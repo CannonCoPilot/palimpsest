@@ -1,0 +1,1814 @@
+{
+ "chapter": 29,
+ "n_verses": 35,
+ "n_cells": 140,
+ "n_pass": 133,
+ "rate": 0.95,
+ "ref_means": {
+  "s_dismas": 0.9813,
+  "odr_com": 0.9815,
+  "sabates_a": 0.9677,
+  "madueke_b": 0.9677
+ },
+ "src_rates": {
+  "S1": 0.9143,
+  "S3": 0.9714,
+  "S9": 0.9714,
+  "S6": 0.9429
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  1
+ ],
+ "n_open": 7,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 1,
+   "worst": 0.817,
+   "from": "p115",
+   "text": "Iacob going on his iourney, came into the Eaſt I countrie."
+  },
+  {
+   "src": "S3",
+   "verse": 1,
+   "worst": 0.817,
+   "from": "p119",
+   "text": "Iacob going on his iourney, came into the Eaſt I countrie."
+  },
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.8,
+   "from": "p125",
+   "text": "Iacob going on his iourney, eame into the Eaſt I countrie."
+  },
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.891,
+   "from": "p107",
+   "text": "ſonnes. ACOB therfore going on his iourney, came into the Eaſt countrie."
+  },
+  {
+   "src": "S1",
+   "verse": 6,
+   "worst": 0.883,
+   "from": "p115",
+   "text": "Is he in hea th? quoth he: He is in health, ſay they And behold Rach: I his daughter cometh with com"
+  },
+  {
+   "src": "S6",
+   "verse": 17,
+   "worst": 0.889,
+   "from": "p107",
+   "text": "But Lya was bleare eyed, Rachel wel fauoured, & of a beautiful countenance."
+  },
+  {
+   "src": "S1",
+   "verse": 27,
+   "worst": 0.769,
+   "from": "chapter",
+   "text": "Make vp the wecke of daves of this oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Iacob going on his iourney, came into the Eaſt I countrie.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.825,
+     "odr_com": 0.825,
+     "sabates_a": 0.817,
+     "madueke_b": 0.817
+    }
+   },
+   "S3": {
+    "text": "Iacob going on his iourney, came into the Eaſt I countrie.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.825,
+     "odr_com": 0.825,
+     "sabates_a": 0.817,
+     "madueke_b": 0.817
+    }
+   },
+   "S9": {
+    "text": "Iacob going on his iourney, eame into the Eaſt I countrie.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.809,
+     "odr_com": 0.809,
+     "sabates_a": 0.8,
+     "madueke_b": 0.8
+    }
+   },
+   "S6": {
+    "text": "ſonnes. ACOB therfore going on his iourney, came into the Eaſt countrie.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And he ſawe a wel in the field, and three flockes of sheepe lying beſide it: for of ix the beaſts were watered, and the mouth therof was cloſed with a great ſtone.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And he ſawe a wel in the field, and three flockes of sheepe lying beſide it: for of it the beaſts were watered, and the mouth therof was cloſed with a great ſtone.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And he ſawe a wel in the field, and three flockes of sheepe lying beſide it: for of it the beaſts were watered, and the mouth therof was cloſed with a great ſtone.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And he ſaw a wel in the field. and three flocles of ſheep lying beſide it: for of it the beaſts were watered, and the mouth thereof was cloſed with a great ſtone.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And the maner was when al the sheepe were geathered togeather they did rowle of the ſtone, and after the sheepe were refreshed they put it on the mouthof the wel againe.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "And the maner was when al the sheepe were geathered togeather they did rowle of the ſtone, and after the sheepe were refreshed they put it on the mouthof the wel againe. 4†",
+    "from": "p119",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "And the maner was when al the sheepe were geathered togeather they did rowle of the ſtone, and after the sheepe were refreshed they put it on the mouth of the wel againe.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And the mannet was when al the ſheep were gathered together they did role off the ſtone, and after the ſheep were refreſhed they put it on the mouth of the wel againe.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And he ſaid to the sheperds: Brethren, whence are you? Who anſwered: Of Haran.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to the sheperds: Brethren Whence are you Who anſwered Of Haran.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to the sheperds Brethren., Whence are you? Who anſwered Of Haran.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to the ſhepeards Brethren, whence are vouv Who anſwered Of Haran.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And he asked them, ſaying Rnow you Laban the ſonne of Nachor? They ſaid: We do knowe him.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And he asked them, ſaying Know you Laban the ſonne of Nachor? They ſaid We do knowe him.",
+    "from": "p119",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he asked them, ſaying Know you Laban the ſonne of Nachor They ſaid We do knowe him.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he asked them, ſaying Know vou Laban the ſonne of Nachor They ſaid: We doe know him.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Is he in hea th? quoth he: He is in health, ſay they And behold Rach: I his daughter cometh with com",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.883,
+     "odr_com": 0.883,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S3": {
+    "text": "Is he in health quoth he: He is in health, ſay they And behold Rachel his daughter cometh with his flocke.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Is he in health: quoth he He is in health, ſay they And behold Rachel his daughter cometh with his flocke.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Is he in health quoth he He is in health, ſay they: And behold Rachel his daughter commeth with his flock.7.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And Iacob ſaid There is yet much day remaining, neither is it time to bring the flockes into the foulds againe firſt geue the sheep drinke, and ſo bring them backe to feede.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And Iacob ſaid : There is yet much day remaining, neither is it time to bring the flockes into the foulds againe : firſt geue the sheep drinke, and ſo bring them backe to feede.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And Iacob ſaid: There is yet much day remaining, neither is it time to bring the flockes into the foulds againe : firſt geue the sheep drinke, and ſo bring them backe to feede.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And Iacob ſaid There is yet much day remaining, neither is it time to bring the flocks into the folds againe firſt giue the ſheep drinke, and ſo bring them back to feed..",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Who anſwered we can not, til al the cattel be gethered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "Who anſwered We can not, til al the cattel be gethered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "Who anſwered : We can not, til al the cattel be gethered together : and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "Who anſwered: we can not, til al the cattel be gathered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "They were yet ſpeaking, and behold Rachel came with her fatheis ſheepe : for ſhe fed the flocke.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "They were yet ſpeaking, and behold Rachel came with her fathers ſheepe: for ſhe fed the flocke.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "They were yet ſpeaking, and behold Rachel came with her fathers ſheepe: for ſhe fed the flocke.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "They were vet ſpeaking, and behold Rachel came with her fathers ſheep: for ſhe fed the flock.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vnkle: he remoued the ſtone, wherwith the wel was cloſed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.912,
+     "madueke_b": 0.912
+    }
+   },
+   "S3": {
+    "text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle: he remoued the ſtone, wherwith the wel was cloſed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S9": {
+    "text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle : he remoued the ſtone, wherwith the wel was cloſed.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S6": {
+    "text": "Whom whe Iacob had ſeen, knew her to be his coſen germane, that they. were the ſheep of Laban his vncle, he remoued the ſtone, wherwith the wel was cloſed.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And hauing watered the Gen) flocke, he :: kiſſed hec: and lifting vp his voice wept,",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S3": {
+    "text": "And hauing watered the flocke, he ſ kiſſed her: and lifting vp his voice wept,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And hauing watered the Gen) flocke, he :: kiſſed her: and lifting vp his voice wept,",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S6": {
+    "text": "And hauing watered the flocke, he (4) kiſſed her: and lifting vp his voice wept,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "and he told her that he was her fathers brother, and the ſonne of Rebecca but ſhe in haſt went and told her father.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "and he told her that he was her fathers brother, and the ſonne of Rebecca but ſhe in haſt went and told her father.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "and he told her that he was her fathers brother, and the ſonne of Rebecca : but ſhe in haſt went and told her father.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "and he told her that he was her fathers brothet, and the ſonne of Rebecca: but ſhe in haſt went told her father.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S3": {
+    "text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S9": {
+    "text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "Who when he heard that Iacob his ſiſters ſoue was come, he ranne forth to meet him, embraceing him hartily kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "he anſwered Thou art my bone and my fleſh. And after the dayes of one moneth were expired,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "he anſwered Thou art my bone and my fleſh. And after the dayes of one moneth were expired,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "he anſwered : Thou art my & bone and my fle ſh. And after the dayes of one moneth were expired,",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "he anſwered: Thou art my bone and my fleſh. And atter the dayes of one month were expired,",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me, What wages wilt thou taker",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S3": {
+    "text": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S9": {
+    "text": "He had in dede two daughters, the name of the elder was Lia : and the younger was called Rachel.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "He had indeed two daughters, the name of the elder was Lia, & the yonger was called Rachel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.913,
+     "odr_com": 0.913,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
+    }
+   },
+   "S3": {
+    "text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
+    }
+   },
+   "S9": {
+    "text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
+    }
+   },
+   "S6": {
+    "text": "But Lya was bleare eyed, Rachel wel fauoured, & of a beautiful countenance.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Whom Iacob louing, ſaid I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Whom Iacob louing, ſaid I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "Whom Iacob louing, ſaid : I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "Who Iacob louing, ſaid: I wil ſerue thee for Rachel thy yonger daughter ſeauen yeares.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Laban an- ſwered It is better that I geue her to thee then to an other man, tary with me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S3": {
+    "text": "Laban anſwered: It is better that I geue her to thee then to an other man, tary with me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "Laban an ſwered : It is better that I geue her to thee then to an other man, tary with me.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Laban anſwered It is better that I giue her to thee then to an other man, tary with me.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Iacob therfore ſerued for Rachel ſeuen yeares: and they ſemed a few days becauſe of the greatnes of his loue.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Iacob therfore ſerued for Rachel ſeuen yeares : and they ſemed a few dayas becauſe of the greatnes of his loue.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Iacob therfore ſerued for Rachel ſeuen yeares : and they ſomed a few dayas becauſe of the greatnes of his loue.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "Iacob thertore ferued for Rachel ſeauen veares: and they ſeemed a few dayes becauſe of the greatnes ot his loue.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And he ſaid to Laban geue me my wife: becauſe now the time is complete, that I may companie with her.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to Laban: geue me my wiſe: becauſe now the time is complete, that I may companie with her.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to Laban : geue me my wife: becauſe now the time is complete, that I may companie with her.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to Laban: giue me my wife: becauſe now the time is complete, that I may companie with her.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Who hauing bid a great number of his frcins to the feaſt, made the mariage.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Who hauing bid a great number of his freinds to the feaſt, made the mariage.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Who hauing bid a great number of his freinds to the feaſt, made the mariage.",
+    "from": "p126",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Who hauing bid a great number of his freinds to the feaſt, made the mariage.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And at night he brought in Lia his daughter to him,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And at night he brought in Lia his daughter to him,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And gre- night : he brought in Lia his daughter to him,",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "And at night he brought in Lia his daughter to him,24.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had companed after the maner, when morning was come he ſaw Lia",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had complained after the maner, when morning was come he ſaw Lia",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.992,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "geuing his daughter a handmaid, named Zelpha. With whom when be Iacob had compained after the maner, when morning was but come he ſaw Lia :",
+    "from": "p126",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.948,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S6": {
+    "text": "giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he ſaw Lia 25..",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.969,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "and he ſaid to his father in lawe what is it that thou dideſt meane to doe? did not I ſerue thee for Rachel? why haſt thou deceiued me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "and he ſaid to his father in lawe What is it that thou dideſt meane to doe did not I ſerue thee for Rachel why haſt thou deceiued me:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "and he ſaid to his father in lawe What is it that thou dideſt meane to doe? did not I ſerue thee for Rachel why haſt thou deceiued me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "and he ſaid to his father in law What is it that thou dideſt meane to doe did not I ſerue thee for Rachel why haſt thou deceiued me",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "Laban anſwered: It is not the. cuſtome in this place, that we beſtowe the younger in mariage firſt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Laban anſwered :26 It is not the. cuſtome in this place, that we beſtowe the hadyounger in mariage firſt.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "Laban anſwered It is not the cuſtome in this place, that we beſtowe the younger in mariage firſt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Laban anſwered: It is not the cuſtome in this place, that we beſtow the yonger in mariage firſt.7.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "Make vp the wecke of daves of this oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.802,
+     "odr_com": 0.809,
+     "sabates_a": 0.769,
+     "madueke_b": 0.769
+    }
+   },
+   "S3": {
+    "text": "Make vp the wecke of dayes ofthis march: and I wil geus the this ſame alſo, fbr the worke that thou lshaltrſerue me other ſeauen yeares.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.947,
+     "sabates_a": 0.903,
+     "madueke_b": 0.903
+    }
+   },
+   "S9": {
+    "text": "Make vp the weeke of dayes of this match: and I wil geue the this ſame alſo, for the worke that thou shalt ſerue me other ſeauen yeares.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "Make vp the weeke of dayes of this matcl: and I wil giue thee this ſame alſo, tor the worke that thou shalt ſerue me other ſeauen yeares.8.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.97,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "He yelded to his pleaſure: and after the weeke was paſt, he maried Rachel to wife",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "yelded to his pleaſure: and after the weeke was paſt, he maried Racheſ to wife:",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "He yelded to his pleaſure and after the weeke was paſt, he maried Rachel to wife:",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He yealded to his pleaſure and after the weeke was paſt, he maried Rachel to wife:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "to whom her father had deliuered Bala for to be her ſeruant.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "to whom her father had deliuered Bala for to be her ſeruant.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "to whom her father had deliuered Bala for to be her ſeruant.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "to whom her father had deliuered Bala for to be her ſeruant.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And hauing at length obtcined the mariage that he wished, he preferred the loue of the later before the former, ſeruing with him other ſeauen veares.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And hauingat length obteined the mariage that he wished, he preferred the loue of the later before the former, ſeruing with him other ſeauen yeares.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And hauing at length obteined the mariage that he wished, he preferred the loue of the later before the former, ſeruing with him other ſeauen yeares.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And hauing at length ob. teinedthe mariage that he wished, he preferted the loue of the later before the former, ſeruins with him other ſeauen veares.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And our Lord ſeing that he deſpiſed Lia, opned her vombe, her ſiſter remaining barren.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſeing that he deſpiſed Lia, opned her womibe, her ſiſter remaining barren.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſeing that he deſpiſed Lia, opned her wombe, her ſiſter remaining barren.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſeeing that he deſpiſed Lia, opened her womb, her ſiſter remaining barren.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "Who conceaued and bare a ſonne, and called his name Ruben, ſaying Our Lord ſaw mine affliction now my huſband wil loue me.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "Who conceaued andbare a ſonne, and called his name Ruben, ſaying Our Lord ſaw mine affliction: now my huſband wil loue me.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Who conceaued and bare a ſonne, and called his name Ruben, ſaying: Our Lord ſawimine affliction now my huſband wil loue me.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Who conceaued and bare a ſonne, and called his name Ruben, ſaying Our Lord ſaw mine affliction: now my husband will loue me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "And againe she conceaued and bare a ſonne, and ſaid For becauſe our Lord heard that I was contemned, he hath geuen this alſo to me and she called his name Simcon",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And againe she conceaued and bare a ſonne, and ſaid For becauſe our Lord heard that I was contemned, he hath geuen this alſo to me :and she called his naie Simeon",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And againe she conceaued and bare a ſonne, and ſaid For becauſe our Lord heard that I was contemned, he hath geuen this alſo to me and she called his name Simeon.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "And againe she conceived and bare a ſonne, and ſaid: For becauſe our Lord heard that I was contemned, he hath giuen this alſo to me: and she called his name Simeon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "And she conceaued the third time, and bare an other ſonne: and ſaid Now alſo my huſband wil be ioyned to me, for becauſe I haue borne him three ſonnes: and therfore she called his name, Leui.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And she conceaued the third time, and bare an other ſonne: and ſaid Now alfo my huſband wil be ioyned to me, for becauſe I haue borne him three ſonnes and therfore she called his name, Leui.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And she conceaued the third time, and bare an other ſonne and ſaid Now alſo my huſband wil be ioyned to mefor becauſe I haue borne him three ſonnes and therfore she called his name, Leui.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And she conceaued the third time, and bare another ſonne and ſaid Now alſo my huſband wil be ioyned to me for becauſe I haue borne him three ſonnes: and therfore she called his name. Leui.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "The fourth time she conceaued and bare a ſonne, and ſaid Now wil I conſſeſſe to our Lord. And for this she called him Iuda And she left bearing",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "The fourth time she conceaued and bare a ſonne, and ſaid Now wil I conffeſſe to our Lord, And for this she called him Iuda And ſhe left bearing,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "The fourth time she conceaued and bare a ſonne, and ſaid Now wil I conffeſſe to our Lord. And for this she called him Iuda And she left bearing,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "The fourth time she conceaued and bare a ſonue and ſaid: Now wil I conteſſe to our Lord. And tor this she called him Iuda And she left bearing.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.972,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Iacob therfore going on his iourney, came into the Eaſt countrie.",
+   "odr_com": "IACOB therfore going on his iourney, came into the East countrie.",
+   "sabates_a": "Jacob therefore going on his journey, came into the East country.",
+   "madueke_b": "Jacob therefore going on his journey, came into the East country."
+  },
+  "2": {
+   "s_dismas": "And he ſawe a wel in the field, and three flockes of sheepe lying beſide it: for of it the beaſts were watered, and the mouth therof was cloſed with a great ſtone.",
+   "odr_com": "And he sawe a wel in the field, and three flockes of sheepe lying beside it: for of it the beasts were watered, and the mouth therof was closed with a great stone.",
+   "sabates_a": "And he saw a well in the field, and three flocks of sheep lying beside it: for of it the beasts were watered, and the mouth thereof was closed with a great stone.",
+   "madueke_b": "And he saw a well in the field, and three flocks of sheep lying beside it: for of it the beasts were watered, and the mouth thereof was closed with a great stone."
+  },
+  "3": {
+   "s_dismas": "And the maner was when al the sheepe were geathered togeather they did rowle of the ſtone, and after the sheepe were refreshed they put it on the mouth of the wel againe.",
+   "odr_com": "And the maner was when al the sheepe were geathered togeather they did rowle of the stone, and after the sheepe were refreshed they put it on the mouth of the wel againe.",
+   "sabates_a": "And the manner was when all the sheep were gathered together they did roll off the stone, and after the sheep were refreshed they put it on the mouth of the well again.",
+   "madueke_b": "And the manner was when all the sheep were gathered together they did roll off the stone, and after the sheep were refreshed they put it on the mouth of the well again."
+  },
+  "4": {
+   "s_dismas": "And he ſaid to the sheperds: Brethren, Whence are you? Who anſwered: Of Haran.",
+   "odr_com": "And he said to the sheperds: Brethren, Whence are you? Who answered: Of Haran.",
+   "sabates_a": "And he said to the shepherds: Brethren, whence are you? Who answered: Of Haran.",
+   "madueke_b": "And he said to the shepherds: Brethren, whence are you? Who answered: Of Haran."
+  },
+  "5": {
+   "s_dismas": "And he asked them, ſaying: Know you Laban the ſonne of Nachor? They ſaid: We do knowe him.",
+   "odr_com": "And he asked them, saying: Know you Laban the sonne of Nachor? They said: We do knowe him.",
+   "sabates_a": "And he asked them, saying: Know you Laban the son of Nachor? They said: We do know him.",
+   "madueke_b": "And he asked them, saying: Know you Laban the son of Nachor? They said: We do know him."
+  },
+  "6": {
+   "s_dismas": "Is he in health? quoth he: He is in health, ſay they: And behold Rachel his daughter cometh with his flocke.",
+   "odr_com": "Is he in health? quoth he: He is in health, say they: And behold Rachel his daughter cometh with his flocke.",
+   "sabates_a": "Is he in health? Quoth he: He is in health, say they: And behold Rachel his daughter cometh with his flock.",
+   "madueke_b": "Is he in health? Quoth he: He is in health, say they: And behold Rachel his daughter cometh with his flock."
+  },
+  "7": {
+   "s_dismas": "And Iacob ſaid: There is yet much day remaining, neither is it time to bring the flockes into the foulds againe: firſt geue the sheep drinke, and ſo bring them backe to feede.",
+   "odr_com": "And Iacob said: There is yet much day remaining, neither is it time to bring the flockes into the foulds againe: first geue the sheep drinke, and so bring them backe to feede.",
+   "sabates_a": "And Jacob said: There is yet much day remaining, neither is it time to bring the flocks into the folds again: first give the sheep drink, and so bring them back to feed.",
+   "madueke_b": "And Jacob said: There is yet much day remaining, neither is it time to bring the flocks into the folds again: first give the sheep drink, and so bring them back to feed."
+  },
+  "8": {
+   "s_dismas": "Who anſwered: We can not, til al the cattel be gethered together: and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+   "odr_com": "Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks.",
+   "sabates_a": "Who answered: we cannot, till all the cattle be gathered together: and we remove the stone from the well's mouth, that we may water the flocks.",
+   "madueke_b": "Who answered: we cannot, till all the cattle be gathered together: and we remove the stone from the well's mouth, that we may water the flocks."
+  },
+  "9": {
+   "s_dismas": "They were yet ſpeaking, and behold Rachel came with her fathers ſheepe: for ſhe fed the flocke.",
+   "odr_com": "They were yet speaking, and behold Rachel came with her fathers sheepe: for she fed the flocke.",
+   "sabates_a": "They were yet speaking, and behold Rachel came with her father's sheep: for she fed the flock.",
+   "madueke_b": "They were yet speaking, and behold Rachel came with her father's sheep: for she fed the flock."
+  },
+  "10": {
+   "s_dismas": "Whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle: he remoued the ſtone, wherwith the wel was cloſed.",
+   "odr_com": "whom when Iacob had seene, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed.",
+   "sabates_a": "Whom when Jacob had seen, & knew her to be his cousin-german, & that they were the sheep of Laban his uncle, he removed the stone, wherewith the well was closed.",
+   "madueke_b": "Whom when Jacob had seen, & knew her to be his cousin-german, & that they were the sheep of Laban his uncle, he removed the stone, wherewith the well was closed."
+  },
+  "11": {
+   "s_dismas": "And hauing watered the flocke, he kiſſed her: and lifting vp his voice wept,",
+   "odr_com": "And hauing watered the flocke, he kissed her: and lifting vp his voice wept,",
+   "sabates_a": "And having watered the flock, he kissed her: and lifting up his voice wept,",
+   "madueke_b": "And having watered the flock, he kissed her: and lifting up his voice wept,"
+  },
+  "12": {
+   "s_dismas": "and he told her that he was her fathers brother, and the ſonne of Rebecca: but ſhe in haſt went and told her father.",
+   "odr_com": "and he told her that he was her fathers brother, and the sonne of Rebecca: but she in hast went and told her father.",
+   "sabates_a": "and he told her that he was her father's brother, and the son of Rebecca: but she in haste went & told her father.",
+   "madueke_b": "and he told her that he was her father's brother, and the son of Rebecca: but she in haste went & told her father."
+  },
+  "13": {
+   "s_dismas": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+   "odr_com": "Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his iourney,",
+   "sabates_a": "Who when he heard that Jacob his sister's son was come, he ran forth to meet him, & embracing him & heartily kissing him, brought him into his house. And when he had heard the causes of his journey,",
+   "madueke_b": "Who when he heard that Jacob his sister's son was come, he ran forth to meet him, & embracing him & heartily kissing him, brought him into his house. And when he had heard the causes of his journey,"
+  },
+  "14": {
+   "s_dismas": "he anſwered: Thou art my bone and my fleſh. And after the dayes of one moneth were expired,",
+   "odr_com": "he answered: Thou art my bone and my flesh. And after the dayes of one moneth were expired,",
+   "sabates_a": "he answered: Thou art my bone and my flesh. And after the days of one month were expired,",
+   "madueke_b": "he answered: Thou art my bone and my flesh. And after the days of one month were expired,"
+  },
+  "15": {
+   "s_dismas": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis? Tel me what wages wilt thou take.",
+   "odr_com": "he said to him: because thou art my brother, shalt thou serue me gratis? Tel me what wages wilt thou take.",
+   "sabates_a": "he said to him: because thou art my brother, shalt thou serve me gratis? Tell me, what wages wilt thou take?",
+   "madueke_b": "he said to him: because thou art my brother, shalt thou serve me gratis? Tell me, what wages wilt thou take?"
+  },
+  "16": {
+   "s_dismas": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+   "odr_com": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+   "sabates_a": "He had indeed two daughters, the name of the elder was Lia; & the younger was called Rachel.",
+   "madueke_b": "He had indeed two daughters, the name of the elder was Lia; & the younger was called Rachel."
+  },
+  "17": {
+   "s_dismas": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+   "odr_com": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+   "sabates_a": "But Lia was blear-eyed, Rachel well favoured, & of a beautiful countenance.",
+   "madueke_b": "But Lia was blear-eyed, Rachel well favoured, & of a beautiful countenance."
+  },
+  "18": {
+   "s_dismas": "Whom Iacob louing, ſaid: I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+   "odr_com": "Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, seauen yeares.",
+   "sabates_a": "Whom Jacob loving, said: I will serve thee for Rachel thy younger daughter seven years.",
+   "madueke_b": "Whom Jacob loving, said: I will serve thee for Rachel thy younger daughter seven years."
+  },
+  "19": {
+   "s_dismas": "Laban anſwered: It is better that I geue her to thee then to an other man, tary with me.",
+   "odr_com": "Laban answered: It is better that I geue her to thee then to an other man, tary with me.",
+   "sabates_a": "Laban answered: It is better that I give her to thee than to another man, tarry with me.",
+   "madueke_b": "Laban answered: It is better that I give her to thee than to another man, tarry with me."
+  },
+  "20": {
+   "s_dismas": "Iacob therfore ſerued for Rachel ſeuen yeares: and they ſemed a few dayes becauſe of the greatnes of his loue.",
+   "odr_com": "Iacob therfore serued for Rachel seuen yeares: and they semed a few dayes because of the greatnes of his loue.",
+   "sabates_a": "Jacob therefore served for Rachel seven years: and they seemed a few days because of the greatness of his love.",
+   "madueke_b": "Jacob therefore served for Rachel seven years: and they seemed a few days because of the greatness of his love."
+  },
+  "21": {
+   "s_dismas": "And he ſaid to Laban: geue me my wife: becauſe now the time is complete, that I may companie with her.",
+   "odr_com": "And he said to Laban: geue me my wife: because now the time is complete, that I may companie with her.",
+   "sabates_a": "And he said to Laban: give me my wife: because now the time is complete, that I may company with her.",
+   "madueke_b": "And he said to Laban: give me my wife: because now the time is complete, that I may company with her."
+  },
+  "22": {
+   "s_dismas": "Who hauing bid a great number of his freinds to the feaſt, made the mariage.",
+   "odr_com": "Who hauing bid a great number of his freinds to the feast, made the mariage.",
+   "sabates_a": "Who having bid a great number of his friends to the feast, made the marriage.",
+   "madueke_b": "Who having bid a great number of his friends to the feast, made the marriage."
+  },
+  "23": {
+   "s_dismas": "And at night he brought in Lia his daughter to him,",
+   "odr_com": "And at night he brought in Lia his daughter to him,",
+   "sabates_a": "And at night he brought in Lia his daughter to him,",
+   "madueke_b": "And at night he brought in Lia his daughter to him,"
+  },
+  "24": {
+   "s_dismas": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the maner, when morning was come he ſaw Lia:",
+   "odr_com": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had compained after the maner, when morning was come he saw Lia:",
+   "sabates_a": "giving his daughter a handmaid, named Zelpha. With whom when Jacob had companied after the manner, when morning was come he saw Lia:",
+   "madueke_b": "giving his daughter a handmaid, named Zelpha. With whom when Jacob had companied after the manner, when morning was come he saw Lia:"
+  },
+  "25": {
+   "s_dismas": "and he ſaid to his father in lawe: What is it that thou dideſt meane to doe? did not I ſerue thee for Rachel? why haſt thou deceiued me?",
+   "odr_com": "and he said to his father in lawe: What is it that thou didest meane to doe? did not I serue thee for Rachel? why hast thou deceiued me?",
+   "sabates_a": "and he said to his father in law: What is it that thou didst mean to do? Did not I serve thee for Rachel? Why hast thou deceived me?",
+   "madueke_b": "and he said to his father in law: What is it that thou didst mean to do? Did not I serve thee for Rachel? Why hast thou deceived me?"
+  },
+  "26": {
+   "s_dismas": "Laban anſwered: It is not the cuſtome in this place, that we beſtowe the younger in mariage firſt.",
+   "odr_com": "Laban answered: It is not the custome in this place, that we bestowe the younger in mariage first.",
+   "sabates_a": "Laban answered: It is not the custom in this place, that we bestow the younger in marriage first.",
+   "madueke_b": "Laban answered: It is not the custom in this place, that we bestow the younger in marriage first."
+  },
+  "27": {
+   "s_dismas": "Make vp the weeke of dayes of this match: and I wil geue thee this ſame alſo, for the worke that thou shalt ſerue me other ſeauen yeares.",
+   "odr_com": "Make vp the weeke of dayes of this match: and I wil geue the this same also, for the worke that thou shalt serue me other seauen yeares.",
+   "sabates_a": "Make up the week of days of this match: and I will give thee this same also, for the work that thou shalt serve me other seven years.",
+   "madueke_b": "Make up the week of days of this match: and I will give thee this same also, for the work that thou shalt serve me other seven years."
+  },
+  "28": {
+   "s_dismas": "He yelded to his pleaſure: and after the weeke was paſt, he maried Rachel to wife:",
+   "odr_com": "He yelded to his pleasure: and after the weeke was past, he maried Rachel to wife:",
+   "sabates_a": "He yielded to his pleasure; and after the week was past, he married Rachel to wife:",
+   "madueke_b": "He yielded to his pleasure; and after the week was past, he married Rachel to wife:"
+  },
+  "29": {
+   "s_dismas": "to whom her father had deliuered Bala for to be her ſeruant.",
+   "odr_com": "to whom her father had deliuered Bala for to be her seruant.",
+   "sabates_a": "to whom her father had delivered Bala for to be her servant.",
+   "madueke_b": "to whom her father had delivered Bala for to be her servant."
+  },
+  "30": {
+   "s_dismas": "And hauing at length obteined the mariage that he wished, he preferred the loue of the later before the former, ſeruing with him other ſeauen yeares.",
+   "odr_com": "And hauing at length obteined the mariage that he wished, he preferred the loue of the later before the former, seruing with him other seauen yeares.",
+   "sabates_a": "And having at length obtained the marriage that he wished, he preferred the love of the later before the former, serving with him other seven years.",
+   "madueke_b": "And having at length obtained the marriage that he wished, he preferred the love of the later before the former, serving with him other seven years."
+  },
+  "31": {
+   "s_dismas": "And our Lord ſeing that he deſpiſed Lia, opned her wombe, her ſiſter remaining barren.",
+   "odr_com": "And our Lord seing that he despised Lia, opned her wombe, her sister remaining barren.",
+   "sabates_a": "And our Lord seeing that he despised Lia, opened her womb, her sister remaining barren.",
+   "madueke_b": "And our Lord seeing that he despised Lia, opened her womb, her sister remaining barren."
+  },
+  "32": {
+   "s_dismas": "Who conceaued and bare a ſonne, and called his name Ruben, ſaying: Our Lord ſaw mine affliction: now my huſband wil loue me.",
+   "odr_com": "Who conceaued and bare a sonne, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband wil loue me.",
+   "sabates_a": "Who conceived and bare a son, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband will love me.",
+   "madueke_b": "Who conceived and bare a son, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband will love me."
+  },
+  "33": {
+   "s_dismas": "And againe she conceaued and bare a ſonne, and ſaid: For becauſe our Lord heard that I was contemned, he hath geuen this alſo to me: and she called his name Simeon.",
+   "odr_com": "And againe she conceaued and bare a sonne, and said: For because our Lord heard that I was contemned, he hath geuen this also to me: and she called his name Simeon.",
+   "sabates_a": "And again she conceived and bare a son, and said: For because our Lord heard that I was contemned, he hath given this also to me: and she called his name Simeon.",
+   "madueke_b": "And again she conceived and bare a son, and said: For because our Lord heard that I was contemned, he hath given this also to me: and she called his name Simeon."
+  },
+  "34": {
+   "s_dismas": "And she conceaued the third time, and bare an other ſonne: and ſaid: Now alſo my huſband wil be ioyned to me, for becauſe I haue borne him three ſonnes: and therfore she called his name, Leui.",
+   "odr_com": "And she conceaued the third time, and bare an other sonne: and said: Now also my husband wil be ioyned to me, for because I haue borne him three sonnes: and therfore she called his name, Leui.",
+   "sabates_a": "And she conceived the third time, and bare another son: and said: Now also my husband will be joined to me, for because I have born him three sons: and therefore she called his name, Levi.",
+   "madueke_b": "And she conceived the third time, and bare another son: and said: Now also my husband will be joined to me, for because I have born him three sons: and therefore she called his name, Levi."
+  },
+  "35": {
+   "s_dismas": "The fourth time she conceaued and bare a ſonne, and ſaid: Now wil I confeſſe to our Lord. And for this she called him Iuda: and she left bearing.",
+   "odr_com": "The fourth time she conceaued and bare a sonne, and said: Now wil I conffesse to our Lord. And for this she called him Iuda: And she left bearing.",
+   "sabates_a": "The fourth time she conceived and bare a son, and said: Now will I confess to our Lord. And for this she called him Juda: And she left bearing.",
+   "madueke_b": "The fourth time she conceived and bare a son, and said: Now will I confess to our Lord. And for this she called him Juda: And she left bearing."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Jacob therefore going on his journey, came into the East country.",
+  "2": "And he saw a well in the field, and three flocks of sheep lying beside it: for of it the beasts were watered, and the mouth thereof was closed with a great stone.",
+  "3": "And the manner was when all the sheep were gathered together they did roll off the stone, and after the sheep were refreshed they put it on the mouth of the well again.",
+  "4": "And he said to the shepherds: Brethren, whence are you? Who answered: Of Haran.",
+  "5": "And he asked them, saying: Know you Laban the son of Nachor? They said: We do know him.",
+  "6": "Is he in health? Quoth he: He is in health, say they: And behold Rachel his daughter cometh with his flock.",
+  "7": "And Jacob said: There is yet much day remaining, neither is it time to bring the flocks into the folds again: first give the sheep drink, and so bring them back to feed.",
+  "8": "Who answered: we cannot, till all the cattle be gathered together: and we remove the stone from the well's mouth, that we may water the flocks.",
+  "9": "They were yet speaking, and behold Rachel came with her father's sheep: for she fed the flock.",
+  "10": "Whom when Jacob had seen, & knew her to be his cousin-german, & that they were the sheep of Laban his uncle, he removed the stone, wherewith the well was closed.",
+  "11": "And having watered the flock, he kissed her: and lifting up his voice wept,",
+  "12": "and he told her that he was her father's brother, and the son of Rebecca: but she in haste went & told her father.",
+  "13": "Who when he heard that Jacob his sister's son was come, he ran forth to meet him, & embracing him & heartily kissing him, brought him into his house. And when he had heard the causes of his journey,",
+  "14": "he answered: Thou art my bone and my flesh. And after the days of one month were expired,",
+  "15": "he said to him: because thou art my brother, shalt thou serve me gratis? Tell me, what wages wilt thou take?",
+  "16": "He had indeed two daughters, the name of the elder was Lia; & the younger was called Rachel.",
+  "17": "But Lia was blear-eyed, Rachel well favoured, & of a beautiful countenance.",
+  "18": "Whom Jacob loving, said: I will serve thee for Rachel thy younger daughter seven years.",
+  "19": "Laban answered: It is better that I give her to thee than to another man, tarry with me.",
+  "20": "Jacob therefore served for Rachel seven years: and they seemed a few days because of the greatness of his love.",
+  "21": "And he said to Laban: give me my wife: because now the time is complete, that I may company with her.",
+  "22": "Who having bid a great number of his friends to the feast, made the marriage.",
+  "23": "And at night he brought in Lia his daughter to him,",
+  "24": "giving his daughter a handmaid, named Zelpha. With whom when Jacob had companied after the manner, when morning was come he saw Lia:",
+  "25": "and he said to his father in law: What is it that thou didst mean to do? Did not I serve thee for Rachel? Why hast thou deceived me?",
+  "26": "Laban answered: It is not the custom in this place, that we bestow the younger in marriage first.",
+  "27": "Make up the week of days of this match: and I will give thee this same also, for the work that thou shalt serve me other seven years.",
+  "28": "He yielded to his pleasure; and after the week was past, he married Rachel to wife:",
+  "29": "to whom her father had delivered Bala for to be her servant.",
+  "30": "And having at length obtained the marriage that he wished, he preferred the love of the later before the former, serving with him other seven years.",
+  "31": "And our Lord seeing that he despised Lia, opened her womb, her sister remaining barren.",
+  "32": "Who conceived and bare a son, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband will love me.",
+  "33": "And again she conceived and bare a son, and said: For because our Lord heard that I was contemned, he hath given this also to me: and she called his name Simeon.",
+  "34": "And she conceived the third time, and bare another son: and said: Now also my husband will be joined to me, for because I have born him three sons: and therefore she called his name, Levi.",
+  "35": "The fourth time she conceived and bare a son, and said: Now will I confess to our Lord. And for this she called him Juda: And she left bearing."
+ },
+ "ref_coverage": {
+  "janvier": 35,
+  "have": {
+   "s_dismas": 35,
+   "odr_com": 35,
+   "sabates_a": 35,
+   "madueke_b": 35
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 140,
+ "triage": "R3-READY",
+ "secs": 6.0
+}

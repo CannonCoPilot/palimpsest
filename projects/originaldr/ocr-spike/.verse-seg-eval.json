@@ -1,0 +1,425 @@
+[
+  {
+    "slug": "scripture-psalms-118",
+    "book": "psalms",
+    "ocr_dir": "archive-ot2-1610",
+    "page_index": 227,
+    "chapters": [
+      {
+        "chapter": 118,
+        "book": "psalms",
+        "n_verses": 12,
+        "sd_witness": "s_dismas",
+        "localized": [
+          103,
+          114
+        ],
+        "NEW_witness_mean": 0.9415,
+        "OLD_witness_mean": 0.9415,
+        "gold_content_mean": 0.9821,
+        "NEW_pass@.90": [
+          9,
+          12
+        ],
+        "OLD_pass@.90": [
+          9,
+          12
+        ],
+        "open_verses": 0,
+        "len_ratio_span": [
+          0.98,
+          1.077
+        ],
+        "ocr_archaic_mean": null,
+        "ocr_pass@.90": [
+          0,
+          0
+        ],
+        "rows": [
+          {
+            "v": 103,
+            "new_wit": 0.8904,
+            "old_wit": 0.8904,
+            "gold_content": 0.9333,
+            "len_ratio": 1.062,
+            "open": false,
+            "reason": "",
+            "anchor": 8,
+            "ocr": null
+          },
+          {
+            "v": 104,
+            "new_wit": 0.713,
+            "old_wit": 0.713,
+            "gold_content": 0.987,
+            "len_ratio": 1.015,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": null
+          },
+          {
+            "v": 105,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9811,
+            "len_ratio": 1.077,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": null
+          },
+          {
+            "v": 106,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9833,
+            "len_ratio": 1.038,
+            "open": false,
+            "reason": "",
+            "anchor": 10,
+            "ocr": null
+          },
+          {
+            "v": 107,
+            "new_wit": 0.9839,
+            "old_wit": 0.9839,
+            "gold_content": 1.0,
+            "len_ratio": 0.98,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": null
+          },
+          {
+            "v": 108,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.973,
+            "len_ratio": 1.016,
+            "open": false,
+            "reason": "",
+            "anchor": 12,
+            "ocr": null
+          },
+          {
+            "v": 109,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9677,
+            "len_ratio": 1.062,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": null
+          },
+          {
+            "v": 110,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 14,
+            "ocr": null
+          },
+          {
+            "v": 111,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9888,
+            "len_ratio": 0.987,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": null
+          },
+          {
+            "v": 112,
+            "new_wit": 0.7113,
+            "old_wit": 0.7113,
+            "gold_content": 0.9853,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": null
+          },
+          {
+            "v": 113,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": null
+          },
+          {
+            "v": 114,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9853,
+            "len_ratio": 1.018,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "scripture-genesis-24",
+    "book": "genesis",
+    "ocr_dir": "archive-ot1-1609",
+    "page_index": 99,
+    "chapters": [
+      {
+        "chapter": 24,
+        "book": "genesis",
+        "n_verses": 19,
+        "sd_witness": "s_dismas",
+        "localized": [
+          12,
+          30
+        ],
+        "NEW_witness_mean": 0.9376,
+        "OLD_witness_mean": 0.6381,
+        "gold_content_mean": 0.921,
+        "NEW_pass@.90": [
+          17,
+          19
+        ],
+        "OLD_pass@.90": [
+          2,
+          19
+        ],
+        "open_verses": 1,
+        "len_ratio_span": [
+          0.288,
+          1.111
+        ],
+        "ocr_archaic_mean": null,
+        "ocr_pass@.90": [
+          0,
+          0
+        ],
+        "rows": [
+          {
+            "v": 12,
+            "new_wit": 0.5588,
+            "old_wit": 0.5294,
+            "gold_content": 0.5426,
+            "len_ratio": 0.592,
+            "open": false,
+            "reason": "",
+            "anchor": 8,
+            "ocr": null
+          },
+          {
+            "v": 13,
+            "new_wit": 1.0,
+            "old_wit": 0.848,
+            "gold_content": 0.9365,
+            "len_ratio": 1.111,
+            "open": false,
+            "reason": "",
+            "anchor": 21,
+            "ocr": null
+          },
+          {
+            "v": 14,
+            "new_wit": 0.9963,
+            "old_wit": 0.9458,
+            "gold_content": 0.9551,
+            "len_ratio": 0.991,
+            "open": false,
+            "reason": "",
+            "anchor": 44,
+            "ocr": null
+          },
+          {
+            "v": 15,
+            "new_wit": 1.0,
+            "old_wit": 0.7538,
+            "gold_content": 0.9891,
+            "len_ratio": 1.019,
+            "open": false,
+            "reason": "",
+            "anchor": 31,
+            "ocr": null
+          },
+          {
+            "v": 16,
+            "new_wit": 1.0,
+            "old_wit": 0.478,
+            "gold_content": 0.9925,
+            "len_ratio": 1.045,
+            "open": false,
+            "reason": "",
+            "anchor": 22,
+            "ocr": null
+          },
+          {
+            "v": 17,
+            "new_wit": 0.9889,
+            "old_wit": 0.6293,
+            "gold_content": 0.9877,
+            "len_ratio": 1.045,
+            "open": false,
+            "reason": "",
+            "anchor": 15,
+            "ocr": null
+          },
+          {
+            "v": 18,
+            "new_wit": 1.0,
+            "old_wit": 0.85,
+            "gold_content": 1.0,
+            "len_ratio": 1.052,
+            "open": false,
+            "reason": "",
+            "anchor": 15,
+            "ocr": null
+          },
+          {
+            "v": 19,
+            "new_wit": 1.0,
+            "old_wit": 0.3656,
+            "gold_content": 0.9884,
+            "len_ratio": 1.074,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": null
+          },
+          {
+            "v": 20,
+            "new_wit": 1.0,
+            "old_wit": 0.5528,
+            "gold_content": 0.9748,
+            "len_ratio": 1.051,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": null
+          },
+          {
+            "v": 21,
+            "new_wit": 1.0,
+            "old_wit": 0.6607,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": null
+          },
+          {
+            "v": 22,
+            "new_wit": 0.9859,
+            "old_wit": 0.5319,
+            "gold_content": 0.9403,
+            "len_ratio": 1.027,
+            "open": false,
+            "reason": "",
+            "anchor": 18,
+            "ocr": null
+          },
+          {
+            "v": 23,
+            "new_wit": 1.0,
+            "old_wit": 0.2804,
+            "gold_content": 0.9892,
+            "len_ratio": 1.013,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": null
+          },
+          {
+            "v": 24,
+            "new_wit": 1.0,
+            "old_wit": 0.4393,
+            "gold_content": 1.0,
+            "len_ratio": 1.015,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": null
+          },
+          {
+            "v": 25,
+            "new_wit": 1.0,
+            "old_wit": 0.7963,
+            "gold_content": 1.0,
+            "len_ratio": 1.014,
+            "open": false,
+            "reason": "",
+            "anchor": 19,
+            "ocr": null
+          },
+          {
+            "v": 26,
+            "new_wit": 1.0,
+            "old_wit": 0.9348,
+            "gold_content": 0.9756,
+            "len_ratio": 1.029,
+            "open": false,
+            "reason": "",
+            "anchor": 7,
+            "ocr": null
+          },
+          {
+            "v": 27,
+            "new_wit": 1.0,
+            "old_wit": 0.8864,
+            "gold_content": 0.9881,
+            "len_ratio": 1.007,
+            "open": false,
+            "reason": "",
+            "anchor": 33,
+            "ocr": null
+          },
+          {
+            "v": 28,
+            "new_wit": 1.0,
+            "old_wit": 0.8165,
+            "gold_content": 0.9762,
+            "len_ratio": 1.014,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": null
+          },
+          {
+            "v": 29,
+            "new_wit": 1.0,
+            "old_wit": 0.5354,
+            "gold_content": 0.9894,
+            "len_ratio": 1.013,
+            "open": false,
+            "reason": "",
+            "anchor": 18,
+            "ocr": null
+          },
+          {
+            "v": 30,
+            "new_wit": 0.2851,
+            "old_wit": 0.2895,
+            "gold_content": 0.2727,
+            "len_ratio": 0.288,
+            "open": true,
+            "reason": "len-short(0.29x)",
+            "anchor": 10,
+            "ocr": null
+          }
+        ]
+      }
+    ]
+  }
+]

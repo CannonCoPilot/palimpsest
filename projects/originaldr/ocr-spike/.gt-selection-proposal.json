@@ -1,0 +1,220 @@
+{
+  "schema": "gt-selection-proposal/v1",
+  "note": "Additional GT page selection for review. page_index = fitz page (int). Body maps cross-validated vs existing GT (Gen24=99, Ps118=227). NT interior map DRIFTS (cursor desync) — mark rung0_confirm.",
+  "already_have": [
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "page": 99,
+      "what": "Genesis 24 (prose body, margin apparatus)"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "page": 227,
+      "what": "Psalms 118 (poetry body + interleaved apparatus)"
+    }
+  ],
+  "body": [
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "book": "genesis",
+      "ref": "1",
+      "page": 20,
+      "pos": "FIRST",
+      "layout": "book+chapter incipit: Genesis title, Argument, drop-cap, prose start",
+      "confidence": "high",
+      "weight": "med"
+    },
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "book": "genesis",
+      "ref": "26",
+      "page": 105,
+      "pos": "MIDDLE",
+      "layout": "chapter opening: heading+Argument+drop-cap+prose",
+      "confidence": "high",
+      "weight": "med"
+    },
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "book": "genesis",
+      "ref": "50",
+      "page": 171,
+      "pos": "LAST",
+      "layout": "final chapter opening; book-end",
+      "confidence": "high",
+      "weight": "med"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "book": "psalms",
+      "ref": "1",
+      "page": 15,
+      "pos": "FIRST",
+      "layout": "single-page psalm: Psalms incipit 'Beatus vir' drop-cap, ~6v",
+      "confidence": "high",
+      "weight": "light"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "book": "psalms",
+      "ref": "74",
+      "page": 138,
+      "pos": "MIDDLE",
+      "layout": "single-page psalm near middle (~11v)",
+      "confidence": "high",
+      "weight": "light"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "book": "psalms",
+      "ref": "150",
+      "page": 265,
+      "pos": "LAST",
+      "layout": "single-page final doxology psalm (~6v)",
+      "confidence": "high",
+      "weight": "light"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "book": "psalms",
+      "ref": "115+116",
+      "page": 211,
+      "pos": "EDGE",
+      "layout": "TWO psalms on one page (Ps116 = shortest chapter in Bible, 2v) -> multiple chapter boundaries",
+      "confidence": "high",
+      "weight": "light"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "book": "matthew",
+      "ref": "1",
+      "page": 27,
+      "pos": "FIRST",
+      "layout": "NT/Matthew incipit: genealogy, title, drop-cap (heavily annotated Rheims)",
+      "confidence": "high",
+      "weight": "med"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "book": "matthew",
+      "ref": "15",
+      "page": 62,
+      "pos": "MIDDLE",
+      "layout": "chapter opening (map-estimated)",
+      "confidence": "low_rung0_confirm",
+      "weight": "med"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "book": "matthew",
+      "ref": "28",
+      "page": 213,
+      "pos": "LAST",
+      "layout": "final chapter (map-estimated; likely drifted)",
+      "confidence": "low_rung0_confirm",
+      "weight": "med"
+    }
+  ],
+  "body_flagged": [
+    {
+      "vol": "NT",
+      "book": "john",
+      "issue": "tome-map localization BROKEN (John ch1/10/20 all -> pp717-722, overlapping Mark ch12). Needs rung-0 visual locate before any GT.",
+      "recommend": "locate on approval, or defer John this round"
+    }
+  ],
+  "matter": [
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "page": 0,
+      "type": "title",
+      "what": "'THE HOLIE BIBLE FAITHFVLLY TRANSLATED…' display type + decorative border",
+      "weight": "light"
+    },
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "page": 2,
+      "type": "approbatio",
+      "what": "Latin approbation, drop-cap, centered cartouche (tests Latin recognition)",
+      "weight": "light"
+    },
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "page": 3,
+      "type": "preface",
+      "what": "'TO THE RIGHT WELBELOVED ENGLISH READER' incipit: headpiece+drop-cap+heading+prose",
+      "weight": "med"
+    },
+    {
+      "vol": "OT1",
+      "ocr_dir": "archive-ot1-1609",
+      "page": 1132,
+      "type": "backmatter",
+      "what": "colophon 'THE END OF THE FIRST TOME' (end of Job), 2-col+marginalia",
+      "weight": "med"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "page": 0,
+      "type": "title",
+      "what": "'THE SECOND TOME OF THE HOLIE BIBLE…' display+border",
+      "weight": "light"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "page": 3,
+      "type": "preface",
+      "what": "'PROEMIAL ANNOTATIONS vpon the Booke of Psalmes' — front-matter for OUR Psalms book; headpiece+drop-cap+2col+marginalia",
+      "weight": "med"
+    },
+    {
+      "vol": "OT2",
+      "ocr_dir": "archive-ot2-1610",
+      "page": 988,
+      "type": "backmatter",
+      "what": "appendix incipit 'THE CONTINVANCE OF THE CHVRCH… IN THE SIXTH AGE' drop-cap+2col+marginalia",
+      "weight": "med"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "page": 0,
+      "type": "title",
+      "what": "'THE NEVV TESTAMENT OF IESVS CHRIST… PRINTED AT RHEMES 1582' display+border",
+      "weight": "light"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "page": 4,
+      "type": "preface",
+      "what": "'THE PREFACE TO THE READER…' headpiece+display heading+drop-cap+2col",
+      "weight": "med"
+    },
+    {
+      "vol": "NT",
+      "ocr_dir": "archive-nt-1582",
+      "page": 724,
+      "type": "backmatter_table",
+      "what": "'A Table of…' 2-col index/table (tabular layout edge case; alt p730 = Epistles/Gospels calendar)",
+      "weight": "med"
+    }
+  ]
+}

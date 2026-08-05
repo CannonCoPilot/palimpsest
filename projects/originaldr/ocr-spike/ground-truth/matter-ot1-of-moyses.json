@@ -1,0 +1,437 @@
+{
+ "locus": "matter/ot1/of-moyses",
+ "page_index": 18,
+ "ocr_dir": "archive-ot1-1609",
+ "scan": "S1",
+ "raster": "jp2:archive-ot1-1609/_0018 (3334x4684); region crops in ocr-spike/.gt-crops/p18_*.png",
+ "raster_dpi": 400,
+ "page_label_printed": "",
+ "running_header": {
+  "left": "",
+  "center": "PROEMIAL ANNOTATIONS.",
+  "right": ""
+ },
+ "layout_note": "Single wide text column of ITALIC prose introducing Moses as author of the Pentateuch, set within the 'Proemial Annotations' front-matter. The section opens immediately below a full-width horizontal rule that closes the preceding 'Summe of the Old Testament' (…where the same are ended.). Two-line display heading in roman capitals: 'OF MOYSES THE AVTHOR OF THE' / 'fiue firſt bookes.' (final E of the first line carries a small stray accent-like mark). Body is ONE continuous justified italic paragraph opened by a ~2-line drop-cap 'M'. LEFT margin carries three roman note-glosses (content summaries); RIGHT margin carries stacked italic Latin source-citations. Catchword 'THE' at foot-right anticipates the next page's 'THE ARGVMENT OF THE BOOKE OF GENESIS.' ONE glyph regime: a real connected 'w' sort in both the italic body and the roman glosses (no genuine lowercase 'vv'); the display caps use V (AVTHOR) and have no w. long-ſ is glyph-driven and mixed in sh-clusters. No printed folio number on this page (a later hand's '16' appears on facing recto p19). Fatima-movement watermark bottom-left is not part of the page.",
+ "body": [
+  {
+   "line_index": 0,
+   "role": "heading",
+   "text": "OF MOYSES THE AVTHOR OF THE",
+   "marks": "roman display capitals; small stray accent-like mark over final E of THE"
+  },
+  {
+   "line_index": 1,
+   "role": "heading",
+   "text": "fiue firſt bookes."
+  },
+  {
+   "line_index": 2,
+   "role": "prose",
+   "drop_cap": "M",
+   "text": "MOyſes (ſo called becauſe he was taken from the water, as the name"
+  },
+  {
+   "line_index": 3,
+   "role": "prose",
+   "text": "ſignifieth) was borne in Ægypt. the ſonne of Amram, the ſonne"
+  },
+  {
+   "line_index": 4,
+   "role": "prose",
+   "text": "of Caath, the ſonne of Leui the Patriarch, and ſo of Iacob, Iſaac, and"
+  },
+  {
+   "line_index": 5,
+   "role": "prose",
+   "text": "Abraham. His maruelous deliuerie from drowning, his education, excellent"
+  },
+  {
+   "line_index": 6,
+   "role": "prose",
+   "text": "forme, ſingular wiſdome, heroical vertues, rare dexteritie in al affayres, &"
+  },
+  {
+   "line_index": 7,
+   "role": "prose",
+   "text": "whole life moſt admirable, are gathered out of holie Scriptures, by S. Gre-",
+   "line_end_hyphen": true
+  },
+  {
+   "line_index": 8,
+   "role": "prose",
+   "text": "gorie Biſhop of Niſſen, into a briefe ſumme, moſt worthie to be read, but"
+  },
+  {
+   "line_index": 9,
+   "role": "prose",
+   "text": "to large for this place. He was borne about the yeare of the world two thou-",
+   "line_end_hyphen": true
+  },
+  {
+   "line_index": 10,
+   "role": "prose",
+   "text": "ſand foure hundred, long before al prophane writers, yea before manie of"
+  },
+  {
+   "line_index": 11,
+   "role": "prose",
+   "text": "the Painimes falſe goddes, as S. Auguſtin declareth in diuers places of his"
+  },
+  {
+   "line_index": 12,
+   "role": "prose",
+   "text": "moſt excellent booke intituled of the Citie of God. He liued in this world"
+  },
+  {
+   "line_index": 13,
+   "role": "prose",
+   "text": "110. yeares. Of which 40. were in Pharaos court, as the adopted ſonne of"
+  },
+  {
+   "line_index": 14,
+   "role": "prose",
+   "text": "Pharaos daughter: fourtie in baniſhment from Ægypt in Madian: and fourtie"
+  },
+  {
+   "line_index": 15,
+   "role": "prose",
+   "text": "more he gouerned the people of Iſrael. His ſingular prayſes are alſo briefly"
+  },
+  {
+   "line_index": 16,
+   "role": "prose",
+   "text": "touched in the laſt chapter of Deuteromie, added by Ioſue. and in the booke of"
+  },
+  {
+   "line_index": 17,
+   "role": "prose",
+   "text": "Eccleſiaſticus. He di⟨e?⟩d in the deſert, and was buried in the vaile of Moab, ſo"
+  },
+  {
+   "line_index": 18,
+   "role": "prose",
+   "text": "ſecretly that no mortal men knew his ſepulchre, leſt the Iewes, who were very"
+  },
+  {
+   "line_index": 19,
+   "role": "prose",
+   "text": "prone to Idolatrie, should haue adored his bodie with diuine honour, for the"
+  },
+  {
+   "line_index": 20,
+   "role": "prose",
+   "text": "greatnes and multitude of his miracles, and for the ſingular eſtimation, they"
+  },
+  {
+   "line_index": 21,
+   "role": "prose",
+   "text": "had of him for the ſame."
+  },
+  {
+   "line_index": 22,
+   "role": "catchword",
+   "text": "THE",
+   "excluded_reason": "reader-convenience catchword at foot-right; duplicated as the opening word of the next section's heading 'THE ARGVMENT OF THE BOOKE OF GENESIS.' on page 19; excluded from body/paragraph concatenation"
+  }
+ ],
+ "marginalia": [
+  {
+   "anchor_line": 2,
+   "position": "left_margin",
+   "role": "margin_gloss",
+   "text": "MOYSES. ſignifieth, taken from the water.",
+   "lines_printed": [
+    "MOYSES.",
+    "ſignifieth, ta-",
+    "ken from the",
+    "water."
+   ],
+   "note": "roman face; small-caps 'MOYSES.'; real 'w' in 'water'"
+  },
+  {
+   "anchor_line": 9,
+   "position": "left_margin",
+   "role": "margin_gloss",
+   "text": "The excellencie of Moyſes",
+   "lines_printed": [
+    "The excellen-",
+    "cie of Moyſes"
+   ]
+  },
+  {
+   "anchor_line": 17,
+   "position": "left_margin",
+   "role": "margin_gloss",
+   "text": "His ſepulchre not knowen to anie man.",
+   "lines_printed": [
+    "His ſepulchre",
+    "not knowen",
+    "to anie man."
+   ],
+   "note": "real 'w' in 'knowen'"
+  },
+  {
+   "anchor_line": 2,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Exod. 6."
+  },
+  {
+   "anchor_line": 3,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Num. 26.",
+   "note": "glyphs read 'N⟨u⟩m.26' with a faint/merged medial u; resolved to Numbers 26 by content (Amram–Caath–Leui Levite genealogy, Num 26:58-59)"
+  },
+  {
+   "anchor_line": 4,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "1. Par. 6."
+  },
+  {
+   "anchor_line": 5,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Ioſeph. li. 2 Antiq. cap 9.",
+   "lines_printed": [
+    "Ioſeph li.",
+    "2 Antiq.",
+    "cap 9."
+   ],
+   "note": "Josephus, Antiquities book 2, ch. 9"
+  },
+  {
+   "anchor_line": 7,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "S. Aug. ſer. 88. de temp.",
+   "lines_printed": [
+    "S. Aug.",
+    "ſer.88.de",
+    "temp."
+   ]
+  },
+  {
+   "anchor_line": 9,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "S. Greg. oratio in laudem Baſilij magni.",
+   "lines_printed": [
+    "S. Greg.",
+    "oratio in",
+    "laudem",
+    "Baſilij",
+    "magni."
+   ]
+  },
+  {
+   "anchor_line": 12,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "S. Aug. li. 18. ciuit. c. 39.",
+   "lines_printed": [
+    "S. Aug.",
+    "li.18.ci-",
+    "uit.c.39."
+   ],
+   "note": "Augustine, De Ciuitate Dei 18.39"
+  },
+  {
+   "anchor_line": 16,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Deut. 34."
+  },
+  {
+   "anchor_line": 16,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Eccli. 45."
+  },
+  {
+   "anchor_line": 17,
+   "position": "right_margin",
+   "role": "margin_citation",
+   "text": "Gloſ. ord."
+  }
+ ],
+ "intervals": [
+  {
+   "idx": 0,
+   "kind": "heading",
+   "text": "OF MOYSES THE AVTHOR OF THE fiue firſt bookes.",
+   "lines": [
+    0,
+    1
+   ]
+  },
+  {
+   "idx": 1,
+   "kind": "paragraph",
+   "text": "MOyſes (ſo called becauſe he was taken from the water, as the name ſignifieth) was borne in Ægypt. the ſonne of Amram, the ſonne of Caath, the ſonne of Leui the Patriarch, and ſo of Iacob, Iſaac, and Abraham. His maruelous deliuerie from drowning, his education, excellent forme, ſingular wiſdome, heroical vertues, rare dexteritie in al affayres, & whole life moſt admirable, are gathered out of holie Scriptures, by S. Gregorie Biſhop of Niſſen, into a briefe ſumme, moſt worthie to be read, but to large for this place. He was borne about the yeare of the world two thouſand foure hundred, long before al prophane writers, yea before manie of the Painimes falſe goddes, as S. Auguſtin declareth in diuers places of his moſt excellent booke intituled of the Citie of God. He liued in this world 110. yeares. Of which 40. were in Pharaos court, as the adopted ſonne of Pharaos daughter: fourtie in baniſhment from Ægypt in Madian: and fourtie more he gouerned the people of Iſrael. His ſingular prayſes are alſo briefly touched in the laſt chapter of Deuteromie, added by Ioſue. and in the booke of Eccleſiaſticus. He di⟨e?⟩d in the deſert, and was buried in the vaile of Moab, ſo ſecretly that no mortal men knew his ſepulchre, leſt the Iewes, who were very prone to Idolatrie, should haue adored his bodie with diuine honour, for the greatnes and multitude of his miracles, and for the ſingular eſtimation, they had of him for the ſame.",
+   "lines": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "idx": 2,
+   "kind": "margin_gloss",
+   "position": "left_margin",
+   "anchor_line": 2,
+   "text": "MOYSES. ſignifieth, taken from the water."
+  },
+  {
+   "idx": 3,
+   "kind": "margin_gloss",
+   "position": "left_margin",
+   "anchor_line": 9,
+   "text": "The excellencie of Moyſes"
+  },
+  {
+   "idx": 4,
+   "kind": "margin_gloss",
+   "position": "left_margin",
+   "anchor_line": 17,
+   "text": "His ſepulchre not knowen to anie man."
+  },
+  {
+   "idx": 5,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 2,
+   "text": "Exod. 6."
+  },
+  {
+   "idx": 6,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 3,
+   "text": "Num. 26."
+  },
+  {
+   "idx": 7,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 4,
+   "text": "1. Par. 6."
+  },
+  {
+   "idx": 8,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 5,
+   "text": "Ioſeph. li. 2 Antiq. cap 9."
+  },
+  {
+   "idx": 9,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 7,
+   "text": "S. Aug. ſer. 88. de temp."
+  },
+  {
+   "idx": 10,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 9,
+   "text": "S. Greg. oratio in laudem Baſilij magni."
+  },
+  {
+   "idx": 11,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 12,
+   "text": "S. Aug. li. 18. ciuit. c. 39."
+  },
+  {
+   "idx": 12,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 16,
+   "text": "Deut. 34."
+  },
+  {
+   "idx": 13,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 16,
+   "text": "Eccli. 45."
+  },
+  {
+   "idx": 14,
+   "kind": "margin_citation",
+   "position": "right_margin",
+   "anchor_line": 17,
+   "text": "Gloſ. ord."
+  }
+ ],
+ "uncertain": [
+  {
+   "line_index": 0,
+   "span": "THE (final word of heading line)",
+   "note": "a small stray accent-like mark sits above the final E of 'THE' in the display heading; likely an ink speck or foul-case accented sort, not a meaningful accent. Transcribed as plain 'THE'."
+  },
+  {
+   "line_index": 14,
+   "span": "baniſhment",
+   "note": "sh-cluster s-form: read as LONG-ſ (ſh), matching 'Biſhop' (line 8) on the same page; type is small/slightly blurred. Medium confidence. Contrast the round-s in 'should' (line 19)."
+  },
+  {
+   "line_index": 16,
+   "span": "Deuteromie",
+   "note": "printed 'Deuteromie' (D-e-u-t-e-r-o-m-i-e) — the '-no-' syllable of 'Deuteronomie' is absent on the page. Preserved diplomatically as printed (NOT corrected). Content = Deuteronomy 34 (confirmed by right-margin 'Deut. 34.')."
+  },
+  {
+   "line_index": 17,
+   "span": "di⟨e?⟩d",
+   "note": "medial vowel glyph is broken/blotted (reads like 'di:d'/'di∴d' at zoom); the d-i-_-d frame plus context ('He di_d in the deſert, and was buried') gives 'died'. Archaic 'dyed' is conceivable but the frame favors 'died'. Flagged per glyph-driven policy."
+  },
+  {
+   "line_index": 19,
+   "span": "should",
+   "note": "sh-cluster s-form: read as ROUND-s (sh) — the leading s is short (x-height), not an ascending long-ſ. Zoom-confirmed. Deliberate contrast with long-ſ 'Biſhop'/'baniſhment' on the same page, exactly the mixed-sort behavior described in §long-ſ."
+  },
+  {
+   "line_index": 20,
+   "span": "multitude",
+   "note": "medial 'ul'/'ti' lightly inked ('m⟨u⟩l⟨ti⟩tude'); word is unambiguous from letter-frame and sense ('greatnes and multitude of his miracles'). Transcribed 'multitude'."
+  }
+ ],
+ "glyph_counts": {
+  "long_s_count_transcribed_body": 39,
+  "note": "Hand count of long-ſ across the 20 prose lines (line_index 2–21); excludes heading/margins. sh-clusters resolved glyph-by-glyph: Biſhop + baniſhment = long-ſ; should = round-s. Subject to script recompute; transcription is source of truth.",
+  "w_regime": "All body 'w' and roman-gloss 'w' are a REAL connected single-'w' sort (zoom-verified: was, water, drowning, knew, who, were, with, world, whole, which, writers, worthie, knowen). ZERO genuine lowercase 'vv' on the page. Display caps use V (AVTHOR), no w sort.",
+  "uv_swap_note": "period u/v swap preserved as printed: medial v→u in maruelous, deliuerie, diuers, liued, gouerned, diuine, haue, Leui, fiue; initial v-spellings vertues, vaile kept."
+ },
+ "validation": {
+  "localization": "CONFIRMED. Heading 'OF MOYSES THE AVTHOR OF THE fiue firſt bookes.' sits immediately below the rule closing the preceding 'Summe of the Old Testament' (…where the same are ended.), under running header 'PROEMIAL ANNOTATIONS.'; content is the prose introduction on Moses as author of the Pentateuch. Not a lookalike.",
+  "identity": "CONFIRMED 1609 OT1. ocr_dir archive-ot1-1609 → S1 jp2 set '…1 of 3 1609 Old Testament_jp2', page _0018, full raster 3334x4684.",
+  "placement": "page_index 18; running header center 'PROEMIAL ANNOTATIONS.' (no left/right header). No printed folio number on this leaf (a later hand's manuscript '16' appears on facing recto p19). Catchword 'THE' at foot-right.",
+  "completeness": "ENTIRE section captured; it is fully contained on page_index 18. IT DOES NOT CONTINUE ONTO PAGE 19 (deviates from the brief's expectation): page 19 already begins the next section 'THE ARGVMENT OF THE BOOKE OF GENESIS.', which the p18 catchword 'THE' anticipates. Pages 19 and 20 were inspected only to confirm this end boundary."
+ },
+ "observer": "agent:matter-ot1-of-moyses",
+ "observed_at": "2026-07-20",
+ "method": "Visual-multimodal read of the S1 jp2 (3334x4684) via ocr-spike/jp2_page.py + PIL region crops (ocr-spike/.gt-crops/p18_*.png, z_*.png) at up to ~2-3x. Per-instance w/vv and glyph-driven long-ſ decided on zoomed crops (heading, body bands, both margins, and targeted words: was/drowning/knew/should/Biſhop/baniſhment/di⟨e?⟩d/water-punctuation/Deuteromie). Modern DR used only as a content anchor for the Latin citations, never as a spelling oracle. Catchwords excluded from the paragraph concat. NOTE: brief's 'continues onto page 19' is incorrect — section is complete on p18 (see validation.completeness).",
+ "confidence": "high on the display heading and the italic prose body (large clear type; whole paragraph legible); medium on the two contrasting sh-cluster s-forms (baniſhment long-ſ vs should round-s) and the broken medial in 'di⟨e?⟩d'; medium on the small stacked right-margin Latin citations (esp. 'Num. 26.' faint u). The printed 'Deuteromie' is confidently transcribed as-printed.",
+ "glyph_regime_resolved": "OT1-1609 proemial 'Of Moyses': SINGLE w-regime — italic running prose body AND roman left-margin glosses both set a REAL connected 'w' sort (no genuine lowercase 'vv' anywhere; verified by stroke-connectivity zoom on was/water/drowning/knew/who/were/with/world/whole/which/writers/knowen). Display heading has no w (uses V: AVTHOR). long-ſ is GLYPH-DRIVEN and mixed in sh-clusters on the same page: Biſhop + baniſhment = long-ſ (ſh); should = round-s (sh). round-s also kept in this/his/place; long-ſ elsewhere per glyph. u/v and i/j preserved as archaic spelling."
+}

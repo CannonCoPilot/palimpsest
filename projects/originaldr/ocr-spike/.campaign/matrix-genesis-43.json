@@ -1,0 +1,1786 @@
+{
+ "chapter": 43,
+ "n_verses": 34,
+ "n_cells": 136,
+ "n_pass": 126,
+ "rate": 0.9265,
+ "ref_means": {
+  "s_dismas": 0.9768,
+  "odr_com": 0.9785,
+  "sabates_a": 0.9681,
+  "madueke_b": 0.9679
+ },
+ "src_rates": {
+  "S1": 0.9412,
+  "S3": 0.9706,
+  "S9": 0.9412,
+  "S6": 0.8529
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  15
+ ],
+ "n_open": 10,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.869,
+   "from": "p139",
+   "text": "at diuntr. NTHE meane time the famine did oppreſſe al the land very ſore."
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.895,
+   "from": "chapter",
+   "text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing: You ehal not ſee my face vnleſſe you brins vout youngeſt com voungeſt brother with you."
+  },
+  {
+   "src": "S9",
+   "verse": 4,
+   "worst": 0.863,
+   "from": "p164",
+   "text": "If therfore thou him wi th vs, we wil goe forward together, and wil bye neceſſaries for thee :"
+  },
+  {
+   "src": "S6",
+   "verse": 11,
+   "worst": 0.886,
+   "from": "p139",
+   "text": "Thettore Iſrael theit fathet ſaid to them: It it inuſt needs be fo, doe that you wil : take of the beſt fruits ot the land in your veſſcls, and carie to the man for preſents, a courteſie of roſen, & of honcy, & of incenſe, ot me, of terebinth, and ot almonds."
+  },
+  {
+   "src": "S1",
+   "verse": 15,
+   "worst": 0.807,
+   "from": "p152",
+   "text": "The men therfore tooke. the preſentes, and the duble money, and Beniamin: and went downe inro Egypt, and ſtood before Ioſeph."
+  },
+  {
+   "src": "S3",
+   "verse": 15,
+   "worst": 0.796,
+   "from": "p156",
+   "text": "The men therfore tooke the preſentes, and the duble money, and Beniamin: and went downe inro gypt, and ſtood before Ioſeph."
+  },
+  {
+   "src": "S9",
+   "verse": 15,
+   "worst": 0.796,
+   "from": "p164",
+   "text": "The men therfore tooke the preſentes, and the duble money, and Beniamin : and went downe inro gypt, and ſtood before Ioſeph."
+  },
+  {
+   "src": "S6",
+   "verse": 15,
+   "worst": 0.808,
+   "from": "p139",
+   "text": "The men therfore tooke the preſents, & the double moncy, & Beniamin: & went doyne into Ecypt, ſtood before Ioſeph."
+  },
+  {
+   "src": "S6",
+   "verse": 16,
+   "worst": 0.885,
+   "from": "chapter",
+   "text": "Who when he had ſceu, & Boniamin withal, Ioſeph. I I27 he comanded the ſteward of his houſe, ſaying: Bring in the men into tne houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone."
+  },
+  {
+   "src": "S6",
+   "verse": 18,
+   "worst": 0.897,
+   "from": "p140",
+   "text": "And there beeing fore atraid, they ſaid one to another: becaule of the money which we cared backe theft te in our ſackes, we are brought in: that he may turne vpon vs a talſe accuſation, and torcibly bring both vs and out aſſes into bondage."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "IN THE meane time the famine did oppreſſe al the land very ſore.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "dinner. THE meane time the famine did oppreſſe al the land Ivery ſore.",
+    "from": "p155",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S9": {
+    "text": "I THE meane time the famine did oppreſſe al the land Ivery ſore.",
+    "from": "p163",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "at diuntr. NTHE meane time the famine did oppreſſe al the land very ſore.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.887,
+     "odr_com": 0.887,
+     "sabates_a": 0.869,
+     "madueke_b": 0.869
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And the prouiſion being ſpent, which they had bronght out of gypt, Iacob ſaid to his ſonnes Goe againe, and by vs a little victual.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.985,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And the prouiſion being ſpent, which they had bronght out of Egypt, Iacob ſaid to his ſonnes Goe againe, and by vs a little victual.",
+    "from": "p155",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.992,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "And the prouiſion being ſpent, which they had bronght out of gypt, Iacob ſaid to his ſonnes Goe againe, and by vs a little victual.",
+    "from": "p163",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.985,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "And the prouiſion being ſpent, which they had brought out of AEgypt, Iacob ſaid to his ſonnes: Goe againe, and buy vs a little victual.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing: You ehal not ſee my face vnleſſe you brins vout youngeſt com voungeſt brother with you.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S3": {
+    "text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing You shal not ſee my face, vnleſſe you bring your youngeſt brother with you.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing You shal not ſee my face, vnleſſe you bring your younges youngeſt brother with you.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "Iudas anſwered: That ſame man denounced vnto vs vndet atteſtation of an oath, ſaying: Vou ſhal not ſee my tace, vnleſſe you bring your yougeſt brother with you.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "If therfore thou wilt ſend him with vs, we wil goe forward together, and wil bye neceſſaries for thee :",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "If therfore thou wilt ſend him with vs, we wil goe forward together, and wil bye neceſſaries for thee :",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "If therfore thou him wi th vs, we wil goe forward together, and wil bye neceſſaries for thee :",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 0.863,
+     "madueke_b": 0.863
+    }
+   },
+   "S6": {
+    "text": "It therfore thou wilt ſend him with ve, we wil goe forward together, and wil buv neceſſaries for thee : .",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "but if thou wilt not, we wil not goe : for the man, as we haue often ſaid, denounced vnto vs ſaing: You shal not ſee my face without your youngeſt brother.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "but if thou wilt not, we wil not goe: for the man, as we haue often ſaid, denounced vnto vs ſaing: You shal not ſee my face without your youngeſt brother.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "but if thou wilt not, we wil not goe : for the mau, as we haue often ſaid, denounced vnto vs ſaing: You shal not ſee my face without your youngeſt brother.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "but if thou wilt not, we wil not goe : for the man, as we haue often ſaid, denounced vnto vs ſaving: Vou ſhal not ſee my face without vour vongeſt brother.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Iſrael ſaid to them: Vou haue done this to my miſerie, in thar you told him that you had an other brother alſo.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "Iſrael ſaid to them: You haue done this to my miſerie, in6 that you told him that you had an other brother alſo.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "Ifrael ſaid to them: You haue done this to my miſerie, in that you told him that you had an other brother alſo.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Itracl ſaid to them : You haue done this to my miſerie in that vou told him that vou had an other brother alſo..",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "But they anſwered : The man asked vs in order our progenie : if our father liued : if we had a brother : and we anſwered him conſequently to that which he demanded: could we know that he would ſay : Bring hither your brother with you",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "But they anſwered : The man asked vs in order our progenie : if our father liued : if we had a brother : and we anſwered him conſequently to that which he demanded : could we know that he would ſay : Bring hither your brother with you?",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But they anſwered : The man asked vs in order our progenie : if our father liued : if we had a brother : and we anſwered him conſequently to that which he demanded : could we know that he would ſay : Bring hither your brother with you?",
+    "from": "p164",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "But they anſwered: The man asked vs in order our progenie: it our father liued it we had a brothet: and we anſwered him conſequently to that which he demanded: could we know that he would ſay Bring hither your brother with vou?",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Iudas alſo ſaid to his father : Send the boy with me, that we may ſet forwarde, and may liue : leſt we and our litle ones die.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Iudas alſo ſaid to his father : Send the boy with me, that we may ſet forwarde, and may liue : leſt we and our litle ones die.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Iudas alſo ſaid to his father : Send the boy with me, that we mayſet forwarde, and may liue : leſt we and our litle ones die.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Iudas alſo ſaid to his father : Send the boy with me, that we may ſet forward, and may liue: leſt we and our litlo ones dic.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "take vpon me the boy: require him of my hand, vnleſſe I bring him againe, and reſtore him to thee, I wil be guiltie of ſinne againſt thee for euer.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.992,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "take vpon me the boy: require him of my hand, vnleſſe I bring him againe, and reſtore him to thee, I wil be guilrie of ſinne againſt thee for euer.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.985,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "take vpon me the boy: require him of my hand, vnleſſe I bring him againe, and reſtore him to thee, I wil be ne guiltie of ſinne againſt thee for euer.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.977,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "take vpon me the boy: require him of my hand, vnleſſe I bring him againe, and reſtore him to thee, I wil be () guiltie of ſinne againſt thee for euer.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.992,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Iridelayhad not bene made, we had bene come now the ſecond time.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S3": {
+    "text": "If delay had not bene made, we had bene come now the ſecond time.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "If delay had not bene made, we had bene come now the ſecond time.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "If delay had not been made we had been come now the ſecond time.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Therfore Iſrael their father ſaid to them : If it muſt nedes be ſo, do that you wil : take of the beſt fruires of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honcy, and of incenſe, of mirhe, of terebinth, and of almondes.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S3": {
+    "text": "Therfore Frael their father ſaid to them : If it muſt nedes be ſo, do that you wil : take of the beſt fruites of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almondes.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S9": {
+    "text": "Therthe fore Ifrael their father ſaid to them : If it muſt nedes be ſo, do that you wil: take of the beſt fruites of the land in your which & veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, & and of almondes.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S6": {
+    "text": "Thettore Iſrael theit fathet ſaid to them: It it inuſt needs be fo, doe that you wil : take of the beſt fruits ot the land in your veſſcls, and carie to the man for preſents, a courteſie of roſen, & of honcy, & of incenſe, ot me, of terebinth, and ot almonds.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Duble money alſo carie with yod : and recarie that you founde in your ſackes, leſt perhaps ir was done by an errour:",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "Duble money alſo carie with yod : and recarie that you founde in your ſackes, leſt perhaps it was done by an errour :",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "Duble money alſo carie with you: : of to and recarie that you founde in your ſackes, leſt perhaps it was done by an errour :",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
+    }
+   },
+   "S6": {
+    "text": "Double mency alſo carie with you: and recarie that you found in your ſackes, leſt perhaps it was done by an errout",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "but take alſo your brother, and goe to the man.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "but take alſo your brother, and goe to the man.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "but take alſo your brother, and goe to the man.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "but take alſo your brother, and goe to the man.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And my God almightie make him ſauorable vnto yon: and ſend backe with you your brother, whom he keepeth, and this Beniamin: as for me I ſhal be deſolate without children.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And my God almightie make him fauorable vnto you : and ſend backe with you your brother, whom he keepeth, and this Beniamin: as for me I ſhal be deſolate without children.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And my God almightie make him fauorable vnto you : and ſend backe with you your brother, be whom he keepeth, and this Beniamin: as for me I ſhal deſolate without children.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And my God Almihtie make him tauourable vnto vou: and ſend backe with vou your brother, whom he keepeth, and this Beniamin: as tor me I thal be deſolate without children.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "The men therfore tooke. the preſentes, and the duble money, and Beniamin: and went downe inro Egypt, and ſtood before Ioſeph.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.992,
+     "sabates_a": 0.807,
+     "madueke_b": 0.807
+    }
+   },
+   "S3": {
+    "text": "The men therfore tooke the preſentes, and the duble money, and Beniamin: and went downe inro gypt, and ſtood before Ioſeph.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.983,
+     "sabates_a": 0.796,
+     "madueke_b": 0.796
+    }
+   },
+   "S9": {
+    "text": "The men therfore tooke the preſentes, and the duble money, and Beniamin : and went downe inro gypt, and ſtood before Ioſeph.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.983,
+     "sabates_a": 0.796,
+     "madueke_b": 0.796
+    }
+   },
+   "S6": {
+    "text": "The men therfore tooke the preſents, & the double moncy, & Beniamin: & went doyne into Ecypt, ſtood before Ioſeph.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.817,
+     "odr_com": 0.808,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Whom when he had ſeene, and Beniamin withal, he commanded the ſteward of his houſe, ſaing :: Bring in the men into the houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "Whom when he had ſeene, and Beniamin withal, he commanded the ſteward of his houſe, ſaing : Bring in the men into the houſe, and kil victimes, and prepare a feaſt : becauſe they ſhal eate with me at noone.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "Whom when he had ſeene, and Beniamin withal he commanded the ſteward of his houſe, ſaing Bring in the men into the houſe, and kil victimes, and prepare a feaſt becauſe they ſhal eate. with me at noone.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S6": {
+    "text": "Who when he had ſceu, & Boniamin withal, Ioſeph. I I27 he comanded the ſteward of his houſe, ſaying: Bring in the men into tne houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.885,
+     "odr_com": 0.885,
+     "sabates_a": 0.909,
+     "madueke_b": 0.909
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "He did that which was commanded him, and brought the men into the houſe.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "He did that which was commanded him, and brought the men into the houſe.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "He did that which was commanded him, and brought the men into the houſe.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He did that which was commanded him, and brought the men into the houſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And there boing ſooe afraied, they ſaid one to an other : becauſe of the money, which wo caried backe the firſt time in our ſackes, we are brought in: that he mayturne vpon vs a falſe accuſation, and forceibly bring both vs, and our aſſes, into bondage.",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.98,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "And there being ſore afraied, they ſaid one to an other : becauſe of the money, which we caried backe the firſt time in our ſackes, we are brought in: that he may turne vpon vs a falſe accuſation, and forceibly bring both vs, and our aſſes: into bondage.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.996,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "And there being ſore afraied, they ſaid one to an other : becauſe of the money, which we caried backe the firſt time in our ſackes, we are brought in: that he may turne vpon vs a falſe accuſation, and forceibly bring both vs, and our aſſes into bondage.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.996,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And there beeing fore atraid, they ſaid one to another: becaule of the money which we cared backe theft te in our ſackes, we are brought in: that he may turne vpon vs a talſe accuſation, and torcibly bring both vs and out aſſes into bondage.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.897,
+     "odr_com": 0.934,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Wherfore in the verie dore ſteppingto the ſteward of the houſe,",
+    "from": "p152",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "Wherfore in the verie dore ſtepping to the ſteward of the houſe,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Wherfore in the verie dore ſtepping to the ſteward of the houſe,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Wherfore in the verie dore ſtepping to the ſteward ot the houſe.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "they ſpake: Sir we deſire thee to heare heare vs. Now once before we came downe to bye prouiſion:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S3": {
+    "text": "they ſpake Sir we deſire thee to heare vs. Now once before we came downe to bye prouiſion",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "they ſpake Sir we deſire thee to heare vs. Now once before we came downe to bye prouſion:",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "they Ipake : Sir, we deſire thee to heare vs. Now once before we came downe to buy prouiſion :",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "which being boucht, when we were come to the Inne, we opened our ſackes, and found our moncy in the mouthes of the ſackes: which we haue now brought againe in the ſame weight.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "which being bought, when we were come to the Inne, we opened our ſackes, and found our moncy in the mouthes of the ſackes: which we haue now brought againe in the ſame weight.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "which being bought, when we were come to the Innc, we opened our ſackes, and found our moncy in the mouthes of the ſackes: whicb we haue now brought againe in the ſame weight.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "which being bought, when we were come to the Inne, we opened our ſackes, and found our money in the mouths of the ſackes: which we haue now brought againe in the ſame weight.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "But we haue brought other money beſides, to bye the thinges that are neceſſarie for vs: our conſcience is not priuie, who put ir in our bagges.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "But we baue brought other monev beſides, to bye the thinges that are neceſtarie for vs : our conſcience is not priuie, who put it in our bagges.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "But we haue brought other money beſides, to bye the thinges that are neceſarie for vs: our conſcience is not priuie, who put it in our bagges.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "But we haue brought other money beſides, to buy the things that are neceſſarie for vs: our conſcience is not priuie, who put it in our bags.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "Fut he anſwered : Peace be with you, feare you not: vour God, and the God of your father hath geuen you treaſures in your ſackes. ſor the money, which you gaue me, I haue for good. And he brought forth Sinteon vnto thom.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "But he anſwered : Peace be with you, feare you not : your God, and the God of your father hath geuen you treaſures in your ſackes. for the money, which you gaue me, I haue for good. And he brought forth Simeon vnto thom.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "But he anſwered : Peace be with you, feare you not : your God, and the God of your father hath geuen you treafures in your ſackes. for the money, which you gaue me, I haue for good. And he brought forth Simeon vnto them.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "But he auſwered: Peace be with you, teare you not : your God, and the God ot vout father hath giuen vou treaſures iu your ſackes. Fot the money, which you gaue me, I haue fot good. And he brought forth Simeon vnto them.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And being brought into the houſe, he fetched water, and they waſhed their feete, and he gaue prouender to their aſſes.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And being brought into the houſe, he fetched water, and they waſhed their feete, and he gaue prouender to their aſſes.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And being brought into the houſe, he fetched water, and they waſhed their feete, and he gaue prouender to their aſſes.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Aud being brought into the houſe. he fetched water, and they waſhed theit teet, and he gaue prouendet to their aſſes.But",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "But they made readie the preſentes, til Ioſeph ſhould come in at noone: for thev had heard that they ſhould eate bread there.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "But they made readie the preſentes, til Ioſeph ſhould come in at noone : for they had heard that they ſhould eate bread there.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "But they made readie the preſontes, til Ioſeph ſhould como in at noone: for they had heard that they ſhould cate bread there.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "But they made readi the preſents, til Ioſeph ſhould come in at noone: for they had heard that they ſhould eate bread there. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.915,
+     "odr_com": 0.915,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "Therfore Ioſeph came in to his houſe, and they offered him preſentes holding them in their handes, and they adored proſtrate to the ground.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "Therfore Ioſeph came in to his houſe, and they offered him preſentes holding them in their handes, and : they dored proſtrate to the ground.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "Therfore Ioſeph came in to his houſe, and they offered him preſentes holding them in their handes, and : thcy a-:: dored proſtrate to the ground.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "Thertore Ioſeph came in to his houſe, and they offered him preſents holding them in their hands, and they adored proſtrate to the ground..",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "he curteouſly luting them, asked them ſaying : Is the old man your father in health, of whom you told me? Is he yer liuing?",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.928,
+     "odr_com": 0.928,
+     "sabates_a": 0.917,
+     "madueke_b": 0.917
+    }
+   },
+   "S3": {
+    "text": "But he curteouſly reſaluting them, asked them ſaying : Is the old man your father in health, of whom you told me? Is he yet liuing:",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "Bur he curteouſly reſaluting them, asked them ſaying : Is the old man your father in health, of whom you told me? Is he yet liuing",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "But he curteouſly reſaluting thei, asked them ſaying : Is the old man vour father in health, ot whom you told me? Is he yet liuiug28.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "Who anſwered : Thy ſeruant our father is in health, he is yet liuing. And bowing themſelues, they adored him.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who anſwered : Thy ſeruant our father is in health, he is yot liuing. And bowing themſelues, they adored him.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Who anſwered: Thy ſeruant our father is in health, he is yet li- uing. And bowing themſelues, they adored him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Who anſwered: Thy ſeruant our father is in health, he is yet liuing. And bowing themſelues they adored him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And Ioſeph lifting vp his cyes, ſawe Beniamin his brother of the ſame mother, and ſaid : Is this your young brother, of whom you told mer And againe: God, ſaith he, be merciful vnto thee my ſonne.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph lifting vp his eyes, ſawe Beniamin his brother of the ſame mother, and ſaid : Is this your young brother, of whom you told me? And againe: God, ſaith he, be merciful vnto thee my ſonne.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And ho. Ioſeph lifting vp his eyes, ſawe Beniamin his brother of the ſame mother, and ſaid : Is this your young brother, of whom you told me? And againe: God, ſaith he, be merciful vnto thee my ſonne.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Aud Ioſeph liftins vp his eves, ſaw eniamin his brother of the ſame mother, aud ſaid: Is this vour yono brothet ot whom you told meꝰ And againe : God, ſaith he, be mercitul vnto thee my ſonne.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And he made haſt becauſe his hart was moued vpon his brother, and teares brake forth: and entring into his chamber he wept.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "And he made haſt becauſe his hart was moued vpon his brother, and teares brake forth: and entring into his chamber he wept.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "And he made haſt becauſe his hart was moued vpon his brother, and teares brake forth: and entring into his chamber he wept.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "And he made haſt becauſe his hart was moued vpon his brothet, and teares brake forth: and entring into his chamber he wept.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And when he had waſhed his face, comming forth againe, he refrained himſelſe, and ſaid : Ser bread on the table.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And when he had waſhed his face, comming forth againe, he refrained himſelfe, and ſaid : Set bread on the table.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when he had waſhed his face, comming forth againe, he refrained himfelfe, and ſaid : Set bread on the table.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And when he had wathed his tace, commin torth againe, he retrained himſelte, aud ſaid : Set bread on tne table.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.924,
+     "odr_com": 0.924,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "Which being ſet downe, to Ioſeph a part, and to his brethren apart, to the Ægyptians alſo that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and :: they thinke ſuch a feaſt prophane),",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Which being ſet downe, to Ioſeph part, and to his brethren apart, to the Agyptians alſo that. did eate with him apart (forit is vnlawful for the Agyptians to eate with the Hebrewes, and : they thinke ſuch a feaſt prophane)",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S9": {
+    "text": "Which being fet downe, to Ioſeph a part, and to his brethren apart, to the Egyptians alſo that did eate with him apart (for it is vnlawful for the Agyptians : to eate with the Hebrewes, and : they thinke ſuch a feaſt 3prophane)",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "Which being ſet downe, to Ioſeph apart, and to his brethron apart, to the AEgyptians alſo that did eate with him apart (tor it is vnlawtul tor the Agyptians to eate with the Hebrewes, aud ( they thinke ſuch a teaſt prophane)",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "they ſare before him, the firſt begorten according to his ſirſt-birth, and the youngeſt according to his age. And they maruailed out of meaſure,",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "they ſate before him, the firſt begotten according to his ſirſt birth, and the youngeſt according to his age. And they maruailed out of meaſure,",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "†they ſate before him, the firſt begotten aecording to his ſerſt birth, and the youngeſt according to his :: age. And they maruailed outof meaſure,",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "they ſate betore him, the firſt begotten according to his firſt. bicth, and the yongeſt according to his age. And they matuailed out of meaſure,",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that ir exceeded by fiue partes. And they dranke and were I in ebriared with him.",
+    "from": "p153",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.976,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded : by fiue partes. And they dranke and were in ebriated with him.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "taking the portions that they receiued of hm:and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And they dranke and were inebriated with him",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.982,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And they dranke and Were in cbriated with him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "In the meane time the famine did oppreſſe al the land very ſore.",
+   "odr_com": "IN THE meane time the famine did oppresse al the land very sore.",
+   "sabates_a": "In the mean time the famine did oppress all the land very sore.",
+   "madueke_b": "In the mean time the famine did oppress all the land very sore."
+  },
+  "2": {
+   "s_dismas": "And the prouiſion being ſpent, which they had brought out of Ægypt, Iacob ſaid to his ſonnes: Goe againe, and by vs a litle victual.",
+   "odr_com": "And the prouision being spent, which they had bronght out of Ægypt, Iacob said to his sonnes: Goe againe, and by vs a little victual.",
+   "sabates_a": "And the provision being spent, which they had brought out of Ægypt, Jacob said to his sons: Go again, and buy us a little victual.",
+   "madueke_b": "And the provision being spent, which they had brought out of Aegypt, Jacob said to his sons: Go again, and buy us a little victual."
+  },
+  "3": {
+   "s_dismas": "Iudas anſwered: That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing: You shal not ſee my face, vnleſſe you bring your youngeſt brother with you.",
+   "odr_com": "Iudas answered: That same man denounced vnto vs vnder attestation of an oath, saing: You shal not see my face, vnlesse you bring your youngest brother with you.",
+   "sabates_a": "Judas answered: That Same man denounced unto us under attestation of an oath, saying: You shall not see my face, unless you bring your youngest brother with you.",
+   "madueke_b": "Judas answered: That Same man denounced unto us under attestation of an oath, saying: You shall not see my face, unless you bring your youngest brother with you."
+  },
+  "4": {
+   "s_dismas": "If therfore thou wilt ſend him with vs, we wil goe forward together, and wil bye neceſſaries for thee:",
+   "odr_com": "If therfore thou wilt send him with vs, we wil goe forward together, and wil bye necessaries for thee:",
+   "sabates_a": "If therefore thou wilt send him with us, we will go forward together, and will buy necessaries for thee:",
+   "madueke_b": "If therefore thou wilt send him with us, we will go forward together, and will buy necessaries for thee:"
+  },
+  "5": {
+   "s_dismas": "but if thou wilt not, we wil not goe: for the man, as we haue often ſaid, denounced vnto vs ſaing: You shal not ſee my face without your youngeſt brother.",
+   "odr_com": "but if thou wilt not, we wil not goe: for the man, as we haue often said, denounced vnto vs saing: You shal not see my face without your youngest brother.",
+   "sabates_a": "but if thou wilt not, we will not go: for the man, as we have often said, denounced unto us saying: You shall not see my face without your youngest brother.",
+   "madueke_b": "but if thou wilt not, we will not go: for the man, as we have often said, denounced unto us saying: You shall not see my face without your youngest brother."
+  },
+  "6": {
+   "s_dismas": "Iſrael ſaid to them: You haue done this to my miſerie, in that you told him that you had an other brother alſo.",
+   "odr_com": "Israel said to them: You haue done this to my miserie, in that you told him that you had an other brother also.",
+   "sabates_a": "Israel said to them: You have done this to my misery, in that you told him that you had another brother also.",
+   "madueke_b": "Israel said to them: You have done this to my misery, in that you told him that you had another brother also."
+  },
+  "7": {
+   "s_dismas": "But they anſwered: The man asked vs in order our progenie: if our father liued: if we had a brother: and we anſwered him conſequently to that which he demanded: could we know that he would ſay: Bring hither your brother with you?",
+   "odr_com": "But they answered: The man asked vs in order our progenie: if our father liued: if we had a brother: and we answered him consequently to that which he demanded: could we know that he would say: Bring hither your brother with you?",
+   "sabates_a": "But they answered: The man asked us in order our progeny: if our father lived; if we had a brother: and we answered him consequently to that which he demanded: could we know that he would say: Bring hither your brother with you?",
+   "madueke_b": "But they answered: The man asked us in order our progeny: if our father lived; if we had a brother: and we answered him consequently to that which he demanded: could we know that he would say: Bring hither your brother with you?"
+  },
+  "8": {
+   "s_dismas": "Iudas alſo ſaid to his father: Send the boy with me, that we may ſet forwarde, and may liue: leſt we and our litle ones die.",
+   "odr_com": "Iudas also said to his father: Send the boy with me, that we may set forwarde, and may liue: lest we and our litle ones die.",
+   "sabates_a": "Judas also said to his father: Send the boy with me, that we may set forward, and may live: lest we and our little ones die.",
+   "madueke_b": "Judas also said to his father: Send the boy with me, that we may set forward, and may live: lest we and our little ones die."
+  },
+  "9": {
+   "s_dismas": "I take vpon me the boy: require him of my hand, vnleſſe I bring him againe, and reſtore him to thee, I wil be guiltie of ſinne againſt thee for euer.",
+   "odr_com": "I take vpon me the boy: require him of my hand, vnlesse I bring him againe, and restore him to thee, I wil be guiltie of sinne against thee for euer.",
+   "sabates_a": "Itake upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever.",
+   "madueke_b": "I take upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever."
+  },
+  "10": {
+   "s_dismas": "If delay had not bene made, we had bene come now the ſecond time.",
+   "odr_com": "If delay had not bene made, we had bene come now the second time.",
+   "sabates_a": "If delay had not been made, we had been come now the second time.",
+   "madueke_b": "If delay had not been made, we had been come now the second time."
+  },
+  "11": {
+   "s_dismas": "Therfore Iſrael their father ſaid to them: If it muſt nedes be ſo, do that you wil: take of the beſt fruites of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almondes.",
+   "odr_com": "Therfore Israel their father said to them: If it must nedes be so, do that you wil: take of the best fruites of the land in your vessels, and carie to the man for presents, a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes.",
+   "sabates_a": "Therefore Israel their father said to them: If it must needs be so, do that you will: take of the best fruits of the land in your vessels, and carry to the man for presents, a courtesy of rosen, & of honey, & of incense, of myrrh, of terebinth, and of almonds.",
+   "madueke_b": "Therefore Israel their father said to them: If it must needs be so, do that you will: take of the best fruits of the land in your vessels, and carry to the man for presents, a courtesy of rosen, & of honey, & of incense, of myrrh, of terebinth, and of almonds."
+  },
+  "12": {
+   "s_dismas": "Duble money alſo carie with you: and recarie that you founde in your ſackes, leſt perhaps it was done by an errour:",
+   "odr_com": "Duble money also carie with you: and recarie that you founde in your sackes, lest perhaps it was done by an errour:",
+   "sabates_a": "Double money also carry with you: and recarry that you found in your sacks, lest perhaps it was done by an error:",
+   "madueke_b": "Double money also carry with you: and recarry that you found in your sacks, lest perhaps it was done by an error:"
+  },
+  "13": {
+   "s_dismas": "but take alſo your brother, and goe to the man.",
+   "odr_com": "but take also your brother, and goe to the man.",
+   "sabates_a": "but take also your brother, and go to the man.",
+   "madueke_b": "but take also your brother, and go to the man."
+  },
+  "14": {
+   "s_dismas": "And my God almightie make him fauorable vnto you: and ſend backe with you your brother, whom he keepeth, and this Beniamin: as for me I ſhal be deſolate without children.",
+   "odr_com": "And my God almightie make him fauorable vnto you: and send backe with you your brother, whom he keepeth, and this Beniamin: as for me I shal be desolate without children.",
+   "sabates_a": "And my God almighty make him favourable unto you; and send back with you your brother, whom he keepeth, and this Benjamin: as for me I shall be desolate without children.",
+   "madueke_b": "And my God almighty make him favourable unto you; and send back with you your brother, whom he keepeth, and this Benjamin: as for me I shall be desolate without children."
+  },
+  "15": {
+   "s_dismas": "The men therfore tooke the preſentes, and the duble money, and Beniamin: and went downe into Ægypt, and ſtood before Ioſeph.",
+   "odr_com": "The men therfore tooke the presentes, and the duble money, and Beniamin: and went downe inro Ægypt, and stood before Ioseph.",
+   "sabates_a": "The men therefore took the presents, & the double money, & Benjamin; & went down into Ægypt, & stood before Joseph.",
+   "madueke_b": "The men therefore took the presents, & the double money, & Benjamin; & went down into Aegypt, & stood before Joseph."
+  },
+  "16": {
+   "s_dismas": "Whom when he had ſeene, and Beniamin withal, he commanded the ſteward of his houſe, ſaing: Bring in the men into the houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone.",
+   "odr_com": "Whom when he had seene, and Beniamin withal, he commanded the steward of his house, saing: Bring in the men into the house, and kil victimes, and prepare a feast: because they shal eate with me at noone.",
+   "sabates_a": "Whom when he had seen & Benjamin withal, he commanded the steward of his house, saying: Bring in the men into the house, and kill victims, and prepare a feast; because they shall eat with me at noon.",
+   "madueke_b": "Whom when he had seen & Benjamin withal, he commanded the steward of his house, saying: Bring in the men into the house, and kill victims, and prepare a feast; because they shall eat with me at noon."
+  },
+  "17": {
+   "s_dismas": "He did that which was commanded him, and brought the men into the houſe.",
+   "odr_com": "He did that which was commanded him, and brought the men into the house.",
+   "sabates_a": "He did that which was commanded him, and brought the men into the house.",
+   "madueke_b": "He did that which was commanded him, and brought the men into the house."
+  },
+  "18": {
+   "s_dismas": "And there being ſore afraied, they ſaid one to an other: Becauſe of the money, which we caried backe the firſt time in our ſackes, we are brought in: that he may turne vpon Calumniam. vs a falſe accuſation, and forcibly bring both vs, and our aſſes into bondage.",
+   "odr_com": "And there being fore afraied, they said one to an other: because of the money, which we caried backe the first time in our sackes, we are brought in: that he may turne vpon vs a false accusation, and forceibly bring both vs, and our asses into bondage.",
+   "sabates_a": "And there being sore afraid, they said one to another: because of the money which we carried back the first time in our sacks, we are brought in: that he may turn upon us a false accusation, and forcibly bring both us and our asses into bondage.",
+   "madueke_b": "And there being sore afraid, they said one to another: because of the money which we carried back the first time in our sacks, we are brought in: that he may turn upon us a false accusation, and forcibly bring both us and our asses into bondage."
+  },
+  "19": {
+   "s_dismas": "Wherfore in the verie dore ſtepping to the ſteward of the houſe,",
+   "odr_com": "Wherfore in the verie dore stepping to the steward of the house,",
+   "sabates_a": "Wherefore in the very door stepping to the steward of the house,",
+   "madueke_b": "Wherefore in the very door stepping to the steward of the house,"
+  },
+  "20": {
+   "s_dismas": "they ſpake: Sir we deſire thee to heare vs. Now once before we came downe to bye prouiſion:",
+   "odr_com": "they spake: Sir we desire thee to heare vs. Now once before we came downe to bye prouision:",
+   "sabates_a": "They spake: Sir, we desire thee to hear us. Now once before we came down to buy provision:",
+   "madueke_b": "They spake: Sir, we desire thee to hear us. Now once before we came down to buy provision:"
+  },
+  "21": {
+   "s_dismas": "which being bought, when we were come to the Inne, we opened our ſackes, and found our money in the mouthes of the ſackes: which we haue now brought againe in the ſame weight.",
+   "odr_com": "which being bought, when we were come to the Inne, we opened our sackes, and found our money in the mouthes of the sackes: which we haue now brought againe in the same weight.",
+   "sabates_a": "Which being bought, when we were come to the Inn, we opened our sacks, and found our money in the mouths of the sacks: which we have now brought again in the same weight.",
+   "madueke_b": "Which being bought, when we were come to the Inn, we opened our sacks, and found our money in the mouths of the sacks: which we have now brought again in the same weight."
+  },
+  "22": {
+   "s_dismas": "But we haue brought other money beſides, to bye the thinges that are neceſſarie for vs: our conſcience is not priuie, who put it in our bagges.",
+   "odr_com": "But we haue brought other money besides, to bye the thinges that are necessarie for vs: our conscience is not priuie, who put it in our bagges.",
+   "sabates_a": "But we have brought other money besides, to buy the things that are necessary for us: our conscience is not privy, who put it in our bags.",
+   "madueke_b": "But we have brought other money besides, to buy the things that are necessary for us: our conscience is not privy, who put it in our bags."
+  },
+  "23": {
+   "s_dismas": "But he anſwered: Peace be with you, feare you not: your God, and the God of your father hath geuen you treaſures in your ſackes. For the money, which you gaue me, I haue for good. And he brought forth Simeon vnto them.",
+   "odr_com": "But he answered: Peace be with you, feare you not: your God, and the God of your father hath geuen you treasures in your sackes. for the money, which you gaue me, I haue for good. And he brought forth Simeon vnto them.",
+   "sabates_a": "But he answered: Peace be with you, fear you not: your God, and the God of your father hath given you treasures in your sacks. For the money, which you gave me, I have for good. And he brought forth Simeon unto them.",
+   "madueke_b": "But he answered: Peace be with you, fear you not: your God, and the God of your father hath given you treasures in your sacks. For the money, which you gave me, I have for good. And he brought forth Simeon unto them."
+  },
+  "24": {
+   "s_dismas": "And being brought into the houſe, he fetched water, and they waſhed their feete, and he gaue prouender to their aſſes.",
+   "odr_com": "And being brought into the house, he fetched water, and they washed their feete, and he gaue prouender to their asses.",
+   "sabates_a": "And being brought into the house, he fetched water, and they washed their feet, and he gave provender to their asses.",
+   "madueke_b": "And being brought into the house, he fetched water, and they washed their feet, and he gave provender to their asses."
+  },
+  "25": {
+   "s_dismas": "But they made readie the preſentes, til Ioſeph ſhould come in at noone: for they had heard that they ſhould eate bread there.",
+   "odr_com": "But they made readie the presentes, til Ioseph should come in at noone: for they had heard that they should eate bread there.",
+   "sabates_a": "But they made ready the presents, till Joseph should come in at noon: for they had heard that they should eat bread there.",
+   "madueke_b": "But they made ready the presents, till Joseph should come in at noon: for they had heard that they should eat bread there."
+  },
+  "26": {
+   "s_dismas": "Therfore Ioſeph came in to his houſe, and they offered him preſentes holding them in their handes, and they adored proſtrate to the ground.",
+   "odr_com": "Therfore Ioseph came in to his house, and they offered him presentes holding them in their handes, and they adored prostrate to the ground.",
+   "sabates_a": "Therefore Joseph came in to his house, and they offered him presents holding them in their hands, and they adored prostrate to the ground.",
+   "madueke_b": "Therefore Joseph came in to his house, and they offered him presents holding them in their hands, and they adored prostrate to the ground."
+  },
+  "27": {
+   "s_dismas": "But he curteouſly reſaluting them, asked them ſaying: Is the old man your father in health, of whom you told me? Is he yet liuing?",
+   "odr_com": "But he curteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet liuing?",
+   "sabates_a": "But he courteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet living.",
+   "madueke_b": "But he courteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet living."
+  },
+  "28": {
+   "s_dismas": "Who anſwered: Thy ſeruant our father is in health, he is yet liuing. And bowing themſelues, they adored him.",
+   "odr_com": "Who answered: Thy seruant our father is in health, he is yet liuing. And bowing themselues, they adored him.",
+   "sabates_a": "Who answered: Thy servant our father is in health, he is yet living. And bowing themselves they adored him.",
+   "madueke_b": "Who answered: Thy servant our father is in health, he is yet living. And bowing themselves they adored him."
+  },
+  "29": {
+   "s_dismas": "And Ioſeph lifting vp his eyes, ſawe Beniamin his brother of the ſame mother, and ſaid: Is this your young brother, of whom you told me? And againe: God, ſaith he, be merciful vnto thee my ſonne.",
+   "odr_com": "And Ioseph lifting vp his eyes, sawe Beniamin his brother of the same mother, and said: Is this your young brother, of whom you told me? And againe: God, saith he, be merciful vnto thee my sonne.",
+   "sabates_a": "And Joseph lifting up his eyes, saw Benjamin his brother of the same mother, and said: is this your young brother, of whom you told me? And again: God, saith he, be merciful unto thee my son.",
+   "madueke_b": "And Joseph lifting up his eyes, saw Benjamin his brother of the same mother, and said: is this your young brother, of whom you told me? And again: God, saith he, be merciful unto thee my son."
+  },
+  "30": {
+   "s_dismas": "And he made haſt becauſe his hart was moued vpon his brother, and teares brake forth: and entring into his chamber he wept.",
+   "odr_com": "And he made hast because his hart was moued vpon his brother, and teares brake forth: and entring into his chamber he wept.",
+   "sabates_a": "And he made haste because his heart was moved upon his brother, and tears brake forth: and entering into his chamber he wept.",
+   "madueke_b": "And he made haste because his heart was moved upon his brother, and tears brake forth: and entering into his chamber he wept."
+  },
+  "31": {
+   "s_dismas": "And when he had waſhed his face, comming forth againe, he refrained himſelfe, and ſaid: Set bread on the table.",
+   "odr_com": "And when he had washed his face, comming forth againe, he refrained himselfe, and said: Set bread on the table.",
+   "sabates_a": "And when he had washed his face, coming forth again, he refrained himself, and said: Set bread on the table.",
+   "madueke_b": "And when he had washed his face, coming forth again, he refrained himself, and said: Set bread on the table."
+  },
+  "32": {
+   "s_dismas": "Which being ſet downe, to Ioſeph apart, and to his brethren apart, to the Ægyptians alſo that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and they thinke ſuch a feaſt prophane)",
+   "odr_com": "Which being set downe, to Ioseph apart, and to his brethren apart, to the Ægyptians also that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and they thinke such a feast prophane)",
+   "sabates_a": "Which being set down, to Joseph apart, and to his brethren apart, to the Ægyptians also that did eat with him apart (for it is unlawful for the Ægyptians to eat with the Hebrews, and they think such a feast profane)",
+   "madueke_b": "Which being set down, to Joseph apart, and to his brethren apart, to the Aegyptians also that did eat with him apart (for it is unlawful for the Aegyptians to eat with the Hebrews, and they think such a feast profane)"
+  },
+  "33": {
+   "s_dismas": "they ſate before him, the firſt begotten according to his firſt-birth, and the youngeſt according to his age. And they maruailed out of meaſure,",
+   "odr_com": "they sate before him, the first begotten according to his first-birth, and the youngest according to his age. And they maruailed out of measure,",
+   "sabates_a": "they sat before him, the first begotten according to his first-birth, and the youngest according to his age. And they marveled out of measure,",
+   "madueke_b": "they sat before him, the first begotten according to his first-birth, and the youngest according to his age. And they marveled out of measure,"
+  },
+  "34": {
+   "s_dismas": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And they dranke and were inebriated with him.",
+   "odr_com": "taking the portions that they receiued of him: and the greater portion came to Beniamin, so that it exceeded by fiue partes. And they dranke and were in ebriated with him.",
+   "sabates_a": "Taking the portions that they received of him: and the greater portion came to Benjamin, so that it exceeded by five parts. And they drank and were inebriated with him.",
+   "madueke_b": "Taking the portions that they received of him: and the greater portion came to Benjamin, so that it exceeded by five parts. And they drank and were inebriated with him."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "In the mean time the famine did oppress all the land very sore.",
+  "2": "And the provision being spent, which they had brought out of Ægypt, Jacob said to his sons: Go again, and buy us a little victual.",
+  "3": "Judas answered: That Same man denounced unto us under attestation of an oath, saying: You shall not see my face, unless you bring your youngest brother with you.",
+  "4": "If therefore thou wilt send him with us, we will go forward together, and will buy necessaries for thee:",
+  "5": "but if thou wilt not, we will not go: for the man, as we have often said, denounced unto us saying: You shall not see my face without your youngest brother.",
+  "6": "Israel said to them: You have done this to my misery, in that you told him that you had another brother also.",
+  "7": "But they answered: The man asked us in order our progeny: if our father lived; if we had a brother: and we answered him consequently to that which he demanded: could we know that he would say: Bring hither your brother with you?",
+  "8": "Judas also said to his father: Send the boy with me, that we may set forward, and may live: lest we and our little ones die.",
+  "9": "Itake upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever.",
+  "10": "If delay had not been made, we had been come now the second time.",
+  "11": "Therefore Israel their father said to them: If it must needs be so, do that you will: take of the best fruits of the land in your vessels, and carry to the man for presents, a courtesy of rosen, & of honey, & of incense, of myrrh, of terebinth, and of almonds.",
+  "12": "Double money also carry with you: and recarry that you found in your sacks, lest perhaps it was done by an error:",
+  "13": "but take also your brother, and go to the man.",
+  "14": "And my God almighty make him favourable unto you; and send back with you your brother, whom he keepeth, and this Benjamin: as for me I shall be desolate without children.",
+  "15": "The men therefore took the presents, & the double money, & Benjamin; & went down into Ægypt, & stood before Joseph.",
+  "16": "Whom when he had seen & Benjamin withal, he commanded the steward of his house, saying: Bring in the men into the house, and kill victims, and prepare a feast; because they shall eat with me at noon.",
+  "17": "He did that which was commanded him, and brought the men into the house.",
+  "18": "And there being sore afraid, they said one to another: because of the money which we carried back the first time in our sacks, we are brought in: that he may turn upon us a false accusation, and forcibly bring both us and our asses into bondage.",
+  "19": "Wherefore in the very door stepping to the steward of the house,",
+  "20": "They spake: Sir, we desire thee to hear us. Now once before we came down to buy provision:",
+  "21": "Which being bought, when we were come to the Inn, we opened our sacks, and found our money in the mouths of the sacks: which we have now brought again in the same weight.",
+  "22": "But we have brought other money besides, to buy the things that are necessary for us: our conscience is not privy, who put it in our bags.",
+  "23": "But he answered: Peace be with you, fear you not: your God, and the God of your father hath given you treasures in your sacks. For the money, which you gave me, I have for good. And he brought forth Simeon unto them.",
+  "24": "And being brought into the house, he fetched water, and they washed their feet, and he gave provender to their asses.",
+  "25": "But they made ready the presents, till Joseph should come in at noon: for they had heard that they should eat bread there.",
+  "26": "Therefore Joseph came in to his house, and they offered him presents holding them in their hands, and they adored prostrate to the ground.",
+  "27": "But he courteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet living.",
+  "28": "Who answered: Thy servant our father is in health, he is yet living. And bowing themselves they adored him.",
+  "29": "And Joseph lifting up his eyes, saw Benjamin his brother of the same mother, and said: is this your young brother, of whom you told me? And again: God, saith he, be merciful unto thee my son.",
+  "30": "And he made haste because his heart was moved upon his brother, and tears brake forth: and entering into his chamber he wept.",
+  "31": "And when he had washed his face, coming forth again, he refrained himself, and said: Set bread on the table.",
+  "32": "Which being set down, to Joseph apart, and to his brethren apart, to the Ægyptians also that did eat with him apart (for it is unlawful for the Ægyptians to eat with the Hebrews, and they think such a feast profane)",
+  "33": "they sat before him, the first begotten according to his first-birth, and the youngest according to his age. And they marveled out of measure,",
+  "34": "Taking the portions that they received of him: and the greater portion came to Benjamin, so that it exceeded by five parts. And they drank and were inebriated with him."
+ },
+ "ref_coverage": {
+  "janvier": 34,
+  "have": {
+   "s_dismas": 34,
+   "odr_com": 34,
+   "sabates_a": 34,
+   "madueke_b": 34
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 136,
+ "triage": "SOURCE-SKEW",
+ "secs": 7.6
+}

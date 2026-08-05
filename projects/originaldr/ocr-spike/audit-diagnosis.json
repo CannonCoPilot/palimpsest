@@ -1,0 +1,64 @@
+{
+ "regression": {
+  "lost": 215,
+  "lost_passing": 22,
+  "causes": {
+   "chapter addressed, verse not localized within it": 22
+  }
+ },
+ "sub02": {
+  "n": 4442,
+  "shape": {
+   "length ok, fit ok — genuine misread": 2632,
+   "length ok but janvier_fit < 0.35 (WRONG TEXT located)": 1506,
+   "span far SHORTER than the reference (truncated / partial)": 282,
+   "span far LONGER than the reference (runaway / merged verses)": 22
+  }
+ },
+ "split_axis": {
+  "modern>0.9 & archaic<0.8": 1660,
+  "archaic>0.9 & modern<0.8": 32
+ },
+ "absent": {},
+ "red_chapters": {
+  "n_red": 4,
+  "causes": {
+   "localized, best archaic_id < 0.2 (structural: wrong/empty text)": 1,
+   "localized, best archaic_id 0.7-0.9 (near miss)": 3
+  },
+  "detail": [
+   {
+    "book": "psalms",
+    "chapter": 17,
+    "n_src": 203,
+    "n_localized": 203,
+    "best_archaic": 0.0,
+    "cause": "localized, best archaic_id < 0.2 (structural: wrong/empty text)"
+   },
+   {
+    "book": "psalms",
+    "chapter": 51,
+    "n_src": 44,
+    "n_localized": 44,
+    "best_archaic": 0.8977,
+    "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
+   },
+   {
+    "book": "psalms",
+    "chapter": 92,
+    "n_src": 20,
+    "n_localized": 20,
+    "best_archaic": 0.8525,
+    "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
+   },
+   {
+    "book": "psalms",
+    "chapter": 139,
+    "n_src": 54,
+    "n_localized": 54,
+    "best_archaic": 0.8932,
+    "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
+   }
+  ]
+ }
+}

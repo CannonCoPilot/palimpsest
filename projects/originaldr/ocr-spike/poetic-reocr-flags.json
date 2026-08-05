@@ -1,0 +1,376 @@
+{
+  "schema": "poetic-reocr-flags/v2",
+  "note": "All poetic OT books x every OT-covering scan source, flagged for layout-aware re-OCR. status=located|partial|MISSING|OCR_GAP_UNLOCATED. v2: zero-located sources (no located span) fall back to master-source-list physical coverage so columnar total-locate failures (e.g. EEBO vol4 Psalms) are captured, not silently dropped. critical+MISSING+partial are the priority targets.",
+  "poetic_books": [
+    "job",
+    "psalms",
+    "proverbs",
+    "ecclesiastes",
+    "canticle-of-canticles",
+    "wisdom",
+    "ecclesiasticus",
+    "lamentations"
+  ],
+  "method_recommended": "kraken -bl with a 2-column region/reading-order model, OR pre-split each page into left/right half-images and OCR each separately, then concatenate (guarantees column reading order, no trained model).",
+  "summary": {
+    "n_flags": 20,
+    "by_status": {
+      "partial": 1,
+      "located": 16,
+      "MISSING": 3
+    },
+    "by_priority": {
+      "high": 2,
+      "medium": 16,
+      "critical": 2
+    },
+    "sources_touched": [
+      "archive-ot1-1609",
+      "archive-ot2-1610",
+      "eebo-vol4",
+      "jp2-S04",
+      "jp2-S06",
+      "pdf-S02",
+      "pdf-S03a"
+    ],
+    "located_page_span_total": 1013
+  },
+  "flags": [
+    {
+      "source": "eebo-vol4",
+      "book": "psalms",
+      "testament": "OT",
+      "canonical_chapters": 150,
+      "status": "MISSING",
+      "priority": "critical",
+      "page_range": null,
+      "n_pages": null,
+      "n_chapters_located": 0,
+      "mean_chapter_recall": null,
+      "note": "physically a poetic book of this source (per master-source-list coverage) but the locate found ZERO chapters while the source IS voting in consensus — it contributes no located content and must be re-OCR'd/re-located layout-aware (columnar).",
+      "physical_coverage": "OT: Book of Psalms only.",
+      "ocr_status": "OK",
+      "ocr_pages": 263,
+      "used_in_consensus": true
+    },
+    {
+      "source": "pdf-S02",
+      "book": "job",
+      "testament": "OT",
+      "canonical_chapters": 42,
+      "status": "MISSING",
+      "priority": "critical",
+      "page_range": null,
+      "n_pages": null,
+      "n_chapters_located": 0,
+      "mean_chapter_recall": null,
+      "note": "physically a poetic book of this source (per master-source-list coverage) but the locate found ZERO chapters — re-OCR/re-locate layout-aware (columnar) before use.",
+      "physical_coverage": "OT VOLUME ONE ONLY (First Tome, Genesis-Job). NOT the whole OT.",
+      "ocr_status": "BENCHED/PARTIAL",
+      "ocr_pages": 10,
+      "used_in_consensus": false
+    },
+    {
+      "source": "archive-ot1-1609",
+      "book": "job",
+      "testament": "OT",
+      "canonical_chapters": 42,
+      "status": "partial",
+      "priority": "high",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_1080",
+        "1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_1127"
+      ],
+      "n_pages": 48,
+      "n_chapters_located": 41,
+      "n_chapters_total": 42,
+      "mean_chapter_recall": 0.6228,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S04",
+      "book": "lamentations",
+      "testament": "OT",
+      "canonical_chapters": 5,
+      "status": "MISSING",
+      "priority": "high",
+      "page_range": null,
+      "n_pages": null,
+      "n_chapters_located": 0,
+      "mean_chapter_recall": null,
+      "note": "poetic book physically expected but NOT located — columnar layout likely defeated the sequential locate; re-OCR the OT section then re-locate (layout-aware)."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "canticle-of-canticles",
+      "testament": "OT",
+      "canonical_chapters": 8,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0335",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0342"
+      ],
+      "n_pages": 8,
+      "n_chapters_located": 8,
+      "n_chapters_total": 8,
+      "mean_chapter_recall": 0.6239,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "ecclesiastes",
+      "testament": "OT",
+      "canonical_chapters": 12,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0317",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0333"
+      ],
+      "n_pages": 17,
+      "n_chapters_located": 12,
+      "n_chapters_total": 12,
+      "mean_chapter_recall": 0.6726,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "ecclesiasticus",
+      "testament": "OT",
+      "canonical_chapters": 51,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0374",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0449"
+      ],
+      "n_pages": 76,
+      "n_chapters_located": 51,
+      "n_chapters_total": 51,
+      "mean_chapter_recall": 0.673,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "lamentations",
+      "testament": "OT",
+      "canonical_chapters": 5,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0650",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0661"
+      ],
+      "n_pages": 12,
+      "n_chapters_located": 5,
+      "n_chapters_total": 5,
+      "mean_chapter_recall": 0.6689,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "proverbs",
+      "testament": "OT",
+      "canonical_chapters": 31,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0268",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0316"
+      ],
+      "n_pages": 49,
+      "n_chapters_located": 31,
+      "n_chapters_total": 31,
+      "mean_chapter_recall": 0.6214,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "psalms",
+      "testament": "OT",
+      "canonical_chapters": 150,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0015",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0265"
+      ],
+      "n_pages": 251,
+      "n_chapters_located": 150,
+      "n_chapters_total": 150,
+      "mean_chapter_recall": 0.5996,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "archive-ot2-1610",
+      "book": "wisdom",
+      "testament": "OT",
+      "canonical_chapters": 19,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0344",
+        "1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_0373"
+      ],
+      "n_pages": 30,
+      "n_chapters_located": 19,
+      "n_chapters_total": 19,
+      "mean_chapter_recall": 0.6671,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "canticle-of-canticles",
+      "testament": "OT",
+      "canonical_chapters": 8,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1356",
+        "S06_1363"
+      ],
+      "n_pages": 8,
+      "n_chapters_located": 8,
+      "n_chapters_total": 8,
+      "mean_chapter_recall": 0.7775,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "ecclesiastes",
+      "testament": "OT",
+      "canonical_chapters": 12,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1340",
+        "S06_1355"
+      ],
+      "n_pages": 16,
+      "n_chapters_located": 12,
+      "n_chapters_total": 12,
+      "mean_chapter_recall": 0.8078,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "ecclesiasticus",
+      "testament": "OT",
+      "canonical_chapters": 51,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1393",
+        "S06_1459"
+      ],
+      "n_pages": 67,
+      "n_chapters_located": 51,
+      "n_chapters_total": 51,
+      "mean_chapter_recall": 0.7465,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "job",
+      "testament": "OT",
+      "canonical_chapters": 42,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_0974",
+        "S06_1021"
+      ],
+      "n_pages": 48,
+      "n_chapters_located": 42,
+      "n_chapters_total": 42,
+      "mean_chapter_recall": 0.7013,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "lamentations",
+      "testament": "OT",
+      "canonical_chapters": 5,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1640",
+        "S06_1650"
+      ],
+      "n_pages": 11,
+      "n_chapters_located": 5,
+      "n_chapters_total": 5,
+      "mean_chapter_recall": 0.6929,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "proverbs",
+      "testament": "OT",
+      "canonical_chapters": 31,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1293",
+        "S06_1339"
+      ],
+      "n_pages": 47,
+      "n_chapters_located": 31,
+      "n_chapters_total": 31,
+      "mean_chapter_recall": 0.7668,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "psalms",
+      "testament": "OT",
+      "canonical_chapters": 150,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1042",
+        "S06_1291"
+      ],
+      "n_pages": 250,
+      "n_chapters_located": 150,
+      "n_chapters_total": 150,
+      "mean_chapter_recall": 0.6547,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "jp2-S06",
+      "book": "wisdom",
+      "testament": "OT",
+      "canonical_chapters": 19,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S06_1365",
+        "S06_1391"
+      ],
+      "n_pages": 27,
+      "n_chapters_located": 19,
+      "n_chapters_total": 19,
+      "mean_chapter_recall": 0.7535,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    },
+    {
+      "source": "pdf-S03a",
+      "book": "job",
+      "testament": "OT",
+      "canonical_chapters": 42,
+      "status": "located",
+      "priority": "medium",
+      "page_range": [
+        "S03a_1084",
+        "S03a_1131"
+      ],
+      "n_pages": 48,
+      "n_chapters_located": 42,
+      "n_chapters_total": 42,
+      "mean_chapter_recall": 0.6906,
+      "note": "re-OCR with column-aware segmentation (half-page split) to lift reading-order recall on the 2-column poetic layout."
+    }
+  ]
+}

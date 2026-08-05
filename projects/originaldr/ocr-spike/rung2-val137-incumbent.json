@@ -1,0 +1,2216 @@
+{
+ "reichenau_dr.mlmodel": {
+  "n": 137,
+  "content_mean": 0.9909502608216646,
+  "content_median": 1.0,
+  "cer": 0.009049739178335403,
+  "s_gt": 181,
+  "s_got": 186,
+  "s_recall": 1.0,
+  "lines": [
+   {
+    "png": "line_0000.png",
+    "gt": "childeren of Ater, the childeren of Telmon, the childeren",
+    "got": "childeren of Atur, the childeren of Telmon, the childeren",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0001.png",
+    "gt": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "got": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0002.png",
+    "gt": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "got": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0003.png",
+    "gt": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "got": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0004.png",
+    "gt": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "got": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0005.png",
+    "gt": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "got": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0006.png",
+    "gt": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "got": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0007.png",
+    "gt": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "got": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0008.png",
+    "gt": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "got": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0009.png",
+    "gt": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "got": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0010.png",
+    "gt": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "got": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0011.png",
+    "gt": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "got": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0012.png",
+    "gt": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "got": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0013.png",
+    "gt": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "got": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0014.png",
+    "gt": "childeren of Hacupha, the childeren of Harur, † the childe-",
+    "got": "childeren of Hacupha, the childerenof Harur, † the childe-",
+    "content": 0.9814814814814815,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0015.png",
+    "gt": "uen: and among them ſinging men, & ſinging wemen, two",
+    "got": "uen: and among them ſinging men, & ſinging wemen, two",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0016.png",
+    "gt": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "got": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0017.png",
+    "gt": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "got": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0018.png",
+    "gt": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "got": "and the childeren of the ſeruanres of Salomon, three hundred",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0019.png",
+    "gt": "childeren of Geddel, the childeren of Gaher, † the childeren",
+    "got": "childeren of Geddel, the childcren of Gaher, † the childeren",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0020.png",
+    "gt": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "got": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0021.png",
+    "gt": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "got": "were of Iſcael. † The children of Dalaia, the childeren of To-",
+    "content": 0.9824561403508771,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0022.png",
+    "gt": "bia, the childeren of Necoda, ſix hundred fourtie two. † And",
+    "got": "bia, the childeren of Necoda, ſix hundred fourtie two. † And 63",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0023.png",
+    "gt": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "got": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0024.png",
+    "gt": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "got": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0025.png",
+    "gt": "childeren of Hatil, the chideren of Phohereth, who was",
+    "got": "childeren of Hatil, the chideren of Phohereth, who was",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0026.png",
+    "gt": "name. † Theſe ſought their writing in the regiſter, and found",
+    "got": "name. † Theſe ſought their writing in the regiſter, and found",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0027.png",
+    "gt": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "got": "oſ Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "content": 0.9827586206896551,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0028.png",
+    "gt": "hundred fourtie fiue. † Their horſes, two hundred fourtie ſix",
+    "got": "hundred fourtie fiue. † Their horſes, two hund red fourtie ſix",
+    "content": 0.9827586206896551,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0029.png",
+    "gt": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "got": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0030.png",
+    "gt": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "got": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0031.png",
+    "gt": "hundred thirtie eight. † The Nathineites: The childeren of",
+    "got": "hundred thittie eight. † The Nathincites: The childeren of",
+    "content": 0.962962962962963,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0032.png",
+    "gt": "ters of Berzellai a Galeadite, and he was called by their",
+    "got": "ters of Berzellai a Galeadire, and he was called by their",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0033.png",
+    "gt": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "got": "hundred ſixtie, † beſide their men ſeruants and wemen ſer- 67",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0034.png",
+    "gt": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites,",
+    "got": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites, 6",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0035.png",
+    "gt": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "got": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0036.png",
+    "gt": "nyntie two. † But theſe be they which came vp from Thel-",
+    "got": "nyntie two. † But theſe be they which came vp from Thel- 6",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0037.png",
+    "gt": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "got": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0038.png",
+    "gt": "the multitude as it were one man fourtie two thouſand three",
+    "got": "the multicude as it were one man fourtie two thouſand three",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0039.png",
+    "gt": "their mules two hundred fourtie fiue, † their camels, foure",
+    "got": "their mules two hundred fourtie fiue, † their camels, foure",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0040.png",
+    "gt": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "got": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0075.png",
+    "gt": "and not by faith only. v. 24.",
+    "got": "and not by faith only. v. 24.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0076.png",
+    "gt": "beareth Iſmael.",
+    "got": "beareth Iſmael.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0077.png",
+    "gt": "to thy",
+    "got": "to thy",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0078.png",
+    "gt": "beſide a fountaine of water in the wilderneſſe, which is in",
+    "got": "beſide a fountaine of water in the wilderneſſe, which is in",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0079.png",
+    "gt": "Ægyptian her handmaid tenne yeares after that they firſt",
+    "got": "Egyptian her handmaid tenne yeares after that they firſt",
+    "content": 0.9824561403508771,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0080.png",
+    "gt": "and charitie, humilite, reuerence, obedience, & the like ioyned with it. wher-",
+    "got": "and charitie, humilite, reuerence, obedience, & the like ioyned with it. wher-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0081.png",
+    "gt": "maid, if happely of her at the leaſt I may haue children. And",
+    "got": "maid, if happely of her at the leaſt I may haue children. And",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0082.png",
+    "gt": "when he agreed to her in this requeſt, † she toke Agar the",
+    "got": "when he agreed to her in this requeſt, † she toke Agar the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0083.png",
+    "gt": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+    "got": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0084.png",
+    "gt": "thou ? who anſwered : From the face of Sarai my miſtreſſe",
+    "got": "thou  who anſwered : From the face of Sarai my miſtreſſe",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0085.png",
+    "gt": "† And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me :",
+    "got": "† And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me:",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0086.png",
+    "gt": "handmaid of Sarai, whence comeſt thou ? and whither goeſt",
+    "got": "handmaid of Sarai, whence comeſt thou ? and whither goeſt",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0087.png",
+    "gt": "mat. v. 22. And concludeth thus : Do yee ſee, that by workes a man is iuſtified",
+    "got": "mat. v. 22. And concludeth thus: Do yee ſee, that by workes a man is iuſtified",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0088.png",
+    "gt": "no children : but hauing an handmaid an Ægyptian na-",
+    "got": "no children: but hauing an handmaid an Egyptian na-",
+    "content": 0.98,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0089.png",
+    "gt": "hard to his former conceipt, that for the ſame he receiued ſingular prayſe ; and",
+    "got": "hard to his former cenceipt, that for the ſame he receiued ſingular prayſes and",
+    "content": 0.9743589743589743,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0090.png",
+    "gt": "med Agar, † she ſaid to her huſband: Behold, our Lord hath",
+    "got": "med Agar, † she ſaid to her huſband: Behold, our Lord hath",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0091.png",
+    "gt": "fore S. Iames teſtifieth that Abraham was iuſtified by workes ( that is by",
+    "got": "fore S. Iames teſtifieth that Abraham was iuſtified by workes ( that is by",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0092.png",
+    "gt": "cloſed me, that I might not beare : Goe in vnto my hand-",
+    "got": "cloſed me, that I might not beare : Goe in vnto my hand-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0093.png",
+    "gt": "SARAI therfore, the wife of Abram, had brought forth",
+    "got": "SARAI therfore, the wife of Abram, had brought forth",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0094.png",
+    "gt": "doe I flye. † And the angel of our Lord ſaid to her : Returne",
+    "got": "doe I flye. † And the angel of our Lord ſaid to her : Returne",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0095.png",
+    "gt": "ned by an Angel to returne and humble herſelfe, 15. which she doth and",
+    "got": "aAngel to returne and humble herſelfe, 15. mhich she doth and",
+    "content": 0.8461538461538461,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0096.png",
+    "gt": "CHAP. XVI.",
+    "got": "CHAP. XVI.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0097.png",
+    "gt": "deſpiſeth her myſtreſſe, is therfore afflicted, & flyeth away. 7. But is war-",
+    "got": "deſpiſeth her myſtreſſe, is therfore afflicted, & ſſyeth away. 7. But is war-",
+    "content": 0.9705882352941176,
+    "s_gt": 5,
+    "s_got": 7
+   },
+   {
+    "png": "line_0098.png",
+    "gt": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+    "got": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0099.png",
+    "gt": "ranne away. † And an angel of our Lord hauing found her,",
+    "got": "ranne away. † And an angel of our Lord hauing found her,",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0100.png",
+    "gt": "cient. Neyther was this a ſole faith but had other neceſſarie vertues of hope,",
+    "got": "cient. Neyther was this a ſole faith but had other neceſſarie vertues of hope, ou",
+    "content": 0.9620253164556962,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0101.png",
+    "gt": "herſelf to be with child, deſpiſeth me. Our Lord iudge be-",
+    "got": "herſelf to be with child, deſpiſeth me. Our Lord iudge be-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0102.png",
+    "gt": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+    "got": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0103.png",
+    "gt": "dwelled in the land of Chanaan : and gaue her vnto her",
+    "got": "dwelled in the land of Chanaan : and gaue her vnto her",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0104.png",
+    "gt": "that Abraham had no iuſtice, nor eſtimation of iuſtice before God, vntil he",
+    "got": "that Abraham had no iuſtice, nor eſtimation of iuſtice before God, vntl",
+    "content": 0.9452054794520548,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0105.png",
+    "gt": "workes folowing faith not going before faith. For Faith ( ſaith he ) if it haue not",
+    "got": "workes folowing faith not going before faith. For Faith ( ſaith he ) if it haue not",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0106.png",
+    "gt": "Sarai geueth her handmaid Agar as a wife to Abram. 4. Who conceiuing",
+    "got": "Sarai geueth her handmaid Agar as a wife to Abram. 4. Who conceiuing",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0107.png",
+    "gt": ":: perceauing that she was with childe, deſpiſed her miſtreſſe.",
+    "got": "perceauing that she was with childe, deſpiſed her miſtreſſe. are rude, or in",
+    "content": 0.7945205479452055,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0108.png",
+    "gt": "I gaue my handmaid into thy boſome, who perceauing",
+    "got": "I gaue my handmaid into thy boſome, who perceauing",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0109.png",
+    "gt": "huſband to wife. † Who did companie with her, but she",
+    "got": "huſband to wife. † Who did companie with her, but she",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0110.png",
+    "gt": "twen me and thee. † To whom Abram making anſwere :",
+    "got": "twen me and thee. † To whom Abram making anſwere :d",
+    "content": 0.9574468085106383,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0111.png",
+    "gt": "S. Paul. The father of al that beleue (Ro. 4. v. 11) where the Apoſtle teacheth",
+    "got": "S. Paul. The ſather of al that beleue (Ro. 4. v. 11) where the Apoſtle teachethbeforefh",
+    "content": 0.88,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0112.png",
+    "gt": "beleued in Chriſt (v. 18. 19, 20) becauſe al workes before that faith are inſuffi-",
+    "got": "beleued in Chriſt (v. 18. 19, 20) becauſe al workes before that faith are inſuffih",
+    "content": 0.9852941176470589,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0113.png",
+    "gt": "for the like afterwards was called The father of manie nations (c. 17. v. 5) and by",
+    "got": "for the like afterwards was called The ſather of manie nations (e. 17.v. and by Not work",
+    "content": 0.8658536585365854,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0114.png",
+    "gt": "vvorkes, is dead in it ſelf. (c. 2. v. 17) And by vvorkes Abrahams faith vvas conſum-",
+    "got": "vvorkes, is dead in it ſelf. (c. 2. v. 17) And by vvorkes Abrahams faith vvas conſum-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0200.png",
+    "gt": "gel of our Lord deſcended from Heauen : and com-",
+    "got": "gel of our Lord deſcended from Heauen : and com-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0201.png",
+    "gt": "riſen, * as he ſaid. Come , and ſee the place where our Lord was laid.",
+    "got": "riſen, * as he ſaid. Come , and ſee the place where our Lord was laid.",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0202.png",
+    "gt": "told you.",
+    "got": "told you.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0203.png",
+    "gt": "counſel , they gaue a great ſumme of money to the ſouldiars, 13. ſaying:",
+    "got": "counſel, they gaue a great ſumme of money to the ſouldiars, 13. ſaying:",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0204.png",
+    "gt": "him, and make you ſecure. 15. But they taking the money , did as they",
+    "got": "him, and make you ſecure. 15. But they taking the. money , did as they",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0205.png",
+    "gt": "vnto this day.",
+    "got": "vnto this day.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0206.png",
+    "gt": "came into the citie , and told the chiefe Prieſts al things that had been",
+    "got": "came into the citie, and told the chiefe Prieſts al things that had been",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0207.png",
+    "gt": "7. And going quickly tel ye his Diſciples that he is riſen : and behold he",
+    "got": "7. And going quickly tel ye his Diſciples that he is riſen : and behold he",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0208.png",
+    "gt": "were taught. And this word was bruited abrode among the Iewes, euen",
+    "got": "were taught. And this word was bruited abrode among the Iewes, euen",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0209.png",
+    "gt": "and adored him. 10. Then Iesvs ſaid to them : Feare not. Goe, tel my bre-",
+    "got": "and adored him. 12. Then Iesvs ſaid to them: Feare not. Goe, tel my bre-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0210.png",
+    "gt": "11. Who when they were departed, behold certaine of the watchmen",
+    "got": "11. Who when they were departed, behold certaine of the watchmen",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0211.png",
+    "gt": "done. 12. And being aſſembled togeather with the Ancients, taking",
+    "got": "done. 12. And being aſſembled togeather with the Ancients, taking",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0212.png",
+    "gt": "8. And they went forth quickly out of the monument with feare",
+    "got": "8. And they went forth quickly out of the monument with feare",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0213.png",
+    "gt": "goeth before you into Galilee : there you ſhal ſee him. Loe I haue fore-",
+    "got": "goeth before you into Galilee : there you ſhal ſee him. Loe I haue fore-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0214.png",
+    "gt": "them, ſaying : Al haile. But they came neere and tooke hold of his feet,",
+    "got": "them, ſaying : Al haile. But they came neere and tooke hold of his feet,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0215.png",
+    "gt": "ſerue al things whatſoeuer I haue cōmanded you : and behold I am with",
+    "got": "ſerne al things whatſoeuer I haue cōmanded you: and behold Iam with",
+    "content": 0.9696969696969697,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0216.png",
+    "gt": "and great ioy, running to tel his Diſciples. 9. And behold Iesvs met",
+    "got": "and great ioy, running to tel his Diſciples. 9. And behold Iesvs met",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0217.png",
+    "gt": "Say you, that his Diſciples came by night, and ſtole him away when we",
+    "got": "Say you, that his Diſciples came by night, and ſtole him away when we",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0218.png",
+    "gt": "were aſleep. 14. And if the Preſident ſhal heare of this, we wil perſuade",
+    "got": "were aſleep. 14. And if the Preſident ſhal heare of this, we wil perſuade",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0219.png",
+    "gt": "that you ſeeke Iesvs that was crucified. 6. He is not here , for he is",
+    "got": "that you ſecke Iesvs that was crucified. 6. He is not here , for he is",
+    "content": 0.984375,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0220.png",
+    "gt": "feare of him, the watchmen were frigited, and became as dead. 5. And",
+    "got": "feare of him, the watchmen were frigited, and became as dead. 5. And",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0221.png",
+    "gt": "thren that they goe into Galilee, there they ſhal ſee me.",
+    "got": "thren that they goe into Galilee, there they ſhal ſee me.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0222.png",
+    "gt": "Iesvs had appointed them. 17. And ſeeing him they adored, but ſome",
+    "got": "Iesvs had appointed them. 17. And ſeeing him they adored, but ſome",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0223.png",
+    "gt": "doubted. 17. And Iesvs comming neere ſpake vnto them, ſaying : Al",
+    "got": "doubted. 17. And Iesvs comming neere ſpake vnto them, ſaying : Al",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0224.png",
+    "gt": "the Angel anſwering ſaid to the women : Feare not you. For I know",
+    "got": "the Angel anſwering ſaid to the women : Feare not you. For I know",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0225.png",
+    "gt": "countenance was as lightning, and his garment as ſnow. 4. And for",
+    "got": "countenance was as lightning, and his garment as ſnow. 4. And for",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0226.png",
+    "gt": "you ″ al daies, euen to the conſummation of the world.",
+    "got": "you″ al daies, euen to the conſummationof the world.",
+    "content": 0.98,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0227.png",
+    "gt": "16. And the eleuen Diſciples went into Galilee, vnto the mount where",
+    "got": "16.And the eleuen Diſciples went into Galilee, vnto the mount where",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0228.png",
+    "gt": "hold there was made a great earth-quake. For an An-",
+    "got": "hold there was made a great earth-quake. For an An-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0229.png",
+    "gt": "on the firſt of the Sabboth, came Marie Magdalene,",
+    "got": "on the firſt of the Sabboth, came Marie Magdalene,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0230.png",
+    "gt": "power is giuen to me in Heauen and in earth. 19. ″ going therfore teach",
+    "got": "power is giuen to me in Heauen and in earth. 19. * going therfore teach",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0231.png",
+    "gt": "and the other Marie ″ to ſee the ſepulchre. 2. And be-",
+    "got": "and the other Marie ″ to ſee the ſepulchre. 2. And be-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0232.png",
+    "gt": "ming, roled back the ſtone, and ſate vpon it : 3. and his",
+    "got": "ming, roled back the ſtone, and ſate vpon it : 3. and his",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0233.png",
+    "gt": "AND in the euening of the Sabboth which dawneth",
+    "got": "ND in the euening of the Sabboth which dawneth",
+    "content": 0.9787234042553191,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0234.png",
+    "gt": "ye al Nations : BAPTIZING THEM IN THE NAME OF THE FATHER, AND",
+    "got": "ye al Nations : BAPTIZING THEM IN THE NAME OF THE FATHER, AND",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0291.png",
+    "gt": "the ſpring thou haſt formed them.",
+    "got": "the ſpring thou haſt formed them.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0292.png",
+    "gt": "† Haue reſpect vnto thy teſtament : becauſe they that are",
+    "got": "† Haue reſpect vnto thy teſtament: becauſe they thatare",
+    "content": 0.9811320754716981,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0293.png",
+    "gt": "† Let not the humble be turned away being confounded :",
+    "got": "† Let not the humble be turned away being confounded:",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0294.png",
+    "gt": "the ſoules of thy poore forget not for euer.",
+    "got": "the ſoules of thy poore forger not for euer.",
+    "content": 0.9767441860465116,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0295.png",
+    "gt": "them that hate thee, hath aſcended alwaies.",
+    "got": "them that hate thee, hath aſcended alwaies.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0296.png",
+    "gt": "the poore and needy shal praiſe thy name.",
+    "got": "the poore and needy shal praiſe thy name.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0297.png",
+    "gt": "dried the riuers of Ethan.",
+    "got": "dried the riuers of Ethan.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0298.png",
+    "gt": "morning and the ſunne.",
+    "got": "morning and the ſunne.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0299.png",
+    "gt": "† Deliuer not to beaſts the ſoules that confeſſe to thee : and",
+    "got": "† Deliuer not to beaſts the ſoules that confeſſe to thee : and",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0300.png",
+    "gt": "obſcure of the earth, are filled with houſes of iniquities.",
+    "got": "obſcure of the earth, are filled with houſes of iniquities.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0301.png",
+    "gt": "1. Vnto the end, Corrupt not, Pſalme of Canticle to Aſaph.",
+    "got": "1. Vnto the end, Corrupt not, Pſalme of Canticle to Aſaph.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0302.png",
+    "gt": "and a fooliſh people hath prouoked thy name.",
+    "got": "and a fooliſh people hath prouoked thy name.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0303.png",
+    "gt": "† Thou haſt broken the heads of the dragon : thou haſt giuen",
+    "got": "† Thou haſt broken the heads of the dragon : thou haſt giuen",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0304.png",
+    "gt": "† Thou haſt made al the coaſts of the earth : the ſummer and",
+    "got": "† Thou haſt made al the coaſts of the earth : the ſummer and",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0305.png",
+    "gt": "† Ariſe God, iudge thy cauſe : be mindful of thoſe thy repro-",
+    "got": "† Ariſe God, iudge thy cauſe : be mindful of thoſe thy repro-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0306.png",
+    "gt": "† The day is thine, and the night is thine : thou haſt made the",
+    "got": "† The day is thine, and the night is thine : thou haſt made the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0307.png",
+    "gt": "ches, that are from the fooliſh man al the day.",
+    "got": "ches, that are from the fooliſh man al the day.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0308.png",
+    "gt": "† Thou haſt broken vp fountanes, and torrentes : thou haſt",
+    "got": "† Thou haſt broken vp fountanes, and torrentes : thou haſt",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0309.png",
+    "gt": "† Be mindeful of this, the enimie hath vpbraided our Lord :",
+    "got": "† Be mindeful of this, the enimie hath vpbraided our Lord :",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0310.png",
+    "gt": "23. † Forget not the voices of thine enimies : the pride of",
+    "got": "Forget not the voices of thine enimies: the y pride of",
+    "content": 0.9622641509433962,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0311.png",
+    "gt": "him for meate to the peoples of the Æthiopians.",
+    "got": "him for meate to the peoples of the Athiopians.",
+    "content": 0.9787234042553191,
+    "s_gt": 0,
+    "s_got": 0
+   }
+  ]
+ },
+ "reichenau_lat.mlmodel": {
+  "n": 137,
+  "content_mean": 0.8772105865437165,
+  "content_median": 0.9302325581395349,
+  "cer": 0.12278941345628347,
+  "s_gt": 181,
+  "s_got": 195,
+  "s_recall": 0.9558011049723757,
+  "lines": [
+   {
+    "png": "line_0000.png",
+    "gt": "childeren of Ater, the childeren of Telmon, the childeren",
+    "got": "childeren of Ater, the childeten of Telmon. the childeren",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0001.png",
+    "gt": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "got": "of Accub. the childeren of Harita, the childeren of Sobai: an",
+    "content": 0.9827586206896551,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0002.png",
+    "gt": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "got": "Soha, the childeren of Haſupha, the childeren ol Tebbrath.",
+    "content": 0.9636363636363636,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0003.png",
+    "gt": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "got": "of Phadon, the childeren of Lebana, the childeren of Ha¬",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0004.png",
+    "gt": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "got": "of Raaia. the childeren of Raſin. the childeren oſ Necoda,",
+    "content": 0.9818181818181818,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0005.png",
+    "gt": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "got": "τ the childeren of Geſem, the childeren of Aza, the childeren 51",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0006.png",
+    "gt": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "got": "of Phaſea, 7 the childeren of Beſai, the childeren of Munim, 52",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0007.png",
+    "gt": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "got": "ren of Beſloth. the childeren of Mahida. the childeren of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0008.png",
+    "gt": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "got": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0009.png",
+    "gt": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "got": "mela, Thelharſa, Chertib. Addon. and Emmer: and could not",
+    "content": 0.9615384615384616,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0010.png",
+    "gt": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "got": "of the Prieſts. the childeren of Habia, the childeren of Accos,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0011.png",
+    "gt": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "got": "holies, vntil there ſtood vp a Prieſt learned and cunning. 1 Al 66",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0012.png",
+    "gt": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "got": "ſatha ſaid to them. that they ſhould not cate of the Holies of",
+    "content": 0.9836065573770492,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0013.png",
+    "gt": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "got": "guba, the childeren of Scimai, 5 the childeren of Hanan, the 49",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0014.png",
+    "gt": "childeren of Hacupha, the childeren of Harur, † the childe-",
+    "got": "childeren of Hacupha, the childerenof Harur, I the childe¬ 54",
+    "content": 0.9454545454545454,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0015.png",
+    "gt": "uen: and among them ſinging men, & ſinging wemen, two",
+    "got": "uen: and among rhem ſinging mon, & ſinging wemen. tυο",
+    "content": 0.9166666666666666,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0016.png",
+    "gt": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "got": "τ the childeren of Ceros, the childeren of Siaa. the childeren 48",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0017.png",
+    "gt": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "got": "Harſa, τ the childeren of Bercos, ihe childeren of Siſara, the 55",
+    "content": 0.9824561403508771,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0018.png",
+    "gt": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "got": "and the childeren of the ſeruantes of Salomon, threc hundred",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0019.png",
+    "gt": "childeren of Geddel, the childeren of Gaher, † the childeren",
+    "got": "childeren of Geddel, the childeren of Gaher, I the childeren 50",
+    "content": 0.9655172413793104,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0020.png",
+    "gt": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "got": "childeren of Thema, I the childeren of Naſia, the childeren 56",
+    "content": 0.9649122807017544,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0021.png",
+    "gt": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "got": "vere of Iſcael. τ The children of Dilaia. the childeren of Tο¬ 62",
+    "content": 0.9298245614035088,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0022.png",
+    "gt": "bia, the childeren of Necoda, ſix hundred fourtie two. † And",
+    "got": "bia, the childeren of Necoda. ſix hundred fourtie tυο. τ And 63",
+    "content": 0.9636363636363636,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0023.png",
+    "gt": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "got": "the childeren of Nephuſſim, f the childeren of Bacbuc, the 53",
+    "content": 0.9642857142857143,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0024.png",
+    "gt": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "got": "the childeren of leddel.  the childeren of Saphia, the 59",
+    "content": 0.9803921568627451,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0025.png",
+    "gt": "childeren of Hatil, the chideren of Phohereth, who was",
+    "got": "childeren of Hatil, the chideren of Phohereth. vho vas",
+    "content": 0.9615384615384616,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0026.png",
+    "gt": "name. † Theſe ſought their writing in the regiſter, and found",
+    "got": "name. τ Theſc ſought their vriting in the regiſter, and found 64",
+    "content": 0.9649122807017544,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0027.png",
+    "gt": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "got": "oſ Phatida, f the childeren of lahala, the childerenof Darcon̄. 58",
+    "content": 0.9152542372881356,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0028.png",
+    "gt": "hundred fourtie fiue. † Their horſes, two hundred fourtie ſix",
+    "got": "hundred fourtie fiue. f Their horſes. tυο hund red fouriie ſix 68",
+    "content": 0.896551724137931,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0029.png",
+    "gt": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "got": "of Hatipha, I the childeren ofthe ſeruantes of Salomon, the 57",
+    "content": 0.9473684210526316,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0030.png",
+    "gt": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "got": "uantes, vhich vere ſeuen thouſand three hundred thirtie ſe¬",
+    "content": 0.9649122807017544,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0031.png",
+    "gt": "hundred thirtie eight. † The Nathineites: The childeren of",
+    "got": "hundred thittie eight. I The Nathincites: The childeren of 47",
+    "content": 0.9285714285714286,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0032.png",
+    "gt": "ters of Berzellai a Galeadite, and he was called by their",
+    "got": "ters of Berzellai a Galeadire, and he was called by their",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0033.png",
+    "gt": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "got": "hundred ſixtie. I beſide their men ſeruants and vemen ſer¬ 67",
+    "content": 0.9464285714285714,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0034.png",
+    "gt": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites,",
+    "got": "borne vnto Sabaim, the ſonne of Amon.  Al Nathencites, 60",
+    "content": 0.98,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0035.png",
+    "gt": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "got": "the childeren of Berzellai, vho tooke a vife of the daugh¬",
+    "content": 0.9642857142857143,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0036.png",
+    "gt": "nyntie two. † But theſe be they which came vp from Thel-",
+    "got": "nyntie twο. τ But theſe be they vhich camc vρ from Thel¬ 61",
+    "content": 0.9230769230769231,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0037.png",
+    "gt": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "got": "ſhew the houſe oſ their fathers, and their ſced. vhether they",
+    "content": 0.9491525423728814,
+    "s_gt": 3,
+    "s_got": 4
+   },
+   {
+    "png": "line_0038.png",
+    "gt": "the multitude as it were one man fourtie two thouſand three",
+    "got": "the multicude as it vere one man fourtie twο thouland threc",
+    "content": 0.9152542372881356,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0039.png",
+    "gt": "their mules two hundred fourtie fiue, † their camels, foure",
+    "got": "their mules tuo hundred fourtie fiue, t theit camels. foure 67",
+    "content": 0.9298245614035088,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0040.png",
+    "gt": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "got": "it not: & theÿ were caſt out ofihe Prieſthood. I And Ather¬ 65",
+    "content": 0.9056603773584906,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0075.png",
+    "gt": "and not by faith only. v. 24.",
+    "got": "aad not by faith only. γ. 24.",
+    "content": 0.8695652173913043,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0076.png",
+    "gt": "beareth Iſmael.",
+    "got": "kcareth Iſmacl.",
+    "content": 0.7857142857142857,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0077.png",
+    "gt": "to thy",
+    "got": "t0 chy",
+    "content": 0.6666666666666667,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0078.png",
+    "gt": "beſide a fountaine of water in the wilderneſſe, which is in",
+    "got": "beſide a fountaine of water in the wilderneſſc. vhich is in",
+    "content": 0.9655172413793104,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0079.png",
+    "gt": "Ægyptian her handmaid tenne yeares after that they firſt",
+    "got": "Agyptian her handmaid tenne ycares after that they firſt",
+    "content": 0.9649122807017544,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0080.png",
+    "gt": "and charitie, humilite, reuerence, obedience, & the like ioyned with it. wher-",
+    "got": "and charitie, humilite, reuerence, obedienec, & the like ioyned vith īt. vher¬",
+    "content": 0.9285714285714286,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0081.png",
+    "gt": "maid, if happely of her at the leaſt I may haue children. And",
+    "got": "maid, if happely of her at the leaſt I may haue children. And",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0082.png",
+    "gt": "when he agreed to her in this requeſt, † she toke Agar the",
+    "got": "when he agreed to her in this requeſt, I she toke Agar the",
+    "content": 0.9649122807017544,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0083.png",
+    "gt": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+    "got": "8 the way to Sur in the deſert. I he ſaid to her: Agar, the",
+    "content": 0.962962962962963,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0084.png",
+    "gt": "thou ? who anſwered : From the face of Sarai my miſtreſſe",
+    "got": "thour who anſwered: From the face of Sarai my miſtreſſe",
+    "content": 0.9814814814814815,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0085.png",
+    "gt": "† And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me :",
+    "got": "f And Sarai ſaid to Abram: Thoudocſt vniuſtly againſt me:",
+    "content": 0.9272727272727272,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0086.png",
+    "gt": "handmaid of Sarai, whence comeſt thou ? and whither goeſt",
+    "got": "handmaid of Sarai. vhence comeſt thour and vhither goeſi",
+    "content": 0.9272727272727272,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0087.png",
+    "gt": "mat. v. 22. And concludeth thus : Do yee ſee, that by workes a man is iuſtified",
+    "got": "πατ. γ 22. And concludeth thus: Do yee ſec, that by νοτκεε a man is iuſtified",
+    "content": 0.8,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0088.png",
+    "gt": "no children : but hauing an handmaid an Ægyptian na-",
+    "got": "O no children: but hauing an handmaid an Egyptian na¬",
+    "content": 0.9411764705882353,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0089.png",
+    "gt": "hard to his former conceipt, that for the ſame he receiued ſingular prayſe ; and",
+    "got": "haταεο hi: fοτmετ ασηαcιρt, that forthe ſame he recciued fingulat prayſe: and",
+    "content": 0.7402597402597403,
+    "s_gt": 3,
+    "s_got": 2
+   },
+   {
+    "png": "line_0090.png",
+    "gt": "med Agar, † she ſaid to her huſband: Behold, our Lord hath",
+    "got": "z med Agar,. I she ſaid to her huſband: Behold, our Lord hath",
+    "content": 0.9298245614035088,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0091.png",
+    "gt": "fore S. Iames teſtifieth that Abraham was iuſtified by workes ( that is by",
+    "got": "fore §. Iames teſtifieth that Abraham was iuſtified by workes (that is by",
+    "content": 0.971830985915493,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0092.png",
+    "gt": "cloſed me, that I might not beare : Goe in vnto my hand-",
+    "got": "cloſed meahat I miglt not beare: Goe in vnto my hand¬",
+    "content": 0.9423076923076923,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0093.png",
+    "gt": "SARAI therfore, the wife of Abram, had brought forth",
+    "got": "1 ꝘAκAI therfore, the wife of Abram, had brouglit forth",
+    "content": 0.92,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0094.png",
+    "gt": "doe I flye. † And the angel of our Lord ſaid to her : Returne",
+    "got": "9 doc I flye. I And the angel ofour Lord ſaid to her: Returne",
+    "content": 0.9298245614035088,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0095.png",
+    "gt": "ned by an Angel to returne and humble herſelfe, 15. which she doth and",
+    "got": ".νελν αη.οιgεlιο rεtuτηε εηd humble herſelfe. 15. μbιc.bε dοtb aηd",
+    "content": 0.49230769230769234,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0096.png",
+    "gt": "CHAP. XVI.",
+    "got": "CHAν. XVI.",
+    "content": 0.875,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0097.png",
+    "gt": "deſpiſeth her myſtreſſe, is therfore afflicted, & flyeth away. 7. But is war-",
+    "got": "deſpiſeth ηετν/trεſε, ι ιειfθτε Alιξtεα, & βετη αιμ. 7. βνι ιε waτ¬",
+    "content": 0.32352941176470584,
+    "s_gt": 5,
+    "s_got": 3
+   },
+   {
+    "png": "line_0098.png",
+    "gt": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+    "got": "u it plcaſeth thec. Vhen Sarai therfore did afflict her. she cttiͣ. gͣrcu̓g:",
+    "content": 0.7681159420289855,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0099.png",
+    "gt": "ranne away. † And an angel of our Lord hauing found her,",
+    "got": "7 ranne away. I. Andan angel ofour Lord hauing found her. Rcg.j.",
+    "content": 0.8421052631578947,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0100.png",
+    "gt": "cient. Neyther was this a ſole faith but had other neceſſarie vertues of hope,",
+    "got": "cient. Neyther vas this a ſole faith but had other neceſſarie νετιuε: of hopc. meritorious.",
+    "content": 0.7682926829268293,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0101.png",
+    "gt": "herſelf to be with child, deſpiſeth me. Our Lord iudge be-",
+    "got": "herſelf to be with child. deſpiſeth me. Our Lord iudge he et adornte",
+    "content": 0.8181818181818181,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0102.png",
+    "gt": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+    "got": "Behold, faith he, thy hādmaid is in thine owne hand, vſe herⁱʰειτ aduα",
+    "content": 0.9166666666666666,
+    "s_gt": 2,
+    "s_got": 1
+   },
+   {
+    "png": "line_0103.png",
+    "gt": "dwelled in the land of Chanaan : and gaue her vnto her",
+    "got": "dwelled in the land of Chanaan: and gaue het vnto her: 5οπσ οbeγ",
+    "content": 0.9272727272727272,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0104.png",
+    "gt": "that Abraham had no iuſtice, nor eſtimation of iuſtice before God, vntil he",
+    "got": "that Abtalam had no iuſtice, nor eſtimation of iuſtice beſore God, vntil he but ioyned",
+    "content": 0.8333333333333334,
+    "s_gt": 3,
+    "s_got": 4
+   },
+   {
+    "png": "line_0105.png",
+    "gt": "workes folowing faith not going before faith. For Faith ( ſaith he ) if it haue not",
+    "got": "vorkes folowing faith not going before faith. Fοτ τμνη (ſaith he) ιναναν",
+    "content": 0.6923076923076923,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0106.png",
+    "gt": "Sarai geueth her handmaid Agar as a wife to Abram. 4. Who conceiuing",
+    "got": "fατειgεηειb heτ haηdmαια Mςαταα wίfε το bτιm. 4 πhο cοηαcινιnς",
+    "content": 0.34375,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0107.png",
+    "gt": ":: perceauing that she was with childe, deſpiſed her miſtreſſe.",
+    "got": "?: perceauing that she was with childe, deſpiſed her miſtreſſe. are rude, ot i¬",
+    "content": 0.8055555555555556,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0108.png",
+    "gt": "I gaue my handmaid into thy boſome, who perceauing",
+    "got": "I gaue my handmaid into thy boſome. vho perccauing heu̓sgota¬",
+    "content": 0.8103448275862069,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0109.png",
+    "gt": "huſband to wife. † Who did companie with her, but she",
+    "got": "4 huſbandⁿ to wife. τ Vho did companie with her, but she hileſ tηες",
+    "content": 0.8421052631578947,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0110.png",
+    "gt": "twen me and thee. † To whom Abram making anſwere :",
+    "got": "6 twen me and thee. I To whom Abram making anſwere: ment diſdaine",
+    "content": 0.7377049180327868,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0111.png",
+    "gt": "S. Paul. The father of al that beleue (Ro. 4. v. 11) where the Apoſtle teacheth",
+    "got": "S. Paul. τhε ſαthετ θξalήμ beleue (Rο. 4. γ. 1ι) vhere ihe Apoſtle teacheth before faith",
+    "content": 0.5373134328358209,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0112.png",
+    "gt": "beleued in Chriſt (v. 18. 19, 20) becauſe al workes before that faith are inſuffi-",
+    "got": "beleued in Chriſt /ν. 18. 19, 20) becauſe al vorkes beſore that faith are inſuffi¬ vith faith are",
+    "content": 0.7625,
+    "s_gt": 3,
+    "s_got": 4
+   },
+   {
+    "png": "line_0113.png",
+    "gt": "for the like afterwards was called The father of manie nations (c. 17. v. 5) and by",
+    "got": "for the like afterward: vas called rhe ſετνσ θρνμηιεημω (ε. 17. γ. 5 aηdbγ νοε vοτκε",
+    "content": 0.547945205479452,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0114.png",
+    "gt": "vvorkes, is dead in it ſelf. (c. 2. v. 17) And by vvorkes Abrahams faith vvas conſum-",
+    "got": "γνθτέι ίιαηαιν iτ ſlξ. c. 2. υ. 17)τηαbγ ττθτειλbνανμνι fαιν νναιονμπ¬",
+    "content": 0.17391304347826086,
+    "s_gt": 2,
+    "s_got": 1
+   },
+   {
+    "png": "line_0200.png",
+    "gt": "gel of our Lord deſcended from Heauen : and com-",
+    "got": "gel of out Lord deſecnded from Heauen: and com¬",
+    "content": 0.9333333333333333,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0201.png",
+    "gt": "riſen, * as he ſaid. Come , and ſee the place where our Lord was laid.",
+    "got": "riſen.ˣ as he ſaid. Come. and ſee the place where our Lord was laid.",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0202.png",
+    "gt": "told you.",
+    "got": "told you.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0203.png",
+    "gt": "counſel , they gaue a great ſumme of money to the ſouldiars, 13. ſaying:",
+    "got": "counſel. they gaue a great ſumme of money to the ſouldiars. 13. ſaying¬",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0204.png",
+    "gt": "him, and make you ſecure. 15. But they taking the money , did as they",
+    "got": "him. and make you ſecure. 15. But they taking the money. did as they",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0205.png",
+    "gt": "vnto this day.",
+    "got": "vnto this day.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0206.png",
+    "gt": "came into the citie , and told the chiefe Prieſts al things that had been",
+    "got": "came into the citie, and told the chieſe prieſts al things that had been",
+    "content": 0.9859154929577465,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0207.png",
+    "gt": "7. And going quickly tel ye his Diſciples that he is riſen : and behold he",
+    "got": "17. And going quickly tel ye his Diſciples that he is riſen: and behold he",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0208.png",
+    "gt": "were taught. And this word was bruited abrode among the Iewes, euen",
+    "got": "were taught. And this wοεdννas bruited abrode amongthe leweε. euen",
+    "content": 0.8923076923076922,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0209.png",
+    "gt": "and adored him. 10. Then Iesvs ſaid to them : Feare not. Goe, tel my bre-",
+    "got": "and adored him. 12. Then lεενs ſaid to them: Feare not. Goe, tel my bre¬",
+    "content": 0.9365079365079365,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0210.png",
+    "gt": "11. Who when they were departed, behold certaine of the watchmen",
+    "got": "11. Who when they were departed. behold certaine ofthe watchmen",
+    "content": 0.9830508474576272,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0211.png",
+    "gt": "done. 12. And being aſſembled togeather with the Ancients, taking",
+    "got": "done. 12. And being aſſembled togeather withthe Ancients. takins",
+    "content": 0.9661016949152542,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0212.png",
+    "gt": "8. And they went forth quickly out of the monument with feare",
+    "got": "8. And tηεγ weηε fortη quίcκlγ οut οftηe monument witη feare",
+    "content": 0.7586206896551724,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0213.png",
+    "gt": "goeth before you into Galilee : there you ſhal ſee him. Loe I haue fore-",
+    "got": "goeth before you into Galilee: there you ſhal ſec him. Loc I haue fore¬",
+    "content": 0.9705882352941176,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0214.png",
+    "gt": "them, ſaying : Al haile. But they came neere and tooke hold of his feet,",
+    "got": "them. ſaying: Al haile. But they came neere and tooke hold of his ſeet.",
+    "content": 0.9850746268656716,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0215.png",
+    "gt": "ſerue al things whatſoeuer I haue cōmanded you : and behold I am with",
+    "got": "ſerue al thiνęε whεſοεuετ hauε cōmaνded γοu: εηd bεηοια τamwίωη",
+    "content": 0.5757575757575757,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0216.png",
+    "gt": "and great ioy, running to tel his Diſciples. 9. And behold Iesvs met",
+    "got": "and great iοy. running to tel his Diſciples. 9. And behold lε ενs met",
+    "content": 0.9206349206349207,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0217.png",
+    "gt": "Say you, that his Diſciples came by night, and ſtole him away when we",
+    "got": "Saγ yoη, that his Diſciples came by night, and ſtole him awaγ wheη wε",
+    "content": 0.9253731343283582,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0218.png",
+    "gt": "were aſleep. 14. And if the Preſident ſhal heare of this, we wil perſuade",
+    "got": "were aſſeep. 14. And ifthe Preſident ſhal heare ofthis, we wil perſuade",
+    "content": 0.9552238805970149,
+    "s_gt": 4,
+    "s_got": 5
+   },
+   {
+    "png": "line_0219.png",
+    "gt": "that you ſeeke Iesvs that was crucified. 6. He is not here , for he is",
+    "got": "that yοu ſecke lεευε that was crucified. 6. He is not here, for he is",
+    "content": 0.890625,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0220.png",
+    "gt": "feare of him, the watchmen were frigited, and became as dead. 5. And",
+    "got": "feare of him. the watchmen were frigited, and became as dead. 5. And",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0221.png",
+    "gt": "thren that they goe into Galilee, there they ſhal ſee me.",
+    "got": "thren that they goc into Galilec, there they ſhal ſec me.",
+    "content": 0.9454545454545454,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0222.png",
+    "gt": "Iesvs had appointed them. 17. And ſeeing him they adored, but ſome",
+    "got": "lεενε had appointed them. 17. And ſecing him they adored. but ſome",
+    "content": 0.9,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0223.png",
+    "gt": "doubted. 17. And Iesvs comming neere ſpake vnto them, ſaying : Al",
+    "got": "doubted. 17. And 1ε ενε comming necre ſpake vntothem. ſaying. Al",
+    "content": 0.8596491228070176,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0224.png",
+    "gt": "the Angel anſwering ſaid to the women : Feare not you. For I know",
+    "got": "ſthe Angel anſi vering ſaιd tothe wοmeη: Ϝεare nοε γοu. Fοτ l κνονν",
+    "content": 0.6451612903225806,
+    "s_gt": 2,
+    "s_got": 3
+   },
+   {
+    "png": "line_0225.png",
+    "gt": "countenance was as lightning, and his garment as ſnow. 4. And for",
+    "got": "countenance was as lightning. and his garment as ſnow. 4. Aηd fοτ EλSτER",
+    "content": 0.9193548387096774,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0226.png",
+    "gt": "you ″ al daies, euen to the conſummation of the world.",
+    "got": "νθηⁿεααίε:, εμεητοtε εονfumπζεῖονοξ εήα wοει. μ",
+    "content": 0.12,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0227.png",
+    "gt": "16. And the eleuen Diſciples went into Galilee, vnto the mount where",
+    "got": "16. And the eleuen Diſciples wενε into Galilee, υηtο tηε mοuηεwhere τε Ghοſρeτ",
+    "content": 0.7301587301587302,
+    "s_gt": 1,
+    "s_got": 2
+   },
+   {
+    "png": "line_0228.png",
+    "gt": "hold there was made a great earth-quake. For an An-",
+    "got": "hold there was made a great earth quake. Fοr aη Aη. ſarreαiον",
+    "content": 0.8301886792452831,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0229.png",
+    "gt": "on the firſt of the Sabboth, came Marie Magdalene,",
+    "got": "U on the firſt oſ the Sabboth. came Marie Magdalene. Maſſe ol̓",
+    "content": 0.7966101694915254,
+    "s_gt": 1,
+    "s_got": 4
+   },
+   {
+    "png": "line_0230.png",
+    "gt": "power is giuen to me in Heauen and in earth. 19. ″ going therfore teach",
+    "got": "power is giuento me in feauen and iν εath. 19.ⁿ gοίνę εηεεfοrε teach τηε Gνοſρει",
+    "content": 0.71875,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0231.png",
+    "gt": "and the other Marie ″ to ſee the ſepulchre. 2. And be-",
+    "got": "and the other Marieˣ to ſec the ſepulehre. 2. And be Cητιήεε Rε.",
+    "content": 0.8823529411764706,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0232.png",
+    "gt": "ming, roled back the ſtone, and ſate vpon it : 3. and his",
+    "got": "☞S ☞ ming. roled back the ſtone, and ſate vpon it: z. and his o Eaſec cuc.",
+    "content": 0.7575757575757576,
+    "s_gt": 2,
+    "s_got": 3
+   },
+   {
+    "png": "line_0233.png",
+    "gt": "AND in the euening of the Sabboth which dawneth",
+    "got": "εαζϖαε νD in tηε cucηing θήtηε Sabbοεη whιch dawνεtη τᵏ: ſehoſgl",
+    "content": 0.4893617021276596,
+    "s_gt": 0,
+    "s_got": 2
+   },
+   {
+    "png": "line_0234.png",
+    "gt": "ye al Nations : BAPTIZING THEM IN THE NAME OF THE FATHER, AND",
+    "got": "γεενatιοηs: βλντικινσ τηεν ιν τηε κανε οε τνε ιλτηεη λνο Iηωησ fοή",
+    "content": 0.12068965517241381,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0291.png",
+    "gt": "the ſpring thou haſt formed them.",
+    "got": "the ſpringthou haſt formed them.",
+    "content": 0.96875,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0292.png",
+    "gt": "† Haue reſpect vnto thy teſtament : becauſe they that are",
+    "got": "20 ¶ Haue reſpect vnto thy teſtament: becauſe they thatare",
+    "content": 0.9811320754716981,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0293.png",
+    "gt": "† Let not the humble be turned away being confounded :",
+    "got": "21 F 7 Let not the humble be turned 2waγ being confounded:",
+    "content": 0.92,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0294.png",
+    "gt": "the ſoules of thy poore forget not for euer.",
+    "got": "the ſoules ofthy pοore forger not for euer.",
+    "content": 0.9302325581395349,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0295.png",
+    "gt": "them that hate thee, hath aſcended alwaies.",
+    "got": "them that hate thec, hath aſcendedalwaies.",
+    "content": 0.9512195121951219,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0296.png",
+    "gt": "the poore and needy shal praiſe thy name.",
+    "got": "the poore and nccdy shal praiſe thy name.",
+    "content": 0.95,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0297.png",
+    "gt": "dried the riuers of Ethan.",
+    "got": "driedthe riuers (of Ethan.",
+    "content": 0.96,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0298.png",
+    "gt": "morning and the ſunne.",
+    "got": "moming and the ſunne.",
+    "content": 0.9047619047619048,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0299.png",
+    "gt": "† Deliuer not to beaſts the ſoules that confeſſe to thee : and",
+    "got": "19 j Deliuer not to beaſts the ſoules that confeſſe to thec: and",
+    "content": 0.95,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0300.png",
+    "gt": "obſcure of the earth, are filled with houſes of iniquities.",
+    "got": "⁊ obſcure of the carth, are filled with houſes ofiniquities.",
+    "content": 0.9649122807017544,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0301.png",
+    "gt": "1. Vnto the end, Corrupt not, Pſalme of Canticle to Aſaph.",
+    "got": "1 Vntσ the end, α Cοττuρtνοt, aPſImε of Canticle tο Aſaph.",
+    "content": 0.75,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0302.png",
+    "gt": "and a fooliſh people hath prouoked thy name.",
+    "got": "and a foolish pcople hath prouoked thy name.",
+    "content": 0.9767441860465116,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0303.png",
+    "gt": "† Thou haſt broken the heads of the dragon : thou haſt giuen",
+    "got": "14 f Thou haſt broken the heads ofthe dragon: thou haſt giuen",
+    "content": 0.9473684210526316,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0304.png",
+    "gt": "† Thou haſt made al the coaſts of the earth : the ſummer and",
+    "got": "17 f Thou haſt made al the coaſts ofthe carth: the ſummer and",
+    "content": 0.9298245614035088,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0305.png",
+    "gt": "† Ariſe God, iudge thy cauſe : be mindful of thoſe thy repro-",
+    "got": "22 F Ariſc God, iudge thy cauſe: be mindful ofthoſe thy reρro¬",
+    "content": 0.9090909090909091,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0306.png",
+    "gt": "† The day is thine, and the night is thine : thou haſt made the",
+    "got": "16 F The day is thine, and the niglit is thine: thou haſt made the",
+    "content": 0.9344262295081968,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0307.png",
+    "gt": "ches, that are from the fooliſh man al the day.",
+    "got": "ches, that are ᵐ ſtom the foolish man al the day.",
+    "content": 0.9555555555555556,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0308.png",
+    "gt": "† Thou haſt broken vp fountanes, and torrentes : thou haſt",
+    "got": "15 f Thou haſt ⁊ brolcen vꝑ fountanes, and torrentes: thou haſt",
+    "content": 0.9090909090909091,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0309.png",
+    "gt": "† Be mindeful of this, the enimie hath vpbraided our Lord :",
+    "got": "18 I Bc mindefulofthis, the enīmie hath vpbraided our Lord:",
+    "content": 0.8888888888888888,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0310.png",
+    "gt": "23. † Forget not the voices of thine enimies : the pride of",
+    "got": "23 f x Forget not the νοιcεε of thine enimie:: the 7 pride of",
+    "content": 0.803921568627451,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0311.png",
+    "gt": "him for meate to the peoples of the Æthiopians.",
+    "got": "him formeate to the pcople. ⁊ ofthe Ethiopian:. q θρ ναεκάηη",
+    "content": 0.851063829787234,
+    "s_gt": 0,
+    "s_got": 0
+   }
+  ]
+ }
+}

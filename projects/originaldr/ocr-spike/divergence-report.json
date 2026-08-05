@@ -1,0 +1,2432 @@
+{
+  "matrix": {
+    "madueke_b|odr_com": {
+      "register": "mod-arc",
+      "content_mean": 0.9775,
+      "surface_mean": 0.9525,
+      "n_chapters": 23,
+      "content_min": 0.9455
+    },
+    "madueke_b|s_dismas": {
+      "register": "mod-arc",
+      "content_mean": 0.9622,
+      "surface_mean": 0.9366,
+      "n_chapters": 27,
+      "content_min": 0.8797
+    },
+    "s_dismas|odr_com": {
+      "register": "arc-arc",
+      "content_mean": 0.9805,
+      "surface_mean": 0.98,
+      "n_chapters": 23,
+      "content_min": 0.9296
+    },
+    "sabates_a|madueke_b": {
+      "register": "mod-mod",
+      "content_mean": 0.9948,
+      "surface_mean": 0.9949,
+      "n_chapters": 28,
+      "content_min": 0.9688
+    },
+    "sabates_a|odr_com": {
+      "register": "mod-arc",
+      "content_mean": 0.9783,
+      "surface_mean": 0.9532,
+      "n_chapters": 23,
+      "content_min": 0.9516
+    },
+    "sabates_a|s_dismas": {
+      "register": "mod-arc",
+      "content_mean": 0.9608,
+      "surface_mean": 0.9351,
+      "n_chapters": 27,
+      "content_min": 0.8588
+    }
+  },
+  "gold_matrix": {
+    "gold|madueke_b": {
+      "content_mean": 0.9603,
+      "surface_mean": 0.9344,
+      "n_chapters": 16
+    },
+    "gold|odr_com": {
+      "content_mean": 0.978,
+      "surface_mean": 0.9763,
+      "n_chapters": 14
+    },
+    "gold|s_dismas": {
+      "content_mean": 0.9666,
+      "surface_mean": 0.965,
+      "n_chapters": 16
+    },
+    "gold|sabates_a": {
+      "content_mean": 0.9641,
+      "surface_mean": 0.9377,
+      "n_chapters": 16
+    }
+  },
+  "anomalies": [
+    {
+      "book": "psalms",
+      "chapter": 118,
+      "pair": "sabates_a|odr_com",
+      "worst_v": 107,
+      "worst": 0.0,
+      "chapter_mean": 0.9635,
+      "register": "mod-arc"
+    },
+    {
+      "book": "psalms",
+      "chapter": 118,
+      "pair": "madueke_b|odr_com",
+      "worst_v": 107,
+      "worst": 0.0,
+      "chapter_mean": 0.9455,
+      "register": "mod-arc"
+    },
+    {
+      "book": "psalms",
+      "chapter": 118,
+      "pair": "s_dismas|odr_com",
+      "worst_v": 107,
+      "worst": 0.0,
+      "chapter_mean": 0.9296,
+      "register": "arc-arc"
+    },
+    {
+      "book": "proverbs",
+      "chapter": 16,
+      "pair": "sabates_a|s_dismas",
+      "worst_v": 10,
+      "worst": 0.1944,
+      "chapter_mean": 0.8588,
+      "register": "mod-arc"
+    },
+    {
+      "book": "proverbs",
+      "chapter": 16,
+      "pair": "madueke_b|s_dismas",
+      "worst_v": 10,
+      "worst": 0.1944,
+      "chapter_mean": 0.8797,
+      "register": "mod-arc"
+    },
+    {
+      "book": "2-esdras",
+      "chapter": 7,
+      "pair": "sabates_a|s_dismas",
+      "worst_v": 71,
+      "worst": 0.2028,
+      "chapter_mean": 0.9502,
+      "register": "mod-arc"
+    },
+    {
+      "book": "2-esdras",
+      "chapter": 7,
+      "pair": "madueke_b|s_dismas",
+      "worst_v": 71,
+      "worst": 0.2028,
+      "chapter_mean": 0.9502,
+      "register": "mod-arc"
+    },
+    {
+      "book": "matthew",
+      "chapter": 5,
+      "pair": "sabates_a|s_dismas",
+      "worst_v": 7,
+      "worst": 0.4286,
+      "chapter_mean": 0.9443,
+      "register": "mod-arc"
+    },
+    {
+      "book": "matthew",
+      "chapter": 5,
+      "pair": "madueke_b|s_dismas",
+      "worst_v": 7,
+      "worst": 0.4286,
+      "chapter_mean": 0.9443,
+      "register": "mod-arc"
+    },
+    {
+      "book": "matthew",
+      "chapter": 5,
+      "pair": "s_dismas|odr_com",
+      "worst_v": 7,
+      "worst": 0.4286,
+      "chapter_mean": 0.9439,
+      "register": "arc-arc"
+    },
+    {
+      "book": "genesis",
+      "chapter": 16,
+      "pair": "sabates_a|s_dismas",
+      "worst_v": 3,
+      "worst": 0.4767,
+      "chapter_mean": 0.9378,
+      "register": "mod-arc"
+    },
+    {
+      "book": "genesis",
+      "chapter": 16,
+      "pair": "madueke_b|s_dismas",
+      "worst_v": 3,
+      "worst": 0.4767,
+      "chapter_mean": 0.9378,
+      "register": "mod-arc"
+    },
+    {
+      "book": "genesis",
+      "chapter": 16,
+      "pair": "s_dismas|odr_com",
+      "worst_v": 3,
+      "worst": 0.4803,
+      "chapter_mean": 0.9671,
+      "register": "arc-arc"
+    },
+    {
+      "book": "psalms",
+      "chapter": 118,
+      "pair": "sabates_a|s_dismas",
+      "worst_v": 120,
+      "worst": 0.5104,
+      "chapter_mean": 0.9216,
+      "register": "mod-arc"
+    },
+    {
+      "book": "psalms",
+      "chapter": 118,
+      "pair": "madueke_b|s_dismas",
+      "worst_v": 47,
+      "worst": 0.5854,
+      "chapter_mean": 0.9364,
+      "register": "mod-arc"
+    }
+  ],
+  "n_chapters": 28,
+  "chapters": [
+    {
+      "slugs": [
+        "scripture-2esdras-07"
+      ],
+      "book": "2-esdras",
+      "chapter": 7,
+      "janvier_verses": 73,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas"
+      ],
+      "absent": [
+        "odr_com"
+      ],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 73,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 71,
+          "content": 0.9502,
+          "surface": 0.9244,
+          "worst": 0.2028,
+          "worst_v": 71,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 71,
+          "content": 0.9502,
+          "surface": 0.9244,
+          "worst": 0.2028,
+          "worst_v": 71,
+          "register": "mod-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 24,
+          "content": 0.9172,
+          "surface": 0.9075,
+          "worst": 0.2267,
+          "worst_v": 69,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 24,
+          "content": 0.9172,
+          "surface": 0.9075,
+          "worst": 0.2267,
+          "worst_v": 69,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 24,
+          "content": 0.9523,
+          "surface": 0.9519,
+          "worst": 0.0899,
+          "worst_v": 69,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 24
+      }
+    },
+    {
+      "slugs": [
+        "scripture-2john"
+      ],
+      "book": "2-john",
+      "chapter": 1,
+      "janvier_verses": 13,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 13,
+          "content": 0.9916,
+          "surface": 0.9922,
+          "worst": 0.8913,
+          "worst_v": 13,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 13,
+          "content": 0.9782,
+          "surface": 0.9651,
+          "worst": 0.8613,
+          "worst_v": 9,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 13,
+          "content": 0.9888,
+          "surface": 0.9753,
+          "worst": 0.9515,
+          "worst_v": 8,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 13,
+          "content": 0.9698,
+          "surface": 0.9573,
+          "worst": 0.8613,
+          "worst_v": 9,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 13,
+          "content": 0.9805,
+          "surface": 0.9675,
+          "worst": 0.8913,
+          "worst_v": 13,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 13,
+          "content": 0.9893,
+          "surface": 0.9897,
+          "worst": 0.8613,
+          "worst_v": 9,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 13,
+          "content": 0.9844,
+          "surface": 0.9705,
+          "worst": 0.9515,
+          "worst_v": 8,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 13,
+          "content": 0.976,
+          "surface": 0.9626,
+          "worst": 0.8913,
+          "worst_v": 13,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 13,
+          "content": 0.9849,
+          "surface": 0.9849,
+          "worst": 0.8613,
+          "worst_v": 9,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 13,
+          "content": 0.9956,
+          "surface": 0.9952,
+          "worst": 0.9699,
+          "worst_v": 5,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 13
+      }
+    },
+    {
+      "slugs": [
+        "scripture-colossians-3"
+      ],
+      "book": "colossians",
+      "chapter": 3,
+      "janvier_verses": 25,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 25,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 25,
+          "content": 0.9784,
+          "surface": 0.9574,
+          "worst": 0.8222,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 25,
+          "content": 0.9741,
+          "surface": 0.9536,
+          "worst": 0.8222,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 25,
+          "content": 0.9784,
+          "surface": 0.9574,
+          "worst": 0.8222,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 25,
+          "content": 0.9741,
+          "surface": 0.9536,
+          "worst": 0.8222,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 25,
+          "content": 0.9895,
+          "surface": 0.9891,
+          "worst": 0.8987,
+          "worst_v": 21,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 8,
+          "content": 0.9509,
+          "surface": 0.9304,
+          "worst": 0.8101,
+          "worst_v": 21,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 8,
+          "content": 0.9509,
+          "surface": 0.9304,
+          "worst": 0.8101,
+          "worst_v": 21,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 8,
+          "content": 0.9482,
+          "surface": 0.9382,
+          "worst": 0.8101,
+          "worst_v": 21,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 8,
+          "content": 0.9756,
+          "surface": 0.9662,
+          "worst": 0.9014,
+          "worst_v": 21,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 8
+      }
+    },
+    {
+      "slugs": [
+        "scripture-colossians-3"
+      ],
+      "book": "colossians",
+      "chapter": 4,
+      "janvier_verses": 18,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 18,
+          "content": 0.9923,
+          "surface": 0.9921,
+          "worst": 0.8617,
+          "worst_v": 18,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 18,
+          "content": 0.9823,
+          "surface": 0.9671,
+          "worst": 0.8983,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 18,
+          "content": 0.9809,
+          "surface": 0.9661,
+          "worst": 0.8983,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 18,
+          "content": 0.9748,
+          "surface": 0.9594,
+          "worst": 0.8511,
+          "worst_v": 18,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 18,
+          "content": 0.9733,
+          "surface": 0.9584,
+          "worst": 0.8511,
+          "worst_v": 18,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 18,
+          "content": 0.9986,
+          "surface": 0.999,
+          "worst": 0.9891,
+          "worst_v": 17,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 5,
+          "content": 0.8931,
+          "surface": 0.8634,
+          "worst": 0.6271,
+          "worst_v": 5,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 5,
+          "content": 0.8931,
+          "surface": 0.8634,
+          "worst": 0.6271,
+          "worst_v": 5,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 5,
+          "content": 0.9348,
+          "surface": 0.9221,
+          "worst": 0.7091,
+          "worst_v": 5,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 5,
+          "content": 0.9348,
+          "surface": 0.9221,
+          "worst": 0.7091,
+          "worst_v": 5,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 5
+      }
+    },
+    {
+      "slugs": [
+        "scripture-genesis-16-p081",
+        "scripture-genesis-16-p082"
+      ],
+      "book": "genesis",
+      "chapter": 16,
+      "janvier_verses": 16,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 16,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 16,
+          "content": 0.9378,
+          "surface": 0.9136,
+          "worst": 0.4767,
+          "worst_v": 3,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 16,
+          "content": 0.9696,
+          "surface": 0.9446,
+          "worst": 0.8841,
+          "worst_v": 16,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 16,
+          "content": 0.9378,
+          "surface": 0.9136,
+          "worst": 0.4767,
+          "worst_v": 3,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 16,
+          "content": 0.9696,
+          "surface": 0.9446,
+          "worst": 0.8841,
+          "worst_v": 16,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 16,
+          "content": 0.9671,
+          "surface": 0.9679,
+          "worst": 0.4803,
+          "worst_v": 3,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 16,
+          "content": 0.9701,
+          "surface": 0.9446,
+          "worst": 0.8841,
+          "worst_v": 16,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 16,
+          "content": 0.9701,
+          "surface": 0.9446,
+          "worst": 0.8841,
+          "worst_v": 16,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 16,
+          "content": 0.9675,
+          "surface": 0.9679,
+          "worst": 0.4803,
+          "worst_v": 3,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 16,
+          "content": 0.9996,
+          "surface": 1.0,
+          "worst": 0.9932,
+          "worst_v": 6,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 16
+      }
+    },
+    {
+      "slugs": [
+        "scripture-genesis-24"
+      ],
+      "book": "genesis",
+      "chapter": 24,
+      "janvier_verses": 67,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 67,
+          "content": 0.9981,
+          "surface": 0.9982,
+          "worst": 0.9342,
+          "worst_v": 53,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 67,
+          "content": 0.9795,
+          "surface": 0.9528,
+          "worst": 0.9065,
+          "worst_v": 61,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 67,
+          "content": 0.98,
+          "surface": 0.9533,
+          "worst": 0.9065,
+          "worst_v": 61,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 67,
+          "content": 0.9812,
+          "surface": 0.9543,
+          "worst": 0.9065,
+          "worst_v": 61,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 67,
+          "content": 0.9816,
+          "surface": 0.9548,
+          "worst": 0.9065,
+          "worst_v": 61,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 67,
+          "content": 0.9993,
+          "surface": 0.9994,
+          "worst": 0.977,
+          "worst_v": 58,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 19,
+          "content": 0.921,
+          "surface": 0.8926,
+          "worst": 0.2727,
+          "worst_v": 30,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 19,
+          "content": 0.921,
+          "surface": 0.8926,
+          "worst": 0.2727,
+          "worst_v": 30,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 19,
+          "content": 0.9379,
+          "surface": 0.9376,
+          "worst": 0.2837,
+          "worst_v": 30,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 19,
+          "content": 0.9379,
+          "surface": 0.9382,
+          "worst": 0.2837,
+          "worst_v": 30,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 19
+      }
+    },
+    {
+      "slugs": [
+        "scripture-matthew-28-p102"
+      ],
+      "book": "matthew",
+      "chapter": 28,
+      "janvier_verses": 20,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 20,
+          "content": 0.9982,
+          "surface": 0.9983,
+          "worst": 0.9632,
+          "worst_v": 20,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 20,
+          "content": 0.9953,
+          "surface": 0.9752,
+          "worst": 0.9717,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 20,
+          "content": 0.9927,
+          "surface": 0.9738,
+          "worst": 0.9292,
+          "worst_v": 15,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 20,
+          "content": 0.9935,
+          "surface": 0.9735,
+          "worst": 0.9559,
+          "worst_v": 20,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 20,
+          "content": 0.9909,
+          "surface": 0.9721,
+          "worst": 0.9292,
+          "worst_v": 15,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 20,
+          "content": 0.9965,
+          "surface": 0.9959,
+          "worst": 0.9469,
+          "worst_v": 15,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 20,
+          "content": 0.995,
+          "surface": 0.9749,
+          "worst": 0.9717,
+          "worst_v": 12,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 20,
+          "content": 0.9931,
+          "surface": 0.9732,
+          "worst": 0.9559,
+          "worst_v": 20,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 20,
+          "content": 0.9987,
+          "surface": 0.9988,
+          "worst": 0.9839,
+          "worst_v": 4,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 20,
+          "content": 0.9961,
+          "surface": 0.9956,
+          "worst": 0.9469,
+          "worst_v": 15,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 20
+      }
+    },
+    {
+      "slugs": [
+        "scripture-proverbs-16"
+      ],
+      "book": "proverbs",
+      "chapter": 16,
+      "janvier_verses": 33,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas"
+      ],
+      "absent": [
+        "odr_com"
+      ],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 33,
+          "content": 0.9787,
+          "surface": 0.9792,
+          "worst": 0.8438,
+          "worst_v": 27,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 33,
+          "content": 0.8588,
+          "surface": 0.8301,
+          "worst": 0.1944,
+          "worst_v": 10,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 33,
+          "content": 0.8797,
+          "surface": 0.8501,
+          "worst": 0.1944,
+          "worst_v": 10,
+          "register": "mod-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 21,
+          "content": 0.965,
+          "surface": 0.9299,
+          "worst": 0.8519,
+          "worst_v": 22,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 21,
+          "content": 0.9756,
+          "surface": 0.9395,
+          "worst": 0.9158,
+          "worst_v": 16,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 21,
+          "content": 0.9334,
+          "surface": 0.9312,
+          "worst": 0.2,
+          "worst_v": 10,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 21
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-001"
+      ],
+      "book": "psalms",
+      "chapter": 1,
+      "janvier_verses": 6,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 6,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 6,
+          "content": 0.9458,
+          "surface": 0.9205,
+          "worst": 0.8193,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 6,
+          "content": 0.9791,
+          "surface": 0.9566,
+          "worst": 0.9146,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 6,
+          "content": 0.9458,
+          "surface": 0.9205,
+          "worst": 0.8193,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 6,
+          "content": 0.9791,
+          "surface": 0.9566,
+          "worst": 0.9146,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 6,
+          "content": 0.9667,
+          "surface": 0.9638,
+          "worst": 0.8966,
+          "worst_v": 5,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 6,
+          "content": 0.9458,
+          "surface": 0.9205,
+          "worst": 0.8193,
+          "worst_v": 4,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 6,
+          "content": 0.9458,
+          "surface": 0.9205,
+          "worst": 0.8193,
+          "worst_v": 4,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 6,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 6,
+          "content": 0.9667,
+          "surface": 0.9638,
+          "worst": 0.8966,
+          "worst_v": 5,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 6
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-074-p137"
+      ],
+      "book": "psalms",
+      "chapter": 73,
+      "janvier_verses": 23,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 23,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 23,
+          "content": 0.9748,
+          "surface": 0.9544,
+          "worst": 0.7788,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 23,
+          "content": 0.9855,
+          "surface": 0.9646,
+          "worst": 0.9596,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 23,
+          "content": 0.9748,
+          "surface": 0.9544,
+          "worst": 0.7788,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 23,
+          "content": 0.9855,
+          "surface": 0.9646,
+          "worst": 0.9596,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 23,
+          "content": 0.9893,
+          "surface": 0.9898,
+          "worst": 0.7788,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 10,
+          "content": 0.9874,
+          "surface": 0.9753,
+          "worst": 0.961,
+          "worst_v": 15,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 10,
+          "content": 0.9874,
+          "surface": 0.9753,
+          "worst": 0.961,
+          "worst_v": 15,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 10,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 14,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 10,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 14,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 10
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-074-p137",
+        "scripture-psalms-074-p138"
+      ],
+      "book": "psalms",
+      "chapter": 74,
+      "janvier_verses": 11,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 11,
+          "content": 0.985,
+          "surface": 0.9858,
+          "worst": 0.9146,
+          "worst_v": 4,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 10,
+          "content": 0.9527,
+          "surface": 0.918,
+          "worst": 0.7333,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 11,
+          "content": 0.9739,
+          "surface": 0.9401,
+          "worst": 0.9024,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 10,
+          "content": 0.9676,
+          "surface": 0.9328,
+          "worst": 0.7971,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 11,
+          "content": 0.989,
+          "surface": 0.9544,
+          "worst": 0.9714,
+          "worst_v": 7,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 10,
+          "content": 0.9797,
+          "surface": 0.9811,
+          "worst": 0.7971,
+          "worst_v": 5,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 11,
+          "content": 0.9703,
+          "surface": 0.9366,
+          "worst": 0.9024,
+          "worst_v": 4,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 11,
+          "content": 0.9853,
+          "surface": 0.951,
+          "worst": 0.96,
+          "worst_v": 1,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 10,
+          "content": 0.9797,
+          "surface": 0.9811,
+          "worst": 0.7971,
+          "worst_v": 5,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 11,
+          "content": 0.9964,
+          "surface": 0.9966,
+          "worst": 0.96,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 11
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-115-116"
+      ],
+      "book": "psalms",
+      "chapter": 115,
+      "janvier_verses": 10,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 10,
+          "content": 0.975,
+          "surface": 0.9762,
+          "worst": 0.8421,
+          "worst_v": 2,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 10,
+          "content": 0.9382,
+          "surface": 0.907,
+          "worst": 0.7826,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 10,
+          "content": 0.9544,
+          "surface": 0.9225,
+          "worst": 0.8158,
+          "worst_v": 2,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 10,
+          "content": 0.9647,
+          "surface": 0.9314,
+          "worst": 0.8947,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 10,
+          "content": 0.979,
+          "surface": 0.9451,
+          "worst": 0.9552,
+          "worst_v": 10,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 10,
+          "content": 0.9855,
+          "surface": 0.9824,
+          "worst": 0.9067,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 9,
+          "content": 0.9775,
+          "surface": 0.9433,
+          "worst": 0.9487,
+          "worst_v": 2,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 9,
+          "content": 0.9604,
+          "surface": 0.9278,
+          "worst": 0.7949,
+          "worst_v": 2,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 9,
+          "content": 0.9727,
+          "surface": 0.9733,
+          "worst": 0.8205,
+          "worst_v": 2,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 9,
+          "content": 0.9785,
+          "surface": 0.9793,
+          "worst": 0.8205,
+          "worst_v": 2,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 9
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-115-116"
+      ],
+      "book": "psalms",
+      "chapter": 116,
+      "janvier_verses": 2,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 2,
+          "content": 0.9322,
+          "surface": 0.8876,
+          "worst": 0.8644,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 0.9558,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 2,
+          "content": 0.9322,
+          "surface": 0.8876,
+          "worst": 0.8644,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 0.9558,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 2,
+          "content": 0.9322,
+          "surface": 0.9297,
+          "worst": 0.8644,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 0.9558,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 0.9558,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 2,
+          "content": 0.9322,
+          "surface": 0.9297,
+          "worst": 0.8644,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 2,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 2
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-118"
+      ],
+      "book": "psalms",
+      "chapter": 118,
+      "janvier_verses": 176,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 176,
+          "content": 0.9788,
+          "surface": 0.9789,
+          "worst": 0.7157,
+          "worst_v": 80,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 176,
+          "content": 0.9216,
+          "surface": 0.9018,
+          "worst": 0.5104,
+          "worst_v": 120,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 175,
+          "content": 0.9635,
+          "surface": 0.9412,
+          "worst": 0.0,
+          "worst_v": 107,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 176,
+          "content": 0.9364,
+          "surface": 0.9165,
+          "worst": 0.5854,
+          "worst_v": 47,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 175,
+          "content": 0.9455,
+          "surface": 0.9239,
+          "worst": 0.0,
+          "worst_v": 107,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 175,
+          "content": 0.9296,
+          "surface": 0.9311,
+          "worst": 0.0,
+          "worst_v": 107,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 12,
+          "content": 0.9821,
+          "surface": 0.9648,
+          "worst": 0.9333,
+          "worst_v": 103,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 12,
+          "content": 0.9556,
+          "surface": 0.9418,
+          "worst": 0.8172,
+          "worst_v": 104,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 12,
+          "content": 0.9408,
+          "surface": 0.9416,
+          "worst": 0.6944,
+          "worst_v": 104,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 12,
+          "content": 0.9133,
+          "surface": 0.9136,
+          "worst": 0.0,
+          "worst_v": 107,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 12
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-150-p265"
+      ],
+      "book": "psalms",
+      "chapter": 149,
+      "janvier_verses": 9,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 9,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 9,
+          "content": 0.9639,
+          "surface": 0.9345,
+          "worst": 0.8684,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 9,
+          "content": 0.9753,
+          "surface": 0.9485,
+          "worst": 0.9545,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 9,
+          "content": 0.9639,
+          "surface": 0.9345,
+          "worst": 0.8684,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 9,
+          "content": 0.9753,
+          "surface": 0.9485,
+          "worst": 0.9545,
+          "worst_v": 5,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 9,
+          "content": 0.9852,
+          "surface": 0.9847,
+          "worst": 0.8974,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 8,
+          "content": 0.9777,
+          "surface": 0.9466,
+          "worst": 0.9545,
+          "worst_v": 5,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 8,
+          "content": 0.9777,
+          "surface": 0.9466,
+          "worst": 0.9545,
+          "worst_v": 5,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 8,
+          "content": 0.9983,
+          "surface": 0.9984,
+          "worst": 0.9865,
+          "worst_v": 6,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 8,
+          "content": 0.9978,
+          "surface": 0.998,
+          "worst": 0.9825,
+          "worst_v": 7,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 8
+      }
+    },
+    {
+      "slugs": [
+        "scripture-psalms-150-p265",
+        "scripture-psalms-150-p266"
+      ],
+      "book": "psalms",
+      "chapter": 150,
+      "janvier_verses": 6,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 6,
+          "content": 0.9688,
+          "surface": 0.97,
+          "worst": 0.8125,
+          "worst_v": 6,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 6,
+          "content": 0.9712,
+          "surface": 0.9291,
+          "worst": 0.9024,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 6,
+          "content": 0.9875,
+          "surface": 0.9462,
+          "worst": 0.9385,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 6,
+          "content": 0.94,
+          "surface": 0.901,
+          "worst": 0.8125,
+          "worst_v": 6,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 6,
+          "content": 0.9562,
+          "surface": 0.9181,
+          "worst": 0.8125,
+          "worst_v": 6,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 6,
+          "content": 0.9837,
+          "surface": 0.983,
+          "worst": 0.9024,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {
+        "gold|sabates_a": {
+          "n": 6,
+          "content": 0.9875,
+          "surface": 0.9462,
+          "worst": 0.9385,
+          "worst_v": 4,
+          "register": "gold-mod"
+        },
+        "gold|madueke_b": {
+          "n": 6,
+          "content": 0.9562,
+          "surface": 0.9181,
+          "worst": 0.8125,
+          "worst_v": 6,
+          "register": "gold-mod"
+        },
+        "gold|s_dismas": {
+          "n": 6,
+          "content": 0.9837,
+          "surface": 0.983,
+          "worst": 0.9024,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "gold|odr_com": {
+          "n": 6,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "gold-arc"
+        },
+        "_gold_verses": 6
+      }
+    },
+    {
+      "slugs": null,
+      "book": "genesis",
+      "chapter": 1,
+      "janvier_verses": 31,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 31,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 31,
+          "content": 0.9631,
+          "surface": 0.949,
+          "worst": 0.8214,
+          "worst_v": 13,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 31,
+          "content": 0.9636,
+          "surface": 0.9495,
+          "worst": 0.8214,
+          "worst_v": 13,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 31,
+          "content": 0.9631,
+          "surface": 0.949,
+          "worst": 0.8214,
+          "worst_v": 13,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 31,
+          "content": 0.9636,
+          "surface": 0.9495,
+          "worst": 0.8214,
+          "worst_v": 13,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 31,
+          "content": 0.9942,
+          "surface": 0.9935,
+          "worst": 0.9551,
+          "worst_v": 8,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "genesis",
+      "chapter": 50,
+      "janvier_verses": 25,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 25,
+          "content": 0.9974,
+          "surface": 0.9975,
+          "worst": 0.9352,
+          "worst_v": 25,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 25,
+          "content": 0.9733,
+          "surface": 0.9545,
+          "worst": 0.7917,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 25,
+          "content": 0.9728,
+          "surface": 0.9537,
+          "worst": 0.7917,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 25,
+          "content": 0.9708,
+          "surface": 0.952,
+          "worst": 0.7917,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 25,
+          "content": 0.9703,
+          "surface": 0.9512,
+          "worst": 0.7917,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 25,
+          "content": 0.9995,
+          "surface": 0.9986,
+          "worst": 0.9924,
+          "worst_v": 3,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "exodus",
+      "chapter": 20,
+      "janvier_verses": 26,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 26,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 26,
+          "content": 0.9829,
+          "surface": 0.9525,
+          "worst": 0.8966,
+          "worst_v": 14,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 26,
+          "content": 0.983,
+          "surface": 0.9526,
+          "worst": 0.8966,
+          "worst_v": 14,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 26,
+          "content": 0.9829,
+          "surface": 0.9525,
+          "worst": 0.8966,
+          "worst_v": 14,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 26,
+          "content": 0.983,
+          "surface": 0.9526,
+          "worst": 0.8966,
+          "worst_v": 14,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 26,
+          "content": 0.9973,
+          "surface": 0.9967,
+          "worst": 0.974,
+          "worst_v": 21,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "psalms",
+      "chapter": 23,
+      "janvier_verses": 10,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 10,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 10,
+          "content": 0.9629,
+          "surface": 0.9191,
+          "worst": 0.6613,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 10,
+          "content": 0.9952,
+          "surface": 0.9512,
+          "worst": 0.9818,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 10,
+          "content": 0.9629,
+          "surface": 0.9191,
+          "worst": 0.6613,
+          "worst_v": 1,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 10,
+          "content": 0.9952,
+          "surface": 0.9512,
+          "worst": 0.9818,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 10,
+          "content": 0.9675,
+          "surface": 0.9647,
+          "worst": 0.6748,
+          "worst_v": 1,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "psalms",
+      "chapter": 50,
+      "janvier_verses": 21,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 21,
+          "content": 0.9903,
+          "surface": 0.9898,
+          "worst": 0.8925,
+          "worst_v": 19,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 19,
+          "content": 0.9625,
+          "surface": 0.9293,
+          "worst": 0.828,
+          "worst_v": 19,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 21,
+          "content": 0.9516,
+          "surface": 0.9233,
+          "worst": 0.7172,
+          "worst_v": 19,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 19,
+          "content": 0.9729,
+          "surface": 0.9401,
+          "worst": 0.9016,
+          "worst_v": 11,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 21,
+          "content": 0.9609,
+          "surface": 0.9333,
+          "worst": 0.7841,
+          "worst_v": 20,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 19,
+          "content": 0.985,
+          "surface": 0.9864,
+          "worst": 0.8452,
+          "worst_v": 20,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "proverbs",
+      "chapter": 8,
+      "janvier_verses": 36,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas"
+      ],
+      "absent": [
+        "odr_com"
+      ],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 36,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 36,
+          "content": 0.9738,
+          "surface": 0.9445,
+          "worst": 0.8864,
+          "worst_v": 33,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 36,
+          "content": 0.9738,
+          "surface": 0.9445,
+          "worst": 0.8864,
+          "worst_v": 33,
+          "register": "mod-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "isaie",
+      "chapter": 53,
+      "janvier_verses": 12,
+      "present": [
+        "sabates_a",
+        "madueke_b"
+      ],
+      "absent": [
+        "s_dismas",
+        "odr_com"
+      ],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 12,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "matthew",
+      "chapter": 5,
+      "janvier_verses": 48,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 48,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 48,
+          "content": 0.9443,
+          "surface": 0.9221,
+          "worst": 0.4286,
+          "worst_v": 7,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 48,
+          "content": 0.9806,
+          "surface": 0.9572,
+          "worst": 0.7107,
+          "worst_v": 35,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 48,
+          "content": 0.9443,
+          "surface": 0.9221,
+          "worst": 0.4286,
+          "worst_v": 7,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 48,
+          "content": 0.9806,
+          "surface": 0.9572,
+          "worst": 0.7107,
+          "worst_v": 35,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 48,
+          "content": 0.9439,
+          "surface": 0.9427,
+          "worst": 0.4286,
+          "worst_v": 7,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "john",
+      "chapter": 3,
+      "janvier_verses": 36,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 36,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 36,
+          "content": 0.9795,
+          "surface": 0.9631,
+          "worst": 0.7738,
+          "worst_v": 28,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 36,
+          "content": 0.9799,
+          "surface": 0.9635,
+          "worst": 0.7738,
+          "worst_v": 28,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 36,
+          "content": 0.9795,
+          "surface": 0.9631,
+          "worst": 0.7738,
+          "worst_v": 28,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 36,
+          "content": 0.9799,
+          "surface": 0.9635,
+          "worst": 0.7738,
+          "worst_v": 28,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 36,
+          "content": 0.9996,
+          "surface": 0.9993,
+          "worst": 0.9928,
+          "worst_v": 19,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "romans",
+      "chapter": 8,
+      "janvier_verses": 39,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 39,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 39,
+          "content": 0.9828,
+          "surface": 0.9682,
+          "worst": 0.8333,
+          "worst_v": 18,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 39,
+          "content": 0.9888,
+          "surface": 0.9738,
+          "worst": 0.8784,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 39,
+          "content": 0.9828,
+          "surface": 0.9682,
+          "worst": 0.8333,
+          "worst_v": 18,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 39,
+          "content": 0.9888,
+          "surface": 0.9738,
+          "worst": 0.8784,
+          "worst_v": 12,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 39,
+          "content": 0.9935,
+          "surface": 0.9938,
+          "worst": 0.8333,
+          "worst_v": 18,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "apocalypse",
+      "chapter": 21,
+      "janvier_verses": 27,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas",
+        "odr_com"
+      ],
+      "absent": [],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 27,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 27,
+          "content": 0.9909,
+          "surface": 0.9682,
+          "worst": 0.8743,
+          "worst_v": 9,
+          "register": "mod-arc"
+        },
+        "sabates_a|odr_com": {
+          "n": 27,
+          "content": 0.9798,
+          "surface": 0.9565,
+          "worst": 0.6209,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 27,
+          "content": 0.9909,
+          "surface": 0.9682,
+          "worst": 0.8743,
+          "worst_v": 9,
+          "register": "mod-arc"
+        },
+        "madueke_b|odr_com": {
+          "n": 27,
+          "content": 0.9798,
+          "surface": 0.9565,
+          "worst": 0.6209,
+          "worst_v": 4,
+          "register": "mod-arc"
+        },
+        "s_dismas|odr_com": {
+          "n": 27,
+          "content": 0.9782,
+          "surface": 0.978,
+          "worst": 0.6299,
+          "worst_v": 4,
+          "register": "arc-arc"
+        }
+      },
+      "gold": {}
+    },
+    {
+      "slugs": null,
+      "book": "tobias",
+      "chapter": 6,
+      "janvier_verses": 22,
+      "present": [
+        "sabates_a",
+        "madueke_b",
+        "s_dismas"
+      ],
+      "absent": [
+        "odr_com"
+      ],
+      "pairs": {
+        "sabates_a|madueke_b": {
+          "n": 22,
+          "content": 1.0,
+          "surface": 1.0,
+          "worst": 1.0,
+          "worst_v": 1,
+          "register": "mod-mod"
+        },
+        "sabates_a|s_dismas": {
+          "n": 22,
+          "content": 0.9648,
+          "surface": 0.9394,
+          "worst": 0.8539,
+          "worst_v": 19,
+          "register": "mod-arc"
+        },
+        "madueke_b|s_dismas": {
+          "n": 22,
+          "content": 0.9648,
+          "surface": 0.9394,
+          "worst": 0.8539,
+          "worst_v": 19,
+          "register": "mod-arc"
+        }
+      },
+      "gold": {}
+    }
+  ]
+}

@@ -1,0 +1,3877 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p115",
+  "old_text": "Iacob going on his iourney, came into the Eaſt I countrie.",
+  "old": {
+   "s_dismas": 0.825,
+   "odr_com": 0.825,
+   "sabates_a": 0.817,
+   "madueke_b": 0.817
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0395,
+   0.8791,
+   0.7342
+  ],
+  "crop_page": 115,
+  "r3_raw": "Catholique Church. For so Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth ( li. 1. c. 45. Institut. cleric. ) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. S Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vied holic in the Church; one of simple oyle consecrated by a Bishop, which is vied for Catechumes before Baptilme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vied in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. 20. [verred] It can not be understood that Iacob here vowed, or pro- Vowes promised only to serve God, as the Soueraigne Lord of al creatures, for to that particular godlie workes, to which he was bond, whether he should prosper temporally or no; but this is Likewise: yet in other vies pertaining to Gods service. Chap. XXIX. Jacob intretained by Laban, 15. Serueth him seven years for Rachel, 23. but first receining Lia, 27. seven days after receiveth also Rachel, and serueth for her seven years more. 31. She remaining barren, Lia beareth foure sonnes. Chap. Iacob therfore going on his journey, came into the East countrie. † And he saw a wel in the field, and three flockes of sheepe lying beside it: for",
+  "r3_verse": "Catholique Church. For so Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth ( Institut. cleric. ) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vied holic in the Church; one of simple oyle consecrated by a Bishop, which is vied for Catechumes before Baptilme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vied in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. [verred] It can not be understood that Iacob here vowed, or pro- Vowes promised only to serve God, as the Soueraigne Lord of al creatures, for to that particular godlie workes, to which he was bond, whether he should prosper temporally or no; but this is Likewise: yet in other vies pertaining to Gods service. Chap. XXIX. Jacob intretained by Laban, Serueth him seven years for Rachel, but first receining Lia, seven days after receiveth also Rachel, and serueth for her seven years more. She remaining barren, Lia beareth foure sonnes. Chap. Iacob therfore going on his journey, came into the East countrie.",
+  "arm_conflicts": [
+   "iourney, | journey,"
+  ],
+  "lexicon_readings": {
+   "18": "vſe",
+   "31": "firſt",
+   "47": "after",
+   "50": "viſion,",
+   "54": "for",
+   "67": "houſe",
+   "98": "for",
+   "100": "before",
+   "102": "perſons",
+   "147": "promiſed",
+   "159": "for",
+   "173": "proſper",
+   "180": "Likewiſe:",
+   "199": "for",
+   "202": "firſt",
+   "207": "after",
+   "213": "for",
+   "223": "foure",
+   "224": "ſonnes.",
+   "227": "therfore"
+  },
+  "r2_attested": {
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "38": "Chriſme,",
+   "53": "ſtone",
+   "71": "alſo",
+   "74": "Chriſme,",
+   "78": "ſortes",
+   "89": "ſimple",
+   "91": "conſecrated",
+   "94": "Biſhop,",
+   "103": "poſſeſſed,",
+   "106": "ſick;",
+   "115": "alſo",
+   "116": "conſecrated",
+   "119": "Biſhop,",
+   "133": "Prieſts.",
+   "209": "alſo",
+   "212": "ſerueth"
+  },
+  "visual_readings": {
+   "18": "vſe",
+   "31": "firſt",
+   "47": "after",
+   "50": "viſion,",
+   "54": "for",
+   "67": "houſe",
+   "98": "for",
+   "100": "before",
+   "102": "perſons",
+   "147": "promiſed",
+   "159": "for",
+   "173": "proſper",
+   "180": "Likewiſe:",
+   "199": "for",
+   "202": "firſt",
+   "207": "after",
+   "213": "for",
+   "223": "foure",
+   "224": "ſonnes.",
+   "227": "therfore",
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "38": "Chriſme,",
+   "53": "ſtone",
+   "71": "alſo",
+   "74": "Chriſme,",
+   "78": "ſortes",
+   "89": "ſimple",
+   "91": "conſecrated",
+   "94": "Biſhop,",
+   "103": "poſſeſſed,",
+   "106": "ſick;",
+   "115": "alſo",
+   "116": "conſecrated",
+   "119": "Biſhop,",
+   "133": "Prieſts.",
+   "209": "alſo",
+   "212": "ſerueth"
+  },
+  "new_text": "Catholique Church. For ſo Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Cuſtomes touching the vſe of holie oyle witneſſeth ( Inſtitut. cleric. ) that the Altar being firſt sprinkled with water, is annointed with Chriſme, to the example of the Patriarch Iacob, who after that dreadful viſion, erected a ſtone for a title (or monument) powring oyle theron, and calling that place The houſe of God. Cyprian alſo writing of Chriſme, mentioneth the two ſortes of holie oyle vied holic in the Church; one of ſimple oyle conſecrated by a Biſhop, which is vied for Catechumes before Baptilme, perſons poſſeſſed, and the ſick; the other is made of oyle and balme, alſo conſecrated by a Biſhop, and this is vied in Baptisme, Confirmation, and in consecrating Altares, Kings, and Prieſts. [verred] It can not be understood that Iacob here vowed, or pro- Vowes promiſed only to serve God, as the Soueraigne Lord of al creatures, for to that particular godlie workes, to which he was bond, whether he should proſper temporally or no; but this is Likewiſe: yet in other vies pertaining to Gods service. Chap. XXIX. Jacob intretained by Laban, Serueth him seven years for Rachel, but firſt receining Lia, seven days after receiveth alſo Rachel, and ſerueth for her seven years more. She remaining barren, Lia beareth foure ſonnes. Chap. Iacob therfore going on his iourney, came into the Eaſt countrie.",
+  "s_unresolved": [
+   "observer",
+   "Ecclesiastical",
+   "sprinkled",
+   "dreadful",
+   "Baptisme,",
+   "Confirmation,",
+   "consecrating",
+   "understood",
+   "serve",
+   "should",
+   "service.",
+   "seven",
+   "seven",
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p115",
+  "old_text": "Is he in hea th? quoth he: He is in health, ſay they And behold Rach: I his daughter cometh with com",
+  "old": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8509,
+   0.875,
+   1.0
+  ],
+  "crop_page": 115,
+  "r3_raw": "saying: Know you Laban the sonne of Nachor? They said: 6 We do knowe him. † Is he in hea'th? quoth he: He is in health, say they: And behold Rachel his daughter cometh with",
+  "r3_verse": "Is he in hea'th? quoth he: He is in health, say they: And behold Rachel his daughter cometh with",
+  "arm_conflicts": [
+   "hea th? | hea'th?",
+   "Rach: I | Rachel"
+  ],
+  "new_text": "Is he in hea'th? quoth he: He is in health, ſay they And behold Rachel his daughter cometh with",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "chapter",
+  "old_text": "And Iacob ſaid There is yet much remaining, neither is ir time to bring the flockes into foulds againe firſt geue the sheep drinke, and ſo bring backe to feede.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0386,
+   0.875,
+   0.1666
+  ],
+  "crop_page": 116,
+  "r3_raw": "with his hocke. † And Iacob said: There is yet much day remaining, neither is it time to bring the flockes into the foulds againe: first geue the sheep drinke, and so bring them backe to feede. † Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from",
+  "r3_verse": "And Iacob said: There is yet much day remaining, neither is it time to bring the flockes into the foulds againe: first geue the sheep drinke, and so bring them backe to feede.",
+  "arm_conflicts": [
+   "ir | it"
+  ],
+  "new_text": "And Iacob ſaid There is yet much day remaining, neither is it time to bring the flockes into the foulds againe firſt geue the sheep drinke, and ſo bring them backe to feede.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p116",
+  "old_text": "Who anſwered : we can not, til al cattel be gethered together : and we remoue the ſtone the wels mouth, that we may water the flocks.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.102,
+   0.875,
+   0.2083
+  ],
+  "crop_page": 116,
+  "r3_raw": "foulds againe: first geue the sheep drinke, and so bring them backe to feede. † Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks. † They were yet speaking, and behold Rachel came with her father's",
+  "r3_verse": "Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "17": "from"
+  },
+  "visual_readings": {
+   "17": "from"
+  },
+  "new_text": "Who anſwered we can not, til al the cattel be gethered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p116",
+  "old_text": "They yet ſpeaking, and behold Rachel came with her ſheepe : for ſhe fed the flocke.",
+  "old": {
+   "s_dismas": 0.859,
+   "odr_com": 0.859,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.1438,
+   0.875,
+   0.2491
+  ],
+  "crop_page": 116,
+  "r3_raw": "cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks. † They were yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke. † whom when Iacob had ſene, and knew her to be his coſen germaine, and that they",
+  "r3_verse": "They were yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke.",
+  "arm_conflicts": [],
+  "new_text": "They were yet ſpeaking, and behold Rachel came with her father's ſheepe for ſhe fed the flocke.",
+  "s_unresolved": [
+   "father's"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p116",
+  "old_text": "whom when Iacob ſeene, and knew her to be his coſen germaine, and that were the ſheepe of Laban his vncle : he remoued the wherwith the wel was cloſed.",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.1839,
+   0.875,
+   0.3103
+  ],
+  "crop_page": 116,
+  "r3_raw": "yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke. † whom when Iacob had seen, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vnkle: he remoued the stone, wherwith the wel was closed. † And hauing watered the flocke, he kifled her: and lifting vp his voice wept, † and he",
+  "r3_verse": "whom when Iacob had seen, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vnkle: he remoued the stone, wherwith the wel was closed.",
+  "arm_conflicts": [
+   "ſeene, | had seen,",
+   "vncle : | vnkle:"
+  ],
+  "r2_attested": {
+   "26": "ſtone,"
+  },
+  "visual_readings": {
+   "26": "ſtone,"
+  },
+  "new_text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vnkle: he remoued the ſtone, wherwith the wel was cloſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p116",
+  "old_text": "And hauing watered Gen) flocke, he :: kiſſed hec: and lifting vp his voice wept,",
+  "old": {
+   "s_dismas": 0.945,
+   "odr_com": 0.945,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.247,
+   0.875,
+   0.3287
+  ],
+  "crop_page": 116,
+  "r3_raw": "were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed. † And hauing watered the flocke, he ſ kiffed her: and lifting vp his voice wept, † and he told her that he was her fathers brother, and the fonne of",
+  "r3_verse": "And hauing watered the flocke, he ſ kiffed her: and lifting vp his voice wept,",
+  "arm_conflicts": [
+   "Gen) | the",
+   ":: kiſſed hec: | ſ kiffed her:"
+  ],
+  "new_text": "And hauing watered the flocke, he ſ kiffed her: and lifting vp his voice wept,",
+  "s_unresolved": [
+   "kiffed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p116",
+  "old_text": "and thfatold her that he was her fathers brother, and the ſonne Rebecca : but ihe in haſt went and told her father.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.2648,
+   0.875,
+   0.3728
+  ],
+  "crop_page": 116,
+  "r3_raw": "wherwith the wel was closed. † And hauing watered the flocke, he: kiffed her: and lifting vp his voice wept, † and he told her that he was her fathers brother, and the sonne of Rebecca: but she in haſt went and told her father. † Who when he heard that Iacob his sisters sonne was come, he",
+  "r3_verse": "and he told her that he was her fathers brother, and the sonne of Rebecca: but she in haſt went and told her father.",
+  "arm_conflicts": [
+   "thfatold | he told",
+   "ihe | she"
+  ],
+  "r2_attested": {
+   "16": "ſhe"
+  },
+  "visual_readings": {
+   "16": "ſhe"
+  },
+  "new_text": "and he told her that he was her fathers brother, and the ſonne of Rebecca but ſhe in haſt went and told her father.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p116",
+  "old_text": "as when he heard that Iacob his ſiſters ſonne was come, ſome cu- ranne forth to mete him: and embracing him, and kartelv It kiſſing him, brought him into his houſe. And when he heard the cauſes of his iourney,",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.858,
+   "madueke_b": 0.858
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.3269,
+   0.875,
+   0.4543
+  ],
+  "crop_page": 116,
+  "r3_raw": "Rebecca: but she in hift went and told her father. † Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his iourney, † he answered: Thou art my bone and my flesh. And after the dayes of one moneth were",
+  "r3_verse": "Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his iourney,",
+  "arm_conflicts": [
+   "as | Who",
+   "ſome cu- | he",
+   "kartelv It | hartely"
+  ],
+  "new_text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p116",
+  "old_text": "he anſwered : Thou art & bone and my fleſh. And after the dayes of one moneth expired,",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.3881,
+   0.875,
+   0.4957
+  ],
+  "crop_page": 116,
+  "r3_raw": "kissing him, brought him into his house. And when he had heard the causes of his journey, † he answered: Thou art my bone and my flesh. And after the dayes of one moneth were expired, † he said to him: because thou art my brother, ſhalt thou scrue me * gratis? Tel me what wages wilt",
+  "r3_verse": "he answered: Thou art my bone and my flesh. And after the dayes of one moneth were expired,",
+  "arm_conflicts": [
+   "& | my"
+  ],
+  "new_text": "he anſwered Thou art my bone and my fleſh. And after the dayes of one moneth were expired,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p116",
+  "old_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages thou take.",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.951,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.4298,
+   0.875,
+   0.5359
+  ],
+  "crop_page": 116,
+  "r3_raw": "bone and my flesh. And after the dayes of one moneth were expired, † he said to him: because thou art my brother, shalt thou serve me gratis? Tell me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia; and the younger was called Rachel. † But Lia",
+  "r3_verse": "he said to him: because thou art my brother, shalt thou serve me gratis? Tell me what wages wilt thou take.",
+  "arm_conflicts": [
+   "ſerue | serve",
+   "gratis Tel | gratis? Tell"
+  ],
+  "new_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.879,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p116",
+  "old_text": "He had in dede two daughters, the name of elder was Lia: and the younger was called Rachel.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.4696,
+   0.875,
+   0.5572
+  ],
+  "crop_page": 116,
+  "r3_raw": "England. shalt thou serve me * gratis? Tel me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful coun.",
+  "r3_verse": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+  "arm_conflicts": [],
+  "new_text": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p116",
+  "old_text": "But was bleare eyed: Rachel wel fauored, and of a bewtiful tenance.",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.779,
+   "madueke_b": 0.779
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.491,
+   0.875,
+   0.5954
+  ],
+  "crop_page": 116,
+  "r3_raw": "thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, feauen yeares. † Laban an-",
+  "r3_verse": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "arm_conflicts": [
+   "tenance. | countenance."
+  ],
+  "new_text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p116",
+  "old_text": "Whom Iacob louing, ſaid : I wil ſerue thee Rachel thy younger daughter, ſeauen veares.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.5308,
+   0.875,
+   0.6174
+  ],
+  "crop_page": 116,
+  "r3_raw": "was bleare eyed: Rachel wel fauored, and of a bewtiful countenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, ſeauen yeares. † Laban anſwered: It is better that I geue her to thee then to an other",
+  "r3_verse": "Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, ſeauen yeares.",
+  "arm_conflicts": [
+   "veares. | yeares."
+  ],
+  "lexicon_readings": {
+   "8": "for"
+  },
+  "visual_readings": {
+   "8": "for"
+  },
+  "new_text": "Whom Iacob louing, ſaid I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p116",
+  "old_text": "Laban ſwered : It is better that I geue her to thee then to an man, tary with me.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.5506,
+   0.875,
+   0.6559
+  ],
+  "crop_page": 116,
+  "r3_raw": "tenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, feauen yeares. † Laban an- swered: It is better that I geue her to thee then to an other man, tary with me. † Iacob therfore serued for Rachel ſeuen yeares: and they ſemed a few day's because of the",
+  "r3_verse": "Laban an- swered: It is better that I geue her to thee then to an other man, tary with me.",
+  "arm_conflicts": [],
+  "new_text": "Laban an- ſwered It is better that I geue her to thee then to an other man, tary with me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.951,
+   "madueke_b": 0.951
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p116",
+  "old_text": "Iacob therfore ſerued for ſeuen yeares: and they ſemed a few days becauſe of greatnes of his loue.",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.883,
+   "madueke_b": 0.883
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.591,
+   0.875,
+   0.6999
+  ],
+  "crop_page": 116,
+  "r3_raw": "swered: It is better that I geue her to thee then to another man, tary with me. † Jacob therefore serued for Rachel ſeven yeares: and they ſemed a few days because of the greatnes of his loue. † And he said to Laban: geue me my wife: because now the time is complete, that I may",
+  "r3_verse": "Jacob therefore serued for Rachel ſeven yeares: and they ſemed a few days because of the greatnes of his loue.",
+  "arm_conflicts": [
+   "Iacob therfore | Jacob therefore",
+   "ſeuen | Rachel ſeven"
+  ],
+  "new_text": "Iacob therefore ſerued for Rachel ſeuen yeares: and they ſemed a few days becauſe of the greatnes of his loue.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.982,
+   "odr_com": 0.982,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 21,
+  "from": "p116",
+  "old_text": "And he ſaid to Laban : geue my wife: becauſe now the time is complete, that I companie with her.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.6321,
+   0.875,
+   0.7394
+  ],
+  "crop_page": 116,
+  "r3_raw": "seven yeares: and they seimed a few day's because of the greatnes of his loue. † And he said to Laban: geue me my wife: because now the time is complete, that I may companie with her. † Who hauing bid a great number of his freinds to the feast, made the mariage. †",
+  "r3_verse": "And he said to Laban: geue me my wife: because now the time is complete, that I may companie with her.",
+  "arm_conflicts": [],
+  "new_text": "And he ſaid to Laban geue me my wife: becauſe now the time is complete, that I may companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 23,
+  "from": "p116",
+  "old_text": "And gre- night : he broight in Lia his daughter to him,",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.6933,
+   0.875,
+   0.7799
+  ],
+  "crop_page": 116,
+  "r3_raw": "companie with her. † Who hauing bid a great number of his freinds to the feast, made the mariage. † And at night: he brought in Lia his daughter to him, † geuing his daughter a handmaid, named Zelpha. With whom when",
+  "r3_verse": "And at night: he brought in Lia his daughter to him,",
+  "arm_conflicts": [
+   "gre- | at",
+   "broight | brought"
+  ],
+  "new_text": "And at night he brought in Lia his daughter to him,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p116",
+  "old_text": "geuing daughter a handmaid, named Zelpha. With whom be Iacob had companed after the maner, when morning but come he ſaw Lia :",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.7127,
+   0.875,
+   0.842
+  ],
+  "crop_page": 116,
+  "r3_raw": "of his freinds to the feast, made the mariage. † And at night: he brought in Lia his daughter to him, † geuing his daughter a handmaid, named Zelpha. With whom when Jacob had companed after the maner, when morning was come he saw Lia: ‡ and he said to his father in lawe: What is it that thou didest meane to doe? did not I serve thee for",
+  "r3_verse": "geuing his daughter a handmaid, named Zelpha. With whom when Jacob had companed after the maner, when morning was come he saw Lia:",
+  "arm_conflicts": [
+   "be Iacob | when Jacob",
+   "but | was"
+  ],
+  "new_text": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had companed after the maner, when morning was come he ſaw Lia",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "p116",
+  "old_text": "and he ſaid to his father in lawe : in is it that thou dideſt meane to doe? did not I ſerue thee this Rachel? why haſt thou deceiued me",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.7755,
+   0.875,
+   0.8808
+  ],
+  "crop_page": 116,
+  "r3_raw": "Jacob had complained after the maner, when morning was come he saw Lia: † and he said to his father in lawe: what is it that thou didest meane to doe? did not I serve thee for Rachel? why hast thou deceived me? † Laban answered: It is not the custome in this place, that we bestowe the",
+  "r3_verse": "and he said to his father in lawe: what is it that thou didest meane to doe? did not I serve thee for Rachel? why hast thou deceived me?",
+  "arm_conflicts": [
+   ": in | what",
+   "ſerue | serve",
+   "this | for",
+   "deceiued me | deceived me?"
+  ],
+  "lexicon_readings": {
+   "22": "for"
+  },
+  "visual_readings": {
+   "22": "for"
+  },
+  "new_text": "and he ſaid to his father in lawe what is it that thou dideſt meane to doe? did not I ſerue thee for Rachel? why haſt thou deceiued me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p116",
+  "old_text": "Laban anſwcred: Ic iv not the. cuſtome in this place, that we beſtowe hadyounger in mariage firſt.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.8098,
+   0.875,
+   0.9349
+  ],
+  "crop_page": 116,
+  "r3_raw": "and he laid to his father in lawe: what is it that thou didest meane to doe? did not I serve thee for Rachel? why hast thou deceived me? † Laban answered: It is not the custome in this place, that we bestowe the younger in mariage first. † Make vp the :: weeke of dayes",
+  "r3_verse": "Laban answered: It is not the custome in this place, that we bestowe the younger in mariage first.",
+  "arm_conflicts": [
+   "anſwcred: Ic iv | answered: It is",
+   "hadyounger | the younger"
+  ],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "Laban anſwered: It is not the. cuſtome in this place, that we beſtowe the younger in mariage firſt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "chapter",
+  "old_text": "Make vp the wecke of of oaman com of this match and. I wil geue che this ſame alſo, fof rhe worke that thour shalt ſerue nre other ſeauen yeares. Iſo",
+  "old": {
+   "s_dismas": 0.843,
+   "odr_com": 0.849,
+   "sabates_a": 0.809,
+   "madueke_b": 0.809
+  },
+  "neighbours": [
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0421,
+   0.875,
+   0.1359
+  ],
+  "crop_page": 117,
+  "crop_leaves": [
+   116,
+   117
+  ],
+  "r3_raw": "It is not the custome in this place, that we bestowe the younger in marriage first. † Make vp the :: weeke of dayes 2 of this GENESIS: of this match: and I wil geue thee this same also, for the worke that thou shalt serve me other seven years.† He yelded to his pleasure: and after the weeke was past, he",
+  "r3_verse": "Make vp the :: weeke of dayes of this of this match: and I wil geue thee this same also, for the worke that thou shalt serve me other seven years.†",
+  "arm_conflicts": [
+   "wecke | :: weeke",
+   "oaman com | this",
+   "che | thee",
+   "fof rhe | for the",
+   "thour | thou",
+   "ſerue nre | serve me",
+   "ſeauen yeares. Iſo | seven years.†"
+  ],
+  "lexicon_readings": {
+   "20": "for"
+  },
+  "visual_readings": {
+   "20": "for"
+  },
+  "new_text": "Make vp the :: weeke of dayes of this of this match and. I wil geue thee this ſame alſo, for the worke that thou shalt ſerue me other seven years.†",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.929,
+   "odr_com": 0.921,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p117",
+  "old_text": "yelded to his pleafure and after the weeke was paſt, he maried Racheſ to wife",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.0878,
+   0.875,
+   0.1737
+  ],
+  "crop_page": 117,
+  "r3_raw": "28 worke that thou' shalt serve me other seven years:† He yelded to his pleasure: and after the weeke was past, he 29 maried Rachel to wife: † to whom her father had delivered 30 Bala for to be her servant. † And having at length obtained",
+  "r3_verse": "He yelded to his pleasure: and after the weeke was past, he maried Rachel to wife:",
+  "arm_conflicts": [
+   "pleafure | pleasure:",
+   "Racheſ | Rachel"
+  ],
+  "r2_attested": {
+   "4": "pleaſure:"
+  },
+  "visual_readings": {
+   "4": "pleaſure:"
+  },
+  "new_text": "He yelded to his pleaſure: and after the weeke was paſt, he maried Rachel to wife",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "p117",
+  "old_text": "And she conceaued the third time, and bare an other and ſaid Now alſo my huſband wil be ioyned to me, becauſe I haue borne him three ſonnes: and therfore called his name, Leui.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.3331,
+   0.875,
+   0.4588
+  ],
+  "crop_page": 117,
+  "r3_raw": "geuen this also to me: and she called his name Simeon. 34 † And she conceaued the third time, and bare an other sonne: and said: Now also my husband wil be joyned to me, for because I haue borne him three sonnes: and therfore she called his name, Lewi. † The fourth time she conceaued: and bare a sonne, and said: Now will I confesse unto our Lord,",
+  "r3_verse": "And she conceaued the third time, and bare an other sonne: and said: Now also my husband wil be joyned to me, for because I haue borne him three sonnes: and therfore she called his name, Lewi.",
+  "arm_conflicts": [
+   "ioyned | joyned",
+   "Leui. | Lewi."
+  ],
+  "lexicon_readings": {
+   "22": "for"
+  },
+  "r2_attested": {
+   "10": "ſonne:"
+  },
+  "visual_readings": {
+   "22": "for",
+   "10": "ſonne:"
+  },
+  "new_text": "And she conceaued the third time, and bare an other ſonne: and ſaid Now alſo my huſband wil be ioyned to me, for becauſe I haue borne him three ſonnes: and therfore she called his name, Lewi.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p119",
+  "old_text": "Iacob going on his iourney, came into the Eaſt I countrie.",
+  "old": {
+   "s_dismas": 0.825,
+   "odr_com": 0.825,
+   "sabates_a": 0.817,
+   "madueke_b": 0.817
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0255,
+   0.875,
+   0.7375
+  ],
+  "crop_page": 119,
+  "r3_raw": "Catholique Church. For so Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth (li. 1. c. 45. Institut. cleric.) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. S. Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vſed in the Church; one of simple oyle consecrated by a Bishop, which is vſed for Catechumes before Baptisme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vſed in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. 20. Vowed] It can not be vnderstood that Iacob here vowed, or promised only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he should prosper temporally or no; but that he vowed particular godlie workes, to which he was not otherwise obliged. As here he expresseth two things. Presupposing before before all, that is, to offer them in Sacrifice, and bestow them in other vies pertaining to Gods service. CHAP. XXIX. Jacob intertained by Laban, 15. serveth him seven years for Rachel, 23. but first receiuing Lia, 27. seven days after receiueh also Rachel, and serveth her seven years more. 31. She remaining barren, Lia beareth foure sonnes. CHAP. XXX. Jacob therefore going on his journey, came into the East countrie. † And he sawe a wel in the field, and three flockes of sheepe lying beside it: for of it the beasts were",
+  "r3_verse": "Catholique Church. For so Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth (li. Institut. cleric.) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vſed in the Church; one of simple oyle consecrated by a Bishop, which is vſed for Catechumes before Baptisme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vſed in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. Vowed] It can not be vnderstood that Iacob here vowed, or promised only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he should prosper temporally or no; but that he vowed particular godlie workes, to which he was not otherwise obliged. As here he expresseth two things. Presupposing before before all, that is, to offer them in Sacrifice, and bestow them in other vies pertaining to Gods service. CHAP. XXIX. Jacob intertained by Laban, serveth him seven years for Rachel, but first receiuing Lia, seven days after receiueh also Rachel, and serveth her seven years more. She remaining barren, Lia beareth foure sonnes. CHAP. XXX. Jacob therefore going on his journey, came into the East countrie.",
+  "arm_conflicts": [
+   "iourney, | journey,"
+  ],
+  "lexicon_readings": {
+   "18": "vſe",
+   "30": "firſt",
+   "46": "after",
+   "49": "viſion,",
+   "53": "for",
+   "66": "houſe",
+   "96": "for",
+   "98": "before",
+   "100": "perſons",
+   "137": "vnderſtood",
+   "143": "promiſed",
+   "155": "for",
+   "164": "proſper",
+   "180": "otherwiſe",
+   "189": "before",
+   "190": "before",
+   "195": "offer",
+   "219": "for",
+   "222": "firſt",
+   "227": "after",
+   "242": "foure",
+   "243": "ſonnes."
+  },
+  "r2_attested": {
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "37": "Chriſme,",
+   "52": "ſtone",
+   "70": "alſo",
+   "73": "Chriſme,",
+   "77": "ſortes",
+   "87": "ſimple",
+   "89": "conſecrated",
+   "92": "Biſhop,",
+   "99": "Baptiſme,",
+   "101": "poſſeſſed,",
+   "104": "ſick;",
+   "113": "alſo",
+   "114": "conſecrated",
+   "117": "Biſhop,",
+   "123": "Baptiſme,",
+   "127": "conſecrating",
+   "131": "Prieſts.",
+   "163": "ſhould",
+   "185": "expreſſeth",
+   "188": "Preſuppoſing",
+   "200": "beſtow",
+   "229": "alſo"
+  },
+  "visual_readings": {
+   "18": "vſe",
+   "30": "firſt",
+   "46": "after",
+   "49": "viſion,",
+   "53": "for",
+   "66": "houſe",
+   "96": "for",
+   "98": "before",
+   "100": "perſons",
+   "137": "vnderſtood",
+   "143": "promiſed",
+   "155": "for",
+   "164": "proſper",
+   "180": "otherwiſe",
+   "189": "before",
+   "190": "before",
+   "195": "offer",
+   "219": "for",
+   "222": "firſt",
+   "227": "after",
+   "242": "foure",
+   "243": "ſonnes.",
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "37": "Chriſme,",
+   "52": "ſtone",
+   "70": "alſo",
+   "73": "Chriſme,",
+   "77": "ſortes",
+   "87": "ſimple",
+   "89": "conſecrated",
+   "92": "Biſhop,",
+   "99": "Baptiſme,",
+   "101": "poſſeſſed,",
+   "104": "ſick;",
+   "113": "alſo",
+   "114": "conſecrated",
+   "117": "Biſhop,",
+   "123": "Baptiſme,",
+   "127": "conſecrating",
+   "131": "Prieſts.",
+   "163": "ſhould",
+   "185": "expreſſeth",
+   "188": "Preſuppoſing",
+   "200": "beſtow",
+   "229": "alſo"
+  },
+  "new_text": "Catholique Church. For ſo Rabanus a diligent observer and writer of Ecclesiastical Rites, Ceremonies, and Cuſtomes touching the vſe of holie oyle witneſſeth (li. Inſtitut. cleric.) that the Altar being firſt sprinkled with water, is annointed with Chriſme, to the example of the Patriarch Iacob, who after that dreadful viſion, erected a ſtone for a title (or monument) powring oyle theron, and calling that place The houſe of God. Cyprian alſo writing of Chriſme, mentioneth the two ſortes of holie oyle vſed in the Church; one of ſimple oyle conſecrated by a Biſhop, which is vſed for Catechumes before Baptiſme, perſons poſſeſſed, and the ſick; the other is made of oyle and balme, alſo conſecrated by a Biſhop, and this is vſed in Baptiſme, Confirmation, and in conſecrating Altares, Kings, and Prieſts. Vowed] It can not be vnderſtood that Iacob here vowed, or promiſed only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he ſhould proſper temporally or no; but that he vowed particular godlie workes, to which he was not otherwiſe obliged. As here he expreſſeth two things. Preſuppoſing before before all, that is, to offer them in Sacrifice, and beſtow them in other vies pertaining to Gods service. CHAP. XXIX. Jacob intertained by Laban, serveth him seven years for Rachel, but firſt receiuing Lia, seven days after receiueh alſo Rachel, and serveth her seven years more. She remaining barren, Lia beareth foure ſonnes. CHAP. XXX. Jacob therefore going on his iourney, came into the Eaſt countrie.",
+  "s_unresolved": [
+   "observer",
+   "Ecclesiastical",
+   "sprinkled",
+   "dreadful",
+   "vſed",
+   "vſed",
+   "vſed",
+   "Confirmation,",
+   "serve",
+   "Sacrifice,",
+   "service.",
+   "serveth",
+   "seven",
+   "seven",
+   "serveth",
+   "seven",
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "chapter",
+  "old_text": "And Iacob ſaid There is yet much remaining, neither is it time to bring the flockes into foulds againe firſt geue the sheep drinke, and ſo bring backe to feede.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0199,
+   0.875,
+   0.1504
+  ],
+  "crop_page": 120,
+  "r3_raw": "with his flocke. † And Iacob said: There is yet much day remaining, neither is it time to bring the fockes into the foulds againe: first geue the sheep drinke, and so bring them backe to feede. † Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from",
+  "r3_verse": "And Iacob said: There is yet much day remaining, neither is it time to bring the fockes into the foulds againe: first geue the sheep drinke, and so bring them backe to feede.",
+  "arm_conflicts": [
+   "flockes | fockes"
+  ],
+  "new_text": "And Iacob ſaid There is yet much day remaining, neither is it time to bring the fockes into the foulds againe firſt geue the sheep drinke, and ſo bring them backe to feede.",
+  "s_unresolved": [
+   "fockes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p120",
+  "old_text": "Who anſwered : We can not, til al cattel be gethered together : and we remoue the ſtone the wels mouth, that we may water the flocks.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.0853,
+   0.875,
+   0.1936
+  ],
+  "crop_page": 120,
+  "r3_raw": "foulds againe: first geue the sheep drinke, and so bring them backe to feede. † Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks. † They were yet speaking, and behold Rachel came with her fathers",
+  "r3_verse": "Who answered: We can not, til al the cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "17": "from"
+  },
+  "visual_readings": {
+   "17": "from"
+  },
+  "new_text": "Who anſwered We can not, til al the cattel be gethered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "p120",
+  "old_text": "They yet ſpeaking, and behold Rachel came with her ſheepe: for ſhe fed the flocke.",
+  "old": {
+   "s_dismas": 0.859,
+   "odr_com": 0.859,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.1282,
+   0.875,
+   0.2335
+  ],
+  "crop_page": 120,
+  "r3_raw": "cattel be gethered together: and we remoue the stone from the wels mouth, that we may water the flocks. † They were yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke. † whom when Iacob had ſene, and knew her to be his coſen germaine, and that they",
+  "r3_verse": "They were yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke.",
+  "arm_conflicts": [],
+  "new_text": "They were yet ſpeaking, and behold Rachel came with her father's ſheepe: for ſhe fed the flocke.",
+  "s_unresolved": [
+   "father's"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p120",
+  "old_text": "whom when Iacob ſeene, and knew her to be his coſen germaine, and that were the ſheepe of Laban his vncle: he remoued the wherwith the wel was cloſed.",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.1698,
+   0.875,
+   0.2999
+  ],
+  "crop_page": 120,
+  "r3_raw": "yet speaking, and behold Rachel came with her father's sheepe: for she fed the flocke. † whom when Iacob had seene, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed. † And hauing watered the flocke, he: kissed her: and lifting vp his voice wept, † and he",
+  "r3_verse": "whom when Iacob had seene, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "26": "ſtone,"
+  },
+  "visual_readings": {
+   "26": "ſtone,"
+  },
+  "new_text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle: he remoued the ſtone, wherwith the wel was cloſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p120",
+  "old_text": "And hauing watered flocke, he : kiſſed her: and lifting vp his voice wept,",
+  "old": {
+   "s_dismas": 0.945,
+   "odr_com": 0.945,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.2351,
+   0.875,
+   0.3217
+  ],
+  "crop_page": 120,
+  "r3_raw": "were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed. † And hauing watered the flocke, he ſ kissed her: and lifting vp his voice wept, † and he told her that he was her fathers brother, and the sonne of",
+  "r3_verse": "And hauing watered the flocke, he ſ kissed her: and lifting vp his voice wept,",
+  "arm_conflicts": [
+   ": | ſ"
+  ],
+  "new_text": "And hauing watered the flocke, he ſ kiſſed her: and lifting vp his voice wept,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.973,
+   "odr_com": 0.973,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p120",
+  "old_text": "and told her that he was her fathers brother, and the ſonne Rebecca : but ihe in haſt went and told her father.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.2543,
+   0.875,
+   0.3636
+  ],
+  "crop_page": 120,
+  "r3_raw": "wherewith the wel was closed. † And hauing watered the flocke, he: kissed her: and lifting vp his voice wept, † and he told her that he was her fathers brother, and the sonne of Rebecca: but she in haſt went and told her father. † Who when he heard that Iacob his sisters sonne was come, he",
+  "r3_verse": "and he told her that he was her fathers brother, and the sonne of Rebecca: but she in haſt went and told her father.",
+  "arm_conflicts": [
+   "ihe | she"
+  ],
+  "r2_attested": {
+   "16": "ſhe"
+  },
+  "visual_readings": {
+   "16": "ſhe"
+  },
+  "new_text": "and he told her that he was her fathers brother, and the ſonne of Rebecca but ſhe in haſt went and told her father.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p120",
+  "old_text": "as when he heard that Iacob his ſiſters ſonne was come, cu ranne forth to mete him: and embracing him, and It kiſſing him, brought him into his houſe. And when he heard the cauſes of his iourney,",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.884,
+   "madueke_b": 0.884
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.3203,
+   0.875,
+   0.4494
+  ],
+  "crop_page": 120,
+  "r3_raw": "Rebecca: but she in haft went and told her father. † Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his iourney, † he answered: Thou art my bone and my flesh. And after the dayes of one moneth were",
+  "r3_verse": "Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his iourney,",
+  "arm_conflicts": [
+   "as | Who",
+   "cu | he",
+   "It | hartely"
+  ],
+  "new_text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p120",
+  "old_text": "he anſwered : Thou art bone and my fleſh. And after the dayes of one moneth expired,",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.384,
+   0.8764,
+   0.4903
+  ],
+  "crop_page": 120,
+  "r3_raw": "kissing him, brought him into his house. And when he had heard the causes of his journey, † he answered: Thou art my bone and my flesh. And after the dayes of one moneth were expired, † he said to him: because thou art my brother, shalt thou serve me * gratis ? Tel me what wages wilt",
+  "r3_verse": "he answered: Thou art my bone and my flesh. And after the dayes of one moneth were expired,",
+  "arm_conflicts": [],
+  "new_text": "he anſwered Thou art my bone and my fleſh. And after the dayes of one moneth were expired,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p120",
+  "old_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages thou take.",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.951,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.4249,
+   0.8764,
+   0.5316
+  ],
+  "crop_page": 120,
+  "r3_raw": "bone and my flesh. And after the dayes of one moneth were expired, † he said to him: because thou art my brother, shalt thou serve me * gratis ? Tel me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia",
+  "r3_verse": "he said to him: because thou art my brother, shalt thou serve me gratis ? Tel me what wages wilt thou take.",
+  "arm_conflicts": [
+   "ſerue | serve"
+  ],
+  "new_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis ? Tel me what wages wilt thou take.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.879,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p120",
+  "old_text": "He had in dede two daughters, the name of elder was Lia: and the younger was called Rachel.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.4671,
+   0.875,
+   0.555
+  ],
+  "crop_page": 120,
+  "r3_raw": "shalt thou serue me * gratis ? Tel me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful coun-",
+  "r3_verse": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+  "arm_conflicts": [],
+  "new_text": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p120",
+  "old_text": "But was bleare eyed: Rachel wel fauored, and of a bewtiful tenance.",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.779,
+   "madueke_b": 0.779
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4886,
+   0.875,
+   0.5966
+  ],
+  "crop_page": 120,
+  "r3_raw": "thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, seauen yeares. † Laban an-",
+  "r3_verse": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "arm_conflicts": [
+   "tenance. | countenance."
+  ],
+  "new_text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p120",
+  "old_text": "Whom Iacob louing, ſaid : I wil ſerue thee Rachel thy younger daughter, ſeauen veares.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.5302,
+   0.875,
+   0.6177
+  ],
+  "crop_page": 120,
+  "r3_raw": "was bleareeyed: Rachel wel fauored, and of a bewtiful countenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, seauen yeares. † Laban an- wered: It is better that I geue her to thee then to an other",
+  "r3_verse": "Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, seauen yeares.",
+  "arm_conflicts": [
+   "veares. | yeares."
+  ],
+  "lexicon_readings": {
+   "8": "for"
+  },
+  "visual_readings": {
+   "8": "for"
+  },
+  "new_text": "Whom Iacob louing, ſaid I wil ſerue thee for Rachel thy younger daughter, ſeauen yeares.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p120",
+  "old_text": "Laban ſwered : It is better that I geue her to thee then to an man, tary with me.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.5516,
+   0.875,
+   0.6599
+  ],
+  "crop_page": 120,
+  "r3_raw": "tenance. † Whom Iacob louing, said: I wil serue thee for Rachel thy younger daughter, feauen yeares. † Laban answered: It is better that I geue her to thee then to an other man, tary with me. † Iacob therefore served for Rachel seven years: and they semeſ a few dayes because of the",
+  "r3_verse": "Laban answered: It is better that I geue her to thee then to an other man, tary with me.",
+  "arm_conflicts": [
+   "ſwered : | answered:"
+  ],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "Laban anſwered: It is better that I geue her to thee then to an other man, tary with me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p120",
+  "old_text": "Iacob therfore ſerued for ſeuen yeares : and they ſemed a few dayas becauſe of greatnes of his loue.",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.5942,
+   0.875,
+   0.7022
+  ],
+  "crop_page": 120,
+  "r3_raw": "swered: It is better that I geue her to thee then to an other man, tary with me. † Jacob therefore served for Rachel ſeven yeares: and they ſemed a few dayes because of the greatnes of his loue. † And he said to Laban: geue me my wife: because now the time is complete, that I may",
+  "r3_verse": "Jacob therefore served for Rachel ſeven yeares: and they ſemed a few dayes because of the greatnes of his loue.",
+  "arm_conflicts": [
+   "Iacob therfore ſerued | Jacob therefore served",
+   "ſeuen | Rachel ſeven",
+   "dayas | dayes"
+  ],
+  "new_text": "Iacob therefore ſerued for Rachel ſeuen yeares and they ſemed a few dayes becauſe of the greatnes of his loue.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 21,
+  "from": "p120",
+  "old_text": "And he ſaid to Laban: geue my wife: becauſe now the time is complete, that I companie with ber.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.6364,
+   0.875,
+   0.7438
+  ],
+  "crop_page": 120,
+  "r3_raw": "feuen yeares: and they femed a few dayes because of the greatnes of his loue. † And he said to Laban: geue me my wise: because now the time is complete, that I may companie with her. † Who hauing bid a great number of his freinds to the feast, made the mariage. † And at",
+  "r3_verse": "And he said to Laban: geue me my wise: because now the time is complete, that I may companie with her.",
+  "arm_conflicts": [
+   "wife: | wise:",
+   "ber. | her."
+  ],
+  "lexicon_readings": {
+   "8": "wiſe:"
+  },
+  "visual_readings": {
+   "8": "wiſe:"
+  },
+  "new_text": "And he ſaid to Laban: geue me my wiſe: becauſe now the time is complete, that I may companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 23,
+  "from": "p120",
+  "old_text": "And gre- night : he brought in Lia his daughter to him,",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.6998,
+   0.875,
+   0.7883
+  ],
+  "crop_page": 120,
+  "r3_raw": "companie with her. † Who hauing bid a great number of his freinds to the feast, made the mariage. † And at night: he brought in Lia his daughter to him, † geuing his daughter a handmaid, named Zelpha. With whom when",
+  "r3_verse": "And at night: he brought in Lia his daughter to him,",
+  "arm_conflicts": [
+   "gre- | at"
+  ],
+  "new_text": "And at night he brought in Lia his daughter to him,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p120",
+  "old_text": "geuing daughter a handmaid, named Zelpha. With whom be Iacob had companed after the maner, when morning but come he ſaw Lia :",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.7186,
+   0.875,
+   0.8497
+  ],
+  "crop_page": 120,
+  "r3_raw": "of his freinds to the feast, made the mariage. † And at night: he brought in Lia his daughter to him, † geuing his daughter a handmaid, named Zelpha. With whom when Iacob had complained after the maner, when morning was come he saw Lia: † and he said to his father in lawe: What is it that thou didest meane to doe? did not I serve thee for",
+  "r3_verse": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had complained after the maner, when morning was come he saw Lia:",
+  "arm_conflicts": [
+   "be | when",
+   "companed | complained",
+   "but | was"
+  ],
+  "new_text": "geuing his daughter a handmaid, named Zelpha. With whom when Iacob had complained after the maner, when morning was come he ſaw Lia",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.992,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "p120",
+  "old_text": "and he ſaid to his father in lawe : in is it that thou dideſt meane to doe did not I ſerue thee this Rachel why haſt thou deceiued me:",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.7843,
+   0.875,
+   0.8933
+  ],
+  "crop_page": 120,
+  "r3_raw": "Jacob had complained after the maner, when morning was come he saw Lia: † and he said to his father in lawe: What is it that thou didest meane to doe? did not I serve thee for Rachel? why hast thou deceived me?: † Laban answered: It is not the custome in this place, that we bestowe the",
+  "r3_verse": "and he said to his father in lawe: What is it that thou didest meane to doe? did not I serve thee for Rachel? why hast thou deceived me?:",
+  "arm_conflicts": [
+   ": in | What",
+   "doe | doe?",
+   "ſerue | serve",
+   "this Rachel | for Rachel?",
+   "deceiued me: | deceived me?:"
+  ],
+  "lexicon_readings": {
+   "22": "for"
+  },
+  "visual_readings": {
+   "22": "for"
+  },
+  "new_text": "and he ſaid to his father in lawe What is it that thou dideſt meane to doe did not I ſerue thee for Rachel why haſt thou deceiued me:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "chapter",
+  "old_text": "Make vp the wecke of ofthis march: and I wil geus the this ſame alſo, fbr the worke that thou lshaltrſerue me other ſeauen yeares.",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.902,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "neighbours": [
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0272,
+   0.875,
+   0.116
+  ],
+  "crop_page": 121,
+  "crop_leaves": [
+   120,
+   121
+  ],
+  "r3_raw": "It is not the custome in this place, that we bestowe the younger in mariage first. † Make vp the :: weeke of dayes 2 of this GENESIS. of this match: and I wil geue thee this fame also, for the worke that thou shalt serue me other seven years. † He yelded to his pleasure: and after the weeke was past, he",
+  "r3_verse": "Make vp the :: weeke of dayes of this of this match: and I wil geue thee this fame also, for the worke that thou shalt serue me other seven years.",
+  "arm_conflicts": [
+   "wecke | :: weeke",
+   "ofthis march: | dayes of this of this match:",
+   "geus the | geue thee",
+   "ſame | fame",
+   "fbr | for",
+   "lshaltrſerue | shalt serue",
+   "ſeauen yeares. | seven years."
+  ],
+  "lexicon_readings": {
+   "18": "ſame",
+   "20": "for"
+  },
+  "r2_attested": {
+   "25": "ſhalt",
+   "26": "ſerue"
+  },
+  "visual_readings": {
+   "18": "ſame",
+   "20": "for",
+   "25": "ſhalt",
+   "26": "ſerue"
+  },
+  "new_text": "Make vp the :: weeke of dayes of this of this match: and I wil geue thee this ſame alſo, for the worke that thou ſhalt ſerue me other seven years.",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.929,
+   "odr_com": 0.921,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p121",
+  "old_text": "yelded to his pleaſure: and after the weeke was paſt, he maried Racheſ to wife:",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.0711,
+   0.875,
+   0.1593
+  ],
+  "crop_page": 121,
+  "r3_raw": "worke that thou shalt serve me other feauen yeares. † He yelded to his pleasure: and after the weeke was past, he maried Rachel to wife: † to whom her father had deliuered Bala for to be her seruant. † And hauing at length obteined",
+  "r3_verse": "He yelded to his pleasure: and after the weeke was past, he maried Rachel to wife:",
+  "arm_conflicts": [
+   "Racheſ | Rachel"
+  ],
+  "new_text": "He yelded to his pleaſure: and after the weeke was paſt, he maried Rachel to wife:",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p125",
+  "old_text": "Iacob going on his iourney, eame into the Eaſt I countrie.",
+  "old": {
+   "s_dismas": 0.809,
+   "odr_com": 0.809,
+   "sabates_a": 0.8,
+   "madueke_b": 0.8
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0305,
+   0.875,
+   0.7033
+  ],
+  "crop_page": 125,
+  "r3_raw": "Catholique Church. For so Rabanus a diligent obseruer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth (li. i. c. 45. Institut. cleric.) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. S Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vſed in the Church; one of simple oyle consecrated by a Bishop, which is vſed for Catechumes before Baptisme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vſed in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. 20. Vowed] It can not be understood that Iacob here vowed, or promised only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he should prosper temporally or no; but that he promised them to God, that is, to offer them in Sacrifice, and bestow them in other vies pertaining to Gods service. Jacob intretained by Laban. 15. Servueth him seven yeares for Rachel, 23. but first receiuing Lia, 27. seven dayes after receiueth also Rachel, and servueth her seven years more. 31. She remaining barren, Lia beareth foure sonnes. Iacob therefore going on his journey, came into the East countrie. † And he sawe a wel in the field, and three",
+  "r3_verse": "Catholique Church. For so Rabanus a diligent obseruer and writer of Ecclesiastical Rites, Ceremonies, and Customes touching the vse of holie oyle witnesseth (li. Institut. cleric.) that the Altar being first sprinkled with water, is annointed with Chrisme, to the example of the Patriarch Iacob, who after that dreadful vision, erected a stone for a title (or monument) powring oyle theron, and calling that place The house of God. Cyprian also writing of Chrisme, mentioneth the two sortes of holie oyle vſed in the Church; one of simple oyle consecrated by a Bishop, which is vſed for Catechumes before Baptisme, persons possessed, and the sick; the other is made of oyle and balme, also consecrated by a Bishop, and this is vſed in Baptisme, Confirmation, and in consecrating Altares, Kings, and Priests. Vowed] It can not be understood that Iacob here vowed, or promised only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he should prosper temporally or no; but that he promised them to God, that is, to offer them in Sacrifice, and bestow them in other vies pertaining to Gods service. Jacob intretained by Laban. Servueth him seven yeares for Rachel, but first receiuing Lia, seven dayes after receiueth also Rachel, and servueth her seven years more. She remaining barren, Lia beareth foure sonnes. Iacob therefore going on his journey, came into the East countrie.",
+  "arm_conflicts": [
+   "iourney, eame | journey, came"
+  ],
+  "lexicon_readings": {
+   "18": "vſe",
+   "30": "firſt",
+   "46": "after",
+   "49": "viſion,",
+   "53": "for",
+   "66": "houſe",
+   "96": "for",
+   "98": "before",
+   "100": "perſons",
+   "143": "promiſed",
+   "155": "for",
+   "164": "proſper",
+   "171": "promiſed",
+   "178": "offer",
+   "200": "for",
+   "203": "firſt",
+   "208": "after",
+   "223": "foure",
+   "224": "ſonnes."
+  },
+  "r2_attested": {
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "37": "Chriſme,",
+   "52": "ſtone",
+   "70": "alſo",
+   "73": "Chriſme,",
+   "77": "ſortes",
+   "87": "ſimple",
+   "89": "conſecrated",
+   "92": "Biſhop,",
+   "99": "Baptiſme,",
+   "101": "poſſeſſed,",
+   "104": "ſick;",
+   "113": "alſo",
+   "114": "conſecrated",
+   "117": "Biſhop,",
+   "123": "Baptiſme,",
+   "127": "conſecrating",
+   "131": "Prieſts.",
+   "163": "ſhould",
+   "183": "beſtow",
+   "210": "alſo"
+  },
+  "visual_readings": {
+   "18": "vſe",
+   "30": "firſt",
+   "46": "after",
+   "49": "viſion,",
+   "53": "for",
+   "66": "houſe",
+   "96": "for",
+   "98": "before",
+   "100": "perſons",
+   "143": "promiſed",
+   "155": "for",
+   "164": "proſper",
+   "171": "promiſed",
+   "178": "offer",
+   "200": "for",
+   "203": "firſt",
+   "208": "after",
+   "223": "foure",
+   "224": "ſonnes.",
+   "3": "ſo",
+   "15": "Cuſtomes",
+   "22": "witneſſeth",
+   "24": "Inſtitut.",
+   "37": "Chriſme,",
+   "52": "ſtone",
+   "70": "alſo",
+   "73": "Chriſme,",
+   "77": "ſortes",
+   "87": "ſimple",
+   "89": "conſecrated",
+   "92": "Biſhop,",
+   "99": "Baptiſme,",
+   "101": "poſſeſſed,",
+   "104": "ſick;",
+   "113": "alſo",
+   "114": "conſecrated",
+   "117": "Biſhop,",
+   "123": "Baptiſme,",
+   "127": "conſecrating",
+   "131": "Prieſts.",
+   "163": "ſhould",
+   "183": "beſtow",
+   "210": "alſo"
+  },
+  "new_text": "Catholique Church. For ſo Rabanus a diligent obseruer and writer of Ecclesiastical Rites, Ceremonies, and Cuſtomes touching the vſe of holie oyle witneſſeth (li. Inſtitut. cleric.) that the Altar being firſt sprinkled with water, is annointed with Chriſme, to the example of the Patriarch Iacob, who after that dreadful viſion, erected a ſtone for a title (or monument) powring oyle theron, and calling that place The houſe of God. Cyprian alſo writing of Chriſme, mentioneth the two ſortes of holie oyle vſed in the Church; one of ſimple oyle conſecrated by a Biſhop, which is vſed for Catechumes before Baptiſme, perſons poſſeſſed, and the ſick; the other is made of oyle and balme, alſo conſecrated by a Biſhop, and this is vſed in Baptiſme, Confirmation, and in conſecrating Altares, Kings, and Prieſts. Vowed] It can not be understood that Iacob here vowed, or promiſed only to serve God, as the Soueraigne Lord of al creatures, for to that he was bond, whether he ſhould proſper temporally or no; but that he promiſed them to God, that is, to offer them in Sacrifice, and beſtow them in other vies pertaining to Gods service. Jacob intretained by Laban. Servueth him seven yeares for Rachel, but firſt receiuing Lia, seven dayes after receiueth alſo Rachel, and servueth her seven years more. She remaining barren, Lia beareth foure ſonnes. Iacob therefore going on his iourney, came into the Eaſt countrie.",
+  "s_unresolved": [
+   "obseruer",
+   "Ecclesiastical",
+   "sprinkled",
+   "dreadful",
+   "vſed",
+   "vſed",
+   "vſed",
+   "Confirmation,",
+   "understood",
+   "serve",
+   "Sacrifice,",
+   "service.",
+   "seven",
+   "seven",
+   "servueth",
+   "seven",
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p126",
+  "old_text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle : he remoued the ſtone, wherwith the wel was cloſed.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.168,
+   0.875,
+   0.2986
+  ],
+  "crop_page": 126,
+  "r3_raw": "yet speaking, and behold Rachel came with her fathers sheepe: for she fed the flocke. † whom when Iacob had 10 seene, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed. † And hauing watered the flocke, he:: kissed her: and lifting vp his voice wept, † and he 12",
+  "r3_verse": "whom when Iacob had seene, and knew her to be his cosen germaine, and that they were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed.",
+  "arm_conflicts": [],
+  "new_text": "whom when Iacob had ſeene, and knew her to be his coſen germaine, and that they were the ſheepe of Laban his vncle he remoued the ſtone, wherwith the wel was cloſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p126",
+  "old_text": "And hauing watered the Gen) flocke, he :: kiſſed her: and lifting vp his voice wept,",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.2275,
+   0.875,
+   0.3183
+  ],
+  "crop_page": 126,
+  "r3_raw": "were the sheepe of Laban his vncle: he remoued the stone, wherwith the wel was closed. † And hauing watered the ii hocke, he:: kissed her: and lifting vp his voice wept, † and he 12 told her that he was her fathers brother, and the sonne of",
+  "r3_verse": "And hauing watered the ii hocke, he:: kissed her: and lifting vp his voice wept,",
+  "arm_conflicts": [
+   "Gen) flocke, | ii hocke,"
+  ],
+  "new_text": "And hauing watered the ii hocke, he kiſſed her: and lifting vp his voice wept,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p126",
+  "old_text": "as when he heard that Iacob his ſiſters ſonne was come, he cu- ranne forth to mete him: and embracing him, and hartely ſome It kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.3088,
+   0.875,
+   0.4407
+  ],
+  "crop_page": 126,
+  "r3_raw": "Rebecca: but she in hafte went and told her father. † Who 13 when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his journey, † he answered: Thou art my 14 bone and my fleſh. And after the dayes of one moneth were",
+  "r3_verse": "Who when he heard that Iacob his sisters sonne was come, he ranne forth to mete him: and embracing him, and hartely kissing him, brought him into his house. And when he had heard the causes of his journey,",
+  "arm_conflicts": [
+   "as | Who",
+   "iourney, | journey,"
+  ],
+  "new_text": "Who when he heard that Iacob his ſiſters ſonne was come, he ranne forth to mete him: and embracing him, and hartely kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 15,
+  "from": "p126",
+  "old_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+  "old": {
+   "s_dismas": 0.879,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.4131,
+   0.875,
+   0.5223
+  ],
+  "crop_page": 126,
+  "r3_raw": "bone and my flesh. And after the dayes of one moneth were expired, † he said to him: because thou art my brother, 15 shalt thou serve me * gratis? Tel me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia",
+  "r3_verse": "he said to him: because thou art my brother, shalt thou serve me gratis? Tel me what wages wilt thou take.",
+  "arm_conflicts": [
+   "ſerue | serve",
+   "gratis | gratis?"
+  ],
+  "new_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me what wages wilt thou take.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.879,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p126",
+  "old_text": "He had in dede two daughters, the name of the elder was Lia : and the younger was called Rachel.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.4529,
+   0.875,
+   0.5444
+  ],
+  "crop_page": 126,
+  "r3_raw": "England. halt thou serve me * gratis ? Tel me what wages wilt thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia 17 was bleare eyed: Rachel wel fauored, and of a bewtiful coun-",
+  "r3_verse": "He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel.",
+  "arm_conflicts": [],
+  "new_text": "He had in dede two daughters, the name of the elder was Lia and the younger was called Rachel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p126",
+  "old_text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.4743,
+   0.875,
+   0.5605
+  ],
+  "crop_page": 126,
+  "r3_raw": "thou take. † He had in dede two daughters, the name of the elder was Lia: and the younger was called Rachel. † But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance. † Whom Iacob louing, said: I wil serve thee for",
+  "r3_verse": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "arm_conflicts": [],
+  "new_text": "But Lia was bleare eyed: Rachel wel fauored, and of a bewtiful countenance.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 23,
+  "from": "p126",
+  "old_text": "And gre- night : he brought in Lia his daughter to him,",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.6807,
+   0.875,
+   0.7698
+  ],
+  "crop_page": 126,
+  "r3_raw": "companie with her. † Who hauing bid a great number 22 of his freinds to the feast, made the mariage. † And at 23 night: he brought in Lia his daughter to him, † geuing his 24 daughter a handmaid, named Zelpha. With whom when",
+  "r3_verse": "And at night: he brought in Lia his daughter to him, geuing",
+  "arm_conflicts": [
+   "gre- | at"
+  ],
+  "new_text": "And at night he brought in Lia his daughter to him, geuing",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.877,
+   "odr_com": 0.877,
+   "sabates_a": 0.875,
+   "madueke_b": 0.875
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 24,
+  "from": "p126",
+  "old_text": "geuing his daughter a handmaid, named Zelpha. With whom when be Iacob had compained after the maner, when morning was but come he ſaw Lia :",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.948,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.7004,
+   0.875,
+   0.8314
+  ],
+  "crop_page": 126,
+  "r3_raw": "of his freinds to the feast, made the mariage. † And at 23 night: he brought in Lia his daughter to him, † geuing his 24 daughter a handmaid, named Zelpha. With whom when Iacob had compained after the maner, when morning was come he saw Lia: † and he said to his father in lawe: What 25 is it that thou didest meane to doe? did not I serve thee for",
+  "r3_verse": "geuing his daughter a handmaid, named Zelpha. With whom when be Iacob had compained after the maner, when morning was but come he saw Lia: :",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "geuing his daughter a handmaid, named Zelpha. With whom when be Iacob had compained after the maner, when morning was but come he ſaw Lia :",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.948,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 25,
+  "from": "p126",
+  "old_text": "and he ſaid to his father in lawe : in. is it that thou dideſt meane to doe? did not I ſerue thee in this Rachel wby haſt thou deceiued me",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.7609,
+   0.875,
+   0.8732
+  ],
+  "crop_page": 126,
+  "r3_raw": "Jacob had complained after the maner, when morning was come he saw Lia: † and he said to his father in lawe: What is it that thou didest meane to doe? did not I serue thee for Rachel? why hast thou deceiued me? † Laban answered: It is not the custome in this place, that we bestowe the",
+  "r3_verse": "and he said to his father in lawe: What is it that thou didest meane to doe? did not I serue thee for Rachel? why hast thou deceiued me?",
+  "arm_conflicts": [
+   ": in. | What",
+   "in this Rachel wby | for Rachel? why",
+   "me | me?"
+  ],
+  "lexicon_readings": {
+   "22": "for"
+  },
+  "visual_readings": {
+   "22": "for"
+  },
+  "new_text": "and he ſaid to his father in lawe What is it that thou dideſt meane to doe? did not I ſerue thee for Rachel why haſt thou deceiued me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "p126",
+  "old_text": "Laban anſwered ſeuen It is not the cuſtome in this place, that we beſtowe the had younger in mariage firſt.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.7994,
+   0.875,
+   0.9247
+  ],
+  "crop_page": 126,
+  "r3_raw": "is it that thou didest meane to doe? did not I serue thee for Rachel? why hast thou deceiued me? † Laban answered: 26 It is not the custome in this place, that we bestowe the younger in mariage first. † Make vp the :: weeke of dayes 27",
+  "r3_verse": "Laban answered: It is not the custome in this place, that we bestowe the younger in mariage first.",
+  "arm_conflicts": [],
+  "new_text": "Laban anſwered It is not the cuſtome in this place, that we beſtowe the younger in mariage firſt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p107",
+  "old_text": "ſonnes. ACOB therfore going on his iourney, came into the Eaſt countrie.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.2276,
+   0.885,
+   0.3597
+  ],
+  "crop_page": 107,
+  "r3_raw": "A C O B therefore going on his journey, came into the East countrie. 2. And he saw a wel in the field, and three flocks of sheep lying beside it: for of it the",
+  "r3_verse": "A O therefore going on his journey, came into the East countrie.",
+  "arm_conflicts": [
+   "ſonnes. ACOB therfore | A O therefore",
+   "iourney, | journey,"
+  ],
+  "new_text": "A O therefore going on his iourney, came into the Eaſt countrie.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p107",
+  "old_text": "Who anſwered: we can not, til al the cattel be gathered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+  "old": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5315,
+   0.885,
+   0.628
+  ],
+  "crop_page": 107,
+  "r3_raw": "there is yet much day remaining; neither is it time to bring the flocks into the folds againe: first giue the sheep drinke, and so bring them back to feed. 8. Who answered: we can not, til al the cattel be gathered together: and we remoue the stone from the wels mouth, that we may water the flocks. They were yet speaking, and behold Rachel came with her fathers sheep: for she fed the flock. 10. Whom",
+  "r3_verse": "Who answered: we can not, til al the cattel be gathered together: and we remoue the stone from the wels mouth, that we may water the flocks.",
+  "arm_conflicts": [],
+  "new_text": "Who anſwered: we can not, til al the cattel be gathered together and we remoue the ſtone from the wels mouth, that we may water the flocks.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p107",
+  "old_text": "Whom whe Iacob had ſeen, knew her to be his coſen germane, that they. were the ſheep of Laban his vncle, he remoued the ſtone, wherwith the wel was cloſed.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5841,
+   0.885,
+   0.6993
+  ],
+  "crop_page": 107,
+  "r3_raw": "that we may water the flocks. They were yet speaking, and behold Rachel came with her fathers sheep: for she fed the flock. 10. Whom whē Iacob had seen, & knew her to be his cosen germane, & that they were the sheep of Laban his vncle, he remoued the stone, wherwith the wel was closed. 11. And hauing watered the flocke, he (a) kissed her: and lifting vp his voice wept, 12. and he told her that he was her",
+  "r3_verse": "Whom whē Iacob had seen, & knew her to be his cosen germane, & that they were the sheep of Laban his vncle, he remoued the stone, wherwith the wel was closed.",
+  "arm_conflicts": [
+   "whe | whē"
+  ],
+  "new_text": "Whom whe Iacob had ſeen, & knew her to be his coſen germane, & that they. were the ſheep of Laban his vncle, he remoued the ſtone, wherwith the wel was cloſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p107",
+  "old_text": "Who when he heard that Iacob his ſiſters ſoue was come, he ranne forth to meet him, embraceing him hartily kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.692,
+   0.885,
+   0.8061
+  ],
+  "crop_page": 107,
+  "r3_raw": "fathers brother, and the sonne of Rebecca: but she in haft went & told her father. 13. Who when he heard that Iacob his sisters ſone was come, he ranne forth to meet him, & embracing him & hartily kissing him, brought him into his house. And when he had heard the causes of his journey, 14. he answered: Thou art my bone and my flesh. And after the dayes of one month were expired, 15. he said to him: because thou",
+  "r3_verse": "Who when he heard that Iacob his sisters ſone was come, he ranne forth to meet him, & embracing him & hartily kissing him, brought him into his house. And when he had heard the causes of his journey,",
+  "arm_conflicts": [
+   "ſoue | ſone",
+   "embraceing | & embracing",
+   "iourney, | journey,"
+  ],
+  "new_text": "Who when he heard that Iacob his ſiſters ſone was come, he ranne forth to meet him, & embracing him & hartily kiſſing him, brought him into his houſe. And when he had heard the cauſes of his iourney,",
+  "s_unresolved": [
+   "ſone"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p107",
+  "old_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me, What wages wilt thou taker",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.99,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.7633,
+   0.885,
+   0.8577
+  ],
+  "crop_page": 107,
+  "r3_raw": "iourney, 14. he answered: Thou art my bone and my flesh. And after the dayes of one month were expired, 15. he said to him: because thou art my brother, shalt thou serue me * gratis? Tel me, what wages wilt thou take? 16. He had indeed two daughters, the name of the elder was Lia; & the yonger was called Rachel. 17. But Lya was bleare-eyed, Ra-",
+  "r3_verse": "he said to him: because thou art my brother, shalt thou serue me gratis? Tel me, what wages wilt thou take?",
+  "arm_conflicts": [
+   "gratis | gratis?",
+   "taker | take?"
+  ],
+  "new_text": "he ſaid to him: becauſe thou art my brother, ſhalt thou ſerue me gratis Tel me, What wages wilt thou take?",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.879,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p107",
+  "old_text": "He had indeed two daughters, the name of the elder was Lia, the vonger was called Rachel.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.7991,
+   0.885,
+   0.8781
+  ],
+  "crop_page": 107,
+  "r3_raw": "art my brother, shalt thou serue me * gratis ? Tel me, what wages wilt thou take? 16. He had indeed two daughters, the name of the elder was Lia; & the yonger was called Rachel. 17. But Lya was bleare-eyed, Rachel wel faoured, & of a beautiful countenance. 18. Who Iacob louing,",
+  "r3_verse": "He had indeed two daughters, the name of the elder was Lia; & the yonger was called Rachel.",
+  "arm_conflicts": [
+   "vonger | yonger"
+  ],
+  "new_text": "He had indeed two daughters, the name of the elder was Lia, & the yonger was called Rachel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p107",
+  "old_text": "But Lya was bleare eyed, Rachel wel fauoured, & of a beautiful countenance.",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.8177,
+   0.885,
+   0.896
+  ],
+  "crop_page": 107,
+  "r3_raw": "16. He had indeed two daughters, the name of the elder was Lia; & the yonger was called Rachel. 17. But Lya was bleare-eyed, Rachel wel faoured, & of a beautiful countenance. 18. Who Iacob louing, said: I wil serue thee for Rachel thy yonger daughter seauen yeares. Without wages?",
+  "r3_verse": "But Lya was bleare-eyed, Rachel wel faoured, & of a beautiful countenance. Who",
+  "arm_conflicts": [
+   "bleare eyed, | bleare-eyed,",
+   "fauoured, | faoured,"
+  ],
+  "new_text": "But Lya was bleare-eyed, Rachel wel faoured, & of a beautiful countenance. Who",
+  "s_unresolved": [
+   "faoured,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.806,
+   "odr_com": 0.806,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "chapter",
+  "old_text": "Laban anſwered It is better that I giue her to thee then to an other with me.",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.882,
+   "sabates_a": 0.863,
+   "madueke_b": 0.863
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.0847,
+   0.885,
+   0.144
+  ],
+  "crop_page": 108,
+  "r3_raw": "man, tary with me. 20. Iacob therefore serued for Rachel seauen yeares: and they seemed a few dayes because of the greatnes of his loue.",
+  "r3_verse": "man, tary It is better that I giue her to thee then to an other with me.",
+  "arm_conflicts": [
+   "Laban anſwered It is better that I giue her to thee then to an other | man, tary"
+  ],
+  "used_merge": true,
+  "new_text": "man, tary It is better that I giue her to thee then to an other with me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.765,
+   "odr_com": 0.765,
+   "sabates_a": 0.738,
+   "madueke_b": 0.738
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p108",
+  "old_text": "Iacob thertore ferued for Rachel ſeauen veathey ſeemed a few dayes becauſe of the greatnes ot his loue.",
+  "old": {
+   "s_dismas": 0.87,
+   "odr_com": 0.87,
+   "sabates_a": 0.864,
+   "madueke_b": 0.864
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.0847,
+   0.885,
+   0.1626
+  ],
+  "crop_page": 108,
+  "r3_raw": "man, tary with me. 20. Iacob therefore serued for Rachel seauen yeares: and they seemed a few dayes because of the greatnes of his loue. 21. And he said to Laban: giue me my wife: because now the time is",
+  "r3_verse": "Iacob therefore serued for Rachel seauen yeares: and they seemed a few dayes because of the greatnes of his loue.",
+  "arm_conflicts": [
+   "thertore ferued | therefore serued",
+   "veathey | yeares: and they",
+   "ot | of"
+  ],
+  "new_text": "Iacob therefore serued for Rachel ſeauen yeares: and they ſeemed a few dayes becauſe of the greatnes of his loue.",
+  "s_unresolved": [
+   "therefore",
+   "serued"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.973,
+   "odr_com": 0.973,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p108",
+  "old_text": "he ſaid to Laban: giue me my wife: becauſe now the time is that I may companie with her.",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.865,
+   "madueke_b": 0.865
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.1198,
+   0.885,
+   0.1991
+  ],
+  "crop_page": 108,
+  "r3_raw": "21. And he said to Laban: giue me my wife: because now the time is complete, that I may companie with her. 22. Who hauing bid a great number of his freinds to the feast, made the mariage. 23. And at night",
+  "r3_verse": "And he said to Laban: giue me my wife: because now the time is complete, that I may companie with her.",
+  "arm_conflicts": [],
+  "new_text": "And he ſaid to Laban: giue me my wife: becauſe now the time is complete, that I may companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p108",
+  "old_text": "Who hauing bid a great of his freinds to the feaſt, made the mariage.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.871,
+   "madueke_b": 0.871
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.155,
+   0.1381,
+   0.885,
+   0.216
+  ],
+  "crop_page": 108,
+  "r3_raw": "21. And he said to Laban: giue me my wife: because now the time is complete, that I may companie with her. 22. Who hauing bid a great number of his freinds to the feast, made the mariage. 23. And at night (b) he brought in Lia his daughter to him, 24. giuing his daughter a",
+  "r3_verse": "Who hauing bid a great number of his freinds to the feast, made the mariage.",
+  "arm_conflicts": [],
+  "new_text": "Who hauing bid a great number of his freinds to the feaſt, made the mariage.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p108",
+  "old_text": "And at night brought in Lia his daughter to him,24.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.1563,
+   0.885,
+   0.235
+  ],
+  "crop_page": 108,
+  "r3_raw": "complete, that I may companie with her. 22. Who hauing bid a great number of his freinds to the feast, made the mariage. 23. And at night (b) he brought in Lia his daughter to him, 24. giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied",
+  "r3_verse": "And at night he brought in Lia his daughter to him,",
+  "arm_conflicts": [
+   "him,24. | him,"
+  ],
+  "new_text": "And at night he brought in Lia his daughter to him,24.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p108",
+  "old_text": "giuing his daughter a (Laban named Zelpha. With whom when Iacob had companied uouſly manner, when morning was come he ſaw Lia",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.85,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.1739,
+   0.885,
+   0.2708
+  ],
+  "crop_page": 108,
+  "r3_raw": "number of his freinds to the feast, made the mariage. 23. And at night he brought in Lia his daughter to him, 24. giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he saw Lia: 25.. and he said to his father in law: What is it that thou didest meane to doe? did",
+  "r3_verse": "giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he saw Lia: 25..",
+  "arm_conflicts": [
+   "(Laban | handmaid,",
+   "uouſly | after the"
+  ],
+  "lexicon_readings": {
+   "13": "after"
+  },
+  "visual_readings": {
+   "13": "after"
+  },
+  "new_text": "giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he ſaw Lia 25..",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.969,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p108",
+  "old_text": "and he ded, could Lia his father in law What is it that thou dideſt meane to doe did excuſed, thee for Rachel why haſt thou deceiued me",
+  "old": {
+   "s_dismas": 0.842,
+   "odr_com": 0.842,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.2059,
+   0.885,
+   0.3077
+  ],
+  "crop_page": 108,
+  "r3_raw": "he brought in Lia his daughter unto him, 24. giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he saw Lia: 25. and he said to his father in law: What is it that thou didest meane to doe? did not I serue thee for Rachel? why haſt thou deceiued me? 26. Laban answered: It is not the custome in this place, that we beſtoe the yonger",
+  "r3_verse": "and he said to his father in law: What is it that thou didest meane to doe? did not I serue thee for Rachel? why haſt thou deceiued me?",
+  "arm_conflicts": [
+   "ded, could Lia | said to",
+   "doe | doe?",
+   "excuſed, | not I serue",
+   "Rachel | Rachel?",
+   "me | me?"
+  ],
+  "lexicon_readings": {
+   "2": "ſaid"
+  },
+  "r2_attested": {
+   "20": "ſerue"
+  },
+  "visual_readings": {
+   "2": "ſaid",
+   "20": "ſerue"
+  },
+  "new_text": "and he ſaid to his father in law What is it that thou dideſt meane to doe did not I ſerue thee for Rachel why haſt thou deceiued me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p108",
+  "old_text": "Laban cob was It is not the cuſtome in this place, that we beſtow the yonger cēt in firſt.7.",
+  "old": {
+   "s_dismas": 0.81,
+   "odr_com": 0.81,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.2448,
+   0.885,
+   0.3421
+  ],
+  "crop_page": 108,
+  "r3_raw": "said to his father in law: What is it that thou didest meane to doe? did not I serve thee for Rachel? why haſt thou deceiued me? 26. Laban answered: It is not the custome in this place, that we bestow the yonger in mariage firſt. 27. Make vp the (c) weeke of dayes of this match: and I wil giue thee this same also, for the worke that thou ſhall serve",
+  "r3_verse": "Laban answered: It is not the custome in this place, that we bestow the yonger in mariage firſt.",
+  "arm_conflicts": [
+   "cob was | answered:",
+   "firſt.7. | mariage firſt."
+  ],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "Laban anſwered: It is not the cuſtome in this place, that we beſtow the yonger in mariage firſt.7.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p108",
+  "old_text": "Make vp the weeke of dayes of this matcl: After wil giue thee this ſame alſo, tor the worke that thou shalt ſerue daies",
+  "old": {
+   "s_dismas": 0.806,
+   "odr_com": 0.797,
+   "sabates_a": 0.808,
+   "madueke_b": 0.808
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.2793,
+   0.885,
+   0.3593
+  ],
+  "crop_page": 108,
+  "r3_raw": "not I feade thee for Rachel? Why haft thou deceiued me? 26. Laban answered: It is not the custome in this place, that we beſtow the yonger in mariage first. 27. Make vp the (c) weeke of dayes of this match: and I wil giue thee this same also, for the worke that thou shalt serve me other feauen yeares. 28. He yealded to his pleasure; and after the",
+  "r3_verse": "Make vp the weeke of dayes of this match: and I wil giue thee this same also, for the worke that thou shalt serve me other feauen yeares.",
+  "arm_conflicts": [
+   "matcl: After | match: and I",
+   "tor | for",
+   "ſerue daies | serve me other feauen yeares."
+  ],
+  "lexicon_readings": {
+   "17": "for"
+  },
+  "visual_readings": {
+   "17": "for"
+  },
+  "new_text": "Make vp the weeke of dayes of this match: and I wil giue thee this ſame alſo, for the worke that thou shalt ſerue me other feauen yeares.",
+  "s_unresolved": [
+   "feauen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.978,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p108",
+  "old_text": "he ſeauen yeares.8. He yealded to his pleaſure and after the was Rachel his was paſt, he maried Rachel to wife:",
+  "old": {
+   "s_dismas": 0.717,
+   "odr_com": 0.717,
+   "sabates_a": 0.71,
+   "madueke_b": 0.71
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.2944,
+   0.885,
+   0.3965
+  ],
+  "crop_page": 108,
+  "r3_raw": "answered: It is not the custom in this place; that we bellow the younger in marriage first. 27. Make vp the (c) weeke of dayes of this match: and I wil giue thee this same also, for the worke that thou shalt serue me other feauen yeares. 28. He yealded to his pleasure; and after the weeke was past, he maried Rachel to wife: 29. to whom her father had deliuered Bala for to be her servant. 30. And hauing at length ob-",
+  "r3_verse": "He yealded to his pleasure; and after the weeke was past, he maried Rachel to wife:",
+  "arm_conflicts": [
+   "was Rachel his | weeke"
+  ],
+  "new_text": "He yealded to his pleaſure and after the weeke was paſt, he maried Rachel to wife:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p108",
+  "old_text": "to whom her father ſpouſe. Bala for to be her ſeruant.",
+  "old": {
+   "s_dismas": 0.814,
+   "odr_com": 0.814,
+   "sabates_a": 0.793,
+   "madueke_b": 0.793
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.3355,
+   0.885,
+   0.412
+  ],
+  "crop_page": 108,
+  "r3_raw": "me other feauen yeares. 28. He yeaded to his pleasure; and after the weeke was past, he maried Rachel to wife: 29. to whom her father had deliuered Bala for to be her servant. 30. And hauing at length obtained—the mariage that he wished, he preferred the loue of the later",
+  "r3_verse": "to whom her father had deliuered Bala for to be her servant.",
+  "arm_conflicts": [
+   "ſpouſe. | had deliuered",
+   "ſeruant. | servant."
+  ],
+  "new_text": "to whom her father had deliuered Bala for to be her ſeruant.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p108",
+  "old_text": "And hauing at length ob. mariage that he wished, he preferted the loue of the later eb..Aue the former, ſeruins with him other ſeauen veares.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.858,
+   "madueke_b": 0.858
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.353,
+   0.885,
+   0.4464
+  ],
+  "crop_page": 108,
+  "r3_raw": "weeke was past, he maried Rachel to wife: 29. to whom her father had deliuered Bala for to be her seruant. 30. And hauing at length obtained—the mariage that he wished, he preferred the loue of the later before the former, seruing with him other seauen yeares. 31. And our Lord seeing that he despised Lia, opened her womb, her sister",
+  "r3_verse": "And hauing at length obtained—the mariage that he wished, he preferred the loue of the later before the former, seruing with him other seauen yeares.",
+  "arm_conflicts": [
+   "ob. | obtained—the",
+   "preferted | preferred",
+   "eb..Aue | before",
+   "ſeruins | seruing",
+   "veares. | yeares."
+  ],
+  "lexicon_readings": {
+   "16": "before"
+  },
+  "visual_readings": {
+   "16": "before"
+  },
+  "new_text": "And hauing at length obtained—the mariage that he wished, he preferred the loue of the later before the former, seruing with him other ſeauen yeares.",
+  "s_unresolved": [
+   "preferred",
+   "seruing"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p108",
+  "old_text": "And .in Gen. ſeeing that he deſpiſed Lia, opened her womb, het ſiſter barren.",
+  "old": {
+   "s_dismas": 0.747,
+   "odr_com": 0.747,
+   "sabates_a": 0.778,
+   "madueke_b": 0.778
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.3867,
+   0.885,
+   0.4843
+  ],
+  "crop_page": 108,
+  "r3_raw": "the mariage that he wished, he preferred the loue of the later before the former, seruing with him other seauen yeares. 31. And our Lord seeing that he despised Lia, opened her womb, her sister remaining barren. 32. Who conceaued and bare a sonne, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband",
+  "r3_verse": "And our Lord seeing that he despised Lia, opened her womb, her sister remaining barren.",
+  "arm_conflicts": [
+   ".in Gen. | our Lord",
+   "het | her"
+  ],
+  "new_text": "And our Lord ſeeing that he deſpiſed Lia, opened her womb, her ſiſter remaining barren.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p108",
+  "old_text": "Who conceaued and bare a ſonne, and called his ſaying Our Lord ſaw mine affliction: nowimy husband me.",
+  "old": {
+   "s_dismas": 0.824,
+   "odr_com": 0.824,
+   "sabates_a": 0.817,
+   "madueke_b": 0.817
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.155,
+   0.4236,
+   0.885,
+   0.5216
+  ],
+  "crop_page": 108,
+  "r3_raw": "our Lord seeing that he despised Lia, opened her womb, her sister remaining barren. 32. Who conceaued and bare a sonne, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband will loue me. 33. And againe she conceived and bare a sonne, and said: For because our Lord heard that I was contemned, he hath giuen this",
+  "r3_verse": "Who conceaued and bare a sonne, and called his name Ruben, saying: Our Lord saw mine affliction: now my husband will loue me.",
+  "arm_conflicts": [
+   "nowimy | now my"
+  ],
+  "new_text": "Who conceaued and bare a ſonne, and called his name Ruben, ſaying Our Lord ſaw mine affliction: now my husband will loue me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p108",
+  "old_text": "And againe she conceaued and bare a ſonne, and ſaid: our Lord heard that I was contemned, he hath giuen this me: and she called his name Simeon.",
+  "old": {
+   "s_dismas": 0.868,
+   "odr_com": 0.868,
+   "sabates_a": 0.865,
+   "madueke_b": 0.865
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.4598,
+   0.885,
+   0.5535
+  ],
+  "crop_page": 108,
+  "r3_raw": "name Ruben, saying: Our Lord saw mine affliction: now my husband will love me. 33. And again she conceived and bare a sonne, and said: For because our Lord heard that I was contemned, he hath giuen this also to me: and she called his name Simeon. 34. And she conceived the third time, and bare another sonne: and said: Now also my husband",
+  "r3_verse": "And again she conceived and bare a sonne, and said: For because our Lord heard that I was contemned, he hath giuen this also to me: and she called his name Simeon.",
+  "arm_conflicts": [
+   "againe | again",
+   "conceaued | conceived"
+  ],
+  "lexicon_readings": {
+   "11": "becauſe",
+   "23": "alſo"
+  },
+  "visual_readings": {
+   "11": "becauſe",
+   "23": "alſo"
+  },
+  "new_text": "And againe she conceived and bare a ſonne, and ſaid: For becauſe our Lord heard that I was contemned, he hath giuen this alſo to me: and she called his name Simeon.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p108",
+  "old_text": "And she conceaued the and bare anothet ſonne and ſaid Now alſo my huſband ioyned to me for becauſe I haue borne him three ſonnes: and she called his name. Leui.",
+  "old": {
+   "s_dismas": 0.843,
+   "odr_com": 0.843,
+   "sabates_a": 0.832,
+   "madueke_b": 0.832
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.496,
+   0.885,
+   0.6076
+  ],
+  "crop_page": 108,
+  "r3_raw": "For because our Lord heard that I was contemned, he hath giuen this also to me:and she called his name Simeon. 34. And she conceaued the third time, and bare another sonne: and said: Now also my husband wil be ioyned to me, for because I haue borne him three sonnes: and therfore she called his name, Leui. 35. The fourth time she conceaued and bare a sonue, and said: Now wil I confesse to our Lord. And for",
+  "r3_verse": "And she conceaued the third time, and bare another sonne: and said: Now also my husband wil be ioyned to me, for because I haue borne him three sonnes: and therfore she called his name, Leui.",
+  "arm_conflicts": [
+   "anothet | another"
+  ],
+  "lexicon_readings": {
+   "30": "therfore"
+  },
+  "visual_readings": {
+   "30": "therfore"
+  },
+  "new_text": "And she conceaued the third time, and bare another ſonne and ſaid Now alſo my huſband wil be ioyned to me for becauſe I haue borne him three ſonnes: and therfore she called his name. Leui.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 35,
+  "from": "p108",
+  "old_text": "The fourth time she conceaued a ſonue and ſaid: Now wil I conteſſe to our Lord. And tor called him Iuda And she left bearing.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.844,
+   "sabates_a": 0.845,
+   "madueke_b": 0.845
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.5494,
+   0.885,
+   0.9364
+  ],
+  "crop_page": 108,
+  "r3_raw": "wil be ioyned to me, for because I haue borne him three sonnes: and therfore she called his name, Leui. 35. The fourth time she conceaued and bare a sonue, and said: Now wil I confesse to our Lord. And for this she called him Iuda: And she left bearing. CHAP. XXX. Rachel yet barren deliuereth her handmaid to Iacob, who beareth two sonnes. 9. Lia ceasing to beare giveth her handmaid also, and she beareth two more. 17 Then Lia beareth other two sonnes, and one daughter. 22. Rachel beareth Joseph. 25. Iacob desirous to returne home, is byed to stay for a certaine part of the stockes increase. 43. Wherby he becommeth exceeding rich. ND D Rachele seeing she was vnfruitful, (a) enuied her sister, and said to her husband: Giue me children, otherwise I shal dye. 2. With whom Iacob being angrie answered: Am I as God, who hath deprived thee of the fruit of thy womb? ; . But she said: I haue here my servant Bala: Companie with her, that she may beare vpon my knees,",
+  "r3_verse": "The fourth time she conceaued and bare a sonue, and said: Now wil I confesse to our Lord. And for this she called him Iuda: And she left bearing. CHAP. XXX. Rachel yet barren deliuereth her handmaid to Iacob, who beareth two sonnes. Lia ceasing to beare giveth her handmaid also, and she beareth two more. Then Lia beareth other two sonnes, and one daughter. Rachel beareth Joseph. Iacob desirous to returne home, is byed to stay for a certaine part of the stockes increase. Wherby he becommeth exceeding rich. ND Rachele seeing she was vnfruitful, enuied her sister, and said to her husband: Giue me children, otherwise I shal dye. With whom Iacob being angrie answered: Am I as God, who hath deprived thee of the fruit of thy womb? ; . But she said: I haue here my servant Bala: Companie with her, that she may beare vpon my knees,",
+  "arm_conflicts": [
+   "conteſſe | confesse",
+   "tor | for this she"
+  ],
+  "lexicon_readings": {
+   "19": "for",
+   "50": "alſo,",
+   "77": "for",
+   "100": "ſaid",
+   "135": "ſaid:"
+  },
+  "r2_attested": {
+   "42": "ſonnes.",
+   "44": "ceaſing",
+   "61": "ſonnes,",
+   "76": "ſtay",
+   "84": "increaſe.",
+   "92": "ſeeing",
+   "98": "ſiſter,",
+   "116": "anſwered:"
+  },
+  "visual_readings": {
+   "19": "for",
+   "50": "alſo,",
+   "77": "for",
+   "100": "ſaid",
+   "135": "ſaid:",
+   "42": "ſonnes.",
+   "44": "ceaſing",
+   "61": "ſonnes,",
+   "76": "ſtay",
+   "84": "increaſe.",
+   "92": "ſeeing",
+   "98": "ſiſter,",
+   "116": "anſwered:"
+  },
+  "new_text": "The fourth time she conceaued and bare a ſonue and ſaid: Now wil I confesse to our Lord. And for this she called him Iuda And she left bearing. CHAP. XXX. Rachel yet barren deliuereth her handmaid to Iacob, who beareth two ſonnes. Lia ceaſing to beare giveth her handmaid alſo, and she beareth two more. Then Lia beareth other two ſonnes, and one daughter. Rachel beareth Joseph. Iacob desirous to returne home, is byed to ſtay for a certaine part of the stockes increaſe. Wherby he becommeth exceeding rich. ND Rachele ſeeing she was vnfruitful, enuied her ſiſter, and ſaid to her husband: Giue me children, otherwise I shal dye. With whom Iacob being angrie anſwered: Am I as God, who hath deprived thee of the fruit of thy womb? ; . But she ſaid: I haue here my servant Bala: Companie with her, that she may beare vpon my knees,",
+  "s_unresolved": [
+   "confesse",
+   "she",
+   "she",
+   "Joseph.",
+   "desirous",
+   "stockes",
+   "she",
+   "vnfruitful,",
+   "husband:",
+   "otherwise",
+   "shal",
+   "fruit",
+   "she",
+   "servant",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

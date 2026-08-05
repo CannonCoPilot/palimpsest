@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ground-Truth Review — OriginalDR re-OCR</title>
+<style>
+  :root {
+    --bg:#1a1a1e; --panel:#232329; --ink:#e8e6df; --muted:#9a978c; --line:#34343c;
+    --accent:#c9a227; --mod:#3a3320; --modborder:#c9a227; --uncertain:#5a2d2d; --ok:#2e7d32;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+  header {
+    position:sticky; top:0; z-index:10; background:var(--panel); border-bottom:1px solid var(--line);
+    padding:8px 14px; display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+  }
+  header h1 { font-size:15px; margin:0 12px 0 0; font-weight:600; color:var(--accent); white-space:nowrap; }
+  select, button, input { font-size:13px; color:var(--ink); background:#2c2c33; border:1px solid var(--line);
+    border-radius:5px; padding:5px 8px; }
+  button { cursor:pointer; }
+  button.primary { background:var(--accent); color:#1a1a1e; font-weight:700; border-color:var(--accent); }
+  button.primary:hover { filter:brightness(1.1); }
+  button.ghost { background:transparent; }
+  .meta { font-size:12px; color:var(--muted); }
+  .glyphpal button { padding:3px 8px; font-family:'Iowan Old Style','Palatino',Georgia,serif; font-size:15px; }
+  #status { font-size:12px; margin-left:auto; }
+  #status.ok { color:#8bc34a; } #status.err { color:#e57373; }
+  main { display:flex; height:calc(100vh - 52px); }
+  #rasterPane { flex:1; overflow:auto; background:#111; border-right:1px solid var(--line); position:relative; }
+  #rasterPane img { display:block; }
+  #rasterPane img.raster { margin:0 auto 2px; }
+  .pageimg { margin-bottom:12px; }
+  .pglabel { position:sticky; top:34px; z-index:1; font-size:12px; font-weight:600; color:var(--accent);
+             background:rgba(20,20,24,.92); padding:3px 10px; display:inline-block; border-radius:0 0 6px 0; }
+  .li .pg { color:var(--accent); font-size:10px; display:block; margin-top:2px; }
+  .zoombar { position:sticky; top:0; background:rgba(20,20,24,.85); padding:6px 10px; display:flex; gap:8px;
+    align-items:center; font-size:12px; color:var(--muted); backdrop-filter:blur(3px); z-index:2; }
+  #txtPane { flex:1; overflow:auto; padding:10px 14px 120px; }
+  .hint { font-size:12px; color:var(--muted); margin:2px 0 12px; line-height:1.5; }
+  .row { display:grid; grid-template-columns:34px 58px 1fr; gap:8px; align-items:start; padding:3px 0;
+    border-bottom:1px solid #2a2a30; }
+  .row.mod { background:var(--mod); border-left:3px solid var(--modborder); padding-left:5px; }
+  .row.uncertain .vb { background:var(--uncertain); }
+  .li { color:var(--muted); font-size:11px; text-align:right; padding-top:7px; }
+  .vb { font-size:10px; color:#cfc; background:#2b3a2b; border-radius:3px; padding:2px 4px; text-align:center;
+    margin-top:5px; white-space:nowrap; }
+  .cell { display:flex; flex-direction:column; gap:3px; }
+  .tline { font-family:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,serif; font-size:16px;
+    line-height:1.4; width:100%; padding:5px 7px; background:#26262c; border:1px solid var(--line);
+    border-radius:5px; color:var(--ink); }
+  .tline:focus { outline:2px solid var(--accent); background:#2c2c33; }
+  .note { font-size:12px; padding:3px 6px; background:transparent; border:1px dashed #444; color:var(--muted); }
+  .rowtools { display:flex; gap:6px; align-items:center; }
+  .rowtools button { padding:2px 6px; font-size:11px; }
+  .del { text-decoration:line-through; opacity:.5; }
+  .badge { font-size:10px; color:var(--accent); }
+  h2 { font-size:13px; color:var(--accent); margin:18px 0 6px; border-bottom:1px solid var(--line); padding-bottom:4px; }
+  .uflag { font-size:11px; color:#e0a; margin-top:2px; }
+  .bodyless { font-size:13px; color:var(--accent); background:rgba(180,140,40,.12);
+              border:1px solid var(--accent); border-radius:6px; padding:10px 12px; margin:6px 0 4px; line-height:1.5; }
+  #addbar { margin:14px 0; }
+  #globalNote { width:100%; min-height:44px; margin-top:6px; }
+  .pill { font-size:11px; background:#2c2c33; border:1px solid var(--line); border-radius:10px; padding:2px 8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GT Review</h1>
+  <select id="locusSel" title="Choose a page"></select>
+  <span class="meta" id="pageInfo"></span>
+  <span class="glyphpal">
+    <span class="meta">insert:</span>
+    <button data-g="ſ">ſ</button><button data-g="æ">æ</button><button data-g="œ">œ</button>
+    <button data-g="†">†</button><button data-g="‡">‡</button><button data-g="‖">‖</button>
+    <button data-g="⟨?⟩">⟨?⟩</button>
+  </span>
+  <button class="primary" id="submitBtn">Submit corrections</button>
+  <button class="ghost" id="downloadBtn" title="Download a copy locally too">↓ copy</button>
+  <span id="status" class="meta"></span>
+</header>
+
+<main>
+  <section id="rasterPane">
+    <div class="zoombar">
+      <span>zoom</span>
+      <input type="range" id="zoom" min="20" max="220" value="80" style="width:180px">
+      <span id="zoomVal">80%</span>
+      <span class="pill" id="rasterMeta"></span>
+    </div>
+    <div id="rasterImgs"></div>
+  </section>
+
+  <section id="txtPane">
+    <div class="hint">
+      Compare the scan (left) to my transcription (right). <b>Click any line and retype</b> the
+      corrected reading — edited lines highlight gold. Use the glyph buttons up top to insert
+      ſ&nbsp;æ&nbsp;œ&nbsp;†&nbsp;‖. Add a per-line note for damage/ambiguity. Lines I already
+      flagged as uncertain are marked. When done, hit <b>Submit corrections</b> — it saves a
+      structured file I read back to fix the ground truth. Nothing here changes my GT until I
+      apply your corrections.
+    </div>
+    <h2 id="headingsHdr" style="display:none">Headings &amp; structural text (book title, chapter heading, argument — edit like any line)</h2>
+    <div id="headings"></div>
+
+    <div id="lines"></div>
+
+    <div id="addbar">
+      <button class="ghost" id="addLineBtn">＋ add a missing line</button>
+    </div>
+
+    <h2 id="apparatusHdr" style="display:none">Annotations &amp; apparatus (italic commentary, section markers, signatures)</h2>
+    <div id="apparatus"></div>
+
+    <h2 id="marginaliaHdr">Marginalia</h2>
+    <div id="marginalia"></div>
+
+    <h2 id="catchwordHdr" style="display:none">Catchword (foot-of-page word duplicated atop next page — excluded from body)</h2>
+    <div id="catchword"></div>
+
+    <h2>Overall note (optional)</h2>
+    <textarea id="globalNote" placeholder="Anything page-level: wrong verse span, systematic glyph issue, etc."></textarea>
+  </section>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+let GT = null, SLUG = null, addedLines = [], MULTI = false;
+
+// Render the page raster(s). A multi-page matter section (page_index is a list) shows ALL its pages,
+// each as a labeled image (Issue 2, Option A: review the whole section across its pages, page-aligned —
+// so no line is ever 'off-page'). Single-page records render one image (unchanged behavior).
+function renderRaster() {
+  const box = $('#rasterImgs'); box.innerHTML = '';
+  const pi = GT.page_index;
+  const pages = Array.isArray(pi) ? pi : [pi];        // [null] for an unaddressed record → single request
+  const multi = pages.length > 1;
+  pages.forEach(pg => {
+    const wrap = document.createElement('div'); wrap.className = 'pageimg';
+    if (multi && pg != null) {
+      const lbl = document.createElement('div'); lbl.className = 'pglabel';
+      lbl.textContent = 'page ' + pg; wrap.appendChild(lbl);
+    }
+    const img = document.createElement('img');
+    img.className = 'raster'; img.alt = 'page raster' + (pg != null ? ' p' + pg : '');
+    img.src = '/raster?locus=' + encodeURIComponent(SLUG)
+            + (pg != null ? '&page=' + encodeURIComponent(pg) : '') + '&t=' + Date.now();
+    img.addEventListener('load', () => { img.style.width = $('#zoom').value + '%'; });
+    img.addEventListener('error', () => { img.alt = '⚠ page ' + pg + ' failed to render'; });
+    wrap.appendChild(img); box.appendChild(wrap);
+  });
+}
+
+async function loadLoci() {
+  const loci = await (await fetch('/api/loci')).json();
+  const sel = $('#locusSel');
+  sel.innerHTML = '';
+  loci.forEach(l => {
+    const o = document.createElement('option');
+    o.value = l.slug;
+    o.textContent = `${l.locus}  (scan ${l.scan}, p.${l.page_label})` + (l.has_corrections ? '  ✎' : '');
+    sel.appendChild(o);
+  });
+  if (loci.length) { SLUG = loci[0].slug; await loadGT(SLUG); }
+}
+
+async function loadGT(slug) {
+  SLUG = slug; addedLines = [];
+  GT = await (await fetch('/api/gt?locus=' + encodeURIComponent(slug))).json();
+  MULTI = Array.isArray(GT.page_index) && GT.page_index.length > 1;
+  renderRaster();
+  const rh = GT.running_header || {};
+  $('#pageInfo').textContent = `${GT.locus} · header[${rh.left||''} | ${rh.center||''} | ${rh.right||''}] · ${GT.verses_on_page?.length||0} verses`;
+  $('#rasterMeta').textContent = `${GT.raster_dpi||'?'} DPI · scan ${GT.scan||'?'}`;
+  const uByLine = {};
+  (GT.uncertain || []).forEach(u => { uByLine[u.line_index] = u; });
+  renderHeadings();
+  renderLines(uByLine);
+  renderApparatus();
+  renderMarginalia();
+  renderCatchword();
+  // restore any prior corrections
+  const prev = GT._existing_corrections;
+  $('#globalNote').value = prev?.global_note || '';
+  if (prev) applyPrev(prev);
+  $('#status').textContent = prev ? 'loaded (prior corrections restored)' : 'loaded';
+  $('#status').className = 'meta';
+}
+
+function renderLines(uByLine) {
+  const box = $('#lines'); box.innerHTML = '';
+  // Front-matter / argument / annotation pages legitimately have no scripture verse body;
+  // their transcribed text lives in the Apparatus section below. Say so loudly so an empty
+  // body pane is never mistaken for a failed transcription.
+  const renderable = (GT.body || []).filter(L => !['excluded','catchword'].includes(L.role));
+  if (renderable.length === 0) {
+    const hasApp = (GT.apparatus || []).length > 0 || (GT.marginalia || []).length > 0;
+    box.innerHTML = `<div class="bodyless">This page has <b>no scripture verse body</b>`
+      + (GT.page_kind ? ` (<i>${escapeHtml(GT.page_kind)}</i>)` : '')
+      + `. ${hasApp ? 'Its transcribed text is in the <b>Apparatus / Marginalia</b> section below — scroll down to review it.'
+                    : 'No apparatus or marginalia were captured either — this page may genuinely need transcription.'}</div>`;
+  }
+  (GT.body || []).forEach(L => {
+    const u = uByLine[L.line_index];
+    const row = document.createElement('div');
+    row.className = 'row' + (u ? ' uncertain' : '');
+    row.dataset.li = L.line_index;
+    row.innerHTML = `
+      <div class="li">${L.line_index}${(MULTI && L.page!=null)?`<span class="pg">p${escapeHtml(''+L.page)}</span>`:''}</div>
+      <div class="vb">${(L.verse||'').replace('24:','')||'—'}</div>
+      <div class="cell">
+        <input class="tline" data-orig="${escapeAttr(L.text)}" value="${escapeAttr(L.text)}">
+        ${u ? `<div class="uflag">⚑ I flagged: “${escapeHtml(u.span||'')}” — ${escapeHtml(u.note||u.printed_appears_as||'')}</div>` : ''}
+        <div class="rowtools">
+          <input class="note" placeholder="note (damage / ambiguity / why)" data-li="${L.line_index}">
+          <button class="ghost btnReset">reset</button>
+          <button class="ghost btnDel">mark not-on-page</button>
+        </div>
+      </div>`;
+    box.appendChild(row);
+  });
+  box.querySelectorAll('.tline').forEach(inp => {
+    inp.addEventListener('input', () => {
+      const row = inp.closest('.row');
+      row.classList.toggle('mod', inp.value !== inp.dataset.orig);
+    });
+  });
+  box.querySelectorAll('.btnReset').forEach(b => b.addEventListener('click', () => {
+    const row = b.closest('.row'); const inp = row.querySelector('.tline');
+    inp.value = inp.dataset.orig; row.classList.remove('mod', 'del');
+  }));
+  box.querySelectorAll('.btnDel').forEach(b => b.addEventListener('click', () => {
+    const row = b.closest('.row'); row.classList.toggle('del');
+    row.querySelector('.tline').classList.toggle('del');
+  }));
+}
+
+function renderHeadings() {
+  const box = $('#headings'); box.innerHTML = '';
+  const asText = v => v == null ? '' : (typeof v === 'string' ? v : (v.text ?? ''));
+  const fields = [
+    ['book_title', 'book title', asText(GT.book_title)],
+    ['chapter_heading', 'chapter heading', asText(GT.chapter_heading)],
+    ['argument', 'argument / summary', asText(GT.argument)],
+  ].filter(f => f[2] !== '' && f[2] != null);
+  $('#headingsHdr').style.display = fields.length ? '' : 'none';
+  fields.forEach(([field, label, text]) => {
+    const rows = (text.match(/\n/g) || []).length + 1;
+    const d = document.createElement('div');
+    d.className = 'row'; d.dataset.field = field;
+    d.innerHTML = `
+      <div class="li">§</div>
+      <div class="vb">${escapeHtml(label)}</div>
+      <div class="cell">
+        <textarea class="tline fldText" data-orig="${escapeAttr(text)}" rows="${Math.max(1, rows)}">${escapeHtml(text)}</textarea>
+        <div class="rowtools"><input class="note" placeholder="note (mis-OCR / missing / wrong glyph)"></div>
+      </div>`;
+    box.appendChild(d);
+  });
+  box.querySelectorAll('.fldText').forEach(inp => inp.addEventListener('input', () => {
+    inp.closest('.row').classList.toggle('mod', inp.value !== inp.dataset.orig);
+  }));
+}
+
+function renderApparatus() {
+  const box = $('#apparatus'); box.innerHTML = '';
+  const items = GT.apparatus || [];
+  const bodyless = (GT.body || []).filter(L => !['excluded','catchword'].includes(L.role)).length === 0;
+  $('#apparatusHdr').style.display = items.length ? '' : 'none';
+  $('#apparatusHdr').innerHTML = bodyless
+    ? 'Page transcript (this front-matter/argument page has no verse body — the full transcribed text is here)'
+    : 'Annotations &amp; apparatus (italic commentary, section markers, signatures)';
+  items.forEach((ap, i) => {
+    const label = (ap.role || 'item') + (ap.ref_letter ? ` ${ap.ref_letter}` : '') +
+                  (ap.hebrew_letter ? ` ${ap.hebrew_letter}` : '');
+    const glossRow = ap.gloss != null
+      ? `<div class="rowtools"><span class="meta">gloss:</span><input class="apGloss tline" style="font-size:14px" value="${escapeAttr(ap.gloss)}"></div>` : '';
+    const d = document.createElement('div');
+    d.className = 'row'; d.dataset.ai = i;
+    d.innerHTML = `
+      <div class="li">a${i}</div>
+      <div class="vb" title="${escapeAttr(ap.anchor_verse||'')}">${escapeHtml(label)}</div>
+      <div class="cell">
+        <textarea class="tline apText" data-orig="${escapeAttr(ap.text)}" rows="${Math.max(1,(ap.text.match(/\n/g)||[]).length+1)}">${escapeHtml(ap.text)}</textarea>
+        ${glossRow}
+        <div class="rowtools"><input class="note" placeholder="note" data-ai="${i}"></div>
+      </div>`;
+    box.appendChild(d);
+  });
+  box.querySelectorAll('.apText, .apGloss').forEach(inp => inp.addEventListener('input', () => {
+    const row = inp.closest('.row');
+    const changed = [...row.querySelectorAll('.apText,.apGloss')].some(x => x.value !== x.dataset.orig && x.dataset.orig !== undefined);
+    row.classList.toggle('mod', changed || row.querySelector('.apText').value !== row.querySelector('.apText').dataset.orig);
+  }));
+}
+
+function renderCatchword() {
+  const box = $('#catchword'); box.innerHTML = '';
+  const cw = GT.catchword;
+  $('#catchwordHdr').style.display = cw ? '' : 'none';
+  if (!cw) return;
+  const d = document.createElement('div');
+  d.className = 'row';
+  d.innerHTML = `
+    <div class="li">cw</div>
+    <div class="vb">catch</div>
+    <div class="cell">
+      <input class="tline cwText" data-orig="${escapeAttr(cw.text)}" value="${escapeAttr(cw.text)}">
+      <div class="uflag">${escapeHtml(cw.note||'')}</div>
+      <div class="rowtools"><input class="note cwNote" placeholder="note (e.g. wrong word, not a catchword)"></div>
+    </div>`;
+  box.appendChild(d);
+  d.querySelector('.cwText').addEventListener('input', e =>
+    e.target.closest('.row').classList.toggle('mod', e.target.value !== e.target.dataset.orig));
+}
+
+function renderMarginalia() {
+  const box = $('#marginalia'); box.innerHTML = '';
+  (GT.marginalia || []).forEach((m, i) => {
+    const d = document.createElement('div');
+    d.className = 'row'; d.dataset.mi = i;
+    d.innerHTML = `
+      <div class="li">m${i}</div>
+      <div class="vb">${(m.anchor_verse||'').replace('24:','')} ${m.anchor_glyph||''}</div>
+      <div class="cell">
+        <textarea class="tline" data-orig="${escapeAttr(m.text)}" rows="4">${escapeHtml(m.text)}</textarea>
+        <div class="rowtools"><input class="note" placeholder="note" data-mi="${i}"></div>
+      </div>`;
+    box.appendChild(d);
+  });
+  box.querySelectorAll('.tline').forEach(inp => inp.addEventListener('input', () => {
+    inp.closest('.row').classList.toggle('mod', inp.value !== inp.dataset.orig);
+  }));
+}
+
+function applyPrev(prev) {
+  (prev.corrections || []).forEach(c => {
+    const row = $(`.row[data-li="${c.line_index}"]`);
+    if (!row) return;
+    const inp = row.querySelector('.tline');
+    if (c.deleted) { row.classList.add('del'); inp.classList.add('del'); }
+    else if (c.corrected != null) { inp.value = c.corrected; row.classList.add('mod'); }
+    if (c.note) row.querySelector('.note').value = c.note;
+  });
+  (prev.marginalia_corrections || []).forEach(c => {
+    const row = $(`.row[data-mi="${c.index}"]`);
+    if (row && c.corrected != null) { row.querySelector('.tline').value = c.corrected; row.classList.add('mod'); }
+  });
+  (prev.added_lines || []).forEach(a => addLine(a.after_line_index, a.text, a.note));
+  (prev.field_corrections || []).forEach(c => {
+    const row = $(`#headings .row[data-field="${c.field}"]`);
+    if (!row) return;
+    if (c.corrected != null) { row.querySelector('.fldText').value = c.corrected; row.classList.add('mod'); }
+    if (c.note) row.querySelector('.note').value = c.note;
+  });
+  (prev.apparatus_corrections || []).forEach(c => {
+    const row = $(`.row[data-ai="${c.index}"]`);
+    if (!row) return;
+    if (c.corrected != null) { row.querySelector('.apText').value = c.corrected; row.classList.add('mod'); }
+    const gl = row.querySelector('.apGloss');
+    if (gl && c.gloss_corrected != null) { gl.value = c.gloss_corrected; row.classList.add('mod'); }
+    if (c.note) row.querySelector('.note').value = c.note;
+  });
+  if (prev.catchword_correction) {
+    const cwRow = $('#catchword .row');
+    if (cwRow) {
+      if (prev.catchword_correction.corrected != null) { cwRow.querySelector('.cwText').value = prev.catchword_correction.corrected; cwRow.classList.add('mod'); }
+      if (prev.catchword_correction.note) cwRow.querySelector('.cwNote').value = prev.catchword_correction.note;
+    }
+  }
+}
+
+function addLine(after, text = '', note = '') {
+  const box = $('#lines');
+  const row = document.createElement('div');
+  row.className = 'row mod'; row.dataset.added = '1';
+  row.innerHTML = `
+    <div class="li">＋</div>
+    <div class="vb">new</div>
+    <div class="cell">
+      <input class="tline addAfter" placeholder="missing line text" value="${escapeAttr(text)}">
+      <div class="rowtools">
+        <span class="meta">insert after line #</span>
+        <input class="afterIdx" style="width:60px" value="${after ?? ''}">
+        <input class="note" placeholder="note" value="${escapeAttr(note)}">
+        <button class="ghost btnRemoveAdd">remove</button>
+      </div>
+    </div>`;
+  box.appendChild(row);
+  row.querySelector('.btnRemoveAdd').addEventListener('click', () => row.remove());
+}
+
+function collect() {
+  const corrections = [];
+  document.querySelectorAll('#lines .row').forEach(row => {
+    if (row.dataset.added) return;
+    const li = +row.dataset.li;
+    const inp = row.querySelector('.tline');
+    const note = row.querySelector('.note').value.trim();
+    const deleted = row.classList.contains('del');
+    const changed = inp.value !== inp.dataset.orig;
+    if (deleted) corrections.push({ line_index: li, deleted: true, original: inp.dataset.orig, note });
+    else if (changed || note) corrections.push({ line_index: li, original: inp.dataset.orig, corrected: inp.value, note });
+  });
+  const added_lines = [];
+  document.querySelectorAll('#lines .row[data-added]').forEach(row => {
+    const text = row.querySelector('.addAfter').value.trim();
+    if (!text) return;
+    added_lines.push({
+      after_line_index: row.querySelector('.afterIdx').value.trim(),
+      text, note: row.querySelector('.note').value.trim(),
+    });
+  });
+  const marginalia_corrections = [];
+  document.querySelectorAll('#marginalia .row').forEach(row => {
+    const inp = row.querySelector('.tline');
+    const note = row.querySelector('.note').value.trim();
+    if (inp.value !== inp.dataset.orig || note)
+      marginalia_corrections.push({ index: +row.dataset.mi, original: inp.dataset.orig, corrected: inp.value, note });
+  });
+  const apparatus_corrections = [];
+  document.querySelectorAll('#apparatus .row').forEach(row => {
+    const txt = row.querySelector('.apText'), gl = row.querySelector('.apGloss');
+    const note = row.querySelector('.note').value.trim();
+    const textChanged = txt.value !== txt.dataset.orig;
+    const glossChanged = gl && gl.value !== gl.dataset.orig;
+    if (textChanged || glossChanged || note) {
+      const c = { index: +row.dataset.ai, note };
+      if (textChanged) { c.original = txt.dataset.orig; c.corrected = txt.value; }
+      if (glossChanged) { c.gloss_original = gl.dataset.orig; c.gloss_corrected = gl.value; }
+      apparatus_corrections.push(c);
+    }
+  });
+  const field_corrections = [];
+  document.querySelectorAll('#headings .row').forEach(row => {
+    const inp = row.querySelector('.fldText');
+    const note = row.querySelector('.note').value.trim();
+    if (inp.value !== inp.dataset.orig || note)
+      field_corrections.push({ field: row.dataset.field, original: inp.dataset.orig, corrected: inp.value, note });
+  });
+  let catchword_correction = null;
+  const cwRow = document.querySelector('#catchword .row');
+  if (cwRow) {
+    const cw = cwRow.querySelector('.cwText'), note = cwRow.querySelector('.cwNote').value.trim();
+    if (cw.value !== cw.dataset.orig || note)
+      catchword_correction = { original: cw.dataset.orig, corrected: cw.value, note };
+  }
+  return {
+    slug: SLUG, locus: GT.locus, page_index: GT.page_index,
+    reviewer: 'sir', corrections, added_lines, marginalia_corrections,
+    apparatus_corrections, field_corrections, catchword_correction,
+    global_note: $('#globalNote').value.trim(),
+  };
+}
+
+async function submit() {
+  const payload = collect();
+  const st = $('#status');
+  st.textContent = 'saving…'; st.className = 'meta';
+  try {
+    const r = await fetch('/api/submit', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+    const j = await r.json();
+    if (j.ok) { st.textContent = `✓ saved ${j.n_corrections} correction(s) → ${j.written}`; st.className = 'ok'; }
+    else { st.textContent = 'error: ' + (j.error || 'unknown'); st.className = 'err'; }
+  } catch (e) { st.textContent = 'network error: ' + e; st.className = 'err'; }
+}
+
+function download() {
+  const blob = new Blob([JSON.stringify(collect(), null, 2)], { type:'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = SLUG + '.corrections.json'; a.click();
+}
+
+// glyph palette inserts at cursor of the last-focused editable
+let lastEl = null;
+document.addEventListener('focusin', e => { if (e.target.classList?.contains('tline') || e.target.classList?.contains('note')) lastEl = e.target; });
+document.querySelectorAll('.glyphpal button').forEach(b => b.addEventListener('click', () => {
+  if (!lastEl) return;
+  const g = b.dataset.g, s = lastEl.selectionStart ?? lastEl.value.length, e = lastEl.selectionEnd ?? s;
+  lastEl.value = lastEl.value.slice(0, s) + g + lastEl.value.slice(e);
+  lastEl.focus(); lastEl.selectionStart = lastEl.selectionEnd = s + g.length;
+  lastEl.dispatchEvent(new Event('input'));
+}));
+
+function escapeHtml(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function escapeAttr(s){return escapeHtml(s).replace(/"/g,'&quot;');}
+
+$('#locusSel').addEventListener('change', e => loadGT(e.target.value));
+$('#submitBtn').addEventListener('click', submit);
+$('#downloadBtn').addEventListener('click', download);
+$('#addLineBtn').addEventListener('click', () => addLine('', '', ''));
+$('#zoom').addEventListener('input', e => {
+  document.querySelectorAll('#rasterImgs img.raster').forEach(im => im.style.width = e.target.value + '%');
+  $('#zoomVal').textContent = e.target.value + '%';
+});
+
+loadLoci();
+</script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+{
+  "locus": "matter/nt/summe-of-new-testament",
+  "page_index": [
+    28,
+    29
+  ],
+  "ocr_dir": "jp2-S08",
+  "scan": "S8",
+  "raster": "jp2-S08 pages 28 & 29 rendered via ocr-spike/jp2_page.py (source: S08_1582-rhemes-nt-hires/1582_Rhemes_New_Testament_jp2/..._0028.jp2, _0029.jp2); read in full-width horizontal bands upscaled ~1.7-3x",
+  "raster_dpi": 138,
+  "raster_note": "S8 front-matter leaves are LOW-RES / soft (~138 DPI effective though the jp2 is ~5864 px wide). Type is large-ish and mostly legible in bands; fine sh-cluster long-ſ-vs-round-s and the smallest italic w-instances are resolution-limited (flagged).",
+  "page_label_printed": [
+    "1",
+    "2"
+  ],
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "page_headers_note": "No running header text on these front-matter leaves. Bare page number only in the outer top corner: '1' at top-right of p28, '2' at top-left of p29. Pagination starts at '1' HERE (the Summe leads the main text block, gathering A); Matthew ch.1 begins on the next leaf printed '3' (sig A ij).",
+  "layout_note": "'THE SVMME OF THE NEW TESTAMENT' — NT (1582 Rhemes) front-matter prose summary, single wide measure. p28 (printed '1'): ornamental woodcut headpiece band across the top; centred two-line display heading in graduated roman capitals ('THE SVMME OF THE' / 'NEVV TESTAMENT.'), the display word NEW set in the titling fount's GAPPED VV (no W sort). Foliate drop-cap 'T' opens intro para 1; a second foliate drop-cap 'T' opens the para under the sub-heading. Intro para 1 mixes ROMAN framing/lemma clauses with ITALIC quotation/argument text; the two intro paras concern the parts of the NT (Gospels, Actes, Apocalypse, Epistles). Centred sub-heading 'The Summe of the 4 Goſpels.' introduces two further paragraphs (mostly italic) on the four Evangelists likened to the four living creatures (Matthew=Man, Marke=Lion, Luke=Calfe, Iohn=Egle). Short right-margin scripture/father references (roman) run beside the text. Signature 'A' and catchword 'The' at the foot of p28. p29 (printed '2'): two more (italic) continuation paragraphs, then a large ornamental tailpiece woodcut MARKS THE END OF THIS SECTION; below it begins 'The argument of S. Matthewes Gospel.' (a SEPARATE section, NOT transcribed here). THREE glyph regimes co-exist: display caps = gapped VV; roman prose intrusions = connected w; italic argument prose = genuine gapped vv (see glyph_regime_resolved).",
+  "body": [
+    {
+      "page": 28,
+      "line_index": 0,
+      "role": "title_display",
+      "text": "THE SVMME OF THE"
+    },
+    {
+      "page": 28,
+      "line_index": 1,
+      "role": "title_display",
+      "text": "NEVV TESTAMENT.",
+      "note": "display titling fount; NEW set as gapped VV (no W sort), per task cue + preface precedent (matter-nt-preface kept 'NEVV TESTAMENT')"
+    },
+    {
+      "page": 28,
+      "line_index": 2,
+      "role": "prose",
+      "text": "THAT which was the ſumme of the Old Teſtament, to wit,",
+      "drop_cap": "T",
+      "note": "foliate ornamental drop-cap 'T'; remaining 'HAT' in small caps (word=THAT). 'which'/'was' roman connected-w; italic 'to vvit' reads gapped vv (small; lower-confidence)",
+      "_pre_review": "THAT which was the ſumme of the Old Teſtament, to vvit,",
+      "reviewed": true
+    },
+    {
+      "page": 28,
+      "line_index": 3,
+      "role": "prose",
+      "text": "Chriſt and his Church, as S. Auguſtine ſaith catechizing the"
+    },
+    {
+      "page": 28,
+      "line_index": 4,
+      "role": "prose",
+      "text": "ignorant : the very ſame is the ſumme of the New Teſtament alſo."
+    },
+    {
+      "page": 28,
+      "line_index": 5,
+      "role": "prose",
+      "text": "For (as the ſame S. Auguſtine ſaith againe) In the Old Teſtament"
+    },
+    {
+      "page": 28,
+      "line_index": 6,
+      "role": "prose",
+      "text": "there is the occultation of the New : and in the New Te-",
+      "line_end_hyphen": true
+    },
+    {
+      "page": 28,
+      "line_index": 7,
+      "role": "prose",
+      "text": "ſtament there is the manifeſtation of the Old. And in another place : In the"
+    },
+    {
+      "page": 28,
+      "line_index": 8,
+      "role": "prose",
+      "text": "Old doth the New lye hidden, and in the New doth the Old lye open."
+    },
+    {
+      "page": 28,
+      "line_index": 9,
+      "role": "prose",
+      "text": "And thervpon our Sauiour ſaid : I am not come to breake the Law or the"
+    },
+    {
+      "page": 28,
+      "line_index": 10,
+      "role": "prose",
+      "text": "Prophets, but to fulfill them. For aſſuredly I ſay vnto you, til heauen"
+    },
+    {
+      "page": 28,
+      "line_index": 11,
+      "role": "prose",
+      "text": "and earth paſſe, one iote or one title ſhall not paſſe of the Law, till all be"
+    },
+    {
+      "page": 28,
+      "line_index": 12,
+      "role": "prose",
+      "text": "fulfilled. In vvhich vvordes he ſhevveth plainely, that the nevv Teſtament is"
+    },
+    {
+      "page": 28,
+      "line_index": 13,
+      "role": "prose",
+      "text": "nothing els but the fulfilling of the old."
+    },
+    {
+      "page": 28,
+      "line_index": 14,
+      "role": "prose",
+      "text": "Therfore to come to the partes : The Goſpels doe tell of Chriſt himſelfe (of"
+    },
+    {
+      "page": 28,
+      "line_index": 15,
+      "role": "prose",
+      "text": "vvhom the Old Teſtamēt did foretell) and that euen from his coming into the vvorld,",
+      "note": "'Teſtamēt' = Testament with macron/tilde nasal-abbrev over the second e"
+    },
+    {
+      "page": 28,
+      "line_index": 16,
+      "role": "prose",
+      "text": "vnto his going out therof againe. The Actes of the Apoſtles doe tell of his"
+    },
+    {
+      "page": 28,
+      "line_index": 17,
+      "role": "prose",
+      "text": "Church beginning at Hieruſalem the headcitie of the Ievves, and of the propagation"
+    },
+    {
+      "page": 28,
+      "line_index": 18,
+      "role": "prose",
+      "text": "therof to the Gentiles and their headcitie Rome. And the Apocalypſe doth pro-",
+      "line_end_hyphen": true
+    },
+    {
+      "page": 28,
+      "line_index": 19,
+      "role": "prose",
+      "text": "phecie of it, euen to the conſummation therof, which ſhal be in the end of the world.",
+      "note": "'which'/'world' set in roman connected-w (upright intrusion: 'w hich', 'w orld')"
+    },
+    {
+      "page": 28,
+      "line_index": 20,
+      "role": "prose",
+      "text": "The Epiſtles of the Apoſtles do treat partly of ſuch queſtions as at that time"
+    },
+    {
+      "page": 28,
+      "line_index": 21,
+      "role": "prose",
+      "text": "were moued, partly of good life and good order.",
+      "note": "'were' set in roman connected-w ('w ere')"
+    },
+    {
+      "page": 28,
+      "line_index": 22,
+      "role": "subtitle",
+      "text": "The Summe of the 4 Goſpels."
+    },
+    {
+      "page": 28,
+      "line_index": 23,
+      "role": "prose",
+      "text": "THE Goſpels doe tell hiſtorically the life of our Lord Ieſus, ſhevving plainely,",
+      "drop_cap": "T",
+      "note": "foliate ornamental drop-cap 'T'; remaining 'HE' in small caps (word=The)"
+    },
+    {
+      "page": 28,
+      "line_index": 24,
+      "role": "prose",
+      "text": "* that he is Chriſt or the king of the Ievves, vvhom vntil then, al the time of the",
+      "marks": [
+        "*"
+      ],
+      "note": "inline '*' anchor keys 'that he is Chriſt or the king of the Ievves' to the right-margin ref 'Io. 20, 31.' (John 20:31); '*' kept on the physical line, omitted from interval scoring text (apparatus anchor)"
+    },
+    {
+      "page": 28,
+      "line_index": 25,
+      "role": "prose",
+      "text": "Old Teſtament, they had expected: and vvithal, that they of their ovvne mere malice"
+    },
+    {
+      "page": 28,
+      "line_index": 26,
+      "role": "prose",
+      "text": "and blindnes (the iniquitie beginning of the Seniors, but at the length the multitude"
+    },
+    {
+      "page": 28,
+      "line_index": 27,
+      "role": "prose",
+      "text": "alſo conſenting) vvould not receaue him, but euer ſought his death : vvhich for the"
+    },
+    {
+      "page": 28,
+      "line_index": 28,
+      "role": "prose",
+      "text": "Redemption of the vvorld, he at length permitted them to compaſſe, they deſeruing"
+    },
+    {
+      "page": 28,
+      "line_index": 29,
+      "role": "prose",
+      "text": "thereby moſt iuſtely to be refuſed of him, and ſo his Kingdom or Church to be taken"
+    },
+    {
+      "page": 28,
+      "line_index": 30,
+      "role": "prose",
+      "text": "avvay from them, and giuen to the Gentils. For the gathering of vvhich Church"
+    },
+    {
+      "page": 28,
+      "line_index": 31,
+      "role": "prose",
+      "text": "after him, he chooſeth Tvvelue, and appointeth one of them to be the cheefe of al,"
+    },
+    {
+      "page": 28,
+      "line_index": 32,
+      "role": "prose",
+      "text": "vvith inſtructions both to them and him accordingly."
+    },
+    {
+      "page": 28,
+      "line_index": 33,
+      "role": "prose",
+      "text": "The ſtorie hereof is vvritten by foure : vvho in Ezechiel and in the Apocalypſe"
+    },
+    {
+      "page": 28,
+      "line_index": 34,
+      "role": "prose",
+      "text": "are likened to foure liuing creatures, euery one according as his booke beginneth."
+    },
+    {
+      "page": 28,
+      "line_index": 35,
+      "role": "prose",
+      "text": "S. Matthevv to a Man, becauſe he beginneth vvith the pedegree of Chriſt as he is"
+    },
+    {
+      "page": 28,
+      "line_index": 36,
+      "role": "prose",
+      "text": "man. S. Marke to a Lion, becauſe he beginneth vvith the preaching of S. Iohn"
+    },
+    {
+      "page": 28,
+      "line_index": 37,
+      "role": "prose",
+      "text": "Baptiſt, as it vvere the roaring of a lion in the vvildernes. S. Luke to a Calfe,"
+    },
+    {
+      "page": 28,
+      "line_index": 38,
+      "role": "prose",
+      "text": "becauſe he beginneth vvith a prieſt of the Old Teſtament (to vvit, Zacharie the"
+    },
+    {
+      "page": 28,
+      "line_index": 39,
+      "role": "prose",
+      "text": "father of S. Iohn Baptiſt) vvhich Prieſthood vvas to ſacrifice calues to God. S. Iohn"
+    },
+    {
+      "page": 28,
+      "line_index": 40,
+      "role": "prose",
+      "text": "to an Egle, becauſe he beginneth vvith the Diuinitie of Chriſt, flying ſo high as more"
+    },
+    {
+      "page": 28,
+      "line_index": 41,
+      "role": "prose",
+      "text": "is not poſſible."
+    },
+    {
+      "page": 28,
+      "line_index": 42,
+      "role": "signature",
+      "text": "A",
+      "excluded_reason": "gathering signature (foot-centre); not scoring prose"
+    },
+    {
+      "page": 28,
+      "line_index": 43,
+      "role": "catchword",
+      "text": "The",
+      "excluded_reason": "reader-convenience catchword (foot-right); duplicated as the first word of p29 ('The firſt three do report...'); excluded from body concat"
+    },
+    {
+      "page": 29,
+      "line_index": 44,
+      "role": "prose",
+      "text": "The firſt three do report at large vvhat Chriſt did in Galilee, after the impri-",
+      "line_end_hyphen": true,
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 45,
+      "role": "prose",
+      "text": "ſonment of S. Iohn Baptiſt. Vvherefore S. Iohn the Euangeliſt vvriting after them",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 46,
+      "role": "prose",
+      "text": "all, doth omit his doinges in Galilee (ſaue onely one, vvhich they had not vvritten",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 47,
+      "role": "prose",
+      "text": "of, the vvonderful bread vvhich he told the Capharnaites he could and",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 48,
+      "role": "prose",
+      "text": "vvould giue, Io. 6.) and reporteth firſt, vvhat he did vvhiles Iohn Baptiſt as yet",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 49,
+      "role": "prose",
+      "text": "vvas preaching and baptizing : then, after Iohns impriſoning, vvhat he did in Iu-",
+      "line_end_hyphen": true,
+      "note": "'vvas' here = italic gapped vv (contrast roman 'was' at line 52 — same word, both sorts, on adjacent lines)",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 50,
+      "role": "prose",
+      "text": "rie euery yere about Eaſter. But of his Paſſion all foure do vvrite at large.",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 51,
+      "role": "prose",
+      "text": "Vvhere it is to be noted, that from his baptizing (vvhich is thought to haue",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 52,
+      "role": "prose",
+      "text": "been vpon Tvvelfthday, vvhat time he was beginning to be about 30 yere",
+      "note": "'was' here = roman connected-w ('w as'); contrast italic 'vvas' at line 49",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 53,
+      "role": "prose",
+      "text": "old, Luk. 3.) vnto his paſſion, are numbred three monethes and three yeres, in",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    },
+    {
+      "page": 29,
+      "line_index": 54,
+      "role": "prose",
+      "text": "vvhich there vvere alſo 4 Eaſters.",
+      "review_status": "needs_rereview_multipage",
+      "review_note": "[DEFERRED: 'not-on-page' predates the multi-page raster fix; this line is on page 29, not the first page then shown — re-review with all pages visible before excluding]"
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "line_index 3-4 (as S. Auguſtine ſaith catechizing the ignorant...)",
+      "position": "right_margin",
+      "text": "Aug. de cat.rud.\ncap. 3. 4.",
+      "earmark_interval": 1,
+      "note": "Augustine, De catechizandis rudibus, cap. 3-4; roman apparatus fount"
+    },
+    {
+      "anchor": "line_index 5-7 (In the Old Teſtament there is the occultation of the New...)",
+      "position": "right_margin",
+      "text": "Super Exod. q.\n73.",
+      "earmark_interval": 1,
+      "note": "Augustine, Quaestiones super Exodum, q. 73"
+    },
+    {
+      "anchor": "line_index 9-11 (I am not come to breake the Law or the Prophets...)",
+      "position": "right_margin",
+      "text": "Mat. 5.",
+      "earmark_interval": 1,
+      "note": "Matt 5:17-18 (fulfilment of the Law)"
+    },
+    {
+      "anchor": "line_index 24 (* that he is Chriſt or the king of the Ievves...)",
+      "position": "right_margin",
+      "text": "Io. 20, 31.",
+      "earmark_interval": 4,
+      "anchor_glyph": "*",
+      "note": "John 20:31; keyed by the inline '*' anchor on line 24"
+    },
+    {
+      "anchor": "line_index 33 (vvho in Ezechiel and in the Apocalypſe are likened to foure liuing creatures)",
+      "position": "right_margin",
+      "text": "Eze. 1.\nApoc. 4.",
+      "earmark_interval": 5,
+      "note": "Ezekiel 1 & Apocalypse 4 (the four living creatures)"
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "title_block",
+      "text": "THE SVMME OF THE NEVV TESTAMENT.",
+      "lines": [
+        0,
+        1
+      ]
+    },
+    {
+      "idx": 1,
+      "kind": "paragraph",
+      "text": "THAT which was the ſumme of the Old Teſtament, to vvit, Chriſt and his Church, as S. Auguſtine ſaith catechizing the ignorant : the very ſame is the ſumme of the New Teſtament alſo. For (as the ſame S. Auguſtine ſaith againe) In the Old Teſtament there is the occultation of the New : and in the New Teſtament there is the manifeſtation of the Old. And in another place : In the Old doth the New lye hidden, and in the New doth the Old lye open. And thervpon our Sauiour ſaid : I am not come to breake the Law or the Prophets, but to fulfill them. For aſſuredly I ſay vnto you, til heauen and earth paſſe, one iote or one title ſhall not paſſe of the Law, till all be fulfilled. In vvhich vvordes he ſhevveth plainely, that the nevv Teſtament is nothing els but the fulfilling of the old.",
+      "lines": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "idx": 2,
+      "kind": "paragraph",
+      "text": "Therfore to come to the partes : The Goſpels doe tell of Chriſt himſelfe (of vvhom the Old Teſtamēt did foretell) and that euen from his coming into the vvorld, vnto his going out therof againe. The Actes of the Apoſtles doe tell of his Church beginning at Hieruſalem the headcitie of the Ievves, and of the propagation therof to the Gentiles and their headcitie Rome. And the Apocalypſe doth prophecie of it, euen to the conſummation therof, which ſhal be in the end of the world. The Epiſtles of the Apoſtles do treat partly of ſuch queſtions as at that time were moued, partly of good life and good order.",
+      "lines": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "idx": 3,
+      "kind": "subtitle",
+      "text": "The Summe of the 4 Goſpels.",
+      "lines": [
+        22
+      ]
+    },
+    {
+      "idx": 4,
+      "kind": "paragraph",
+      "text": "THE Goſpels doe tell hiſtorically the life of our Lord Ieſus, ſhevving plainely, that he is Chriſt or the king of the Ievves, vvhom vntil then, al the time of the Old Teſtament, they had expected: and vvithal, that they of their ovvne mere malice and blindnes (the iniquitie beginning of the Seniors, but at the length the multitude alſo conſenting) vvould not receaue him, but euer ſought his death : vvhich for the Redemption of the vvorld, he at length permitted them to compaſſe, they deſeruing thereby moſt iuſtely to be refuſed of him, and ſo his Kingdom or Church to be taken avvay from them, and giuen to the Gentils. For the gathering of vvhich Church after him, he chooſeth Tvvelue, and appointeth one of them to be the cheefe of al, vvith inſtructions both to them and him accordingly.",
+      "lines": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "note": "leading '*' apparatus anchor (line 24) omitted from scoring text; earmarked to margin ref 'Io. 20, 31.'"
+    },
+    {
+      "idx": 5,
+      "kind": "paragraph",
+      "text": "The ſtorie hereof is vvritten by foure : vvho in Ezechiel and in the Apocalypſe are likened to foure liuing creatures, euery one according as his booke beginneth. S. Matthevv to a Man, becauſe he beginneth vvith the pedegree of Chriſt as he is man. S. Marke to a Lion, becauſe he beginneth vvith the preaching of S. Iohn Baptiſt, as it vvere the roaring of a lion in the vvildernes. S. Luke to a Calfe, becauſe he beginneth vvith a prieſt of the Old Teſtament (to vvit, Zacharie the father of S. Iohn Baptiſt) vvhich Prieſthood vvas to ſacrifice calues to God. S. Iohn to an Egle, becauſe he beginneth vvith the Diuinitie of Chriſt, flying ſo high as more is not poſſible.",
+      "lines": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "idx": 6,
+      "kind": "paragraph",
+      "text": "The firſt three do report at large vvhat Chriſt did in Galilee, after the impriſonment of S. Iohn Baptiſt. Vvherefore S. Iohn the Euangeliſt vvriting after them all, doth omit his doinges in Galilee (ſaue onely one, vvhich they had not vvritten of, the vvonderful bread vvhich he told the Capharnaites he could and vvould giue, Io. 6.) and reporteth firſt, vvhat he did vvhiles Iohn Baptiſt as yet vvas preaching and baptizing : then, after Iohns impriſoning, vvhat he did in Iurie euery yere about Eaſter. But of his Paſſion all foure do vvrite at large.",
+      "lines": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "idx": 7,
+      "kind": "paragraph",
+      "text": "Vvhere it is to be noted, that from his baptizing (vvhich is thought to haue been vpon Tvvelfthday, vvhat time he was beginning to be about 30 yere old, Luk. 3.) vnto his paſſion, are numbred three monethes and three yeres, in vvhich there vvere alſo 4 Eaſters.",
+      "lines": [
+        51,
+        52,
+        53,
+        54
+      ]
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": "regime (whole section)",
+      "span": "italic argument prose w = gapped vv",
+      "note": "HIGH-confidence VISUAL but POLICY-DIVERGENT. The italic argument/quotation fount here sets 'w' as a genuine GAPPED vv, consistent across dozens of instances at 3-5x zoom (vvhich, vvordes, ſhevveth, nevv, vvhom, vvorld, Ievves, Matthevv, Tvvelue, avvay, vvith, vvritten, vvho, Vvherefore, Vvhere, Tvvelfthday, ...). Roman prose intrusions on the SAME lines are connected single-sort w (which, was, world, were, New, Law). Clean per-glyph proof: 'was' set as italic 'vvas' (L49) and roman 'was' (L52) on adjacent lines. This DIVERGES from the ratified GUIDELINES note that 'matter-nt front-matter prose is uniformly connected-w' — but that ratification was verified on the PREFACE's ROMAN drop-cap body, not on ITALIC argument prose (this is the first heavy-italic front-matter section). Per §w-regime ('decide every instance by the glyph on the page', 'pixel evidence wins', 'supersedes any uniform roman=w') I transcribed per glyph: italic=vv, roman=w, display=NEVV. FLAGGED for Sir's ratification — if he reads the italic as connected-w, a regime flip to w is a mechanical find/replace of the italic vv."
+    },
+    {
+      "line_index": 1,
+      "span": "NEVV TESTAMENT.",
+      "note": "display word NEW set in the titling-caps fount as gapped VV (no W sort), per the task cue and preface precedent (matter-nt-preface kept 'NEVV TESTAMENT'). Visually the two V-strokes abut with the inner arms rising to cap height. Kept as VV."
+    },
+    {
+      "line_index": "11, 12, 19, 23",
+      "span": "ſhall / ſhevveth / ſhal / ſhevving (sh-clusters)",
+      "note": "long-ſ vs round-s in sh-clusters is resolution-limited at ~138 DPI. Read as long-ſ (ſh) from the visible ascender/descender, but the §long-ſ glyph-driven distinction (ſh ligature vs round s+h) cannot be fully resolved at this scan quality; flagged, not guessed beyond the visible tall-s."
+    },
+    {
+      "line_index": "4, 7, 9, 14, 27, 33, 49",
+      "span": "French spacing before high punctuation (space before ':')",
+      "note": "this edition sets a space before high punctuation; preserved where the printed gap is visible (e.g. 'ignorant :', 'another place :', 'ſaid :', 'partes :', 'death :', 'by foure :', 'baptizing :'). At ~138 DPI a few colon-spaces are judgement calls; not all colons are French-spaced (e.g. 'expected:' L25 shows no clear space)."
+    }
+  ],
+  "observer": "agent:matter-nt-summe-of-new-testament",
+  "observed_at": "2026-07-20",
+  "method": "Visual-multimodal read of the jp2-S08 (S8) rasters for pages 28 & 29, rendered via ocr-spike/jp2_page.py and read in 3-5 full-width horizontal bands per page (upscaled ~1.7-3x), with targeted micro-zooms only for the display 'NEVV' and the italic w-vs-vv adjudication (efficiency rule honoured). 4 VALIDATIONS: (1) LOCALIZATION — PASS: heading 'THE SVMME OF THE / NEVV TESTAMENT' under a woodcut headpiece (p28), content unmistakable (Augustine De cat.rud. & Super Exod., Old/New occultation-manifestation, Matt 5 fulfilment; then the parts = Gospels/Actes/Apocalypse/Epistles; then sub-heading 'The Summe of the 4 Goſpels' with the four living creatures Matthew=Man, Marke=Lion, Luke=Calfe, Iohn=Egle). Not a lookalike. (2) IDENTITY — PASS: 1582 Rhemes NT, scan S8 / ocr_dir jp2-S08; edition markers (u/v swap, long-ſ, æ-less spellings) and structure confirm the 1582 first-edition NT — the Summe leads the paginated main text block (printed '1'), and Matthew ch.1 opens on the next leaf printed '3' (sig A ij); same text as the S1 archive-nt-1582 preface sibling. (3) PLACEMENT — PASS: printed pages '1' (p28, top-right) & '2' (p29, top-left), signature 'A' (p28 foot); follows the Preface to the Reader (ends p27, sig d, catchword 'THE' → 'THE SVMME'); catchword 'The' (p28 foot) → 'The firſt three' (p29 head) confirms page continuity; precedes 'The argument of S. Matthewes Gospel.' (p29, below the tailpiece) → Gospel of Matthew ch.1 (p30). (4) COMPLETENESS — PASS: the ENTIRE section is transcribed — heading + 2 intro paragraphs + sub-heading + 2 paragraphs (p28), + 2 continuation paragraphs (p29), ending at the ornamental tailpiece woodcut that closes the section before 'The argument of S. Matthewes Gospel.' (that next section deliberately excluded). Diplomatic: long-ſ glyph-driven; per-instance w/vv (see glyph_regime_resolved); u/v & i/j as printed; macron 'Teſtamēt' preserved; typos/spellings preserved (Gentils vs Gentiles both kept); catchword & signature kept in body but excluded from scoring intervals.",
+  "confidence": "HIGH on text, localization, identity, placement and completeness — the display heading and both drop-cap paragraphs are large and clear, and the bulk of the prose is legible in bands despite the soft ~138 DPI S8 scan. HIGH-visual but POLICY-FLAGGED on the w/vv regime (italic=gapped vv diverges from the ratified preface connected-w note; routed for Sir). MEDIUM on the finest sh-cluster long-ſ-vs-round-s calls and a few French-space colons at this resolution (flagged in uncertain).",
+  "glyph_regime_resolved": "THREE co-existing glyph regimes on these S8 leaves (per-glyph visual, §w-regime governing): (1) DISPLAY titling caps (heading L1) — gapped VV, the titling fount has no W sort → 'NEVV TESTAMENT' (kept; matches preface precedent). (2) ROMAN body/prose intrusions — connected single-sort w → w: the roman clauses set within the italic flow ('which'/'was' L2, 'which ſhal...world' L19, 'were' L21, 'was' L52) are all connected-w. (3) ITALIC argument/quotation prose (the bulk) — genuine GAPPED vv, consistent across dozens of instances at 3-5x zoom → vv (vvhich, vvordes, ſhevveth/ſhevving, nevv, vvhom, vvorld, Ievves, vvithal, ovvne, vvould, avvay, Tvvelue, vvith, vvritten, vvho, vvonderful, vvhiles, vvrite, ...); word-initial capitals → VV ('Vvherefore' L45, 'Vvhere' L51, 'Tvvelfthday' L52). CLEAN PROOF of the split: the word 'was' appears as italic 'vvas' (L49) and roman 'was' (L52) on adjacent lines. This ITALIC=vv finding DIVERGES from the ratified GUIDELINES §w-regime STATUS note ('matter-nt front-matter prose is uniformly connected-w') — but that was verified on the PREFACE's ROMAN drop-cap body, not on the ITALIC argument fount which first appears in bulk HERE; pixel evidence governs ('pixel evidence wins', 'supersedes any uniform roman=w'). FLAGGED for Sir's ratification (a flip to connected-w, if he so reads it, is a mechanical vv→w on the italic only). long-ſ read glyph-driven (tall-s for initial/medial, round-s at word-ends and some sh-clusters); æ/œ none on the page; macron nasal-abbrev 'Teſtamēt' (L15) preserved; ct clusters (Actes L16, expected L25, inſtructions L32) transcribed as component c+t.",
+  "resolved_uncertain": [
+    {
+      "line_index": 2,
+      "span": "to vvit",
+      "note": "the first (and smallest) italic w-instance; at ~138 DPI the gap is less crisp than the larger italic vv's, but read as gapped vv consistent with the fount. Lower-confidence.",
+      "resolved_to": "THAT which was the ſumme of the Old Teſtament, to wit,",
+      "resolved_by": "sir"
+    }
+  ],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-23T20:04:17.183654+00:00",
+    "n_applied": 1,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "n_deferred": 11,
+    "corrections_source": "ground-truth/corrections/matter-nt-summe-of-new-testament.corrections.json"
+  }
+}

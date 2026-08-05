@@ -1,0 +1,1695 @@
+{
+ "chapter": 11,
+ "n_verses": 32,
+ "n_cells": 128,
+ "n_pass": 117,
+ "rate": 0.9141,
+ "ref_means": {
+  "s_dismas": 0.9688,
+  "odr_com": 0.9822,
+  "sabates_a": 0.9616,
+  "madueke_b": 0.9616
+ },
+ "src_rates": {
+  "S1": 0.875,
+  "S3": 0.9375,
+  "S9": 0.9375,
+  "S6": 0.9062
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  32
+ ],
+ "n_open": 11,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 6,
+   "worst": 0.888,
+   "from": "chapter",
+   "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they movmnt com they haue begunne to doe this, ncyther wil they leaue from their determinations, til they accompliſh them indede."
+  },
+  {
+   "src": "S6",
+   "verse": 12,
+   "worst": 0.852,
+   "from": "p58",
+   "text": "Moreouer Arphaxad thirtie fiue veares, and begat Sale."
+  },
+  {
+   "src": "S1",
+   "verse": 15,
+   "worst": 0.886,
+   "from": "r3",
+   "text": "And Sale liued. after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters."
+  },
+  {
+   "src": "S3",
+   "verse": 15,
+   "worst": 0.886,
+   "from": "r3",
+   "text": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters."
+  },
+  {
+   "src": "S9",
+   "verse": 15,
+   "worst": 0.886,
+   "from": "r3",
+   "text": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters."
+  },
+  {
+   "src": "S6",
+   "verse": 19,
+   "worst": 0.847,
+   "from": "chapter",
+   "text": "And Phaleg liued he begat Reu, two hundred nine veares, and begat ſonnes and Sem. daughters."
+  },
+  {
+   "src": "S1",
+   "verse": 30,
+   "worst": 0.884,
+   "from": "p64",
+   "text": "And Sarai was barren, neither had ſe chilcom"
+  },
+  {
+   "src": "S1",
+   "verse": 32,
+   "worst": 0.714,
+   "from": "p65",
+   "text": "And the dayes of Thare came to two hundred fiue yeares, and died in flaran."
+  },
+  {
+   "src": "S3",
+   "verse": 32,
+   "worst": 0.735,
+   "from": "p69",
+   "text": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran."
+  },
+  {
+   "src": "S9",
+   "verse": 32,
+   "worst": 0.735,
+   "from": "p75",
+   "text": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran."
+  },
+  {
+   "src": "S6",
+   "verse": 32,
+   "worst": 0.0,
+   "from": "p59",
+   "text": "And the is dayes of Thare came to two hundred fiue veates, and he died in Haran."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "ND the earth was of one tongue, and alone ſpeach.",
+    "from": "p63",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   },
+   "S3": {
+    "text": "And the earth was of one tongue, and alone ſpeach.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "And the earth was of one tongue, and alone ſpeach.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "ND the earth was of one tong and al one ſpeach.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And when they remoued from the eaſt, they found a plaine in the land of Sennaar, and dweltin it.",
+    "from": "p63",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And when they remoued from the eaſt, they found a plaine in the land of Sennaar, and dwelt in it.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when they remoued from the eaſt, they found and a plaine in the land of Sennaar, and dwelt in it.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And when they remoued from the eaſt, they found a plaine in the land of Sennaar and dwelt in it.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And eech one ſaid to his neighboure Come, let vs make bricke, and bake them with fire. And they had bricke in ſteed of ſtone, and bitume in ſteed of morter:",
+    "from": "p63",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And eech one ſaid to his neighboure Come, let vs make bricke, and bake them with fire. And they had bricke in ſteed of ſtone, and bitume in ſteed of morter:",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And eech one ſaid to his neighboure: Come, let vs make bricke, and bake them with fire. And they had bricke in ſteed of ſtone, and bitume in ſteed of morter:",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And each one ſaid to his neighbour: Come, let vs make brick, and bake them with fire. And they had brick inſtead of ſtone and bitume inſtead of morter",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "†and they ſaid: Come, let vs make vs a citie and a towre, the toppe wherof may reach to heauen: and let vs renowne our name before we be diſperſed into al lands.",
+    "from": "p63",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "and they ſaid: Come, let vs make vs a citie and a towre, the toppe wherof may reach to heauen and let vs renowne our name before we be diſperſed into al lands.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "and they ſaid: Come, let vs make vs a citie and a towre, the toppe wherof may reach to heauen: and let vs renowne our name before we be diſperſed into al lands.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "and they ſaid, Come, let vs make vs a citie and a towre, the top wherof may reach to heauen: and let vs renowne our name before we be diſperſed into al lands.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And our Lord deſcended to ſee the citie and the towre, which the children of Adam builded,",
+    "from": "p63",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And our Lord deſcended to ſee the citie and the towre, which the children of Adam builded,",
+    "from": "p67",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And our Lord deſcended to ſee the citie and the towre, which the children of Adam builded,",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And out Lord deſcended to fee the eitie and the towre which the children of Adam builded,.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they movmnt com they haue begunne to doe this, ncyther wil they leaue from their determinations, til they accompliſh them indede.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.895,
+     "odr_com": 0.895,
+     "sabates_a": 0.888,
+     "madueke_b": 0.888
+    }
+   },
+   "S3": {
+    "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue of from their determinations, til they accomplish them indede.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and he ſaid: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue of from their determinations, til they accompliſh them indede.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and he ſaid: Behold, it is one people, and one tong is to al: and they haue begun to doe this, neyther wil they leaue off from their determinations, til they accompliſh them indeed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Come ye therfore, let vs goe downe, and there confound their tongue, that none may heare is neighbours voice.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "Come ye therfore, let vs goe downe, and there confound their tongue, that none may heare is neighbours voice.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "Come ye therfore, let vs goe downe, and there confound their tongue, that none may heare is neighbours voice.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "Come yee thertore let vs goe downe and there contound their tong, that none may heare his neighbours voice.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.943,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And ſo our Lord diſperſed them from that place into Iands, and they ceaſed to build the citie.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And ſo our Lord diſperſed them from that place into al Iands, and they ceaſed to build the citie.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And ſo our Lord diſperſed them from that place into Iands, and they ceaſed to build the citie.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And ſo our Lord diſperſed them from that place into al lands and they ceaſed to build the citie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And therfore the name therof was called Babel, : becauſe there the tongue to of the whole earth was confounded: and from thence Lord diſperſed them vpon the face of al countries.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   },
+   "S3": {
+    "text": "And therfore the name thereof was called Babel, becauſe there the tongue of the whole earth was confounded and from thence our Lord diſperſed them vpon the face of al countries.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And therfore he the name therof was called Babel, :: becauſe there the tongue to of the whole earth was confounded: and from thence our Lord diſperſed them vpon the face of al countries.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And thertore the name therof was called Babel, ()becauſe there the tons of the whole earth was tonfounded: and from thence our Lord diſperſed them vpon the tace ot al countrios.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Theſe are‖ the gonerations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two ycares aſter of floud.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S3": {
+    "text": "Theſe are:: the generations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two ycares after the of floud.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S9": {
+    "text": "Theſe are:: the generations of Sem: Sem was an hundred here yeares old when he begat Arphaxad, two yeares after the the",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.913,
+     "odr_com": 0.913,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   },
+   "S6": {
+    "text": "Theſe are the generations of Sem: Sem was an hundred yeares old when he begat Arphavad, two yeares aftor the floud.bable",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.911,
+     "madueke_b": 0.911
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And Sem liued after he begat Arphaxad, fiue hundred yeares: and begat ſonnes and daughters.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And Sem liued after he begat Arphaxad, fiue hundred yeares : and begat ſonnes and daughters.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And Sem liued after he begat Arphaxad, fiue hundred yeares: and begat ſonnes and daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And Sem liued after he begat Arphaxad, fiue hundred yea- res, and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Moreouer Arphaxad liued thirtie fiue yeares, and begat Sale.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "Moreouer Arphaxad liued thirtie fiue yeares, and begat Sale.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "Moreouer Arphaxad liued thirtie fiue yeares, and begat Sale.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Moreouer Arphaxad thirtie fiue veares, and begat Sale.",
+    "from": "p58",
+    "score": {
+     "s_dismas": 0.879,
+     "odr_com": 0.879,
+     "sabates_a": 0.852,
+     "madueke_b": 0.852
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And Arphaxad liued after he begat Sale, three hundred three yeares and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And Arphaxad liued after he begat Sale, three hundred three yeares and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And Arphaxad liued after he begat Sale, three hundred three yeares and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And Arphaxad liued after he begat Sale three hundred three yeares, and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Sale alſo liued thirtie yeares, and begat Heber.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "Sale alſo liued thirtie yeares, and begat Heber.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "Sale alſo liued thirtie yeares, and begat Heber.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "Sale alſo liued thirie yeares, and begat Heber.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And Sale liued. after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S3": {
+    "text": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S9": {
+    "text": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.886,
+     "madueke_b": 0.886
+    }
+   },
+   "S6": {
+    "text": "And Sale liued after he begat Heber, foure hundred three ycares, & begat ſonnes & daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.903,
+     "odr_com": 0.903,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And Heber liued thirtie foure yeares, and begat Phaleg.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And Heber liued thirtie foure yeares, and begat Phaleg.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And Heber liued thirtie foure yeares, and begat Phaleg.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And Heber liued thirtie foure ycares, and begat Phaleg.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And Heber liued after he begat Phaleg, foure hundred thirtie yeares : and begat ſonnes and daughrers.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And Heber liued after he begat Phaleg, foure hundred thirtie yeares : and begat ſonnes and daughters.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "And Heber liued after he begat Phaleg, foure hundred thirtie yeares : and begat ſonnes and daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And Heber liued after he begat Phaleg, foure hundred thirtie yearcs, and begat ſonues and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Phaleg alſo liued thirtie veares, and begat Reu.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "Phaleg alſo liued thirtie veares, and begat Reu.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "Phaleg alſo liued thirtie yeares, and begat Reu.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "Phaleg alſo liued thirte ycares, and begat Reu.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And Phaleg liued after he begat Reu, two hundred nine yeares, and begat ſonnes and daughters.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "†And Phaleg liued after he begat Reu, two hundred nine yeares, and begat ſonnes and daughters.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And Phaleg liued after he begat Reu, two hundred nine yeares, and begat ſonnes and daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And Phaleg liued he begat Reu, two hundred nine veares, and begat ſonnes and Sem. daughters.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.878,
+     "odr_com": 0.878,
+     "sabates_a": 0.847,
+     "madueke_b": 0.847
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Reu liued thirtie two yeares, and begat Sarug.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "And Reu liued thirtie two yeares, and begat Sarug.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "And Reu liued thirtie two yeares, and begat Sarug.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And Reu liued thirtie two yeares, and begat Sarug.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Reu liued alſo after he begat Sarug, two hundred ſeauen yeares: and begat ſonnes & daughters.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S3": {
+    "text": "Reu liued alſo after he begat Sarug, two hundred ſeauen yeares: and begat ſonnes & daughters.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S9": {
+    "text": "Reu liued alſo after he begat Sarug, two hundred ſeauen yeares : and begat ſonnes & daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S6": {
+    "text": ".Reu liued alſo after he begat Sarug, two hundred ſeauen veares, and begat ſonnes and daughters.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And Sarug liued thirtie yeares, and begat Nachor.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And Sarug liued thirtie yeares, and begat Nachor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And Sarug liued thirtie yeares, and begat Nachor.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And Sarug liued thirtie veares, and begat Nachor.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And Sarug liued after he begat Nachor, wo hnndred yeares : and begat ſonnes and daughters.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "And Sarug liued after he begat Nachor, two hundred yeares: and begat ſonnes and daughters.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "And Sarug liued after he begat Nachor, two hundred yeares: and begat ſonnes and daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And Sarug liued after he begat Nachot, two hundred yeares, and begat ſonues and daughters.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And Nachor liued nine and twentie yeares, and begat Thare.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And Nachor liued nine and twentie yeares, and begat Thare.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "And Nachor liued nine and twentie yeares, and begat2 Thare.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And Nachor liued nine and twentie veares, and begat Thara.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And Nachor liued after he begot Thare, an hundred and nintene yeares and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "And Nachor liued after he begot Thare, an hundred and nintene yeares and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "And Nachor liued after he begot Thare, an hundred and nintene yeares : and begat ſonnes and daughters.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "And Nachor liuer after he begat Thare an hundred and nineteen yeares, and begat ſonnes and daughters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.95,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And Thare liued ſeauentie yeares, and begat Abram and Nachor, and Aran.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And Thare liued ſeauentie yeares, and begat Abram and Nachor, and Aran.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And Thare liued ſeauentie yeares, and begat Abram and Nachor, and Aran.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And Thare liued ſeeuentie veares aud begat Abram, and Nachor, and Aran.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And theſe are the generations of Thare : Thare begat Abram, Nachor, & Aran. Moreouer Aran begat Lot.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "And theſe are the generations of Thare : Thare begat Abram, Nachor, & Aran. Moreouer Aran begat Lot.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "And theſe are the generations of Thare : Thare begat Abram, Nachor, & Aran. Moreouer Aran begat Lot.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "And theſe are the generations of Thare Thare begat Abram, Nachor. and Aran. Moreouer Aran begat Lot.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And Aran died before Tharehis8 father, in the land of his natiuitie in Vr of the Chaldees.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And Aran died before Thare his father, in the land of his natiuitie in : Vr of the Chaldees.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Aran died before Thare citie, father, in the land of his natiuitie in: Vr of the Chaldees.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "And Atan died before Thare his father in the land of his natiuitie, inVt ot the Chaldees.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "I Abram & Nachor maried wiues : the name of Abram his wife was Sarai: and the name of Nachor his Wife, Melcha the daughter of Aran the father of Melcha, and the father of Ieſcha.",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And Abram & Nachor maried wiues: the name of Abram his wife was Sarai: and the name of Nachor his Wife, Melcha the daughter of Aran the father of Melcha, and the father of Ieſcha.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And Abram & Nachor maried wiues : the name of Abram his wife was Sarai: and the name of Nachor his Wife, Melcha the daughter of Aran the father of Melcha, and the father of Ieſcha.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "And Abram and Nachor maried wiues: the name of Abram his wife was Sarai: and the name of Nachor his wite, Melcha, the daughter of Aran the father of Melcha and the tather of Ieſcha.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And Sarai was barren, neither had ſe chilcom",
+    "from": "p64",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 0.884,
+     "madueke_b": 0.884
+    }
+   },
+   "S3": {
+    "text": "And Sarai was barren, neither had ſhe children.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Sarai was barren, neither had ſhe children.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Sarai was batren, neither had ſhe children.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "Thare therfore : tooke Abram his ſonne, and Lot the ſonne of Aran, his ſonnes ſonne, & Sarai his daughter in law, the wife of Abram his ſonne, and brought them out of Vr of the Chaldees, for to goe into the land Chanaan : and they came as farre as Haran, and dwelled there.",
+    "from": "p65",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "Thare therfore :: tooke Abram his ſonne, and Lot the ſonne of Aran, his ſonnes ſonne, & Sarai his daughe ter in law, the wife of Abram his ſonne, and brought them out of Vr of the Chaldees, for to goe into the land of Chanaan : and they came as farre as Haran, and dwelled there.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Thare therfore : tooke Abram his ſonne, and Lot the ſonne of Aran, his ſonnes ſonne, & Sarai his daughter in law, the wife of Abram his ſonne, and brought them to of out of Vr of the Chaldees, for to goe into the land of as Chanaan : and they came as farre as Haran, and dwelled Act. there.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   },
+   "S6": {
+    "text": "Thare thertoretook Abtam his ſonne and Lot the ſonne of Aran, his ſonnes ſonue, andSarai his daughter in law, the wite of Abram his ſoune, and brought them out of Vr of the Chaldees for to goe into the land of Chanaan: and they came as farre as Haran, and dwellod there.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "And the dayes of Thare came to two hundred fiue yeares, and died in flaran.",
+    "from": "p65",
+    "score": {
+     "s_dismas": 0.714,
+     "odr_com": 0.973,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.735,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S9": {
+    "text": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.735,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "And the is dayes of Thare came to two hundred fiue veates, and he died in Haran.",
+    "from": "p59",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.897,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And the earth was of one tongue, and al one ſpeach.",
+   "odr_com": "AND the earth was of one tongue, and al one speach.",
+   "sabates_a": "And the earth was of one tongue, and all one speech.",
+   "madueke_b": "And the earth was of one tongue, and all one speech."
+  },
+  "2": {
+   "s_dismas": "And when they remoued from the eaſt, they found a plaine in the land of Sennaar, and dwelt in it.",
+   "odr_com": "And when they remoued from the east, they found a plaine in the land of Sennaar, and dwelt in it.",
+   "sabates_a": "And when they removed from the east, they found a plain in the land of Sennaar, and dwelt in it.",
+   "madueke_b": "And when they removed from the east, they found a plain in the land of Sennaar, and dwelt in it."
+  },
+  "3": {
+   "s_dismas": "And eech one ſaid to his neighboure: Come, let vs make bricke, and bake them with fire. And they had bricke in ſteed of ſtone, and bitume in ſteed of morter:",
+   "odr_com": "And eech one said to his neighboure: Come, let vs make bricke, and bake them with fire. And they had bricke in steed of stone, and bitume in steed of morter:",
+   "sabates_a": "And each one said to his neighbour: Come, let us make brick, and bake them with fire. And they had brick instead of stone, and bitume instead of mortar:",
+   "madueke_b": "And each one said to his neighbour: Come, let us make brick, and bake them with fire. And they had brick instead of stone, and bitume instead of mortar:"
+  },
+  "4": {
+   "s_dismas": "and they ſaid: Come, let vs make vs a citie and a towre, the toppe wherof may reach to heauen: and let vs renowne our name before we be diſperſed into al lands.",
+   "odr_com": "and they said: Come, let vs make vs a citie and a towre, the toppe wherof may reach to heauen: and let vs renowne our name before we be dispersed into al lands.",
+   "sabates_a": "and they said, Come, let us make us a city and a tower, the top whereof may reach to heaven: and let us renown our name before we be dispersed into all lands.",
+   "madueke_b": "and they said, Come, let us make us a city and a tower, the top whereof may reach to heaven: and let us renown our name before we be dispersed into all lands."
+  },
+  "5": {
+   "s_dismas": "And our Lord deſcended to ſee the citie and the towre, which the children of Adam builded,",
+   "odr_com": "And our Lord descended to see the citie and the towre, which the children of Adam builded,",
+   "sabates_a": "And our Lord descended to see the city and the tower, which the children of Adam builded,",
+   "madueke_b": "And our Lord descended to see the city and the tower, which the children of Adam builded,"
+  },
+  "6": {
+   "s_dismas": "and he ſaid: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue of from their determinations, til they accomplish them indede.",
+   "odr_com": "and he said: Behold, it is one people, and one tongue is to al: and they haue begunne to doe this, neyther wil they leaue of from their determinations, til they accomplish them indede.",
+   "sabates_a": "and he said: Behold, it is one people, and one tongue is to all: and they have begun to do this, neither will they leave off from their determinations, till they accomplish them indeed.",
+   "madueke_b": "and he said: Behold, it is one people, and one tongue is to all: and they have begun to do this, neither will they leave off from their determinations, till they accomplish them indeed."
+  },
+  "7": {
+   "s_dismas": "Come ye therfore, let vs goe downe, and there confound their tongue, that none may heare his neighbours voice.",
+   "odr_com": "Come ye therfore, let vs goe downe, and there confound their tongue, that none may heare is neighbours voice.",
+   "sabates_a": "Come ye therefore, let us go down, and there confound their tongue, that none may hear his neighbour's voice.",
+   "madueke_b": "Come ye therefore, let us go down, and there confound their tongue, that none may hear his neighbour's voice."
+  },
+  "8": {
+   "s_dismas": "And ſo our Lord diſperſed them from that place into al lands, and they ceaſed to build the citie.",
+   "odr_com": "And so our Lord dispersed them from that place into al lands, and they ceased to build the citie.",
+   "sabates_a": "And so our Lord dispersed them from that place into all lands, and they ceased to build the city.",
+   "madueke_b": "And so our Lord dispersed them from that place into all lands, and they ceased to build the city."
+  },
+  "9": {
+   "s_dismas": "And therfore the name therof was called Babel, becauſe there the tongue of the whole earth was confounded: and from thence our Lord diſperſed them vpon the face of al countries.",
+   "odr_com": "And therfore the name therof was called Babel, because there the tongue of the whole earth was confounded: and from thence our Lord dispersed them vpon the face of al countries.",
+   "sabates_a": "And therefore the name thereof was called Babel, because there the tongue of the whole earth was confounded: and from thence our Lord dispersed them upon the face of all countries.",
+   "madueke_b": "And therefore the name thereof was called Babel, because there the tongue of the whole earth was confounded: and from thence our Lord dispersed them upon the face of all countries."
+  },
+  "10": {
+   "s_dismas": "Theſe are the generations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two yeares after the floud.",
+   "odr_com": "These are the generations of Sem: Sem was an hundred yeares old when he begat Arphaxad, two yeares after the floud.",
+   "sabates_a": "These are the generations of Sem: Sem was an hundred years old when he begat Arphaxad, two years after the flood.",
+   "madueke_b": "These are the generations of Sem: Sem was an hundred years old when he begat Arphaxad, two years after the flood."
+  },
+  "11": {
+   "s_dismas": "And Sem liued after he begat Arphaxad, fiue hundred yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Sem liued after he begat Arphaxad, fiue hundred yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Sem lived after he begat Arphaxad, five hundred years, and begat sons and daughters.",
+   "madueke_b": "And Sem lived after he begat Arphaxad, five hundred years, and begat sons and daughters."
+  },
+  "12": {
+   "s_dismas": "Moreouer Arphaxad liued thirtie fiue yeares, and begat Sale.",
+   "odr_com": "Moreouer Arphaxad liued thirtie fiue yeares, and begat Sale.",
+   "sabates_a": "Moreover Arphaxad lived thirty five years, and begat Sale.",
+   "madueke_b": "Moreover Arphaxad lived thirty five years, and begat Sale."
+  },
+  "13": {
+   "s_dismas": "And Arphaxad liued after he begat Sale, three hundred three yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Arphaxad liued after he begat Sale, three hundred three yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Arphaxad lived after he begat Sale, three hundred three years, and begat sons and daughters.",
+   "madueke_b": "And Arphaxad lived after he begat Sale, three hundred three years, and begat sons and daughters."
+  },
+  "14": {
+   "s_dismas": "Sale alſo liued thirtie yeares, and begat Heber.",
+   "odr_com": "Sale also liued thirtie yeares, and begat Heber.",
+   "sabates_a": "Sale also lived thirty years, and begat Heber.",
+   "madueke_b": "Sale also lived thirty years, and begat Heber."
+  },
+  "15": {
+   "s_dismas": "And Sale liued after he begat Heber, foure hundred three yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Sale liued after he begat Heber, foure hundred three yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Sale lived after he begat Heber, four hundred three years, & begat sons & daughters.",
+   "madueke_b": "And Sale lived after he begat Heber, four hundred three years, & begat sons & daughters."
+  },
+  "16": {
+   "s_dismas": "And Heber liued thirtie foure yeares, and begat Phaleg.",
+   "odr_com": "And Heber liued thirtie foure yeares, and begat Phaleg.",
+   "sabates_a": "And Heber lived thirty four years, and begat Phaleg.",
+   "madueke_b": "And Heber lived thirty four years, and begat Phaleg."
+  },
+  "17": {
+   "s_dismas": "And Heber liued after he begat Phaleg, foure hundred thirtie yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Heber liued after he begat Phaleg, foure hundred thirtie yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Heber lived after he begat Phaleg, four hundred thirty years, and begat sons and daughters.",
+   "madueke_b": "And Heber lived after he begat Phaleg, four hundred thirty years, and begat sons and daughters."
+  },
+  "18": {
+   "s_dismas": "Phaleg alſo liued thirtie yeares, and begat Reu.",
+   "odr_com": "Phaleg also liued thirtie yeares, and begat Reu.",
+   "sabates_a": "Phaleg also lived thirty years, and begat Reu.",
+   "madueke_b": "Phaleg also lived thirty years, and begat Reu."
+  },
+  "19": {
+   "s_dismas": "And Phaleg liued after he begat Reu, two hundred nine yeares, and begat ſonnes and daughters.",
+   "odr_com": "And Phaleg liued after he begat Reu, two hundred nine yeares, and begat sonnes and daughters.",
+   "sabates_a": "And Phaleg lived after he begat Reu, two hundred nine years, and begat sons and daughters.",
+   "madueke_b": "And Phaleg lived after he begat Reu, two hundred nine years, and begat sons and daughters."
+  },
+  "20": {
+   "s_dismas": "And Reu liued thirtie two yeares, and begat Sarug.",
+   "odr_com": "And Reu liued thirtie two yeares, and begat Sarug.",
+   "sabates_a": "And Reu lived thirty two years, and begat Sarug.",
+   "madueke_b": "And Reu lived thirty two years, and begat Sarug."
+  },
+  "21": {
+   "s_dismas": "Reu liued alſo after he begat Sarug, two hundred ſeauen yeares: and begat ſonnes & daughters.",
+   "odr_com": "Reu liued also after he begat Sarug, two hundred seauen yeares: and begat sonnes & daughters.",
+   "sabates_a": "Reu lived also after he begat Sarug, two hundred seven years, and begat sons and daughters.",
+   "madueke_b": "Reu lived also after he begat Sarug, two hundred seven years, and begat sons and daughters."
+  },
+  "22": {
+   "s_dismas": "And Sarug liued thirtie yeares, and begat Nachor.",
+   "odr_com": "And Sarug liued thirtie yeares, and begat Nachor.",
+   "sabates_a": "And Sarug lived thirty years, and begat Nachor.",
+   "madueke_b": "And Sarug lived thirty years, and begat Nachor."
+  },
+  "23": {
+   "s_dismas": "And Sarug liued after he begat Nachor, two hundred yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Sarug liued after he begat Nachor, two hundred yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Sarug lived after he begat Nachor, two hundred years, and begat sons and daughters.",
+   "madueke_b": "And Sarug lived after he begat Nachor, two hundred years, and begat sons and daughters."
+  },
+  "24": {
+   "s_dismas": "And Nachor liued nine and twentie yeares, and begat Thare.",
+   "odr_com": "And Nachor liued nine and twentie yeares, and begat Thare.",
+   "sabates_a": "And Nachor lived nine and twenty years, and begat Thare.",
+   "madueke_b": "And Nachor lived nine and twenty years, and begat Thare."
+  },
+  "25": {
+   "s_dismas": "And Nachor liued after he begat Thare, an hundred and nintene yeares: and begat ſonnes and daughters.",
+   "odr_com": "And Nachor liued after he begot Thare, an hundred and nintene yeares: and begat sonnes and daughters.",
+   "sabates_a": "And Nachor lived after he begat Thare, and hundred and nineteen years, and begat sons and daughters.",
+   "madueke_b": "And Nachor lived after he begat Thare, and hundred and nineteen years, and begat sons and daughters."
+  },
+  "26": {
+   "s_dismas": "And Thare liued ſeauentie yeares, and begat Abram, and Nachor, and Aran.",
+   "odr_com": "And Thare liued seauentie yeares, and begat Abram and Nachor, and Aran.",
+   "sabates_a": "And Thare lived seventy years, and begat Abram, and Nachor, and Aran.",
+   "madueke_b": "And Thare lived seventy years, and begat Abram, and Nachor, and Aran."
+  },
+  "27": {
+   "s_dismas": "And theſe are the generations of Thare: Thare begat Abram, Nachor, & Aran. Moreouer Aran begat Lot.",
+   "odr_com": "And these are the generations of Thare: Thare begat Abram, Nachor, & Aran. Moreouer Aran begat Lot.",
+   "sabates_a": "And these are the generations of Thare: Thare begat Abram, Nachor, and Aran. Moreover Aran begat Lot.",
+   "madueke_b": "And these are the generations of Thare: Thare begat Abram, Nachor, and Aran. Moreover Aran begat Lot."
+  },
+  "28": {
+   "s_dismas": "And Aran died before Thare his father, in the land of his natiuitie in Vr of the Chaldees.",
+   "odr_com": "And Aran died before Thare his father, in the land of his natiuitie in Vr of the Chaldees.",
+   "sabates_a": "And Aran died before Thare his father, in the land of his nativity, in Ur of the Chaldees.",
+   "madueke_b": "And Aran died before Thare his father, in the land of his nativity, in Ur of the Chaldees."
+  },
+  "29": {
+   "s_dismas": "And Abram & Nachor maried wiues: the name of Abram his wife was Sarai: and the name of Nachor his wife, Melcha the daughter of Aran the father of Melcha, and the father of Ieſcha.",
+   "odr_com": "And Abram & Nachor maried wiues: the name of Abram his wife was Sarai: and the name of Nachor his Wife, Melcha the daughter of Aran the father of Melcha, and the father of Iescha.",
+   "sabates_a": "And Abram and Nachor married wives: the name of Abram his wife was Sarai: and the name of Nachor his wife, Melcha, the daughter of Aran the father of Melcha, and the father of Jescha.",
+   "madueke_b": "And Abram and Nachor married wives: the name of Abram his wife was Sarai: and the name of Nachor his wife, Melcha, the daughter of Aran the father of Melcha, and the father of Jescha."
+  },
+  "30": {
+   "s_dismas": "And Sarai was barren, neither had ſhe children.",
+   "odr_com": "And Sarai was barren, neither had she children.",
+   "sabates_a": "And Sarai was barren, neither had she children.",
+   "madueke_b": "And Sarai was barren, neither had she children."
+  },
+  "31": {
+   "s_dismas": "Thare therfore tooke Abram his ſonne, and Lot the ſonne of Aran, his ſonnes ſonne, & Sarai his daughter in law, the wife of Abram his ſonne, and brought them out of Vr of the Chaldees, for to goe into the land of Chanaan: and they came as farre as Haran, and dwelled there.",
+   "odr_com": "Thare therfore tooke Abram his sonne, and Lot the sonne of Aran, his sonnes sonne, & Sarai his daughter in law, the wife of Abram his sonne, and brought them out of Vr of the Chaldees, for to goe into the land of Chanaan: and they came as farre as Haran, and dwelled there.",
+   "sabates_a": "Thare therefore took Abram his son, and Lot the son of Aran, his son's son, and Sarai his daughter in law, the wife of Abram his son, and brought them out of Ur of the Chaldees, for to go into the land of Chanaan: and they came as far as Haran, and dwelled there.",
+   "madueke_b": "Thare therefore took Abram his son, and Lot the son of Aran, his son's son, and Sarai his daughter in law, the wife of Abram his son, and brought them out of Ur of the Chaldees, for to go into the land of Chanaan: and they came as far as Haran, and dwelled there."
+  },
+  "32": {
+   "s_dismas": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran. The end of the ſecond age.",
+   "odr_com": "And the dayes of Thare came to two hundred fiue yeares, and died in Haran.",
+   "sabates_a": "And the days of Thare came to two hundred five years, and he died in Haran.",
+   "madueke_b": "And the days of Thare came to two hundred five years, and he died in Haran."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And the earth was of one tongue, and all one speech.",
+  "2": "And when they removed from the east, they found a plain in the land of Sennaar, and dwelt in it.",
+  "3": "And each one said to his neighbour: Come, let us make brick, and bake them with fire. And they had brick instead of stone, and bitume instead of mortar:",
+  "4": "and they said, Come, let us make us a city and a tower, the top whereof may reach to heaven: and let us renown our name before we be dispersed into all lands.",
+  "5": "And our Lord descended to see the city and the tower, which the children of Adam builded,",
+  "6": "and he said: Behold, it is one people, and one tongue is to all: and they have begun to do this, neither will they leave off from their determinations, till they accomplish them indeed.",
+  "7": "Come ye therefore, let us go down, and there confound their tongue, that none may hear his neighbour's voice.",
+  "8": "And so our Lord dispersed them from that place into all lands, and they ceased to build the city.",
+  "9": "And therefore the name thereof was called Babel, because there the tongue of the whole earth was confounded: and from thence our Lord dispersed them upon the face of all countries.",
+  "10": "These are the generations of Sem: Sem was an hundred years old when he begat Arphaxad, two years after the flood.",
+  "11": "And Sem lived after he begat Arphaxad, five hundred years, and begat sons and daughters.",
+  "12": "Moreover Arphaxad lived thirty five years, and begat Sale.",
+  "13": "And Arphaxad lived after he begat Sale, three hundred three years, and begat sons and daughters.",
+  "14": "Sale also lived thirty years, and begat Heber.",
+  "15": "And Sale lived after he begat Heber, four hundred three years, & begat sons & daughters.",
+  "16": "And Heber lived thirty four years, and begat Phaleg.",
+  "17": "And Heber lived after he begat Phaleg, four hundred thirty years, and begat sons and daughters.",
+  "18": "Phaleg also lived thirty years, and begat Reu.",
+  "19": "And Phaleg lived after he begat Reu, two hundred nine years, and begat sons and daughters.",
+  "20": "And Reu lived thirty two years, and begat Sarug.",
+  "21": "Reu lived also after he begat Sarug, two hundred seven years, and begat sons and daughters.",
+  "22": "And Sarug lived thirty years, and begat Nachor.",
+  "23": "And Sarug lived after he begat Nachor, two hundred years, and begat sons and daughters.",
+  "24": "And Nachor lived nine and twenty years, and begat Thare.",
+  "25": "And Nachor lived after he begat Thare, and hundred and nineteen years, and begat sons and daughters.",
+  "26": "And Thare lived seventy years, and begat Abram, and Nachor, and Aran.",
+  "27": "And these are the generations of Thare: Thare begat Abram, Nachor, and Aran. Moreover Aran begat Lot.",
+  "28": "And Aran died before Thare his father, in the land of his nativity, in Ur of the Chaldees.",
+  "29": "And Abram and Nachor married wives: the name of Abram his wife was Sarai: and the name of Nachor his wife, Melcha, the daughter of Aran the father of Melcha, and the father of Jescha.",
+  "30": "And Sarai was barren, neither had she children.",
+  "31": "Thare therefore took Abram his son, and Lot the son of Aran, his son's son, and Sarai his daughter in law, the wife of Abram his son, and brought them out of Ur of the Chaldees, for to go into the land of Chanaan: and they came as far as Haran, and dwelled there.",
+  "32": "And the days of Thare came to two hundred five years, and he died in Haran."
+ },
+ "ref_coverage": {
+  "janvier": 32,
+  "have": {
+   "s_dismas": 32,
+   "odr_com": 32,
+   "sabates_a": 32,
+   "madueke_b": 32
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 128,
+ "triage": "R3-READY",
+ "secs": 5.3
+}

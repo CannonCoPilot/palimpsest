@@ -1,0 +1,704 @@
+{
+  "locus": "matter-nt-table",
+  "page_index": 724,
+  "ocr_dir": "archive-nt-1582",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-nt-table-p0724.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "A TABLE OF",
+    "right": ""
+  },
+  "layout_note": "Two-column BACKMATTER of the 1582 Rheims NT: running PROSE (role 'prose', NOT a gridded/cell table), so no ' | ' column separators. It is a polemical 'Table' of the Protestant translators' corruptions, arranged by chapter & verse: Actes of the Apostles ch.2/3/9/14/15/16/17/19/20, then S. Paules Epiſtle to the Romanes ch.2/3/5. Centered running-title 'A TABLE OF' in spaced small caps. Two faces alternate within lines: ROMAN = the DR editors' own commentary; ITALIC = the quoted adversary translations / cited words (face is not separately encoded in the text field). PER-FACE w (project rule, verified by word-level zoom): ROMAN body uses a genuine single 'w' sort -> transcribed 'w' (words, new, alwaies, workes, were, we, which[roman], Wittenberge, away, where, wel, with, free-wil); ITALIC apparatus uses a double-v sort that renders as two separate v-strokes -> transcribed 'vv' (vvilt, vvhom, vvho, vvith, vvhen, vvhich, vvorſhip, vve, vvithout, vvorkes, lavv, vveake, tovvards). long-ſ is glyph-driven (worſhip, ſhrines, Engliſh read long-ſ). An italic section-header 'S. Paules Epiſtle to the Romanes:' introduces the Romans block, which opens with a 2-line woodcut decorated initial 'C' (drop_cap) giving 'CHAP. 2.'. Foot-of-page right-justified catchword 'comming,' (excluded from body concat). French spacing (a space before : ; and before some commas) preserved where the compositor set it; a few colons are set tight (deuotions:, Image:, God:, text:, men:and) and are transcribed without a preceding space. Digitization additions are NOT part of the page and are excluded: a red papal-keys shield + 'www.fatimamovement.com' watermark at lower-left, and scattered foxing/ink specks (several raised dots at line-ends are foxing, not points).",
+  "body": [
+    {
+      "line_index": 0,
+      "column": "L",
+      "role": "prose",
+      "text": "tranſlate ; thou wilt not leaue my carcas",
+      "_pre_vvfix": "tranſlate ; thou vvilt not leaue my carcas"
+    },
+    {
+      "line_index": 1,
+      "column": "L",
+      "role": "prose",
+      "text": "in the graue : Other Engliſh tranſla-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 2,
+      "column": "L",
+      "role": "prose",
+      "text": "ting alſo graue for hel, yet read ſoul in"
+    },
+    {
+      "line_index": 3,
+      "column": "L",
+      "role": "prose",
+      "text": "the text , but in the margent life or"
+    },
+    {
+      "line_index": 4,
+      "column": "L",
+      "role": "prose",
+      "text": "perſon : as though either Chriſt had"
+    },
+    {
+      "line_index": 5,
+      "column": "L",
+      "role": "prose",
+      "text": "been aliue in the graue : or his per-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 6,
+      "column": "L",
+      "role": "prose",
+      "text": "ſon ( being Diuine ) had not been,"
+    },
+    {
+      "line_index": 7,
+      "column": "L",
+      "role": "prose",
+      "text": "by hypoſtatical vnion, as wel with"
+    },
+    {
+      "line_index": 8,
+      "column": "L",
+      "role": "prose",
+      "text": "the ſoul in Limbo , as with the"
+    },
+    {
+      "line_index": 9,
+      "column": "L",
+      "role": "prose",
+      "text": "body in the gaue : and , abſtracting",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 10,
+      "column": "L",
+      "role": "prose",
+      "text": "frō that vnion, alike euery where."
+    },
+    {
+      "line_index": 11,
+      "column": "L",
+      "role": "prose",
+      "text": "Chap. 3.v.21. For whom heauen muſt",
+      "_pre_vvfix": "Chap. 3.v.21. For vvhom heauen muſt"
+    },
+    {
+      "line_index": 12,
+      "column": "L",
+      "role": "prose",
+      "text": "receiue they tranſlate whom heauen",
+      "_pre_vvfix": "receiue they tranſlate vvhom heauen"
+    },
+    {
+      "line_index": 13,
+      "column": "L",
+      "role": "prose",
+      "text": "muſt containe : Beza and Whitakers,"
+    },
+    {
+      "line_index": 14,
+      "column": "L",
+      "role": "prose",
+      "text": "who muſt be contained in heauen : ſo in-",
+      "line_end_hyphen": true,
+      "_pre_vvfix": "vvho muſt be contained in heauen : ſo in-"
+    },
+    {
+      "line_index": 15,
+      "column": "L",
+      "role": "prose",
+      "text": "cluding Chriſt in haauen , as",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 16,
+      "column": "L",
+      "role": "prose",
+      "text": "though he could not alſo be vpon"
+    },
+    {
+      "line_index": 17,
+      "column": "L",
+      "role": "prose",
+      "text": "the altar."
+    },
+    {
+      "line_index": 18,
+      "column": "L",
+      "role": "prose",
+      "text": "Chap.9.v.22. For this text : affir-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 19,
+      "column": "L",
+      "role": "prose",
+      "text": "ming that this is Chriſt, by changing"
+    },
+    {
+      "line_index": 20,
+      "column": "L",
+      "role": "prose",
+      "text": "and adding they read thus : prouing"
+    },
+    {
+      "line_index": 21,
+      "column": "L",
+      "role": "prose",
+      "text": "by conferring one Scripture with another",
+      "_pre_vvfix": "by conferring one Scripture vvith another"
+    },
+    {
+      "line_index": 22,
+      "column": "L",
+      "role": "prose",
+      "text": "that this is Chriſt : in fauour of their"
+    },
+    {
+      "line_index": 23,
+      "column": "L",
+      "role": "prose",
+      "text": "opinion that by conferring of"
+    },
+    {
+      "line_index": 24,
+      "column": "L",
+      "role": "prose",
+      "text": "Scriptures euerie man may eaſily"
+    },
+    {
+      "line_index": 25,
+      "column": "L",
+      "role": "prose",
+      "text": "vnderſtand them."
+    },
+    {
+      "line_index": 26,
+      "column": "L",
+      "role": "prose",
+      "text": "Chap. 14. v.22. For when they had",
+      "_pre_vvfix": "Chap. 14. v.22. For vvhen they had"
+    },
+    {
+      "line_index": 27,
+      "column": "L",
+      "role": "prose",
+      "text": "ordained to them Prieſts in euerie Church,"
+    },
+    {
+      "line_index": 28,
+      "column": "L",
+      "role": "prose",
+      "text": "they ſay : when they had ordained to thē",
+      "_pre_vvfix": "they ſay : vvhen they had ordained to thē"
+    },
+    {
+      "line_index": 29,
+      "column": "L",
+      "role": "prose",
+      "text": "by election Elders in euerie congregation:"
+    },
+    {
+      "line_index": 30,
+      "column": "L",
+      "role": "prose",
+      "text": "changing the words Prieſts and"
+    },
+    {
+      "line_index": 31,
+      "column": "L",
+      "role": "prose",
+      "text": "Church into new termes Elders and"
+    },
+    {
+      "line_index": 32,
+      "column": "L",
+      "role": "prose",
+      "text": "Congregation : and adding to the text"
+    },
+    {
+      "line_index": 33,
+      "column": "L",
+      "role": "prose",
+      "text": "by election , to make it ſeeme , that"
+    },
+    {
+      "line_index": 34,
+      "column": "L",
+      "role": "prose",
+      "text": "Church-men were ordained by"
+    },
+    {
+      "line_index": 35,
+      "column": "L",
+      "role": "prose",
+      "text": "election or voices of the people."
+    },
+    {
+      "line_index": 36,
+      "column": "L",
+      "role": "prose",
+      "text": "For ſo Beza forceth this place."
+    },
+    {
+      "line_index": 37,
+      "column": "L",
+      "role": "prose",
+      "text": "Chap. 15, v. 2, 4, 6, 22, & 23. for",
+      "_pre_review": "Chap. 15. v. 2.4.6, 22. & 23. for",
+      "reviewed": true
+    },
+    {
+      "line_index": 38,
+      "column": "L",
+      "role": "prose",
+      "text": "Prieſts the ſtil ſay Elders , the Greek",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 39,
+      "column": "L",
+      "role": "prose",
+      "text": "( which they profeſſe to tranſlate )"
+    },
+    {
+      "line_index": 40,
+      "column": "L",
+      "role": "prose",
+      "text": "being alwaies Prieſts : where the"
+    },
+    {
+      "line_index": 41,
+      "column": "L",
+      "role": "prose",
+      "text": "Latin hath Seniores , we tranſlate"
+    },
+    {
+      "line_index": 42,
+      "column": "L",
+      "role": "prose",
+      "text": "Ancients , becauſe it importeth an"
+    },
+    {
+      "line_index": 43,
+      "column": "L",
+      "role": "prose",
+      "text": "office or dignitie, and not elders in"
+    },
+    {
+      "line_index": 44,
+      "column": "L",
+      "role": "prose",
+      "text": "yeares."
+    },
+    {
+      "line_index": 45,
+      "column": "L",
+      "role": "prose",
+      "text": "Chap.16.v.4. The ſame corruptiō"
+    },
+    {
+      "line_index": 46,
+      "column": "L",
+      "role": "prose",
+      "text": "Elders for Prieſt.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 47,
+      "column": "R",
+      "role": "prose",
+      "text": "Chap.17. v.23. For ſeeing your Idols"
+    },
+    {
+      "line_index": 48,
+      "column": "R",
+      "role": "prose",
+      "text": "or ſeeing the things which you ( Athe-",
+      "line_end_hyphen": true,
+      "_pre_vvfix": "or ſeeing the things vvhich you ( Athe-"
+    },
+    {
+      "line_index": 49,
+      "column": "R",
+      "role": "prose",
+      "text": "niens ) doe worſhip , they tranſlate",
+      "_pre_vvfix": "niens ) doe vvorſhip , they tranſlate"
+    },
+    {
+      "line_index": 50,
+      "column": "R",
+      "role": "prose",
+      "text": "ſeeing your deuotions: as though deuo-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 51,
+      "column": "R",
+      "role": "prose",
+      "text": "tion & ſuperſtition were al one."
+    },
+    {
+      "line_index": 52,
+      "column": "R",
+      "role": "prose",
+      "text": "V. 30. For doe penance , they ſay"
+    },
+    {
+      "line_index": 53,
+      "column": "R",
+      "role": "prose",
+      "text": "repent."
+    },
+    {
+      "line_index": 54,
+      "column": "R",
+      "role": "prose",
+      "text": "Chap.19. v.4. For in Iohns Baptiſme"
+    },
+    {
+      "line_index": 55,
+      "column": "R",
+      "role": "prose",
+      "text": "they ſay vnto Iohns Baptiſme, and then"
+    },
+    {
+      "line_index": 56,
+      "column": "R",
+      "role": "prose",
+      "text": "falſely gloſſe it, to beleeue in Iohns"
+    },
+    {
+      "line_index": 57,
+      "column": "R",
+      "role": "prose",
+      "text": "doctrine."
+    },
+    {
+      "line_index": 58,
+      "column": "R",
+      "role": "prose",
+      "text": "V. 24. For Temples of Diana they"
+    },
+    {
+      "line_index": 59,
+      "column": "R",
+      "role": "prose",
+      "text": "tranſlate ſhrines : to make ſhrines of"
+    },
+    {
+      "line_index": 60,
+      "column": "R",
+      "role": "prose",
+      "text": "Saints bodies, and of other holie"
+    },
+    {
+      "line_index": 61,
+      "column": "R",
+      "role": "prose",
+      "text": "Relikes, odious."
+    },
+    {
+      "line_index": 62,
+      "column": "R",
+      "role": "prose",
+      "text": "V.35. They adde to the text Image:"
+    },
+    {
+      "line_index": 63,
+      "column": "R",
+      "role": "prose",
+      "text": "againſt holie Images."
+    },
+    {
+      "line_index": 64,
+      "column": "R",
+      "role": "prose",
+      "text": "Chap. 20. v.17. Elders for Prieſts.",
+      "has_uncertain": true,
+      "_pre_review": "Chap. 20. v.17. Elders for Prieſts;",
+      "reviewed": true
+    },
+    {
+      "line_index": 65,
+      "column": "R",
+      "role": "prose",
+      "text": "V. 28. For rule the Church of God,",
+      "has_uncertain": true,
+      "_pre_review": "V. 28. For rule the Church of God;",
+      "reviewed": true
+    },
+    {
+      "line_index": 66,
+      "column": "R",
+      "role": "prose",
+      "text": "they tranſlate ſeede the Church of God:"
+    },
+    {
+      "line_index": 67,
+      "column": "R",
+      "role": "prose",
+      "text": "and in one Bible, ſeede the Congrega-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 68,
+      "column": "R",
+      "role": "prose",
+      "text": "tion of God."
+    },
+    {
+      "line_index": 69,
+      "column": "R",
+      "role": "section_header",
+      "text": "S. Paules Epiſtle to the Romanes:",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 70,
+      "column": "R",
+      "role": "excluded",
+      "text": "C",
+      "drop_cap_note": "woodcut decorated initial (2 lines tall) opening 'CHAP. 2.' of the Romans section; continues on line 71",
+      "excluded_reason": "reviewer removed (empty correction)"
+    },
+    {
+      "line_index": 71,
+      "column": "R",
+      "role": "prose",
+      "text": "CHAP. 2. v. 13. For iuſt they ſay",
+      "_pre_review": "HAP. 2. v. 13. For iuſt they ſay",
+      "reviewed": true
+    },
+    {
+      "line_index": 72,
+      "column": "R",
+      "role": "prose",
+      "text": "righteous , And v. 26. ordinances"
+    },
+    {
+      "line_index": 73,
+      "column": "R",
+      "role": "prose",
+      "text": "for iuſtices : againſt iuſtification by"
+    },
+    {
+      "line_index": 74,
+      "column": "R",
+      "role": "prose",
+      "text": "good workes."
+    },
+    {
+      "line_index": 75,
+      "column": "R",
+      "role": "prose",
+      "text": "Chap. 3. v.28. To this text: for we",
+      "_pre_vvfix": "Chap. 3. v.28. To this text: for vve"
+    },
+    {
+      "line_index": 76,
+      "column": "R",
+      "role": "prose",
+      "text": "account a man to be iuſtified by faith"
+    },
+    {
+      "line_index": 77,
+      "column": "R",
+      "role": "prose",
+      "text": "without the workes of the law , Luther",
+      "_pre_vvfix": "vvithout the vvorkes of the lavv , Luther"
+    },
+    {
+      "line_index": 78,
+      "column": "R",
+      "role": "prose",
+      "text": "added only, ſaying by faith only, in the"
+    },
+    {
+      "line_index": 79,
+      "column": "R",
+      "role": "prose",
+      "text": "Edition of Wittenberge, anno.1551."
+    },
+    {
+      "line_index": 80,
+      "column": "R",
+      "role": "prose",
+      "text": "Chap. 5. v. 6. For weake they",
+      "_pre_vvfix": "Chap. 5. v. 6. For vveake they"
+    },
+    {
+      "line_index": 81,
+      "column": "R",
+      "role": "prose",
+      "text": "tranſlate of no ſtrength : to take away"
+    },
+    {
+      "line_index": 82,
+      "column": "R",
+      "role": "prose",
+      "text": "free-wil."
+    },
+    {
+      "line_index": 83,
+      "column": "R",
+      "role": "prose",
+      "text": "V. 18. To this text: as by the offence"
+    },
+    {
+      "line_index": 84,
+      "column": "R",
+      "role": "prose",
+      "text": "of one vnto al men to condemnation, ſo alſo"
+    },
+    {
+      "line_index": 85,
+      "column": "R",
+      "role": "prose",
+      "text": "by the iuſtice of one vnto al men to iuſtifi-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 86,
+      "column": "R",
+      "role": "prose",
+      "text": "cation of life , they adde moſt par-",
+      "line_end_hyphen": true,
+      "has_uncertain": true
+    },
+    {
+      "line_index": 87,
+      "column": "R",
+      "role": "prose",
+      "text": "tially in the former part , by the of-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 88,
+      "column": "R",
+      "role": "prose",
+      "text": "fence of one the fault came on al men:and"
+    },
+    {
+      "line_index": 89,
+      "column": "R",
+      "role": "prose",
+      "text": "in the ſecond part , by the iuſtice of one"
+    },
+    {
+      "line_index": 90,
+      "column": "R",
+      "role": "prose",
+      "text": "the benifit abounded towards al men:ma-",
+      "line_end_hyphen": true,
+      "has_uncertain": true,
+      "_pre_vvfix": "the benifit abounded tovvards al men:ma-"
+    },
+    {
+      "line_index": 91,
+      "column": "R",
+      "role": "prose",
+      "text": "king this falſe difference , that we"
+    },
+    {
+      "line_index": 92,
+      "column": "R",
+      "role": "prose",
+      "text": "are indeed vniuſt, by Adams fault,"
+    },
+    {
+      "line_index": 93,
+      "column": "R",
+      "role": "catchword",
+      "text": "comming,",
+      "catchword_note": "reader-convenience catchword duplicating the first word(s) of the next page; excluded from body concat (Sir, 2026-07-12)",
+      "excluded_reason": "reviewer removed (empty correction)"
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "line_index": 9,
+      "span": "gaue",
+      "note": "printed 'gaue' (g-a-u-e, NO r) — verified at 2.6x zoom; a compositor typo for 'graue' (grave), which IS correctly spelt at line_index 1 and 5 on this same page. Preserved as printed."
+    },
+    {
+      "line_index": 15,
+      "span": "haauen",
+      "note": "printed 'haauen' (doubled 'a') — compositor typo for 'heauen', which is correctly spelt at line_index 11/12/14. Preserved as printed."
+    },
+    {
+      "line_index": 38,
+      "span": "the",
+      "note": "glyph is unambiguously 'the' (t-h-e, no y-descender) — verified against the true 'they' one line below ('which they profeſſe') where the y-tail is obvious. Sense wants 'they' ('for Prieſts they ſtil ſay Elders'); a probable dropped-y compositor slip. Transcribed as printed = 'the'."
+    },
+    {
+      "line_index": 46,
+      "span": "Elders for Prieſt.",
+      "note": "last line of the left column; italic, very faint/worn on the plate. Reading recovered from context — the 'ſame corruptiō' named on line 45, paralleling 'Elders for Prieſts' at Actes 20:17 (line 64). Singular/plural of the final word ('Prieſt' / 'Prieſts') and the exact terminal punctuation cannot be read with confidence; OCR scaffold gives 'Elders for Preft.'."
+    },
+    {
+      "line_index": 69,
+      "span": "Romanes:",
+      "note": "italic section-header terminal mark ambiguous between ':', ';' and '.'. Transcribed ':'."
+    },
+    {
+      "line_index": 86,
+      "span": "cation",
+      "note": "a stray dot / broken sort sits at the left margin immediately before 'cation' (the tail of hyphenated 'iuſtifi-/cation'); likely a broken piece of type or stray ink, not a printed point, so not transcribed. OCR scaffold also shows a leading '.'."
+    },
+    {
+      "line_index": 90,
+      "span": "benifit",
+      "note": "printed 'benifit' (b-e-n-i-f-i-t; second vowel is 'i', verified at zoom) — a period spelling / typo for 'benefit'. Preserved as printed (OCR scaffold also reads 'benifit')."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": null,
+    "note": "not hand-counted; recompute by script counting U+017F in body[].text. long-ſ was read glyph-by-glyph (glyph-driven, not positional). w/vv resolved per-FACE: roman commentary -> 'w', italic quotation -> 'vv'."
+  },
+  "observer": "claude-opus-4.8:matter-nt-table",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal read of the 400 DPI raster (.gt-rasters/matter-nt-table-p0724.png), read region-by-region and with word-level 2.5-3.2x zooms (incl. a direct italic-vs-roman 'which' comparison to fix the w/vv face-rule); OCR scaffold (sources/our-ocr/nt-1582/..._0724.txt) consulted only as a dropped-line hint, never as a spelling oracle.",
+  "confidence": "high on the roman commentary and italic quotations (body text) and on long-ſ; per-face w/vv applied per the project directive (roman 'w', italic 'vv') and confirmed by zoom (italic w = two v-strokes). medium on the faint last left-column line (46) and on the small terminal colon/semicolon marks (lines 64/65/69).",
+  "resolved_uncertain": [
+    {
+      "line_index": 37,
+      "span": "22",
+      "note": "'Chap. 15. v. 2.4.6, 22. & 23.' A first pass read the second numeral as '21'; a tight zoom of the digit plus the underlying reference (Actes 15:22-23, 'the Apostles and ancients/elders') confirm '22' (v.21 is unrelated). Transcribed '22'.",
+      "resolved_to": "Chap. 15, v. 2, 4, 6, 22, & 23. for",
+      "resolved_by": "sir"
+    },
+    {
+      "line_index": 64,
+      "span": "Prieſts;",
+      "note": "terminal mark after 'Prieſts' is a raised point, ambiguous between ':' and ';' (the page carries many raised foxing dots). Transcribed ';' (matches OCR scaffold).",
+      "resolved_to": "Chap. 20. v.17. Elders for Prieſts.",
+      "resolved_by": "sir"
+    },
+    {
+      "line_index": 65,
+      "span": "God;",
+      "note": "mid-sentence terminal mark after 'God' ('For rule the Church of God, they tranſlate...') is a raised mark, ambiguous between ';', ':' and a raised comma. Transcribed ';'.",
+      "resolved_to": "V. 28. For rule the Church of God,",
+      "resolved_by": "sir"
+    }
+  ],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-14T22:18:26.705397+00:00",
+    "n_applied": 4,
+    "n_excluded": 2,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-nt-table.corrections.json"
+  },
+  "glyph_regime_resolved": "NT-1582 per-FACE w/vv (Jarvis 2026-07-15, applying Sir's body=w guideline): roman body/prose = REAL single-sort 'w' cut in vv-style -> w; DISPLAY TITLING CAPS (title_display/imprint) = genuine VV, the large capitals fount has NO W sort (zoomed 'NEVV TESTAMENT' = two separated V's) -> KEEP vv; italic (arguments/annotations) = real 'w' (zoomed 'Whoſe'/'who' connected). Prose vv->w applied here; display 'NEVV' preserved. OPEN: roman-lowercase w-vs-vv rests on a CAPITAL proof + Sir's guideline; clean-page lowercase reads vv-style — awaiting Sir ratification (global-flip reverts all roman NT if he reads genuine vv)."
+}

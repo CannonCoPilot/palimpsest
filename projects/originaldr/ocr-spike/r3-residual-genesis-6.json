@@ -1,0 +1,1981 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p40",
+  "old_text": "ND after that men began to be multiplied vpon the Nearth, & had procreation of daughters:",
+  "old": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7606,
+   0.955,
+   0.8488
+  ],
+  "crop_page": 40,
+  "r3_raw": "And after that men began to be multiplied vpon the earth, & had procréation of daughters: † The sonnes of God ſeeing the daughters of men, that they were faire;",
+  "r3_verse": "And after that men began to be multiplied vpon the earth, & had procréation of daughters:",
+  "arm_conflicts": [
+   "ND | And",
+   "Nearth, | earth,",
+   "procreation | procréation"
+  ],
+  "new_text": "And after that men began to be multiplied vpon the earth, & had procreation of daughters:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "And God ſaid My ſpirir ſhal not romaine in man for euer, becauſe amovmnt com becauſe he it flesh: his dayes ſhal be* an hūdred twentier yeares. Ant",
+  "old": {
+   "s_dismas": 0.803,
+   "odr_com": 0.789,
+   "sabates_a": 0.717,
+   "madueke_b": 0.717
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.8454,
+   0.955,
+   1.0
+  ],
+  "crop_page": 40,
+  "crop_leaves": [
+   40,
+   41
+  ],
+  "r3_raw": "tooke to them selues wiuces out of al, which they had chosen; 3 And God said: My spirit that not remaine in man for ever. because GENESIS. because he is flesh: & his dayes shal be an húdred & twentie yeares. † And Giants were vpon the earth in those dayes. :: God For after the sónnes of God did companie with the daugh-",
+  "r3_verse": "And God said: My spirit that not remaine in man for ever. because because he is flesh: & his dayes shal be an húdred & twentie yeares.",
+  "arm_conflicts": [
+   "ſpirir ſhal | spirit that",
+   "romaine | remaine",
+   "euer, | ever.",
+   "it | is",
+   "hūdred twentier | húdred & twentie"
+  ],
+  "new_text": "And God ſaid My spirit that not remaine in man for euer, becauſe becauſe he is flesh: & his dayes ſhal be* an hūdred & twentie yeares.",
+  "s_unresolved": [
+   "spirit"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.92,
+   "odr_com": 0.904,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p41",
+  "old_text": "Ant Giants were vpon the earth in thoſe dayes. For aftet the ſonnes of God did companie with the daughrets of men, hnd they brought forth children, theſe be the mightie of the olde world, famous men.",
+  "old": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.049,
+   0.0431,
+   0.875,
+   0.1737
+  ],
+  "crop_page": 41,
+  "r3_raw": "because he is flesh: & his dayes shal be an hundred & twentie yeares. † And Giants were vpon the earth in those dayes. :: God For after the sonnes of God did companie with the daughters of men, and they brought forth children, these be the mightie of the olde world, famous men. † And God seing the malice of men was much on the earth, and that al the",
+  "r3_verse": "And Giants were vpon the earth in those dayes. :: God For after the sonnes of God did companie with the daughters of men, and they brought forth children, these be the mightie of the olde world, famous men.",
+  "arm_conflicts": [
+   "Ant | And",
+   "aftet | after",
+   "daughrets | daughters",
+   "hnd | and"
+  ],
+  "lexicon_readings": {
+   "12": "after"
+  },
+  "visual_readings": {
+   "12": "after"
+  },
+  "new_text": "And Giants were vpon the earth in thoſe dayes. :: God For after the ſonnes of God did companie with the daughters of men, and they brought forth children, theſe be the mightie of the olde world, famous men.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p41",
+  "old_text": "And he begatg three ſonnes, Sem, Cham, & I: pheth.",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3315,
+   0.8959,
+   0.4158
+  ],
+  "crop_page": 41,
+  "r3_raw": "generations of Noe: \" Noc was a iust and perfect man in: 10 :: his generations, he did walke with God. † And he begat :: Inial gen 11 three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie.",
+  "r3_verse": "And he begat :: Inial gen three sonnes, Sem, Cham, & Iapheth.",
+  "arm_conflicts": [
+   "begatg | begat :: Inial gen",
+   "I: pheth. | Iapheth."
+  ],
+  "new_text": "And he begat :: Inial gen three ſonnes, Sem, Cham, & Iapheth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.808,
+   "odr_com": 0.808,
+   "sabates_a": 0.694,
+   "madueke_b": 0.694
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p41",
+  "old_text": "And the earth was corrupted before God, aud was replenished with iniquitie.",
+  "old": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3531,
+   0.875,
+   0.4397
+  ],
+  "crop_page": 41,
+  "r3_raw": "10: his generations, he did walke with God. † And he begat three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie. 12: † And when God had perceiued that the earth was corrup-",
+  "r3_verse": "And the earth was corrupted before God, and was replenished with iniquitie. 12:",
+  "arm_conflicts": [
+   "aud | and"
+  ],
+  "new_text": "And the earth was corrupted before God, and was replenished with iniquitie. 12:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p41",
+  "old_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou ſhalr fet at the ſide belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.5755,
+   0.875,
+   0.7032
+  ],
+  "crop_page": 41,
+  "r3_raw": "hundred\" cubitts: fiftie cubitts the breadth, and thirtie cubitts the height of it. † Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it:and the dore of the arke thou ſhalt fet at the side belowe, middle chambers, and third loftes ſhalt thou make in it. † Behold I wil bring the waters of a great floud vpon the earth, that I may",
+  "r3_verse": "Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it:and the dore of the arke thou ſhalt fet at the side belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "arm_conflicts": [
+   "it: and | it:and",
+   "ſhalr | ſhalt"
+  ],
+  "new_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it:and the dore of the arke thou ſhalt fet at the ſide belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "s_unresolved": [
+   "ſhalt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "Of foules according to their kind, and of beaſtes in their kind, of al that creepeth on the earth according to their kind: payres of al ſortes ſbal enter in with thee, that they may liue.",
+  "old": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.7994,
+   0.875,
+   0.9142
+  ],
+  "crop_page": 41,
+  "crop_leaves": [
+   41,
+   42
+  ],
+  "r3_raw": "of al flesh, thou shalt bring payres into the arke, that they may liue with thee: of the male sexe, and the female. † Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kind: payres Genesis: payres of al sortes that enter in with thee, that they may live. † Thou shalt take therefore with thee of all meates, that may be eaten, and thou shalt lay them vp with thee: and",
+  "r3_verse": "Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kind: payres Genesis: payres of al sortes that enter in with thee, that they may live.",
+  "arm_conflicts": [
+   "ſbal | that",
+   "liue. | live."
+  ],
+  "new_text": "Of foules according to their kind, and of beaſtes in their kind, & of al that creepeth on the earth according to their kind: payres Genesis: payres of al ſortes that enter in with thee, that they may liue.",
+  "s_unresolved": [
+   "Genesis:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 21,
+  "from": "p42",
+  "old_text": "Thou ſhalt take therfore with thee of al meates, that right may be eaten, and thou ſhalt lay them vp with thee and of a iuft they ſhal be meate for thee and them.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.0486,
+   0.955,
+   0.1588
+  ],
+  "crop_page": 42,
+  "r3_raw": "payres of al sortes that enter in with thee, that they may live. † Thou shalt take therefore with thee of all meates, that may be eaten, and thou shalt lay them vp with thee: and they shalbe meate for thee and them. † Noe therfore did all things, which God commanded him.",
+  "r3_verse": "Thou shalt take therefore with thee of all meates, that may be eaten, and thou shalt lay them vp with thee: and they shalbe meate for thee and them.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "al | all",
+   "ſhal be | shalbe"
+  ],
+  "new_text": "Thou ſhalt take therefore with thee of al meates, that may be eaten, and thou ſhalt lay them vp with thee and they shalbe meate for thee and them.",
+  "s_unresolved": [
+   "therefore",
+   "shalbe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p44",
+  "old_text": "and after that men began to be multiplied vpon the Nearth, had procreation of daughters:",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.016,
+   0.965,
+   0.8599
+  ],
+  "crop_page": 44,
+  "r3_raw": "and the whole Church beleeueth) was preserved from that death, and so vndoubtedly were Seth, and Enos being most holie. and the rest here recounted, as is most probable. Nevertheles for further confutation of the contrarie opinion of Protestants, the reader may also obserue the judgement of S. Chrisostom, who affirmeth that Though it be not a matter of faith, whether Enoch benovv in Paradise from vvhence Adam and Eve vvere expelled, or in some other pleasant place: Dicunt tamen sacra Scriprura quod Deus transstulit eum, & quod viuentem transstulit eum, quod mortem ip/e non sit expertus. The holie Scriptures say that God translated him, and that he translated him aline, that he felt not (or hath not experienced) death. And S. Augustin as expressly saith. Non mortuus, sed viuus translatus est. He (to vvit Enoch ) is translated, not dead but aline. Yea he teacheth how his life is sustayned thus many thousand yeares vpon earth. And sheweth moreouer that both Enoch and Elias shal dye. For seing Enoch and Elias (saith he) are dead in Adam, and caruing the offspring of death in their flesh, to pay that debt, are to returne to this life (of common conversation) and to pay this debt vvhich so long is deferred. Divers reasons are also all allegaged, why God would preserve these two aline. Secondly to give vs an argument of immortalitie, we may assuredly belieue that he wil geue immortality & eternal life of bobie and soule to his Sainctes, when he shal come before the great and terrible day of our Lord, and shal prophicicieth, that he shal come before the great and terrible day of our Lord, and shal turne the hart of the fathers (that is the people of the Lewes) to the sonnes (the Christians )and of the sonnes ( the deceiued Christians) to the fathers, the ancient true Catholiques. CHAP. VII. Mans finnes cause of the deluge. 4. Giants were then vpon the earth. 8. Noe being just was commanded to build the Arke, 18. vvherin be with seven persons more, and these seede of other living things things vvere saved. A ND after that men began to be multiplied vpon the earth, & had procreation of daughters: † The sonnes sonnes 2",
+  "r3_verse": "and the whole Church beleeueth) was preserved from that death, and so vndoubtedly were Seth, and Enos being most holie. and the rest here recounted, as is most probable. Nevertheles for further confutation of the contrarie opinion of Protestants, the reader may also obserue the judgement of Chrisostom, who affirmeth that Though it be not a matter of faith, whether Enoch benovv in Paradise from vvhence Adam and Eve vvere expelled, or in some other pleasant place: Dicunt tamen sacra Scriprura quod Deus transstulit eum, & quod viuentem transstulit eum, quod mortem ip/e non sit expertus. The holie Scriptures say that God translated him, and that he translated him aline, that he felt not (or hath not experienced) death. And Augustin as expressly saith. Non mortuus, sed viuus translatus est. He (to vvit Enoch ) is translated, not dead but aline. Yea he teacheth how his life is sustayned thus many thousand yeares vpon earth. And sheweth moreouer that both Enoch and Elias shal dye. For seing Enoch and Elias (saith he) are dead in Adam, and caruing the offspring of death in their flesh, to pay that debt, are to returne to this life (of common conversation) and to pay this debt vvhich so long is deferred. Divers reasons are also all allegaged, why God would preserve these two aline. Secondly to give vs an argument of immortalitie, we may assuredly belieue that he wil geue immortality & eternal life of bobie and soule to his Sainctes, when he shal come before the great and terrible day of our Lord, and shal prophicicieth, that he shal come before the great and terrible day of our Lord, and shal turne the hart of the fathers (that is the people of the Lewes) to the sonnes (the Christians )and of the sonnes ( the deceiued Christians) to the fathers, the ancient true Catholiques. CHAP. VII. Mans finnes cause of the deluge. Giants were then vpon the earth. Noe being just was commanded to build the Arke, vvherin be with seven persons more, and these seede of other living things things vvere saved. A ND after that men began to be multiplied vpon the earth, & had procreation of daughters: The sonnes sonnes",
+  "arm_conflicts": [
+   "Nearth, | earth, &"
+  ],
+  "lexicon_readings": {
+   "7": "from",
+   "18": "moſt",
+   "27": "moſt",
+   "30": "for",
+   "31": "further",
+   "64": "from",
+   "102": "tranſlated",
+   "107": "tranſlated",
+   "120": "Auguſtin",
+   "123": "ſaith.",
+   "136": "tranſlated,",
+   "146": "life",
+   "151": "thouſand",
+   "170": "(ſaith",
+   "194": "life",
+   "218": "theſe",
+   "240": "life",
+   "244": "ſoule",
+   "252": "before",
+   "268": "before",
+   "284": "fathers",
+   "294": "ſonnes",
+   "300": "ſonnes",
+   "307": "fathers,",
+   "315": "ſinnes",
+   "339": "perſons",
+   "342": "theſe",
+   "369": "ſonnes",
+   "370": "ſonnes"
+  },
+  "r2_attested": {
+   "11": "ſo",
+   "22": "reſt",
+   "38": "Proteſtants,",
+   "42": "alſo",
+   "43": "obſerue",
+   "47": "Chriſoſtom,",
+   "63": "Paradiſe",
+   "73": "ſome",
+   "94": "ſit",
+   "99": "ſay",
+   "126": "ſed",
+   "128": "tranſlatus",
+   "129": "eſt.",
+   "148": "ſuſtayned",
+   "156": "ſheweth",
+   "166": "ſeing",
+   "204": "ſo",
+   "209": "reaſons",
+   "211": "alſo",
+   "231": "aſſuredly",
+   "296": "Chriſtians",
+   "304": "Chriſtians)",
+   "316": "cauſe",
+   "343": "ſeede"
+  },
+  "visual_readings": {
+   "7": "from",
+   "18": "moſt",
+   "27": "moſt",
+   "30": "for",
+   "31": "further",
+   "64": "from",
+   "102": "tranſlated",
+   "107": "tranſlated",
+   "120": "Auguſtin",
+   "123": "ſaith.",
+   "136": "tranſlated,",
+   "146": "life",
+   "151": "thouſand",
+   "170": "(ſaith",
+   "194": "life",
+   "218": "theſe",
+   "240": "life",
+   "244": "ſoule",
+   "252": "before",
+   "268": "before",
+   "284": "fathers",
+   "294": "ſonnes",
+   "300": "ſonnes",
+   "307": "fathers,",
+   "315": "ſinnes",
+   "339": "perſons",
+   "342": "theſe",
+   "369": "ſonnes",
+   "370": "ſonnes",
+   "11": "ſo",
+   "22": "reſt",
+   "38": "Proteſtants,",
+   "42": "alſo",
+   "43": "obſerue",
+   "47": "Chriſoſtom,",
+   "63": "Paradiſe",
+   "73": "ſome",
+   "94": "ſit",
+   "99": "ſay",
+   "126": "ſed",
+   "128": "tranſlatus",
+   "129": "eſt.",
+   "148": "ſuſtayned",
+   "156": "ſheweth",
+   "166": "ſeing",
+   "204": "ſo",
+   "209": "reaſons",
+   "211": "alſo",
+   "231": "aſſuredly",
+   "296": "Chriſtians",
+   "304": "Chriſtians)",
+   "316": "cauſe",
+   "343": "ſeede"
+  },
+  "new_text": "and the whole Church beleeueth) was preserved from that death, and ſo vndoubtedly were Seth, and Enos being moſt holie. and the reſt here recounted, as is moſt probable. Nevertheles for further confutation of the contrarie opinion of Proteſtants, the reader may alſo obſerue the judgement of Chriſoſtom, who affirmeth that Though it be not a matter of faith, whether Enoch benovv in Paradiſe from vvhence Adam and Eve vvere expelled, or in ſome other pleasant place: Dicunt tamen sacra Scriprura quod Deus transstulit eum, & quod viuentem transstulit eum, quod mortem ip/e non ſit expertus. The holie Scriptures ſay that God tranſlated him, and that he tranſlated him aline, that he felt not (or hath not experienced) death. And Auguſtin as expressly ſaith. Non mortuus, ſed viuus tranſlatus eſt. He (to vvit Enoch ) is tranſlated, not dead but aline. Yea he teacheth how his life is ſuſtayned thus many thouſand yeares vpon earth. And ſheweth moreouer that both Enoch and Elias shal dye. For ſeing Enoch and Elias (ſaith he) are dead in Adam, and caruing the offspring of death in their flesh, to pay that debt, are to returne to this life (of common conversation) and to pay this debt vvhich ſo long is deferred. Divers reaſons are alſo all allegaged, why God would preserve theſe two aline. Secondly to give vs an argument of immortalitie, we may aſſuredly belieue that he wil geue immortality & eternal life of bobie and ſoule to his Sainctes, when he shal come before the great and terrible day of our Lord, and shal prophicicieth, that he shal come before the great and terrible day of our Lord, and shal turne the hart of the fathers (that is the people of the Lewes) to the ſonnes (the Chriſtians )and of the ſonnes ( the deceiued Chriſtians) to the fathers, the ancient true Catholiques. CHAP. VII. Mans ſinnes cauſe of the deluge. Giants were then vpon the earth. Noe being just was commanded to build the Arke, vvherin be with seven perſons more, and theſe ſeede of other living things things vvere saved. A ND after that men began to be multiplied vpon the earth, & had procreation of daughters: The ſonnes ſonnes",
+  "s_unresolved": [
+   "preserved",
+   "confutation",
+   "affirmeth",
+   "faith,",
+   "pleasant",
+   "sacra",
+   "transstulit",
+   "transstulit",
+   "felt",
+   "expressly",
+   "shal",
+   "offspring",
+   "flesh,",
+   "conversation)",
+   "deferred.",
+   "preserve",
+   "shal",
+   "shal",
+   "shal",
+   "shal",
+   "just",
+   "seven",
+   "saved."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "And God ſaid Myſpinit ſal not romaie in man for euer, becauſe he is flesh: his dayes ſhal be an hūdred twentie yeares.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.941,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "neighbours": [
+   3
+  ],
+  "crop": [
+   0.08,
+   0.8562,
+   0.965,
+   0.9299
+  ],
+  "crop_page": 44,
+  "crop_leaves": [
+   44,
+   45
+  ],
+  "r3_raw": "tooke to them selues wiuues out of al, which they had chofen. And God said: My spirit shal not remaine in man for euers, because GENESIS. because he is flesh: & his dayes shal be \"an hūdred & twentie 4 yeares. † And \" Giants were vpon the earth in those dayes. :: God For after the sonnes of God did companie with the daugh-",
+  "r3_verse": "And God said: My spirit shal not remaine in man for euers, because because he is flesh: & his dayes shal be \"an hūdred & twentie yeares.",
+  "arm_conflicts": [
+   "Myſpinit ſal | My spirit shal",
+   "romaie | remaine",
+   "euer, | euers, because",
+   "an | \"an"
+  ],
+  "lexicon_readings": {
+   "12": "becauſe"
+  },
+  "r2_attested": {
+   "5": "ſhal"
+  },
+  "visual_readings": {
+   "12": "becauſe",
+   "5": "ſhal"
+  },
+  "new_text": "And God ſaid My spirit ſhal not remaine in man for euers, becauſe becauſe he is flesh: & his dayes ſhal be an hūdred & twentie yeares.",
+  "s_unresolved": [
+   "spirit"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.929,
+   "odr_com": 0.913,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p45",
+  "old_text": "And he begat three ſonnes, Sem, Cham, & Iapheth.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3236,
+   0.875,
+   0.4144
+  ],
+  "crop_page": 45,
+  "r3_raw": "generations of Noe: \"Noe was a iust and perfect man in his generations, he did walke with God. † And he begat three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie.",
+  "r3_verse": "And he begat three sonnes, Sem, Cham, & Iapheth.",
+  "arm_conflicts": [],
+  "new_text": "And he begat three ſonnes, Sem, Cham, & Iapheth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p45",
+  "old_text": "And the earth was corrupted before God, and was replenished with iniquitie.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3437,
+   0.875,
+   0.4355
+  ],
+  "crop_page": 45,
+  "r3_raw": "10 :: his generations, he did walke with God. † And he begat 11 three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie. 12 † And when God had perceiued that the earth was corrup-",
+  "r3_verse": "And the earth was corrupted before God, and was replenished with iniquitie.",
+  "arm_conflicts": [],
+  "new_text": "And the earth was corrupted before God, and was replenished with iniquitie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p45",
+  "old_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou ſhalt fet at the ſide belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "old": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.578,
+   0.875,
+   0.7144
+  ],
+  "crop_page": 45,
+  "r3_raw": "hundred\" cubitts: fiftie cubitts the breadth, and thirtie cubitts the height of it. † Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou shalt set at the side belowe, middle chambers, and third loftes shalt thou make in it. † Behold I wil bring the waters of a great floud vpon the earth, that I may",
+  "r3_verse": "Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou shalt set at the side belowe, middle chambers, and third loftes shalt thou make in it.",
+  "arm_conflicts": [
+   "fet | set"
+  ],
+  "lexicon_readings": {
+   "25": "ſet"
+  },
+  "visual_readings": {
+   "25": "ſet"
+  },
+  "new_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou ſhalt ſet at the ſide belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "Of foules accordingto their kind, andof beaſtes in their kind, of al thar creepeth on the earth according to their kind: payres of al ſortes ſhal enter in with thee, that they may liue.",
+  "old": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.8097,
+   0.875,
+   0.9276
+  ],
+  "crop_page": 45,
+  "crop_leaves": [
+   45,
+   46
+  ],
+  "r3_raw": "of al flesh, thou shalt bring payres into the arke, that they may liue with thee: of the male sexe, and the female. Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kinds payres of al sortes ſhal enter in with thee, that they may live. † Thou ſhalt take therefore with thee of al meates, that 21 may be eaten, and thou ſhalt lay them vp with thee: and",
+  "r3_verse": "Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kinds payres of al sortes ſhal enter in with thee, that they may live.",
+  "arm_conflicts": [
+   "accordingto | according to",
+   "andof | and of",
+   "thar | that",
+   "kind: | kinds",
+   "liue. | live."
+  ],
+  "new_text": "Of foules according to their kind, and of beaſtes in their kind, & of al that creepeth on the earth according to their kinds payres of al ſortes ſhal enter in with thee, that they may liue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 21,
+  "from": "p46",
+  "old_text": "Thou ſhalt take therfore with thee of al meates, that2 may be eaten, and thou ſhalt lay them vp with thee and ofa iuſt they ſhal be meate for thee and them.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.0348,
+   0.965,
+   0.1415
+  ],
+  "crop_page": 46,
+  "r3_raw": "payres of al sortes that enter in with thee, that they may live. † Thou shalt take therefore with thee of all meates, that may be eaten, and thou shalt lay them vp with thee: and they shal be meate for thee and them. † Noe therfore did all thinges, which God commanded him.",
+  "r3_verse": "Thou shalt take therefore with thee of all meates, that may be eaten, and thou shalt lay them vp with thee: and they shal be meate for thee and them.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "al | all",
+   "that2 | that"
+  ],
+  "new_text": "Thou ſhalt take therefore with thee of al meates, that2 may be eaten, and thou ſhalt lay them vp with thee and they ſhal be meate for thee and them.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p50",
+  "old_text": "ND after that men began to be multiplied vpon the Nearth, & had procreation of daughters:",
+  "old": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7688,
+   0.935,
+   0.8589
+  ],
+  "crop_page": 50,
+  "r3_raw": "And after that men began to be multiplied vpon the earth, & had procreation of daughters: † The sonnes of God seing the daughters of men, that they were faire,",
+  "r3_verse": "And after that men began to be multiplied vpon the earth, & had procreation of daughters:",
+  "arm_conflicts": [
+   "ND | And",
+   "Nearth, | earth,"
+  ],
+  "new_text": "And after that men began to be multiplied vpon the earth, & had procreation of daughters:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p50",
+  "old_text": "The: ſonnes God. of God ſeing the daughters of inen, that they were faire, the tooke to them ſelues wiues out of al, which they had choſen",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7904,
+   0.935,
+   0.9052
+  ],
+  "crop_page": 50,
+  "r3_raw": "And after that men began to be multiplied vpon the earth, & had procreation of daughters: † The sonnes of God seing the daughters of men, that they were faire, tooke to them selues wiuues out of al, which they had chosen. And God said: My spirit shal not remaine in man for euer,",
+  "r3_verse": "The sonnes of God seing the daughters of men, that they were faire, tooke to them selues wiuues out of al, which they had chosen.",
+  "arm_conflicts": [
+   "inen, | men,",
+   "wiues | wiuues"
+  ],
+  "new_text": "The: ſonnes of God ſeing the daughters of men, that they were faire, tooke to them ſelues wiues out of al, which they had choſen",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "And God ſaids My ſpirit mal not remainer in man for euer. beoauſehe isfesh:&hs dayes ſhal be an hūdred twentie yaAndGiants",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.832,
+   "sabates_a": 0.775,
+   "madueke_b": 0.775
+  },
+  "neighbours": [
+   3
+  ],
+  "crop": [
+   0.08,
+   0.8531,
+   0.935,
+   0.9303
+  ],
+  "crop_page": 50,
+  "crop_leaves": [
+   50,
+   51
+  ],
+  "r3_raw": "tooke to them selues wiuues out of al, which they had chosen. And God said: My spirit shal not remaine in man for euer, because GENESIS. because he is flesh: & his dayes shal be an hūdred & twentie yeares. † And \" Giants were vpon the earth in those dayes. :: God wh For after the sonnes of God did companie with the daugh-",
+  "r3_verse": "And God said: My spirit shal not remaine in man for euer, because because he is flesh: & his dayes shal be an hūdred & twentie yeares.",
+  "arm_conflicts": [
+   "ſaids | said:",
+   "mal | shal",
+   "remainer | remaine",
+   "beoauſehe isfesh:&hs | because because he is flesh: & his",
+   "yaAndGiants | yeares."
+  ],
+  "lexicon_readings": {
+   "2": "ſaid:",
+   "12": "becauſe",
+   "13": "becauſe"
+  },
+  "r2_attested": {
+   "5": "ſhal"
+  },
+  "visual_readings": {
+   "2": "ſaid:",
+   "12": "becauſe",
+   "13": "becauſe",
+   "5": "ſhal"
+  },
+  "new_text": "And God ſaid: My ſpirit ſhal not remaine in man for euer. becauſe becauſe he is flesh: & his dayes ſhal be an hūdred & twentie yeares.",
+  "s_unresolved": [
+   "flesh:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.936,
+   "odr_com": 0.92,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p51",
+  "old_text": "were vpon the earth in thoſe dayes. :: For after the ſonnes of God did companie with the daugho ters of men, and they brought forth children, theſe be the mightie of the olde world, famous men.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.049,
+   0.0558,
+   0.875,
+   0.1862
+  ],
+  "crop_page": 51,
+  "r3_raw": "because he is flesh: & his dayes shal be an hūdred & twentie yeares. † And \"Giants were vpon the earth in those dayes. :: God wh immutabl subiect to passion, yet the enorm of sinnes",
+  "r3_verse": "And \"Giants were vpon the earth in those dayes. :: God wh immutabl subiect to passion, yet the enorm of sinnes did companie with the daugho ters of men, and they brought forth children, theſe be the mightie of the olde world, famous men.",
+  "arm_conflicts": [
+   "For after | God wh immutabl subiect to passion, yet",
+   "ſonnes | enorm",
+   "God did companie with the daugho ters of men, and they brought forth children, theſe be the mightie of the olde world, famous men. | sinnes"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "20": "ſinnes"
+  },
+  "r2_attested": {
+   "13": "ſubiect",
+   "15": "paſſion,"
+  },
+  "visual_readings": {
+   "20": "ſinnes",
+   "13": "ſubiect",
+   "15": "paſſion,"
+  },
+  "new_text": "And \"Giants were vpon the earth in thoſe dayes. :: God wh immutabl ſubiect to paſſion, yet the enorm of ſinnes did companie with the daugho ters of men, and they brought forth children, theſe be the mightie of the olde world, famous men.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.797,
+   "odr_com": 0.797,
+   "sabates_a": 0.778,
+   "madueke_b": 0.778
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p51",
+  "old_text": "And God ſeing the the malice of men was much on the earth, and that al the of cogitation of their hart was bent to euil at al times,",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.049,
+   0.1185,
+   0.875,
+   0.235
+  ],
+  "crop_page": 51,
+  "r3_raw": "ters of men, and they brought forth children, these be the mightie of the olde world, famous men. † And God seing the malice of men was much on the earth, and that al the cogitation of their hart was bent to euil at al times, † it repented him that he had made man on the earth. And tou-",
+  "r3_verse": "And God seing the malice of men was much on the earth, and that al the cogitation of their hart was bent to euil at al times,",
+  "arm_conflicts": [],
+  "new_text": "And God ſeing the malice of men was much on the earth, and that al the cogitation of their hart was bent to euil at al times,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "p51",
+  "old_text": "ked repented him that he had made man on the earth. And tou- and ched inwardly with ſorrowe of hart,",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.157,
+   0.875,
+   0.2688
+  ],
+  "crop_page": 51,
+  "r3_raw": "the malice of men was much on the earth, and that al the cogitation of their hart was bent to euil at al times, † it repented him that he had made man on the earth. And touched inwardly with sorrowe of hart, † I wil, saith he, cleane take away man, whom I haue created, from the face of the",
+  "r3_verse": "it repented him that he had made man on the earth. And touched inwardly with sorrowe of hart,",
+  "arm_conflicts": [
+   "ked | it",
+   "tou- and ched | touched"
+  ],
+  "new_text": "it repented him that he had made man on the earth. And touched inwardly with ſorrowe of hart,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p51",
+  "old_text": "I wil, ſaith he, cleane that take away man, whom I haue created, from the face of the made earth, from man euen to beaſtes, from that which creepeth euen vnto the foules of the ayre. for it repenteth me that I Noe haue made them. 8.†",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.049,
+   0.2011,
+   0.875,
+   0.3731
+  ],
+  "crop_page": 51,
+  "r3_raw": "repented him that he had made man on the earth. And touched inwardly with sorrowe of hart, † I wil, saith he, cleane take away man, whom I haue created, from the face of the earth, from man euen to beastes, from that which creepeth euen vnto the foules of the ayre. for it repenteth me that I haue made them. But Noe found grace before our Lord. † These are the generations of Noe: \"Noe was a iust and perfect man in",
+  "r3_verse": "I wil, saith he, cleane take away man, whom I haue created, from the face of the earth, from man euen to beastes, from that which creepeth euen vnto the foules of the ayre. for it repenteth me that I haue made them.",
+  "arm_conflicts": [],
+  "new_text": "I wil, ſaith he, cleane take away man, whom I haue created, from the face of the earth, from man euen to beaſtes, from that which creepeth euen vnto the foules of the ayre. for it repenteth me that I haue made them.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p51",
+  "old_text": "And he begat: In three ſonnes, Sem, Cham, & Iapheth.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.809,
+   "madueke_b": 0.809
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3432,
+   0.875,
+   0.431
+  ],
+  "crop_page": 51,
+  "r3_raw": "generations of Noe: \"Noe was a iust and perfect man in his generations, he did walke with God. † And he begat three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie.",
+  "r3_verse": "And he begat three sonnes, Sem, Cham, & Iapheth.",
+  "arm_conflicts": [],
+  "new_text": "And he begat: three ſonnes, Sem, Cham, & Iapheth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p51",
+  "old_text": "the earth was tions corrupred before God, and was replenished with iniquitie.",
+  "old": {
+   "s_dismas": 0.853,
+   "odr_com": 0.853,
+   "sabates_a": 0.789,
+   "madueke_b": 0.789
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.3632,
+   0.875,
+   0.4631
+  ],
+  "crop_page": 51,
+  "r3_raw": "10 :: his generations, he did walke with God. † And he begat 11 three sonnes, Sem, Cham, & Iapheth. † And the earth was corrupted before God, and was replenished with iniquitie. 12 † And when God had perceiued that the earth was corrup-",
+  "r3_verse": "And the earth was corrupted before God, and was replenished with iniquitie.",
+  "arm_conflicts": [
+   "tions corrupred | corrupted"
+  ],
+  "new_text": "And the earth was corrupted before God, and was replenished with iniquitie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p51",
+  "old_text": "And (for when God had perceiued that the earth was corrup- more al flesh had corrupted his way vpon the earth",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   12
+  ],
+  "crop": [
+   0.049,
+   0.4082,
+   0.875,
+   0.5021
+  ],
+  "crop_page": 51,
+  "r3_raw": "corrupted before God, and was replenished with iniquitie. 12 † And when God had perceiued that the earth was corrupted (for al flesh had corrupted his way vpon the earth) 13 † he said to Noe: The end of al flesh is come before me, the",
+  "r3_verse": "And when God had perceiued that the earth was corrupted (for al flesh had corrupted his way vpon the earth)",
+  "arm_conflicts": [
+   "corrup- more | corrupted (for"
+  ],
+  "lexicon_readings": {
+   "10": "(for"
+  },
+  "visual_readings": {
+   "10": "(for"
+  },
+  "new_text": "And when God had perceiued that the earth was corrupted (for al flesh had corrupted his way vpon the earth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p51",
+  "old_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou ſhalt ſet at the ſide belowe, middle chambers, and third lofres ſhalt thou make in it.",
+  "old": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.5897,
+   0.875,
+   0.7194
+  ],
+  "crop_page": 51,
+  "r3_raw": "hundred\" cubitts: fiftie cubitts the breadth, and thirtie cubitts the height of it. † Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou shalt set at the side belowe, middle chambers, and third loftes shalt thou make in it. † Behold I wil bring the waters of a great floud vpon the earth, that I may",
+  "r3_verse": "Thou shalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou shalt set at the side belowe, middle chambers, and third loftes shalt thou make in it.",
+  "arm_conflicts": [
+   "lofres | loftes"
+  ],
+  "new_text": "Thou ſhalt make a windowe in the arke, and in a cubit finish the toppe of it: and the dore of the arke thou ſhalt ſet at the ſide belowe, middle chambers, and third loftes ſhalt thou make in it.",
+  "s_unresolved": [
+   "loftes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "O foules according to their kind, and of beaſtes in their kind, &of al that creepeth on the earth according to their kind: payres of al fortes ſhal enter in with thee, that they may liue.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   20
+  ],
+  "crop": [
+   0.049,
+   0.8341,
+   0.875,
+   0.9269
+  ],
+  "crop_page": 51,
+  "crop_leaves": [
+   51,
+   52
+  ],
+  "r3_raw": "may liue with thee: of the male sexe, and the female. † Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kind: payres of al sortes shal enter in with thee, that they may liue. † Thou shalt take therfore with thee of al meates, that 21 may be eaten, and thou shalt lay them vp with thee: and",
+  "r3_verse": "Of foules according to their kind, and of beastes in their kind, & of al that creepeth on the earth according to their kind: payres of al sortes shal enter in with thee, that they may liue.",
+  "arm_conflicts": [
+   "O | Of",
+   "&of | & of",
+   "fortes | sortes"
+  ],
+  "new_text": "Of foules according to their kind, and of beaſtes in their kind, & &of al that creepeth on the earth according to their kind: payres of al sortes ſhal enter in with thee, that they may liue.",
+  "s_unresolved": [
+   "sortes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 21,
+  "from": "p52",
+  "old_text": "Thou ſhalt take therfore with thee of al meates, that rght may be eaten, and thou ſhalt lay them vp wit thee: and of a iuſt they fhal be meate for thee and them.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.0467,
+   0.945,
+   0.1639
+  ],
+  "crop_page": 52,
+  "r3_raw": "payres of al sortes shal enter in with thee, that they may live. † Thou shalt take therefore with thee of al meates, that 21 may be eaten, and thou shalt lay them vp with thee: and A right example of a iust man. they shal be meate for thee and them. † Noe therfore did all thinges, which God commanded him...",
+  "r3_verse": "Thou shalt take therefore with thee of al meates, that may be eaten, and thou shalt lay them vp with thee: and A right example of a iust man. they shal be meate for thee and them.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "wit | with",
+   "fhal | shal"
+  ],
+  "r2_attested": {
+   "30": "ſhal"
+  },
+  "visual_readings": {
+   "30": "ſhal"
+  },
+  "new_text": "Thou ſhalt take therefore with thee of al meates, that may be eaten, and thou ſhalt lay them vp with thee: and A right example of a iuſt man. they ſhal be meate for thee and them.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.822,
+   "odr_com": 0.822,
+   "sabates_a": 0.794,
+   "madueke_b": 0.794
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p52",
+  "old_text": "Noe therfore did Hb al thinges, which God commanded him",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.0866,
+   0.945,
+   0.9347
+  ],
+  "crop_page": 52,
+  "r3_raw": "ANNOTATIONS. CHAP. VI. Sones of God 2. Sonnes of God.] The progenie of Seth, professing true faith & Religion, and sonnes of were called the sonnes of God: and those of Cains issue and congregation, men was then folowing erronious and wicked opinions, were called the sonees of men. Such a distinction, as now wardes were the termes of Iewes and Gentiles: after Christ, Christians and Heretikes. As S. Augustin teacheth in his questions vpon Genesis, & other places. VVhich were then the distinctive termes of true and false Religion, as afterward was confirmed by the like judgement of S. Cixil Alexandrinus li. 9. aduersl. Iulianum. S. Ambrosefelli de Noe & arca c. 4. S. Pacicianus epist. ad Symphororianum. This warning hundred and twentie yeares, as some haue understood this place. For after a generation to repent in, as the Chaldee Edition expoundeth more plainly: And so S. Chrisostom. S. Hierom. and S. Augustin expounded this Scripture. How easie socuer Protestants say al Scriptures arec. Though vnder correction of better judgement, it semeth more probable, that Moyses by anticipation joyneth the birth of Noes sonnes (when he was 500. yeares old) to the rest of the genealogie of the first Patriarkes, in the former chapter, and then telleth of this admonition, geuen 20. yeares before their birth. And so God expected the peoples repentance the whole time of 120. yeares prescribed. Erronious opinions concerning these giants. 4. Giants vvere upon the earth.] Some haue thought that these giantes were not men, nor begotten by men, but that either diuels, which fel at first from heauen, or other Angels allured with concupiscence, begate them of the daughters of Cain. Philo Iudeus in his booke de Gigantibus, writeth that those whom Moyses here called Angels, the Philosophers called Genios. Qui sunt animalia aërea, which are living creatures vith lyrie bodies Josephus (li. 1. Antiq.) saith that Angels begate these giants. Tertullian also li. de habitu muliebri) holdeth the same error, and diuers more otherwise good authors. But S.",
+  "r3_verse": "Noe therfore did Hb al thinges, which God commanded him",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Noe therfore did Hb al thinges, which God commanded him",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p36",
+  "old_text": "WFVMAWND after that men began to be multiplied vpon earth, and had procreation of daughters,",
+  "old": {
+   "s_dismas": 0.856,
+   "odr_com": 0.856,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.09,
+   0.2645,
+   0.815,
+   0.3421
+  ],
+  "crop_page": 36,
+  "r3_raw": "ND after that men began to be multiplied vpon the earth, and had procreation of daughters, 2. the (a) sonnes of God ſeeing the daughters of men that they were faire, took them to wife.",
+  "r3_verse": "ND after that men began to be multiplied vpon the earth, and had procreation of daughters,",
+  "arm_conflicts": [
+   "WFVMAWND | ND"
+  ],
+  "new_text": "ND after that men began to be multiplied vpon the earth, and had procreation of daughters,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p36",
+  "old_text": "And God ſaid : My ſpirit ſhal uot emaine in man for euer, becauſe hes fle: and his dayes ſhal be an hundred and twentie yeares.",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.902,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.09,
+   0.3337,
+   0.815,
+   0.4281
+  ],
+  "crop_page": 36,
+  "r3_raw": "wcre faire, tooke to themselues wiues out of al which they had chosen. 3. And God said: My spirit shal not remaine in man for euer, because he is flesh: and his dayes shal be\" an hundred and twentie yeares. 4. And\" Giants were vpon the earth in those daycs. For after the sonnes of God did com-",
+  "r3_verse": "And God said: My spirit shal not remaine in man for euer, because he is flesh: and his dayes shal be\" an hundred and twentie yeares.",
+  "arm_conflicts": [
+   "uot emaine | not remaine",
+   "hes fle: | he is flesh:",
+   "be | be\""
+  ],
+  "r2_attested": {
+   "15": "fleſh:"
+  },
+  "visual_readings": {
+   "15": "fleſh:"
+  },
+  "new_text": "And God ſaid My ſpirit ſhal not remaine in man for euer, becauſe he is fleſh: and his dayes ſhal be an hundred and twentie yeares.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.921,
+   "odr_com": 0.937,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p36",
+  "old_text": "And God ſeeing the malice ot men was much on the earth, & that al the cogitation ot their hart was bent to euil at al times,",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.09,
+   0.4226,
+   0.815,
+   0.517
+  ],
+  "crop_page": 36,
+  "r3_raw": "Vpon the earth in seuerall dayes: For these men communed with God in companie with the daughters of men, & they brought forth children, these be the mightie of the old world, famous men. 5. And God seeing the malice of men was much on the earth, & that al the cogitation of their hart was bent to euil at al times, 6. it (b) repented him that he had made man on the earth. And touched inwardly with sorrow of hart, 7. I wil",
+  "r3_verse": "And God seeing the malice of men was much on the earth, & that al the cogitation of their hart was bent to euil at al times,",
+  "arm_conflicts": [
+   "ot | of",
+   "ot | of"
+  ],
+  "new_text": "And God ſeeing the malice of men was much on the earth, & that al the cogitation of their hart was bent to euil at al times,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p36",
+  "old_text": "But Noe found grace before our Lord.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.09,
+   0.5459,
+   0.815,
+   0.6059
+  ],
+  "crop_page": 36,
+  "r3_raw": "to the foules of the ayre. For it repenteth me that I haue made them. 8. But Noe found grace before our Lord. 9. These are the generations of Noe: \"Noe was a iust and perfect man in (i) his generations, he did",
+  "r3_verse": "But Noe found grace before our Lord.",
+  "arm_conflicts": [],
+  "new_text": "But Noe found grace before our Lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p36",
+  "old_text": "And he begat three ſonnes, Sem, Cham, and Iapheth.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.09,
+   0.582,
+   0.815,
+   0.64
+  ],
+  "crop_page": 36,
+  "r3_raw": "of Noe: \"Noe was a iust and perfect man in (i) his generations, he did walkc with God. 10. And he begat three sonnes, Sem, Cham, and Iapheth. 11. And the earth was corrupted before God, & was repleniſhed",
+  "r3_verse": "And he begat three sonnes, Sem, Cham, and Iapheth.",
+  "arm_conflicts": [],
+  "new_text": "And he begat three ſonnes, Sem, Cham, and Iapheth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p36",
+  "old_text": "And the earth was corrupted before God, & was replenilned with iniquitie.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.09,
+   0.5992,
+   0.815,
+   0.6754
+  ],
+  "crop_page": 36,
+  "r3_raw": "walkc with God. 10. And he begat three sonnes, Sem, Cham, and Iapheth. 11. And the earth was corrupted before God, & was replenished with iniquitie. 12. And when God had perceiued that the earth was corrupted (for al flesh had corrupted his way vpon the carth) 13. he said to",
+  "r3_verse": "And the earth was corrupted before God, & was replenished with iniquitie.",
+  "arm_conflicts": [
+   "replenilned | replenished"
+  ],
+  "r2_attested": {
+   "9": "repleniſhed"
+  },
+  "visual_readings": {
+   "9": "repleniſhed"
+  },
+  "new_text": "And the earth was corrupted before God, & was repleniſhed with iniquitie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.945,
+   "odr_com": 0.945,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p36",
+  "old_text": "he ſaid to Noe: The eud of al fleſh is come before me, the earthis repleniſhed with iniquitie trom the face of them, and I wil deſtroy them with tne earth.",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.09,
+   0.6344,
+   0.815,
+   0.745
+  ],
+  "crop_page": 36,
+  "r3_raw": "with iniquitie. 12. And when God had perceiued that the earth was corrupted (for al fleſh had corrupted his way vpon the earth) 13, he said to Noc: The end of al fleſh is come before me, the earth is replenished with iniquitie from the face of them, and I wil destroy them with the earth. 14. Make thee an arke of timber planke:cabinets ſhalt thou make in the arke, and ſhalt pitch it within and without with bitume. 15. And",
+  "r3_verse": "he said to Noc: The end of al fleſh is come before me, the earth is replenished with iniquitie from the face of them, and I wil destroy them with the earth.",
+  "arm_conflicts": [
+   "Noe: | Noc:",
+   "eud | end",
+   "earthis | earth is",
+   "trom | from",
+   "tne | the"
+  ],
+  "lexicon_readings": {
+   "19": "from"
+  },
+  "visual_readings": {
+   "19": "from"
+  },
+  "new_text": "he ſaid to Noc: The end of al fleſh is come before me, the earth is repleniſhed with iniquitie from the face of them, and I wil deſtroy them with the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p36",
+  "old_text": "Make thee an arke of timber planke: cabinets thalt thou mahe in the arke, and ſhalt pitch it within and without with bitume. Aud",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.09,
+   0.6871,
+   0.815,
+   0.7643
+  ],
+  "crop_page": 36,
+  "r3_raw": "with iniquitie from the face of them, and I wil destroy them with the earth. 14. Make thee an arke of timber planke: cabinets shalt thou make in the arke, and shalt pitch it within and without with bitume. 15. And thus shalt thou make it. The length of the Arke shal be three hundred",
+  "r3_verse": "Make thee an arke of timber planke: cabinets shalt thou make in the arke, and shalt pitch it within and without with bitume.",
+  "arm_conflicts": [
+   "thalt | shalt",
+   "mahe | make"
+  ],
+  "r2_attested": {
+   "8": "ſhalt"
+  },
+  "visual_readings": {
+   "8": "ſhalt"
+  },
+  "new_text": "Make thee an arke of timber planke: cabinets ſhalt thou make in the arke, and ſhalt pitch it within and without with bitume.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p36",
+  "old_text": "thus ſhalt thou make it. The length ot the Arke ſhal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the height ot it.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "neighbours": [
+   15
+  ],
+  "crop": [
+   0.09,
+   0.7208,
+   0.815,
+   0.7998
+  ],
+  "crop_page": 36,
+  "r3_raw": "in the arke, and shalt pitch it within and without with bitume. 15. And thus shalt thou make it. The length of the Arke shal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the height of it. 16. Thou shalt make a window in the arke, & in a cubit finish the top of it:",
+  "r3_verse": "And thus shalt thou make it. The length of the Arke shal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the height of it.",
+  "arm_conflicts": [
+   "ot | of",
+   "ot | of"
+  ],
+  "new_text": "And thus ſhalt thou make it. The length of the Arke ſhal be three hundred cubits: fiftie cubits the breadth, and thirtie cubits the height of it.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p36",
+  "old_text": "Thou ſnalt make a window in the arke, & in a cubit finiſh the top ot it: & the dore of the arke thou ſhalt ſet at the ſide below, middle chambers & third lofts ſhalt thou make in it.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.09,
+   0.7577,
+   0.815,
+   0.8539
+  ],
+  "crop_page": 36,
+  "r3_raw": "\" cubits: fiftie cubits the breadth, and thirtic cubits the height of it. 16. Thou shalt make a window in the arke, & in a cubit finiſh the top of it: & the dore of the arke thou ſhalt set at the fide below, middle chambers & third lofts ſhalt thou make in it. 17. Behold I wil bring the waters of a great floud vpon the earth, that I may destroy al fiſh wherin there is",
+  "r3_verse": "Thou shalt make a window in the arke, & in a cubit finiſh the top of it: & the dore of the arke thou ſhalt set at the fide below, middle chambers & third lofts ſhalt thou make in it.",
+  "arm_conflicts": [
+   "ſnalt | shalt",
+   "ot | of",
+   "ſide | fide"
+  ],
+  "r2_attested": {
+   "1": "ſhalt"
+  },
+  "visual_readings": {
+   "1": "ſhalt"
+  },
+  "new_text": "Thou ſhalt make a window in the arke, & in a cubit finiſh the top of it: & the dore of the arke thou ſhalt ſet at the fide below, middle chambers & third lofts ſhalt thou make in it.",
+  "s_unresolved": [
+   "fide"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p36",
+  "old_text": "Behold I wil bring the waters ot a great foud vpon the earth, that I may deſtroy alfeſh wernthres breath of lite vnder heauen. Al thinos that are in the earth ſhal be conſumed.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.09,
+   0.7924,
+   0.815,
+   0.9048
+  ],
+  "crop_page": 36,
+  "r3_raw": "& the dore of the arke thou shalt set at the side below, middle chambers & third lofts shalt thou make in it. 17. Behold I wil bring the waters of a great floud vpon the earth, that I may destroy al fieth wherin there is breath of life vnder heauen. Al things that are in the earth final be consumed. 18. And I wil establish my couenant with thee: and thou shalt enter into the arke, thou and thy sonnes, and thy wife,",
+  "r3_verse": "Behold I wil bring the waters of a great floud vpon the earth, that I may destroy al fieth wherin there is breath of life vnder heauen. Al things that are in the earth final be consumed.",
+  "arm_conflicts": [
+   "ot | of",
+   "foud | floud",
+   "alfeſh wernthres | al fieth wherin there is",
+   "lite | life",
+   "thinos | things",
+   "ſhal | final"
+  ],
+  "lexicon_readings": {
+   "24": "life"
+  },
+  "visual_readings": {
+   "24": "life"
+  },
+  "new_text": "Behold I wil bring the waters of a great floud vpon the earth, that I may deſtroy al fieth wherin there is breath of life vnder heauen. Al things that are in the earth final be conſumed.",
+  "s_unresolved": [
+   "floud",
+   "fieth",
+   "final"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p37",
+  "old_text": "Of toules accordins to their kind, and of beaſts in their kind and of al that creepeth on the earth according to their kind: payres of al ſorts ſhal enter in with thee, that they may biue.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.1093,
+   0.885,
+   0.2255
+  ],
+  "crop_page": 37,
+  "r3_raw": "of al flesh, thou shalt bring payres into the arke, that they may liue with thee: of the male sexe and the femalec. 20. Of foules according to their kind, and of beasts in their kind, and of al that creepeth on the earth according to their kind: payres of al sorts shal enter in with thee, that they may liue. 21. Thou shalt take therefore with thee of al meats, that may be eaten, and thou shalt lay them vp with thee: &",
+  "r3_verse": "Of foules according to their kind, and of beasts in their kind, and of al that creepeth on the earth according to their kind: payres of al sorts shal enter in with thee, that they may liue.",
+  "arm_conflicts": [
+   "toules accordins | foules according",
+   "biue. | liue."
+  ],
+  "new_text": "Of foules according to their kind, and of beaſts in their kind and of al that creepeth on the earth according to their kind: payres of al ſorts ſhal enter in with thee, that they may liue.",
+  "s_unresolved": [
+   "foules"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

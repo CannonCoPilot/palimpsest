@@ -1,0 +1,1035 @@
+{
+ "chapter": 33,
+ "n_verses": 20,
+ "n_cells": 80,
+ "n_pass": 79,
+ "rate": 0.9875,
+ "ref_means": {
+  "s_dismas": 0.9887,
+  "odr_com": 0.989,
+  "sabates_a": 0.983,
+  "madueke_b": 0.9825
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 0.95
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 1,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 9,
+   "worst": 0.891,
+   "from": "p117",
+   "text": "Eut he ſaid: I haue plentie, my brother, be thy things to thy"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and Iacob lifting vp his eyes, ſaw Eſau coming, and with him foure hundred men: and he diuided the children of Lia and of Rachel, and of the two handmaides:",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "AND Iacob lifting vpthis eyes, ſaw Eſau coming, and with him foure hundred men: and he diuided the children of Lia and of Rachel, and of the two handmaides:",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "and Iacob lifting vp his eyes, ſaw Eſau coming, and with him foure hundred men and he diuided the children of Lia and of Rachel, and of the two handmaides:",
+    "from": "p139",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "and Iacob lifting vp his eyes, ſaw Eſau comming and with him foure hundred men: and he diuided the children of La and of Rachel, and of the two handmaids :2",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "and he put both the handmaids their children foremoſt: and Lia, and her children in the ſecond place and Rachel, and Ioſeph laſt.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "and he put both the handmaids & their children foremoſt: and Lia, and her children in the ſecond place and Rachel, and Ioſeph laſt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "and he put both the handmaids their children foremoſt: and Lia, and her children in the ſecond place and Rachel, and Ioſeph laſt.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "and he put both the handmaids and their children foremoſt: and Lia and her childreu in the ſecond place: and Rachel and Ioſeph laſt.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And himſelfe going foreward adored proſtrate to the grownd ſeuen times, vntil his brother came nere.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And himſelfe going foreward adored proſtrate to the grownd ſeuen times, vntil his brother came nere.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "And himſelfe going foreward adored proſtrate to the grownd ſeuen times, vntil his brother came nere.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And himſelte going forward adoted proſtrate to the ground ſeauen times, vntil his brother came neer.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Eſau therfore running to mete his brother, embraced him: and claſping him faſt abour the necke, and kiſſing him wept.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "Eſau therfore running to mete his brother, embraced him: and claſping him faſt about the necke, and kiſſing him wept.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "Eſau therfore running to mete his brother, embraced him and claſping him faſt about the necke, and kiſſing him wept.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "Eſau therefore runnins to meet his brother, embtaced him: and claſping him faſt about the necke, and kiſſing him wept.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And caſting vp his eyes, he ſaw the wemen and their litle ones, and ſaid What meane theſe? And do they perteyne to thee He anſwered They are the litle ones which God hath geuen to me thy ſeruant.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "And caſting vp his eyes, he ſaw the wemen and their litle ones, and ſaid What meane theſe? And do they perteyne to thee He anſwered They are the litle ones which God hath geuen to me thyſeruant.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And caſting vp his eyes, he ſaw the wemen and their litle ones, and ſaid What meane theſe? And do they perteyne to thee? He anſwered They are the litle ones which God hath geuen to me thy ſeruant.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "And caſting vp his eyes he ſaw the women and their litle ones, and ſaid: What meane theſer And doe they perteyue to thee He anſwered Thev are the litle ones which God hath giuen to me thy ſeruant.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And the handmaides and their children coming nere, bowed themſelues.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And the handmaides and their children coming nere, bowed themſelues.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And the handmaides and their children coming nere, bowed themſelues.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And the handmaids and their children comming neer bowed themſelues..",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Lia alſo with her children came nere and when they had adored in like maner, laſt Ioſeph and Rachel adored.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Lia alſo with her children came nere and when they had adored in like maner, laſt Ioſeph and Rachel adored.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Lia alſo with her children came nere and when they had adored in like maner, laſt Ioſeph and Rachel adored.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Lia alſo with het children came neet: and when they had adored in like manner, laſt Ioſeph and Rachel adored.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And Eſau ſaid What are the troupes that I did mete He anſwered: That I might find grace before my lord.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "And Eſau ſaid What are the troupes that I did mete? He anſwered: That I might find grace before my lord.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "And Eſau ſaid What are the troupes that I did mete? He anſwered: That I might find grace before my lord.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "And Eſau ſaid: What are the troupes that I did meet He anſwered That I might find grace before my Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "But he ſaid I haue plentie, my brother, be thy things to thy ſelfe.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "But he ſaid I haue plentie, my brother, be thy things to thy ſelfe.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "But he ſaid I haue plentie, my brother, be thy things to thy ſelfe.",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Eut he ſaid: I haue plentie, my brother, be thy things to thy",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.891,
+     "odr_com": 0.891,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And Iacob ſaid: Do not ſo I beſech thee, but if I haue found grace in thin eyes, take a litle preſent at my hands: for ſo haue I ſeene thy face, as if I ſhould haue ſeene the countenance of God be gracious to me,",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And Iacob ſaid Do not ſo I beſech thee, but if I haue found grace in thin eyes, take a litle preſent at my hands for ſo haue I ſeene thy face, as if I ſhould haue ſeene the countenance of God be gracious to me,",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And Iacob ſaid Do not ſo I beſech thee, but if I haue found grace in thin eyes, take a litle preſent at my hands for ſo haue I ſeene thy face, as if I ſhould haue ſeene the countenance of God be gracious to me,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And Iacob ſaid Doe not fo, I befeech thee, but if I haue found grace in thiue eves, take a litle preſent at my hands: for ſo haue I ſeen thy face as it I ſhould haue ſeen (4) the countenance of God: be gracious to me,",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.974,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "and take: the bleſſing, which I haue brought thee, and which God hath geuen me, who geueth al thinges. Scarſe at his brothers great inſtance, taking it,",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S3": {
+    "text": "and take the bleſſing, which I haue brought thee, and which God hath geuen me, who geueth al thinges. Scarſe at his brothers great inſtance, taking it,",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "and take the bleſſing, which I haue brought thee, and which God hath geuen me, who geueth al thinges. Scarſe at his brothers great inſtance, taking it,",
+    "from": "p137",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "and take the bleſſing which I haue brought thee, and which God hath giuen me, who giueth al things. Scarce at his brothers great inſtance taking it,",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "he ſaid Let vs march on together, and I wil accompanie thee in thy iourney.",
+    "from": "p127",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "he ſaid Let vs march on together, and I wil accompanie thee in thy iourney.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "he ſaid Let vs march on toge. ther, and I wil accompanie thee in thy iourney.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "12he ſaid: Let vs march. on together, and I wil accompanie thee in thy iourney.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And Iacob ſaid: My lord thou knoweſt that I haue with me litle ones, and ſheepe, and kine with young which if I cauſe to ouerlaboure themſelues in going, in one day al the flockes wil die.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And Iacob ſaid: My lord thou knoweſt that I haue with me litle ones, and ſheepe, and kine with young which if I cauſe to ouerlaboure themſelues in going, in one day al the flockes his as wil die.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S9": {
+    "text": "And Iacob ſaid: My lord thou knoweſt that I haue with me litle ones, and ſheepe, and kine with young which if I cauſe to ouerlaboure themſelues in going, in one day al the flockes wil die.",
+    "from": "p139",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And Iacob Sheep, My Lord thou knoweſt that I haue with me litle ones, and IOI and kine with yong: which if I cauſe to ouerlabour themſelues in going, in one day al the flocks wil die.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly aſter him, as I ſh al ſee my lirle ones to be mammm to be able, vntil I come to my lord in Seir.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   },
+   "S3": {
+    "text": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly after him, as I ſh al ſee my litle ones to be able, vntil I come to my lord in Seir.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly after him, as I ſhal ſee my litle ones to be able, vntil I come to my lord in Seir.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "It may pleaſe my Lord to goe before his ſeruant: and I wil follow ſoftlyatter him, as I ſhal ſee my Iitle ones to be able, vntil I come to my Lord in Seir.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Eſau anſwered I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Eſau anſwes red Ibeſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "Eſau anſwered I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Eſau anſwered: I beſeech thee that of my people at the leaſt wiſe which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue need of, that I may find grace (my Lord) in thy ſight.",
+    "from": "p118",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Eſau therfore returned that day the ſame way, that he came into Seir.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "Eſau therfore returned that day the ſame way, that he came into Seir.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Eſau therfore returned that day the ſame way, that he came into Seir.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Eſau therefore returned that day the ſame way that he came, into Seir.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And Iacob cometh into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Iacob cometh into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Iacob cometh into Socoth where hauing built houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And Iacob commeth into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is Tabernacles,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And he bought that part of the field, wherin he ha† pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.993,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.978,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
+    "from": "p132",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
+    "from": "p140",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And erecting an altar there, on it he called vpon the moſt Mightie God of Iſrael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Iacob lifting vp his eyes, ſaw Eſau coming, and with him foure hundred men: and he diuided the children of Lia and of Rachel, and of the two handmaides:",
+   "odr_com": "AND Iacob lifting vp his eyes, saw Esau coming, and with him foure hundred men: and he diuided the children of Lia and of Rachel, and of the two handmaides:",
+   "sabates_a": "And Jacob lifting up his eyes, saw Esau coming, and with him four hundred men: and he divided the children of Lia, and of Rachel, and of the two handmaids:",
+   "madueke_b": "And Jacob lifting up his eyes, saw Esau coming, and with him four hundred men: and he divided the children of Lia, and of Rachel, and of the two handmaids:"
+  },
+  "2": {
+   "s_dismas": "and he put both the handmaids & their children foremoſt: and Lia, and her children in the ſecond place: and Rachel, and Ioſeph laſt.",
+   "odr_com": "and he put both the handmaids & their children foremost: and Lia, and her children in the second place: and Rachel, and Ioseph last.",
+   "sabates_a": "and he put both the handmaids and their children foremost: and Lia and her children in the second place: and Rachel and Joseph last.",
+   "madueke_b": "and he put both the handmaids and their children foremost: and Lia and her children in the second place: and Rachel and Joseph last."
+  },
+  "3": {
+   "s_dismas": "And himſelfe going foreward adored proſtrate to the grownd ſeuen times, vntil his brother came nere.",
+   "odr_com": "And himselfe going foreward adored prostrate to the grownd seuen times, vntil his brother came nere.",
+   "sabates_a": "And himself going forward adored prostrate to the ground seven times, until his brother came near.",
+   "madueke_b": "And himself going forward adored prostrate to the ground seven times, until his brother came near."
+  },
+  "4": {
+   "s_dismas": "Eſau therfore running to mete his brother, embraced him: and claſping him faſt about the necke, and kiſſing him wept.",
+   "odr_com": "Esau therfore running to mete his brother, embraced him: and clasping him fast about the necke, and kissing him wept.",
+   "sabates_a": "Esau therefore running to meet his brother, embraced him: and clasping him fast about the neck, and kissing him wept.",
+   "madueke_b": "Esau therefore running to meet his brother, embraced him: and clasping him fast about the neck, and kissing him wept."
+  },
+  "5": {
+   "s_dismas": "And caſting vp his eyes, he ſaw the wemen and their litle ones, and ſaid: What meane theſe? And do they perteyne to thee? He anſwered: They are the litle ones which God hath geuen to me thy ſeruant.",
+   "odr_com": "And casting vp his eyes, he saw the wemen and their litle ones, and said: What meane these? And do they perteyne to thee? He answered: They are the litle ones which God hath geuen to me thy seruant.",
+   "sabates_a": "And casting up his eyes he saw the women and their little ones, and said: What mean these? And do they pertain to thee? He answered: They are the little ones which God hath given to me thy servant.",
+   "madueke_b": "And casting up his eyes he saw the women and their little ones, and said: What mean these? And do they pertain to thee? He answered: They are the little ones which God hath given to me thy servant."
+  },
+  "6": {
+   "s_dismas": "And the handmaides and their children coming nere, bowed themſelues.",
+   "odr_com": "And the handmaides and their children coming nere, bowed themselues.",
+   "sabates_a": "And the handmaids and their children coming near bowed themselves.",
+   "madueke_b": "And the handmaids and their children coming near bowed themselves."
+  },
+  "7": {
+   "s_dismas": "Lia alſo with her children came nere: and when they had adored in like maner, laſt Ioſeph and Rachel adored.",
+   "odr_com": "Lia also with her children came nere: and when they had adored in like maner, last Ioseph and Rachel adored.",
+   "sabates_a": "Lia also with her children came near: and when they had adored in like manner, last Joseph and Rachel adored.",
+   "madueke_b": "Lia also with her children came near: and when they had adored in like manner, last Joseph and Rachel adored."
+  },
+  "8": {
+   "s_dismas": "And Eſau ſaid: What are the troupes that I did mete? He anſwered: That I might find grace before my lord.",
+   "odr_com": "And Esau said: What are the troupes that I did mete? He answered: That I might find grace before my lord.",
+   "sabates_a": "And Esau said: What are the troops that I did meet? He answered: That I might find grace before my lord.",
+   "madueke_b": "And Esau said: What are the troops that I did meet? He answered: That I might find grace before my lord."
+  },
+  "9": {
+   "s_dismas": "But he ſaid: I haue plentie, my brother, be thy things to thy ſelfe.",
+   "odr_com": "But he said: I haue plentie, my brother, be thy things to thy selfe.",
+   "sabates_a": "But he said: I have plenty, my brother, be thy things to thyself,",
+   "madueke_b": "But he said: I have plenty, my brother, be thy things to thyself,"
+  },
+  "10": {
+   "s_dismas": "And Iacob ſaid: Do not ſo I beſech thee, but if I haue found grace in thin eyes, take a litle preſent at my hands: for ſo haue I ſeene thy face, as if I ſhould haue ſeene the countenance of God: be gracious to me,",
+   "odr_com": "And Iacob said: Do not so I besech thee, but if I haue found grace in thin eyes, take a litle present at my hands: for so haue I seene thy face, as if I should haue seene the countenance of God: be gracious to me,",
+   "sabates_a": "And Jacob said: Do not so, I beseech thee, but if I have found grace in thine eyes, take a little present at my hands: for so have I seen thy face as if I should have seen the countenance of God: be gracious to me,",
+   "madueke_b": "And Jacob said: Do not so, I beseech thee, but if I have found grace in thine eyes, take a little present at my hands: for so have seen thy face as if I should have seen the countenance of God: be gracious to me,"
+  },
+  "11": {
+   "s_dismas": "and take the bleſſing, which I haue brought thee, and which God hath geuen me, who geueth al thinges. Scarſe at his brothers great inſtance, taking it,",
+   "odr_com": "and take the blessing, which I haue brought thee, and which God hath geuen me, who geueth al thinges. Scarse at his brothers great instance, taking it,",
+   "sabates_a": "and take the blessing which I have brought thee, and which God hath given me, who giveth all things. Scarce at his brother's great instance taking it,",
+   "madueke_b": "and take the blessing which I have brought thee, and which God hath given me, who giveth all things. Scarce at his brother's great instance taking it,"
+  },
+  "12": {
+   "s_dismas": "he ſaid: Let vs march on together, and I wil accompanie thee in thy iourney.",
+   "odr_com": "he said: Let vs march on together; and I wil accompanie thee in thy iourney.",
+   "sabates_a": "he said: let us march on together, and I will accompany thee in thy journey.",
+   "madueke_b": "he said: let us march on together, and I will accompany thee in thy journey."
+  },
+  "13": {
+   "s_dismas": "And Iacob ſaid: My lord thou knoweſt that I haue with me litle ones, and ſheepe, and kine with young: which if I cauſe to ouerlaboure themſelues in going, in one day al the flockes wil die.",
+   "odr_com": "And Iacob said: My lord thou knowest that I haue with me litle ones, and sheepe, and kine with young: which if I cause to ouerlaboure themselues in going, in one day al the flockes wil die.",
+   "sabates_a": "And Jacob said: My lord thou knowest that I have with me little ones, and sheep, and kine with young: which if I cause to overlabour themselves in going, in one day all the flocks will die.",
+   "madueke_b": "And Jacob said: My lord thou knowest that I have with me little ones, and sheep, and kine with young: which if I cause to overlabour themselves in going, in one day all the flocks will die."
+  },
+  "14": {
+   "s_dismas": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly after him, as I ſhal ſee my litle ones to be able, vntil I come to my lord in Seir.",
+   "odr_com": "It may please my lord to goe before his seruant: and I wil folow softly after him, as I shal see my litle ones to be able, vntil I come to my lord in Seir.",
+   "sabates_a": "It may please my lord to go before his servant: and I will follow softly after him, as I shall see my little ones to be able, until I come to my lord in Seir.",
+   "madueke_b": "It may please my lord to go before his servant: and I will follow softly after him, as I shall see my little ones to be able, until I come to my lord in Seir."
+  },
+  "15": {
+   "s_dismas": "Eſau anſwered: I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+   "odr_com": "Esau answered: I besech thee, that of my people at the leastwise, which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight.",
+   "sabates_a": "Esau answered: I beseech thee, that of my people at the leastwise, which is with me, there may remain some to accompany thee in the way. It is not needful, said he, this only I have need of, that I may find grace (my lord) in thy sight.",
+   "madueke_b": "Esau answered: I beseech thee, that of my people at the leastwise, which is with me, there may remain some to accompany thee in the way. It is not needful, said he, this only I have need of, that I may find grace (my lord) in thy sight."
+  },
+  "16": {
+   "s_dismas": "Eſau therfore returned that day the ſame way, that he came into Seir.",
+   "odr_com": "Esau therfore returned that day the same way, that he came into Seir.",
+   "sabates_a": "Esau therefore returned that day the same way that he came, into Seir.",
+   "madueke_b": "Esau therefore returned that day the same way that he came, into Seir."
+  },
+  "17": {
+   "s_dismas": "And Iacob cometh into Socoth: where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+   "odr_com": "And Iacob cometh into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+   "sabates_a": "And Jacob cometh into Socoth: where having built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+   "madueke_b": "And Jacob cometh into Socoth: where having built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles."
+  },
+  "18": {
+   "s_dismas": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+   "odr_com": "And he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beside the towne.",
+   "sabates_a": "and he passed into Salem a city of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Syria: and he dwelt beside the town.",
+   "madueke_b": "and he passed into Salem a city of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Syria: and he dwelt beside the town."
+  },
+  "19": {
+   "s_dismas": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem for an hundred lambes.",
+   "odr_com": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+   "sabates_a": "And he bought that part of the field, wherein he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs.",
+   "madueke_b": "And he bought that part of the field, wherein he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs."
+  },
+  "20": {
+   "s_dismas": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael.",
+   "odr_com": "And erecting an altar there, on it he called vpon the most mightie God of Israel.",
+   "sabates_a": "And erecting an altar there, on it he called upon the most Mighty God of Israel.",
+   "madueke_b": "And erecting an altar there, on it he called upon the most Mighty God of Israel."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Jacob lifting up his eyes, saw Esau coming, and with him four hundred men: and he divided the children of Lia, and of Rachel, and of the two handmaids:",
+  "2": "and he put both the handmaids and their children foremost: and Lia and her children in the second place: and Rachel and Joseph last.",
+  "3": "And himself going forward adored prostrate to the ground seven times, until his brother came near.",
+  "4": "Esau therefore running to meet his brother, embraced him: and clasping him fast about the neck, and kissing him wept.",
+  "5": "And casting up his eyes he saw the women and their little ones, and said: What mean these? And do they pertain to thee? He answered: They are the little ones which God hath given to me thy servant.",
+  "6": "And the handmaids and their children coming near bowed themselves.",
+  "7": "Lia also with her children came near: and when they had adored in like manner, last Joseph and Rachel adored.",
+  "8": "And Esau said: What are the troops that I did meet? He answered: That I might find grace before my lord.",
+  "9": "But he said: I have plenty, my brother, be thy things to thyself,",
+  "10": "And Jacob said: Do not so, I beseech thee, but if I have found grace in thine eyes, take a little present at my hands: for so have I seen thy face as if I should have seen the countenance of God: be gracious to me,",
+  "11": "and take the blessing which I have brought thee, and which God hath given me, who giveth all things. Scarce at his brother's great instance taking it,",
+  "12": "he said: let us march on together, and I will accompany thee in thy journey.",
+  "13": "And Jacob said: My lord thou knowest that I have with me little ones, and sheep, and kine with young: which if I cause to overlabour themselves in going, in one day all the flocks will die.",
+  "14": "It may please my lord to go before his servant: and I will follow softly after him, as I shall see my little ones to be able, until I come to my lord in Seir.",
+  "15": "Esau answered: I beseech thee, that of my people at the leastwise, which is with me, there may remain some to accompany thee in the way. It is not needful, said he, this only I have need of, that I may find grace (my lord) in thy sight.",
+  "16": "Esau therefore returned that day the same way that he came, into Seir.",
+  "17": "And Jacob cometh into Socoth: where having built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "18": "and he passed into Salem a city of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Syria: and he dwelt beside the town.",
+  "19": "And he bought that part of the field, wherein he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs.",
+  "20": "And erecting an altar there, on it he called upon the most Mighty God of Israel."
+ },
+ "ref_coverage": {
+  "janvier": 20,
+  "have": {
+   "s_dismas": 20,
+   "odr_com": 20,
+   "sabates_a": 20,
+   "madueke_b": 20
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 80,
+ "triage": "R3-READY",
+ "secs": 5.2
+}

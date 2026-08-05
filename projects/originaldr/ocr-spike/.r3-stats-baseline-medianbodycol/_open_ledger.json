@@ -1,0 +1,1230 @@
+{
+ "state": "OPEN",
+ "generated_by": "reOCR escalation ladder (reocr_core + xsrc_gate + reocr_r3); No Silent Degradation terminal",
+ "n_open": 58,
+ "by_reason": {
+  "xsrc<taux-after-R3": 39,
+  "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)": 19
+ },
+ "blocks_deliverable": true,
+ "entries": [
+  {
+   "locus_key": "2-esdras/7/46",
+   "locus": [
+    "2-esdras",
+    7,
+    46
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 994,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.767,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "2-esdras/7/69",
+   "locus": [
+    "2-esdras",
+    7,
+    69
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 994,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "abdias/1/1",
+   "locus": [
+    "abdias",
+    1,
+    1
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 840,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8036,
+   "best_rung": "R2",
+   "reference_used": "sabates_a",
+   "reference_axis": "modern",
+   "taux": 0.92,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "abdias/1/2",
+   "locus": [
+    "abdias",
+    1,
+    2
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 840,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7342,
+   "best_rung": "R3-mlx",
+   "reference_used": "sabates_a",
+   "reference_axis": "modern",
+   "taux": 0.92,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "abdias/1/4",
+   "locus": [
+    "abdias",
+    1,
+    4
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 840,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9919,
+   "best_rung": "R3-mlx",
+   "reference_used": "sabates_a",
+   "reference_axis": "modern",
+   "taux": 0.92,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "abdias/1/12",
+   "locus": [
+    "abdias",
+    1,
+    12
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 840,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9596,
+   "best_rung": "R3-mlx",
+   "reference_used": "sabates_a",
+   "reference_axis": "modern",
+   "taux": 0.92,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/16/3",
+   "locus": [
+    "genesis",
+    16,
+    3
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 81,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/16/4",
+   "locus": [
+    "genesis",
+    16,
+    4
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 81,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9891,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/16/5",
+   "locus": [
+    "genesis",
+    16,
+    5
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 81,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9888,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/16/6",
+   "locus": [
+    "genesis",
+    16,
+    6
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 81,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9437,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/16/9",
+   "locus": [
+    "genesis",
+    16,
+    9
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 81,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "matthew/28/1",
+   "locus": [
+    "matthew",
+    28,
+    1
+   ],
+   "source": "archive-nt-1582",
+   "page_index": 102,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9781,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "matthew/28/2",
+   "locus": [
+    "matthew",
+    28,
+    2
+   ],
+   "source": "archive-nt-1582",
+   "page_index": 102,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9929,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "matthew/28/3",
+   "locus": [
+    "matthew",
+    28,
+    3
+   ],
+   "source": "archive-nt-1582",
+   "page_index": 102,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 1.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "matthew/28/16",
+   "locus": [
+    "matthew",
+    28,
+    16
+   ],
+   "source": "archive-nt-1582",
+   "page_index": 102,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 1.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "matthew/28/19",
+   "locus": [
+    "matthew",
+    28,
+    19
+   ],
+   "source": "archive-nt-1582",
+   "page_index": 102,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9826,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/7",
+   "locus": [
+    "proverbs",
+    16,
+    7
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8913,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/8",
+   "locus": [
+    "proverbs",
+    16,
+    8
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8356,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/9",
+   "locus": [
+    "proverbs",
+    16,
+    9
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7589,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/10",
+   "locus": [
+    "proverbs",
+    16,
+    10
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/11",
+   "locus": [
+    "proverbs",
+    16,
+    11
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9302,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/12",
+   "locus": [
+    "proverbs",
+    16,
+    12
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8796,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/19",
+   "locus": [
+    "proverbs",
+    16,
+    19
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8202,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "proverbs/16/25",
+   "locus": [
+    "proverbs",
+    16,
+    25
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 292,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9205,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/1/1",
+   "locus": [
+    "psalms",
+    1,
+    1
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 15,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8205,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/1/2",
+   "locus": [
+    "psalms",
+    1,
+    2
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 15,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.6983,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/1/3",
+   "locus": [
+    "psalms",
+    1,
+    3
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 15,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7126,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/1/4",
+   "locus": [
+    "psalms",
+    1,
+    4
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 15,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.6977,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/1/6",
+   "locus": [
+    "psalms",
+    1,
+    6
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 15,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7054,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/73/23",
+   "locus": [
+    "psalms",
+    73,
+    23
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 137,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8925,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/74/1",
+   "locus": [
+    "psalms",
+    74,
+    1
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 137,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "sabates_a",
+   "reference_axis": "modern",
+   "taux": 0.92,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/74/4",
+   "locus": [
+    "psalms",
+    74,
+    4
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 138,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7209,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/74/5",
+   "locus": [
+    "psalms",
+    74,
+    5
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 138,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7297,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/115/2",
+   "locus": [
+    "psalms",
+    115,
+    2
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/115/3",
+   "locus": [
+    "psalms",
+    115,
+    3
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.973,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/115/6",
+   "locus": [
+    "psalms",
+    115,
+    6
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8281,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/115/7",
+   "locus": [
+    "psalms",
+    115,
+    7
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8846,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/115/8",
+   "locus": [
+    "psalms",
+    115,
+    8
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9651,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/116/1",
+   "locus": [
+    "psalms",
+    116,
+    1
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 211,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/103",
+   "locus": [
+    "psalms",
+    118,
+    103
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8767,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/104",
+   "locus": [
+    "psalms",
+    118,
+    104
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8522,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/105",
+   "locus": [
+    "psalms",
+    118,
+    105
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8571,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/108",
+   "locus": [
+    "psalms",
+    118,
+    108
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8442,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/112",
+   "locus": [
+    "psalms",
+    118,
+    112
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7113,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/118/114",
+   "locus": [
+    "psalms",
+    118,
+    114
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 227,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8846,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/2",
+   "locus": [
+    "psalms",
+    149,
+    2
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 1.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/3",
+   "locus": [
+    "psalms",
+    149,
+    3
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.987,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/4",
+   "locus": [
+    "psalms",
+    149,
+    4
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9886,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/5",
+   "locus": [
+    "psalms",
+    149,
+    5
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9726,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/6",
+   "locus": [
+    "psalms",
+    149,
+    6
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9375,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/7",
+   "locus": [
+    "psalms",
+    149,
+    7
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.7794,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/8",
+   "locus": [
+    "psalms",
+    149,
+    8
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.6735,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/149/9",
+   "locus": [
+    "psalms",
+    149,
+    9
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8909,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/150/1",
+   "locus": [
+    "psalms",
+    150,
+    1
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.8977,
+   "best_rung": "R2",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/150/3",
+   "locus": [
+    "psalms",
+    150,
+    3
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/150/4",
+   "locus": [
+    "psalms",
+    150,
+    4
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/150/5",
+   "locus": [
+    "psalms",
+    150,
+    5
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "psalms/150/6",
+   "locus": [
+    "psalms",
+    150,
+    6
+   ],
+   "source": "archive-ot2-1610",
+   "page_index": 265,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  }
+ ]
+}

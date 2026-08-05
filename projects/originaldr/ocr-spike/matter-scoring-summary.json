@@ -1,0 +1,2086 @@
+{
+  "pass_threshold": 0.9,
+  "window_words": 20,
+  "books": [
+    {
+      "slug": "matter-nt-books-of-new-testament",
+      "locus": "matter/nt/books-of-new-testament",
+      "testament": "nt",
+      "n_intervals": 56,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 32,
+          "para_pct": 0,
+          "para": [
+            0,
+            75
+          ],
+          "app_pct": 43,
+          "app": [
+            18,
+            42
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 39,
+          "para_pct": 15,
+          "para": [
+            11,
+            75
+          ],
+          "app_pct": 38,
+          "app": [
+            16,
+            42
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 45,
+          "para_pct": 35,
+          "para": [
+            26,
+            75
+          ],
+          "app_pct": 36,
+          "app": [
+            15,
+            42
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            75
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            42
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-censure-and-approbation",
+      "locus": "matter/nt/censure-and-approbation",
+      "testament": "nt",
+      "n_intervals": 9,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 11,
+          "para_pct": 57,
+          "para": [
+            4,
+            7
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            6
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 33,
+          "para_pct": 57,
+          "para": [
+            4,
+            7
+          ],
+          "app_pct": 33,
+          "app": [
+            2,
+            6
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 33,
+          "para_pct": 14,
+          "para": [
+            1,
+            7
+          ],
+          "app_pct": 17,
+          "app": [
+            1,
+            6
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": false
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-explication-of-certaine-words",
+      "locus": "matter/nt/explication-of-certaine-words",
+      "testament": "nt",
+      "n_intervals": 70,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            2
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            69
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 4,
+          "para_pct": 50,
+          "para": [
+            1,
+            2
+          ],
+          "app_pct": 4,
+          "app": [
+            3,
+            69
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 1,
+          "para_pct": 0,
+          "para": [
+            0,
+            2
+          ],
+          "app_pct": 1,
+          "app": [
+            1,
+            69
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 3,
+          "para_pct": 0,
+          "para": [
+            0,
+            2
+          ],
+          "app_pct": 3,
+          "app": [
+            2,
+            69
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-preface",
+      "locus": "matter/nt/preface",
+      "testament": "nt",
+      "n_intervals": 3,
+      "own_source": "archive-nt-1582",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            21
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 33,
+          "para_pct": 0,
+          "para": [
+            0,
+            21
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 5,
+          "para": [
+            1,
+            21
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 5,
+          "para": [
+            1,
+            21
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-signification-or-meaning",
+      "locus": "matter/nt/signification-or-meaning",
+      "testament": "nt",
+      "n_intervals": 14,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 43,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 46,
+          "app": [
+            6,
+            13
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 36,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 38,
+          "app": [
+            5,
+            13
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 64,
+          "para_pct": 50,
+          "para": [
+            2,
+            4
+          ],
+          "app_pct": 69,
+          "app": [
+            9,
+            13
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 64,
+          "para_pct": 25,
+          "para": [
+            1,
+            4
+          ],
+          "app_pct": 69,
+          "app": [
+            9,
+            13
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-summe-of-new-testament",
+      "locus": "matter/nt/summe-of-new-testament",
+      "testament": "nt",
+      "n_intervals": 8,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 25,
+          "para_pct": 5,
+          "para": [
+            2,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": 21,
+          "para": [
+            8,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": 18,
+          "para": [
+            7,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-table-of-certaine-places",
+      "locus": "matter/nt/table-of-certaine-places",
+      "testament": "nt",
+      "n_intervals": 135,
+      "own_source": "archive-nt-1582",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 2,
+          "para_pct": 4,
+          "para": [
+            9,
+            210
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 10,
+          "para_pct": 12,
+          "para": [
+            25,
+            210
+          ],
+          "app_pct": 4,
+          "app": [
+            1,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            210
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            210
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            23
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-table-of-epistles",
+      "locus": "matter/nt/table-of-epistles",
+      "testament": "nt",
+      "n_intervals": 210,
+      "own_source": "jp2-S08",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            208
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            208
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 6,
+          "para_pct": 25,
+          "para": [
+            1,
+            4
+          ],
+          "app_pct": 6,
+          "app": [
+            12,
+            208
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 5,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 5,
+          "app": [
+            10,
+            208
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-table",
+      "locus": "matter-nt-table",
+      "testament": "nt",
+      "n_intervals": 2,
+      "own_source": "archive-nt-1582",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            30
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            30
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            30
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            30
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-nt-title",
+      "locus": "matter/nt/title",
+      "testament": "nt",
+      "n_intervals": 10,
+      "own_source": "archive-nt-1582",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-nt-1582",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            4
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S4",
+          "ocr_dir": "jp2-S04",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            4
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S8",
+          "ocr_dir": "jp2-S08",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": 31,
+          "para": [
+            4,
+            13
+          ],
+          "app_pct": 50,
+          "app": [
+            2,
+            4
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "pdf-S09nt",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": 31,
+          "para": [
+            4,
+            13
+          ],
+          "app_pct": 25,
+          "app": [
+            1,
+            4
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-approbatio",
+      "locus": "matter/ot1/approbatio",
+      "testament": "ot1",
+      "n_intervals": 2,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 33,
+          "para": [
+            2,
+            6
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 33,
+          "para": [
+            2,
+            6
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 17,
+          "para": [
+            1,
+            6
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-argument-of-genesis",
+      "locus": "matter/ot1/argument-of-genesis",
+      "testament": "ot1",
+      "n_intervals": 3,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": false
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 11,
+          "para": [
+            4,
+            38
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-brief-recapitulation",
+      "locus": "matter/ot1/brief-recapitulation",
+      "testament": "ot1",
+      "n_intervals": 14,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 1,
+          "para": [
+            1,
+            88
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 36,
+          "para_pct": 15,
+          "para": [
+            13,
+            88
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            88
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-colophon",
+      "locus": "matter/ot1/colophon",
+      "testament": "ot1",
+      "n_intervals": 1,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            23
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 100,
+          "para_pct": 4,
+          "para": [
+            1,
+            23
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": false
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            23
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-of-moyses",
+      "locus": "matter/ot1/of-moyses",
+      "testament": "ot1",
+      "n_intervals": 2,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-preface",
+      "locus": "matter-ot1-preface",
+      "testament": "ot1",
+      "n_intervals": 2,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-signification-of-the-markes",
+      "locus": "matter/ot1/signification-of-the-markes",
+      "testament": "ot1",
+      "n_intervals": 10,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": null,
+          "para": [
+            0,
+            0
+          ],
+          "app_pct": 50,
+          "app": [
+            5,
+            10
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 90,
+          "para_pct": null,
+          "para": [
+            0,
+            0
+          ],
+          "app_pct": 90,
+          "app": [
+            9,
+            10
+          ],
+          "reocr_flag": false
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 90,
+          "para_pct": null,
+          "para": [
+            0,
+            0
+          ],
+          "app_pct": 90,
+          "app": [
+            9,
+            10
+          ],
+          "reocr_flag": false
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-summe-and-partition",
+      "locus": "matter/ot1/summe-and-partition",
+      "testament": "ot1",
+      "n_intervals": 6,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            49
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 2,
+          "para": [
+            1,
+            49
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 17,
+          "para_pct": 6,
+          "para": [
+            3,
+            49
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-summe-of-old-testament",
+      "locus": "matter/ot1/summe-of-old-testament",
+      "testament": "ot1",
+      "n_intervals": 3,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            32
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 3,
+          "para": [
+            1,
+            32
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            32
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot1-title",
+      "locus": "matter/ot1/title",
+      "testament": "ot1",
+      "n_intervals": 5,
+      "own_source": "archive-ot1-1609",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot1-1609",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            3
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03a",
+          "located": true,
+          "overall_pct": 60,
+          "para_pct": 33,
+          "para": [
+            1,
+            3
+          ],
+          "app_pct": 100,
+          "app": [
+            2,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "archive-holiebible-ot1",
+          "located": true,
+          "overall_pct": 60,
+          "para_pct": 33,
+          "para": [
+            1,
+            3
+          ],
+          "app_pct": 100,
+          "app": [
+            2,
+            2
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-approbatio",
+      "locus": "matter/ot2/approbatio",
+      "testament": "ot2",
+      "n_intervals": 5,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            8
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 20,
+          "para_pct": 12,
+          "para": [
+            1,
+            8
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            8
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 20,
+          "para_pct": 12,
+          "para": [
+            1,
+            8
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-backmatter",
+      "locus": "matter-ot2-backmatter",
+      "testament": "ot2",
+      "n_intervals": 3,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 4,
+          "para": [
+            1,
+            26
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 19,
+          "para": [
+            5,
+            26
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            26
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            2,
+            26
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-censura-trium-theologorum",
+      "locus": "matter/ot2/censura-trium-theologorum",
+      "testament": "ot2",
+      "n_intervals": 5,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 40,
+          "para_pct": 67,
+          "para": [
+            6,
+            9
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 20,
+          "para_pct": 11,
+          "para": [
+            1,
+            9
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 20,
+          "para_pct": 11,
+          "para": [
+            1,
+            9
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 40,
+          "para_pct": 67,
+          "para": [
+            6,
+            9
+          ],
+          "app_pct": null,
+          "app": [
+            0,
+            0
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-concerning-interpretation",
+      "locus": "matter/ot2/concerning-interpretation",
+      "testament": "ot2",
+      "n_intervals": 6,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 8,
+          "para": [
+            1,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 67,
+          "para_pct": 31,
+          "para": [
+            4,
+            13
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 15,
+          "para": [
+            2,
+            13
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 50,
+          "para_pct": 38,
+          "para": [
+            5,
+            13
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-faults-escaped",
+      "locus": "matter/ot2/faults-escaped",
+      "testament": "ot2",
+      "n_intervals": 79,
+      "own_source": "jp2-S06",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            3
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            78
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            3
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            78
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 65,
+          "para_pct": 0,
+          "para": [
+            0,
+            3
+          ],
+          "app_pct": 65,
+          "app": [
+            51,
+            78
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            3
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            78
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-historical-table",
+      "locus": "matter/ot2/historical-table",
+      "testament": "ot2",
+      "n_intervals": 564,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 25,
+          "para_pct": 25,
+          "para": [
+            1,
+            4
+          ],
+          "app_pct": 25,
+          "app": [
+            141,
+            560
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 26,
+          "para_pct": 25,
+          "para": [
+            1,
+            4
+          ],
+          "app_pct": 26,
+          "app": [
+            143,
+            560
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 25,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 25,
+          "app": [
+            140,
+            560
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 24,
+          "para_pct": 0,
+          "para": [
+            0,
+            4
+          ],
+          "app_pct": 25,
+          "app": [
+            138,
+            560
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-preface-psalms",
+      "locus": "matter/ot2/preface-psalms",
+      "testament": "ot2",
+      "n_intervals": 3,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            15
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            15
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            15
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 7,
+          "para": [
+            1,
+            15
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            2
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-privilege-du-roi",
+      "locus": "matter/ot2/privilege-du-roi",
+      "testament": "ot2",
+      "n_intervals": 3,
+      "own_source": "jp2-S06",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": false
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": false
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            8
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": false
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-table-epistles",
+      "locus": "matter/ot2-back/table-of-epistles-ot",
+      "testament": "ot2",
+      "n_intervals": 25,
+      "own_source": "jp2-S06",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 16,
+          "para_pct": 100,
+          "para": [
+            2,
+            2
+          ],
+          "app_pct": 9,
+          "app": [
+            2,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 48,
+          "para_pct": 100,
+          "para": [
+            2,
+            2
+          ],
+          "app_pct": 43,
+          "app": [
+            10,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 12,
+          "para_pct": 50,
+          "para": [
+            1,
+            2
+          ],
+          "app_pct": 9,
+          "app": [
+            2,
+            23
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 16,
+          "para_pct": 100,
+          "para": [
+            2,
+            2
+          ],
+          "app_pct": 13,
+          "app": [
+            3,
+            23
+          ],
+          "reocr_flag": true
+        }
+      ]
+    },
+    {
+      "slug": "matter-ot2-title",
+      "locus": "matter/ot2/title",
+      "testament": "ot2",
+      "n_intervals": 3,
+      "own_source": "archive-ot2-1610",
+      "sources": [
+        {
+          "scan": "S1",
+          "ocr_dir": "archive-ot2-1610",
+          "located": true,
+          "overall_pct": 33,
+          "para_pct": 17,
+          "para": [
+            1,
+            6
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S3",
+          "ocr_dir": "pdf-S03b",
+          "located": true,
+          "overall_pct": 33,
+          "para_pct": 17,
+          "para": [
+            1,
+            6
+          ],
+          "app_pct": 100,
+          "app": [
+            1,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S6",
+          "ocr_dir": "jp2-S06",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 17,
+          "para": [
+            1,
+            6
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        },
+        {
+          "scan": "S9",
+          "ocr_dir": "jp2-S09ot2",
+          "located": true,
+          "overall_pct": 0,
+          "para_pct": 0,
+          "para": [
+            0,
+            6
+          ],
+          "app_pct": 0,
+          "app": [
+            0,
+            1
+          ],
+          "reocr_flag": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2072 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p128",
+  "old_text": "Whom when Sichem ſee ſeene the ſonne of Hemor the Heuite, the prince of ofa land, he was in loue with her and he tooke her away, Iay with her, by force raui ſhing the virgin.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.924,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.537,
+   0.875,
+   0.6653
+  ],
+  "crop_page": 128,
+  "r3_raw": "And Dina the daughter of Lia went forth :: to see the wemen of that countrie. † Whom when Sichem had seene the sonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. † And his soule was fast kint vnto her, and wheras she was sad, he com-",
+  "r3_verse": "Whom when Sichem had seene the sonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin.",
+  "arm_conflicts": [
+   "ſee | had",
+   "ofa | that",
+   "Iay | and lay",
+   "raui ſhing | rauishing"
+  ],
+  "new_text": "Whom when Sichem had ſeene the ſonne of Hemor the Heuite, the prince of that land, he was in loue with her and he tooke her away, and lay with her, by force rauishing the virgin.",
+  "s_unresolved": [
+   "rauishing"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p128",
+  "old_text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.884,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5975,
+   0.875,
+   0.7061
+  ],
+  "crop_page": 128,
+  "r3_raw": "land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. † And his soule was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes. † And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "r3_verse": "And his soule was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes.",
+  "arm_conflicts": [
+   "humi- de | soule",
+   "ine | she",
+   "forted | comforted"
+  ],
+  "lexicon_readings": {
+   "2": "ſoule"
+  },
+  "visual_readings": {
+   "2": "ſoule"
+  },
+  "new_text": "And his ſoule was faſt kint vnto her, and wheras she was ſad, he comforted her with ſweete wordes.",
+  "s_unresolved": [
+   "she",
+   "comforted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p128",
+  "old_text": "And going to his father, he ſaid: Take me this wench to be my wife",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.6392,
+   0.875,
+   0.7258
+  ],
+  "crop_page": 128,
+  "r3_raw": "was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes. † And going to Hemor his father, he said: Take me this wench to be my wife. † Which when Iacob had heard, his sonnes being absent,",
+  "r3_verse": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "arm_conflicts": [],
+  "new_text": "And going to Hemor his father, he ſaid: Take me this wench to be my wife",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p128",
+  "old_text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+  "old": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.6774,
+   0.875,
+   0.7867
+  ],
+  "crop_page": 128,
+  "r3_raw": "his father, he said: Take me this wench to be my wife. † Which when Iacob had heard, his sonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned. † And when Hemor Sichems father was conie forth to speake vnto Iacob, † behold his sonnes came",
+  "r3_verse": "Which when Iacob had heard, his sonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned.",
+  "arm_conflicts": [
+   "beingabſent, | being absent,"
+  ],
+  "new_text": "Which when Iacob had heard, his ſonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned.",
+  "s_unresolved": [
+   "absent,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p128",
+  "old_text": "And when Hemor Sichems father conie forth to ſpeake vnto Iacob,",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.7192,
+   0.875,
+   0.8064
+  ],
+  "crop_page": 128,
+  "r3_raw": "and occupied in feeding of the cattle, he held his peace til they returned. † And when Hemor Sichems father was conie forth to speake vnto Iacob, † behold his sonnes came out of the field: and hearing what had passed, they were",
+  "r3_verse": "And when Hemor Sichems father was conie forth to speake vnto Iacob,",
+  "arm_conflicts": [],
+  "new_text": "And when Hemor Sichems father was conie forth to ſpeake vnto Iacob,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p128",
+  "old_text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and committed an vnlavful ſact, in rauiſhing Iacobs ter",
+  "old": {
+   "s_dismas": 0.877,
+   "odr_com": 0.877,
+   "sabates_a": 0.869,
+   "madueke_b": 0.869
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.7392,
+   0.875,
+   0.887
+  ],
+  "crop_page": 128,
+  "r3_raw": "they returned. † And when Hemor Sichems father was conie forth to speake vnto Iacob, † behold his sonnes came out of the field: and hearing what had passed, they were paiting wrath, becauſe he had done a foule thing in Israel, and committed an vnlawful fact, in rauishing Iaco's daughter. † Hemor therefore spake to them: The soule of my sonne Sichem is falſed to your daughter; Geue her vnto him to",
+  "r3_verse": "behold his sonnes came out of the field: and hearing what had passed, they were paiting wrath, becauſe he had done a foule thing in Israel, and committed an vnlawful fact, in rauishing Iaco's daughter.",
+  "arm_conflicts": [
+   "paſſing | were paiting",
+   "vnlavful ſact, | vnlawful fact,",
+   "Iacobs ter | Iaco's daughter."
+  ],
+  "lexicon_readings": {
+   "25": "Iſrael,"
+  },
+  "visual_readings": {
+   "25": "Iſrael,"
+  },
+  "new_text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paiting wrath, becauſe he had done a foule thing in Iſrael, and committed an vnlawful fact, in rauiſhing Iaco's daughter.",
+  "s_unresolved": [
+   "vnlawful",
+   "fact,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "chapter",
+  "old_text": "Hemor therfore ſpake to them: The ſoule of my Sichem is faſtued to your daughter Geue her vnto him mammc wife:",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.8188,
+   0.875,
+   1.0
+  ],
+  "crop_page": 128,
+  "r3_raw": "and committed an vnlawful fact, in rauishing Iacob's daughter. † Hemor therefore spake to them: The soule of my sonne Sichem is fallened to your daughter; Geue her vnto him to wife:",
+  "r3_verse": "Hemor therefore spake to them: The soule of my sonne Sichem is fallened to your daughter; Geue her vnto him to wife:",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "faſtued | fallened",
+   "mammc | to"
+  ],
+  "r2_attested": {
+   "9": "ſonne"
+  },
+  "visual_readings": {
+   "9": "ſonne"
+  },
+  "new_text": "Hemor therefore ſpake to them: The ſoule of my ſonne Sichem is fallened to your daughter Geue her vnto him to wife:",
+  "s_unresolved": [
+   "therefore",
+   "fallened"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p129",
+  "old_text": "Iacobs ſonnes anſwered Sichem & his ſather : in guile, being wrath for the deflouring of their ſiſter:",
+  "old": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.1716,
+   0.875,
+   0.2792
+  ],
+  "crop_page": 129,
+  "r3_raw": "dowrie, and require giftes, and I ſhall gladly geue, what you thal demande: only geue me this wench to wife. † Jacobs sonnes answered Sichem & his father :: in guile, being wrath :: for the deflouring of their sister: † We can not doe that which you demande, nor geue our sister to an vncircumcised",
+  "r3_verse": "Jacobs sonnes answered Sichem & his father :: in guile, being wrath :: for the deflouring of their sister:",
+  "arm_conflicts": [
+   "Iacobs | Jacobs",
+   "ſather | father"
+  ],
+  "lexicon_readings": {
+   "6": "father"
+  },
+  "visual_readings": {
+   "6": "father"
+  },
+  "new_text": "Iacobs ſonnes anſwered Sichem & his father :: in guile, being wrath :: for the deflouring of their ſiſter:",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p129",
+  "old_text": "When they were gone forth, the other of Iacob ranne in vpon them that were ſhine: and the citie in reuenge of the rape.",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.871,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.7726,
+   0.875,
+   0.8799
+  ],
+  "crop_page": 129,
+  "r3_raw": "Hemor and Sichem, taking away Dina their sister out of Sichems house. † When they were gone forth, the other sonnes of Jacob ranne in vpon them that were thaine: and spoiled the citie in revengce of the rape. † And wasting al things that were in their houses, and fildes, their ſheepe and",
+  "r3_verse": "When they were gone forth, the other sonnes of Jacob ranne in vpon them that were thaine: and spoiled the citie in revengce of the rape.",
+  "arm_conflicts": [
+   "Iacob | Jacob",
+   "ſhine: | thaine:",
+   "reuenge | revengce"
+  ],
+  "lexicon_readings": {
+   "7": "ſonnes"
+  },
+  "r2_attested": {
+   "18": "ſpoiled"
+  },
+  "visual_readings": {
+   "7": "ſonnes",
+   "18": "ſpoiled"
+  },
+  "new_text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were thaine: and ſpoiled the citie in revengce of the rape.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "chapter",
+  "old_text": "And waſting al thar were in their houſes, and fildes, their ſheepe and heardes, and aſſes,",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.812,
+   0.875,
+   0.9181
+  ],
+  "crop_page": 129,
+  "crop_leaves": [
+   129,
+   130
+  ],
+  "r3_raw": "the sonnes of Iacob ranne in vpon them that were thaine: and spoiled the citie in revengue of the rape. † And wasting al things that were in their houses, and fildes, their ſheepe and heardes GENESIS. heardes, and aſses, † their little ones alſo, and their wiues 2; they led away captiue. † Which things when they had;",
+  "r3_verse": "And wasting al things that were in their houses, and fildes, their ſheepe and heardes heardes, and aſses,",
+  "arm_conflicts": [
+   "thar | things that"
+  ],
+  "new_text": "And waſting al things that were in their houſes, and fildes, their ſheepe and heardes heardes, and aſſes,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p130",
+  "old_text": "their little ones alſo, and their they led away captiue.",
+  "old": {
+   "s_dismas": 0.881,
+   "odr_com": 0.9,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.0188,
+   0.875,
+   0.1093
+  ],
+  "crop_page": 130,
+  "r3_raw": "GENESIS. heardes, and aſses, † their little ones also, and their wiues 2 they led away captiue. † Which things when they had ; boldly atcheiued, Iacob said to Simeon and Leui: You haue",
+  "r3_verse": "their little ones also, and their wiues they led away captiue.",
+  "arm_conflicts": [],
+  "new_text": "their little ones alſo, and their wiues they led away captiue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 30,
+  "from": "p130",
+  "old_text": "which things when they boldly atcheiued, Iacob ſaid to Simeon and Leui You trubled me, and made me odious to the Chananites, Pherezites the inhabiters of this land. we are few: being gethered together wil ſtrike me and I, and my ſhal be deſtroyed.",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.0405,
+   0.875,
+   0.2109
+  ],
+  "crop_page": 130,
+  "r3_raw": "heardes, and aſses, † their little ones alſo, and their wiues 2 they led away captiue. † Which things when they had boldly atcheiued, Iacob said to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiteres of this land. we are few: they being gethered together wil strike me; and I, and my house ſhal be destroyed. † They answered: What ſhould they abuse our fifter as a strumpet?",
+  "r3_verse": "Which things when they had boldly atcheiued, Iacob said to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiteres of this land. we are few: they being gethered together wil strike me; and I, and my house ſhal be destroyed.",
+  "arm_conflicts": [
+   "inhabiters | inhabiteres"
+  ],
+  "lexicon_readings": {
+   "45": "houſe"
+  },
+  "visual_readings": {
+   "45": "houſe"
+  },
+  "new_text": "which things when they had boldly atcheiued, Iacob ſaid to Simeon and Leui You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabiteres of this land. we are few: they being gethered together wil ſtrike me and I, and my houſe ſhal be deſtroyed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 0.996,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "p130",
+  "old_text": "They anſwered : What ſhould abuſe our ſiſter as a ſtrumper:",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.1412,
+   0.875,
+   0.2333
+  ],
+  "crop_page": 130,
+  "r3_raw": "being gethered together wil strike me; and I, and my house shal be destroyed. † They answered: What should they abuse our sister as a strumpet?",
+  "r3_verse": "They answered: What should they abuse our sister as a strumpet?",
+  "arm_conflicts": [
+   "ſtrumper: | strumpet?"
+  ],
+  "r2_attested": {
+   "10": "ſtrumpet?"
+  },
+  "visual_readings": {
+   "10": "ſtrumpet?"
+  },
+  "new_text": "They anſwered What ſhould they abuſe our ſiſter as a ſtrumpet?",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p132",
+  "old_text": "Whom when Sichem ſee ſeene the ſonne of Hemor the Heuite, the prince of of a land, he was in loue with her: and he tooke her away, cou n- lay with her, by force rauiſhing the virgin.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.924,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.5378,
+   0.875,
+   0.6682
+  ],
+  "crop_page": 132,
+  "r3_raw": "And Dina the daughter of Lia went forth :: to see the wemen of that countrie. † Whom when Sichem had seene the sonne of Hemor the Heuïte, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. † And his soule was fast kint vnto her, and wheras she was sad, he com-",
+  "r3_verse": "Whom when Sichem had seene the sonne of Hemor the Heuïte, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin.",
+  "arm_conflicts": [
+   "ſee | had",
+   "Heuite, | Heuïte,",
+   "of a | that",
+   "cou n- | and"
+  ],
+  "new_text": "Whom when Sichem had ſeene the ſonne of Hemor the Heuite, the prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauiſhing the virgin.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p132",
+  "old_text": "And his humi- de was faſt kint vnto her, and wheras ine was ſad, he forted her with ſweete wordes.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.884,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5998,
+   0.875,
+   0.7108
+  ],
+  "crop_page": 132,
+  "r3_raw": "land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. † And his soule was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes. † And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "r3_verse": "And his soule was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes.",
+  "arm_conflicts": [
+   "humi- de | soule",
+   "ine | she",
+   "forted | comforted"
+  ],
+  "lexicon_readings": {
+   "2": "ſoule"
+  },
+  "visual_readings": {
+   "2": "ſoule"
+  },
+  "new_text": "And his ſoule was faſt kint vnto her, and wheras she was ſad, he comforted her with ſweete wordes.",
+  "s_unresolved": [
+   "she",
+   "comforted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p132",
+  "old_text": "And going to his father, he ſaid Take me this wench to be my",
+  "old": {
+   "s_dismas": 0.843,
+   "odr_com": 0.843,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.6417,
+   0.875,
+   0.7316
+  ],
+  "crop_page": 132,
+  "r3_raw": "was fast kint unto her, and wheras she was sad, he comforted her with sweete wordes. † And going to Hemor his father, he said: Take me this wench to be my wife. † Which when Iacob had heard, his sonnes being absent,",
+  "r3_verse": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "arm_conflicts": [],
+  "new_text": "And going to Hemor his father, he ſaid Take me this wench to be my wife.",
+  "s_unresolved": [
+   "wife."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p132",
+  "old_text": "Which when Iacob had heard, his ſonnes beingabſent, and occupied in feeding of the cattle, he held his peace they returned.",
+  "old": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.6826,
+   0.8777,
+   0.7949
+  ],
+  "crop_page": 132,
+  "r3_raw": "his father, he said: Take me this wench to be my wife. † Which when Iacob had heard, his sonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned. † And when Hemor Sichems father was come forth to speake vnto Iacob, † behold his sonnes came",
+  "r3_verse": "Which when Iacob had heard, his sonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned.",
+  "arm_conflicts": [
+   "beingabſent, | being absent,"
+  ],
+  "new_text": "Which when Iacob had heard, his ſonnes being absent, and occupied in feeding of the cattle, he held his peace til they returned.",
+  "s_unresolved": [
+   "absent,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p132",
+  "old_text": "And when Hemor Sichems father conie forth to ſpeake vnto Iacob,",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.7255,
+   0.875,
+   0.816
+  ],
+  "crop_page": 132,
+  "r3_raw": "and occupied in feeding of the cattle, he held his peace til they returned. † And when Hemor Sichems father was come forth to speake vnto Iacob, † behold his sonnes came out of the field: and hearing what had passed, they were",
+  "r3_verse": "And when Hemor Sichems father was come forth to speake vnto Iacob,",
+  "arm_conflicts": [
+   "conie | was come"
+  ],
+  "new_text": "And when Hemor Sichems father was come forth to ſpeake vnto Iacob,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p132",
+  "old_text": "behold his ſonnes out of the field: and hearing what had paſſed, they paſſing wrath, becauſe he had done a foule thing in and commitred an vnlawful fact, in raui ſhing Iacobs ter.",
+  "old": {
+   "s_dismas": 0.877,
+   "odr_com": 0.877,
+   "sabates_a": 0.869,
+   "madueke_b": 0.869
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.747,
+   0.875,
+   0.8999
+  ],
+  "crop_page": 132,
+  "r3_raw": "they returned. † And when Hemor Sichems father was come forth to speake vnto Iacob, † behold his sonnes came out of the field: and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and committed an vnlawfull fact; in rauishing Jacobs daughter. † Hemor therefore spake to them: The soule of my sonne Sichem is fastned to your daughter; Geue her vnto him to",
+  "r3_verse": "behold his sonnes came out of the field: and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and committed an vnlawfull fact; in rauishing Jacobs daughter.",
+  "arm_conflicts": [
+   "commitred | committed",
+   "vnlawful | vnlawfull",
+   "raui ſhing Iacobs ter. | rauishing Jacobs daughter."
+  ],
+  "lexicon_readings": {
+   "25": "Iſrael,"
+  },
+  "visual_readings": {
+   "25": "Iſrael,"
+  },
+  "new_text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and committed an vnlawful fact, in rauishing Iacobs daughter.",
+  "s_unresolved": [
+   "rauishing"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "chapter",
+  "old_text": "Hemor therfore ſpake to them: The ſoule of my Sichem is ſaſtned to your daughter Geue her vnto him wife:",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.8298,
+   0.875,
+   0.9236
+  ],
+  "crop_page": 132,
+  "r3_raw": "and committed an vnlawful fact; in rauishing Iacobs daughter. † Hemor therefore spake to them: The soule of my sonne Sichem is fastned to your daughter; Geue her vnto him to wife:",
+  "r3_verse": "Hemor therefore spake to them: The soule of my sonne Sichem is fastned to your daughter; Geue her vnto him to wife:",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "ſaſtned | fastned"
+  ],
+  "r2_attested": {
+   "9": "ſonne",
+   "12": "faſtned"
+  },
+  "visual_readings": {
+   "9": "ſonne",
+   "12": "faſtned"
+  },
+  "new_text": "Hemor therefore ſpake to them: The ſoule of my ſonne Sichem is faſtned to your daughter Geue her vnto him to wife:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p133",
+  "old_text": "Iacobs ſonnes anſwered Sichem & his father :: in guile, being wrath for the deffouring of their ſiſter:",
+  "old": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.1589,
+   0.875,
+   0.2665
+  ],
+  "crop_page": 133,
+  "r3_raw": "dowrie, and require giftes, and I ſhal gladly geue, what you ſhall demande: only geue me this wench to wife. † Jacobs sonnes answered Sichem & his father :: in guile, being wrath :: for the deflouring of their sister: † We can not doe that which you demande, nor geue our sister to an vncircumcised",
+  "r3_verse": "Jacobs sonnes answered Sichem & his father :: in guile, being wrath :: for the deflouring of their sister:",
+  "arm_conflicts": [
+   "Iacobs | Jacobs",
+   "deffouring | deflouring"
+  ],
+  "new_text": "Iacobs ſonnes anſwered Sichem & his father :: in guile, being wrath :: for the deflouring of their ſiſter:",
+  "s_unresolved": [
+   "deflouring"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p133",
+  "old_text": "And they al aſſented, and circumciſed al the man",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.6599,
+   0.875,
+   0.7283
+  ],
+  "crop_page": 133,
+  "r3_raw": "vs condescend, and dwelling together, we shal make one people. † And they al assented, and circumcised at the man sex. † And behold the third day, when the grieſe of the",
+  "r3_verse": "And they al assented, and circumcised at the man sex.",
+  "arm_conflicts": [
+   "al | at"
+  ],
+  "r2_attested": {
+   "9": "ſex."
+  },
+  "visual_readings": {
+   "9": "ſex."
+  },
+  "new_text": "And they al aſſented, and circumciſed at the man ſex.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "p133",
+  "old_text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were ſlaine : and the citie in reuenge of the rape.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.7846,
+   0.875,
+   0.8933
+  ],
+  "crop_page": 133,
+  "r3_raw": "Hemor and Sichem, taking away Dina their sister out of Sichems house. † When they were gone forth, the other sonnes of Iacob ranne in vpon them that were slaine: and spoiled the citie in revengue of therape. † And wasting all things that were in their houses, and fildes, their sheepe and",
+  "r3_verse": "When they were gone forth, the other sonnes of Iacob ranne in vpon them that were slaine: and spoiled the citie in revengue of therape.",
+  "arm_conflicts": [
+   "reuenge | revengue",
+   "the rape. | therape."
+  ],
+  "r2_attested": {
+   "18": "ſpoiled"
+  },
+  "visual_readings": {
+   "18": "ſpoiled"
+  },
+  "new_text": "When they were gone forth, the other ſonnes of Iacob ranne in vpon them that were ſlaine and ſpoiled the citie in revengue of therape.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "chapter",
+  "old_text": "And waſting al that were in their hou ſec, and fildes, their ſecpe and heardes, and aſſes,",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.882,
+   "sabates_a": 0.828,
+   "madueke_b": 0.828
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.8255,
+   0.875,
+   0.9365
+  ],
+  "crop_page": 133,
+  "crop_leaves": [
+   133,
+   134
+  ],
+  "r3_raw": "sonnes of Iacob ranne in vpon them that were slaine: and spoiled the citie in reuenge of the rape. † And wasting al things that were in their houses, and fildes, their sheepe and heardes GENESIS. heardes, and aſses, † their little ones also, and their wiues 2 they led away captiue. † Which things when they had 3",
+  "r3_verse": "And wasting al things that were in their houses, and fildes, their sheepe and heardes heardes, and aſses,",
+  "arm_conflicts": [
+   "hou ſec, | houses,",
+   "ſecpe | sheepe"
+  ],
+  "new_text": "And waſting al things that were in their houses, and fildes, their sheepe and heardes heardes, and aſſes,",
+  "s_unresolved": [
+   "houses,",
+   "sheepe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p134",
+  "old_text": "their little ones alſo, and their they led away captiue.",
+  "old": {
+   "s_dismas": 0.881,
+   "odr_com": 0.9,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.0048,
+   0.875,
+   0.0903
+  ],
+  "crop_page": 134,
+  "r3_raw": "GENESIS. heardes, and aſses, † their little ones also, and their wiues 2 they led away captiue. † Which things when they had 3 boldly atcheiued, Iacob said to Simeon and Leui: You haue",
+  "r3_verse": "their little ones also, and their wiues they led away captiue.",
+  "arm_conflicts": [],
+  "new_text": "their little ones alſo, and their wiues they led away captiue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p134",
+  "old_text": "Which things when they boldly atcheiued, Iacob ſaid to Simeon and Leui You trubled me, and made me odious to the Chananites, Pherezites the inhabiters of this land. we are few: being gethered together wil ſtrike me and I, and my ſhal be deſtroyed.",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.0272,
+   0.875,
+   0.1982
+  ],
+  "crop_page": 134,
+  "r3_raw": "heardes, and aſses, † their little ones also, and their wiues 2 they led away captiue. † Which things when they had boldly atcheiued, Iacob said to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabitants of this land. we are few: they being gethered together wil strike me; and I, and my house ſhal be destroyed. † They answered: What ſhould they abuse our sister as a strumpet?",
+  "r3_verse": "Which things when they had boldly atcheiued, Iacob said to Simeon and Leui: You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabitants of this land. we are few: they being gethered together wil strike me; and I, and my house ſhal be destroyed.",
+  "arm_conflicts": [
+   "inhabiters | inhabitants"
+  ],
+  "lexicon_readings": {
+   "45": "houſe"
+  },
+  "visual_readings": {
+   "45": "houſe"
+  },
+  "new_text": "Which things when they had boldly atcheiued, Iacob ſaid to Simeon and Leui You haue trubled me, and made me odious to the Chananites, and Pherezites the inhabitants of this land. we are few: they being gethered together wil ſtrike me and I, and my houſe ſhal be deſtroyed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 31,
+  "from": "p134",
+  "old_text": "They anſwered What ſhould abuſe our ſiſter as a ſtrumpet?",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.1308,
+   0.8791,
+   0.9292
+  ],
+  "crop_page": 134,
+  "r3_raw": "being gethered together wil strike me; and I, and my house ſhal be destroyed. † They answered: What should they 3 abuse our sister as a strumpet? CHAP. XXXV. Jacob purging his whole familie of idols, goeth by Gods commandment in Bethel, 7. There buildeth an Altar. 8. Debora dieth. 9. God appearing gaine to Iacob bleſseth him, and changeth his name into Israel. 16. Raa bearing Beniamin dieth, and is buried in Bethleem, 22. Ruben lyeth v Bala. 23. Israels twelve ſonnnes are recited. 28. Isaac dieth at the age of 18 yeares. and his ſonnnes Esau and Iacob burie him. IN THE meane time God spake to Iacob: Arife, and goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and accompanied me in their eares: but he buried them under the terebinth, that is behind the citie of Sichem. † And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purfuew them going away. Iacob came to Luza, which is in the land of Chanaan, fur named Bethel: he and all the people that was with him, † And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother. † The same time died Debora the nurse of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping. † And God appeared again",
+  "r3_verse": "They answered: What should they abuse our sister as a strumpet? CHAP. XXXV. Jacob purging his whole familie of idols, goeth by Gods commandment in Bethel, There buildeth an Altar. Debora dieth. God appearing gaine to Iacob bleſseth him, and changeth his name into Israel. Raa bearing Beniamin dieth, and is buried in Bethleem, Ruben lyeth Bala. Israels twelve ſonnnes are recited. Isaac dieth at the age of yeares. and his ſonnnes Esau and Iacob burie him. IN THE meane time God spake to Iacob: Arife, and goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and accompanied me in their eares: but he buried them under the terebinth, that is behind the citie of Sichem. And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purfuew them going away. Iacob came to Luza, which is in the land of Chanaan, fur named Bethel: he and all the people that was with him, And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother. The same time died Debora the nurse of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping. And God appeared again",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "17": "familie",
+   "44": "Iſrael.",
+   "62": "Iſaac",
+   "72": "Eſau",
+   "189": "houſe",
+   "192": "for",
+   "201": "from",
+   "205": "ſame"
+  },
+  "r2_attested": {
+   "37": "bleſſeth",
+   "57": "Iſraels",
+   "82": "ſpake",
+   "210": "nurſe"
+  },
+  "visual_readings": {
+   "17": "familie",
+   "44": "Iſrael.",
+   "62": "Iſaac",
+   "72": "Eſau",
+   "189": "houſe",
+   "192": "for",
+   "201": "from",
+   "205": "ſame",
+   "37": "bleſſeth",
+   "57": "Iſraels",
+   "82": "ſpake",
+   "210": "nurſe"
+  },
+  "new_text": "They anſwered What ſhould they abuſe our ſiſter as a ſtrumpet? CHAP. XXXV. Jacob purging his whole familie of idols, goeth by Gods commandment in Bethel, There buildeth an Altar. Debora dieth. God appearing gaine to Iacob bleſſeth him, and changeth his name into Iſrael. Raa bearing Beniamin dieth, and is buried in Bethleem, Ruben lyeth Bala. Iſraels twelve ſonnnes are recited. Iſaac dieth at the age of yeares. and his ſonnnes Eſau and Iacob burie him. IN THE meane time God ſpake to Iacob: Arife, and goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and accompanied me in their eares: but he buried them under the terebinth, that is behind the citie of Sichem. And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purfuew them going away. Iacob came to Luza, which is in the land of Chanaan, fur named Bethel: he and all the people that was with him, And he builded there an altar, and called the name of that place, The houſe of God: for there God appeared to him when he fled from his brother. The ſame time died Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping. And God appeared again",
+  "s_unresolved": [
+   "ſonnnes",
+   "ſonnnes",
+   "Arife,",
+   "durſt",
+   "purfuew",
+   "fur",
+   "fled",
+   "foote"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p140",
+  "old_text": "And his ſoule de was faſt kint vnto her, and wheras ſne was ſad, he comforted her with ſweete wordes.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.959,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5971,
+   0.875,
+   0.7082
+  ],
+  "crop_page": 140,
+  "r3_raw": "land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. † And his soule 3: was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes. † And going to Hemor 4: his father, he laid: Take me this wench to be my wife.",
+  "r3_verse": "And his soule 3: was fast kint vnto her, and wheras she was sad, he comforted her with sweete wordes.",
+  "arm_conflicts": [
+   "de | 3:",
+   "ſne | she"
+  ],
+  "new_text": "And his ſoule 3: was faſt kint vnto her, and wheras she was ſad, he comforted her with ſweete wordes.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p141",
+  "old_text": "We can not doe that ded which you demande, nor geue our ſiſter to an vncircumciſed perſon : which with vs is an vnlawful & abhominable thing.xceſſe",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.2192,
+   0.875,
+   0.3268
+  ],
+  "crop_page": 141,
+  "r3_raw": "sonnes answered Sichem & his father: in guile, being wrath: for the deflouring of their sister: † We can not doe that which you demande, nor geue our sister to an vncircumcised person: which with vs is an vnlawful & abhominable thing. † But in this order we may be confederate, if you wilbe",
+  "r3_verse": "We can not doe that which you demande, nor geue our sister to an vncircumcised person: which with vs is an vnlawful & abhominable thing.",
+  "arm_conflicts": [
+   "thing.xceſſe | thing."
+  ],
+  "new_text": "We can not doe that which you demande, nor geue our ſiſter to an vncircumciſed perſon which with vs is an vnlawful & abhominable thing.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p141",
+  "old_text": "The offer pleaſed Hemor, and Sichem their his ſonne:",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.38,
+   0.875,
+   0.4642
+  ],
+  "crop_page": 141,
+  "r3_raw": "17 † but if you will not be circumcised, we will take our daughter, and depart. † The offer pleased Hemor, and Sichem his sonne: † neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loued",
+  "r3_verse": "The offer pleased Hemor, and Sichem his sonne:",
+  "arm_conflicts": [],
+  "new_text": "The offer pleaſed Hemor, and Sichem his ſonne:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p141",
+  "old_text": "neither did the young man make delay, but iuſt ſo forthwith fulfilled that which was demanded : for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3975,
+   0.875,
+   0.5277
+  ],
+  "crop_page": 141,
+  "r3_raw": "ter, and depart. † The offer pleased Hemor, and Sichem his sonne: † neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greatest man in al his fathers house. † And going into the gate of the citie, they spake to the people: † These men are men of peace,",
+  "r3_verse": "neither did the young man make delay, but forthwith fulfilled that which was demanded: for he loued the wench exceedingly, and he was the greatest man in al his fathers house.",
+  "arm_conflicts": [],
+  "new_text": "neither did the young man make delay, but forthwith fulfilled that which was demanded for he loued the wench exceedingly, and he was the greateſt man in al his fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p118",
+  "old_text": "fact. Dina the daughter of Lia went forth to ſee the women of that countrie.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.5469,
+   0.885,
+   0.6853
+  ],
+  "crop_page": 118,
+  "r3_raw": "Leu her brothers. 27. The rest of Jacobs sonnes spoile the citie. 30. Iacob blameth them, fearing harme may come by this fact. No Dina the daughter of Lia went forth to see the women of that countrie. 2. Whom when Sichem had seen, the sonne of Hemor the Heuite, the Prince of",
+  "r3_verse": "Leu her brothers. The rest of Jacobs sonnes spoile the citie. Iacob blameth them, fearing harme may come by this fact. No Dina the daughter of Lia went forth to see the women of that countrie.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "4": "reſt",
+   "7": "ſonnes",
+   "8": "ſpoile"
+  },
+  "visual_readings": {
+   "4": "reſt",
+   "7": "ſonnes",
+   "8": "ſpoile"
+  },
+  "new_text": "Leu her brothers. The reſt of Jacobs ſonnes ſpoile the citie. Iacob blameth them, fearing harme may come by this fact. No Dina the daughter of Lia went forth to ſee the women of that countrie.",
+  "s_unresolved": [
+   "fearing"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p118",
+  "old_text": "Whom when Sichem had ODina ſeen, the ſonue of Hemor the Heuite, the Prince of Bernard) that land, he was in loue with her : and he tooke her what need there to away, and lay with her, by force rauiſhing the virgin.",
+  "old": {
+   "s_dismas": 0.829,
+   "odr_com": 0.829,
+   "sabates_a": 0.831,
+   "madueke_b": 0.82
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.6224,
+   0.885,
+   0.7404
+  ],
+  "crop_page": 118,
+  "r3_raw": "ND Dina the daughter of Lia went forth to see the women of that countrie. 2. Whom when Sichem had seen, the sonne of Hemor the Heuite, the Prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin. 3. And his ſoule was fast knit vnto her, and wheras",
+  "r3_verse": "Whom when Sichem had seen, the sonne of Hemor the Heuite, the Prince of that land, he was in loue with her: and he tooke her away, and lay with her, by force rauishing the virgin.",
+  "arm_conflicts": [
+   "ſonue | sonne"
+  ],
+  "r2_attested": {
+   "6": "ſonne"
+  },
+  "visual_readings": {
+   "6": "ſonne"
+  },
+  "new_text": "Whom when Sichem had ſeen, the ſonne of Hemor the Heuite, the Prince of that land, he was in loue with her and he tooke her away, and lay with her, by force rauiſhing the virgin.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 1.0,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p118",
+  "old_text": "And his ſoule was faſt kuit vnto het, and wheras ſtrange ſad, he comforted het with ſweet words.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.874,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.6937,
+   0.885,
+   0.7717
+  ],
+  "crop_page": 118,
+  "r3_raw": "that land; he was affiude with her: And he tooke her away, and lay with her, by force rauishing the virgin. 3. And his soule was fast knit vnto her, and wheras she was sad, he comforted her with sweet words. 4. And going to Hemor his father, he said: Take me this wench to be my wife. 5. Which",
+  "r3_verse": "And his soule was fast knit vnto her, and wheras she was sad, he comforted her with sweet words.",
+  "arm_conflicts": [
+   "kuit | knit",
+   "het, | her,",
+   "ſtrange | she was",
+   "het | her"
+  ],
+  "r2_attested": {
+   "10": "ſhe"
+  },
+  "visual_readings": {
+   "10": "ſhe"
+  },
+  "new_text": "And his ſoule was faſt knit vnto her, and wheras ſhe was ſad, he comforted her with ſweet words.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.958,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p118",
+  "old_text": "And going to He- trie tather, he ſaid: Take me this wench to be my wife.",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.7127,
+   0.885,
+   0.7892
+  ],
+  "crop_page": 118,
+  "r3_raw": "3. And his soule was fast knit vnto her, and wheras she was sad, he comforted her with sweet words. 4. And going to Hemor his father, he said: Take me this wench to be my wife. 5. Which when Iacob had heard, his sonnes being absent and occupied in feeding",
+  "r3_verse": "And going to Hemor his father, he said: Take me this wench to be my wife.",
+  "arm_conflicts": [
+   "He- trie tather, | Hemor his father,"
+  ],
+  "new_text": "And going to Hemor his father, he ſaid: Take me this wench to be my wife.",
+  "s_unresolved": [
+   "father,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p118",
+  "old_text": "Which gradib, Iacob had heard, his ſonnes being abſent andoccupied in teeding tatis. he hold his peace til they returned.",
+  "old": {
+   "s_dismas": 0.847,
+   "odr_com": 0.847,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.7282,
+   0.885,
+   0.8272
+  ],
+  "crop_page": 118,
+  "r3_raw": "3. And his face was fast knit vnto her; and whereas she was sad, he comforted her with sweet words. 4. And going to Hemor his father, he said: Take me this wench to be my wife. 5. Which when Iacob had heard, his sonnes being absent and occupied in feeding of the cattle, he held his peace til they returned. 6. And when Hemor Sichems father was come forth to speake vnto Iacob, 7. behold his",
+  "r3_verse": "Which when Iacob had heard, his sonnes being absent and occupied in feeding of the cattle, he held his peace til they returned.",
+  "arm_conflicts": [
+   "gradib, | when",
+   "andoccupied | and occupied",
+   "teeding tatis. | feeding of the cattle,",
+   "hold | held"
+  ],
+  "new_text": "Which when Iacob had heard, his ſonnes being abſent and occupied in feeding of the cattle, he held his peace til they returned.",
+  "s_unresolved": [
+   "feeding"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p118",
+  "old_text": "Aud when Hemor tather was come forth to ſpeake vnto Iacob,",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.828,
+   "madueke_b": 0.828
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.7664,
+   0.885,
+   0.8447
+  ],
+  "crop_page": 118,
+  "r3_raw": "when Iacob had heard, his sonnes being absent and occupied in feeding of the cattle, he held his peace til they returned. 6. And when Hemor Sichems father was come forth to speake vnto Iacob, 7. behold his sonnes came out of the field; and hearing what had passed, they were",
+  "r3_verse": "And when Hemor Sichems father was come forth to speake vnto Iacob,",
+  "arm_conflicts": [
+   "Aud | And",
+   "tather | Sichems father"
+  ],
+  "new_text": "And when Hemor Sichems father was come forth to ſpeake vnto Iacob,",
+  "s_unresolved": [
+   "father"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p118",
+  "old_text": "behold his came out of the field: and hearing what had paſſed, they were wtath, becauſe he had doue a toule thiug in Ilrael, and comitvnlawtul fact in rauuhing Iacobs daughter.",
+  "old": {
+   "s_dismas": 0.841,
+   "odr_com": 0.841,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.7837,
+   0.885,
+   0.8992
+  ],
+  "crop_page": 118,
+  "r3_raw": "of the cattle, he hold his peace til they returned. 6. And when Hemor Sichems father was come forth to speake vnto Iacob, 7. behold his sonnes came out of the field; and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and comitted an unlawful fact in rauishing Jacobs daughter. 8. Hemor therefore spake to them: The soule of my sonne Sichem is faſtned to your daugh-",
+  "r3_verse": "behold his sonnes came out of the field; and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and comitted an unlawful fact in rauishing Jacobs daughter.",
+  "arm_conflicts": [
+   "wtath, | passing wrath,",
+   "doue | done",
+   "toule thiug | foule thing",
+   "Ilrael, | Israel,",
+   "comitvnlawtul | comitted an unlawful",
+   "rauuhing Iacobs | rauishing Jacobs"
+  ],
+  "r2_attested": {
+   "2": "ſonnes",
+   "15": "paſſing",
+   "25": "Iſrael,",
+   "32": "rauiſhing"
+  },
+  "visual_readings": {
+   "2": "ſonnes",
+   "15": "paſſing",
+   "25": "Iſrael,",
+   "32": "rauiſhing"
+  },
+  "new_text": "behold his ſonnes came out of the field: and hearing what had paſſed, they were paſſing wrath, becauſe he had done a foule thing in Iſrael, and comitted an unlawful fact in rauiſhing Iacobs daughter.",
+  "s_unresolved": [
+   "foule",
+   "unlawful"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p118",
+  "old_text": "Homor thertore them: The ſoule of iny ſoune Sichemis tafined to your daughher vnto him to wire:",
+  "old": {
+   "s_dismas": 0.748,
+   "odr_com": 0.748,
+   "sabates_a": 0.724,
+   "madueke_b": 0.724
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.8388,
+   0.885,
+   0.935
+  ],
+  "crop_page": 118,
+  "r3_raw": "passing wrath, because he had done a foule thing in Israel, and comitted an vnlawful fact in rauishing Jacobs daughter. 8. Hemor therefore spake to them: The soule of my sonne Sichem is faſtned to your daughtter: Give her vnto him to wife: 9. and let vs contract mariages one",
+  "r3_verse": "Hemor therefore spake to them: The soule of my sonne Sichem is faſtned to your daughtter: Give her vnto him to wife:",
+  "arm_conflicts": [
+   "Homor thertore | Hemor therefore spake to",
+   "iny ſoune Sichemis tafined | my sonne Sichem is faſtned",
+   "daughher | daughtter: Give her",
+   "wire: | wife:"
+  ],
+  "r2_attested": {
+   "2": "ſpake",
+   "9": "ſonne"
+  },
+  "visual_readings": {
+   "2": "ſpake",
+   "9": "ſonne"
+  },
+  "new_text": "Hemor therefore ſpake to them: The ſoule of my ſonne Sichem is faſtned to your daughtter: Give her vnto him to wife:",
+  "s_unresolved": [
+   "therefore",
+   "faſtned",
+   "wife:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "ad letvs cora maages one with an other : giue vs your daughters, and takeyou our daughters.",
+  "old": {
+   "s_dismas": 0.896,
+   "odr_com": 0.896,
+   "sabates_a": 0.88,
+   "madueke_b": 0.88
+  },
+  "neighbours": [
+   9
+  ],
+  "skip": "no crop geometry; leaves tried: [121]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p119",
+  "old_text": "raiſe the dowrie, aud require guifts, and I ſhal oladly giue what vou ſhal demand: onely giue me this wench to wife.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.1588,
+   0.885,
+   0.255
+  ],
+  "crop_page": 119,
+  "r3_raw": "brethren: Let me find grace in your sight: and what soever you shal appoint I wil giue: 12. raise the dowrie, and require guifts, and I ſhal gladly giue what you ſhal demand: onely giue me this wench to wife. 13. Jacobs sonnes answered Sichem & his father (a) in guile, being wrath for the deflouring of their sister: 14. We can not doe that",
+  "r3_verse": "raise the dowrie, and require guifts, and I ſhal gladly giue what you ſhal demand: onely giue me this wench to wife.",
+  "arm_conflicts": [
+   "aud | and",
+   "oladly | gladly",
+   "vou | you"
+  ],
+  "new_text": "raiſe the dowrie, and require guifts, and I ſhal gladly giue what you ſhal demand: onely giue me this wench to wife.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p119",
+  "old_text": "Iacobs ſounes anſwered Sichem & his father ( in guile, being wtath for the deflouring of theit ſiſter :",
+  "old": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.1936,
+   0.885,
+   0.2704
+  ],
+  "crop_page": 119,
+  "r3_raw": "they of- by pretend. religion, appoint I will giue: 12. There are Lewi's daughters; and I shal gladly giue what you shal demand: onely giue me this wench to wife. 13. Jacobs sonnes answered Sichem & his father (a) in guile, being wrath for the deflouring of their sister: 14. We can not doe that which you demand, nor giue our sister to an vncircumcised person;",
+  "r3_verse": "Jacobs sonnes answered Sichem & his father in guile, being wrath for the deflouring of their sister:",
+  "arm_conflicts": [
+   "Iacobs ſounes | Jacobs sonnes",
+   "wtath | wrath",
+   "theit | their"
+  ],
+  "r2_attested": {
+   "1": "ſonnes"
+  },
+  "visual_readings": {
+   "1": "ſonnes"
+  },
+  "new_text": "Iacobs ſonnes anſwered Sichem & his father in guile, being wrath for the deflouring of their ſiſter",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p119",
+  "old_text": "Aud behold the third day, whon the griefe of the wounds is moſt painetul : Iacobs two ſonnes Simcon aud Loui, the brothers of Dina, taking their words, entred nto the citie boldiy: and killing al the man ſex,",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.5522,
+   0.885,
+   0.6659
+  ],
+  "crop_page": 119,
+  "r3_raw": "this let vs condescend, and dwelling together we shal make one people. 24. And they ai assented, and circumcised al the man sex. 25. And be- hold the third day, when the grieſe of the wounds is most painful: Ia- cob's two sonnes Simcon and Leui, the brothers of Dina, taking their swords, entered into the citie boldiy: and killing al the man sex, 26. murdered withal Hemor and Sichem, taking away Dina their sister",
+  "r3_verse": "And be- hold the third day, when the grieſe of the wounds is most painful: Ia- cob's two sonnes Simcon and Leui, the brothers of Dina, taking their swords, entered into the citie boldiy: and killing al the man sex,",
+  "arm_conflicts": [
+   "Aud behold | And be- hold",
+   "whon | when",
+   "griefe | grieſe",
+   "painetul : Iacobs | painful: Ia- cob's",
+   "aud Loui, | and Leui,",
+   "words, entred nto | swords, entered into"
+  ],
+  "new_text": "And be- hold the third day, when the grieſe of the wounds is moſt painful: Ia- cob's two ſonnes Simcon and Leui, the brothers of Dina, taking their swords, entered into the citie boldiy: and killing al the man ſex,",
+  "s_unresolved": [
+   "grieſe",
+   "painful:",
+   "swords,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p119",
+  "old_text": "6murdred withal Hemor and Sichem, takins away Dina theit ſiſter out ot Sichems houſe.",
+  "old": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.6238,
+   0.885,
+   0.7021
+  ],
+  "crop_page": 119,
+  "r3_raw": "fwords, entered into the citie boldly: and killing al the man sex, 26. murdered withal Hemor and Sichem, taking away Dina their sister out of Sichems house. 27. When they were gone forth, the other sonnes of Iacob ranne in vpon them that were slaine, and spoiled the citie",
+  "r3_verse": "murdered withal Hemor and Sichem, taking away Dina their sister out of Sichems house.",
+  "arm_conflicts": [
+   "6murdred | murdered",
+   "takins | taking",
+   "theit | their",
+   "ot | of"
+  ],
+  "new_text": "murdered withal Hemor and Sichem, taking away Dina their ſiſter out of Sichems houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p119",
+  "old_text": "And waſting al things that were in theit houſes and fieldes, their ſneep and heards, and aiſes,",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.6769,
+   0.885,
+   0.7538
+  ],
+  "crop_page": 119,
+  "r3_raw": "nes of Iacob ranne in vpon them that were slaine, and spoiled the citie in revenge of the rape. 28. And waiting al things that were in their houses and fieldes, their sheep and heards, and ailes, 29. their little ones also, and their wiues they led away captiue. 30. which things",
+  "r3_verse": "And waiting al things that were in their houses and fieldes, their sheep and heards, and ailes,",
+  "arm_conflicts": [
+   "waſting | waiting",
+   "theit | their",
+   "ſneep | sheep",
+   "aiſes, | ailes,"
+  ],
+  "new_text": "And waiting al things that were in their houſes and fieldes, their sheep and heards, and ailes,",
+  "s_unresolved": [
+   "sheep"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

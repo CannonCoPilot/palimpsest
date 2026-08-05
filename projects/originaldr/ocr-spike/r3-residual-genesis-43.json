@@ -1,0 +1,1544 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p151",
+  "old_text": "I THE meane time the famine did oppreſſe al the land I very ſore.",
+  "old": {
+   "s_dismas": 0.953,
+   "odr_com": 0.953,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.7418,
+   0.905,
+   0.8342
+  ],
+  "crop_page": 151,
+  "r3_raw": "IN THE meane time the famine did oppresse al the land very sore. † And the prouision being spent, which they had brought out of Ægypt, Iacob said to his sonnes: Goc",
+  "r3_verse": "IN THE meane time the famine did oppresse al the land very sore.",
+  "arm_conflicts": [
+   "I | IN"
+  ],
+  "new_text": "IN THE meane time the famine did oppreſſe al the land very ſore.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing: You ehal not ſee my face vnleſſe you brins vout youngeſt com voungeſt brother with you.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.8052,
+   0.905,
+   1.0
+  ],
+  "crop_page": 151,
+  "crop_leaves": [
+   151,
+   152
+  ],
+  "r3_raw": "had brought out of Ægypt, Iacob said to his sonnes: Goe againe, and by vs a little victual. † Judas answered: That same man denounced vnto vs vnder attestation of an oath, saing: You shal not see my face, vnlesse you bring your youngest 132 Genesis. youngest brother with you. † If therefore thou wilt send 4 him with vs, we wil goe forward together, and will bye ne-",
+  "r3_verse": "Judas answered: That same man denounced vnto vs vnder attestation of an oath, saing: You shal not see my face, vnlesse you bring your youngest Genesis. youngest brother with you.",
+  "arm_conflicts": [
+   "Iudas | Judas",
+   "ehal | shal",
+   "brins vout | bring your",
+   "com voungeſt | Genesis. youngest"
+  ],
+  "r2_attested": {
+   "26": "youngeſt"
+  },
+  "visual_readings": {
+   "26": "youngeſt"
+  },
+  "new_text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing: You shal not ſee my face vnleſſe you bring your youngeſt Genesis. youngeſt brother with you.",
+  "s_unresolved": [
+   "shal",
+   "Genesis."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p152",
+  "old_text": "Iridelayhad not bene made, we had bene come now the ſecond time.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.3376,
+   0.875,
+   0.4226
+  ],
+  "crop_page": 152,
+  "r3_raw": "vnleffe I bring him againe, and restore him to thee, I wilbe guiltie of sinne against thee for euer. If fidelity had not io bene made, we had bene come now the second time. Therefore Israel their father said to them: If it must nedes be so,",
+  "r3_verse": "If fidelity had not io bene made, we had bene come now the second time.",
+  "arm_conflicts": [
+   "Iridelayhad | If fidelity had"
+  ],
+  "new_text": "If fidelity had not io bene made, we had bene come now the ſecond time.",
+  "s_unresolved": [
+   "fidelity"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p152",
+  "old_text": "Therfore Iſrael their father ſaid to them : If it muſt nedes be ſo, do that you wil : take of the beſt fruires of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honcy, and of incenſe, of mirhe, of terebinth, and of almondes.",
+  "old": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.3583,
+   0.875,
+   0.5249
+  ],
+  "crop_page": 152,
+  "r3_raw": "guiltie of sinne against thee for euer. † Ifidely had riot io bene made, we had bene come now the second time. † Therfore Israel their father said to them: If it must nedes be so; do that you wil: take of the best fruities of the land in your vessels, and carie to the man for presents, a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almonds. † Duble money also carie with you: 12 and recarie that you founde in your sackes, lest perhaps it",
+  "r3_verse": "Therfore Israel their father said to them: : If it must nedes be so; do that you wil: : take of the best fruities of the land in your vessels, and carie to the man for presents, a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almonds. Duble",
+  "arm_conflicts": [
+   "fruires | fruities",
+   "honcy, | honey,",
+   "almondes. | almonds. Duble"
+  ],
+  "used_merge": true,
+  "new_text": "Therfore Iſrael their father ſaid to them : If it muſt nedes be ſo, do that you wil : take of the beſt fruities of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almonds. Duble",
+  "s_unresolved": [
+   "fruities"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p152",
+  "old_text": "The men therfore tooke. the preſentes, and the duble money, and Beniamin: and went downe inro Egypt, and ſtood before Ioſeph.",
+  "old": {
+   "s_dismas": 0.983,
+   "odr_com": 0.992,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.5803,
+   0.875,
+   0.687
+  ],
+  "crop_page": 152,
+  "r3_raw": "whom he keepeth, and this Beniamin: as for me I ſhall be desolate without children. † The men therefore tooke 15 the presentes, and the duble money, and Beniamin: and went downe into Ægypt, and stood before Joseph. † Whom 16 when he had ſeene, and Beniamin withal, he commanded",
+  "r3_verse": "The men therefore tooke the presentes, and the duble money, and Beniamin: and went downe into Ægypt, and stood before Joseph.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "inro Egypt, | into Ægypt,",
+   "Ioſeph. | Joseph."
+  ],
+  "new_text": "The men therefore tooke. the preſentes, and the duble money, and Beniamin: and went downe into Ægypt, and ſtood before Ioſeph.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.984,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p152",
+  "old_text": "And there boing ſooe afraied, they ſaid one to an other : becauſe of the money, which wo caried backe the firſt time in our ſackes, we are brought in: that he mayturne vpon vs a falſe accuſation, and forceibly bring both vs, and our aſſes, into bondage.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.98,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.7214,
+   0.875,
+   0.8915
+  ],
+  "crop_page": 152,
+  "r3_raw": "shal eate with me at noone. † He did that which was commanded him, and brought the men into the house. † And there being sore afraid; they said one to another: because of the money, which we caried backe the first time in our sackes, we are brought in: that he may turne vpon vs a false accusation, and forcibly bring both vs, and our asses into bondage. † Wherfore in the verie dore stepping to the steward of the house, † they spake: Sir we desire thee to",
+  "r3_verse": "And there being sore afraid; they said one to another: because of the money, which we caried backe the first time in our sackes, we are brought in: that he may turne vpon vs a false accusation, and forcibly bring both vs, and our asses into bondage.",
+  "arm_conflicts": [
+   "boing ſooe afraied, | being sore afraid;",
+   "an other : | another:",
+   "wo | we",
+   "mayturne | may turne",
+   "forceibly | forcibly"
+  ],
+  "r2_attested": {
+   "3": "ſore"
+  },
+  "visual_readings": {
+   "3": "ſore"
+  },
+  "new_text": "And there being ſore afraid; they ſaid one to another: becauſe of the money, which we caried backe the firſt time in our ſackes, we are brought in: that he may turne vpon vs a falſe accuſation, and forcibly bring both vs, and our aſſes, into bondage.",
+  "s_unresolved": [
+   "afraid;",
+   "forcibly"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.953,
+   "odr_com": 0.984,
+   "sabates_a": 0.996,
+   "madueke_b": 0.996
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "they ſpake: Sir we deſire thee o heare heare vs. Now once before we came downe to bye prouiſion:",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8421,
+   0.875,
+   0.942
+  ],
+  "crop_page": 152,
+  "crop_leaves": [
+   152,
+   153
+  ],
+  "r3_raw": "into bondage. † Wherfore in the verie dore stepping to the 19 steward of the house, † they spake: Sir we desire thee to heare... GENESIS. heare vs. Now once before we came downe to bye provision: † which being bought, when we were come to the",
+  "r3_verse": "they spake: Sir we desire thee to heare... heare vs. Now once before we came downe to bye provision:",
+  "arm_conflicts": [
+   "o | to",
+   "prouiſion: | provision:"
+  ],
+  "new_text": "they ſpake: Sir we deſire thee to heare heare vs. Now once before we came downe to bye prouiſion:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p153",
+  "old_text": "he curteouſly luting them, asked them ſaying : Is the old man your father in health, of whom you told me? Is he yer liuing?",
+  "old": {
+   "s_dismas": 0.928,
+   "odr_com": 0.928,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.391,
+   0.875,
+   0.4957
+  ],
+  "crop_page": 153,
+  "r3_raw": "him presentes holding them in their handes, and they adored prostrate to the ground. But he courteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet liuing? Who answered: Thy servant our father is in health, he is yet li-",
+  "r3_verse": "But he courteously resaluting them, asked them saying: Is the old man your father in health, of whom you told me? Is he yet liuing?",
+  "arm_conflicts": [
+   "curteouſly luting | courteously resaluting",
+   "yer | yet"
+  ],
+  "new_text": "But he courteously resaluting them, asked them ſaying Is the old man your father in health, of whom you told me? Is he yet liuing?",
+  "s_unresolved": [
+   "courteously",
+   "resaluting"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p153",
+  "old_text": "Which being ſer downe, to Ioſeph a part, and to his brethren apart, to the Egyptians alſo thardid eare with him apart (for it is vnlawful for the Agyptians: ro eate with the Hebrewes, and : they thinke ſuch a feaſt prophane),",
+  "old": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.6328,
+   0.875,
+   0.7799
+  ],
+  "crop_page": 153,
+  "r3_raw": "comming forth againe, he refrained himselfe, and said: Set bread on the table. † Which being set downe, to Ioseph a part, and to his brethren apart, to the Ægyptians also that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and :: they thinke such a feast prophane), † they sate before him, the first begotten according to his ſirſt-birth, and the youngest according to his",
+  "r3_verse": "Which being set downe, to Ioseph a part, and to his brethren apart, to the Ægyptians also that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and :: they thinke such a feast prophane),",
+  "arm_conflicts": [
+   "ſer | set",
+   "Egyptians | Ægyptians",
+   "thardid eare | that did eate",
+   "Agyptians: ro | Ægyptians to"
+  ],
+  "lexicon_readings": {
+   "2": "ſet"
+  },
+  "visual_readings": {
+   "2": "ſet"
+  },
+  "new_text": "Which being ſet downe, to Ioſeph a part, and to his brethren apart, to the Ægyptians alſo that did eate with him apart (for it is vnlawful for the Ægyptians to eate with the Hebrewes, and :: they thinke ſuch a feaſt prophane),",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p155",
+  "old_text": "dinner. THE meane time the famine did oppreſſe al the land Ivery ſore.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.7107,
+   0.875,
+   0.8405
+  ],
+  "crop_page": 155,
+  "r3_raw": "brought back by error. 16. Ioseph being Beniamin, 23. deliuereth Simeon, and entertaineth them al at dinner. IN THE meane time the famine did oppresse al the land very sore. † And the prouision being spent, which they had brought out of Ægypt, Iacob said to his sonnes: Goe",
+  "r3_verse": "brought back by error. Ioseph being Beniamin, deliuereth Simeon, and entertaineth them al at dinner. IN THE meane time the famine did oppresse al the land very sore.",
+  "arm_conflicts": [
+   "Ivery | very"
+  ],
+  "lexicon_readings": {
+   "4": "Ioſeph"
+  },
+  "visual_readings": {
+   "4": "Ioſeph"
+  },
+  "new_text": "brought back by error. Ioſeph being Beniamin, deliuereth Simeon, and entertaineth them al at dinner. IN THE meane time the famine did oppreſſe al the land very ſore.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p156",
+  "old_text": "Therfore Frael their father ſaid to them : If it muſt nedes be ſo, do that you wil : take of the beſt fruites of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almondes.",
+  "old": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.3543,
+   0.875,
+   0.5217
+  ],
+  "crop_page": 156,
+  "r3_raw": "guiltie of sinne against thee for ever. † If delay had not bene made, we had bene come now the second time. † Therefore Israel their father said to them: If it must nedes be so, do that you wil: take of the best fruities of the land in your vessels, and carie to the man for presents, a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes. † Duble money also carie with you: 12 and recarie that you founde in your sackes, lest perhaps it",
+  "r3_verse": "Therefore Israel their father said to them: If it must nedes be so, do that you wil: take of the best fruities of the land in your vessels, and carie to the man for presents, a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes. Duble",
+  "arm_conflicts": [
+   "Therfore Frael | Therefore Israel",
+   "fruites | fruities"
+  ],
+  "lexicon_readings": {
+   "1": "Iſrael"
+  },
+  "visual_readings": {
+   "1": "Iſrael"
+  },
+  "new_text": "Therefore Iſrael their father ſaid to them If it muſt nedes be ſo, do that you wil take of the beſt fruities of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almondes. Duble",
+  "s_unresolved": [
+   "Therefore",
+   "fruities"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p156",
+  "old_text": "The men therfore tooke the preſentes, and the duble money, and Beniamin: and went downe inro gypt, and ſtood before Ioſeph.",
+  "old": {
+   "s_dismas": 0.975,
+   "odr_com": 0.983,
+   "sabates_a": 0.796,
+   "madueke_b": 0.796
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.5833,
+   0.875,
+   0.69
+  ],
+  "crop_page": 156,
+  "r3_raw": "whom he keepeth, and this Beniamin: as for me I ſhal be desolate without children. † The men therefore tooke 15 the presentes, and the duble money, and Beniamin: and went downe inro Aegypt, and stood before Joseph. † Whom 16 when he had seene, and Beniamin withal, he commanded",
+  "r3_verse": "The men therefore tooke the presentes, and the duble money, and Beniamin: and went downe inro Aegypt, and stood before Joseph.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "gypt, | Aegypt,",
+   "Ioſeph. | Joseph."
+  ],
+  "new_text": "The men therefore tooke the preſentes, and the duble money, and Beniamin: and went downe inro Aegypt, and ſtood before Ioſeph.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.992,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p156",
+  "old_text": "Wherfore in theverie dore ſteppingto the ſteward of the houſe,",
+  "old": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8338,
+   0.875,
+   0.9302
+  ],
+  "crop_page": 156,
+  "r3_raw": "false accusation, and forcibly bring both vs, and our asses into bondage. † Wherfore in the verie dore stepping to the 19 steward of the house, † they spake: Sir we desire thee to heare",
+  "r3_verse": "Wherfore in the verie dore stepping to the steward of the house,",
+  "arm_conflicts": [
+   "theverie | the verie",
+   "ſteppingto | stepping to"
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "5": "ſtepping"
+  },
+  "visual_readings": {
+   "5": "ſtepping"
+  },
+  "new_text": "Wherfore in the verie dore ſtepping to the ſteward of the houſe,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing Vou shal not ſee my face, vnleſſe you bring your wilt ſend voungeſt brother with you.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.783,
+   0.875,
+   0.8964
+  ],
+  "crop_page": 163,
+  "crop_leaves": [
+   163,
+   164
+  ],
+  "r3_raw": "had brought out of Ægypt, Iacob said to his sonnes: Goe againe, and by vs a little victual. † Iudas answered: That same man denounced vnto vs vnder attestation of an oath, saing: You shal not see my face, vnlesse you bring your younges yongest brother with you. † If therfore thou wilt send 4 him with vs, we wil goe forward together, and wil bye ne-",
+  "r3_verse": "Iudas answered: That same man denounced vnto vs vnder attestation of an oath, saing: You shal not see my face, vnlesse you bring your younges yongest brother with you.",
+  "arm_conflicts": [
+   "Vou | You",
+   "wilt ſend voungeſt | younges yongest"
+  ],
+  "new_text": "Iudas anſwered That ſame man denounced vnto vs vnder atteſtation of an oath, ſaing You shal not ſee my face, vnleſſe you bring your younges yongest brother with you.",
+  "s_unresolved": [
+   "yongest"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p164",
+  "old_text": "If therfore thou him wi th vs, we wil goe forward together, and wil bye neceſſaries for thee :",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.863,
+   "madueke_b": 0.863
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.0329,
+   0.915,
+   0.143
+  ],
+  "crop_page": 164,
+  "r3_raw": "youngeſt brother with you. † If therfore thou wilt send 4 him with vs, we wil goe forward together, and wil bye ne- cessaries for thee: † but if thou wilt not, we wil not goe: ſ for the man, as we haue often said, denounced vnto vs ſaing:",
+  "r3_verse": "If therfore thou wilt send him with vs, we wil goe forward together, and wil bye ne- cessaries for thee:",
+  "arm_conflicts": [
+   "wi th | with",
+   "neceſſaries | ne- cessaries"
+  ],
+  "r2_attested": {
+   "17": "ceſſaries"
+  },
+  "visual_readings": {
+   "17": "ceſſaries"
+  },
+  "new_text": "If therfore thou wilt send him with vs, we wil goe forward together, and wil bye ne- ceſſaries for thee",
+  "s_unresolved": [
+   "send"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p164",
+  "old_text": "Therthe fore Ifrael their father ſaid to them : If it muſt nedes be ſo, do that you wil: take of the beſt fruites of the land in your which & veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, & and of almondes.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.3583,
+   0.915,
+   0.5293
+  ],
+  "crop_page": 164,
+  "r3_raw": "guiltie of sinne against thee for euer. † If delay had not bene made, we had bene come now the second time. † Therefore Israel their father said to them: If it must nedes be so, do that you wil: take of the best fruities of the land in your vessels, and carie to the man for presents; a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes. † Duble money also carie with you: 12 and recarie that you founde in your sackes, lest perhaps it",
+  "r3_verse": "Therefore Israel their father said to them: If it must nedes be so, do that you wil: take of the best fruities of the land in your vessels, and carie to the man for presents; a courtesie of rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes. Duble",
+  "arm_conflicts": [
+   "Therthe fore Ifrael | Therefore Israel",
+   "fruites | fruities"
+  ],
+  "lexicon_readings": {
+   "1": "Iſrael"
+  },
+  "visual_readings": {
+   "1": "Iſrael"
+  },
+  "new_text": "Therefore Iſrael their father ſaid to them If it muſt nedes be ſo, do that you wil: take of the beſt fruities of the land in your veſſels, and carie to the man for preſents, a courteſie of roſen, and of honey, and of incenſe, of mirhe, of terebinth, and of almondes. Duble",
+  "s_unresolved": [
+   "Therefore",
+   "fruities"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p164",
+  "old_text": "Duble money alſo carie with yoa : of to and recarie that you founde in yout ſackes, leſt perhaps it was done by an errour :",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.4588,
+   0.915,
+   0.5693
+  ],
+  "crop_page": 164,
+  "r3_raw": "rosen, and of honey, and of incense, of mirhe, of terebinth, and of almondes. † Duble money also carie with you: 12 and recarie that you founde in your sackes, lest perhaps it was done by an errour: † but take also your brother, and 13 goe to the man. † And my God almightie make him fauo-",
+  "r3_verse": "Duble money also carie with you: : of to and recarie that you founde in your sackes, lest perhaps it was done by an errour: :",
+  "arm_conflicts": [
+   "yoa : of to | you:",
+   "yout | your"
+  ],
+  "used_merge": true,
+  "new_text": "Duble money alſo carie with you: : of to and recarie that you founde in your ſackes, leſt perhaps it was done by an errour :",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 15,
+  "from": "p164",
+  "old_text": "The men therfore tooke the preſentes, and the duble money, and Beniamin : and went downe inro gypt, and ſtood before Ioſeph.",
+  "old": {
+   "s_dismas": 0.975,
+   "odr_com": 0.983,
+   "sabates_a": 0.796,
+   "madueke_b": 0.796
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.5809,
+   0.915,
+   0.6913
+  ],
+  "crop_page": 164,
+  "r3_raw": "whom he keepeth, and this Beniamin: as for me I shal be desolate without children. † The men therefore tooke 15 the presentes, and the duble money, and Beniamin: and went downe into Ægypt; and stood before Joseph.† Whom 16 when he had seene, and Beniamin withal, he commanded",
+  "r3_verse": "The men therefore tooke the presentes, and the duble money, and Beniamin: and went downe into Ægypt; and stood before Joseph.†",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "inro gypt, | into Ægypt;",
+   "Ioſeph. | Joseph.†"
+  ],
+  "new_text": "The men therefore tooke the preſentes, and the duble money, and Beniamin and went downe into Ægypt; and ſtood before Ioſeph.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.984,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 28,
+  "from": "p165",
+  "old_text": "Who ſold, anſwered: Thy ſeruant our father is in health, he is yet li- him. uing. And bowing themſelues, they adored him.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.911,
+   "madueke_b": 0.911
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.4103,
+   0.875,
+   0.5156
+  ],
+  "crop_page": 165,
+  "r3_raw": "luting them, asked them saying: Is the old man your father whom th 28 in health, of whom you told me? Is he yet liuing? † Who answered: Thy seruant our father is in health, he is yet li- uing. And bowing themselves, they adored him. † And ho. 22. i Joseph lifting vp his eyes, sawe Benjamin his brother of the zech.",
+  "r3_verse": "Who answered: Thy seruant our father is in health, he is yet li- uing. And bowing themselves, they adored him.",
+  "arm_conflicts": [
+   "themſelues, | themselves,"
+  ],
+  "new_text": "Who anſwered: Thy ſeruant our father is in health, he is yet li- uing. And bowing themſelues, they adored him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p139",
+  "old_text": "at diuntr. NTHE meane time the famine did oppreſſe al the land very ſore.",
+  "old": {
+   "s_dismas": 0.887,
+   "odr_com": 0.887,
+   "sabates_a": 0.869,
+   "madueke_b": 0.869
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.2441,
+   0.885,
+   0.3583
+  ],
+  "crop_page": 139,
+  "r3_raw": "back by errour. 16. Joseph seeing Beniamin , 23. deliuereth Simeon , and entertaineth them al at dinner. N THE meane time the famine did oppresse al the land very sore. 2. And the provision being spent, which they had brought",
+  "r3_verse": "back by errour. Joseph seeing Beniamin , deliuereth Simeon , and entertaineth them al at dinner. THE meane time the famine did oppresse al the land very sore.",
+  "arm_conflicts": [
+   "diuntr. NTHE | dinner. THE"
+  ],
+  "r2_attested": {
+   "4": "ſeeing"
+  },
+  "visual_readings": {
+   "4": "ſeeing"
+  },
+  "new_text": "back by errour. Joseph ſeeing Beniamin , deliuereth Simeon , and entertaineth them al at dinner. THE meane time the famine did oppreſſe al the land very ſore.",
+  "s_unresolved": [
+   "Joseph"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p139",
+  "old_text": "Iudas alſo ſaid to his father : Send the boy with me, that we may ſet forward, and may liue: leſt we and our litlo ones dic.",
+  "old": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5782,
+   0.885,
+   0.6747
+  ],
+  "crop_page": 139,
+  "r3_raw": "consequently to that which he demanded: could we know that he would say: Bring hither your brother with you? 8. Iudas also said to his father: Send the boy with me, that we may set forward, and may liue: lest we and our little ones die. 9. I take vpon me the boy: require him of my hand, vnlesse I bring him againe, and restore him to thee; I wil",
+  "r3_verse": "Iudas also said to his father: Send the boy with me, that we may set forward, and may liue: lest we and our little ones die. I take",
+  "arm_conflicts": [
+   "litlo | little",
+   "dic. | die. I take"
+  ],
+  "new_text": "Iudas alſo ſaid to his father Send the boy with me, that we may ſet forward, and may liue: leſt we and our little ones die. I take",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p139",
+  "old_text": "If delay had not been made we had been come now the ſecond time.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.6488,
+   0.885,
+   0.7243
+  ],
+  "crop_page": 139,
+  "r3_raw": "of my hand, vntlesse I bring him againe, and restore him to thee; I wil be (a) guiltie of sinne against thee for euer. 10. If delay had not been made, we had been come now the second time. 11. Therfore Israel their father said to them: If it mult needs be so, doe that you wil: take",
+  "r3_verse": "If delay had not been made, we had been come now the second time. Therfore",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "14": "Therfore"
+  },
+  "visual_readings": {
+   "14": "Therfore"
+  },
+  "new_text": "If delay had not been made we had been come now the ſecond time. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.819,
+   "odr_com": 0.819,
+   "sabates_a": 0.875,
+   "madueke_b": 0.875
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p139",
+  "old_text": "Thettore Iſrael theit fathet ſaid to them: It it inuſt needs be fo, doe that you wil : take of the beſt fruits ot the land in your veſſcls, and carie to the man for preſents, a courteſie of roſen, & of honcy, & of incenſe, ot me, of terebinth, and ot almonds.",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.6663,
+   0.885,
+   0.7977
+  ],
+  "crop_page": 139,
+  "r3_raw": "be (a) guiltie of sinne against thee for ever. 10. If delay had not been made, we had been come now the second time. 11. Therfore Israel their father said to them: If it must needs be so, doe that you wil: take of the best fruits of the land in your vessels, and carie to the man for presents, a courtesie of rosen, & of honey, & of incense, of mirhe, of tcrebinth, and of almonds. 12. Double money also carie with you: and recarie that you found in your sackes, lest perhaps it was done by an",
+  "r3_verse": "Israel their father said to them: If it must needs be so, doe that you wil: take of the best fruits of the land in your vessels, and carie to the man for presents, a courtesie of rosen, & of honey, & of incense, of mirhe, of tcrebinth, and of almonds.",
+  "arm_conflicts": [
+   "theit fathet | their father",
+   "it inuſt | must",
+   "fo, | so,",
+   "ot | of",
+   "veſſcls, | vessels,",
+   "honcy, | honey,",
+   "terebinth, | mirhe, of tcrebinth,",
+   "ot | of"
+  ],
+  "lexicon_readings": {
+   "8": "muſt"
+  },
+  "r2_attested": {
+   "11": "ſo,"
+  },
+  "visual_readings": {
+   "8": "muſt",
+   "11": "ſo,"
+  },
+  "new_text": "Iſrael their father ſaid to them: If it muſt needs be ſo, doe that you wil take of the beſt fruits of the land in your vessels, and carie to the man for preſents, a courteſie of roſen, & of honey, & of incenſe, of mirhe, of tcrebinth, and of almonds.",
+  "s_unresolved": [
+   "father",
+   "vessels,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p139",
+  "old_text": "The men therfore tooke the preſents, & the double moncy, & Beniamin: & went doyne into Ecypt, ſtood before Ioſeph.",
+  "old": {
+   "s_dismas": 0.817,
+   "odr_com": 0.808,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.8255,
+   0.885,
+   0.9217
+  ],
+  "crop_page": 139,
+  "r3_raw": "you your brother, whom he keepeth, and this Beniamin: as for me I shalbe desolate without children. 15. The men therefore tooke the presents, & the double moncy, & Beniamin; & went downe into Ægypt, & stood before Joseph. 16. Who when he had seen, & Beniamin withal,",
+  "r3_verse": "The men therefore tooke the presents, & the double moncy, & Beniamin; & went downe into Ægypt, & stood before Joseph. Who",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "doyne | downe",
+   "Ecypt, | Ægypt, &",
+   "Ioſeph. | Joseph. Who"
+  ],
+  "new_text": "The men therefore tooke the preſents, & the double moncy, & Beniamin: & went downe into Ægypt, & ſtood before Ioſeph. Who",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.8,
+   "odr_com": 0.792,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "chapter",
+  "old_text": "Who when he had ſceu, & Boniamin withal, Ioſeph. I I27 he comanded the ſteward of his houſe, ſaying: Bring in the men into tne houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone.",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.885,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.0555,
+   0.815,
+   0.1767
+  ],
+  "crop_page": 140,
+  "r3_raw": "he commanded the steward of his house, saying: Bring in the men into the house, and kill victimes, and prepare a feast; because they shal eate with me at noone. 17. He did that which was commanded him, and brought the men into the house. 18. And there beeing sore afraid, they said one",
+  "r3_verse": "Who when he commanded ſceu, & Boniamin withal, Ioſeph. I I27 he comanded the steward of his house, saying: Bring in the men into the house, and kill victimes, and prepare a feast; because they shal eate with me at noone.",
+  "arm_conflicts": [
+   "had ſceu, & Boniamin withal, Ioſeph. I I27 he comanded | commanded",
+   "tne | the",
+   "kil | kill"
+  ],
+  "used_merge": true,
+  "new_text": "Who when he commanded ſceu, & Boniamin withal, Ioſeph. I I27 he comanded the ſteward of his houſe, ſaying: Bring in the men into the houſe, and kil victimes, and prepare a feaſt: becauſe they ſhal eate with me at noone.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.864,
+   "odr_com": 0.864,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p140",
+  "old_text": "And there beeing fore atraid, they ſaid one to another: becaule of the money which we cared backe theft te in our ſackes, we are brought in: that he may turne vpon vs a talſe accuſation, and torcibly bring both vs and out aſſes into bondage.",
+  "old": {
+   "s_dismas": 0.897,
+   "odr_com": 0.934,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.136,
+   0.815,
+   0.2494
+  ],
+  "crop_page": 140,
+  "r3_raw": "me at noone. 17. He did that which was commanded him, and brought the men into the house. 18. And there beeing sore afraid, they said one to another: because of the money which we caried backe the first time in our sackes, we are brought in: that he may turne vpon vs a false accusation, and forcibly bring both vs and our asses into bondage. 19. Wherfore in the verie dorc stepping to the steward of the house,",
+  "r3_verse": "And there beeing sore afraid, they said one to another: because of the money which we caried backe the first time in our sackes, we are brought in: that he may turne vpon vs a false accusation, and forcibly bring both vs and our asses into bondage. Wherfore",
+  "arm_conflicts": [
+   "fore atraid, | sore afraid,",
+   "becaule | because",
+   "cared | caried",
+   "theft te | the first time",
+   "talſe | false",
+   "torcibly | forcibly",
+   "out | our"
+  ],
+  "lexicon_readings": {
+   "10": "becauſe",
+   "19": "firſt"
+  },
+  "r2_attested": {
+   "3": "ſore"
+  },
+  "visual_readings": {
+   "10": "becauſe",
+   "19": "firſt",
+   "3": "ſore"
+  },
+  "new_text": "And there beeing ſore afraid, they ſaid one to another: becauſe of the money which we caried backe the firſt time in our ſackes, we are brought in: that he may turne vpon vs a false accuſation, and forcibly bring both vs and our aſſes into bondage. Wherfore",
+  "s_unresolved": [
+   "afraid,",
+   "false",
+   "forcibly",
+   "Wherfore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.913,
+   "odr_com": 0.944,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p140",
+  "old_text": "But we haue brought other mouey beſides, to buy the things that are neceſſarie tor vs: our conſcience is nor priuie, who put it in our bags.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.2947,
+   0.815,
+   0.3909
+  ],
+  "crop_page": 140,
+  "r3_raw": "mouths of the sackes: which we haue now brought againe in the same weight. 22. But we haue brought other money beſides, to buy the things that are necessarie for vs: our conscience is not priuie, who put it in our bags. 23. But he answered: Peace be with you, feare you not: your God, and the God of your father hath giuen you treasures in your sackes. For",
+  "r3_verse": "But we haue brought other money beſides, to buy the things that are necessarie for vs: our conscience is not priuie, who put it in our bags.",
+  "arm_conflicts": [
+   "mouey | money",
+   "tor | for",
+   "nor | not"
+  ],
+  "lexicon_readings": {
+   "14": "for"
+  },
+  "visual_readings": {
+   "14": "for"
+  },
+  "new_text": "But we haue brought other money beſides, to buy the things that are neceſſarie for vs: our conſcience is not priuie, who put it in our bags.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p140",
+  "old_text": "Aud being brought into the houſe. he fetched water, and they waſhed theit teet, and he gaue prouendet to their aſſes.But",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.3832,
+   0.815,
+   0.4794
+  ],
+  "crop_page": 140,
+  "r3_raw": "the money, which you gaue me, I haue for good. And he brought forth Simeon vnto them. 24. And being brought into the house, he fetched water, and they washed their feet, and he gaue prouender to their asses. 25. But they made readie the presents, til Ioseph should come in at noone: for they had heard that they",
+  "r3_verse": "And being brought into the house, he fetched water, and they washed their feet, and he gaue prouender to their asses.",
+  "arm_conflicts": [
+   "Aud | And",
+   "theit teet, | their feet,",
+   "prouendet | prouender",
+   "aſſes.But | asses."
+  ],
+  "r2_attested": {
+   "20": "aſſes."
+  },
+  "visual_readings": {
+   "20": "aſſes."
+  },
+  "new_text": "And being brought into the houſe. he fetched water, and they waſhed their feet, and he gaue prouender to their aſſes.",
+  "s_unresolved": [
+   "feet,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p140",
+  "old_text": "they made readi the preſets til Ioſeph ſhould come in at noone: for they had heard that they ſhould eate bread there.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.4194,
+   0.815,
+   0.5132
+  ],
+  "crop_page": 140,
+  "r3_raw": "he fetched water, and they washed their feet, and he gaue prouender to their asses. 25. But they made readie the presents, til Ioseph should come in at noone: for they had heard that they should eate bread there. 26. Therfore Ioseph came in to his house, and they offered him presents holding them in their hands, and (b) they",
+  "r3_verse": "But they made readie the presents, til Ioseph should come in at noone: for they had heard that they should eate bread there. Therfore",
+  "arm_conflicts": [
+   "readi | readie",
+   "preſets | presents,"
+  ],
+  "lexicon_readings": {
+   "23": "Therfore"
+  },
+  "r2_attested": {
+   "5": "preſents,"
+  },
+  "visual_readings": {
+   "23": "Therfore",
+   "5": "preſents,"
+  },
+  "new_text": "But they made readi the preſents, til Ioſeph ſhould come in at noone: for they had heard that they ſhould eate bread there. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p140",
+  "old_text": "Aud Ioſeph liftins vp his eves, ſaw eniamin his brother of the ſame mother, aud ſaid: Is this vour yono brothet ot whom you told meꝰ And againe : God, ſaith he, be mercitul vnto thee my ſonne.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.562,
+   0.815,
+   0.6572
+  ],
+  "crop_page": 140,
+  "r3_raw": "in health, he is yet liuing. And bowing themselues they adored him. 29. And Ioseph lifting vp his eyes, saw ſeniamin his brother of the same mother, and said: Is this your yong brother, of whom you told me? And againc: God, saith he, be merciful vnto thee my sonne. 30. And he made haſt because his hart was moved vpon his brother, and teares",
+  "r3_verse": "And Ioseph lifting vp his eyes, saw ſeniamin his brother of the same mother, and said: Is this your yong brother, of whom you told me? And againc: God, saith he, be merciful vnto thee my sonne.",
+  "arm_conflicts": [
+   "Aud | And",
+   "liftins | lifting",
+   "eves, | eyes,",
+   "eniamin | ſeniamin",
+   "aud | and",
+   "vour yono brothet ot | your yong brother, of",
+   "meꝰ | me?",
+   "againe : | againc:",
+   "mercitul | merciful"
+  ],
+  "new_text": "And Ioſeph lifting vp his eyes, ſaw ſeniamin his brother of the ſame mother, and ſaid: Is this your yong brother, of whom you told meꝰ And againc: God, ſaith he, be merciful vnto thee my ſonne.",
+  "s_unresolved": [
+   "lifting",
+   "ſeniamin",
+   "merciful"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p140",
+  "old_text": "And when he had wathed his tace, commin torth againe, he retrained himſelte, aud ſaid : Set bread on tne table.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.08,
+   0.6309,
+   0.815,
+   0.7271
+  ],
+  "crop_page": 140,
+  "r3_raw": "made hast because his hart was moued vpon his brother, and teares brake forth: and entreing into his chamber he wept. 31. And when he had walthed his face, comming forth againe, he retrained himselfe, and said: Set bread on the table., 2. Which being set downe, to Ioseph a-part, and to his brethren apart, to the AEgyptians also that did eate with",
+  "r3_verse": "And when he had walthed his face, comming forth againe, he retrained himselfe, and said: Set bread on the table.,",
+  "arm_conflicts": [
+   "wathed | walthed",
+   "tace, commin torth | face, comming forth",
+   "himſelte, aud | himselfe, and",
+   "tne | the"
+  ],
+  "r2_attested": {
+   "12": "himſelfe,"
+  },
+  "visual_readings": {
+   "12": "himſelfe,"
+  },
+  "new_text": "And when he had walthed his face, comming forth againe, he retrained himſelfe, and ſaid Set bread on the table.",
+  "s_unresolved": [
+   "face,",
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p140",
+  "old_text": "taking the portions that thev receiued ot him: and the greater porto ca Beniamin, ſo that it exceededby fiue pattes. And they dranke aud Were in chriated with him.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.916,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.7566,
+   0.815,
+   0.8683
+  ],
+  "crop_page": 140,
+  "r3_raw": "him, the first begotten according to his first-birth, and the youngest according to his age. And they maruailed out of measure, 34. taking the portions that they received of him: and the greater portion came to Beniamin, so that it exceeded (d) by five partes. And they dranke and were in cbriated with him.",
+  "r3_verse": "taking the portions that they received of him: and the greater portion came to Beniamin, so that it exceeded by five partes. And they dranke and were in cbriated with him.",
+  "arm_conflicts": [
+   "thev receiued ot | they received of",
+   "porto ca | portion came to",
+   "exceededby fiue pattes. | exceeded by five partes.",
+   "aud | and",
+   "chriated | cbriated"
+  ],
+  "new_text": "taking the portions that they receiued of him: and the greater portion came to Beniamin, ſo that it exceeded by fiue partes. And they dranke and Were in cbriated with him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.994,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

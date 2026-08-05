@@ -1,0 +1,944 @@
+{
+ "chapter": 13,
+ "n_verses": 18,
+ "n_cells": 72,
+ "n_pass": 70,
+ "rate": 0.9722,
+ "ref_means": {
+  "s_dismas": 0.9687,
+  "odr_com": 0.9692,
+  "sabates_a": 0.9599,
+  "madueke_b": 0.9599
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 0.8889
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 2,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.882,
+   "from": "p67",
+   "text": "God. BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth dhewasvety"
+  },
+  {
+   "src": "S6",
+   "verse": 2,
+   "worst": 0.0,
+   "from": "p67",
+   "text": "ſiluer.."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Gad. BRAM therfore aſcended out of Egypt, he and his Awife, and al that he had, and Lot with him to the ſouth coaſt.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S3": {
+    "text": "God. BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S9": {
+    "text": "to BRAM therfore aſcended out of gypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "God. BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth dhewasvety",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.896,
+     "odr_com": 0.896,
+     "sabates_a": 0.882,
+     "madueke_b": 0.882
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And he was very rich in poſſeſſion of gold and ſiluer.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he was very rich in poſſeſſion of gold and ſiluer.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he was very rich in poſſeſſion of gold and ſiluer.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "ſiluer..",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And he returned by the way, that he came, from the ſouth vnto Bethel, euen to the place where before he had pitched a tabernacle betwen Bethel and Hay :",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he returned by the way, that he came, from the ſouth vnto Bethel, euen to the place where before he had pitched a tabernacle betwen Bethel and Hay :",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he returned by the way, that he came, from the ſouth vnto Bethel, euen to the place where before he had pitched a tabernacle betwen Bethel and Hay:",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he returned by the way that he came, from the ſouth vnto Bethel, euen to the piace where before he had pitched a tabernacle between Bethel and Hay",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "in the place of the altar which he had made before, and there he called vpon the name of our Lord.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "in the place of the altar which he had made before, and there he called vpon the name of our Lord.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "in the place of the altar which he had made before, and there he called vpon the name of our Lord.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "in the place of the altar which he had made betore, and there he called vpon the name of out Lord.",
+    "from": "p67",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "But Lot alſo that was with Abram, had flocks of ff cepe, and heards of beaſts, and tents.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "But Lot alſo that was with Abram, had flocks of ſh eepe, and heards of beaſts, and tents.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "But Lot alſo that was with Abram, had flocks of ſheepe, :: and heards of beaſts, and tents.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "But Lot alſo that was with Abram had flocks of ſheep, and heards of beaſts, and tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Neyther was the land able to, receine them, for to dwel togeather : for their ſubſtance was much, and they could not dwel togeather.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "Neyther was the land able to receiue them, for to dwel togeather: for their ſubſtance was much, and they could not dwel togeather.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Neyther was the land able of to receiue them, for to dwel togeather : for their ſubſtance was much, and they could not dwel togeather.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "Neyther was the land able to receiue them for to dwel together for their ſubſtance was much, and they could not dwel together.7. Wherupon",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Wheruron alſo there aroſe ſtrife amongſt the heardſmen of Abram and of Lot. And that, time the Chananite and the Pheriſite dw elled in that countrie.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Wherupon alſo there aroſe ſtrife amongſt the heardſmen of Abram and of Lot. And that, time the Chananite and the Pheriſite dwel led in that countrie.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Wherupon alſo there aroſe ſtrife amongſt the heardſmen of Abram and and of Lot. And that time the Chananite and the Pheriſite dwelled in that countrie.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "Wherupon alſo there aroſe ſtrite amongſt the heardſmen of Abram and of Lot. And that time the Chananite and the Pheriſite dwelled in that countrie.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Abram therfore ſaid to Lot : Let there be no brawle I beſeech thee betwen me and thee, and betwen my heardſmen, and thy heardſmen: for we be : brethren.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "Abram therfore ſaid to Lot : Let there be no brawle I beſeech thee betwen me and thee, and betwen my heardſmen, and thy heardſmen: for we be :: brethren.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "Abram therfore ſaid to Lot : Let there be no brawle I beſeech thee betwen me ahd thee, and ſame betwen my heardſmen, and thy heardſmen: for we be :: bre- as thren.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S6": {
+    "text": "Abram therfore ſaid to Lot : Let there be no brawle, I beſeech thee, between me and thee, and between my heardſmen, and thy heardſmen : for we be () thren. .",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "Behold the whole land is before thee : goe aparte from me, I pray thee : if thou wilt goe to the left hand, I wil take the right : if thou chooſe the right hand, I wil paſſe to on the left.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Behold the whole land is before thee : goe aparte from me, I pray thee : if thou wilt goe to the left hand, I wil take the right : if thou chooſe the right hand, I wil paſſe to on the left.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "Behold the whole land is before thee goe aparte from me, I pray thee if thou wilt goe to the left hand, I wil take the right if thou chooſe the right hand, I wil paſſe to the left.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Behold the whole land is before thee goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou chooſe the right hand, I wil paſſe to the left.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Lot therfore lifting vp his eyes, ſawe al the countrie about Iordaine, which was watered through out before that our Lord ſubuerted Sodome and Gomorre, as the paradiſe of our Lord, and like as Egypt as men come vnto Segor.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Lot therfore lifting vp his eyes, ſawe al the countrie about Iordaine, which was watered through out before that our Lord ſubuerted Sodome and Gomorre, as the paradiſe of our Lord, and like as Agypt as men come vnto Segor.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "Lot therfore lifting vp his eyes, ſawe al the countrie about Iordaine, which was watered through out before that our Lord ſubuerted Sodome and Gomorre, as the paradiſe of our Lord, and like as gypt as men come vnto Segor.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "Lot therfore lifting vp his eyes, ſaw al the countrie about Iordand, which was watered throughout befote that our Lord ſubuerted Sodome and Gomorre, as the Paradiſe ot our Lord, and like as Eypt as men come vnto Segor.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And Lot choſe vnto him the countrie about Iordaine, and he departed from the Eaſt : and they were ſeperated either brother from the other.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And Lot choſe vnto him the countrie about Iordaine, and he departed from the Eaſt and they were ſeperated either brother from the other.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And Lot choſe vnto him the countrie about Iordaine, and he departed from the Eaſt : and they were ſeperated either brother from the other.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And Lot choſe vnto him the countrie about Iordane, and he departed from the Eaſt: and they wer ſeperated either brother from the other.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "Abram dwelt in the land of Chanaan: and Lot aboad in the townes that were about Iordane, and dwelt in Sodome.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And the men of Sodome were verie wicked, and ſinners before the face of our Lord out of meaſure.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the men of Sodome were verie wicked, and ſinners before the face of our Lord out of meaſure.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the men of Sodome were verie wicked, and ſinners before the face of our Lord out of mea†",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And the men ot Sodome were verie wicked, and ſinners before the tace of our Lord out ot meaſure.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And our Lord ſaid to Abram, after that Lot was ſeperated from him : Lyft vp thyn cyes, and looke from the place, wherin thou nowart, to the north and ſouth, to the eaſt and weſt.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to Abram, after that Lot was ſeperated from him : Lyft vp thyn eyes, and looke from the place, wherin thou nowart, to the north and ſouth, to the :: eaſt and weſt.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to Abram, after that Lot was ſeperated from him : Lyft vp thyn cyes, and looke from the place, wherin thou nowart, to the north and ſouth, to the eaſt and weſt.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to Abtam, after that Lot was ſeparated trom him: Litt vp thyne eyes, and looke from the place wnerin thou now art, to the north and ſouth, to the eaſt and welt.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S3": {
+    "text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S9": {
+    "text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S6": {
+    "text": "Al the land which thou ſeeſt wil I giue to thee, and to thy ſeed for euer.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And I wil make : thy ſeede as the duſt of the earth : if any man be able to number the duſt of the earth, thy ſeede alſo ſbal he be able to number.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And I wil make :: thy ſeede as the duſt of the earth: if any man be able to number the duſt of the earth, thy ſeede alſo ſhal he be able to number,",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And I wil make :: thy ſeede feſh as the duſt of the earth: if any man be able to numbet the duſt of the earth, thy ſeede alſo ſhal he be able to number.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.955,
+     "madueke_b": 0.955
+    }
+   },
+   "S6": {
+    "text": "And I wil make thy ſeed as the duſt of the earth: it any man be able to number the duſt of the earth, thy ſeed alſo ſhal he be able to numbet.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "Ariſe and walke through the land in the length, and in the breath therof: for I wil geue it to thee.",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "Ariſe and walke through the land in the length, and in the breath therof for I wil geue it to thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "Ariſe and walke through the land in the length, and in the breath therof: for I wil geue it to thee.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "Ariſe and walke through the land in the length, and in the breath therof: tor wil giue it to tnee.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.949,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "Abram therfore remouing his tent, came, and dwelt beſide the vale of Mambre, whichis in Hebron : and he builded there an altar to our Lord:",
+    "from": "p73",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "Abram therfore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron : and he builded there an altar to our Lord.",
+    "from": "p77",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "Abram ther- are fore remouing his tent, came, and dwelt beſide the vale of ble. Mambre, which is in Hebron : and he builded there an altar to our Lord",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "Abram thertore remouing his tent, came, and dwelt beſide the vale ot Mambre, which is in Hebron: aud builded there an altar to our Lord.",
+    "from": "p68",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Abram therfore aſcended out of Ægypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+   "odr_com": "ABRAM therfore ascended out of Ægypt, he and his wife, and al that he had, and Lot with him to the south coast.",
+   "sabates_a": "Abram therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast.",
+   "madueke_b": "Abram therefore ascended out of Aegypt, he and his wife, and all that he had, and Lot with him to the south coast."
+  },
+  "2": {
+   "s_dismas": "And he was very rich in poſſeſſion of gold and ſiluer.",
+   "odr_com": "And he was very rich in possession of gold and siluer.",
+   "sabates_a": "And he was very rich in possession of gold and silver.",
+   "madueke_b": "And he was very rich in possession of gold and silver."
+  },
+  "3": {
+   "s_dismas": "And he returned by the way, that he came, from the ſouth vnto Bethel, euen to the place where before he had pitched a tabernacle betwen Bethel and Hay:",
+   "odr_com": "And he returned by the way, that he came, from the south vnto Bethel, euen to the place where before he had pitched a tabernacle betwen Bethel and Hay:",
+   "sabates_a": "And he returned by the way that he came, from the south unto Bethel, even to the place where before he had pitched a tabernacle between Bethel and Hai:",
+   "madueke_b": "And he returned by the way that he came, from the south unto Bethel, even to the place where before he had pitched a tabernacle between Bethel and Hai:"
+  },
+  "4": {
+   "s_dismas": "in the place of the altar which he had made before, and there he called vpon the name of our Lord.",
+   "odr_com": "in the place of the altar which he had made before, and there he called vpon the name of our Lord.",
+   "sabates_a": "in the place of the altar which he had made before, and there he called upon the name of our Lord.",
+   "madueke_b": "in the place of the altar which he had made before, and there he called upon the name of our Lord."
+  },
+  "5": {
+   "s_dismas": "But Lot alſo that was with Abram, had flocks of ſheepe, and heards of beaſts, and tents.",
+   "odr_com": "But Lot also that was with Abram, had flocks of sheepe, and heards of beasts, and tents.",
+   "sabates_a": "But Lot also that was with Abram had flocks of sheep, and herds of beasts, and tents.",
+   "madueke_b": "But Lot also that was with Abram had flocks of sheep, and herds of beasts, and tents."
+  },
+  "6": {
+   "s_dismas": "Neyther was the land able to receiue them, for to dwel togeather: for their ſubſtance was much, and they could not dwel togeather.",
+   "odr_com": "Neyther was the land able to receiue them, for to dwel togeather: for their substance was much, and they could not dwel togeather.",
+   "sabates_a": "Neither was the land able to receive them for to dwell together: for their substance was much, and they could not dwell together.",
+   "madueke_b": "Neither was the land able to receive them for to dwell together: for their substance was much, and they could not dwell together."
+  },
+  "7": {
+   "s_dismas": "Wherupon alſo there aroſe ſtrife amongſt the heardſmen of Abram and of Lot. And that time the Chananite and the Pheriſite dwelled in that countrie.",
+   "odr_com": "Wherupon also there arose strife amongst the heardsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that countrie.",
+   "sabates_a": "Whereupon also there arose strife amongst the herdsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that country.",
+   "madueke_b": "Whereupon also there arose strife amongst the herdsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that country."
+  },
+  "8": {
+   "s_dismas": "Abram therfore ſaid to Lot: Let there be no brawle I beſeech thee betwen me and thee, and betwen my heardſmen, and thy heardſmen: for we be brethren.",
+   "odr_com": "Abram therfore said to Lot: Let there be no brawle I beseech thee betwen me and thee, and betwen my heardsmen, and thy heardsmen: for we be brethren.",
+   "sabates_a": "Abram therefore said to Lot: Let there be no brawl, I beseech thee, between me and thee, and between my herdsmen, and thy herdsmen: for we be brethren.",
+   "madueke_b": "Abram therefore said to Lot: Let there be no brawl, I beseech thee, between me and thee, and between my herdsmen, and thy herdsmen: for we be brethren."
+  },
+  "9": {
+   "s_dismas": "Behold the whole land is before thee: goe aparte from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou chooſe the right hand, I wil paſſe to the left.",
+   "odr_com": "Behold the whole land is before thee: goe aparte from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I wil passe to the left.",
+   "sabates_a": "Behold the whole land is before thee: go apart from me, I pray thee: if thou wilt go to the left hand, I will take the right: if thou choose the right hand, I will pass to the left.",
+   "madueke_b": "Behold the whole land is before thee: go apart from me, I pray thee: if thou wilt go to the left hand, I will take the right: if thou choose the right hand, I will pass to the left."
+  },
+  "10": {
+   "s_dismas": "Lot therfore lifting vp his eyes, ſawe al the countrie about Iordaine, which was watered through out before that our Lord ſubuerted Sodome and Gomorre, as the paradiſe of our Lord, and like as Ægypt as men come vnto Segor.",
+   "odr_com": "Lot therfore lifting vp his eyes, sawe al the countrie about Iordaine, which was watered through out before that our Lord subuerted Sodome and Gomorre, as the paradise of our Lord, and like as Ægypt as men come vnto Segor.",
+   "sabates_a": "Lot therefore lifting up his eyes, saw all the country about Jordan, which was watered throughout before that our Lord subverted Sodome and Gomorre, as the Paradise of our Lord, and like as Ægypt as men come unto Segor.",
+   "madueke_b": "Lot therefore lifting up his eyes, saw all the country about Jordan, which was watered throughout before that our Lord subverted Sodome and Gomorre, as the Paradise of our Lord, and like as Aegypt as men come unto Segor."
+  },
+  "11": {
+   "s_dismas": "And Lot choſe vnto him the countrie about Iordaine, and he departed from the Eaſt: and they were ſeperated either brother from the other.",
+   "odr_com": "And Lot chose vnto him the countrie about Iordaine, and he departed from the East: and they were seperated either brother from the other.",
+   "sabates_a": "And Lot chose unto him the country about Jordan, and he departed from the East: and they were separated either brother from the other.",
+   "madueke_b": "And Lot chose unto him the country about Jordan, and he departed from the East: and they were separated either brother from the other."
+  },
+  "12": {
+   "s_dismas": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+   "odr_com": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+   "sabates_a": "Abram dwelt in the land of Chanaan: and Lot abode in the towns that were about Jordan, and dwelt in Sodome.",
+   "madueke_b": "Abram dwelt in the land of Chanaan: and Lot abode in the towns that were about Jordan, and dwelt in Sodome."
+  },
+  "13": {
+   "s_dismas": "And the men of Sodome were verie wicked, and ſinners before the face of our Lord out of meaſure.",
+   "odr_com": "And the men of Sodome were verie wicked, and sinners before the face of our Lord out of measure.",
+   "sabates_a": "And the men of Sodome were very wicked, and sinners before the face of our Lord out of measure.",
+   "madueke_b": "And the men of Sodome were very wicked, and sinners before the face of our Lord out of measure."
+  },
+  "14": {
+   "s_dismas": "And our Lord ſaid to Abram, after that Lot was ſeperated from him: Lyft vp thyn eyes, and looke from the place, wherin thou now art, to the north and ſouth, to the eaſt and weſt.",
+   "odr_com": "And our Lord said to Abram, after that Lot was seperated from him: Lyft vp thyn eyes, and looke from the place, wherin thou now art, to the north and south, to the east and west.",
+   "sabates_a": "And our Lord said to Abram, after that Lot was separated from him: Lift up thine eyes, and look from the place wherein thou now art, to the north and south, to the east and west:",
+   "madueke_b": "And our Lord said to Abram, after that Lot was separated from him: Lift up thine eyes, and look from the place wherein thou now art, to the north and south, to the east and west:"
+  },
+  "15": {
+   "s_dismas": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+   "odr_com": "Al the land, which thou seest, wil I geue to thee, & to thy seed for euer.",
+   "sabates_a": "All the land which thou seest will I give to thee, and to thy seed for ever.",
+   "madueke_b": "All the land which thou seest will I give to thee, and to thy seed for ever."
+  },
+  "16": {
+   "s_dismas": "And I wil make thy ſeede as the duſt of the earth: if any man be able to number the duſt of the earth, thy ſeede alſo ſhal he be able to number.",
+   "odr_com": "And I wil make thy seede as the dust of the earth: if any man be able to number the dust of the earth, thy seede also shal he be able to number.",
+   "sabates_a": "And I will make thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also shall he be able to number.",
+   "madueke_b": "And I will make thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also shall he be able to number."
+  },
+  "17": {
+   "s_dismas": "Ariſe and walke through the land in the length, and in the breadth therof: for I wil geue it to thee.",
+   "odr_com": "Arise and walke through the land in the length, and in the breath therof: for I wil geue it to thee.",
+   "sabates_a": "Arise and walk through the land in the length, and in the breadth thereof: for I will give it to thee.",
+   "madueke_b": "Arise and walk through the land in the length, and in the breadth thereof: for I will give it to thee."
+  },
+  "18": {
+   "s_dismas": "Abram therfore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+   "odr_com": "Abram therfore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+   "sabates_a": "Abram therefore removing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+   "madueke_b": "Abram therefore removing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Abram therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast.",
+  "2": "And he was very rich in possession of gold and silver.",
+  "3": "And he returned by the way that he came, from the south unto Bethel, even to the place where before he had pitched a tabernacle between Bethel and Hai:",
+  "4": "in the place of the altar which he had made before, and there he called upon the name of our Lord.",
+  "5": "But Lot also that was with Abram had flocks of sheep, and herds of beasts, and tents.",
+  "6": "Neither was the land able to receive them for to dwell together: for their substance was much, and they could not dwell together.",
+  "7": "Whereupon also there arose strife amongst the herdsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that country.",
+  "8": "Abram therefore said to Lot: Let there be no brawl, I beseech thee, between me and thee, and between my herdsmen, and thy herdsmen: for we be brethren.",
+  "9": "Behold the whole land is before thee: go apart from me, I pray thee: if thou wilt go to the left hand, I will take the right: if thou choose the right hand, I will pass to the left.",
+  "10": "Lot therefore lifting up his eyes, saw all the country about Jordan, which was watered throughout before that our Lord subverted Sodome and Gomorre, as the Paradise of our Lord, and like as Ægypt as men come unto Segor.",
+  "11": "And Lot chose unto him the country about Jordan, and he departed from the East: and they were separated either brother from the other.",
+  "12": "Abram dwelt in the land of Chanaan: and Lot abode in the towns that were about Jordan, and dwelt in Sodome.",
+  "13": "And the men of Sodome were very wicked, and sinners before the face of our Lord out of measure.",
+  "14": "And our Lord said to Abram, after that Lot was separated from him: Lift up thine eyes, and look from the place wherein thou now art, to the north and south, to the east and west:",
+  "15": "All the land which thou seest will I give to thee, and to thy seed for ever.",
+  "16": "And I will make thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also shall he be able to number.",
+  "17": "Arise and walk through the land in the length, and in the breadth thereof: for I will give it to thee.",
+  "18": "Abram therefore removing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord."
+ },
+ "ref_coverage": {
+  "janvier": 18,
+  "have": {
+   "s_dismas": 18,
+   "odr_com": 18,
+   "sabates_a": 18,
+   "madueke_b": 18
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 72,
+ "triage": "SOURCE-SKEW",
+ "secs": 4.5
+}

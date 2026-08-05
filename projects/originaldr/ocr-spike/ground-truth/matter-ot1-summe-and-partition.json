@@ -1,0 +1,791 @@
+{
+  "locus": "matter/ot1/summe-and-partition",
+  "page_index": [
+    15,
+    16,
+    17
+  ],
+  "ocr_dir": "archive-ot1-1609",
+  "scan": "S1",
+  "raster": "jp2 pages 0015-0016 (ocr-spike/jp2_page.py archive-ot1-1609 15|16); source S01_1582-first-edition-3vol/...1609 Old Testament_jp2",
+  "raster_dpi": "jp2 native, 3334x4684 (~550 dpi equiv), region-cropped and upscaled 2-6x for glyph reads",
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "PROEMIAL ANNOTATIONS.",
+    "right": ""
+  },
+  "layout_note": "Two-page front-matter section of OT1 (1609), Douay Old Testament vol. 1. PAGE 15 (recto, section opening): ornamental woodcut headpiece band across the top; centred display title in graduated roman capitals 'THE SVMME AND PARTI-|TION OF THE HOLIE BIBLE.'; smaller roman subtitle 'With a brife note of the Canonical and | Apochryphal Bookes.'; single main text column opened by an ornate foliate drop-cap 'B' (~3 lines deep) reading 'BY the vniforme conſent...'. Body is a continuous argument set MOSTLY in ITALIC (the compiler's connecting prose) with embedded ROMAN passages (the Augustine/Gregory quotations, the Latin 'niſi quod... Allegoriam?', defined terms 'Old'/'New', and the roman book-name enumerations). Inner (LEFT) margin carries stacked scholarly citation-abbreviations; outer (RIGHT) margin carries roman shoulder-note glosses summarising the argument. NO printed folio number; a later-hand manuscript foliation '14' sits top-right; printed preliminary-quire signature '†† 2' at foot-centre; catchword 'Numeri,' at foot-right. PAGE 16 (verso): running header 'PROEMIAL ANNOTATIONS.' centred; same two-face body continuing (book enumeration by the four sorts Legal/Historical/Sapiential/Prophetical, then the canonical-vs-apocryphal discussion); LEFT margin has the four-sort labels ('Hiſtorical.', 'Sapiential.', 'Prophetical') plus two note-blocks; RIGHT margin a dense block of conciliar/patristic citations. No signature (verso); catchword 'con-' at foot-right; a red Fatima-movement collection stamp bottom-left is NOT part of the page. THREE+ glyph regimes on the spread: italic body (w set as vv), roman body (real w), display titling caps (roman), small marginal note fount (vv). Section title/subtitle/drop-cap unit = p15; argument runs p15->p16 and (see completeness) spills onto the top of p17 before 'THE SVMME OF THE OLD TESTAMENT'.",
+  "body": [
+    {
+      "line_index": 0,
+      "page": 15,
+      "role": "title_display",
+      "text": "THE SVMME AND PARTI-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 1,
+      "page": 15,
+      "role": "title_display",
+      "text": "TION OF THE HOLIE BIBLE."
+    },
+    {
+      "line_index": 2,
+      "page": 15,
+      "role": "subtitle",
+      "text": "With a brife note of the Canonical and"
+    },
+    {
+      "line_index": 3,
+      "page": 15,
+      "role": "subtitle",
+      "text": "Apochryphal Bookes."
+    },
+    {
+      "line_index": 4,
+      "page": 15,
+      "role": "prose",
+      "drop_cap": "B",
+      "text": "BY the vniforme conſent of al learned Diuines, the holie Bible,"
+    },
+    {
+      "line_index": 5,
+      "page": 15,
+      "role": "prose",
+      "text": "or vvritten vvord of God, conteyneth expreſſed or implied, al"
+    },
+    {
+      "line_index": 6,
+      "page": 15,
+      "role": "prose",
+      "text": "thinges that man is to beleue, to obſerue, & to auoid, for ob-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 7,
+      "page": 15,
+      "role": "prose",
+      "text": "tayning of eternal ſaluation. That is , al matters of faith &"
+    },
+    {
+      "line_index": 8,
+      "page": 15,
+      "role": "prose",
+      "text": "maners, by vvhich vve may knovv and ſerue God, and ſo be ſpi-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 9,
+      "page": 15,
+      "role": "prose",
+      "text": "ritually ioyned vvith him, in this life, & in eternitie. For both the old &"
+    },
+    {
+      "line_index": 10,
+      "page": 15,
+      "role": "prose",
+      "text": "nevv Teſtament propoſe and teſtifie vnto vs, one and the ſame God, the ſame"
+    },
+    {
+      "line_index": 11,
+      "page": 15,
+      "role": "prose",
+      "text": "Chriſt, the ſame Church, and other Myſteries of our beleefe, not differing in"
+    },
+    {
+      "line_index": 12,
+      "page": 15,
+      "role": "prose",
+      "text": "ſubſtance, but in maner of vttering ; the Old more obſcurely in figures and pro-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 13,
+      "page": 15,
+      "role": "prose",
+      "text": "phecies foretelling thoſe thinges, vvhich the New declareth (in great part) as"
+    },
+    {
+      "line_index": 14,
+      "page": 15,
+      "role": "prose",
+      "text": "donne and performed. VVherupon ſaith S. Auguſtin : In the Old Teſta-",
+      "line_end_hyphen": true,
+      "note": "italic up to 'S. Auguſtin :'; 'In the Old Teſta-' begins the roman Augustine quotation"
+    },
+    {
+      "line_index": 15,
+      "page": 15,
+      "role": "prose",
+      "text": "ment the New lieth hidden : & in the New the Old lieth open.",
+      "note": "roman (Augustine quotation)"
+    },
+    {
+      "line_index": 16,
+      "page": 15,
+      "role": "prose",
+      "text": "And touching their names ; vvherein appareth difference, the one (ſaith"
+    },
+    {
+      "line_index": 17,
+      "page": 15,
+      "role": "prose",
+      "text": "the ſame Doctor) is called the old Teſtament , either becauſe it pro-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 18,
+      "page": 15,
+      "role": "prose",
+      "text": "poſeth promiſes of temporal thinges (VVhervvith our old corruptnes"
+    },
+    {
+      "line_index": 19,
+      "page": 15,
+      "role": "prose",
+      "text": "is allured) Or in reſpect of the New, by which it is fulfilled , and"
+    },
+    {
+      "line_index": 20,
+      "page": 15,
+      "role": "prose",
+      "text": "in ſome part aboliſhed. The other is called the New, becauſe by"
+    },
+    {
+      "line_index": 21,
+      "page": 15,
+      "role": "prose",
+      "text": "it man is renewed, and hath promiſe of eternal life : VVhich ſhal"
+    },
+    {
+      "line_index": 22,
+      "page": 15,
+      "role": "prose",
+      "text": "neuer vvaxe old nor decay. Likevviſe S. Gregorie the great teſtifieth this con-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 23,
+      "page": 15,
+      "role": "prose",
+      "text": "formitie, and correſpondence betvven the Old and New Teſtament, affirming"
+    },
+    {
+      "line_index": 24,
+      "page": 15,
+      "role": "prose",
+      "text": "that the ſame is ſignified by the Prophet Ezechiels viſion of a vvheele, vvhich"
+    },
+    {
+      "line_index": 25,
+      "page": 15,
+      "role": "prose",
+      "text": "had foure faces, or apparence of foure vvhiles, the ſhape vvhereof vvas, as it"
+    },
+    {
+      "line_index": 26,
+      "page": 15,
+      "role": "prose",
+      "text": "vvete, a wheele in the middes of a wheele. What is this ſaith he,",
+      "note": "'vvete' (italic, =were) then roman 'a wheele...What is this'; 'ſaith he,' italic"
+    },
+    {
+      "line_index": 27,
+      "page": 15,
+      "role": "prose",
+      "text": "niſi quod in Teſtamenti veteris litera Teſtamentum nouum la-",
+      "line_end_hyphen": true,
+      "note": "roman Latin (Gregory)"
+    },
+    {
+      "line_index": 28,
+      "page": 15,
+      "role": "prose",
+      "text": "tuit per Allegoriam ? but that in the letter of the old Teſtament,",
+      "note": "Latin ends at 'Allegoriam ?', then roman English rendering"
+    },
+    {
+      "line_index": 29,
+      "page": 15,
+      "role": "prose",
+      "text": "the New lay hidden by an Allegorie ?"
+    },
+    {
+      "line_index": 30,
+      "page": 15,
+      "role": "prose",
+      "text": "And as the ſame is the ſumme and ſubiect of both Teſtaments : ſo both are"
+    },
+    {
+      "line_index": 31,
+      "page": 15,
+      "role": "prose",
+      "text": "diuided (for the more principal partes therof) into foure ſortes of Bookes:"
+    },
+    {
+      "line_index": 32,
+      "page": 15,
+      "role": "prose",
+      "text": "Legal, Hiſtorical, Sapiential, & Prophetical. The Legal bookes of the"
+    },
+    {
+      "line_index": 33,
+      "page": 15,
+      "role": "prose",
+      "text": "old Teſtament are the fiue Bookes of Moiſes ; Geneſis, Exodus, Leuiticus,"
+    },
+    {
+      "line_index": 34,
+      "page": 15,
+      "role": "signature",
+      "text": "†† 2",
+      "excluded_reason": "preliminary-quire signature at foot-centre; excluded from interval concatenation"
+    },
+    {
+      "line_index": 35,
+      "page": 15,
+      "role": "catchword",
+      "text": "Numeri,",
+      "excluded_reason": "foot-right catchword anticipating p16 first word 'Numeri,'; excluded from body concat"
+    },
+    {
+      "line_index": 36,
+      "page": 16,
+      "role": "prose",
+      "text": "Numeri, & Deuteronomie ; vvhereto anſvver in the nevv Teſtament,"
+    },
+    {
+      "line_index": 37,
+      "page": 16,
+      "role": "prose",
+      "text": "the foure Goſpels of S. Matthew, S. Marke, S. Luke, & S. Iohn."
+    },
+    {
+      "line_index": 38,
+      "page": 16,
+      "role": "prose",
+      "text": "Hiſtorical bookes of the old Teſtament, are the Bookes of Ioſue, Iudges,"
+    },
+    {
+      "line_index": 39,
+      "page": 16,
+      "role": "prose",
+      "text": "Ruth, foure bookes of Kinges, two of Paralipomenon, Eſdras vvith"
+    },
+    {
+      "line_index": 40,
+      "page": 16,
+      "role": "prose",
+      "text": "Nehemias, Tobias, Iudith, Heſter, Iob, & two of the Machabees ;"
+    },
+    {
+      "line_index": 41,
+      "page": 16,
+      "role": "prose",
+      "text": "vnto vvhich, in the nevv Teſtament, anſvver the Actes of the Apoſtles."
+    },
+    {
+      "line_index": 42,
+      "page": 16,
+      "role": "prose",
+      "text": "Sapiential, of the old Teſtament, are the Prouerbes, Eccleſiaſtes, Can-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 43,
+      "page": 16,
+      "role": "prose",
+      "text": "ticles, Booke of wiſdome, & Eccleſiaſticus ; and of like ſorte are in",
+      "note": "'wiſdome' roman: w resolved per prior but reads gap-like/vv at high zoom (see uncertain)"
+    },
+    {
+      "line_index": 44,
+      "page": 16,
+      "role": "prose",
+      "text": "the nevv Teſtament, the Epiſtles of S. Paul & of other Apoſtles. Prophetical"
+    },
+    {
+      "line_index": 45,
+      "page": 16,
+      "role": "prose",
+      "text": "bookes are Dauids Pſalter (vvhich is alſo Sapiential, yea likevviſe Legal"
+    },
+    {
+      "line_index": 46,
+      "page": 16,
+      "role": "prose",
+      "text": "and Hiſtorical) the Bookes of Iſaias, Ieremias vvith Baruch, Ezechiel,"
+    },
+    {
+      "line_index": 47,
+      "page": 16,
+      "role": "prose",
+      "text": "Daniel, the tvvelue leſſe Prophetes, Oſea, Ioel, Amos, Abdias, Ionas,"
+    },
+    {
+      "line_index": 48,
+      "page": 16,
+      "role": "prose",
+      "text": "Michæas, Nahum, Abacuc, Sophonias, Aggæus, Zacharias,"
+    },
+    {
+      "line_index": 49,
+      "page": 16,
+      "role": "prose",
+      "text": "Malachias . And in the nevv Teſtament, the Apocalips of S. Iohn the"
+    },
+    {
+      "line_index": 50,
+      "page": 16,
+      "role": "prose",
+      "text": "Apoſtle."
+    },
+    {
+      "line_index": 51,
+      "page": 16,
+      "role": "prose",
+      "text": "Al theſe Bookes are vndoubtedly Canonical, as the Authores cited in"
+    },
+    {
+      "line_index": 52,
+      "page": 16,
+      "role": "prose",
+      "text": "the inner margent teſtifie . And conſequently al, and al the partes therof ;"
+    },
+    {
+      "line_index": 53,
+      "page": 16,
+      "role": "prose",
+      "text": "are of infallible truth. For othervviſe as S. Auguſtin teacheth, if anie part"
+    },
+    {
+      "line_index": 54,
+      "page": 16,
+      "role": "prose",
+      "text": "vvere falſe, or doubtful , al vvere vncertaine. once admittiug falſehood",
+      "note": "'admittiug' = turned-n typo for 'admitting' (preserved)"
+    },
+    {
+      "line_index": 55,
+      "page": 16,
+      "role": "prose",
+      "text": "(ſaith he, Epiſt. 8. ad Ieroni) in ſuch ſoueraigne authoritie, no parcel"
+    },
+    {
+      "line_index": 56,
+      "page": 16,
+      "role": "prose",
+      "text": "of theſe bookes should remaine, which anie way should ſeme hard",
+      "note": "roman: 'should' round-s (both), 'which'/'way' roman-w (flagged)"
+    },
+    {
+      "line_index": 57,
+      "page": 16,
+      "role": "prose",
+      "text": "to maners, or incredible to beleue, but it might by this moſt per-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 58,
+      "page": 16,
+      "role": "prose",
+      "text": "nicious rule be turned to an officious fiction of the author. That"
+    },
+    {
+      "line_index": 59,
+      "page": 16,
+      "role": "prose",
+      "text": "is : If anie error could be committed by the authores of Scriptures, either"
+    },
+    {
+      "line_index": 60,
+      "page": 16,
+      "role": "prose",
+      "text": "through ignorance, obliuion, or anie other humane frailtie, vvhatſoeuer vvere"
+    },
+    {
+      "line_index": 61,
+      "page": 16,
+      "role": "prose",
+      "text": "produced, exception might be taken, and queſtion made, vvhether the author"
+    },
+    {
+      "line_index": 62,
+      "page": 16,
+      "role": "prose",
+      "text": "had erred, or no ? True it is, that ſome of theſe bookes (as we ſhal par-",
+      "line_end_hyphen": true,
+      "note": "'erred' reads e-red (possible single-r); 'we' roman-w (flagged)"
+    },
+    {
+      "line_index": 63,
+      "page": 16,
+      "role": "prose",
+      "text": "ticularly diſcuſſe in their places) vvere ſometimes doubted of by ſome Catho-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 64,
+      "page": 16,
+      "role": "prose",
+      "text": "liques, and called Apochrypal, in that ſenſe, as the vvord properly ſignifi-",
+      "line_end_hyphen": true,
+      "note": "'Apochrypal' printed without medial h (variant vs 'Apochryphal' at 66/70)"
+    },
+    {
+      "line_index": 65,
+      "page": 16,
+      "role": "prose",
+      "text": "eth hidden, or not apparent. So S. Ierom (in his Prologue before the La-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 66,
+      "page": 16,
+      "role": "prose",
+      "text": "tin Bible) calleth diuers bookes Apochryphal, being not ſo euident,"
+    },
+    {
+      "line_index": 67,
+      "page": 16,
+      "role": "prose",
+      "text": "VVhether they vvere Diuine ſcripture, becauſe they vvere not in the Ievves Canon,"
+    },
+    {
+      "line_index": 68,
+      "page": 16,
+      "role": "prose",
+      "text": "nor at firſt in the Churches Canon, but vvere neuer reiected, as falſe or erronious."
+    },
+    {
+      "line_index": 69,
+      "page": 16,
+      "role": "prose",
+      "text": "In vvhich ſenſe the Prayer of Manaſſes, the third booke-of-Eſdras, and"
+    },
+    {
+      "line_index": 70,
+      "page": 16,
+      "role": "prose",
+      "text": "third of Machabees are yet called Apochryphal. As for the fourth of"
+    },
+    {
+      "line_index": 71,
+      "page": 16,
+      "role": "prose",
+      "text": "Eſdras, and fourth of Machabees there is more doubt. But diuers others, as"
+    },
+    {
+      "line_index": 72,
+      "page": 16,
+      "role": "prose",
+      "text": "the booke aſcribed to Enoch, the Goſpels of S. Andrew, S. Thomas,"
+    },
+    {
+      "line_index": 73,
+      "page": 16,
+      "role": "prose",
+      "text": "S. Bartholmew, and the like recited by ſ. Gelaſius (Decreto de libris Eccle-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 74,
+      "page": 16,
+      "role": "prose",
+      "text": "ſiaſticis diſt. 15. Can. Sancta Romana) S. Innocentius the firſt (Epiſt. 3.)"
+    },
+    {
+      "line_index": 75,
+      "page": 16,
+      "role": "prose",
+      "text": "S. Ierom, Ep. ad Latam, S. Auguſtin li. 15. cap. 23. de ciuit. Dei. Origen homiſ."
+    },
+    {
+      "line_index": 76,
+      "page": 16,
+      "role": "prose",
+      "text": "2. in Cantica. are in a vvorſe ſenſe called Apochryphal, & are reiected as"
+    },
+    {
+      "line_index": 77,
+      "page": 16,
+      "role": "catchword",
+      "text": "con-",
+      "excluded_reason": "foot-right catchword; resolves to 'conteyning' at top of p17 (paragraph continues off-page); excluded from body concat"
+    },
+    {
+      "page": 17,
+      "line_index": 78,
+      "column": "full",
+      "role": "prose",
+      "text": "conteyning manifeſt errors, or fained by Heretikes. Neither can a Chriſtian Catholique be otherwiſe aſſured, Which Bookes are Diuine and Canonical Scriptures, but by declaration of the Catholique Church, which without interruption ſuccedeth the Apoſtles, to whom our Sauiour promiſed, and ſent the Holie Ghoſt, to teach al truth. For if in anie thing more then others, aſſuredly one chief and moſt neceſſarie point is, to know and declare, which Bookes are Gods holie Word: being of moſt ſingular importance.",
+      "note": "COMPLETENESS FIX 2026-07-21: this is the tail of the final paragraph, printed at the TOP of p17 (archive-ot1-1609) immediately above the next section heading 'THE SVMME OF THE OLD TESTAMENT'. It completes the p16-foot truncation '...are reiected as con-' -> 'conteyning manifeſt errors...'. Right-margin gloss on p17: 'The Holie Ghoſt declareth by the Church which Bookes are Diuine Scriptures.'"
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "title_block",
+      "text": "THE SVMME AND PARTITION OF THE HOLIE BIBLE.",
+      "lines": [
+        0,
+        1
+      ]
+    },
+    {
+      "idx": 1,
+      "kind": "subtitle",
+      "text": "With a brife note of the Canonical and Apochryphal Bookes.",
+      "lines": [
+        2,
+        3
+      ]
+    },
+    {
+      "idx": 2,
+      "kind": "paragraph",
+      "text": "BY the vniforme conſent of al learned Diuines, the holie Bible, or vvritten vvord of God, conteyneth expreſſed or implied, al thinges that man is to beleue, to obſerue, & to auoid, for obtayning of eternal ſaluation. That is , al matters of faith & maners, by vvhich vve may knovv and ſerue God, and ſo be ſpiritually ioyned vvith him, in this life, & in eternitie. For both the old & nevv Teſtament propoſe and teſtifie vnto vs, one and the ſame God, the ſame Chriſt, the ſame Church, and other Myſteries of our beleefe, not differing in ſubſtance, but in maner of vttering ; the Old more obſcurely in figures and prophecies foretelling thoſe thinges, vvhich the New declareth (in great part) as donne and performed. VVherupon ſaith S. Auguſtin : In the Old Teſtament the New lieth hidden : & in the New the Old lieth open. And touching their names ; vvherein appareth difference, the one (ſaith the ſame Doctor) is called the old Teſtament , either becauſe it propoſeth promiſes of temporal thinges (VVhervvith our old corruptnes is allured) Or in reſpect of the New, by which it is fulfilled , and in ſome part aboliſhed. The other is called the New, becauſe by it man is renewed, and hath promiſe of eternal life : VVhich ſhal neuer vvaxe old nor decay. Likevviſe S. Gregorie the great teſtifieth this conformitie, and correſpondence betvven the Old and New Teſtament, affirming that the ſame is ſignified by the Prophet Ezechiels viſion of a vvheele, vvhich had foure faces, or apparence of foure vvhiles, the ſhape vvhereof vvas, as it vvete, a wheele in the middes of a wheele. What is this ſaith he, niſi quod in Teſtamenti veteris litera Teſtamentum nouum latuit per Allegoriam ? but that in the letter of the old Teſtament, the New lay hidden by an Allegorie ?",
+      "lines": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "idx": 3,
+      "kind": "paragraph",
+      "text": "And as the ſame is the ſumme and ſubiect of both Teſtaments : ſo both are diuided (for the more principal partes therof) into foure ſortes of Bookes: Legal, Hiſtorical, Sapiential, & Prophetical. The Legal bookes of the old Teſtament are the fiue Bookes of Moiſes ; Geneſis, Exodus, Leuiticus, Numeri, & Deuteronomie ; vvhereto anſvver in the nevv Teſtament, the foure Goſpels of S. Matthew, S. Marke, S. Luke, & S. Iohn. Hiſtorical bookes of the old Teſtament, are the Bookes of Ioſue, Iudges, Ruth, foure bookes of Kinges, two of Paralipomenon, Eſdras vvith Nehemias, Tobias, Iudith, Heſter, Iob, & two of the Machabees ; vnto vvhich, in the nevv Teſtament, anſvver the Actes of the Apoſtles. Sapiential, of the old Teſtament, are the Prouerbes, Eccleſiaſtes, Canticles, Booke of wiſdome, & Eccleſiaſticus ; and of like ſorte are in the nevv Teſtament, the Epiſtles of S. Paul & of other Apoſtles. Prophetical bookes are Dauids Pſalter (vvhich is alſo Sapiential, yea likevviſe Legal and Hiſtorical) the Bookes of Iſaias, Ieremias vvith Baruch, Ezechiel, Daniel, the tvvelue leſſe Prophetes, Oſea, Ioel, Amos, Abdias, Ionas, Michæas, Nahum, Abacuc, Sophonias, Aggæus, Zacharias, Malachias . And in the nevv Teſtament, the Apocalips of S. Iohn the Apoſtle.",
+      "lines": [
+        30,
+        31,
+        32,
+        33,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "idx": 4,
+      "kind": "paragraph",
+      "text": "Al theſe Bookes are vndoubtedly Canonical, as the Authores cited in the inner margent teſtifie . And conſequently al, and al the partes therof ; are of infallible truth. For othervviſe as S. Auguſtin teacheth, if anie part vvere falſe, or doubtful , al vvere vncertaine. once admittiug falſehood (ſaith he, Epiſt. 8. ad Ieroni) in ſuch ſoueraigne authoritie, no parcel of theſe bookes should remaine, which anie way should ſeme hard to maners, or incredible to beleue, but it might by this moſt pernicious rule be turned to an officious fiction of the author. That is : If anie error could be committed by the authores of Scriptures, either through ignorance, obliuion, or anie other humane frailtie, vvhatſoeuer vvere produced, exception might be taken, and queſtion made, vvhether the author had erred, or no ? True it is, that ſome of theſe bookes (as we ſhal particularly diſcuſſe in their places) vvere ſometimes doubted of by ſome Catholiques, and called Apochrypal, in that ſenſe, as the vvord properly ſignifieth hidden, or not apparent. So S. Ierom (in his Prologue before the Latin Bible) calleth diuers bookes Apochryphal, being not ſo euident, VVhether they vvere Diuine ſcripture, becauſe they vvere not in the Ievves Canon, nor at firſt in the Churches Canon, but vvere neuer reiected, as falſe or erronious. In vvhich ſenſe the Prayer of Manaſſes, the third booke-of-Eſdras, and third of Machabees are yet called Apochryphal. As for the fourth of Eſdras, and fourth of Machabees there is more doubt. But diuers others, as the booke aſcribed to Enoch, the Goſpels of S. Andrew, S. Thomas, S. Bartholmew, and the like recited by ſ. Gelaſius (Decreto de libris Eccleſiaſticis diſt. 15. Can. Sancta Romana) S. Innocentius the firſt (Epiſt. 3.) S. Ierom, Ep. ad Latam, S. Auguſtin li. 15. cap. 23. de ciuit. Dei. Origen homiſ. 2. in Cantica. are in a vvorſe ſenſe called Apochryphal, & are reiected as",
+      "lines": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "continues": "Paragraph is TRUNCATED here at p16 foot ('...are reiected as' + catchword 'con-'). It completes on p17 ('conteyning manifest errors, or fained by Heretikes...') immediately before the next section 'THE SVMME OF THE OLD TESTAMENT'. Per task scope only pages 15-16 are transcribed; the p17 completion is excluded from this GT (see completeness note)."
+    },
+    {
+      "idx": 5,
+      "kind": "paragraph",
+      "text": "conteyning manifeſt errors, or fained by Heretikes. Neither can a Chriſtian Catholique be otherwiſe aſſured, Which Bookes are Diuine and Canonical Scriptures, but by declaration of the Catholique Church, which without interruption ſuccedeth the Apoſtles, to whom our Sauiour promiſed, and ſent the Holie Ghoſt, to teach al truth. For if in anie thing more then others, aſſuredly one chief and moſt neceſſarie point is, to know and declare, which Bookes are Gods holie Word: being of moſt ſingular importance.",
+      "lines": [
+        78
+      ],
+      "page": 17
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "lines 4-29 (drop-cap paragraph, p15)",
+      "position": "left_margin",
+      "text": "S. Ierom.\nEpiſt. ad\nPaulin.\nde omnib\nS. Script.\nlibris.\nS. Aug.\nprefat in\nſpecul. li.\n2 de doct\nchriſt ca.\n9. li. 1. de\nGen. cō-\ntra Ma-\nnich. ca.\n4. li. de\ncatechiz\nrudib. c.\n3. & 4.\nl. 2. qq. ſu\nper Exod\nq. 71. li.\n15. cont.\nFauſt.\nManich.\ncap. 2. li\n18. ciuit.\nca 54. de\nvera re-\nlig. c. 27.\nli. 4. cōt.\nFauſt.\nca. 2.\nS. Greg.\nho. 6. in\nEzech. 1.",
+      "note": "Stacked scholarly citation-abbreviations set in small italic (Jerome Ep. ad Paulinum de omnib[us] S[acrae] Script. libris; Augustine praefat. in speculum, li.2 de doctr. Christ. ca.9, li.1 de Gen. contra Manich. ca.4, li. de catechiz. rudib. c.3&4, l.2 qq. super Exod. q.71, li.15 cont. Faust. Manich. cap.2, li.18 civit. ca.54, de vera relig. c.27, li.4 cont. Faust. ca.2; Gregory ho.6 in Ezech.1). Line-breaks as printed; medium confidence on abbreviations ('S. Script.', 'catechiz', 'q. 71' flagged)."
+    },
+    {
+      "anchor": "lines 4-8 (p15)",
+      "position": "right_margin",
+      "text": "How the holie Scriptures conteine al knovvlege neceſſarie to ſaluation."
+    },
+    {
+      "anchor": "lines 9-15 (p15)",
+      "position": "right_margin",
+      "text": "The old and the nevv Teſtament ſhevv the ſame God, Chriſt, Church and other Myſteries of Religion."
+    },
+    {
+      "anchor": "lines 16-17 (p15)",
+      "position": "right_margin",
+      "text": "The old more obſcurely, vvith leſſe helpes."
+    },
+    {
+      "anchor": "lines 18-21 (p15)",
+      "position": "right_margin",
+      "text": "The nevv more expreſſy and yeldeth more grace."
+    },
+    {
+      "anchor": "lines 30-31 (p15)",
+      "position": "right_margin",
+      "text": "In both Teſtaments, are foure ſortes of Bookes."
+    },
+    {
+      "anchor": "lines 32-33 (p15)",
+      "position": "right_margin",
+      "text": "Legal."
+    },
+    {
+      "anchor": "line 38 (p16)",
+      "position": "left_margin",
+      "text": "Hiſtorical."
+    },
+    {
+      "anchor": "line 42 (p16)",
+      "position": "left_margin",
+      "text": "Sapiential."
+    },
+    {
+      "anchor": "line 44 (p16)",
+      "position": "left_margin",
+      "text": "Prophetical"
+    },
+    {
+      "anchor": "lines 51-53 (p16)",
+      "position": "left_margin",
+      "text": "Al theſe bookes recited ar : Canonical, and of infallible truth."
+    },
+    {
+      "anchor": "lines 63-68 (p16)",
+      "position": "left_margin",
+      "text": "Apochryphal of two ſortes. 1. Not declared canonical. 2. Reiected as erronious."
+    },
+    {
+      "anchor": "lines 51-76 (p16, canonicity argument)",
+      "position": "right_margin",
+      "text": "Conc. Carth. An. Dni 419.\nConc. Laodic cap. 59.\nFlorent Inſtruct. Armen. decret. 7.\nTrident Seſſ. 4.\nS. Atha. inSynop.\nS. Aug. li. 2. doct Chriſt e. &\nIſidor. li. 6. Elymol c. 1. & alibi.\nNicep. li. li. 4. cap. 15.\nEuſeb. li. 5. c. 8.",
+      "note": "Dense conciliar/patristic citation block, small roman note fount (w=vv regime). Line-grouping approximated; medium-low confidence on abbreviations ('cap. 59.', 'Chriſt e. &', 'Elymol' = Etymol.)."
+    },
+    {
+      "page": 17,
+      "position": "right_margin",
+      "role": "side_note",
+      "text": "The Holie Ghoſt declareth by the Church which Bookes are Diuine Scriptures."
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 11,
+      "span": "beleefe",
+      "note": "'our beleefe' (= belief). The medial long-descender glyph's crossbar is not resolvable at this scan quality — reads between long-f (beleefe, expected) and long-ſ (beleeſe). Transcribed 'beleefe' per word-sense + this italic fount's f; the f/ſ glyph is flagged, not certain."
+    },
+    {
+      "line_index": 33,
+      "span": "Moiſes",
+      "note": "'fiue Bookes of Moiſes' — letter after 'Mo' read as 'i' (no clear descender), but a 'y' descender could be masked by the following long-ſ; possible 'Moyſes' (common DR spelling). Transcribed as read 'Moiſes'. 'fiue' (=five) confirmed."
+    },
+    {
+      "line_index": 26,
+      "span": "vvete",
+      "note": "'as it vvete, a wheele' — the word is 'were' (as it were). Medial glyph reads as 't' but is most likely 'r' (r/t confusion in italic); italic w set as vv. Flagged: printed form vs intended 'were'."
+    },
+    {
+      "line_index": 25,
+      "span": "vvhiles",
+      "note": "'apparence of foure vvhiles' — the referent is Ezekiel's four wheels ('wheeles'); glyph reads w-h-i-l-e-s. Possible compositor variant/typo for 'wheeles'. Transcribed diplomatically as read."
+    },
+    {
+      "line_index": 54,
+      "span": "admittiug",
+      "note": "Turned-n typo for 'admitting' ('-iug' for '-ing'). Preserved as printed per diplomatic rule."
+    },
+    {
+      "line_index": 64,
+      "span": "Apochrypal",
+      "note": "Printed without the medial 'h' that appears in 'Apochryphal' at lines 66 and 70 (and margins). Preserved as printed variant/typo."
+    },
+    {
+      "line_index": 62,
+      "span": "erred",
+      "note": "'had erred, or no?' — reads e-r-ed with a faint doubled r; could be single-r 'ered'. Transcribed 'erred'."
+    },
+    {
+      "line_index": -1,
+      "span": "roman-body w/vv CLASS",
+      "note": "PER SIR'S w-REGIME (route low-confidence w/vv to human review). The ROMAN body glyphs sit at the raster resolution limit. Resolved to real 'w' per the guideline prior ('roman body/prose predominantly w; a vv in roman body is probably a real w cut vv-style; agents over-produce vv') and consistency with matter-nt GT. HOWEVER several read gap-like/vv at high zoom — clearest is p16 'wiſdome' (line 43), and p15 'New'/'wheele' (lines 15,19,20,26,29) are borderline. Affected roman-w tokens: p15 lines 15,19,20,21,23,26,29 (New, which, renewed, wheele, What, betwen-terms); p16 lines 37 (Matthew), 43 (wiſdome), 56 (which, way), 62 (we), 72 (Andrew), 73 (Bartholmew). If Sir reads these as genuine vv, flip the whole roman-body class. ITALIC body vv is HIGH confidence (verified on many glyphs: which/we/know/written/word/with/wherein/were/whatſoeuer/etc.)."
+    },
+    {
+      "line_index": -1,
+      "span": "marginal-note w/vv",
+      "note": "Small marginal note founts (p15 right shoulder-notes; p16 right citation block) resolved to vv per the small-annotation-fount rule (p15 'knovvlege' reads clearly gapped). Small type near the 400+ dpi legibility limit — low confidence, review-routed (affected: knovvlege, nevv, ſhevv, vvith on p15 right margin)."
+    },
+    {
+      "line_index": 34,
+      "span": "†† 2",
+      "note": "Preliminary-quire signature at foot-centre of p15. Exact typographic mark is a doubled dagger/cross glyph followed by numeral 2 (p17 recto bears the sequel '†† 3'). Rendered as '†† 2'."
+    },
+    {
+      "line_index": 2,
+      "span": "With",
+      "note": "Subtitle initial 'W' read as a real body-capital W (patterns with body 'Which'-style caps), not the gapped display-titling VV. Low stakes."
+    },
+    {
+      "line_index": 78,
+      "span": "italic w vs vv on p17 tail",
+      "note": "The p17 tail's italic lowercase w's (otherwiſe, without, whom, know, which) read as CONNECTED single-sort w at the 3334px archive-ot1-1609 resolution, whereas the pp15-16 body of this section was adjudicated as a vv-fount italic. Transcribed per-glyph as w (what is visible); flag for Sir whether the compositor shifted founts across the page break or this is a resolution artifact."
+    }
+  ],
+  "glyph_regime_resolved": "OT1-1609 'Proemial Annotations', per-FACE w/vv + glyph-driven long-ſ. (1) ITALIC BODY (the compiler's connecting argument prose) sets w as genuine vv -> transcribed vv; HIGH confidence, verified per-glyph on many instances (which->vvhich, we->vve, know->knovv, written->vvritten, word->vvord, with->vvith, wherein->vvherein, new->nevv, were->vvere, whatſoeuer->vvhatſoeuer, whiles/whereof/was->vv, betwen->betvven, twelue->tvvelue, worſe->vvorſe, otherwiſe->othervviſe, Iewes->Ievves). This matches Sir's guideline 'OT italic annotations use genuine vv'. (2) ITALIC WORD-INITIAL CAPITALS = genuine VV -> VVherupon, VVhervvith, VVhich, VVhether. (3) ROMAN BODY (Augustine/Gregory quotations, Latin, defined terms Old/New, roman book-name enumerations, proper names) = real w -> transcribed w per Sir's prior ('roman body predominantly w; a vv in roman body is probably a real-w cut vv-style'); LOW confidence at the resolution limit (p16 'wiſdome' reads gapped), routed to human review (see uncertain). (4) SMALL MARGINAL NOTE founts = vv (p15 'knovvlege' clearly gapped), low confidence. (5) DISPLAY TITLE = roman capitals (no W sort needed). long-ſ read glyph-driven, NOT positional: round-s kept where the compositor set it (e.g. p16 'should' = round s+h, confirmed; 'sh' clusters read per glyph). u/v ('vniforme','vs','vttering','diuers','beleue','nouum','ſoueraigne','Dauids','Leuiticus'), i/j ('Iohn','Ioſue','ſubiect','Iewes'), and æ ('Michæas','Aggæus') preserved as printed. French spacing preserved before high punctuation (: ; ? !) and clearly-spaced commas. Ampersand rendered '&'; macron 'ō' kept in margin abbrevs ('cō-'). Ligatures (ſt, ct, ſh) transcribed as component letters.",
+  "observer": "agent:matter-ot1-summe-and-partition",
+  "observed_at": "2026-07-20",
+  "method": "Visual-multimodal read of the jp2 rasters (full 3334x4684, ~550 dpi-equiv) via ocr-spike/jp2_page.py, region-cropped and upscaled 2-6x per line and per ambiguous word (title, subtitle, drop-cap, body in bands, both margins, foot, plus dedicated w/vv connectivity, long-ſ, and glyph-identity tiles). LOCALIZATION: found the correct section by heading 'THE SVMME AND PARTITION OF THE HOLIE BIBLE' + subtitle 'With a brife note of the Canonical and Apochryphal Bookes' + drop-cap 'B' ('BY the vniforme conſent...') + catchword 'Numeri,' + running header 'PROEMIAL ANNOTATIONS.' — not a lookalike (the following section 'THE SVMME OF THE OLD TESTAMENT' is distinct). IDENTITY: 1609 OT1 confirmed — source path S01_1582-first-edition-3vol/...1609 Old Testament_jp2 (scan S1), consistent with the OT1 approbatio dated 'Duaci. 8. Nouembris. 1609' and OT vol.1 front matter. PLACEMENT: no printed folio; later-hand manuscript foliation '14' (p15 top-right); printed signature '†† 2' (p15 foot); running header 'PROEMIAL ANNOTATIONS.' (p16, and p17). COMPLETENESS: transcribed the ENTIRE section as it stands on pages 15-16 (title+subtitle+full argument). Boundaries verified by rendering p14 (end of 'TO THE ENGLISH READER', closing 'From the English College in Doway, the Octaues of AL SAINCTES. 1609.' + short italic benediction) and p17 (where 'THE SVMME OF THE OLD TESTAMENT' begins). The final paragraph (interval 4) is TRUNCATED at the p16 foot ('...are reiected as' + catchword 'con-') and completes in the first ~5 lines of p17 ('conteyning manifest errors, or fained by Heretikes. Neither can a Christian Catholique be otherwiſe aſſured, VVhich Bookes are Diuine and Canonical Scriptures, but by declaration of the Catholique Church... For if in anie thing more then others, aſſuredly one chief and moſt neceſſarie point is, to know and declare, which Bookes are Gods holie Word: being of moſt ſingular importance.') immediately before 'THE SVMME OF THE OLD TESTAMENT'; that p17 completion (read at overview zoom, not full diplomatic) is OUT OF SCOPE for this GT per the task directive to transcribe pages 15-16 only. Reference DR (janvier/Madueke) NOT used — front matter, no verse anchor. Schema modeled on matter-ot1-approbatio.json and matter-nt-preface.json.",
+  "confidence": "HIGH on the body prose text (large, clear roman+italic type, region-zoomed) and on localization/identity/placement. HIGH on italic-body w/vv (genuine vv) and italic word-initial VV. LOW (prior-based, review-routed) on roman-body w/vv and small-margin w/vv (raster resolution limit). MEDIUM on the scholarly marginal citation blocks and the signature mark. Specific glyphs flagged in uncertain[]: beleefe (f/ſ), Moiſes (i/y), vvete (=were, t/r), vvhiles (=wheeles?), admittiug (typo), Apochrypal (variant), erred.",
+  "completeness_resolved_2026-07-21": "RESOLVED: the final paragraph, TRUNCATED at p16 foot ('...are reiected as' + catchword 'con-'), is now completed with its p17 tail ('conteyning manifeſt errors...being of moſt ſingular importance.') added as the last body line + interval. The section is complete; its content ends immediately before the p17 heading 'THE SVMME OF THE OLD TESTAMENT' (= matter-ot1-summe-of-old-testament, a separate section)."
+}

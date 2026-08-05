@@ -1,0 +1,2508 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "and our Lord viſited Sara, as he had promiſed fulfilled the things which he ſpake.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7069,
+   0.875,
+   0.7954
+  ],
+  "crop_page": 92,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And she conceived and bare a sonne in her old age, at the time that",
+  "r3_verse": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake.",
+  "arm_conflicts": [],
+  "new_text": "and our Lord viſited Sara, as he had promiſed and fulfilled the things which he ſpake.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p92",
+  "old_text": "And she ceau and bare a ſonne in her old age, at the time God had forciold her.",
+  "old": {
+   "s_dismas": 0.862,
+   "odr_com": 0.862,
+   "sabates_a": 0.816,
+   "madueke_b": 0.816
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.7269,
+   0.875,
+   0.8355
+  ],
+  "crop_page": 92,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And she conceived and bare a sonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, Isaac: † and he circumci-",
+  "r3_verse": "And she conceived and bare a sonne in her old age, at the time that God had foretold her.",
+  "arm_conflicts": [
+   "ceau | conceived",
+   "forciold | foretold"
+  ],
+  "new_text": "And she conceived and bare a ſonne in her old age, at the time that God had foretold her.",
+  "s_unresolved": [
+   "foretold"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p92",
+  "old_text": "And Abraham called the name bis ſonne, which Sara bare him, Iſaac",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7732,
+   0.875,
+   0.8566
+  ],
+  "crop_page": 92,
+  "r3_raw": "ceaued and bare a fonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumci- sed him the eight day, as God had commanded him, † when",
+  "r3_verse": "And Abraham called the name of his sonne, which Sara bare him, :: Isaac:",
+  "arm_conflicts": [
+   "bis | of his"
+  ],
+  "new_text": "And Abraham called the name of his ſonne, which Sara bare him, :: Iſaac",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p92",
+  "old_text": "he was an hundred veares old: for ar this age of his was Iaac born",
+  "old": {
+   "s_dismas": 0.797,
+   "odr_com": 0.797,
+   "sabates_a": 0.784,
+   "madueke_b": 0.784
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8321,
+   0.875,
+   0.9317
+  ],
+  "crop_page": 92,
+  "r3_raw": "fed him the eight day, as God had commanded him, † when he was an hundred yeares old: for at this age of his father, was Isaac born. † And Sara said: Laughter God hath made",
+  "r3_verse": "when he was an hundred yeares old: for at this age of his father, was Isaac born.",
+  "arm_conflicts": [
+   "veares | yeares",
+   "ar | at",
+   "Iaac | Isaac"
+  ],
+  "lexicon_readings": {
+   "13": "father,",
+   "15": "Iſaac"
+  },
+  "visual_readings": {
+   "13": "father,",
+   "15": "Iſaac"
+  },
+  "new_text": "when he was an hundred yeares old: for at this age of his father, was Iſaac born",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "chapter",
+  "old_text": "And Sara ſaid Laughter God made to me whoſoeuer shal heare ofir, wil hugh with me.",
+  "old": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8506,
+   0.875,
+   0.9317
+  ],
+  "crop_page": 92,
+  "crop_leaves": [
+   92,
+   93
+  ],
+  "r3_raw": "he was an hundred yeares old: for at this age of his father, was Isaac borne. † And Sara said: Laughter God hath made to me: whosocuer shal heare of it, wil laugh with me. And again she said: Who that shal heare of it would belue Abraham, that Sara gaue sucke to a sonne, which",
+  "r3_verse": "And Sara said: Laughter God hath made to me: whosocuer shal heare of it, wil laugh with me.",
+  "arm_conflicts": [
+   "whoſoeuer | whosocuer",
+   "ofir, | of it,",
+   "hugh | laugh"
+  ],
+  "new_text": "And Sara ſaid Laughter God hath made to me whosocuer shal heare of it, wil laugh with me.",
+  "s_unresolved": [
+   "whosocuer"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p93",
+  "old_text": "Ariſe, take vp the boy, and hold his hand : for into a great nation wil I make him.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.5933,
+   0.875,
+   0.6776
+  ],
+  "crop_page": 93,
+  "r3_raw": "hath heard the voice of the boy, from the place wherin he is. † Arise, take vp the boy, and hold his hand: for into a great nation wil I make him. † And God opened her eyes: who ſeing a wel of water, went, and filled the bottle, and",
+  "r3_verse": "Arise, take vp the boy, and hold his hand: for into a great nation wil I make him.",
+  "arm_conflicts": [],
+  "new_text": "Ariſe, take vp the boy, and hold his hand for into a great nation wil I make him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p93",
+  "old_text": "And Abraham ſaid : I wil ſycare.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.837,
+   0.875,
+   0.9381
+  ],
+  "crop_page": 93,
+  "r3_raw": "mercie, that I haue don: thee, thou shalt doe to me, and to the land wherin thou haft liued a stranger. † And Abraham said: I wil ſwearc. † And he rebuked Abimelech for the",
+  "r3_verse": "And Abraham said: I wil ſwearc.",
+  "arm_conflicts": [
+   "ſycare. | ſwearc."
+  ],
+  "new_text": "And Abraham ſaid I wil ſwearc.",
+  "s_unresolved": [
+   "ſwearc."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "chapter",
+  "old_text": "And he rebuked Abimelech for the wel mant co wel of water, which his ſeruants had taken away by force.",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.857,
+   0.875,
+   1.0
+  ],
+  "crop_page": 93,
+  "crop_leaves": [
+   93,
+   94
+  ],
+  "r3_raw": "24 the land wherin thou haſt liued a stranger. † And Abraham 25 laid: I wil ſwearc. † And he rebuked Abimelech for the K wel GENESIS. welof water, which his seruants had taken away by force. + And Abimelech answered: I knew not who did this thing: 20",
+  "r3_verse": "And he rebuked Abimelech for the wel welof water, which his seruants had taken away by force. +",
+  "arm_conflicts": [
+   "mant co wel of | welof"
+  ],
+  "new_text": "And he rebuked Abimelech for the wel welof water, which his ſeruants had taken away by force. +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p94",
+  "old_text": "And Abunclech anſwered: I knew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it to day.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0664,
+   0.875,
+   0.1737
+  ],
+  "crop_page": 94,
+  "r3_raw": "wel of water, which his seruants had taken away by force. † And Abimelech answered: I knew not who did this thing: yea and thy selfe dideſt not tel me, and I heard not of it but to day. † Abraham therefore tooke ſheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "r3_verse": "And Abimelech answered: I knew not who did this thing: yea and thy selfe dideſt not tel me, and I heard not of it but to day.",
+  "arm_conflicts": [
+   "Abunclech | Abimelech"
+  ],
+  "new_text": "And Abimelech anſwered: I knew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it but to day.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p94",
+  "old_text": "Abraham therfore tooke ſheepe and oxen, gaue to Abimelech: and both of them made a league.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.1091,
+   0.875,
+   0.1961
+  ],
+  "crop_page": 94,
+  "r3_raw": "yea and thy selfe didest not tel me, and I heard not of it but to day. † Abraham therefore tooke sheepe and oxen, and gaue to Abimelech: and both of them made a league. † And Abraham ſet ſeven eue lambes of the flocke apart. † To",
+  "r3_verse": "Abraham therefore tooke sheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "Abraham therefore tooke ſheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p94",
+  "old_text": "Abraham ſet ſeuen ewe lambes of the flocke apart.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   28
+  ],
+  "crop": [
+   0.08,
+   0.1499,
+   0.875,
+   0.2164
+  ],
+  "crop_page": 94,
+  "r3_raw": "gave to Abimelech: And both of them made a league. † And 18 Abraham set seven ewe lambes of the flocke apart. † To 19 whom Abimelech said: What meane these seven ewe lambes,",
+  "r3_verse": "And Abraham set seven ewe lambes of the flocke apart.",
+  "arm_conflicts": [
+   "ſeuen | seven"
+  ],
+  "new_text": "And Abraham ſet ſeuen ewe lambes of the flocke apart.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "p94",
+  "old_text": "Therfor thar lace called Berſabee : becauſe there both did ſweare.",
+  "old": {
+   "s_dismas": 0.775,
+   "odr_com": 0.899,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.2328,
+   0.875,
+   0.32
+  ],
+  "crop_page": 94,
+  "r3_raw": "ewe lambes shalt thou take at my hand: that they may be a testimonie for me, that I digged this wel. † Therfor was 31 that place called • Bersabee': because there both did sweare. † And they made a league for the wel of oath. †. And Abi-",
+  "r3_verse": "was that place called Bersabee': because there both did sweare.",
+  "arm_conflicts": [
+   "Therfor thar lace | was that place",
+   "Berſabee : | Bersabee':"
+  ],
+  "new_text": "was that place called Berſabee becauſe there both did ſweare.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.75,
+   "odr_com": 0.87,
+   "sabates_a": 0.857,
+   "madueke_b": 0.857
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 33,
+  "from": "p94",
+  "old_text": "And melech aroſe, and Phicol the general of his armie, and returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of Lord God erernal.",
+  "old": {
+   "s_dismas": 0.934,
+   "odr_com": 0.934,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.2742,
+   0.875,
+   0.4255
+  ],
+  "crop_page": 94,
+  "r3_raw": "that place called • Bersabee: because there both did sweare. † And they made a league for the wel of oath. †. And Abimelech arose, and Phicol the general of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called therupon the name of our Lord God eternal. † And he was a seiorner in the land of the Palestines manie dayes.",
+  "r3_verse": "And Abimelech arose, and Phicol the general of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called therupon the name of our Lord God eternal.",
+  "arm_conflicts": [
+   "melech | Abimelech",
+   "erernal. | eternal."
+  ],
+  "new_text": "And Abimelech aroſe, and Phicol the general of his armie, and they returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of our Lord God eternal.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "p94",
+  "old_text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.859,
+   "odr_com": 0.859,
+   "sabates_a": 0.82,
+   "madueke_b": 0.82
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.3564,
+   0.875,
+   0.5271
+  ],
+  "crop_page": 94,
+  "r3_raw": "agroue in Bersabee, and called therupon the name of our Lord God eternal. † And he was a feiornen in the land of the Palestines manie dayes. ANNOTATIONS. CHAP. XXI.",
+  "r3_verse": "And he was a feiornen in the land of the Palestines manie dayes.",
+  "arm_conflicts": [
+   "ſeiorner | feiornen"
+  ],
+  "new_text": "And he was a feiornen in the land of the Paleſtines manie dayes.",
+  "s_unresolved": [
+   "feiornen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "and our Lord viſited Sara, as he had promiſed: fulfilled the things which he ſpake.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.717,
+   0.875,
+   0.8071
+  ],
+  "crop_page": 96,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And she conceived and bare a sonne in her old age, at the time that",
+  "r3_verse": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake.",
+  "arm_conflicts": [],
+  "new_text": "and our Lord viſited Sara, as he had promiſed: and fulfilled the things which he ſpake.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p96",
+  "old_text": "And she ceaued and bare a ſonne in her old age, at the time God had foretold her.",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.7391,
+   0.875,
+   0.8454
+  ],
+  "crop_page": 96,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And she conceaued and bare a sonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumci-",
+  "r3_verse": "And she conceaued and bare a sonne in her old age, at the time that God had foretold her.",
+  "arm_conflicts": [
+   "ceaued | conceaued"
+  ],
+  "new_text": "And she conceaued and bare a ſonne in her old age, at the time that God had foretold her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p96",
+  "old_text": "And Abraham called the name his ſonne, which Sara bare him, Iſaac:",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7817,
+   0.875,
+   0.8665
+  ],
+  "crop_page": 96,
+  "r3_raw": "ceaued and bare a sonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumcised him the eight day, as God had commanded him, † when",
+  "r3_verse": "And Abraham called the name of his sonne, which Sara bare him, :: Isaac:",
+  "arm_conflicts": [],
+  "new_text": "And Abraham called the name of his ſonne, which Sara bare him, :: Iſaac:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p96",
+  "old_text": "he was an hundred veares old: for at this age of his was Iſaa born",
+  "old": {
+   "s_dismas": 0.81,
+   "odr_com": 0.81,
+   "sabates_a": 0.797,
+   "madueke_b": 0.797
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8437,
+   0.875,
+   0.9388
+  ],
+  "crop_page": 96,
+  "r3_raw": "fed him the eight day, as God had commanded him, † when he was an hundred yeares old: for at this age of his father, was Isaac borne. † And Sara said: Laughter God hath made",
+  "r3_verse": "when he was an hundred yeares old: for at this age of his father, was Isaac borne.",
+  "arm_conflicts": [
+   "veares | yeares",
+   "Iſaa born | Isaac borne."
+  ],
+  "lexicon_readings": {
+   "13": "father,",
+   "15": "Iſaac"
+  },
+  "visual_readings": {
+   "13": "father,",
+   "15": "Iſaac"
+  },
+  "new_text": "when he was an hundred yeares old: for at this age of his father, was Iſaac born",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "chapter",
+  "old_text": "And Sara ſaid Laughter God made to me: whoſoeuer shal heare of it, wil laugh with me.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8648,
+   0.875,
+   0.9388
+  ],
+  "crop_page": 96,
+  "crop_leaves": [
+   96,
+   97
+  ],
+  "r3_raw": "he was an hundred yeares old: for at this age of his father, was Isaac borne. † And Sara said: Laughter God hath made to me: whosoeuer shal heare of it, wil laugh with promise me. † And again she said: Who that shal heare of it would beleue Abraham, that Sara gaue sucke to a sonne, which",
+  "r3_verse": "And Sara said: Laughter God hath made to me: whosoeuer shal heare of it, wil laugh with promise me.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "17": "promiſe"
+  },
+  "visual_readings": {
+   "17": "promiſe"
+  },
+  "new_text": "And Sara ſaid Laughter God hath made to me: whoſoeuer shal heare of it, wil laugh with promiſe me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p95",
+  "old_text": "and our he And the elder bare a ſonne and ſhe bare a in the her. And the and he he ſay to me of it with me, and I permitted not that ſhal pray for thee, not and al things that",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   12
+  ],
+  "crop": [
+   0.049,
+   0.012,
+   0.875,
+   0.8583
+  ],
+  "crop_page": 95,
+  "r3_raw": "said to the younger: Behold I lay yeſternight with my father, let vs make him drinke wine also this night, and thou ſhalt lye with him, that we may faue feed of our father. † They made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther then truly did he perceau when she lay downe, or when ſhe rose vp. † The two daughters therefore of Lot were with a child by their father. † And the elder bare a fonne and ſhe called his name Moab: he is, the :: father of the Moabites euuen to this present day. † The younger alſo bare a fonne, and ſhe called his name Ammon, that is the fonne of my people: he is the father of the Ammonites euuen to this day. CHAP. XX. A B R A H A M remoued from thence into the south countrie, and dwelt betwene Cades, and Sur: And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou haſt taken a woman that is my sister. Lord wilt thou kil a nation that is ignorant and iuſt? † Did not he ſay to me: She is my sister: and the ſay, He is my brother? in simplicitie of my hart, and cleaneneses of my hands haue I done this. † And God ſaid to him: And I do know that thou dideft it with a sincere hart: and therfore I kept thee that thou shouldest not touch her. † Now therfore restore the wife to her husband, because he is a prophet: and he ſhall pray for thee, and thou shalt liue: but if thou wilt not restore her, know thou that dying thou shalt dye, thou and all things that are thine. † And Abimelech forthwith rising vp in the night,",
+  "r3_verse": "said to the younger: Behold I lay yeſternight with my father, let vs make him drinke wine also this night, and thou ſhalt lye with him, that we may faue feed of our father. They made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther then truly did he perceau when she lay downe, or when ſhe rose vp. The two daughters therefore of Lot were with a child by their father. And the elder bare a fonne and ſhe called his name Moab: he is, the :: father of the Moabites euuen to this present day. The younger alſo bare a fonne, and ſhe called his name Ammon, that is the fonne of my people: he is the father of the Ammonites euuen to this day. CHAP. XX. A A A remoued from thence into the south countrie, and dwelt betwene Cades, and Sur: And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou haſt taken a woman that is my sister. Lord wilt thou kil a nation that is ignorant and iuſt? Did not he ſay to me: She is my sister: and the ſay, He is my brother? in simplicitie of my hart, and cleaneneses of my hands haue I done this. And God ſaid to him: And I do know that thou dideft it with a sincere hart: and therfore I kept thee that thou shouldest not touch her. Now therfore restore the wife to her husband, because he is a prophet: and he ſhall pray for thee, and thou shalt liue: but if thou wilt not restore her, know thou that dying thou shalt dye, thou and all things that",
+  "arm_conflicts": [
+   "ſonne | fonne",
+   "the her. | a dreame by night,",
+   "the | ſaid to him: Loe thou haſt taken a woman that is my sister. Lord wilt thou kil a nation that is ignorant",
+   "he | iuſt? Did not",
+   "me, | a sincere hart:",
+   "permitted | kept thee that thou shouldest",
+   "that ſhal | touch her. Now therfore restore the wife to her husband, because he is a prophet: and he ſhall",
+   "al | all"
+  ],
+  "lexicon_readings": {
+   "0": "ſaid",
+   "10": "father,",
+   "33": "father.",
+   "37": "father",
+   "42": "alſo,",
+   "81": "father.",
+   "87": "ſonne",
+   "98": "father",
+   "105": "preſent",
+   "109": "alſo",
+   "112": "ſonne,",
+   "122": "ſonne",
+   "129": "father",
+   "143": "from",
+   "166": "ſaid",
+   "171": "haſt",
+   "189": "iuſt?",
+   "223": "ſaid",
+   "239": "therfore",
+   "250": "therfore",
+   "257": "becauſe"
+  },
+  "r2_attested": {
+   "17": "alſo",
+   "67": "roſe",
+   "147": "ſouth",
+   "178": "ſiſter.",
+   "199": "ſiſter:",
+   "208": "ſimplicitie",
+   "236": "ſincere",
+   "245": "ſhouldeſt",
+   "251": "reſtore",
+   "256": "huſband,",
+   "270": "ſhalt",
+   "277": "reſtore",
+   "284": "ſhalt"
+  },
+  "visual_readings": {
+   "0": "ſaid",
+   "10": "father,",
+   "33": "father.",
+   "37": "father",
+   "42": "alſo,",
+   "81": "father.",
+   "87": "ſonne",
+   "98": "father",
+   "105": "preſent",
+   "109": "alſo",
+   "112": "ſonne,",
+   "122": "ſonne",
+   "129": "father",
+   "143": "from",
+   "166": "ſaid",
+   "171": "haſt",
+   "189": "iuſt?",
+   "223": "ſaid",
+   "239": "therfore",
+   "250": "therfore",
+   "257": "becauſe",
+   "17": "alſo",
+   "67": "roſe",
+   "147": "ſouth",
+   "178": "ſiſter.",
+   "199": "ſiſter:",
+   "208": "ſimplicitie",
+   "236": "ſincere",
+   "245": "ſhouldeſt",
+   "251": "reſtore",
+   "256": "huſband,",
+   "270": "ſhalt",
+   "277": "reſtore",
+   "284": "ſhalt"
+  },
+  "new_text": "ſaid to the younger: Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may faue feed of our father. They made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther then truly did he perceau when she lay downe, or when ſhe roſe vp. The two daughters therefore of Lot were with a child by their father. And the elder bare a ſonne and ſhe called his name Moab: he is, the :: father of the Moabites euuen to this preſent day. The younger alſo bare a ſonne, and ſhe called his name Ammon, that is the ſonne of my people: he is the father of the Ammonites euuen to this day. CHAP. XX. A A A remoued from thence into the ſouth countrie, and dwelt betwene Cades, and Sur: And God came to Abimelech in a dreame by night, and ſaid to him: Loe thou haſt taken a woman that is my ſiſter. Lord wilt thou kil a nation that is ignorant and iuſt? Did not he ſay to me She is my ſiſter: and the ſay, He is my brother? in ſimplicitie of my hart, and cleaneneses of my hands haue I done this. And God ſaid to him: And I do know that thou dideft it with a ſincere hart: and therfore I kept thee that thou ſhouldeſt not touch her. Now therfore reſtore the wife to her huſband, becauſe he is a prophet: and he ſhal pray for thee, and thou ſhalt liue: but if thou wilt not reſtore her, know thou that dying thou ſhalt dye, thou and al things that",
+  "s_unresolved": [
+   "yeſternight",
+   "ſhalt",
+   "faue",
+   "feed",
+   "she",
+   "ſhe",
+   "therefore",
+   "ſhe",
+   "ſay,",
+   "cleaneneses",
+   "dideft",
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p97",
+  "old_text": "Ariſe, take vp the boy, and hold his hand : for into a great nation wil I make him.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.5942,
+   0.875,
+   0.6847
+  ],
+  "crop_page": 97,
+  "r3_raw": "hath heard the voice of the boy, from the place wherin he is. † Arise, take vp the boy, and hold his hand: for into a great nation wil I make him. † And God opened her eyes: who ſeing a wel of water, went, and filled the bottle, and",
+  "r3_verse": "Arise, take vp the boy, and hold his hand: for into a great nation wil I make him.",
+  "arm_conflicts": [],
+  "new_text": "Ariſe, take vp the boy, and hold his hand for into a great nation wil I make him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "chapter",
+  "old_text": "And he rebuked Abimelech for the wel of water, which his ſeruants had taken away by",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.8698,
+   0.875,
+   0.9408
+  ],
+  "crop_page": 97,
+  "crop_leaves": [
+   97,
+   98
+  ],
+  "r3_raw": "24 the land wherin thou hast liued a stranger. † And Abraham 25 said: I wil ſwear. † And he rebuked Abimelech for the K wel GENESIS. wel of water, which his seruants had taken away by force. † And Abimelech answered: I knew not who did this thing: 20",
+  "r3_verse": "And he rebuked Abimelech for the wel wel of water, which his seruants had taken away by force.",
+  "arm_conflicts": [],
+  "new_text": "And he rebuked Abimelech for the wel wel of water, which his ſeruants had taken away by force.",
+  "s_unresolved": [
+   "force."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 26,
+  "from": "p98",
+  "old_text": "And Abimelech anſwered: Iknew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it to day.",
+  "old": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0536,
+   0.875,
+   0.1616
+  ],
+  "crop_page": 98,
+  "r3_raw": "wel of water, which his seruants had taken away by force. † And Abimelech answered: I knew not who did this thing: yea and thy selfe diſt not tel me, and I heard not of it but to day. † Abraham therefore tooke sheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "r3_verse": "And Abimelech answered: I knew not who did this thing: yea and thy selfe diſt not tel me, and I heard not of it but to day.",
+  "arm_conflicts": [
+   "Iknew | I knew",
+   "dideſt | diſt"
+  ],
+  "new_text": "And Abimelech anſwered: I knew not who did this thing: yea and thy ſelfe diſt not tel me, and I heard not of it but to day.",
+  "s_unresolved": [
+   "diſt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "p98",
+  "old_text": "Abraham therfore tooke ſheepe and oxen, gaue to Abimelech: and both of them made a league.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0958,
+   0.875,
+   0.1827
+  ],
+  "crop_page": 98,
+  "r3_raw": "yea and thy selfe didest not tel me, and I heard not of it but to day. † Abraham therefore tooke sheepe and oxen, and gaue to Abimelech: and both of them made a league. † And Abraham set feuen ewe lambes of the flocke apart. † To",
+  "r3_verse": "Abraham therefore tooke sheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "Abraham therefore tooke ſheepe and oxen, and gaue to Abimelech: and both of them made a league.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p98",
+  "old_text": "Abraham ſet ſeuen ewe lambes of the flocke apart.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   28
+  ],
+  "crop": [
+   0.08,
+   0.1378,
+   0.875,
+   0.2022
+  ],
+  "crop_page": 98,
+  "r3_raw": "gaue to Abimelech: and both of them made a league. † And Abraham set seven ewe lambes of the flocke apart. † To whom Abimelech said: What meane these seven ewe lambes,",
+  "r3_verse": "And Abraham set seven ewe lambes of the flocke apart.",
+  "arm_conflicts": [
+   "ſeuen | seven"
+  ],
+  "new_text": "And Abraham ſet ſeuen ewe lambes of the flocke apart.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 31,
+  "from": "p98",
+  "old_text": "Therfor that place calledx Berſabee: becauſe there both did ſweare.",
+  "old": {
+   "s_dismas": 0.787,
+   "odr_com": 0.913,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.2236,
+   0.875,
+   0.3075
+  ],
+  "crop_page": 98,
+  "r3_raw": "ewe lambes shalt thou take at my hand: that they may be a testimonie for me, that I digged this wel. † Therfor was 31 that place called* Bersabee: because there both did sweare. † And they made a league for the wel of oath. † And Abi-",
+  "r3_verse": "was that place called* Bersabee: because there both did sweare.",
+  "arm_conflicts": [
+   "Therfor | was",
+   "calledx | called*"
+  ],
+  "new_text": "was that place called* Berſabee: becauſe there both did ſweare.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.75,
+   "odr_com": 0.87,
+   "sabates_a": 0.857,
+   "madueke_b": 0.857
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p98",
+  "old_text": "And melech aroſe, and Phicol the general of his armie, and returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of Lord God eternal.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.2658,
+   0.875,
+   0.417
+  ],
+  "crop_page": 98,
+  "r3_raw": "that place called * Bersabee: because there both did sweare. + And they made a league for the wel of oath. + And Abimelech arose, and Phicol the general of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called therupon the name of our Lord God eternal. + And he was a sciorner in the land of the Palestines manie dayes.",
+  "r3_verse": "And Abimelech arose, and Phicol the general of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called therupon the name of our Lord God eternal. +",
+  "arm_conflicts": [
+   "melech | Abimelech"
+  ],
+  "new_text": "And Abimelech aroſe, and Phicol the general of his armie, and they returned to the land of the Paleſtines. But Abraham planted a groue in Berſabee, and called therupon the name of our Lord God eternal. +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 34,
+  "from": "p98",
+  "old_text": "And he was a ſeiorner in the land of Paleſtines manie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.859,
+   "odr_com": 0.859,
+   "sabates_a": 0.82,
+   "madueke_b": 0.82
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.3503,
+   0.875,
+   0.522
+  ],
+  "crop_page": 98,
+  "r3_raw": "agroue in Bersabee, and called therupon the name of our Lord God eternal. † And he was a feiornen in the land of the Palestines manie dayes. ANNOTATIONS. CHAP. XXI.",
+  "r3_verse": "And he was a feiornen in the land of the Palestines manie dayes.",
+  "arm_conflicts": [
+   "ſeiorner | feiornen"
+  ],
+  "new_text": "And he was a feiornen in the land of the Paleſtines manie dayes.",
+  "s_unresolved": [
+   "feiornen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p102",
+  "old_text": "ND our Lord viſited Sara, as he had promiſed : fulfilled the things which he ſpake.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6977,
+   0.875,
+   0.7909
+  ],
+  "crop_page": 102,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and I fulfilled the things which he spake. † And she conceived and bare a sonne in her old age, at the time that",
+  "r3_verse": "And our Lord visited Sara, as he had promised: and I fulfilled the things which he spake.",
+  "arm_conflicts": [
+   "ND | And",
+   ": | and I"
+  ],
+  "new_text": "And our Lord viſited Sara, as he had promiſed and I fulfilled the things which he ſpake.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p102",
+  "old_text": "And she conceaued and bare a ſonne in her old age, at the time that God had foretold her.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.7181,
+   0.875,
+   0.8334
+  ],
+  "crop_page": 102,
+  "r3_raw": "And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And she conceaued and bare a sonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumci-",
+  "r3_verse": "And she conceaued and bare a sonne in her old age, at the time that God had foretold her.",
+  "arm_conflicts": [],
+  "new_text": "And she conceaued and bare a ſonne in her old age, at the time that God had foretold her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p102",
+  "old_text": "And Abraham oalled the name his ſonne, which Sara bare him, Iſaac",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7599,
+   0.875,
+   0.8524
+  ],
+  "crop_page": 102,
+  "r3_raw": "ceased and bare a sonne in her old age, at the time that God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumcised him the eight day, as God had commanded him, † when",
+  "r3_verse": "And Abraham called the name of his sonne, which Sara bare him, :: Isaac:",
+  "arm_conflicts": [
+   "oalled | called"
+  ],
+  "new_text": "And Abraham called the name of his ſonne, which Sara bare him, :: Iſaac",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p102",
+  "old_text": "and he circumci when ſed him the eight day, as God had commanded him,",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7783,
+   0.875,
+   0.8732
+  ],
+  "crop_page": 102,
+  "r3_raw": "ceaued and bare a sonne in her old age, God had foretold her. † And Abraham called the name of his sonne, which Sara bare him, :: Isaac: † and he circumcised him the eight day, as God had commanded him, † when he was an hundred yeares old: for at this age of his father,",
+  "r3_verse": "and he circumcised him the eight day, as God had commanded him,",
+  "arm_conflicts": [
+   "circumci when ſed | circumcised"
+  ],
+  "new_text": "and he circumcised him the eight day, as God had commanded him,",
+  "s_unresolved": [
+   "circumcised"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p102",
+  "old_text": "he was an hundred veares old: for at this age of his father, ioyful was Iſaac borne.",
+  "old": {
+   "s_dismas": 0.84,
+   "odr_com": 0.84,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8185,
+   0.875,
+   0.9243
+  ],
+  "crop_page": 102,
+  "r3_raw": "Sara laughed (headmiring, she doubting) at the joyful sed him the eight day, as God had commanded him, † when he was an hundred yeares old: for at this age of his father, was Isaac borne. † And Sara said: Laughter God hath made",
+  "r3_verse": "when he was an hundred yeares old: for at this age of his father, was Isaac borne.",
+  "arm_conflicts": [
+   "veares | yeares"
+  ],
+  "new_text": "when he was an hundred yeares old: for at this age of his father, was Iſaac borne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "chapter",
+  "old_text": "And Sara ſaid Laughter God made hath made to me: whoſoeuor shal heare of ir, wil laugh with promiſe me.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8372,
+   0.875,
+   0.9243
+  ],
+  "crop_page": 102,
+  "crop_leaves": [
+   102,
+   103
+  ],
+  "r3_raw": "Sara laughed (headmiring, she doubting) at the joyful fed him the eight day, as God had commanded unto him: he was an hundred yeares old: for at this age of his father, was Isaac borne. † And Sara said: Laughter God hath made to me: whosoeuer shal heare of it, wil laugh with promise of a sonne, & then beleeue Abraham, that Sara gaue sucke to a sonne, which forche is calle Isaac, which",
+  "r3_verse": "And Sara said: Laughter God hath made to me: whosoeuer shal heare of it, wil laugh with promise",
+  "arm_conflicts": [
+   "whoſoeuor | whosoeuer",
+   "ir, | it,"
+  ],
+  "r2_attested": {
+   "9": "whoſoeuer"
+  },
+  "visual_readings": {
+   "9": "whoſoeuer"
+  },
+  "new_text": "And Sara ſaid Laughter God hath made to me: whoſoeuer shal heare of it, wil laugh with promiſe",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p103",
+  "old_text": "And againshe ſaid : Who that shal heare of would ſonne, foreheis beleue Abraham, that Sara gaue ſucke to a ſonne, which Iſaae, she bare him nowbeing an old man",
+  "old": {
+   "s_dismas": 0.83,
+   "odr_com": 0.83,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0542,
+   0.875,
+   0.1641
+  ],
+  "crop_page": 103,
+  "r3_raw": "made to me: whosoeuer shal heare of it, wil laugh with promise of a sonne, & therforche is calle Isaac, which signifieth laughter. And again she said: Who that shal heare of it would beleue Abraham, that Sara gaue sucke to a sonne, which she bare him now being an old man? The child therefore grewe, and was weined: and Abraham made a great feast in",
+  "r3_verse": "And again she said: Who that shal heare of it would beleue Abraham, that Sara gaue sucke to a sonne, which she bare him now being an old man?",
+  "arm_conflicts": [
+   "againshe | again she",
+   "nowbeing | now being",
+   "man | man?"
+  ],
+  "new_text": "And again she ſaid Who that shal heare of it would beleue Abraham, that Sara gaue ſucke to a ſonne, which she bare him now being an old man",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p103",
+  "old_text": "The child therfore ſignifieth grewe, and was weined : and Abraham made a great feaſt in aughter. the day of his weining.",
+  "old": {
+   "s_dismas": 0.835,
+   "odr_com": 0.835,
+   "sabates_a": 0.8,
+   "madueke_b": 0.8
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.0937,
+   0.875,
+   0.2023
+  ],
+  "crop_page": 103,
+  "r3_raw": "beleue Abraham, that Sara gaue sucke to a sonne, which she bare him now being an old man? The child therefore grewe, and was weined: and Abraham made a great feast in laughter. the day of his weining. And when Sara had senne the sonne of Agar the Egyptian playing with Isaac her sonne,",
+  "r3_verse": "The child therefore grewe, and was weined: and Abraham made a great feast in laughter. the day of his weining.",
+  "arm_conflicts": [
+   "therfore ſignifieth | therefore",
+   "aughter. | laughter."
+  ],
+  "new_text": "The child therefore grewe, and was weined and Abraham made a great feaſt in laughter. the day of his weining.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p103",
+  "old_text": "And when Sara had ſenne the Aug li ſonne of Agar the gyptian playing with Iſaac her ſonne, ciuit. she ſaid to Abraham :",
+  "old": {
+   "s_dismas": 0.852,
+   "odr_com": 0.87,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.1332,
+   0.875,
+   0.2427
+  ],
+  "crop_page": 103,
+  "r3_raw": "grewe, and was weined: and Abraham made a great feast in laughter.S. 9 the day of his weining. † And when Sara had senne the Aug li . 16. sonne of Agar the Egyptian playing with Isaac her sonne, 31. ciuit. 10 she said to Abraham: † Cast out this handmaid, and her sonne: for the sonne of the handmaid shal not be heire",
+  "r3_verse": "And when Sara had senne the Aug li . sonne of Agar the Egyptian playing with Isaac her sonne, ciuit. she said to Abraham:",
+  "arm_conflicts": [
+   "gyptian | Egyptian"
+  ],
+  "new_text": "And when Sara had ſenne the Aug li . ſonne of Agar the Egyptian playing with Iſaac her ſonne, ciuit. she ſaid to Abraham",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.862,
+   "odr_com": 0.879,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p103",
+  "old_text": "Abraham tooke this greuouſly for his ſoune.",
+  "old": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.2138,
+   0.875,
+   0.3029
+  ],
+  "crop_page": 103,
+  "r3_raw": "sonne: for the sonne of the handmaid shal not be heire with my sonne Isaac. † Abraham tooke this greuously for his sonne. † To whom God said: \"Let it not seme greuous to thee for the boy, and for thy handmaid: al things that",
+  "r3_verse": "Abraham tooke this greuously for his sonne.",
+  "arm_conflicts": [
+   "ſoune. | sonne."
+  ],
+  "r2_attested": {
+   "6": "ſonne."
+  },
+  "visual_readings": {
+   "6": "ſonne."
+  },
+  "new_text": "Abraham tooke this greuouſly for his ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p103",
+  "old_text": "And ſhe went her way, and ſate ouer againſt a great way of as farre as a bowe can caſt. for she ſaid : I wil no ſee the child dying : and ſitting ouer she lifred vpher voice and wept.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.4352,
+   0.875,
+   0.5631
+  ],
+  "crop_page": 103,
+  "r3_raw": "water in the bottle was spent, she cast the boy vnder one of the trees, that were there. † And she went her way, and sate ouer against a great way of as farre as a bowe can cast. for she said: I wil no see the child dying: and sitting over againſt, ſhe lifted vphervoice and wept. † And God heard the voice of the boy: and an angel of God called Agar from",
+  "r3_verse": "And she went her way, and sate ouer against a great way of as farre as a bowe can cast. for she said: I wil no see the child dying: and sitting over againſt, ſhe lifted vphervoice and wept.",
+  "arm_conflicts": [
+   "ouer | over againſt,",
+   "lifred vpher voice | lifted vphervoice"
+  ],
+  "lexicon_readings": {
+   "33": "againſt,"
+  },
+  "visual_readings": {
+   "33": "againſt,"
+  },
+  "new_text": "And ſhe went her way, and ſate ouer againſt a great way of as farre as a bowe can caſt. for she ſaid I wil no ſee the child dying and ſitting ouer againſt, she lifted vphervoice and wept.",
+  "s_unresolved": [
+   "lifted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p103",
+  "old_text": "Ariſe, take vp the boy, and hold his hand : for into a great nation wil I make him.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.5706,
+   0.875,
+   0.6645
+  ],
+  "crop_page": 103,
+  "r3_raw": "hath heard the voice of the boy, from the place wherin he is. † Arise, take vp the boy, and hold his hand: for into a great nation wil I make him. † And God opened her eyes: who ſeeing a wel of water, went, and filled the bottle, and",
+  "r3_verse": "Arise, take vp the boy, and hold his hand: for into a great nation wil I make him.",
+  "arm_conflicts": [],
+  "new_text": "Ariſe, take vp the boy, and hold his hand for into a great nation wil I make him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 24,
+  "from": "p103",
+  "old_text": "And Abraham : I wil ſweare.",
+  "old": {
+   "s_dismas": 0.828,
+   "odr_com": 0.828,
+   "sabates_a": 0.821,
+   "madueke_b": 0.821
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.8134,
+   0.875,
+   0.906
+  ],
+  "crop_page": 103,
+  "r3_raw": "mercie, that I haue done thee, thou shalt doe to me, and to the land wherin thou hast liued a stranger. † And Abraham said: I wil sweare. † And he rebuked Abimelech for the",
+  "r3_verse": "And Abraham said: I wil sweare.",
+  "arm_conflicts": [
+   ": | said:"
+  ],
+  "lexicon_readings": {
+   "2": "ſaid:"
+  },
+  "visual_readings": {
+   "2": "ſaid:"
+  },
+  "new_text": "And Abraham ſaid: I wil ſweare.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 31,
+  "from": "p104",
+  "old_text": "Therfor was that lace called Berſabee: becauſe there both did ſweare.",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.971,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.2111,
+   0.875,
+   0.2986
+  ],
+  "crop_page": 104,
+  "r3_raw": "ewe lambes shalt thou take at my hand: that they may be a testimonie for me, that I digged this wel. † Therfor was 31 that place called * Bersabee: because there both did sweare. † And they made a league for the wel of oath. † And Abi-",
+  "r3_verse": "Therfor was that place called Bersabee: because there both did sweare.",
+  "arm_conflicts": [
+   "lace | place"
+  ],
+  "used_merge": true,
+  "new_text": "Therfor was that place called Berſabee: becauſe there both did ſweare.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.85,
+   "odr_com": 0.986,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 34,
+  "from": "p104",
+  "old_text": "And he was a ſeiorner in the land of the Paleſtines manie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.875,
+   "madueke_b": 0.875
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.3325,
+   0.875,
+   0.5009
+  ],
+  "crop_page": 104,
+  "r3_raw": "a groue in Bersabee, and called therupon the name of our Lord God eternal. † And he was a feiornen in the land of the Palestines manie dayes. ANNOTATIONS. CHAP. XXI.",
+  "r3_verse": "And he was a feiornen in the land of the Palestines manie dayes.",
+  "arm_conflicts": [
+   "ſeiorner | feiornen"
+  ],
+  "new_text": "And he was a feiornen in the land of the Paleſtines manie dayes.",
+  "s_unresolved": [
+   "feiornen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p86",
+  "old_text": "And she conceiued bare a ſoune in her old age, at the time that God had foretold her.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.3597,
+   0.805,
+   0.4548
+  ],
+  "crop_page": 86,
+  "r3_raw": "ND our Lord visited Sara, as he had promised: and fulfilled the things which he spake. 2. And she conceived & bare a sonne in her old age, at the time that God had foretold her.3. And Abraham called the name of his sonne, which Sara bare him,(a) Isaac: 4. and he",
+  "r3_verse": "And she conceived & bare a sonne in her old age, at the time that God had foretold her.3.",
+  "arm_conflicts": [
+   "conceiued | conceived &",
+   "ſoune | sonne",
+   "her. | her.3."
+  ],
+  "r2_attested": {
+   "6": "ſonne"
+  },
+  "visual_readings": {
+   "6": "ſonne"
+  },
+  "new_text": "And she conceiued & bare a ſonne in her old age, at the time that God had foretold her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p86",
+  "old_text": "and he runciſed the eht day, as God had commanded him,",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.814,
+   "madueke_b": 0.814
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.4141,
+   0.805,
+   0.511
+  ],
+  "crop_page": 86,
+  "r3_raw": "God had foretold her. 3. And Abraham called the name of his sonne, which Sara bare him, (a) Isaac: 4. and he circumcised him the eight day, as God had commanded him, 5. when he was an hundred yeares old: for at this age of his father, was Isaac borne. 6. And Sara said: Laughter God hath made to",
+  "r3_verse": "and he circumcised him the eight day, as God had commanded him,",
+  "arm_conflicts": [
+   "runciſed | circumcised him",
+   "eht | eight"
+  ],
+  "new_text": "and he circumcised him the eight day, as God had commanded him,",
+  "s_unresolved": [
+   "circumcised"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p86",
+  "old_text": "The child thertore grew and was weaned: and Abranam made a great feaſt in the day ot his weaning..",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.5202,
+   0.805,
+   0.6171
+  ],
+  "crop_page": 86,
+  "r3_raw": "said: Who that shal heare of it would belieue Abraham, that Sara gaue sucke to a sonne, which she bare him now being an old man? 8. The child therefore grew and was weaned: and Abraham made a great feast in the day of his weaning. 9. And when Sara had seen the sonne of Agar the Egyptian playing with Isaac her sonne, she said to Abraham:",
+  "r3_verse": "The child therefore grew and was weaned: and Abraham made a great feast in the day of his weaning.",
+  "arm_conflicts": [
+   "thertore | therefore",
+   "Abranam | Abraham",
+   "ot | of"
+  ],
+  "new_text": "The child therefore grew and was weaned: and Abraham made a great feaſt in the day of his weaning..",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p86",
+  "old_text": "Caſt out this handmaid, & her ſonne: for the ſonne ofthe handmaid shal not be heire with my ſonne Iſaae. Abraha",
+  "old": {
+   "s_dismas": 0.877,
+   "odr_com": 0.877,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.5926,
+   0.805,
+   0.6698
+  ],
+  "crop_page": 86,
+  "r3_raw": "Agar the Egyptian playing with Isaac her sonne, she said to Abraham: 10. Cast out this handmaid, & her sonne: for the sonne of the handmaid shal not be heire with my sonne Isaac. 11. Abrahā tooke this grieuously for his sonne. 12. To whom God said: \"Let it not seem grieuous to thee",
+  "r3_verse": "Cast out this handmaid, & her sonne: for the sonne of the handmaid shal not be heire with my sonne Isaac. Abrahā",
+  "arm_conflicts": [
+   "ofthe | of the",
+   "Iſaae. Abraha | Isaac. Abrahā"
+  ],
+  "r2_attested": {
+   "20": "Iſaac."
+  },
+  "visual_readings": {
+   "20": "Iſaac."
+  },
+  "new_text": "Caſt out this handmaid, & her ſonne: for the ſonne of the handmaid shal not be heire with my ſonne Iſaac. Abraha",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p86",
+  "old_text": "tooke this grieuouſly for his ſonne.",
+  "old": {
+   "s_dismas": 0.786,
+   "odr_com": 0.786,
+   "sabates_a": 0.795,
+   "madueke_b": 0.795
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.6094,
+   0.805,
+   0.6853
+  ],
+  "crop_page": 86,
+  "r3_raw": "10. Cast out this handmaid, & her sonne: for the sonne of the handmaid shal not be heire with my sonne Isaac. 11. Abrahā tooke this grieuoutly for his sonne. 12. To whom God said: \"Let it not seem grieuous to thee for the boy, and for thy handmaid: al things that Sara shal say to thee,\"",
+  "r3_verse": "tooke this grieuoutly for his sonne.",
+  "arm_conflicts": [
+   "grieuouſly | grieuoutly"
+  ],
+  "used_merge": true,
+  "new_text": "tooke this grieuoutly for his ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.762,
+   "odr_com": 0.762,
+   "sabates_a": 0.769,
+   "madueke_b": 0.769
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "chapter",
+  "old_text": "Ariſe, take vp the boy, hold his hand: tor int o Abraham. a great natiō wil I make him.",
+  "old": {
+   "s_dismas": 0.802,
+   "odr_com": 0.802,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.0576,
+   0.885,
+   0.1503
+  ],
+  "crop_page": 87,
+  "r3_raw": "a great natio wil I make him: 19. And God opened her eyes: who seeing a wel of water, went, and filled the bottle, and gaue the boy to drinke.",
+  "r3_verse": "Ariſe, take vp the boy, hold his hand: tor int o Abraham. a great natio wil I make him:",
+  "arm_conflicts": [
+   "natiō | natio"
+  ],
+  "used_merge": true,
+  "new_text": "Ariſe, take vp the boy, hold his hand: tor int o Abraham. a great natiō wil I make him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.802,
+   "odr_com": 0.802,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p87",
+  "old_text": "Aud he dwelt in the wildernes of Phatan, and his mother tooke a wife tor him out ot the land ot Egypt.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.1409,
+   0.885,
+   0.2209
+  ],
+  "crop_page": 87,
+  "r3_raw": "20. And God was with him: who grew, and abode in the wildernes, and became a yong man archer. 21. And he dwelt in the wildernes of Pharan, and his mother tooke a wife for him out of the land of Ægypt. 22. The same time said Abimelech, and Phicol the General of his ar-",
+  "r3_verse": "And he dwelt in the wildernes of Pharan, and his mother tooke a wife for him out of the land of Ægypt.",
+  "arm_conflicts": [
+   "Aud | And",
+   "Phatan, | Pharan,",
+   "tor | for",
+   "ot | of",
+   "ot Egypt. | of Ægypt."
+  ],
+  "lexicon_readings": {
+   "14": "for"
+  },
+  "visual_readings": {
+   "14": "for"
+  },
+  "new_text": "And he dwelt in the wildernes of Pharan, and his mother tooke a wife for him out of the land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p87",
+  "old_text": "And Abimelech anſwered : I knew not who did this thing: yea and thy ſelfe dideſt not tel tne and I heard not of it but to",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.2838,
+   0.885,
+   0.3776
+  ],
+  "crop_page": 87,
+  "r3_raw": "Abraham said: I wil sweare. 25. And he rebuked Abimelech for the wel of water, which his seruants had taken away by force. 26. And Abimelech answered: I knew not who did this thing: yea and thy selfe dideſt not tell me, and I heard not of it but to day. 27. Abraham therefore tooke ſheep and oxen, and gaue to Abimelcch: and both of",
+  "r3_verse": "And Abimelech answered: I knew not who did this thing: yea and thy selfe dideſt not tell me, and I heard not of it but to day.",
+  "arm_conflicts": [
+   "tel tne | tell me,"
+  ],
+  "new_text": "And Abimelech anſwered I knew not who did this thing: yea and thy ſelfe dideſt not tel me, and I heard not of it but to day.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p87",
+  "old_text": "day. Abtaham therfore tooke ſheep and oxen, and gaue to Abimelech: and both ot them made a league.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.3193,
+   0.885,
+   0.4141
+  ],
+  "crop_page": 87,
+  "r3_raw": "Abimelech answered: I knew not who did this thing: yea and thy selfe dideſt not tell me, and I heard not of it but to day. 27. Abraham therefore tooke ſheep and oxen, and gaue to Abimelcch: and both of them made a league. 28. And Abraham set ſeauen ewe lambs of the flocke apart. 29. To whom Abimelech said: What meane these ſeauen",
+  "r3_verse": "Abraham therefore tooke ſheep and oxen, and gaue to Abimelcch: and both of them made a league.",
+  "arm_conflicts": [
+   "day. Abtaham therfore | Abraham therefore",
+   "Abimelech: | Abimelcch:",
+   "ot | of"
+  ],
+  "new_text": "Abraham therefore tooke ſheep and oxen, and gaue to Abimelcch: and both of them made a league.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p87",
+  "old_text": "Therfore was that place called Berſabee: becauſe there both did ſweare.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.4261,
+   0.885,
+   0.5037
+  ],
+  "crop_page": 87,
+  "r3_raw": "Scauen.ewe lambs shalt thou take at my hand: that they may be a testi- monie for me, that I digged this wel. 31. Therfore was that place cal- led * Bersabee: because there both did sweare. 32. And they made a league for the wel of oath. 33. And Abimelch arose, and Phicol the",
+  "r3_verse": "Therfore was that place cal- led Bersabee: because there both did sweare.",
+  "arm_conflicts": [
+   "called | cal- led"
+  ],
+  "used_merge": true,
+  "new_text": "Therfore was that place cal- led Berſabee: becauſe there both did ſweare.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.85,
+   "odr_com": 0.986,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p87",
+  "old_text": "And they madea league tor the wel of oath.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.155,
+   0.4436,
+   0.885,
+   0.5216
+  ],
+  "crop_page": 87,
+  "r3_raw": "monie for me, that I digged this wel. 31. Therfore was that place called * Bersabee: because there both did sweare. 32. And they made a league for the wel of oath. 33. And Abimelech arose, and Phicol the General of his armie, and they returned to the land of the Palestines.",
+  "r3_verse": "And they made a league for the wel of oath.",
+  "arm_conflicts": [
+   "madea | made a",
+   "tor | for"
+  ],
+  "lexicon_readings": {
+   "5": "for"
+  },
+  "visual_readings": {
+   "5": "for"
+  },
+  "new_text": "And they made a league for the wel of oath.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p87",
+  "old_text": "And Abimcloch aroſe, and Phicol the General of his armie, and theyrtturned to the land ot the Palefuines. But Abraham planted a groue in Berſabee, and callod there vpon the name of our Lord God eternal.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.4616,
+   0.885,
+   0.5743
+  ],
+  "crop_page": 87,
+  "r3_raw": "31. And they made a peace called * Bersabee: because there both did sweare. 32. And they made a league for the wel of oath. 33. And Abimelech arose, and Phicol the General of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called there vpon the name of our Lord God eternal. 34. And he was a feiourner in the land of the Palestines manie dayes.",
+  "r3_verse": "And Abimelech arose, and Phicol the General of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Bersabee, and called there vpon the name of our Lord God eternal.",
+  "arm_conflicts": [
+   "Abimcloch | Abimelech",
+   "theyrtturned | they returned",
+   "ot | of",
+   "Palefuines. | Palestines.",
+   "callod | called"
+  ],
+  "new_text": "And Abimelech aroſe, and Phicol the General of his armie, and they returned to the land of the Palestines. But Abraham planted a groue in Berſabee, and called there vpon the name of our Lord God eternal.",
+  "s_unresolved": [
+   "Palestines."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p87",
+  "old_text": "And he was a ſeiournet in the land of the Paleſtines manie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.5153,
+   0.885,
+   0.6965
+  ],
+  "crop_page": 87,
+  "r3_raw": "But Abraham planted a groue in Bersabee, and called there vpon the name of our Lord God eternal. 34..And he was a feiourner in the land of the Palestines manie dayes. ANNOTATIONS. CHAP. XXI.",
+  "r3_verse": "34..And he was a feiourner in the land of the Palestines manie dayes.",
+  "arm_conflicts": [
+   "And | 34..And",
+   "ſeiournet | feiourner"
+  ],
+  "new_text": "And he was a feiourner in the land of the Paleſtines manie dayes.",
+  "s_unresolved": [
+   "feiourner"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

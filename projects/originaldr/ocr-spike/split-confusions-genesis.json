@@ -1,0 +1,388 @@
+{
+ "book": "genesis",
+ "n_split": 627,
+ "witnesses": {
+  "S1": "archive-ot1-1609",
+  "S3": "pdf-S03a",
+  "S9": "archive-holiebible-ot1",
+  "S6": "jp2-S06"
+ },
+ "fails_in_split": {
+  "S1": 394,
+  "S3": 272,
+  "S6": 237,
+  "S9": 262
+ },
+ "passes_in_split": {
+  "S9": 365,
+  "S6": 390,
+  "S3": 353,
+  "S1": 229
+ },
+ "sole_failer": {
+  "S6": 165,
+  "S1": 88,
+  "S3": 29,
+  "S9": 20
+ },
+ "length_ratio_vs_passing_sibling": {
+  "S1": 1.009,
+  "S3": 0.9936,
+  "S6": 0.9745,
+  "S9": 1.0122
+ },
+ "char_confusions": [
+  {
+   "from": "w",
+   "to": "v",
+   "n": 425
+  },
+  {
+   "from": "e",
+   "to": "c",
+   "n": 415
+  },
+  {
+   "from": ".",
+   "to": ",",
+   "n": 258
+  },
+  {
+   "from": "c",
+   "to": "e",
+   "n": 202
+  },
+  {
+   "from": ",",
+   "to": ".",
+   "n": 189
+  },
+  {
+   "from": "t",
+   "to": "f",
+   "n": 180
+  },
+  {
+   "from": "t",
+   "to": "r",
+   "n": 173
+  },
+  {
+   "from": "u",
+   "to": "n",
+   "n": 153
+  },
+  {
+   "from": "f",
+   "to": "t",
+   "n": 86
+  },
+  {
+   "from": "r",
+   "to": "t",
+   "n": 84
+  },
+  {
+   "from": "f",
+   "to": "ſ",
+   "n": 83
+  },
+  {
+   "from": "n",
+   "to": "u",
+   "n": 82
+  },
+  {
+   "from": "h",
+   "to": "li",
+   "n": 75
+  },
+  {
+   "from": "v",
+   "to": "w",
+   "n": 65
+  },
+  {
+   "from": "t̄",
+   "to": "f",
+   "n": 54
+  },
+  {
+   "from": ".",
+   "to": ":",
+   "n": 45
+  },
+  {
+   "from": "t",
+   "to": "c",
+   "n": 43
+  },
+  {
+   "from": "W",
+   "to": "V",
+   "n": 39
+  },
+  {
+   "from": "I",
+   "to": "l",
+   "n": 38
+  },
+  {
+   "from": "s",
+   "to": "ſ",
+   "n": 35
+  },
+  {
+   "from": "ſ",
+   "to": "s",
+   "n": 35
+  },
+  {
+   "from": "f",
+   "to": "t̄",
+   "n": 34
+  },
+  {
+   "from": "i",
+   "to": "e",
+   "n": 32
+  },
+  {
+   "from": "l",
+   "to": "ſ",
+   "n": 28
+  },
+  {
+   "from": "t",
+   "to": "i",
+   "n": 28
+  },
+  {
+   "from": "ſ",
+   "to": "i",
+   "n": 28
+  },
+  {
+   "from": "y",
+   "to": "v",
+   "n": 27
+  },
+  {
+   "from": "h",
+   "to": "l",
+   "n": 27
+  },
+  {
+   "from": "e",
+   "to": "o",
+   "n": 25
+  },
+  {
+   "from": "li",
+   "to": "h",
+   "n": 20
+  },
+  {
+   "from": "ſ",
+   "to": "f",
+   "n": 18
+  },
+  {
+   "from": "l",
+   "to": "I",
+   "n": 18
+  },
+  {
+   "from": "e",
+   "to": "i",
+   "n": 17
+  },
+  {
+   "from": "v",
+   "to": "y",
+   "n": 17
+  },
+  {
+   "from": ":",
+   "to": ".",
+   "n": 17
+  },
+  {
+   "from": "ſ",
+   "to": "l",
+   "n": 17
+  },
+  {
+   "from": "m",
+   "to": "in",
+   "n": 15
+  },
+  {
+   "from": "V",
+   "to": "W",
+   "n": 15
+  },
+  {
+   "from": "K",
+   "to": "k",
+   "n": 15
+  },
+  {
+   "from": "a",
+   "to": "i",
+   "n": 14
+  }
+ ],
+ "word_confusions": [
+  {
+   "from": "was",
+   "to": "vas",
+   "n": 55
+  },
+  {
+   "from": "aud",
+   "to": "and",
+   "n": 48
+  },
+  {
+   "from": "ot̄",
+   "to": "of",
+   "n": 45
+  },
+  {
+   "from": "ot",
+   "to": "of",
+   "n": 44
+  },
+  {
+   "from": "which",
+   "to": "vhich",
+   "n": 35
+  },
+  {
+   "from": "with",
+   "to": "vith",
+   "n": 35
+  },
+  {
+   "from": "wil",
+   "to": "vil",
+   "n": 33
+  },
+  {
+   "from": "and",
+   "to": "&",
+   "n": 32
+  },
+  {
+   "from": "of",
+   "to": "ofthe",
+   "n": 31
+  },
+  {
+   "from": "of",
+   "to": "ot̄",
+   "n": 31
+  },
+  {
+   "from": "and",
+   "to": "aud",
+   "n": 29
+  },
+  {
+   "from": "of",
+   "to": "ot",
+   "n": 29
+  },
+  {
+   "from": "were",
+   "to": "vere",
+   "n": 24
+  },
+  {
+   "from": "&",
+   "to": "and",
+   "n": 24
+  },
+  {
+   "from": "when",
+   "to": "vhen",
+   "n": 22
+  },
+  {
+   "from": "thee",
+   "to": "thec",
+   "n": 19
+  },
+  {
+   "from": "Who",
+   "to": "Vho",
+   "n": 19
+  },
+  {
+   "from": "theit",
+   "to": "their",
+   "n": 18
+  },
+  {
+   "from": "giue",
+   "to": "geue",
+   "n": 16
+  },
+  {
+   "from": "ſhal",
+   "to": "shal",
+   "n": 16
+  },
+  {
+   "from": "to",
+   "to": "ro",
+   "n": 15
+  },
+  {
+   "from": "the",
+   "to": "tlic",
+   "n": 15
+  },
+  {
+   "from": "Aud",
+   "to": "And",
+   "n": 15
+  },
+  {
+   "from": "we",
+   "to": "ve",
+   "n": 14
+  },
+  {
+   "from": "the",
+   "to": "tlie",
+   "n": 14
+  },
+  {
+   "from": "who",
+   "to": "vho",
+   "n": 14
+  },
+  {
+   "from": "ofthe",
+   "to": "of",
+   "n": 13
+  },
+  {
+   "from": "whom",
+   "to": "vhom",
+   "n": 13
+  },
+  {
+   "from": "thertore",
+   "to": "therfore",
+   "n": 13
+  },
+  {
+   "from": "haue",
+   "to": "hauc",
+   "n": 12
+  }
+ ]
+}

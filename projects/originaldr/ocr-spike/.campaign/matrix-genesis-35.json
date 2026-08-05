@@ -1,0 +1,1541 @@
+{
+ "chapter": 35,
+ "n_verses": 29,
+ "n_cells": 116,
+ "n_pass": 106,
+ "rate": 0.9138,
+ "ref_means": {
+  "s_dismas": 0.9789,
+  "odr_com": 0.9821,
+  "sabates_a": 0.9709,
+  "madueke_b": 0.9709
+ },
+ "src_rates": {
+  "S1": 0.931,
+  "S3": 0.931,
+  "S9": 0.8276,
+  "S6": 0.9655
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  4
+ ],
+ "n_open": 10,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.892,
+   "from": "p142",
+   "text": "in the time God ſpake to Iacob Ariſe, and Lvp to Bethel, and dwel there, and make an altar to that appeared to thee when thou diddeſt flie from Eſau brother."
+  },
+  {
+   "src": "S1",
+   "verse": 4,
+   "worst": 0.898,
+   "from": "p130",
+   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem."
+  },
+  {
+   "src": "S3",
+   "verse": 4,
+   "worst": 0.888,
+   "from": "p134",
+   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem."
+  },
+  {
+   "src": "S9",
+   "verse": 4,
+   "worst": 0.893,
+   "from": "p142",
+   "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder the- terebinth, (when that is behind the citie of Sichem."
+  },
+  {
+   "src": "S6",
+   "verse": 4,
+   "worst": 0.858,
+   "from": "p120",
+   "text": "They gaue to him theretore al the ſtrange Gods that they had, and the earclets which were in their eares:but he bured them vnder the terebnth that is behnd the citie of Sichem."
+  },
+  {
+   "src": "S9",
+   "verse": 5,
+   "worst": 0.883,
+   "from": "p142",
+   "text": "And when they departed, : the terror of God inuaded al the oities rounde maketh about, and they durſt not purſew them going away."
+  },
+  {
+   "src": "S9",
+   "verse": 6,
+   "worst": 0.881,
+   "from": "p142",
+   "text": "Iacob came to Luza, whichis in the land of Chanaan, hamed Bethel he and al the people that was with more"
+  },
+  {
+   "src": "S9",
+   "verse": 24,
+   "worst": 0.861,
+   "from": "p143",
+   "text": "The ſonnes of Rachel : Ioſeph and Ben- his iamin."
+  },
+  {
+   "src": "S1",
+   "verse": 25,
+   "worst": 0.87,
+   "from": "r3",
+   "text": "The ſonnes of Bala Rachels handmaid Dan and Gen. Nepthali."
+  },
+  {
+   "src": "S3",
+   "verse": 25,
+   "worst": 0.849,
+   "from": "r3",
+   "text": "The ſonnes of Bala Rachels handmaid: Dan and Gen. Neptali."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "in the time God ſpake to Iacob Ariſe, and goe Ivp to Bethel, and dwel there, and make an altar to God that appeared ro thee when thou diddeſt flie from Eſau thy brother.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "in the time God ſpake to Iacob Ariſe, and goe I vp to Bethel, and dwel there, and make an altar to God that appeared to thee when thou diddeſt flie from Eſau thy brother.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "in the time God ſpake to Iacob Ariſe, and Lvp to Bethel, and dwel there, and make an altar to that appeared to thee when thou diddeſt flie from Eſau brother.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.894,
+     "odr_com": 0.894,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S6": {
+    "text": "burie him. NTHE meane time God ſpake to Iacob: Ariſe, and goe vp to Bethel, and dwel there, and make an altar to God that appeared to thee when thou diddeſt flie from Eſau thy brother.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And Iacob hauing called together al his houſe, ſaid Caſt away the ſtrange goddes that are among you, and be clenſed and change your garments.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "And Iacob hauing called together al his houſe, ſaid Caſt away the ſtrange goddes that are among you, and be clenſed and change your garments.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And Iacob hauing called together al his houſe, ſaid Caſt away the ſtrange goddes that are among and be clenſed and change your garments.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "And Iacob hauing called together al his houſe, ſaid: Caſt away the ſtrange Gods that are among you, and, be clenſed and change your garments.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Ariſe, and let vs goe vp into Bethel, that we may make there an altar vnto God who heard me in the day of my tribulation, and accompanied me in my iourney.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.987,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "Ariſe, and let vs goe vp into Bethel, that we may make there an altar vnto God who heard me in the day of my tribulation, and accompaigned me in my iourney.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.993,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "Ariſe, and let vs goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and ac- compained me in my iourney.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.993,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "Ariſe, and let vs goe vp into Bethel, that we may make there an altar vnto God who heard me in the day of my tribulation, and accompanyed me in my journey.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.987,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thes terebinth, that is behind the citie of Sichem.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.994,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder thex terebinth, when that is behind the citie of Sichem.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.888,
+     "odr_com": 0.967,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   },
+   "S9": {
+    "text": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which were in their eares: but he buried them vnder the- terebinth, (when that is behind the citie of Sichem.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.893,
+     "odr_com": 0.973,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S6": {
+    "text": "They gaue to him theretore al the ſtrange Gods that they had, and the earclets which were in their eares:but he bured them vnder the terebnth that is behnd the citie of Sichem.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.858,
+     "odr_com": 0.949,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt nor purſew them goingaway.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purſew them going away.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "And when they departed, : the terror of God inuaded al the oities rounde maketh about, and they durſt not purſew them going away.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.895,
+     "odr_com": 0.895,
+     "sabates_a": 0.883,
+     "madueke_b": 0.883
+    }
+   },
+   "S6": {
+    "text": "And when they were departed the terrour of God inuaded al the cities round about, and they durit not purſue them going away.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Iacob came to Luza, which is in the land of Chanaan, tur- named Bethel: he and al the people that was with him",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And then Iacob came to Lura, which is in the land of Chanaan, ſurnamed Bethel he and al the people that was with him",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "Iacob came to Luza, whichis in the land of Chanaan, hamed Bethel he and al the people that was with more",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.881,
+     "odr_com": 0.881,
+     "sabates_a": 0.883,
+     "madueke_b": 0.883
+    }
+   },
+   "S6": {
+    "text": "And Iacob came to Luza, which is in the land of Chanaan, ſurnamed Bethel: he and al the people that was with him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And he builded there an altar, and called the name of that place, The houſe of God: for there God appeared to him when he fled from his brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he builded there an altar, and called the name of that then ChIi. place, The houſe of God for there God appeared to him when he fed from his brother.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S9": {
+    "text": "And he builded there an altar, and called the name of then place, The houſe of God: for there God appeared to Chri- when he fled from his brother.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "And he builded there an altar, and called the name of that place, the houſe of God: for there God appeared to him when he fled from his brother.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "The ſame time died Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping.",
+    "from": "p130",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "The ſame time died8 I2 in Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke and the name of that place was called, The oke of weeping.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "The ſame time in Debora the nurſe of Rebecca, and was buried at the of Bethel vnder an oke and the name of that place called, The oke of weeping.",
+    "from": "p142",
+    "score": {
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.906,
+     "madueke_b": 0.906
+    }
+   },
+   "S6": {
+    "text": "The ſame time died Debora the nurſe of Rebecca, and was buried at the foot of Bethel vnder an oke: and the name of that place was called The oke of weeping.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And God appeared again to Ia· to Iacob after he returned from Meſopotamia of Siria, and to he bleſſed him,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.913,
+     "odr_com": 0.913,
+     "sabates_a": 0.909,
+     "madueke_b": 0.909
+    }
+   },
+   "S3": {
+    "text": "And God appeared again to Ia- to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S9": {
+    "text": "And God appeared again to Ia- to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S6": {
+    "text": "And God appeared againe to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him, ro.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "ſaying: Thou vntalt not be called any more Iacob, but Iſrael ſhal be thy name. And he called him Iſrael,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "ſaying: Thou ſhalt not be called any more Iacob, but Iſrael ſhal be thy name. And he called him Iſrael,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "ſaying: Thou :: ſhalt not be called any more :: Iacob, but Iſrael ſhal be thy name. And he called him Iſrael,",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "ſaying Thou ſhalt not be called any more Iacob, but Iſrael ſhal be thy name. And he called him Iſraal,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "and ſaid to him : I am God almightie, encreaſe thou and multiplie: Of thee ſhal be nations and peoples of nations, kinges ſhal come ſorth of thy loynes.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "and ſaid to him I am God almightie, encreaſe thou and multiplie Of thee ſhal be nations and peoples of nations, kinges ſhal come forth of thy loynes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "and ſaid to him I am God almightie, encreaſe thou and multiplie Of thee ſhal be nations and peoples of nations, kinges ſhal come forth of thy loynes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "aud ſaid to him: I am God Amightie, encreaſe thou and multiplie: Of thee ſhal be natious and peoples of nations, Kings thal come torth of thy loyues.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And the land which I gaue to Abraham and Iſaac, I wil geue to thee, and to thy ſeede after thee",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And the land which I gaue to Abraham and Iſaac, I wil geue to thee, and to thy ſeede after thee",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And the land which I gaue to Abraham and Iſaac, I wil geue to thee, and to thy ſeede after thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And the land which I gaue to Abraham and Iſaac, I wil giue to thee, and to thy ſeed after thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And he departed from him.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he departed from him.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he departed from him.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he departed trom him.",
+    "from": "p120",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "But he erected a title of ſtone, in the place where God had ſpoken vnto him: offering vpon it liquide offeringes, and powring oile on it:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "But he erected a title of ſtone, in the place where God had ſpoken vnto him: offering vpon it liquide offeringes, and powring oile on it:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "But he erected a title of ſtone, in the place where God had ſpoken vnto him: offering vpon it liquide offeringes, and powring oile on it :",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "But he erected a title of ſtone in the place where God had ſpoken vnto him: offering vpon it liquid offerings, and pouring oil on it,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "and calling the name of that place, Bethel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and calling the name of that place, Bethel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and calling the name of that place, Bethel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "1and calling the name of that place, Bethel.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And being gone forth from thence, he came in the ſpring time to the land which leadeth to Ephrata: wherin when Rachel was in trauaile,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And being gone forth from thence, he came in the ſpring time to the land which leadeth to Ephrata: wherin when Rachel was in trauaile,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And being gone forth from thence, he came in the ſpring time to the land which leadeth to Ephrata: wherin when Rachel was in trauaile,",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And boing gone forth trom thence, he came in the ſpring time to the land which leadeth to Iacob Epfrata: wherin when Rachel was in trauaile,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "becauſe of difficultie in her trauaile, ſhe beganne to be in danger, and the midwife ſaid vnto her : Fcare not, for thou shalt haue alſo this a ſonne.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "becauſe of difficultie in her trauaile, ſhe beganne to be in danger, and the midwife ſaid vnto her : Feare not, for thou shalt haue alſo this a ſonne.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "becauſe of difficultie in her trauaile, ſhe beganne to be in danger, and the midwife ſaid vnto her : Feare not, for thou shalt haue alſo this a ſonne.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "1becauſe of difficultie in her trauaile ſhe began to be in danger, and the midwife ſaid vnto het : Feare not for thou ſhalt haue alſo this a ſoune.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And her ſoule departing for paine, and death now at hand, she called the name of her ſonne Benoni, that is the ſonne of my paine but his father called him Beniamin, that is the ſonne of the right hand.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And her ſoule departing for paine, and death now at hand, she called the name of her ſonne Benoni, that is the ſonne of my paine but his father called him Beniamin, that is the ſonne of the right hand.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And her ſoule departing for paine, and death now at hand, she called the name of her ſonne Benoni, that is the ſonne of my paine : but his father called him Beniamin, that is the ſonne of the right hand.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And her ſoule departins for paine and death now at hand, ſhe called the name of her ſonne Benoni, that is the ſonne of my paine:but his father called him. Beniamin, that is the ſonne of the right hand.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Rachel therfore died, and was buried in the hye way that leadeth to Ephrata, this ſame is Bethleem.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "Rachel therfore died, and was buried in the hye way that leadeth to Ephrata, this ſame is Bethleem.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "Rachel therfore died, and was buried in the hye way that leadeth to Ephrata, this ſame is Bethleem.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "Rachel therfore died, and was buried in the high way that leadeth to Ephrata, this ſame is Bethleem.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And Iacob erecteda title ouer her ſepulchre : This is the litle of Rachels monument, vntil this preſent day.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And Iacob erected a title ouer her ſepulchre : This is the litle of Rachels monument, vntil this preſent day.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And Iacob erected a title ouer her ſepulchre : This is the litle of Rachels monument, vntil this preſent day.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And Iacob erected a title ouer her ſepulchre: This is the title of Rachels monument vntil this preſent day.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "Departing thence, he pitched his tent beyond the Flocke tower.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Departing thence, he pitched his tent beyond the Flocke tower.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Departing thence, he pitched his tent beyond the Focke tower.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "Departing thence, he pirched his tent beyond the Flocke tower.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And when he dwelt in that countrie: Ruben went, and :: ſlept with Bala his fathers concubine: which thing he was not ignorant of. And the ſonnes of Iacob were twelue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And when he dwelt in that countrie: Ruben went, and :: ſlept with Bala his fathers concubine: which thing he was not ignorant of. And the ſonnes of Iacob were twelue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And when he dwelt in that countrie: Ruben went, and : ſlept with Bala his fathers con- :: cubine : which thing he was not ignorant of. And the ſonnes of Iacob were twelue.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And when he dwelt in that countrie, Ruben went, andt with Bala his tathers concubine which thing he was not ignorant of. And the ſonnes of Iacob were twelue.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "The ſonnes of Lia Ruben the firſt begotten, and Simeon, and Leui, and Iudas, and Iſſachar, and Zabulon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "The ſonnes of Lia Ruben the firſt begotten, and Simeon, and Leui, and Iudas, and Iſſachar, and Zabulon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "The ſonnes of Lia Ruben the firſt begotten, and Simeon, and Leui, and Iudas, and Iſſachar, and Zabulon.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "The ſonues of Lia: Ruben the firſt begotten, and Simeon, and Leui, and Iudas, and Iſſachat, and Zabulon.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "The ſonnes of Rachel Ioſeph and Ben- iamin.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "The ſonnes of Rachel Ioſeph and Beniamin.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "The ſonnes of Rachel : Ioſeph and Ben- his iamin.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.889,
+     "odr_com": 0.889,
+     "sabates_a": 0.861,
+     "madueke_b": 0.861
+    }
+   },
+   "S6": {
+    "text": "The ſonnes of Rachel: Ioſeph and Beniamin.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "The ſonnes of Bala Rachels handmaid Dan and Gen. Nepthali.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.87,
+     "madueke_b": 0.87
+    }
+   },
+   "S3": {
+    "text": "The ſonnes of Bala Rachels handmaid: Dan and Gen. Neptali.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.909,
+     "odr_com": 0.909,
+     "sabates_a": 0.849,
+     "madueke_b": 0.849
+    }
+   },
+   "S9": {
+    "text": "The ſonnes of Bala Rachels handmaid : Dan and Nepthali.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S6": {
+    "text": "The ſonnes of Bala Rachels handmaid Dan and Nepthali.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "The ſonnes of Zelpha Lias handmaid Gad and Aſer: theſe are the ſonnes of Iacob, that were borne to him in Meſopotamia of Siria.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "The ſonnes of Zelpha Lias handmaid Gad and Aſer: theſe are the ſonnes of Iacob, that were borne to him in Meſopotamia of Siria.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "The ſonnes of Zelpha Lias handmaid: Gad and Aſer : theſe are the ſonnes of Iacob, that were borne to him in Meſopotamia of Siria.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "The ſonnes of Zelpha Lias handmaid: Gad and Aſer theſe are the ſonnes of Iacob, that were borne to him in Meſopotamia of Siria.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "He came alſo to Iſaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Iſaac ſoiourned.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "He came alſo to Iſaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Iſaac ſoiourned.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "He came alſo to Iſaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Iſaac ſoiourned.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "He came alſo to Iſaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Iſaae ſeiourned.",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And ſpent with age he died, and was put to his people, being old and ful of dayes : and Eſau an I Iacob his ſonnes buryed him.",
+    "from": "p131",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "And ſpent With age he died, and was put to his people, being old and ful of dayes: and Eſau and Iacob his ſonnes buryed him.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "And ſpent With age he died, and was put to his people, being old and ful of dayes : and Eſau and Iacob his ſonnes buryed him.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "And ſpent with age: he died, and was put to his people, beiug old and ful of dayes, aud Eſau and Iacob his ſonnes buryed him,",
+    "from": "p121",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "In the meane time God ſpake to Iacob: Ariſe, and goe vp to Bethel, and dwel there, and make an altar to God that appeared to thee when thou diddeſt flie from Eſau thy brother.",
+   "odr_com": "IN THE meane time God spake to Iacob: Arise, and goe vp to Bethel, and dwel there, and make an altar to God that appeared to thee when thou diddest flie from Esau thy brother.",
+   "sabates_a": "In the mean time God spake to Jacob: Arise, and go up to Bethel, and dwell there, and make an altar to God that appeared to thee when thou didst fly from Esau thy brother.",
+   "madueke_b": "In the mean time God spake to Jacob: Arise, and go up to Bethel, and dwell there, and make an altar to God that appeared to thee when thou didst fly from Esau thy brother."
+  },
+  "2": {
+   "s_dismas": "And Iacob hauing called together al his houſe, ſaid: Caſt away the ſtrange goddes that are among you, and be clenſed and change your garments.",
+   "odr_com": "And Iacob hauing called together al his house, said: Cast away the strange goddes that are among you, and be clensed and change your garments.",
+   "sabates_a": "And Jacob having called together all his house, said: Cast away the strange gods that are among you, and be cleansed and change your garments.",
+   "madueke_b": "And Jacob having called together all his house, said: Cast away the strange gods that are among you, and be cleansed and change your garments."
+  },
+  "3": {
+   "s_dismas": "Ariſe, and let vs goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and accompanied me in my iourney.",
+   "odr_com": "Arise, and let vs goe vp into Bethel, that we may make there an altar vnto God: who heard me in the day of my tribulation, and accompained me in my iourney.",
+   "sabates_a": "Arise, and let us go up into Bethel, that we may make there an altar unto God: who herd me in the day of my tribulation, and accompanied me in my journey.",
+   "madueke_b": "Arise, and let us go up into Bethel, that we may make there an altar unto God: who herd me in the day of my tribulation, and accompanied me in my journey."
+  },
+  "4": {
+   "s_dismas": "They gaue to him therfore al the ſtrange goddes that they had, and the earelets which An exe- were in their eares: but he buried them vnder the terecrable tree. binth, that is behind the citie of Sichem.",
+   "odr_com": "They gaue to him therfore al the strange goddes that they had, and the earelets which were in their eares: but he buried them vnder the 330.4 terebinth, that is behind the citie of Sichem.",
+   "sabates_a": "They gave to him therefore all the strange gods that they had, and the earlets which were in their ears: but he buried them under the terebinth that is behind the city of Sichem.",
+   "madueke_b": "They gave to him therefore all the strange gods that they had, and the earlets which were in their ears: but he buried them under the terebinth that is behind the city of Sichem."
+  },
+  "5": {
+   "s_dismas": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durſt not purſew them going away.",
+   "odr_com": "And when they were departed, the terror of God inuaded al the cities rounde about, and they durst not pursew them going away.",
+   "sabates_a": "And when they were departed, the terror of God invaded all the cities round about, and they durst not pursue them going away.",
+   "madueke_b": "And when they were departed, the terror of God invaded all the cities round about, and they durst not pursue them going away."
+  },
+  "6": {
+   "s_dismas": "And Iacob came to Luza, which is in the land of Chanaan, ſurnamed Bethel: he and al the people that was with him.",
+   "odr_com": "And Iacob came to Luza, which is in the land of Chanaan, surnamed Bethel: he and al the people that was with him.",
+   "sabates_a": "And Jacob came to Luza, which is in the land of Chanaan, surnamed Bethel: he and all the people that was with him.",
+   "madueke_b": "And Jacob came to Luza, which is in the land of Chanaan, surnamed Bethel: he and all the people that was with him."
+  },
+  "7": {
+   "s_dismas": "And he builded there an altar, and called the name of that place, The houſe of God: for there God appeared to him when he fled from his brother.",
+   "odr_com": "And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother.",
+   "sabates_a": "And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother.",
+   "madueke_b": "And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother."
+  },
+  "8": {
+   "s_dismas": "The ſame time died Debora the nurſe of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping.",
+   "odr_com": "The same time died Debora the nurse of Rebecca, and was buried at the foote of Bethel vnder an oke: and the name of that place was called, The oke of weeping.",
+   "sabates_a": "The same time died Debora the nurse of Rebecca, and was buried at the foot of Bethel under an oak: and the name of that place was called The oak of weeping.",
+   "madueke_b": "The same time died Debora the nurse of Rebecca, and was buried at the foot of Bethel under an oak: and the name of that place was called The oak of weeping."
+  },
+  "9": {
+   "s_dismas": "And God appeared again to Iacob after he returned from Meſopotamia of Siria, and he bleſſed him,",
+   "odr_com": "And God appeared again to Iacob after he returned from Mesopotamia of Siria, and he blessed him,",
+   "sabates_a": "And God appeared again to Jacob after he returned from Mesopotamia of Syria, and he blessed him,",
+   "madueke_b": "And God appeared again to Jacob after he returned from Mesopotamia of Syria, and he blessed him,"
+  },
+  "10": {
+   "s_dismas": "ſaying: Thou ſhalt not be called any more Iacob, but Iſrael ſhal be thy name. And he called him Iſrael,",
+   "odr_com": "saying: Thou shalt not be called any more Iacob, but Israel shal be thy name. And he called him Israel,",
+   "sabates_a": "saying: Thou shalt not be called any more Jacob, but Israel shall be thy name. And he called him Israel,",
+   "madueke_b": "saying: Thou shalt not be called any more Jacob, but Israel shall be thy name. And he called him Israel,"
+  },
+  "11": {
+   "s_dismas": "and ſaid to him: I am God almightie, encreaſe thou and multiplie: Of thee ſhal be nations and peoples of nations, kinges ſhal come forth of thy loynes.",
+   "odr_com": "and said to him: I am God almightie, encrease thou and multiplie: Of thee shal be nations and peoples of nations, kinges shal come forth of thy loynes.",
+   "sabates_a": "and said to him: I am God Almighty, increase thou and multiply: Of thee shall be nations and peoples of nations, kings shall come forth of thy loins.",
+   "madueke_b": "and said to him: I am God Almighty, increase thou and multiply: Of thee shall be nations and peoples of nations, kings shall come forth of thy loins."
+  },
+  "12": {
+   "s_dismas": "And the land which I gaue to Abraham and Iſaac, I wil geue to thee, and to thy ſeede after thee.",
+   "odr_com": "And the land which I gaue to Abraham and Isaac, I wil geue to thee, and to thy seede after thee.",
+   "sabates_a": "And the land which I gave to Abraham and Isaac, I will give to thee, and to thy seed after thee.",
+   "madueke_b": "And the land which I gave to Abraham and Isaac, I will give to thee, and to thy seed after thee."
+  },
+  "13": {
+   "s_dismas": "And he departed from him.",
+   "odr_com": "And he departed from him.",
+   "sabates_a": "And he departed from him.",
+   "madueke_b": "And he departed from him."
+  },
+  "14": {
+   "s_dismas": "But he erected a title of ſtone, in the place where God had ſpoken vnto him: offering vpon it liquide offeringes, and powring oile on it:",
+   "odr_com": "But he erected a title of stone, in the place where God had spoken vnto him: offering vpon it liquide offeringes, and powring oile on it:",
+   "sabates_a": "But he erected a title of stone in the place where God had spoken unto him: offering upon it liquid offerings, and pouring oil on it,",
+   "madueke_b": "But he erected a title of stone in the place where God had spoken unto him: offering upon it liquid offerings, and pouring oil on it,"
+  },
+  "15": {
+   "s_dismas": "and calling the name of that place, Bethel.",
+   "odr_com": "and calling the name of that place, Bethel.",
+   "sabates_a": "and calling the name of that place, Bethel.",
+   "madueke_b": "and calling the name of that place, Bethel."
+  },
+  "16": {
+   "s_dismas": "And being gone forth from thence, he came in the ſpring time to the land which leadeth to Ephrata: wherin when Rachel was in trauaile,",
+   "odr_com": "And being gone forth from thence, he came in the spring time to the land which leadeth to Ephrata: wherin when Rachel was in trauaile,",
+   "sabates_a": "And being gone forth from thence, he came in the spring time to the land which leadeth to Ephrata: wherein when Rachel was in travail,",
+   "madueke_b": "And being gone forth from thence, he came in the spring time to the land which leadeth to Ephrata: wherein when Rachel was in travail,"
+  },
+  "17": {
+   "s_dismas": "becauſe of difficultie in her trauaile, ſhe beganne to be in danger, and the midwife ſaid vnto her: Feare not, for thou shalt haue alſo this a ſonne.",
+   "odr_com": "because of difficultie in her trauaile, she beganne to be in danger, and the midwife said vnto her: Feare not, for thou shalt haue also this a sonne.",
+   "sabates_a": "because of difficulty in her travail, she began to be in danger, and the midwife said unto her: Fear not, for thou shalt have also this a son.",
+   "madueke_b": "because of difficulty in her travail, she began to be in danger, and the midwife said unto her: Fear not, for thou shalt have also this a son."
+  },
+  "18": {
+   "s_dismas": "And her ſoule departing for paine, and death now at hand, she called the name of her ſonne Benoni, that is the ſonne of my paine: but his father called him Beniamin, that is the ſonne of the right hand.",
+   "odr_com": "And her soule departing for paine, and death now at hand, she called the name of her sonne Benoni, that is the sonne of my paine: but his father called him Beniamin, that is the sonne of the right hand.",
+   "sabates_a": "And her soul departing for pain, and death now at hand, she called the name of her son Benoni, that is the son of my pain: but his father called him Benjamin, that is the son of the right hand.",
+   "madueke_b": "And her soul departing for pain, and death now at hand, she called the name of her son Benoni, that is the son of my pain: but his father called him Benjamin, that is the son of the right hand."
+  },
+  "19": {
+   "s_dismas": "Rachel therfore died, and was buried in the hye way that leadeth to Ephrata, this ſame is Bethleem.",
+   "odr_com": "Rachel therfore died, and was buried in the hye way that leadeth to Ephrata, this same is Bethleem.",
+   "sabates_a": "Rachel therefore died, and was buried in the high way that leadeth to Ephrata, this same is Bethleem.",
+   "madueke_b": "Rachel therefore died, and was buried in the high way that leadeth to Ephrata, this same is Bethleem."
+  },
+  "20": {
+   "s_dismas": "And Iacob erected a title ouer her ſepulchre: This is the title of Rachels monument, vntil this preſent day.",
+   "odr_com": "And Iacob erected a title ouer her sepulchre: This is the litle of Rachels monument, vntil this present day.",
+   "sabates_a": "And Jacob erected a title over her sepulchre: This is the title of Rachel's monument, until this present day.",
+   "madueke_b": "And Jacob erected a title over her sepulchre: This is the title of Rachel's monument, until this present day."
+  },
+  "21": {
+   "s_dismas": "Departing thence, he pitched his tent beyond the Flocke tower.",
+   "odr_com": "Departing thence, he pitched his tent beyond the Flocke tower.",
+   "sabates_a": "Departing thence, he pitched his tent beyond the Flock tower.",
+   "madueke_b": "Departing thence, he pitched his tent beyond the Flock tower."
+  },
+  "22": {
+   "s_dismas": "And when he dwelt in that countrie: Ruben went, and ſlept with Bala his fathers concubine: which thing he was not ignorant of. And the ſonnes of Iacob were twelue.",
+   "odr_com": "And when he dwelt in that countrie: Ruben went, and slept with Bala his fathers concubine: which thing he was not ignorant of. And the sonnes of Iacob were twelue.",
+   "sabates_a": "And when he dwelt in that country, Ruben went, and slept with Bala his father's concubine: which thing he was not ignorant of. And the sons of Jacob were twelve.",
+   "madueke_b": "And when he dwelt in that country, Ruben went, and slept with Bala his father's concubine: which thing he was not ignorant of. And the sons of Jacob were twelve."
+  },
+  "23": {
+   "s_dismas": "The ſonnes of Lia: Ruben the firſt begotten, and Simeon, and Leui, and Iudas, and Iſſachar, and Zabulon.",
+   "odr_com": "The sonnes of Lia: Ruben the first begotten, and Simeon, and Leui, and Iudas, and Issachar, and Zabulon.",
+   "sabates_a": "The sons of Lia: Ruben the first begotten, and Simeon, and Levi, and Judas, and Issachar, and Zabulon.",
+   "madueke_b": "The sons of Lia: Ruben the first begotten, and Simeon, and Levi, and Judas, and Issachar, and Zabulon."
+  },
+  "24": {
+   "s_dismas": "The ſonnes of Rachel: Ioſeph and Beniamin.",
+   "odr_com": "The sonnes of Rachel: Ioseph and Beniamin.",
+   "sabates_a": "The sons of Rachel: Joseph and Benjamin.",
+   "madueke_b": "The sons of Rachel: Joseph and Benjamin."
+  },
+  "25": {
+   "s_dismas": "The ſonnes of Bala Rachels handmaid: Dan and Nepthali.",
+   "odr_com": "The sonnes of Bala Rachels handmaid: Dan and Nepthali.",
+   "sabates_a": "The sons of Bala Rachel's handmaid: Dan and Nephthali.",
+   "madueke_b": "The sons of Bala Rachel's handmaid: Dan and Nephthali."
+  },
+  "26": {
+   "s_dismas": "The ſonnes of Zelpha Lias handmaid: Gad and Aſer: theſe are the ſonnes of Iacob, that were borne to him in Meſopotamia of Siria.",
+   "odr_com": "The sonnes of Zelpha Lias handmaid: Gad and Aser: these are the sonnes of Iacob, that were borne to him in Mesopotamia of Siria.",
+   "sabates_a": "The sons of Zelpha Lia's handmaid: Gad and Aser: these are the sons of Jacob, that were born to him in Mesopotamia of Syria.",
+   "madueke_b": "The sons of Zelpha Lia's handmaid: Gad and Aser: these are the sons of Jacob, that were born to him in Mesopotamia of Syria."
+  },
+  "27": {
+   "s_dismas": "He came alſo to Iſaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Iſaac ſoiourned.",
+   "odr_com": "He came also to Isaac his father in Mambre, the citie of Arbee, this is Hebron: wherin Abraham and Isaac soiourned.",
+   "sabates_a": "He came also to Isaac his father in Mambre, the city of Arbee, this is Hebron: wherein Abraham and Isaac sojourned.",
+   "madueke_b": "He came also to Isaac his father in Mambre, the city of Arbee, this is Hebron: wherein Abraham and Isaac sojourned."
+  },
+  "28": {
+   "s_dismas": "And the dayes of Iſaac were complete an hundred eyghtie yeares.",
+   "odr_com": "And the dayes of Isaac were complete an hundred eyghtie yeares.",
+   "sabates_a": "And the days of Isaac were complete an hundred eighty years.",
+   "madueke_b": "And the days of Isaac were complete an hundred eighty years."
+  },
+  "29": {
+   "s_dismas": "And ſpent with age he died, and was put to his people, being old and ful of dayes: and Eſau and Iacob his ſonnes buryed him.",
+   "odr_com": "And spent With age he died, and was put to his people, being old and ful of dayes: and Esau and Iacob his sonnes buryed him.",
+   "sabates_a": "And spent with age he died, and was put to his people, being old and full of days, and Esau and Jacob his sons buried him.",
+   "madueke_b": "And spent with age he died, and was put to his people, being old and full of days, and Esau and Jacob his sons buried him."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "In the mean time God spake to Jacob: Arise, and go up to Bethel, and dwell there, and make an altar to God that appeared to thee when thou didst fly from Esau thy brother.",
+  "2": "And Jacob having called together all his house, said: Cast away the strange gods that are among you, and be cleansed and change your garments.",
+  "3": "Arise, and let us go up into Bethel, that we may make there an altar unto God: who herd me in the day of my tribulation, and accompanied me in my journey.",
+  "4": "They gave to him therefore all the strange gods that they had, and the earlets which were in their ears: but he buried them under the terebinth that is behind the city of Sichem.",
+  "5": "And when they were departed, the terror of God invaded all the cities round about, and they durst not pursue them going away.",
+  "6": "And Jacob came to Luza, which is in the land of Chanaan, surnamed Bethel: he and all the people that was with him.",
+  "7": "And he builded there an altar, and called the name of that place, The house of God: for there God appeared to him when he fled from his brother.",
+  "8": "The same time died Debora the nurse of Rebecca, and was buried at the foot of Bethel under an oak: and the name of that place was called The oak of weeping.",
+  "9": "And God appeared again to Jacob after he returned from Mesopotamia of Syria, and he blessed him,",
+  "10": "saying: Thou shalt not be called any more Jacob, but Israel shall be thy name. And he called him Israel,",
+  "11": "and said to him: I am God Almighty, increase thou and multiply: Of thee shall be nations and peoples of nations, kings shall come forth of thy loins.",
+  "12": "And the land which I gave to Abraham and Isaac, I will give to thee, and to thy seed after thee.",
+  "13": "And he departed from him.",
+  "14": "But he erected a title of stone in the place where God had spoken unto him: offering upon it liquid offerings, and pouring oil on it,",
+  "15": "and calling the name of that place, Bethel.",
+  "16": "And being gone forth from thence, he came in the spring time to the land which leadeth to Ephrata: wherein when Rachel was in travail,",
+  "17": "because of difficulty in her travail, she began to be in danger, and the midwife said unto her: Fear not, for thou shalt have also this a son.",
+  "18": "And her soul departing for pain, and death now at hand, she called the name of her son Benoni, that is the son of my pain: but his father called him Benjamin, that is the son of the right hand.",
+  "19": "Rachel therefore died, and was buried in the high way that leadeth to Ephrata, this same is Bethleem.",
+  "20": "And Jacob erected a title over her sepulchre: This is the title of Rachel's monument, until this present day.",
+  "21": "Departing thence, he pitched his tent beyond the Flock tower.",
+  "22": "And when he dwelt in that country, Ruben went, and slept with Bala his father's concubine: which thing he was not ignorant of. And the sons of Jacob were twelve.",
+  "23": "The sons of Lia: Ruben the first begotten, and Simeon, and Levi, and Judas, and Issachar, and Zabulon.",
+  "24": "The sons of Rachel: Joseph and Benjamin.",
+  "25": "The sons of Bala Rachel's handmaid: Dan and Nephthali.",
+  "26": "The sons of Zelpha Lia's handmaid: Gad and Aser: these are the sons of Jacob, that were born to him in Mesopotamia of Syria.",
+  "27": "He came also to Isaac his father in Mambre, the city of Arbee, this is Hebron: wherein Abraham and Isaac sojourned.",
+  "28": "And the days of Isaac were complete an hundred eighty years.",
+  "29": "And spent with age he died, and was put to his people, being old and full of days, and Esau and Jacob his sons buried him."
+ },
+ "ref_coverage": {
+  "janvier": 29,
+  "have": {
+   "s_dismas": 29,
+   "odr_com": 29,
+   "sabates_a": 29,
+   "madueke_b": 29
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 116,
+ "triage": "SOURCE-SKEW",
+ "secs": 5.4
+}

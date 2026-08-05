@@ -1,0 +1,254 @@
+<title>Rung-2 Recognizer — Kraken vs Calamari (OriginalDR)</title>
+<style>
+  :root{
+    --paper:#f7f6f3; --raised:#fffefb; --sunk:#efece5;
+    --ink:#1a1e24; --ink-soft:#4a525c; --ink-faint:#828d98;
+    --rule:#dcd8cf; --rule-strong:#c7c1b4;
+    --accent:#1f5a5f; --accent-ink:#123c40; --accent-soft:#e2ecec;
+    --win:#2f7d4f; --win-bg:#e8f2ea; --warn:#8f6415; --warn-bg:#f6edd7; --crit:#a4382f; --crit-bg:#f6e5e2;
+    --serif:"Palatino","Iowan Old Style","Palatino Linotype","URW Palladio L",Georgia,serif;
+    --sans:ui-sans-serif,-apple-system,"Segoe UI",Roboto,system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#14171b; --raised:#1c2127; --sunk:#0f1216;
+      --ink:#e9e6df; --ink-soft:#a7afb8; --ink-faint:#6c757e;
+      --rule:#2a3037; --rule-strong:#3a424b;
+      --accent:#5fb6b2; --accent-ink:#8fd0cc; --accent-soft:#1b2c2d;
+      --win:#5ec488; --win-bg:#16271d; --warn:#d3a251; --warn-bg:#2a2413; --crit:#dd786e; --crit-bg:#2b1a18;
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#f7f6f3; --raised:#fffefb; --sunk:#efece5; --ink:#1a1e24; --ink-soft:#4a525c; --ink-faint:#828d98;
+    --rule:#dcd8cf; --rule-strong:#c7c1b4; --accent:#1f5a5f; --accent-ink:#123c40; --accent-soft:#e2ecec;
+    --win:#2f7d4f; --win-bg:#e8f2ea; --warn:#8f6415; --warn-bg:#f6edd7; --crit:#a4382f; --crit-bg:#f6e5e2;
+  }
+  :root[data-theme="dark"]{
+    --paper:#14171b; --raised:#1c2127; --sunk:#0f1216; --ink:#e9e6df; --ink-soft:#a7afb8; --ink-faint:#6c757e;
+    --rule:#2a3037; --rule-strong:#3a424b; --accent:#5fb6b2; --accent-ink:#8fd0cc; --accent-soft:#1b2c2d;
+    --win:#5ec488; --win-bg:#16271d; --warn:#d3a251; --warn-bg:#2a2413; --crit:#dd786e; --crit-bg:#2b1a18;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--paper); color:var(--ink); font-family:var(--sans);
+    line-height:1.62; -webkit-font-smoothing:antialiased; margin:0;}
+  .wrap{max-width:900px; margin:0 auto; padding:clamp(1.5rem,4vw,3.5rem) clamp(1.1rem,4vw,2rem) 4rem;}
+  .prose{max-width:66ch;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; line-height:1.15; text-wrap:balance; margin:0;}
+  h1{font-size:clamp(2rem,5vw,2.9rem); letter-spacing:-.01em;}
+  h2{font-size:clamp(1.4rem,3vw,1.75rem); margin:2.8rem 0 .4rem;}
+  h3{font-size:1.1rem; margin:1.8rem 0 .3rem;}
+  p{margin:.6rem 0;}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px;}
+  .eyebrow{font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 .9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap;}
+  .eyebrow::before{content:""; width:2rem; height:1px; background:var(--accent); opacity:.6;}
+  .lede{font-family:var(--serif); font-size:clamp(1.1rem,2.4vw,1.35rem); color:var(--ink-soft);
+    line-height:1.45; margin:.9rem 0 0; max-width:60ch;}
+  .meta{font-family:var(--mono); font-size:.74rem; color:var(--ink-faint); margin-top:1.4rem;
+    letter-spacing:.02em; display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .longs{color:var(--accent); font-weight:600;}
+
+  /* verdict banner */
+  .verdict{margin:2.4rem 0 0; border:1px solid var(--rule); border-left:3px solid var(--win);
+    background:var(--raised); border-radius:3px; padding:1.1rem 1.3rem; display:flex; gap:1rem;
+    align-items:baseline; flex-wrap:wrap;}
+  .verdict .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--win); background:var(--win-bg); padding:.2rem .5rem; border-radius:99px; white-space:nowrap;}
+  .verdict p{margin:0; font-size:1.02rem;}
+  .verdict code{font-family:var(--mono); font-size:.9em; background:var(--sunk); padding:.05em .35em; border-radius:3px;}
+
+  /* stat tiles */
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1px;
+    background:var(--rule); border:1px solid var(--rule); border-radius:4px; overflow:hidden; margin:1.4rem 0 0;}
+  .tile{background:var(--raised); padding:1.1rem 1.2rem;}
+  .tile .k{font-family:var(--mono); font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--ink-faint);}
+  .tile .v{font-family:var(--mono); font-size:2.05rem; font-variant-numeric:tabular-nums; line-height:1.1;
+    margin:.35rem 0 .1rem; letter-spacing:-.02em;}
+  .tile .v.win{color:var(--win)} .tile .v.mid{color:var(--warn)}
+  .tile .d{font-size:.82rem; color:var(--ink-soft);}
+  .tile .d b{color:var(--ink); font-weight:600;}
+
+  /* specimen */
+  .specimen{margin:1.2rem 0 0; border:1px solid var(--rule); border-radius:4px; overflow:hidden;}
+  .spec-row{padding:.85rem 1.1rem; border-top:1px solid var(--rule); font-family:var(--serif); font-size:1.02rem;}
+  .spec-row:first-child{border-top:0;}
+  .spec-row .who{font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase;
+    display:block; margin-bottom:.3rem; color:var(--ink-faint);}
+  .spec-row.gold{background:var(--accent-soft);} .spec-row.gold .who{color:var(--accent-ink);}
+  .spec-row.kr{background:var(--win-bg);} .spec-row.kr .who{color:var(--win);}
+  .spec-row.cal{background:var(--warn-bg);} .spec-row.cal .who{color:var(--warn);}
+  .spec-row .txt{color:var(--ink);}
+
+  /* tables */
+  .tbl-wrap{overflow-x:auto; margin:1rem 0 0; border:1px solid var(--rule); border-radius:4px;}
+  table{border-collapse:collapse; width:100%; font-size:.92rem; min-width:520px;}
+  caption{caption-side:top; text-align:left; font-family:var(--mono); font-size:.7rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink-faint); padding:.7rem 1rem .1rem;}
+  th,td{padding:.6rem .9rem; text-align:right; border-top:1px solid var(--rule);
+    font-variant-numeric:tabular-nums; white-space:nowrap;}
+  th:first-child,td:first-child{text-align:left; font-variant-numeric:normal; white-space:normal;}
+  thead th{border-top:0; font-family:var(--mono); font-size:.68rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-faint); font-weight:500; background:var(--sunk);}
+  tbody tr.hl td{background:var(--win-bg);}
+  tbody tr.hl td:first-child{font-weight:600; color:var(--win);}
+  td .num{font-family:var(--mono);}
+  .best{color:var(--win); font-weight:600;} .weak{color:var(--warn);}
+  .chip{font-family:var(--mono); font-size:.62rem; letter-spacing:.06em; text-transform:uppercase;
+    padding:.12em .45em; border-radius:99px; vertical-align:middle; margin-left:.4rem;}
+  .chip.win{color:var(--win); background:var(--win-bg); border:1px solid color-mix(in srgb,var(--win) 30%,transparent);}
+
+  /* story cards */
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0 0;}
+  @media(max-width:640px){.cards{grid-template-columns:1fr;}}
+  .card{border:1px solid var(--rule); border-radius:4px; padding:1.1rem 1.2rem; background:var(--raised);}
+  .card.bug{border-top:2px solid var(--crit);} .card.stack{border-top:2px solid var(--warn);}
+  .card h3{margin:0 0 .5rem; font-size:1.02rem;}
+  .card .badge{font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint);}
+  .card p{font-size:.9rem; margin:.45rem 0;}
+  .card code{font-family:var(--mono); font-size:.82em; background:var(--sunk); padding:.05em .3em; border-radius:3px;
+    word-break:break-word;}
+  .card .fix{color:var(--win); font-weight:600;}
+
+  .note{border-left:3px solid var(--warn); background:var(--warn-bg); border-radius:0 3px 3px 0;
+    padding:.8rem 1.1rem; margin:1rem 0 0; font-size:.9rem;}
+  .note b{color:var(--warn);}
+  ul{padding-left:1.1rem; margin:.5rem 0;} li{margin:.35rem 0;}
+  hr{border:0; border-top:1px solid var(--rule); margin:2.6rem 0;}
+  footer{margin-top:2.6rem; padding-top:1.2rem; border-top:1px solid var(--rule);
+    font-family:var(--mono); font-size:.72rem; color:var(--ink-faint); line-height:1.7;}
+  footer code{color:var(--ink-soft);}
+  .kw{color:var(--accent); font-weight:600;}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Rung-2 recognizer · OriginalDR re-OCR ladder</p>
+    <h1>Two engines, one typeface:<br>fine-tuning a Douay-Rheims recognizer</h1>
+    <p class="lede">A per-typeface recognizer, trained two independent ways on the same 264 gold lines,
+      so the choice of engine is measured — not assumed. The whole point is surface fidelity: the
+      long-s <span class="longs">ſ</span> must survive.</p>
+    <div class="meta"><span>2026·07·21</span><span>264 train / 47 held-out val</span><span>NFC · no dictionary/LM · ſ-count on every output</span></div>
+  </header>
+
+  <div class="verdict">
+    <span class="tag">Verdict</span>
+    <p><b>Kraken fine-tuned wins</b> — ship <code>reichenau_dr.mlmodel</code> as Rung&nbsp;2. Transfer from a
+      strong ſ-faithful Latin base beats training a second engine from scratch on 264 lines by ~10 points.</p>
+  </div>
+
+  <div class="tiles">
+    <div class="tile">
+      <div class="k">Held-out line accuracy · fair head-to-head</div>
+      <div class="v win">93.96%</div>
+      <div class="d"><b>Kraken</b> · CER 0.060 &nbsp;vs&nbsp; Calamari <b>83.94%</b></div>
+    </div>
+    <div class="tile">
+      <div class="k">genesis-24 page · content</div>
+      <div class="v">0.9448</div>
+      <div class="d">base 0.8997 → R1 0.9114 → <b>R2 0.9448</b></div>
+    </div>
+    <div class="tile">
+      <div class="k">genesis-24 page · surface fidelity</div>
+      <div class="v">0.451</div>
+      <div class="d">R1 0.038 → <b>R2 0.451</b> · ſ 54/51 kept</div>
+    </div>
+  </div>
+
+  <h2>The difference you can read</h2>
+  <p class="prose">One verse of Genesis 24, transcribed by each engine from the same scan line-crops. Gold is the
+    human diplomatic transcription; long-s <span class="longs">ſ</span> is marked. Kraken reproduces the body
+    verbatim (it even reads the running header the gold omits); Calamari, from scratch, fragments.</p>
+  <div class="specimen">
+    <div class="spec-row gold"><span class="who">Gold — human diplomatic</span><span class="txt">I be<span class="longs">ſ</span>eech thee, and doe mercifully with my mai<span class="longs">ſ</span>ter Abra-ham. † Behold I <span class="longs">ſ</span>tand nigh to the fountaine of water…</span></div>
+    <div class="spec-row kr"><span class="who">Kraken fine-tuned — R2</span><span class="txt">Abraham. GENESIS. I be<span class="longs">ſ</span>eech thee, and doe mercifully with my mai<span class="longs">ſ</span>ter Abra-ham. † Behold I <span class="longs">ſ</span>tand nigh to the fountaine of water, and the daughters…</span></div>
+    <div class="spec-row cal"><span class="who">Calamari from-scratch — R2</span><span class="txt">t t beeech hand doe ifute A h † <span class="longs">ſ</span>ehold I ftand rio h ro the fotmtaif he daugl ero t the nhaltets of this citic…</span></div>
+  </div>
+
+  <h2>Line-level — the fair comparison</h2>
+  <p class="prose">Both engines recognizing the identical 47 held-out validation crops (neither trained on them),
+    each scored by its own native character-accuracy. No segmentation confound — this is the clean recognizer test.</p>
+  <div class="tbl-wrap">
+    <table>
+      <caption>47 held-out val line-crops · char accuracy (higher = better)</caption>
+      <thead><tr><th>Recognizer</th><th>Char accuracy</th><th>CER</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Kraken fine-tuned <span class="chip win">winner</span></td><td class="num best">93.96%</td><td class="num">0.060</td><td>transfer · reichenau_lat</td></tr>
+        <tr><td>Calamari from-scratch</td><td class="num weak">83.94%</td><td class="num">0.161</td><td>scratch · 264 lines</td></tr>
+        <tr><td>reichenau_lat (base, no fine-tune)</td><td class="num">~93.0%</td><td class="num">~0.070</td><td>starting point</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Page-level — the deliverable metric</h2>
+  <p class="prose">Full-page re-OCR through the ladder, same kraken segmentation for both engines, scored at the
+    grain-correct metric (page content edit-ratio + ~20-word window pass-rate + the mandatory ſ-count check).
+    <b>psalms-118</b> stays ~0.43 for <i>every</i> rung — it's layout-confounded (the recognizer emits
+    verse-numbers/marginalia the gold body excludes), a known Rung-1 body-typing gap, not a recognizer failure.</p>
+  <div class="tbl-wrap">
+    <table>
+      <caption>page content edit-ratio · surface in (parens) · ſ hyp/gold</caption>
+      <thead><tr><th>Rung / engine</th><th>genesis-24</th><th>surface</th><th>psalms-118</th><th>ſ (gen-24)</th></tr></thead>
+      <tbody>
+        <tr><td>base — existing scan OCR</td><td class="num">0.8997</td><td class="num">0.083</td><td class="num">0.4377</td><td class="num">55/51</td></tr>
+        <tr><td>R1 — base recognizer + preprocess</td><td class="num">0.9114</td><td class="num">0.038</td><td class="num">0.4221</td><td class="num">55/51</td></tr>
+        <tr class="hl"><td>R2 — Kraken fine-tuned <span class="chip win">best</span></td><td class="num best">0.9448</td><td class="num best">0.451</td><td class="num">0.4309</td><td class="num">54/51</td></tr>
+        <tr><td>R2 — Calamari (crop-mismatch penalised †)</td><td class="num weak">0.5689</td><td class="num">0.087</td><td class="num">0.3409</td><td class="num">44/51</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><b>† Honest caveat.</b> Calamari's <i>page</i> number is depressed by a train/score crop-distribution
+    mismatch (it trained on full-res <code>rung2_prepare</code> crops, scored on downscaled masked-polygon crops), not
+    pure recognizer quality. Its fair number is the line-level <b>83.94%</b> — still 10 points below Kraken.</div>
+
+  <h2>Why Kraken wins: transfer &gt; from-scratch</h2>
+  <p class="prose">Kraken fine-tunes from <span class="kw">reichenau_lat</span> — a strong, ſ-faithful Latin base of
+    roughly millions of characters — so 264 Douay-Rheims lines only need to <i>refine</i> it (<code>resize='union'</code>
+    extended the codec 223→233, adding 10 DR-only glyphs while keeping the base's learned strokes). Calamari, pinned
+    to v1.0.7 with no compatible ſ-faithful warm-start base, learns entirely from 264 lines — it plateaus at 83.9%
+    validation while its <i>training</i> error keeps falling to 0.12: textbook small-data overfitting. Both engines are
+    surface-honest — Calamari <i>did</i> learn ſ, †, and archaic spelling — Kraken is simply more accurate.</p>
+
+  <h2>Both trainers were broken; both were fixed</h2>
+  <p class="prose">The two-track mandate earned its keep: each engine had a blocker that would have silently
+    sunk a single-track attempt.</p>
+  <div class="cards">
+    <div class="card bug">
+      <span class="badge">Track 1 · Kraken 7.0.2</span>
+      <h3>"No training data" was a lie</h3>
+      <p>The <code>ketos train</code> CLI reported an empty dataset from provably-valid data. Root cause: the datamodule
+        passes <code>im_transforms=None</code>; on raw-bbox data <code>.add()</code> then sets
+        <code>self.transforms.valid_norm</code> → <code>AttributeError</code> — <b>swallowed</b> by a broad
+        <code>except</code> into an empty set. A silent-degradation trap; DEBUG logging exposed it.</p>
+      <p class="fix">Fix → Python-API trainer overriding one method to pass a real transform. Best val 0.9396.</p>
+    </div>
+    <div class="card stack">
+      <span class="badge">Track 2 · Calamari 1.0.7</span>
+      <h3>A 2020 engine on a 2026 stack</h3>
+      <p>pip on Python 3.12 resolves only calamari 1.0.7 (2.x needs an old TensorFlow). It runs against modern TF
+        only with two env vars on every call: <code>TF_USE_LEGACY_KERAS=1</code> (Keras-3 rejects its symbolic
+        <code>K.cast</code>) and <code>PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python</code> (protobuf 4+ guard).</p>
+      <p class="fix">Fix → isolated venv + both env vars. Trains from scratch to 83.9% val.</p>
+    </div>
+  </div>
+
+  <hr>
+  <h2>What held the line</h2>
+  <ul class="prose">
+    <li><b>Consensus stayed out</b> of the ladder — each source's OCR is improved singly, honestly.</li>
+    <li><b>Grain-correct metric</b> (page + ~20-word window), never the per-verse metric that deflates prose.</li>
+    <li><b>ſ surface-safe</b> throughout — NFC (never NFKC), no dictionary or language model, and the ſ-count
+      companion check ran on every output because <code>edit_ratio</code> is ſ-blind.</li>
+    <li><b>Base = reichenau_lat</b> (ſ-faithful); catmus-print-large (which modernises ſ→s) was rejected.</li>
+  </ul>
+
+  <footer>
+    Artifacts &nbsp;·&nbsp; trainer <code>ocr-spike/rung2_finetune_kraken.py</code> &nbsp;·&nbsp;
+    scorer <code>ocr-spike/score_engines.py</code> &nbsp;·&nbsp;
+    models <code>models/reichenau_dr.mlmodel</code> + <code>models/calamari-dr/dr_best.ckpt</code><br>
+    full write-up <code>ocr-spike/RUNG2-ENGINE-COMPARISON-2026-07-21.md</code> &nbsp;·&nbsp;
+    next lever = Rung-3 vision-LLM (validated 0.95–0.99), gated on residual
+  </footer>
+</div>

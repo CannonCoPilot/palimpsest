@@ -1,0 +1,1945 @@
+{
+ "chapter": 19,
+ "n_verses": 38,
+ "n_cells": 152,
+ "n_pass": 147,
+ "rate": 0.9671,
+ "ref_means": {
+  "s_dismas": 0.9825,
+  "odr_com": 0.9856,
+  "sabates_a": 0.9789,
+  "madueke_b": 0.9789
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 0.9737,
+  "S9": 0.9474,
+  "S6": 0.9474
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 5,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 15,
+   "worst": 0.861,
+   "from": "chapter",
+   "text": "And when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two Abraham. GENE SIS. daug hters which thou haſt: leaſt thou alſo perish withal in the wickednes ot the citie."
+  },
+  {
+   "src": "S3",
+   "verse": 23,
+   "worst": 0.895,
+   "from": "p94",
+   "text": "The funne was riſen vpon the earth, & Lot entred into Segor."
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.895,
+   "from": "r3",
+   "text": "our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:"
+  },
+  {
+   "src": "S9",
+   "verse": 32,
+   "worst": 0.883,
+   "from": "p100",
+   "text": "Come, let vs make him drunke ſeed with wine, and let vs lie with him, that we may preſerue to drinke of our father."
+  },
+  {
+   "src": "S9",
+   "verse": 33,
+   "worst": 0.856,
+   "from": "p100",
+   "text": "They therfore made their father with her fawine that night: and the elder went in, and lay lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Np the two angels came to Sodome at euen, and Lot ſitting in the gates of the citie. Who hen he had ſene them, roſe vp and went to meete them : and adored proſtrate vnto the ground,",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "ND the two angels came to Sodome at euen, and Lot A ſitting in the gates of the citie. Who when he had ſene them, roſe vp and went to meete them: and adored proſtrate vnto the ground,",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And the two angels came to Sodome at cuen, and Lot ſitting in the gates of the citie. Who when he had ſene them, roſe vp and went to meete them:and adored proſtrate vnto the ground,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "and two Angels came to. Sodome at euen, and Lot ſitting in the gates of the citie. Who whenhe had ſeen them, roſe vp went to meet then: and adored proſtrate vnto the ground,",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "and ſaid : I beſech vou, my Lords, turne:: into the houſe of your ſeruant, and lodge there : wash your feet, and in the morning you shal go forth on your way. Who ſaid : No, but we wil abide in the ſtreat.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "and ſaid : I beſech you, my Lords, turne into the houſe of your ſeruant, and lodge there : wash your feet, and in the morning you shal go forth on your way. Who ſaid : No, but we wil abide in the ſtreat.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "†and ſaid : I beſoch you, my Lords, turne:: into the houſe of your ſeruant, and lodge there : wash your Lot feet, and in the morning you shal go forth on your way. talitie Who ſaid : No, but we wil abide in the ſtreat.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   },
+   "S6": {
+    "text": "and ſaid I beſeech you, my Lords, turne into the houſe of vour ſeruant, and lodge there: waſh your feet, and in the morning you ſhal goe forth on your way. Who ſaid: No, but we wil abide in the ſtreet.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "He compelled them earneſtly to rurne in vnto him: and when they were ontred into his houſe, he made them a banquet, and baked vnleauened bread, and they did eate.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "He compelled them earneſtly to turne in vnto him: and when they were entred into his houſe, he made them a banquet, and baked vnleauened bread, and they did eate.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "He compelled them earneſtly to turne in vnto him: and when they were entered into his houſe, he made them a banquet, and baked vnleauened. bread, and they did eate.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "He compelled them earneſtly to turne in vnto him: and when they were entred into his houſe, he made them a banquet, and baked vnleauened bread, and they did eate.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And before they went to bed, the men of the citie beſet thohouſe fromyoung to old, al the pecple togeather.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S3": {
+    "text": "And before they went to bed, the men of the citie beſet thohouſe from young to old, al the people togeather.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "†And before they went to bed, the men of the citie beſet the houſe from young to old, al the pecple togeather.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And betore they went to bed, the men of the citie beſet the houſe from yong to old, al the people together.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And they called Lot, and ſaid to him: Where are the men that came in to thee at nightꝰ bring them forth hither that we may know them.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And they called Lot, and ſaid to him: Where are the men that came in to thee at night bring them forth hither that we may know them.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And they called Lot, and ſaid to him: Where are the men that came in to thee at night bring them forth hither that we mayknow them.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And they called Lot, and ſaid to him Where are the men that came in to thee at night: bring the forth hither that we may know them.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Lor going forth to them, and ſhutiing the dore after him, ſaiI:",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "Lot going forth to them, and ſhutting the dore after him, ſaid :",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Lot going forth to them, and ſhutting the dore after him, aid :",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Lot goin torth to them, and ſhutting the dore atter him, ſaid:",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Doe not ſo, I beſech you, my brethren, doe not commit this euil.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Doe not ſo, I beſech you, my brethren, doe not commit this euil.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Doe not ſo, I beſech you, my brethren, doe not commit this ouil.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "Doe not ſo, I beſeech you, my brethren, doe not commit this euil.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "I haue two daughters, which as yer haue not knowen man : I wil bring them forth to you, and abuſe you them as it ſhal pleaſe you, ſo that you do no euil to rheſe men, becauſe they are entred vnder the ihadowe of my roofe.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "I haue two daughters, which as yet haue not knowen man : I wil bring them forth to you, and abuſe you them as it ſhal pleaſe you, ſo that you do no euil to theſe men, becauſe they are entred vnder the ſhadowe of my roofe.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "I haue two daughters, which as yet haue not knowen man : I wil bring them forth to you, and abuſe you them as it ſhal pleaſe you, ſo that you do no euil to theſe men, becauſe they are entred vnder the ſhadow of my roofe.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "I haue two daughters, which as yet haue not knowen man I wil bring them torth to you, and abuſe you them as it ſhal pleaſe you, ſo that vou doe no euil to theſe men, becauſe they are entred vnder the ſhadow of my roofe.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "But they ſaid : Get thee backe thither. And againe : Thou cameſt in, ſaid they, as a ſtranger, what to be a iudge? Thy ſelfe therfore we wil afflict more then theſe. And they did violence to Lot exceadinglv: and it was euen nowe at the point that they would break the dores.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "But they ſaid : Get thee backe thither. And againe : Thou cameſt in, ſaid they, as a ſtranger, what to be a iudge ? Thy ſelfe therfore we wil afflict more then theſe. And they did violence to Lot exceadingly: and it was euen nowe at the point that they would break the dores.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "But they ſaid : Get thee backe thither. And againe : Thou cameſt in, ſaid they, as a ſtranger, what to be a iudge Thy ſelfe therfore we wil afflict more then theſe. And they did violence to Lot exceadingly : and it was euen nowe at the point that they would break the dores.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "But they ſaid: Get thee backe thithet. And againe Thou cameſt in, ſaid they, as a ſtranger what to be a Iudger Thy ſelfe therfore we wil afflict more then theſe. And they did violece to Lot exceedingly and it was euen now at the point that they would break the dores.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And behold the men put forth their hand, and drew in Lot vnto them, and ſhut the dore:",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And behold the men put forth their hand, and drew in Lot vnto them, and ut the dore:",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "And behold the men put forth their hand, and drew in Lot vnto them, and ſhut the dore :",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And behold the men put fotth thuir hand, and drew in Lot vnto them, and ſhut the dore",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "and them, that were without, they ſtroke ith blyndnes from the leaſt to the greateſt, ſo that they could not find the dore.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "and them, that were without, they ſtroke with blyndnes from the leaſt to the greateſt, ſo that they could not find the dore.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "and them, that were without, they ſtroke with blyndnes from the leaſt to the greateſt, ſo that they could not find the dore.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "and them that wore without they ſtruck with blindnes from the leaſt to the greatelt, ſo that they could not find the dore.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And they ſaid to Lot : Haſt thou here anicof thine ſonne in law, or ſonnes, or daughters, al that are thine, bring them out of this citie:",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And they ſaid to Lot: Haſt thou here anic ofthine ſonne in law, or ſonnes, or daughters, al that are thine, bring them out of this citie:†",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And they ſaid to Lot Haſt thou here anie of thine ſonne in law, or ſonnes, or daughters, al that are thine, bring them out of this citie",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And they ſaid to Lot Haſt thou here anie of thine ſonne in law, or ſonnes, or daughters, al that art thine bring them out of this citie",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "for we wil deſtroy this place, for that :: their crye is waxen lowde before our Lord, who hath ſent vs to deſtroy them",
+    "from": "p89",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "for we wil deſtroy this place, for that :: their crye is waxen lowde before our Lord, who hath ſent vs to deſtroy them",
+    "from": "p93",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "for we wil deſtroy this place, for that their crye is waxen lowde before our Lord, who hath ſent vs to deſtroy them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "for we wil deſtroy this place, for that their cry is waxen loud betore our Lord, who hath lent vs to deſtroy them.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Therfore Lot went forth, and ſpake to his ſonnes in lawe that were to take his daughters, and ſaid : Ariſe : ger you forth out of this place, becauſe our Lord wil deſtroy this citie. And he ſemed vnto them to ſpeake as it were in ieſt.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "Therfore Lor went forth, and ſpake to his ſonnes in lawe that were to take his daughters, and ſaid : Ariſe : get you forth out of this place, becauſe our Lord wil deſtroy this citie. And he ſemed vnto them to fpeake as it were in ieſt.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "Therfore Lot crieth went forth, and ſpake to his ſonnes in lawe that were to take uen for his daughters, and ſaid : Ariſe: get you forth out of thig uenge. place, becauſe our Lord wil deſtroy this citie. And he ſemed vnto them to ſpeake as it were in ieſt.",
+    "from": "p99",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.901,
+     "madueke_b": 0.901
+    }
+   },
+   "S6": {
+    "text": "Therfore Lot went forth, aud ſpake to his ſonnes in law that were to take his daughters, aud ſaid: Ariſe, get vou torth out of this place becauſe our Lord wil deſtroy this citie. And he ſeemed vnto them to ſpeake as it were in ieſt.",
+    "from": "p83",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And when it was morning, the angels vrged him, ſaying: Ariſe, take thy wife, and the two daughters which thou haſt: leaſt thou alſo periih withal in the wickednes of the citie.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And when it was morning, the angels vrged him, ſaying: Ariſe, take thy wife, and the two daughters which thou haſt: leaſt thou alſo peri ſh withal in the wickednes of the citie.",
+    "from": "p93",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And when it was morning, the angels vrged him, ſaying: Ariſe, take thy wife, and the two daughters which thou haſt: leaſt thou alſo periſh withal in the wickednes of the citie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two Abraham. GENE SIS. daug hters which thou haſt: leaſt thou alſo perish withal in the wickednes ot the citie.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.869,
+     "odr_com": 0.869,
+     "sabates_a": 0.861,
+     "madueke_b": 0.861
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And they led him forth, and ſet him without the citie and there they ſpake to him, ſaying Saue thy life looke not backe, neither ſtay thou in al the countrie about but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S3": {
+    "text": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying Saue thy life looke not backe, neither ſtay thou in al the countrie about but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S9": {
+    "text": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying : Saue thy life: looke not backe, neither ſtay thou in al the countrie about : but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S6": {
+    "text": "And they led him torth, and ſet him without the citie, and there they ſpake to him, ſaying: Saue thy lite: looke not backe, neither ſtay thou in al the countrie about : but ſaue thy ſelfe in the mountaine, leſt thou alſo perith withal.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And Lot ſaid to them I beſeech thee my Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Lot ſaid to them I beſeech thee my Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Lot ſaid to them I beſeech thee my Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Lot ſaid to them : I beſeech thee my Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "becauſe thy ſeruant hath fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "becauſe thy ſeruant hath found grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my lite, and ſate I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.987,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ihalbe ſafe in it : is it not a little one, and my life ſhalbe ſaued",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.993,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in it: is it not a little one, and my life ſhalbe ſaued",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "There is this citie hereby 2o at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in at: is it not alittle one, and my life ſhalbe ſaued",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.971,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S6": {
+    "text": "There is this citie here by. at hand, wherunto I may fly, a little one, and I ſhal be ſate in it: sit not a little one and my life ſhal be ſaued21.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And he ſaid to him : Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to him Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to him: Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to him: Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Make haſt, and be ſaued there : becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called. Segor.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Make haſt, and be ſaued there : becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "Make haſt, and beſaued there becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.993,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "Make haſt, and be ſaued there: becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.918,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "The ſunne was riſen vpon the earth, & Lot entred into Segor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.912,
+     "madueke_b": 0.912
+    }
+   },
+   "S3": {
+    "text": "The funne was riſen vpon the earth, & Lot entred into Segor.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S9": {
+    "text": "The ſunne was riſen vpon the earth, & Lot entered into Segor.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S6": {
+    "text": "The ſunne was riſen vpon the earth, and Lot entred into Segor.24.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out ofheauen : andhe",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S3": {
+    "text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.901,
+     "odr_com": 0.901,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And his wife : looking behind her, nor was turned into a ſtatua of ſalt.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "And his wife : looking behind her, not was turned into a ſtatua of ſalt.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "And his wife looking behind her, was turned into a ſtatua of ſalt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And his wite () lookiug behind her, was turned into a ſtatua of ſalt.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And Abraham getting vp early in the morning there where before he had ſtood with our Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+    "from": "p94",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "beheld Sodome & Gomorre, and the whole8 land of that countrie : and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S3": {
+    "text": "beheld Sodome & Gomorre, and the whole land of that countrie and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S9": {
+    "text": "†beheld Sodome & Gomorre, and the whole land of that countrie and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S6": {
+    "text": "beheld Sodome and Gomorre, and the whole land of that countrie: and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "For when God ſubuerted the citties of that countrie, he :: remenbring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "For when God ſubuerted the citties of that countrie, he :: remenbring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "For when God ſubuerted the citties of that countrie, he remenbring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "For when God ſubuerted the citties of that countrie, he remembring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt. ;0.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him (for he was afraid to abide in Segor) and he abode in a caue him ſelfe, and his two daughters with him.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and heabode in a caue him ſelfe, and his two daughters with him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and he abode in a caue Aug. him ſelfe, and his two daughters with him.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And Lot aſcended out of Segor and abode in the mountaine, his two daughters alſo with him ( for he was afraid to abide in Segor) and he abode in a caue hiuiſelfe, and his two daughters with him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And the elder ſaid to the younger : Our father is old, and there is no man left on the earth, that may companie with vs after the maner of the whole earth.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the elder ſaid to the younger Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the elder ſaid to the younger Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the elder ſaid to the yonger : Our father is old, and there is no man lett on the earth, that may companie with vs after the manner ot the whole earth.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preſerue ſeed of our father.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preſerue ſeed of our father.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Come, let vs make him drunke ſeed with wine, and let vs lie with him, that we may preſerue to drinke of our father.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.883,
+     "odr_com": 0.883,
+     "sabates_a": 0.892,
+     "madueke_b": 0.892
+    }
+   },
+   "S6": {
+    "text": "Come, let vs make him drunke with wine, and let vs lic with him, that we may preſerue ſeed of our tather.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father : but ke perceaued not, neyther when his daughter lay downe, nor when ſne roſe vp.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father : but he perceaued not, neyther when his daughter lay downe, nor whon ſheroſe vp.",
+    "from": "p94",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "They therfore made their father with her fawine that night: and the elder went in, and lay lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 0.867,
+     "odr_com": 0.867,
+     "sabates_a": 0.856,
+     "madueke_b": 0.856
+    }
+   },
+   "S6": {
+    "text": "They therfore made their father to drinke wine that night : and the elder went in, and lay with her tather : but he perceiued not, neyther when his daughter lay downe, nor when ſhe roſe vp.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "34": {
+   "S1": {
+    "text": "The next day alſo the elder ſaid to mcm ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke winealſo this night, and thou ialt lye with him, that we may ſaue ſeed of our ſather.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "The next day alſo the elder ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S9": {
+    "text": "The next day alſo the elder ſaid to the younger Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The next day alſo the elder ſaid to the yonger : Behold I lay veſternight with my father, let vs make him crinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſced of our father.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "35": {
+   "S1": {
+    "text": "They made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther the truly did he perceaue when ſhe lay downe, or when ſhe roſe vp.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "They made their father drinke wine that night alfo, and the younger daughter went in, and lay with him: and neyther the truly did he perceaue when ſhe lay downe, or when ſhe roſe vp.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "They. made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther then truly did he perceaue when ſhe lay downe, or when ſhe roſe vp.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "They made their tather drinke wine that night alſo, and the yonger daughter went in, and lay with him: and neyther then truly did he perceiue when ſhe lay downe, or when ſhe roſe vp.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "36": {
+   "S1": {
+    "text": "The two daughters therfore of Lot were with child by their father.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "The two daughters therfore of Lot were with child by their father.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "The two daughters therfore of Lot were with child by their father.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "The two daughters thertore of Lot were with chuld by theit father.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   }
+  },
+  "37": {
+   "S1": {
+    "text": "And the elder bare a ſonne and ſhe called his name Moab: he is, the father of the Moabites euen to this preſent day.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the elder bare a ſonne and ſhe called his name Moab: he is, the:: father of the Moabites euen to this preſent day.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the elder bare a ſonne and ſhe called his name Moab: he is, the :: father of the Moabites euen to this preſent day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the elder bare a ſonne and ſhe called his name Moab. he is the father of the Moabites euen to this preſent day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "38": {
+   "S1": {
+    "text": "The younger alſo bare a ſonne, and ſke called his name Ammon, that is the ſonne of my people: he is the father of the Ammonites euen to this day.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "The younger alſo bare a ſonne, and ſhe called his name Ammon, that is the ſonne of my people: he is the father of the Ammonites euen to this day.",
+    "from": "p95",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "The younger alſo bare a ſonne, and ſhe called his name Ammon, that is the ſonne of my people: he is the father of the Ammonites euen to this day.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The yonger alſo bare a ſonne, and she called his name Ammon, that is the ſonue of my people: he is the father of the Ammonites euento this day.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And the two Angels came to Sodome at euen; and Lot ſitting in the gates of the citie. Who when he had ſene them, roſe vp and went to meete them: and adored proſtrate vnto the ground,",
+   "odr_com": "AND the two angels came to Sodome at euen, and Lot sitting in the gates of the citie. Who when he had sene them, rose vp and went to meete them: and adored prostrate vnto the ground,",
+   "sabates_a": "And the two Angels came to Sodome at even, and Lot sitting in the gates of the city. Who when he had seen them, rose up & went to meet them: and adored prostrate unto the ground,",
+   "madueke_b": "And the two Angels came to Sodome at even, and Lot sitting in the gates of the city. Who when he had seen them, rose up & went to meet them: and adored prostrate unto the ground,"
+  },
+  "2": {
+   "s_dismas": "and ſaid: I beſech you, my Lords, turne into the houſe of your ſeruant, and lodge there: wash your feet, and in the morning you shal go forth on your way. Who ſaid: No, but we wil abide in the ſtreat.",
+   "odr_com": "and said: I besech you, my Lords, turne into the house of your seruant, and lodge there: wash your feet, and in the morning you shal go forth on your way. Who said: No, but we wil abide in the streat.",
+   "sabates_a": "and said: I beseech you, my Lords, turn into the house of your servant, and lodge there: Wash your feet, and in the morning you shall go forth on your way. Who said: No, but we will abide in the street.",
+   "madueke_b": "and said: I beseech you, my Lords, turn into the house of your servant, and lodge there: Wash your feet, and in the morning you shall go forth on your way. Who said: No, but we will abide in the street."
+  },
+  "3": {
+   "s_dismas": "He compelled them earneſtly to turne in vnto him: and when they were entred into his houſe, he made them a banquet, and baked vnleauened bread, and they did eate.",
+   "odr_com": "He compelled them earnestly to turne in vnto him: and when they were entred into his house, he made them a banquet, and baked vnleauened bread, and they did eate.",
+   "sabates_a": "He compelled them earnestly to turn in unto him: and when they were entered into his house, he made them a banquet, and baked unleavened bread, and they did eat.",
+   "madueke_b": "He compelled them earnestly to turn in unto him: and when they were entered into his house, he made them a banquet, and baked unleavened bread, and they did eat."
+  },
+  "4": {
+   "s_dismas": "And before they went to bed, the men of the citie beſet the houſe from young to old, al the people togeather.",
+   "odr_com": "And before they went to bed, the men of the citie beset the house from young to old, al the people togeather.",
+   "sabates_a": "And before they went to bed, the men of the city beset the house from young to old, all the people together.",
+   "madueke_b": "And before they went to bed, the men of the city beset the house from young to old, all the people together."
+  },
+  "5": {
+   "s_dismas": "And they called Lot, and ſaid to him: Where are the men that came in to thee at night? bring them forth hither that we may know them.",
+   "odr_com": "And they called Lot, and said to him: Where are the men that came in to thee at night? bring them forth hither that we may know them.",
+   "sabates_a": "And they called Lot, and said to him: Where are the men that came in to thee at night? Bring them forth hither that we may know them.",
+   "madueke_b": "And they called Lot, and said to him: Where are the men that came in to thee at night? Bring them forth hither that we may know them."
+  },
+  "6": {
+   "s_dismas": "Lot going forth to them, and ſhutting the dore after him, ſaid:",
+   "odr_com": "Lot going forth to them, and shutting the dore after him, said:",
+   "sabates_a": "Lot going forth to them, and shutting the door after him, said:",
+   "madueke_b": "Lot going forth to them, and shutting the door after him, said:"
+  },
+  "7": {
+   "s_dismas": "Doe not ſo, I beſech you, my brethren, doe not commit this euil.",
+   "odr_com": "Doe not so, I besech you, my brethren, doe not commit this euil.",
+   "sabates_a": "Do not so, I beseech you, my brethren, do not commit this evil.",
+   "madueke_b": "Do not so, I beseech you, my brethren, do not commit this evil."
+  },
+  "8": {
+   "s_dismas": "I haue two daughters, which as yet haue not knowen man: I wil bring them forth to you, and abuſe you them as it ſhal pleaſe you, ſo that you do no euil to theſe men, becauſe they are entred vnder the ſhadowe of my roofe.",
+   "odr_com": "I haue two daughters, which as yet haue not knowen man: I wil bring them forth to you, and abuse you them as it shal please you, so that you do no euil to these men, because they are entred vnder the shadowe of my roofe.",
+   "sabates_a": "I have two daughters, which as yet have not known man: I will bring them forth to you, and abuse you them as it shall please you, so that you do no evil to these men, because they are entered under the shadow of my roof.",
+   "madueke_b": "I have two daughters, which as yet have not known man: I will bring them forth to you, and abuse you them as it shall please you, so that you do no evil to these men, because they are entered under the shadow of my roof."
+  },
+  "9": {
+   "s_dismas": "But they ſaid: Get thee backe thither. And againe: Thou cameſt in, ſaid they, as a ſtranger, what to be a iudge? Thy ſelfe therfore we wil afflict more then theſe. And they did violence to Lot exceadingly: and it was euen nowe at the point that they would break the dores.",
+   "odr_com": "But they said: Get thee backe thither. And againe: Thou camest in, said they, as a stranger, what to be a iudge? Thy selfe therfore we wil afflict more then these. And they did violence to Lot exceadingly: and it was euen nowe at the point that they would break the dores.",
+   "sabates_a": "But they said: Get thee back thither. And again: Thou camest in, said they, as a stranger, what to be a Judge? Thyself therefore we will afflict more than these. And they did violence to Lot exceedingly: and it was even now at the point that they would break the doors.",
+   "madueke_b": "But they said: Get thee back thither. And again: Thou camest in, said they, as a stranger, what to be a Judge? Thyself therefore we will afflict more than these. And they did violence to Lot exceedingly: and it was even now at the point that they would break the doors."
+  },
+  "10": {
+   "s_dismas": "And behold the men put forth their hand, and drew in Lot vnto them, and ſhut the dore:",
+   "odr_com": "And behold the men put forth their hand, and drew in Lot vnto them, and shut the dore:",
+   "sabates_a": "And behold the men put forth their hand, and drew in Lot unto them, and shut the door:",
+   "madueke_b": "And behold the men put forth their hand, and drew in Lot unto them, and shut the door:"
+  },
+  "11": {
+   "s_dismas": "and them, that were without, they ſtroke with blyndnes from the leaſt to the greateſt, ſo that they could not find the dore.",
+   "odr_com": "and them, that were without, they stroke with blyndnes from the least to the greatest, so that they could not find the dore.",
+   "sabates_a": "and them that were without they struck with blindness from the least to the greatest, so that they could not find the door.",
+   "madueke_b": "and them that were without they struck with blindness from the least to the greatest, so that they could not find the door."
+  },
+  "12": {
+   "s_dismas": "And they ſaid to Lot: Haſt thou here anie of thine? ſonne in law, or ſonnes, or daughters, al that are thine, bring them out of this citie:",
+   "odr_com": "And they said to Lot: Hast thou here anie of thine? sonne in law, or sonnes, or daughters, al that are thine, bring them out of this citie:",
+   "sabates_a": "And they said to Lot: Hast thou here any of thine? Son in law, or sons, or daughters, all that are thine, bring them out of this city:",
+   "madueke_b": "And they said to Lot: Hast thou here any of thine? Son in law, or sons, or daughters, all that are thine, bring them out of this city:"
+  },
+  "13": {
+   "s_dismas": "for we wil deſtroy this place, for that their crye is waxen lowde before our Lord, who hath ſent vs to deſtroy them.",
+   "odr_com": "for we wil destroy this place, for that their crye is waxen lowde before our Lord, who hath sent vs to destroy them.",
+   "sabates_a": "for we will destroy this place, for that their cry is waxen loud before our Lord, who hath sent us to destroy them.",
+   "madueke_b": "for we will destroy this place, for that their cry is waxen loud before our Lord, who hath sent us to destroy them."
+  },
+  "14": {
+   "s_dismas": "Therfore Lot went forth, and ſpake to his ſonnes in lawe that were to take his daughters, and ſaid: Ariſe: get you forth out of this place, becauſe our Lord wil deſtroy this citie. And he ſemed vnto them to ſpeake as it were in ieſt.",
+   "odr_com": "Therfore Lot went forth, and spake to his sonnes in lawe that were to take his daughters, and said: Arise: get you forth out of this place, because our Lord wil destroy this citie. And he semed vnto them to speake as it were in iest.",
+   "sabates_a": "Therefore Lot went forth, and spake to his sons in law that were to take his daughters, and said: Arise, get you forth out of this place, because our Lord will destroy this city. And he seemed unto them to speak as it were in jest.",
+   "madueke_b": "Therefore Lot went forth, and spake to his sons in law that were to take his daughters, and said: Arise, get you forth out of this place, because our Lord will destroy this city. And he seemed unto them to speak as it were in jest."
+  },
+  "15": {
+   "s_dismas": "And when it was morning, the Angels vrged him, ſaying: Ariſe, take thy wife, and the two daughters which thou haſt: leaſt thou alſo periſh withal in the wickednes of the citie.",
+   "odr_com": "And when it was morning, the angels vrged him, saying: Arise, take thy wife, and the two daughters which thou hast: least thou also perish withal in the wickednes of the citie.",
+   "sabates_a": "And when it was morning, the Angels urged him, saying: Arise, take thy wife, and the two daughters which thou hast: lest thou also perish withal in the wickedness of the city.",
+   "madueke_b": "And when it was morning, the Angels urged him, saying: Arise, take thy wife, and the two daughters which thou hast: lest thou also perish withal in the wickedness of the city."
+  },
+  "16": {
+   "s_dismas": "He lingering, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+   "odr_com": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, because our Lord spared him.",
+   "sabates_a": "He lingering, they took his hand, and the hand of his wife, and of his two daughters, because our Lord spared him.",
+   "madueke_b": "He lingering, they took his hand, and the hand of his wife, and of his two daughters, because our Lord spared him."
+  },
+  "17": {
+   "s_dismas": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying: Saue thy life: looke not backe, neither ſtay thou in al the countrie about: but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+   "odr_com": "And they led him forth, and set him without the citie: and there they spake to him, saying: Saue thy life: looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal.",
+   "sabates_a": "And they led him forth, and set him without the city; and there they spake to him, saying: Save thy life; look not back, neither stay thou in all the country about: but save thyself in the mountain, lest thou also perish withal.",
+   "madueke_b": "And they led him forth, and set him without the city; and there they spake to him, saying: Save thy life; look not back, neither stay thou in all the country about: but save thyself in the mountain, lest thou also perish withal."
+  },
+  "18": {
+   "s_dismas": "And Lot ſaid to them: I beſeech thee my Lord,",
+   "odr_com": "And Lot said to them: I beseech thee my Lord,",
+   "sabates_a": "And Lot said to them: I beseech thee my Lord,",
+   "madueke_b": "And Lot said to them: I beseech thee my Lord,"
+  },
+  "19": {
+   "s_dismas": "becauſe thy ſeruant hath found grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+   "odr_com": "because thy seruant hath fonnd grace before thee, and thou hast magnified thy mercie, which thou hast wrought with me, in that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye.",
+   "sabates_a": "because thy servant hath found grace before thee, and thou hast magnified thy mercy, which thou hast wrought with me, in that thou wouldest save my life, and safe I cannot be in the mountain, lest perhaps the evil catch me, and I die.",
+   "madueke_b": "because thy servant hath found grace before thee, and thou hast magnified thy mercy, which thou hast wrought with me, in that thou wouldest save my life, and safe I cannot be in the mountain, lest perhaps the evil catch me, and I die."
+  },
+  "20": {
+   "s_dismas": "There is this citie hereby at hand, wherunto I may flee, a litle one, and I ſhal be ſafe in it: is it not a litle one, and my life ſhal be ſaued?",
+   "odr_com": "There is this citie hereby at hand, wherunto I may flee, a little one, and I shalbe safe in it: is it not a little one, and my life shalbe saued?",
+   "sabates_a": "There is this city here-by at hand, whereunto I may fly, a little one, and I shall be safe in it: is it not a little one, and my life shall be saved?",
+   "madueke_b": "There is this city here-by at hand, whereunto I may fly, a little one, and I shall be safe in it: is it not a little one, and my life shall be saved?"
+  },
+  "21": {
+   "s_dismas": "And he ſaid to him: Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+   "odr_com": "And he said to him: Behold also in this point I haue heard thy prayers, not to ouerthrow the citie for which thou hast spoken.",
+   "sabates_a": "And he said to him: Behold also in this point I have heard thy prayers, not to overthrow the city for which thou hast spoken.",
+   "madueke_b": "And he said to him: Behold also in this point I have heard thy prayers, not to overthrow the city for which thou hast spoken."
+  },
+  "22": {
+   "s_dismas": "Make haſt, and be ſaued there: becauſe I can not doe any thing til thou enter in thither. Therfore the name a litle one of that citie was called Segor.",
+   "odr_com": "Make hast, and be saued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+   "sabates_a": "Make haste, and be saved there: because I cannot do any thing till thou enter in thither. Therefore the name of that city was called Segor.",
+   "madueke_b": "Make haste, and be saved there: because I cannot do any thing till thou enter in thither. Therefore the name of that city was called Segor."
+  },
+  "23": {
+   "s_dismas": "The ſunne was riſen vpon the earth, & Lot entred into Segor.",
+   "odr_com": "The sunne was risen vpon the earth, & Lot entred into Segor.",
+   "sabates_a": "The sun was risen upon the earth, and Lot entered into Segor.",
+   "madueke_b": "The sun was risen upon the earth, and Lot entered into Segor."
+  },
+  "24": {
+   "s_dismas": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+   "odr_com": "Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen:",
+   "sabates_a": "Therefore our Lord rained upon Sodome and Gomorre brimstone & fire from our Lord out of heaven:",
+   "madueke_b": "Therefore our Lord rained upon Sodome and Gomorre brimstone & fire from our Lord out of heaven:"
+  },
+  "25": {
+   "s_dismas": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+   "odr_com": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.",
+   "sabates_a": "and he subverted these cities, and all the country about, all the inhabitants of the cities, and all things that spring of the earth.",
+   "madueke_b": "and he subverted these cities, and all the country about, all the inhabitants of the cities, and all things that spring of the earth."
+  },
+  "26": {
+   "s_dismas": "And his wife looking behind her, was turned into a ſtatua of ſalt.",
+   "odr_com": "And his wife looking behind her, was turned into a statua of salt.",
+   "sabates_a": "And his wife looking behind her, was turned into a statua of salt.",
+   "madueke_b": "And his wife looking behind her, was turned into a statua of salt."
+  },
+  "27": {
+   "s_dismas": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+   "odr_com": "And Abraham getting vp early in the morning, there where before he had stood with our Lord,",
+   "sabates_a": "And Abraham getting up early in the morning, there where before he had stood with our Lord,",
+   "madueke_b": "And Abraham getting up early in the morning, there where before he had stood with our Lord,"
+  },
+  "28": {
+   "s_dismas": "beheld Sodome & Gomorre, and the whole land of that countrie: and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+   "odr_com": "beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace.",
+   "sabates_a": "beheld Sodome and Gomorre, and the whole land of that country: and he saw the cinders rise up from the earth as it were the smoke of a furnace.",
+   "madueke_b": "beheld Sodome and Gomorre, and the whole land of that country: and he saw the cinders rise up from the earth as it were the smoke of a furnace."
+  },
+  "29": {
+   "s_dismas": "For when God ſubuerted the citties of that countrie, he remembring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt.",
+   "odr_com": "For when God subuerted the citties of that countrie, he remenbring Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt.",
+   "sabates_a": "For when God subverted the cities of that country, he remembering Abraham, delivered Lot out of the subversion of the cities wherein he had dwelt.",
+   "madueke_b": "For when God subverted the cities of that country, he remembering Abraham, delivered Lot out of the subversion of the cities wherein he had dwelt."
+  },
+  "30": {
+   "s_dismas": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him (for he was afraid to abide in Segor) and he abode in a caue him ſelfe, and his two daughters with him.",
+   "odr_com": "And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a caue him selfe, and his two daughters with him.",
+   "sabates_a": "And Lot ascended out of Segor, and abode in the mountain, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a cave himself, and his two daughters with him.",
+   "madueke_b": "And Lot ascended out of Segor, and abode in the mountain, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a cave himself, and his two daughters with him."
+  },
+  "31": {
+   "s_dismas": "And the elder ſaid to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the maner of the whole earth.",
+   "odr_com": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the maner of the whole earth.",
+   "sabates_a": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may company with us after the manner of the whole earth.",
+   "madueke_b": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may company with us after the manner of the whole earth."
+  },
+  "32": {
+   "s_dismas": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preſerue ſeed of our father.",
+   "odr_com": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preserue seed of our father.",
+   "sabates_a": "Come, let us make him drunk with wine, and let us lie with him, that we may preserve seed of our father.",
+   "madueke_b": "Come, let us make him drunk with wine, and let us lie with him, that we may preserve seed of our father."
+  },
+  "33": {
+   "s_dismas": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father: but he perceaued not, neyther when his daughter lay downe, nor when ſhe roſe vp.",
+   "odr_com": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp.",
+   "sabates_a": "They therefore made their father to drink wine that night: and the elder went in, and lay with her father: but he perceived not, neither when his daughter lay down, nor when she rose up.",
+   "madueke_b": "They therefore made their father to drink wine that night: and the elder went in, and lay with her father: but he perceived not, neither when his daughter lay down, nor when she rose up."
+  },
+  "34": {
+   "s_dismas": "The next day alſo the elder ſaid to the younger: Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may ſaue ſeed of our father.",
+   "odr_com": "The next day also the elder said to the younger: Behold I lay yesternight with my father, let vs make him drinke wine also this night, and thou shalt lye with him, that we may saue seed of our father.",
+   "sabates_a": "The next day also the elder said to the younger: Behold I lay yesternight with my father, let us make him drink wine also this night, and thou shalt lie with him, that we may save seed of our father.",
+   "madueke_b": "The next day also the elder said to the younger: Behold I lay yesternight with my father, let us make him drink wine also this night, and thou shalt lie with him, that we may save seed of our father."
+  },
+  "35": {
+   "s_dismas": "They made their father drinke wine that night alſo, and the younger daughter went in, and lay with him: and neyther then truly did he perceaue when ſhe lay downe, or when ſhe roſe vp.",
+   "odr_com": "They made their father drinke wine that night also, and the younger daughter went in, and lay with him: and neyther then truly did he perceaue when she lay downe, or when she rose vp.",
+   "sabates_a": "They made their father drink wine that night also, and the younger daughter went in, and lay with him: and neither then truly did he perceive when she lay down, or when she rose up.",
+   "madueke_b": "They made their father drink wine that night also, and the younger daughter went in, and lay with him: and neither then truly did he perceive when she lay down, or when she rose up."
+  },
+  "36": {
+   "s_dismas": "The two daughters therfore of Lot were with child by their father.",
+   "odr_com": "The two daughters therfore of Lot were with child by their father.",
+   "sabates_a": "The two daughters therefore of Lot were with child by their father.",
+   "madueke_b": "The two daughters therefore of Lot were with child by their father."
+  },
+  "37": {
+   "s_dismas": "And the elder bare a ſonne and ſhe called his name Moab: he is, the father of the Moabites euen to this preſent day.",
+   "odr_com": "And the elder bare a sonne and she called his name Moab: he is, the father of the Moabites euen to this present day.",
+   "sabates_a": "And the elder bare a son and she called his name Moab: he is the father of the Moabites even to this present day.",
+   "madueke_b": "And the elder bare a son and she called his name Moab: he is the father of the Moabites even to this present day."
+  },
+  "38": {
+   "s_dismas": "The younger alſo bare a ſonne, and ſhe called his name Ammon, that is the ſonne of my people: he is the father of the Ammonites euen to this day.",
+   "odr_com": "The younger also bare a sonne, and she called his name Ammon, that is the sonne of my people: he is the father of the Ammonites euen to this day.",
+   "sabates_a": "The younger also bare a son, and she called his name Ammon, that is the son of my people: he is the father of the Ammonites even to this day.",
+   "madueke_b": "The younger also bare a son, and she called his name Ammon, that is the son of my people: he is the father of the Ammonites even to this day."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And the two Angels came to Sodome at even, and Lot sitting in the gates of the city. Who when he had seen them, rose up & went to meet them: and adored prostrate unto the ground,",
+  "2": "and said: I beseech you, my Lords, turn into the house of your servant, and lodge there: Wash your feet, and in the morning you shall go forth on your way. Who said: No, but we will abide in the street.",
+  "3": "He compelled them earnestly to turn in unto him: and when they were entered into his house, he made them a banquet, and baked unleavened bread, and they did eat.",
+  "4": "And before they went to bed, the men of the city beset the house from young to old, all the people together.",
+  "5": "And they called Lot, and said to him: Where are the men that came in to thee at night? Bring them forth hither that we may know them.",
+  "6": "Lot going forth to them, and shutting the door after him, said:",
+  "7": "Do not so, I beseech you, my brethren, do not commit this evil.",
+  "8": "I have two daughters, which as yet have not known man: I will bring them forth to you, and abuse you them as it shall please you, so that you do no evil to these men, because they are entered under the shadow of my roof.",
+  "9": "But they said: Get thee back thither. And again: Thou camest in, said they, as a stranger, what to be a Judge? Thyself therefore we will afflict more than these. And they did violence to Lot exceedingly: and it was even now at the point that they would break the doors.",
+  "10": "And behold the men put forth their hand, and drew in Lot unto them, and shut the door:",
+  "11": "and them that were without they struck with blindness from the least to the greatest, so that they could not find the door.",
+  "12": "And they said to Lot: Hast thou here any of thine? Son in law, or sons, or daughters, all that are thine, bring them out of this city:",
+  "13": "for we will destroy this place, for that their cry is waxen loud before our Lord, who hath sent us to destroy them.",
+  "14": "Therefore Lot went forth, and spake to his sons in law that were to take his daughters, and said: Arise, get you forth out of this place, because our Lord will destroy this city. And he seemed unto them to speak as it were in jest.",
+  "15": "And when it was morning, the Angels urged him, saying: Arise, take thy wife, and the two daughters which thou hast: lest thou also perish withal in the wickedness of the city.",
+  "16": "He lingering, they took his hand, and the hand of his wife, and of his two daughters, because our Lord spared him.",
+  "17": "And they led him forth, and set him without the city; and there they spake to him, saying: Save thy life; look not back, neither stay thou in all the country about: but save thyself in the mountain, lest thou also perish withal.",
+  "18": "And Lot said to them: I beseech thee my Lord,",
+  "19": "because thy servant hath found grace before thee, and thou hast magnified thy mercy, which thou hast wrought with me, in that thou wouldest save my life, and safe I cannot be in the mountain, lest perhaps the evil catch me, and I die.",
+  "20": "There is this city here-by at hand, whereunto I may fly, a little one, and I shall be safe in it: is it not a little one, and my life shall be saved?",
+  "21": "And he said to him: Behold also in this point I have heard thy prayers, not to overthrow the city for which thou hast spoken.",
+  "22": "Make haste, and be saved there: because I cannot do any thing till thou enter in thither. Therefore the name of that city was called Segor.",
+  "23": "The sun was risen upon the earth, and Lot entered into Segor.",
+  "24": "Therefore our Lord rained upon Sodome and Gomorre brimstone & fire from our Lord out of heaven:",
+  "25": "and he subverted these cities, and all the country about, all the inhabitants of the cities, and all things that spring of the earth.",
+  "26": "And his wife looking behind her, was turned into a statua of salt.",
+  "27": "And Abraham getting up early in the morning, there where before he had stood with our Lord,",
+  "28": "beheld Sodome and Gomorre, and the whole land of that country: and he saw the cinders rise up from the earth as it were the smoke of a furnace.",
+  "29": "For when God subverted the cities of that country, he remembering Abraham, delivered Lot out of the subversion of the cities wherein he had dwelt.",
+  "30": "And Lot ascended out of Segor, and abode in the mountain, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a cave himself, and his two daughters with him.",
+  "31": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may company with us after the manner of the whole earth.",
+  "32": "Come, let us make him drunk with wine, and let us lie with him, that we may preserve seed of our father.",
+  "33": "They therefore made their father to drink wine that night: and the elder went in, and lay with her father: but he perceived not, neither when his daughter lay down, nor when she rose up.",
+  "34": "The next day also the elder said to the younger: Behold I lay yesternight with my father, let us make him drink wine also this night, and thou shalt lie with him, that we may save seed of our father.",
+  "35": "They made their father drink wine that night also, and the younger daughter went in, and lay with him: and neither then truly did he perceive when she lay down, or when she rose up.",
+  "36": "The two daughters therefore of Lot were with child by their father.",
+  "37": "And the elder bare a son and she called his name Moab: he is the father of the Moabites even to this present day.",
+  "38": "The younger also bare a son, and she called his name Ammon, that is the son of my people: he is the father of the Ammonites even to this day."
+ },
+ "ref_coverage": {
+  "janvier": 38,
+  "have": {
+   "s_dismas": 38,
+   "odr_com": 38,
+   "sabates_a": 38,
+   "madueke_b": 38
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 152,
+ "triage": "R3-READY",
+ "secs": 8.4
+}

@@ -1,0 +1,825 @@
+{
+ "locus": "matter/ot1/argument-of-genesis",
+ "page_index": [
+  19,
+  20
+ ],
+ "ocr_dir": "archive-ot1-1609",
+ "scan": "S1",
+ "raster": [
+  ".gt-crops/p19_b1.png (through p19_b9)",
+  ".gt-crops/p20_b1.png (through p20_b6)"
+ ],
+ "raster_dpi": 400,
+ "page_label_printed": "",
+ "running_header": {
+  "left": "",
+  "center": "THE ARGVMENT OF GENESIS.",
+  "right": ""
+ },
+ "layout_note": "Single-column italic 'Argument' prose spanning two facing scan pages (19 recto, 20 verso), with roman marginalia. PAGE 19 opens the section with a two-line roman-cap display heading 'THE ARGVMENT OF THE BOOKE / OF GENESIS.' (no running header on this first page); the body begins with a 2-line italic drop-cap 'T' ('THIS firſt Booke...'). Left margin carries three roman scripture/authority citation clusters; right margin carries four roman summary glosses. A right-justified catchword 'maner,' sits at the foot (duplicated as the first word of p.20). PAGE 20 has the centered running header 'THE ARGVMENT OF GENESIS.'; the body continues the same paragraph and enumerates the book's 'eight partes', with a left-margin roman gloss 'This booke diuided into eight partes.' followed by the numerals 1.–8. aligned to each part. The argument ends at 'death. in the fiue laſt cahpters.', immediately above the next (separate) section 'The ſignification of the markes here vſed, for direction of the reader.' (NOT transcribed here). Neither page bears a printed folio; the printed foliation begins at 'I' on scan p.21 (Genesis chap. 1, running header 'Creation.'). Modern pencil foliation '16' (p.19) and '17' (p.21) appears in the top-right corners. TWO glyph regimes: body italic uses a CONNECTED single-sort 'w' throughout EXCEPT the last line of p.19 (line_index 40), which shifts to genuine gapped 'vv'; display/word-initial capitals use gapped 'VV' (VVho, VVherfore, VVhy, VVhat). 'should' is set with round s+h, not long-ſ.",
+ "body": [
+  {
+   "line_index": 0,
+   "page": 19,
+   "role": "heading",
+   "text": "THE ARGVMENT OF THE BOOKE"
+  },
+  {
+   "line_index": 1,
+   "page": 19,
+   "role": "heading",
+   "text": "OF GENESIS."
+  },
+  {
+   "line_index": 2,
+   "page": 19,
+   "role": "prose",
+   "drop_cap": "T",
+   "text": "THIS firſt Booke of holie Sripture, called Geneſis, which ſignifieth"
+  },
+  {
+   "line_index": 3,
+   "page": 19,
+   "role": "prose",
+   "text": "birth or beginning, was written by Moyſes, when he was deſigned by"
+  },
+  {
+   "line_index": 4,
+   "page": 19,
+   "role": "prose",
+   "text": "God, to inſtruct & rule the children of Iſrael. As also the other foure bookes"
+  },
+  {
+   "line_index": 5,
+   "page": 19,
+   "role": "prose",
+   "text": "folowing. The Author and authoritie of al which fiue bookes, were euer"
+  },
+  {
+   "line_index": 6,
+   "page": 19,
+   "role": "prose",
+   "text": "acknowledged by the faithful, both of the old and new Teſtament: and ſo"
+  },
+  {
+   "line_index": 7,
+   "page": 19,
+   "role": "prose",
+   "text": "accounted and eſtemed by tradition, i.⟨e?⟩ Chriſt and his Apoſtles: who alſo"
+  },
+  {
+   "line_index": 8,
+   "page": 19,
+   "role": "prose",
+   "text": "confirmed them by their teſtimonies, and allegations of the ſame, as of holie"
+  },
+  {
+   "line_index": 9,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "Scriptures. From the creation vntil Moyſes writ (which was aboue two thou-"
+  },
+  {
+   "line_index": 10,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "ſand and foure hundred yeares) the Church exerciſed Religion by Reuelati-"
+  },
+  {
+   "line_index": 11,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "ons made to certaine Patriarches, and by Traditions from man to man, with-"
+  },
+  {
+   "line_index": 12,
+   "page": 19,
+   "role": "prose",
+   "text": "out anie Scriptures or Law written. But the peculiar people of God being"
+  },
+  {
+   "line_index": 13,
+   "page": 19,
+   "role": "prose",
+   "text": "more viſibly ſeparated from other nations, & manie errors abunding in the"
+  },
+  {
+   "line_index": 14,
+   "page": 19,
+   "role": "prose",
+   "text": "world, God would for correction & confuſation therof, haue his wil made"
+  },
+  {
+   "line_index": 15,
+   "page": 19,
+   "role": "prose",
+   "text": "further knowen to his children, and ſo remaine amongſt them in written"
+  },
+  {
+   "line_index": 16,
+   "page": 19,
+   "role": "prose",
+   "text": "record, by his faithful ſeruant and Prophet Moyſes. VVho therfore declareth"
+  },
+  {
+   "line_index": 17,
+   "page": 19,
+   "role": "prose",
+   "text": "the Author and beginning of al thinges, that is, How al creatures were"
+  },
+  {
+   "line_index": 18,
+   "page": 19,
+   "role": "prose",
+   "text": "made by God, and of him haue their being, and by him only are conſerued."
+  },
+  {
+   "line_index": 19,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "He teacheth expreſly that there is one onlie God, againſt thoſe that imagi-"
+  },
+  {
+   "line_index": 20,
+   "page": 19,
+   "role": "prose",
+   "text": "ned and brought into the phantaſies of men manie goddes. That the whole"
+  },
+  {
+   "line_index": 21,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "or vniuerſal ſubſtance of heauen and earth, with their ornaments and acci-"
+  },
+  {
+   "line_index": 22,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "dents, were made in time; againſt thoſe that thought the firſt fundation ther-"
+  },
+  {
+   "line_index": 23,
+   "page": 19,
+   "role": "prose",
+   "text": "of had euer benne. That God doth gouerne the ſame; againſt thoſe that ſay,"
+  },
+  {
+   "line_index": 24,
+   "page": 19,
+   "role": "prose",
+   "text": "al is ruled by deſtenie or by the ſtarres, and not by the continual prouidence"
+  },
+  {
+   "line_index": 25,
+   "page": 19,
+   "role": "prose",
+   "text": "of God. That God is a rewarder of the good, and a puniſher of euil; which"
+  },
+  {
+   "line_index": 26,
+   "page": 19,
+   "role": "prose",
+   "text": "ſinners ſeme either not to know, or groſly to forgete. And that God created"
+  },
+  {
+   "line_index": 27,
+   "page": 19,
+   "role": "prose",
+   "text": "al for mans vſe and benefite, which should make vs grateful. VVherfore"
+  },
+  {
+   "line_index": 28,
+   "page": 19,
+   "role": "prose",
+   "text": "holie Moyſes more particularly deſcribeth the beginning of man; what he was"
+  },
+  {
+   "line_index": 29,
+   "page": 19,
+   "role": "prose",
+   "text": "at firſt; how he fel; how al mankind is come of one man: deducing the"
+  },
+  {
+   "line_index": 30,
+   "page": 19,
+   "role": "prose",
+   "text": "Genealogie of Adam, especially to Noe. Then how men being more and"
+  },
+  {
+   "line_index": 31,
+   "page": 19,
+   "role": "prose",
+   "text": "more defiled vpon the earth, with wicked, especially carnal ſinnes, were by"
+  },
+  {
+   "line_index": 32,
+   "page": 19,
+   "role": "prose",
+   "text": "Gods iuſt wrath drowned with an vniuerſal floud."
+  },
+  {
+   "line_index": 33,
+   "page": 19,
+   "role": "prose",
+   "paragraph_start": true,
+   "text": "Againe how a few reſerued perſons multiplied the world anew. But"
+  },
+  {
+   "line_index": 34,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "this ofſpring alſo falling into manie ſinnes, especially Idolatrie and ſpiri-"
+  },
+  {
+   "line_index": 35,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "tual fornication, as thoſe of the firſt age did to carnal offences, God ſtil con-"
+  },
+  {
+   "line_index": 36,
+   "page": 19,
+   "role": "prose",
+   "text": "ſerued ſome faithful & true ſeruants. Of which Moyſes ſpecially purſueth"
+  },
+  {
+   "line_index": 37,
+   "page": 19,
+   "role": "prose",
+   "text": "the line of Noe by Sem his firſt begotten ſonne. Then deſcribeth the particular"
+  },
+  {
+   "line_index": 38,
+   "page": 19,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "vocations, liues, maners, notable ſayings, and noble factes, with ſincere re-"
+  },
+  {
+   "line_index": 39,
+   "page": 19,
+   "role": "prose",
+   "text": "ligion of Abraham, Iſaac, Iacob, Ioſeph, & other holie Patriarches: who"
+  },
+  {
+   "line_index": 40,
+   "page": 19,
+   "role": "prose",
+   "text": "liued before the vvritten lavv. Likevviſe vpon VVhat occaſion, & in vvhat"
+  },
+  {
+   "line_index": 41,
+   "page": 19,
+   "role": "catchword",
+   "excluded_from_intervals": true,
+   "text": "maner,"
+  },
+  {
+   "line_index": 42,
+   "page": 20,
+   "role": "running_header",
+   "excluded_from_intervals": true,
+   "text": "THE ARGVMENT OF GENESIS."
+  },
+  {
+   "line_index": 43,
+   "page": 20,
+   "role": "prose",
+   "text": "maner, Iacob otherwiſe called Iſrael, with al his progenie, deſcended from"
+  },
+  {
+   "line_index": 44,
+   "page": 20,
+   "role": "prose",
+   "text": "the Land of Canaan into Ægypt, and were there entertayned. So this booke"
+  },
+  {
+   "line_index": 45,
+   "page": 20,
+   "role": "prose",
+   "text": "contayneth the hiſtorie of two thouſand three hundred & odde yeares. And"
+  },
+  {
+   "line_index": 46,
+   "page": 20,
+   "role": "prose",
+   "text": "it may be diuided into eight partes. The firſt contayneth the Creation of"
+  },
+  {
+   "line_index": 47,
+   "page": 20,
+   "role": "prose",
+   "text": "Heauen and Earth, & other Creatures, and laſtly of Man. chap. 1. & 2."
+  },
+  {
+   "line_index": 48,
+   "page": 20,
+   "role": "prose",
+   "text": "The ſecond part is of the trangreſſion & fal of man, & his caſting out"
+  },
+  {
+   "line_index": 49,
+   "page": 20,
+   "role": "prose",
+   "text": "Paradiſe, of multiplication of men, and of ſinne, though ſtil ſome were"
+  },
+  {
+   "line_index": 50,
+   "page": 20,
+   "role": "prose",
+   "text": "iuſt, of the general floud, that drowned al except eight perſons, & few other"
+  },
+  {
+   "line_index": 51,
+   "page": 20,
+   "role": "prose",
+   "text": "liuing creatures of the earth. from the third chap. to the 8. The third part is"
+  },
+  {
+   "line_index": 52,
+   "page": 20,
+   "role": "prose",
+   "text": "of the new increaſe, & multiplication of the ſame. from the 8. chap. to"
+  },
+  {
+   "line_index": 53,
+   "page": 20,
+   "role": "prose",
+   "text": "11. The fourth, of the confuſion of tongues, & the diuiſion of nations. in"
+  },
+  {
+   "line_index": 54,
+   "page": 20,
+   "role": "prose",
+   "text": "the 11. chap. The fift relateth Abrahams going forth of his countrie, Gods"
+  },
+  {
+   "line_index": 55,
+   "page": 20,
+   "role": "prose",
+   "text": "promiſe, that in his ſeede al Nations should be bleſſed, & the commandment"
+  },
+  {
+   "line_index": 56,
+   "page": 20,
+   "role": "prose",
+   "text": "of Circumciſion, from the 12. chap. to the 21. The ſixth part recounteth"
+  },
+  {
+   "line_index": 57,
+   "page": 20,
+   "role": "prose",
+   "text": "progenie, and other bleſſings, especially the great vertues of Abraham, Iſaac,"
+  },
+  {
+   "line_index": 58,
+   "page": 20,
+   "role": "prose",
+   "line_end_hyphen": true,
+   "text": "and Iacob. from the 21. chap. to the 37. The ſeuenth part reporteth the ſel-"
+  },
+  {
+   "line_index": 59,
+   "page": 20,
+   "role": "prose",
+   "text": "ling of Ioſeph into Ægypt, and his aduancement there. from the 37. chap. to"
+  },
+  {
+   "line_index": 60,
+   "page": 20,
+   "role": "prose",
+   "text": "the 46. The eight and laſt part is of Iacob, and his progenies going into"
+  },
+  {
+   "line_index": 61,
+   "page": 20,
+   "role": "prose",
+   "text": "Ægypt, their intertainment there, and of Iacobs, and finally of Ioſephs"
+  },
+  {
+   "line_index": 62,
+   "page": 20,
+   "role": "prose",
+   "text": "death. in the fiue laſt cahpters."
+  }
+ ],
+ "marginalia": [
+  {
+   "id": "m19-left-1",
+   "page": 19,
+   "position": "left_margin",
+   "role": "margin_citation",
+   "anchor_lines": [
+    6,
+    7,
+    8
+   ],
+   "anchor_note": "beside 'acknowledged... new Teſtament... Chriſt and his Apoſtles... confirmed them by their teſtimonies'",
+   "text": "Mat. 19.\nHeb. 11.\nIacob. 2.\n1. Pet. 2.\n2. Pet. 2.",
+   "lines_as_printed": [
+    "Mat. 19.",
+    "Heb. 11.",
+    "Iacob. 2.",
+    "1. Pet. 2.",
+    "2. Pet. 2."
+   ]
+  },
+  {
+   "id": "m19-left-2",
+   "page": 19,
+   "position": "left_margin",
+   "role": "margin_citation",
+   "anchor_lines": [
+    14,
+    15,
+    16,
+    17
+   ],
+   "anchor_note": "beside 'God would for correction & confuſation... VVho therfore declareth the Author and beginning of al thinges'",
+   "text": "S. Aug.\nqueſt. vet\n& noui\nTeſtam.\ncap. 3.",
+   "expanded": "S. Augustine, Quæſtiones veteris & novi Testamenti, cap. 3"
+  },
+  {
+   "id": "m19-left-3",
+   "page": 19,
+   "position": "left_margin",
+   "role": "margin_citation",
+   "anchor_lines": [
+    36,
+    37
+   ],
+   "anchor_note": "beside 'the line of Noe by Sem his firſt begotten ſonne'",
+   "text": "Gen. 10."
+  },
+  {
+   "id": "m19-right-1",
+   "page": 19,
+   "position": "right_margin",
+   "role": "margin_gloss",
+   "anchor_lines": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "text": "Geneſis written by Moyſes Alwayes authentical. So knowen by Tradition, confirmed by Chriſt. Alleaged alſo by the Apoſtles. Religion reueled to ſpecial perſons, and ſo obſerued by Traditions."
+  },
+  {
+   "id": "m19-right-2",
+   "page": 19,
+   "position": "right_margin",
+   "role": "margin_gloss",
+   "anchor_lines": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "text": "VVhy Scripture was written. VVhat Moyſes ſpecially ſheweth in this booke."
+  },
+  {
+   "id": "m19-right-3",
+   "page": 19,
+   "position": "right_margin",
+   "role": "margin_gloss",
+   "anchor_lines": [
+    27,
+    28,
+    29,
+    30
+   ],
+   "text": "Man moſt particularly deſcribed: The right line from Adam to Noe."
+  },
+  {
+   "id": "m19-right-4",
+   "page": 19,
+   "position": "right_margin",
+   "role": "margin_gloss",
+   "anchor_lines": [
+    37,
+    38,
+    39
+   ],
+   "text": "The principal Patriarches from Noe to their ſonnes of Iſrael."
+  },
+  {
+   "id": "m20-left-1",
+   "page": 20,
+   "position": "left_margin",
+   "role": "margin_gloss",
+   "anchor_lines": [
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+   ],
+   "text": "This booke diuided into eight partes.",
+   "accompanying_numbers": [
+    "1.",
+    "2.",
+    "3.",
+    "4.",
+    "5.",
+    "6.",
+    "7.",
+    "8."
+   ],
+   "numbers_note": "roman numerals 1.–8. set down the margin, each aligned to the corresponding 'part' in the body enumeration (part 1 ~line 46, ... part 8 ~line 60)."
+  }
+ ],
+ "intervals": [
+  {
+   "idx": 0,
+   "kind": "heading",
+   "text": "THE ARGVMENT OF THE BOOKE OF GENESIS.",
+   "lines": [
+    0,
+    1
+   ]
+  },
+  {
+   "idx": 1,
+   "kind": "paragraph",
+   "lines": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ],
+   "text": "THIS firſt Booke of holie Sripture, called Geneſis, which ſignifieth birth or beginning, was written by Moyſes, when he was deſigned by God, to inſtruct & rule the children of Iſrael. As also the other foure bookes folowing. The Author and authoritie of al which fiue bookes, were euer acknowledged by the faithful, both of the old and new Teſtament: and ſo accounted and eſtemed by tradition, i.⟨e?⟩ Chriſt and his Apoſtles: who alſo confirmed them by their teſtimonies, and allegations of the ſame, as of holie Scriptures. From the creation vntil Moyſes writ (which was aboue two thouſand and foure hundred yeares) the Church exerciſed Religion by Reuelations made to certaine Patriarches, and by Traditions from man to man, without anie Scriptures or Law written. But the peculiar people of God being more viſibly ſeparated from other nations, & manie errors abunding in the world, God would for correction & confuſation therof, haue his wil made further knowen to his children, and ſo remaine amongſt them in written record, by his faithful ſeruant and Prophet Moyſes. VVho therfore declareth the Author and beginning of al thinges, that is, How al creatures were made by God, and of him haue their being, and by him only are conſerued. He teacheth expreſly that there is one onlie God, againſt thoſe that imagined and brought into the phantaſies of men manie goddes. That the whole or vniuerſal ſubſtance of heauen and earth, with their ornaments and accidents, were made in time; againſt thoſe that thought the firſt fundation therof had euer benne. That God doth gouerne the ſame; againſt thoſe that ſay, al is ruled by deſtenie or by the ſtarres, and not by the continual prouidence of God. That God is a rewarder of the good, and a puniſher of euil; which ſinners ſeme either not to know, or groſly to forgete. And that God created al for mans vſe and benefite, which should make vs grateful. VVherfore holie Moyſes more particularly deſcribeth the beginning of man; what he was at firſt; how he fel; how al mankind is come of one man: deducing the Genealogie of Adam, especially to Noe. Then how men being more and more defiled vpon the earth, with wicked, especially carnal ſinnes, were by Gods iuſt wrath drowned with an vniuerſal floud."
+  },
+  {
+   "idx": 2,
+   "kind": "paragraph",
+   "lines": [
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+   ],
+   "spans_pages": [
+    19,
+    20
+   ],
+   "text": "Againe how a few reſerued perſons multiplied the world anew. But this ofſpring alſo falling into manie ſinnes, especially Idolatrie and ſpiritual fornication, as thoſe of the firſt age did to carnal offences, God ſtil conſerued ſome faithful & true ſeruants. Of which Moyſes ſpecially purſueth the line of Noe by Sem his firſt begotten ſonne. Then deſcribeth the particular vocations, liues, maners, notable ſayings, and noble factes, with ſincere religion of Abraham, Iſaac, Iacob, Ioſeph, & other holie Patriarches: who liued before the vvritten lavv. Likevviſe vpon VVhat occaſion, & in vvhat maner, Iacob otherwiſe called Iſrael, with al his progenie, deſcended from the Land of Canaan into Ægypt, and were there entertayned. So this booke contayneth the hiſtorie of two thouſand three hundred & odde yeares. And it may be diuided into eight partes. The firſt contayneth the Creation of Heauen and Earth, & other Creatures, and laſtly of Man. chap. 1. & 2. The ſecond part is of the trangreſſion & fal of man, & his caſting out Paradiſe, of multiplication of men, and of ſinne, though ſtil ſome were iuſt, of the general floud, that drowned al except eight perſons, & few other liuing creatures of the earth. from the third chap. to the 8. The third part is of the new increaſe, & multiplication of the ſame. from the 8. chap. to 11. The fourth, of the confuſion of tongues, & the diuiſion of nations. in the 11. chap. The fift relateth Abrahams going forth of his countrie, Gods promiſe, that in his ſeede al Nations should be bleſſed, & the commandment of Circumciſion, from the 12. chap. to the 21. The ſixth part recounteth progenie, and other bleſſings, especially the great vertues of Abraham, Iſaac, and Iacob. from the 21. chap. to the 37. The ſeuenth part reporteth the ſelling of Ioſeph into Ægypt, and his aduancement there. from the 37. chap. to the 46. The eight and laſt part is of Iacob, and his progenies going into Ægypt, their intertainment there, and of Iacobs, and finally of Ioſephs death. in the fiue laſt cahpters."
+  },
+  {
+   "idx": 3,
+   "kind": "running_header",
+   "scoring": false,
+   "text": "THE ARGVMENT OF GENESIS.",
+   "lines": [
+    42
+   ]
+  },
+  {
+   "idx": 4,
+   "kind": "catchword",
+   "scoring": false,
+   "note": "foot-of-page catchword on p.19, duplicated as first word of p.20 line_index 43; excluded from paragraph concatenation",
+   "text": "maner,",
+   "lines": [
+    41
+   ]
+  },
+  {
+   "idx": 5,
+   "kind": "marginalia",
+   "role": "margin_citation",
+   "page": 19,
+   "text": "Mat. 19. Heb. 11. Iacob. 2. 1. Pet. 2. 2. Pet. 2.",
+   "lines": []
+  },
+  {
+   "idx": 6,
+   "kind": "marginalia",
+   "role": "margin_citation",
+   "page": 19,
+   "text": "S. Aug. queſt. vet & noui Teſtam. cap. 3.",
+   "lines": []
+  },
+  {
+   "idx": 7,
+   "kind": "marginalia",
+   "role": "margin_citation",
+   "page": 19,
+   "text": "Gen. 10.",
+   "lines": []
+  },
+  {
+   "idx": 8,
+   "kind": "marginalia",
+   "role": "margin_gloss",
+   "page": 19,
+   "text": "Geneſis written by Moyſes Alwayes authentical. So knowen by Tradition, confirmed by Chriſt. Alleaged alſo by the Apoſtles. Religion reueled to ſpecial perſons, and ſo obſerued by Traditions.",
+   "lines": []
+  },
+  {
+   "idx": 9,
+   "kind": "marginalia",
+   "role": "margin_gloss",
+   "page": 19,
+   "text": "VVhy Scripture was written. VVhat Moyſes ſpecially ſheweth in this booke.",
+   "lines": []
+  },
+  {
+   "idx": 10,
+   "kind": "marginalia",
+   "role": "margin_gloss",
+   "page": 19,
+   "text": "Man moſt particularly deſcribed: The right line from Adam to Noe.",
+   "lines": []
+  },
+  {
+   "idx": 11,
+   "kind": "marginalia",
+   "role": "margin_gloss",
+   "page": 19,
+   "text": "The principal Patriarches from Noe to their ſonnes of Iſrael.",
+   "lines": []
+  },
+  {
+   "idx": 12,
+   "kind": "marginalia",
+   "role": "margin_gloss",
+   "page": 20,
+   "text": "This booke diuided into eight partes.",
+   "accompanying_numbers": [
+    "1.",
+    "2.",
+    "3.",
+    "4.",
+    "5.",
+    "6.",
+    "7.",
+    "8."
+   ],
+   "lines": []
+  }
+ ],
+ "uncertain": [
+  {
+   "line_index": 2,
+   "span": "Sripture",
+   "note": "PRESERVED PRINTER'S TYPO for 'Scripture' (medial 'c' dropped). Confirmed at 4x zoom vs the correctly-spelled 'Scriptures' at line_index 8 and 'Scriptures' line_index 12. Diplomatic: kept as printed."
+  },
+  {
+   "line_index": 7,
+   "span": "i.⟨e?⟩",
+   "note": "Latin abbreviation, almost certainly 'i.e.' (id est): the 'i' (dotted) and the following point are clear; the second glyph reads as a tall stroke and is ambiguous at 400 DPI (could be 'e' or 'l'). Read as 'e' on Latin convention and sense ('esteemed by tradition, i.e. Christ and his Apostles'). Low-medium confidence on the second glyph."
+  },
+  {
+   "line_index": 13,
+   "span": "abunding",
+   "note": "As-printed for 'abounding' (dropped 'o') — archaic variant / printer slip. Confirmed at 4x. Kept diplomatically."
+  },
+  {
+   "line_index": 14,
+   "span": "confuſation",
+   "note": "Intended word is 'confutation'. The medial glyph was adjudicated at 5x against the adjacent short crossbarred 't' in 'correction' and in the '-ation' suffix on the same line: it clearly descends below the baseline and has NO crossbar = a LONG-ſ, not a 't'. So the compositor set a long-ſ sort where 't' was intended. Kept as printed 'confuſation' (glyph-driven, per §long-ſ)."
+  },
+  {
+   "line_index": 21,
+   "span": "fundation",
+   "note": "As-printed for 'foundation' (dropped 'o') — archaic variant. Kept diplomatically."
+  },
+  {
+   "line_index": 40,
+   "span": "vvritten",
+   "note": "This final line of p.19 shifts to genuine gapped 'vv': 'lavv', 'Likevviſe', 'vvhat' are unambiguous two-stroke vv (verified 3.5x), and 'VVhat' is a gapped capital VV. 'written' here reads as two strokes but with a less-distinct gap than its neighbours — transcribed 'vvritten' to match the line's vv regime (w-sort likely ran short at page foot). Borderline; could be a connected 'written'. Medium confidence. Rest of the body (both pages) uses connected real 'w'."
+  },
+  {
+   "line_index": 48,
+   "span": "caſting out Paradiſe",
+   "note": "The expected 'of' ('casting out OF Paradise') is NOT printed: line_index 48 ends with 'out' flush to the right margin (verified 5x) and line_index 49 begins 'Paradiſe' (with French spacing 'Paradiſe ,'). Transcribed diplomatically WITHOUT inserting 'of'."
+  },
+  {
+   "line_index": null,
+   "span": "Mat. 19. / Heb. 11. / Iacob. 2. / 1. Pet. 2. / 2. Pet. 2.",
+   "note": "Left-margin citation cluster (p.19), small roman type near the 400 DPI limit. Book names read confidently; chapter digits read but medium confidence (esp. 'Iacob. 2.' — 1 vs 2 ambiguous)."
+  },
+  {
+   "line_index": null,
+   "span": "S. Aug. queſt. vet & noui Teſtam. cap. 3.",
+   "note": "Left-margin citation (p.19) = Augustine, Quæstiones veteris & novi Testamenti, cap. 3. Small type; 'queſt.' read (no clear æ ligature seen, so rendered 'queſt.' not 'quæſt.'), 'vet' = veteris (abbrev.). Medium confidence on the abbreviations."
+  },
+  {
+   "line_index": null,
+   "span": "their ſonnes of Iſrael",
+   "note": "Right-margin gloss (p.19) reads 'from Noe to their ſonnes of Iſrael' — the token before 'ſonnes' is letters 'their' (verified 2.8x), NOT the digits 'the 12.'; slightly loose phrasing but glyph-driven read."
+  }
+ ],
+ "glyph_regime_resolved": {
+  "w_vs_vv": "Body italic (pp.19-20): CONNECTED single-sort 'w' throughout (verified per-instance: which, was, written, when, world, would, How, were, knowen, otherwiſe, new, two, etc.) EXCEPT line_index 40 (last line of p.19) which uses genuine gapped 'vv' (lavv, Likevviſe, vvhat, and vvritten[borderline]). Word-initial/display CAPITALS use gapped 'VV': VVho (l16), VVherfore (l27), and margin VVhy/VVhat (m19-right-2). Right-margin roman glosses (p.19) use connected 'w' (written, was, Alwayes, knowen) with display-initial gapped VV. Counts: 4 lowercase 'vv', 5 'VV'.",
+  "long_s": "GLYPH-DRIVEN. Total long-ſ transcribed = 131 (paragraph 1 = 53; paragraph 2 = 60; marginalia = 18). Notable non-ſ decision: 'should' (line_index 27 and 55) is set with a ROUND s+h, verified at 4x — NOT long-ſ. 'confuſation' (l14) IS a long-ſ (see uncertain). ſt and ſh appear as tied ligatures where set; transcribed as component letters (ſ+t, ſ+h) per §glyph-repertoire.",
+  "u_v_i_j": "period u/v swap preserved (vpon, vntil, vſe, euer, haue, liued, diuided, Reuelations, prouidence, Heauen, aduancement, fiue, vniuerſal, etc.); i/j preserved (Iſrael, Iacob, Ioſeph, iuſt).",
+  "ae_lig": "Æ preserved: 'Ægypt' ×3 (line_index 44, 59, 61). No lowercase æ on these pages.",
+  "ct_lig": "ct ligatures (correction, multiplication, factes, protection-class) transcribed as component letters c+t.",
+  "typos_preserved": [
+   "Sripture (l2, for Scripture)",
+   "abunding (l13, for abounding)",
+   "confuſation (l14, long-ſ for t, = confutation)",
+   "fundation (l21, for foundation)",
+   "trangreſſion (l48, dropped medial s, for transgreſſion)",
+   "cahpters (l62, h/p transposition, for chapters)"
+  ],
+  "archaic_spellings_kept": [
+   "eſtemed (l7)",
+   "folowing (l5)",
+   "goddes (l20)",
+   "benne (l23, =been)",
+   "deſtenie (l24, =destiny)",
+   "groſly (l26)",
+   "fel (l29, =fell)",
+   "wil (l14)",
+   "fift (l54, =fifth)",
+   "therof (l14/23)",
+   "intertainment (l61)"
+  ]
+ },
+ "observer": "agent:matter-ot1-argument-of-genesis",
+ "observed_at": "2026-07-20",
+ "method": "Visual-multimodal read of the 400 DPI jp2 rasters (scan pp.19-20 of archive-ot1-1609), region-cropped and zoomed 2.5x-6x per line/word for diplomatic glyph decisions (long-ſ, w/vv, ligatures, typos). No OCR scaffold used. VALIDATION: (1) Localization — identified by the p.19 display heading 'THE ARGVMENT OF THE BOOKE OF GENESIS.' + the p.20 running header 'THE ARGVMENT OF GENESIS.' + content (the argument of Genesis, dividing the book into eight parts); it follows 'Of Moyses' and precedes 'The ſignification of the markes', exactly as briefed. (2) Identity — 1609 OT1 (First Tome): the volume's Approbatio is dated 'Duaci. 8. Nouembris. 1609', and this is the standard Douay-OT-Tome-1 front-matter Argument. (3) Placement — scan pages 19-20; no printed folio on either page (the Argument sits on the last preliminary leaf; printed foliation begins 'I' on scan p.21 = Genesis chap. 1, running header 'Creation.'); modern pencil foliation '16'/'17' in top-right corners. (4) Completeness — WHOLE section captured: opens p.19 (drop-cap 'THIS firſt Booke...'), carries across the leaf-turn via catchword 'maner,' → p.20 'maner, Iacob...', and ends p.20 at 'death. in the fiue laſt cahpters.' immediately above the next section 'The ſignification of the markes here vſed, for direction of the reader.' (excluded). p.21 begins Genesis chap. 1 proper. NOTE: French spacing before high punctuation (: ; ? !) is present in this fount but was not exhaustively adjudicated at 400 DPI; punctuation transcribed mostly tight — flag for a French-spacing review pass.",
+ "confidence": "HIGH on localization, identity, placement, completeness, the two-line heading, the p.20 running header, and the bulk of both paragraphs and marginalia. HIGH (as-printed) on the six preserved typos (Sripture, abunding, confuſation, fundation, trangreſſion, cahpters) — each verified at high zoom. MEDIUM on: the 'i.⟨e?⟩' abbreviation (2nd glyph), the line_index 40 'vvritten' w/vv borderline, small left-margin citation digits, and the Augustine abbreviation 'queſt. vet'. LOW-confidence items are all flagged in uncertain[]."
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "page": 100,
+  "page_conf": 0.9917,
+  "n_body": 43,
+  "n_low_conf": 2,
+  "escalate_r3": false,
+  "dropped": {
+   "header": 3,
+   "catchword": 2
+  }
+ },
+ {
+  "page": 101,
+  "page_conf": 0.9909,
+  "n_body": 43,
+  "n_low_conf": 1,
+  "escalate_r3": false,
+  "dropped": {
+   "header": 2,
+   "marginalia": 8,
+   "catchword": 4
+  }
+ },
+ {
+  "page": 102,
+  "page_conf": 0.9876,
+  "n_body": 42,
+  "n_low_conf": 2,
+  "escalate_r3": false,
+  "dropped": {
+   "header": 3,
+   "marginalia": 14,
+   "catchword": 3
+  }
+ }
+]

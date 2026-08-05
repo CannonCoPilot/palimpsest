@@ -1,0 +1,160 @@
+{
+  "locus": "matter/ot1/approbatio",
+  "page_index": 2,
+  "ocr_dir": "archive-ot1-1609",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot1-approbatio-p0002.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Single column. Large woodcut headpiece cartouche flanked by two winged putti holding coats of arms, enclosing a roman-cap panel title 'APPROBATIO.'. Below: one Latin ITALIC paragraph opening with a 3-line drop-cap 'N' (Nos infraſcripti…). At foot: three signatory blocks in roman small-caps / roman type (Doctors of Divinity). No running header. Type is Latin roman/italic, so the vv-vs-w footnote rule does not apply. An isolated worn mark reading '6' sits in the left margin beside the paragraph (see marginalia).",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "heading",
+      "text": "APPROBATIO."
+    },
+    {
+      "line_index": 1,
+      "role": "latin",
+      "drop_cap": "N",
+      "text": "NOs infraſcripti, in alma Duacenſi vniuerſitate"
+    },
+    {
+      "line_index": 2,
+      "role": "latin",
+      "text": "Sacræ Theologiæ Doctores & Profeſſores, hanc"
+    },
+    {
+      "line_index": 3,
+      "role": "latin",
+      "text": "Anglicanam Veteris Teſtamenti tranſlationem,"
+    },
+    {
+      "line_index": 4,
+      "role": "latin",
+      "text": "quam tres diuerſi eius nationis eruditiſſimi Theologi,"
+    },
+    {
+      "line_index": 5,
+      "role": "latin",
+      "text": "non ſolum fidelem, ſed propter diuerſa quæ ei ſunt adiun-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 6,
+      "role": "latin",
+      "text": "cta, valde vtilem fidei Catholicæ propagandæ ac tuendæ,"
+    },
+    {
+      "line_index": 7,
+      "role": "latin",
+      "text": "& bonis moribus promouendis, ſunt teſtati: quorum teſti-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 8,
+      "role": "latin",
+      "text": "monia ipſorum ſyngraphis munita vidimus ; cuius item"
+    },
+    {
+      "line_index": 9,
+      "role": "latin",
+      "text": "Tranſlationis, & Annotationum auctores nobis de fidei"
+    },
+    {
+      "line_index": 10,
+      "role": "latin",
+      "text": "integritate, & eruditionis præſtantia probè ſunt noti:"
+    },
+    {
+      "line_index": 11,
+      "role": "latin",
+      "text": "his rebus adducti & nixi, fructuoſe euulgari poſſe cenſui-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 12,
+      "role": "latin",
+      "text": "mus. Duaci. 8. Nouembris. 1609."
+    },
+    {
+      "line_index": 13,
+      "role": "latin",
+      "block": "signatory",
+      "text": "GVILIELMVS ESTIVS Sacræ Theologiæ Doctor, & in"
+    },
+    {
+      "line_index": 14,
+      "role": "latin",
+      "block": "signatory",
+      "text": "Academia Duacenſi Profeſſor."
+    },
+    {
+      "line_index": 15,
+      "role": "latin",
+      "block": "signatory",
+      "text": "BARTHOLOMÆVS PETRVS Sacræ Theologiæ Doctor,"
+    },
+    {
+      "line_index": 16,
+      "role": "latin",
+      "block": "signatory",
+      "text": "& in Vniuerſitate Duacenſi Profeſſor."
+    },
+    {
+      "line_index": 17,
+      "role": "latin",
+      "block": "signatory",
+      "text": "GEORGIVS COLVENERIVS S. Theologiæ Doctor, &"
+    },
+    {
+      "line_index": 18,
+      "role": "latin",
+      "block": "signatory",
+      "text": "eiuſdem in Academia Duacena Profeſſor."
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "line_index 4 (left of paragraph)",
+      "position": "left_margin",
+      "text": "",
+      "uncertain": "Isolated worn mark in the left margin; reads as a cursive '6' (could be an ink/manuscript annotation or a compositor cue rather than a printed folio). Low confidence.",
+      "_pre_review": "6"
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 16,
+      "span": "Vniuerſitate",
+      "note": "Roman 'r' is worn/faint in the scan and reads almost like 'i' (OCR scaffold: 'Vniueifitate'). Resolved to 'Vniuerſitate' from the standard Latin formula 'in Vniuerſitate Duacenſi Profeſſor' and the parallel signature blocks. High confidence in the word, low confidence in the individual 'r' glyph."
+    },
+    {
+      "line_index": 18,
+      "span": "Duacena",
+      "note": "Final letters worn; transcribed as printed 'Duacena' (feminine ablative agreeing with 'Academia'); OCR scaffold also reads 'Duacena'. The other two signatures use 'Duacenſi', so a worn 'Duacenſi' is possible. Transcribed diplomatically as read. Medium confidence."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 36,
+    "note": "Hand count over the whole page: 26 in the italic paragraph + 10 in the roman signature blocks (capital S in the small-caps names is round S, not long ſ). Subject to script recompute; transcription is the source of truth."
+  },
+  "observer": "agent:matter-ot1-approbatio",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (region-cropped/zoomed for heading, paragraph, and each signature); OCR scaffold (our-ocr/ot1-1609/..._0002.txt) used only as a dropped-line hint, never as a spelling oracle",
+  "confidence": "high on heading and italic paragraph; medium on two worn roman signature words ('Vniuerſitate' worn 'r', 'Duacena' worn ending); low on the marginal '6'",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-14T22:32:07.568995+00:00",
+    "n_applied": 0,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-ot1-approbatio.corrections.json"
+  }
+}

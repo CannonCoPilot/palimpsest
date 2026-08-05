@@ -1,0 +1,1427 @@
+{
+ "chapter": 45,
+ "n_verses": 28,
+ "n_cells": 112,
+ "n_pass": 111,
+ "rate": 0.9911,
+ "ref_means": {
+  "s_dismas": 0.9794,
+  "odr_com": 0.9793,
+  "sabates_a": 0.9714,
+  "madueke_b": 0.9714
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 0.9643,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 1,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 20,
+   "worst": 0.895,
+   "from": "p169",
+   "text": "ioy ther doe you leaue any thing of your houshould ſtuffe : for in al the riches of Egypt, shal be vours."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Ioſeph could no longer refrayne manie ſtanding by in I preſence: wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "Ioſeph could no longer refrayne manie ſtanding by in I preſence wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S9": {
+    "text": "Ioſeph could no longer refrayne manie ſtanding by Ipreſence wherupon he commanded that al ſhould forth, and no ſtranger ſhould be preſent at their acknowIedgingone of another.",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "Ioſeph. no longer refrayne manie ſtandins by in preſence: wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.2.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And he lifted vp his voice with weeping, which the Egyptians heard, and al the houſe of Pharao.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And he lifted vp his voice with weeping, which the Agyptians heard, and al the houſe of Pharao.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And he lifted vp his voice with weeping, which the Ægyptians heard, and al the houſe of Pharao.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he litted vp his voice with weeping, which the AEgyptiant heatd, and al the houſe of Pharao.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And he ſaid to his Brethren: I am Ioſeph : is my father yet liuing His brethren could not anſwer him being teribly aſtonyed out of meaſure.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to his Brethren: I am Ioſeph is my father yet liuing His brethren could not anſwer him being teribly aſtonyed out of meaſure.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to his Brethren: I am Ioſeph : is my father yet liuing His brethren, could not anſwer him being teribly aſtonyed out of meaſure.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to his Brethren: Iam Ioſeph: is my father yet liuing His brethren could not anſwer hm being terribly aſtoniſhed out of meaure..To",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "To whom gently he ſaid: Come hither to me. And when they were come nere him, I am, quoth he, Ioſeph, your brother, wbom you ſolde into gypt.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "To whom gently he ſaid: Come hither to me. And when they were come nere him, I am, quoth he, Ioſeph, your brother, whom you ſolde into Agypt.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "To whom gently he ſaid: Come hither to me. And when they were come nere him, I am, quoth he, Ioſeph, your brother, whom you ſolde into Egypt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "To whom gently he ſaid: Come hither to me. And when they were come neer him. I am, quoth he, Ioſeph your brother, whom you ſold into AEgypt.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Be not affraid, neither let it ſeeme to you a hard caſe that you did ſel me into theſe countries: for :: God ſent me before you into Ægypt for your preſeruation.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Be not affraid, neither let it ſeeme to you a hard caſe dea that you did ſel me into theſe countries: for God ſent me the before you into Egypt for your preſeruation.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   },
+   "S9": {
+    "text": "Be not affraid, neither let it ſeeme to you a hard caſe that you did ſel me into theſe countries for :: God ſent me before you into Ægypt for your preſeruation.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Be not affraid, neither let it ſeeme to you a hard caſe that you did ſel me into thefe countries tor (4) God ſent me before vou into AEgypt for your preſeruation.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "For it is two yeares ſince the famin begain to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither earing nor reaping.",
+    "from": "p156",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "For it is two yeares ſince the famin begain to be vpon the earth, and yet fue yeares remaine, wherin there can be neither earing nor reaping.",
+    "from": "p160",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "For it is two yeares ſince the famin begain to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither earing nor reaping.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "For it is two yeares ſinco the famine began to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither earing not reaping.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.964,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And God ſent me before, that you may be pre- ſerued ſerued vpon the earth, and may haue victuals to liue.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.921,
+     "odr_com": 0.921,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S3": {
+    "text": "And God ſent me before, that you may be pre- ferue dvpon the earth, and may haue victuals to liue.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "And God ſent me before, that you may be ſerued pon the earth, and may haue victuals to liue.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S6": {
+    "text": "And God ſent me betore, that you may be preſerued vpon the earth, and may haue victuals to liue.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "by your counſail, but by the wil of Godwas I ſent hither who hath made me as it were a fatherto Pharao, and lord of his whole houſe, and prince in al the laud of Egypt.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S3": {
+    "text": "Not by your counſail, but by the wil of Godwas I ſent hither: who hath iade me as it were a father to Pharao, and lord his whole houſe, and prince in al the land of Egypt.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "Not by your counſail, but by the wil of Godwas I ſent hither : who hath made me as it were a father to Pharao, and lord of his whole houſe, and prince in al the land of Egypt.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "Not by vour counſail, but by the wil ot God was I ſent hither who hath made nicas it were a father to Pharao, and Lord of his whole houſe, and Prince in al the land of AEgypt.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "Make haſt and get ye vp to my father, and you shal ſay to him : Thy ſonne Ioteph willeth thus : God hath made me lord of the whole land of Egypt : come downe to me, tary not.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "Make haſt and get ye vp to my father, and you shal fay to him : Thy ſonne Ioſeph willeth thus : God hath made me lord of the whole land of Egypt : come downe to me, tary not.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "Make haſt and get ye vp to my father, and you shal ſay to him : Thy ſonne Ioſeph willeth thus : God hath made me lord of the whole land of gypt: come downe to me, tary not.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "Make haſt and get ye vp to my father, and you ſhal ſay to him: Thy ſonne Ioſeph willeth thus: God hath made me Lord of the whole land of AEgypt: come downe to me, tary not.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And thou ſhalt dwel in the land of Geſſen: and thou ſralt be nere me thou and thy ſonnes, and thy ſonnes children, thy ſhepe, and tny heardes. and al things that thou doſt poſſeſſe.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And thou ſhalt dwel in the land of Geſſen: and thou ſtalt be nere me thou and thy ſonnes, and thy ſonnes children, thy ſhepe, and tny heardes. and al things that thou doſt poſſeſſe.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And thou ſbalt dwel in the land of Geſſen: and thou ſhalt be nere me thou and thy ſonnes, and thy ſonnes children, thy ſhepe, and tny heardes, and al things that thou doſt poſſeſſe.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And thou ſhalt dwel in the land of Geſſen: and thou ſhalt be neer me thou and thy ſonnes, and thy ſonnes children, thy ſheep, and thy heards, aud al things that thon doſt poſſeſſe.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And there I wil fede thee (for yet there are fiue yeares of famine remarning)leſt both thon perish, and thy houſe, & al things that thou doſt poſſeſſe.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "And there I wil fede thee (for yet there are fiue yeares of famine remayning) leſt both thou periſh, and thy houſe, & al things that thou doſt poſſeſſe.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "And there I wil fede thee (for yet there are fiue yeares of famine remayning) leſt both thou perish, and thy houſe, & al things that thou doſt poſſeſſe.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "And there I wil feed thee for vet there are fiue yeares of famine remayning) leſt both thou periſh, and thy houſe, and al things that thou doſt poſſeſſe.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Behold, your eyes, and the eyes of iny brother Beniamin doe ſee, that it is my mouth that ſpeaketh vnto you.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "Behold, your eyes, and the eyes of my brother Beniamin doe ſee, that it is my mouth that ſpeaketh vnto you.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Behold, your eyes, and the eyes of my brother Beniamin doe ſee, that it is my mouth that ſpeaketh vnto you.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Behold, your eyes and the eyes of my brother Bentamin doe ſee, that it is my mouth that ſpeaketh vnto you.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "Report to my father my whole glorie and al things that you haue ſcene in Ægypt: make haſt, and bring him to me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "Report to my father my whole glorie and al things that you haue ſeene in Egypt : make haſt, and bring him to me.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "Report to my father my whole glorie and al things that you haue ſeene in Egypt : make haſt, and bring him to me.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Report to my father my whole glorie & al things that you haue ſeen in A Egypt: make haſt, and bring him to me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.945,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And falling vpon the neck of his brother Beniamin, embracing him he wept : he alſo in like nianer weeping vpon his neck.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And falling vpon the neck of his brother Beniamin, embracing him he wept : he alſo in like maner weeping vpon his neck.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And falling vpon the neck of his brother Beniamin, embracing him he wept : he alſo in like maner weeping vpon his neck.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And talling vpon the neck of his brother Beniamin, embracins him he wept: he alſo in like manner weeping vpon his neck.",
+    "from": "p143",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And Ioſeph kiſſed al his brethren, and wept vpon euerie one : after which things they were bold to ſpeake vnro him.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph kiſſed al his brethren, and wept vpon euerie one : after which things they were bold to ſpeake vnto him.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Ioſeph kiſſed al his brethren, and wept vpon euerie one: after which things they were bold to ſpeake vnto him.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Ioſeph kiſſed al his brethren, and wept vpon cuerie one: after which things they wert Ioſeph. bold to ſpeake vnto him.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.932,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And it was heard of, and very famouſly reported abrode in the kings courte : The brethren of Ioſeph are come: and : Pharao was glad, and al his familie.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And it was heard of, and very famouſly reported abrode in the kings courte : The brethren of Ioſeph are come: and : Pharao was glad, and al his familie.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And it was heard of, and very famouſly reported abrode in the kings courte : The brethren of Ioſeph are come: and :: Pharao was glad, and al his familie. :",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "And it was heard of , and very famouſly reported abrode in the Kings Court: The brethren of Ioſeph are come: and Pharao was glad, and al his familie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And he ſpake to Ioſeph that he ſhould command his brethren, ſaying : Loading your beaſts goe into the Land of Chanaan,",
+    "from": "p157",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſpake to Ioſeph that he ſhould command his brethren, ſaying : Loading your beaſts goe into the Land Chanaan,",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S9": {
+    "text": "And he ſpake to Ioſeph that he ſhould command his dēt brethren, ſaying : Loading your beaſts goe into the Land of Chanaan,",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "And he ſpake to Ioſcph that he ſhould cotnmand his brethren, fayins: Loadine vour beaſts goe into the Land of Chanaan,",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "and take thence your father and kinne, and come to me: and I wil geue you al the good things of Egypr, thar you may eate the marow of the land.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "and take thence your father and kinne, and come to me : and I wil geue you al the good things of Egypt, that you may eate the marow of the land.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "and take thence your father and kinne, and come to me and I wil geue you al the good things of Ægypt, that you may eate the marow of the land.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "take thence your ther and kinne, and come to me: and I wil giue you al the good things of Egypt, that you may eate the marow of the laud.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.936,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "Geue commandment alſo that they take waynes out of the lanl of Agypt, for the carage of their litle ones and wyues: and ſay: Take vp your father, and make haſt to come with al ſpede.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "Geue command ment alſo that they take waynes out of the land of Agypt, for the carage of their litle ones and wyues: and ſay : Take vp your father, and make haſt to come with al ſpede.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "commandment alſo that they take waynes out of the land of Ægypt, for the carage of their litle ones and wyues: and ſay Take vp your father, and make haſt to come with al ſpede.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "Giue commandment alſo that they take waynes out of the land ot Egypt, tor the cariage ot their litle ones and wiues: and ſay: Take vp your tather, and make haſt to come with al ſpeed.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "Nei. ther doe you leaue any thing of your houshould ſluffe: for al theriches of Egypt, shal be yours.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S3": {
+    "text": "Nei. ther doe you leaue any thing of your houshould ſtuffe : for al the riches of Egypt, shal be yours.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "ioy ther doe you leaue any thing of your houshould ſtuffe : for in al the riches of Egypt, shal be vours.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.911,
+     "odr_com": 0.911,
+     "sabates_a": 0.895,
+     "madueke_b": 0.895
+    }
+   },
+   "S6": {
+    "text": "Neither doe you leaue any thing ot vour houthold ſtuffe: tor al the riches of gypt ſhal be yours.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And the ſonnes of I ſrael did as it was commanded ther. To whom Ioſeph gaue waynes according to Pharaos commanment: and victuals for the way.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "And the ſonnes Iſrael did as it was commanded them. To whom Ioſeph gaue waynes according to Pharaos commandment: and victuals for the way.",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S9": {
+    "text": "And the ſonnes of Iſrael did as it was commanded them. To whom Ioſe ph gaue waynes according to Pharaos commandment: and victuals for the way.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And the ſonnes ot Iſrael did as it was commanded them. To whom Ioſeph gaue waynes according to Pharaos commandment, and victuals tor the way.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "He bad alſo to be broughr vp for euery one two robes: but to Beniamin he gaue three hundred peeces of ſiluer with fiue robes of the beſt :",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "He bad alſo to be brought vp euery one two robes: but to Beniamin he gaue three hundred peeces of ſiluer with fiue robes of thebeſt :",
+    "from": "p161",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S9": {
+    "text": "He bad alſo to be brought vp for euery one two robes: but to Beniamin he gaue three hundred peeces of ſiluer with fiue robes of the beſt:",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "He bad alſo to be brought vp for euery one two robes: but to Beniamin he gaue three hundred picces of ſiluer with. hie robes of the beſt",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "ſending to his father as much money and rayment, adding beſides them he aſſes that should carie of al the riches of Egypt, and as many shee aſſes, carying whe ar for the iourney and bread.",
+    "from": "p157",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   },
+   "S3": {
+    "text": "ſending to his father as much money and rayment, adding beſides them he aſſes that should carie of al the riches of Ægypt, and as many shee aſſes, carying wheat for the iourney and bread.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "ſending to his father as much money and rayment, adding beſides them he aſſes that should carie of al the riches of Egypt, and as many shee aſſes, carying whe at for the iourney and bread.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "ſending to his tather as much money & rayment, adding beſides them he aſſes that ſhould carie ot al the riches ot AE gypt, and as many ſhe aſſes, carying wheat tot the iourncy and bread.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "fore he diſmiſſed his brethren, and when they were departing he ſaid to them: Be not angrie in the way.",
+    "from": "p158",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S3": {
+    "text": "I fore he diſmiſſed his brethren, and when they were departing he ſaid to them: Be not angrie in the way.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "fore he diſmiſſed his brethren, and when they were departing he ſaid to them: Be not angrie in the way.",
+    "from": "p170",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S6": {
+    "text": "Therfore he diſiniſſed his brethren, and wben they were departing he ſaid to them: Be not angrie in the way.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "Who going vp out of Ægypt, came into the land of Chanaan to their father Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Who going vp out of Ægypt, came into the land of Chanaan to their father Iacob.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Who going vpout of Egypt, came into the land of Chanaan to their father Iacob.",
+    "from": "p170",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "Who going vp out of AEgyt came into the landof Chanaan to their tather Iacob.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And they told him ſaying Ioſeph thy ſonne is liuing: and he ruleth in al the Land of Egypt. Which when ſacob heard, awaking as it were out of a heauie ſleepe, not withſtanding did not beleeue them.",
+    "from": "p158",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "And they told him ſaying Ioſeph thy ſonne is liuing: and he ruleth in al the Land of Egypt. Which when Iacob heard, awaking as it were out of a heauie ſleepe, not withſtanding did not beleeue them.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And they told him ſaying Ioſe ph thy ſonne is liuing: and he ruleth in al the Land of Egypt. Which when Iacob heard, awakingas it were out of a heauie ſleepe, notwithſtanding did not beleeue them.",
+    "from": "p170",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And they told him ſaving: Ioſeph thy ſonne is liuing: and he tuin al the Land ot AEgypt. Which when Iacob heard, awakins as twere out ot a heauie tleep, notwithſtanding did not belieue them.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.922,
+     "odr_com": 0.922,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "They on the contrarie ſide reported the whole order of the thing. And when he ſawe the waynes and al things that he had ſent, his ſpirit reuiued,",
+    "from": "p158",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "They on the contrarie ſide reported the whole order of the thing. And when he ſawe the waynes and al things that he had ſent, his ſpirit reuiued,",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "They on the contrarie ſide reported the whole order of the thing. And when he ſawe the waynes and al things that he had ſent, his ſpirit reuiued,",
+    "from": "p170",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "They on the contrarie ſide reported the whole order ot the thins. And when he ſaw the waynes and al things that he had ſent, his ſpitit teuiued,.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "and he ſaid It ſufficeth me if Ioſeph my ſonne8 be liuing yet: I wil goe, and ſee him before I dye.",
+    "from": "p158",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and he ſaid It ſufficeth me if Ioſeph my ſonne be liuing yet: I wil goe, and ſee him before I dye.",
+    "from": "p162",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and he ſaid It, ſufficeth me if Ioſeph my ſonne be liuing yet: I wil goe, and ſee him before I dye.",
+    "from": "p170",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and he ſaid It ſufhceth me it Ioſeph my ſoune be liuing yet Iwil goe, and ſee him betore I dye.",
+    "from": "p144",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Ioſeph could no longer refrayne manie ſtanding by in preſence: wherupon he commanded that al ſhould goe forth, and no ſtranger ſhould be preſent at their acknowledging one of another.",
+   "odr_com": "IOSEPH could no longer refrayne manie standing by in presence: wherupon he commanded that al should goe forth, and no stranger should be present at their acknowledging one of another.",
+   "sabates_a": "Joseph could no longer refrain many standing by in presence: whereupon he commanded that all should go forth, and no stranger should be present at their acknowledging one of another.",
+   "madueke_b": "Joseph could no longer refrain many standing by in presence: whereupon he commanded that all should go forth, and no stranger should be present at their acknowledging one of another."
+  },
+  "2": {
+   "s_dismas": "And he lifted vp his voice with weeping, which the Ægyptians heard, and al the houſe of Pharao.",
+   "odr_com": "And he lifted vp his voice with weeping, which the Ægyptians heard, and al the house of Pharao.",
+   "sabates_a": "And he lifted up his voice with weeping, which the Ægyptians heard, and all the house of Pharao.",
+   "madueke_b": "And he lifted up his voice with weeping, which the Aegyptians heard, and all the house of Pharao."
+  },
+  "3": {
+   "s_dismas": "And he ſaid to his Brethren: I am Ioſeph: is my father yet liuing? His brethren could not anſwer him being teribly aſtonyed out of meaſure.",
+   "odr_com": "And he said to his Brethren: I am Ioseph: is my father yet liuing? His brethren could not answer him being teribly astonyed out of measure.",
+   "sabates_a": "And he said to his Brethren: I am Joseph: is my father yet living? His brethren could not answer him being terribly astonished out of measure.",
+   "madueke_b": "And he said to his Brethren: I am Joseph: is my father yet living? His brethren could not answer him being terribly astonished out of measure."
+  },
+  "4": {
+   "s_dismas": "To whom gently he ſaid: Come hither to me. And when they were come nere him, I am, quoth he, Ioſeph, your brother, whom you ſolde into Ægypt.",
+   "odr_com": "To whom gently he said: Come hither to me. And when they were come nere him, I am, quoth he, Ioseph, your brother, whom you solde into Ægypt.",
+   "sabates_a": "To whom gently he said: Come hither to me. And when they were come near him, I am, quoth he, Joseph your brother, whom you sold into Ægypt.",
+   "madueke_b": "To whom gently he said: Come hither to me. And when they were come near him, I am, quoth he, Joseph your brother, whom you sold into Aegypt."
+  },
+  "5": {
+   "s_dismas": "Be not affraid, neither let it ſeeme to you a hard caſe that you did ſel me into theſe countries: for God ſent me before you into Ægypt for your preſeruation.",
+   "odr_com": "Be not affraid, neither let it seeme to you a hard case that you did sel me into these countries: for God sent me before you into Ægypt for your preseruation.",
+   "sabates_a": "Be not afraid, neither let it seem to you a hard case that you did sell me into these countries: for God sent me before you into Ægypt for your preservation.",
+   "madueke_b": "Be not afraid, neither let it seem to you a hard case that you did sell me into these countries: for God sent me before you into Aegypt for your preservation."
+  },
+  "6": {
+   "s_dismas": "For it is two yeares ſince the famine begain to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither earing nor reaping.",
+   "odr_com": "For it is two yeares since the famin begain to be vpon the earth, and yet fiue yeares remaine, wherin there can be neither caring nor reaping.",
+   "sabates_a": "For it is two years since the famine began to be upon the earth, and yet five years remain, wherein there can be neither earing nor reaping.",
+   "madueke_b": "For it is two years since the famine began to be upon the earth, and yet five years remain, wherein there can be neither earing nor reaping."
+  },
+  "7": {
+   "s_dismas": "And God ſent me before, that you may be preſerued vpon the earth, and may haue victuals to liue.",
+   "odr_com": "And God sent me before, that you may be preserued vpon the earth, and may haue victuals to liue.",
+   "sabates_a": "And God sent me before, that you may be preserved upon the earth, and may have victuals to live.",
+   "madueke_b": "And God sent me before, that you may be preserved upon the earth, and may have victuals to live."
+  },
+  "8": {
+   "s_dismas": "Not by your counſail, but by the wil of God was I ſent hither: who hath made me as it were a father to Pharao, and lord of his whole houſe, and prince in al the land of Ægypt.",
+   "odr_com": "Not by your counsail, but by the wil of God was I sent hither: who hath made me as it were a father to Pharao, and lord of his whole house, and prince in al the land of Ægypt.",
+   "sabates_a": "Not by your counsel, but by the will of God was I sent hither: who hath made me as it were a father to Pharao, and lord of his whole house, and Prince in all the land of Ægypt.",
+   "madueke_b": "Not by your counsel, but by the will of God was I sent hither: who hath made me as it were a father to Pharao, and lord of his whole house, and Prince in all the land of Aegypt."
+  },
+  "9": {
+   "s_dismas": "Make haſt and get ye vp to my father, and you shal ſay to him: Thy ſonne Ioſeph willeth thus: God hath made me lord of the whole land of Ægypt: come downe to me, tary not.",
+   "odr_com": "Make hast and get ye vp to my father, and you shal say to him: Thy sonne Ioseph willeth thus: God hath made me lord of the whole land of Ægypt: come downe to me, tary not.",
+   "sabates_a": "Make haste and get ye up to my father, and you shall say to him: Thy son Joseph willeth thus: God hath made me lord of the whole land of Ægypt: come down to me, tarry not.",
+   "madueke_b": "Make haste and get ye up to my father, and you shall say to him: Thy son Joseph willeth thus: God hath made me lord of the whole land of Aegypt: come down to me, tarry not."
+  },
+  "10": {
+   "s_dismas": "And thou ſhalt dwel in the land of Geſſen: and thou ſhalt be nere me thou and thy ſonnes, and thy ſonnes children, thy ſhepe, and thy heardes, and al things that thou doſt poſſeſſe.",
+   "odr_com": "And thou shalt dwel in the land of Gessen: and thou shalt be nere me thou and thy sonnes, and thy sonnes children, thy shepe, and thy heardes. and al things that thou dost possesse.",
+   "sabates_a": "And thou shalt dwell in the land of Gessen: and thou shalt be near me thou and thy sons, and thy son's children, thy sheep, and thy herds, and all things that thou dost possess.",
+   "madueke_b": "And thou shalt dwell in the land of Gessen: and thou shalt be near me thou and thy sons, and thy son's children, thy sheep, and thy herds, and all things that thou dost possess."
+  },
+  "11": {
+   "s_dismas": "And there I wil fede thee (for yet there are fiue yeares of famine remayning) leſt both thou perish, and thy houſe, & al things that thou doſt poſſeſſe.",
+   "odr_com": "And there I wil fede thee (for yet there are fiue yeares of famine remayning) lest both thou perish, and thy house, & al things that thou dost possesse.",
+   "sabates_a": "And there I will feed thee (for yet there are five years of famine remaining) lest both thou perish and thy house, and all things that thou dost possess.",
+   "madueke_b": "And there I will feed thee (for yet there are five years of famine remaining) lest both thou perish and thy house, and all things that thou dost possess."
+  },
+  "12": {
+   "s_dismas": "Behold, your eyes, and the eyes of my brother Beniamin doe ſee, that it is my mouth that ſpeaketh vnto you.",
+   "odr_com": "Behold, your eyes, and the eyes of my brother Beniamin doe see, that it is my mouth that speaketh vnto you.",
+   "sabates_a": "Behold, your eyes, and the eyes of my brother Benjamin do see, that it is my mouth that speaketh unto you.",
+   "madueke_b": "Behold, your eyes, and the eyes of my brother Benjamin do see, that it is my mouth that speaketh unto you."
+  },
+  "13": {
+   "s_dismas": "Report to my father my whole glorie and al things that you haue ſeene in Ægypt: make haſt, and bring him to me.",
+   "odr_com": "Report to my father my whole glorie and al things that you haue seene in Ægypt: make hast, and bring him to me.",
+   "sabates_a": "Report to my father my whole glory & all things that you have seen in Ægypt: make haste, and bring him to me.",
+   "madueke_b": "Report to my father my whole glory & all things that you have seen in Aegypt: make haste, and bring him to me."
+  },
+  "14": {
+   "s_dismas": "And falling vpon the neck of his brother Beniamin, embracing him he wept: he alſo in like maner weeping vpon his neck.",
+   "odr_com": "And falling vpon the neck of his brother Beniamin, embracing him he wept: he also in like maner weeping vpon his neck.",
+   "sabates_a": "And falling upon the neck of his brother Benjamin, embracing him he wept: he also in like manner weeping upon his neck.",
+   "madueke_b": "And falling upon the neck of his brother Benjamin, embracing him he wept: he also in like manner weeping upon his neck."
+  },
+  "15": {
+   "s_dismas": "And Ioſeph kiſſed al his brethren, and wept vpon euerie one: after which things they were bold to ſpeake vnto him.",
+   "odr_com": "And Ioseph kissed al his brethren, and wept vpon euerie one: after which things they were bold to speake vnto him.",
+   "sabates_a": "And Joseph kissed all his brethren, and wept upon every one: after which things they were bold to speak unto him.",
+   "madueke_b": "And Joseph kissed all his brethren, and wept upon every one: after which things they were bold to speak unto him."
+  },
+  "16": {
+   "s_dismas": "And it was heard of, and very famouſly reported abrode in the kings courte: The brethren of Ioſeph are come: and Pharao was glad, and al his familie.",
+   "odr_com": "And it was heard of, and very famously reported abrode in the kings courte: The brethren of Ioseph are come: and Pharao was glad, and al his familie.",
+   "sabates_a": "And it was heard of, and very famously reported abroad in the king's court: The brethren of Joseph are come: and Pharao was glad, and all his family.",
+   "madueke_b": "And it was heard of, and very famously reported abroad in the king's court: The brethren of Joseph are come: and Pharao was glad, and all his family."
+  },
+  "17": {
+   "s_dismas": "And he ſpake to Ioſeph that he ſhould command his brethren, ſaying: Loading your beaſts goe into the Land of Chanaan,",
+   "odr_com": "And he spake to Ioseph that he should command his brethren, saying: Loading your beasts goe into the Land of Chanaan,",
+   "sabates_a": "And he spake to Joseph that he should command his brethren, saying: Loading your beasts go into the Land of Chanaan,",
+   "madueke_b": "And he spake to Joseph that he should command his brethren, saying: Loading your beasts go into the Land of Chanaan,"
+  },
+  "18": {
+   "s_dismas": "and take thence your father and kinne, and come to me: and I wil geue you al the good things of Ægypt, that you may eate the marow of the land.",
+   "odr_com": "and take thence your father and kinne, and come to me: and I wil geue you al the good things of Ægypt, that you may eate the marow of the land.",
+   "sabates_a": "and take thence your father and kin, and come to me: and I will give you all the good things of Ægypt, that you may eat the marrow of the land.",
+   "madueke_b": "and take thence your father and kin, and come to me: and I will give you all the good things of Aegypt, that you may eat the marrow of the land."
+  },
+  "19": {
+   "s_dismas": "Geue commandment alſo that they take waynes out of the land of Ægypt, for the carage of their litle ones and wyues: and ſay: Take vp your father, and make haſt to come with al ſpede.",
+   "odr_com": "Geue commandment also that they take waynes out of the land of Ægypt, for the carage of their litle ones and wyues: and say: Take vp your father, and make hast to come with al spede.",
+   "sabates_a": "Give commandment also that they take wains out of the land of Ægypt, for the carriage of their little ones and wives: and say: Take up your father, and make haste to come with all speed.",
+   "madueke_b": "Give commandment also that they take wains out of the land of Aegypt, for the carriage of their little ones and wives: and say: Take up your father, and make haste to come with all speed."
+  },
+  "20": {
+   "s_dismas": "Neither doe you leaue any thing of your houshould ſtuffe: for al the riches of Ægypt, shal be yours.",
+   "odr_com": "Neither doe you leaue any thing of your houshould stuffe: for al the riches of Ægypt, shal be yours.",
+   "sabates_a": "Neither do you leave any thing of your household stuff: for all the riches of Ægypt shall be yours.",
+   "madueke_b": "Neither do you leave any thing of your household stuff: for all the riches of Aegypt shall be yours."
+  },
+  "21": {
+   "s_dismas": "And the ſonnes of Iſrael did as it was commanded them. To whom Ioſeph gaue waynes according to Pharaos commandment: and victuals for the way.",
+   "odr_com": "And the sonnes of Israel did as it was commanded them. To whom Ioseph gaue waynes according to Pharaos commandment: and victuals for the way.",
+   "sabates_a": "And the sons of Israel did as it was commanded them. To whom Joseph gave wains according to Pharao's commandment, and victuals for the way.",
+   "madueke_b": "And the sons of Israel did as it was commanded them. To whom Joseph gave wains according to Pharao's commandment, and victuals for the way."
+  },
+  "22": {
+   "s_dismas": "He bad alſo to be brought vp for euery one two robes: but to Beniamin he gaue three hundred peeces of ſiluer with fiue robes of the beſt:",
+   "odr_com": "He bad also to be brought vp for euery one two robes: but to Beniamin he gaue three hundred peeces of siluer with fiue robes of the best:",
+   "sabates_a": "He bade also to be brought up for every one two robes: but to Benjamin he gave three hundred pieces of silver with five robes of the best:",
+   "madueke_b": "He bade also to be brought up for every one two robes: but to Benjamin he gave three hundred pieces of silver with five robes of the best:"
+  },
+  "23": {
+   "s_dismas": "ſending to his father as much money and rayment, adding beſides them he aſſes that should carie of al the riches of Ægypt, and as many shee aſſes, carying wheat for the iourney and bread.",
+   "odr_com": "sending to his father as much money and rayment, adding besides them he asses that should carie of al the riches of Ægypt, and as many shee asses, carying wheat for the iourney and bread.",
+   "sabates_a": "sending to his father as much money & raiment, adding besides them he asses that should carry of all the riches of Ægypt, and as many she asses, carrying wheat for the journey and bread.",
+   "madueke_b": "sending to his father as much money & raiment, adding besides them he asses that should carry of all the riches of Aegypt, and as many she asses, carrying wheat for the journey and bread."
+  },
+  "24": {
+   "s_dismas": "Therfore he diſmiſſed his brethren, and when they were departing he ſaid to them: Be not angrie in the way.",
+   "odr_com": "Therfore he dismissed his brethren, and when they were departing he said to them: Be not angrie in the way.",
+   "sabates_a": "Therefore he dismissed his brethren, and when they were departing he said to them: Be not angry in the way.",
+   "madueke_b": "Therefore he dismissed his brethren, and when they were departing he said to them: Be not angry in the way."
+  },
+  "25": {
+   "s_dismas": "Who going vp out of Ægypt, came into the land of Chanaan to their father Iacob.",
+   "odr_com": "Who going vp out of Ægypt, came into the land of Chanaan to their father Iacob.",
+   "sabates_a": "Who going up out of Ægypt, came into the land of Chanaan to their father Jacob.",
+   "madueke_b": "Who going up out of Aegypt, came into the land of Chanaan to their father Jacob."
+  },
+  "26": {
+   "s_dismas": "And they told him ſaying: Ioſeph thy ſonne is liuing: and he ruleth in al the Land of Ægypt. Which when Iacob heard, awaking as it were out of a heauie ſleepe, notwithſtanding did not beleeue them.",
+   "odr_com": "And they told him saying: Ioseph thy sonne is liuing: and he ruleth in al the Land of Ægypt. Which when Iacob heard, awaking as it were out of a heauie sleepe, notwithstanding did not beleeue them.",
+   "sabates_a": "And they told him saying: Joseph thy son is living: and he ruleth in all the Land of Ægypt. Which when Jacob heard, awaking as it were out of a heavy sleep, notwithstanding did not believe them.",
+   "madueke_b": "And they told him saying: Joseph thy son is living: and he ruleth in all the Land of Aegypt. Which when Jacob heard, awaking as it were out of a heavy sleep, notwithstanding did not believe them."
+  },
+  "27": {
+   "s_dismas": "They on the contrarie ſide reported the whole order of the thing. And when he ſawe the waynes and al things that he had ſent, his ſpirit reuiued,",
+   "odr_com": "They on the contrarie side reported the whole order of the thing. And when he sawe the waynes and al things that he had sent, his spirit reuiued,",
+   "sabates_a": "They on the contrary side reported the whole order of the thing. And when he saw the wains and all things that he had sent, his spirit revived,",
+   "madueke_b": "They on the contrary side reported the whole order of the thing. And when he saw the wains and all things that he had sent, his spirit revived,"
+  },
+  "28": {
+   "s_dismas": "and he ſaid: It ſufficeth me if Ioſeph my ſonne be liuing yet: I wil goe, and ſee him before I dye.",
+   "odr_com": "and he said: It sufficeth me if Ioseph my sonne be liuing yet: I wil goe, and see him before I dye.",
+   "sabates_a": "and he said: It sufficeth me if Joseph my son be living yet: I will go, and see him before I die.",
+   "madueke_b": "and he said: It sufficeth me if Joseph my son be living yet: I will go, and see him before I die."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Joseph could no longer refrain many standing by in presence: whereupon he commanded that all should go forth, and no stranger should be present at their acknowledging one of another.",
+  "2": "And he lifted up his voice with weeping, which the Ægyptians heard, and all the house of Pharao.",
+  "3": "And he said to his Brethren: I am Joseph: is my father yet living? His brethren could not answer him being terribly astonished out of measure.",
+  "4": "To whom gently he said: Come hither to me. And when they were come near him, I am, quoth he, Joseph your brother, whom you sold into Ægypt.",
+  "5": "Be not afraid, neither let it seem to you a hard case that you did sell me into these countries: for God sent me before you into Ægypt for your preservation.",
+  "6": "For it is two years since the famine began to be upon the earth, and yet five years remain, wherein there can be neither earing nor reaping.",
+  "7": "And God sent me before, that you may be preserved upon the earth, and may have victuals to live.",
+  "8": "Not by your counsel, but by the will of God was I sent hither: who hath made me as it were a father to Pharao, and lord of his whole house, and Prince in all the land of Ægypt.",
+  "9": "Make haste and get ye up to my father, and you shall say to him: Thy son Joseph willeth thus: God hath made me lord of the whole land of Ægypt: come down to me, tarry not.",
+  "10": "And thou shalt dwell in the land of Gessen: and thou shalt be near me thou and thy sons, and thy son's children, thy sheep, and thy herds, and all things that thou dost possess.",
+  "11": "And there I will feed thee (for yet there are five years of famine remaining) lest both thou perish and thy house, and all things that thou dost possess.",
+  "12": "Behold, your eyes, and the eyes of my brother Benjamin do see, that it is my mouth that speaketh unto you.",
+  "13": "Report to my father my whole glory & all things that you have seen in Ægypt: make haste, and bring him to me.",
+  "14": "And falling upon the neck of his brother Benjamin, embracing him he wept: he also in like manner weeping upon his neck.",
+  "15": "And Joseph kissed all his brethren, and wept upon every one: after which things they were bold to speak unto him.",
+  "16": "And it was heard of, and very famously reported abroad in the king's court: The brethren of Joseph are come: and Pharao was glad, and all his family.",
+  "17": "And he spake to Joseph that he should command his brethren, saying: Loading your beasts go into the Land of Chanaan,",
+  "18": "and take thence your father and kin, and come to me: and I will give you all the good things of Ægypt, that you may eat the marrow of the land.",
+  "19": "Give commandment also that they take wains out of the land of Ægypt, for the carriage of their little ones and wives: and say: Take up your father, and make haste to come with all speed.",
+  "20": "Neither do you leave any thing of your household stuff: for all the riches of Ægypt shall be yours.",
+  "21": "And the sons of Israel did as it was commanded them. To whom Joseph gave wains according to Pharao's commandment, and victuals for the way.",
+  "22": "He bade also to be brought up for every one two robes: but to Benjamin he gave three hundred pieces of silver with five robes of the best:",
+  "23": "sending to his father as much money & raiment, adding besides them he asses that should carry of all the riches of Ægypt, and as many she asses, carrying wheat for the journey and bread.",
+  "24": "Therefore he dismissed his brethren, and when they were departing he said to them: Be not angry in the way.",
+  "25": "Who going up out of Ægypt, came into the land of Chanaan to their father Jacob.",
+  "26": "And they told him saying: Joseph thy son is living: and he ruleth in all the Land of Ægypt. Which when Jacob heard, awaking as it were out of a heavy sleep, notwithstanding did not believe them.",
+  "27": "They on the contrary side reported the whole order of the thing. And when he saw the wains and all things that he had sent, his spirit revived,",
+  "28": "and he said: It sufficeth me if Joseph my son be living yet: I will go, and see him before I die."
+ },
+ "ref_coverage": {
+  "janvier": 28,
+  "have": {
+   "s_dismas": 28,
+   "odr_com": 28,
+   "sabates_a": 28,
+   "madueke_b": 28
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 112,
+ "triage": "R3-READY",
+ "secs": 6.2
+}

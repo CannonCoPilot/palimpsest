@@ -1,0 +1,1693 @@
+{
+ "chapter": 18,
+ "n_verses": 33,
+ "n_cells": 132,
+ "n_pass": 128,
+ "rate": 0.9697,
+ "ref_means": {
+  "s_dismas": 0.9733,
+  "odr_com": 0.9742,
+  "sabates_a": 0.9667,
+  "madueke_b": 0.9667
+ },
+ "src_rates": {
+  "S1": 0.9394,
+  "S3": 1.0,
+  "S9": 0.9697,
+  "S6": 0.9697
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 4,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 15,
+   "worst": 0.0,
+   "from": "p97",
+   "text": "Sara denied, ſaying : ſo, ſaith he: but thou didſt laugh."
+  },
+  {
+   "src": "S6",
+   "verse": 18,
+   "worst": 0.731,
+   "from": "chapter",
+   "text": "he ſhal be into a Nauon great, aud very ſtroug, and in him Abraham. IS. ate TOBE BLESSEDALTHE NATIONSOF THEEARTH"
+  },
+  {
+   "src": "S1",
+   "verse": 20,
+   "worst": 0.859,
+   "from": "chapter",
+   "text": "The crye of Sodome, and I2 Gomorre com Gomorre is multiplied, and their ſinne is aggrauated excedingly."
+  },
+  {
+   "src": "S1",
+   "verse": 23,
+   "worst": 0.89,
+   "from": "p88",
+   "text": "And approching he ſaid: a wall what wilt thou deſtroy the iuſt with the wickedr"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and God appeared to him in the vale of mambre as ſat in the dore of his tent, in the verie heat of the",
+    "from": "p86",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "and God appeared to him in the vale of mambre as ſat in the dore of his tent, in the verie heat of the",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S9": {
+    "text": "and God appeared to him in the vale of mambre as he ſat in the dore of his tent, in the verie heat of the day.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "God appeared to him in the vale of Mambre as he ſat in the dore ot his tent, in the verie heat of the dav.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And when he had lifted vp his eyes, there appeared to him three men ſtanding nere vnto him whom after he had he ranne to meete them from the dore of his tent, and adored to the ground.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And when he had lifted vp his eyes, there appeared to rhree men ſtauding nere vnto him whom after he had he ranne to meete them from the dore of his tent, and adored to the ground.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S9": {
+    "text": "And when he had lifted vp his eyes, there appeared to him three men ſtanding nere vnto him: whom after he had ſene, he ranne to meete them from the dore of his tent, and adored the ground.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": ".And when he had lifted vp his eyes, there appeared to him three men ſtanding nere vnto him: whom after he had ſeen he ranne to meet them trom the dore ot his tent, and adored to the ground.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And He ſaid : Lord, if I haue found grace in thy ſight, goe not paſt thy ſeruant :",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And He ſaid : Lord, if I haue found grace in thy ſight, goe not paſt thy ſeruant :",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And He ſaid : Lord, if I haue found grace in thy ſight, goe not paſt thy ſeruant:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And He ſaid (4) Lord, I haue tound grace in thy ſight, goe not paſt thy ſeruant",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "but I wil ferch a lirtle water, and waſn ye vour feete, and reſt ye vncor the tree.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S3": {
+    "text": "but I wil fetch a little water, and waſn ye your feete, and reſt ye vnder the tree.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "†but I wil fetch a little water, and waſh ye your feete, and reſt ye vnder the tree.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "but I wil fetcha litle water, and walh ve vour feet, and reſt ve vnder the tree.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.912,
+     "odr_com": 0.912,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And I wil fet a morſel of bread, and ſtrengthen your hart, afterward you ſhal paſſe: for therfore are you come aſide to your ſeruāt. Who ſaid: Do as thou haſt ſpoken:",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "And I wil fet a morſel of bread, and ſtrengthen your hart, afterward vou ſhal paſſe : for therfore are you come aſide to your ſeruāt. Who ſaid: Do as thou haſt ſpokon:",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.987,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S9": {
+    "text": "And I wil fet a morſel of bread, and ſtrengthen your hart, afterward you ſhal paſſe : for therfore are you come aſide to your ſeruat. Who ſaid: Do as thou haſt ſpoken.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.994,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "And I wil teta morſ:Iof bread and ſtrengthen vour hart afterward vou ſhal paſſe: for therfore are you come aſide to vour ſeruant. Who ſaid: Doe as thou haſt ſpoken.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "Abraham made haſt into the tent to Sara, and ſaid to her Make haſt, temper togeather three meafures of floure, and make harth cakes.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "Abraham made haſt into the tent to Sara, and ſaid to her Make haſt, temper togeather three meaſures of floure, and make harth cakes.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "Abraham made haſt into the tent to Sara, and ſaid to her Make haſt, temper togeather three meaſures of floure, and make harth cakes.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "Abraham made haſt into the tent to Sara, and ſaid to her: Make haſt, temper together three meaſures of floure, and make harth cakes.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "But him ſelfe raune to the heard, and tooke from thence a calfe verie tender and verie good, and gaue it to a young man : who made haſt and boiled it.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "But him ſelfe ranne to the heard, and tooke from thence a calfe verie tender and verie good, and gaue it to a young man : who made haſt and boiled it.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "But him ſelfe ranne to the heard, and tooke from thence a calfe verie tender and verie good, and gaue it to a young man : who made haſt and boiled it.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "But hinſelte ranne to the heard, and tooke trom thence a calte verie tender and verie good, and gaue it to a yong man: who made haſt and boiled it.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "He tooke alſo butter and mylke, and the calfe which he had boyled, and ſet before them : but him ſclfe did ſtand befide them vnder the tree.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "He tooke alſo butter and mylke, aud the calfe which he had boyled, and fet before them : but him ſolfe did ſtand befide them vnder the tree.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S9": {
+    "text": "He tooke alſo butter and mylke, and the calfe which he had boyled, and ſet be fore them : but him ſelfe did ſtand beſide them vnder the tree.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "He tooke alſo butter and inilke, and the calte which he had boyled, aud fet before them: but himſelre did ſtand beſide them vnder the tree",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And when thcy had earen, they ſaid to him: Where is Sara thy wife? He anſwered : Loe fhe is in the tent.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "And when they had eaten, they ſaid to him: Where is Sara thy wife? He anſwered : Loe fhe is in the tent.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And when they had eaten, they ſaid to him: Where is Sara thy wife? He anſwered : Loe fhe is in the tent.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And when they had eaten, they ſaid to him: Where is Sara thy wife: He anſwered Loe ſhe is in the tent.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "To whom he ſaid : Returning I wil come to thee at this time, life accompaning, and Sara thy wife ſhal haue a ſonne. Which when Sara heard, ſhe laughed behind the dore of the tent.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "To whom he ſaid : Returning I wil come to thee at this time, life accompaning, and Sara thy wife ſhal haue a ſonne. Which when Sara heard, ſhe laughed behind the dore of the tent.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "To whom he ſaid : Returning I wil come to thee at this time, life accompaning, and Sara thy wife ſhal haue a ſonne. Which when Sara heard, ſhe laughed behind the dore of the tent.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "To whom he ſaid: Returning I wil come to thee at this time, lite accompanying, and Sara thy wite ſhal haue a ſonne. Which when Sara heard, ſhe laughed behind the dore of the tent.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And tkey were both aged, and farre entred, in yeares, and it ceaſed to be with Sara after the maner of wemen.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "And they were both aged, and farre entred in yeares, and it ceaſed to be with Sara after the maner of wemen.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And they were both aged, and farre entred in yeares, and it ceaſed to be with Sara after the maner of wemen.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And they were both aged, and tarre entrod in veares, and it ceaſed to be with Sara after the manner of women.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Who laughed ſecreatly ſaying : After I am waxen old, & my Lord is an old one, ſhal I geue my ſelfe to pleaſure ?",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S3": {
+    "text": "Who laughed ſecreatly ſaying : After I am waxen old, & my Lord is an old one, ſhal I geue my ſelfe to pleaſure:",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S9": {
+    "text": "Who laughed ſecreatly ſaying : After I am waxen old, & my Lord is an old one, ſhal I geue my ſelfe to pleaſure",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S6": {
+    "text": "Who laughed ſecretly ſaying: After I am waxen old, and my Lord is an old one ſhal I giue my ſelfe to pleaſure",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And our Lord ſaid to Abraham: why did Sara laugh, ſaying : Shal I an old woman beare a child in deed",
+    "from": "p87",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to Abraham: Why did Sara laugh, ſaying : Shal I an old woman beare a child in deed?",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to Abraham: Why did Sara laugh, ſaying : Shal I an old woman beare a child in deed?",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to Abraham Why did Sara laugh, ſaying: Shal I an old woman beare a child in deed",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Is there any thing hard to God? According to appointment I wil returne to thee this verie ſelfe ſame time, life accompaynig, and Sara ſhal haue a ſonne.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "Is there any thing hard to God? According to appointment I wil returne to thee this verie ſelfe ſame time, life accompaynig, and Sara ſhal haue a ſonne.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "Is there any thing hard to God? According to appointment I wil returne to thee this verie ſelfe ſame time, life accompaynig, and Sara ſhal haue a ſonne.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "Is there any thiug hard to God According to appointment I wil returne to thee this verie ſelte ſametime, life accompanying, Sara ſhal haue a ſonne.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.939,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "Sara denied, ſaying: I laughed not : being much afraid. But our Lord : : It is not ſo, ſaith he : bur thou didſt laugh.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Sara denied, ſaying I laughed not: being much afraid. But our Lord : :: It is not ſo, ſaith he : but thou didſt laugh.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Sara denied, ſaying : ſo, ſaith he: but thou didſt laugh.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.0,
+     "sabates_a": 0.0,
+     "madueke_b": 0.0
+    }
+   },
+   "S6": {
+    "text": "Sara denied, ſaving I laughed not boing much afraid. But our Lord It is not ſo, ſaith he, but thou didſt laugh.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "When the men therfore were riſen vp from thence, they turned their eyes againſt Sodome : and Abraham did goe with thom, bringing them on the wav.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "When the men therfore were riſen vp from thence, they turned their eyes againſt Sodome : and Abraham did goe with them, bringing them on the way.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "When the men therfore were riſen vp from thence, they turned their eyes againſt Sodome : and Abraham did goe with them, bringing them on the way.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "When the men thertore were riſen vp from thence, they turned their eyes againſt Sodome: and Abraham did goe with them, bringing them on the way",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And our Lord ſaid : Can I conceale from A braham the things which I wil doe :",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid : Can I conceale from Abraham the things which I wil doe :",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid : Can I conceale from Abraham the things which I wil doe:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid: Can I conceale trom Abtaham the things which I wil doe.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "whcras he ſhal be into a nation great, and verie ſtrong, and in him are TO BE BLESSED al the nations of the earth",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "wheras he ſhal be into a nation great, and verie ſtrong, and in him are TO BE BLESSED al the nations of the earth",
+    "from": "p91",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "wheras he ſhal be into a nation great, and verie ſtrong, and in him are TO BE BLESSED al the nations of the earth",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "he ſhal be into a Nauon great, aud very ſtroug, and in him Abraham. IS. ate TOBE BLESSEDALTHE NATIONSOF THEEARTH",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.739,
+     "odr_com": 0.739,
+     "sabates_a": 0.731,
+     "madueke_b": 0.731
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "For I know that he wil commande his children, and his houſe after him that they kepe the wayof the Lord, and doe iudgement and iuſtice: that for Abrahams ſake the Lord may bring to effect al the things that he hath ſpoken vnto him. Therfore ſaid our Lord.",
+    "from": "p87",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "For I know that he wil commande his children, and his houſe after him that they kepe the way of the Lord, and doe iudge- ment and iuſtice: that for Abrahams ſake the Lord may bring to effect al the things that he hath ſpoken vnto him. Therfore ſaid our Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "For I know that he wil commande his children, and his houſe after him that they kepe the way of the Lord, and doe iudge-ment and iuſtice: that for Abrahams ſake the Lord may bring to effect al the things that he hath ſpoken vnto him. Therfore ſaid our Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "For I know that he wil command his children, and his houſe after him that they keep the way of the Lord, & doe iudgement and iuſtice: that for Abrahams ſake the Lord may bring to effect al the things that he hath ſpoken vnto him. Therfore ſaid our Lord",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "The crye of Sodome, and I2 Gomorre com Gomorre is multiplied, and their ſinne is aggrauated excedingly.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.859,
+     "odr_com": 0.859,
+     "sabates_a": 0.865,
+     "madueke_b": 0.865
+    }
+   },
+   "S3": {
+    "text": "The crye of Sodome, and Gomorre is multiplied, and their ſinne is aggrauated excedingly.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "The crye of Sodome, and Gomorre is multiplied, and their ſinne is aggrauated excedingly.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The cry of Sodome and Gomorre is multiplied, and their ſinne is aggrauated exceedingly.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come ro me or whether it be not ſo, that I may know.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come to me: or whether it be not ſo, that I may know.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come to me: or whether it be not ſo, that I may know.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "I wil deſcend, and ſee whether they haue in acte accomplilhed the cry that is come to me: or whether it be not ſo, that I may know.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And they turned them ſelues from thence, and went their way to Sodome but Abraham as yet ſtood before our Lord.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And they turned them ſelues from thence, and went their way to Sodome but Abraham as yet ſtood before our Lord.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And they turned them ſelues from thence, and went their way to Sodome but Abraham as yet ſtood before our Lord.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "And they turned themſelues from thence, and went their way to Sodome but Abraham as yet ſtood before our Lord.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And approching he ſaid: a wall what wilt thou deſtroy the iuſt with the wickedr",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.897,
+     "odr_com": 0.897,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
+    }
+   },
+   "S3": {
+    "text": "And approching he ſaid what wilt thou deſtroy the iuſt with the wicked",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And approching he ſaid what wilt thou deſtroy the iuſt with the wicked",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And approaching he ſaid: What! wilt thou deſtroy the iuſt with the wicked 24.(c)",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "If there ſhalbe fiftie iuſt perſons in the citie, ſhal they periſh withal? and wilt thou ſpare that place for fiftie iuſt, if they be therin?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "If there to ſhalbe fiftie iuſt perſons in the citie, ſhal they peri ſh withal? ſa- and wilt thou ſpare that place for fiftie iuſt, if they be tnerinꝰ",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.944,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S9": {
+    "text": "If there ſhalbe fiftie iuſt perſons in the citie, ſhal they periſh withal and wilt thou ſpare that place for fiftie iuſt, if they be therin?",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "()If there ſhal be fittie iuſt perſons in the citie, ſhal they periſh withal and wilt thou ſpate that plaee for fiftie iuſt, it they be therin",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.964,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "Be it farre from thee, that thou doe this thing, and that thou kil the iuſt with the wicked, and that the iuſt be in like caſe as the wicked, this is not beſeeming thee: which Iudgeſt al the earth, no thou wilt not do this iudgement.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Be it farre from thee, that thou doe this thing, and thou kil the iuſt with the wicked, and that the iuſt be in like caſe as the wicked, this is not beſeeming thee: which iudgeſt al the earth, no thou wilt not do this iudgement.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "Be it farre from thee, that thou doe this thing, and that thou kil the iuſt with the wicked, and that the iuſt be in like caſe as the wicked, this is not beſeeming thee which audgeſt al the earth, no thou wilt not do this iudgement.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S6": {
+    "text": "Be it farre from thee, that thou doe this thins and that thou kil the iuſt with the wicked, and that the iuſt be in like cafe as the wicked, this is not beſeeming thee, which iudgeſt al the earth: no, thou wilt not doe this iudgement.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And our Lord ſaid to him If I ſhal find in Sodome fiftie for iuſt perſons within the citie, I wil ſpare the whole place their ſake.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "And our Lord ſaid to him If I ſhal find in Sodome fiftie iuſt perſons within the citie, I wil ſpare the whole place their ſake.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "And our Lord ſaid to him If I ſhal find in Sodome fiftie iuſt perſons within the citie, I wil ſpare the whole place for their ſake.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And our Lord ſaid to him : If I ſhal find in Sodome fiftie iuſt porſons within the citie, I wil ſpare the whole place for theite ſake.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And Abrahanr anſwered, and ſaid Becauſe I haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And Abraham anſwered, and ſaid Becauſe haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And Abraham anſwered, and ſaid Becauſe P27 haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And Abraham anſwered and ſaid: Becauſe I haue once begun, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "What if there shal be fiue leſſe then fiftie iuſt perſons wilt thou for fortie fiue deſtroy the whole citie And he ſaid I wil not deſtroy it, if I shal finde fiue and fourtie.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "What if there shal be fiue leſfe then fiftie iuſt perſons wilt thou for fortie fiue deſtroy the whole citie And he ſaid I wil not deſtrov it, if I shal finde ſiue and fourtie.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "What if there shal be fiue leſſe then fiftie8 iuſt perſons wilt thou for fortie fiue deſtroy the whole citie And he ſaid I wil not deſtroy it, if I shal finde fiue and fourtie.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "What if there ſhal be fue leſſe then fiftie iuſt perſons wilt thou for tourtie fiue deſtroy the whole citie: And he ſaid : I wil not deſtroy. it, it I ſhal find fiue and fourtie.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And againe he ſaid vnto him: But if fourtie shalbe found there, what wilt thou doe? He ſaid I wil not ſtrike it for fourties ſake.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "And againe he ſaid vnto him: But if fourtie shalbe found there, what wilt thou doe? He ſaid I wil not ſtrike it for fourties ſake.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 1.0,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S9": {
+    "text": "And againer he ſaid vnto him But if fourtie shalbe found there, what wilt thou doe? He ſaid I wil not ſtrike it for fourties ſake.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.992,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "And agatne he ſaid vnto hun But it fourtie ſhal be tound there, what wilt thou doe He ſaid : I wil not ſtrike it for tourties ſake.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.945,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "Lord, ſaith he, be not angrie I beſech thee, if I ſpeake what if thirtie shal be founde there? He anſwered I wil not doe it, if I shal find thirtie there.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "Lord, ſaith he, be not angrie I beſech thee, if I ſpeake what if thirtie shal be founde there? He anſwered I wil not doe it, if I shal find thirtie there.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "Lord, ſaith he, be not z0 angrie I beſech hee, if I ſpeake what if thirtie shal be founde there? He anſwered I wil not doe it, if I shal find thirtie there.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "Lord, ſaith he be not angrie I beſeech thee, if I ſpeake : What it thirtie ſhal be found there : He anſwered: I wil not doe it,if I ſhal fiud thirtie there.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "Becauſe, ſaith he, I haue once begunne, I wil ſpeake to my Lord: What if twentie shalbe founde there? He ſaid I wil not deſtroy it for twenties ſake.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Becauſe, ſaith he, I haue once begunne, wil ſpeake to my Lord: What if twentie shalbe founde there? He ſaid I wil not deſtroy it for twenties ſake.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.986,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "Becauſe, ſaith he, I haue once begunne, I wil ſpeake to my Lord: What if twentie shalbe founde there? He ſaid I wil not deſtroy it for twenties ſake.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Becauſe, ſaith he, I haue once begun, I wil ſpeake to my Lord: What if twentie ſhal be found there? He ſaid: I wil not deſtroy it for twenties ſake. 32...I",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.958,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "I beſeech thee, ſaith he, be not angrie Lord, if I ſpeake yet once more what if tenne shalbe found there? And he ſaid I wil not deſtroy it for tennes ſake.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "I beſeech thee, ſaith he, be not angrie Lord, if I ſpeake yet once more What if tenne shalbe found there And he ſaid I wil deſtroy it for tennes ſake.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.973,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "I beſeech thee, ſaith he, be not angrie Lord, if I ſpeake yet once more What if tenne shalbe found there And he ſaid I wil not deſtroy it for tennes ſake.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "I beſeech thee, ſaith he, be not angrie Lord, it I ſpeake yet once more : What itten ſhal be tound there And he ſaid: I wil not deſtroy it for tennes ſake.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.953,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "33": {
+   "S1": {
+    "text": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham and Abraham returned into his place.",
+    "from": "p88",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham and Abraham turned into his place.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham and Abraham returned into his place.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And our Lord departed after that he ceaſed to ſpeake vnto. Abraham: and Abraham returned into his place-",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And God appeared to him in the vale of mambre as he ſat in the dore of his tent, in the verie heat of the day.",
+   "odr_com": "AND God appeared to him in the vale of mambre as he sat in the dore of his tent, in the verie heat of the day.",
+   "sabates_a": "And God appeared to him in the vale of Mambre as he sat in the door of his tent, in the very heat of the day.",
+   "madueke_b": "And God appeared to him in the vale of Mambre as he sat in the door of his tent, in the very heat of the day."
+  },
+  "2": {
+   "s_dismas": "And when he had lifted vp his eyes, there appeared to him three men ſtanding nere vnto him: whom after he had ſene, he ranne to meete them from the dore of his tent, and adored to the ground.",
+   "odr_com": "And when he had lifted vp his eyes, there appeared to him three men standing nere vnto him: whom after he had sene, he ranne to meete them from the dore of his tent, and adored to the ground.",
+   "sabates_a": "And when he had lifted up his eyes, there appeared to him three men standing near unto him: whom after he had seen, he ran to meet them from the door of his tent, and adored to the ground.",
+   "madueke_b": "And when he had lifted up his eyes, there appeared to him three men standing near unto him: whom after he had seen, he ran to meet them from the door of his tent, and adored to the ground."
+  },
+  "3": {
+   "s_dismas": "And he ſaid: Lord, if I haue found grace in thy ſight, goe not paſt thy ſeruant:",
+   "odr_com": "And He said Lord, if I haue found grace in thy sight, goe not past thy seruant:",
+   "sabates_a": "And He said Lord, if I have found grace in thy sight, go not past thy servant:",
+   "madueke_b": "And He said Lord, if I have found grace in thy sight, go not past thy servant:"
+  },
+  "4": {
+   "s_dismas": "but I wil fetch a little water, and waſh ye your feete, and reſt ye vnder the tree.",
+   "odr_com": "but I wil fetch a little water, and wash ye your feete, and rest ye vnder the tree.",
+   "sabates_a": "but I will fetch a little water, and wash ye your feet, and rest ye under the tree.",
+   "madueke_b": "but I will fetch a little water, and wash ye your feet, and rest ye under the tree."
+  },
+  "5": {
+   "s_dismas": "And I wil ſet a morſel of bread, and ſtrengthen your hart, afterward you ſhal paſſe: for therfore are you come aſide to your ſeruãt. Who ſaid: Do as thou haſt ſpoken:",
+   "odr_com": "And I wil fet a morsel of bread, and strengthen your hart, afterward you shal passe: for therfore are you come aside to your seruát. Who said: Do as thou hast spoken.",
+   "sabates_a": "And I will set a morsel of bread, and strengthen your heart, afterward you shall pass: for therefore are you come aside to your servant. Who said: Do as thou hast spoken.",
+   "madueke_b": "And I will set a morsel of bread, and strengthen your heart, afterward you shall pass: for therefore are you come aside to your servant. Who said: Do as thou hast spoken."
+  },
+  "6": {
+   "s_dismas": "Abraham made haſt into the tent to Sara, and ſaid to her: Make haſt, temper togeather three meaſures of floure, and make harth cakes.",
+   "odr_com": "Abraham made hast into the tent to Sara, and said to her: Make hast, temper togeather three measures of floure, and make harth cakes.",
+   "sabates_a": "Abraham made haste into the tent to Sara, and said to her: Make haste, temper together three measures of flour, and make hearth cakes.",
+   "madueke_b": "Abraham made haste into the tent to Sara, and said to her: Make haste, temper together three measures of flour, and make hearth cakes."
+  },
+  "7": {
+   "s_dismas": "But him ſelfe ranne to the heard, and tooke from thence a calfe verie tender and verie good, and gaue it to a young man: who made haſt and boiled it.",
+   "odr_com": "But him selfe ranne to the heard, and tooke from thence a calfe verie tender and verie good, and gaue it to a young man: who made hast and boiled it.",
+   "sabates_a": "But himself ran to the herd, and took from thence a calf very tender and very good, and gave it to a young man: who made haste and boiled it.",
+   "madueke_b": "But himself ran to the herd, and took from thence a calf very tender and very good, and gave it to a young man: who made haste and boiled it."
+  },
+  "8": {
+   "s_dismas": "He tooke alſo butter and mylke, and the calfe which he had boyled, and ſet before them: but him ſelfe did ſtand beſide them vnder the tree.",
+   "odr_com": "He tooke also butter and mylke, and the calfe which he had boyled, and set before them: but him selfe did stand beside them vnder the tree.",
+   "sabates_a": "He took also butter and milk, and the calf which he had boiled, and set before them: but himself did stand beside them under the tree.",
+   "madueke_b": "He took also butter and milk, and the calf which he had boiled, and set before them: but himself did stand beside them under the tree."
+  },
+  "9": {
+   "s_dismas": "And when they had eaten, they ſaid to him: Where is Sara thy wife? He anſwered: Loe ſhe is in the tent.",
+   "odr_com": "And when they had eaten, they said to him: Where is Sara thy wife? He answered: Loe she is in the tent.",
+   "sabates_a": "And when they had eaten, they said to him: Where is Sara thy wife? He answered: Lo she is in the tent.",
+   "madueke_b": "And when they had eaten, they said to him: Where is Sara thy wife? He answered: Lo she is in the tent."
+  },
+  "10": {
+   "s_dismas": "To whom he ſaid: Returning I wil come to thee at this time, life accompaning, and Sara thy wife ſhal haue a ſonne. Which when Sara heard, ſhe laughed behind the dore of the tent.",
+   "odr_com": "To whom he said: Returning I wil come to thee at this time, life accompaning, and Sara thy wife shal haue a sonne. Which when Sara heard, she laughed behind the dore of the tent.",
+   "sabates_a": "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son . Which when Sara heard, she laughed behind the door of the tent.",
+   "madueke_b": "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son. Which when Sara heard, she laughed behind the door of the tent."
+  },
+  "11": {
+   "s_dismas": "And they were both aged, and farre entred in yeares, and it ceaſed to be with Sara after the maner of wemen.",
+   "odr_com": "And they were both aged, and farre entred in yeares, and it ceased to be with Sara after the maner of wemen.",
+   "sabates_a": "And they were both aged, and far entered in years, and it ceased to be with Sara after the manner of women.",
+   "madueke_b": "And they were both aged, and far entered in years, and it ceased to be with Sara after the manner of women."
+  },
+  "12": {
+   "s_dismas": "Who laughed ſecreatly ſaying: After I am waxen old, & my Lord is an old one, ſhal I geue my ſelfe to pleaſure?",
+   "odr_com": "Who laughed secreatly saying: After I am waxen old, & my Lord is an old one, shal I geue my selfe to pleasure?",
+   "sabates_a": "Who laughed secretly saying: After I am waxen old, and my Lord is an old one, shall I give myself to pleasure?",
+   "madueke_b": "Who laughed secretly saying: After I am waxen old, and my Lord is an old one, shall I give myself to pleasure?"
+  },
+  "13": {
+   "s_dismas": "And our Lord ſaid to Abraham: Why did Sara laugh, ſaying: Shal I an old woman beare a child in deed?",
+   "odr_com": "And our Lord said to Abraham: Why did Sara laugh, saying: Shal I an old woman beare a child in deed?",
+   "sabates_a": "And our Lord said to Abraham: Why did Sara laugh, saying: Shall I an old woman bear a child indeed?",
+   "madueke_b": "And our Lord said to Abraham: Why did Sara laugh, saying: Shall I an old woman bear a child indeed?"
+  },
+  "14": {
+   "s_dismas": "Is there any thing hard to God? According to appointment I wil returne to thee this verie ſelfe ſame time, life accompanying, and Sara ſhal haue a ſonne.",
+   "odr_com": "Is there any thing hard to God? According to appointment I wil returne to thee this verie selfe same time, life accompaynig, and Sara shal haue a sonne.",
+   "sabates_a": "Is there any thing hard to God? According to appointment I will return to thee this very self-same time, life accompanying, & Sara shall have a son.",
+   "madueke_b": "Is there any thing hard to God? According to appointment I will return to thee this very self-same time, life accompanying, & Sara shall have a son."
+  },
+  "15": {
+   "s_dismas": "Sara denied, ſaying: I laughed not: being much afraid. But our Lord: It is not ſo, ſaith he: but thou didſt laugh.",
+   "odr_com": "Sara denied, saying: I laughed not: being much afraid. But our Lord: It is not so, saith he: but thou didst laugh.",
+   "sabates_a": "Sara denied, saying: I laughed not; being much afraid. But our Lord: It is not so, saith he, but thou didst laugh.",
+   "madueke_b": "Sara denied, saying: I laughed not; being much afraid. But our Lord: It is not so, saith he, but thou didst laugh."
+  },
+  "16": {
+   "s_dismas": "When the men therfore were riſen vp from thence, they turned their eyes againſt Sodome: and Abraham did goe with them, bringing them on the way.",
+   "odr_com": "When the men therfore were risen vp from thence, they turned their eyes against Sodome: and Abraham did goe with them, bringing them on the way.",
+   "sabates_a": "When the men therefore were risen up from thence, they turned their eyes against Sodome: and Abraham did go with them, bringing them on the way.",
+   "madueke_b": "When the men therefore were risen up from thence, they turned their eyes against Sodome: and Abraham did go with them, bringing them on the way."
+  },
+  "17": {
+   "s_dismas": "And our Lord ſaid: Can I conceale from Abraham the things which I wil doe:",
+   "odr_com": "And our Lord said: Can I conceale from Abraham the things which I wil doe:",
+   "sabates_a": "And our Lord said: Can I conceal from Abraham the things which I will do,",
+   "madueke_b": "And our Lord said: Can I conceal from Abraham the things which I will do,"
+  },
+  "18": {
+   "s_dismas": "wheras he ſhal be into a nation great, and verie ſtrong, and in him are to be blessed al the nations of the earth?",
+   "odr_com": "wheras he shal be into a nation great, and verie strong, and in him are TO BE BLESSED al the nations of the earth?",
+   "sabates_a": "whereas he shall be into a Nation great, and very strong, and in him are TO BE Blessed All The Nations of The Earth?",
+   "madueke_b": "whereas he shall be into a Nation great, and very strong, and in him are TO BE BLESSED ALL THE NATIONS OF THE EARTH?"
+  },
+  "19": {
+   "s_dismas": "For I know that he wil commande his children, and his houſe after him that they kepe the way of the Lord, and doe iudgement and iuſtice: that for Abrahams ſake the Lord may bring to effect al the things that he hath ſpoken vnto him. Therfore ſaid our Lord:",
+   "odr_com": "For I know that he wil commande his children, and his house after him that they kepe the way of the Lord, and doe iudgement and iustice: that for Abrahams sake the Lord may bring to effect al the things that he hath spoken vnto him. Therfore said our Lord.",
+   "sabates_a": "For I know that he will command his children, and his house after him that they keep the way of the Lord, & do judgement and justice: that for Abraham's sake the Lord may bring to effect all the things that he hath spoken unto him. Therefore said our Lord:",
+   "madueke_b": "For I know that he will command his children, and his house after him that they keep the way of the Lord, & do judgement and justice: that for Abraham's sake the Lord may bring to effect all the things that he hath spoken unto him. Therefore said our Lord:"
+  },
+  "20": {
+   "s_dismas": "The crye of Sodome, and Gomorre is multiplied, and their ſinne is aggrauated excedingly.",
+   "odr_com": "The crye of Sodome, and Gomorre is multiplied, and their sinne is aggrauated excedingly.",
+   "sabates_a": "The cry of Sodome and Gomorre is multiplied, and their sin is aggravated exceedingly.",
+   "madueke_b": "The cry of Sodome and Gomorre is multiplied, and their sin is aggravated exceedingly."
+  },
+  "21": {
+   "s_dismas": "I wil deſcend, and ſee whether they haue in acte accompliſhed the crye that is come to me: or whether it be not ſo, that I may know.",
+   "odr_com": "I wil descend, and see whether they haue in acte accomplished the crye that is come to me: or whether it be not so, that I may know.",
+   "sabates_a": "I will descend, and see whether they have in act accomplished the cry that is come to me: or whether it be not so, that I may know.",
+   "madueke_b": "I will descend, and see whether they have in act accomplished the cry that is come to me: or whether it be not so, that I may know."
+  },
+  "22": {
+   "s_dismas": "And they turned them ſelues from thence, and went their way to Sodome: but Abraham as yet ſtood before our Lord.",
+   "odr_com": "And they turned them selues from thence, and went their way to Sodome: but Abraham as yet stood before our Lord.",
+   "sabates_a": "And they turned themselves from thence, and went their way to Sodome: but Abraham as yet stood before our Lord.",
+   "madueke_b": "And they turned themselves from thence, and went their way to Sodome: but Abraham as yet stood before our Lord."
+  },
+  "23": {
+   "s_dismas": "And approching he ſaid: What! wilt thou deſtroy the iuſt with the wicked?",
+   "odr_com": "And approching he said: what! wilt thou destroy the iust with the wicked?",
+   "sabates_a": "And approaching he said: What! Wilt thou destroy the just with the wicked?",
+   "madueke_b": "And approaching he said: What! Wilt thou destroy the just with the wicked?"
+  },
+  "24": {
+   "s_dismas": "If there ſhal be fiftie iuſt perſons in the citie, ſhal they periſh withal? and wilt thou ſpare that place for fiftie iuſt, if they be therin?",
+   "odr_com": "If there shalbe fiftie iust persons in the citie, shal they perish withal? and wilt thou spare that place for fiftie iust, if they be therin?",
+   "sabates_a": "If there shall be fifty just persons in the city, shall they perish withal? And wilt thou spare that place for fifty just, if they be therein?",
+   "madueke_b": "If there shall be fifty just persons in the city, shall they perish withal? And wilt thou spare that place for fifty just, if they be therein?"
+  },
+  "25": {
+   "s_dismas": "Be it farre from thee, that thou doe this thing, and that thou kil the iuſt with the wicked, and that the iuſt be in like caſe as the wicked, this is not beſeeming thee: which iudgeſt al the earth, no thou wilt not do this iudgement.",
+   "odr_com": "Be it farre from thee, that thou doe this thing, and that thou kil the iust with the wicked, and that the iust be in like case as the wicked, this is not beseeming thee: which iudgest al the earth, no thou wilt not do this iudgement.",
+   "sabates_a": "Be it far from thee, that thou do this thing, and that thou kill the just with the wicked, and that the just be in like case as the wicked, this is not beseeming thee, which judgest all the earth: no, thou wilt not do this judgement.",
+   "madueke_b": "Be it far from thee, that thou do this thing, and that thou kill the just with the wicked, and that the just be in like case as the wicked, this is not beseeming thee, which judgest all the earth: no, thou wilt not do this judgement."
+  },
+  "26": {
+   "s_dismas": "And our Lord ſaid to him: If I ſhal find in Sodome fiftie iuſt perſons within the citie, I wil ſpare the whole place for their ſake.",
+   "odr_com": "And our Lord said to him: If I shal find in Sodome fiftie iust persons within the citie, I wil spare the whole place for their sake.",
+   "sabates_a": "And our Lord said to him: If I shall find in Sodome fifty just persons within the city, I will spare the whole place for their sake.",
+   "madueke_b": "And our Lord said to him: If I shall find in Sodome fifty just persons within the city, I will spare the whole place for their sake."
+  },
+  "27": {
+   "s_dismas": "And Abraham anſwered, and ſaid: Becauſe I haue once begunne, I wil ſpeake to my Lord, wheras I am duſt and aſhes.",
+   "odr_com": "And Abraham answered, and said: Because I haue once begunne, I wil speake to my Lord, wheras I am dust and ashes.",
+   "sabates_a": "And Abraham answered, and said: Because I have once begun, I will speak to my Lord, whereas I am dust and ashes.",
+   "madueke_b": "And Abraham answered, and said: Because I have once begun, I will speak to my Lord, whereas I am dust and ashes."
+  },
+  "28": {
+   "s_dismas": "What if there shal be fiue leſſe then fiftie iuſt perſons? wilt thou for fortie fiue deſtroy the whole citie? And he ſaid: I wil not deſtroy it, if I shal finde fiue and fourtie.",
+   "odr_com": "What if there shal be fiue lesse then fiftie iust persons? wilt thou for fortie fiue destroy the whole citie? And he said: I wil not destroy it, if I shal finde fiue and fourtie.",
+   "sabates_a": "What if there shall be five less than fifty just persons? Wilt thou for forty five destroy the whole city? And he said: I will not destroy it, if I shall find five and forty.",
+   "madueke_b": "What if there shall be five less than fifty just persons? Wilt thou for forty five destroy the whole city? And he said: I will not destroy it, if I shall find five and forty."
+  },
+  "29": {
+   "s_dismas": "And againe he ſaid vnto him: But if fourtie shal be found there, what wilt thou doe? He ſaid: I wil not ſtrike it for fourties ſake.",
+   "odr_com": "And againe he said vnto him: But if fourtie shalbe found there, what wilt thou doe? He said: I wil not strike it for fourties sake.",
+   "sabates_a": "And again he said unto him: But if forty shall be found there, what wilt thou do? He said: I will not strike it for forty's sake.",
+   "madueke_b": "And again he said unto him: But if forty shall be found there, what wilt thou do? He said: I will not strike it for forty's sake."
+  },
+  "30": {
+   "s_dismas": "Lord, ſaith he, be not angrie I beſech thee, if I ſpeake: What if thirtie shal be founde there? He anſwered: I wil not doe it, if I shal find thirtie there.",
+   "odr_com": "Lord, saith he, be not angrie I besech thee, if I speake: what if thirtie shal be founde there? He answered: I wil not doe it, if I shal find thirtie there.",
+   "sabates_a": "Lord, saith he, be not angry I beseech thee, if I speak: What if thirty shall be found there? He answered: I will not do it, if I shall find thirty there.",
+   "madueke_b": "Lord, saith he, be not angry I beseech thee, if I speak: What if thirty shall be found there? He answered: I will not do it, if I shall find thirty there."
+  },
+  "31": {
+   "s_dismas": "Becauſe, ſaith he, I haue once begunne, I wil ſpeake to my Lord: What if twentie shal be founde there? He ſaid: I wil not deſtroy it for twenties ſake.",
+   "odr_com": "Because, saith he, I haue once begunne, I wil speake to my Lord: What if twentie shalbe founde there? He said: I wil not destroy it for twenties sake.",
+   "sabates_a": "Because, saith he, I have once begun, I will speak to my Lord: What if twenty shall be found there? He said: I will not destroy it for twenty's sake.",
+   "madueke_b": "Because, saith he, I have once begun, I will speak to my Lord: What if twenty shall be found there? He said: I will not destroy it for twenty's sake."
+  },
+  "32": {
+   "s_dismas": "I beſeech thee, ſaith he, be not angrie Lord, if I ſpeake yet once more: What if tenne shal be found there? And he ſaid: I wil not deſtroy it for tennes ſake.",
+   "odr_com": "I beseech thee, saith he, be not angrie Lord, if I speake yet once more: What if tenne shalbe found there? And he said: I wil not destroy it for tennes sake.",
+   "sabates_a": "I beseech thee, saith he, be not angry Lord, if I speak yet once more: What if ten shall be found there? And he said: I will not destroy it for ten's sake.",
+   "madueke_b": "I beseech thee, saith he, be not angry Lord, if I speak yet once more: What if ten shall be found there? And he said: I will not destroy it for ten's sake."
+  },
+  "33": {
+   "s_dismas": "And our Lord departed after that he ceaſed to ſpeake vnto Abraham: and Abraham returned into his place.",
+   "odr_com": "And our Lord departed after that he ceased to speake vnto Abraham: and Abraham returned into his place.",
+   "sabates_a": "And our Lord departed after that he ceased to speak unto Abraham: and Abraham returned into his place.",
+   "madueke_b": "And our Lord departed after that he ceased to speak unto Abraham: and Abraham returned into his place."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And God appeared to him in the vale of Mambre as he sat in the door of his tent, in the very heat of the day.",
+  "2": "And when he had lifted up his eyes, there appeared to him three men standing near unto him: whom after he had seen, he ran to meet them from the door of his tent, and adored to the ground.",
+  "3": "And He said Lord, if I have found grace in thy sight, go not past thy servant:",
+  "4": "but I will fetch a little water, and wash ye your feet, and rest ye under the tree.",
+  "5": "And I will set a morsel of bread, and strengthen your heart, afterward you shall pass: for therefore are you come aside to your servant. Who said: Do as thou hast spoken.",
+  "6": "Abraham made haste into the tent to Sara, and said to her: Make haste, temper together three measures of flour, and make hearth cakes.",
+  "7": "But himself ran to the herd, and took from thence a calf very tender and very good, and gave it to a young man: who made haste and boiled it.",
+  "8": "He took also butter and milk, and the calf which he had boiled, and set before them: but himself did stand beside them under the tree.",
+  "9": "And when they had eaten, they said to him: Where is Sara thy wife? He answered: Lo she is in the tent.",
+  "10": "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son . Which when Sara heard, she laughed behind the door of the tent.",
+  "11": "And they were both aged, and far entered in years, and it ceased to be with Sara after the manner of women.",
+  "12": "Who laughed secretly saying: After I am waxen old, and my Lord is an old one, shall I give myself to pleasure?",
+  "13": "And our Lord said to Abraham: Why did Sara laugh, saying: Shall I an old woman bear a child indeed?",
+  "14": "Is there any thing hard to God? According to appointment I will return to thee this very self-same time, life accompanying, & Sara shall have a son.",
+  "15": "Sara denied, saying: I laughed not; being much afraid. But our Lord: It is not so, saith he, but thou didst laugh.",
+  "16": "When the men therefore were risen up from thence, they turned their eyes against Sodome: and Abraham did go with them, bringing them on the way.",
+  "17": "And our Lord said: Can I conceal from Abraham the things which I will do,",
+  "18": "whereas he shall be into a Nation great, and very strong, and in him are TO BE Blessed All The Nations of The Earth?",
+  "19": "For I know that he will command his children, and his house after him that they keep the way of the Lord, & do judgement and justice: that for Abraham's sake the Lord may bring to effect all the things that he hath spoken unto him. Therefore said our Lord:",
+  "20": "The cry of Sodome and Gomorre is multiplied, and their sin is aggravated exceedingly.",
+  "21": "I will descend, and see whether they have in act accomplished the cry that is come to me: or whether it be not so, that I may know.",
+  "22": "And they turned themselves from thence, and went their way to Sodome: but Abraham as yet stood before our Lord.",
+  "23": "And approaching he said: What! Wilt thou destroy the just with the wicked?",
+  "24": "If there shall be fifty just persons in the city, shall they perish withal? And wilt thou spare that place for fifty just, if they be therein?",
+  "25": "Be it far from thee, that thou do this thing, and that thou kill the just with the wicked, and that the just be in like case as the wicked, this is not beseeming thee, which judgest all the earth: no, thou wilt not do this judgement.",
+  "26": "And our Lord said to him: If I shall find in Sodome fifty just persons within the city, I will spare the whole place for their sake.",
+  "27": "And Abraham answered, and said: Because I have once begun, I will speak to my Lord, whereas I am dust and ashes.",
+  "28": "What if there shall be five less than fifty just persons? Wilt thou for forty five destroy the whole city? And he said: I will not destroy it, if I shall find five and forty.",
+  "29": "And again he said unto him: But if forty shall be found there, what wilt thou do? He said: I will not strike it for forty's sake.",
+  "30": "Lord, saith he, be not angry I beseech thee, if I speak: What if thirty shall be found there? He answered: I will not do it, if I shall find thirty there.",
+  "31": "Because, saith he, I have once begun, I will speak to my Lord: What if twenty shall be found there? He said: I will not destroy it for twenty's sake.",
+  "32": "I beseech thee, saith he, be not angry Lord, if I speak yet once more: What if ten shall be found there? And he said: I will not destroy it for ten's sake.",
+  "33": "And our Lord departed after that he ceased to speak unto Abraham: and Abraham returned into his place."
+ },
+ "ref_coverage": {
+  "janvier": 33,
+  "have": {
+   "s_dismas": 33,
+   "odr_com": 33,
+   "sabates_a": 33,
+   "madueke_b": 33
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 132,
+ "triage": "R3-READY",
+ "secs": 6.8
+}

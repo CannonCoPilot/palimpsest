@@ -1,0 +1,1168 @@
+{
+ "chapter": 28,
+ "n_verses": 22,
+ "n_cells": 88,
+ "n_pass": 82,
+ "rate": 0.9318,
+ "ref_means": {
+  "s_dismas": 0.9712,
+  "odr_com": 0.9751,
+  "sabates_a": 0.9671,
+  "madueke_b": 0.9674
+ },
+ "src_rates": {
+  "S1": 0.9545,
+  "S3": 0.9545,
+  "S9": 0.9091,
+  "S6": 0.9091
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 6,
+ "open": [
+  {
+   "src": "S3",
+   "verse": 1,
+   "worst": 0.889,
+   "from": "p116",
+   "text": "Iſaac called Iacob, and bleſſed him, and comImanded him ſaying Take not a wife of the ſtocke of Chanaan:"
+  },
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.879,
+   "from": "p122",
+   "text": "Iſaac called Iacob, and bleſſed him, and comI manded him ſaying Take not a wife of the ſtocke of Chanaan"
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.869,
+   "from": "chapter",
+   "text": "And God almightie bleſſe thee, and make the encreaſe amcom encreaſe, and multiplie thee that thou maieſt be into multi- tudes of pcoples."
+  },
+  {
+   "src": "S9",
+   "verse": 10,
+   "worst": 0.817,
+   "from": "p123",
+   "text": "Iacob being departed from Berſabee, went on The Haran."
+  },
+  {
+   "src": "S6",
+   "verse": 14,
+   "worst": 0.838,
+   "from": "chapter",
+   "text": "And thy ſeed thal be as the duit of the earth: thou ſhalt be dilated to the Weſt, and to the Eaſt, and to Iſaae the North and to the South and IN THEEANPTHY SEEDALTHETRIBESOETHE EARTHSHAL BEBLESSED And I wil"
+  },
+  {
+   "src": "S6",
+   "verse": 18,
+   "worst": 0.893,
+   "from": "p105",
+   "text": "And Iacob ariſing in the morning tooke the ſtone, which he had laid vnder his head, and crected it for a title, powring oyle vpon the top."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "vow. SAAO therfore called Iacob, and bleſſed him, and comI manded him ſaying : Take not a wife of the ſtocke of Chanaan :",
+    "from": "p112",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "Iſaac called Iacob, and bleſſed him, and comImanded him ſaying Take not a wife of the ſtocke of Chanaan:",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S9": {
+    "text": "Iſaac called Iacob, and bleſſed him, and comI manded him ſaying Take not a wife of the ſtocke of Chanaan",
+    "from": "p122",
+    "score": {
+     "s_dismas": 0.899,
+     "odr_com": 0.899,
+     "sabates_a": 0.879,
+     "madueke_b": 0.879
+    }
+   },
+   "S6": {
+    "text": "Iſaac. called Iacob, and bleſſed him, and commanded him ſaying Take not a wife of the ſtock of Chanaan :2.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.908,
+     "odr_com": 0.908,
+     "sabates_a": 0.909,
+     "madueke_b": 0.909
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "but goe, and make a iourney into Meſopotamia of Syria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vntle.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "but goe, and make a iourney into Meſopotamia of Svria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vncle.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "but goe, and make a iourney into Meſopotamia of Syria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vncle.",
+    "from": "p122",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "but goe and make a iourney into Meſopotamia ofSyria to the houſe of Bathuel thy moV thers father, and take thee a wife thence of the daughters of Laban thine vncle.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And God almightie bleſſe thee, and make the encreaſe amcom encreaſe, and multiplie thee that thou maieſt be into multi- tudes of pcoples.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.88,
+     "odr_com": 0.88,
+     "sabates_a": 0.869,
+     "madueke_b": 0.869
+    }
+   },
+   "S3": {
+    "text": "And God almightie bleſſe thee, and make thee encreaſe encreaſe, and multiplie thee that thou maieſt be into multitudes of peoples.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.929,
+     "odr_com": 0.929,
+     "sabates_a": 0.922,
+     "madueke_b": 0.922
+    }
+   },
+   "S9": {
+    "text": "And God almightie bleſſe thee, and make the encreaſe, and multiplie thee that thou maieſt be into multitudes of peoples.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And God Almightie bleſſe thee, and make thee encreaſe, and multiplie thee: that thou mayeſt be into multitudes of peoples.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And : geue he thee the bleſſings of braham, and to thy ſeed after thee : that thou mayeſt poſſeſſe the land of thy perigrination, hich. he promiſed to thy grandfather.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And : geue he thee the bleſſings of braham, and to thy ſeed aſter thee : that thou mayeſt poſſeſſe the land of thy perigrination, which he promiſed to thy grandfather.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And : geue he thee the bleſſings of :: braham, and to thy ſeed after thee : that thou mayeſt poſſeſſe the land of thy perigrination, which he promiſed to thy grandfather.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And giue he thee the bleſſings of Abraham, and to thy ſeed after thee: that thou mayeſt poſſeſſe the land of thy peregrination, which he promiſed to thy grandfather.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And when Iſaac had diſmiſt him, taking his iourncy he came to Meſopotamia of Syria to Laban the ſonne of Bathuel the Syrian, brother to Robecca his mother.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "And when Iſaac had diſmiſt him, taking his iourney he came to Meſopotamia of Syria to Laban the ſonne of Bathuel the Syrian, brother to Rebecca his mother.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And when Iſaac had diſmiſt him, taking cob, his iourney he came to Meſopotamia of Syria to Laban the Eſau ſede, ſonne of Bathuel the Syrian, brother to Rebecca his mother.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   },
+   "S6": {
+    "text": "And when Iſaac had diſmiſt him, taking his iourney he came to Meſopotamia of Syria to Laban, the ſonne ot Bathuel the Syrian, brothet to Rebecea his mother.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And Eſau ſeing that his ſather had bleſſed Iacob, and had ſent him into Moſopotamia of Syria, to marry a wiſe thence : and that after the bleſſing he had commanded him, ſaying : Tl. ou ſhalt not take a wife of the daughters of Chanaan:",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And Eſau ſeing that his father had bleſſed Iacob, and had ſent him into Meſopotamia of Syria, to marry a wife thence; and that after the bleſſing he had commanded him, ſaying: Thou ſhalt not take a wife of the daughters of Chanaan:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Eſau ſeing that his father had bleſſed Iacob, and the had ſent him into Meſopotamia of Syria, to marry a wife thence : and that after the bleſſing he had commanded him, ſaying : Thou ſhalt not take a wife of the daughters of Chanaan:",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S6": {
+    "text": "Aud Eſau ſeeing that his tather had bleſſed Iacob, and had ſent him into Meſopotamia of Syria, to marry a wife thence: and that after the bleſſing he had commanded him, ſaying: Thou ſhalt not take a wife of the daughters of Chanaan,",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "and that Iacob obeying his parents was gone into Syria:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and that Iacob obeying his parents was gone into Syria:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and that Iacob obeying his parents was gone into Syria :",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and that Iacob obeying his parents was gone into Syria",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "hauing tryal alſo that his father did not willingly ſee the daughteis of Canaan :",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "hauing tryal alſo that his father did not willingly ſee the daughters of Canaan:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "hauing tryal alſo that his father did not willingly ſee the daughteis of Canaan:",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "hauing tryal alſo that his father did not willingly ſee the daughters of Canaan,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "he went to Iſmael, and tooke to wife beſides them, which he had before, Maheleth the daughter of Iſmael Abrahams ſonne, ſiſter to Nabaioth. Thertore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   },
+   "S3": {
+    "text": "he went to Iſmael, and tooke to wife beſides them, which he had before, Maheleth the daughter of Iſmael Abrahams ſonne, ſiſter to Nabaioth. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.932,
+     "madueke_b": 0.932
+    }
+   },
+   "S9": {
+    "text": "he went to Iſmael, and tooke to wife beſides them, which he had before, Maheleth the daughter of Iſmael Abrahams ſonne, ſiſter to Nabaioth.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "he went to Iſmael, and tooke to wite beſides them which he had betore, Maheleth the daughter of Iſmael Abrahams ſonne, ſiſter to Nabaioth.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "Therfore Iacob being departed from Borſabee, went on a to Haran.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "Therfore Iacob being, departed fromi Borſabee, went on to Haran.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "Iacob being departed from Berſabee, went on The Haran.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.817,
+     "odr_com": 0.817,
+     "sabates_a": 0.831,
+     "madueke_b": 0.831
+    }
+   },
+   "S6": {
+    "text": "Therfore Iacob being departed from Berſabee, went on to Haran.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And when he was come to a certaine place, and would reſt in it after ſunne ſet, he tooke one of the ſtones that lay there, and putting it vnder his head, ſlept in the ſame place.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when he was come to a certaine place, a and would reſt in it after ſunne ſet, he tooke one of the ſtones that lay there, and putting it vnder his head, ſlept in the ſame place.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "And when he was come to a certaine place, a and would reſt in it after ſunne ſet, he tooke one of the for ſtones that lay there, and putting it vnder his head, ſlept in the ſame place.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "And when he was come to a certaine place, and would reſt in it after ſunne ſet, he tooke one of the ſtones that lay there, and putting in vnder his head, ſlept in the ſame place.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And he ſaw in his ſleepe a ladder ſtanding vpon the earth, and the top therof tooching heauen : the angels alſo of God aſcending and deſcending by it,",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S3": {
+    "text": "And he ſaw in his ſleepe a ladder ſtanding vpon the earth, and the top therof tooching heauen the angels alſo of God aſcending and deſcending by it,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S9": {
+    "text": "And he ſaw in his ſleepe a ladder ſtanding vpon the earth, and the top therof tooching heauen: the angels alſo of God aſcending and deſcending by it,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S6": {
+    "text": "And he ſaw in his ſleep a ladder ſtanding vpon the earth, the top therof touching heauen the Angels alſo ot God aſcending deſcending by it,",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "and our Lord leyning vpon the ladder ſaying to him : I am the Lord God of Abraham thy father, and the God of Iſaac: the Land, wherin thou ſleepeſt, I wil geue to thee and to thy ſeed.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "and our Lord leyning vpon the ladder ſaying to him I am the Lord God of Abraham thy father, and the God of Iſaac: the Land, wherin thou ſleepeſt, I wil geue to thee and to thy ſeed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "†and our Lord leyning vpon the ladder ſaying to him : I am the Lord God of Abraham thy father, and the God of Iſaac : the Land, wherin thou ſleepeſt, I wil geue to thee and to thy ſeed.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "and our Lord leaning vpon the ladder ſaying to him: Iam the Lord God ot Abtaham thy father, the God ot Iſaac: the Land wherin thou ſlcopeit, I wil giue to thee and to thy ſeed.",
+    "from": "p104",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And thy ſeed ſhal be as the duſt of the earth thou ſhalt be dilated to the Weſt, and to the Eaſt, &C to the North, and to the South and in thee and thy ſeed al the tribes of the earth SHAL BE BLESSED.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And thy ſeed ſhal be as the duſt of the earth thou ſhalt be dilated to the Weſt, and to the Eaſt, &C to the North, and to the South: and IN THEE and thy ſeed al the tribes of the earth SHAL BE BLESSED.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And thy ſeed ſhal be as the duſt of the earth thou ſhalt be dilated to the Weſt, and to the Eaſt, &C to the North, and to the South and IN THEE and thy ſeed al the tribes of the earth SHAL BE BLESSED.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And thy ſeed thal be as the duit of the earth: thou ſhalt be dilated to the Weſt, and to the Eaſt, and to Iſaae the North and to the South and IN THEEANPTHY SEEDALTHETRIBESOETHE EARTHSHAL BEBLESSED And I wil",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.838,
+     "odr_com": 0.838,
+     "sabates_a": 0.857,
+     "madueke_b": 0.857
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And I wil be thy keeper whither ſo euer thou goeſt, and wil bring thee backe into this land : neither wil I leaue thee, til I ſhal haue accompliſhed al things which I haue ſaid.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And I wil be thy keeper whither ſo euer thou goeſt, and wil bring thee backe into this land : neither wil I leaue thee, til I ſhal haue accompliſhed al things which I haue ſaid.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And I wil be thy keeper whither ſo euer thou goeſt, and wil bring thee backe into this land: neither wil I leaue thee, til I ſhal haue accompliſhed al things which I haue ſaid.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And I wil be thy keeper whither ſo-euer thou goeſt, and wil bring thee back into this land: neither wil I leaue thee, til I ſhal haue accompliſhed al things which I haue ſaid.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.988,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And when Iacob was awaked out of ſleepe, he ſaid : In dede our Lord is in this place, and I wiſt not.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And when Iacob was awaked out of ſleepe, he ſaid : In dede our Lord is in this place, and I wiſt not.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And when Iacob was awaked out of ſleepe, he ſaid : In dede our Lord is in this place, and I wiſt not.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And when Iacob was awaked out of ſleep, he ſaid: Indeed our Lord is in this place, and I wiſt not.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And trembling he ſaid : How tertible is this place this is none other but the houſe of God, and the gate of heauen.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And trembling he ſaid How terrible is this place this is none other but the houſe of God, and the gate of heauen.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And trembling he ſaid : How terrible is this place this is none other but the houſe of God, and the gate of heauen.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And trembling he ſaid How terrible is this place this is none other but the houſe of God, and the gate of heauen.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And Iacob arifing in the morningꝫ tooke the ſtone, which he had laid vnder his head, and erected it for a title, powring oyle vpon the toppe.",
+    "from": "p113",
+    "score": {
+     "s_dismas": 0.906,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And Iacob arifing in the morning, tooke the ſtone, which he had laid vnder his head, and erected it for a title, powring oyle vpon the toppe.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 0.906,
+     "odr_com": 0.993,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And Iacob ariſing in the morning, tooke. the ſtone, which he had laid vnder his head, and erected it for a title, powring oyle vpon the toppe.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.913,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And Iacob ariſing in the morning tooke the ſtone, which he had laid vnder his head, and crected it for a title, powring oyle vpon the top.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.893,
+     "odr_com": 0.978,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And he called the name of the citie Bethel, which before was called Luza.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he called the name of the citie Bethel, which before was called Luza.",
+    "from": "p117",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he called the name of the citie Bethel, which before was called Lura.",
+    "from": "p123",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And he called the name of the citie Bethel, which before was called Lura.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And he vowed a vowe, ſaying ſhal be with me, and ſhal keepe me in the way, by the which I walke, and ſhal geue me bread to eate, and rayment to ro not on,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.921,
+     "odr_com": 0.921,
+     "sabates_a": 0.906,
+     "madueke_b": 0.906
+    }
+   },
+   "S3": {
+    "text": "And he vowed a vowe, ſaying If God ſhal be with me, and ſhal keepe me in the way, by the I walke, and ſhal geue me bread to eate, and rayment to not on,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.935,
+     "madueke_b": 0.935
+    }
+   },
+   "S9": {
+    "text": "And he vowed a vowe, ſaying: I God ſhal be with me, and ſhal keepe me in the way, by the which I walke, and ſhal geue me bread to eate, and rayment to is to not on,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.943,
+     "odr_com": 0.943,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S6": {
+    "text": "And he vowed a vow, ſaying: If God ſhal be with me, and ſhal keep me in the way, by the which I walke, and ſhal giue me bread to cate, and rayment to put on,",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "and I ſhal be returned proſperouſly to my fathers houſe, the Lord ſhal be my God,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "and I ſhal be returned proſperouſly to my fathers houſe, the Lord ſhal be my God,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "and I ſhal be returned proſperouſly to my fathers is houſe, the Lord ſhal be my God,",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "and I ſhal be returned proſperouſly to my fathers houſe, the Lord ſhal be my God,",
+    "from": "p105",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "and this ſtone, I haue erected for a title, ihal be called the Houſe of and of al things that thou ſhalt geue to me, I wil offer tithes to thee.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   },
+   "S3": {
+    "text": "and this ſtone, I haue erected for a title, ſhal be called the Houſe of and of al things that thou ſhalt geue to me, I wil offer tithes to thee.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S9": {
+    "text": "and this ſtone, which Aulus I haue erected for a title, ſhal be called the Houſe of God: and of al things that thou ſhalt geue to me, I wil offer tithes to thee.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "and this ſtone, which I haue erected for a title, ſhal be called the Houſe of God and of al things that thou ſhalt giue to me, I wil offer tithes to thee.",
+    "from": "p105",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Iſaac therfore called Iacob, and bleſſed him, and commanded him ſaying: Take not a wife of the ſtocke of Chanaan:",
+   "odr_com": "ISAAC therfore called Iacob, and blessed him, and commanded him saying: Take not a wife of the stocke of Chanaan:",
+   "sabates_a": "Isaac therefore called Jacob, and blessed him, and commanded him saying: Take not a wife of the stock of Chanaan;",
+   "madueke_b": "Isaac therefore called Jacob, and blessed him, and commanded him saying: Take not a wife of the stock of Chanaan;"
+  },
+  "2": {
+   "s_dismas": "but goe, and make a iourney into Meſopotamia of Syria, to the houſe of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vncle.",
+   "odr_com": "but goe, and make a iourney into Mesopotamia of Syria, to the house of Bathuel thy mothers father, and take thee a wife thence of the daughters of Laban thin vncle.",
+   "sabates_a": "but go and make a journey into Mesopotamia of Syria; to the house of Bathuel thy mother's father, and take thee a wife thence of the daughters of Laban thine uncle.",
+   "madueke_b": "but go and make a journey into Mesopotamia of Syria; to the house of Bathuel thy mother's father, and take thee a wife thence of the daughters of Laban thine uncle."
+  },
+  "3": {
+   "s_dismas": "And God almightie bleſſe thee, and make thee encreaſe and multiplie thee: that thou maieſt be into multitudes of peoples.",
+   "odr_com": "And God almightie blesse thee, and make thee encrease, and multiplie thee: that thou maiest be into multitudes of peoples.",
+   "sabates_a": "And God Almighty bless thee, and make thee increase, and multiply thee: that thou mayest be into multitudes of peoples.",
+   "madueke_b": "And God Almighty bless thee, and make thee increase, and multiply thee: that thou mayest be into multitudes of peoples."
+  },
+  "4": {
+   "s_dismas": "And geue he thee the bleſſings of Abraham, and to thy ſeed after thee: that thou mayeſt poſſeſſe the land of thy perigrination, which he promiſed to thy grandfather.",
+   "odr_com": "And geue he thee the blessings of Abraham, and to thy seed after thee: that thou mayest possesse the land of thy perigrination, which he promised to thy grandfather.",
+   "sabates_a": "And give he thee the blessings of Abraham, and to thy seed after thee: that thou mayest possess the land of thy peregrination, which he promised to thy grandfather.",
+   "madueke_b": "And give he thee the blessings of Abraham, and to thy seed after thee: that thou mayest possess the land of thy peregrination, which he promised to thy grandfather."
+  },
+  "5": {
+   "s_dismas": "And when Iſaac had diſmiſt him, taking his iourney he came to Meſopotamia of Syria to Laban the ſonne of Bathuel the Syrian, brother to Rebecca his mother.",
+   "odr_com": "And when Isaac had dismist him, taking his iourney he came to Mesopotamia of Syria to Laban the sonne of Bathuel the Syrian, brother to Rebecca his mother.",
+   "sabates_a": "And when Isaac had dismissed him, taking his journey he came to Mesopotamia of Syria to Laban, the son of Bathuel the Syrian, brother to Rebecca his mother.",
+   "madueke_b": "And when Isaac had dismissed him, taking his journey he came to Mesopotamia of Syria to Laban, the son of Bathuel the Syrian, brother to Rebecca his mother."
+  },
+  "6": {
+   "s_dismas": "And Eſau ſeing that his father had bleſſed Iacob, and had ſent him into Meſopotamia of Syria, to marry a wife thence; and that after the bleſſing he had commanded him, ſaying: Thou ſhalt not take a wife of the daughters of Chanaan:",
+   "odr_com": "And Esau seing that his father had blessed Iacob, and had sent him into Mesopotamia of Syria, to marry a wife thence; and that after the blessing he had commanded him, saying: Thou shalt not take a wife of the daughters of Chanaan:",
+   "sabates_a": "And Esau seeing that his father had blessed Jacob, and had sent him into Mesopotamia of Syria, to marry a wife thence; and that after the blessing he had commanded him, saying: Thou shalt not take a wife of the daughters of Chanaan;",
+   "madueke_b": "And Esau seeing that his father had blessed Jacob, and had sent him into Mesopotamia of Syria, to marry a wife thence; and that after the blessing he had commanded him, saying: Thou shalt not take a wife of the daughters of Chanaan;"
+  },
+  "7": {
+   "s_dismas": "and that Iacob obeying his parents was gone into Syria:",
+   "odr_com": "and that Iacob obeying his parents was gone into Syria:",
+   "sabates_a": "and that Jacob obeying his parents was gone into Syria:",
+   "madueke_b": "and that Jacob obeying his parents was gone into Syria:"
+  },
+  "8": {
+   "s_dismas": "hauing tryal alſo that his father did not willingly ſee the daughters of Canaan:",
+   "odr_com": "hauing tryal also that his father did not willingly see the daughters of Canaan:",
+   "sabates_a": "having trial also that his father did not willingly see the daughters of Chanaan,",
+   "madueke_b": "having trial also that his father did not willingly see the daughters of Chanaan,"
+  },
+  "9": {
+   "s_dismas": "he went to Iſmael, and tooke to wife beſides them, which he had before, Maheleth the daughter of Iſmael Abrahams ſonne, ſiſter to Nabaioth.",
+   "odr_com": "he went to Ismael, and tooke to wife besides them, which he had before, Maheleth the daughter of Ismael Abrahams sonne, sister to Nabaioth.",
+   "sabates_a": "he went to Ismael, and took to wife besides them which he had before, Maheleth the daughter of Ismael Abraham's son, sister to Nabajoth.",
+   "madueke_b": "he went to Ismael, and took to wife besides them which he had before, Maheleth the daughter of Ismael Abraham's son, sister to Nabajoth."
+  },
+  "10": {
+   "s_dismas": "Therfore Iacob being departed from Berſabee, went on to Haran.",
+   "odr_com": "Therfore Iacob being departed from Bersabee, went on to Haran.",
+   "sabates_a": "Therefore Jacob being departed from Bersabee, went on to Haran.",
+   "madueke_b": "Therefore Jacob being departed from Bersabee, went on to Haran."
+  },
+  "11": {
+   "s_dismas": "And when he was come to a certaine place, and would reſt in it after ſunne ſet, he tooke one of the ſtones that lay there, and putting it vnder his head, ſlept in the ſame place.",
+   "odr_com": "And when he was come to a certaine place, and would rest in it after sunne set, he tooke one of the stones that lay there, and putting it vnder his head, slept in the same place.",
+   "sabates_a": "And when he was come to a certain place, and would rest in it after sun set, he took one of the stones that lay there, and putting it under his head, slept in the same place.",
+   "madueke_b": "And when he was come to a certain place, and would rest in it after sun set, he took one of the stones that lay there, and putting it under his head, slept in the same place."
+  },
+  "12": {
+   "s_dismas": "And he ſaw in his ſleepe a ladder ſtanding vpon the earth, and the top therof tooching heauen: the Angels alſo of God aſcending and deſcending by it,",
+   "odr_com": "And he saw in his sleepe a ladder standing vpon the earth, and the top therof tooching heauen: the angels also of God ascending and descending by it,",
+   "sabates_a": "And he saw in his sleep a ladder standing upon the earth, & the top thereof touching heaven: the Angels also of God ascending & descending by it,",
+   "madueke_b": "And he saw in his sleep a ladder standing upon the earth, & the top thereof touching heaven: the Angels also of God ascending & descending by it,"
+  },
+  "13": {
+   "s_dismas": "and our Lord leyning vpon the ladder ſaying to him: I am the Lord God of Abraham thy father, and the God of Iſaac: the Land, wherin thou ſleepeſt, I wil geue to thee and to thy ſeed.",
+   "odr_com": "and our Lord leyning vpon the ladder saying to him: I am the Lord God of Abraham thy father, and the God of Isaac: the Land, wherin thou sleepest, I wil geue to thee and to thy seed.",
+   "sabates_a": "and our Lord leaning upon the ladder saying to him: I am the Lord God of Abraham thy father, & the God of Isaac: the Land wherein thou sleepest, I will give to thee and to thy seed.",
+   "madueke_b": "and our Lord leaning upon the ladder saying to him: I am the Lord God of Abraham thy father, & the God of Isaac: the Land wherein thou sleepest, I will give to thee and to thy seed."
+  },
+  "14": {
+   "s_dismas": "And thy ſeed ſhal be as the duſt of the earth: thou ſhalt be dilated to the Weſt, and to the Eaſt, & to the North, and to the South: and in thee and thy seed al the tribes of the earth shal be blessed.",
+   "odr_com": "And thy seed shal be as the dust of the earth: thou shalt be dilated to the West, and to the East, & to the North, and to the South: and IN THEE and thy seed al the tribes of the earth SHAL BE BLEssED.",
+   "sabates_a": "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN Thee And Thy Seed All The Tribes of The Earth Shall be Blessed.",
+   "madueke_b": "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN THEE AND THY SEED ALL THE TRIBES OF THE EARTH SHALL BE BLESSED."
+  },
+  "15": {
+   "s_dismas": "And I wil be thy keeper whither ſo euer thou goeſt, and wil bring thee backe into this land: neither wil I leaue thee, til I ſhal haue accompliſhed al things which I haue ſaid.",
+   "odr_com": "And I wil be thy keeper whither so euer thou goest, and wil bring thee backe into this land: neither wil I leaue thee, til I shal haue accomplished al things which I haue said.",
+   "sabates_a": "And Iwill be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said.",
+   "madueke_b": "And I will be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said."
+  },
+  "16": {
+   "s_dismas": "And when Iacob was awaked out of ſleepe, he ſaid: In dede our Lord is in this place, and I wiſt not.",
+   "odr_com": "And when Iacob was awaked out of sleepe, he said: In dede our Lord is in this place, and I wist not.",
+   "sabates_a": "And when Jacob was awaked out of sleep, he said: Indeed our Lord is in this place, and I wist not.",
+   "madueke_b": "And when Jacob was awaked out of sleep, he said: Indeed our Lord is in this place, and I wist not."
+  },
+  "17": {
+   "s_dismas": "And trembling he ſaid: How terrible is this place! this is none other but the houſe of God, and the gate of heauen.",
+   "odr_com": "And trembling he said: How terrible is this place! this is none other but the house of God, and the gate of heauen.",
+   "sabates_a": "And trembling he said: How terrible is this place! This is none other but the house of God, and the gate of heaven.",
+   "madueke_b": "And trembling he said: How terrible is this place! This is none other but the house of God, and the gate of heaven."
+  },
+  "18": {
+   "s_dismas": "And Iacob ariſing in the morning, tooke the ſtone, which he had laid vnder his head, and erected it for a title, powring oyle vpon the toppe. Houſe of God.",
+   "odr_com": "And Iacob arising in the morning, tooke the stone, which he had laid vnder his head, and erected it for a title, powring oyle vpon the toppe.",
+   "sabates_a": "And Jacob arising in the morning took the stone, which he had laid under his head, and erected it for a title, pouring oil upon the top.",
+   "madueke_b": "And Jacob arising in the morning took the stone, which he had laid under his head, and erected it for a title, pouring oil upon the top."
+  },
+  "19": {
+   "s_dismas": "And he called the name of the citie Bethel, which before was called Luza.",
+   "odr_com": "And he called the name of the citie Bethel, which before was called Luza.",
+   "sabates_a": "And he called the name of the city Bethel, which before was called Luza.",
+   "madueke_b": "And he called the name of the city Bethel, which before was called Luza."
+  },
+  "20": {
+   "s_dismas": "And he vowed a vowe, ſaying: If God ſhal be with me, and ſhal keepe me in the way, by the which I walke, and ſhal geue me bread to eate, and rayment to put on,",
+   "odr_com": "And he vowed a vowe, saying: If God shal be with me, and shal keepe me in the way, by the which I walke, and shal geue me bread to eate, and rayment to put on,",
+   "sabates_a": "And he vowed a vow, saying: If God shall be with me, and shall keep me in the way, by the which I walk, and shall give me bread to eat, and raiment to put on,",
+   "madueke_b": "And he vowed a vow, saying: If God shall be with me, and shall keep me in the way, by the which I walk, and shall give me bread to eat, and raiment to put on,"
+  },
+  "21": {
+   "s_dismas": "and I ſhal be returned proſperouſly to my fathers houſe, the Lord ſhal be my God,",
+   "odr_com": "and I shal be returned prosperously to my fathers house, the Lord shal be my God,",
+   "sabates_a": "and I shall be returned prosperously to my father's house, the Lord shall be my God,",
+   "madueke_b": "and I shall be returned prosperously to my father's house, the Lord shall be my God,"
+  },
+  "22": {
+   "s_dismas": "and this ſtone, which I haue erected for a title, ſhal be called the Houſe of God: and of al things that thou ſhalt geue to me, I wil offer tithes to thee.",
+   "odr_com": "and this stone, which I haue erected for a title, shal be called the House of God: and of al things that thou shalt geue to me, I wil offer tithes to thee.",
+   "sabates_a": "and this stone, which I have erected for a title, shall be called the House of God: and of all things that thou shalt give to me, I will offer tithes to thee.",
+   "madueke_b": "and this stone, which I have erected for a title, shall be called the House of God: and of all things that thou shalt give to me, I will offer tithes to thee."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Isaac therefore called Jacob, and blessed him, and commanded him saying: Take not a wife of the stock of Chanaan;",
+  "2": "but go and make a journey into Mesopotamia of Syria; to the house of Bathuel thy mother's father, and take thee a wife thence of the daughters of Laban thine uncle.",
+  "3": "And God Almighty bless thee, and make thee increase, and multiply thee: that thou mayest be into multitudes of peoples.",
+  "4": "And give he thee the blessings of Abraham, and to thy seed after thee: that thou mayest possess the land of thy peregrination, which he promised to thy grandfather.",
+  "5": "And when Isaac had dismissed him, taking his journey he came to Mesopotamia of Syria to Laban, the son of Bathuel the Syrian, brother to Rebecca his mother.",
+  "6": "And Esau seeing that his father had blessed Jacob, and had sent him into Mesopotamia of Syria, to marry a wife thence; and that after the blessing he had commanded him, saying: Thou shalt not take a wife of the daughters of Chanaan;",
+  "7": "and that Jacob obeying his parents was gone into Syria:",
+  "8": "having trial also that his father did not willingly see the daughters of Chanaan,",
+  "9": "he went to Ismael, and took to wife besides them which he had before, Maheleth the daughter of Ismael Abraham's son, sister to Nabajoth.",
+  "10": "Therefore Jacob being departed from Bersabee, went on to Haran.",
+  "11": "And when he was come to a certain place, and would rest in it after sun set, he took one of the stones that lay there, and putting it under his head, slept in the same place.",
+  "12": "And he saw in his sleep a ladder standing upon the earth, & the top thereof touching heaven: the Angels also of God ascending & descending by it,",
+  "13": "and our Lord leaning upon the ladder saying to him: I am the Lord God of Abraham thy father, & the God of Isaac: the Land wherein thou sleepest, I will give to thee and to thy seed.",
+  "14": "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN Thee And Thy Seed All The Tribes of The Earth Shall be Blessed.",
+  "15": "And Iwill be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said.",
+  "16": "And when Jacob was awaked out of sleep, he said: Indeed our Lord is in this place, and I wist not.",
+  "17": "And trembling he said: How terrible is this place! This is none other but the house of God, and the gate of heaven.",
+  "18": "And Jacob arising in the morning took the stone, which he had laid under his head, and erected it for a title, pouring oil upon the top.",
+  "19": "And he called the name of the city Bethel, which before was called Luza.",
+  "20": "And he vowed a vow, saying: If God shall be with me, and shall keep me in the way, by the which I walk, and shall give me bread to eat, and raiment to put on,",
+  "21": "and I shall be returned prosperously to my father's house, the Lord shall be my God,",
+  "22": "and this stone, which I have erected for a title, shall be called the House of God: and of all things that thou shalt give to me, I will offer tithes to thee."
+ },
+ "ref_coverage": {
+  "janvier": 22,
+  "have": {
+   "s_dismas": 22,
+   "odr_com": 22,
+   "sabates_a": 22,
+   "madueke_b": 22
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 88,
+ "triage": "R3-READY",
+ "secs": 5.4
+}

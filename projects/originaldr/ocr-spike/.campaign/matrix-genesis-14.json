@@ -1,0 +1,1252 @@
+{
+ "chapter": 14,
+ "n_verses": 24,
+ "n_cells": 96,
+ "n_pass": 92,
+ "rate": 0.9583,
+ "ref_means": {
+  "s_dismas": 0.9824,
+  "odr_com": 0.9837,
+  "sabates_a": 0.9755,
+  "madueke_b": 0.9755
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 0.875,
+  "S6": 0.9583
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 4,
+ "open": [
+  {
+   "src": "S9",
+   "verse": 1,
+   "worst": 0.841,
+   "from": "p84",
+   "text": "and it came to paſſe in that time, that. Amraphel the and Xking of Sennaar, and Arioch the king of Pontus, Thadal the Chodorlahomor king of the Elamyts, and king of nacions"
+  },
+  {
+   "src": "S9",
+   "verse": 4,
+   "worst": 0.845,
+   "from": "p84",
+   "text": "For they had ſerued Chodorlamor twelue yeares, Therfore5 and the thirtenth yeare they reuolted from him."
+  },
+  {
+   "src": "S9",
+   "verse": 5,
+   "worst": 0.831,
+   "from": "p84",
+   "text": "in the fourtenth yeare came Chodorlahomor, and the king that were with him and they ſtroke Raphaim in Aſtarothof Cariacarnaim, and Suſim with them, and Emim in Sauee Seir, euen thaim,"
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.88,
+   "from": "p70",
+   "text": "except ſuch things as the yong men haue eaten and the ihares of the men that came wme Ane, Eſchol, and Mambre : theſe ihal take theit ihares. CHAP."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and it came to paſſe in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of nacions",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "and it came to paſſe in that time, that Amraphel the Aking of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of nacions",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "and it came to paſſe in that time, that. Amraphel the and Xking of Sennaar, and Arioch the king of Pontus, Thadal the Chodorlahomor king of the Elamyts, and king of nacions",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.841,
+     "madueke_b": 0.841
+    }
+   },
+   "S6": {
+    "text": "and came to paſſe in that time, that Amraphel the king of Sennaat, and Arioch the Fing of Pontus, aud Chodorlahomor Ring ot the Elamites, and Thadal the nof Nations",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "made warre againſt Barra the king of Sodome, and againſt Berſa the king of Gomorra, and againſt Sennaab the king of Adama, and againſt Semebar the king of Seboim, and agaiſt the king of Bala, the ſame is Segor.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   },
+   "S3": {
+    "text": "made warre againſt Barra the king of Sodome, and againſt Berſa the king of Gomorra, and againſt Sennaab the king of Adama, and againſt Semebar the king of Seboim, and againſt the king of Bala, the ſame is Segor.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "made warre againſt Barra the king of Sodome, and againſt Berſa the king of Gomorra, and againſt Sennaab the king of Adama, and againſt Semebar the king of Seboim, Al theſe and againſt the king of Bala, the ſame is Segor.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.958,
+     "odr_com": 0.958,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S6": {
+    "text": "made watre againit Barra the Ring oSodome, and againſt Berſa the King of Gomorra, and againſt Sennaab the King ot Adama, and againſt Semebar the king of Seboim, and againſt the Kins of Bala, the ſame is Segot.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "Al theſe came together into the Woodland vale, which now is the ſalt ſea.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "Al theſe came together into the Woodland vale, which now is the ſalt ſea.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "Al theſe came together into the Woodland vale, which now is the ſalt ſea.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "Al theſe came together into the wood land vale, which now is the ſalt ſea.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "For they had ſerued Chodorlamor twelue yeares, and the thirtenth yeare they reuolted from him.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 1.0,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S3": {
+    "text": "For they had ſerued Chodorlamor twelue yeares, and the thirtenth yeare they reuolted from him.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 1.0,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S9": {
+    "text": "For they had ſerued Chodorlamor twelue yeares, Therfore5 and the thirtenth yeare they reuolted from him.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.891,
+     "odr_com": 0.911,
+     "sabates_a": 0.845,
+     "madueke_b": 0.845
+    }
+   },
+   "S6": {
+    "text": "For they had ſerued Chodorlahomor twelue yeares, & the thirteenth veare they reuolted from him.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.936,
+     "odr_com": 0.913,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Therfore in the fourtenth yeare came Chodorlahomor, and the kingthat were with him: and they ſtroke Raphaim in Aſtarothcarnaim, and Suſim with them, and Emim in Sauee of Cariathaim,",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.994,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "Therfore in the fourtenth yeare came Chodorlahomor, and the kingthat were with him: and they ſtroke Raphaim in Aſtarothcarnaim, and Suſim with them, and Emim in Sauee of Cariathaim,",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.994,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "in the fourtenth yeare came Chodorlahomor, and the king that were with him and they ſtroke Raphaim in Aſtarothof Cariacarnaim, and Suſim with them, and Emim in Sauee Seir, euen thaim,",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.848,
+     "odr_com": 0.854,
+     "sabates_a": 0.831,
+     "madueke_b": 0.831
+    }
+   },
+   "S6": {
+    "text": "Therfore in the fourteenth yeare came Chodorlahomot, and the Kings that were with him, and they ſtruck Raphaim in Aſtarothearnaim, and Suſim with them, and Emim in Sauee of Carimathaim,",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.956,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And they returned, and came as farre as the fountaine of Miſphat, the ſame is Cades and they ſtroke al the countrie of the Ameleichites, and of the Amorheans, that dwel in Aſſaſonthamar.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And they returned, and came as farre as the fountaine of Miſphat, the ſame is Cades: and they ſtroke al the countrie of the Ameleichites, and of the Amorheans, that dwel in Aſſaſonthamar.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "And they returned, and came as farre as the fountaine of Miſphat, the ſame is Cades and they ſtroke al the countrie of the Ameleichites, and of the Amorheans, that dwel in Aſſaſonthamar.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And they returned, and came as farre as the fountaine of Miſphat, the ſame is Cades and they ſtruck al the countrie of the Amelechites, and of the Amorheans, that dwel in Aſaſonthamar.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreouer alſo the king of Bala, which is Segor and they ſet themſelues againſt them in battaile aray in the Woodland vale:",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreouer alſo the king of Bala, which is Segor and they ſet themſelues againſt them in battaile aray in the Woodland vale:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreouer alſo the king of Bala, which is Segor and they ſet themſelues againſt them in bat- taile aray in the Woodland vale",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "And they went forth the King of Sodome, and the King of Gomorra, and the King of Adama, and the King of Sebeim, moreouer alſo the King of Bala, which is Segor and they ſet themſelues againſt them in battaile aray in the wood-land vale",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "to wit againſt Chodorlahomor king of the Elamites, and Chadal king of nacions, and Amraphel king of Sennaar, and Arioch kingof Pontus: foure gs againſt fiue.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.974,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S3": {
+    "text": "to wit againſt Chodorlahomor king of the Elamites, and Chadal king of nacions, and Amraphel king of Sennaar, and Arioch kingof Pontus fourek gs againſt fiue.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   },
+   "S9": {
+    "text": "to wit againſt Chodorlahomor king of the. Elamites, and Chadal king of nacions, and Amraphel king of Sennaar, and Arioch kingof Pontus foure kings againſt fiue.",
+    "from": "p84",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.994,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "to wit againſt Chodorlahomor King of the Elamites, and Thadal King of Nations, and Amraphel King of Senuaat and Arioch King of Pontus: foure Rings againſt fiue.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.968,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "But the woodland vale had many pitts ofitume. Therfore the king of Sodome, and of Gomorra turned their backes, and were ouerthrowne there: and they that remained fled to the mountaine.",
+    "from": "p74",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "But the Woodland vale had many pitts of itume. Therfore the king of Sodome, and of Gomorra turned their backes, and were ouerthrowne there and they that remained fled to the mountaine.",
+    "from": "p78",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "But the Woodland vale had many pitts of bitume. Therfore the king of Sodome, and of Gomorra turned their backes, and were ouerthrowne there: and they that remained fled to the mountaine.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "But the wood land vale had many pits of bitume. Therfore the King of Sodome and of Gomorra turned their backs and were ouerthrowne there: and they that temained fled to the mountaine.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And they tooke al the ſubſtance of the Sodomites, and Gomorrheans, and tooke al kind of victuales, and went their way",
+    "from": "p74",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And they tooke al the ſubſtance of the Sodomites, and Gomorrheans, and tooke al kind of victuales, and went their way",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And they tooke al the ſubſtance of the Sodomites, and Gomorrheans, and tooke al kind of victuales, and went, their way",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "And they tooke al the ſubſtance of the Sodomites and Gomorrheans, and tooke al kind of victuals, and went theit way:",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "and Lor alſo and his ſubſtance, the ſonne of Abrams brother, who dwelled in Sodom.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "and Lot alſo and his ſubſtance, the ſonne of Abrams brother who dwel- dwelled in Sodom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   },
+   "S9": {
+    "text": "Lot alſo and his ſubſtance, the ſonne of Abrams brother, who dwelled in Sodom.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S6": {
+    "text": "and Lot alſo and his ſubſtance, the ſonne of Abrams brother, who dwelled in Sodom.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And behold one, that had eſcaped, told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean brother of Eſchol, and the brother of Aner: for theſe had made a league with Abram.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And behold one, that had eſcaped, told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean brother of Eſchol, and the brother of Aner: for theſe had made a league with Abram.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And behold one, that had eſcaped, told Abram the Hebrew, that dwelt in the vale of Mamibre, the Amorrean brother of Eichol, and the brother of Aner: for theſe had made a league with Abram.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And behold one that bad eſcaped told Abtam the Hebrew that dwelt in the vale of Mambre, the Amorrean, brother of Eſchol, and the brother of Aner to the had made a league with Abram.",
+    "from": "p69",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Which when Abram had heard, to witt, that his brother Lot was taken, he numbred of the ſeruantes borne in his houſe, wel appointed three hundred and eightene and purſued them vnto Dan.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "Which when Abram had heard, to witt, that his brother Lot was taken, he numbred of the ſeruantes borne in his houſe, wel appointed three hundred and eightene and purſued them vnto Dan.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "Which when Abram had heard, to witt, that his brother Lot was taken, he numbred of the ſeruantes borne in his houſe, wel appointed three hundred and eightene and purſued them vnto Dan.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "Abram had heard, to wit, that his brother Lot was taken, he num-bred of the ſeruants borne in his houſe, wel appointed, three hundred and eighteen: and purſued them vnto Dan",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.916,
+     "odr_com": 0.916,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And diuiding his companie, he ranne vpon them in the night and ſtroke them, and purſued them vnto Hoba, which is on the lefr hand of Damaſcus.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "And diuiding his companie, he ranne vpon them in the night and ſtroke them, and purſued them vnto Hoba, which is on the left hand of Damaſcus.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "And diuiding his companie, he ranne vpon them in the night and ſtroke them, and purſued them vnto Hoba, which is on the left hand of Damaſcus.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "And diuiding his companie, he ranne vpon them in the night and ſtruck them and purſued them vnto Hoba, which is on the left hand of Pamaſcus,",
+    "from": "p70",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And he brought backe al the ſubſtance, and Lot his brother with his ſubſtance, the wemen alſo and the people.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And he brought backe al the ſubſtance, and Lot his brother with his ſubſtance, the wemen alſo and the people.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And he brought backe al the ſubſtance, and Lot his brother with his ſubſtance, the wemen alſo and the people.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And he brought backe al the ſubſtance, and Lot his brother with his ſubſtance, the women alſo and the people.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And the king of Sodom went forth to meete them, after he returned from the ſlaughter of Chodorlahomor, and of the kinges that were with him in the vale Sauce, which is the kings vale.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And the king of Sodom went forth to meete them, after he returned from the ſlaughter of Chodorlahomor, and of the kinges that were with him in the vale Sauee, which is the kings vale.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And the king of Sodom went forth to meete them, after he returned from the ſlaughter of Chodorlahomor, and of the kinges that were with him in the vale Sauee, which is the kings vale.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And the King of Sodom went forth to meet them, after he returned from the ſlaughter of Chodorlahomor, and of the Kings that were with him in the vale Sauce, which is the Kings vale.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "†But Melcheſidech the kingof Salem, bringing forth bread and wine, for he was the Prieſt of God moſt highe,",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.99,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "†But Melcheſidech the kingof Salem, bringing forth bread and wine, for he was the Prieſt of God moſt highe,",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.99,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "But Melcheſidech the king of Salem, bringing forth bread and wine, for he was the Prieſt of God moſt highe,",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "But Melchiſedech the King of Salem, bringing forth bread and wine, for he was the Prieſt of God moſt High, 19.\"",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.971,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "bleſſed him, and ſaid Bleſſed be Abram to God the higheſt, which created heauen and earth:",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "bleſſed him, and ſaid Bleſſed be Abram to God the higheſt, which created heauen and earth",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "bleſſed him, and ſaid Bleſſed be Abram to God the higheſt, which created heauen and earth",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "19.bleſſed him, and ſaid: Bleſſed be Abram to God the Higheſt, which created heauen and earth",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "and bleſſed be God the higheſt, by whoſe protection, the enemyes are in thy hands. And he gaue him the tythes of al.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "and bleſſed be God the higheſt, by whoſe protection, the enemyes are in thy hands. And he gaue him the tythes of al.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "and bleſſed be God the higheſt, by whoſe protection, the enemyes are in thy hands. And he gaue him the tythes of al.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "and bleſſed be God the Higheſt by whoſe protection the enemyes are in thy hands. And he gaue him the tyths of al.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And the king of Sodom ſaid to Abram Geue me the ſoules, and the reſt take to thee.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And the king of Sodom ſaid to Abram Geue me the ſoules, and the reſt take to thee.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And the king of Sodom ſaid to Abram Geue me the ſoules, and the reſt take to thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And the King of Sodom ſaid to Abram: Giue me the ſoules, and the reſt take to thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "Who anſwered him I lift vp my hand to my Lord God moſt hiegh poſſeſſor of heauen and earth,",
+    "from": "p75",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "Who anſwered him I lift vp my hand to my Lord God moſt hiegh poſſeſſor of heauen and earth,",
+    "from": "p79",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "Who anſwered him I lift vp my hand to my Lord God moſt hiegh poſſeſſor of heauen and earth,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "Who anſwered him: I litt vp my hand to my Lord God moſt High, poſſeſſour of heauen and earth,",
+    "from": "p70",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "that from the very woofe thread vnto the ſhoe larchet, I wil not take of al that are thine leſt thou ſay I haue enriched Abram:",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "that from the very woofe thread vnto the ſhoe latchet, I wil not take of al that are thine leſt thou ſay I haue enriched Abram:",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "that from the very woofe thread vnto the ſhoe latchet, I wil not take of al that are thine leſt thou ſay Ihaue enriched Abram",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "that from the very woote thread vnto the ſhoe latchet, I wil not take of al that are thine, (4) leſt thou ſay, I haue enriched Abram",
+    "from": "p70",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "except ſuch thinges, as the young men haue earen, and the ſhares of the men, that came with me, Aner, Eſchol, and Mambre: theſe ſhal take their ſhares.",
+    "from": "p75",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "except ſuch thinges, as the young men haue eaten, and the ſhares of the men, that came with me, Auer, Eſchol, and Mambre: theſe ſhal take their ſhares.",
+    "from": "p79",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "except ſuch thinges, as the young men haue men, eaten, and the ſhares of the men, that came with me, Aner, ſoſt Eſchol, and Mambre: theſe ſhal take their ſhares.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.93,
+     "madueke_b": 0.93
+    }
+   },
+   "S6": {
+    "text": "except ſuch things as the yong men haue eaten and the ihares of the men that came wme Ane, Eſchol, and Mambre : theſe ihal take theit ihares. CHAP.",
+    "from": "p70",
+    "score": {
+     "s_dismas": 0.888,
+     "odr_com": 0.888,
+     "sabates_a": 0.88,
+     "madueke_b": 0.88
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And it came to paſſe in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of nacions",
+   "odr_com": "AND it came to passe in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamyts, and Thadal the king of nacions",
+   "sabates_a": "And it came to pass in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamites, and Thadal the king of Nations.",
+   "madueke_b": "And it came to pass in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamites, and Thadal the king of Nations."
+  },
+  "2": {
+   "s_dismas": "made warre againſt Barra the king of Sodome, and againſt Berſa the king of Gomorra, and againſt Sennaab the king of Adama, and againſt Semebar the king of Seboim, and againſt the king of Bala, the ſame is Segor.",
+   "odr_com": "made warre against Barra the king of Sodome, and against Bersa the king of Gomorra, and against Sennaab the king of Adama, and against Semebar the king of Seboim, and against the king of Bala, the same is Segor.",
+   "sabates_a": "made war against Barra the king of Sodome, and against Bersa the king of Gomorra, and against Sennaab the king of Adama, and against Semebar the king of Seboim, and against the king of Bala, the same is Segor.",
+   "madueke_b": "made war against Barra the king of Sodome, and against Bersa the king of Gomorra, and against Sennaab the king of Adama, and against Semebar the king of Seboim, and against the king of Bala, the same is Segor."
+  },
+  "3": {
+   "s_dismas": "Al theſe came together into the Woodland vale, which now is the ſalt ſea.",
+   "odr_com": "Al these came together into the Woodland vale, which now is the salt sea.",
+   "sabates_a": "All these came together into the wood-land vale, which now is the salt sea.",
+   "madueke_b": "All these came together into the wood-land vale, which now is the salt sea."
+  },
+  "4": {
+   "s_dismas": "For they had ſerued Chodorlahomor twelue yeares, and the thirtenth yeare they reuolted from him.",
+   "odr_com": "For they had serued Chodorlamor twelue yeares, and the thirtenth yeare they reuolted from him.",
+   "sabates_a": "For they had served Chodorlahomor twelve years, & the thirteenth year they revolted from him.",
+   "madueke_b": "For they had served Chodorlahomor twelve years, & the thirteenth year they revolted from him."
+  },
+  "5": {
+   "s_dismas": "Therfore in the fourtenth yeare came Chodorlahomor, and the king that were with him: and they ſtroke Raphaim in Aſtarothcarnaim, and Sufim with them, and Emim in Sauee of Cariathaim,",
+   "odr_com": "Therfore in the fourtenth yeare came Chodorlahomor, and the king that were with him: and they stroke Raphaim in Astarothcarnaim, and Susim with them, and Emim in Sauee of Cariathaim,",
+   "sabates_a": "Therefore in the fourteenth year came Chodorlahomor, and the kings that were with him, and they struck Raphaim in Astarothcarnaim, and Susim with them, and Emim in Savee of Cariathaim,",
+   "madueke_b": "Therefore in the fourteenth year came Chodorlahomor, and the kings that were with him, and they struck Raphaim in Astarothcarnaim, and Susim with them, and Emim in Savee of Cariathaim,"
+  },
+  "6": {
+   "s_dismas": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+   "odr_com": "and the Corrheans in the mountains of Seir, euen to the Champion countrie of Pharan, which is in the wildernes.",
+   "sabates_a": "and the Corrheans in the mountains of Seir, even to the Champion country of Pharan, which is in the wilderness.",
+   "madueke_b": "and the Corrheans in the mountains of Seir, even to the Champion country of Pharan, which is in the wilderness."
+  },
+  "7": {
+   "s_dismas": "And they returned, and came as farre as the fountaine of Miſphat, the ſame is Cades: and they ſtroke al the countrie of the Ameleichites, and of the Amorheans, that dwel in Aſſaſonthamar.",
+   "odr_com": "And they returned, and came as farre as the fountaine of Misphat, the same is Cades: and they stroke al the countrie of the Ameleichites, and of the Amorheans, that dwel in Assasonthamar.",
+   "sabates_a": "And they returned, and came as far as the fountain of Misphat, the same is Cades: and they struck all the country of the Amelechites, and of the Amorrheans, that dwell in Asasonthamar.",
+   "madueke_b": "And they returned, and came as far as the fountain of Misphat, the same is Cades: and they struck all the country of the Amelechites, and of the Amorrheans, that dwell in Asasonthamar."
+  },
+  "8": {
+   "s_dismas": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreouer alſo the king of Bala, which is Segor: and they ſet themſelues againſt them in battaile aray in the Woodland vale:",
+   "odr_com": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreouer also the king of Bala, which is Segor: and they set themselues against them in battaile aray in the Woodland vale:",
+   "sabates_a": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreover also the king of Bala, which is Segor: and they set themselves against them in battle array in the wood-land vale:",
+   "madueke_b": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreover also the king of Bala, which is Segor: and they set themselves against them in battle array in the wood-land vale:"
+  },
+  "9": {
+   "s_dismas": "to wit againſt Chodorlahomor king of the Elamites, and Chadal king of nacions, and Amraphel king of Sennaar, and Arioch king of Pontus: four kings againſt fiue.",
+   "odr_com": "to wit against Chodorlahomor king of the Elamites, and Chadal king of nacions, and Amraphel king of Sennaar, and Arioch king of Pontus: foure kings against fiue.",
+   "sabates_a": "to wit against Chodorlahomor king of the Elamites, and Thadal king of Nations, and Amraphel king of Sennaar, and Arioch king of Pontus: four kings against five.",
+   "madueke_b": "to wit against Chodorlahomor king of the Elamites, and Thadal king of Nations, and Amraphel king of Sennaar, and Arioch king of Pontus: four kings against five."
+  },
+  "10": {
+   "s_dismas": "But the Woodland vale had many pitts of bitume. Therfore the king of Sodome, and of Gomorra turned their backes, and were ouerthrowne there: and they that remained fled to the mountaine.",
+   "odr_com": "But the Woodland vale had many pitts of bitume. Therfore the king of Sodome, and of Gomorra turned their backes, and were ouerthrowne there: and they that remained fled to the mountaine.",
+   "sabates_a": "But the wood-land vale had many pits of bitume. Therefore the king of Sodome and of Gomorra turned their backs, and were overthrown there: and they that remained fled to the mountain.",
+   "madueke_b": "But the wood-land vale had many pits of bitume. Therefore the king of Sodome and of Gomorra turned their backs, and were overthrown there: and they that remained fled to the mountain."
+  },
+  "11": {
+   "s_dismas": "And they tooke al the ſubſtance of the Sodomites, and Gomorrheans, and tooke al kind of victuales, and went their way:",
+   "odr_com": "And they tooke al the substance of the Sodomites, and Gomorrheans, and tooke al kind of victuales, and went their way:",
+   "sabates_a": "And they took all the substance of the Sodomites and Gomorrheans, and took all kind of victuals, and went their way:",
+   "madueke_b": "And they took all the substance of the Sodomites and Gomorrheans, and took all kind of victuals, and went their way:"
+  },
+  "12": {
+   "s_dismas": "and Lot alſo and his ſubſtance, the ſonne of Abrams brother, who dwelled in Sodom.",
+   "odr_com": "and Lot also and his substance, the sonne of Abrams brother, who dwelled in Sodom.",
+   "sabates_a": "and Lot also and his substance, the son of Abrams brother, who dwelled in Sodom.",
+   "madueke_b": "and Lot also and his substance, the son of Abrams brother, who dwelled in Sodom."
+  },
+  "13": {
+   "s_dismas": "And behold one, that had eſcaped, told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean brother of Eſchol, and the brother of Aner: for theſe had made a league with Abram.",
+   "odr_com": "And behold one, that had escaped, told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean brother of Eschol, and the brother of Aner: for these had made a league with Abram.",
+   "sabates_a": "And behold one that had escaped told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean, brother of Eschol, and the brother of Aner: for these made a league with Abram.",
+   "madueke_b": "And behold one that had escaped told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean, brother of Eschol, and the brother of Aner: for these made a league with Abram."
+  },
+  "14": {
+   "s_dismas": "Which when Abram had heard, to witt, that his brother Lot was taken, he numbred of the ſeruantes borne in his houſe, wel appointed three hundred and eightene: and purſued them vnto Dan.",
+   "odr_com": "Which when Abram had heard, to witt, that his brother Lot was taken, he numbred of the seruantes borne in his house, wel appointed three hundred and eightene: and pursued them vnto Dan.",
+   "sabates_a": "Which when Abram had heard, to wit, that his brother Lot was taken, he numbered of the servants born in his house, well appointed, three hundred and eighteen: and pursued them unto Dan.",
+   "madueke_b": "Which when Abram had heard, to wit, that his brother Lot was taken, he numbered of the servants born in his house, well appointed, three hundred and eighteen: and pursued them unto Dan."
+  },
+  "15": {
+   "s_dismas": "And diuiding his companie, he ranne vpon them in the night: and ſtroke them, and purſued them vnto Hoba, which is on the left hand of Damaſcus.",
+   "odr_com": "And diuiding his companie, he ranne vpon them in the night: and stroke them, and pursued them vnto Hoba, which is on the left hand of Damascus.",
+   "sabates_a": "And dividing his company, he ran upon them in the night, and struck them, and pursued them unto Hoba, which is on the left hand of Damascus.",
+   "madueke_b": "And dividing his company, he ran upon them in the night, and struck them, and pursued them unto Hoba, which is on the left hand of Damascus."
+  },
+  "16": {
+   "s_dismas": "And he brought backe al the ſubſtance, and Lot his brother with his ſubſtance, the wemen alſo and the people.",
+   "odr_com": "And he brought backe al the substance, and Lot his brother with his substance, the wemen also and the people.",
+   "sabates_a": "And he brought back all the substance, and Lot his brother with his substance, the women also and the people.",
+   "madueke_b": "And he brought back all the substance, and Lot his brother with his substance, the women also and the people."
+  },
+  "17": {
+   "s_dismas": "And the king of Sodom went forth to meete them, after he returned from the ſlaughter of Chodorlahomor, and of the kinges that were with him in the vale Sauee, which is the kings vale.",
+   "odr_com": "And the king of Sodom went forth to meete them, after he returned from the slaughter of Chodorlahomor, and of the kinges that were with him in the vale Sauee, which is the kings vale.",
+   "sabates_a": "And the king of Sodom went forth to meet them, after he returned from the slaughter of Chodorlahomor, and of the kings that were with him in the vale Savee, which is the king's vale.",
+   "madueke_b": "And the king of Sodom went forth to meet them, after he returned from the slaughter of Chodorlahomor, and of the kings that were with him in the vale Savee, which is the king's vale."
+  },
+  "18": {
+   "s_dismas": "But Melchiſedech the king of Salem, bringing forth bread and wine, for he was the Prieſt of God moſt highe,",
+   "odr_com": "But Melchesidech the king of Salem, bringing forth bread and wine, for he was the Priest of God most highe,",
+   "sabates_a": "But Melchisedech the king of Salem, bringing forth bread and wine, for he was the Priest of God most High,",
+   "madueke_b": "But Melchisedech the king of Salem, bringing forth bread and wine, for he was the Priest of God most High,"
+  },
+  "19": {
+   "s_dismas": "bleſſed him, and ſaid: Bleſſed be Abram to God the higheſt, which created heauen and earth:",
+   "odr_com": "blessed him, and said: Blessed be Abram to God the highest, which created heauen and earth:",
+   "sabates_a": "blessed him, and said: Blessed be Abram to God the Highest, which created heaven and earth:",
+   "madueke_b": "blessed him, and said: Blessed be Abram to God the Highest, which created heaven and earth:"
+  },
+  "20": {
+   "s_dismas": "and bleſſed be God the higheſt, by whoſe protection, the enemyes are in thy hands. And he gaue him the tythes of al.",
+   "odr_com": "and blessed be God the highest, by whose protection, the enemyes are in thy hands. And he gaue him the tythes of al.",
+   "sabates_a": "and blessed be God the Highest, by whose protection the enemies are in thy hands. And he gave him the tithes of all.",
+   "madueke_b": "and blessed be God the Highest, by whose protection the enemies are in thy hands. And he gave him the tithes of all."
+  },
+  "21": {
+   "s_dismas": "And the king of Sodom ſaid to Abram: Geue me the ſoules, and the reſt take to thee.",
+   "odr_com": "And the king of Sodom said to Abram: Geue me the soules, and the rest take to thee.",
+   "sabates_a": "And the king of Sodom said to Abram: Give me the souls, and the rest take to thee.",
+   "madueke_b": "And the king of Sodom said to Abram: Give me the souls, and the rest take to thee."
+  },
+  "22": {
+   "s_dismas": "Who anſwered him: I lift vp my hand to my Lord God moſt hiegh poſſeſſor of heauen and earth,",
+   "odr_com": "Who answered him: I lift vp my hand to my Lord God most hiegh possessor of heauen and earth,",
+   "sabates_a": "Who answered him: I lift up my hand to my Lord God most High, possessor of heaven and earth,",
+   "madueke_b": "Who answered him: I lift up my hand to my Lord God most High, possessor of heaven and earth,"
+  },
+  "23": {
+   "s_dismas": "that from the very woofe-thread vnto the ſhoe latchet, I wil not take of al that are thine: leſt thou ſay: I haue enriched Abram:",
+   "odr_com": "that from the very woofe-thread vnto the shoe latchet, I wil not take of al that are thine: lest thou say: I haue enriched Abram:",
+   "sabates_a": "that from the very woof-thread unto the shoe latchet, I will not take of all that are thine, lest thou say, I have enriched Abram:",
+   "madueke_b": "that from the very woof-thread unto the shoe latchet, I will not take of all that are thine, lest thou say, I have enriched Abram:"
+  },
+  "24": {
+   "s_dismas": "except ſuch thinges, as the young men haue eaten, and the ſhares of the men, that came with me, Aner, Eſchol, and Mambre: theſe ſhal take their ſhares.",
+   "odr_com": "except such thinges, as the young men haue eaten, and the shares of the men, that came with me, Aner, Eschol, and Mambre: these shal take their shares.",
+   "sabates_a": "except such things as the young men have eaten, and the shares of the men that came with me, Aner, Eschol, and Mambre: these shall take their shares.",
+   "madueke_b": "except such things as the young men have eaten, and the shares of the men that came with me, Aner, Eschol, and Mambre: these shall take their shares."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And it came to pass in that time, that Amraphel the king of Sennaar, and Arioch the king of Pontus, and Chodorlahomor king of the Elamites, and Thadal the king of Nations.",
+  "2": "made war against Barra the king of Sodome, and against Bersa the king of Gomorra, and against Sennaab the king of Adama, and against Semebar the king of Seboim, and against the king of Bala, the same is Segor.",
+  "3": "All these came together into the wood-land vale, which now is the salt sea.",
+  "4": "For they had served Chodorlahomor twelve years, & the thirteenth year they revolted from him.",
+  "5": "Therefore in the fourteenth year came Chodorlahomor, and the kings that were with him, and they struck Raphaim in Astarothcarnaim, and Susim with them, and Emim in Savee of Cariathaim,",
+  "6": "and the Corrheans in the mountains of Seir, even to the Champion country of Pharan, which is in the wilderness.",
+  "7": "And they returned, and came as far as the fountain of Misphat, the same is Cades: and they struck all the country of the Amelechites, and of the Amorrheans, that dwell in Asasonthamar.",
+  "8": "And they went forth the king of Sodome, and the king of Gomorra, and the king of Adama, and the king of Seboim, moreover also the king of Bala, which is Segor: and they set themselves against them in battle array in the wood-land vale:",
+  "9": "to wit against Chodorlahomor king of the Elamites, and Thadal king of Nations, and Amraphel king of Sennaar, and Arioch king of Pontus: four kings against five.",
+  "10": "But the wood-land vale had many pits of bitume. Therefore the king of Sodome and of Gomorra turned their backs, and were overthrown there: and they that remained fled to the mountain.",
+  "11": "And they took all the substance of the Sodomites and Gomorrheans, and took all kind of victuals, and went their way:",
+  "12": "and Lot also and his substance, the son of Abrams brother, who dwelled in Sodom.",
+  "13": "And behold one that had escaped told Abram the Hebrew, that dwelt in the vale of Mambre, the Amorrean, brother of Eschol, and the brother of Aner: for these made a league with Abram.",
+  "14": "Which when Abram had heard, to wit, that his brother Lot was taken, he numbered of the servants born in his house, well appointed, three hundred and eighteen: and pursued them unto Dan.",
+  "15": "And dividing his company, he ran upon them in the night, and struck them, and pursued them unto Hoba, which is on the left hand of Damascus.",
+  "16": "And he brought back all the substance, and Lot his brother with his substance, the women also and the people.",
+  "17": "And the king of Sodom went forth to meet them, after he returned from the slaughter of Chodorlahomor, and of the kings that were with him in the vale Savee, which is the king's vale.",
+  "18": "But Melchisedech the king of Salem, bringing forth bread and wine, for he was the Priest of God most High,",
+  "19": "blessed him, and said: Blessed be Abram to God the Highest, which created heaven and earth:",
+  "20": "and blessed be God the Highest, by whose protection the enemies are in thy hands. And he gave him the tithes of all.",
+  "21": "And the king of Sodom said to Abram: Give me the souls, and the rest take to thee.",
+  "22": "Who answered him: I lift up my hand to my Lord God most High, possessor of heaven and earth,",
+  "23": "that from the very woof-thread unto the shoe latchet, I will not take of all that are thine, lest thou say, I have enriched Abram:",
+  "24": "except such things as the young men have eaten, and the shares of the men that came with me, Aner, Eschol, and Mambre: these shall take their shares."
+ },
+ "ref_coverage": {
+  "janvier": 24,
+  "have": {
+   "s_dismas": 24,
+   "odr_com": 24,
+   "sabates_a": 24,
+   "madueke_b": 24
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 96,
+ "triage": "SOURCE-SKEW",
+ "secs": 5.9
+}

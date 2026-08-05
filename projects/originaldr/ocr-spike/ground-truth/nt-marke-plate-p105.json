@@ -1,0 +1,59 @@
+{
+  "locus": "nt/marke/plate#p105",
+  "page_index": 105,
+  "ocr_dir": "archive-nt-1582",
+  "scan": "S1",
+  "raster": ".gt-rasters/scripture-matthew-28-p0105.png",
+  "raster_dpi": 400,
+  "page_label_printed": null,
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "page_kind": "illustration_plate",
+  "layout_note": "Full-page intaglio ENGRAVING (evangelist author-portrait of S. Marke) facing the opening of his Gospel. NO scripture body[], NO running header, NO folio number. The only letterpress/engraved TEXT is a faint engraver's signature within the plate and a two-line Latin emblematic couplet in the cartouche beneath the image. 'THE HOLY GHOSPEL ... ACCORDING TO ... MARKE' book-heading is NOT on this leaf — it follows on the next page (~p106), which the p104 catchword 'THE' anticipates. Modern watermark 'www.fatimamovement.com' + papal-keys logo bottom-left excluded (digitization artifact).",
+  "verses_on_page": [],
+  "body": [],
+  "apparatus": [
+    {
+      "role": "illustration",
+      "description": "Author-portrait of S. Marke (St. Mark the Evangelist): a haloed, bearded man seated at a slanted writing desk, quill in his lowered right hand, writing his Gospel; his emblem the winged lion crouches at right beside him; a leaded/latticed window at upper left, a hanging curtain at upper right, an inkwell and a small dish set on the desk in the lower right. Baroque engraving.",
+      "text": null
+    },
+    {
+      "role": "engraver_signature",
+      "position": "lower_right within the plate (on the desk edge, above the cartouche)",
+      "text": "Piquet. incidit",
+      "has_uncertain": true,
+      "note": "faint cursive engraver's mark; reading low-confidence — could be 'Piqvet.'/'Picquet.' and the verb 'incidit'/'ſculpſit'."
+    },
+    {
+      "role": "plate_caption",
+      "position": "cartouche below the image",
+      "face": "engraved italic/cursive (long-ſ present, e.g. adeſt, inſtar, ſit)",
+      "text": "Forma Leonis adeſt MARCO: inſtar namq; leonis\nRugit et exclamat: ſit via plana Dei.",
+      "note": "Latin emblematic couplet identifying Mark with the lion (his evangelist symbol): 'The form of a lion is present to Mark: for like a lion he roars and cries out — let the way of God be made plain' (alluding to Mark 1:3, 'parate viam Domini'). 'MARCO' set in small capitals. 'namq;' = 'namque' with the '-que' abbreviation stroke."
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "span": "Piquet. incidit (engraver signature)",
+      "note": "very faint cursive within the plate; the surname and verb are both low-confidence at 400 DPI."
+    },
+    {
+      "span": "namq; (caption line 1)",
+      "note": "the '-que' abbreviation on 'nam' — the abbreviation mark could be a semicolon-form (namq;) or a tilde (namq̃); rendered 'namq;'."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 3,
+    "note": "counted by script over apparatus[].text (caption: adeſt, inſtar, ſit); not hand-counted."
+  },
+  "observer": "agent:matthew-28",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (.gt-rasters/scripture-matthew-28-p0105.png); cartouche and signature regions cropped and upscaled 3-6x. Caption Latin verified for sense against Mark 1:3; engraver signature flagged uncertain due to faint intaglio line at scan resolution.",
+  "confidence": "high on the cartouche couplet; low on the engraver signature; image described not transcribed.",
+  "relabel_note": "RELABELED from 'scripture-matthew-28-p105': this is the full-page engraving plate (author-portrait of S. Marke) + Latin cartouche, not Mt28."
+}

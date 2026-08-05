@@ -1,0 +1,1839 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p56",
+  "old_text": "the waters returned from the earth going comming they begane to decreaſe after a hundred fiftie dayes.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.2904,
+   0.875,
+   0.3753
+  ],
+  "crop_page": 56,
+  "r3_raw": "were shut vp: and the rayne from heauen was stayd. † And 3 the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes. † And 4 the arke rested the feauenth moneth, the seauen & twentith",
+  "r3_verse": "And the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes. And the arke rested the feauenth moneth, the seauen & twentith",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "23": "reſted",
+   "28": "ſeauen"
+  },
+  "visual_readings": {
+   "23": "reſted",
+   "28": "ſeauen"
+  },
+  "new_text": "And the waters returned from the earth going & comming and they begane to decreaſe after a hundred fiftie dayes. And the arke reſted the feauenth moneth, the ſeauen & twentith",
+  "s_unresolved": [
+   "feauenth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p56",
+  "old_text": "And the arke reſted the ſeauenth moneth, the ſeauen twentith day of the moneth vpon the mountaines of Armenia.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.3098,
+   0.875,
+   0.4158
+  ],
+  "crop_page": 56,
+  "r3_raw": "the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes. † And the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia. † But 5 the waters for al that were going and decreasing unto the",
+  "r3_verse": "And the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "arm_conflicts": [],
+  "new_text": "And the arke reſted the ſeauenth moneth, the ſeauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p56",
+  "old_text": "the waters for al that were going and decreaſing vntil tenth moneth: for in the tenth moneth, the firſt day of moneth, the topps of the mountaines appeared.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.3726,
+   0.875,
+   0.4786
+  ],
+  "crop_page": 56,
+  "r3_raw": "day of the moneth vpon the mountaines of Armenia. + But 5 the waters for al that were going and decreasing vntil the tenth moneth: for in the tenth moneth, the first day of the moneth, the topps of the mountaines appeared. + And after .6- that fourtie dayes were passed, Noe opening the windowe",
+  "r3_verse": "But the waters for al that were going and decreasing vntil the tenth moneth: for in the tenth moneth, the first day of the moneth, the topps of the mountaines appeared. +",
+  "arm_conflicts": [],
+  "new_text": "But the waters for al that were going and decreaſing vntil the tenth moneth: for in the tenth moneth, the firſt day of the moneth, the topps of the mountaines appeared. +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p56",
+  "old_text": "And that fourtie dayes were paſſed, Noe opening the. windowe of the arke, which he had made, let forth a crowe:",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.4127,
+   0.875,
+   0.5181
+  ],
+  "crop_page": 56,
+  "r3_raw": "tenth moneth: for in the tenth moneth, the first day of the moneth, the topps of the mountaines appeared. † And after that fourtie dayes were passed, Noe opening the windowe of the arke, which he had made, let forth a crowe: † which went forth, and did not returne, til the waters were dried",
+  "r3_verse": "And after that fourtie dayes were passed, Noe opening the windowe of the arke, which he had made, let forth a crowe:",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "1": "after"
+  },
+  "visual_readings": {
+   "1": "after"
+  },
+  "new_text": "And after that fourtie dayes were paſſed, Noe opening the. windowe of the arke, which he had made, let forth a crowe:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p56",
+  "old_text": "which not went forth, and did not returne, til the waters were dried vpon the earth.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.951,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.4515,
+   0.875,
+   0.5575
+  ],
+  "crop_page": 56,
+  "r3_raw": "that fourtie dayes were passed, Noe opening the windowe of the arke, which he had made, let forth a crowe: † which went forth, and did :: not returne, til the waters were dried vpon the earth. † He sent forth also a doue after him, to see if the waters were ceased yet vpon the face of the earth.",
+  "r3_verse": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+  "arm_conflicts": [],
+  "new_text": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p56",
+  "old_text": "And hauing expected verſeauen moe dayes, againe he let forth a doue out of the arke.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.5933,
+   0.875,
+   0.677
+  ],
+  "crop_page": 56,
+  "r3_raw": "earth: and he stretched forth his hand, and caught her and brought her into the arke. † And having expected yet seauen moe dayes, againe he let forth a doe out of the arke. † But she came to him at euentide, carrying a bough of an",
+  "r3_verse": "And having expected yet seauen moe dayes, againe he let forth a doe out of the arke.",
+  "arm_conflicts": [
+   "hauing | having",
+   "verſeauen | yet seauen",
+   "doue | doe"
+  ],
+  "r2_attested": {
+   "4": "ſeauen"
+  },
+  "visual_readings": {
+   "4": "ſeauen"
+  },
+  "new_text": "And hauing expected yet ſeauen moe dayes, againe he let forth a doe out of the arke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p56",
+  "old_text": "Therfore in the ſixt hundred and one yeare, the firſt moſo neth, the firſt day of the moneth the waters were cleane minished vpon the earth : and Noe opening the roofe of and arke, Iooked, and ſawe that the face of the earth was dried†",
+  "old": {
+   "s_dismas": 0.961,
+   "odr_com": 0.961,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7337,
+   0.875,
+   0.8689
+  ],
+  "crop_page": 56,
+  "r3_raw": "he sent forth a dove, which returned not any more vnto him. † Therfore in the fixt hundred and one yeare, the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried. † In the second moneth, the seven & twentyth day of the month the earth was dried. †And God beſeech to Noe saying:",
+  "r3_verse": "Therfore in the fixt hundred and one yeare, the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried.",
+  "arm_conflicts": [
+   "ſixt | fixt",
+   "moſo neth, | moneth,",
+   "minished | diminished",
+   "and | the",
+   "Iooked, | looked,"
+  ],
+  "new_text": "Therfore in the fixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the waters were cleane diminished vpon the earth and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried†",
+  "s_unresolved": [
+   "fixt",
+   "diminished"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 0.996,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p56",
+  "old_text": "In the ſecond moneth, the ſeuen twentyth day of moneth the earth was dried.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.948,
+   "sabates_a": 0.868,
+   "madueke_b": 0.868
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.8143,
+   0.875,
+   0.9148
+  ],
+  "crop_page": 56,
+  "r3_raw": "arke, looked, and sawe that the face of the earth was dried. † In ii: the second moneth, the seven & twentyth day of the 14 moneth the earth was dried. † And God spake to Noe, saying: Goe",
+  "r3_verse": "In the second moneth, the seven & twentyth day of the moneth the earth was dried.",
+  "arm_conflicts": [
+   "ſeuen | seven &"
+  ],
+  "new_text": "In the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p57",
+  "old_text": "Goe forth of tke arke, thou thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.0201,
+   0.875,
+   0.1119
+  ],
+  "crop_page": 57,
+  "r3_raw": "GENESIS. 16 † Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee. † Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that",
+  "r3_verse": "Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee.",
+  "arm_conflicts": [
+   "tke | the"
+  ],
+  "new_text": "Goe forth of the arke, thou & thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p57",
+  "old_text": "Al cattle, that are with thee of al flesh, as wcl in foules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon: the eartht increaſe and multiphe vpon it.",
+  "old": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.0421,
+   0.875,
+   0.1731
+  ],
+  "crop_page": 57,
+  "r3_raw": "16 † Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee. † Al cattle, that are with thee of al flesh, as wel in soules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiplie vpon it. † Noe therefore went forth, and his sonnes: his wife, and the wiues of his",
+  "r3_verse": "Al cattle, that are with thee of al flesh, as wel in soules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiplie vpon it.",
+  "arm_conflicts": [
+   "wcl | wel",
+   "foules, | soules,",
+   "eartht | earth:",
+   "multiphe | multiplie"
+  ],
+  "r2_attested": {
+   "12": "ſoules,"
+  },
+  "visual_readings": {
+   "12": "ſoules,"
+  },
+  "new_text": "Al cattle, that are with thee of al flesh, as wel in ſoules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon: the earth: increaſe and multiplie vpon it.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p57",
+  "old_text": "Noo therfore went ſorth, and his ſonnes : his wiſe, and the wiues of his ſonnes with him.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.049,
+   0.1036,
+   0.875,
+   0.2145
+  ],
+  "crop_page": 57,
+  "r3_raw": "creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiplie vpon it. † Noe therefore went forth, and his sonnes: his wise, and the wiues of his sonnes with him. † Yea 2nd al cattle, beastes, and creepers that crepe vpon the earth, according to their kinde, went",
+  "r3_verse": "Noe therefore went forth, and his sonnes: his wise, and the wiues of his sonnes with him.",
+  "arm_conflicts": [
+   "Noo therfore | Noe therefore",
+   "ſorth, | forth,"
+  ],
+  "lexicon_readings": {
+   "3": "forth,"
+  },
+  "visual_readings": {
+   "3": "forth,"
+  },
+  "new_text": "Noo therefore went forth, and his ſonnes his wiſe, and the wiues of his ſonnes with him.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.962,
+   "madueke_b": 0.962
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p57",
+  "old_text": "Yea and al cattle, beaſtes, and crcepers thar crepe vpon the earth, according to their kinde, went forth our of the arke.",
+  "old": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.1454,
+   0.875,
+   0.254
+  ],
+  "crop_page": 57,
+  "r3_raw": "18 went forth, and his sonnes: his wise, and the winces of his sonnes with him. † Yea 2nd al cattle, beastes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke. † And Noe\" built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered",
+  "r3_verse": "Yea 2nd al cattle, beastes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+  "arm_conflicts": [
+   "and | 2nd",
+   "crcepers thar | creepers that",
+   "our | out"
+  ],
+  "new_text": "Yea 2nd al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went forth out of the arke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p57",
+  "old_text": "And Noe″ biult an Altar to our Lord: and raking of al cattle and foules rhat were cleane, offered Holocauſts vpon the Altar.",
+  "old": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.1849,
+   0.875,
+   0.2922
+  ],
+  "crop_page": 57,
+  "r3_raw": "19 that crepe vpon the earth, according to their kinde, went forth out of the arke. † And Noe built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocausts vpon the Altar. † And our Lord smelled a sweete sauour; and laid: I wil no more curse the earth for men: for",
+  "r3_verse": "And Noe built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocausts vpon the Altar.",
+  "arm_conflicts": [
+   "Noe″ biult | Noe built",
+   "raking | taking",
+   "rhat | that"
+  ],
+  "new_text": "And Noe″ built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p60",
+  "old_text": "And the arke reſted the ſeauenth moneth, the ſeauen twentith day of the moneth vpon the mountaines of Armenia.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.11,
+   0.3028,
+   0.911,
+   0.4111
+  ],
+  "crop_page": 60,
+  "r3_raw": "the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes. † And 4 the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia. † But 5 the waters for al that were going and decreasing unto the",
+  "r3_verse": "And the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "arm_conflicts": [],
+  "new_text": "And the arke reſted the ſeauenth moneth, the ſeauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p60",
+  "old_text": "And hauing expected vet ſeauen moe dayes, againe he let forth a doue out of the arke.",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.11,
+   0.5958,
+   0.911,
+   0.6847
+  ],
+  "crop_page": 60,
+  "r3_raw": "earth: and he stretched forth his hand, and caught her and brought her into the arke. † And having expected yet seven moe dayes, againe he let forth a doue out of the arke. † But she came to him at euentide, carrying a bough of an",
+  "r3_verse": "And having expected yet seven moe dayes, againe he let forth a doue out of the arke.",
+  "arm_conflicts": [
+   "hauing | having",
+   "vet ſeauen | yet seven"
+  ],
+  "new_text": "And hauing expected yet seven moe dayes, againe he let forth a doue out of the arke.",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p60",
+  "old_text": "in the ſixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the warers were cleane diminished vpon the earth and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried†",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   13
+  ],
+  "crop": [
+   0.11,
+   0.7427,
+   0.911,
+   0.8741
+  ],
+  "crop_page": 60,
+  "r3_raw": "he sent forth a dove, which returned not any more vnto him. † Therfore in the fixt hundred and one yeare; the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried. † In the second moneth, the seven & twentyth day of the",
+  "r3_verse": "Therfore in the fixt hundred and one yeare; the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried.",
+  "arm_conflicts": [
+   "ſixt | fixt",
+   "warers | waters"
+  ],
+  "lexicon_readings": {
+   "0": "Therfore"
+  },
+  "visual_readings": {
+   "0": "Therfore"
+  },
+  "new_text": "Therfore in the fixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the waters were cleane diminished vpon the earth and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried†",
+  "s_unresolved": [
+   "fixt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 0.996,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p60",
+  "old_text": "In the ſecond moneth, the ſeuen twentyth day of the moneth the earth was dried.",
+  "old": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.11,
+   0.8249,
+   0.911,
+   0.918
+  ],
+  "crop_page": 60,
+  "r3_raw": "arke, looked, and sawe that the face of the earth was dried. † In: the second moneth, the seven & twentyth day of the 14 moneth the earth was dried. † And God spake to Noe, saying: † Goc",
+  "r3_verse": "In: the second moneth, the seven & twentyth day of the moneth the earth was dried.",
+  "arm_conflicts": [
+   "ſeuen | seven &"
+  ],
+  "new_text": "In the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p61",
+  "old_text": "Goe forth of the arke, thou thy wife, thy ſonnes and the wiues of thyſonnes with thee.",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.0044,
+   0.875,
+   0.0943
+  ],
+  "crop_page": 61,
+  "r3_raw": "GENESIS. 16 † Go forth of the arke, thou & thy wise, thy sonnes and the wiues of thy sonnes with thee. 17 † Al cattle, that are with thee of al flesh, as wel in soules, as in beastes, & al creepers, that",
+  "r3_verse": "Go forth of the arke, thou & thy wise, thy sonnes and the wiues of thy sonnes with thee.",
+  "arm_conflicts": [
+   "Goe | Go",
+   "wife, | wise,",
+   "thyſonnes | thy sonnes"
+  ],
+  "lexicon_readings": {
+   "8": "wiſe,",
+   "16": "ſonnes"
+  },
+  "visual_readings": {
+   "8": "wiſe,",
+   "16": "ſonnes"
+  },
+  "new_text": "Goe forth of the arke, thou & thy wiſe, thy ſonnes and the wiues of thy ſonnes with thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p61",
+  "old_text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, al creepers, that creepe vpon the earth, bring out with thee, goe yee vpon the earth: incrcaſe and multiphe vpon it.",
+  "old": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.0259,
+   0.875,
+   0.1566
+  ],
+  "crop_page": 61,
+  "r3_raw": "16 † Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee. 17 Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon 18 the earth: increase and multiply vpon it. † Noe therfore went forth, and his sonnes: his wife, and the wiues of his",
+  "r3_verse": "Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiply vpon it.",
+  "arm_conflicts": [
+   "incrcaſe | increase",
+   "multiphe | multiply"
+  ],
+  "new_text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon the earth: increase and multiply vpon it.",
+  "s_unresolved": [
+   "increase"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "and God Noe, and al the beaſts, and al the A cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.906,
+   "madueke_b": 0.906
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.1037,
+   0.875,
+   0.2936
+  ],
+  "crop_page": 66,
+  "r3_raw": "The waters diminishing by little and little, 6. Noe sendeth forth a crow, &c. after him adoue, thrise: 18. lastly goeth forth with al that were with him in the arke. 20. erecteth an Altar, and offereth sacrifice. And God remembered Noe, and all the beasts, and all the cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreased. † And the fountaines of the depth, and the flood gates of heauen,",
+  "r3_verse": "The waters diminishing by little and little, Noe sendeth forth a crow, &c. after him adoue, thrise: lastly goeth forth with al that were with him in the arke. erecteth an Altar, and offereth sacrifice. And God remembered Noe, and all the beasts, and all the cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreased.",
+  "arm_conflicts": [
+   "al | all",
+   "al | all"
+  ],
+  "lexicon_readings": {
+   "9": "forth",
+   "13": "after",
+   "19": "forth"
+  },
+  "r2_attested": {
+   "8": "ſendeth",
+   "16": "thriſe:",
+   "17": "laſtly"
+  },
+  "visual_readings": {
+   "9": "forth",
+   "13": "after",
+   "19": "forth",
+   "8": "ſendeth",
+   "16": "thriſe:",
+   "17": "laſtly"
+  },
+  "new_text": "The waters diminishing by little and little, Noe ſendeth forth a crow, &c. after him adoue, thriſe: laſtly goeth forth with al that were with him in the arke. erecteth an Altar, and offereth sacrifice. And God remembered Noe, and al the beaſts, and al the cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreaſed.",
+  "s_unresolved": [
+   "diminishing",
+   "offereth",
+   "sacrifice."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p66",
+  "old_text": "And the of fountaines, of the depth, and the floud gates of heauen, were, ſhut vp: and the rayne from heauen was ſtayd.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.974,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.2288,
+   0.875,
+   0.3371
+  ],
+  "crop_page": 66,
+  "r3_raw": "A cattle, which were with him in the arke, and brought a winde vpon the earth, and the waters decreased. † And the 2 ication of fountaines of the depth, and the houd gates of heauen, world. were shut vp: and the rayne from heauen was stayd. † And 3 the waters returned from the earth going & comming: and",
+  "r3_verse": "And the ication of fountaines of the depth, and the houd gates of heauen, world. were shut vp: and the rayne from heauen was stayd.",
+  "arm_conflicts": [
+   "floud | houd"
+  ],
+  "new_text": "And the ication of fountaines, of the depth, and the houd gates of heauen, world. were, ſhut vp: and the rayne from heauen was ſtayd.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.841,
+   "odr_com": 0.849,
+   "sabates_a": 0.817,
+   "madueke_b": 0.817
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p66",
+  "old_text": "And the arke reſted the ſeauenth moneth, the ſeauen twentith day of the moneth vpon the mountaines of Armenia.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3098,
+   0.875,
+   0.417
+  ],
+  "crop_page": 66,
+  "r3_raw": "the waters returned from the earth going & comming: and they begane to decrease after a hundred fiftie dayes. † And 4 the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia. † But 5 the waters for al that were going and decreasing vntil the",
+  "r3_verse": "And the arke rested the seauenth moneth, the seauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "arm_conflicts": [],
+  "new_text": "And the arke reſted the ſeauenth moneth, the ſeauen & twentith day of the moneth vpon the mountaines of Armenia.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p66",
+  "old_text": "which not went forth, and did not returne, til the waters were dried vpon the earth.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.951,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.4532,
+   0.875,
+   0.5591
+  ],
+  "crop_page": 66,
+  "r3_raw": "that fourtie dayes were passed, Noe opening the windowe of the arke, which he had made, let forth a crowe: † which 7 went forth, and did :: not returne, til the waters were dried vpon the earth. † He sent forth also a doue after him, to see 8 if the waters were ceased yet vpon the face of the earth.",
+  "r3_verse": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+  "arm_conflicts": [],
+  "new_text": "which went forth, and did :: not returne, til the waters were dried vpon the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p66",
+  "old_text": "Therfore in the ſixt hundred and one yeare, the firſt moſo neth, the firſt day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the and arke, looked, and ſawe that the faoe of the earth was dried,",
+  "old": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7389,
+   0.875,
+   0.8722
+  ],
+  "crop_page": 66,
+  "r3_raw": "he sent forth a doue, which returned not any more vnto him. † Therfore in the sixt hundred and one yeare, the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried. † In:: the second moneth, the seven & twentyth day of the",
+  "r3_verse": "Therfore in the sixt hundred and one yeare, the first moneth, the first day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and sawe that the face of the earth was dried.",
+  "arm_conflicts": [
+   "moſo neth, | moneth,",
+   "faoe | face"
+  ],
+  "new_text": "Therfore in the ſixt hundred and one yeare, the firſt moneth, the firſt day of the moneth the waters were cleane diminished vpon the earth: and Noe opening the roofe of the arke, looked, and ſawe that the face of the earth was dried,",
+  "s_unresolved": [
+   "face"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p66",
+  "old_text": "In the ſecond moneth, the ſeuen twentyth day of the moneth the earth was dried.",
+  "old": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.8198,
+   0.875,
+   0.9126
+  ],
+  "crop_page": 66,
+  "r3_raw": "arke, looked, and sawe that the face of the earth was dried. † In: the second moneth, the seven & twentyth day of the 14 moneth the earth was dried. † And God spake to Noe, saying: † Goe",
+  "r3_verse": "In: the second moneth, the seven & twentyth day of the moneth the earth was dried.",
+  "arm_conflicts": [
+   "ſeuen | seven &"
+  ],
+  "new_text": "In the ſecond moneth, the ſeuen & twentyth day of the moneth the earth was dried.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 1.0,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p67",
+  "old_text": "Goe forth of the arke, thou thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.0372,
+   0.875,
+   0.128
+  ],
+  "crop_page": 67,
+  "r3_raw": "GENESIS. 16 † Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee. † Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that",
+  "r3_verse": "Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee.",
+  "arm_conflicts": [],
+  "new_text": "Goe forth of the arke, thou & thy wife, thy ſonnes and the wiues of thy ſonnes with thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p67",
+  "old_text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, al creepers, that creepe vpon the earth, bring out with thee, goe yee vpon the earth: increafe and multiplie vpon it.",
+  "old": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.0593,
+   0.875,
+   0.1876
+  ],
+  "crop_page": 67,
+  "r3_raw": "16 † Goe forth of the arke, thou & thy wife, thy sonnes and the wiues of thy sonnes with thee. † Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon :: In thew 18 the earth: increase and multiplie vpon it. † Noe therfore yeare of went forth, and his sonnes : his wife, and the wiues of his floud wa",
+  "r3_verse": "Al cattle, that are with thee of al flesh, as wel in foules, as in beastes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon :: In thew the earth: increase and multiplie vpon it.",
+  "arm_conflicts": [
+   "increafe | increase"
+  ],
+  "new_text": "Al cattle, that are with thee of al flesh, as wel in foules, as in beaſtes, & al creepers, that creepe vpon the earth, bring out with thee, & goe yee vpon :: In thew the earth: increase and multiplie vpon it.",
+  "s_unresolved": [
+   "increase"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p67",
+  "old_text": "Yea and al cattle, beaſtes, and creepers that crepe vpon the earth, according to their kinde, went voforth out of the arke.",
+  "old": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.1576,
+   0.875,
+   0.2665
+  ],
+  "crop_page": 67,
+  "r3_raw": "went forth, and his sonnes: his wife, and the wiues of his sonnes with him. † Yea and al cattle, beastes, and creepers reaping, that crepe vpon the earth, according to their kinde, went pleasant forth out of the arke. † And Noe built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered",
+  "r3_verse": "Yea and al cattle, beastes, and creepers reaping, that crepe vpon the earth, according to their kinde, went pleasant forth out of the arke.",
+  "arm_conflicts": [
+   "voforth | pleasant forth"
+  ],
+  "lexicon_readings": {
+   "19": "forth"
+  },
+  "r2_attested": {
+   "18": "pleaſant"
+  },
+  "visual_readings": {
+   "19": "forth",
+   "18": "pleaſant"
+  },
+  "new_text": "Yea and al cattle, beaſtes, and creepers reaping, that crepe vpon the earth, according to their kinde, went pleaſant forth out of the arke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.872,
+   "odr_com": 0.872,
+   "sabates_a": 0.823,
+   "madueke_b": 0.823
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p67",
+  "old_text": "And Noe built an Altar to our Lord: tie but and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.1991,
+   0.875,
+   0.3073
+  ],
+  "crop_page": 67,
+  "r3_raw": "that crepe vpon the earth, according to their kinde, went forth out of the arke. † And Noe' built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocausts vpon the Altar. † And our Lord smelld a sweete sauour, and said: I wil no more curse the earth for men: for God pro",
+  "r3_verse": "And Noe' built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocausts vpon the Altar.",
+  "arm_conflicts": [
+   "Noe | Noe'"
+  ],
+  "new_text": "And Noe built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocauſts vpon the Altar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 21,
+  "from": "p67",
+  "old_text": "And our Lord ſmelled a ſweete ſauour, and ſaid I wil no more curſe the earth for men for the ſenſe and cogitation of mans harttare prone to euil from ſeth he youth Iwil no more therfore ſtrike euerie liuing ſouleoas I haue done.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.2399,
+   0.875,
+   0.3909
+  ],
+  "crop_page": 67,
+  "r3_raw": "and taking of al cattle and foules that were cleane, offered Holocaufts vpon the Altar. † And our Lord smelled a sweete sauour, and said: I wil no more curse the earth for men: for God proffeth more reasonable t S.Amb.l Noc & A but al deſe & misera the ſenfe and cogitation of mans hart are prone to euil from their youth: I wil no more therfore strike euerie liuing soule as I haue done. † Al the dayes of the earth, :: seed-time and haruest; cold and heate, Sommer and winter, night",
+  "r3_verse": "And our Lord smelled a sweete sauour, and said: I wil no more curse the earth for men: for the ſenfe and cogitation of mans hart are prone to euil from their youth: I wil no more therfore strike euerie liuing soule as I haue done.",
+  "arm_conflicts": [
+   "ſenſe | ſenfe",
+   "harttare | hart are",
+   "ſeth he | their",
+   "Iwil | I wil",
+   "ſouleoas | soule as"
+  ],
+  "lexicon_readings": {
+   "20": "ſenſe",
+   "41": "ſoule"
+  },
+  "visual_readings": {
+   "20": "ſenſe",
+   "41": "ſoule"
+  },
+  "new_text": "And our Lord ſmelled a ſweete ſauour, and ſaid I wil no more curſe the earth for men for the ſenſe and cogitation of mans hart are prone to euil from their youth I wil no more therfore ſtrike euerie liuing ſoule as I haue done.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p67",
+  "old_text": "Al the dayes of the earth, ſeed- Noe time and harueft, cold and heate, ſommer and winter, night and day ſhal not reſt.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.946,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.3198,
+   0.875,
+   0.8916
+  ],
+  "crop_page": 67,
+  "r3_raw": "their youth: I wil no more therefore strike euerie liuing soule as I haue done. † Al the dayes of the earth, :: seed-time and haruest, cold and heate, Sommer and winter, night c. 23. and day that not rest. ANNOTATIONS. CHAP. VIII. 10. Built an Altar] Noe without expresse commandment, and without delay, offereth Sacrifice to God, for the benefite received, in his, and his families conservation, with the other liuing creatures, in that general deluge of the world, vvel knowing (faith S. Ambrose) That to be true thanksgiving, vvich is presented, not commanded: therfore he made no delay. For the vertue of a grateful mind excludeth doubtfull deliberation, and he that expecteth, til the debt of thanksbe offered of al the kindes of cleane beastes and foules. Finally he offered them in Holocauastes, where all was burned and consumed in the honour of God. God, who is the most spiritual substance, or that the burning of flesh, bones, and bowels of beastes could yield sweete saour; but the devout mind declareth greatly pleased God. For God requireth both, but specially a sincere hart. As not only diuine Scriptures, and holic Fathers, but also moral Philosophers teach vs. It were a greuous thing (saith Plato writing) if God had respect rather to the gifts, and sacrifices of men, then to their mind. Noes sacr manie was comendab 1. Volunta 2. Speedie 3. Solema 4. Pure. 5. Bountif 6. Holocau",
+  "r3_verse": "Al the dayes of the earth, :: seed-time and haruest, cold and heate, Sommer and winter, night and day that not rest. CHAP. VIII. Built an Altar] Noe without expresse commandment, and without delay, offereth Sacrifice to God, for the benefite received, in his, and his families conservation, with the other liuing creatures, in that general deluge of the world, vvel knowing (faith Ambrose) That to be true thanksgiving, vvich is presented, not commanded: therfore he made no delay. For the vertue of a grateful mind excludeth doubtfull deliberation, and he that expecteth, til the debt of thanksbe offered of al the kindes of cleane beastes and foules. Finally he offered them in Holocauastes, where all was burned and consumed in the honour of God. God, who is the most spiritual substance, or that the burning of flesh, bones, and bowels of beastes could yield sweete saour; but the devout mind declareth greatly pleased God. For God requireth both, but specially a sincere hart. As not only diuine Scriptures, and holic Fathers, but also moral Philosophers teach vs. It were a greuous thing (saith Plato writing) if God had respect rather to the gifts, and sacrifices of men, then to their mind. Noes sacr manie was comendab Volunta Speedie Solema Pure. Bountif Holocau",
+  "arm_conflicts": [
+   "ſeed- Noe time | :: seed-time",
+   "harueft, | haruest,",
+   "ſhal | that"
+  ],
+  "lexicon_readings": {
+   "38": "for",
+   "74": "therfore",
+   "98": "offered",
+   "110": "offered",
+   "129": "moſt",
+   "183": "(ſaith",
+   "189": "reſpect",
+   "203": "sacr"
+  },
+  "r2_attested": {
+   "29": "expreſſe",
+   "63": "Ambroſe)",
+   "71": "preſented,",
+   "105": "beaſtes",
+   "119": "conſumed",
+   "130": "ſpiritual",
+   "131": "ſubſtance,",
+   "142": "beaſtes",
+   "145": "ſweete",
+   "153": "pleaſed",
+   "160": "ſpecially",
+   "162": "ſincere",
+   "173": "alſo",
+   "175": "Philoſophers",
+   "195": "ſacrifices"
+  },
+  "visual_readings": {
+   "38": "for",
+   "74": "therfore",
+   "98": "offered",
+   "110": "offered",
+   "129": "moſt",
+   "183": "(ſaith",
+   "189": "reſpect",
+   "203": "sacr",
+   "29": "expreſſe",
+   "63": "Ambroſe)",
+   "71": "preſented,",
+   "105": "beaſtes",
+   "119": "conſumed",
+   "130": "ſpiritual",
+   "131": "ſubſtance,",
+   "142": "beaſtes",
+   "145": "ſweete",
+   "153": "pleaſed",
+   "160": "ſpecially",
+   "162": "ſincere",
+   "173": "alſo",
+   "175": "Philoſophers",
+   "195": "ſacrifices"
+  },
+  "new_text": "Al the dayes of the earth, :: seed-time and haruest, cold and heate, ſommer and winter, night and day that not reſt. CHAP. VIII. Built an Altar] Noe without expreſſe commandment, and without delay, offereth Sacrifice to God, for the benefite received, in his, and his families conservation, with the other liuing creatures, in that general deluge of the world, vvel knowing (faith Ambroſe) That to be true thanksgiving, vvich is preſented, not commanded: therfore he made no delay. For the vertue of a grateful mind excludeth doubtfull deliberation, and he that expecteth, til the debt of thanksbe offered of al the kindes of cleane beaſtes and foules. Finally he offered them in Holocauastes, where all was burned and conſumed in the honour of God. God, who is the moſt ſpiritual ſubſtance, or that the burning of flesh, bones, and bowels of beaſtes could yield ſweete saour; but the devout mind declareth greatly pleaſed God. For God requireth both, but ſpecially a ſincere hart. As not only diuine Scriptures, and holic Fathers, but alſo moral Philoſophers teach vs. It were a greuous thing (ſaith Plato writing) if God had reſpect rather to the gifts, and ſacrifices of men, then to their mind. Noes sacr manie was comendab Volunta Speedie Solema Pure. Bountif Holocau",
+  "s_unresolved": [
+   "seed-time",
+   "haruest,",
+   "offereth",
+   "Sacrifice",
+   "benefite",
+   "families",
+   "conservation,",
+   "(faith",
+   "thanksgiving,",
+   "grateful",
+   "doubtfull",
+   "thanksbe",
+   "foules.",
+   "Holocauastes,",
+   "flesh,",
+   "saour;",
+   "gifts,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p50",
+  "old_text": "And the fountaines of the depth and the foudgates of ha enwere shut vp: and the ravne troni heauen was ſtayd.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.918,
+   "sabates_a": 0.883,
+   "madueke_b": 0.883
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.09,
+   0.8156,
+   0.814,
+   0.928
+  ],
+  "crop_page": 50,
+  "r3_raw": "cattle which were with him in the arke, and brought a wind vpon the earth, and the waters decreased. 2. And the fountaines of the depth and the flood-gates of heauen were shut vp: and the rayne from heaven was stayd. 3. And the waters returned from the earth going & comming:",
+  "r3_verse": "And the fountaines of the depth and the floud-gates of heauen were shut vp: and the rayne from heauen was stayd.",
+  "visual_content": {
+   "8": "floud-gates",
+   "18": "heauen"
+  },
+  "arm_conflicts": [
+   "foudgates | floud-gates",
+   "ha enwere | heauen were",
+   "ravne troni | rayne from"
+  ],
+  "lexicon_readings": {
+   "17": "from"
+  },
+  "visual_readings": {
+   "8": "floud-gates",
+   "17": "from"
+  },
+  "new_text": "And the fountaines of the depth and the floud-gates of heauen were shut vp: and the rayne from heauen was ſtayd.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.982,
+   "odr_com": 0.991,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "And the waters returned trom the earth going commins. I Noe. and they beran to decreaſe atter an hundred tittie dayes.",
+  "old": {
+   "s_dismas": 0.878,
+   "odr_com": 0.878,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.09,
+   0.8683,
+   0.814,
+   0.928
+  ],
+  "crop_page": 50,
+  "r3_raw": "uen were shut vp: and the rayne from heauen was stayd. 3. And the waters returned from the earth going & comming;",
+  "r3_verse": "And the waters returned from the earth going & comming; and they began to decreaſe atter an hundred fittie dayes.",
+  "arm_conflicts": [
+   "trom | from",
+   "commins. I Noe. and they beran to decreaſe atter an hundred tittie dayes. | & comming;"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "4": "from"
+  },
+  "visual_readings": {
+   "18": "fittie",
+   "4": "from"
+  },
+  "new_text": "And the waters returned from the earth going & comming; and they began to decreaſe atter an hundred fittie dayes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p51",
+  "old_text": "And the arke reſted the ſeauenth month, the ſeauen and twentieth day of the month, vpon the mountaines of Armenia.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.0892,
+   0.885,
+   0.1872
+  ],
+  "crop_page": 51,
+  "r3_raw": "and they began to decrease after an hundred fiftie dayes. 4. And the arke rested the seauenth month, the seauen and twentieth day of the month, vpon the mountaines of Armenia. 5. But the waters for al that were going and decreasing vntil the tenth month: for in the tenth",
+  "r3_verse": "And the arke rested the seauenth month, the seauen and twentieth day of the month, vpon the mountaines of Armenia.",
+  "arm_conflicts": [],
+  "new_text": "And the arke reſted the ſeauenth month, the ſeauen and twentieth day of the month, vpon the mountaines of Armenia.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p51",
+  "old_text": "He ſent forth alſo a doue after him, to ſee it the waters were ceaſed vet vpon the face of the earth.",
+  "old": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.2315,
+   0.885,
+   0.3105
+  ],
+  "crop_page": 51,
+  "r3_raw": "window of the arke; where he had made a croue: which went forth, and did (a) not returne, til the waters were dried vpon the earth. 8. He sent forth also a dove after him, to see if the waters were ceased yet vpon the face of the earth. 9. Which finding not where her foot might rest, returned to him into the arke: for the waters were",
+  "r3_verse": "He sent forth also a dove after him, to see if the waters were ceased yet vpon the face of the earth.",
+  "arm_conflicts": [
+   "doue | dove",
+   "it | if",
+   "vet | yet"
+  ],
+  "new_text": "He ſent forth alſo a doue after him, to ſee if the waters were ceaſed yet vpon the face of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p51",
+  "old_text": "in the ſixt hundred and one yeare, the firſt month, the firſt day of the month, the waters were cleane diminihod vpon the earth: Noe opening the roofe ot the arke, looked, and ſaw that the tace of the earth was dried.4.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.4054,
+   0.885,
+   0.517
+  ],
+  "crop_page": 51,
+  "r3_raw": "dayes: and he sent forth a doue, which returned not any more vnto him. 13. Therfore in the sixt hundred and one yeare, the first month, the first day of the month, the waters were ciane diminished vpon the earth: & Noe opening the roofe of the arke, looked, and saw that the face of the earth was dried. 14. In (b) the second month, the seauen and twentieth day of the month the earth was dired. 15. And God spake to Noe, saying:",
+  "r3_verse": "in the sixt hundred and one yeare, the first month, the first day of the month, the waters were ciane diminished vpon the earth: & Noe opening the roofe of the arke, looked, and saw that the face of the earth was dried.",
+  "arm_conflicts": [
+   "cleane diminihod | ciane diminished",
+   "ot | of",
+   "tace | face",
+   "dried.4. | dried."
+  ],
+  "new_text": "in the ſixt hundred and one yeare, the firſt month, the firſt day of the month, the waters were ciane diminished vpon the earth: & Noe opening the roofe of the arke, looked, and ſaw that the face of the earth was dried.4.",
+  "s_unresolved": [
+   "diminished",
+   "face"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p51",
+  "old_text": "In the ſecond month, the ſeauen and twentieth day of the month the earth was dried.",
+  "old": {
+   "s_dismas": 0.876,
+   "odr_com": 0.889,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.457,
+   0.885,
+   0.536
+  ],
+  "crop_page": 51,
+  "r3_raw": "Noe opening the roofe of the arke, looked, and saw that the face of the earth was dried. 14. In (b) the second month, the feaven and twentieth day of the month the earth was dried. 15. And God spake to Noe, saying: 16. Goe forth of the arke, thou and thy wife, thy sonnes and the wiues",
+  "r3_verse": "In the second month, the feaven and twentieth day of the month the earth was dried.",
+  "arm_conflicts": [
+   "ſeauen | feaven"
+  ],
+  "new_text": "In the ſecond month, the feaven and twentieth day of the month the earth was dried.",
+  "s_unresolved": [
+   "feaven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.864,
+   "odr_com": 0.876,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p51",
+  "old_text": "Goe forth of the arke, thou and thy wite, thy ſonnes and the wiues o- of thy ſonnes with thee.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.4925,
+   0.885,
+   0.5669
+  ],
+  "crop_page": 51,
+  "r3_raw": "day of the month the earth was dried. 15. And God spake to Noe, saying: 16. Goe forth of the arke, thou and thy wife, thy sonnes and the wiues of thy sonnes with thee. 17. Al cattle that are with thee, of al flesh, as wel in foules, as in beasts, and al creepers that creep vpon the earth,",
+  "r3_verse": "Goe forth of the arke, thou and thy wife, thy sonnes and the wiues o- of thy sonnes with thee.",
+  "arm_conflicts": [
+   "wite, | wife,"
+  ],
+  "used_merge": true,
+  "new_text": "Goe forth of the arke, thou and thy wife, thy ſonnes and the wiues o- of thy ſonnes with thee.",
+  "s_unresolved": [
+   "wife,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.951,
+   "madueke_b": 0.951
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p51",
+  "old_text": "Al cattle that are with thee, of al fleſh, as ſo wel in foules, as in beaſts, and al creepers that creep vpon the earth, bring out withthee, and goe yee vpon the earth: increaſe and multiplie vpon it.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.5093,
+   0.885,
+   0.6199
+  ],
+  "crop_page": 51,
+  "r3_raw": "16. Goe forth of the arke, thou and thy wife, thy sonnes and the wiues of thy sonnes with thee. 17. Al cattle that are with thee, of al flesh, as wel in foules, as in beasts, and al creepers that creep vpon the earth, bring out with thee, and goe yee vpon the eart h: increase and multiplie vpon it. 18. Noe therefore went forth, and his sonnes: his wife, and the wiues of his sonnes with him. 19. Yea and al cattle, beafts, & creepers",
+  "r3_verse": "Al cattle that are with thee, of al flesh, as wel in foules, as in beasts, and al creepers that creep vpon the earth, bring out with thee, and goe yee vpon the eart h: increase and multiplie vpon it.",
+  "arm_conflicts": [
+   "withthee, | with thee,",
+   "earth: | eart h:"
+  ],
+  "new_text": "Al cattle that are with thee, of al fleſh, as wel in foules, as in beaſts, and al creepers that creep vpon the earth, bring out with thee, and goe yee vpon the eart h: increaſe and multiplie vpon it.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p51",
+  "old_text": "Yea and al cattle, beaſts, creepers that creepvpon the earth, according tothtir kind, went torth out of the arke.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.5789,
+   0.885,
+   0.6709
+  ],
+  "crop_page": 51,
+  "r3_raw": "18. Noe therefore went forth, and his sonnes: his wife, and the wiues of his sonnes with him. 19. Yea and al cattle, beasts, & creepers that creep vpon the earth, according to their kind, went forth out of the arke. 20. And Noe\" built an Altar to our Lord: and taking of al cattle and foules that were cleane, offered Holocausts vpon the Altar. 21. And",
+  "r3_verse": "Yea and al cattle, beasts, & creepers that creep vpon the earth, according to their kind, went forth out of the arke.",
+  "arm_conflicts": [
+   "creepvpon | creep vpon",
+   "tothtir | to their",
+   "torth | forth"
+  ],
+  "new_text": "Yea and al cattle, beaſts, & creepers that creep vpon the earth, according to their kind, went forth out of the arke.",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

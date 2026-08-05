@@ -1,0 +1,1710 @@
+{
+ "chapter": 32,
+ "n_verses": 32,
+ "n_cells": 128,
+ "n_pass": 115,
+ "rate": 0.8984,
+ "ref_means": {
+  "s_dismas": 0.9774,
+  "odr_com": 0.9778,
+  "sabates_a": 0.9661,
+  "madueke_b": 0.9661
+ },
+ "src_rates": {
+  "S1": 0.9062,
+  "S3": 0.8125,
+  "S9": 0.9375,
+  "S6": 0.9375
+ },
+ "n_all_fail": 2,
+ "all_fail": [
+  5,
+  15
+ ],
+ "n_open": 13,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 5,
+   "worst": 0.836,
+   "from": "r3",
+   "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants: and now I ſend a leagacie to my lord, that I may finde grace in thy ſight"
+  },
+  {
+   "src": "S3",
+   "verse": 5,
+   "worst": 0.836,
+   "from": "r3",
+   "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants: and now I ſend a leagacie to my lord, that I may finde grace in thy ſight"
+  },
+  {
+   "src": "S9",
+   "verse": 5,
+   "worst": 0.836,
+   "from": "p134",
+   "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants and now I ſend a leagacie to my lord, that I may finde grace in thy ſight."
+  },
+  {
+   "src": "S6",
+   "verse": 5,
+   "worst": 0.823,
+   "from": "p115",
+   "text": "I haue oxen, & aſſes, & ſheep, & men ſeruants : & woman ſeruants: & now I ſend a legacie to my Lord, that I may find grace in thy ſight."
+  },
+  {
+   "src": "S3",
+   "verse": 7,
+   "worst": 0.83,
+   "from": "p128",
+   "text": "fcared exceedingly : & being ſore affraid diuided the that was with him, the flockes alſo and the ſhepe and oxen, and thercamels, into two troupes,"
+  },
+  {
+   "src": "S3",
+   "verse": 8,
+   "worst": 0.843,
+   "from": "p128",
+   "text": "ſaying If come to one froupe, and ſtrike it, the other troupe remaineth, ſhal be ſaued."
+  },
+  {
+   "src": "S3",
+   "verse": 10,
+   "worst": 0.809,
+   "from": "p128",
+   "text": "al thymercies, and thy truth that thou haſt fulfilled to ſeruant. With my ſtaffe I paſſed ouer this Iordain and with two troupes I doereturne."
+  },
+  {
+   "src": "S3",
+   "verse": 11,
+   "worst": 0.898,
+   "from": "p128",
+   "text": "Deliuer me from hand of my brother Eſau, becauſe I am ſore affraid of et perhaps he come, and ſtrike the mother with the dren"
+  },
+  {
+   "src": "S1",
+   "verse": 14,
+   "worst": 0.846,
+   "from": "p125",
+   "text": "ſhe goates two hundred, he goates wentie, ewes two hundred, and ramnes twentie, thirtie"
+  },
+  {
+   "src": "S1",
+   "verse": 15,
+   "worst": 0.876,
+   "from": "p125",
+   "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten."
+  },
+  {
+   "src": "S3",
+   "verse": 15,
+   "worst": 0.876,
+   "from": "p129",
+   "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten."
+  },
+  {
+   "src": "S9",
+   "verse": 15,
+   "worst": 0.876,
+   "from": "p135",
+   "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten."
+  },
+  {
+   "src": "S6",
+   "verse": 15,
+   "worst": 0.897,
+   "from": "p115",
+   "text": "milch camels with their colts fourtie kine, and twentie buls twentie ſhe aſſes and their foles ten."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "Iacob. VVho alſo went on his iourney that he had begunne: I and the Angels of God met him.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 0.927,
+     "madueke_b": 0.927
+    }
+   },
+   "S3": {
+    "text": "Iacob. alſo went on his iourney that he had begunne: I and the Angels of God met him.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "Iacob. Aalſo went on his iourney that he had begunne: Tand the Angels of God met him.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.976,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "ACOB alſo went on his iourney that he had begun : and the Angels of God met him.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "Whom when he had ſeene, he ſaid: Theſe are the Campes of God, and he called the name of that place Mahanaim, that is, Campes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Whom when he had ſeene, he ſaid Theſe are the Campes of God, and he called the name of that place Mahanaim, that is, Campes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "whom when he had ſeene, he ſaid Theſe are the Campes of God, and he called the name of that place Mahanaim, that is, Campes.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "Whom when he had ſeen, he ſaid : Theſe are the Camps of God and he called the name of that place Mahanaim, that 1s Camps.",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And he ſent alſo meſſengers before him to Eſau his brother imo the land of Seir, into the countrie of Edom:",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And he ſent alſo meſſengers before him to Eſau his brother into the land of Seir, into the countrie of Edom:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſent alſo meſſengers before him to Eſau his brother into the land of Seir, into the countrie of Edom:",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he fent alſo meſfengers betore him to Eſau his brother into the land of Seir, into the countrie of Edom :",
+    "from": "p114",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "and he commanded them, ſaying Thus ſpeake ye vnto my lord EſauThis ſaith thy brother Iacob haue ſoiourned, and haue bene with Laban vntil this preſent day.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "and he manded them, ſaving: Thus ſpeake ye vnto my lord This ſaith thy brother Iacob I haue ſoiourned, and bene with Laban vntil this preſent day.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.918,
+     "madueke_b": 0.918
+    }
+   },
+   "S9": {
+    "text": "and he com-4 manded them, ſaying Thus ſpeake ye vnto my lord Eſau This ſaith thy brother Iacob I haue ſoiourned, and haue bene with Laban vntil this preſent day.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S6": {
+    "text": "and he commanded thei, ſaving Thus ſpeake ye vnto my Lord Eſau This ſaith thy brother Iacob. Iacob I haue ſeiourned, aud haue beeu with Laban vntil this preſent day.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.925,
+     "sabates_a": 0.929,
+     "madueke_b": 0.929
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants: and now I ſend a leagacie to my lord, that I may finde grace in thy ſight",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.836,
+     "madueke_b": 0.836
+    }
+   },
+   "S3": {
+    "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants: and now I ſend a leagacie to my lord, that I may finde grace in thy ſight",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.836,
+     "madueke_b": 0.836
+    }
+   },
+   "S9": {
+    "text": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants and now I ſend a leagacie to my lord, that I may finde grace in thy ſight.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 1.0,
+     "sabates_a": 0.836,
+     "madueke_b": 0.836
+    }
+   },
+   "S6": {
+    "text": "I haue oxen, & aſſes, & ſheep, & men ſeruants : & woman ſeruants: & now I ſend a legacie to my Lord, that I may find grace in thy ſight.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.829,
+     "odr_com": 0.823,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And the meſſengers returned to Iacob, ſaying We came to Eſau thy brother, and behold he cometh with ſpede to mete thee with foure hundred men.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "And the meſſengers returned to Iacob, ſaying We came to Eſau thy brother, and behold he cometh with ſpede to mete thee with foure hundred men.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "And the meſſengers returned to Iacob, ſaying We came to Eſau thy brother, and behold he cometh with ſpede to mete thee with foure hundred men.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S6": {
+    "text": "And the meſſengers returned to Iacob, ſaying: We came to Eſau thy brother, & behold he commeth with ſpeed to meet thee with foure hundred men.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.935,
+     "odr_com": 0.935,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Jacob feared exceedingly: & being ſore affraid diuided the people that was with him, the hockes alſo and the ſhepe and the oxen, and the camels, into two troupes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.939,
+     "madueke_b": 0.939
+    }
+   },
+   "S3": {
+    "text": "fcared exceedingly : & being ſore affraid diuided the that was with him, the flockes alſo and the ſhepe and oxen, and thercamels, into two troupes,",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.878,
+     "odr_com": 0.878,
+     "sabates_a": 0.83,
+     "madueke_b": 0.83
+    }
+   },
+   "S9": {
+    "text": "Iacob feared exceedingly & being ſore affraid diuided the people that was with him, the flockes alſo and the ſhepe and the oxen, and the camels, into two troupes,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "Iacob feared exceedingly : and being ſore affraid diuided the people that was with him, the flockes alſo and the ſheep. and the oxen, and the camels, into two troups,",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "ſaying If Eſau come to one troupe, and ſtrike it, the other troupe that remaineth, ſhal be ſaued.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "ſaying If come to one froupe, and ſtrike it, the other troupe remaineth, ſhal be ſaued.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.882,
+     "odr_com": 0.882,
+     "sabates_a": 0.843,
+     "madueke_b": 0.843
+    }
+   },
+   "S9": {
+    "text": "ſaying If Eſau come to one troupe, and ſtrike i, the other troupe that remaineth, ſhal be ſaued.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S6": {
+    "text": "ſaying : If Eſau come to one troup, and ſtrike it the other troup that remaineth ſhal be ſaued.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And Iacob ſaid: O God of my father Abraham, and God of my father Iſaac O Lord that dideſt ſay to me Returne into thy land, and into the place of thy nativitie, and I wil doe thee good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And Iacob ſaid O God of my father Abraham, and God of my father Iſaac O Lord that dideſt ſay to me Returne into thy land, and into the place of thy natiuitie, and I wil doe thee good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And Iacob ſaid O God of my father Abraham, and God of my father Iſaac O Lord that dideſt ſay to me Returne into thy land, and into the place of thy natiuitie, and I wil doe thee good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And Iacob ſaid: O God of my father Abraham, and God of my father Iſaac O Lord that dideſt ſay to me: Returne into thy land and into the place of thy natiuitie, and I wil doe thee good :",
+    "from": "p115",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "I am inferiourto al thymarcies, and thy truth that thou haſt fulfilled to thy ſeruant. with my ſtaſre I paſſed ouer this Iordain and now wita two troupes I doe returne.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.938,
+     "madueke_b": 0.938
+    }
+   },
+   "S3": {
+    "text": "al thymercies, and thy truth that thou haſt fulfilled to ſeruant. With my ſtaffe I paſſed ouer this Iordain and with two troupes I doereturne.",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.832,
+     "odr_com": 0.832,
+     "sabates_a": 0.809,
+     "madueke_b": 0.809
+    }
+   },
+   "S9": {
+    "text": "I am inferiourto al thy mercies, and thy truth that thou haſt fulfilled to ſeruant. With my ſtaffe I paſſed ouer this Iordain and now with two troupes I doe returne.",
+    "from": "p134",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.943,
+     "madueke_b": 0.943
+    }
+   },
+   "S6": {
+    "text": "I am interiour to al thy mercies, and thy truth that thou haſt fulfilled to thy ſeruant. With my ſtaffe I paſſed ouer this Iordan: and now with two troupes I doe returne.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "Deliuer me from the nand of my btother Eſau, becauſe I am ſore affraidof him: leſt perhaps he come, And ſtrike the mother with the children.",
+    "from": "p124",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "Deliuer me from hand of my brother Eſau, becauſe I am ſore affraid of et perhaps he come, and ſtrike the mother with the dren",
+    "from": "p128",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.898,
+     "sabates_a": 0.898,
+     "madueke_b": 0.898
+    }
+   },
+   "S9": {
+    "text": "Deliuer me from the hand of my brother Eſau, becauſe I am ſore affraid of him leſt perhaps he come, and ſtrike the mother with the children.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Deliuer me from the hand of my brother Eſau, becauſe I am ſore affraid of him: leſt perhaps he come, and ſtrike the mother with the children.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Thou di leſt ſay that thou wouldeſt do good to me, and and dilate my ſeed as the ſand of the ſea, which for multitude can hot be numbred.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.948,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "Thou dideſt ſay that thou wouldeſt do good to me, and dilate my ſeed as the ſand of the ſea, which for multitude can not be numbred.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S9": {
+    "text": "Thou dideſt ſay that thou wouldeſt do good to me, and dilate my ſeed as the ſand of the ſea, which for multitude can not be numbred.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.959,
+     "madueke_b": 0.959
+    }
+   },
+   "S6": {
+    "text": "Thou dideſt ſay that thou wouldeſt doe good to me, and dilate my ſeedas the ſand of the ſea, which for multitude cau not be numbred.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And when he had ſlept there that night, he ſeparated of thoſe things which he had, gifres to kis brother Eſau,",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "And when he had ſlept there that night, he ſeparated of thoſe things which he had, giftes to his brother Eſau,",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And when he had ſlept there that night, he ſeparated of thoſe things which he had, giftes to his brother Eſau,",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "And when he had ſlept there that night, he ſeparated of thoſe things which he had guifts to his brother Elau,",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "ſhe goates two hundred, he goates wentie, ewes two hundred, and ramnes twentie, thirtie",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.879,
+     "odr_com": 0.879,
+     "sabates_a": 0.846,
+     "madueke_b": 0.846
+    }
+   },
+   "S3": {
+    "text": "ſhe goates two hundred, he goates twentie, ewes two hundred, and rammies twentie,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.944,
+     "madueke_b": 0.944
+    }
+   },
+   "S9": {
+    "text": "ſhe goates two hundred, he goates twentie, ewes two hundred, and rammes twentie,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "14ſhe goats two hundred he goats twentie ewes two hundred and ramines twentie",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S3": {
+    "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S9": {
+    "text": "milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 0.926,
+     "odr_com": 0.926,
+     "sabates_a": 0.876,
+     "madueke_b": 0.876
+    }
+   },
+   "S6": {
+    "text": "milch camels with their colts fourtie kine, and twentie buls twentie ſhe aſſes and their foles ten.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.898,
+     "odr_com": 0.898,
+     "sabates_a": 0.897,
+     "madueke_b": 0.897
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And he ſent by the handes of his ſeruants, euerie ſlocke by it ſelfe, and he ſaid to his ſeruants: Goe before me, and let there be a ſpace betwen ſlocke and ſlocke.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "And he ſent by the handes of his ſeruants, euerie ſlocke by it ſelfe, and he ſaid to his ſeruants: Goe before me, and let there be a ſpace betwen flocke and flocke.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "And he ſent by the handes of his ſeruants, euerie flocke by it ſelfe, and he ſaid to his ſeruants : Goe before me, and let there be a ſpace betwen flocke and flocke.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "And he ſent hy the hands of his ſeruants euerie flock by it ſelfe, and he ſaid to his ſeruants: Goe before me and let there be a ſpace between flock and flock.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And he commanded the former, ſaying : If thou mete my brothor Eſau, and he aske thee, whoſe art thou or whither goeſt thou ? or whoſe are theſe thar thou doeſt folowe",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "And he commanded the former, ſaying : If thou mete my brother Eſau, and he aske thee, whoſe art thou or whither goeſt thou or whoſe are theſe that thou doeſt folowe",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he commanded the former, ſaying : If thou mete my brother Eſau, and he aske thee, whoſe art thou or whither goeſt thou or whoſe are theſe that thou doeſt folowe",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he commanded the former, ſaying : If thou meet my brother Eſau, and he aske thee, whoſe art thou o whither goeſt. thou or whoſe are theſe that thou doeſt follow",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "thou ſhalt anſwere: Iacobes thy ſeruant, he hath ſent them for gifts to my lord Eſau : himſelfe alſo cometh after vs.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "thou ſbalt anſwere : Iacobes thy ſeruant, he hath ſent them for gifts to my lord Eſau : himſelfe alſo cometh after vs.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "thou ſhalt anſwere : Iacobes thy ſeruant, he hath ſent them for gifts to my lord Eſau : himſelfe alſo cometh after vs.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "thou ſhalt anſwer : Iacobes thy ſeruant, he hath ſent them tor guifts to my Lord Eſau: himſelfe alſo commeth after vs.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "In like maner he gaue commandements to thes ſecond, and the third, and to al that folowed the flocks, ſaying : With the ſelfe ſame words ſpeake ye to Eſau, when you ſhal finde him.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "In like maner he gaue commandements to thef ſecond, and the third, and to al that folowed the flocks, ſaying : With the ſelfe ſame words ſpeake ye to Eſau, when you ihal ſinde him.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "In like maner he gaue commandements to the ſecond, and the third, and to al that folowed the flocks, ſaying : With the ſelfe ſame words ſpeake ye to Eſau, when you ſhal finde him.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "In like he manner gaue commandements to the ſecond, and the third, and to al that followed the flocks, ſaying: With the ſelte ſame words ſpeake ve to Eſau, when vou ſhal find him.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And ye ſhal adde : Iacob alſo thy ſeruant himſelfe foloweth on after vs: for he ſaid : I wil pacifie him with the gifts that goe before, and afterward I wil ſee him, perhaps he wil be gracious vnto me.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And ye ſhal adde : Iacob alſo thy ſeruant himſelfe foloweth on aftervs: for he ſaid : I wil pacifie him with the gifts that goe before, and afterward I wil ſee him, perhaps he wil be gracious vnto me.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And ye ſhal adde : Iacob alſo thy ſeruant himſelfe foloweth on after vs: for he ſaid : I wil pacifie him with the gifts that goe before, and afterward I wil ſee him, perhaps he wil be gracious vnto me.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And ye ſhal adde : Iacob alſo thy Ieruant himſelfe followeth after on vs : for he ſaid: I wil pacifie him with the guifts that goe before, and afterward I wil ſee him, perhaps he wil be gracious vnto me.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "The giftes therfore went before him, but himſelfe lodged that night in the campe.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "The giftes therfore went before him, but himſelfe lodged that night in the campe.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "The giftes therfore went before him, but himſelfe lodged that night in the campe.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "The guifts therefore went betore him. but himſelfe lodged that night in the campe.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.95,
+     "odr_com": 0.95,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And when he was riſen early he tooke his two wiues, and his handmaides as manie, with his eleuen ſonnes, and paſſed ouer the ford Iaboc.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And when he was riſen early he tooke his two wiues, and his handmaides as manie, with his eleuen ſonnes, and paſſed ouer the ford Iaboc.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "And when he was riſen early he tooke his two wiues, and his handmaides as manie, with his eleuen ſonnes, and paſſed ouer the ford Iaboc.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "And when he was riſen early, he tooke his two wiues, and his handmaids as manie, with his eleuen ſonnes, and paſſed ouer the ford Iaboc.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And when he had ſet ouer al things that appertained to him,",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And when he had ſet ouer al things that appertained to him,",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And when he had ſet ouer al things that appertained to him,",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And when he had ſet ouer al things that appertained to him,",
+    "from": "p115",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "he taried alone : and behold a man wraſteled with him til morning.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "he taried alone : and behold a man wraſteled with him ril morning.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "he taried alone : and behold a man wraſteled with him til morning.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S6": {
+    "text": "he taried alone: and behold a man wraſtled with him til morning.5.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "Who when he ſaw that he could not ouercome him, he touched the ſinowe of his thighe, and forthwith it ſhranke.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Who when he ſaw that he could not ouercome him, he touched the ſinowe of his thighe, and forthwith it ſhranke.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Who when he ſaw that he could not ouercome him, he touched the ſinowe of his thighe, and forthwith it ſhrauke.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "Who when he ſaw that he could not ouercome him, he touched the ſinow of his thigh, and forthwith it ſhranke.",
+    "from": "p115",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "And he ſaid to him : Let me goe for it is breake of day. He anſwered : I wil not let thee goe, vnleſſe thou bleſſe me.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to him : Let me goe for it is breake of day. He anſwered : I wil not let thee goe, vnleſſe thou bleſſe me.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to him : Let me goe for it is breake of day. He anſwered : I wil not let thee goe, vnleſſe thou bleſſe me.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to him Let me goe for it Iacob. is breake of day. He anſwered: I wil not let thee goe, vntille thou bleſſe me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.914,
+     "odr_com": 0.914,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "He therfore ſaid : What is thy name? He anſwered : Iacob.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S3": {
+    "text": "He therfore ſaid : What is thy name ? He anſwered : Iacob.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S9": {
+    "text": "He therfore ſaid : What is thy name? He anſwered : Iacob.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   },
+   "S6": {
+    "text": "He therefore ſaid: What is thy name He anſwered: Iacab.8.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "But he, no, thy name, quoth he, ſhal not be called Iacob, but Ifrael: for if thou haſt bene ſtrong againſt God, how much more shalt thou pre. uaile againſt men",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "But he, no, thy name, quoth he, : ſhal not be called Iacob, but Iſrael : for if thou haſt bene ſtrong againſt God, how much more shalt thou preuaile againſt men :",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "But he, no, thy name, quoth he, :: ſhal not be called Iacob, but Iſrael: for if thou haſt bene ſtrong againſt God, how much more shalt thou pre-uaile againſt men",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "But he, no, thy name, quoth he, ſhal not be called Iacob, but Iſrael for if thou haſt been ſtrong againſt God, how much more shalt thou preuaile againſt men",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "Iacob asked him: Tel me by what name art thou called: He anſwered: why doeſt thou aske my namer and bleſſed him in the ſame place.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "Iacob asked him: Tel me by what name art thou called? He anſwered: Why doeſt thou aske my namer and bleſſed him in the ſame place.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "Iacob asked him: Tel me by what name art thou called? He anſwered: Why doeſt thou aske my name bleſſed him in the ſame place.",
+    "from": "p135",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.968,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "Iacob asked him: Tel me by what name art thoucalled He anſwered: Why doeſt thou aske my name and bleſſed him in the ſame place.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "And Iacob called the name of the place Phanuel, ſaying : I haue ſene God face to face, and my ſoule was made ſafe.",
+    "from": "p125",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Iacob called the name of the place Phanuel, ſaying : I haue ſene God face to face, and my ſoule was made ſafe.",
+    "from": "p129",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Iacob called the name of the place Phanuel, ſaying I haue ſene God face to face, and my ſoule was made ſafe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Iacob called the name of the place Phanuel, ſaying : I haue ſeen God face to face, and my ſoule was made ſate.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.973,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel; but he halted halted on his foote.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.913,
+     "madueke_b": 0.913
+    }
+   },
+   "S3": {
+    "text": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel but he halted on his foote.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel but he Iacob. halted on his foote.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.923,
+     "madueke_b": 0.923
+    }
+   },
+   "S6": {
+    "text": "Aud immediately the ſunne roſe to him, after that he was paſt Phanuel : but he halted on his toot.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "32": {
+   "S1": {
+    "text": "For which cauſe the children of Iſrael eate not the ſinowe, that ſhrunke in Iacobes thighe, vnto his preſent day becauſe he touched the ſinowe of his thighe, and it ſhrunke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "For which cauſe the children of Iſrael eate not the ſinowe, that ſhrunke in Iacobes thighe, vnto his preſent day becauſe he touched the ſinowe of his thighe, and it ſhrunke.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "For which cauſe the children of Iſrael eate not the ſinowe, that ſhrunke in Iacobes thighe, vnto his preſent day : becauſe he touched the ſinowe of his thighe, and it ſhrunke.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "For which cauſe the children of Iſrael eate not the ſinow, that ſhrunke in Iacobes thigh, vnto this preſent day: becauſe he touched the ſinow of his thigh, and it ſhrunke.",
+    "from": "p116",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Iacob alſo went on his iourney that he had begunne: and the Angels of God met him.",
+   "odr_com": "IACOB also went on his iourney that he had begunne: and the Angels of God met him.",
+   "sabates_a": "Jacob also went on his journey that he had begun: and the Angels of God met him.",
+   "madueke_b": "Jacob also went on his journey that he had begun: and the Angels of God met him."
+  },
+  "2": {
+   "s_dismas": "Whom when he had ſeene, he ſaid: Theſe are the Campes of God, and he called the name of that place Mahanaim, that is, Campes.",
+   "odr_com": "Whom when he had seene, he said: These are the Campes of God, and he called the name of that place Mahanaim, that is, Campes.",
+   "sabates_a": "Whom when he had seen, he said: These are the Camps of God, and he called the name of that place Mahanaim, that is, Camps.",
+   "madueke_b": "Whom when he had seen, he said: These are the Camps of God, and he called the name of that place Mahanaim, that is, Camps."
+  },
+  "3": {
+   "s_dismas": "And he ſent alſo meſſengers before him to Eſau his brother into the land of Seir, into the countrie of Edom:",
+   "odr_com": "And he sent also messengers before him to Esau his brother into the land of Seir, into the countrie of Edom:",
+   "sabates_a": "And he sent also messengers before him to Esau his brother into the land of Seir, into the country of Edom:",
+   "madueke_b": "And he sent also messengers before him to Esau his brother into the land of Seir, into the country of Edom:"
+  },
+  "4": {
+   "s_dismas": "and he commanded them, ſaying: Thus ſpeake ye vnto my lord Eſau: This ſaith thy brother Iacob: I haue ſoiourned, and haue bene with Laban vntil this preſent day.",
+   "odr_com": "and he commanded them, saying: Thus speake ye vnto my lord Esau: This saith thy brother Iacob: I haue soiourned, and haue bene with Laban vntil this present day.",
+   "sabates_a": "and he commanded them, saying: Thus speak ye unto my lord Esau: This saith thy brother Jacob: I have sojourned, and have been with Laban until this present day.",
+   "madueke_b": "and he commanded them, saying: Thus speak ye unto my lord Esau: This saith thy brother Jacob: I have sojourned, and have been with Laban until this present day."
+  },
+  "5": {
+   "s_dismas": "I haue oxen, and aſſes, and ſheepe, and men ſeruants, and wemen ſeruants: and now I ſend a legacie to my lord, that I may finde grace in thy ſight.",
+   "odr_com": "I haue oxen, and asses, and sheepe, and men seruants, and wemen seruants: and now I send a leagacie to my lord, that I may finde grace in thy sight.",
+   "sabates_a": "I have oxen, & asses, & sheep, & men servants: & women servants: & now I send a legacy to my lord, that I may find grace in thy sight.",
+   "madueke_b": "I have oxen, & asses, & sheep, & men servants: & women servants: & now I send a legacy to my lord, that I may find grace in thy sight."
+  },
+  "6": {
+   "s_dismas": "And the meſſengers returned to Iacob, ſaying: We came to Eſau thy brother, and behold he cometh with ſpede to mete thee with foure hundred men.",
+   "odr_com": "And the messengers returned to Iacob, saying: We came to Esau thy brother, and behold he cometh with spede to mete thee with foure hundred men.",
+   "sabates_a": "And the messengers returned to Jacob, saying: We came to Esau thy brother, & behold he cometh with speed to meet thee with four hundred men.",
+   "madueke_b": "And the messengers returned to Jacob, saying: We came to Esau thy brother, & behold he cometh with speed to meet thee with four hundred men."
+  },
+  "7": {
+   "s_dismas": "Iacob feared exceedingly: & being ſore affraid diuided the people that was with him, the flockes alſo and the ſhepe and the oxen, and the camels, into two troupes,",
+   "odr_com": "Iacob feared exceedingly: & being sore affraid diuided the people that was with him, the flockes also and the shepe and the oxen, and the camels, into two troupes,",
+   "sabates_a": "Jacob feared exceedingly: and being sore afraid divided the people that was with him, the flocks also and the sheep, and the oxen, and the camels, into two troops,",
+   "madueke_b": "Jacob feared exceedingly: and being sore afraid divided the people that was with him, the flocks also and the sheep, and the oxen, and the camels, into two troops,"
+  },
+  "8": {
+   "s_dismas": "ſaying: If Eſau come to one troupe, and ſtrike it, the other troupe that remaineth, ſhal be ſaued.",
+   "odr_com": "saying: If Esau come to one troupe, and strike it, the other troupe that remaineth, shal be saued.",
+   "sabates_a": "saying: If Esau come to one troop, and strike it, the other troop that remaineth shall be saved.",
+   "madueke_b": "saying: If Esau come to one troop, and strike it, the other troop that remaineth shall be saved."
+  },
+  "9": {
+   "s_dismas": "And Iacob ſaid: O God of my father Abraham, and God of my father Iſaac: O Lord that dideſt ſay to me: Returne into thy land, and into the place of thy natiuitie, and I wil doe thee good.",
+   "odr_com": "And Iacob said: O God of my father Abraham, and God of my father Isaac: O Lord that didest say to me: Returne into thy land, and into the place of thy natiuitie, and I wil doe thee good.",
+   "sabates_a": "And Jacob said: O God of my father Abraham, and God of my father Isaac; O Lord that didst say to me: Return into thy land, and into the place of thy nativity, and I will do thee good:",
+   "madueke_b": "And Jacob said: O God of my father Abraham, and God of my father Isaac; O Lord that didst say to me: Return into thy land, and into the place of thy nativity, and I will do thee good:"
+  },
+  "10": {
+   "s_dismas": "I am inferiour to al thy mercies, and thy truth that thou haſt fulfilled to thy ſeruant. With my ſtaffe I paſſed ouer this Iordain: and now with two troupes I doe returne.",
+   "odr_com": "I am inferiour to al thy mercies, and thy truth that thou hast fulfilled to thy seruant. With my staffe I passed ouer this Iordain: and now with two troupes I doe returne.",
+   "sabates_a": "I am inferior to all thy mercies, and thy truth that thou hast fulfilled to thy servant. With my staff I passed over this Jordan: and now with two troops I do return.",
+   "madueke_b": "I am inferior to all thy mercies, and thy truth that thou hast fulfilled to thy servant. With my staff I passed over this Jordan: and now with two troops I do return."
+  },
+  "11": {
+   "s_dismas": "Deliuer me from the hand of my brother Eſau, becauſe I am ſore affraid of him: leſt perhaps he come, and ſtrike the mother with the children.",
+   "odr_com": "Deliuer me from the hand of my brother Esau, because I am sore affraid of him: lest perhaps he come, and strike the mother with the children.",
+   "sabates_a": "Deliver me from the hand of my brother Esau, because I am sore afraid of him: lest perhaps he come, and strike the mother with the children.",
+   "madueke_b": "Deliver me from the hand of my brother Esau, because I am sore afraid of him: lest perhaps he come, and strike the mother with the children."
+  },
+  "12": {
+   "s_dismas": "Thou dideſt ſay that thou wouldeſt do good to me, and dilate my ſeed as the ſand of the ſea, which for multitude can not be numbred.",
+   "odr_com": "Thou didest say that thou wouldest do good to me, and dilate my seed as the sand of the sea, which for multitude can not be numbred.",
+   "sabates_a": "Thou didst say that thou wouldst do good to me, and dilate my seed as the sand of the sea, which for multitude cannot be numbered.",
+   "madueke_b": "Thou didst say that thou wouldst do good to me, and dilate my seed as the sand of the sea, which for multitude cannot be numbered."
+  },
+  "13": {
+   "s_dismas": "And when he had ſlept there that night, he ſeparated of thoſe things which he had, giftes to his brother Eſau,",
+   "odr_com": "And when he had slept there that night, he separated of those things which he had, giftes to his brother Esau,",
+   "sabates_a": "And when he had slept there that night, he separated of those things which he had, gifts to his brother Esau,",
+   "madueke_b": "And when he had slept there that night, he separated of those things which he had, gifts to his brother Esau,"
+  },
+  "14": {
+   "s_dismas": "ſhe goates two hundred, he goates twentie, ewes two hundred, and rammes twentie,",
+   "odr_com": "she goates two hundred, he goates twentie, ewes two hundred, and rammes twentie,",
+   "sabates_a": "she goats two hundred, he goats twenty, ewes two hundred, and rams twenty,",
+   "madueke_b": "she goats two hundred, he goats twenty, ewes two hundred, and rams twenty,"
+  },
+  "15": {
+   "s_dismas": "thirtie milch camels with their coltes, fourtie kine, and twentie bulles, twentie ſhe aſſes, and their foles ten.",
+   "odr_com": "thirtie milch camels with their coltes, fourtie kine, and twentie bulles, twentie she asses, and their foles ten.",
+   "sabates_a": "thirty milch camels with their colts, forty kine, and twenty bulls, twenty she asses, and their foals ten.",
+   "madueke_b": "thirty milch camels with their colts, forty kine, and twenty bulls, twenty she asses, and their foals ten."
+  },
+  "16": {
+   "s_dismas": "And he ſent by the handes of his ſeruants, euerie flocke by it ſelfe, and he ſaid to his ſeruants: Goe before me, and let there be a ſpace betwen flocke and flocke.",
+   "odr_com": "And he sent by the handes of his seruants, euerie flocke by it selfe, and he said to his seruants: Goe before me, and let there be a space betwen flocke and flocke.",
+   "sabates_a": "And he sent by the hands of his servants every flock by it-self, and he said to his servants: Go before me, and let there be a space between flock and flock.",
+   "madueke_b": "And he sent by the hands of his servants every flock by it-self, and he said to his servants: Go before me, and let there be a space between flock and flock."
+  },
+  "17": {
+   "s_dismas": "And he commanded the former, ſaying: If thou mete my brother Eſau, and he aske thee, whoſe art thou? or whither goeſt thou? or whoſe are theſe that thou doeſt folowe?",
+   "odr_com": "And he commanded the former, saying: If thou mete my brother Esau, and he aske thee, whose art thou? or whither goest thou? or whose are these that thou doest folowe?",
+   "sabates_a": "And he commanded the former, saying: If thou meet my brother Esau, and he ask thee, whose art thou? Or whither goest thou? Or whose are these that thou doest follow?",
+   "madueke_b": "And he commanded the former, saying: If thou meet my brother Esau, and he ask thee, whose art thou? Or whither goest thou? Or whose are these that thou doest follow?"
+  },
+  "18": {
+   "s_dismas": "thou ſhalt anſwere: Iacobes thy ſeruant, he hath ſent them for gifts to my lord Eſau: himſelfe alſo cometh after vs.",
+   "odr_com": "thou shalt answere: Iacobes thy seruant, he hath sent them for gifts to my lord Esau: himselfe also cometh after vs.",
+   "sabates_a": "Thou shalt answer: Jacob's thy servant, he hath sent them for gifts to my lord Esau: himself also cometh after us.",
+   "madueke_b": "Thou shalt answer: Jacob's thy servant, he hath sent them for gifts to my lord Esau: himself also cometh after us."
+  },
+  "19": {
+   "s_dismas": "In like maner he gaue commandements to the ſecond, and the third, and to al that folowed the flocks, ſaying: With the ſelfe ſame words ſpeake ye to Eſau, when you ſhal finde him.",
+   "odr_com": "In like maner he gaue commandements to the second, and the third, and to al that folowed the flocks, saying: With the selfe same words speake ye to Esau, when you shal finde him.",
+   "sabates_a": "In like manner he gave commandments to the second, and the third, and to all that followed the flocks, saying: With the self-same words speak ye to Esau, when you shall find him.",
+   "madueke_b": "In like manner he gave commandments to the second, and the third, and to all that followed the flocks, saying: With the self-same words speak ye to Esau, when you shall find him."
+  },
+  "20": {
+   "s_dismas": "And ye ſhal adde: Iacob alſo thy ſeruant himſelfe foloweth on after vs; for he ſaid: I wil pacifie him with the gifts that goe before, and afterward I wil ſee him, perhaps he wil be gracious vnto me.",
+   "odr_com": "And ye shal adde: Iacob also thy seruant himselfe foloweth on after vs; for he said: I wil pacifie him with the gifts that goe before, and afterward I wil see him, perhaps he wil be gracious vnto me.",
+   "sabates_a": "And ye shall add: Jacob also thy servant himself followeth on after us; for he said: I will pacify him with the gifts that go before, and afterward I will see him, perhaps he will be gracious unto me.",
+   "madueke_b": "And ye shall add: Jacob also thy servant himself followeth on after us; for he said: I will pacify him with the gifts that go before, and afterward I will see him, perhaps he will be gracious unto me."
+  },
+  "21": {
+   "s_dismas": "The giftes therfore went before him, but himſelfe lodged that night in the campe.",
+   "odr_com": "The giftes therfore went before him, but himselfe lodged that night in the campe.",
+   "sabates_a": "The gifts therefore went before him, but himself lodged that night in the camp.",
+   "madueke_b": "The gifts therefore went before him, but himself lodged that night in the camp."
+  },
+  "22": {
+   "s_dismas": "And when he was riſen early he tooke his two wiues, and his hand-maides as manie, with his eleuen ſonnes, and paſſed ouer the ford Iaboc.",
+   "odr_com": "And when he was risen early he tooke his two wiues, and his handmaides as manie, with his eleuen sonnes, and passed ouer the ford Iaboc.",
+   "sabates_a": "And when he was risen early, he took his two wives, and his handmaids as many, with his eleven sons, and passed over the ford Iaboc.",
+   "madueke_b": "And when he was risen early, he took his two wives, and his handmaids as many, with his eleven sons, and passed over the ford Iaboc."
+  },
+  "23": {
+   "s_dismas": "And when he had ſet ouer al things that appertained to him,",
+   "odr_com": "And when he had set ouer al things that appertained to him,",
+   "sabates_a": "And when he had set over all things that appertained to him,",
+   "madueke_b": "And when he had set over all things that appertained to him,"
+  },
+  "24": {
+   "s_dismas": "he taried alone: and behold a man wraſteled with him til morning.",
+   "odr_com": "he taried alone: and behold a man wrasteled with him til morning.",
+   "sabates_a": "he tarried alone: and behold a man wrestled with him till morning.",
+   "madueke_b": "he tarried alone: and behold a man wrestled with him till morning."
+  },
+  "25": {
+   "s_dismas": "Who when he ſaw that he could not ouercome him, he touched the ſinowe of his thighe, and forthwith it ſhranke.",
+   "odr_com": "Who when he saw that he could not ouercome him, he touched the sinowe of his thighe, and forthwith it shranke.",
+   "sabates_a": "Who when he saw that he could not overcome him, he touched the sinew of his thigh, and forthwith it shrank.",
+   "madueke_b": "Who when he saw that he could not overcome him, he touched the sinew of his thigh, and forthwith it shrank."
+  },
+  "26": {
+   "s_dismas": "And he ſaid to him: Let me goe for it is breake of day. He anſwered: I wil not let thee goe, vnleſſe thou bleſſe me.",
+   "odr_com": "And he said to him: Let me goe for it is breake of day. He answered: I wil not let thee goe, vnlesse thou blesse me.",
+   "sabates_a": "And he said to him: Let me go for it is break of day. He answered: I will not let thee go, unless thou bless me.",
+   "madueke_b": "And he said to him: Let me go for it is break of day. He answered: I will not let thee go, unless thou bless me."
+  },
+  "27": {
+   "s_dismas": "He therfore ſaid: What is thy name? He anſwered: Iacob.",
+   "odr_com": "He therfore said: What is thy name? He answered: Iacob.",
+   "sabates_a": "He therefore said: What is thy name? He answered: Jacob.",
+   "madueke_b": "He therefore said: What is thy name? He answered: Jacob."
+  },
+  "28": {
+   "s_dismas": "But he, no, thy name, quoth he, ſhal not be called Iacob, but Iſrael: for if thou haſt bene ſtrong againſt God, how much more shalt thou preuaile againſt men?",
+   "odr_com": "But he, no, thy name, quoth he, shal not be called Iacob, but Israel: for if thou hast bene strong against God, how much more shalt thou preuaile against men?",
+   "sabates_a": "But he, no, thy name, quoth he, shall not be called Jacob. But Israel: for if thou hast been strong against God, how much more shalt thou prevail against men?",
+   "madueke_b": "But he, no, thy name, quoth he, shall not be called Jacob. But Israel: for if thou hast been strong against God, how much more shalt thou prevail against men?"
+  },
+  "29": {
+   "s_dismas": "Iacob asked him: Tel me by what name art thou called? He anſwered: Why doeſt thou aske my name? and bleſſed him in the ſame place.",
+   "odr_com": "Iacob asked him: Tel me by what name art thou called? He answered: Why doest thou aske my name? and blessed him in the same place.",
+   "sabates_a": "Jacob asked him: Tell me by what name art thou called? He answered: Why dost thou ask my name? and blessed him in the same place.",
+   "madueke_b": "Jacob asked him: Tell me by what name art thou called? He answered: Why dost thou ask my name? and blessed him in the same place."
+  },
+  "30": {
+   "s_dismas": "And Iacob called the name of the place Phanuel, ſaying: I haue ſene God face to face, and my ſoule was made ſafe.",
+   "odr_com": "And Iacob called the name of the place Phanuel, saying: I haue sene God face to face, and my soule was made safe.",
+   "sabates_a": "And Jacob called the name of the place Phanuel, saying: I have seen God face to face, and my soul was made safe.",
+   "madueke_b": "And Jacob called the name of the place Phanuel, saying: I have seen God face to face, and my soul was made safe."
+  },
+  "31": {
+   "s_dismas": "And immediatly the ſunne roſe to him, after that he was paſt Phanuel; but he halted on his foote.",
+   "odr_com": "And immediatly the sunne rose to him, after that he was past Phanuel; but he halted on his foote.",
+   "sabates_a": "And immediately the sun rose to him, after that he was past Phanuel; but he halted on his foot.",
+   "madueke_b": "And immediately the sun rose to him, after that he was past Phanuel; but he halted on his foot."
+  },
+  "32": {
+   "s_dismas": "For which cauſe the children of Iſrael eate not the ſinowe, that ſhrunke in Iacobs thighe, vnto this preſent day: becauſe he touched the ſinowe of his thighe, and it ſhrunke.",
+   "odr_com": "For which cause the children of Israel eate not the sinowe, that shrunke in Iacobes thighe, vnto his present day: because he touched the sinowe of his thighe, and it shrunke.",
+   "sabates_a": "For which cause the children of Israel eat not the sinew, that shrunk in Jacob's thigh, unto this present day: because he touched the sinew of his thigh, and it shrunk.",
+   "madueke_b": "For which cause the children of Israel eat not the sinew, that shrunk in Jacob's thigh, unto this present day: because he touched the sinew of his thigh, and it shrunk."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Jacob also went on his journey that he had begun: and the Angels of God met him.",
+  "2": "Whom when he had seen, he said: These are the Camps of God, and he called the name of that place Mahanaim, that is, Camps.",
+  "3": "And he sent also messengers before him to Esau his brother into the land of Seir, into the country of Edom:",
+  "4": "and he commanded them, saying: Thus speak ye unto my lord Esau: This saith thy brother Jacob: I have sojourned, and have been with Laban until this present day.",
+  "5": "I have oxen, & asses, & sheep, & men servants: & women servants: & now I send a legacy to my lord, that I may find grace in thy sight.",
+  "6": "And the messengers returned to Jacob, saying: We came to Esau thy brother, & behold he cometh with speed to meet thee with four hundred men.",
+  "7": "Jacob feared exceedingly: and being sore afraid divided the people that was with him, the flocks also and the sheep, and the oxen, and the camels, into two troops,",
+  "8": "saying: If Esau come to one troop, and strike it, the other troop that remaineth shall be saved.",
+  "9": "And Jacob said: O God of my father Abraham, and God of my father Isaac; O Lord that didst say to me: Return into thy land, and into the place of thy nativity, and I will do thee good:",
+  "10": "I am inferior to all thy mercies, and thy truth that thou hast fulfilled to thy servant. With my staff I passed over this Jordan: and now with two troops I do return.",
+  "11": "Deliver me from the hand of my brother Esau, because I am sore afraid of him: lest perhaps he come, and strike the mother with the children.",
+  "12": "Thou didst say that thou wouldst do good to me, and dilate my seed as the sand of the sea, which for multitude cannot be numbered.",
+  "13": "And when he had slept there that night, he separated of those things which he had, gifts to his brother Esau,",
+  "14": "she goats two hundred, he goats twenty, ewes two hundred, and rams twenty,",
+  "15": "thirty milch camels with their colts, forty kine, and twenty bulls, twenty she asses, and their foals ten.",
+  "16": "And he sent by the hands of his servants every flock by it-self, and he said to his servants: Go before me, and let there be a space between flock and flock.",
+  "17": "And he commanded the former, saying: If thou meet my brother Esau, and he ask thee, whose art thou? Or whither goest thou? Or whose are these that thou doest follow?",
+  "18": "Thou shalt answer: Jacob's thy servant, he hath sent them for gifts to my lord Esau: himself also cometh after us.",
+  "19": "In like manner he gave commandments to the second, and the third, and to all that followed the flocks, saying: With the self-same words speak ye to Esau, when you shall find him.",
+  "20": "And ye shall add: Jacob also thy servant himself followeth on after us; for he said: I will pacify him with the gifts that go before, and afterward I will see him, perhaps he will be gracious unto me.",
+  "21": "The gifts therefore went before him, but himself lodged that night in the camp.",
+  "22": "And when he was risen early, he took his two wives, and his handmaids as many, with his eleven sons, and passed over the ford Iaboc.",
+  "23": "And when he had set over all things that appertained to him,",
+  "24": "he tarried alone: and behold a man wrestled with him till morning.",
+  "25": "Who when he saw that he could not overcome him, he touched the sinew of his thigh, and forthwith it shrank.",
+  "26": "And he said to him: Let me go for it is break of day. He answered: I will not let thee go, unless thou bless me.",
+  "27": "He therefore said: What is thy name? He answered: Jacob.",
+  "28": "But he, no, thy name, quoth he, shall not be called Jacob. But Israel: for if thou hast been strong against God, how much more shalt thou prevail against men?",
+  "29": "Jacob asked him: Tell me by what name art thou called? He answered: Why dost thou ask my name? and blessed him in the same place.",
+  "30": "And Jacob called the name of the place Phanuel, saying: I have seen God face to face, and my soul was made safe.",
+  "31": "And immediately the sun rose to him, after that he was past Phanuel; but he halted on his foot.",
+  "32": "For which cause the children of Israel eat not the sinew, that shrunk in Jacob's thigh, unto this present day: because he touched the sinew of his thigh, and it shrunk."
+ },
+ "ref_coverage": {
+  "janvier": 32,
+  "have": {
+   "s_dismas": 32,
+   "odr_com": 32,
+   "sabates_a": 32,
+   "madueke_b": 32
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 128,
+ "triage": "SOURCE-SKEW",
+ "secs": 6.1
+}

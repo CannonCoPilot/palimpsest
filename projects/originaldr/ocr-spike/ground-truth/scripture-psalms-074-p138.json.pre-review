@@ -1,0 +1,47 @@
+{
+  "locus": "scripture/psalms/74#p138",
+  "page_index": 138,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": ".gt-rasters/scripture-psalms-074-p0138.png",
+  "raster_dpi": 400,
+  "page_label_printed": "138",
+  "running_header": { "left": "138", "center": "THE BOOKE", "right": "" },
+  "layout_note": "Psalm 74 body vv2-11 (v1 + Argument are on p137 — NOT on this page). Ornamental drop-cap 'VV' (=W) opens v2. Central body column with right-margin verse numbers (2-11); annotation blocks (b-o) span full width in the small italic apparatus face, which here MIXES w and vv (drop-cap and 'VVhen' use VV; several annotation words read as real w). Catchword 'PSALME' foot-right (anticipates Ps75 on p139).",
+  "verses_on_page": ["74:2", "74:3", "74:4", "74:5", "74:6", "74:7", "74:8", "74:9", "74:10", "74:11"],
+  "body": [
+    { "line_index": 0, "verse": "74:2", "verse_number_printed": "2", "dropcap": "VV", "text": "WE wil confeſſe to thee ô God: we wil confeſſe, and wil inuocate thy name.", "ref_letters_present": ["b", "c"] },
+    { "line_index": 1, "verse": "74:3", "verse_number_printed": "3", "verse_marker": "†", "text": "We wil tel thy meruelouſe workes: † when I ſhal take a time, I wil iudge iuſtices.", "ref_letters_present": ["d"] },
+    { "line_index": 2, "verse": "74:4", "verse_number_printed": "4", "verse_marker": "†", "text": "† The earth is melted, and al that dwel in it: I haue confirmed the pillers thereof.", "ref_letters_present": ["e", "f"] },
+    { "line_index": 3, "verse": "74:5", "verse_number_printed": "5", "verse_marker": "†", "text": "† I ſaid to the wicked: doe not wickedly: and to them that offend: Exalt not the horne.", "ref_letters_present": ["g", "h"] },
+    { "line_index": 4, "verse": "74:6", "verse_number_printed": "6", "verse_marker": "†", "text": "† Exalt not your horne on high: ſpeake not iniquitie aganſt God.", "note": "'aganſt' printed as-is (typo for 'against') — preserved per §typos" },
+    { "line_index": 5, "verse": "74:7", "verse_number_printed": "7", "verse_marker": "†", "text": "† For neither from the Eaſt, nor from the Weſt, nor from the deſert mountanes:" },
+    { "line_index": 6, "verse": "74:8", "verse_number_printed": "8", "verse_marker": "†", "text": "† becauſe God is Iudge.", "ref_letters_present": ["i"] },
+    { "line_index": 7, "verse": "74:9", "verse_number_printed": "9", "verse_marker": "†", "text": "† This man he humbleth, and him he exalteth, † becauſe there is a cuppe in the hand of our Lord of mere wine ful of mixture.", "ref_letters_present": ["k", "l", "m"] },
+    { "line_index": 8, "verse": "74:9", "text": "And he hath powred it out of this into that, but yet the dregges therof are not emptied: al the ſinners of the earth ſhal drinke.", "ref_letters_present": ["n"] },
+    { "line_index": 9, "verse": "74:10", "verse_number_printed": "10", "verse_marker": "†", "text": "† But I wil ſhew forth for euer: I wil ſing to the God of Iacob." },
+    { "line_index": 10, "verse": "74:11", "verse_number_printed": "11", "verse_marker": "†", "text": "† And I wil breake al the hornes of ſinners: and the hornes of the iuſt ſhal be exalted.", "ref_letters_present": ["o"] }
+  ],
+  "apparatus": [
+    { "role": "annotation", "ref_letter": "b", "anchor_verse": "74:2", "text": "Chriſt with his Apoſtles, and other aſſeſſorie iudges, wil praiſe and thanke God, for his admirable good prouidence, and gouernement of this world." },
+    { "role": "annotation", "ref_letter": "c", "anchor_verse": "74:2", "text": "This duplication of the ſame word, confirmeth vs of the aſſured performance of that, which is here propheciel.", "uncertain": "'propheciel' final letters worn — probably 'prophecied'; transcribed as read" },
+    { "role": "annotation", "ref_letter": "d", "anchor_verse": "74:3", "text": "Chriſt our ſingular, principal, and proper Iudge only, and no mere creature, knoweth the determinate time of general iudgement." },
+    { "role": "annotation", "ref_letter": "e", "anchor_verse": "74:4", "text": "The earth at that time ſhal be purged with flaming fire: yet ſhal not be deſtroyed, but changed in qualities." },
+    { "role": "annotation", "ref_letter": "g", "anchor_verse": "74:5", "text": "An epitome, or briefe ſumme of Chriſts doctrine, to flee from ſinne." },
+    { "role": "annotation", "ref_letter": "h", "anchor_verse": "74:5", "text": "be not proud, abuſe not the powre you haue, to do what you pleaſe." },
+    { "role": "annotation", "ref_letter": "i", "anchor_verse": "74:8", "face": "vv-for-w", "text": "VVhen other Iudges ſitte on tribunales, ſome may be abſent, or eſcape from their ſentences: but al without exception ſhal be brought in perſons, when Chriſt God and Man ſhal iudge." },
+    { "role": "annotation", "ref_letter": "k", "anchor_verse": "74:9", "text": "Some ſhal haue ſentence of eternal paine in hel; ſome of eternal reward in glorie, l though (partly in this world, partly in particular iudgement of euerie ſoule) God hath already, and wil before the laſt day puniſh ſinners, yet there reſteth more puniſhment, and no impenitent ſinners ſhal eſcape, but al ſhal drinke of the bitter cuppe of eternal damnation. m ſtrong wine not delayde with water, but mingled with bitter ſharpe thinges, as gal, vinegre, brimſtone &c. and ſo powred into feſtered woundes, ſo they ſhal ſuffer vntolerable endles paine, mixed with the worme of conſcience, loſſe of glorie, rancor of hart, and eternal deſperation.", "note": "contains sub-keys l and m inline" },
+    { "role": "annotation", "ref_letter": "n", "anchor_verse": "74:9", "text": "Varietie of helliſh torments, from one extreme to another: as from ſnowwaters to exceding heate. Iob. 24." },
+    { "role": "annotation", "ref_letter": "o", "anchor_verse": "74:11", "text": "The iuſt for wel vſing their powre of freewil, and of al powre geuen them in this life, are rewarded in heauen." }
+  ],
+  "marginalia": [],
+  "catchword": { "text": "PSALME", "position": "foot_right", "note": "catchword anticipating Ps75 heading on p139; EXCLUDED from body concat" },
+  "uncertain": [
+    { "line_index": null, "span": "annotation w/vv face (whole page)", "note": "the apparatus face MIXES: drop-cap 'VV' and annotation i 'VVhen' use vv; but many annotation words (with, world, water, wine, powre) read as real w at this zoom. Body uses real w. Transcribed per best read; reviewer should settle the mixed face — this is exactly the §footnote-typeface ambiguity." },
+    { "line_index": 0, "span": "WE (dropcap VV)", "note": "opening initial is an ornamental 'VV' ligature = W; word is WE." }
+  ],
+  "observer": "jarvis",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster; content anchor only for verse span. NOTE: Ps74 v1 + Argument are on p137 (add for full-chapter completeness).",
+  "confidence": "high on scripture body vv2-11; medium on the dense annotation blocks (mixed w/vv face)"
+}

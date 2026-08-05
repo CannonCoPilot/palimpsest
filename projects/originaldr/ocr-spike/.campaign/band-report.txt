@@ -1,0 +1,30 @@
+
+TOTAL CELLS SCORED (all 4 refs present): 6116
+
+band                         S1       S3       S6       S9
+[0.876,0.90)                 77       52       53       44
+[0.90,0.999)               1144     1158      988     1178
+[0.876,0.999) TOTAL        1221     1210     1041     1222
+below 0.876                 113       88      369       75
+[0.999,1.0]                 195      231      119      232
+
+ARM GAP  min(MODERN) - min(ARCHAIC)   [positive = archaic refs penalise this source]
+source          n    median      mean       p90   >+0.024
+S1           1529   -0.0110   -0.0141    0.0000        26
+S3           1529   -0.0110   -0.0141    0.0000        28
+S6           1529    0.0000    0.0099    0.0340       244
+S9           1529   -0.0110   -0.0142    0.0000        24
+
+CELLS IN [0.876,0.999) REACHABLE BY AN EDITION FIX
+   (worst score is set by an ARCHAIC ref, and gap > threshold)
+source        gap>0   gap>0.024  gap>0.05  gap>0.10
+S1               93          16         4         0
+S3               85          18         5         0
+S6              536         179        44         3
+S9               78          15         6         0
+
+SUB-BAR HALF ONLY  [0.876,0.90)  -- these are the cells that move the BOARD
+  S1: 77 in band, 9 archaic-limited, 2 with gap > +0.024
+  S3: 52 in band, 4 archaic-limited, 0 with gap > +0.024
+  S6: 53 in band, 29 archaic-limited, 9 with gap > +0.024
+  S9: 44 in band, 6 archaic-limited, 1 with gap > +0.024

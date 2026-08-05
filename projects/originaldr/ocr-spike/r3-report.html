@@ -1,0 +1,234 @@
+<title>OriginalDR re-OCR · R3 Productionization & Validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --paper:#f6f4ef; --paper-2:#efece3; --ink:#241f18; --ink-soft:#5b5347; --ink-faint:#8c8477;
+    --rule:#ddd8cc; --card:#fffdf8; --accent:#2d5a66; --accent-soft:#3d7280;
+    --good:#4a7c59; --warn:#b07d3c; --bad:#8f4539;
+    --good-bg:#e6efe4; --warn-bg:#f3e9d7; --bad-bg:#f1e2dd;
+    --shadow:0 1px 2px rgba(36,31,24,.05), 0 4px 16px rgba(36,31,24,.05);
+    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+    --mono:"SF Mono","JetBrains Mono",ui-monospace,"Cascadia Code",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#16140f; --paper-2:#1e1b15; --ink:#e9e3d5; --ink-soft:#b3ab9a; --ink-faint:#7d7566;
+      --rule:#322d24; --card:#1f1c15; --accent:#6fb2b0; --accent-soft:#5b9a99;
+      --good:#7fb389; --warn:#d3a562; --bad:#cd7d6c;
+      --good-bg:#1c2a20; --warn-bg:#2c2517; --bad-bg:#2c1d19;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#16140f; --paper-2:#1e1b15; --ink:#e9e3d5; --ink-soft:#b3ab9a; --ink-faint:#7d7566;
+    --rule:#322d24; --card:#1f1c15; --accent:#6fb2b0; --accent-soft:#5b9a99;
+    --good:#7fb389; --warn:#d3a562; --bad:#cd7d6c;
+    --good-bg:#1c2a20; --warn-bg:#2c2517; --bad-bg:#2c1d19;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.28);
+  }
+  :root[data-theme="light"]{
+    --paper:#f6f4ef; --paper-2:#efece3; --ink:#241f18; --ink-soft:#5b5347; --ink-faint:#8c8477;
+    --rule:#ddd8cc; --card:#fffdf8; --accent:#2d5a66; --accent-soft:#3d7280;
+    --good:#4a7c59; --warn:#b07d3c; --bad:#8f4539;
+    --good-bg:#e6efe4; --warn-bg:#f3e9d7; --bad-bg:#f1e2dd;
+    --shadow:0 1px 2px rgba(36,31,24,.05), 0 4px 16px rgba(36,31,24,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:60rem;margin:0 auto;padding:clamp(1.5rem,4vw,4rem) clamp(1.1rem,4vw,2.5rem)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;letter-spacing:-.01em;line-height:1.15}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:focus-visible,.tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:600}
+  .num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+
+  /* header */
+  header{border-bottom:2px solid var(--ink);padding-bottom:1.6rem;margin-bottom:2.4rem}
+  header h1{font-size:clamp(1.9rem,4.6vw,3rem);margin:.5rem 0 .4rem}
+  .thesis{font-family:var(--serif);font-size:clamp(1.12rem,2.3vw,1.4rem);color:var(--ink-soft);
+    font-style:italic;max-width:44ch;margin:.2rem 0 1.2rem}
+  .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-family:var(--mono);font-size:.76rem;color:var(--ink-faint)}
+  .meta b{color:var(--ink-soft);font-weight:600}
+
+  section{margin:2.8rem 0}
+  h2{font-size:clamp(1.3rem,2.8vw,1.7rem);margin:0 0 .3rem;padding-top:.3rem}
+  .lede{color:var(--ink-soft);max-width:66ch;margin:.2rem 0 1.3rem}
+  p{max-width:68ch}
+
+  /* stat tiles */
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.9rem;margin:1.4rem 0}
+  .tile{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:1rem 1.1rem;box-shadow:var(--shadow)}
+  .tile .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+  .tile .v{font-family:var(--serif);font-size:1.9rem;font-weight:600;line-height:1.1;margin:.25rem 0 .1rem;font-variant-numeric:tabular-nums}
+  .tile .s{font-size:.8rem;color:var(--ink-soft)}
+  .tile .v.arrow small{font-size:1rem;color:var(--ink-faint);font-family:var(--sans);font-weight:400}
+
+  /* thesis callout */
+  .callout{background:var(--good-bg);border:1px solid color-mix(in srgb,var(--good) 40%,transparent);
+    border-left:4px solid var(--good);border-radius:10px;padding:1.3rem 1.4rem;margin:1.5rem 0}
+  .callout .eyebrow{color:var(--good)}
+  .callout .big{font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.55rem);font-weight:600;margin:.35rem 0 .5rem;text-wrap:balance}
+  .callout p{margin:.4rem 0 0;color:var(--ink-soft)}
+
+  /* tables */
+  .tbl-wrap{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+  table{border-collapse:collapse;width:100%;font-size:.87rem}
+  th,td{padding:.6rem .85rem;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;border-bottom:1.5px solid var(--rule)}
+  tbody tr:last-child td{border-bottom:none}
+  td.num,th.num{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+  tr.hi td{background:color-mix(in srgb,var(--accent) 8%,transparent);font-weight:600}
+  .delta-pos{color:var(--good);font-weight:600}
+  .delta-neg{color:var(--bad);font-weight:600}
+
+  /* chips */
+  .chip{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--mono);font-size:.72rem;
+    font-weight:600;padding:.15rem .55rem;border-radius:999px;letter-spacing:.02em}
+  .chip::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:currentColor}
+  .chip.good{color:var(--good);background:var(--good-bg)}
+  .chip.warn{color:var(--warn);background:var(--warn-bg)}
+  .chip.bad{color:var(--bad);background:var(--bad-bg)}
+
+  /* bimodal bar chart */
+  .dist{display:grid;gap:.5rem;margin:1.2rem 0;max-width:40rem}
+  .dist .row{display:grid;grid-template-columns:12rem 1fr;align-items:center;gap:.8rem}
+  .dist .lbl{font-size:.8rem;color:var(--ink-soft);text-align:right}
+  .dist .bar{height:1.5rem;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;
+    padding-right:.4rem;color:#fff;font-family:var(--mono);font-size:.75rem;font-weight:600;min-width:1.6rem}
+  @media(max-width:34rem){.dist .row{grid-template-columns:1fr}.dist .lbl{text-align:left}}
+
+  /* ladder */
+  .ladder{display:grid;gap:.55rem;margin:1.2rem 0;font-size:.86rem}
+  .rung{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;padding:.7rem .9rem;
+    background:var(--card);border:1px solid var(--rule);border-radius:8px;border-left:3px solid var(--accent-soft)}
+  .rung .step{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--accent);white-space:nowrap}
+  .rung b{font-family:var(--serif)}
+  .rung.term{border-left-color:var(--bad)}
+  .rung.term .step{color:var(--bad)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:40rem){.two{grid-template-columns:1fr}}
+  .note{font-size:.82rem;color:var(--ink-faint);font-style:italic;max-width:66ch}
+  code{font-family:var(--mono);font-size:.85em;background:var(--paper-2);padding:.1em .35em;border-radius:4px}
+  ul.clean{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.6rem;max-width:68ch}
+  ul.clean li{padding-left:1.4rem;position:relative}
+  ul.clean li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:var(--mono)}
+  footer{border-top:1px solid var(--rule);margin-top:3rem;padding-top:1.4rem;color:var(--ink-faint);font-size:.8rem}
+  .long-s{font-family:var(--serif);font-style:italic}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Douay–Rheims re-OCR · Rung 3 · autonomous sprint</div>
+    <h1>The gate learned to act</h1>
+    <p class="thesis">A flagged verse is now turned into pixels, re-read by a local vision model, re-scored on the janvier grid, and either accepted or held open — never laundered.</p>
+    <div class="meta">
+      <span><b>Date</b> 2026-07-25</span>
+      <span><b>Model</b> olmOCR-2-7B (MLX, load-once)</span>
+      <span><b>Tests</b> 46 (37 fast · 9 real-model)</span>
+      <span><b>Validation</b> 13 gold pages · 65 flagged verses</span>
+      <span><b>New code</b> ~1,000 LOC · 5 modules</span>
+    </div>
+  </header>
+
+  <section id="summary">
+    <div class="eyebrow">Headline</div>
+    <h2>What the productionized rung does, and how well</h2>
+    <p class="lede">The re-OCR ladder is <b>base → R2 (fine-tuned) → four-alarm gate → R3 (vision) → OPEN ledger</b>. Before this sprint the gate flagged verses but nothing re-read them. Now it routes end-to-end — and the numbers below are all from runs whose output is on disk.</p>
+    <div class="tiles">
+      <div class="tile"><div class="k">Gate recall on known-bad</div><div class="v">1.00</div><div class="s">46/46 at τx=0.90 · 33% escalation</div></div>
+      <div class="tile"><div class="k">Prose content pass-rate</div><div class="v arrow">0 → 0.76</div><div class="s">R2 0.749 → R3 0.862 (+0.11)</div></div>
+      <div class="tile"><div class="k">Accepted verses laundered</div><div class="v" style="color:var(--good)">0 / 23</div><div class="s">none worse vs gold than R2</div></div>
+      <div class="tile"><div class="k"><span class="long-s">ſ</span> surface residual</div><div class="v">80%</div><div class="s">olmOCR modernizes <span class="long-s">ſ</span> → owed to arbiter</div></div>
+    </div>
+  </section>
+
+  <section id="safety">
+    <div class="callout">
+      <div class="eyebrow">The safety result — measured, not asserted</div>
+      <div class="big">Of the 23 verses the pipeline accepted, <span style="color:var(--good)">zero</span> are worse vs gold than R2.</div>
+      <p>olmOCR is a <b>high-variance</b> rung: it rescues the median verse but fails catastrophically on a minority (the psalms two-column apparatus). The risk that raises — since acceptance is witness-based and the psalms witnesses are known-defective — is that the gate might “rescue” a verse with a reading that is actually worse. It does not. Every one of olmOCR’s catastrophic failures stayed <b>OPEN</b>; a reading bad enough to hurt gold also failed the witness bar. The gate over-escalates (safe) rather than over-accepts (unsafe). This is the No-Silent-Degradation guarantee, verified across 13 gold pages.</p>
+    </div>
+  </section>
+
+  <section id="gate">
+    <div class="eyebrow">Section 1 · the gate</div>
+    <h2>Confidence is blind; an independent witness is not</h2>
+    <p class="lede">Recognizer confidence cannot see systematic misreads. Calibrated on 177 gold verses (46 known-bad), the cross-source alarm — R2’s per-verse reading vs an independent reference witness, janvier-cut — is the only signal that separates.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Signal</th><th class="num">mean · known-bad (46)</th><th class="num">mean · good (131)</th><th>Separates?</th></tr></thead>
+      <tbody>
+        <tr><td>Recognizer confidence <span class="note">(alarm 1)</span></td><td class="num">0.980</td><td class="num">0.988</td><td><span class="chip bad">no · Δ0.008</span></td></tr>
+        <tr class="hi"><td>Cross-source xsrc_id <span class="note">(alarm 2)</span></td><td class="num">0.685</td><td class="num">0.937</td><td><span class="chip good">yes · Δ0.25</span></td></tr>
+      </tbody>
+    </table></div>
+    <p>At recall = 1 (every known-bad flagged, per No Silent Degradation), the <b>full gate</b> escalates <b>33%</b> of verses at τx=0.90 — versus <b>87%</b> for confidence alone. The confident-wrong tail (42 verses with conf ≥ 0.92) is caught <b>42/42</b> by the cross-source alarm and <b>2/42</b> by the internal alarms. The external witness does essentially all the anti-laundering work — a router, never an acceptor.</p>
+  </section>
+
+  <section id="lift">
+    <div class="eyebrow">Section 2 · R3 content rescue</div>
+    <h2>olmOCR rescues prose; the psalms layout defeats it</h2>
+    <p class="lede">For every gate-flagged verse on the gold pages, the region-based R3 was run and the content lift measured two ways: <b>gold-anchored</b> (vs the diplomatic gold — the truth) and <b>gold-free</b> (vs the witness — what production sees). The proxy tracks the truth (mean Δ −0.104 vs −0.114).</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Verse group</th><th class="num">n</th><th class="num">R2 mean</th><th class="num">R3 mean</th><th class="num">mean Δ</th><th class="num">median Δ</th><th class="num">pass ≥0.90</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td>Prose / narrative</td><td class="num">21</td><td class="num">0.749</td><td class="num">0.862</td><td class="num delta-pos">+0.113</td><td class="num delta-pos">+0.137</td><td class="num">0 → 0.76</td></tr>
+        <tr><td>Psalms (2-col apparatus)</td><td class="num">25</td><td class="num">0.734</td><td class="num">0.428</td><td class="num delta-neg">−0.305</td><td class="num delta-neg">−0.165</td><td class="num">0 → 0.28</td></tr>
+        <tr><td>All known-bad</td><td class="num">46</td><td class="num">0.741</td><td class="num">0.626</td><td class="num delta-neg">−0.114</td><td class="num delta-pos">+0.077</td><td class="num">0 → 0.50</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">Gold-anchored <code>archaic_id</code> folds <span class="long-s">ſ</span>→s (ſ-blind), so it isolates content+spelling recovery — the axis olmOCR can lift. Negative <em>mean</em> with positive <em>median</em> = a bimodal, high-variance rung.</p>
+
+    <h3 style="margin-top:1.8rem;font-size:1.05rem">Distribution of gold-anchored ΔR3 (46 known-bad verses)</h3>
+    <div class="dist">
+      <div class="row"><div class="lbl">big rescue (Δ &gt; +0.3)</div><div class="bar" style="width:8%;background:var(--good)">2</div></div>
+      <div class="row"><div class="lbl">better (+0.05 … +0.3)</div><div class="bar" style="width:92%;background:var(--good)">24</div></div>
+      <div class="row"><div class="lbl">flat (±0.05)</div><div class="bar" style="width:22%;background:var(--ink-faint)">5</div></div>
+      <div class="row"><div class="lbl">worse (−0.3 … −0.05)</div><div class="bar" style="width:10%;background:var(--warn)">2</div></div>
+      <div class="row"><div class="lbl">catastrophic (Δ &lt; −0.3)</div><div class="bar" style="width:52%;background:var(--bad)">13</div></div>
+    </div>
+    <p class="note">26 verses gain, 15 lose (13 catastrophically), 5 flat. The catastrophic tail is almost entirely psalms — the argument for layout-aware column-band crops (next section).</p>
+  </section>
+
+  <section id="dualtrack">
+    <div class="eyebrow">Section 3 · the dual track</div>
+    <h2>Content recovered is not diplomatically complete</h2>
+    <div class="two">
+      <div>
+        <p>olmOCR is a <b>content</b> rung. It modernizes the long-<span class="long-s">ſ</span> on 80% of its outputs, so a verse whose content it rescues is not finished: the diplomatic surface is still owed. The pipeline scores the two axes separately and refuses to conflate them.</p>
+        <p class="note">A naïve pipeline would report the content rescue and silently ship <span class="long-s">ſ</span>-less text. This one holds the surface open.</p>
+      </div>
+      <div class="ladder" style="margin-top:0">
+        <div class="rung"><span class="step">≥τx · ſ kept</span><span><b>RESCUED</b> — accepted at R3</span></div>
+        <div class="rung term"><span class="step">≥τx · ſ dropped</span><span><b>RESCUED_CONTENT_S_OPEN</b> — <span class="chip warn">ſ owed → arbiter</span></span></div>
+        <div class="rung term"><span class="step">&lt;τx / no-geom</span><span><b>OPEN</b> — <span class="chip bad">blocks deliverable</span></span></div>
+      </div>
+    </div>
+    <p style="margin-top:1rem">Genesis-24 makes it concrete: R3 lifted three verses’ content over the bar (24:27 <span class="num">0.88→1.00</span>, 24:28 <span class="num">0.78→0.97</span>, 24:29 <span class="num">0.88→0.99</span>) — yet all three are held <span class="chip warn">ſ-OPEN</span> because olmOCR dropped the long-<span class="long-s">ſ</span>, and two cross-page fragments stay <span class="chip bad">OPEN</span>. The ledger holds all five and blocks the deliverable, even though content was recovered. That is the point.</p>
+  </section>
+
+  <section id="remains">
+    <div class="eyebrow">Section 4 · what remains</div>
+    <h2>The next levers, in order</h2>
+    <ul class="clean">
+      <li><b>Layout-aware crop geometry for psalms</b> — the biggest lever. The run localizes olmOCR’s weakness precisely (prose +0.11 vs psalms −0.31); a column-band crop per layout mode is the principled fix, and the harness already measures the exact metric to prove any improvement.</li>
+      <li><b>The ſ-faithful arbiter rung</b> — close the 19 <span class="long-s">ſ</span>-surface debts via the in-agent Jarvis arbiter reading the crop in-session (no API call), converting “content recovered” into “diplomatically complete”.</li>
+      <li><b>Hard cross-page fragments</b> — verses whose text runs past the page need addressing/segmentation work, not a larger crop.</li>
+      <li><b>GT-3 breadth</b> — the source-coverage transcription tail, best interleaved with review.</li>
+    </ul>
+    <p style="margin-top:1.2rem">The rung is sound and measured: it genuinely rescues prose content, it never launders a worse reading, and its one real weakness is exposed, contained as OPEN, and has a clear next experiment. The pipeline reports its own limits rather than reporting success while degraded.</p>
+  </section>
+
+  <footer>
+    OriginalDR re-OCR · R3 productionization &amp; statistical validation · 2026-07-25. All figures from on-disk runs
+    (<code>.r3-stats/</code>, <code>.gate-calibration.json</code>). Modules: <code>verse_geom</code>, <code>mlx_client</code>,
+    <code>mlx_ocr_server</code>, <code>open_ledger</code>, <code>r3_route</code> — test-driven, 46 passing, and
+    adversarially code-reviewed (2 anti-laundering gaps found &amp; fixed). Companion:
+    <code>R3-PRODUCTIONIZATION-REPORT-2026-07-25.md</code>.
+  </footer>
+</div>

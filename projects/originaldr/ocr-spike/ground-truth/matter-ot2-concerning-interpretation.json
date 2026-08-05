@@ -1,0 +1,258 @@
+{
+  "locus": "matter/ot2/concerning-interpretation",
+  "page_index": 14,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": "ocr-spike/.ci-scan/ot2-p0014.png",
+  "raster_dpi": 400,
+  "page_label_printed": "14",
+  "running_header": {
+    "left": "14",
+    "center": "PROEMIAL ANNOTATIONS",
+    "right": ""
+  },
+  "layout_note": "A SHORT, SELF-CONTAINED proemial section titled (italic) 'Concerning interpretation of holie Scriptures .', printed on the LOWER HALF of page 14 (printed folio '14') of the 1610 OT2 (Second Tome) front matter. It is bounded ABOVE and BELOW by a horizontal rule: above the top rule is the TAIL of the preceding 'PROEMIAL ANNOTATIONS vpon the Booke of Pſalmes' (whose first page = matter-ot2-preface-psalms, page_index 3), ending '...render al praiſe to God.'; below the bottom rule the volume proceeds to 'THE BOOKE OF PSALMES / PSALME I.' on page_index 15. Thus this is the LAST front-matter item before the Psalter text proper, and it is DISTINCT from the Psalms Proemial Annotations. Because the page's running header ('PROEMIAL ANNOTATIONS', folio '14' top-left) belongs to the section ENDING above the rule, this section has no running header of its own. LAYOUT: one wide column of roman prose, opening with a large ~3-line drop-cap 'A' (AS Prophecie…), followed by four further short paragraphs, EACH closing with an italic patristic source-citation and EACH keyed to a small ROMAN summary note in the LEFT margin (five notes; the page's TWO OTHER left-margin notes — 'Other inſtrumentes make conſorte with the Pſalter.' and 'Al vertues are referred to Gods honour.' — sit ABOVE the top rule and belong to the Psalms annotations, so they are EXCLUDED here). TWO GLYPH REGIMES: (a) roman body sets a REAL connected 'w' (verified per-instance: was, wil, wherwith, written, which, wordes, knowlege); (b) italic apparatus — the parenthetical glosses ('or other holie Scripture', 'Prophetes', 'nor explication'), the leading word 'Neither', and every source-citation — contains no 'w', so no vv/w call arises in the italic. Punctuation is TIGHT (no French spacing) at the section's colons/semicolons/commas (verified: 'Ghoſt:', 'truth;', 'Scripture,is'); the ONLY spaced high-mark is the heading terminal ('Scriptures .'). ct is always a ligature (Sainctes, expect, Doct., Ezech.). The modern scanner watermark 'www.fatimamovement.com' and a small red heraldic shield overlaid at the lower-left corner are digitisation marks, NOT part of the original page; excluded.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "heading",
+      "has_italic": true,
+      "text": "Concerning interpretation of holie Scriptures .",
+      "note": "whole heading set in ITALIC display type; a clear SPACE precedes the terminal mark ('Scriptures .'); the mark reads as a period (corpus-consistent: APPROBATIO. / …Pſalmes. / THE ARGVMENT OF GENESIS. all end with a point) but a comma cannot be fully excluded at this raster — see uncertain"
+    },
+    {
+      "line_index": 1,
+      "role": "prose",
+      "drop_cap": "A",
+      "has_italic": true,
+      "text": "AS Prophecie (or other holie Scripture) was not at anie time by",
+      "note": "opens with large ~3-line drop-cap 'A'; full-size cap 'S' follows → 'AS'. '(or other holie Scripture)' set in italic; body 'was' is a REAL connected w"
+    },
+    {
+      "line_index": 2,
+      "role": "prose",
+      "has_italic": true,
+      "text": "mans wil, but the (Prophetes) holie men of God ſpake, inſpired",
+      "note": "'(Prophetes)' italic; 'wil' real w; ſpake/inſpired long-ſ"
+    },
+    {
+      "line_index": 3,
+      "role": "prose",
+      "has_italic": true,
+      "text": "by the Holie Ghoſt: ſo no prophecie (nor explication) of Scripture, is",
+      "note": "'(nor explication)' italic; 'Ghoſt:' colon tight (no French space); 'Scripture,is' comma tight; Ghoſt/ſo long-ſ"
+    },
+    {
+      "line_index": 4,
+      "role": "prose",
+      "has_italic": true,
+      "text": "made by priuate interpretation. 2. Pet. 1. but by the ſame Spirite",
+      "note": "'priuate' u/v swap; scripture-citation '2. Pet. 1.' in italic; 'ſame' long-ſ; 'Spirite' round cap S"
+    },
+    {
+      "line_index": 5,
+      "role": "prose",
+      "text": "wherwith it was written, which our Sauiour gaue to the Church,",
+      "note": "wherwith / was / written / which all REAL connected w (verified 2.6x); Sauiour/gaue u/v swap"
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "has_italic": true,
+      "text": "to abide for euer, the Spirite of truth; to teach al truth. Ioan. 14. 16.",
+      "note": "'euer' u/v; 'truth;' semicolon tight (no French space, verified 3x); citation 'Ioan. 14. 16.' italic"
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "has_italic": true,
+      "text": "Neither perteyneth it to euerie one, to diſcerne the true ſpirite, but",
+      "note": "leading 'Neither' in italic; 'euerie' u/v; diſcerne/ſpirite long-ſ"
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "has_italic": true,
+      "text": "to ſome. 1. Cor. 12.",
+      "note": "'ſome' long-ſ; citation '1. Cor. 12.' italic; end of the drop-cap paragraph"
+    },
+    {
+      "line_index": 9,
+      "role": "prose",
+      "text": "Holie Scriptures conſiſt not in reading, but in vnderſtanding.",
+      "note": "new indented paragraph; conſiſt (two long-ſ); vnderſtanding u/v + long-ſ"
+    },
+    {
+      "line_index": 10,
+      "role": "prose",
+      "has_italic": true,
+      "text": "S. Ierom Dialogo aduerſ. Luciferianos.",
+      "note": "whole line italic patristic citation (Jerome, Dialogus adversus Luciferianos); 'aduerſ.' u/v + long-ſ; 'Luciferianos' round final s"
+    },
+    {
+      "line_index": 11,
+      "role": "prose",
+      "text": "The wordes of holie Scripture are ſo to be vnderſtood, as holie",
+      "note": "new indented paragraph; 'wordes' real w; ſo/vnderſtood long-ſ"
+    },
+    {
+      "line_index": 12,
+      "role": "prose",
+      "has_italic": true,
+      "text": "men, the Sainctes of God, haue vnderſtood them, s. Aug ſer. 18. de",
+      "note": "'Sainctes' ct-ligature; 'haue' u/v; italic citation opens 's. Aug ſer. 18. de' — the 's' is a LOWERCASE italic s (unlike the capital 'S.' of the Ierom/Amb/Greg citations) and NO period is visible after 'Aug' (see uncertain); 'ſer.' long-ſ"
+    },
+    {
+      "line_index": 13,
+      "role": "prose",
+      "has_italic": true,
+      "text": "verb. Domini. Men muſt lerne of men, not expect knowlege imme-",
+      "line_end_hyphen": true,
+      "note": "'verb. Domini.' completes the italic citation (de verbis Domini); then roman body resumes; 'muſt' long-ſ; 'lerne' as printed; 'expect' ct-lig; 'knowlege' real w; 'imme-' hyphen-split to next line"
+    },
+    {
+      "line_index": 14,
+      "role": "prose",
+      "has_italic": true,
+      "text": "diatly of God, nor only by Angels. Idem, in prologo Doct. Chriſt.",
+      "note": "'diatly' completes 'immediatly'; italic citation 'Idem, in prologo Doct. Chriſt.' (Augustine, prol. De Doctrina Christiana); 'Doct.' ct-lig; 'Chriſt.' long-ſ"
+    },
+    {
+      "line_index": 15,
+      "role": "prose",
+      "text": "There be ſome thinges, mentioned in holie Scripture, which",
+      "note": "new indented paragraph; 'ſome' long-ſ; 'which' real w"
+    },
+    {
+      "line_index": 16,
+      "role": "prose",
+      "text": "God wil haue hidden, and thoſe are not to be curiouſly ſearched.",
+      "note": "'wil' real w; 'haue' u/v; thoſe/curiouſly/ſearched long-ſ"
+    },
+    {
+      "line_index": 17,
+      "role": "prose",
+      "has_italic": true,
+      "text": "S. Amb. li. 1. c. 7. de vocat. Gentium.",
+      "note": "whole line italic citation (Ambrose, De vocatione Gentium, l.1 c.7); capital 'S.' here confirms the lowercase 's.' of the Aug citation (line 12) is a genuine compositor variant"
+    },
+    {
+      "line_index": 18,
+      "role": "prose",
+      "text": "By thoſe thinges, which to vs are hidden in holie Scripture, our",
+      "note": "new indented paragraph; 'thoſe' long-ſ; 'which' real w; 'vs' u/v"
+    },
+    {
+      "line_index": 19,
+      "role": "prose",
+      "has_italic": true,
+      "text": "humilitie is proued, S. Greg. ho. 17. ſuper Ezech.",
+      "note": "'proued' u/v; italic citation 'S. Greg. ho. 17. ſuper Ezech.' (Gregory, Homily 17 super Ezechielem); 'ſuper' long-ſ; last line before the closing rule"
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "heading",
+      "text": "Concerning interpretation of holie Scriptures .",
+      "lines": [0]
+    },
+    {
+      "idx": 1,
+      "kind": "paragraph",
+      "text": "AS Prophecie (or other holie Scripture) was not at anie time by mans wil, but the (Prophetes) holie men of God ſpake, inſpired by the Holie Ghoſt: ſo no prophecie (nor explication) of Scripture, is made by priuate interpretation. 2. Pet. 1. but by the ſame Spirite wherwith it was written, which our Sauiour gaue to the Church, to abide for euer, the Spirite of truth; to teach al truth. Ioan. 14. 16. Neither perteyneth it to euerie one, to diſcerne the true ſpirite, but to ſome. 1. Cor. 12.",
+      "lines": [1, 2, 3, 4, 5, 6, 7, 8]
+    },
+    {
+      "idx": 2,
+      "kind": "paragraph",
+      "text": "Holie Scriptures conſiſt not in reading, but in vnderſtanding. S. Ierom Dialogo aduerſ. Luciferianos.",
+      "lines": [9, 10]
+    },
+    {
+      "idx": 3,
+      "kind": "paragraph",
+      "text": "The wordes of holie Scripture are ſo to be vnderſtood, as holie men, the Sainctes of God, haue vnderſtood them, s. Aug ſer. 18. de verb. Domini. Men muſt lerne of men, not expect knowlege immediatly of God, nor only by Angels. Idem, in prologo Doct. Chriſt.",
+      "lines": [11, 12, 13, 14]
+    },
+    {
+      "idx": 4,
+      "kind": "paragraph",
+      "text": "There be ſome thinges, mentioned in holie Scripture, which God wil haue hidden, and thoſe are not to be curiouſly ſearched. S. Amb. li. 1. c. 7. de vocat. Gentium.",
+      "lines": [15, 16, 17]
+    },
+    {
+      "idx": 5,
+      "kind": "paragraph",
+      "text": "By thoſe thinges, which to vs are hidden in holie Scripture, our humilitie is proued, S. Greg. ho. 17. ſuper Ezech.",
+      "lines": [18, 19]
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": 1,
+      "anchor_note": "beside the drop-cap paragraph (para idx 1)",
+      "position": "left_margin",
+      "text": "Scriptures are\nto be ex-poun-\nded by the cō-\nmon ſpirit of\nthe Church,\nnot by priuate\nmen.",
+      "note": "small ROMAN summary gloss; 'expounded' split ex-poun-ded; 'cō-mon' = common (macron over o for the nasal, then hyphen-split); 'ſpirit' long-ſ; 'priuate' u/v"
+    },
+    {
+      "anchor": 9,
+      "anchor_note": "beside para idx 2 (Holie Scriptures conſiſt…)",
+      "position": "left_margin",
+      "text": "They conſiſt\nin vnderſtan-\nding.",
+      "note": "small roman gloss; conſiſt (two long-ſ); vnderſtanding u/v + long-ſ, hyphen-split"
+    },
+    {
+      "anchor": 11,
+      "anchor_note": "beside para idx 3 (The wordes of holie Scripture…)",
+      "position": "left_margin",
+      "text": "Holy Fathers\ndo beſt ex-\npound them.",
+      "note": "small roman gloss; 'beſt' long-ſ; 'expound' hyphen-split ex-pound"
+    },
+    {
+      "anchor": 15,
+      "anchor_note": "beside para idx 4 (There be ſome thinges…)",
+      "position": "left_margin",
+      "text": "Some Myſte-\nries are hid-\nden.",
+      "note": "small roman gloss; 'Myſteries' long-ſ, hyphen-split Myſte-ries; 'hidden' hyphen-split hid-den"
+    },
+    {
+      "anchor": 18,
+      "anchor_note": "beside para idx 5 (By thoſe thinges…)",
+      "position": "left_margin",
+      "text": "They proue\nour humilitie.",
+      "note": "small roman gloss; 'proue' u/v swap"
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 0,
+      "span": "Scriptures .",
+      "note": "The heading's terminal mark, preceded by a clear space, is read as a PERIOD — consistent with every other section heading in this corpus ending in a point (APPROBATIO. / '…vpon the Booke of Pſalmes.' / 'THE ARGVMENT OF GENESIS.'), and the highest-zoom (4.5x) view shows a compact baseline dot. A COMMA cannot be fully excluded: a lower/medium zoom (3x) suggested a slight tail. Medium-high confidence on period; the preceding space is real (this edition's occasional space-before-punctuation habit)."
+    },
+    {
+      "line_index": 12,
+      "span": "s. Aug ſer.",
+      "note": "The Augustine citation opens with a LOWERCASE italic 's.' (verified against the capital 'S.' of the Ierom, Amb. and Greg. citations on the same page — a genuine compositor inconsistency, preserved). NO period is visible after 'Aug' (transcribed 'Aug ſer.'); a very faint dropped/lost point at this raster cannot be 100% excluded. The abbreviation intends 'S. Aug. ser. 18. de verb. Domini' (Augustine, Sermo 18 de verbis Domini). Medium-high confidence on the lowercase s; medium on the absent Aug-period."
+    },
+    {
+      "line_index": 3,
+      "span": "explication",
+      "note": "Italic '(nor explication)' — read letter-by-letter e-x-p-l-i-c-a-t-i-o-n at 3x; the small italic fount makes the '-ation' tail lightly inked but the reading is secure. High confidence."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 30,
+    "long_s_count_body": 24,
+    "long_s_count_marginalia": 6,
+    "note": "Hand-tallied glyph-driven per §long-ſ. Body 24: para1 8 (ſpake, inſpired, Ghoſt, ſo, ſame, diſcerne, ſpirite, ſome), para2 4 (conſiſt×2, vnderſtanding, aduerſ), para3 6 (ſo, vnderſtood×2, ſer, muſt, Chriſt), para4 4 (ſome, thoſe, curiouſly, ſearched), para5 2 (thoſe, ſuper). Marginalia 6 (ſpirit; conſiſt×2 + vnderſtanding; beſt; Myſteries). Heading 0 ('Scriptures' round cap S). Capital/round S (Scripture, Sauiour, Spirite, Some, the 'S.' citation abbreviations) NOT counted as long-ſ. Subject to script recompute; transcription is the source of truth.",
+    "w_real_count_body": 11,
+    "w_note": "All 11 body w's are REAL connected-stroke w (verified per-instance, §w-regime): para1 was/wil/wherwith/was/written/which (6), para3 wordes/knowlege (2), para4 which/wil (2), para5 which (1). No 'vv' anywhere on the page — the italic apparatus (glosses + citations) contains no w."
+  },
+  "observer": "agent:matter-ot2-concerning-interpretation",
+  "observed_at": "2026-07-20",
+  "method": "Four validations. (1) LOCALIZATION: paged the OT2 front matter via ocr-spike/jp2_page.py archive-ot2-1610 (pages 3-16). The Psalms 'PROEMIAL ANNOTATIONS' run pages 3-14a; on page_index 14, after they close ('…render al praiſe to God.'), a horizontal rule introduces a NEW italic-headed section 'Concerning interpretation of holie Scriptures .' with its own drop-cap and patristic paragraphs, closed by a second rule — confirmed by heading + content to be a SEPARATE proemial section on Scripture interpretation, NOT the Psalms annotations (which are the matter-ot2-preface-psalms locus, page 3) and NOT duplicated. (2) IDENTITY: archive-ot2-1610 S1 maps (jp2_page.py) to 'S01_1582-first-edition-3vol/…2 of 3 1610 Old Testament_jp2' = the 1610 Second Tome; the surrounding pages (Approbatio p.2, Psalms Proemial Annotations pp.3-14, THE BOOKE OF PSALMES p.15) confirm the 1610 OT2 front matter. Read from the native jp2 raster (3334×4684, ~400-DPI class). (3) PLACEMENT: printed folio '14' (verso; page running-header 'PROEMIAL ANNOTATIONS' belongs to the section ending above the top rule, so this section carries no header of its own); it is the LAST front-matter item before 'THE BOOKE OF PSALMES / PSALME I.' which begins on page_index 15. (4) COMPLETENESS: the ENTIRE section is on page 14, fully enclosed between the two horizontal rules — heading + drop-cap paragraph (2 Pet 1 / Ioan 14.16 / 1 Cor 12) + four short cited paragraphs (Jerome, Augustine, Ambrose, Gregory), each with a left-margin gloss; nothing continues onto page 15 (which starts the Psalter text). Diplomatic per GUIDELINES.md: long-ſ glyph-driven; w/vv per-instance (all body w real, verified by stroke-connectivity at 2.5-3x); ct→component letters; u/v period-swap and i/j kept as printed; French spacing checked at every colon/semicolon/comma (all tight except the spaced heading terminal); Latin/italic citations transcribed exactly; printer's variant (lowercase 's.' citation) preserved. Region crops zoomed 1.8-4.5x with autocontrast on faint marks. No content-anchor reference (janvier/Madueke) applies to this non-scriptural matter section.",
+  "confidence": "high on the heading text, the five paragraphs, and the section boundaries — localization / identity / placement / completeness all PASS. High on long-ſ placement (hand-verified, glyph-driven) and on the real-w regime (per-instance stroke-connectivity). Medium-high on the small-fount italic citations (verified at 2.8-3x). Two flagged items: the heading terminal mark (period vs comma; period committed on corpus consistency) and the lowercase 's.'/absent Aug-period in the line-12 citation (preserved as printed).",
+  "glyph_regime_resolved": "TWO faces on one section, both resolved. (a) ROMAN BODY: real connected 'w' throughout (was, wil, wherwith, written, which, wordes, knowlege — no vv); long-ſ glyph-driven (24 in body, e.g. ſpake, inſpired, Ghoſt, conſiſt, vnderſtood, muſt, curiouſly, ſearched, ſuper); round/cap S kept separate (Scripture, Sauiour, Spirite, Some); ct always ligature→components (Sainctes, expect, Doct.); u/v period-swap preserved (priuate, Sauiour, gaue, euer, euerie, haue, vnderſtanding, vnderſtood, proue, vs); i/j as printed (Ierom, Idem, Ioan, Domini). (b) ITALIC APPARATUS: the parenthetical glosses ('or other holie Scripture', 'Prophetes', 'nor explication'), the leading word 'Neither', and all patristic/scriptural citations (2. Pet. 1.; Ioan. 14. 16.; 1. Cor. 12.; S. Ierom Dialogo aduerſ. Luciferianos.; s. Aug ſer. 18. de verb. Domini.; Idem, in prologo Doct. Chriſt.; S. Amb. li. 1. c. 7. de vocat. Gentium.; S. Greg. ho. 17. ſuper Ezech.) — italic contains NO 'w', so no vv/w call arises; long-ſ present in italic (aduerſ., ſer., ſuper, Chriſt). LEFT-MARGIN NOTES: small roman, no w; long-ſ present (ſpirit, conſiſt, vnderſtanding, beſt, Myſteries); macron abbreviation 'cō-mon' (common). Punctuation TIGHT at colons/semicolons/commas (Ghoſt:, truth;, Scripture,is) — the single spaced high-mark is the heading terminal ('Scriptures .')."
+}

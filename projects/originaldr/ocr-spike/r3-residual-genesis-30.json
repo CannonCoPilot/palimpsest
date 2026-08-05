@@ -1,0 +1,3210 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p117",
+  "old_text": "No Rachel ſeing ſhe was vnfruitful, enuief her ſiſter, and ſaid to her huſband : Geue me children, otherwiſe Iy I ſhal dye.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.949,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6787,
+   0.875,
+   0.7876
+  ],
+  "crop_page": 117,
+  "r3_raw": "And Rachel seing she was vnfruitful; enuied her sister, and said to her husband: Geue me children, otherwise ly enuied I shal dye. With whom Iacob being angrie answered: Am I as God, who hath depriued thee of the fruitie of thy ful emul.",
+  "r3_verse": "And Rachel seing she was vnfruitful; enuied her sister, and said to her husband: Geue me children, otherwise ly enuied I shal dye.",
+  "arm_conflicts": [
+   "No | And",
+   "enuief | enuied",
+   "Iy | ly enuied"
+  ],
+  "new_text": "And Rachel ſeing ſhe was vnfruitful, enuied her ſiſter, and ſaid to her huſband Geue me children, otherwiſe ly enuied I ſhal dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.912,
+   "odr_com": 0.92,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p117",
+  "old_text": "But ihe ſaid Ihaue here my ſeruant Bala Comwith her, that she may beare vpon my knees, and I haue children of her.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7622,
+   0.875,
+   0.8695
+  ],
+  "crop_page": 117,
+  "r3_raw": "Am I as God, who hath deprived thee of the fruit of thy wombe? † But he said: I haue here my servant Bala: Company with her, that she may beare vpon my knees, and I may haue children of her. † And she gaue him Bala vnto matiage: who, † when her husband had complained with",
+  "r3_verse": "But he said: I haue here my servant Bala: Company with her, that she may beare vpon my knees, and I may haue children of her.",
+  "arm_conflicts": [
+   "ihe | he",
+   "Ihaue | I haue",
+   "ſeruant | servant",
+   "Comwith | Company with"
+  ],
+  "new_text": "But he ſaid I haue here my ſeruant Bala Company with her, that she may beare vpon my knees, and I may haue children of her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p117",
+  "old_text": "And she gaue him Bala vnto matiage who,",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.974,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.803,
+   0.875,
+   0.8909
+  ],
+  "crop_page": 117,
+  "r3_raw": "panie with her, that she may beare vpon my knees, and I Fault. may haue children of her. † And she gaue him Bala vnto matiage: who, † when her husband had compained with her, conceaued and bare a sonne. † And Rachel said: Our",
+  "r3_verse": "And she gaue him Bala vnto matiage: who,",
+  "arm_conflicts": [],
+  "new_text": "And she gaue him Bala vnto matiage who,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.974,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p117",
+  "old_text": "when her huſband ſad compained with conceaued and bare a ſonne.",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.924,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8224,
+   0.875,
+   0.9132
+  ],
+  "crop_page": 117,
+  "r3_raw": "4 may haue children of her. † And she gaue him Bala vnto 5 :: mariage: who, † when her husband had compained with 6 her, conceaued and bare a sonne. † And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing pag. 62",
+  "r3_verse": "when her husband had compained with her, conceaued and bare a sonne.",
+  "arm_conflicts": [
+   "ſad | had"
+  ],
+  "new_text": "when her huſband had compained with her, conceaued and bare a ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 1.0,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "chapter",
+  "old_text": "And Rachel ſaid Ous ef hath iudged for me, and hath heard my voice, geumg amom com me a ſonne and therfore she called his name, Dan",
+  "old": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8434,
+   0.875,
+   1.0
+  ],
+  "crop_page": 117,
+  "crop_leaves": [
+   117,
+   118
+  ],
+  "r3_raw": "5 :: matiage: who, † when her husband had compained with 6 her, conceaued and bare a sonne. † And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing pag. 62 me a sonne. and therefore she called his name, Dan. † And againe Bala conceauing bare an other, † for whom 7",
+  "r3_verse": "And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing pag. me a sonne. and therefore she called his name, Dan. And againe Bala conceauing bare an other, for whom",
+  "arm_conflicts": [
+   "Ous ef | Our Lord",
+   "geumg amom com | geuing pag.",
+   "therfore | therefore"
+  ],
+  "lexicon_readings": {
+   "33": "for"
+  },
+  "visual_readings": {
+   "33": "for"
+  },
+  "new_text": "And Rachel ſaid Our Lord hath iudged for me, and hath heard my voice, geuing pag. me a ſonne and therefore she called his name, Dan And againe Bala conceauing bare an other, for whom",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.689,
+   "odr_com": 0.689,
+   "sabates_a": 0.681,
+   "madueke_b": 0.681
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p118",
+  "old_text": "And againe Bala conceauing bare an other,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0506,
+   0.875,
+   0.121
+  ],
+  "crop_page": 118,
+  "r3_raw": "me a sonne. and therefore she called his name, Dan. † And againe Bala conceauing bare an other, † for whom 7 Rachel said: God hath compared me with my sister, and",
+  "r3_verse": "And againe Bala conceauing bare an other,",
+  "arm_conflicts": [],
+  "new_text": "And againe Bala conceauing bare an other,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p118",
+  "old_text": "Lia ceauing that she had left bearing, deliuered Zelpha handmaid to her huſband.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.0917,
+   0.875,
+   0.198
+  ],
+  "crop_page": 118,
+  "r3_raw": "Rachel laid: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali. † Lia perceiving that she had left bearing, delivered Zelpha her handmaid to her liuſband. † Who conceauing and bringing forth a sonne, † she laid: Happely. And therfore",
+  "r3_verse": "Lia perceiving that she had left bearing, delivered Zelpha her handmaid to her liuſband.",
+  "arm_conflicts": [
+   "ceauing | perceiving",
+   "deliuered | delivered",
+   "huſband. | liuſband."
+  ],
+  "new_text": "Lia perceiving that she had left bearing, deliuered Zelpha her handmaid to her liuſband.",
+  "s_unresolved": [
+   "liuſband."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p118",
+  "old_text": "she iaid : Happely. And therfore called his name Gad",
+  "old": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1522,
+   0.875,
+   0.2365
+  ],
+  "crop_page": 118,
+  "r3_raw": "handmaid to her liuſband. † Who conceauing and brin- 10 ging forth a sonne, † she laid: Happely. And therfore 11 called his name Gad. † Zelpha also bare an other. 12 † And Lia said: This is for my blessednes: for wemen wil 13",
+  "r3_verse": "she laid: Happely. And therfore called his name Gad.",
+  "arm_conflicts": [
+   "iaid : | laid:"
+  ],
+  "new_text": "she laid: Happely. And therfore called his name Gad",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p118",
+  "old_text": "Zclpha alſo bare an",
+  "old": {
+   "s_dismas": 0.72,
+   "odr_com": 0.72,
+   "sabates_a": 0.739,
+   "madueke_b": 0.739
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1732,
+   0.875,
+   0.2365
+  ],
+  "crop_page": 118,
+  "r3_raw": "ging forth a sonne, † she laid: Happely. And therefore ii called his name Gad. † Zelpha also bare an other. 12 † And Lia said: This is for my blessednes: for women wil 13",
+  "r3_verse": "Zelpha also bare an other.",
+  "arm_conflicts": [
+   "Zclpha | Zelpha"
+  ],
+  "new_text": "Zelpha alſo bare an other.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p118",
+  "old_text": "And Lia ſaid : This is for my bleſſednes : for wemen cal me bleſſed. Therfore she called him, Aſer.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.1926,
+   0.875,
+   0.2789
+  ],
+  "crop_page": 118,
+  "r3_raw": "called his name Gad. † Zelpha also bare an other. † And Lia said: This is for my blessedness: for women will call me blessed. Therefore she called him, Aser. † And Ruben going forth in the time of wheat harvest into the field, found",
+  "r3_verse": "And Lia said: This is for my blessedness: for women will call me blessed. Therefore she called him, Aser.",
+  "arm_conflicts": [
+   "bleſſednes : | blessedness:",
+   "wemen cal | women will call",
+   "Therfore | Therefore"
+  ],
+  "new_text": "And Lia ſaid This is for my bleſſednes for women will cal me bleſſed. Therefore she called him, Aſer.",
+  "s_unresolved": [
+   "Therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p118",
+  "old_text": "She anſwered : Doeſt thou thinkeit a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid : For thy ſonnes mandragores ler him ſleepe with thee this night.",
+  "old": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.2949,
+   0.875,
+   0.4232
+  ],
+  "crop_page": 118,
+  "r3_raw": "Rachel said: Geue me part of thy sonnes :: mandragores. † She answered: Docst thou thinke it a smal matter, that 15 thou hast taken my husband from me, vnlesse thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him slepe with thee this night. † And when Iacob returned at cuen from the field, Lia went out to",
+  "r3_verse": "She answered: Docst thou thinke it a smal matter, that thou hast taken my husband from me, vnlesse thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him slepe with thee this night.",
+  "arm_conflicts": [
+   ": Doeſt | Docst",
+   "thinkeit | thinke it",
+   "ler | let",
+   "ſleepe | slepe"
+  ],
+  "r2_attested": {
+   "20": "alſo"
+  },
+  "visual_readings": {
+   "20": "alſo"
+  },
+  "new_text": "She anſwered Docst thou thinke it a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo my ſonnes mandragores? Rachel ſaid For thy ſonnes mandragores let him ſleepe with thee this night.",
+  "s_unresolved": [
+   "Docst"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p118",
+  "old_text": "Lia conceauing, bare che ſixt ſonne, andſaid :",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.5188,
+   0.875,
+   0.5847
+  ],
+  "crop_page": 118,
+  "r3_raw": "my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the fixt sonne, † and said: God hath 20 endowed me with a good dowrie: this turne also my hus-",
+  "r3_verse": "Lia conceauing, bare the fixt sonne,",
+  "arm_conflicts": [
+   "che ſixt | the fixt"
+  ],
+  "new_text": "Lia conceauing, bare the fixt ſonne,",
+  "s_unresolved": [
+   "fixt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.805,
+   "odr_com": 0.805,
+   "sabates_a": 0.757,
+   "madueke_b": 0.757
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p118",
+  "old_text": "andſaid : God hath endowed me with a good dowrie : this turne alſo my huſband wil be with me, for becauſe I haue borne him ſonnes, and therfore ſhe called his name, Zabulon.",
+  "old": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.5188,
+   0.875,
+   0.6414
+  ],
+  "crop_page": 118,
+  "r3_raw": "my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the fixt sonne, † and said: God hath 20 endowed me with a good dowrie: this turne also my husband wil be with me, for because I haue borne him six sonnes, and therfore she called his name, Zabulon. † After whom she bare a daughter, named Dina. † Our Lord also 22",
+  "r3_verse": "said: God hath endowed me with a good dowrie: this turne also my husband wil be with me, for because I haue borne him six sonnes, and therfore she called his name, Zabulon.",
+  "arm_conflicts": [
+   "andſaid : | said:"
+  ],
+  "lexicon_readings": {
+   "0": "ſaid:",
+   "24": "ſix"
+  },
+  "visual_readings": {
+   "0": "ſaid:",
+   "24": "ſix"
+  },
+  "new_text": "ſaid: God hath endowed me with a good dowrie this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſhe called his name, Zabulon.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 42,
+  "from": "chapter",
+  "old_text": "bur when the later comming was, and the laſt conceauing, he did not them. And thoſe that were late warde, became Labans: they of the prime time, Iacobs.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.0392,
+   0.875,
+   0.1478
+  ],
+  "crop_page": 120,
+  "r3_raw": "later comming was, and the last conceauing, he did not put them. And those that were late warde, becauue Labans: and they of the prime time, Iacobs. † And the man was enri- ched beyond measure, and he had manie flockes, wemen",
+  "r3_verse": "bur when the later comming was, and the last conceauing, he did not put them. And those that were late warde, becauue Labans: and they of the prime time, Iacobs.",
+  "arm_conflicts": [
+   "became | becauue"
+  ],
+  "used_merge": true,
+  "new_text": "bur when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, becauue Labans: and they of the prime time, Iacobs.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p121",
+  "old_text": "No Rachel ſeing ſhe was vnfruitful, :: enuied her ſiſter, and ſaid to her huſband : Geue me children, otherwiſe ly I ſhal dye.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.957,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6754,
+   0.875,
+   0.7926
+  ],
+  "crop_page": 121,
+  "r3_raw": "And Rachel seeing she was vnfruitful, enuied her sister, and said to her husband: Geue me children, otherwise ly enui. I shal dye. With whom Iacob being angrie answered: grieve & Am I as God, who hath deprived thee of the fruite of thy ful emul",
+  "r3_verse": "And Rachel seeing she was vnfruitful, enuied her sister, and said to her husband: Geue me children, otherwise ly enui. I shal dye.",
+  "arm_conflicts": [
+   "No | And",
+   "ſeing | seeing"
+  ],
+  "new_text": "And Rachel ſeing ſhe was vnfruitful, enuied her ſiſter, and ſaid to her huſband Geue me children, otherwiſe ly enui. I ſhal dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.927,
+   "odr_com": 0.935,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p121",
+  "old_text": "With whom Iacob being angrie anſwered : Am Tas God, who hath depriued thee of the fruite of thy ful",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7269,
+   0.875,
+   0.8131
+  ],
+  "crop_page": 121,
+  "r3_raw": "A and said to her husband: Geue me children, otherwise ly enui 2 I shal dye. † With whom Iacob being angrie answered: Am I as God, who hath deprived thee of the fruie of thy 3 wombe? † But she said: I haue here my seruant Bala: Com-",
+  "r3_verse": "With whom Iacob being angrie answered: Am I as God, who hath deprived thee of the fruie of thy wombe?",
+  "arm_conflicts": [
+   "Tas | I as",
+   "depriued | deprived",
+   "fruite | fruie",
+   "ful | wombe?"
+  ],
+  "new_text": "With whom Iacob being angrie anſwered Am I as God, who hath depriued thee of the fruie of thy wombe?",
+  "s_unresolved": [
+   "fruie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p121",
+  "old_text": "when her huſband had compained with conceaued and bare a ſonne.",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.939,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8298,
+   0.875,
+   0.9197
+  ],
+  "crop_page": 121,
+  "r3_raw": "may haue children of her. † And she gaue him Bala vnto mariage: who, † when her husband had complained with her, conceaued and bare a sonne. † And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing",
+  "r3_verse": "when her husband had complained with her, conceaued and bare a sonne.",
+  "arm_conflicts": [
+   "compained | complained"
+  ],
+  "new_text": "when her huſband had complained with her, conceaued and bare a ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.955,
+   "odr_com": 0.985,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p122",
+  "old_text": "And againe Bala conceauing bare an other,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0361,
+   0.875,
+   0.1022
+  ],
+  "crop_page": 122,
+  "r3_raw": "me a sonne...and therefore she called his name, Dan. † And againe Bala conceauing bare an other, † for whom 7 Rachel said: God hath compared me with my sister, and",
+  "r3_verse": "And againe Bala conceauing bare an other,",
+  "arm_conflicts": [],
+  "new_text": "And againe Bala conceauing bare an other,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p122",
+  "old_text": "for Rachel ſaid: God hath compared me with my ſiſter, I haue preuailed : and she called him Nepthali.",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.0361,
+   0.875,
+   0.1428
+  ],
+  "crop_page": 122,
+  "r3_raw": "me a sonne. and therefore she called his name, Dan. † And againe Bala conceauing bare an other, † for whom 7 Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali. † Lia per- ceauing that she had left bearing, deliuered Zelpha her",
+  "r3_verse": "for whom Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali.",
+  "arm_conflicts": [],
+  "new_text": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed and she called him Nepthali.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "p122",
+  "old_text": "Lia ceauing that che had left bearing, deliuered Zelpha handmaid to her huſband.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.077,
+   0.875,
+   0.1844
+  ],
+  "crop_page": 122,
+  "r3_raw": "Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali. † Lia perceiving that she had left bearing, deliuered Zelpha her handmaid to her husband. † Who conceauing and bringing forth a sonne, † she said: Happely. And therefore",
+  "r3_verse": "Lia perceiving that she had left bearing, deliuered Zelpha her handmaid to her husband.",
+  "arm_conflicts": [
+   "ceauing | perceiving",
+   "che | she"
+  ],
+  "new_text": "Lia perceiving that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p122",
+  "old_text": "she iaid : Happely. And therfore called his name Gad",
+  "old": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1397,
+   0.875,
+   0.2259
+  ],
+  "crop_page": 122,
+  "r3_raw": "handmaid to her husband. † Who conceauing and bringing forth a sonne, † she laid: Happely. And therefore called his name Gad. † Zelpha also bare an other. 12 † And Lia said: This is for my blessednes: for wemen wil",
+  "r3_verse": "she laid: Happely. And therefore called his name Gad.",
+  "arm_conflicts": [
+   "iaid : | laid:",
+   "therfore | therefore"
+  ],
+  "new_text": "she laid: Happely. And therefore called his name Gad",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p122",
+  "old_text": "And Lia ſaid : This is for my bleſſednes : for wemen cal me bleſſed. Therfore she called him, Aſer.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.1823,
+   0.875,
+   0.2688
+  ],
+  "crop_page": 122,
+  "r3_raw": "called his name Gad. † Zelpha also bare an other. † And Lia said: This is for my blessednes: for wemen wil cal me blessed. Therfore she called him, Aser. † And Ruben going forth in the time of wheat haruest into the field, found",
+  "r3_verse": "And Lia said: This is for my blessednes: for wemen wil cal me blessed. Therfore she called him, Aser.",
+  "arm_conflicts": [],
+  "new_text": "And Lia ſaid This is for my bleſſednes for wemen wil cal me bleſſed. Therfore she called him, Aſer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p122",
+  "old_text": "She anſwered : Doeſt thou thinke it a ſmal matter, thou haſt taken my huſband from me, vnleſſe thou take my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.2869,
+   0.875,
+   0.417
+  ],
+  "crop_page": 122,
+  "r3_raw": "Rachel said: Geue me part of thy sonnes :: mandragores. † She answered: Dost thou thinke it a small matter, that thou hast taken my husband from me, vnlesse thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleepe with thee this night. † And when Iacob returned at euene from the field, Lia went out to",
+  "r3_verse": "She answered: Dost thou thinke it a small matter, that thou hast taken my husband from me, vnlesse thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleepe with thee this night.",
+  "arm_conflicts": [
+   ": Doeſt | Dost",
+   "ſmal | small"
+  ],
+  "r2_attested": {
+   "20": "alſo"
+  },
+  "visual_readings": {
+   "20": "alſo"
+  },
+  "new_text": "She anſwered Dost thou thinke it a ſmal matter, that thou haſt taken my huſband from me, vnleſſe thou take alſo my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleepe with thee this night.",
+  "s_unresolved": [
+   "Dost"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p122",
+  "old_text": "And when to Iacob returned at euen from the field, Lia went out meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. he ſlept with her that night.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.3503,
+   0.875,
+   0.4999
+  ],
+  "crop_page": 122,
+  "r3_raw": "my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleepe with thee this night. † And when Iacob returned at eu'en from the field, Lia went out to meete him, and said: Companie with me, because with wages I haue hired thee for my sonnes mandragores. And he slept with her that night. † And God heard her prayers: 17 and she conceaued and bare the fift sonne, † and said: God",
+  "r3_verse": "And when Iacob returned at eu'en from the field, Lia went out to meete him, and said: Companie with me, because with wages I haue hired thee for my sonnes mandragores. And he slept with her that night.",
+  "arm_conflicts": [
+   "euen | eu'en"
+  ],
+  "new_text": "And when Iacob returned at eu'en from the field, Lia went out to meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p122",
+  "old_text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.4972,
+   0.875,
+   0.582
+  ],
+  "crop_page": 122,
+  "r3_raw": "hath geuen me a reward, because I gaue my handmaid to my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the sixt sonne, † and said: God hath 20 endowed me with a good dowrie: this turne also my hus-",
+  "r3_verse": "Againe Lia conceauing, bare the sixt sonne, and",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p122",
+  "old_text": "ſaid : God hath endowed me with a good dowrie : this turne alſo my band wil be with me, for becauſe I haue borne him ſonnes, and therfore ſbe called his name, Zabulon.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.5186,
+   0.875,
+   0.6461
+  ],
+  "crop_page": 122,
+  "r3_raw": "my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the sixt sonne, † and said: God hath 20 endowed me with a good dowrie: this turne also my hus- band wil be with me, for because I haue borne him fix sonnes, and therfore she called his name, Zabulon. † After 21 whom she bare a daughter, named Dina. † Our Lord also 22",
+  "r3_verse": "said: God hath endowed me with a good dowrie: this turne also my hus- band wil be with me, for because I haue borne him fix sonnes, and therfore she called his name, Zabulon.",
+  "arm_conflicts": [
+   "ſbe | she"
+  ],
+  "lexicon_readings": {
+   "25": "ſix"
+  },
+  "visual_readings": {
+   "25": "ſix"
+  },
+  "new_text": "ſaid God hath endowed me with a good dowrie this turne alſo my hus- band wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore she called his name, Zabulon.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 22,
+  "from": "p122",
+  "old_text": "Our Lord remembring Rachel, heard her, and opened her wombe.",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.6034,
+   0.875,
+   0.6886
+  ],
+  "crop_page": 122,
+  "r3_raw": "sonnes, and therefore she called his name, Zabulon. † After 21 whom she bare a daughter, named Dina. † Our Lord also 22 remembring Rachel, heard her, and opened her wombe. † Who conceaued, and bare a sonne, saying: God hath taken 23",
+  "r3_verse": "Our Lord also remembring Rachel, heard her, and opened her wombe.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p122",
+  "old_text": "appoint thee wages Ishal geue thee.",
+  "old": {
+   "s_dismas": 0.829,
+   "odr_com": 0.829,
+   "sabates_a": 0.784,
+   "madueke_b": 0.784
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.8338,
+   0.875,
+   0.9349
+  ],
+  "crop_page": 122,
+  "r3_raw": "grace in thy sight: I haue learned by experience, that God hath blessed me for thy sake: † appoint thee wages which 28 I shal geue thee. † But he answered: Thou knowest how I 29 haue",
+  "r3_verse": "appoint thee wages which I shal geue thee.",
+  "arm_conflicts": [
+   "Ishal | which I shal"
+  ],
+  "new_text": "appoint thee wages which I shal geue thee.",
+  "s_unresolved": [
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 42,
+  "from": "chapter",
+  "old_text": "but when the later comming was, and the laſt conceauing, he did not them. And thoſe that were late warde, became Labans: they of the prime time, Iacobs†",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.0249,
+   0.875,
+   0.1339
+  ],
+  "crop_page": 124,
+  "crop_leaves": [
+   123,
+   124
+  ],
+  "r3_raw": "before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue: † but when the later comming was, and the last conceauing, he did not put them. And those that were late warde, became Labans: and they of the prime time, Iacobs.† And the man was enri- 4 ched beyond measure, and he had manie flockes, wemen",
+  "r3_verse": "but when the later comming was, and the last conceauing, he did not put them. And those that were late warde, became Labans: and they of the prime time, Iacobs.†",
+  "arm_conflicts": [],
+  "new_text": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were late warde, became Labans: and they of the prime time, Iacobs†",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 43,
+  "from": "p124",
+  "old_text": "And the man was ched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.0671,
+   0.875,
+   0.9428
+  ],
+  "crop_page": 124,
+  "r3_raw": "them. And those that were late warde, became Labans: and they of the prime time, Jacobs. † And the man was enriched beyond measure, and he had manie flockes, wemen seruantes and men seruants, camels and asses. CHAP. XXXI. Jacob by Gods commandment parteth secretly with al he hath towards his father. 21. Laban pursueth him. 26. expostulating why he went in secret manner. 30. especially chargeth him with stealing his goddes. 31. Jacob excuses himselfe, not knowing that Rachel had taken away the Idols. 34 and she deludeth his diligent searching for them. 36. Then Iacob expostulateth with Laban for this unkindnesse. AFTER he heard the wordes of Labans sonnies saying: and the God of my father hath bene with me, that it is not towards me as yesterday day: yet God hath not suffered him to hurt me. † And your Father hath changed my wages: but when he said: They of diuers colours shall be thy wages: al the fleece brought forth white ones for thy wages: al the flockes brought forth white ones. † And God hath taken your fathers substance, and geuen it to me. † For after the time came of the ewes conceauing, I lifted vp mine eyes, and sawe in my sleepe the males ascending vpon the females of diuers colours, and the spotted, and the speckled. † And the angel of God said to me in sleepe:",
+  "r3_verse": "And the man was enriched beyond measure, and he had manie flockes, wemen seruantes and men seruants, camels and asses. CHAP. XXXI. Jacob by Gods commandment parteth secretly with al he hath towards his father. Laban pursueth him. expostulating why he went in secret manner. especially chargeth him with stealing his goddes. Jacob excuses himselfe, not knowing that Rachel had taken away the Idols. and she deludeth his diligent searching for them. Then Iacob expostulateth with Laban for this unkindnesse. AFTER he heard the wordes of Labans sonnies saying: and the God of my father hath bene with me, that it is not towards me as yesterday day: yet God hath not suffered him to hurt me. And your Father hath changed my wages: but when he said: They of diuers colours shall be thy wages: al the fleece brought forth white ones for thy wages: al the flockes brought forth white ones. And God hath taken your fathers substance, and geuen it to me. For after the time came of the ewes conceauing, I lifted vp mine eyes, and sawe in my sleepe the males ascending vpon the females of diuers colours, and the spotted, and the speckled. And the angel of God said to me in sleepe:",
+  "arm_conflicts": [
+   "ched | enriched"
+  ],
+  "lexicon_readings": {
+   "34": "father.",
+   "70": "for",
+   "77": "for",
+   "94": "father",
+   "127": "ſaid:",
+   "140": "forth",
+   "143": "for",
+   "150": "forth",
+   "158": "fathers",
+   "166": "after",
+   "204": "ſaid"
+  },
+  "r2_attested": {
+   "27": "ſecretly",
+   "36": "purſueth",
+   "38": "expoſtulating",
+   "45": "eſpecially",
+   "54": "himſelfe,",
+   "69": "ſearching",
+   "88": "ſaying:",
+   "106": "yeſterday",
+   "159": "ſubſtance,",
+   "180": "ſawe",
+   "183": "ſleepe",
+   "186": "aſcending",
+   "195": "ſpotted,",
+   "198": "ſpeckled.",
+   "208": "ſleepe:"
+  },
+  "visual_readings": {
+   "34": "father.",
+   "70": "for",
+   "77": "for",
+   "94": "father",
+   "127": "ſaid:",
+   "140": "forth",
+   "143": "for",
+   "150": "forth",
+   "158": "fathers",
+   "166": "after",
+   "204": "ſaid",
+   "27": "ſecretly",
+   "36": "purſueth",
+   "38": "expoſtulating",
+   "45": "eſpecially",
+   "54": "himſelfe,",
+   "69": "ſearching",
+   "88": "ſaying:",
+   "106": "yeſterday",
+   "159": "ſubſtance,",
+   "180": "ſawe",
+   "183": "ſleepe",
+   "186": "aſcending",
+   "195": "ſpotted,",
+   "198": "ſpeckled.",
+   "208": "ſleepe:"
+  },
+  "new_text": "And the man was enriched beyond meaſure, and he had manie flockes, wemen ſeruantes and men ſeruants, camels and aſſes CHAP. XXXI. Jacob by Gods commandment parteth ſecretly with al he hath towards his father. Laban purſueth him. expoſtulating why he went in secret manner. eſpecially chargeth him with stealing his goddes. Jacob excuses himſelfe, not knowing that Rachel had taken away the Idols. and she deludeth his diligent ſearching for them. Then Iacob expostulateth with Laban for this unkindnesse. AFTER he heard the wordes of Labans sonnies ſaying: and the God of my father hath bene with me, that it is not towards me as yeſterday day: yet God hath not suffered him to hurt me. And your Father hath changed my wages: but when he ſaid: They of diuers colours shall be thy wages: al the fleece brought forth white ones for thy wages: al the flockes brought forth white ones. And God hath taken your fathers ſubſtance, and geuen it to me. For after the time came of the ewes conceauing, I lifted vp mine eyes, and ſawe in my ſleepe the males aſcending vpon the females of diuers colours, and the ſpotted, and the ſpeckled. And the angel of God ſaid to me in ſleepe:",
+  "s_unresolved": [
+   "secret",
+   "stealing",
+   "excuses",
+   "she",
+   "expostulateth",
+   "unkindnesse.",
+   "sonnies",
+   "suffered",
+   "shall",
+   "fleece",
+   "flockes",
+   "lifted",
+   "females"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p127",
+  "old_text": "No Rachel ſeing ſhe was vnfruitful, : enuied her ſiſter, :: Xand ſaid to her huſband : Geue me children, otherwiſe ly I ſhal dye.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.949,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6559,
+   0.875,
+   0.7638
+  ],
+  "crop_page": 127,
+  "r3_raw": "And Rachel feing she was vnfruitful, enuied her sister, and said to her husband: Geue me children, otherwise ly enuie, I shal dye. With whom Iacob being angrie answered: Am I as God, who hath depriued thee of the fruite of thy",
+  "r3_verse": "And Rachel feing she was vnfruitful, enuied her sister, and said to her husband: Geue me children, otherwise ly enuie, I shal dye.",
+  "arm_conflicts": [
+   "No | And",
+   "ſeing | feing",
+   ":: Xand | and"
+  ],
+  "new_text": "And Rachel feing ſhe was vnfruitful, enuied her ſiſter, and ſaid to her huſband Geue me children, otherwiſe ly enuie, I ſhal dye.",
+  "s_unresolved": [
+   "feing"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.919,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p127",
+  "old_text": "when her huſband had compained with ::Of her, conceaued and bare a ſonne.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.957,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.7974,
+   0.875,
+   0.8856
+  ],
+  "crop_page": 127,
+  "r3_raw": "may haue children of her. † And she gaue him Bala vnto mariage: who, † when her husband had compained with her, conceaued and bare a sonne. † And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing",
+  "r3_verse": "when her husband had compained with her, conceaued and bare a sonne.",
+  "arm_conflicts": [],
+  "new_text": "when her huſband had compained with her, conceaued and bare a ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 1.0,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "chapter",
+  "old_text": "And Rachel ſaid Our of Lord hath iudged for me, and hath heard my voice, geuing pag. me a ſonneand therfore she called his name, Dan.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.8168,
+   0.875,
+   0.9126
+  ],
+  "crop_page": 127,
+  "crop_leaves": [
+   127,
+   128
+  ],
+  "r3_raw": "5 :: mariage: who, † when her husband had compained with 6 her, conceaued and bare a sonne. † And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing pag. 62. GENESIS. me a sonne...and therefore she called his name, Dan. + And againe Bala conceauing bare an other, + for whom 78",
+  "r3_verse": "And Rachel said: Our Lord hath iudged for me, and hath heard my voice, geuing pag. me a sonne...and therefore she called his name, Dan. + And againe Bala conceauing bare an other, + for whom",
+  "arm_conflicts": [
+   "ſonneand therfore | sonne...and therefore"
+  ],
+  "lexicon_readings": {
+   "34": "for"
+  },
+  "visual_readings": {
+   "34": "for"
+  },
+  "new_text": "And Rachel ſaid Our Lord hath iudged for me, and hath heard my voice, geuing pag. me a sonne...and therefore she called his name, Dan. + And againe Bala conceauing bare an other, + for whom",
+  "s_unresolved": [
+   "sonne...and",
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.682,
+   "odr_com": 0.682,
+   "sabates_a": 0.681,
+   "madueke_b": 0.681
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p128",
+  "old_text": "And againe Bala conceauing bare an other,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.0385,
+   0.875,
+   0.1126
+  ],
+  "crop_page": 128,
+  "r3_raw": "me a sonne. and therefore she called his name, Dan. † And againe Bala conceauing bare an other, † for whom 78 Rachel said: God hath compared me with my sister, and",
+  "r3_verse": "And againe Bala conceauing bare an other,",
+  "arm_conflicts": [],
+  "new_text": "And againe Bala conceauing bare an other,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p128",
+  "old_text": "Lia per her ceauing that she had left bearing, deliuered Zelpha handmaid to her huſband.",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.0807,
+   0.875,
+   0.1916
+  ],
+  "crop_page": 128,
+  "r3_raw": "Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali. † Lia per- ceauing that she had left bearing, deliuered Zelpha her handmaid to her husband. † Who conceauing and brin- ging forth a sonne, † she said: Happely. And therfore II",
+  "r3_verse": "Lia per- ceauing that she had left bearing, deliuered Zelpha her handmaid to her husband.",
+  "arm_conflicts": [
+   "per her | per-"
+  ],
+  "new_text": "Lia per ceauing that she had left bearing, deliuered Zelpha her handmaid to her huſband.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p128",
+  "old_text": "And when ad- Iacob returned at euen from the field, Lia went out vs to meete him, and ſaid: Companie with me, becauſe with miwages Ihaue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.3449,
+   0.875,
+   0.4999
+  ],
+  "crop_page": 128,
+  "r3_raw": "my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleepe with thee this night. † And when 16 Jacob returned at euuen from the field, Lia went out to meete him, and said: Companie with me, because with wages I haue hired thee for my sonnes mandragores. And he slept with her that night. † And God heard her prayers: 17 and she conceaued and bare the fifth sonne, † and said: God 18",
+  "r3_verse": "And when Jacob returned at euuen from the field, Lia went out to meete him, and said: Companie with me, because with wages I haue hired thee for my sonnes mandragores. And he slept with her that night.",
+  "arm_conflicts": [
+   "ad- Iacob | Jacob",
+   "euen | euuen",
+   "miwages Ihaue | wages I haue"
+  ],
+  "new_text": "And when Iacob returned at euen from the field, Lia went out to meete him, and ſaid: Companie with me, becauſe with wages I haue hired thee for my ſonnes mandragores. And he ſlept with her that night.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p128",
+  "old_text": "And God heard her prayers : God and she conceaued and bare the fifth ſonne,",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4288,
+   0.875,
+   0.522
+  ],
+  "crop_page": 128,
+  "r3_raw": "wages I haue hired thee for my sonnes mandragores. And he slept with her that night. † And God heard her prayers: 17 and she conceaued and bare the fifth sonne, † and said: God hath geuen me a reward, because I gaue my handmaid to",
+  "r3_verse": "And God heard her prayers: and she conceaued and bare the fifth sonne,",
+  "arm_conflicts": [],
+  "new_text": "And God heard her prayers and she conceaued and bare the fifth ſonne,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p128",
+  "old_text": "and ſaid hath geuen me a reward, becauſe I gaue my handmaid my huſband. And she called his name Iſſachar.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.4479,
+   0.875,
+   0.5628
+  ],
+  "crop_page": 128,
+  "r3_raw": "he slept with her that night: † And God heard her prayers: 17 and she conceaued and bare the fifth sonne, † and said: God hath geuen me a reward, because I gaue my handmaid to my husband. And she called his name Issachar. † Againe Lia conceauing, bare the sixt sonne, † and said: God hath",
+  "r3_verse": "and said: God hath geuen me a reward, because I gaue my handmaid to my husband. And she called his name Issachar.",
+  "arm_conflicts": [],
+  "new_text": "and ſaid God hath geuen me a reward, becauſe I gaue my handmaid to my huſband. And she called his name Iſſachar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p128",
+  "old_text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.4887,
+   0.875,
+   0.5809
+  ],
+  "crop_page": 128,
+  "r3_raw": "hath geuen me a reward, because I gaue my handmaid to my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the sixt sonne, † and said: God hath 20 endowed me with a good dowrie: this turne also my hus-",
+  "r3_verse": "Againe Lia conceauing, bare the sixt sonne, and",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Againe Lia conceauing, bare the ſixt ſonne, and",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p128",
+  "old_text": "ſaid : God hath endowed me with a good dowrie : this turne alſo my band wil be with me, for becauſe I haue borne him ſonnes, and therfore ſhe called his name, Zabulon.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.5078,
+   0.875,
+   0.6414
+  ],
+  "crop_page": 128,
+  "r3_raw": "my husband. And she called his name Issachar. † Againe 19 Lia conceauing, bare the fixt sonne, † and said: God hath endowed me with a good dowrie: this turne also my husband wil be with me, for because I haue borne him six sonnes, and therfore she called his name, Zabulon. † After whom she bare a daughter, named Dina. † Our Lord also",
+  "r3_verse": "said: God hath endowed me with a good dowrie: this turne also my husband wil be with me, for because I haue borne him six sonnes, and therfore she called his name, Zabulon.",
+  "arm_conflicts": [
+   "band | husband"
+  ],
+  "lexicon_readings": {
+   "24": "ſix"
+  },
+  "r2_attested": {
+   "13": "huſband"
+  },
+  "visual_readings": {
+   "24": "ſix",
+   "13": "huſband"
+  },
+  "new_text": "ſaid God hath endowed me with a good dowrie this turne alſo my huſband wil be with me, for becauſe I haue borne him ſix ſonnes, and therfore ſhe called his name, Zabulon.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p128",
+  "old_text": "Our Lord remembring Rachel, heard her, and opened her wombe.",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.5897,
+   0.875,
+   0.6849
+  ],
+  "crop_page": 128,
+  "r3_raw": "sonnes, and therefore she called his name, Zabulon. † After 21 whom she bare a daughter, named Dina. † Our Lord also 22 remembring Rachel, heard her, and opened her wombe. † Who conceaued, and bare a sonne, saying: God hath taken 23",
+  "r3_verse": "Our Lord also remembring Rachel, heard her, and opened her wombe.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "Our Lord alſo remembring Rachel, heard her, and opened her wombe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "p128",
+  "old_text": "me my wiues, and my children, for whom I ſerued thee, that I may depart : thou knoweſt the ſeruice that I haue ſerued thee.",
+  "old": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.7338,
+   0.875,
+   0.8461
+  ],
+  "crop_page": 128,
+  "r3_raw": "me that I may returne into my countrie, and to my land. † Geue me my wiues, and my children, for whom I haue 26 serued thee, that I may depart: thou knowest the service that I haue serued thee. † Laban said to him: Let me finde 27 grace in thy sight: I haue learned by experience, that God",
+  "r3_verse": "me my wiues, and my children, for whom I haue serued thee, that I may depart: thou knowest the service that I haue serued thee.",
+  "arm_conflicts": [
+   "ſeruice | service"
+  ],
+  "new_text": "me my wiues, and my children, for whom I haue ſerued thee, that I may depart thou knoweſt the ſeruice that I haue ſerued thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.961,
+   "odr_com": 0.961,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 27,
+  "from": "p128",
+  "old_text": "Laban ſaid to him: Let me grace in thy ſight : I haue learned by experience, that hath bleſſed me for thy ſake :",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.773,
+   0.875,
+   0.8866
+  ],
+  "crop_page": 128,
+  "r3_raw": "served thee, that I may depart: thou knowest the service that I haue served thee. † Laban said to him: Let me finde grace in thy sight: I haue learned by experience, that God hath blessed me for thy sake: † appoint thee wages which I shal geue thee. † But he answered: Thou knowest how I",
+  "r3_verse": "Laban said to him: Let me finde grace in thy sight: I haue learned by experience, that God hath blessed me for thy sake:",
+  "arm_conflicts": [],
+  "new_text": "Laban ſaid to him: Let me finde grace in thy ſight I haue learned by experience, that God hath bleſſed me for thy ſake",
+  "s_unresolved": [
+   "finde"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 28,
+  "from": "p128",
+  "old_text": "appoint thee wages I shal geue thee.",
+  "old": {
+   "s_dismas": 0.854,
+   "odr_com": 0.854,
+   "sabates_a": 0.811,
+   "madueke_b": 0.811
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.8158,
+   0.875,
+   0.9133
+  ],
+  "crop_page": 128,
+  "r3_raw": "grace in thy sight: I haue learned by experience, that God hath blessed me for thy sake: † appoint thee wages which 28 I shal geue thee. † But he answered: Thou knowest how I 29 haue",
+  "r3_verse": "appoint thee wages which I shal geue thee.",
+  "arm_conflicts": [],
+  "new_text": "appoint thee wages which I shal geue thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 37,
+  "from": "p129",
+  "old_text": "Ia-: cob therfore : takinggrene roddes of the poplare, and of iuſtly the almond, and of the plaine trees, in part pilled them : and when the barkes were taken of, in the parts that were couer which pilled, there appeared whitnes: but the parts that were whole, remayned grene : and by this meanes the colour was him, made diuers.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.92,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.4553,
+   0.875,
+   0.6421
+  ],
+  "crop_page": 129,
+  "r3_raw": "36 † And he put a space of three dayes journey betwixt him and his sonne in lawe, who fed the rest of his flocke. † Iacob therefore :: taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them: and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene: and by this meanes the colour was made diuers. † And he put them in the troughes, where the water was poured out: that when the flockes should",
+  "r3_verse": "Iacob therefore :: taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them: and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene: and by this meanes the colour was made diuers.",
+  "arm_conflicts": [
+   "Ia-: cob therfore | Iacob therefore",
+   "takinggrene | taking grene"
+  ],
+  "new_text": "Iacob therefore :: taking grene roddes of the poplare, and of the almond, and of the plaine trees, in part pilled them and when the barkes were taken of, in the parts that were pilled, there appeared whitnes: but the parts that were whole, remayned grene and by this meanes the colour was made diuers.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.997,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 38,
+  "from": "p129",
+  "old_text": "And he put them in the troughes, where for the water was poured out : that when the flockes should of come to drinke, they might haue the roddes before their pence and eyes, and in the ſight of them conceaue.",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.5773,
+   0.875,
+   0.7036
+  ],
+  "crop_page": 129,
+  "r3_raw": "whole, remayned grene: and by this meanes the colour was made diuers. † And he put them in the troughes, where the water was poured out: that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the sight of them conceaue. † And it came to passe that in the verie heat of the ramming, the shepe",
+  "r3_verse": "And he put them in the troughes, where the water was poured out: that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the sight of them conceaue.",
+  "arm_conflicts": [],
+  "new_text": "And he put them in the troughes, where the water was poured out that when the flockes should come to drinke, they might haue the roddes before their eyes, and in the ſight of them conceaue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 39,
+  "from": "p129",
+  "old_text": "And it came to his paſſe that in the verie heate of the ram, the shepe beheld the roddes, and brought forth ſpot ted, and of diuers colours, and ſpeckled.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   38,
+   39,
+   40
+  ],
+  "crop": [
+   0.08,
+   0.6382,
+   0.875,
+   0.7621
+  ],
+  "crop_page": 129,
+  "r3_raw": "come to drinke, they might haue the roddes before their eyes, and in the sight of them conceaue. † And it came to passe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth spotted, and of diuers colours, and speckled. † And Iacob diuided the flocke, and put the roddes in the troughes before the eyes of the ram-",
+  "r3_verse": "And it came to passe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth spotted, and of diuers colours, and speckled.",
+  "arm_conflicts": [
+   "ram, | ramming,",
+   "ſpot ted, | spotted,"
+  ],
+  "r2_attested": {
+   "21": "ſpotted,"
+  },
+  "visual_readings": {
+   "21": "ſpotted,"
+  },
+  "new_text": "And it came to paſſe that in the verie heate of the ramming, the shepe beheld the roddes, and brought forth ſpotted, and of diuers colours, and ſpeckled.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p108",
+  "old_text": "And Rachel ſeeing ſhe was vnfruitful, (4) enuied her (4) Not iſter, and ſaid to her huſband: Giue me children, other- perly griefe wiſe Tihal dye.",
+  "old": {
+   "s_dismas": 0.826,
+   "odr_com": 0.833,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.0847,
+   0.885,
+   0.8869
+  ],
+  "crop_page": 108,
+  "r3_raw": "man, tary with me. 20. Iacob therefore serued for Rachel seauen yeares: and they seemed a few dayes because of the greatnes of his loue. 21. And he said to Laban: giue me my wife: because now the time is complete, that I may companie with her. 22. Who hauing bid a great number of his freinds to the feast, made the mariage. 23. And at night (b) he brought in Lia his daughter to him, 24. giuing his daughter a handmaid, named Zelpha. With whom when Iacob had companied after the manner, when morning was come he saw Lia: 25.. and he said to his father in law: What is it that thou didest meane to doe? did not I serue thee for Rachel? why haſt thou deceiued me? 26. Laban answered: It is not the custome in this place; that we bestow the yonger in mariage first. 27. Make vp the (c) weeke of dayes of this match: and I wil giue thee for Rachel, why haſt thou deceiued me? 28. He yealded to his pleasure; and bare another sonne, and said: Now will I confesse to our Lord. And for this she called him Iuda: And she left bearing. CHAP. XXXX. Rachel yet barren deliuereth her handmaid to Iacob, who beareth two sonnes. 17 Then Lia bare other two sonnes, and one daughter. 22. Rachel beareth Joseph. 25. Iacob desirous to returne home, is hyred to stay for a certaine part of the stockes increase. 43. Whereby he becommeth exceeding rich. (a) Not properly enuie, but grieſe & lawfull emulation. (b) Laban grievously offended, neither could Lia be excused, but Iacob was innocent in this fact. (c) After seaué daies he had his first spouse. Heb. S. Aug li.",
+  "r3_verse": "And Rachel ſeeing ſhe was vnfruitful, (4) enuied her (4) Not iſter, and ſaid to her huſband: Giue me children, other- perly griefe wiſe Tihal dye.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "And Rachel ſeeing ſhe was vnfruitful, (4) enuied her (4) Not iſter, and ſaid to her huſband: Giue me children, other- perly griefe wiſe Tihal dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.826,
+   "odr_com": 0.833,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p108",
+  "old_text": "With whom Iacob being angrie an- but law ful wered: Am I as God, who hato depriued thee of the tion. fruit ot thy womb",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.82,
+   "madueke_b": 0.82
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.8163,
+   0.885,
+   0.9174
+  ],
+  "crop_page": 108,
+  "r3_raw": "ND Rachel seeing me was vnfruitfull, (a) enuied her sister, and said to her husband: Giue me children, otherwise I ihal dye. 2. With whom Jacob being angrie answered: Am I as God, who hath deprived thee of the fruit of thy womb? ; But she said: I haue here my servant Bala: Companie with her, that she may beare vpon my knees, (a) Not properly enuie, but grieve & lawful emulation. S. Aug.li. 12.c. 54.cons. Faust.",
+  "r3_verse": "With whom Jacob being angrie answered: Am I as God, who hath deprived thee of the fruit of thy womb? ;",
+  "arm_conflicts": [
+   "Iacob | Jacob",
+   "an- but law ful wered: | answered:",
+   "hato depriued | hath deprived",
+   "ot | of",
+   "womb | womb? ;"
+  ],
+  "r2_attested": {
+   "5": "anſwered:"
+  },
+  "visual_readings": {
+   "5": "anſwered:"
+  },
+  "new_text": "With whom Iacob being angrie anſwered: Am I as God, who hath depriued thee of the fruit of thy womb ;",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "chapter",
+  "old_text": "But ſhe ſaid I haue here my fer- 22.c. Conpanie with her, that ihe may beare vpcu myknees, Iacob. and I may haue children of het.",
+  "old": {
+   "s_dismas": 0.828,
+   "odr_com": 0.828,
+   "sabates_a": 0.816,
+   "madueke_b": 0.816
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.0513,
+   0.885,
+   0.1387
+  ],
+  "crop_page": 109,
+  "r3_raw": "and I may haue children of her. 4. And she gaue him Bala vnto (b) mariage: who, 5. when her husband had companied with",
+  "r3_verse": "But ſhe ſaid I haue here my fer- 22.c. Conpanie with her, that ihe may beare vpcu myknees, Iacob. and I may haue children of her.",
+  "arm_conflicts": [
+   "het. | her."
+  ],
+  "used_merge": true,
+  "new_text": "But ſhe ſaid I haue here my fer- 22.c. Conpanie with her, that ihe may beare vpcu myknees, Iacob. and I may haue children of her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.825,
+   "madueke_b": 0.825
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p109",
+  "old_text": "And she gaue him Bala vnto bmarnge : who,",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.921,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.0731,
+   0.885,
+   0.1552
+  ],
+  "crop_page": 109,
+  "r3_raw": "and I may haue children of her. 4. And she gaue him Bala vnto (b) mariage: who, 5. when her husband had companied with her, conceaued and bare a sonne. 6. And Rachel said: Our",
+  "r3_verse": "And she gaue him Bala vnto mariage: who,",
+  "arm_conflicts": [
+   "bmarnge : | mariage:"
+  ],
+  "new_text": "And she gaue him Bala vnto mariage: who,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.974,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p109",
+  "old_text": "when ber huſband had companied with het conceaued and bare ſone.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.894,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.0966,
+   0.885,
+   0.1724
+  ],
+  "crop_page": 109,
+  "r3_raw": "and I may haue children of her. 4. And she gaue him Bala vnto (b) mariage: who, 5. when her husband had companied with her, conceaued and bare a sonne. 6. And Rachel said: Our our Lord hat iudged for me and hath heard my voice, giuing me a",
+  "r3_verse": "when her husband had companied with her, conceaued and bare a sonne.",
+  "arm_conflicts": [
+   "ber | her",
+   "het | her,",
+   "ſone. | a sonne."
+  ],
+  "new_text": "when her huſband had companied with her, conceaued and bare a ſone.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.955,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p109",
+  "old_text": "And Rachel ſaid Our our Lord hat iudged for me and hath heard my voice, giuing me a ſonne, and therfore she called his name, Dan.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.1138,
+   0.885,
+   0.2097
+  ],
+  "crop_page": 109,
+  "r3_raw": "(b) marriage: who, 5. when her husband had companied with her, conceaued and bare a sonne. 6. And Rachel said: Our our Lord hat judged for me and hath heard my voice, giuing me a sonne, and therfore she called his name, Dan. 7. And againe Bala conceauing bare another, 8. for whom Rachel said: God hath compa-",
+  "r3_verse": "And Rachel said: Our our Lord hat judged for me and hath heard my voice, giuing me a sonne, and therfore she called his name, Dan.",
+  "arm_conflicts": [
+   "iudged | judged"
+  ],
+  "new_text": "And Rachel ſaid Our our Lord hat iudged for me and hath heard my voice, giuing me a ſonne, and therfore she called his name, Dan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p109",
+  "old_text": "for whom Rachel ſaict : God hath compared me with my ſiſter, and I haue preuailed: and she called him Nepthali.",
+  "old": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.1676,
+   0.885,
+   0.2459
+  ],
+  "crop_page": 109,
+  "r3_raw": "sonne, and therefore she called his name, Dan. 7. And againe Bala conceauing bare another, 8. for whom Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali. 9. Lia perceauing that she had left bearing, deliuered Zelpha her",
+  "r3_verse": "for whom Rachel said: God hath compared me with my sister, and I haue preuailed: and she called him Nepthali.",
+  "arm_conflicts": [
+   "ſaict : | said:"
+  ],
+  "lexicon_readings": {
+   "3": "ſaid:"
+  },
+  "visual_readings": {
+   "3": "ſaid:"
+  },
+  "new_text": "for whom Rachel ſaid: God hath compared me with my ſiſter, and I haue preuailed: and she called him Nepthali.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p109",
+  "old_text": "Who conceauing and bringing torth. a ſonne,",
+  "old": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   9,
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.221,
+   0.885,
+   0.2992
+  ],
+  "crop_page": 109,
+  "r3_raw": "9. Lia perceauing that she had left bearing, deliuered Zelpha her handmaid to her husband. 10. Who conceauing and bringing forth a sonne, 11. she said: Happily. And therfore called his name Gad. 12. Zelpha also bare another. 13. And Lia said: This is for my blessednes: for",
+  "r3_verse": "Who conceauing and bringing forth a sonne,",
+  "arm_conflicts": [
+   "torth. | forth"
+  ],
+  "new_text": "Who conceauing and bringing forth a ſonne,",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p109",
+  "old_text": "Zelpha alſo bare auother.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   10,
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.2382,
+   0.885,
+   0.3165
+  ],
+  "crop_page": 109,
+  "r3_raw": "9. Lia perceiving that she had left Damar, delivered Zelpha her handmaid to her husband. 10. Who conceauing and bringing forth a sonne, 11. she said: Happily. And therefore called his name Gad. 12. Zelpha also bare another. 13. And Lia said: This is for my blessednes: for women wil cal me blessed. Therefore she called him Aser. 14. And",
+  "r3_verse": "Zelpha also bare another.",
+  "arm_conflicts": [
+   "auother. | another."
+  ],
+  "new_text": "Zelpha alſo bare another.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p109",
+  "old_text": "She anſwered : Doeſt thou thinke it a ſmnal matter that thou haſt taken my huſband from me, leſſe thou take alſo ſornes mandragoes Rachel ſaid: For thy ſonnes mandragores let him ſleep with thee this night.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.3277,
+   0.885,
+   0.4422
+  ],
+  "crop_page": 109,
+  "r3_raw": "dragores: which he brought to his mother Lia. And Rachel said: Giue me part of thy sonnes (c) mandragores..15. She answered: Dost thou thinke it a small matter that thou hast taken my husband from me, vntleſe thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleep with thee this night. 16. And when Iacob returned at euene from the field, Lia went out to meet him, and said:",
+  "r3_verse": "She answered: Dost thou thinke it a small matter that thou hast taken my husband from me, vntleſe thou take also my sonnes mandragores? Rachel said: For thy sonnes mandragores let him sleep with thee this night.",
+  "arm_conflicts": [
+   ": Doeſt | Dost",
+   "ſmnal | small",
+   "leſſe | vntleſe",
+   "ſornes mandragoes | my sonnes mandragores?"
+  ],
+  "r2_attested": {
+   "22": "ſonnes"
+  },
+  "visual_readings": {
+   "22": "ſonnes"
+  },
+  "new_text": "She anſwered Dost thou thinke it a small matter that thou haſt taken my huſband from me, vntleſe thou take alſo my ſonnes mandragores? Rachel ſaid: For thy ſonnes mandragores let him ſleep with thee this night.",
+  "s_unresolved": [
+   "Dost",
+   "small",
+   "vntleſe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p109",
+  "old_text": "Againe Lia conceauing. bare the ſixt ſonne, 2o. &",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.4854,
+   0.885,
+   0.5694
+  ],
+  "crop_page": 109,
+  "r3_raw": "and she bare her prayers: and she conceived and bare the man sonne, 18. and said: God hath giuen me a reward, because I gave my handmaid to my husband. And she called his name Issachar. 19. Againe Lia conceauing, bare the sixt sonne, 20. & said: God hath endowed me with a good dowrie: this turne also my husband will be with me, for because I haue",
+  "r3_verse": "Againe Lia conceauing, bare the sixt sonne, 2o. &",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Againe Lia conceauing. bare the ſixt ſonne, 2o. &",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p109",
+  "old_text": "And Laban ſaid : What ſhal I giue thee But he ſaid : I wil nothing : but it thou wilt doe that which I demand, I wil feod and keep thy sheep again.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "neighbours": [
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.8247,
+   0.885,
+   0.9273
+  ],
+  "crop_page": 109,
+  "r3_raw": "It is reason therefore that once I prouide also for mine owne house. And Laban said: What shal I giue thee? But he said: I wil nothing: but if thou wilt doe that which I demand, I wil feed and keep thy sheep again.",
+  "r3_verse": "And Laban said: What shal I giue thee? But he said: I wil nothing: but if thou wilt doe that which I demand, I wil feed and keep thy sheep again.",
+  "arm_conflicts": [
+   "thee | thee?",
+   "it | if",
+   "feod | feed"
+  ],
+  "new_text": "And Laban ſaid What ſhal I giue thee But he ſaid I wil nothing but if thou wilt doe that which I demand, I wil feed and keep thy sheep again.",
+  "s_unresolved": [
+   "feed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "chapter",
+  "old_text": "Goe round aboue al thy flockes, aud ſeparate al the ſheep colours, of ſpeckled flyſe : and what ſoeuer shal be ruſſet and of diuers coloursas wel in the sheep as in the shal be my wages.",
+  "old": {
+   "s_dismas": 0.823,
+   "odr_com": 0.829,
+   "sabates_a": 0.827,
+   "madueke_b": 0.827
+  },
+  "neighbours": [
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.8634,
+   0.885,
+   0.9273
+  ],
+  "crop_page": 109,
+  "crop_leaves": [
+   109,
+   110
+  ],
+  "r3_raw": "if thou wilt doe that which I demand, I wil feed and keep thy sheep again. 32. Goe round aboue al thy fleckes, and separate al the sheep of di- of diuers colours, of speckled flyle: and what-foever shal beruſset and spotted, and of diuers colours, as wel in the sheep as in the goats, shal be my wages. 33. And my iustice shal answer for me to morow before thee, when the time of the bargaine ſhall come: and al",
+  "r3_verse": "round aboue al thy fleckes, and separate al the sheep of di- of diuers colours, of speckled flyle: and what-foever shal beruſset and spotted, and of diuers colours, as wel in the sheep as in the goats, shal be my wages.",
+  "arm_conflicts": [
+   "flockes, aud | fleckes, and",
+   "flyſe : | flyle:",
+   "what ſoeuer | what-foever",
+   "be ruſſet | beruſset and spotted,",
+   "coloursas | colours, as"
+  ],
+  "r2_attested": {
+   "23": "ſpotted,"
+  },
+  "visual_readings": {
+   "23": "ſpotted,"
+  },
+  "new_text": "round aboue al thy fleckes, and ſeparate al the ſheep of di- of diuers colours, of ſpeckled flyle: and what-foever shal beruſset and ſpotted, and of diuers colours, as wel in the sheep as in the goats, shal be my wages.",
+  "s_unresolved": [
+   "fleckes,",
+   "flyle:",
+   "what-foever",
+   "beruſset"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.905,
+   "odr_com": 0.9,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p110",
+  "old_text": "And my iuſtice shal anſwer tor me to betore thee, when the time of the batgaine I shal come: aud al not be of diuers colours, and ſpotted, and ruſſet, as wel in the in the goats, shal accuſe me of theft.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.1209,
+   0.885,
+   0.2325
+  ],
+  "crop_page": 110,
+  "r3_raw": "and spotted, and of diuers colours, as wel in the sheep as in the goats, shal be my wages. 33. And my iustice shal answer for me to morow before thee, when the time of the bargaine;|shal come: and al that shal not be of diuers colours, and spotted, and russet, as wel in the sheep as in the goats, shal accuse me of theft. 34. And Laban said: I like wel that thou demandest. 35. And he separated the same day the",
+  "r3_verse": "And my iustice shal answer for me to morow before thee, when the time of the bargaine;|shal come: and al that shal not be of diuers colours, and spotted, and russet, as wel in the sheep as in the goats, shal accuse me of theft.",
+  "arm_conflicts": [
+   "tor | for",
+   "betore | morow before",
+   "batgaine I | bargaine;|shal come: and al that"
+  ],
+  "lexicon_readings": {
+   "5": "for",
+   "9": "before"
+  },
+  "visual_readings": {
+   "5": "for",
+   "9": "before"
+  },
+  "new_text": "And my iuſtice shal anſwer for me to morow before thee, when the time of the bargaine;|shal come: and al that shal not be of diuers colours, and ſpotted, and ruſſet, as wel in the sheep as in the goats, shal accuſe me of theft.",
+  "s_unresolved": [
+   "bargaine;|shal",
+   "sheep"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.973,
+   "odr_com": 0.973,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p110",
+  "old_text": "And Laban ſaid : I that thou demandeſt.",
+  "old": {
+   "s_dismas": 0.8,
+   "odr_com": 0.8,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.1739,
+   0.885,
+   0.2504
+  ],
+  "crop_page": 110,
+  "r3_raw": "that shal not be of diuers colours, and spotted, and russet, as wel in the sheep as in the goats, shal accuse me of theft. 34. And Laban said: I like wel that thou demandest. 35. And he separated the same day the she goats, and the sheep, and the he goats, and the rammes of diuers co-",
+  "r3_verse": "And Laban said: I like wel that thou demandest.",
+  "arm_conflicts": [],
+  "new_text": "And Laban ſaid I like wel that thou demandeſt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 35,
+  "from": "p110",
+  "old_text": "And he ſeparated the ſame day the and the sheep, and the he goats, aud the rammes of diuers coſpotted: and al the flocke of one colour, that is ot white aud flyſe, he deliuered in the hand of his ſounes.",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.838,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.155,
+   0.1911,
+   0.885,
+   0.3042
+  ],
+  "crop_page": 110,
+  "r3_raw": "sheep as in the goats, shal accuse me of theft. 34. And Laban said: I like wel that thou demandest. 35. And he separated the same day the she goats, and the sheep, and the he goats, and the rammes of diuers co- lours, and spotted: and al the flocke of one colour, that is of white and blacke flyse, he delivered in the hand of his sonnes. 36. And he put a space of three dayes iourney betwixt him and his sonne in law, who fed",
+  "r3_verse": "And he separated the same day the she goats, and the sheep, and the he goats, and the rammes of diuers co- lours, and spotted: and al the flocke of one colour, that is of white and blacke flyse, he delivered in the hand of his sonnes.",
+  "arm_conflicts": [
+   "aud | and",
+   "coſpotted: | co- lours, and spotted:",
+   "ot | of",
+   "aud | and blacke",
+   "deliuered | delivered",
+   "ſounes. | sonnes."
+  ],
+  "r2_attested": {
+   "24": "ſpotted:",
+   "46": "ſonnes."
+  },
+  "visual_readings": {
+   "24": "ſpotted:",
+   "46": "ſonnes."
+  },
+  "new_text": "And he ſeparated the ſame day the she goats, and the sheep, and the he goats, and the rammes of diuers co- lours, and ſpotted: and al the flocke of one colour, that is of white and blacke flyſe, he deliuered in the hand of his ſonnes.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 36,
+  "from": "p110",
+  "old_text": "And he put a three dayes iourncy betwixt him and his ſonne in law, who fed of his flock.",
+  "old": {
+   "s_dismas": 0.802,
+   "odr_com": 0.802,
+   "sabates_a": 0.814,
+   "madueke_b": 0.814
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.155,
+   0.2455,
+   0.885,
+   0.3438
+  ],
+  "crop_page": 110,
+  "r3_raw": "and spotted: and al the flocke of one colour, that is of white and blacke flyse, he delivered in the hand of his sonnes. 36. And he put a space of three dayes iourney betwixt him and his sonne in law, who fed the rest of his flock. 37. Iacob therefore (d) taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them:",
+  "r3_verse": "And he put a space of three dayes iourney betwixt him and his sonne in law, who fed the rest of his flock.",
+  "arm_conflicts": [
+   "iourncy | iourney"
+  ],
+  "r2_attested": {
+   "4": "ſpace",
+   "19": "reſt"
+  },
+  "visual_readings": {
+   "4": "ſpace",
+   "19": "reſt"
+  },
+  "new_text": "And he put a ſpace of three dayes iourney betwixt him and his ſonne in law, who fed the reſt of his flock.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 37,
+  "from": "p110",
+  "old_text": "Iacob therfore (4) takiug green rods of the (4) Iacob and of the almond, and ot the plane trees, in part pilled them: iuſtly vſe the barkes were taken off, in the parts thatere pilled there meanes whitues: but the patts that were whole remayned green: couer that which this meanes the colour was made diuers.",
+  "old": {
+   "s_dismas": 0.833,
+   "odr_com": 0.836,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.155,
+   0.2803,
+   0.885,
+   0.4102
+  ],
+  "crop_page": 110,
+  "r3_raw": "space of three dayes journey betwixt him and his sonne in law, who fed the rest of his flock. 37. Iacob therefore (d) taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barkes were taken off, in the parts that were pilled there appeared whitnes: but the parts that were whole remayned green: and by this meanes the colour was made diuers. 38. And he put them in the troughs, where the water was poured out: that when the flockes",
+  "r3_verse": "Iacob therefore taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barkes were taken off, in the parts that were pilled there appeared whitnes: but the parts that were whole remayned green: and by this meanes the colour was made diuers.",
+  "arm_conflicts": [
+   "therfore (4) takiug | therefore taking",
+   "(4) Iacob | poplar,",
+   "ot | of",
+   "plane trees, | plane-trees,",
+   "iuſtly vſe | and when",
+   "thatere | that were",
+   "meanes whitues: | appeared whitnes:",
+   "patts | parts",
+   "couer that which | and by"
+  ],
+  "new_text": "Iacob therefore taking green rods of the poplar, and of the almond, and of the plane-trees, in part pilled them: and when the barkes were taken off, in the parts that were pilled there appeared whitnes: but the parts that were whole remayned green: and by this meanes the colour was made diuers.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.962,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 38,
+  "from": "p110",
+  "old_text": "And he put them withheld troughs, where the water was poured out : that when the flockes him, being come to driuke, they might haue the rods betore their eyes, fot the the ſightot them conceaue.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.155,
+   0.3527,
+   0.885,
+   0.4664
+  ],
+  "crop_page": 110,
+  "r3_raw": "appeared whitnes: but the parts that were whole remayned green: and by this meanes the colour was made diuers. 38. And he put them in the troughs, where the water was poured out: that when the flockes should come to drinke, they might haue the rods before their eyes, and in the sight of them conceaue. 39. And it came to passe that in the verie heat of the ramming, the sheep beheld the rods, and brought",
+  "r3_verse": "And he put them in the troughs, where the water was poured out: that when the flockes should come to drinke, they might haue the rods before their eyes, and in the sight of them conceaue.",
+  "arm_conflicts": [
+   "withheld | in the",
+   "him, being | should",
+   "driuke, | drinke,",
+   "betore | before",
+   "fot | and in",
+   "the ſightot | sight of"
+  ],
+  "lexicon_readings": {
+   "26": "before"
+  },
+  "r2_attested": {
+   "32": "ſight"
+  },
+  "visual_readings": {
+   "26": "before",
+   "32": "ſight"
+  },
+  "new_text": "And he put them in the troughs, where the water was poured out that when the flockes should come to drinke, they might haue the rods before their eyes, and in the ſight of them conceaue.",
+  "s_unresolved": [
+   "should"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 39,
+  "from": "p110",
+  "old_text": "And it came to paſſe that in the of his of the ramming, the sheep beheld the tods, and brought and recom- for and of diuers colours, and ſpeckled.",
+  "old": {
+   "s_dismas": 0.818,
+   "odr_com": 0.818,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   38,
+   39,
+   40
+  ],
+  "crop": [
+   0.155,
+   0.404,
+   0.885,
+   0.5054
+  ],
+  "crop_page": 110,
+  "r3_raw": "should come to drinke, they might haue the rods before their eyes, and in the sight of them conceaue. 39. And it came to passe that in the verie heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diuers colours, and speckled. 40. And Iacob divided the flock, and put the rods in the troughs before the eyes of the rams, and sheepeheards, and they beſeech'd Jacob to take them of him, being due for the dowrie of his wiues, and recompence for his service.",
+  "r3_verse": "And it came to passe that in the verie heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diuers colours, and speckled.",
+  "arm_conflicts": [
+   "of his | verie heat",
+   "tods, | rods,",
+   "and recom- for | forth spotted,"
+  ],
+  "r2_attested": {
+   "21": "ſpotted,"
+  },
+  "visual_readings": {
+   "21": "ſpotted,"
+  },
+  "new_text": "And it came to paſſe that in the verie heat of the ramming, the sheep beheld the rods, and brought forth ſpotted, and of diuers colours, and ſpeckled.",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 40,
+  "from": "p110",
+  "old_text": "And Iacob di- ſeruice. pence flock, and put the rods in the troughs before the cyes of the and al the white and the blacke were Labans, and the reſt, when the flockes were ſeparated one from the other.",
+  "old": {
+   "s_dismas": 0.861,
+   "odr_com": 0.861,
+   "sabates_a": 0.861,
+   "madueke_b": 0.861
+  },
+  "neighbours": [
+   39,
+   40
+  ],
+  "crop": [
+   0.155,
+   0.4366,
+   0.885,
+   0.5549
+  ],
+  "crop_page": 110,
+  "r3_raw": "39. And it came to pate that in the verie heat of the ramming, the sheep beheld the rods, and brought forth spotted, and of diuers colours, and speckled. 40. And Iacob divided the flock, and put the rods in the troughs before the eyes of the rammes: and al the white and the blacke were Labans, and the rest, Jacobs, when the flockes were separated one from the other. 41. Therfore when the ewes went to ramme, in the prime time Iacob",
+  "r3_verse": "And Iacob divided the flock, and put the rods in the troughs before the eyes of the rammes: and al the white and the blacke were Labans, and the rest, Jacobs, when the flockes were separated one from the other. Therfore",
+  "arm_conflicts": [
+   "di- ſeruice. pence | divided the",
+   "cyes | eyes"
+  ],
+  "lexicon_readings": {
+   "40": "Therfore"
+  },
+  "visual_readings": {
+   "40": "Therfore"
+  },
+  "new_text": "And Iacob divided the flock, and put the rods in the troughs before the eyes of the rammes: and al the white and the blacke were Labans, and the reſt, Jacobs, when the flockes were ſeparated one from the other. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 41,
+  "from": "p110",
+  "old_text": "when the ewes went to ramme, in the prime time Iacob rods in the troughs of water betore the eyes of the ramot the ewes, that in looking vpon them they might con42",
+  "old": {
+   "s_dismas": 0.818,
+   "odr_com": 0.818,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "neighbours": [
+   41
+  ],
+  "crop": [
+   0.155,
+   0.5114,
+   0.885,
+   0.6097
+  ],
+  "crop_page": 110,
+  "r3_raw": "Iacobs, when the flockes were separated one from the other. 41. Therfore when the ewes went to ramme, in the prime time Iacob put the rods in the troughs of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue: 42. but when the later comming was, and the last conceauing,",
+  "r3_verse": "when the ewes went to ramme, in the prime time Iacob put the rods in the troughs of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+  "arm_conflicts": [
+   "betore | before",
+   "ramot | rammes, and of",
+   "con42 | conceaue:"
+  ],
+  "lexicon_readings": {
+   "19": "before"
+  },
+  "visual_readings": {
+   "19": "before"
+  },
+  "new_text": "when the ewes went to ramme, in the prime time Iacob put the rods in the troughs of water before the eyes of the rammes, and of the ewes, that in looking vpon them they might conceaue:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 42,
+  "from": "p110",
+  "old_text": "but when the later comming was, and the laſt conceauing, not put them. And thoſe that were lateward became Labans: of the prime time, Iacobs.",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.882,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.155,
+   0.5655,
+   0.885,
+   0.66
+  ],
+  "crop_page": 110,
+  "r3_raw": "and of the ewes, that in looking vpon them they might conceaue: 42. but when the later comming was, and the last conceauing, he did not put them. And those that were lateward became Labans: and they of the prime time, Iacobs. 43. And the man was enriched beyond measure, and he had manie flockes, women seruants and men",
+  "r3_verse": "but when the later comming was, and the last conceauing, he did not put them. And those that were lateward became Labans: and they of the prime time, Iacobs.",
+  "arm_conflicts": [],
+  "new_text": "but when the later comming was, and the laſt conceauing, he did not put them. And thoſe that were lateward became Labans: and they of the prime time, Iacobs.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 43,
+  "from": "p110",
+  "old_text": "And the man was enriched teaſure, and he had mauie flockes, women ſeruants and men camels aud aſſes.",
+  "old": {
+   "s_dismas": 0.816,
+   "odr_com": 0.816,
+   "sabates_a": 0.802,
+   "madueke_b": 0.802
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.155,
+   0.6014,
+   0.885,
+   0.6983
+  ],
+  "crop_page": 110,
+  "r3_raw": "he did not put them. And those that were lateward became Labans: and they of the prime time, Iacobs. 43. And the man was enriched beyond measure, and he had manie flockes, women seruants and men seruants, camels and asses.",
+  "r3_verse": "And the man was enriched beyond measure, and he had manie flockes, women seruants and men seruants, camels and asses.",
+  "arm_conflicts": [
+   "teaſure, | beyond measure,",
+   "mauie | manie",
+   "aud | and"
+  ],
+  "r2_attested": {
+   "16": "ſeruants,"
+  },
+  "visual_readings": {
+   "16": "ſeruants,"
+  },
+  "new_text": "And the man was enriched beyond measure, and he had manie flockes, women ſeruants and men ſeruants, camels and aſſes.",
+  "s_unresolved": [
+   "measure,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

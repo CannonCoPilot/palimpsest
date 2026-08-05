@@ -1,0 +1,457 @@
+{
+ "pass_threshold": 0.9,
+ "matrix": {
+  "2-esdras": {
+   "S1": {
+    "status": "scored",
+    "ocr_dir": "archive-ot1-1609",
+    "verses_scored": 24,
+    "verses_pass": 10,
+    "book_frac": 0.4167,
+    "chapters": {
+     "7": 0.417
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     7
+    ],
+    "E5a_book_fail": true
+   },
+   "S3": {
+    "status": "scored",
+    "ocr_dir": "pdf-S03a",
+    "verses_scored": 24,
+    "verses_pass": 9,
+    "book_frac": 0.375,
+    "chapters": {
+     "7": 0.375
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     7
+    ],
+    "E5a_book_fail": true
+   },
+   "S6": {
+    "status": "scored",
+    "ocr_dir": "jp2-S06",
+    "verses_scored": 24,
+    "verses_pass": 2,
+    "book_frac": 0.0833,
+    "chapters": {
+     "7": 0.083
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     7
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "jp2-S09ot2",
+    "verses_scored": 14,
+    "verses_pass": 0,
+    "book_frac": 0.0,
+    "chapters": {
+     "7": 0.0
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     7
+    ],
+    "E5a_book_fail": true
+   }
+  },
+  "2john": {
+   "S1": {
+    "status": "no-ocr",
+    "ocr_dir": null
+   },
+   "S4": {
+    "status": "no-ocr",
+    "ocr_dir": null
+   },
+   "S8": {
+    "status": "no-ocr",
+    "ocr_dir": null
+   },
+   "S9": {
+    "status": "no-ocr",
+    "ocr_dir": null
+   }
+  },
+  "colossians": {
+   "S1": {
+    "status": "scored",
+    "ocr_dir": "archive-nt-1582",
+    "verses_scored": 13,
+    "verses_pass": 0,
+    "book_frac": 0.0,
+    "chapters": {
+     "3": 0.0,
+     "4": 0.0
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     3,
+     4
+    ],
+    "E5a_book_fail": true
+   },
+   "S4": {
+    "status": "scored",
+    "ocr_dir": "jp2-S04",
+    "verses_scored": 13,
+    "verses_pass": 2,
+    "book_frac": 0.1538,
+    "chapters": {
+     "3": 0.0,
+     "4": 0.4
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     3,
+     4
+    ],
+    "E5a_book_fail": true
+   },
+   "S8": {
+    "status": "scored",
+    "ocr_dir": "jp2-S08",
+    "verses_scored": 13,
+    "verses_pass": 3,
+    "book_frac": 0.2308,
+    "chapters": {
+     "3": 0.25,
+     "4": 0.2
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     3,
+     4
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "pdf-S09nt",
+    "verses_scored": 13,
+    "verses_pass": 5,
+    "book_frac": 0.3846,
+    "chapters": {
+     "3": 0.5,
+     "4": 0.2
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     3,
+     4
+    ],
+    "E5a_book_fail": true
+   }
+  },
+  "genesis": {
+   "S1": {
+    "status": "scored",
+    "ocr_dir": "archive-ot1-1609",
+    "verses_scored": 35,
+    "verses_pass": 3,
+    "book_frac": 0.0857,
+    "chapters": {
+     "16": 0.125,
+     "24": 0.053
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16,
+     24
+    ],
+    "E5a_book_fail": true
+   },
+   "S3": {
+    "status": "scored",
+    "ocr_dir": "pdf-S03a",
+    "verses_scored": 35,
+    "verses_pass": 9,
+    "book_frac": 0.2571,
+    "chapters": {
+     "16": 0.25,
+     "24": 0.263
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16,
+     24
+    ],
+    "E5a_book_fail": true
+   },
+   "S6": {
+    "status": "scored",
+    "ocr_dir": "jp2-S06",
+    "verses_scored": 35,
+    "verses_pass": 4,
+    "book_frac": 0.1143,
+    "chapters": {
+     "16": 0.062,
+     "24": 0.158
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16,
+     24
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "archive-holiebible-ot1",
+    "verses_scored": 35,
+    "verses_pass": 7,
+    "book_frac": 0.2,
+    "chapters": {
+     "16": 0.125,
+     "24": 0.263
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16,
+     24
+    ],
+    "E5a_book_fail": true
+   }
+  },
+  "matthew": {
+   "S1": {
+    "status": "no-overlap",
+    "ocr_dir": "archive-nt-1582"
+   },
+   "S4": {
+    "status": "scored",
+    "ocr_dir": "jp2-S04",
+    "verses_scored": 20,
+    "verses_pass": 4,
+    "book_frac": 0.2,
+    "chapters": {
+     "28": 0.2
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     28
+    ],
+    "E5a_book_fail": true
+   },
+   "S8": {
+    "status": "scored",
+    "ocr_dir": "jp2-S08",
+    "verses_scored": 20,
+    "verses_pass": 3,
+    "book_frac": 0.15,
+    "chapters": {
+     "28": 0.15
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     28
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "pdf-S09nt",
+    "verses_scored": 20,
+    "verses_pass": 6,
+    "book_frac": 0.3,
+    "chapters": {
+     "28": 0.3
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     28
+    ],
+    "E5a_book_fail": true
+   }
+  },
+  "proverbs": {
+   "S1": {
+    "status": "scored",
+    "ocr_dir": "archive-ot2-1610",
+    "verses_scored": 19,
+    "verses_pass": 0,
+    "book_frac": 0.0,
+    "chapters": {
+     "16": 0.0
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16
+    ],
+    "E5a_book_fail": true
+   },
+   "S3": {
+    "status": "scored",
+    "ocr_dir": "pdf-S03b",
+    "verses_scored": 19,
+    "verses_pass": 2,
+    "book_frac": 0.1053,
+    "chapters": {
+     "16": 0.105
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16
+    ],
+    "E5a_book_fail": true
+   },
+   "S6": {
+    "status": "scored",
+    "ocr_dir": "jp2-S06",
+    "verses_scored": 19,
+    "verses_pass": 2,
+    "book_frac": 0.1053,
+    "chapters": {
+     "16": 0.105
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "jp2-S09ot2",
+    "verses_scored": 19,
+    "verses_pass": 0,
+    "book_frac": 0.0,
+    "chapters": {
+     "16": 0.0
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     16
+    ],
+    "E5a_book_fail": true
+   }
+  },
+  "psalms": {
+   "S1": {
+    "status": "scored",
+    "ocr_dir": "archive-ot2-1610",
+    "verses_scored": 59,
+    "verses_pass": 9,
+    "book_frac": 0.1525,
+    "chapters": {
+     "1": 0.0,
+     "149": 0.125,
+     "150": 0.0,
+     "118": 0.273,
+     "73": 0.4,
+     "74": 0.0,
+     "115": 0.0,
+     "116": 0.5
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     1,
+     73,
+     74,
+     115,
+     116,
+     118,
+     149,
+     150
+    ],
+    "E5a_book_fail": true
+   },
+   "S3": {
+    "status": "scored",
+    "ocr_dir": "pdf-S03b",
+    "verses_scored": 60,
+    "verses_pass": 12,
+    "book_frac": 0.2,
+    "chapters": {
+     "1": 0.0,
+     "149": 0.125,
+     "150": 0.0,
+     "118": 0.182,
+     "73": 0.5,
+     "74": 0.2,
+     "115": 0.125,
+     "116": 0.5
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     1,
+     73,
+     74,
+     115,
+     116,
+     118,
+     149,
+     150
+    ],
+    "E5a_book_fail": true
+   },
+   "S6": {
+    "status": "scored",
+    "ocr_dir": "jp2-S06",
+    "verses_scored": 60,
+    "verses_pass": 6,
+    "book_frac": 0.1,
+    "chapters": {
+     "1": 0.0,
+     "149": 0.25,
+     "150": 0.0,
+     "118": 0.0,
+     "73": 0.3,
+     "74": 0.0,
+     "115": 0.125,
+     "116": 0.0
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     1,
+     73,
+     74,
+     115,
+     116,
+     118,
+     149,
+     150
+    ],
+    "E5a_book_fail": true
+   },
+   "S9": {
+    "status": "scored",
+    "ocr_dir": "jp2-S09ot2",
+    "verses_scored": 60,
+    "verses_pass": 9,
+    "book_frac": 0.15,
+    "chapters": {
+     "1": 0.0,
+     "149": 0.125,
+     "150": 0.0,
+     "118": 0.182,
+     "73": 0.5,
+     "74": 0.0,
+     "115": 0.0,
+     "116": 0.5
+    },
+    "reocr_flag": true,
+    "E4_chapter_fail": [
+     1,
+     73,
+     74,
+     115,
+     116,
+     118,
+     149,
+     150
+    ],
+    "E5a_book_fail": true
+   }
+  }
+ },
+ "skipped_gt_no_align": []
+}

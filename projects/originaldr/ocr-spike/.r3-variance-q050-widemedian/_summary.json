@@ -1,0 +1,2951 @@
+{
+ "summary": {
+  "n_known_bad_with_samples": 46,
+  "n_variants_per_region": 4,
+  "gold_spread_across_variants": {
+   "mean": 0.2714,
+   "median": 0.0509,
+   "max": 1.0,
+   "n_spread_gt_0.1": 18,
+   "n_spread_gt_0.3": 13
+  },
+  "mean_gold": {
+   "r2": 0.7407,
+   "single_run_variant0": 0.6711,
+   "selected_gold_free_argmax_xsrc": 0.7821,
+   "oracle_best_by_gold": 0.8013
+  },
+  "pass_rate_ge_0.90_vs_gold": {
+   "single_run_variant0": 0.478,
+   "selected_gold_free": 0.457,
+   "oracle_best_by_gold": 0.543
+  }
+ },
+ "records": [
+  {
+   "slug": "scripture-2esdras-07",
+   "book": "2-esdras",
+   "ch": 7,
+   "v": 46,
+   "taux": 0.9,
+   "r2_xsrc": 0.7614,
+   "r2_gold_aid": 0.9853,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.767,
+     "gold": 0.9926,
+     "span": "childeren of Ater, the childeren of Telmon, the childeren of Accub, the childeren of Harita, the childeren of Sobai: an hundred thirtie eight. †",
+     "span_len": 144,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.767,
+     "gold": 0.9926,
+     "span": "childeren of Ater, the childeren of Telmon, the childeren of Accub, the childeren of Harita, the childeren of Sobai: an hundred thirtie eight. †",
+     "span_len": 144,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.7614,
+     "gold": 0.9853,
+     "span": "childeren of Ater, the childeren of Telmon, the childeren of Accub, the childeren of Harita, the childeren of Sobai: an hundred thittie eight. †",
+     "span_len": 144,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.7614,
+     "gold": 0.9853,
+     "span": "childeren of Ater, the childeren of Telmon, the childeren of Accub, the childeren of Harita, the childeren of Sobai: an hundred chirtie eight. †",
+     "span_len": 144,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-2esdras-07",
+   "book": "2-esdras",
+   "ch": 7,
+   "v": 69,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 1.0,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.8182,
+     "span": "their camels, foure 69 hun-",
+     "span_len": 27,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.8182,
+     "span": "their camels, foure 69 hun-",
+     "span_len": 27,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.8182,
+     "span": "their camels, foure 69 hun-",
+     "span_len": 27,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.8182,
+     "span": "their camels, foure 69 hun-",
+     "span_len": 27,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-abdias-01",
+   "book": "abdias",
+   "ch": 1,
+   "v": 1,
+   "taux": 0.92,
+   "r2_xsrc": 0.8036,
+   "r2_gold_aid": 0.8034,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "The vision of Abdias. Thus sayth our Lord God how hadst thou held",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7321,
+     "gold": 0.736,
+     "span": "THE vision of Abdias. Thus sayth our Lord God unto Edom: We have heard a bruit from sent to thee, and let us arise against him into battel.",
+     "span_len": 139,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8214,
+     "gold": 0.8427,
+     "span": "THE vision of Abdias. Thus sayth our Lord God unto Edom: We have heard a bruit from them, and he hath sent a legate to thee, rise ye, arise against him into battel.",
+     "span_len": 164,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.7143,
+     "gold": 0.7135,
+     "span": "The vision of Abdias. Thus sayth our Lord God unto Edom: We have heard a bruit from our Lord, and let vs arise against him into battel.",
+     "span_len": 135,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-abdias-01",
+   "book": "abdias",
+   "ch": 1,
+   "v": 2,
+   "taux": 0.92,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.0,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.6962,
+     "gold": 0.6988,
+     "span": "thee a little one in the Gentilis: thou art contéptible exceedingingly.",
+     "span_len": 71,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Behold I have given thee a little one, the clefcs",
+     "span_len": 49,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.95,
+     "gold": 0.9302,
+     "span": "Behold I have givenen thee a little one in the Gentilis: thou art contéptible excedingly.",
+     "span_len": 89,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.962,
+     "gold": 0.9398,
+     "span": "Behold I haue given thee a little one in the Gentilis: thou art contépible excedingly.",
+     "span_len": 86,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-abdias-01",
+   "book": "abdias",
+   "ch": 1,
+   "v": 3,
+   "taux": 0.92,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.0,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9456,
+     "gold": 0.9684,
+     "span": "The pride of thy hart hath extolled thee, dwelling in the clefts of rockes, exalting thy throne: which layeth in thy hart: Who shal plucke me downe unto the earth?",
+     "span_len": 163,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "of rockes, exalting thy throne: which sayst in thy hart: Who shal plucke me downe unto the earth?",
+     "span_len": 97,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9793,
+     "gold": 1.0,
+     "span": "The pride of thy hart hath extolled thee, dwelling in the clefts of rockes, exalting thy throne: which sayst in thy hart: Who shal plucke me downe to the earth?",
+     "span_len": 160,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.6774,
+     "span": "The pride of thy hart hath extolled thee, dwelling in the clefts of rockes, exalting thy throne: which sayst",
+     "span_len": 108,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-abdias-01",
+   "book": "abdias",
+   "ch": 1,
+   "v": 4,
+   "taux": 0.92,
+   "r2_xsrc": 0.9098,
+   "r2_gold_aid": 0.9237,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9919,
+     "gold": 1.0,
+     "span": "If thou shalt be exalted as an eagle, and if thou shalt set thy nest among the starres: thence wil I plucke thee downe, sayth our Lord.",
+     "span_len": 135,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 0.9695,
+     "span": "If thou shalt be exalted as an eagle, and if thou shalt set thy nest among the stars: thence will I plucke thee downe, saith our Lord.",
+     "span_len": 134,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 0.9771,
+     "span": "If thou shalt be exalted as an eagle, and if thou shalt set thy nest among the stars: thence wil I plucke thee downe, saith our Lord.",
+     "span_len": 133,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9672,
+     "gold": 0.9695,
+     "span": "thou shalt be exalted as an eagle, and if thou shalt set thy nest among the starres: thence wil I plucke thee downe, saith our Lord.",
+     "span_len": 132,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-abdias-01",
+   "book": "abdias",
+   "ch": 1,
+   "v": 12,
+   "taux": 0.92,
+   "r2_xsrc": 0.9064,
+   "r2_gold_aid": 0.918,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9596,
+     "gold": 0.9522,
+     "span": "And :: thou shalt not dispise in the day of thy brother,in the day of his peregrination:and thou shalt not reioyce over the children of Iuda,in the day of their perdition: & thou shalt not magnifie thy mouth in the day of distresse. † Neither",
+     "span_len": 242,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9422,
+     "gold": 0.9399,
+     "span": "And :: thou shalt not dispile in the day 12 of rhy brother,in the day of his peregrination :and thou shalt not reioyce ouer the children of Iuda,in the day of their perdition: &c thou shalt not magnifie thy mouth in the day of distresse. † Neither",
+     "span_len": 247,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9552,
+     "gold": 0.9524,
+     "span": "And :: thou shalt not dispise in the day 12 of rhy brother,in the day of his peregrination :and thou shalt not rejoyce ouer the children of Iuda,in the day of their perdition: & thou shalt not magnifie thy mouth in the day of distresse. † Neither",
+     "span_len": 246,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9467,
+     "gold": 0.9442,
+     "span": "And :: thou ſhalt not dispile in the day 12 of thy brother,in the day of his peregrination :and thou shalt not reioyce ouer the children of Iuda,in the day of their perdition: &c thou ſhalt not magnifie thy mouth in the day of distresse. † Neither",
+     "span_len": 247,
+     "s_count": 2
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p081",
+   "book": "genesis",
+   "ch": 16,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.9404,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.9861,
+     "span": "she toke Agar the Egyptian her handmaid tenne yeares after that they firft dwelled in the land of Chanaan: and gaue her vnto her husband\" to wife. †",
+     "span_len": 148,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.9931,
+     "span": "she toke Agar the Egyptian her handmaid tenne yeares after that they first dwelled in the land of Chanaan: and gaue her vnto her husband\" to wife. †",
+     "span_len": 148,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.9931,
+     "span": "she toke Agar the Egyptian her handmaid tenne yeares after that they first dwelled in the land of Chanaan: and gaue her vnto her husband\" to wife. †",
+     "span_len": 148,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.9931,
+     "span": "she toke Agar the Egyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan: and gaue her vnto her husband \"to wife. †",
+     "span_len": 148,
+     "s_count": 1
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p081",
+   "book": "genesis",
+   "ch": 16,
+   "v": 4,
+   "taux": 0.9,
+   "r2_xsrc": 0.7731,
+   "r2_gold_aid": 0.7731,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9891,
+     "gold": 0.9891,
+     "span": "Who did companie with her, but ſhe perceauing that she was with childe, despifed her mistresse. 5 †",
+     "span_len": 99,
+     "s_count": 1
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Who did companie with her, but she perceauing that she was with childe, despised her mistresse. 5 †",
+     "span_len": 99,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Who did companie with her, but she perceauing that she was with childe, despised her mistresse. 4",
+     "span_len": 97,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9891,
+     "gold": 0.9891,
+     "span": "Who did companie with her, but ſhe perceauing that ſhe was with childe, despifed her mistresse. 4",
+     "span_len": 97,
+     "s_count": 2
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p081",
+   "book": "genesis",
+   "ch": 16,
+   "v": 5,
+   "taux": 0.9,
+   "r2_xsrc": 0.88,
+   "r2_gold_aid": 0.88,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9887,
+     "gold": 0.9887,
+     "span": "And Sarai said to Abram: Thou doest vnjustly against me: I gaue my handmaid into thy bosome, who perceauing herself to be with child, despifeth me. Our Lord iudge be- twen me and thee. †",
+     "span_len": 186,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9887,
+     "gold": 0.9887,
+     "span": "And Sarai said to Abram: Thou doest vnjustly against me: I gaue my handmaid into thy bosome, who perceauing herself to be with child, despifeth me. Our Lord iudge betwene me and thee. †",
+     "span_len": 185,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9888,
+     "gold": 0.9888,
+     "span": "And Sarai said to Abram: Thou doest vnjustly against me: I gaue my handmaid into thy bosome, who perceauing herselfe to be with child, despiseth me. Our Lord iudge between me and thee. †",
+     "span_len": 186,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9888,
+     "gold": 0.9888,
+     "span": "And Sarai said to Abram: Thou doest vnjustly against me: I gaue my handmaid into thy bosome, who perceauing herselfe to be with child, despiseth me. Our Lord iudge between me and thee. †",
+     "span_len": 186,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p081",
+   "book": "genesis",
+   "ch": 16,
+   "v": 6,
+   "taux": 0.9,
+   "r2_xsrc": 0.8168,
+   "r2_gold_aid": 0.8168,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9268,
+     "gold": 0.9268,
+     "span": "To whom Abram making anfwere: Behold, faith he, thy hādmaid is in thine owne hand, vſe her as it pleafeth the thee. When Sarai therfore did affliet her, she ranne awayaway. 7",
+     "span_len": 174,
+     "s_count": 1
+    },
+    {
+     "i": 1,
+     "xsrc": 0.95,
+     "gold": 0.95,
+     "span": "To whom Abram making anfwere: Behold, faith he, thy hādmaid is in thine owne hand, vſe her as it pleafeth the thee. When Sarai therfore did affliet her, she ranne away. 7",
+     "span_len": 170,
+     "s_count": 1
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9118,
+     "gold": 0.9118,
+     "span": "To whom Abram making answere: Behold, saith he, thy hādmaid is in thine owne hand, vſe her as it pleaseth the thee. When Sarai therfore therefore did affliet her, she ranne away. 7",
+     "span_len": 180,
+     "s_count": 1
+    },
+    {
+     "i": 3,
+     "xsrc": 0.7051,
+     "gold": 0.7051,
+     "span": "To whom Abram making anſwere: Behold, faith he, thy handmaid is in thine owne hand, vfe her as it pleafeth thee. 5 rannewaway. †",
+     "span_len": 128,
+     "s_count": 1
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p081",
+   "book": "genesis",
+   "ch": 16,
+   "v": 9,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.9778,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.8333,
+     "span": "And the angel of our Lord said to her: Returne H. 3 to thy",
+     "span_len": 58,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.8333,
+     "span": "And the angel of our Lord said to her: Returne H. 3 to thy",
+     "span_len": 58,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.8333,
+     "span": "And the angel of our Lord said to her: Returne H. 3 to thy",
+     "span_len": 58,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.8333,
+     "span": "And the angel of our Lord said to her: Returne H. 3 to thy",
+     "span_len": 58,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-16-p082",
+   "book": "genesis",
+   "ch": 16,
+   "v": 9,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 1.0,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.8667,
+     "span": "GENESIS. to thy mistresse, and humble thy selfe vnder her hand. †",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.8667,
+     "span": "GENESIS. to thy mistresse, and humble thy selfe vnder her hand. †",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.8667,
+     "span": "GENESIS.\" to thy mistresse, and humble thy selfe vnder her hand. †",
+     "span_len": 66,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.8667,
+     "span": "GENESIS. to thy mistresse, and humble thy selfe vnder her hand. †",
+     "span_len": 65,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-24",
+   "book": "genesis",
+   "ch": 24,
+   "v": 12,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.9828,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.8769,
+     "span": "GENESIS. I beseech thee, and doe mercifully with my maister Abraham. †",
+     "span_len": 70,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.8769,
+     "span": "GENESIS. I beseech thee, and doe mercifully with my maister Abraham. †",
+     "span_len": 70,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.8769,
+     "span": "GENESIS. I beseech thee, and doe mercifully with my maister Abraham. †",
+     "span_len": 70,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.8769,
+     "span": "GENESIS. I beseech thee, and doe mercifully with my maister Abraham. †",
+     "span_len": 70,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-24",
+   "book": "genesis",
+   "ch": 24,
+   "v": 27,
+   "taux": 0.9,
+   "r2_xsrc": 0.8838,
+   "r2_gold_aid": 0.8838,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house of my lords brother.",
+     "span_len": 182,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house of my lords brother. †",
+     "span_len": 184,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house of my lords brother. †",
+     "span_len": 184,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house 28 of my lords brother. †",
+     "span_len": 187,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-24",
+   "book": "genesis",
+   "ch": 24,
+   "v": 28,
+   "taux": 0.9,
+   "r2_xsrc": 0.7768,
+   "r2_gold_aid": 0.7768,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.967,
+     "gold": 0.967,
+     "span": "The maide therefore ranne, and reported unto her mothers house all things that she had heard.",
+     "span_len": 93,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9565,
+     "gold": 0.9565,
+     "span": "The maide therefore ranne, and re- ported unto her mothers house all things that she had heard. 29",
+     "span_len": 98,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.967,
+     "gold": 0.967,
+     "span": "The maide therefore ranne, and reported unto her mothers house all things that she had heard. 29",
+     "span_len": 96,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.967,
+     "gold": 0.967,
+     "span": "The maide therefore ranne, and reported unto her mothers house all things that she had heard. 29",
+     "span_len": 96,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-24",
+   "book": "genesis",
+   "ch": 24,
+   "v": 29,
+   "taux": 0.9,
+   "r2_xsrc": 0.8761,
+   "r2_gold_aid": 0.8761,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9899,
+     "gold": 0.9899,
+     "span": "And Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was.",
+     "span_len": 102,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9899,
+     "gold": 0.9899,
+     "span": "And Rebecca had a brother named Laban, who in al haift 30 went forth to the man, where the fountaine was. †",
+     "span_len": 107,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9899,
+     "gold": 0.9899,
+     "span": "And Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was. †",
+     "span_len": 104,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9899,
+     "gold": 0.9899,
+     "span": "And Rebecca had a brother named Laban, who in al haift 30 went forth to the man, where the fountaine was. †",
+     "span_len": 107,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-genesis-24",
+   "book": "genesis",
+   "ch": 24,
+   "v": 30,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.6915,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.8358,
+     "span": "When he had seene the earcletts and braceletts in his sisters hands,",
+     "span_len": 68,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.9014,
+     "span": "And when he had seene the earcletts and braceletts in his sisters hands,",
+     "span_len": 72,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.9028,
+     "span": "And when he had seene the earleletts and braceletts in his sisters hands,",
+     "span_len": 73,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.9014,
+     "span": "And when he had seene the earcletts and braceletts in his sisters hands,",
+     "span_len": 72,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-matthew-28-p102",
+   "book": "matthew",
+   "ch": 28,
+   "v": 1,
+   "taux": 0.9,
+   "r2_xsrc": 0.8954,
+   "r2_gold_aid": 0.8954,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9781,
+     "gold": 0.9781,
+     "span": "And in the evening of the Sabbath which dawmeth on the first of the Sabbath, came Marie Magdalene, and the other Marie\" to see the sepulchre. 2.",
+     "span_len": 144,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9783,
+     "gold": 0.9783,
+     "span": "And in the evening of the Sabbath which dawneath on the first of the Sabbath, came Marie Magdalene, and the other Marie\" to see the sepulchre. 2.",
+     "span_len": 145,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9854,
+     "gold": 0.9854,
+     "span": "And in the evening of the Sabbath which dawneth on the first of the Sabbath, came Marie Magdalene, and the other Marie* to see the sepulchre. 2.",
+     "span_len": 144,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9854,
+     "gold": 0.9854,
+     "span": "and in the evening of the Sabbath which dawneth on the first of the Sabbath, came Marie Magdalene, and the other Marie\" to see the sepulchre. 2.",
+     "span_len": 144,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-matthew-28-p102",
+   "book": "matthew",
+   "ch": 28,
+   "v": 2,
+   "taux": 0.9,
+   "r2_xsrc": 0.8443,
+   "r2_gold_aid": 0.8443,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9858,
+     "gold": 0.9858,
+     "span": "And behold there was made a great earth-quake: For an Angel of our Lord descended from Heaven: and coming, roled back the stone, and satte vpon it: 3.",
+     "span_len": 150,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9929,
+     "gold": 0.9929,
+     "span": "And behold there was made a great earth-quake. For an Angel of our Lord descended from Heaven: and coming, roled back the stone, and sate upon it: 3.",
+     "span_len": 149,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9929,
+     "gold": 0.9929,
+     "span": "And behold there was made a great earth-quake. For an Angel of our Lord descended from Heaven: and coming, roled back the stone, and ſate vpon it: 3.",
+     "span_len": 149,
+     "s_count": 1
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "And behold there was made a great earth-quake. For an Angel of our Lord descended from Heaven: and comming, roled back the stone, and sate vpon it: 3.",
+     "span_len": 150,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-matthew-28-p102",
+   "book": "matthew",
+   "ch": 28,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.8108,
+   "r2_gold_aid": 0.8108,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "and his countenance was as lightning, and his garment as snow. 4.",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "and his countenance was as lightning, and his garment as snow. 4.",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "and his countenance was as lightning, and his garment as snow. 4.",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "and his countenance was as lightning, and his garment as snow. 4.",
+     "span_len": 65,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-matthew-28-p102",
+   "book": "matthew",
+   "ch": 28,
+   "v": 16,
+   "taux": 0.9,
+   "r2_xsrc": 0.8333,
+   "r2_gold_aid": 0.8333,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9462,
+     "gold": 0.9462,
+     "span": "And the eleven Disciples went into Galilee, vn to the mount where I E S V S had appointed them. 17.",
+     "span_len": 99,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "And the eleuen Disciples went into Galilee, vnto the mount where Iesus had appointed them. 17.",
+     "span_len": 94,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "And the eleuen Disciples went into Galilee, vnto the mount where Iesus had appointed them. 17.",
+     "span_len": 94,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "And the eleuen Disciples went into Galilee, vnto the mount where Iesus had appointed them. 17.",
+     "span_len": 94,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-matthew-28-p102",
+   "book": "matthew",
+   "ch": 28,
+   "v": 19,
+   "taux": 0.9,
+   "r2_xsrc": 0.7571,
+   "r2_gold_aid": 0.7643,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9741,
+     "gold": 0.9828,
+     "span": "going therefore teach ye all Nations : Baptizing them in the name of the Father, and of the Sonne, and of the Holy Ghost, 20.",
+     "span_len": 125,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9113,
+     "gold": 0.9194,
+     "span": "going therefore teach ye al Nations : Baptizing them in the name of the Father, and of the Sonne, and of the Holy Ghost, 20.teaching",
+     "span_len": 132,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9912,
+     "gold": 1.0,
+     "span": "going therfore teach ye al Nations : Baptizing them in the name of the Father, and of the Sonne, and of the Holy Ghost, 20.",
+     "span_len": 123,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9826,
+     "gold": 0.9913,
+     "span": "going therefore teach ye al Nations : Baptizing them in the name of the Father, and of the Sonne, and of the Holy Ghost, 20.",
+     "span_len": 124,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 7,
+   "taux": 0.9,
+   "r2_xsrc": 0.8913,
+   "r2_gold_aid": 0.988,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8587,
+     "gold": 0.9518,
+     "span": "When the wayes of man shal please our Lord, he wil 7 conoer all his enemies to peace. †",
+     "span_len": 87,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8913,
+     "gold": 0.988,
+     "span": "When the wayes of man shal please our Lord, he wil 7 conaert also his enemies to peace. †",
+     "span_len": 89,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8913,
+     "gold": 0.988,
+     "span": "When the wayes of man shal please our Lord, he wil concert also his enemies to peace. †",
+     "span_len": 87,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8804,
+     "gold": 0.9759,
+     "span": "When the wayes of man shal please our Lord, he wil connect also his enemies to peace. †",
+     "span_len": 87,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 8,
+   "taux": 0.9,
+   "r2_xsrc": 0.8356,
+   "r2_gold_aid": 0.9839,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8493,
+     "gold": 1.0,
+     "span": "Better is a litle with iustice, then much fruite with iniquitie. 8 †",
+     "span_len": 68,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8356,
+     "gold": 0.9841,
+     "span": "Better is a little with justice, then much fruite with iniquitie. 8 †",
+     "span_len": 69,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8356,
+     "gold": 0.9677,
+     "span": "Better is a litle with iustice, then much fruict with iniquitie. †",
+     "span_len": 66,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8356,
+     "gold": 0.9841,
+     "span": "Better is a little with iustice, then much fruite with iniquitie. †",
+     "span_len": 67,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 9,
+   "taux": 0.9,
+   "r2_xsrc": 0.6607,
+   "r2_gold_aid": 0.866,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.7679,
+     "gold": 0.9885,
+     "span": "The hart of man dispoeth his way: but it perteyneth to 9 our Lord to direct his progresse. † ::",
+     "span_len": 95,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7679,
+     "gold": 0.9885,
+     "span": "The hart of man dispoſeth his way: but it perteyneth to 9 our Lord to direet his progresse. † ::",
+     "span_len": 96,
+     "s_count": 1
+    },
+    {
+     "i": 2,
+     "xsrc": 0.7679,
+     "gold": 0.9885,
+     "span": "The hart of man dispogeth his way: but it perteyneth to our Lord to direct his progresse. †",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.6786,
+     "gold": 0.8878,
+     "span": "The hart of man dispoſeth his way: but it perteyneth to our Lord to direct his progresse. † Dimination",
+     "span_len": 102,
+     "s_count": 1
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 10,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.8352,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.9737,
+     "span": "Divination is in the lippes o fthe king, his mouth shal not 10 erre in judgement. †",
+     "span_len": 83,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 1.0,
+     "span": "Divination is in the lippes of the king, his mouth ſhal not 10 erre in judgement. †",
+     "span_len": 83,
+     "s_count": 1
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.9868,
+     "span": "Divination is in the lippes of the king, his mouth shal not errc in judgement. †",
+     "span_len": 80,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.8553,
+     "span": "is in the lippes of the king, his mouth shal not erre in judgement. †",
+     "span_len": 69,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 11,
+   "taux": 0.9,
+   "r2_xsrc": 0.8515,
+   "r2_gold_aid": 0.8515,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9884,
+     "gold": 0.9884,
+     "span": "Weight and balance are judgements of our Lord: and his worke al the stones of the bigge. †",
+     "span_len": 90,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9884,
+     "gold": 0.9884,
+     "span": "Weight and balance are judgements of our Lord: and his 11 worke al the stones of the bigge. †",
+     "span_len": 93,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9884,
+     "gold": 0.9884,
+     "span": "Weight and balance are judgements of our Lord: and his worke al the stones of the bigge. †",
+     "span_len": 90,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9884,
+     "gold": 0.9884,
+     "span": "Weight and balance are judgements of our Lord: and his worke al the stones of the bigge. †",
+     "span_len": 90,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 12,
+   "taux": 0.9,
+   "r2_xsrc": 0.8796,
+   "r2_gold_aid": 0.8704,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 0.9895,
+     "span": "They are abominable to the king that doe impiously: 12 because the throne is established by iustice. †",
+     "span_len": 102,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 0.9895,
+     "span": "They are abominable to the king that doe impiously: 12 because the throne is established by iuſtice. †",
+     "span_len": 102,
+     "s_count": 1
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "They are abominable to the king that doe impiously",
+     "span_len": 50,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "They are abominable to the king that doe impiously: †",
+     "span_len": 53,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 19,
+   "taux": 0.9,
+   "r2_xsrc": 0.8202,
+   "r2_gold_aid": 0.8202,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9753,
+     "gold": 0.9753,
+     "span": "It is better to be humbled with the meeke, then to diuide 19 spoyle s with the preude. †",
+     "span_len": 88,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8298,
+     "gold": 0.8298,
+     "span": "shalbe exalted. † It is better to be humbled with the meeke, then to diuide 19 spoyles with the prude. †",
+     "span_len": 104,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8966,
+     "gold": 0.8966,
+     "span": "It is better to be humbled with the meeke, then to diuide in spoyle s with the prude. God. †",
+     "span_len": 92,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9398,
+     "gold": 0.9398,
+     "span": "It is better to be humbled with the meeke, then to diuide 19 spoyles with the prude. God. †",
+     "span_len": 91,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-proverbs-16",
+   "book": "proverbs",
+   "ch": 16,
+   "v": 25,
+   "taux": 0.9,
+   "r2_xsrc": 0.7849,
+   "r2_gold_aid": 0.8387,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9318,
+     "gold": 0.9881,
+     "span": "There is a way that seemeth to a man right: and the latter 25 endes therof lead to death. †",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9318,
+     "gold": 0.9881,
+     "span": "There is a way that seemeth to a man right: and the later 25 endes thereof lead to death. †",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9318,
+     "gold": 0.9881,
+     "span": "There is a way that seemeth to a man right: and the later 25 endes thereof lead to death. †",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9205,
+     "gold": 0.9762,
+     "span": "There is a way that secmeth to a man right: and the later 25 endes thereof lead to death. †",
+     "span_len": 91,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-001",
+   "book": "psalms",
+   "ch": 1,
+   "v": 1,
+   "taux": 0.9,
+   "r2_xsrc": 0.8205,
+   "r2_gold_aid": 0.8205,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "is the man, that hath b not gone in the counsel of the impious, hath c not stoode eternal felicity in keeping Gods commandments.",
+     "span_len": 128,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "is the man, that hath b not gone in the counsel of the impious, hath c not stoode d finally persisted in keeping God's commandments.",
+     "span_len": 132,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "is the man, that hath b not gone in the counscl of the impious, hath c not d not finally persifted in wicked life. 2",
+     "span_len": 116,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "is the man, that hath b not in the chayre of pestilence:",
+     "span_len": 56,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-001",
+   "book": "psalms",
+   "ch": 1,
+   "v": 2,
+   "taux": 0.9,
+   "r2_xsrc": 0.6983,
+   "r2_gold_aid": 0.6983,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.6951,
+     "gold": 0.6951,
+     "span": "But d his will is in the way of our Lord, and in his law he And f",
+     "span_len": 65,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "But e his f wil is in the way of our Lord, and in his law he",
+     "span_len": 60,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "But his e will is in the way of our Lord, and in his law he",
+     "span_len": 59,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.6707,
+     "gold": 0.6707,
+     "span": "But his wil is in the way of our Lord, and in his law he",
+     "span_len": 56,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-001",
+   "book": "psalms",
+   "ch": 1,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.7126,
+   "r2_gold_aid": 0.7126,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "his leaf shall not fall: and h all things whatsoeuer he i Through to the good of them that love God sincerely.",
+     "span_len": 110,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7165,
+     "gold": 0.7165,
+     "span": "And he shal be as a tree, that is planted nigh to the streams f To him that of waters, which shall geuec his fruit e in his time: And t his lcafe shal not fal: and h al things whatsoeuer he Through shal doc; shal prosper. [are carried with every light tentation.",
+     "span_len": 262,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "And he shal be as a tree, that is planted nigh to f the streames f To him that of waters, which shall geue his fruite in his time: vseth God's grace wel, 4 And e his leaſe shal not fal: and h al things whatfocouer he g Through shal doc; shal prosper. are carried with every light tentation. 5",
+     "span_len": 292,
+     "s_count": 1
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8565,
+     "gold": 0.8565,
+     "span": "And he shal be as a tree, that is planted nigh to t the streames. To him that of waters, which shall geuec his fruite in his time: And his leafes shal not fal: and h al things whatsoeuer he e Through shal doc; shal prosper.",
+     "span_len": 223,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-001",
+   "book": "psalms",
+   "ch": 1,
+   "v": 4,
+   "taux": 0.9,
+   "r2_xsrc": 0.6977,
+   "r2_gold_aid": 0.6977,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8738,
+     "gold": 0.8738,
+     "span": "The impious not so: but i as dust, which the winde driueth The Wicked, from the face of the earth. Therfore",
+     "span_len": 107,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8571,
+     "gold": 0.8571,
+     "span": "The impious not so: but i as dust, which the winde driueth i The Wicked from the face of the earth. 6 Therfore",
+     "span_len": 110,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.766,
+     "gold": 0.766,
+     "span": "The impious not so: but i as dust, which the winde driueth The Wicked from the face of the earth.",
+     "span_len": 97,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-001",
+   "book": "psalms",
+   "ch": 1,
+   "v": 6,
+   "taux": 0.9,
+   "r2_xsrc": 0.7054,
+   "r2_gold_aid": 0.7054,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "1 the happie congregation of the blessed. 7 † For our Lord m knoweth the way of the just, and the way of m approketh, the impious n shal perish. [ & rewardeh. a in eternal damnation. ANNO:",
+     "span_len": 188,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "1 the happie congregation of the blessed. 7 † For our Lord m knoweth the way of the just, and the way of m approacheth, the impious n shal perish. [ & rewardeth. a in eternal damnation. ANNO:",
+     "span_len": 191,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "the happie congregation of the blessed. 7 † For our Lord m knoweth the way of the just, and the way of m approacheth, the impious a shal perish. [ & rewardeth. a in eternal damnation. ANNO:",
+     "span_len": 189,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "the happie congregation of the blessed. 7 For our Lord m knoweth the way of the just, and the way of m approveth, the impious n shal perish. rewardeth. in eternal damnation. ANNO:",
+     "span_len": 179,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-074-p137",
+   "book": "psalms",
+   "ch": 73,
+   "v": 23,
+   "taux": 0.9,
+   "r2_xsrc": 0.8925,
+   "r2_gold_aid": 0.8925,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.7917,
+     "gold": 0.7917,
+     "span": "things. 23 x Forget not the voices of thine enemies: the y pride of them that hate thee, hath ascended",
+     "span_len": 102,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7917,
+     "gold": 0.7917,
+     "span": "things. 23 x Forget not the voices of thine enemies: the y pride of them that hate thee, hath ascended",
+     "span_len": 102,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.7917,
+     "gold": 0.7917,
+     "span": "things. 23 x Forget not the voices of thine enemies: the y pride of them that hate thee, hath ascended",
+     "span_len": 102,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8,
+     "gold": 0.8,
+     "span": "things. 23 x Forget not the voices of thine enemies: they pride of them that hate thee, hath ascended",
+     "span_len": 101,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-074-p137",
+   "book": "psalms",
+   "ch": 74,
+   "v": 1,
+   "taux": 0.92,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.0,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Vnto the end, a Corrupti not, a Psalme of Canticle to Asaphh. to the God eſcuse violate his promise nor purpose, but wil render to euery one in the day of as they deſerue.",
+     "span_len": 171,
+     "s_count": 2
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "vnto so punish, a Psalme of Canticle to Asaphh. to the will render to euerie one in the day of",
+     "span_len": 94,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Vnto the end, Corrupt not, a Psalme of Canticle to Asaphh. to the God eate violate his promise nor purpose, but will render to euery one in the day of l as they deserue. S",
+     "span_len": 171,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Vnto the end, Corrupt not, a Psalme of Canticle to Asaphh. to the God case violate his promise nor purpose, but will render to euerie one in the day of ju as they deserue.",
+     "span_len": 171,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-074-p138",
+   "book": "psalms",
+   "ch": 74,
+   "v": 4,
+   "taux": 0.9,
+   "r2_xsrc": 0.7209,
+   "r2_gold_aid": 0.7209,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "determinate time of general judgement. e The earth is melted, and all that dwel in it: f I haue confirmed the pillars thereof.",
+     "span_len": 126,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8488,
+     "gold": 0.8488,
+     "span": "e The earth is melted, and all that dwell in it: f I haue confirmed the pillers thereof.",
+     "span_len": 88,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "the determinate time of general judgement. e The earth is melted, and all that dwell in it: f I haue confir- 4 med the pillers thereof.",
+     "span_len": 135,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "the determinate time of general judgement. e The earth is melted, and all that dwel in it: f I haue confir- 4 med the pillers thereof.",
+     "span_len": 134,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-074-p138",
+   "book": "psalms",
+   "ch": 74,
+   "v": 5,
+   "taux": 0.9,
+   "r2_xsrc": 0.7297,
+   "r2_gold_aid": 0.9189,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.6757,
+     "gold": 0.8649,
+     "span": "to the wicked: g doe not wickedly: and to them that offend: h Exalt not the",
+     "span_len": 75,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.6757,
+     "gold": 0.8649,
+     "span": "to the wicked: g doe not wickedly: and to them that offend: h Exalt not the",
+     "span_len": 75,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.6757,
+     "gold": 0.8649,
+     "span": "to the wicked: g doe not wickedly: and to them that offend: h Exalt not the",
+     "span_len": 75,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.6757,
+     "gold": 0.8649,
+     "span": "to the wicked: g doe not wickedly: and to them that offend: h Exalt not the",
+     "span_len": 75,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 115,
+   "v": 2,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.7907,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "OF PSALMES 2 I said d in mine excelle: Euerie man is a",
+     "span_len": 54,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.7907,
+     "span": "2 I said d in mine excelle: Euerie man is a",
+     "span_len": 43,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.7907,
+     "span": "2 I said d in mine excelle: Euerie man is a",
+     "span_len": 43,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "OF PSALMES 2 I said d in mine excelle: Euerie man is a",
+     "span_len": 54,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 115,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.7912,
+   "r2_gold_aid": 0.7802,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.7447,
+     "gold": 0.7553,
+     "span": "What e ſhal I render to our Lord, for al things that he f hath rendered to me, deſerving so euil? 4",
+     "span_len": 99,
+     "s_count": 2
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7527,
+     "gold": 0.7634,
+     "span": "What e ſhal I render to our Lord, for all things that he hath rendered to me, deſerving so euil? 4",
+     "span_len": 98,
+     "s_count": 2
+    },
+    {
+     "i": 2,
+     "xsrc": 0.7527,
+     "gold": 0.7634,
+     "span": "What e shal I render to our Lord, for all things that he hath rendered to me, deserving so euil? 4",
+     "span_len": 98,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.7527,
+     "gold": 0.7634,
+     "span": "What e ſhal I render to our Lord, for all things that he hath rendered to me, deſerving fo euil? 4",
+     "span_len": 98,
+     "s_count": 2
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 115,
+   "v": 6,
+   "taux": 0.9,
+   "r2_xsrc": 0.8281,
+   "r2_gold_aid": 0.8548,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8281,
+     "gold": 0.8548,
+     "span": "precious in the sight of our Lord is the death of his",
+     "span_len": 53,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8281,
+     "gold": 0.8548,
+     "span": "precious in the sight of our Lord is the death of his",
+     "span_len": 53,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8281,
+     "gold": 0.8548,
+     "span": "precious in the sight of our Lord is the death of his",
+     "span_len": 53,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8281,
+     "gold": 0.8548,
+     "span": "precious in the sight of our Lord is the death of his",
+     "span_len": 53,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 115,
+   "v": 7,
+   "taux": 0.9,
+   "r2_xsrc": 0.8846,
+   "r2_gold_aid": 0.9057,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8269,
+     "gold": 0.8491,
+     "span": "O Lord because m I am thy servant: I am thy servant, and n the sonne of thy Thou hast o broken my bondes:",
+     "span_len": 105,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8269,
+     "gold": 0.8491,
+     "span": "O Lord because m I am thy servant: I am thy servant, and n the sonne of thy Thou hast o broken my bondes:",
+     "span_len": 105,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8269,
+     "gold": 0.8491,
+     "span": "O Lord because m I am thy seruant: I am thy seruant, and n the sonne of thy Thou hast o broken my bondes:",
+     "span_len": 105,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8269,
+     "gold": 0.8491,
+     "span": "O Lord because m I am thy seruant: I am thy seruant, and n the sonne of thy Thou hast o broken my bondes:",
+     "span_len": 105,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 115,
+   "v": 8,
+   "taux": 0.9,
+   "r2_xsrc": 0.8925,
+   "r2_gold_aid": 0.8925,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.9432,
+     "gold": 0.9432,
+     "span": "I wil sacrifice to thee the e D hoast of praise, and I will invocate the name of our Lord.",
+     "span_len": 90,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "I wil sacrifice to thee the hoast of praise, and I wil invocate the name of our Lord.",
+     "span_len": 85,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9881,
+     "gold": 0.9881,
+     "span": "I wil sacrifice to thee the hoast of praise, and I will invocate the name of our Lord.",
+     "span_len": 86,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "I wil sacrifice to thee the hoast of praise, and I wil invocate the name of our Lord.",
+     "span_len": 85,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-115-116",
+   "book": "psalms",
+   "ch": 116,
+   "v": 1,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": 0.0,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8088,
+     "gold": 0.9412,
+     "span": "Alleluia. 1 PRAYSE our Lord a al ye Gentiles: prayſe him b al ye peoples.",
+     "span_len": 73,
+     "s_count": 1
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8088,
+     "gold": 0.9412,
+     "span": "Alleluia. PRAYSE our Lord a al ye Gentiles: prayſe him b al ye peoples.",
+     "span_len": 71,
+     "s_count": 1
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 103,
+   "taux": 0.9,
+   "r2_xsrc": 0.8767,
+   "r2_gold_aid": 0.9846,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.863,
+     "gold": 0.9701,
+     "span": "10; e. How sweete are thy wordes to my iawes, more then honie to my mouth!",
+     "span_len": 74,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.7308,
+     "gold": 0.8333,
+     "span": "OF PSALMES 105 c. How sweete are thy wordes to my iawes, more then honie to my mouth!",
+     "span_len": 85,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.7308,
+     "gold": 0.8333,
+     "span": "OF PSALMES 103 c. How sweete are thy wordes to my iawes, more then honie to my mouth!",
+     "span_len": 85,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.7308,
+     "gold": 0.8333,
+     "span": "OF PSALMES 103 e. How sweete are thy wordes to my iawes, more then honie to my mouth!",
+     "span_len": 85,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 104,
+   "taux": 0.9,
+   "r2_xsrc": 0.7739,
+   "r2_gold_aid": 0.7232,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8522,
+     "gold": 0.7981,
+     "span": "By thy commandments I haue vnderstood: therefore haue I f hated al the way of iniquitie. Nun. Everlasting. 105 a",
+     "span_len": 112,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8522,
+     "gold": 0.7981,
+     "span": "By thy commandments I haue vnderstood: therefore haue I f hated al the way of iniquitie. Nun. Everlasting. 105 a",
+     "span_len": 112,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8087,
+     "gold": 0.75,
+     "span": "By thy commandments I haue vnderstood: therfore haue f It I f hated al the way of iniquitie. Nun. Everlasting. 105 a",
+     "span_len": 116,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8087,
+     "gold": 0.7615,
+     "span": "By thy commandments I haue vnderstood: therefore haue It b I f hated al the way of iniquitie. Nun. Everlasting. 105 a",
+     "span_len": 117,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 105,
+   "taux": 0.9,
+   "r2_xsrc": 0.8571,
+   "r2_gold_aid": 0.8571,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8571,
+     "gold": 0.8571,
+     "span": "Thy word is a lampe to my seete, and a light to my",
+     "span_len": 50,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8571,
+     "gold": 0.8571,
+     "span": "Thy word is a lampe to my seete, and a light to my",
+     "span_len": 50,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.875,
+     "gold": 0.875,
+     "span": "Thy word is a lampe to my feete, and a light to my",
+     "span_len": 50,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Thy word is a lampe to my feete, and a light to my pathes. a The word or law of to lerne, how to direct their wayes, and actions.",
+     "span_len": 129,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 108,
+   "taux": 0.9,
+   "r2_xsrc": 0.8442,
+   "r2_gold_aid": 0.8442,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.6795,
+     "gold": 0.6795,
+     "span": "c All that The d voluntaries of my mouth make acceptable Lord: and teach me thy",
+     "span_len": 79,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.6795,
+     "gold": 0.6795,
+     "span": "c All that The d voluntaries of my mouth make acceptable Lord: and teach me thy",
+     "span_len": 79,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.6795,
+     "gold": 0.6795,
+     "span": "c All that The d voluntaries of my mouth make acceptable Lord: and teach me thy",
+     "span_len": 79,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "c All that will live godly in Christ Jesus, shal The voluntaries of my mouth make acceptable Lord: and teach me thy",
+     "span_len": 115,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 112,
+   "taux": 0.9,
+   "r2_xsrc": 0.7113,
+   "r2_gold_aid": 1.0,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.7113,
+     "gold": 1.0,
+     "span": "I haue inclined my hart to doe thy iustifications for euer, for reward.",
+     "span_len": 71,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.6701,
+     "gold": 0.942,
+     "span": "I haue inclined my hart to doe thy iustifications for euer, reward",
+     "span_len": 66,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.6907,
+     "gold": 0.9718,
+     "span": "I haue inclined my hart to doe thy justifications for euer, f for reward.",
+     "span_len": 73,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.6701,
+     "gold": 0.942,
+     "span": "I haue inclined my hart to doe thy justifications for euer, reward,",
+     "span_len": 67,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-118",
+   "book": "psalms",
+   "ch": 118,
+   "v": 114,
+   "taux": 0.9,
+   "r2_xsrc": 0.8846,
+   "r2_gold_aid": 0.8846,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8375,
+     "gold": 0.8375,
+     "span": "Thou art my helper, and protector: and upon thy word I haue much hoped. Ec 1 † c Depart",
+     "span_len": 87,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8375,
+     "gold": 0.8375,
+     "span": "Thou art my helper, and protector: and upon thy word I haue much hoped. Ec 1 † c Depart",
+     "span_len": 87,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Not the mortal man is to be hated, in his to God's lawe, which euerie just man loueth. 114 Thou art my helper, and protector: and vpon thy word I haue much hoped.",
+     "span_len": 162,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "Not anie mortal man is to be hated, in his to Gods lawe, b vvhich euerie iust man loueth. 114 Thou art my helper, and protectour: and vpon thy word I haue much hoped.",
+     "span_len": 166,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 2,
+   "taux": 0.9,
+   "r2_xsrc": 0.748,
+   "r2_gold_aid": 0.748,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8,
+     "gold": 0.8,
+     "span": "OF PSALMES 2 Let Israel be joyful in him, that made him: and let the are bond to children of Sion rejoyce in their king. 3",
+     "span_len": 122,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.8932,
+     "gold": 0.8932,
+     "span": "OF PSALMES 2 Let Israel be joyful in him, that made him: and let the children of Sion rejoyce in their king. 3",
+     "span_len": 110,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.8932,
+     "gold": 0.8932,
+     "span": "OF PSALMES 2 Let Israel be ioyful in him, that made him: and let the children of Sion reioyce in their king. 3",
+     "span_len": 110,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8932,
+     "gold": 0.8932,
+     "span": "OF PSALMES 2 Let Israel be joyful in him, that made him: and let the children of Sion rejoyce in their king. 3",
+     "span_len": 110,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.8556,
+   "r2_gold_aid": 0.8556,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Let them praise his name in quire: on tymbrel, and psalter let them sing to him: 4",
+     "span_len": 82,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.987,
+     "gold": 0.987,
+     "span": "Let them praise his name in quite: on tymbrel, and psalter let them sing to him: 4",
+     "span_len": 82,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Let them praise his name in quire: on tymbrel, and psalter let them sing to him: 4",
+     "span_len": 82,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.987,
+     "gold": 0.987,
+     "span": "Let them praise his name in quite: on tymbrel, and psalter let them sing to him: 4",
+     "span_len": 82,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 4,
+   "taux": 0.9,
+   "r2_xsrc": 0.7768,
+   "r2_gold_aid": 0.7768,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Because our Lord is wel pleased in his people: and he wil exalt the meeke vnto salvation. 5",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.9885,
+     "gold": 0.9885,
+     "span": "Because our Lord is wel pleased in his people: and he wil exalt the mecke vnto salvation. 5",
+     "span_len": 91,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9886,
+     "gold": 0.9886,
+     "span": "Because our Lord is wel pleased in his people: and he wil exalt the meekke vnto saluation. 5",
+     "span_len": 92,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "Because our Lord is wel pleased in his people: and he wil exalt the meeke vnto salvation. 5",
+     "span_len": 91,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 5,
+   "taux": 0.9,
+   "r2_xsrc": 0.8452,
+   "r2_gold_aid": 0.8452,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "The sainctes shal rejoyce in glorie: they shal be joyful in their beddes. 6",
+     "span_len": 75,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 1.0,
+     "gold": 1.0,
+     "span": "The sainctes shal rejoyce in glorie: they shal be joyful in their beddes. 6",
+     "span_len": 75,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9726,
+     "gold": 0.9726,
+     "span": "The sainctes shal reioyce in glorie: they shal be ioyful in b their beddes. 6",
+     "span_len": 77,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.9726,
+     "gold": 0.9726,
+     "span": "The sainctes shal rejoyce in glorie: they shal be joyful in b their beddes. 6",
+     "span_len": 77,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 6,
+   "taux": 0.9,
+   "r2_xsrc": 0.88,
+   "r2_gold_aid": 0.8947,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.6887,
+     "gold": 0.6981,
+     "span": "The c exaltations of God in their throte: and d two edged swordes in their to the multitude of his greatnes.",
+     "span_len": 108,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.766,
+     "gold": 0.7766,
+     "span": "The exaltations of God in their throte: and two edged swordes in their in the blessed, vvhich the",
+     "span_len": 97,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.84,
+     "gold": 0.8553,
+     "span": "The c exaltations of God in their throte: and d two edged swordes in their",
+     "span_len": 74,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.84,
+     "gold": 0.8553,
+     "span": "The c exaltations of God in their throte: and d two edged swordes in their",
+     "span_len": 74,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 7,
+   "taux": 0.9,
+   "r2_xsrc": 0.7794,
+   "r2_gold_aid": 0.7794,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "in the abundance of the blessed, vwho passed through,",
+     "span_len": 53,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "To binde",
+     "span_len": 8,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 8,
+   "taux": 0.9,
+   "r2_xsrc": 0.6735,
+   "r2_gold_aid": 0.6735,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "and ouercame",
+     "span_len": 12,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "their kinges in fetters: and in in 8 Al ye Angels and men that may the powre of all creatures to all his greatnes.",
+     "span_len": 114,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 149,
+   "v": 9,
+   "taux": 0.9,
+   "r2_xsrc": 0.8909,
+   "r2_gold_aid": 0.8909,
+   "known_bad_gold": true,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "the iudgement that is e written: God most excellent and laudable. d This to al your possible endeououre, for though his",
+     "span_len": 119,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 150,
+   "v": 1,
+   "taux": 0.9,
+   "r2_xsrc": 0.8977,
+   "r2_gold_aid": 1.0,
+   "known_bad_gold": false,
+   "has_gold": true,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.8316,
+     "gold": 0.9263,
+     "span": "Alleluia. PRAYSE ye our Lord a in his holies: prayse ye him in in b the firmament of his strength.",
+     "span_len": 98,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": 0.0,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.9518,
+     "gold": 0.8523,
+     "span": "Prayse ye our Lord a in his holies.: prayse ye him in b the firmament of his strength.",
+     "span_len": 86,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.8587,
+     "gold": 0.9565,
+     "span": "Alleluia. PRAYSE ye our Lord a in his holies: prayse ye him in b the firmament of his strength.",
+     "span_len": 95,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 150,
+   "v": 3,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": null,
+   "known_bad_gold": null,
+   "has_gold": false,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "And you especially (Gods peculiar people) amongst whom,",
+     "span_len": 55,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "And you especially (Gods peculiar people) amongst whom,",
+     "span_len": 55,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 150,
+   "v": 4,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": null,
+   "known_bad_gold": null,
+   "has_gold": false,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "and",
+     "span_len": 3,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "and",
+     "span_len": 3,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 150,
+   "v": 5,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": null,
+   "known_bad_gold": null,
+   "has_gold": false,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "for whom, divine miracles haue bene wrought",
+     "span_len": 43,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "for whom, diuine miracles haue bene wrought",
+     "span_len": 43,
+     "s_count": 0
+    }
+   ]
+  },
+  {
+   "slug": "scripture-psalms-150-p265",
+   "book": "psalms",
+   "ch": 150,
+   "v": 6,
+   "taux": 0.9,
+   "r2_xsrc": 0.0,
+   "r2_gold_aid": null,
+   "known_bad_gold": null,
+   "has_gold": false,
+   "samples": [
+    {
+     "i": 0,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 1,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "",
+     "span_len": 0,
+     "s_count": 0
+    },
+    {
+     "i": 2,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "praise our Lord,",
+     "span_len": 16,
+     "s_count": 0
+    },
+    {
+     "i": 3,
+     "xsrc": 0.0,
+     "gold": null,
+     "span": "praise our Lord,",
+     "span_len": 16,
+     "s_count": 0
+    }
+   ]
+  }
+ ]
+}

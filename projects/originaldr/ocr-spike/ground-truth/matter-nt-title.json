@@ -1,0 +1,233 @@
+{
+  "locus": "matter/nt/title",
+  "page_index": 0,
+  "ocr_dir": "archive-nt-1582",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-nt-title-p0000.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Single-column display title page set inside an ornamental woodcut interlace border (border is art only — no motto text is set within the border itself). Top: large display capitals; then a roman-prose descriptive block with small-caps emphasis words (ARGVMENTS, ANNOTATIONS, CORRVPTIONS); then two centered scripture citations — Pſal. 118 and S. Aug. — each followed by small, faded ITALIC Latin and a roman English 'That is' translation; imprint block at foot. WHOLE PAGE uses VV for W (no real 'w' sort anywhere: NEVV, vvith, Vvith, lavv, vvhich); u/v and i/j are period-swapped (IESVS, FAITHFVLLY, vnder, diuers). A modern red digital watermark (a URL) and a modern emblem at the foot are NOT part of the 1582 print and are excluded.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "title_display",
+      "text": "THE"
+    },
+    {
+      "line_index": 1,
+      "role": "title_display",
+      "text": "NEVV TESTAMENT"
+    },
+    {
+      "line_index": 2,
+      "role": "title_display",
+      "text": "OF IESVS CHRIST, TRANS-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 3,
+      "role": "title_display",
+      "text": "LATED FAITHFVLLY INTO ENGLISH,"
+    },
+    {
+      "line_index": 4,
+      "role": "prose",
+      "text": "out of the authentical Latin , according to the beſt cor-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 5,
+      "role": "prose",
+      "text": "rected copies of the ſame , diligently conferred with",
+      "_pre_vvfix": "rected copies of the ſame , diligently conferred vvith"
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "text": "the Greeke and other editions in diuers languages: With",
+      "_pre_vvfix": "the Greeke and other editions in diuers languages: Vvith"
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "text": "ARGVMENTS of bookes and chapters, ANNOTA-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "text": "TIONS, and other neceſſarie helpes, for the better vnder-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 9,
+      "role": "prose",
+      "text": "ſtanding of the text, and ſpecially for the diſcouerie of the"
+    },
+    {
+      "line_index": 10,
+      "role": "prose",
+      "text": "CORRVPTIONS of diuers late tranſlations, and for"
+    },
+    {
+      "line_index": 11,
+      "role": "prose",
+      "text": "cleering the CONTROVERSIES in religion, of theſe daies:"
+    },
+    {
+      "line_index": 12,
+      "role": "heading",
+      "text": "IN THE ENGLISH COLLEGE OF RHEMES."
+    },
+    {
+      "line_index": 13,
+      "role": "heading",
+      "text": "Pſal. 118."
+    },
+    {
+      "line_index": 14,
+      "role": "latin",
+      "text": "Da mihi intellectum , & ſcrutabor legem tuam, & cuſtodiam"
+    },
+    {
+      "line_index": 15,
+      "role": "latin",
+      "text": "illam in toto corde meo."
+    },
+    {
+      "line_index": 16,
+      "role": "heading",
+      "text": "That is,"
+    },
+    {
+      "line_index": 17,
+      "role": "prose",
+      "text": "Giue me vnderſtanding, and I wil ſearche thy law, and",
+      "_pre_vvfix": "Giue me vnderſtanding, and I vvil ſearche thy lavv, and"
+    },
+    {
+      "line_index": 18,
+      "role": "prose",
+      "text": "wil keepe it with my whole hart.",
+      "_pre_vvfix": "vvil keepe it vvith my vvhole hart."
+    },
+    {
+      "line_index": 19,
+      "role": "heading",
+      "text": "S. Aug. tract. ⟨2?⟩. in Epiſt. Ioan.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 20,
+      "role": "latin",
+      "text": "Omnia quæ leguntur in Scripturis ſanctis, ad inſtructionem & ſalutem noſtram intente oportet"
+    },
+    {
+      "line_index": 21,
+      "role": "latin",
+      "text": "audire: maxime tamen memoriæ commendanda ſunt, quæ aduerſus Hæreticos valent plu-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 22,
+      "role": "latin",
+      "text": "rimum, quorum inſidiæ infirmiores quoſque negligentiores, circumuenire non ceſſant."
+    },
+    {
+      "line_index": 23,
+      "role": "heading",
+      "text": "That is,"
+    },
+    {
+      "line_index": 24,
+      "role": "prose",
+      "text": "Al things that are readde in holy Scriptures, we muſt heare with great attention, to our",
+      "_pre_vvfix": "Al things that are readde in holy Scriptures, vve muſt heare vvith great attention, to our"
+    },
+    {
+      "line_index": 25,
+      "role": "prose",
+      "text": "inſtruction and ſaluation: but thoſe things ſpecially muſt be commended to me-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 26,
+      "role": "prose",
+      "text": "morie, which make moſt againſt Heretikes: whoſe deceites ceaſe not to cir-",
+      "line_end_hyphen": true,
+      "_pre_vvfix": "morie, vvhich make moſt againſt Heretikes: vvhoſe deceites ceaſe not to cir-"
+    },
+    {
+      "line_index": 27,
+      "role": "prose",
+      "text": "cumuent and beguile al the weaker ſort and the more negligent perſons.",
+      "_pre_vvfix": "cumuent and beguile al the vveaker ſort and the more negligent perſons."
+    },
+    {
+      "line_index": 28,
+      "role": "imprint",
+      "text": "PRINTED AT RHEMES,"
+    },
+    {
+      "line_index": 29,
+      "role": "imprint",
+      "text": "by Iohn Fogny."
+    },
+    {
+      "line_index": 30,
+      "role": "imprint",
+      "text": "1582."
+    },
+    {
+      "line_index": 31,
+      "role": "imprint",
+      "text": "CVM PRIVILEGIO."
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "line_index": 19,
+      "span": "⟨2?⟩",
+      "note": "Augustine tract number: a single faded digit between 'tract.' and 'in Epiſt. Ioan.' — reads as '2' but could be '3'. Standard citation of the 'Omnia quae leguntur' passage (prologue of Augustine, In Epistolam Ioannis ad Parthos) supports 'tract. 2'. OCR scaffold did not resolve the digit."
+    },
+    {
+      "line_index": 14,
+      "span": "Da mihi intellectum , & ſcrutabor legem tuam, & cuſtodiam / illam in toto corde meo.",
+      "note": "Psalm 118 motto set in small, faded ITALIC. Individual glyphs read at high magnification; content cross-checked against Vulgate Ps 118:34 ('Da mihi intellectum, et scrutabor legem tuam, et custodiam illam in toto corde meo') used as a CONTENT anchor only — & printed for 'et'. Region confidence LOW; no inline glyph is illegible enough to mark, but the whole block is degraded."
+    },
+    {
+      "line_index": 20,
+      "span": "Omnia quæ leguntur ... circumuenire non ceſſant.",
+      "note": "Augustine Latin (lines 20-22) is the most degraded region — tiny faded italic. Read at high magnification and cross-checked against Augustine, In Epist. Ioannis ad Parthos, prologue ('Omnia quae leguntur in scripturis sanctis, ad instructionem et salutem nostram intente oportet audire: maxime tamen memoriae commendanda sunt, quae adversus haereticos valent plurimum, quorum insidiae infirmiores quosque negligentiores circumvenire non cessant') as CONTENT anchor only. u/v rendered per period convention (aduerſus, circumuenire) as glyphs are not individually distinguishable at this fade. Region confidence LOW."
+    },
+    {
+      "line_index": 24,
+      "span": "Al things that are readde ... the more negligent perſons.",
+      "note": "English 'That is' translation of the Augustine passage (lines 24-27), faded roman apparatus type. Read at high magnification; whole-page VV-for-W regime applied (vve, vvith, vvhich, vvhoſe, vveaker). Possible compositor comma after 'vveaker ſort' not clearly resolvable. Region confidence MEDIUM."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 37,
+    "note": "hand-count of ſ (U+017F) across body text; display caps and small-caps carry none; the two faded Latin blocks contribute the bulk. Treat as approximate — recompute by script for the authoritative figure."
+  },
+  "observer": "agent:matter-nt-title",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (.gt-rasters/matter-nt-title-p0000.png) with per-region high-magnification autocontrast crops; OCR scaffold (our-ocr/nt-1582/..._0000.txt) used only as a dropped-line hint (it was very noisy); Vulgate Ps 118:34 and Augustine In Epist. Ioan. prologue used as CONTENT anchors for the two faded Latin mottos, never as spelling oracles",
+  "confidence": "high on display capitals (lines 0-3), roman prose block (4-11), college heading (12), and imprint (28-31); medium on the two English 'That is' translations (17-18, 24-27); low on the two faded small-italic Latin mottos (14-15 Psalm, 20-22 Augustine) and the Augustine tract number (19)",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-14T22:23:45.553027+00:00",
+    "n_applied": 0,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-nt-title.corrections.json"
+  },
+  "glyph_regime_resolved": "NT-1582 per-FACE w/vv (Jarvis 2026-07-15, applying Sir's body=w guideline): roman body/prose = REAL single-sort 'w' cut in vv-style -> w; DISPLAY TITLING CAPS (title_display/imprint) = genuine VV, the large capitals fount has NO W sort (zoomed 'NEVV TESTAMENT' = two separated V's) -> KEEP vv; italic (arguments/annotations) = real 'w' (zoomed 'Whoſe'/'who' connected). Prose vv->w applied here; display 'NEVV' preserved. OPEN: roman-lowercase w-vs-vv rests on a CAPITAL proof + Sir's guideline; clean-page lowercase reads vv-style — awaiting Sir ratification (global-flip reverts all roman NT if he reads genuine vv)."
+}

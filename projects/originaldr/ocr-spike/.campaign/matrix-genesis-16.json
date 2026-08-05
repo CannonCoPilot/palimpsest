@@ -1,0 +1,831 @@
+{
+ "chapter": 16,
+ "n_verses": 16,
+ "n_cells": 64,
+ "n_pass": 64,
+ "rate": 1.0,
+ "ref_means": {
+  "s_dismas": 0.9895,
+  "odr_com": 0.9895,
+  "sabates_a": 0.9835,
+  "madueke_b": 0.9835
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 0,
+ "open": [],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "SARAI therfore, the wife of Abram, had brought forth no children but hauing an handmaid an Egyptian named Agar,",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "SARAI therfore, the wife of Abram, had brought forth no children: but hauing an handmaid an Agyptian named Agar,",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S9": {
+    "text": "SARAI therfore, the wife of Abram, had brought forth no children: but hauing an handmaid an Egyptian named Agar,",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "SARAI therfore the wife of Abtam had brought forth no children: but hauing an handmaid, an Agyptian named Agar,",
+    "from": "p76",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "she ſaid to her huſband: Behold, our Lord hath cloſed me Mhar I might not beare Goe in vnto my handmaid, if happely of her at the leaſt I may haue children. And when he agreed to her in this requeſt,",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "she ſaid to her huſband: Behold, our Lord hath cloſed me hat I might not beare : Goe in vnto my handmaid, if happely of her at the leaſt I may haue children. And when he agreed to her in this requeſt,",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "she ſaid to her huſband: Behold, our Lord hatk cloſed me, that I might not beare : Goe in vnto my handmaid, if happely of her at the leaſt I may haue children. And when he agreed to her in this requeſt,",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "ſhe ſaid to her huſband: Behold, our Lord hath cloſed me, that I might not beare: Goe in vnto my handrnaid, if happily of her at the leaſt I may haue children. And when he agreed to her in this requeſt,",
+    "from": "p76",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "she toke Agar the Egyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan and gaue her vnto her: huſband to wife.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "she toke Agar the Egyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan : and gaue her vnto her huſband to wife.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "she toke Agar the Agyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan : and gaue her vnto her:: huſband to wife.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "ſhe toke Agar the Ægyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan, and gaue her vnto her huſband to wife.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "Who did companie with her, but she perceauing that she was with childe, deſpiſed her miſtreſſe.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "Who did companie with her, but she perceauing that she was with childe, deſpiſed her miſtreſſe.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "Who did companie with her, but she whileſt perceauing that she was with childe, deſpiſed her miſtreſſe.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.92,
+     "odr_com": 0.92,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   },
+   "S6": {
+    "text": "Who did companie with her, but ſhe perceiuing that ſhe was with child, deſpiſed her miſtreſſe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And Sarai ſaid to Abram Thou doeſt vniuſtly againſt me: I gaue my handmaid into thy boſome, who perceauing herſelf to be with child, deſpiſeth me. Our Lord iudge betwen me and thee.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me: I gaue my handmaid into thy boſome, who perceauing herſelf to be with child, deſpiſeth me. Our Lord iudge betwen me and thee.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "And Sarai ſaid to Abram Thou doeſt vniuſtly againſt me: I gaue my handmaid into thy boſome, who perceauing herſelf to be with child, deſpiſeth me. Our Lord iudge betwene me and thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S6": {
+    "text": "And Sarai ſaid to Abram: Thou doeit vniuſtly againſt me:I gaue my handmaid into thy boſome, who perceiuing her ſelf to be with child, deſpiſeth me. Our Lord iudge between me and thee.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "To whom Abram making anſwere Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her as it pleaſeth thee. When Sarai therfore did afflict her, she ranne away.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "To whom Abram making anſwere : Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her as it pleaſeth thee. When Sarai therfore did afflict her, she ranne away.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "To whom Abram making anſwere: Behold, ſaith he, thy handmaid is in thine owne hand, vſe her as it pleaſeth thee. When Sarai therfore did afflict her, she ranne away.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "To whom Abram making anſwer: Behold, ſaith he, thy handmaid is in thine owne hand, vſe her as it pleaſeth thee. When Sarai therfore did afflict her, ſhe ranne away.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And an angel of our Lord hauing found her, beſide a fountaine of water in the wilderneſſe, which is in the way to Sur in the deſert,",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And an angel of our Lord hauing found her, beſide a fountaine of water in the wilderneſſe, which is in the way to Sur in the deſert,",
+    "from": "p85",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And an angel of our Lord hauing found her, Reg. beſide a fountaine of water in the wilderneſſe, which is in the way to Sur in the deſert,",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And an Angel of our Lord hauing found her beſide a fountaine of water in the wilderneſſe, which is in the way to Sur in the deſert,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "he ſaid to her Agar, the handmaid of Sarai, whence comeſt thou? and whither goeſt thou who anſwered From the face of Sarai my miſtreſſe doe I flye.",
+    "from": "p81",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "he ſaid to her : Agar, the handmaid of Sarai, whence comeſt thou? and whither goeſt thou ? who anſwered : From the face of Sarai my miſtreſſe doe I fye.",
+    "from": "p85",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "he ſaid to her : Agar, the handmaid of Sarai, whence comeſt thou and whither goeſt thou who anſwered : From the face of Sarai my miſtreſſe doe I ſlye.",
+    "from": "p91",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "he ſaid to her: firmament, the handmaid of Sarai whence commeſt thou? and whither goeſt thou who anſwered From the face of Sarai my miſtreſſe doe I flye,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.94,
+     "odr_com": 0.94,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "And the angel of our Lord ſaid to her Returne to thy to thy miſtreſſe, and humble thy ſelfe vnder her hand.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S3": {
+    "text": "And the angel of our Lord ſaid to her Rerurne to thy miſtreſſe, and humble thy ſelfe vnder her hand.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "And the angel of our Lord ſaid to her; Returne to thy to thy miſtreſſe, and humble thy ſelfe vnder her hand.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.919,
+     "madueke_b": 0.919
+    }
+   },
+   "S6": {
+    "text": "And the Angel of our Lord ſaid to her Returne to thy miſtreſſe, and humble thy ſelfe vnder her hand.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And again Multiplying, ſayth he, wil I multiplie thy ſeed, and it shal not be numbred for the multitude thereof.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "And again Multiplying, ſayth he, wil I multiplie thy ſeed, and it shal not be numbred for the multitude therof.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And again Multiplying, ſayth he, wil I multiplie thy ſeed, and it shal not be numbred for the multitude therof.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And againe: Multiplying, ſayth he, wil I multiplie thy ſeed, and it ſhal not be num-bred for the multitude therof.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And againe after that Behold, ſaith he, thou art with child, and thou shalt bring forth a ſonne: and thou shalt cal his name Iſmael, becauſe the Lord hath heard thin affliction.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And againe after that Behold, ſaith he, thou art with child, and thou shalt bring forth a ſonne and thou shalt cal his name Iſmael, becauſe the Lord hath heard thin affliction.",
+    "from": "p86",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And againe after that Behold, ſaith he, thou art with child, and thou shalt bring forth a ſonne and thou shalt cal his name Iſmael, becauſe the Lord hath heard thin affliction.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And againe after that Behold, ſaith he, thou art with child, and thou ſhalt bring forth a ſonne: and thou ſhalt cal his name Iſmael, becauſe the Lord hath heard thine affliction.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "He shal be a wild man his hand shal be againſt al men, and al mens hands againſt him: and ouer againſt al his bretheren shal he pitch his tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S3": {
+    "text": "He shal be a wild man his hand shal be againſt al men, and al mens hands againſt him and ouer againſt al his bretheren shal he pitch his tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S9": {
+    "text": "He shal2 be a wild man his hand shal be againſt al men, and al mens hands againſt him and ouer againſt al his bretheren shal he pitch his tents.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "He ſhal be a wild man his hand ſhal be againſt al men, and al mens hands againſt himꝫ and ouer againſt al his brethren ſhal he pitch his tents.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And she called the name of our Lord that ſpake vnto her Thou the God which haſt ſene me. For she ſaid verily here haue I ſene the backe partes of him that hath ſene me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S3": {
+    "text": "And she called the name of our Lord that ſpake vnto her Thou the God which haſt ſene me. For she ſaid: verily here haue I ſene the backe partes of him that hath ſene me.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "And she called the name of our Lord that ſpake vnto her : Thou the God which haſt ſene me. For she ſaid : verily here haue I ſene the backe partes of him that hath ſene me.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "And ſhe called the name of our Lord that ſpake vnto her: Thou the God which hath ſeen me. For ſhe ſaid: verily here haue I ſeen the backe parts of him that hath ſeen me. Therfore",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.902,
+     "odr_com": 0.902,
+     "sabates_a": 0.924,
+     "madueke_b": 0.924
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Therfore she called that wel, the wel of him that liueth and ſeeth me. The ſame is betwen Cadeſſe, and Barad.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "Therfore she called that wel, the Wel of him that liueth and ſeeth me. The ſame is betwen Cadeſſe, and Barad.",
+    "from": "p86",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "Therfore she called that wel, the Wel of him that liueth and ſeeth me. The ſame is betwen Cadeſſe, and Barad.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "Therfore ſhe called that wel, the wel of him that liueth and ſeeth me. The ſame is between Cadeſſe and Barad.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And Agar brought forth a ſonne to Abram: who called his name Iſmael.",
+    "from": "p82",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Agar brought forth a ſonne to Abram: who called his name Iſmael.",
+    "from": "p86",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Agar brought forth a ſonne to Abram: who called his name Iſmael.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Agar brought forth a ſonne to Abram: who called his name Iſmael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Eightie and ſixe yeares old was Abram when Agar brought him forth Iſmael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S3": {
+    "text": "Eightie and ſixe yeares old was Abram when Agar brought him forth Iſmael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "Eightie and ſixe veares old was Abram when Agar brought him forth Iſmael.",
+    "from": "p92",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Eightie and ſixe yeares old was Abram when Agar brought him forth Iſmael.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Sarai therfore, the wife of Abram, had brought forth no children: but hauing an handmaid an Ægyptian named Agar,",
+   "odr_com": "SARAI therfore, the wife of Abram, had brought forth no children: but hauing an handmaid an Ægyptian named Agar,",
+   "sabates_a": "Sarai therefore the wife of Abram had brought forth no children; but having an handmaid, an Ægyptian named Agar,",
+   "madueke_b": "Sarai therefore the wife of Abram had brought forth no children; but having an handmaid, an Aegyptian named Agar,"
+  },
+  "2": {
+   "s_dismas": "she ſaid to her huſband: Behold, our Lord hath cloſed me, that I might not beare: Goe in vnto my handmaid, if happely of her at the leaſt I may haue children. And when he agreed to her in this requeſt,",
+   "odr_com": "she said to her husband: Behold, our Lord hath closed me, that I might not beare: Goe in vnto my handmaid, if happely of her at the least I may haue children. And when he agreed to her in this request,",
+   "sabates_a": "she said to her husband: Behold, our Lord hath closed me, that I might not bear; Go in unto my handmaid, if happily of her at the least I may have children. And when he agreed to her in this request,",
+   "madueke_b": "she said to her husband: Behold, our Lord hath closed me, that I might not bear; Go in unto my handmaid, if happily of her at the least I may have children. And when he agreed to her in this request,"
+  },
+  "3": {
+   "s_dismas": "she toke Agar the Ægyptian her handmaid tenne yeares after that they firſt dwelled in the land of Chanaan: and gaue her vnto her huſband to wife.",
+   "odr_com": "she toke Agar the Ægyptian her handmaid tenne yeares after that they first dwelled in the land of Chanaan: and gaue her vnto her husband to wife.",
+   "sabates_a": "she took Agar the Ægyptian her handmaid ten years after that they first dwelled in the land of Chanaan, and gave her unto her husband to wife.",
+   "madueke_b": "she took Agar the Aegyptian her handmaid ten years after that they first dwelled in the land of Chanaan, and gave her unto her husband to wife."
+  },
+  "4": {
+   "s_dismas": "Who did companie with her, but she perceauing that she was with childe, deſpiſed her miſtreſſe.",
+   "odr_com": "Who did companie with her, but she perceauing that she was with childe, despised her mistresse.",
+   "sabates_a": "Who did company with her, but she perceiving that she was with child, despised her mistress.",
+   "madueke_b": "Who did company with her, but she perceiving that she was with child, despised her mistress."
+  },
+  "5": {
+   "s_dismas": "And Sarai ſaid to Abram: Thou doeſt vniuſtly againſt me: I gaue my handmaid into thy boſome, who perceauing herſelf to be with child, deſpiſeth me. Our Lord iudge betwen me and thee.",
+   "odr_com": "And Sarai said to Abram: Thou doest vniustly against me: I gaue my handmaid into thy bosome, who perceauing herself to be with child, despiseth me. Our Lord iudge betwen me and thee.",
+   "sabates_a": "And Sarai said to Abram: Thou doest unjustly against me: I gave my handmaid into thy bosom, who perceiving herself to be with child, despiseth me. Our Lord judge between me and thee.",
+   "madueke_b": "And Sarai said to Abram: Thou doest unjustly against me: I gave my handmaid into thy bosom, who perceiving herself to be with child, despiseth me. Our Lord judge between me and thee."
+  },
+  "6": {
+   "s_dismas": "To whom Abram making anſwere: Behold, ſaith he, thy hãdmaid is in thine owne hand, vſe her as it pleaſeth thee. When Sarai therfore did afflict her, she ranne away.",
+   "odr_com": "To whom Abram making answere: Behold, saith he, thy hdmaid is in thine owne hand, vse her as it pleaseth thee. When Sarai therfore did afflict her, she ranne away.",
+   "sabates_a": "To whom Abram making answer: Behold, saith he, thy handmaid is in thine own hand, use her as it pleaseth thee. When Sarai therefore did afflict her, she ran away.",
+   "madueke_b": "To whom Abram making answer: Behold, saith he, thy handmaid is in thine own hand, use her as it pleaseth thee. When Sarai therefore did afflict her, she ran away."
+  },
+  "7": {
+   "s_dismas": "And an Angel of our Lord hauing found her, beſide a fountaine of water in the wilderneſſe, which is in the way to Sur in the deſert,",
+   "odr_com": "And an angel of our Lord hauing found her, beside a fountaine of water in the wildernesse, which is in the way to Sur in the desert,",
+   "sabates_a": "And an Angel of our Lord having found her beside a fountain of water in the wilderness, which is in the way to Sur in the desert,",
+   "madueke_b": "And an Angel of our Lord having found her beside a fountain of water in the wilderness, which is in the way to Sur in the desert,"
+  },
+  "8": {
+   "s_dismas": "he ſaid to her: Agar, the handmaid of Sarai, whence comeſt thou? and whither goeſt thou? who anſwered: From the face of Sarai my miſtreſſe doe I flye.",
+   "odr_com": "he said to her: Agar, the handmaid of Sarai, whence comest thou? and whither goest thou? who answered: From the face of Sarai my mistresse doe I flye.",
+   "sabates_a": "he said to her: Agar, the handmaid of Sarai, whence comest thou? And whither goest thou? Who answered: From the face of Sarai my mistress do I fly.",
+   "madueke_b": "he said to her: Agar, the handmaid of Sarai, whence comest thou? And whither goest thou? Who answered: From the face of Sarai my mistress do I fly."
+  },
+  "9": {
+   "s_dismas": "And the Angel of our Lord ſaid to her: Returne to thy miſtreſſe, and humble thy ſelfe vnder her hand.",
+   "odr_com": "And the angel of our Lord said to her: Returne to thy mistresse, and humble thy selfe vnder her hand.",
+   "sabates_a": "And the Angel of our Lord said to her: Return to thy mistress, and humble thyself under her hand.",
+   "madueke_b": "And the Angel of our Lord said to her: Return to thy mistress, and humble thyself under her hand."
+  },
+  "10": {
+   "s_dismas": "And again: Multiplying, ſayth he, wil I multiplie thy ſeed, and it shal not be numbred for the multitude therof.",
+   "odr_com": "And again: Multiplying, sayth he, wil I multiplie thy seed, and it shal not be numbred for the multitude therof.",
+   "sabates_a": "And again: Multiplying, saith he, will I multiply thy seed, and it shall not be numbered for the multitude thereof.",
+   "madueke_b": "And again: Multiplying, saith he, will I multiply thy seed, and it shall not be numbered for the multitude thereof."
+  },
+  "11": {
+   "s_dismas": "And againe after that: Behold, ſaith he, thou art with child, and thou shalt bring forth a ſonne: and thou shalt cal his name Iſmael, becauſe the Lord hath heard thin affliction.",
+   "odr_com": "And againe after that: Behold, saith he, thou art with child, and thou shalt bring forth a sonne: and thou shalt cal his name Ismael, because the Lord hath heard thin affliction.",
+   "sabates_a": "And again after that: Behold, saith he, thou art with child, and thou shalt bring forth a son; and thou shalt call his name Ismael, because the Lord hath heard thine affliction.",
+   "madueke_b": "And again after that: Behold, saith he, thou art with child, and thou shalt bring forth a son; and thou shalt call his name Ismael, because the Lord hath heard thine affliction."
+  },
+  "12": {
+   "s_dismas": "He shal be a wild man: his hand shal be againſt al men, and al mens hands againſt him: and ouer againſt al his bretheren shal he pitch his tents.",
+   "odr_com": "He shal be a wild man: his hand shal be against al men, and al mens hands against him: and ouer against al his bretheren shal he pitch his tents.",
+   "sabates_a": "He shall be a wild man: his hand shall be against all men, and all men's hands against him; and over against all his brethren shall he pitch his tents.",
+   "madueke_b": "He shall be a wild man: his hand shall be against all men, and all men's hands against him; and over against all his brethren shall he pitch his tents."
+  },
+  "13": {
+   "s_dismas": "And she called the name of our Lord that ſpake vnto her: Thou the God which haſt ſene me. For she ſaid: verily here haue I ſene the backe partes of him that hath ſene me.",
+   "odr_com": "And she called the name of our Lord that spake vnto her: Thou the God which hast sene me. For she said: verily here haue I sene the backe partes of him that hath sene me.",
+   "sabates_a": "And she called the name of our Lord that spake unto her: Thou the God which hast seen me. For she said: verily here have I seen the back parts of him that hast seen me.",
+   "madueke_b": "And she called the name of our Lord that spake unto her: Thou the God which hast seen me. For she said: verily here have I seen the back parts of him that hast seen me."
+  },
+  "14": {
+   "s_dismas": "Therfore she called that wel, the wel of him that liueth and ſeeth me. The ſame is betwen Cadeſſe, and Barad.",
+   "odr_com": "Therfore she called that wel, the Wel of him that liueth and seeth me. The same is betwen Cadesse, and Barad.",
+   "sabates_a": "Therefore she called that well, the well of him that liveth and seeth me. The same is between Cadesse and Barad.",
+   "madueke_b": "Therefore she called that well, the well of him that liveth and seeth me. The same is between Cadesse and Barad."
+  },
+  "15": {
+   "s_dismas": "And Agar brought forth a ſonne to Abram: who called his name Iſmael.",
+   "odr_com": "And Agar brought forth a sonne to Abram: who called his name Ismael.",
+   "sabates_a": "And Agar brought forth a son to Abram: Who called his name Ismael.",
+   "madueke_b": "And Agar brought forth a son to Abram: Who called his name Ismael."
+  },
+  "16": {
+   "s_dismas": "Eightie and ſixe yeares old was Abram when Agar brought him forth Iſmael.",
+   "odr_com": "Eightie and sixe yeares old was Abram when Agar brought him forth Ismael.",
+   "sabates_a": "Eighty and six years old was Abram when Agar brought him forth Ismael.",
+   "madueke_b": "Eighty and six years old was Abram when Agar brought him forth Ismael."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "Sarai therefore the wife of Abram had brought forth no children; but having an handmaid, an Ægyptian named Agar,",
+  "2": "she said to her husband: Behold, our Lord hath closed me, that I might not bear; Go in unto my handmaid, if happily of her at the least I may have children. And when he agreed to her in this request,",
+  "3": "she took Agar the Ægyptian her handmaid ten years after that they first dwelled in the land of Chanaan, and gave her unto her husband to wife.",
+  "4": "Who did company with her, but she perceiving that she was with child, despised her mistress.",
+  "5": "And Sarai said to Abram: Thou doest unjustly against me: I gave my handmaid into thy bosom, who perceiving herself to be with child, despiseth me. Our Lord judge between me and thee.",
+  "6": "To whom Abram making answer: Behold, saith he, thy handmaid is in thine own hand, use her as it pleaseth thee. When Sarai therefore did afflict her, she ran away.",
+  "7": "And an Angel of our Lord having found her beside a fountain of water in the wilderness, which is in the way to Sur in the desert,",
+  "8": "he said to her: Agar, the handmaid of Sarai, whence comest thou? And whither goest thou? Who answered: From the face of Sarai my mistress do I fly.",
+  "9": "And the Angel of our Lord said to her: Return to thy mistress, and humble thyself under her hand.",
+  "10": "And again: Multiplying, saith he, will I multiply thy seed, and it shall not be numbered for the multitude thereof.",
+  "11": "And again after that: Behold, saith he, thou art with child, and thou shalt bring forth a son; and thou shalt call his name Ismael, because the Lord hath heard thine affliction.",
+  "12": "He shall be a wild man: his hand shall be against all men, and all men's hands against him; and over against all his brethren shall he pitch his tents.",
+  "13": "And she called the name of our Lord that spake unto her: Thou the God which hast seen me. For she said: verily here have I seen the back parts of him that hast seen me.",
+  "14": "Therefore she called that well, the well of him that liveth and seeth me. The same is between Cadesse and Barad.",
+  "15": "And Agar brought forth a son to Abram: Who called his name Ismael.",
+  "16": "Eighty and six years old was Abram when Agar brought him forth Ismael."
+ },
+ "ref_coverage": {
+  "janvier": 16,
+  "have": {
+   "s_dismas": 16,
+   "odr_com": 16,
+   "sabates_a": 16,
+   "madueke_b": 16
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 64,
+ "triage": "CLEAN",
+ "secs": 4.3
+}

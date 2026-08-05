@@ -1,0 +1,732 @@
+{
+ "findings": [
+  {
+   "ref": "s_dismas",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 27,
+   "last": 32,
+   "offset": -1,
+   "scores": [
+    1.0,
+    0.955,
+    0.987,
+    0.971,
+    0.974,
+    1.0
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 5,
+   "last": 19,
+   "offset": 1,
+   "scores": [
+    1.0,
+    0.988,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.976,
+    1.0,
+    0.987
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 21,
+   "last": 33,
+   "offset": 2,
+   "scores": [
+    1.0,
+    1.0,
+    1.0,
+    0.955,
+    0.927,
+    1.0,
+    0.973,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 6,
+   "last": 23,
+   "offset": 1,
+   "scores": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 27,
+   "last": 32,
+   "offset": -1,
+   "scores": [
+    0.956,
+    0.955,
+    0.883,
+    0.896,
+    0.923,
+    0.92
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 5,
+   "last": 19,
+   "offset": 1,
+   "scores": [
+    0.8,
+    0.965,
+    0.966,
+    0.939,
+    0.886,
+    0.9,
+    0.95,
+    0.944,
+    0.952,
+    0.905,
+    0.955,
+    1.0,
+    0.927,
+    1.0,
+    0.935
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 21,
+   "last": 23,
+   "offset": 2,
+   "scores": [
+    1.0,
+    0.949,
+    0.897
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 25,
+   "last": 33,
+   "offset": 2,
+   "scores": [
+    0.927,
+    0.926,
+    0.919,
+    0.923,
+    0.914,
+    1.0,
+    0.895,
+    0.92,
+    1.0
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 27,
+   "last": 32,
+   "offset": -1,
+   "scores": [
+    0.956,
+    0.955,
+    0.883,
+    0.896,
+    0.923,
+    0.92
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 5,
+   "last": 19,
+   "offset": 1,
+   "scores": [
+    0.8,
+    0.965,
+    0.966,
+    0.939,
+    0.886,
+    0.9,
+    0.95,
+    0.944,
+    0.952,
+    0.905,
+    0.955,
+    1.0,
+    0.927,
+    1.0,
+    0.935
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 21,
+   "last": 23,
+   "offset": 2,
+   "scores": [
+    1.0,
+    0.949,
+    0.897
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 25,
+   "last": 33,
+   "offset": 2,
+   "scores": [
+    0.927,
+    0.926,
+    0.919,
+    0.923,
+    0.914,
+    1.0,
+    0.895,
+    0.92,
+    1.0
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 26,
+   "last": 31,
+   "offset": 1,
+   "scores": [
+    1.0,
+    0.955,
+    0.987,
+    0.971,
+    0.974,
+    1.0
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 6,
+   "last": 20,
+   "offset": -1,
+   "scores": [
+    1.0,
+    0.988,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.976,
+    1.0,
+    0.987
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 23,
+   "last": 35,
+   "offset": -2,
+   "scores": [
+    1.0,
+    1.0,
+    1.0,
+    0.955,
+    0.927,
+    1.0,
+    0.973,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 7,
+   "last": 24,
+   "offset": -1,
+   "scores": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 7,
+   "last": 19,
+   "offset": -1,
+   "scores": [
+    0.958,
+    0.812,
+    0.881,
+    0.947,
+    0.909,
+    0.955,
+    0.958,
+    0.839,
+    1.0,
+    1.0,
+    0.895,
+    0.944,
+    0.938
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "sabates_a",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 21,
+   "last": 24,
+   "offset": -1,
+   "scores": [
+    0.941,
+    1.0,
+    1.0,
+    0.889
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 7,
+   "last": 19,
+   "offset": -1,
+   "scores": [
+    0.958,
+    0.812,
+    0.881,
+    0.947,
+    0.909,
+    0.955,
+    0.958,
+    0.839,
+    1.0,
+    1.0,
+    0.895,
+    0.944,
+    0.938
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "against": "madueke_b",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 21,
+   "last": 24,
+   "offset": -1,
+   "scores": [
+    0.941,
+    1.0,
+    1.0,
+    0.889
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 26,
+   "last": 31,
+   "offset": 1,
+   "scores": [
+    0.956,
+    0.955,
+    0.883,
+    0.896,
+    0.923,
+    0.92
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 6,
+   "last": 20,
+   "offset": -1,
+   "scores": [
+    0.8,
+    0.965,
+    0.966,
+    0.939,
+    0.886,
+    0.9,
+    0.95,
+    0.944,
+    0.952,
+    0.905,
+    0.955,
+    1.0,
+    0.927,
+    1.0,
+    0.935
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 23,
+   "last": 25,
+   "offset": -2,
+   "scores": [
+    1.0,
+    0.949,
+    0.897
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 27,
+   "last": 35,
+   "offset": -2,
+   "scores": [
+    0.927,
+    0.926,
+    0.919,
+    0.923,
+    0.914,
+    1.0,
+    0.895,
+    0.92,
+    1.0
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 6,
+   "last": 18,
+   "offset": 1,
+   "scores": [
+    0.958,
+    0.812,
+    0.881,
+    0.947,
+    0.909,
+    0.955,
+    0.958,
+    0.839,
+    1.0,
+    1.0,
+    0.895,
+    0.944,
+    0.938
+   ]
+  },
+  {
+   "ref": "sabates_a",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 20,
+   "last": 23,
+   "offset": 1,
+   "scores": [
+    0.941,
+    1.0,
+    1.0,
+    0.889
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 1,
+   "first": 26,
+   "last": 31,
+   "offset": 1,
+   "scores": [
+    0.956,
+    0.955,
+    0.883,
+    0.896,
+    0.923,
+    0.92
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 6,
+   "last": 20,
+   "offset": -1,
+   "scores": [
+    0.8,
+    0.965,
+    0.966,
+    0.939,
+    0.886,
+    0.9,
+    0.95,
+    0.944,
+    0.952,
+    0.905,
+    0.955,
+    1.0,
+    0.927,
+    1.0,
+    0.935
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 23,
+   "last": 25,
+   "offset": -2,
+   "scores": [
+    1.0,
+    0.949,
+    0.897
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "first": 27,
+   "last": 35,
+   "offset": -2,
+   "scores": [
+    0.927,
+    0.926,
+    0.919,
+    0.923,
+    0.914,
+    1.0,
+    0.895,
+    0.92,
+    1.0
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 6,
+   "last": 18,
+   "offset": 1,
+   "scores": [
+    0.958,
+    0.812,
+    0.881,
+    0.947,
+    0.909,
+    0.955,
+    0.958,
+    0.839,
+    1.0,
+    1.0,
+    0.895,
+    0.944,
+    0.938
+   ]
+  },
+  {
+   "ref": "madueke_b",
+   "against": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "first": 20,
+   "last": 23,
+   "offset": 1,
+   "scores": [
+    0.941,
+    1.0,
+    1.0,
+    0.889
+   ]
+  }
+ ],
+ "corroborated": [
+  {
+   "ref": "s_dismas",
+   "book": "genesis",
+   "chapter": 1,
+   "from_verse": 27,
+   "offset": -1,
+   "against": [
+    "odr_com",
+    "sabates_a",
+    "madueke_b"
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "from_verse": 5,
+   "offset": 1,
+   "against": [
+    "odr_com",
+    "sabates_a",
+    "madueke_b"
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "from_verse": 21,
+   "offset": 2,
+   "against": [
+    "odr_com",
+    "sabates_a",
+    "madueke_b"
+   ]
+  },
+  {
+   "ref": "s_dismas",
+   "book": "genesis",
+   "chapter": 26,
+   "from_verse": 25,
+   "offset": 2,
+   "against": [
+    "sabates_a",
+    "madueke_b"
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "from_verse": 7,
+   "offset": -1,
+   "against": [
+    "s_dismas",
+    "sabates_a",
+    "madueke_b"
+   ]
+  },
+  {
+   "ref": "odr_com",
+   "book": "genesis",
+   "chapter": 39,
+   "from_verse": 21,
+   "offset": -1,
+   "against": [
+    "sabates_a",
+    "madueke_b"
+   ]
+  }
+ ]
+}

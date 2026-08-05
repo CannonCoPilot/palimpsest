@@ -1,0 +1,2731 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "chapter",
+  "old_text": "And theſe are his gencrations: Ioſeph when he was ſixten yeares old, fed the flock with his mamom cm his brethren being yet a boy and he was with the is of Bala and Zelpha his fathers wiues and he accuſed brethren to his fatherof a moſt wicked crime.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.899,
+   "madueke_b": 0.899
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.826,
+   0.875,
+   1.0
+  ],
+  "crop_page": 135,
+  "crop_leaves": [
+   135,
+   136
+  ],
+  "r3_raw": "1 And Iacob dwelt in the land of Chanaan, wherin his father sojournded. † And :: these are his generations: Joseph when he was fixten e yeares old, fed the flock with nedco P 2 his brethren being yet a boy: and he was with the sonnes of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of:: a most wicked crime. † And Israel loued Ioseph aboue al his sonnes, because he had begotten",
+  "r3_verse": "And :: these are his generations: Joseph when he was fixten yeares old, fed the flock with nedco his brethren being yet a boy: and he was with the sonnes of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of:: a most wicked crime.",
+  "arm_conflicts": [
+   "gencrations: Ioſeph | generations: Joseph",
+   "ſixten | fixten",
+   "his mamom cm | nedco",
+   "is | sonnes",
+   "fatherof | father of::"
+  ],
+  "lexicon_readings": {
+   "29": "ſonnes",
+   "44": "father"
+  },
+  "visual_readings": {
+   "29": "ſonnes",
+   "44": "father"
+  },
+  "new_text": "And :: theſe are his generations: Ioſeph when he was fixten yeares old, fed the flock with nedco his brethren being yet a boy and he was with the ſonnes of Bala and Zelpha his fathers wiues and he accuſed his brethren to his father of:: a moſt wicked crime.",
+  "s_unresolved": [
+   "fixten"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p136",
+  "old_text": "And in loued Ioſeph aboue al his ſonnes, becauſe he had begorten him in his oldage : and he made him a coate of diuers for il",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.0764,
+   0.875,
+   0.2028
+  ],
+  "crop_page": 136,
+  "r3_raw": "of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of a most wicked crime. † And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his old age: and he made him a coate of diuers coloureſ. † And his brethren ſeing that he was loued of his father, more then al his sonnes, they hated him, neither",
+  "r3_verse": "And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his old age: and he made him a coate of diuers coloureſ.",
+  "arm_conflicts": [
+   "in | Israel",
+   "begorten | begotten",
+   "oldage : | old age:",
+   "for il | coloureſ."
+  ],
+  "lexicon_readings": {
+   "1": "Iſrael"
+  },
+  "visual_readings": {
+   "1": "Iſrael"
+  },
+  "new_text": "And Iſrael loued Ioſeph aboue al his ſonnes, becauſe he had begotten him in his old age: and he made him a coate of diuers coloureſ.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p136",
+  "old_text": "And his brethren ſeing that he was loued of were the father, more then al his ſonnes, they hated him, word could they ſpeake any thing to him peaceably.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.899,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.1347,
+   0.875,
+   0.2475
+  ],
+  "crop_page": 136,
+  "r3_raw": "him\" in his old age: and he made him a coate of diuers coloures. † And his brethren seing that he was loued of his father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably. † It chanced also that he reported to his brethren a dreame,",
+  "r3_verse": "And his brethren seing that he was loued of his father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably.",
+  "arm_conflicts": [
+   "were the | his",
+   "word | neither"
+  ],
+  "new_text": "And his brethren ſeing that he was loued of his father, more then al his ſonnes, they hated him, neither could they ſpeake any thing to him peaceably.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p136",
+  "old_text": "It ced alſo that he reported to his brehea dream, he had ſeene : which occaſion was the ſeed of greater tred.",
+  "old": {
+   "s_dismas": 0.868,
+   "odr_com": 0.868,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.1781,
+   0.875,
+   0.3041
+  ],
+  "crop_page": 136,
+  "r3_raw": "father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably. † It chanced also that he reported to his brethren a dreame, that he had scene: which occasion was the seed of greater hatred. † And he said to them: Heare my dreame which I haue scene: † I thought we bounde sheaues in the field:",
+  "r3_verse": "It chanced also that he reported to his brethren a dreame, that he had scene: which occasion was the seed of greater hatred.",
+  "arm_conflicts": [
+   "ced | chanced",
+   "brehea dream, | brethren a dreame, that",
+   "ſeene : | scene:",
+   "tred. | hatred."
+  ],
+  "new_text": "It chanced alſo that he reported to his brethren a dream, that he had scene: which occaſion was the ſeed of greater hatred.",
+  "s_unresolved": [
+   "scene:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p136",
+  "old_text": "I thought we bounde ſheaues in the in and my ſheafe aroſe as it were, and ſtood, and your ſtanding about did adore my iheafe.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.2603,
+   0.875,
+   0.3676
+  ],
+  "crop_page": 136,
+  "r3_raw": "tred. † And he said to them: Hearc my dreame which I haue seene: † I thought we bounde sheaues in the field: on friday, in and my sheafe arose as it were, and stood, and your sheaues standing about did adore my sheafe. † His brethren an-swered: What shalt thou be our king? or shal we be subiect",
+  "r3_verse": "I thought we bounde sheaues in the field: on friday, in and my sheafe arose as it were, and stood, and your sheaues standing about did adore my sheafe.",
+  "arm_conflicts": [
+   "iheafe. | sheafe."
+  ],
+  "r2_attested": {
+   "22": "ſheaues",
+   "28": "ſheafe."
+  },
+  "visual_readings": {
+   "22": "ſheaues",
+   "28": "ſheafe."
+  },
+  "new_text": "I thought we bounde ſheaues in the field: on friday, in and my ſheafe aroſe as it were, and ſtood, and your ſheaues ſtanding about did adore my ſheafe.",
+  "s_unresolved": [
+   "field:",
+   "friday,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p136",
+  "old_text": "His brethren Lent. ſwered : What ſhalt thou be our king or ſhal we be ro thy dominion? This occaſion of his dreames and miniſtred nourishment to the enuie and hatred.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.3017,
+   0.875,
+   0.4278
+  ],
+  "crop_page": 136,
+  "r3_raw": "in friday, in and my sheafe arole as it were, and stood, and your sheaues standing about did adore my sheafe. † His brethren answered: What shalt thou be our king? or shal we be subiect to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred. † He sawe also an other dreame, which telling his brethren, he said:",
+  "r3_verse": "His brethren answered: What shalt thou be our king? or shal we be subiect to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred.",
+  "arm_conflicts": [
+   "Lent. ſwered : | answered:",
+   "king | king?",
+   "ro | subiect to"
+  ],
+  "r2_attested": {
+   "2": "anſwered:",
+   "13": "ſubiect"
+  },
+  "visual_readings": {
+   "2": "anſwered:",
+   "13": "ſubiect"
+  },
+  "new_text": "His brethren anſwered: What ſhalt thou be our king or ſhal we be ſubiect to thy dominion? This occaſion of his dreames and wordes miniſtred nourishment to the enuie and hatred.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p136",
+  "old_text": "He alſo an other dreame, which telling his brethren, he I ſawe in a dreame, as it were the ſunne, and the moone, and eleuen ſtarres adore me.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.3641,
+   0.875,
+   0.4906
+  ],
+  "crop_page": 136,
+  "r3_raw": "to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred. † He sawe also an other dreame, which telling his brethren, he said: I sawe in a dreame, as it were the funne, and the moone, and eleuen starres adore me. † Which when he had reported to his father, and brethren, his father rebuked him, and",
+  "r3_verse": "He sawe also an other dreame, which telling his brethren, he said: I sawe in a dreame, as it were the funne, and the moone, and eleuen starres adore me.",
+  "arm_conflicts": [
+   "ſunne, | funne,"
+  ],
+  "lexicon_readings": {
+   "11": "ſaid:"
+  },
+  "r2_attested": {
+   "1": "ſawe"
+  },
+  "visual_readings": {
+   "11": "ſaid:",
+   "1": "ſawe"
+  },
+  "new_text": "He ſawe alſo an other dreame, which telling his brethren, he ſaid: I ſawe in a dreame, as it were the funne, and the moone, and eleuen ſtarres adore me.",
+  "s_unresolved": [
+   "funne,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p136",
+  "old_text": "Which when he had red to his father, and brethren, his father rebuked him, ſaid : What meaneth this dreame that thou haſt ſeene? ſhal I and thy mother, and thy brethren adore thee a the earth",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.4253,
+   0.875,
+   0.5705
+  ],
+  "crop_page": 136,
+  "r3_raw": "I sawe in a dreame, as it were the funne, and the moone, and eleuen starres adore me. † Which when he had reported to his father, and brethren, his father rebuked him, and said: What meaneth this dreame that thou hast seen? why shal I and thy mother, and thy brethren adore thee vpon the earth? † His brethren therefore enuyed him: but :: his r Brothers ea. venuiee eech father considered the thing with him selfe. † And when",
+  "r3_verse": "Which when he had reported to his father, and brethren, his father rebuked him, and said: What meaneth this dreame that thou hast seen? why shal I and thy mother, and thy brethren adore thee vpon the earth?",
+  "arm_conflicts": [
+   "red | reported",
+   "ſeene? | seen? why",
+   "a | vpon",
+   "earth | earth?"
+  ],
+  "new_text": "Which when he had reported to his father, and brethren, his father rebuked him, and ſaid What meaneth this dreame that thou haſt ſeene? why ſhal I and thy mother, and thy brethren adore thee vpon the earth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p136",
+  "old_text": "His brethren therfore enuyed him: but father conſidered the thing with him ſelfe.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5056,
+   0.875,
+   0.5906
+  ],
+  "crop_page": 136,
+  "r3_raw": "shal I and thy mother, and thy brethren adore thee vpon the earth? † His brethren therefore enuyed him: but :: his rvenuie eech father considered the thing with him selfe. † And when her: but the his brethren abode in Sichem, feeding their fathers flockes,",
+  "r3_verse": "His brethren therefore enuyed him: but :: his rvenuie eech father considered the thing with him selfe.",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "His brethren therefore enuyed him: but :: his rvenuie eech father conſidered the thing with him ſelfe.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.856,
+   "odr_com": 0.856,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p136",
+  "old_text": "And the his brethren abode in Sichem, feeding their fathers are",
+  "old": {
+   "s_dismas": 0.881,
+   "odr_com": 0.881,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.526,
+   0.875,
+   0.6372
+  ],
+  "crop_page": 136,
+  "r3_raw": "the earth? † His brethren therefore enuyed him: but :: his father considered the thing with him selfe. † And when his brethren abode in Sichem, feeding their fathers flockes, † Israel said to him: Thy brethren feed sheepe in Sichem: come, I wil send thee to them. Who answering, † I am",
+  "r3_verse": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "arm_conflicts": [
+   "the | when",
+   "are | flockes,"
+  ],
+  "new_text": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "s_unresolved": [
+   "flockes,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p136",
+  "old_text": "I readie : he ſaid to him: Goe, and ſee if al things be wel thy brethren, and the ſheepe : and bring me word what they doe. Being ſent therfore from rhe Vale of Hebron, he came to Sichem:",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.5865,
+   0.875,
+   0.7317
+  ],
+  "crop_page": 136,
+  "r3_raw": "† Israel said to him: Thy brethren feed sheepe in Sichem: come, I wil send thee to them. Who answering, † I am readie; he said to him: Goe, and see if al things be wel with thy brethren, and the sheepe: and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem: † and a man found him there wandring in the field, and asked what he sought. † But he answered:",
+  "r3_verse": "I am readie; he said to him: Goe, and see if al things be wel with thy brethren, and the sheepe: and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem:",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "rhe | the"
+  ],
+  "new_text": "I am readie he ſaid to him: Goe, and ſee if al things be wel with thy brethren, and the ſheepe and bring me word againe what they doe. Being ſent therefore from the Vale of Hebron, he came to Sichem:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p136",
+  "old_text": "And the man ſaid to him: They are departed from place : for I heard them ſay : Let vs goe into Dothain. Ioſeph therfore went forward after his brethren, and them in Dothain.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7227,
+   0.875,
+   0.8527
+  ],
+  "crop_page": 136,
+  "r3_raw": "I seek my brethren, shew me where they fede the flockes. † And the man said to him: They are departed from this place: for I heard them say: Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain. † Who when they had seene him a farre of, before he came nighe them, they devised to kil him:",
+  "r3_verse": "And the man said to him: They are departed from this place: for I heard them say: Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain.",
+  "arm_conflicts": [
+   "Ioſeph therfore | Joseph therefore"
+  ],
+  "new_text": "And the man ſaid to him: They are departed from this place for I heard them ſay Let vs goe into Dothain. Ioſeph therefore went forward after his brethren, and found them in Dothain.",
+  "s_unresolved": [
+   "therefore",
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p136",
+  "old_text": "Who when they had ſeene him a of, before he came nighe them, they deuiſed to kil",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7878,
+   0.875,
+   0.8715
+  ],
+  "crop_page": 136,
+  "r3_raw": "Joseph therefore went forward after his brethren, and found them in Dothain. † Who when they had seene him a farre of, before he came nigher them, they devised to kil him: † and spake among them selues: Behold the dreamer com-",
+  "r3_verse": "Who when they had seene him a farre of, before he came nigher them, they devised to kil him:",
+  "arm_conflicts": [
+   "nighe | nigher",
+   "deuiſed | devised"
+  ],
+  "new_text": "Who when they had ſeene him a farre of, before he came nigher them, they deuiſed to kil him:",
+  "s_unresolved": [
+   "farre"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p136",
+  "old_text": "and ſpake among them ſelues : Behold the dreamer meth,",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8272,
+   0.875,
+   0.9194
+  ],
+  "crop_page": 136,
+  "r3_raw": "of, before he came nighe them, they devised to kil him: † and spake among them selues: Behold the dreamer com- meth, † come, let vs kil him, and cast him into an old cesterne:.",
+  "r3_verse": "and spake among them selues: Behold the dreamer com- meth,",
+  "arm_conflicts": [],
+  "new_text": "and ſpake among them ſelues Behold the dreamer com- meth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.982,
+   "odr_com": 0.982,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "come, ler vs kil him, and caſt him into an ceſterne: and we wil ſay A naughrie wild beaſt hath deuoured. him: and then it ſhal appeare what his dreames doe profite him.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8483,
+   0.875,
+   0.9194
+  ],
+  "crop_page": 136,
+  "crop_leaves": [
+   136,
+   137
+  ],
+  "r3_raw": "† and spake among them selues: Behold the dreamer com- meth, † come, let vs kil him, and cast him into an old cesterne:. cefterne: and we wil say A naughtie wild beast hath deuoured him:: and then it shal appeare what his dreames ::So the Ie doe profite him. † And Ruben hearing this, endeuored to deliuer him out of their hands, and laid: † Do not take",
+  "r3_verse": "come, let vs kil him, and cast him into an old cesterne:. cefterne: and we wil say A naughtie wild beast hath deuoured him:: and then it shal appeare what his dreames ::So the Ie doe profite him.",
+  "arm_conflicts": [
+   "ler | let",
+   "naughrie | naughtie"
+  ],
+  "new_text": "come, let vs kil him, and caſt him into an old ceſterne: cefterne: and we wil ſay A naughtie wild beaſt hath deuoured. him: and then it ſhal appeare what his dreames ::So the Ie doe profite him.",
+  "s_unresolved": [
+   "cefterne:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 22,
+  "from": "p137",
+  "old_text": "Do not take away his life, neyther ſheed ye blood : but caſt him intooperated this ceſterne, that is in the wilderneſſe, and keepe your handes harmeles: and he ſaid this, deſirous to dcliuer him our of their handes, and to reſtore him to his father.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.049,
+   0.0917,
+   0.8855,
+   0.2462
+  ],
+  "crop_page": 137,
+  "r3_raw": "11 doe profite him. † And Ruben hearing this, endeavored to deliuer him out of their hands, and laid: † Do not take away his life, neyther beſeech ye blood: but cast him into this cesterne, that is in the wildernesse, and keepe your handes harmeles: and he said this, desirous to deliuer him out of their handes, and to restore him to his father. † As ſoone therefore as he came vnto his brethren, forthwith",
+  "r3_verse": "Do not take away his life, neyther beſeech ye blood: but cast him into this cesterne, that is in the wildernesse, and keepe your handes harmeles: and he said this, desirous to deliuer him out of their handes, and to restore him to his father.",
+  "arm_conflicts": [
+   "ſheed | beſeech",
+   "intooperated | into",
+   "dcliuer | deliuer",
+   "our | out"
+  ],
+  "new_text": "Do not take away his life, neyther beſeech ye blood but caſt him into this ceſterne, that is in the wilderneſſe, and keepe your handes harmeles: and he ſaid this, deſirous to deliuer him out of their handes, and to reſtore him to his father.",
+  "s_unresolved": [
+   "beſeech"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p137",
+  "old_text": "And Ruben returning to the ceſterne, findeth the not the boy:",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.049,
+   0.4622,
+   0.875,
+   0.5514
+  ],
+  "crop_page": 137,
+  "r3_raw": "elites, for twentie peeces of siluer, who brought him into Egypt. † And Ruben returning to the cesterne, findeth not the boy: † and renting his garments went to his brethren, and said: The boy doth not appeare, and whither",
+  "r3_verse": "And Ruben returning to the cesterne, findeth not the boy:",
+  "arm_conflicts": [],
+  "new_text": "And Ruben returning to the ceſterne, findeth not the boy:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "p137",
+  "old_text": "And they rooke his coate, and dipped it in fied the blood of a kidde, which they had killed:",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.049,
+   0.5237,
+   0.875,
+   0.6161
+  ],
+  "crop_page": 137,
+  "r3_raw": "thren. and said: The boy doth not appeare, and whither shal I goe? † And they tooke his coate, and dipped it in the blood of a kidde, which they had killed: † sending some that should carie it to their father, and should say:",
+  "r3_verse": "And they tooke his coate, and dipped it in the blood of a kidde, which they had killed:",
+  "arm_conflicts": [
+   "rooke | tooke"
+  ],
+  "new_text": "And they tooke his coate, and dipped it in the blood of a kidde, which they had killed:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p137",
+  "old_text": "feſſe ſome that should carie it to their father, and should ſav: of This we haue founde : ſee whether it be thy ſonnes coate, Aug. or no.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.049,
+   0.5431,
+   0.875,
+   0.677
+  ],
+  "crop_page": 137,
+  "r3_raw": "31 shal I goe? † And they tooke his coate, and dipped it in Joseph sif 32 the blood of a kidde, which they had killed: † ſending fied is mo some that should carie it to their father, and should ſay: leſle eſti This we haue founde: see whether it be thy sonnes coate, Aug. Ser. 33 or no. † Which when the father acknowledged, he said: de temp: It is my sonnes coate, a naughtie wild beast hath eaten",
+  "r3_verse": "ſending fied is mo some that should carie it to their father, and should ſay: leſle eſti This we haue founde: see whether it be thy sonnes coate, Aug. Ser. or no.",
+  "arm_conflicts": [
+   "feſſe | ſending fied is mo",
+   "ſav: of | ſay: leſle eſti"
+  ],
+  "new_text": "ſending fied is mo ſome that should carie it to their father, and should ſay: leſle eſti This we haue founde ſee whether it be thy ſonnes coate, Aug. Ser. or no.",
+  "s_unresolved": [
+   "ſending",
+   "fied",
+   "ſay:",
+   "leſle",
+   "eſti"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.806,
+   "odr_com": 0.806,
+   "sabates_a": 0.793,
+   "madueke_b": 0.793
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 36,
+  "from": "p137",
+  "old_text": "the Madianites ſold Ioſeph in Egvpt to Phutiphar an Eunuch of Pharoes maiſter of the ſouldiars.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.979,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   35,
+   36
+  ],
+  "crop": [
+   0.049,
+   0.747,
+   0.875,
+   0.8575
+  ],
+  "crop_page": 137,
+  "r3_raw": "said: I wil descend vnto my sonne\" into hel, mourning. 36 And whileſt he perſecuered in weeping, † the Madianites fold Iofeph in Ægypt to Phutiphar an Eunuch of Pharoes maifter of the fouldiars.",
+  "r3_verse": "the Madianites fold Iofeph in Ægypt to Phutiphar an Eunuch of Pharoes maifter of the fouldiars.",
+  "arm_conflicts": [
+   "ſold Ioſeph | fold Iofeph",
+   "Egvpt | Ægypt",
+   "maiſter | maifter",
+   "ſouldiars. | fouldiars."
+  ],
+  "lexicon_readings": {
+   "3": "Ioſeph"
+  },
+  "visual_readings": {
+   "3": "Ioſeph"
+  },
+  "new_text": "the Madianites fold Ioſeph in Ægypt to Phutiphar an Eunuch of Pharoes maifter of the fouldiars.",
+  "s_unresolved": [
+   "fold",
+   "maifter",
+   "fouldiars."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.968,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p140",
+  "old_text": "And in loued Ioſeph aboue al his ſonnes, becauſe he had begotten him in his oldage: and he made him a coate of diuers for il",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.0599,
+   0.875,
+   0.1853
+  ],
+  "crop_page": 140,
+  "r3_raw": "of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of a most wicked crime. † And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his old age: and he made him a coate of diuers coloutes. † And his brethren seing that he was loued of his father, more then al his sonnes, they hated him, neither",
+  "r3_verse": "And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his old age: and he made him a coate of diuers coloutes.",
+  "arm_conflicts": [
+   "in | Israel",
+   "oldage: | old age:",
+   "for il | coloutes."
+  ],
+  "lexicon_readings": {
+   "1": "Iſrael"
+  },
+  "visual_readings": {
+   "1": "Iſrael"
+  },
+  "new_text": "And Iſrael loued Ioſeph aboue al his ſonnes, becauſe he had begotten him in his old age: and he made him a coate of diuers coloutes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p140",
+  "old_text": "And his brethren ſeing that he was loued of were the father, more then al his ſonnes, they hated him, word could they ſpeake any thing to him peaceably.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.899,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.1176,
+   0.875,
+   0.2322
+  ],
+  "crop_page": 140,
+  "r3_raw": "him\" in his oldage: and he made him a coate of diuers coloures. † And his brethren seing that he was loued of his father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably. † It chanced also that he reported to his brethren a dreame, that",
+  "r3_verse": "And his brethren seing that he was loued of his father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably.",
+  "arm_conflicts": [
+   "were the | his",
+   "word | neither"
+  ],
+  "new_text": "And his brethren ſeing that he was loued of his father, more then al his ſonnes, they hated him, neither could they ſpeake any thing to him peaceably.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p140",
+  "old_text": "It ced alſo that he reported to his brethren a dreame, he had ſeene: which occaſion was the ſeed of greater tred.",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.1658,
+   0.875,
+   0.2926
+  ],
+  "crop_page": 140,
+  "r3_raw": "father, more then al his sonnes, they hated him, neither could they speake any thing to him peaceably. † It chanced also that he reported to his brethren a dreame, that he had seene: which occasion was the seed of greater hatred. † And he said to them: Heare my dreame which I haue seene: † I thought we bounde sheaues in the field:",
+  "r3_verse": "It chanced also that he reported to his brethren a dreame, that he had seene: which occasion was the seed of greater hatred.",
+  "arm_conflicts": [
+   "ced | chanced",
+   "tred. | hatred."
+  ],
+  "new_text": "It chanced alſo that he reported to his brethren a dreame, that he had ſeene: which occaſion was the ſeed of greater hatred.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p140",
+  "old_text": "I thought we bounde ſheaues in the in and my ſheafe aroſe as it were, and ſtood, and your ſtanding about did adore my ſheafe.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.25,
+   0.875,
+   0.356
+  ],
+  "crop_page": 140,
+  "r3_raw": "tred. † And he said to them: Heare my dreame which I haue seene: † I thought we bounde sheaues in the field: standing about did adore my sheafe. † His brethren answered: What shalt thou be our king? or ſhall we be subiect",
+  "r3_verse": "I thought we bounde sheaues in the field: and my ſheafe aroſe as it were, and ſtood, and your standing about did adore my sheafe.",
+  "arm_conflicts": [
+   "in and my ſheafe aroſe as it were, and ſtood, and your | field:"
+  ],
+  "used_merge": true,
+  "new_text": "I thought we bounde ſheaues in the field: and my ſheafe aroſe as it were, and ſtood, and your ſtanding about did adore my ſheafe.",
+  "s_unresolved": [
+   "field:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p140",
+  "old_text": "His brethren Lent. ſwered : What ſhalt thou be our king or ſhal we be to thy dominion? This occaſion of his dreames and miniſtred nourishment to the enuie and hatred.",
+  "old": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.879,
+   "madueke_b": 0.879
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.2909,
+   0.875,
+   0.4183
+  ],
+  "crop_page": 140,
+  "r3_raw": "friday, in and my sheafe arose as it were, and stood, and your sheaues standing about did adore my sheafe. † His brethren answered: What shalt thou be our king? or shal we be subiect to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred. † He sawe also an other dreame, which telling his brethren, he said:",
+  "r3_verse": "His brethren answered: What shalt thou be our king? or shal we be subiect to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred.",
+  "arm_conflicts": [
+   "Lent. ſwered : | answered:",
+   "king | king?"
+  ],
+  "r2_attested": {
+   "2": "anſwered:",
+   "13": "ſubiect"
+  },
+  "visual_readings": {
+   "2": "anſwered:",
+   "13": "ſubiect"
+  },
+  "new_text": "His brethren anſwered: What ſhalt thou be our king or ſhal we be ſubiect to thy dominion? This occaſion of his dreames and wordes miniſtred nourishment to the enuie and hatred.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "p140",
+  "old_text": "He alſo an other dreame, which telling his brethren, he I ſawe in a dreame, as it were the ſunne, and the and eleuen ſtarres adore me.",
+  "old": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.3552,
+   0.875,
+   0.4834
+  ],
+  "crop_page": 140,
+  "r3_raw": "to thy dominion? This occasion of his dreames and wordes ministred nourishment to the enuie and hatred. † He sawe also an other dreame, which telling his brethren, he said: I sawe in a dreame, as it were the sunne, and the moone, and eleuen starres adore me. † Which when he had reported to his father, and brethren, his father rebuked him, and",
+  "r3_verse": "He sawe also an other dreame, which telling his brethren, he said: I sawe in a dreame, as it were the sunne, and the moone, and eleuen starres adore me.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "11": "ſaid:"
+  },
+  "r2_attested": {
+   "1": "ſawe"
+  },
+  "visual_readings": {
+   "11": "ſaid:",
+   "1": "ſawe"
+  },
+  "new_text": "He ſawe alſo an other dreame, which telling his brethren, he ſaid: I ſawe in a dreame, as it were the ſunne, and the moone, and eleuen ſtarres adore me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p140",
+  "old_text": "Which when he had ted to his father, and brethren, his father rebuked him, ſaid : What meaneth this dreame that thou haſt ſeene ſhal I and thy mother, and thy brethren adore thee ea the earth",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.4176,
+   0.875,
+   0.5672
+  ],
+  "crop_page": 140,
+  "r3_raw": "I sawe in a dreame, as it were the sunne, and the moone, and eleuen starres adore me. † Which when he had reported to his father, and brethren, his father rebuked him, and said: What meaneth this dreame that thou hast seene? why shal I and thy mother, and thy brethren adore thee vpon the earth? † His brethren therefore enuyed him: but :: his father considered the thing with him selfe. † And when",
+  "r3_verse": "Which when he had reported to his father, and brethren, his father rebuked him, and said: What meaneth this dreame that thou hast seene? why shal I and thy mother, and thy brethren adore thee vpon the earth?",
+  "arm_conflicts": [
+   "ted | reported",
+   "ſeene | seene? why",
+   "ea | vpon",
+   "earth | earth?"
+  ],
+  "new_text": "Which when he had reported to his father, and brethren, his father rebuked him, and ſaid What meaneth this dreame that thou haſt ſeene why ſhal I and thy mother, and thy brethren adore thee vpon the earth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p140",
+  "old_text": "His brethren therfore enuyed him : but :: eech father conſidered the thing with him ſelfe.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5015,
+   0.875,
+   0.586
+  ],
+  "crop_page": 140,
+  "r3_raw": "shal I and thy mother, and thy brethren adore thee vpon the earth? † His brethren therefore enuyed him: but :: his father considered the thing with him selfe. † And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "r3_verse": "His brethren therefore enuyed him: but :: his father considered the thing with him selfe.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "eech | his"
+  ],
+  "new_text": "His brethren therefore enuyed him but :: his father conſidered the thing with him ſelfe.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p140",
+  "old_text": "And the his brethren abode in Sichem, feeding their fathers",
+  "old": {
+   "s_dismas": 0.851,
+   "odr_com": 0.851,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5232,
+   0.875,
+   0.6075
+  ],
+  "crop_page": 140,
+  "r3_raw": "the earth? † His brethren therefore enuyed him: but :: his father considered the thing with him selfe. † And when his brethren abode in Sichem, feeding their fathers flockes, † Israel said to him: Thy brethren feed sheepe in Sichem:",
+  "r3_verse": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "arm_conflicts": [
+   "the | when"
+  ],
+  "new_text": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "s_unresolved": [
+   "flockes,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p140",
+  "old_text": "I readie : he ſaid to him : Goe, and ſee if al things be wel thy brethren, and the ſheepe: and bring me word what they doe. Being ſent therfore from the Vale of Hebron, he came to Sichem:",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.5853,
+   0.875,
+   0.7339
+  ],
+  "crop_page": 140,
+  "r3_raw": "Israel said to him: Thy brethren feed sheepe in Sichem: come, I wil send thee to them. Who answering, † I am readie; he said to him: Goe, and see if al things be wel with thy brethren, and the sheepe: and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem: † and a man found him there wandring in the field, and asked what he sought. † But he answered:",
+  "r3_verse": "I am readie; he said to him: Goe, and see if al things be wel with thy brethren, and the sheepe: and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem:",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "I am readie he ſaid to him Goe, and ſee if al things be wel with thy brethren, and the ſheepe: and bring me word againe what they doe. Being ſent therefore from the Vale of Hebron, he came to Sichem:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p140",
+  "old_text": "And the man ſaid to him: They. are departed from place : for I heard them ſay : Let vs goe into Dothain. Ioſeph therfore went forward after his brethren, and them in Dothain.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7312,
+   0.875,
+   0.8593
+  ],
+  "crop_page": 140,
+  "r3_raw": "I seeke my brethren, shew me where they fede the flockes. And the man said to him: They are departed from this place: for I heard them say: Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain. Who when they had seen him a farre of, before he came nigh them, they devised to kil him:",
+  "r3_verse": "And the man said to him: They are departed from this place: for I heard them say: Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain.",
+  "arm_conflicts": [
+   "Ioſeph therfore | Joseph therefore"
+  ],
+  "new_text": "And the man ſaid to him: They. are departed from this place for I heard them ſay Let vs goe into Dothain. Ioſeph therefore went forward after his brethren, and found them in Dothain.",
+  "s_unresolved": [
+   "therefore",
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p140",
+  "old_text": "Who when they had ſeene him a of, before he came nighe them, they deuiſed to kil",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7949,
+   0.875,
+   0.8827
+  ],
+  "crop_page": 140,
+  "r3_raw": "Joseph therefore went forward after his brethren, and found them in Dothain. † Who when they had seene him a farre of, before he came nigh them, they devised to kil him: † and spake among them selues: Behold the dreamer com-",
+  "r3_verse": "Who when they had seene him a farre of, before he came nigh them, they devised to kil him:",
+  "arm_conflicts": [
+   "nighe | nigh",
+   "deuiſed | devised"
+  ],
+  "new_text": "Who when they had ſeene him a farre of, before he came nighe them, they deuiſed to kil him:",
+  "s_unresolved": [
+   "farre"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p140",
+  "old_text": "and ſpake among them ſelues : Behold the dreamer meth,",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8364,
+   0.875,
+   0.9342
+  ],
+  "crop_page": 140,
+  "r3_raw": "of, before he came nigh them, they devised to kil him: † and spake among them selues: Behold the dreamer com- meth, † come, let vs kil him, and cast him into an old cesterne:.",
+  "r3_verse": "and spake among them selues: Behold the dreamer com- meth,",
+  "arm_conflicts": [],
+  "new_text": "and ſpake among them ſelues Behold the dreamer com- meth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.982,
+   "odr_com": 0.982,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "come, let vs kil him, and caſt him into an ceſterne and we wil ſay A naughrie wild beaſt hath deuouredhim and then it ſbal appeare what his dreames doe profite him.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.8576,
+   0.875,
+   0.9342
+  ],
+  "crop_page": 140,
+  "crop_leaves": [
+   140,
+   141
+  ],
+  "r3_raw": "† and spake among them selues: Behold the dreamer com- meth, † come; let vs kil him, and cast him into an old cesterne:. cefterne: and we wil say A naughtie wild beast hath deuoured him:: and then it shal appeare what his dreames ::So the I doe profite him. † And Ruben hearing this, endeuored thinking to deliuer him out of their hands, and said: † Do not take",
+  "r3_verse": "come; let vs kil him, and cast him into an old cesterne:. cefterne: and we wil say A naughtie wild beast hath deuoured him:: and then it shal appeare what his dreames ::So the I doe profite him.",
+  "arm_conflicts": [
+   "naughrie | naughtie",
+   "deuouredhim | deuoured him::",
+   "ſbal | shal"
+  ],
+  "r2_attested": {
+   "27": "ſhal"
+  },
+  "visual_readings": {
+   "27": "ſhal"
+  },
+  "new_text": "come, let vs kil him, and caſt him into an old ceſterne cefterne: and we wil ſay A naughtie wild beaſt hath deuoured him:: and then it ſhal appeare what his dreames ::So the I doe profite him.",
+  "s_unresolved": [
+   "cefterne:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p141",
+  "old_text": "And Ruben returning to the ceſterne, findeth the not the boy :",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.049,
+   0.4592,
+   0.875,
+   0.5471
+  ],
+  "crop_page": 141,
+  "r3_raw": "elites, for :: twentie peeces of siluer, who brought him into Ægypt. † And Ruben returning to the cesterne, findeth 30 not the boy: † and renting his garments went to his brethren, and said: The boy doth not appeare, and whither",
+  "r3_verse": "And Ruben returning to the cesterne, findeth not the boy:",
+  "arm_conflicts": [],
+  "new_text": "And Ruben returning to the ceſterne, findeth not the boy",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p141",
+  "old_text": "fied ſome that should carie it to their father, and should ſay: of This we haue founde : ſee whether it be thy ſonnes coate, or no.",
+  "old": {
+   "s_dismas": 0.928,
+   "odr_com": 0.928,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.049,
+   0.5384,
+   0.875,
+   0.6738
+  ],
+  "crop_page": 141,
+  "r3_raw": "31 shal I goe? † And they tooke his coate, and dipped it in Joseph's blood of a kidde, which they had killed: † sending some that should carie it to their father, and should say: This we haue founde: see whether it be thy sonnes coate, 32 or no. † Which when the father acknowledged, he said: It is my sonnes coate, a naughtie wild beast hath eaten",
+  "r3_verse": "sending some that should carie it to their father, and should say: This we haue founde: see whether it be thy sonnes coate, or no.",
+  "arm_conflicts": [
+   "fied | sending"
+  ],
+  "r2_attested": {
+   "0": "ſending"
+  },
+  "visual_readings": {
+   "0": "ſending"
+  },
+  "new_text": "ſending ſome that should carie it to their father, and should ſay: This we haue founde ſee whether it be thy ſonnes coate, or no.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 36,
+  "from": "p141",
+  "old_text": "the Madianites ſold Ioſeph in Egypt to Phutiphar an Eunuch of Pharoes maiſter of the ſouldiars.",
+  "old": {
+   "s_dismas": 0.968,
+   "odr_com": 0.99,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   35,
+   36
+  ],
+  "crop": [
+   0.049,
+   0.7533,
+   0.875,
+   0.8764
+  ],
+  "crop_page": 141,
+  "r3_raw": "said: I wil descend vnto my sonne\" into hel, mourning. 36 And whileſt he perseuered in weeping, † the Madianites fold Ioseph in Ægypt to Phutiphar an Eunuch of Pharoes maister of the souldiars.",
+  "r3_verse": "the Madianites fold Ioseph in Ægypt to Phutiphar an Eunuch of Pharoes maister of the souldiars.",
+  "arm_conflicts": [
+   "ſold | fold",
+   "Egypt | Ægypt"
+  ],
+  "new_text": "the Madianites fold Ioſeph in Ægypt to Phutiphar an Eunuch of Pharoes maiſter of the ſouldiars.",
+  "s_unresolved": [
+   "fold"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.99,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p148",
+  "old_text": "And Iſrael in loued Ioſeph aboue al his ſonnes, becauſe he had begotten him in his oldage : and he made him a coate of diuers coil loures.",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.0594,
+   0.875,
+   0.191
+  ],
+  "crop_page": 148,
+  "r3_raw": "of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of a most wicked crime. † And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his oldage: and he made him a coate of diuers coloureſ. † And his brethren ſeing that he was loued of his father, more then al his sonnes, they hated him, neither",
+  "r3_verse": "And Israel loued Ioseph aboue al his sonnes, because he had begotten him in his oldage: and he made him a coate of diuers coloureſ.",
+  "arm_conflicts": [
+   "coil loures. | coloureſ."
+  ],
+  "new_text": "And Iſrael loued Ioſeph aboue al his ſonnes, becauſe he had begotten him in his oldage and he made him a coate of diuers coloureſ.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p148",
+  "old_text": "His brethren therfore enuyed him: but : his eech father conſidered the thing with him ſelfe.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.4853,
+   0.875,
+   0.5795
+  ],
+  "crop_page": 148,
+  "r3_raw": "shal I and thy mother, and thy brethren adore thee vpon the earth? † His brethren therefore enuyed him: but :: his r Brothers ea- y enuie eech father considered the thing with him selfe. † And when 12 her: but the his brethren abode in Sichem, feeding their fathers flockes,",
+  "r3_verse": "His brethren therefore enuyed him: but :: his Brothers ea- enuie eech father considered the thing with him selfe.",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "His brethren therefore enuyed him: but :: his Brothers ea- enuie eech father conſidered the thing with him ſelfe.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.776,
+   "odr_com": 0.776,
+   "sabates_a": 0.784,
+   "madueke_b": 0.784
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p148",
+  "old_text": "And when the his brethren abode in Sichem, feeding their fathers flockes,",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5025,
+   0.875,
+   0.5994
+  ],
+  "crop_page": 148,
+  "r3_raw": "that I and thy mother, and thy brethren adore thee upon the earth? † His brethren therefore enuyed him: but :: his father considered the thing with him selfe. † And when his brethren abode in Sichem, feeding their fathers flockes, † Israel said to him: Thy brethren feed sheepe in Sichem:",
+  "r3_verse": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "arm_conflicts": [],
+  "new_text": "And when his brethren abode in Sichem, feeding their fathers flockes,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p149",
+  "old_text": "And Ruben returning to the ceſterne, findeth the not the boy:",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.4505,
+   0.875,
+   0.5403
+  ],
+  "crop_page": 149,
+  "r3_raw": "elites, for :: twentie peeces of siluer, who brought him into :: Some r thirtie: A 29 Ægypt. † And Ruben returning to the cesterne, findeth not the boy: † and renting his garments went to his bre-thren, and said: The boy doth not appeare, and whither",
+  "r3_verse": "And Ruben returning to the cesterne, findeth not the boy:",
+  "arm_conflicts": [],
+  "new_text": "And Ruben returning to the ceſterne, findeth not the boy:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 32,
+  "from": "p149",
+  "old_text": "leſſe ſome that should carie it to their father, and should ſay: of This we haue founde : ſee whether it be thy ſonnes coate, or no.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.5302,
+   0.875,
+   0.6553
+  ],
+  "crop_page": 149,
+  "r3_raw": "31 shal I goe? † And they tooke his coate, and dipped it in Joseph sige. 32 the blood of a kidde, which they had killed: † ſending fied is moſte leffe estin. some that should carie it to their father, and should lay: of diueres This we haue founde: see whether it be thy sonnes coate, Aug. Ser. 33 or no. † Which when the father acknowledged, he laid: detemp: It is my sonnes coate, a naughtie wild beast hath eaten",
+  "r3_verse": "ſending fied is moſte leffe estin. some that should carie it to their father, and should lay: of diueres This we haue founde: see whether it be thy sonnes coate, Aug. Ser. or no.",
+  "arm_conflicts": [
+   "leſſe | ſending fied is moſte leffe estin.",
+   "ſay: | lay:"
+  ],
+  "lexicon_readings": {
+   "4": "leſſe"
+  },
+  "visual_readings": {
+   "4": "leſſe"
+  },
+  "new_text": "ſending fied is moſte leſſe estin. ſome that should carie it to their father, and should lay: of diueres This we haue founde ſee whether it be thy ſonnes coate, Aug. Ser. or no.",
+  "s_unresolved": [
+   "ſending",
+   "fied",
+   "moſte",
+   "estin."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.729,
+   "odr_com": 0.729,
+   "sabates_a": 0.722,
+   "madueke_b": 0.722
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 36,
+  "from": "p149",
+  "old_text": "the Madianites ſold Ioſeph in Agypt to Phutiphar an Eunuch of Pharoes maiſter of the ſouldiars.",
+  "old": {
+   "s_dismas": 0.968,
+   "odr_com": 0.99,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.7302,
+   0.875,
+   0.8375
+  ],
+  "crop_page": 149,
+  "r3_raw": "said: I wil descend vnto my sonne\" into hel, mourning. 36 And whileſt he perseuered in weeping, † the Madianites sold Ioseph in Ægypt to Phutiphar an Eunuch of Pharoes maister of the souldiars.",
+  "r3_verse": "the Madianites sold Ioseph in Ægypt to Phutiphar an Eunuch of Pharoes maister of the souldiars.",
+  "arm_conflicts": [
+   "Agypt | Ægypt"
+  ],
+  "new_text": "the Madianites ſold Ioſeph in Ægypt to Phutiphar an Eunuch of Pharoes maiſter of the ſouldiars.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p125",
+  "old_text": "And theſe are his geuerations Ioſeph when he was ſixteen veares old, ted the flock with his brethren being vet a boy and he was with the ſonnes ot Bala and clphe his tathers wiues: and he accuſed his brethren to his father of (a moſt wicked crime.",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.3116,
+   0.885,
+   0.4608
+  ],
+  "crop_page": 125,
+  "r3_raw": "ND Iacob dwelt in the land of Chanaan, wherin his father sejournd. 2. And (a) these are his generations: Joseph when he was sixteen yeares old, fed the flock with his brethren being yet a boy: and he was with the sonnes of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of (b) a most wicked crime. 3. And Israel loued Joseph aboue al his sonnes, because he had begotten him \"in his old age:and he made him a coate of diners",
+  "r3_verse": "And these are his generations: Joseph when he was sixteen yeares old, fed the flock with his brethren being yet a boy: and he was with the sonnes of Bala and Zelpha his fathers wiues: and he accused his brethren to his father of a most wicked crime.",
+  "arm_conflicts": [
+   "geuerations Ioſeph | generations: Joseph",
+   "veares | yeares",
+   "ted | fed",
+   "vet | yet",
+   "ot | of",
+   "clphe | Zelpha",
+   "tathers | fathers"
+  ],
+  "new_text": "And theſe are his generations: Ioſeph when he was ſixteen yeares old, fed the flock with his brethren being yet a boy and he was with the ſonnes of Bala and Zelpha his fathers wiues: and he accuſed his brethren to his father of (a moſt wicked crime.",
+  "s_unresolved": [
+   "fed",
+   "fathers"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p125",
+  "old_text": "His bret hren anſwered : What: ſhalt thou be our King: or ſhal we be ſubiect to thy dominion: This occalon of his dreames nd words miniſtred nourithment to the enuie and hatred",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5553,
+   0.885,
+   0.6565
+  ],
+  "crop_page": 125,
+  "r3_raw": "as it were, and stood, and your sheaues standing about did adore my sheafe. 8. His brethren answered: What? shalt thou be our King; or shall we be ſubieet to thy dominion? This occasion of his dreames and words miniftred nourifhment to the enuie and hatred... He saw also another dreame, which telling his brethren, he said: I saw in a",
+  "r3_verse": "His brethren answered: What? shalt thou be our King; or shall we be ſubieet to thy dominion? This occasion of his dreames and words miniftred nourifhment to the enuie and hatred...",
+  "arm_conflicts": [
+   "bret hren | brethren",
+   ": What: | What?",
+   "ſhal | shall",
+   "ſubiect | ſubieet",
+   "dominion: | dominion?",
+   "occalon | occasion",
+   "nd | and",
+   "miniſtred nourithment | miniftred nourifhment"
+  ],
+  "r2_attested": {
+   "18": "occaſion"
+  },
+  "visual_readings": {
+   "18": "occaſion"
+  },
+  "new_text": "His brethren anſwered What: ſhalt thou be our King: or ſhal we be ſubieet to thy dominion: This occaſion of his dreames and words miniftred nourifhment to the enuie and hatred",
+  "s_unresolved": [
+   "ſubieet",
+   "miniftred",
+   "nourifhment"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p125",
+  "old_text": "Hofwalſo another dreame which telling his brethren, he ſaid: I ſaw in a dreame as it were the ſunne, and the moone, and eleuen liatres adore me.1Which",
+  "old": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.5898,
+   0.885,
+   0.707
+  ],
+  "crop_page": 125,
+  "r3_raw": "his brethren answered: What? must thou be our King; or shall we be subiect to thy dominion? This occasion of his dreames and words ministred nourishment to the enuie and hatred... He saw also another dreame, which telling his brethren, he said: I saw in a dreame, as it were the sunne, and the moone, and cleuen starres adore me. 10. Which when he had reported to his father and brethren, his father rebuked him, and said: What meaneth this dreame that thou hast seen?",
+  "r3_verse": "He saw also another dreame, which telling his brethren, he said: I saw in a dreame, as it were the sunne, and the moone, and cleuen starres adore me.",
+  "arm_conflicts": [
+   "Hofwalſo | He saw also",
+   "eleuen liatres | cleuen starres",
+   "me.1Which | me."
+  ],
+  "lexicon_readings": {
+   "2": "alſo"
+  },
+  "r2_attested": {
+   "1": "ſaw"
+  },
+  "visual_readings": {
+   "2": "alſo",
+   "1": "ſaw"
+  },
+  "new_text": "He ſaw alſo another dreame which telling his brethren, he ſaid: I ſaw in a dreame as it were the ſunne, and the moone, and cleuen starres adore me.",
+  "s_unresolved": [
+   "starres"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p125",
+  "old_text": "His bretkren thertore enuyed him: but his tather conſidered the thing with himſelte.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.6955,
+   0.885,
+   0.7766
+  ],
+  "crop_page": 125,
+  "r3_raw": "dreme that thou hast seen? Why, shal I and thy mother, and thy brethren adore thee vpon the earth? 11. His brethren therefore enuyed him: but (i) his father considered the thing with himselfe. 12. And when his brethren abode in Sichem feeding their fathers fleckes, i.e. Israel",
+  "r3_verse": "His brethren therefore enuyed him: but his father considered the thing with himselfe.",
+  "arm_conflicts": [
+   "bretkren thertore | brethren therefore",
+   "tather | father",
+   "himſelte. | himselfe."
+  ],
+  "new_text": "His brethren therefore enuyed him: but his father conſidered the thing with himselfe.",
+  "s_unresolved": [
+   "therefore",
+   "father",
+   "himselfe."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p125",
+  "old_text": "And when bis brethren abode in Sichem feeding their tathers flockes, Ifrael",
+  "old": {
+   "s_dismas": 0.878,
+   "odr_com": 0.878,
+   "sabates_a": 0.847,
+   "madueke_b": 0.847
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.7127,
+   0.885,
+   0.7956
+  ],
+  "crop_page": 125,
+  "r3_raw": "10 that thou haue been: Why, Iua! I and thy mother, and thy brethren adore thee vpon the earth? 11. His brethren therefore enuyed him: but (i) his father considered the thing with himselfe. 12. And when his brethren abode in Sichem feeding their fathers flockes, i.e. Israel said to him: Thy brethren feed sheep in Sichem: come, I wil send thee",
+  "r3_verse": "And when his brethren abode in Sichem feeding their fathers flockes, i.e.",
+  "arm_conflicts": [
+   "bis | his",
+   "tathers | fathers",
+   "Ifrael | i.e."
+  ],
+  "new_text": "And when his brethren abode in Sichem feeding their fathers flockes, i.e.",
+  "s_unresolved": [
+   "fathers"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p125",
+  "old_text": "ſaid to him: Thy brethren feed iheep in dichem come, I wil ſend thee to them. Who anſwerins,",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.885,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.7489,
+   0.885,
+   0.8293
+  ],
+  "crop_page": 125,
+  "r3_raw": "his brethren abode in Sichem feeding their fathers flockes, 14. Israel said to him: Thy brethren feed sheep in Sichem: come, I will send thee to them. Who anſwering, 14. I am readie; he said to him: Goe, and see if all things be wel with thy brethren and the sheep, and bring me",
+  "r3_verse": "Israel said to him: Thy brethren feed sheep in Sichem: come, I will send thee to them. Who anſwering,",
+  "arm_conflicts": [
+   "iheep | sheep",
+   "dichem | Sichem:",
+   "wil | will",
+   "anſwerins, | anſwering,"
+  ],
+  "r2_attested": {
+   "0": "Iſrael",
+   "7": "ſheep"
+  },
+  "visual_readings": {
+   "0": "Iſrael",
+   "7": "ſheep"
+  },
+  "new_text": "Iſrael ſaid to him: Thy brethren feed ſheep in Sichem: come, I wil ſend thee to them. Who anſwering,",
+  "s_unresolved": [
+   "anſwering,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p125",
+  "old_text": "I am readie he ſaid to im: Goe, and ſee it al thinas be wel with thy brethreu and the ſheep, aud bring me word againe what they doe. Being ſent therfore trom the Wale ot Hebron, he came to Sichem",
+  "old": {
+   "s_dismas": 0.953,
+   "odr_com": 0.953,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.7664,
+   0.885,
+   0.8809
+  ],
+  "crop_page": 125,
+  "r3_raw": "said to him: Thy brethren feed sheep in Sichem: come, I will send thee to them. Who answering, 14. I am readie; he said to him: Goe, and see if all things be wel with thy brethren and the sheep, and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem: 15. and a man found him there wandring in the field, and asked what he sought. 16. But he answered: (a) I seeke",
+  "r3_verse": "I am readie; he said to him: Goe, and see if all things be wel with thy brethren and the sheep, and bring me word againe what they doe. Being sent therefore from the Vale of Hebron, he came to Sichem:",
+  "arm_conflicts": [
+   "im: | him:",
+   "it al thinas | if all things",
+   "brethreu | brethren",
+   "aud | and",
+   "therfore trom | therefore from",
+   "Wale ot | Vale of"
+  ],
+  "lexicon_readings": {
+   "32": "from"
+  },
+  "visual_readings": {
+   "32": "from"
+  },
+  "new_text": "I am readie he ſaid to him: Goe, and ſee if al things be wel with thy brethren and the ſheep, and bring me word againe what they doe. Being ſent therefore from the Vale of Hebron, he came to Sichem",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p125",
+  "old_text": "But he anſwered: (4) I ſeeke my brethren, ſhew me wnere they teed the flockes.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.8388,
+   0.885,
+   0.9174
+  ],
+  "crop_page": 125,
+  "r3_raw": "15. And after this they went: Being therefore from the Vale of Hebron, he came to Sichem: 16. and a man found him there wandring in the field, and asked what he sought. 16. But he answered: (a) I seeke my brethren, shew me where they feed the flockes. 17. And the",
+  "r3_verse": "But he answered: I seeke my brethren, shew me where they feed the flockes. And the",
+  "arm_conflicts": [
+   "wnere | where",
+   "teed | feed"
+  ],
+  "new_text": "But he anſwered: I ſeeke my brethren, ſhew me where they feed the flockes. And the",
+  "s_unresolved": [
+   "feed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.873,
+   "odr_com": 0.873,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p126",
+  "old_text": "Iofeph. man ſaid to him: They are departed trom this place: tor Iheard tnem ſay : Let vs goe into Dothain. Ioſeph thertore went torward atter his brethren, and tound them in Dothain.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.1,
+   0.0527,
+   0.825,
+   0.1738
+  ],
+  "crop_page": 126,
+  "r3_raw": "man said to him: They are departed from this place: for I heard them say: Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain. 18. Who when they had seen him a farre off, before he came nigh them, they devised to kil him: 19. and",
+  "r3_verse": "Iofeph. man said to him: They are departed from this place: for I heard them say: : Let vs goe into Dothain. Joseph therefore went forward after his brethren, and found them in Dothain.",
+  "arm_conflicts": [
+   "trom | from",
+   "tor Iheard tnem | for I heard them",
+   "Ioſeph thertore | Joseph therefore",
+   "torward atter | forward after",
+   "tound | found"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "8": "from",
+   "11": "for",
+   "26": "after"
+  },
+  "visual_readings": {
+   "8": "from",
+   "11": "for",
+   "26": "after"
+  },
+  "new_text": "Iofeph. man ſaid to him: They are departed from this place: for I heard them ſay : Let vs goe into Dothain. Ioſeph therefore went forward after his brethren, and found them in Dothain.",
+  "s_unresolved": [
+   "therefore",
+   "forward",
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p126",
+  "old_text": "Who when they had ſeen him a tarre off, betore he came nigh them they deuiſed to kil him:and",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.1,
+   0.1142,
+   0.825,
+   0.1932
+  ],
+  "crop_page": 126,
+  "r3_raw": "Let vs goe into Dothain. Ioseph therefore went forward after his brethren, and found them in Dothain. 18. Who when they had seen him a farre off, before he came nigh them, they devised to kil him: 19. and spake among themselues: Behold the dreamer commeth, 20. come, let",
+  "r3_verse": "Who when they had seen him a farre off, before he came nigh them, they devised to kil him:",
+  "arm_conflicts": [
+   "tarre | farre",
+   "betore | before",
+   "deuiſed | devised",
+   "him:and | him:"
+  ],
+  "lexicon_readings": {
+   "9": "before"
+  },
+  "visual_readings": {
+   "9": "before"
+  },
+  "new_text": "Who when they had ſeen him a farre off, before he came nigh them they deuiſed to kil him:",
+  "s_unresolved": [
+   "farre"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "chapter",
+  "old_text": "him:and ſpake amons themſelues : Behold the dreamer comieth,",
+  "old": {
+   "s_dismas": 0.893,
+   "odr_com": 0.893,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.1,
+   0.15,
+   0.825,
+   0.2086
+  ],
+  "crop_page": 126,
+  "r3_raw": "a farre off, before he came nigh them, they devised to kil him: 19. and spake among themselues: Behold the dreamer commncth, 20. come, let vs kil him, and cast him into an old cesterne: and we wil say a naugh-",
+  "r3_verse": "and spake among themselues: Behold the dreamer commncth,",
+  "arm_conflicts": [
+   "him:and | and",
+   "amons | among",
+   "comieth, | commncth,"
+  ],
+  "new_text": "and ſpake among themſelues Behold the dreamer commncth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p126",
+  "old_text": "Aud Ruben hearino this, endeauoured to deliuer him out ot their hands, and ſaid:2.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.1,
+   0.203,
+   0.825,
+   0.2782
+  ],
+  "crop_page": 126,
+  "r3_raw": "tie wild beast hath devoured him: (e) and then it shal appeare what his dreames doe profite him. 21. And Ruben hearing this, endeauoured to deliuer him out of their hands, and said: 22. Doe not take away his life, neither theed ye bloud: but cast him into this cesterne that is in",
+  "r3_verse": "And Ruben hearing this, endeauoured to deliuer him out of their hands, and said:",
+  "arm_conflicts": [
+   "Aud | And",
+   "hearino | hearing",
+   "ot | of",
+   "ſaid:2. | said:"
+  ],
+  "new_text": "And Ruben hearing this, endeauoured to deliuer him out of their hands, and ſaid:2.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p126",
+  "old_text": "Doe not take away his lite, neither ſheed ye bloud: but caſt him into this ceſterne that iston the wilderneffe, and keep vour hands harmeles: and he ſaid this, delirous to deliuer him out ot their hands, and to reſtore him to his father.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.1,
+   0.2203,
+   0.825,
+   0.3305
+  ],
+  "crop_page": 126,
+  "r3_raw": "dreames doe profite him. 21. And Ruben hearing this, endeauoured to deliuer him out of their hands, and said: 22. Doe not take away his life, neither ſheed ye bloud: but cast him into this cesterne that is in the wilderneſfe, and keep your hands harmeles: and he said this, defi- rous to deliuer him out of their hands, and to restore him to his father. 23. As ſonne therefore as he came vnto his brethren, forthwith they strip-",
+  "r3_verse": "Doe not take away his life, neither ſheed ye bloud: but cast him into this cesterne that is in the wilderneſfe, and keep your hands harmeles: and he said this, defi- rous to deliuer him out of their hands, and to restore him to his father.",
+  "arm_conflicts": [
+   "lite, | life,",
+   "iston | is in",
+   "wilderneffe, | wilderneſfe,",
+   "vour | your",
+   "delirous | defi- rous",
+   "ot | of"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "5": "life,"
+  },
+  "visual_readings": {
+   "5": "life,"
+  },
+  "new_text": "Doe not take away his life, neither ſheed ye bloud: but caſt him into this ceſterne that is in the wilderneſfe, and keep your hands harmeles: and he ſaid this, defi- rous to deliuer him out of their hands, and to reſtore him to his father.",
+  "s_unresolved": [
+   "wilderneſfe,",
+   "defi-"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.961,
+   "odr_com": 0.961,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p126",
+  "old_text": "As ſonne thertore as he came vnto his brethren, forthwith they ſtripd ped him out of his ſide coate, and ot diuers colours,",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.1,
+   0.2891,
+   0.825,
+   0.3681
+  ],
+  "crop_page": 126,
+  "r3_raw": "the Wildertiene; and keep your hands harmless: and he laid this, earnest to deliuer him out of their hands, and to restore him to his father. 23. As sonne therefore as he came vnto his brethren, forthwith they stripped him out of his tide coate, and of diuers colours, 24. and cast him into the old cesterne, that had not water. 25. And sitting to eate bread,",
+  "r3_verse": "As sonne therefore as he came vnto his brethren, forthwith they stripped him out of his tide coate, and of diuers colours,",
+  "arm_conflicts": [
+   "thertore | therefore",
+   "ſtripd ped | stripped",
+   "ſide | tide",
+   "ot | of"
+  ],
+  "new_text": "As ſonne therefore as he came vnto his brethren, forthwith they stripped him out of his tide coate, and of diuers colours,",
+  "s_unresolved": [
+   "therefore",
+   "stripped"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p126",
+  "old_text": "And ſitting to eate bread, thev ſaw Iſmaelites waytaring men comming trom Galaad, and their camels carytng ſpices, and roſen, and mirrh into gypt.6.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.958,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.1,
+   0.326,
+   0.825,
+   0.4215
+  ],
+  "crop_page": 126,
+  "r3_raw": "ped him out of his tide coate, and of diuers colours, 24. and cast him into the old cesterne, that had not water. 25. And litting to eate bread, they saw Ismaelites waytaring men comming from Galaad, and their camels carying spices, and roſen, and mirr h into Ægypt. 26. Iudas therfore said to his brethren: What auailleth it vs if we kil our brother,",
+  "r3_verse": "And litting to eate bread, they saw Ismaelites waytaring men comming from Galaad, and their camels carying spices, and roſen, and mirr into Ægypt.",
+  "arm_conflicts": [
+   "ſitting | litting",
+   "thev | they",
+   "trom | from",
+   "carytng | carying",
+   "mirrh | mirr",
+   "gypt.6. | Ægypt."
+  ],
+  "lexicon_readings": {
+   "11": "from"
+  },
+  "visual_readings": {
+   "11": "from"
+  },
+  "new_text": "And litting to eate bread, they ſaw Iſmaelites waytaring men comming from Galaad, and their camels carying ſpices, and roſen, and mirr into Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.979,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 36,
+  "from": "p126",
+  "old_text": "the Madianites ſold Ioſeph in Egypt to Putiphar an Eunuch ot Pharoes Maſter of the ſoldiers.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.937,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "neighbours": [
+   35,
+   36
+  ],
+  "crop": [
+   0.1,
+   0.6769,
+   0.825,
+   0.771
+  ],
+  "crop_page": 126,
+  "r3_raw": "he would not take comfort, but laid: I wil descend vnto my sonne\" into hel, mourning. And whileſt he perfeuered in weeping, 36. the Madianites sold Ioseph in Ægypt to Putiphar an Eunuch of Pharoes Master of the soldiers.",
+  "r3_verse": "the Madianites sold Ioseph in Ægypt to Putiphar an Eunuch of Pharoes Master of the soldiers.",
+  "arm_conflicts": [
+   "Egypt | Ægypt",
+   "ot | of"
+  ],
+  "new_text": "the Madianites ſold Ioſeph in Ægypt to Putiphar an Eunuch of Pharoes Maſter of the ſoldiers.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.958,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

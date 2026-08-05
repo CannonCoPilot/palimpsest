@@ -1,0 +1,1170 @@
+{
+ "chapter": 48,
+ "n_verses": 22,
+ "n_cells": 88,
+ "n_pass": 82,
+ "rate": 0.9318,
+ "ref_means": {
+  "s_dismas": 0.934,
+  "odr_com": 0.9773,
+  "sabates_a": 0.9681,
+  "madueke_b": 0.9681
+ },
+ "src_rates": {
+  "S1": 0.9091,
+  "S3": 0.9545,
+  "S9": 0.9091,
+  "S6": 0.9545
+ },
+ "n_all_fail": 1,
+ "all_fail": [
+  3
+ ],
+ "n_open": 6,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 2,
+   "worst": 0.89,
+   "from": "p164",
+   "text": "And it was told the old Behold thy ſonne Ioſeph cometh to thee. who ſtrengthned ſate on his bed."
+  },
+  {
+   "src": "S9",
+   "verse": 2,
+   "worst": 0.89,
+   "from": "p176",
+   "text": "And it was told the old Behold thy ſonne Ioſeph cometh to thee Who ſtrengthned ſate on his bed."
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.0,
+   "from": "p164",
+   "text": "And Ioſeph beingentred to him, he ſaid: God almightie appeared to me in Lura, is in the Land of Chanaan: and He bleſſed me,"
+  },
+  {
+   "src": "S3",
+   "verse": 3,
+   "worst": 0.0,
+   "from": "p168",
+   "text": "And Ioſeph beingentredin to him, he ſaid: God almightie appeared to me in Luza, is in the Land of Chanaan: and He bleſſed me,"
+  },
+  {
+   "src": "S9",
+   "verse": 3,
+   "worst": 0.0,
+   "from": "p176",
+   "text": "And Toſeph beingentred to him, he ſaid: God almightie appeared to me in Luza, is in the Land of Chanaan: and he bleſſed me,"
+  },
+  {
+   "src": "S6",
+   "verse": 3,
+   "worst": 0.0,
+   "from": "p150",
+   "text": "And Ioſeph being entred in to him, he ſaid: God Almightie appeared to me in Lura, which is in the Land ot Chanaan and he bleſſed me,"
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "THESE things being ſo done, it was told Ioſeph that Ifather was ſicke who, taking his two ſonnes Manaſſes and Ephraim, went forward.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "theſe, things being ſo done, it was told Ioſeph rhat father was ſicke who, taking his two ſonnes Manaſſes and Ephraim, went forward.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.962,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "theſe, things being ſo done, it was told Ioſeph that his father was ſicke who, taking his two ſonnes Manaſſes and Ephraim, went forward.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "HESE things being ſo done, it was told Toſeph that this father was ſicke: who, taking his two ſonnes Manaſſes and Ephraim, went torward.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.96,
+     "madueke_b": 0.96
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And it was told the old Behold thy ſonne Ioſeph cometh to thee. who ſtrengthned ſate on his bed.",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.904,
+     "odr_com": 0.904,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
+    }
+   },
+   "S3": {
+    "text": "And it was told the old man: Behold thy ſonne Ioſeph cometh to thee. Who being ſtrengthned ſate on his bed.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S9": {
+    "text": "And it was told the old Behold thy ſonne Ioſeph cometh to thee Who ſtrengthned ſate on his bed.",
+    "from": "p176",
+    "score": {
+     "s_dismas": 0.904,
+     "odr_com": 0.904,
+     "sabates_a": 0.89,
+     "madueke_b": 0.89
+    }
+   },
+   "S6": {
+    "text": "And it was told the old man: Behold thy ſonne Ioſeph commeth to thee. Who being ſtrengthned ſate on his bed.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And Ioſeph beingentred to him, he ſaid: God almightie appeared to me in Lura, is in the Land of Chanaan: and He bleſſed me,",
+    "from": "p164",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.914,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph beingentredin to him, he ſaid: God almightie appeared to me in Luza, is in the Land of Chanaan: and He bleſſed me,",
+    "from": "p168",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.938,
+     "sabates_a": 0.925,
+     "madueke_b": 0.925
+    }
+   },
+   "S9": {
+    "text": "And Toſeph beingentred to him, he ſaid: God almightie appeared to me in Luza, is in the Land of Chanaan: and he bleſſed me,",
+    "from": "p176",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.914,
+     "sabates_a": 0.9,
+     "madueke_b": 0.9
+    }
+   },
+   "S6": {
+    "text": "And Ioſeph being entred in to him, he ſaid: God Almightie appeared to me in Lura, which is in the Land ot Chanaan and he bleſſed me,",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.0,
+     "odr_com": 0.984,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "and ſayd I vIl increaſe, and multiplie thee, and make thee into com titudes of peoples and I wil geue thee this land, and to thy ſede after thee for an euerlaſting poſſeſſion.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "and ſayd: I wil increaſe, and multiplie thee, and make thee into multitudes titudes of peoples and I wil geue thee this land, and to thy ſede after thee for an euerlaſting poſſeſſion",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S9": {
+    "text": "and ſayd: I wil increaſe, and multiplie thee, and make thee into multitudes titudes of peoples: and I wil geue thee this land, and to thy ſede after thee for an euerlaſting poſſeſſion.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   },
+   "S6": {
+    "text": "and ſayd: I wil increaſe, and multiplie thee, and make thee into multitudes of peoples: and I wil giue thee this land, and to thy ſeed after thee for an euerlaſting poſſeſſion.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Thy two ſonnes therfore, which were borne to thee in the Land of gypt before I came hither to thee, ſkalbe myne :. Ephraim and Manaſſes, as Ruben and Simeon ſhalbe reputed to me",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.983,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Thy two ſonnes therfore, which were borne to thee in the Land of Agypt before I came hither to thee, ſhalbe myne : Ephraim and Manaſſes, as Ruben and Simcon ſhalbe repured to me.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.983,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "Thy two ſonnes therfore, which were borne to thee in the Land of gypt before I came hither to thee, ſhalbe myne : Ephraim and Manaſſes, as Ruben and Simeon ſhalbe reputed to me.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.988,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "Thy two ſonnes therfore which were borne to thee in the Land ot Egypt betore I came hither to thee ſhalbe myne Ephraim and Manaſſes as Ruben and Simeon ſhal be reputed to me.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "But the reſt begotten of thee afcer them, ſhalbe thyne, and ibal be called by the name of their brethren in their poſſeſſions. †.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 0.976,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "But the reſt begotren of thee after them, ſhalbe thyne, and ſbal be called by the name of their brethren in their poſſeſſions",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.984,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "But the reſt begotten of thee after them, ſhalbe thyne, and ſbal be called by the name of their brethren in their poſeſſions.†",
+    "from": "p177",
+    "score": {
+     "s_dismas": 0.976,
+     "odr_com": 0.984,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "But the reſt begotten of thee after them, ſhal be thyne, and that be called by the name of their brethren in their poſſeſſions.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.976,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "For vnto me, when I came out of Meſopotamia, Rachel dyed in the land of Chanaan in the very iourney, and it was ſpring time : and I entered into Ephrata, and buried her by the way ſide to Ephrata, which by an other name is called Bethleem.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.996,
+     "madueke_b": 0.996
+    }
+   },
+   "S3": {
+    "text": "For vnto me, when I came out of Meſopotamia, Rachel dyed in the land of Chanaan in the very iourney, and it was ſpring time : and I entered into Ephrata, and buried her by the way ſide to Ephrata, which by an other name is called Bethleem.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.996,
+     "madueke_b": 0.996
+    }
+   },
+   "S9": {
+    "text": "For vnto me, when I came out of Meſopotamia, Rachel dyed in the land of Chanaan in the very iourney, and it was ſpring time : and I entered into Ephrata, and buried her by the way ſide to Ephrata, which by an other name is called Bethleem.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.996,
+     "madueke_b": 0.996
+    }
+   },
+   "S6": {
+    "text": "For vnto me, when I came out ot Mefopotamia, Rachal dyed in the land of Chanaan in the very iourney. and it was ſpring time: and I entred into Ephrata, and buried her by the way ſide to Ephrata, which by another name is called Bethleem.",
+    "from": "p150",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And ſceing his ſonnes he ſaid to him: who are theiſe",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S3": {
+    "text": "And ſeeinghis ſonnes he ſaid to him: Who are theiſe†",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S9": {
+    "text": "And ſeeing his ſonnes he ſaid to him: Who are theſe?",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And ſeeing his ſonnes: he ſaid to him: Who are theſe",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 0.98,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "He, anſweted: Thev are my ſonnes, whom God hath geuen me in this place. Bring them, quoth he, to me, that I may bleſſe thom.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S3": {
+    "text": "He. anſweted: Thev are my ſonnes, whom God hath geuen me in this place. Bring them, quoth he, to me, that I may bleſſe them.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "anſweted: They are my ſonnes, whom God hath geuen me in this place. Bring them, quoth he, to me, that I may bleſſe them.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.953,
+     "madueke_b": 0.953
+    }
+   },
+   "S6": {
+    "text": "He anſwered: They are my ſonnes, whom God hath giuen me in this place. Bring them, quoth he, to me, that I may bleſſe them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "For Iſraels eyes were dymme by reaſon of very great age, and he could not ſee clearly. And when they were ſet beſide him, kiſſing and embracing them,",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "For Iſraels eyes were dymme by reaſon of very great age, and he could not ſee clearly. And when they were ſet beſide him, kiſſing and embracing them,",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "For Iſraels eyes were dymme by reaſon of very great age, and he could not ſee clearly. And when they were ſet beſide him, kiſſing and embracing them,",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "For Iſraels eyes were I I Ioſeph. dimme by reaſon ot very great age, and he could not ſee cleerly. And when they were ſet beſide him, kiſſing and embracing them,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "he ſaid to his ſonne : I am not defrauded of thy ſight: moreouer God hath ſhewed me thy ſede.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "he ſaid to his ſonne : I am not defrauded of thy ſight: moreouer God hath ihewed me thy ſede.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "he ſaid to his ſonne: I am not defrauded of thy ſight : moreouer God hath ſhewed me thy ſede.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "he ſaid to his ſonne I am not detrauded ot thy ſight moreouer God hath ſhewed me thy ſeed.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And when Ioſeph had taken them from his fathers lappe, he adored proſtrate vnto the ground.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S3": {
+    "text": "And when Ioſeph had taken them from his fathers lappe, he adored proſtrate vnto the ground",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And when Ioſeph had taken them from his fathers lappe, he adored proſtrate vnto the ground.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S6": {
+    "text": "And when Ioſeph had taken them trom his fathers lap, he adored proſtrate vnto the ground.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And he ſet Ephraim on his right hand, that is, on the left hand of Iſrael : but Manaſſes on his owne left hand, to wit, on his fathers right hand, and pur them nere to him.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "And he ſet Ephraim, on his right hand, that is, on the left hand of Iſrael : but Manaſſes on his owne left hand, to wit, on his fathers right hand, and put them nere to him.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   },
+   "S9": {
+    "text": "And he ſet Ephraim on his right hand, that is, on the left hand of Iſrael: but Manaſſes on his owne left hand, to wit, on his fathers right hand, and pur them nere to him.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S6": {
+    "text": "And he ſet Ephraim on his tigat han I, that is, on the left hand of Iſrael: but Manaſſes on his owne left hand, to wit, on his fathers right hand, and put them neer to him.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Who ſtrerching forth his right hand, put it vpon the head of Ephraim the younger brother: and the left vpon the head of Manaſſes, thar was the elder, changing handes.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   },
+   "S3": {
+    "text": "Who ſtretching forth his right hand, put it vpon the head of Ephraim the younger brother : and : the left vpon the head of Manaſſes, that was the elder, changing handes.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "Who ſtretching forth his right hand, put it vpon the head of Ephraim the younger: By brother : and :: the left vpon the head of Manaſſes, that was made the elder, changing handes.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 0.953,
+     "odr_com": 0.953,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "Who ſtretching forth his right hand, put it vpon the head ot Ephraim the vonger brother: and the lett vpon the head of Manaſſes, that was the elder, changing hands.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "And Iacob bleſſed the ſonnes of Ioſeph, and ſaid : God, in whoſe ſight my fathers Abraham and Iſaac haue walked, God that feedeth me from my youth vntil this preſent day:",
+    "from": "p165",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And Iacob bleſſed the ſonnes of Ioſeph, and ſaid : God, in whoſe ſight my fathers Abraham and Iſaac haue walked, God that feedeth me from my youth vntil this preſent day :",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S9": {
+    "text": "And Iacob bleſſed the ſonnes of Ioſeph, and ſaid God, in whoſe ſight my fathers Abraham and Iſaac haue walked, God that feedeth me from my youth vntil this preſent day:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S6": {
+    "text": "And facob bleſſed the ſounes of Ioſeph, and ſaid: God, in whoſe ſight my fathets Abtaham Iſaac haue walked, God that feedeth me trom my vouth vntil this preſent day:",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.954,
+     "madueke_b": 0.954
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "The Angel thar deliuereth me from al euils, bleſſe theſe children: and be my name called vpon them, the names alſo of my fathers Abraham, and Iſaac, and grow they into a multitude vpon the earth.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S3": {
+    "text": "The Angol that deliuereth me from al euils, bleſſe theſe children : and be my name called vpon them, the names alſo of my fathers Abraham, and Iſaac, and grow they into a multitude vpon the earth.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   },
+   "S9": {
+    "text": "The Angel that deliuereth me from al euils, bleſſe theſe children: and be my name called vpon them, the names alſo of my fathers Abraham, and Iſaac, and grow they into a multitude vpon the earth.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The Angel that deliuereth me from al euils, bleſſe theſe children: aud be my name called vponthem, the names alſo ot my fathers Abraham, and Iſaac, aad grow they into a multitude vpon the eatth.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And Ioſeph ſeing that his father had put his right hand vpon the head of Ephraim, tooke it heauily: and taking his fathers hand he went abour to lift it from Ephraims heao, and to remoue ir vpon the head of Manaſſes.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.986,
+     "odr_com": 0.986,
+     "sabates_a": 0.961,
+     "madueke_b": 0.961
+    }
+   },
+   "S3": {
+    "text": "And Ioſeph ſeing that his father had put his right hand vpon the head of Ephraim, tooke it heauily : and taking his fathers hand he went about to lift it from Ephraims head, and to remoue it vpon the head of Manaſſes.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "And Ioſeph ſeing that his father had put his right hand vpon the head of Ephraim, tooke it heauily : and taking his fathers hand he went about to lift it from Ephraims head, and to remoue it vpon the head of Manaſſes.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "And Ioſeph ſeeing that his father had put his tight hand vpon the headot Ephraim, tooke it heauily: aud taking his tathers hand he went about to litt it from Ephraus head to remoue it vpon the head ot Manaſſes.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.934,
+     "odr_com": 0.934,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "And he ſaid to his father : It is not conuenient father ſo to be: becauſe this is the firſt begotren pur thy righr hand vpon his head.",
+    "from": "p165",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to his father : It is not conuenient father ſo to be: becauſe this is the firſt begotten put thy right hand vpon his head.",
+    "from": "p169",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to his father : It is not conuenient father ſo to be: becauſe this is the firſt begotten put thy right hand vpon his head.",
+    "from": "p177",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſaid to his tather It is not conuenient father ſo to be: becauſe this is the firſtbegotten put thy tight hand vpon his head.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "wao refuſing. ſaid : I know my ſonne, I know: and this ſams in dede Hal be into peoples, and ſhal be multi- plied : but his vounger brother ſhal be greater then he : and his ſede inal growe into nations.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S3": {
+    "text": "Wno refuſing, ſaid : I know my ſonne, I know: and this ſame in dede hal be into peoples, and ſhal be multi- I46 I plied : but his younger brother ſhal be greater then he : and his ſede ſhal growe into nattous.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.954,
+     "odr_com": 0.954,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S9": {
+    "text": "Who refuſing, ſaid I know my ſonne, I know: and this ſame in dede ial be into peoples, and ſhal be multi- plied but his younger brother ſhal be greater then he and his ſede ſhal growe into nations.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S6": {
+    "text": "Who re fuſing, ſaid: Iknow my ſonne, Iknow: aud this ſame indeed thal be into peoples, and lhal be multiplied: but his yonger brother ſhal be greater theu he: and his ſeed ſhal grow into nations.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And he bleſſed them at thar time, ſaying In thee ihal Iſrael be bleſſed, and it ſhalbe ſaid God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſerte Ephraim before Manaſſes.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.983,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S3": {
+    "text": "And he bleſſed them at that time, ſaying In thee ſhal Iſrael be bleſſed, and it ſhalbe ſaid God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſette Ephraim before Manaſſes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S9": {
+    "text": "And he bleſſed them at that time, ſaying In thee ſhal Iſrael be bleſſed, and it ſhalbe ſaid God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſette Ephraim before Manaſſes.",
+    "from": "p178",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "And he bleſſed them at that time, ſayin: In thee ihal Iſrael be bleſſed, and it ſhal be ſail: God doe vnto thee as vnto Ephraim, as vnto Manaſles. And he ſet Ephraim betore Manaſſes.And",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.911,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And he ſaid Ioſeph his ſonne: Behold I dye, and God wil be with vou, and wil bring vou backe into the land of your fathers.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 0.959,
+     "odr_com": 0.959,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
+    }
+   },
+   "S3": {
+    "text": "And he ſaid to Ioſeph his ſonne Behold I dye, and God wil be with you, and wil bring you backe into the land of your fathers.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "And he ſaid to Ioſeph his ſonne Behold I dye, and God wil be with you, and wil bring you backe into the land of your fathers.",
+    "from": "p178",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "he ſaid to Ioſeph his ſonne: Behold I dye, God wil be with you, and wil brins you backe Into the land of vour tathers.",
+    "from": "p151",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.937,
+     "madueke_b": 0.937
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my ſword and bowe.",
+    "from": "p166",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my ſword and bowe.",
+    "from": "p170",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my ſword and bowe.",
+    "from": "p178",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "I doe giue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrian with my ſword and bow.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.966,
+     "odr_com": 0.966,
+     "sabates_a": 0.981,
+     "madueke_b": 0.981
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "Theſe things being ſo done, it was told Ioſeph that his father was ſicke: who, taking his two ſonnes Manaſſes and Ephraim, went forward.",
+   "odr_com": "THESE things being so done, it was told Ioseph that his father was sicke: who, taking his two sonnes Manasses and Ephraim, went forward.",
+   "sabates_a": "These things being so done, it was told Joseph that his father was sick: who, taking his two sons Manasses and Ephraim, went forward.",
+   "madueke_b": "These things being so done, it was told Joseph that his father was sick: who, taking his two sons Manasses and Ephraim, went forward."
+  },
+  "2": {
+   "s_dismas": "And it was told the old man: Behold thy ſonne Ioſeph cometh to thee. Who being ſtrengthned ſate on his bed.",
+   "odr_com": "And it was told the old man: Behold thy sonne Ioseph cometh to thee. Who being strengthned sate on his bed.",
+   "sabates_a": "And it was told the old man: Behold thy son Joseph cometh to thee. Who being strengthened sat on his bed.",
+   "madueke_b": "And it was told the old man: Behold thy son Joseph cometh to thee. Who being strengthened sat on his bed."
+  },
+  "3": {
+   "s_dismas": "And Ioſeph being entred in to him, he ſaid: God But pompe auaileth not the dead. The Septuagint are not contrarie to the Hebrew and Latin text, but ſupplie that was omitted. Adoration of God and creatures is not repugnant. almightie appeared to me in Luza, which is in the Land of Chanaan: and He bleſſed me,",
+   "odr_com": "And Ioseph being entred in to him, he said: God almightie appeared to me in Luza, which is in the Land of Chanaan: and he blessed me,",
+   "sabates_a": "And Joseph being entered in to him, he said: God Almighty appeared to me in Luza, which is in the Land of Chanaan: and he blessed me,",
+   "madueke_b": "And Joseph being entered in to him, he said: God Almighty appeared to me in Luza, which is in the Land of Chanaan: and he blessed me,"
+  },
+  "4": {
+   "s_dismas": "and ſayd: I wil increaſe, and multiplie thee, and make thee into multitudes of peoples: and I wil geue thee this land, and to thy ſede after thee for an euerlaſting poſſeſſion.",
+   "odr_com": "and sayd: I wil increase, and multiplie thee, and make thee into multitudes of peoples: and I wil geue thee this land, and to thy sede after thee for an euerlasting possession.",
+   "sabates_a": "and said: I will increase, and multiply thee, and make thee into multitudes of peoples: and I will give thee this land, and to thy seed after thee for an everlasting possession.",
+   "madueke_b": "and said: I will increase, and multiply thee, and make thee into multitudes of peoples: and I will give thee this land, and to thy seed after thee for an everlasting possession."
+  },
+  "5": {
+   "s_dismas": "Thy two ſonnes therfore, which were borne to thee in the Land of Ægypt before I came hither to thee, ſhal be myne: Ephraim and Manaſſes, as Ruben and Simeon ſhal be reputed to me.",
+   "odr_com": "Thy two sonnes therfore, which were borne to thee in the Land of Ægypt before I came hither to thee, shalbe myne: Ephraim and Manasses, as Ruben and Simeon shalbe reputed to me.",
+   "sabates_a": "Thy two sons therefore which were born to thee in the Land of Ægypt before I came hither to thee, shall be mine: Ephraim and Manasses, as Ruben and Simeon shall be reputed to me.",
+   "madueke_b": "Thy two sons therefore which were born to thee in the Land of Aegypt before I came hither to thee, shall be mine: Ephraim and Manasses, as Ruben and Simeon shall be reputed to me."
+  },
+  "6": {
+   "s_dismas": "But the reſt begotten of thee after them, ſhal be thyne, and ſhal be called by the name of their brethren in their poſſeſſions.",
+   "odr_com": "But the rest begotten of thee after them, shalbe thyne, and shal be called by the name of their brethren in their possessions.",
+   "sabates_a": "But the rest begotten of thee after them, shall be thine, and shall be called by the name of their brethren in their possessions.",
+   "madueke_b": "But the rest begotten of thee after them, shall be thine, and shall be called by the name of their brethren in their possessions."
+  },
+  "7": {
+   "s_dismas": "For vnto me, when I came out of Meſopotamia, Rachel dyed in the land of Chanaan in the very iourney, and it was ſpring time: and I entered into Ephrata, and buried her by the way ſide to Ephrata, which by an other name is called Bethleem.",
+   "odr_com": "For vnto me, when I came out of Mesopotamia, Rachel dyed in the land of Chanaan in the very iourney, and it was spring time: and I entered into Ephrata, and buried her by the way side to Ephrata, which by an other name is called Bethleem.",
+   "sabates_a": "For unto me, when I came out of Mesopotamia, Rachel died in the land of Chanaan in the very journey, and it was spring time: and I entered into Ephrata, and buried her by the way side to Ephrata, which by another name is called Bethleem.",
+   "madueke_b": "For unto me, when I came out of Mesopotamia, Rachel died in the land of Chanaan in the very journey, and it was spring time: and I entered into Ephrata, and buried her by the way side to Ephrata, which by another name is called Bethleem."
+  },
+  "8": {
+   "s_dismas": "And ſeeing his ſonnes he ſaid to him: Who are theiſe?",
+   "odr_com": "And seeing his sonnes, he said to him: Who are theise?",
+   "sabates_a": "And seeing his sons he said to him: Who are these?",
+   "madueke_b": "And seeing his sons he said to him: Who are these?"
+  },
+  "9": {
+   "s_dismas": "He anſwered: They are my ſonnes, whom God hath geuen me in this place. Bring them, quoth he, to me, that I may bleſſe them.",
+   "odr_com": "He answered: They are my sonnes, whom God hath geuen me in this place. Bring them, quoth he, to me, that I may blesse them.",
+   "sabates_a": "He answered: They are my sons, whom God hath given me in this place. Bring them, quoth he, to me, that I may bless them.",
+   "madueke_b": "He answered: They are my sons, whom God hath given me in this place. Bring them, quoth he, to me, that I may bless them."
+  },
+  "10": {
+   "s_dismas": "For Iſraels eyes were dymme by reaſon of very great age, and he could not ſee clearly. And when they were ſet beſide him, kiſſing and embracing them,",
+   "odr_com": "For Israels eyes were dymme by reason of very great age, and he could not see clearly. And when they were set beside him, kissing and embracing them,",
+   "sabates_a": "For Israel's eyes were dim by reason of very great age, and he could not see clearly. And when they were set beside him, kissing and embracing them,",
+   "madueke_b": "For Israel's eyes were dim by reason of very great age, and he could not see clearly. And when they were set beside him, kissing and embracing them,"
+  },
+  "11": {
+   "s_dismas": "he ſaid to his ſonne: I am not defrauded of thy ſight: moreouer God hath ſhewed me thy ſede.",
+   "odr_com": "he said to his sonne: I am not defrauded of thy sight: moreouer God hath shewed me thy sede.",
+   "sabates_a": "he said to his son: I am not defrauded of thy sight, moreover God hath shewed me thy seed.",
+   "madueke_b": "he said to his son: I am not defrauded of thy sight, moreover God hath shewed me thy seed."
+  },
+  "12": {
+   "s_dismas": "And when Ioſeph had taken them from his fathers lappe, he adored proſtrate vnto the ground.",
+   "odr_com": "And when Ioseph had taken them from his fathers lappe, he adored prostrate vnto the ground.",
+   "sabates_a": "And when Joseph had taken them from his father's lap, he adored prostrate unto the ground.",
+   "madueke_b": "And when Joseph had taken them from his father's lap, he adored prostrate unto the ground."
+  },
+  "13": {
+   "s_dismas": "And he ſet Ephraim on his right hand, that is, on the left hand of Iſrael: but Manaſſes on his owne left hand, to wit, on his fathers right hand, and put them nere to him.",
+   "odr_com": "And he set Ephraim on his right hand, that is, on the left hand of Israel: but Manasses on his owne left hand, to wit, on his fathers right hand, and put them nere to him.",
+   "sabates_a": "And he set Ephraim on his right hand, that is, on the left hand of Israel: but Manasses on his own left hand, to wit, on his father's right hand, and put them near to him.",
+   "madueke_b": "And he set Ephraim on his right hand, that is, on the left hand of Israel: but Manasses on his own left hand, to wit, on his father's right hand, and put them near to him."
+  },
+  "14": {
+   "s_dismas": "Who ſtretching forth his right hand, put it vpon the head of Ephraim the younger brother: and the left vpon the head of Manaſſes, that was the elder, changing handes.",
+   "odr_com": "Who stretching forth his right hand, put it vpon the head of Ephraim the younger brother: and the left vpon the head of Manasses, that was the elder, changing handes.",
+   "sabates_a": "Who stretching forth his right hand, put it upon the head of Ephraim the younger brother: and the left upon the head of Manasses, that was the elder, changing hands.",
+   "madueke_b": "Who stretching forth his right hand, put it upon the head of Ephraim the younger brother: and the left upon the head of Manasses, that was the elder, changing hands."
+  },
+  "15": {
+   "s_dismas": "And Iacob bleſſed the ſonnes of Ioſeph, and ſaid: God, in whoſe ſight my fathers Abraham and Iſaac haue walked, God that feedeth me from my youth vntil this preſent day:",
+   "odr_com": "And Iacob blessed the sonnes of Ioseph, and said: God, in whose sight my fathers Abraham and Isaac haue walked, God that feedeth me from my youth vntil this present day:",
+   "sabates_a": "And Jacob blessed the sons of Joseph, and said: God, in whose sight my fathers Abraham & Isaac have walked, God that feedeth me from my youth until this present day:",
+   "madueke_b": "And Jacob blessed the sons of Joseph, and said: God, in whose sight my fathers Abraham & Isaac have walked, God that feedeth me from my youth until this present day:"
+  },
+  "16": {
+   "s_dismas": "The Angel that deliuereth me from al euils, bleſſe theſe children: and be my name called vpon them, the names alſo of my fathers Abraham, and Iſaac, and grow they into a multitude vpon the earth.",
+   "odr_com": "The Angel that deliuereth me from al euils, blesse these children: and be my name called vpon them, the names also of my fathers Abraham, and Isaac, and grow they into a multitude vpon the earth.",
+   "sabates_a": "The Angel that delivereth me from all evils, bless these children: and be my name called upon them, the names also of my fathers Abraham, and Isaac, and grow they into a multitude upon the earth.",
+   "madueke_b": "The Angel that delivereth me from all evils, bless these children: and be my name called upon them, the names also of my fathers Abraham, and Isaac, and grow they into a multitude upon the earth."
+  },
+  "17": {
+   "s_dismas": "And Ioſeph ſeing that his father had put his right hand vpon the head of Ephraim, tooke it heauily: and taking his fathers hand he went about to lift it from Ephraims head, and to remoue it vpon the head of Manaſſes.",
+   "odr_com": "And Ioseph seing that his father had put his right hand vpon the head of Ephraim, tooke it heauily: and taking his fathers hand he went about to lift it from Ephraims head, and to remoue it vpon the head of Manasses.",
+   "sabates_a": "And Joseph seeing that his father had put his right hand upon the head of Ephraim, took it heavily: and taking his father's hand he went about to lift it from Ephraim's head & to remove it upon the head of Manasses.",
+   "madueke_b": "And Joseph seeing that his father had put his right hand upon the head of Ephraim, took it heavily: and taking his father's hand he went about to lift it from Ephraim's head & to remove it upon the head of Manasses."
+  },
+  "18": {
+   "s_dismas": "And he ſaid to his father: It is not conuenient father ſo to be: becauſe this is the firſt begotten put thy right hand vpon his head.",
+   "odr_com": "And he said to his father: It is not conuenient father so to be: because this is the first begotten put thy right hand vpon his head.",
+   "sabates_a": "And he said to his father: It is not convenient father so to be: because this is the first-begotten put thy right hand upon his head.",
+   "madueke_b": "And he said to his father: It is not convenient father so to be: because this is the first-begotten put thy right hand upon his head."
+  },
+  "19": {
+   "s_dismas": "Who refuſing, ſaid: I know my ſonne, I know: and this ſame in dede ſhal be into peoples, and ſhal be multiplied: but his younger brother ſhal be greater then he: and his ſede ſhal growe into nations.",
+   "odr_com": "Who refusing, said: I know my sonne, I know: and this same in dede shal be into peoples, and shal be multiplied: but his younger brother shal be greater then he: and his sede shal growe into nations.",
+   "sabates_a": "Who refusing, said: I know my son, I know: and this same indeed shall be into peoples, and shall be multiplied: but his younger brother shall be greater than he: and his seed shall grow into nations.",
+   "madueke_b": "Who refusing, said: I know my son, I know: and this same indeed shall be into peoples, and shall be multiplied: but his younger brother shall be greater than he: and his seed shall grow into nations."
+  },
+  "20": {
+   "s_dismas": "And he bleſſed them at that time, ſaying: In thee ſhal Iſrael be bleſſed, and it ſhal be ſaid: God do vnto thee as vnto Ephraim, and as vnto Manaſſes. And he ſette Ephraim before Manaſſes.",
+   "odr_com": "And he blessed them at that time, saying: In thee shal Israel be blessed, and it shalbe said: God do vnto thee as vnto Ephraim, and as vnto Manasses. And he sette Ephraim before Manasses.",
+   "sabates_a": "And he blessed them at that time, saying: In thee shall Israel be blessed, and it shall be said: God do unto thee as unto Ephraim, & as unto Manasses. And he set Ephraim before Manasses.",
+   "madueke_b": "And he blessed them at that time, saying: In thee shall Israel be blessed, and it shall be said: God do unto thee as unto Ephraim, & as unto Manasses. And he set Ephraim before Manasses."
+  },
+  "21": {
+   "s_dismas": "And he ſaid to Ioſeph his ſonne: Behold I dye, and God wil be with you, and wil bring you backe into the land of your fathers.",
+   "odr_com": "And he said to Ioseph his sonne: Behold I dye, and God wil be with you, and wil bring you backe into the land of your fathers.",
+   "sabates_a": "And he said to Joseph his son: Behold I die, & God will be with you, and will bring you back into the land of your fathers.",
+   "madueke_b": "And he said to Joseph his son: Behold I die, & God will be with you, and will bring you back into the land of your fathers."
+  },
+  "22": {
+   "s_dismas": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my ſword and bowe.",
+   "odr_com": "I doe geue thee one portion aboue thy brethren, which I tooke out of the hand of the Amorrhean with my sword and bowe.",
+   "sabates_a": "I do give thee one portion above thy brethren, which I took out of the hand of the Amorrhean with my sword and bow.",
+   "madueke_b": "I do give thee one portion above thy brethren, which I took out of the hand of the Amorrhean with my sword and bow."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "These things being so done, it was told Joseph that his father was sick: who, taking his two sons Manasses and Ephraim, went forward.",
+  "2": "And it was told the old man: Behold thy son Joseph cometh to thee. Who being strengthened sat on his bed.",
+  "3": "And Joseph being entered in to him, he said: God Almighty appeared to me in Luza, which is in the Land of Chanaan: and he blessed me,",
+  "4": "and said: I will increase, and multiply thee, and make thee into multitudes of peoples: and I will give thee this land, and to thy seed after thee for an everlasting possession.",
+  "5": "Thy two sons therefore which were born to thee in the Land of Ægypt before I came hither to thee, shall be mine: Ephraim and Manasses, as Ruben and Simeon shall be reputed to me.",
+  "6": "But the rest begotten of thee after them, shall be thine, and shall be called by the name of their brethren in their possessions.",
+  "7": "For unto me, when I came out of Mesopotamia, Rachel died in the land of Chanaan in the very journey, and it was spring time: and I entered into Ephrata, and buried her by the way side to Ephrata, which by another name is called Bethleem.",
+  "8": "And seeing his sons he said to him: Who are these?",
+  "9": "He answered: They are my sons, whom God hath given me in this place. Bring them, quoth he, to me, that I may bless them.",
+  "10": "For Israel's eyes were dim by reason of very great age, and he could not see clearly. And when they were set beside him, kissing and embracing them,",
+  "11": "he said to his son: I am not defrauded of thy sight, moreover God hath shewed me thy seed.",
+  "12": "And when Joseph had taken them from his father's lap, he adored prostrate unto the ground.",
+  "13": "And he set Ephraim on his right hand, that is, on the left hand of Israel: but Manasses on his own left hand, to wit, on his father's right hand, and put them near to him.",
+  "14": "Who stretching forth his right hand, put it upon the head of Ephraim the younger brother: and the left upon the head of Manasses, that was the elder, changing hands.",
+  "15": "And Jacob blessed the sons of Joseph, and said: God, in whose sight my fathers Abraham & Isaac have walked, God that feedeth me from my youth until this present day:",
+  "16": "The Angel that delivereth me from all evils, bless these children: and be my name called upon them, the names also of my fathers Abraham, and Isaac, and grow they into a multitude upon the earth.",
+  "17": "And Joseph seeing that his father had put his right hand upon the head of Ephraim, took it heavily: and taking his father's hand he went about to lift it from Ephraim's head & to remove it upon the head of Manasses.",
+  "18": "And he said to his father: It is not convenient father so to be: because this is the first-begotten put thy right hand upon his head.",
+  "19": "Who refusing, said: I know my son, I know: and this same indeed shall be into peoples, and shall be multiplied: but his younger brother shall be greater than he: and his seed shall grow into nations.",
+  "20": "And he blessed them at that time, saying: In thee shall Israel be blessed, and it shall be said: God do unto thee as unto Ephraim, & as unto Manasses. And he set Ephraim before Manasses.",
+  "21": "And he said to Joseph his son: Behold I die, & God will be with you, and will bring you back into the land of your fathers.",
+  "22": "I do give thee one portion above thy brethren, which I took out of the hand of the Amorrhean with my sword and bow."
+ },
+ "ref_coverage": {
+  "janvier": 22,
+  "have": {
+   "s_dismas": 22,
+   "odr_com": 22,
+   "sabates_a": 22,
+   "madueke_b": 22
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 88,
+ "triage": "R3-READY",
+ "secs": 5.9
+}

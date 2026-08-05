@@ -1,0 +1,378 @@
+{
+  "locus": "scripture/2john/1",
+  "page_index": 664,
+  "ocr_dir": "archive-nt-1582",
+  "scan": "S1",
+  "raster": ".gt-rasters/scripture-2john-p0664.png",
+  "raster_dpi": 400,
+  "page_label_printed": "642",
+  "running_header": {
+    "left": "642",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Book-INCIPIT page of the Second Epistle of S. Iohn (whole 13-verse book on this one page; only the lettered ANNOTATIONS overflow to p665). Woodcut ornamental headpiece (grotesques/figures) top; three display-title lines; italic Argument (4 lines); single wide text column opened by a woodcut historiated drop-cap 'T' (pastoral/landscape scene); left-margin roman side-notes (2); right-margin scripture cross-refs (roman); 'ANNOT.' catchword foot-right. THREE glyph regimes on the page: roman BODY uses a REAL 'w' cut in vv-style (compositor short on w-sorts); ITALIC (Argument + quoted 'God ſaue you') sets a real cursive 'w'; small roman margin notes set real 'w'. Digitization marks excluded (www.fatimamovement.com watermark; red papal-keys shield bottom-left; hand/print folio '642').",
+  "book_title": [
+    "THE",
+    "SECOND EPISTLE",
+    "OF S. IOHN THE APOSTLE."
+  ],
+  "chapter_heading": "",
+  "argument": {
+    "role": "argument",
+    "typeface": "italic",
+    "text": "He commendeth the Lady and her ſonnes for continuing in the old faith, bidding them ſo to doe hereafter alſo, leſt they loſe the reward of their workes in the day of iudge-ment : and to loue the true beleeuers , but with Heretikes to haue no ſocietie: expreſſing alſo the points then in controuerſie.",
+    "note": "italic face uses REAL cursive w (reward, workes, with); 'iudge-ment' hyphenated across argument lines 2-3."
+  },
+  "verses_on_page": [
+    "1:1",
+    "1:2",
+    "1:3",
+    "1:4",
+    "1:5",
+    "1:6",
+    "1:7",
+    "1:8",
+    "1:9",
+    "1:10",
+    "1:11",
+    "1:12",
+    "1:13"
+  ],
+  "body": [
+    {
+      "line_index": 0,
+      "verse": "1:1",
+      "dropcap": "T",
+      "text": "THE Seniour to the Lady Elect and her children,"
+    },
+    {
+      "line_index": 1,
+      "verse": "1:1",
+      "text": "whom I loue in truth, and not I only , but alſo"
+    },
+    {
+      "line_index": 2,
+      "verse": "1:1",
+      "text": "al that haue knowen the truth , 2. for the truth",
+      "verse_starts_midline": [
+        "1:2"
+      ]
+    },
+    {
+      "line_index": 3,
+      "verse": "1:2",
+      "text": "which abideth in vs , and ſhal be with vs for"
+    },
+    {
+      "line_index": 4,
+      "verse": "1:2",
+      "text": "euer. 3. Grace be with you , mercie , peace from",
+      "verse_starts_midline": [
+        "1:3"
+      ]
+    },
+    {
+      "line_index": 5,
+      "verse": "1:3",
+      "text": "God the Father, and from Chriſt Iesvs the Sonne"
+    },
+    {
+      "line_index": 6,
+      "verse": "1:3",
+      "text": "of the Father in truth, and charitie."
+    },
+    {
+      "line_index": 7,
+      "verse": "1:4",
+      "verse_number_printed": "4",
+      "text": "4. I was exceeding glad , becauſe I haue found"
+    },
+    {
+      "line_index": 8,
+      "verse": "1:4",
+      "text": "of thy children walking in truth , as we haue re-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 9,
+      "verse": "1:4",
+      "text": "ceiued commandement of the Father. 5. And now I beſeech thee Lady,",
+      "verse_starts_midline": [
+        "1:5"
+      ]
+    },
+    {
+      "line_index": 10,
+      "verse": "1:5",
+      "text": "not as writing a new commandement to thee , but that which we haue"
+    },
+    {
+      "line_index": 11,
+      "verse": "1:5",
+      "text": "had ‖ from the beginning , * that we loue one another. 6.*And this is",
+      "marks_present": [
+        "‖",
+        "*"
+      ],
+      "verse_starts_midline": [
+        "1:6"
+      ]
+    },
+    {
+      "line_index": 12,
+      "verse": "1:6",
+      "text": "charitie, that we walke according to his commandements. For this is"
+    },
+    {
+      "line_index": 13,
+      "verse": "1:6",
+      "text": "the commandement, that as you haue heard from the beginning , you"
+    },
+    {
+      "line_index": 14,
+      "verse": "1:6",
+      "text": "walke in the ſame: 7. becauſe many ſeducers are gone out into the",
+      "verse_starts_midline": [
+        "1:7"
+      ],
+      "_pre_review": "walke in the ſame:7. becauſe many ſeducers are gone out into the",
+      "reviewed": true
+    },
+    {
+      "line_index": 15,
+      "verse": "1:7",
+      "text": "world, which doe not confeſſe Iesvs Chriſt to haue come into fleſh: this",
+      "_pre_review": "world, which doe not confeſſe Iesvs Chriſt to haue come into fleſh:this",
+      "reviewed": true
+    },
+    {
+      "line_index": 16,
+      "verse": "1:7",
+      "text": "is a ſeducer and an Antichriſt."
+    },
+    {
+      "line_index": 17,
+      "verse": "1:8",
+      "verse_number_printed": "8",
+      "text": "8. Looke to your ſelues , that you loſe not the things which you haue"
+    },
+    {
+      "line_index": 18,
+      "verse": "1:8",
+      "text": "wrought : but that you may receiue a ful ‖ reward. 9. Euery one that",
+      "marks_present": [
+        "‖"
+      ],
+      "verse_starts_midline": [
+        "1:9"
+      ]
+    },
+    {
+      "line_index": 19,
+      "verse": "1:9",
+      "text": "reuolteth, and perſiſteth not in the doctrine of Chriſt , hath not God.",
+      "ref_letters_present": [
+        "c"
+      ],
+      "_pre_review": "c reuolteth, and perſiſteth not in the doctrine of Chriſt , hath not God.",
+      "reviewed": true
+    },
+    {
+      "line_index": 20,
+      "verse": "1:9",
+      "text": "He that perſiſteth in the doctrine , the ſame hath both the Father , and"
+    },
+    {
+      "line_index": 21,
+      "verse": "1:9",
+      "text": "the Sonne. 10. If * any man come to you, and bring not ‖ this doctrine,",
+      "marks_present": [
+        "*",
+        "‖"
+      ],
+      "verse_starts_midline": [
+        "1:10"
+      ]
+    },
+    {
+      "line_index": 22,
+      "verse": "1:10",
+      "text": "‖ receiue him not into the houſe, ‖ nor ſay, God ſaue you, vñto him.",
+      "marks_present": [
+        "‖",
+        "‖"
+      ],
+      "italic_spans": [
+        "God ſaue you"
+      ]
+    },
+    {
+      "line_index": 23,
+      "verse": "1:11",
+      "verse_number_printed": "11",
+      "text": "11. For he that ſaith vnto him , God ſaue you , communicateth with his",
+      "italic_spans": [
+        "God ſaue you"
+      ]
+    },
+    {
+      "line_index": 24,
+      "verse": "1:11",
+      "text": "wicked workes."
+    },
+    {
+      "line_index": 25,
+      "verse": "1:12",
+      "verse_number_printed": "12",
+      "text": "12. Hauing moe things to write vnto you : I would not by paper and"
+    },
+    {
+      "line_index": 26,
+      "verse": "1:12",
+      "text": "inke : for I hope that I ſhal be with you, and ſpeake mouth to mouth:"
+    },
+    {
+      "line_index": 27,
+      "verse": "1:12",
+      "text": "that your ioy may be ful. 13. The children of thy ſiſter elect ſalute thee.",
+      "verse_starts_midline": [
+        "1:13"
+      ]
+    }
+  ],
+  "apparatus": [
+    {
+      "role": "annotation",
+      "mark": "‖",
+      "anchor_verse": "1:8",
+      "typeface": "roman-small",
+      "text": "Reward for keeping faſt the Catholike faith."
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "c",
+      "anchor_verse": "1:9",
+      "typeface": "roman-small",
+      "text": "To goe backe or reuolt from the receiued truth and doctrine Apoſtolical, is damnable."
+    }
+  ],
+  "marginalia": [
+    {
+      "role": "scripture_ref",
+      "position": "right_margin",
+      "anchor_verse": "1:5",
+      "mark": "*",
+      "text": "Io. 15, 12."
+    },
+    {
+      "role": "scripture_ref",
+      "position": "right_margin",
+      "anchor_verse": "1:6",
+      "mark": "*",
+      "text": "1. Io. 3, 11."
+    },
+    {
+      "role": "scripture_ref",
+      "position": "right_margin",
+      "anchor_verse": "1:10",
+      "mark": "*",
+      "text": "Ro. 16, 17."
+    }
+  ],
+  "catchword": {
+    "text": "ANNOT.",
+    "position": "foot_right",
+    "note": "catchword anticipating the ANNOTATIONS block that continues on p665; EXCLUDED from body concat per §catchwords."
+  },
+  "uncertain": [
+    {
+      "line_index": null,
+      "span": "italic face w",
+      "note": "The italic Argument and the italic quoted phrase 'God ſaue you' (v10, v11) use a REAL cursive italic w (reward/workes/with) — distinct from the roman body's vv. Rendered as 'w' in italic spans."
+    },
+    {
+      "line_index": 0,
+      "span": "Iesvs",
+      "note": "divine name set in small capitals (I-E-S-V-S, u->v); rendered 'Iesvs' at v1? (actually first at l5/v3 and l15/v7). Small-cap face not otherwise marked in text."
+    },
+    {
+      "line_index": 22,
+      "span": "vñto",
+      "note": "'vnto' set with nasal-abbreviation tilde over n (vñto); v11 'vnto' (l23) set in full without tilde — both preserved as printed."
+    },
+    {
+      "line_index": 18,
+      "span": "‖ anchor mapping",
+      "note": "the ‖ reference marks recur at v8 (reward) and thrice at v10; only the v8 ‖ maps cleanly to the 'Reward for keeping faſt' side-note. The v10 ‖ marks' targets are ambiguous at this resolution (possibly repeated pointers to the same note or to the 'God ſaue you' warning); recorded inline as ‖ without a firm apparatus link."
+    }
+  ],
+  "observer": "jarvis",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster with 3x targeted glyph zooms (whom/knowen/which for w-vs-vv); OCR scaffold used only as a dropped-line check; DR/Vulgate content used only to confirm the verse span, never as a spelling oracle.",
+  "confidence": "high on scripture body wording and verse structure; medium on the page-wide w/vv regime (flagged) and on the ‖ anchor mapping; high on the two left-margin notes and three scripture cross-refs.",
+  "glyph_regime_resolved": "RESOLVED (post-write): the NT-1582 roman body is a REAL single-sort 'w' cut in the old vv-style, NOT a vv digraph. Proof: the capital 'Who' (Mt28 v11) is a single connected 'W' sort at 2.4x zoom, so the font owns a w; the apparent inter-stroke gap in lowercase is the punch cut. Two independent NT-page agents reached the same conclusion. Body text corrected vv->w / VV->W. (Contrast: OT italic annotation faces DO set vv.)",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-15T03:53:38.302245+00:00",
+    "n_applied": 3,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/scripture-2john.corrections.json"
+  },
+  "verses_aligned": {
+    "1:1": "THE Seniour to the Lady Elect and her children, whom I loue in truth, and not I only , but alſo al that haue knowen the truth , 2.",
+    "1:2": "for the truth which abideth in vs , and ſhal be with vs for euer. 3.",
+    "1:3": "Grace be with you , mercie , peace from God the Father, and from Chriſt Iesvs the Sonne of the Father in truth, and charitie. 4.",
+    "1:4": "I was exceeding glad , becauſe I haue found of thy children walking in truth , as we haue receiued commandement of the Father. 5.",
+    "1:5": "And now I beſeech thee Lady, not as writing a new commandement to thee , but that which we haue had ‖ from the beginning , * that we loue one another. 6.*And",
+    "1:6": "this is charitie, that we walke according to his commandements. For this is the commandement, that as you haue heard from the beginning , you walke in the ſame: 7.",
+    "1:7": "becauſe many ſeducers are gone out into the world, which doe not confeſſe Iesvs Chriſt to haue come into fleſh: this is a ſeducer and an Antichriſt. 8. Looke",
+    "1:8": "to your ſelues , that you loſe not the things which you haue wrought : but that you may receiue a ful ‖ reward. 9.",
+    "1:9": "Euery one that reuolteth, and perſiſteth not in the doctrine of Chriſt , hath not God. He that perſiſteth in the doctrine , the ſame hath both the Father , and the Sonne. 10.",
+    "1:10": "If * any man come to you, and bring not ‖ this doctrine, ‖ receiue him not into the houſe, ‖ nor ſay, God ſaue you, vñto him. 11.",
+    "1:11": "For he that ſaith vnto him , God ſaue you , communicateth with his wicked workes. 12.",
+    "1:12": "Hauing moe things to write vnto you : I would not by paper and inke : for I hope that I ſhal be with you, and ſpeake mouth to mouth: that your ioy may be ful. 13.",
+    "1:13": "The children of thy ſiſter elect ſalute thee."
+  },
+  "_aligned_note": "coordinate-rehabilitated per align_coords.py (s_dismas>odr_com>janvier boundaries)",
+  "_verses_aligned_pre_gt2": {
+    "1:1": "THE Seniour to the Lady Elect and her children, whom I loue in truth, and not I only , but alſo al that haue knowen the truth , 2.",
+    "1:2": "for the truth which abideth in vs , and ſhal be with vs for euer. 3.",
+    "1:3": "Grace be with you , mercie , peace from God the Father, and from Chriſt Iesvs the Sonne of the Father in truth, and charitie. 4.",
+    "1:4": "I was exceeding glad , becauſe I haue found of thy children walking in truth , as we haue re- ceiued commandement of the Father. 5.",
+    "1:5": "And now I beſeech thee Lady, not as writing a new commandement to thee , but that which we haue had ‖ from the beginning , * that we loue one another. 6.*And",
+    "1:6": "this is charitie, that we walke according to his commandements. For this is the commandement, that as you haue heard from the beginning , you walke in the ſame: 7.",
+    "1:7": "becauſe many ſeducers are gone out into the world, which doe not confeſſe Iesvs Chriſt to haue come into fleſh: this is a ſeducer and an Antichriſt. 8.",
+    "1:8": "Looke to your ſelues , that you loſe not the things which you haue wrought : but that you may receiue a ful ‖ reward. 9.",
+    "1:9": "Euery one that reuolteth, and perſiſteth not in the doctrine of Chriſt , hath not God. He that perſiſteth in the doctrine , the ſame hath both the Father , and the Sonne. 10.",
+    "1:10": "If * any man come to you, and bring not ‖ this doctrine, ‖ receiue him not into the houſe, ‖ nor ſay, God ſaue you, vñto him. 11.",
+    "1:11": "For he that ſaith vnto him , God ſaue you , communicateth with his wicked workes. 12.",
+    "1:12": "Hauing moe things to write vnto you : I would not by paper and inke : for I hope that I ſhal be with you, and ſpeake mouth to mouth: that your ioy may be ful. 13.",
+    "1:13": "The children of thy ſiſter elect ſalute thee."
+  },
+  "verses_on_page_derived": [
+    "1:1",
+    "1:10",
+    "1:11",
+    "1:12",
+    "1:13",
+    "1:2",
+    "1:3",
+    "1:4",
+    "1:5",
+    "1:6",
+    "1:7",
+    "1:8",
+    "1:9"
+  ],
+  "_gt2": {
+    "note": "verses_aligned re-standardized to janvier boundaries by verse_seg.segment (janvier-cut); DERIVED + regenerable; scoring uses verse_seg on-demand, not this field.",
+    "engine": "verse_seg.py",
+    "n_aligned": 13,
+    "open_verses": [],
+    "on_page_missing_vs_human": [],
+    "on_page_extra_vs_human": []
+  }
+}

@@ -1,0 +1,1027 @@
+{
+  "locus": "matter/ot2/particular-table",
+  "page_index": [
+    2049,
+    2050,
+    2051
+  ],
+  "page_index_full_section": [
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068
+  ],
+  "ocr_dir": "jp2-S06",
+  "scan": "S6",
+  "raster": ".gt-rasters/retry/s6-p{2049,2050,2051}.png",
+  "raster_dpi": null,
+  "page_label_printed": null,
+  "running_header": {
+    "left": "A PARTICVLAR TABLE",
+    "center": "",
+    "right": "A PART. TABLE OF PRINC. THINGS."
+  },
+  "status": "PARTIAL — OPEN",
+  "completeness": "OPEN / PARTIAL (No Silent Degradation): this GT covers pages 2049-2051 — the ornament+display title, the two citation-format intro notes, letter-heading 'A' (entries Aaron..Aureola) and letter-heading 'B' start (Baal..Bleſſing). The full section is S6 jp2-S06 pp2049-2068 (20 pp, alphabetical A-Z topical index of the OT text & annotations, two columns/page). Pages 2052-2068 (rest of B through Z, ending 'LAVS DEO' ~p2068) REMAIN to transcribe — NOT done, held OPEN. Read each page as two hi-res full-column bands (rband.py) — NOTE recto/verso column shift: verso L x0.055-0.505 R x0.50-0.95; recto R needs x~0.455 (else the right column's first chars clip). Running headers alternate verso 'A PARTICVLAR TABLE' / recto 'A PART. TABLE OF PRINC. THINGS'. p2048 (before) = the Historical Table.",
+  "layout_note": "OT2 back-matter alphabetical topical index. p2049 opens with a woodcut cherub/arabesque ornament band + full-width display title 'A TABLE OF THE CHIEFE CONTENTS OF THE TEXT AND ANNOTATIONS of the old Teſtament', then two roman/italic intro notes explaining the citation-number format and the ″ annotation-reference mark, then a centred letter-heading 'A' and the two-column entry list. Each entry = a headword (italic) + a summary + a run of scripture citations; the ″ double-prime marks a reference that lives in the Annotations/margin rather than the text; 'n. N' = annotation number; 'pag. N' / 't. 1.' = page/tome pointers. Entries wrap across columns and pages (e.g. Aaron L->R p2049; Abimelech p2049R->2050L). Body rows are logical entries (the index's natural grain). Hi-res S6 (5100x6601), opj_decompress decode.",
+  "body": [
+    {
+      "line_index": 0,
+      "page": "2049",
+      "column": "C",
+      "role": "title_block",
+      "text": "A TABLE OF THE CHIEFE CONTENTS OF THE TEXT AND ANNOTATIONS of the old Teſtament."
+    },
+    {
+      "line_index": 1,
+      "page": "2049",
+      "column": "C",
+      "role": "intro_note",
+      "text": "The numbers ioyned to the citations of Scripture, if they be written thus, Gen. 4, 16. the firſt is the chapter, the ſecond the verſe. If thus, Gen. 4, 16, 17, 18. both are the chapters. If thus, Gen. 4, 16, 5, 7. the firſt is the chapter, al the reſt the verſes. If thus, Gen. 4, 16, 5, 7. it ſignifieth cap. 4. v. 16. and cap. 5. v. 7. This marke ″ ſignifyeth that if the matter ſpoken of be not in the text, it is either in the Annotations or marginal note of the text cited. Eccle. ſignifieth Eccleſiaſtes, Eccli. Eccleſiaſticus."
+    },
+    {
+      "line_index": 2,
+      "page": "2049",
+      "column": "C",
+      "role": "intro_note",
+      "text": "Beſides this and the precedent Table, the principal contents of the old Teſtament (eſpecially ſuch as concerne points of Controuerſie) are briefly ſet downe at the end of ech Age pag. 27. 45. 179. 630. & 827. of the firſt Tome, and pag. 939. of the ſecond."
+    },
+    {
+      "line_index": 3,
+      "page": "2049",
+      "column": "L",
+      "role": "letter_heading",
+      "text": "A"
+    },
+    {
+      "line_index": 4,
+      "page": "2049",
+      "column": "L",
+      "role": "entry",
+      "text": "Aaron of the Tribe of Leui deſigned to aſſiſt his brother Moyſes. Exod. 4, 14. 16. 30. Called the Prophet of Moyſes. Exod 7, 1. He yealded to make an idol. Exod. 32. Was conſecrated High-Prieſt. Leuit 8 In him and his ſeed the Prieſthood of the written law was eſtabliſhed. pag. 188. Leuit. 8. ″ Eccli. 45, 6. Ier. 31, 24. He once murmured againſt Moyſes. Num 12. He and Moyſes offended in doubting of God's wil. Num. 20. Pſal. 105, 16. He dyed in mount Hor. Num. And is particularly prayſed. Eccli. 44, 7."
+    },
+    {
+      "line_index": 5,
+      "page": "2049",
+      "column": "R",
+      "role": "entry",
+      "text": "Abel offered ſacrifice ſincerely. Gen. 4. ″ & pag. 29. & was ſlaine by his brother ibidem."
+    },
+    {
+      "line_index": 6,
+      "page": "2049",
+      "column": "R",
+      "role": "entry",
+      "text": "Abdias prophecied the captiuitie and relaxation of the Iewes, & the Incarnation of Chriſt the Redeemer of mankind. Abdias per totum."
+    },
+    {
+      "line_index": 7,
+      "page": "2049",
+      "column": "R",
+      "role": "entry",
+      "text": "Abiathar the High-Prieſt was depoſed. 3. Reg. 2."
+    },
+    {
+      "line_index": 8,
+      "page": "2049",
+      "column": "R",
+      "role": "entry",
+      "text": "Abimelech killed his brethren and vſurped gouernement. Iud. 9."
+    },
+    {
+      "line_index": 9,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Abram left his country Chaldea for religion. Gen. 11, 31. 12, 1. & ſeq. Principal Patriarch t. 1. pag. 48. He & his ſeed were ſtrangers in diuerſe countries 430. yeares Gen. 15. Exod. 12. His name changed to Abraham. Gen. 17, 5. ″. His ſingular faith and obedience. Gen. 22. His many vertues pag. t. 1. 183. & 186. He was neuer Idolate. t. 1. pag. 186. Ioſ. 14, 2. ″ He died at the age of 175. yeares. Gen. 15. His prayſes. Eccli. 44, 20."
+    },
+    {
+      "line_index": 10,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Abſalon ambicious & ſodicious. 2. Reg. 15. He periſhed in rebellion. 2. Reg. 18."
+    },
+    {
+      "line_index": 11,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Abſtinence. Gen. 1, 29. 30. 2, ″ n. 4. Item 3, 11. 9, 4. Exod. 12, 9. 13, 6. 21, 28. 22, 31. 29, 34. Leuit. 6, 24. 7, 18. 10, 8. 11, 34. 11, 4. 17, 28. 19, 7. 22, 8. 23, 14. Num. 6, 2. 3. 4. 18, 10. Deut. 12, 16. 14, 3. Iudic. 13, 3. 4. 5. Tob. 1, 21. Iudith 12, 2. Eſter. 4, 16. Ier. 35, 5. in the text and Annotations. Dan. 1, 8. 2. Mach. 7. Zach. 8, 14. 19. Ioel 2, 2. 15. ſee the word Faſting."
+    },
+    {
+      "line_index": 12,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Accaronites durſt not keep the arke of God. 1. Reg. 6."
+    },
+    {
+      "line_index": 13,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Accidents remaine without ſubiect in the holy Euchariſt. Gen. 1, ″. n. 16."
+    },
+    {
+      "line_index": 14,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Achans ſecret ſinne puniſhed in the multitude. Ioſue 7."
+    },
+    {
+      "line_index": 15,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Achitophel a wicked Councellour. 2. Reg. 17. Hanged himſelfe. 2. Reg. 17."
+    },
+    {
+      "line_index": 16,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Adam created in grace and knowledge. Gen. 1, ″. n. 26. Tranſgreſſing loſt the ſame. Gen. 3, ″. Repented and is ſaued Sap. 10, 1."
+    },
+    {
+      "line_index": 17,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Adonai one of the names of God, is alſo read in place of Tetragramaton, the name of foure letters, which the Iewes pronounce not. Exod. 6, 3. ″."
+    },
+    {
+      "line_index": 18,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Adoration ciuil due to men. Gen. 23, 7. 43, 26. 47, ″ n. 3. 32. 50, 18. 1. Par. 29, 15. Adoration religious of holy perſons & other things. See the Ages in the places cited before this Table. But diuine adoration is only due to God. Exod. 20. ″. n. 1. at large. See Idolatrie."
+    },
+    {
+      "line_index": 19,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Ægypt was diuerſely plagued. Exod. 7. 8. & c."
+    },
+    {
+      "line_index": 20,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Affinitie ſpiritual and carnal in certaine degrees hinder mariage. Leuit. 18, ″. n. 6."
+    },
+    {
+      "line_index": 21,
+      "page": "2050",
+      "column": "L",
+      "role": "entry",
+      "text": "Agar lawfully married to Abraham. Gen. 6. ″. n. 3."
+    },
+    {
+      "line_index": 22,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Aggeus prophecied after the relaxation from captiuity, exhorting to build the Temple. Argum. Aggei."
+    },
+    {
+      "line_index": 23,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Ahias prophecied the diuiſion of Salomons Kingdom. 3. Reg. 11. And afterwards the vtter ruine of Ieroboams houſe. 3. Reg. 14."
+    },
+    {
+      "line_index": 24,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Alcimus an Apoſtata deceiued the Aſſidians. 1. Mach. 7. Did much wickednes and dyed miſerably. 1. Machab. 9, 54."
+    },
+    {
+      "line_index": 25,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Alleluya a voice of praiſe to God. Tob. 13, 23. Pſal. 104. & 118 ″. tit."
+    },
+    {
+      "line_index": 26,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Alexander the Great brought the Monarchie to the Grecians. 1. Mach. 1. He honoured Iaddus the High-Prieſt. Exod. 39. in the marg. His Empire diuided into foure Kingdoms. Dan. 8, 8."
+    },
+    {
+      "line_index": 27,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Almes-deeds. Exod. 22, 25. 23. 11. Leuit. 19, 10. 23, 22. 25. 34. Deut. 15, 7. 10. 2. 24, 19. 3. Reg 17, 10. 2 Eſdr. 8, 11. Pſal 40, 1. 81, 4. 111, 9. Tobie 1, 4. 2, 11. 4, 5, 13. 12, 8. 14, 12. Prouerb. 3, 9. 28. 11, 18. 25. 13, 8. 14, 21. 31. 15, 27. 19, 17. 21, 13. 21. 25, 27, 27. Sap. 14, 22. 18, 16. 19, 17. 21, 13. 22, 9. Eccleſ. 3, 33. 12, 11. 17, 18. Iſaiæ 58, 7. 59, 7. Ezech. 16, 49. 18, 7. Dan. 4, 24, 26."
+    },
+    {
+      "line_index": 28,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Alphabet in hebrew is myſtical and verie hard Annot. before the 118. Pſal. and the Prophecie of Ieremie."
+    },
+    {
+      "line_index": 29,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Altars erected for ſacrifice Gen. 12, 7. 18, 18. Exod. 24, 4. 30, 1. 10. 37. 40. 10. 2. Reg. 24, 3. 3. Reg. 18, 31. 4. Reg. 18, 15. 2. Paralip. 1, 5. 4, 1. 15, 8. 1. Eſd. 3, 2. Ezech. 43, 13. 1. Machab. 4, 47. 56. ″"
+    },
+    {
+      "line_index": 30,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Aman required diuine honour. Eſther 3, 2. & ſeq. ″ He fauoured Traytours. Eſther 12, 7. Perſecuted the Iewes. Eſther 3. And himſelf was hanged. Eſther. 7."
+    },
+    {
+      "line_index": 31,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Ambition breedeth ſedition. 2. Reg. 15. It deceiueth and ouerthroweth. 2. Reg. 8. Eſther. 7. Ambition, aboundance, and idlenes are the cauſe of much corruption. Ezech. 16, 49."
+    },
+    {
+      "line_index": 32,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Amos a heards man prophecied before the captiuitie of the then Tribes. Argum. Prophet Amos."
+    },
+    {
+      "line_index": 33,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Amram nephew of Leui, and father of Moyſes and Aaron, lawfully married his Aunt. Exod. 6, 20. ″ Leuit. 18, ″ n. 6. Num. 26, 59. ″"
+    },
+    {
+      "line_index": 34,
+      "page": "2050",
+      "column": "R",
+      "role": "entry",
+      "text": "Angels offer mens prayers to God. Exod. 19, 9. ″ Tobie 12, 12. ″ at large. Reſiſt the Diuel. Num. 22, 22. & ſeq. Tobiæ 8, 3. And wicked men. 2. Mach. 3, 23. & ſeq. ſpecially Antichriſt Dan. 12, in the text and Annotations. Their miniſterie in the Church. t. 1. Pag. 45. Exo. 3. ″ n. 2. 31, 18. 34, 28. Iud. 13, 3, ″ n. 10. Iob 9. They protect men and places. Gen. 48, 16. Exod. 14, 19. Ioſ. 5, 13. & ſeq. Iud. 2, 1. 7, 8. 2. Par. 32, 21. Tob. from the 5. to the 12. chapter. Iudic. 13, 20. Eccleſ. 3, 5. Baruch 6, 6 Dan. 10, 21. 11 per totum. 2. Mach. 11, 6. They are exceeding many Dan. 7, 10. They learne ſecrets one of another. Dan. 8, 13."
+    },
+    {
+      "line_index": 35,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Anti-Chriſt probably ſuppoſed to come of the Tribe of Dan. Gen. 49. ″ n. 17. The Iewes wil receaue him. Dan. 11, 22. & Annot. at L. He is prefigured. Iud. 9, 1. ″ n. 8. Iudith 3, 13. Dan. 8, 24. 11, 21 1. Mach. 1, 57. 2. Mach. 5, 28. He ſhal be ſtrong and cruel for a ſhort time. Dan. 7, 8. to wit three yeares and a halfe ibid. v. 25. 12, 7. He ſhal then be ouerthrowne. Ezech. 39, 4."
+    },
+    {
+      "line_index": 36,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Antiochus his cruel Edict 1. Mach. 43 1001. His repentance in ſicknes was not ſincere nor fruitful. 1. Mach. 6, 12. 2. Mach. 9, 13. He dyed miſerably. 1. Mach. 6. vſque. ad v. 17. 2 Mach. 9, 9. He was a figure of Anti-Chriſt. 2. Mach. 9, 28."
+    },
+    {
+      "line_index": 37,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Antiquitie a note of true doctrine. Deut. 32, 7. Iob 8, 8. Prouerb. 22, 28. Eccleſ. 10. & 16. ″ Eccli. 8, 11. 12. Hier. 6, 16. Pſal. 77, 5."
+    },
+    {
+      "line_index": 38,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Aod by ſpecial inſpiration killing Eglon, is not to be imitated. Iudic. 3, 20."
+    },
+    {
+      "line_index": 39,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Apoſtaſie from faith firſt happened to Cain. Gen. 4, 16. ″ After in Nemred. Gen. 11, 4. ″ In Ieroboam and others 734."
+    },
+    {
+      "line_index": 40,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Arke of Noe how great. Gen 6, 15. ″ It was a figure of the Church. Gen. 7. ″ n. 23. at large."
+    },
+    {
+      "line_index": 41,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Arke of the Teſtament much reuerenced. Num. 7, 9. 18; 7 1 Reg. 4, 3. 6, 19. 7, 1. 2. Reg. 6, 17. 1. Par. 13. 2. Par. 5, 2. 8, 11. Pſal. 77, 60. & ſeq. 2. Mach. 2, 4. & ſeq. Ouerthrew Dagon. 1. Reg. 5, 4."
+    },
+    {
+      "line_index": 42,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Arphaxad King of the Medes vainly boaſted. Iudith 1, 4."
+    },
+    {
+      "line_index": 43,
+      "page": "2051",
+      "column": "L",
+      "role": "entry",
+      "text": "Aſhes a holy ceremonie Gen. 3. ″ n. 19. t. 1. pag. 30 Iudith 1, 4. 5, 1 Eſther 4, 3. Sap. 52, 5 Dan. 9, 4. Ion 3, 6, 1. Mach. 3, 47. 4, 39 & paſſim in Scriptura."
+    },
+    {
+      "line_index": 44,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Aſſidians profeſſed a Religious Rule of life. 1. Mach 2, 42. 7, 13 & ſeq. 2. Mach. 9, 35. 12, 18. 14, 6. Threeſcore of them Martyrs. 1. Mach 7, 16."
+    },
+    {
+      "line_index": 45,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Auarice a deteſtable ſinne, eſpecially in Clergy men. 1. Reg. 2 12 & ſeq. 8, 3. & ſeq. Iſa. 57, 9. Ier. 6, 13 8, 1. & ſeq."
+    },
+    {
+      "line_index": 46,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Aureola an accidental glorie of Martyrs, holy Doctours, and Virgins. Dan. 12, 3."
+    },
+    {
+      "line_index": 47,
+      "page": "2051",
+      "column": "R",
+      "role": "letter_heading",
+      "text": "B"
+    },
+    {
+      "line_index": 48,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Baal the falſe God of the Moabites, Madianites, Sidonians, and other nations. Num. 22. Worſhipped ſometimes by Iewes was once ouerthrowne by Gedeon Iudic. 6. Againe his Prophets deſtroyed. 3. Reg. 18, 40. 4. Reg 10, 25. 23, 5. King Ioas deſtroyed his temple. 2. Par. 23."
+    },
+    {
+      "line_index": 49,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Babylon built. Gen 11 ″ n. 4. 7. Was long potent & glorious, but at laſt deſtroyed. Iſa. 13. 47, 1. Ier. 5. 51. & c. Ezech. 21, 30."
+    },
+    {
+      "line_index": 50,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Balaam the ſorcerer firſt refuſed, afterwards attempted to curſe Gods people. Num. 22. His aſſe ſpake. Num. 22. He Prophecied true & good things of Iſrael. Num. 23. & c. He was ſlaine together with the Madianites. Num. 31."
+    },
+    {
+      "line_index": 51,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Baptiſme prefigured. t. 1. p. 30. & 182. Pſal. 105. ″ Ezech. 37, 25. It taketh away al ſinnes. Gen. 17, 14. Exod. 14, 28. Iſa. 44, 3 Ezech. 36, 25. Zach. 13, 1."
+    },
+    {
+      "line_index": 52,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "S. Iohn Baptiſt Precurſour of Chriſt. Malach. 3, 1. & ſeq."
+    },
+    {
+      "line_index": 53,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Baruch's Prophecie is Canonical ſcripture. Arg. Baruch."
+    },
+    {
+      "line_index": 54,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Beda moſt modeſt in expounding holy Scripture. Gen. 11. ″ n. 12."
+    },
+    {
+      "line_index": 55,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Behemoth an Elephant, or another greater beaſt, is ſubiect to Gods ordinance. Iob 40, 10. ″"
+    },
+    {
+      "line_index": 56,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Belus Iupiter imagined by Idolaters to be the greateſt God. Gen. 10. ″ n. 12"
+    },
+    {
+      "line_index": 57,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Bel and the Dragon's hiſtorie. Dan. 14."
+    },
+    {
+      "line_index": 58,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Beza corrupteth the Ghoſpel. Gen. 11. ″ n. 32. Saith God created man to fal. Eccli. 15, 11. ″."
+    },
+    {
+      "line_index": 59,
+      "page": "2051",
+      "column": "R",
+      "role": "entry",
+      "text": "Bleſſing of creatures operatiue. Gen. 1. ″ n 28. t. 1. p. 45. item Gen. 27. & 28. It [continues p2052]"
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "title_block",
+      "text": "A TABLE OF THE CHIEFE CONTENTS OF THE TEXT AND ANNOTATIONS of the old Teſtament.",
+      "lines": [
+        0
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 1,
+      "kind": "paragraph",
+      "text": "The numbers ioyned to the citations of Scripture, if they be written thus, Gen. 4, 16. the firſt is the chapter, the ſecond the verſe. If thus, Gen. 4, 16, 17, 18. both are the chapters. If thus, Gen. 4, 16, 5, 7. the firſt is the chapter, al the reſt the verſes. If thus, Gen. 4, 16, 5, 7. it ſignifieth cap. 4. v. 16. and cap. 5. v. 7. This marke ″ ſignifyeth that if the matter ſpoken of be not in the text, it is either in the Annotations or marginal note of the text cited. Eccle. ſignifieth Eccleſiaſtes, Eccli. Eccleſiaſticus.",
+      "lines": [
+        1
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 2,
+      "kind": "paragraph",
+      "text": "Beſides this and the precedent Table, the principal contents of the old Teſtament (eſpecially ſuch as concerne points of Controuerſie) are briefly ſet downe at the end of ech Age pag. 27. 45. 179. 630. & 827. of the firſt Tome, and pag. 939. of the ſecond.",
+      "lines": [
+        2
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 3,
+      "kind": "heading",
+      "text": "A",
+      "lines": [
+        3
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 4,
+      "kind": "list_item",
+      "text": "Aaron of the Tribe of Leui deſigned to aſſiſt his brother Moyſes. Exod. 4, 14. 16. 30. Called the Prophet of Moyſes. Exod 7, 1. He yealded to make an idol. Exod. 32. Was conſecrated High-Prieſt. Leuit 8 In him and his ſeed the Prieſthood of the written law was eſtabliſhed. pag. 188. Leuit. 8. ″ Eccli. 45, 6. Ier. 31, 24. He once murmured againſt Moyſes. Num 12. He and Moyſes offended in doubting of God's wil. Num. 20. Pſal. 105, 16. He dyed in mount Hor. Num. And is particularly prayſed. Eccli. 44, 7.",
+      "lines": [
+        4
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 5,
+      "kind": "list_item",
+      "text": "Abel offered ſacrifice ſincerely. Gen. 4. ″ & pag. 29. & was ſlaine by his brother ibidem.",
+      "lines": [
+        5
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 6,
+      "kind": "list_item",
+      "text": "Abdias prophecied the captiuitie and relaxation of the Iewes, & the Incarnation of Chriſt the Redeemer of mankind. Abdias per totum.",
+      "lines": [
+        6
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 7,
+      "kind": "list_item",
+      "text": "Abiathar the High-Prieſt was depoſed. 3. Reg. 2.",
+      "lines": [
+        7
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 8,
+      "kind": "list_item",
+      "text": "Abimelech killed his brethren and vſurped gouernement. Iud. 9.",
+      "lines": [
+        8
+      ],
+      "page": 2049
+    },
+    {
+      "idx": 9,
+      "kind": "list_item",
+      "text": "Abram left his country Chaldea for religion. Gen. 11, 31. 12, 1. & ſeq. Principal Patriarch t. 1. pag. 48. He & his ſeed were ſtrangers in diuerſe countries 430. yeares Gen. 15. Exod. 12. His name changed to Abraham. Gen. 17, 5. ″. His ſingular faith and obedience. Gen. 22. His many vertues pag. t. 1. 183. & 186. He was neuer Idolate. t. 1. pag. 186. Ioſ. 14, 2. ″ He died at the age of 175. yeares. Gen. 15. His prayſes. Eccli. 44, 20.",
+      "lines": [
+        9
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 10,
+      "kind": "list_item",
+      "text": "Abſalon ambicious & ſodicious. 2. Reg. 15. He periſhed in rebellion. 2. Reg. 18.",
+      "lines": [
+        10
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 11,
+      "kind": "list_item",
+      "text": "Abſtinence. Gen. 1, 29. 30. 2, ″ n. 4. Item 3, 11. 9, 4. Exod. 12, 9. 13, 6. 21, 28. 22, 31. 29, 34. Leuit. 6, 24. 7, 18. 10, 8. 11, 34. 11, 4. 17, 28. 19, 7. 22, 8. 23, 14. Num. 6, 2. 3. 4. 18, 10. Deut. 12, 16. 14, 3. Iudic. 13, 3. 4. 5. Tob. 1, 21. Iudith 12, 2. Eſter. 4, 16. Ier. 35, 5. in the text and Annotations. Dan. 1, 8. 2. Mach. 7. Zach. 8, 14. 19. Ioel 2, 2. 15. ſee the word Faſting.",
+      "lines": [
+        11
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 12,
+      "kind": "list_item",
+      "text": "Accaronites durſt not keep the arke of God. 1. Reg. 6.",
+      "lines": [
+        12
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 13,
+      "kind": "list_item",
+      "text": "Accidents remaine without ſubiect in the holy Euchariſt. Gen. 1, ″. n. 16.",
+      "lines": [
+        13
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 14,
+      "kind": "list_item",
+      "text": "Achans ſecret ſinne puniſhed in the multitude. Ioſue 7.",
+      "lines": [
+        14
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 15,
+      "kind": "list_item",
+      "text": "Achitophel a wicked Councellour. 2. Reg. 17. Hanged himſelfe. 2. Reg. 17.",
+      "lines": [
+        15
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 16,
+      "kind": "list_item",
+      "text": "Adam created in grace and knowledge. Gen. 1, ″. n. 26. Tranſgreſſing loſt the ſame. Gen. 3, ″. Repented and is ſaued Sap. 10, 1.",
+      "lines": [
+        16
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 17,
+      "kind": "list_item",
+      "text": "Adonai one of the names of God, is alſo read in place of Tetragramaton, the name of foure letters, which the Iewes pronounce not. Exod. 6, 3. ″.",
+      "lines": [
+        17
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 18,
+      "kind": "list_item",
+      "text": "Adoration ciuil due to men. Gen. 23, 7. 43, 26. 47, ″ n. 3. 32. 50, 18. 1. Par. 29, 15. Adoration religious of holy perſons & other things. See the Ages in the places cited before this Table. But diuine adoration is only due to God. Exod. 20. ″. n. 1. at large. See Idolatrie.",
+      "lines": [
+        18
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 19,
+      "kind": "list_item",
+      "text": "Ægypt was diuerſely plagued. Exod. 7. 8. & c.",
+      "lines": [
+        19
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 20,
+      "kind": "list_item",
+      "text": "Affinitie ſpiritual and carnal in certaine degrees hinder mariage. Leuit. 18, ″. n. 6.",
+      "lines": [
+        20
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 21,
+      "kind": "list_item",
+      "text": "Agar lawfully married to Abraham. Gen. 6. ″. n. 3.",
+      "lines": [
+        21
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 22,
+      "kind": "list_item",
+      "text": "Aggeus prophecied after the relaxation from captiuity, exhorting to build the Temple. Argum. Aggei.",
+      "lines": [
+        22
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 23,
+      "kind": "list_item",
+      "text": "Ahias prophecied the diuiſion of Salomons Kingdom. 3. Reg. 11. And afterwards the vtter ruine of Ieroboams houſe. 3. Reg. 14.",
+      "lines": [
+        23
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 24,
+      "kind": "list_item",
+      "text": "Alcimus an Apoſtata deceiued the Aſſidians. 1. Mach. 7. Did much wickednes and dyed miſerably. 1. Machab. 9, 54.",
+      "lines": [
+        24
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 25,
+      "kind": "list_item",
+      "text": "Alleluya a voice of praiſe to God. Tob. 13, 23. Pſal. 104. & 118 ″. tit.",
+      "lines": [
+        25
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 26,
+      "kind": "list_item",
+      "text": "Alexander the Great brought the Monarchie to the Grecians. 1. Mach. 1. He honoured Iaddus the High-Prieſt. Exod. 39. in the marg. His Empire diuided into foure Kingdoms. Dan. 8, 8.",
+      "lines": [
+        26
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 27,
+      "kind": "list_item",
+      "text": "Almes-deeds. Exod. 22, 25. 23. 11. Leuit. 19, 10. 23, 22. 25. 34. Deut. 15, 7. 10. 2. 24, 19. 3. Reg 17, 10. 2 Eſdr. 8, 11. Pſal 40, 1. 81, 4. 111, 9. Tobie 1, 4. 2, 11. 4, 5, 13. 12, 8. 14, 12. Prouerb. 3, 9. 28. 11, 18. 25. 13, 8. 14, 21. 31. 15, 27. 19, 17. 21, 13. 21. 25, 27, 27. Sap. 14, 22. 18, 16. 19, 17. 21, 13. 22, 9. Eccleſ. 3, 33. 12, 11. 17, 18. Iſaiæ 58, 7. 59, 7. Ezech. 16, 49. 18, 7. Dan. 4, 24, 26.",
+      "lines": [
+        27
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 28,
+      "kind": "list_item",
+      "text": "Alphabet in hebrew is myſtical and verie hard Annot. before the 118. Pſal. and the Prophecie of Ieremie.",
+      "lines": [
+        28
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 29,
+      "kind": "list_item",
+      "text": "Altars erected for ſacrifice Gen. 12, 7. 18, 18. Exod. 24, 4. 30, 1. 10. 37. 40. 10. 2. Reg. 24, 3. 3. Reg. 18, 31. 4. Reg. 18, 15. 2. Paralip. 1, 5. 4, 1. 15, 8. 1. Eſd. 3, 2. Ezech. 43, 13. 1. Machab. 4, 47. 56. ″",
+      "lines": [
+        29
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 30,
+      "kind": "list_item",
+      "text": "Aman required diuine honour. Eſther 3, 2. & ſeq. ″ He fauoured Traytours. Eſther 12, 7. Perſecuted the Iewes. Eſther 3. And himſelf was hanged. Eſther. 7.",
+      "lines": [
+        30
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 31,
+      "kind": "list_item",
+      "text": "Ambition breedeth ſedition. 2. Reg. 15. It deceiueth and ouerthroweth. 2. Reg. 8. Eſther. 7. Ambition, aboundance, and idlenes are the cauſe of much corruption. Ezech. 16, 49.",
+      "lines": [
+        31
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 32,
+      "kind": "list_item",
+      "text": "Amos a heards man prophecied before the captiuitie of the then Tribes. Argum. Prophet Amos.",
+      "lines": [
+        32
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 33,
+      "kind": "list_item",
+      "text": "Amram nephew of Leui, and father of Moyſes and Aaron, lawfully married his Aunt. Exod. 6, 20. ″ Leuit. 18, ″ n. 6. Num. 26, 59. ″",
+      "lines": [
+        33
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 34,
+      "kind": "list_item",
+      "text": "Angels offer mens prayers to God. Exod. 19, 9. ″ Tobie 12, 12. ″ at large. Reſiſt the Diuel. Num. 22, 22. & ſeq. Tobiæ 8, 3. And wicked men. 2. Mach. 3, 23. & ſeq. ſpecially Antichriſt Dan. 12, in the text and Annotations. Their miniſterie in the Church. t. 1. Pag. 45. Exo. 3. ″ n. 2. 31, 18. 34, 28. Iud. 13, 3, ″ n. 10. Iob 9. They protect men and places. Gen. 48, 16. Exod. 14, 19. Ioſ. 5, 13. & ſeq. Iud. 2, 1. 7, 8. 2. Par. 32, 21. Tob. from the 5. to the 12. chapter. Iudic. 13, 20. Eccleſ. 3, 5. Baruch 6, 6 Dan. 10, 21. 11 per totum. 2. Mach. 11, 6. They are exceeding many Dan. 7, 10. They learne ſecrets one of another. Dan. 8, 13.",
+      "lines": [
+        34
+      ],
+      "page": 2050
+    },
+    {
+      "idx": 35,
+      "kind": "list_item",
+      "text": "Anti-Chriſt probably ſuppoſed to come of the Tribe of Dan. Gen. 49. ″ n. 17. The Iewes wil receaue him. Dan. 11, 22. & Annot. at L. He is prefigured. Iud. 9, 1. ″ n. 8. Iudith 3, 13. Dan. 8, 24. 11, 21 1. Mach. 1, 57. 2. Mach. 5, 28. He ſhal be ſtrong and cruel for a ſhort time. Dan. 7, 8. to wit three yeares and a halfe ibid. v. 25. 12, 7. He ſhal then be ouerthrowne. Ezech. 39, 4.",
+      "lines": [
+        35
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 36,
+      "kind": "list_item",
+      "text": "Antiochus his cruel Edict 1. Mach. 43 1001. His repentance in ſicknes was not ſincere nor fruitful. 1. Mach. 6, 12. 2. Mach. 9, 13. He dyed miſerably. 1. Mach. 6. vſque. ad v. 17. 2 Mach. 9, 9. He was a figure of Anti-Chriſt. 2. Mach. 9, 28.",
+      "lines": [
+        36
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 37,
+      "kind": "list_item",
+      "text": "Antiquitie a note of true doctrine. Deut. 32, 7. Iob 8, 8. Prouerb. 22, 28. Eccleſ. 10. & 16. ″ Eccli. 8, 11. 12. Hier. 6, 16. Pſal. 77, 5.",
+      "lines": [
+        37
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 38,
+      "kind": "list_item",
+      "text": "Aod by ſpecial inſpiration killing Eglon, is not to be imitated. Iudic. 3, 20.",
+      "lines": [
+        38
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 39,
+      "kind": "list_item",
+      "text": "Apoſtaſie from faith firſt happened to Cain. Gen. 4, 16. ″ After in Nemred. Gen. 11, 4. ″ In Ieroboam and others 734.",
+      "lines": [
+        39
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 40,
+      "kind": "list_item",
+      "text": "Arke of Noe how great. Gen 6, 15. ″ It was a figure of the Church. Gen. 7. ″ n. 23. at large.",
+      "lines": [
+        40
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 41,
+      "kind": "list_item",
+      "text": "Arke of the Teſtament much reuerenced. Num. 7, 9. 18; 7 1 Reg. 4, 3. 6, 19. 7, 1. 2. Reg. 6, 17. 1. Par. 13. 2. Par. 5, 2. 8, 11. Pſal. 77, 60. & ſeq. 2. Mach. 2, 4. & ſeq. Ouerthrew Dagon. 1. Reg. 5, 4.",
+      "lines": [
+        41
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 42,
+      "kind": "list_item",
+      "text": "Arphaxad King of the Medes vainly boaſted. Iudith 1, 4.",
+      "lines": [
+        42
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 43,
+      "kind": "list_item",
+      "text": "Aſhes a holy ceremonie Gen. 3. ″ n. 19. t. 1. pag. 30 Iudith 1, 4. 5, 1 Eſther 4, 3. Sap. 52, 5 Dan. 9, 4. Ion 3, 6, 1. Mach. 3, 47. 4, 39 & paſſim in Scriptura.",
+      "lines": [
+        43
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 44,
+      "kind": "list_item",
+      "text": "Aſſidians profeſſed a Religious Rule of life. 1. Mach 2, 42. 7, 13 & ſeq. 2. Mach. 9, 35. 12, 18. 14, 6. Threeſcore of them Martyrs. 1. Mach 7, 16.",
+      "lines": [
+        44
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 45,
+      "kind": "list_item",
+      "text": "Auarice a deteſtable ſinne, eſpecially in Clergy men. 1. Reg. 2 12 & ſeq. 8, 3. & ſeq. Iſa. 57, 9. Ier. 6, 13 8, 1. & ſeq.",
+      "lines": [
+        45
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 46,
+      "kind": "list_item",
+      "text": "Aureola an accidental glorie of Martyrs, holy Doctours, and Virgins. Dan. 12, 3.",
+      "lines": [
+        46
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 47,
+      "kind": "heading",
+      "text": "B",
+      "lines": [
+        47
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 48,
+      "kind": "list_item",
+      "text": "Baal the falſe God of the Moabites, Madianites, Sidonians, and other nations. Num. 22. Worſhipped ſometimes by Iewes was once ouerthrowne by Gedeon Iudic. 6. Againe his Prophets deſtroyed. 3. Reg. 18, 40. 4. Reg 10, 25. 23, 5. King Ioas deſtroyed his temple. 2. Par. 23.",
+      "lines": [
+        48
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 49,
+      "kind": "list_item",
+      "text": "Babylon built. Gen 11 ″ n. 4. 7. Was long potent & glorious, but at laſt deſtroyed. Iſa. 13. 47, 1. Ier. 5. 51. & c. Ezech. 21, 30.",
+      "lines": [
+        49
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 50,
+      "kind": "list_item",
+      "text": "Balaam the ſorcerer firſt refuſed, afterwards attempted to curſe Gods people. Num. 22. His aſſe ſpake. Num. 22. He Prophecied true & good things of Iſrael. Num. 23. & c. He was ſlaine together with the Madianites. Num. 31.",
+      "lines": [
+        50
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 51,
+      "kind": "list_item",
+      "text": "Baptiſme prefigured. t. 1. p. 30. & 182. Pſal. 105. ″ Ezech. 37, 25. It taketh away al ſinnes. Gen. 17, 14. Exod. 14, 28. Iſa. 44, 3 Ezech. 36, 25. Zach. 13, 1.",
+      "lines": [
+        51
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 52,
+      "kind": "list_item",
+      "text": "S. Iohn Baptiſt Precurſour of Chriſt. Malach. 3, 1. & ſeq.",
+      "lines": [
+        52
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 53,
+      "kind": "list_item",
+      "text": "Baruch's Prophecie is Canonical ſcripture. Arg. Baruch.",
+      "lines": [
+        53
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 54,
+      "kind": "list_item",
+      "text": "Beda moſt modeſt in expounding holy Scripture. Gen. 11. ″ n. 12.",
+      "lines": [
+        54
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 55,
+      "kind": "list_item",
+      "text": "Behemoth an Elephant, or another greater beaſt, is ſubiect to Gods ordinance. Iob 40, 10. ″",
+      "lines": [
+        55
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 56,
+      "kind": "list_item",
+      "text": "Belus Iupiter imagined by Idolaters to be the greateſt God. Gen. 10. ″ n. 12",
+      "lines": [
+        56
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 57,
+      "kind": "list_item",
+      "text": "Bel and the Dragon's hiſtorie. Dan. 14.",
+      "lines": [
+        57
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 58,
+      "kind": "list_item",
+      "text": "Beza corrupteth the Ghoſpel. Gen. 11. ″ n. 32. Saith God created man to fal. Eccli. 15, 11. ″.",
+      "lines": [
+        58
+      ],
+      "page": 2051
+    },
+    {
+      "idx": 59,
+      "kind": "list_item",
+      "text": "Bleſſing of creatures operatiue. Gen. 1. ″ n 28. t. 1. p. 45. item Gen. 27. & 28. It [continues p2052]",
+      "lines": [
+        59
+      ],
+      "page": 2051
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 1,
+      "span": "intro-note citation numbers",
+      "note": "The citation-format explanatory note straddles the L/R column split of the full-width intro; the exact example numbers (Gen. 4,16,17,18 / 4,16,5,7) were reconstructed across the two halves and are approximate in the interior digits. The ″ mark is transcribed as U+2033 (stripped to core)."
+    },
+    {
+      "line_index": null,
+      "span": "dense citation strings",
+      "note": "Entry citation runs (e.g. Almes-deeds, Altars) are long numeral lists (apparatus / chapter-level per §markers); read from hi-res full-column bands but individual interior digits/points under foxing are approximate. Headwords + summaries are the priority-#1 text and read with confidence."
+    }
+  ],
+  "observer": "jarvis:matter-ot2-particular-table",
+  "observed_at": "2026-07-21",
+  "method": "Jarvis main-thread visual transcription (no sub-agents). Rendered jp2-S06 pp2049-2050 at native ~5100px via jp2_page.py (opj_decompress fallback), read in hi-res full-column LANCZOS bands (rband.py). VALIDATIONS: (1) Localization - display title + 'A' heading + Aaron.. entries confirm the OT2 Particular Table; p2048=Historical Table bounds the start, running header 'A PART. TABLE OF PRINC. THINGS' confirms. (2) Identity - S6 = 1635 facsimile OT2 back matter. (3) Placement - pp2049-2068; leaves unnumbered here. (4) Completeness - PARTIAL: pp2049-2050 done, pp2051-2068 OPEN (documented above). Diplomatic per GUIDELINES.md; ″ = annotation-ref mark; u/v i/j & typos (ambicious, ſodicious) preserved.",
+  "confidence": "High on headwords/summaries and long-ſ/u-v/i-j (hi-res reads). Medium on the dense interior citation numerals (apparatus). COVERAGE IS PARTIAL (2/20 pages) and held OPEN — not a completed book.",
+  "glyph_regime_resolved": "Roman body + italic headwords; the display title is roman caps. ″ annotation mark throughout. No 'w'/'vv' issue in the A-entries seen. long_s_transcribed = 194.",
+  "glyph_counts": {
+    "long_s_transcribed": 194
+  }
+}

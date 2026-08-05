@@ -1,0 +1,174 @@
+{
+  "locus": "matter/ot1/title",
+  "page_index": 0,
+  "ocr_dir": "archive-ot1-1609",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot1-title-p0000.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Single-column centred title page inside a full-page woodcut ornamental border (repeating floral/knotwork strapwork; NO text set within the border, so no border_motto). Two horizontal rules divide the page: the upper rule separates the title/subtitle block from the Isaiah 12:3 scripture motto (Latin line 14 + English rendering line 15); the lower rule separates the motto from the imprint. Languages: English display + one Latin scripture line. Top display is roman capitals (no long-ſ possible); the descriptive subtitle mixes roman caps with italic lower-case. A hand-inked collation numeral '5' sits in the upper-right corner (not printed). The coat-of-arms device and 'www.fatimamovement.com' at lower-left are a modern digitisation watermark, NOT part of the 1609 page — ignored.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "title_display",
+      "text": "THE"
+    },
+    {
+      "line_index": 1,
+      "role": "title_display",
+      "text": "HOLIE BIBLE"
+    },
+    {
+      "line_index": 2,
+      "role": "title_display",
+      "text": "FAITHFVLLY TRANS-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 3,
+      "role": "title_display",
+      "text": "LATED INTO ENGLISH,"
+    },
+    {
+      "line_index": 4,
+      "role": "subtitle",
+      "text": "OVT OF THE AVTHENTICAL"
+    },
+    {
+      "line_index": 5,
+      "role": "subtitle",
+      "text": "LATIN."
+    },
+    {
+      "line_index": 6,
+      "role": "subtitle",
+      "text": "Diligently conferred with the Hebrew, Greeke,"
+    },
+    {
+      "line_index": 7,
+      "role": "subtitle",
+      "text": "and other Editions in diuers languages."
+    },
+    {
+      "line_index": 8,
+      "role": "subtitle",
+      "text": "With ARGVMENTS of the Bookes, and Chapters:"
+    },
+    {
+      "line_index": 9,
+      "role": "subtitle",
+      "text": "ANNOTATIONS : TABLES : and other helpes,",
+      "_pre_review": "ANNOTATIONS: TABLES: and other helpes,",
+      "reviewed": true
+    },
+    {
+      "line_index": 10,
+      "role": "subtitle",
+      "text": "for better vnderſtanding of the text : for diſcouerie of"
+    },
+    {
+      "line_index": 11,
+      "role": "subtitle",
+      "text": "CORRVPTIONS in ſome late tranſlations : and"
+    },
+    {
+      "line_index": 12,
+      "role": "subtitle",
+      "text": "for clearing CONTROVERSIES in Religion."
+    },
+    {
+      "line_index": 13,
+      "role": "subtitle",
+      "text": "BY THE ENGLISH COLLEGE OF DOWAY."
+    },
+    {
+      "line_index": 14,
+      "role": "latin",
+      "text": "Haurietis aquas in gaudio de fontibus Saluatoris. Iſaiæ.12."
+    },
+    {
+      "line_index": 15,
+      "role": "subtitle",
+      "text": "You shal draw waters in ioy out of the Sauiours fountaines."
+    },
+    {
+      "line_index": 16,
+      "role": "imprint",
+      "text": "Printed at Doway by LAVRENCE KELLAM,",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 17,
+      "role": "imprint",
+      "text": "at the ſigne of the holie Lambe."
+    },
+    {
+      "line_index": 18,
+      "role": "imprint",
+      "text": "M. DC. IX."
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "line_index": 14,
+      "span": "Iſaiæ.12.",
+      "note": "small italic scripture citation 'Iſaiæ' (Isaiæ, gen. of Isaias) with medial long-ſ and æ ligature, then '.12.'. Long-ſ vs round-s on the small italic 's' is medium confidence; the reference numeral reads '12'."
+    },
+    {
+      "line_index": 16,
+      "span": "KELLAM",
+      "note": "a small raised comma-like tick sits between the K and E of KELLAM (OCR scaffold renders it K‘ELLAM). Judged an ink speck / broken-type artifact, not a printed glyph, so transcribed as 'KELLAM'; flagged in case it is intentional pointing."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count": 6,
+    "long_s_words": [
+      "vnderſtanding",
+      "diſcouerie",
+      "ſome",
+      "tranſlations",
+      "Iſaiæ",
+      "ſigne"
+    ],
+    "u_v_swap_examples": [
+      "FAITHFVLLY",
+      "OVT",
+      "AVTHENTICAL",
+      "diuers",
+      "ARGVMENTS",
+      "vnderſtanding",
+      "diſcouerie",
+      "CORRVPTIONS",
+      "CONTROVERSIES",
+      "Saluatoris",
+      "Sauiours",
+      "LAVRENCE"
+    ],
+    "i_j_swap_examples": [
+      "ioy"
+    ],
+    "ae_ligature_examples": [
+      "Iſaiæ"
+    ],
+    "note": "'shal' (line 15) is set with a ROUND s here, not long-ſ — verified by glyph. French-spacing (space before high punctuation) is present on 'text :' and 'tranſlations :' but NOT on 'Chapters:' / 'ANNOTATIONS:' / 'TABLES:', per the compositor. Counts are hand-observed; authoritative recount should come from a script."
+  },
+  "observer": "agent:matter-ot1-title",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (region crops magnified for long-ſ / u-v / French-spacing disambiguation); OCR scaffold used only as a dropped-line hint, never as a spelling oracle",
+  "confidence": "high on the roman-capital title block (lines 0-5) and the italic descriptive subtitle (lines 6-13); high on the imprint English; medium on the small italic Latin scripture citation 'Iſaiæ.12.' and the stray tick in 'KELLAM'",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-15T01:30:48.841040+00:00",
+    "n_applied": 1,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-ot1-title.corrections.json"
+  }
+}

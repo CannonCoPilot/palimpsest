@@ -1,0 +1,24 @@
+[
+ {
+  "page": 99,
+  "page_conf": 0.9935,
+  "n_body": 45,
+  "n_low_conf": 0,
+  "escalate_r3": true,
+  "dropped": {
+   "header": 2,
+   "marginalia": 1,
+   "catchword": 2
+  },
+  "xsrc_flagged": 5,
+  "worst_xsrc": 0.0,
+  "escalate_reasons": [
+   "xsrc-alarm2(5v<0.9)"
+  ],
+  "r3": {
+   "n_rescued": 0,
+   "n_content_rescued_s_open": 3,
+   "n_open": 5
+  }
+ }
+]

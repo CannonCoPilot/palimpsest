@@ -1,0 +1,327 @@
+{
+  "locus": "matter/ot1/colophon",
+  "page_index": 1132,
+  "ocr_dir": "archive-ot1-1609",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot1-colophon-p1132.png",
+  "raster_dpi": 400,
+  "page_label_printed": "1114",
+  "running_header": {
+    "left": "1114",
+    "center": "THE BOOKE OF IOB.",
+    "right": ""
+  },
+  "layout_note": "Single wide text-column: the closing ARGUMENT of the Book of Iob (running commentary continued from the previous page). NOT 2-column scripture and NOT verse-structured — no verses, verse-numbers, or dagger markers. The column MIXES two faces that alternate within lines — doctrinal/emphatic phrases in ROMAN (upright), connective narration in ITALIC (slanted). Left margin carries 6 roman-type side-notes (marginalia). Page closes with three decorative (broken) horizontal double-rules, then a centered roman colophon 'THE END OF THE FIRST TOME.', with a small centred 'L'/hook-shaped signature/ornament mark below it (uncertain, line 37). No errata/faults-escaped list and no printer's device/imprint on this page. TWO glyph regimes: ITALIC spans set 'w' as 'vv' and use long-ſ (per GUIDELINES §footnote-typeface); ROMAN spans use a real 'w' and upright letterforms. Lowercase roman real-'w' instances: 'with impietie' (l.0) and 'with fulnes of' (l.23). Capital W is set 'VV' in BOTH faces (italic 'VVhom' l.13, 'VVho' l.20, 'VVorkes' l.4, 'VVordes' l.33, 'VVil' l.34). column:'L'/'R' intentionally NOT applied — the page is objectively single-column, so imposing false 2-column structure would corrupt the gold data (deviation from the task's '2-column' hint flagged per diplomatic-fidelity / no-silent-degradation). Digitization marks excluded: 'www.fatimamovement.com' watermark and red papal-keys shield at bottom-left; printed folio '1114' at top-left.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "prose",
+      "text": "with impietie, impatience, ignorance, pride, blaſphemie, and obſti-",
+      "line_end_hyphen": true,
+      "has_uncertain": true,
+      "note": "continues a paragraph carried over from the previous page. 'with impietie ... blaſphemie' is set in ROMAN (upright) → real 'w'; the line switches to italic at 'and obſti-'. (Corrects a prior pass that read the opening 'with' as italic 'vvith'.)"
+    },
+    {
+      "line_index": 1,
+      "role": "prose",
+      "text": "nacie, vices farre from Iobs ſanctitie, dilating alſo of Gods iuſtice, mercie,"
+    },
+    {
+      "line_index": 2,
+      "role": "prose",
+      "text": "vviſdome, povvre, and prouidence; and that no man ought to contend, nor ex-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 3,
+      "role": "prose",
+      "text": "poſtulate vvith God, that afflictions muſt be borne patiently, and that God is"
+    },
+    {
+      "line_index": 4,
+      "role": "prose",
+      "text": "iuſt, and maruelous in his VVorkes, vvherof no vviſeman euer doubted ; and ſo",
+      "has_uncertain": true,
+      "note": "'VVorkes' (God's Works) is a cap-height italic W → 'VV'; contrast lowercase 'workes of nature' at line 8 ('vvorkes')"
+    },
+    {
+      "line_index": 5,
+      "role": "prose",
+      "text": "Iob conuinced him vvith ſilence."
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "paragraph_start": true,
+      "text": "But God himſelf for deciſion of al (from ch. 38. to the end of the Booke)"
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "text": "firſt by vvay of examining inſtructed Iob more particularly, reciting manie"
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "text": "maruelous vvorkes of nature, ſhevving therby his Diuine Maieſtie, Povvre, and"
+    },
+    {
+      "line_index": 9,
+      "role": "prose",
+      "text": "vviſdome, exerciſing Iob in more patience, and vvithal perfecting"
+    },
+    {
+      "line_index": 10,
+      "role": "prose",
+      "text": "him in humilitie, ſo that vvith al reuerent feare and ſubiection, he offered"
+    },
+    {
+      "line_index": 11,
+      "role": "prose",
+      "text": "and ſubmitted him ſelfe to Gods onlie good pleaſure. Then finally God gaue"
+    },
+    {
+      "line_index": 12,
+      "role": "prose",
+      "text": "ſentence that Iob had defended the truth, & his three freindes had"
+    },
+    {
+      "line_index": 13,
+      "role": "prose",
+      "text": "erred. VVhom after Sacrifice, and Iobs prayer for them, he pardoned; reſtored"
+    },
+    {
+      "line_index": 14,
+      "role": "prose",
+      "text": "Iob to health, and to duble proſperitie, of al he had loſt before, geuing him alſo"
+    },
+    {
+      "line_index": 15,
+      "role": "prose",
+      "text": "long life, and a happie end."
+    },
+    {
+      "line_index": 16,
+      "role": "prose",
+      "paragraph_start": true,
+      "text": "In this hiſtorie beſides the literal ſenſe, ſhevving that Iob vvas iuſt and ſin-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 17,
+      "role": "prose",
+      "text": "cere, and not for his ſinnes (as his freindes falſly ſuppoſed) but for his more me-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 18,
+      "role": "prose",
+      "text": "rite vvas moſt extremly afflicted, and aftervvards reſtored to health and"
+    },
+    {
+      "line_index": 19,
+      "role": "prose",
+      "text": "vvealth : vve haue alſo here in the Allegorical ſenſe, an eſpecial figure of"
+    },
+    {
+      "line_index": 20,
+      "role": "prose",
+      "text": "Chriſt. VVho as he vvas abſolutly moſt innocent, & moſt perfect : ſo vvas he vvith-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 21,
+      "role": "prose",
+      "text": "out cōpariſon moſt alflicted of al mankind. Likevviſe Iobs reſtauration to better",
+      "_pre_review": "out cōpariſon moſt afflicted of al mankind. Likevviſe Iobs reſtauration to better",
+      "reviewed": true
+    },
+    {
+      "line_index": 22,
+      "role": "prose",
+      "text": "ſtate then before, ſignified in the* Anagogical ſenſe, the Reſurrection, and",
+      "has_uncertain": true,
+      "_pre_review": "ſtate then before, ſignified in the. Anagogical ſenſe, the Reſurrection, and",
+      "reviewed": true
+    },
+    {
+      "line_index": 23,
+      "role": "prose",
+      "text": "reſtauratiō of better, & moſt glorious qualities in the bleſſed, with fulnes of",
+      "note": "'with fulnes of' is set in ROMAN (upright) type → real 'w', unlike the italic body's 'vv'"
+    },
+    {
+      "line_index": 24,
+      "role": "prose",
+      "text": "daies, in eternal glorie. Finally in the Moral ſenſe (vvhich S. Gregorie moſt"
+    },
+    {
+      "line_index": 25,
+      "role": "prose",
+      "text": "eſpecially proſecuteth) al Chriſtians haue here a moſt notable example of al"
+    },
+    {
+      "line_index": 26,
+      "role": "prose",
+      "text": "vertues, namely of patience, vvherin Iob proceded by degrees to great perfe-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 27,
+      "role": "prose",
+      "text": "ction. For he vvas firſt tried by the loſſe of al his goodes & children, and vvas"
+    },
+    {
+      "line_index": 28,
+      "role": "prose",
+      "text": "proued to be very patient. He vvas then moſt greuouſly tormented in bodie, &"
+    },
+    {
+      "line_index": 29,
+      "role": "prose",
+      "text": "being left vvithout comforth, albeit he lamentably bevvailed ſo great extre-",
+      "line_end_hyphen": true,
+      "has_uncertain": true
+    },
+    {
+      "line_index": 30,
+      "role": "prose",
+      "text": "mitie, vviſhing ſuch daies had bene preuented; yet he neither ſpoke againſt God,",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 31,
+      "role": "prose",
+      "text": "nor good man, nor his ovvne ſoule, & according to truth auouched & defended"
+    },
+    {
+      "line_index": 32,
+      "role": "prose",
+      "text": "his ovvne innocencie. And at laſt by Gods inſpiration, and ſvvete conſolation,"
+    },
+    {
+      "line_index": 33,
+      "role": "prose",
+      "text": "he reprehended him ſelf, of former imperfections vttered in ſome wordes,",
+      "has_uncertain": true,
+      "_pre_review": "he reprehended him ſelf, of former imperfections vttered in ſome VVordes,",
+      "reviewed": true
+    },
+    {
+      "line_index": 34,
+      "role": "prose",
+      "text": "and vvith ful reſignation to Gods wil, ſuſteyned al his loſſes and paynes, not",
+      "has_uncertain": true,
+      "_pre_review": "and vvith ful reſignation to Gods VVil, ſuſteyned al his loſſes and paynes, not",
+      "reviewed": true
+    },
+    {
+      "line_index": 35,
+      "role": "prose",
+      "text": "only vvith contentment, but alſo vvith ioy."
+    },
+    {
+      "line_index": 36,
+      "role": "colophon",
+      "text": "THE END OF THE FIRST TOME."
+    },
+    {
+      "line_index": 37,
+      "role": "signature",
+      "text": "⟨?⟩",
+      "has_uncertain": true,
+      "note": "small centred 'L'/hook-shaped mark on the centre-line below the colophon; deliberate-looking but unidentifiable — a signature/register mark, a small ornament, or stray ink. Not a right-justified catchword (this is the final leaf of the tome). Flagged, not guessed."
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "line_index 6 (\"But God himſelf for deciſion of al\")",
+      "position": "left_margin",
+      "text": "In the tenth\nplace God\ndecided the\ncontrouerſie."
+    },
+    {
+      "anchor": "line_index 13 (\"he pardoned; reſtored\")",
+      "position": "left_margin",
+      "text": "Penitentes\npardoned.\nIob rewar-\nded."
+    },
+    {
+      "anchor": "line_index 16 (\"In this hiſtorie beſides the literal ſenſe\")",
+      "position": "left_margin",
+      "text": "The literal\nſenſe of this\nhiſtorie.\nAllegorical.",
+      "_pre_review": "The literal\nſenſe of this\nhiſtorie.\nAllegorical.",
+      "review_note": "split 'Allegorical' into its own marginalia entry, following the pattern of the two which follow."
+    },
+    {
+      "anchor": "line_index 22 (\"in the Anagogical ſenſe\")",
+      "position": "left_margin",
+      "text": "Anagogical."
+    },
+    {
+      "anchor": "line_index 24 (\"in the Moral ſenſe\")",
+      "position": "left_margin",
+      "text": "Moral."
+    },
+    {
+      "anchor": "line_index 26 (\"vvherin Iob proceded by degrees\")",
+      "position": "left_margin",
+      "text": "Holie Iob pro-\nceded by de-\ngrees to per-\nfect patience."
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 0,
+      "span": "with",
+      "note": "the opening 'with' (and 'impietie ... blaſphemie' up to the comma) is ROMAN/upright → real 'w'; the line then switches to italic at 'and obſti-'. Per-face rule confirmed by direct glyph inspection (upright roman w, not the italic vv-digraph)."
+    },
+    {
+      "line_index": "4,33,34",
+      "span": "VVorkes / VVordes / VVil",
+      "note": "three mid-line italic W's judged CAPITAL (cap-height, 'VV') on high-contrast inspection vs the lowercase italic 'vv' of 'vvherof' / 'vvorkes'(l.8): 'his VVorkes' (God's Works, l.4), 'ſome VVordes' (l.33), 'Gods VVil' (God's Will, l.34). Cap-vs-lowercase in small italic is inherently close; medium-high confidence."
+    },
+    {
+      "line_index": 37,
+      "span": "⟨?⟩",
+      "note": "small centred 'L'/hook-shaped mark below the colophon; unidentifiable — signature/register mark, ornament, or stray ink. Flagged rather than guessed."
+    },
+    {
+      "line_index": 29,
+      "span": "bevvailed",
+      "note": "Italic annotation face → 'w'='vv'; word is 'bewailed' (lamented). The medial 'ai' cluster is faint/damaged on the scan and reads almost as 'bevva·led'; confident on lemma but the exact medial glyphs (bevvailed vs bevvayled) are ambiguous. OCR scaffold reads 'beva led'."
+    },
+    {
+      "line_index": 30,
+      "span": "vviſhing",
+      "note": "'wishing' in the italic face. Rendered with long-ſ (ſh) per §footnote-typeface (annotation face uses long-ſ) and the tall descender in the raster; but per §long-ſ the sh cluster can also be round-s+h, so this single glyph is a possible round-s ('vvishing')."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 99,
+    "vv_digraph_count_transcribed": 42,
+    "note": "counts of U+017F 'ſ' and the italic 'vv'/'VV' w-digraph across body+marginalia text (script-computed)."
+  },
+  "region_glyph_regimes": {
+    "italic_annotation_body": "sets 'w' as 'vv' and uses long-ſ; the connective-narration face, alternating with roman within lines",
+    "roman_emphasis_inserts": "upright roman for doctrinal/emphatic phrases → real 'w' and roman letterforms. Lowercase real-'w' instances: 'with impietie ... blaſphemie' (line 0) and 'with fulnes of' (line 23). Other roman spans (no w): 'But God himſelf ... Booke' (l.6), 'exerciſing Iob ... perfecting' (l.9-10), 'ſentence that Iob ... freindes had' (l.12), 'the Reſurrection, and' (l.22), 'daies, in eternal glorie' (l.24), 'a moſt notable example of al vertues, namely of patience' (l.25-26), colophon (l.36). Capital W is 'VV' in BOTH faces: italic 'VVhom' (l.13), 'VVho' (l.20), 'VVorkes' (l.4), 'VVordes' (l.33), 'VVil' (l.34)"
+  },
+  "observer": "claude-opus-gt-transcriber",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (banded + word-level + high-contrast binarized crops up to ~3x); OCR scaffold (ot1-1609/..._1132.txt) used only as dropped-line hint. Per-face w/ſ judgment made by inspecting upright(roman)-vs-slanted(italic) letterforms and cap-vs-x-height directly. This pass verified and corrected a prior transcription in the same file: fixed the line-0 opening 'with' (roman real-w; prior read 'vvith'); set three mid-line italic capitals 'VVorkes' (l.4) / 'VVordes' (l.33) / 'VVil' (l.34); reframed the line-22 raised dot as a marginal-reference anchor; added the small centred mark below the colophon as line 37.",
+  "confidence": "high on the argument wording, roman/italic face calls, and the roman colophon; medium on the cap-height calls for VVorkes/VVordes/VVil, the line-22 anchor dot, line-29 'bevvailed' medial letters, and the line-30 sh cluster; low on the small centred mark below the colophon (line 37, unidentified). Marginalia high (roman, legible)",
+  "resolved_uncertain": [
+    {
+      "line_index": 22,
+      "span": "in the. Anagogical",
+      "note": "a RAISED dot is printed between 'the' and 'Anagogical'. It sits mid-height (not a baseline period) and aligns with the left side-note 'Anagogical.', so it most likely functions as a marginal-reference ANCHOR keying that note to the body (compare a similar raised dot before 'which' on line 24, keying 'Moral.'). Transcribed as printed ('.') per diplomatic fidelity; treat as apparatus/anchor, not sentence punctuation.",
+      "resolved_to": "ſtate then before, ſignified in the* Anagogical ſenſe, the Reſurrection, and",
+      "resolved_by": "sir"
+    }
+  ],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-15T01:19:35.916927+00:00",
+    "n_applied": 4,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-ot1-colophon.corrections.json"
+  }
+}

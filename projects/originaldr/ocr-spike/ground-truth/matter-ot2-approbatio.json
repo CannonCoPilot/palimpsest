@@ -1,0 +1,243 @@
+{
+  "locus": "matter/ot2/approbatio",
+  "page_index": 2,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot2-approbatio-p0002.png",
+  "raster_dpi": 360,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Single column. The DISTINCT 1610 OT2 (Second Tome) setting of the Douai Doctors' Approbatio — the counterpart of the OT1 (1609) Approbatio, carrying the same license text (same three Doctors, same date 'Duaci. 8. Nouembris. 1609.') but a physically different type-setting with its own line breaks and several unique compositor typos (see uncertain: Thologiæ, ropter, promuendis, Amotationum, integtitate, eruditonis, Noembris, ESTVS, Duaceni, Dacenſi). Top: woodcut headpiece cartouche — a grotesque mask flanked by foliate scrollwork, with two nude putti at the ends each holding a heraldic shield — enclosing a roman-cap banner panel 'APPROBATIO.'. Below the headpiece: one Latin ITALIC paragraph opening with a 2–3-line drop-cap 'N' (NOs infraſcripti…), running twelve type-lines to the date. At foot: three signatory blocks (Doctors of Divinity) set in roman small-caps names + roman lower-case, each two lines. No running header and NO printed page number (this is the unnumbered verso of the title leaf, A1v = implied p.2; the following leaf A2r is printed '3' and signed 'A 2'). Type is Latin roman/italic, so the vv-vs-w apparatus rule does not apply (no 'w' sort in Latin, no footnote face on the page). A modern scanner watermark 'www.fatimamovement.com' and a small red heraldic shield are overlaid at the lower-left corner — NOT part of the original print; excluded. Page foot below the third signature is blank (no catchword, no marginalia).",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "heading",
+      "text": "APPROBATIO."
+    },
+    {
+      "line_index": 1,
+      "role": "latin",
+      "drop_cap": "N",
+      "text": "NOs infraſcripti, in alma Duacenſi vniuerſitate"
+    },
+    {
+      "line_index": 2,
+      "role": "latin",
+      "text": "Sacræ Thologiæ Doctores & Profeſſores, hanc"
+    },
+    {
+      "line_index": 3,
+      "role": "latin",
+      "text": "Anglicanam Veteris Teſtamenti tranſlationem,"
+    },
+    {
+      "line_index": 4,
+      "role": "latin",
+      "text": "quam tres diuerſi eius nationis eruditiſſimi Theologi, non"
+    },
+    {
+      "line_index": 5,
+      "role": "latin",
+      "text": "ſolum fidelem, ſed ropter diuerſa quæ ei ſunt adiuncta,"
+    },
+    {
+      "line_index": 6,
+      "role": "latin",
+      "text": "valde vtilem fidei Catholicæ propagandæ ac tuendæ, &"
+    },
+    {
+      "line_index": 7,
+      "role": "latin",
+      "text": "bonis moribus promuendis, ſunt teſtati : quorum teſti-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 8,
+      "role": "latin",
+      "text": "monia ipſorum ſyngraphis munita vidimus ; Cuius item"
+    },
+    {
+      "line_index": 9,
+      "role": "latin",
+      "text": "Tranſlationis, & Amotationum Auctores nobis de fidei"
+    },
+    {
+      "line_index": 10,
+      "role": "latin",
+      "text": "integtitate, & eruditonis præſtantia probè ſunt noti :"
+    },
+    {
+      "line_index": 11,
+      "role": "latin",
+      "text": "his rebus adducti & nixi, fructuoſe euulgari poſſe cen-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 12,
+      "role": "latin",
+      "text": "ſuimus. Duaci. 8. Noembris. 1609."
+    },
+    {
+      "line_index": 13,
+      "role": "latin",
+      "block": "signatory",
+      "text": "GVILIELMVS ESTVS Sacræ Theologiæ Doctor, & in"
+    },
+    {
+      "line_index": 14,
+      "role": "latin",
+      "block": "signatory",
+      "text": "Academia Duaceni Profeſſor."
+    },
+    {
+      "line_index": 15,
+      "role": "latin",
+      "block": "signatory",
+      "text": "BARTHOLOMAEVS PETRVS Sacræ Theologiæ Doctor"
+    },
+    {
+      "line_index": 16,
+      "role": "latin",
+      "block": "signatory",
+      "text": "& in Vniuerſitate Dacenſi Profeſſor."
+    },
+    {
+      "line_index": 17,
+      "role": "latin",
+      "block": "signatory",
+      "text": "GEORGIVS COLVENERIVS S. Theologiæ Doctor, &"
+    },
+    {
+      "line_index": 18,
+      "role": "latin",
+      "block": "signatory",
+      "text": "eiuſdem in Academia Duacena Profeſſor."
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "heading",
+      "text": "APPROBATIO.",
+      "lines": [0]
+    },
+    {
+      "idx": 1,
+      "kind": "paragraph",
+      "text": "NOs infraſcripti, in alma Duacenſi vniuerſitate Sacræ Thologiæ Doctores & Profeſſores, hanc Anglicanam Veteris Teſtamenti tranſlationem, quam tres diuerſi eius nationis eruditiſſimi Theologi, non ſolum fidelem, ſed ropter diuerſa quæ ei ſunt adiuncta, valde vtilem fidei Catholicæ propagandæ ac tuendæ, & bonis moribus promuendis, ſunt teſtati : quorum teſtimonia ipſorum ſyngraphis munita vidimus ; Cuius item Tranſlationis, & Amotationum Auctores nobis de fidei integtitate, & eruditonis præſtantia probè ſunt noti : his rebus adducti & nixi, fructuoſe euulgari poſſe cenſuimus. Duaci. 8. Noembris. 1609.",
+      "lines": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    },
+    {
+      "idx": 2,
+      "kind": "paragraph",
+      "block": "signatory",
+      "text": "GVILIELMVS ESTVS Sacræ Theologiæ Doctor, & in Academia Duaceni Profeſſor.",
+      "lines": [13, 14]
+    },
+    {
+      "idx": 3,
+      "kind": "paragraph",
+      "block": "signatory",
+      "text": "BARTHOLOMAEVS PETRVS Sacræ Theologiæ Doctor & in Vniuerſitate Dacenſi Profeſſor.",
+      "lines": [15, 16]
+    },
+    {
+      "idx": 4,
+      "kind": "paragraph",
+      "block": "signatory",
+      "text": "GEORGIVS COLVENERIVS S. Theologiæ Doctor, & eiuſdem in Academia Duacena Profeſſor.",
+      "lines": [17, 18]
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "line_index": 2,
+      "span": "Thologiæ",
+      "note": "Printed 'Thologiæ' (T-h-o-l-o-g-i-æ) — an 'e' is dropped from 'Theologiæ'. Confirmed as a genuine compositor typo, not a misread: the three signature blocks below (lines 13/15/17) all set the word correctly as 'Theologiæ' with the 'e'. Preserved diplomatically. High confidence."
+    },
+    {
+      "line_index": 5,
+      "span": "ropter",
+      "note": "Reads 'ropter': the initial 'p' of 'propter' failed to print, leaving only a faint high vestige/tick before the word. Middle 'p' (with descender) prints normally, so the visible glyphs are r-o-p-t-e-r. Transcribed as printed 'ropter' (dropped/defective initial p); intended word 'propter'. High confidence on the missing initial p."
+    },
+    {
+      "line_index": 5,
+      "span": "diuerſa",
+      "note": "The vowel after 'diu' is lightly inked / open and reads close to a 'c' ('diucrſa'); resolved to 'diuerſa' (Latin 'diversa'; 'diucrſa' is not a word and the shape is consistent with a worn italic 'e'). long-ſ before final 'a' is clear. Medium-high confidence on 'e'."
+    },
+    {
+      "line_index": 7,
+      "span": "promuendis",
+      "note": "Reads 'promuendis' (p-r-o-m-u-e-n-d-i-s) — an 'o' is dropped from 'promouendis' (Latin 'promovendis'). Verified at 2x: no 'o' between 'm' and 'u'. Genuine compositor typo, preserved. High confidence."
+    },
+    {
+      "line_index": 9,
+      "span": "Amotationum",
+      "note": "Reads 'Amotationum' — the 'nn' of 'Annotationum' is set as a single 'm' (A-m-o-t-a-t-i-o-n-u-m). Preserved diplomatically; intended 'Annotationum'. Medium-high confidence (the letter after the capital A reads as a single connected italic 'm', not 'nn')."
+    },
+    {
+      "line_index": 10,
+      "span": "integtitate",
+      "note": "Reads 'integtitate' — the 'r' of 'integritate' is set/worn as a 't' (letter after 'g' shows a tall stem with crossbar, matching the other 't' sorts). Preserved as printed; intended 'integritate'. Medium confidence on t-vs-r."
+    },
+    {
+      "line_index": 10,
+      "span": "eruditonis",
+      "note": "Reads 'eruditonis' (e-r-u-d-i-t-o-n-i-s) — an 'i' is dropped from 'eruditionis'. No 'i' between 't' and 'o'. Preserved as printed. Medium-high confidence."
+    },
+    {
+      "line_index": 12,
+      "span": "Noembris",
+      "note": "Reads 'Noembris' — the 'u' of 'Nouembris' does not clearly print ('o' runs straight into 'e'). Consistent across all zoom levels (1.8x–2.5x autocontrast). Transcribed as the visible 'Noembris' (probable dropped-u typo for 'Nouembris'); a very compressed/merged 'u' cannot be 100% excluded at this raster resolution (near the 360 DPI limit for this italic). Medium confidence; the DATE itself (8 … 1609) is certain."
+    },
+    {
+      "line_index": 13,
+      "span": "ESTVS",
+      "note": "Reads 'ESTVS' (E-S-T-V-S, five sorts, no 'I'). The OT1 (1609) sibling setting and the surname (Guilielmus Estius) have 'ESTIVS'; here the 'I' appears dropped. Preserved as printed 'ESTVS'. Medium-high confidence (clear 5-letter letterspacing)."
+    },
+    {
+      "line_index": 14,
+      "span": "Duaceni",
+      "note": "Reads 'Duaceni' (D-u-a-c-e-n-i) with NO long-ſ before the final 'i'; the OT1 sibling has 'Duacenſi'. Note the compositor renders this toponym three different ways on this one page: 'Duaceni' (here), 'Dacenſi' (line 16, dropped u), and 'Duacena' (line 18, feminine -a). Line 1 has the correct 'Duacenſi'. Preserved each as printed. Medium confidence."
+    },
+    {
+      "line_index": 16,
+      "span": "Dacenſi",
+      "note": "Reads 'Dacenſi' (D-a-c-e-n-ſ-i) — the 'u' of 'Duacenſi' is dropped ('D' runs straight into 'a'). long-ſ before final 'i' is clear. Preserved as printed; OT1 sibling has 'Duacenſi'. Medium-high confidence on the missing u."
+    },
+    {
+      "line_index": 15,
+      "span": "Doctor",
+      "note": "Sig-block 2 line 1 ends 'Sacræ Theologiæ Doctor' with NO comma clearly printed after 'Doctor' (the OT1 sibling and the other two blocks set 'Doctor,'). Transcribed without comma as seen; a faint/lost comma at the right measure cannot be fully excluded. Low-priority."
+    },
+    {
+      "line_index": 17,
+      "span": "COLVENERIVS",
+      "note": "One worn small-cap letter (the 2nd 'E' in COLVEN·E·RIVS) is heavily inked and reads ambiguously E/B; resolved to 'COLVENERIVS' on the surname (Georgius Colvenerius) and the OT1 sibling. Medium-high confidence on the word."
+    },
+    {
+      "line_index": 1,
+      "span": "infraſcripti",
+      "note": "long-ſ (with the italic descender) is unambiguous; the following 'c' is set tight against the ſ (ſc cluster) but present. Committed 'infraſcripti' (= infra scripti, 'the undersigned'). High confidence."
+    },
+    {
+      "line_index": 6,
+      "span": "Catholicæ",
+      "note": "The initial capital of 'Catholicæ' is a swash/defective italic 'C' that reads as an open hook/comma-like form; committed 'Catholicæ' on context and the italic swash-C shape. Medium-high confidence."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 35,
+    "note": "Hand count over the page: ~26 long-ſ in the italic paragraph (lines 1–12) + ~9 in the three roman signature blocks (Profeſſor ſſ ×3, Vniuerſitate, Dacenſi, eiuſdem). Small-cap names use round capital S, not long-ſ. Note this setting drops the long-ſ present in the OT1 sibling's 'Duacenſi' at line 14 ('Duaceni'). Subject to script recompute; transcription is the source of truth."
+  },
+  "observer": "agent:matter-ot2-approbatio",
+  "observed_at": "2026-07-20",
+  "method": "Four validations. (1) LOCALIZATION: paged the OT2 front matter via ocr-spike/jp2_page.py archive-ot2-1610; the banner heading 'APPROBATIO.' with the Nos-infraſcripti Douai-Doctors license is at page_index 2 (jp2 _0002), matching the OT1 counterpart's position. (2) IDENTITY: archive-ot2-1610 S1 = the 1610 Second Tome (jp2_page maps it to 'S01_1582-first-edition-3vol/…2 of 3 1610 Old Testament_jp2'); the immediately-preceding leaf (index 0/1) is the OT2 title 'THE SECOND TOME OF THE HOLIE BIBLE … M.DC.X.', confirming the 1610 OT2, and the text is the DISTINCT OT2 setting (its own line breaks + unique typos), NOT a copy of the OT1 file. (3) PLACEMENT: unnumbered verso of the title leaf (A1v, implied p.2) — no running header (woodcut headpiece instead) and no printed page number; confirmed by the next leaf (index 3) which is 'PROEMIAL ANNOTATIONS vpon the Booke of Pſalmes', printed page '3' and signed 'A 2'. (4) COMPLETENESS: whole section is on this one page — heading + 12-line italic paragraph (dated 8 … 1609) + three signatory blocks (Estius, Bartholomaeus Petrus, Colvenerius); the page foot below the third signature is blank (no catchword/continuation), and index 3 begins a different section. Read from the 400-DPI-class jp2 raster (native 3334×4684) with region crops zoomed 1.8–2.5x (autocontrast on the faintest words); diplomatic per GUIDELINES.md — long-ſ glyph-driven, ct-ligatures→component letters, æ preserved (caps spell AE), u/v period-swap kept, French spacing preserved before ':' and ';', printer's typos preserved. OT1 sibling GT (matter-ot1-approbatio.json) used only as a content anchor for the shared license formula, never as a spelling oracle.",
+  "confidence": "high on the heading, the italic paragraph's overall text, and the three signatory identities; the section boundaries (localization/identity/placement/completeness) are all PASS. Medium-to-high on the setting-specific typos preserved diplomatically (Thologiæ, ropter, promuendis, Amotationum, integtitate, eruditonis, ESTVS, Duaceni, Dacenſi — each flagged in uncertain); medium on the date word 'Noembris' (probable dropped-u for 'Nouembris', at the raster resolution limit) and the sig-2 'Doctor' comma.",
+  "glyph_regime_resolved": "Latin roman + italic display/text only; NO w/vv regime on the page (Latin has no 'w' sort and there is no footnote/annotation face). Heading = roman capitals ('APPROBATIO.'); body = italic (drop-cap 'N'); signatures = roman small-caps names + roman lower-case. long-ſ resolved per glyph: present in italic body and in roman 'Profeſſor'/'Vniuerſitate'/'Dacenſi'/'eiuſdem', absent from small-cap names (round capital S) and dropped in 'Duaceni'. ct = always ligature (Doctores, Doctor, Auctores, adducti, fructuoſe). æ preserved (Sacræ, Thologiæ/Theologiæ, quæ, Catholicæ, propagandæ, tuendæ, præſtantia); roman capitals spell AE as two sorts (BARTHOLOMAEVS). u/v period-swap preserved (vniuerſitate, vtilem, valde, euulgari, eius, Cuius, Duaci, GVILIELMVS, ESTVS, PETRVS, COLVENERIVS, GEORGIVS)."
+}

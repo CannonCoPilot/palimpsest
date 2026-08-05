@@ -1,0 +1,1577 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p58",
+  "old_text": "and God bleſſed Noe and his ſonnes. And he ſaid to A them: Increaſe, multiplie, and replenish the earth. or",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0794,
+   0.9127,
+   0.2925
+  ],
+  "crop_page": 58,
+  "r3_raw": "CHAP. IX. God reneweth the blessing of multiplication, 3 alloweth the eating of flesh, but not of blood. 8. promiseth never againe to destroy the world by water. 22. Cham saw, and reported his father's nakednes, which Sem and Japheth covered. 24. For which he be cursed, and they are blessed. AND God blessed Noe and his sonnes. And he said to them: Increase, & multiply, and replenish the earth.",
+  "r3_verse": "CHAP. IX. God reneweth the blessing of multiplication, alloweth the eating of flesh, but not of blood. promiseth never againe to destroy the world by water. Cham saw, and reported his father's nakednes, which Sem and Japheth covered. For which he be cursed, and they are blessed. AND God blessed Noe and his sonnes. And he said to them: Increase, & multiply, and replenish the earth.",
+  "arm_conflicts": [
+   "multiplie, | & multiply,"
+  ],
+  "lexicon_readings": {
+   "46": "bleſſed."
+  },
+  "r2_attested": {
+   "5": "bleſſing",
+   "17": "promiſeth",
+   "27": "ſaw,",
+   "42": "curſed,"
+  },
+  "visual_readings": {
+   "46": "bleſſed.",
+   "5": "bleſſing",
+   "17": "promiſeth",
+   "27": "ſaw,",
+   "42": "curſed,"
+  },
+  "new_text": "CHAP. IX. God reneweth the bleſſing of multiplication, alloweth the eating of flesh, but not of blood. promiſeth never againe to destroy the world by water. Cham ſaw, and reported his father's nakednes, which Sem and Japheth covered. For which he be curſed, and they are bleſſed. AND God bleſſed Noe and his ſonnes. And he ſaid to them: Increaſe, & multiplie, and replenish the earth.",
+  "s_unresolved": [
+   "flesh,",
+   "destroy",
+   "father's"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p58",
+  "old_text": "Sauing that flesh with bloud you ibal not eate.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3269,
+   0.905,
+   0.3951
+  ],
+  "crop_page": 58,
+  "r3_raw": "meat: cuen as the grene herbes haue I deliuered al to you. † Sawing that \"flesh with bloud you shal not eate. † For I wil require the blood of your soules at the hands of all beasts:",
+  "r3_verse": "Sawing that \"flesh with bloud you shal not eate.",
+  "arm_conflicts": [
+   "Sauing | Sawing",
+   "flesh | \"flesh",
+   "ibal | shal"
+  ],
+  "r2_attested": {
+   "6": "ſhal"
+  },
+  "visual_readings": {
+   "6": "ſhal"
+  },
+  "new_text": "Sawing that flesh with bloud you ſhal not eate.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p58",
+  "old_text": "Who ſoeuer ſhal6 ſheed mans bloud, his bloud ſhal be ibed : for to the image of God man was made.",
+  "old": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.3887,
+   0.905,
+   0.4977
+  ],
+  "crop_page": 58,
+  "r3_raw": "and at the hand of man, at the hand of eech man, and of his brother, wil I require the soule of man. † Who foever ſhal 6 ſheed mans bloud, his bloud ſhal be ſhed: for to the image of God man was made.'† But increase you and multiplie; 7 and goe vpon the earth, and fill it.",
+  "r3_verse": "ſhal ſoeuer ſhal6 ſheed mans bloud, his bloud ſhal be ſhed: : for to the image of God man was made.'†",
+  "arm_conflicts": [
+   "Who ſoeuer ſhal6 | ſhal",
+   "ibed : | ſhed:",
+   "made. | made.'†"
+  ],
+  "used_merge": true,
+  "new_text": "ſhal ſoeuer ſhal6 ſheed mans bloud, his bloud ſhal be ſhed: : for to the image of God man was made.",
+  "s_unresolved": [
+   "ſhal",
+   "ſhed:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p58",
+  "old_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   8
+  ],
+  "crop": [
+   0.08,
+   0.4671,
+   0.905,
+   0.5342
+  ],
+  "crop_page": 58,
+  "r3_raw": "and goe vpon the earth, and fill it. † Thus also said God to Noe, and to his sonnes with him: 8 † Behold I wil establish my couenant with you, and with 9",
+  "r3_verse": "Thus also said God to Noe, and to his sonnes with him:",
+  "arm_conflicts": [],
+  "new_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p58",
+  "old_text": "And God ſaid This is the ſigno of che couenant which. I geue berwen me and you, and berwen euerie liuing ſoule, as that is with you, for perpetual generations:",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.6321,
+   0.905,
+   0.7391
+  ],
+  "crop_page": 58,
+  "r3_raw": "ther shal there be from henceforth a flood to wast the earth. † And God said: This is the signe of the couenant which I geue between me and you, and between euerie liuing soule, that is with you, for perpetual generations: † :: my bowe wil I set in the clouds, and it shal be the signe of a couenant",
+  "r3_verse": "And God said: This is the signe of the couenant which I geue between me and you, and between euerie liuing soule, that is with you, for perpetual generations: ::",
+  "arm_conflicts": [
+   "ſigno | signe",
+   "che | the",
+   "berwen | between",
+   "berwen | between"
+  ],
+  "r2_attested": {
+   "6": "ſigne"
+  },
+  "visual_readings": {
+   "6": "ſigne"
+  },
+  "new_text": "And God ſaid This is the ſigne of the couenant which. I geue between me and you, and between euerie liuing ſoule, that is with you, for perpetual generations: ::",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p58",
+  "old_text": "†my bowe it wil I ſet in the clouds, and it ſhalbe the ſigne of a couenant for betwen me and betwen the earth.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.6729,
+   0.905,
+   0.7873
+  ],
+  "crop_page": 58,
+  "r3_raw": "geue between me and you, and betwen euerie liuing soule, that is with you, for perpetual generations: † :: my bowe 13 wil I set in the clouds, and it ſhal be the signe of a couenant between me and between the earth. † And when I ſhal cover :4 the element with cloudes, my bowe ſhal appcare in the - cloudes: † and I ſhal remember my covenant vnto you, and",
+  "r3_verse": "my bowe wil I set in the clouds, and it ſhal be the signe of a couenant between me and between the earth.",
+  "arm_conflicts": [
+   "ſhalbe | ſhal be",
+   "for betwen | between",
+   "betwen | between"
+  ],
+  "new_text": "†my bowe wil I ſet in the clouds, and it ſhal be the ſigne of a couenant betwen me and betwen the earth.",
+  "s_unresolved": [
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p58",
+  "old_text": "And when I ihal couer the element with cloudes, my bowe ſhal apprare in the cloudes:",
+  "old": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.7133,
+   0.905,
+   0.8177
+  ],
+  "crop_page": 58,
+  "r3_raw": "wil I set in the clouds, and it shalbe the signe of a couenant between me and betwen the earth. † And when I shal cower 14 the element with cloudes, my bowe shal appeare in the cloudes: † and I shal remember my couenant with you, and 15 with euerie liuing soule that beareth flesh: and there shal no,",
+  "r3_verse": "And when I shal cower the element with cloudes, my bowe shal appeare in the cloudes:",
+  "arm_conflicts": [
+   "ihal couer | shal cower",
+   "apprare | appeare"
+  ],
+  "r2_attested": {
+   "3": "ſhal"
+  },
+  "visual_readings": {
+   "3": "ſhal"
+  },
+  "new_text": "And when I ſhal cower the element with cloudes, my bowe ſhal appeare in the cloudes:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p58",
+  "old_text": "and I ſhal remember my couenant with you, and in more with euerie liuing ſoule floud, that beareth flesh: and there ſhal no be warers of a to diſtroy al flesh.",
+  "old": {
+   "s_dismas": 0.832,
+   "odr_com": 0.832,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.7554,
+   0.905,
+   0.8588
+  ],
+  "crop_page": 58,
+  "r3_raw": "the element with cloudes, my bowe ſhal appeare in the clouedes: † and I ſhall remember my couenant with you, and 15 with euerie liuing soule that beareth flesh: and there ſhall no more be waters of a floud, to distroy al fleſh.† And my bowe ſhal be in the cloudes, and I ſhall re-",
+  "r3_verse": "and I ſhall remember my couenant with you, and with euerie liuing soule that beareth flesh: and there ſhall no more be waters of a floud, to distroy al fleſh.†",
+  "arm_conflicts": [
+   "ſhal | ſhall",
+   "ſhal | ſhall",
+   "warers | waters"
+  ],
+  "lexicon_readings": {
+   "25": "floud,"
+  },
+  "visual_readings": {
+   "25": "floud,"
+  },
+  "new_text": "and I ſhal remember my couenant with you, and with euerie liuing ſoule that beareth flesh: and there ſhal no more be waters of a floud, to diſtroy al flesh.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "chapter",
+  "old_text": "And my. bowe ſhal be in the cloudes, and I ſhal ſee it, and ſhal rememher the euerlaſting couenant, that was made berwen God, com God and euerie liuing ſoule of al fleth which is vpon the: earth.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.7942,
+   0.905,
+   1.0
+  ],
+  "crop_page": 58,
+  "crop_leaves": [
+   58,
+   59
+  ],
+  "r3_raw": "with euerie liuing soule that bareth flesh: and there shal no more be waters of a floud, to distroy al flesh.'† And my bowe shal be in the cloudes, and I shal see it, and I shal remember the everlasting couenant, that was made betwen God, GENESIS. God and everie liuing soule of al flesh which is vpon the earth..† And God said to Noc: This shal be the signe of the couenant, which I established, between me & al Hesh of the",
+  "r3_verse": "And my bowe shal be in the cloudes, and I shal see it, and I shal remember the everlasting couenant, that was made betwen God, God and everie liuing soule of al flesh which is vpon the earth..†",
+  "arm_conflicts": [
+   "rememher | remember",
+   "euerlaſting | everlasting",
+   "berwen | betwen",
+   "euerie | everie",
+   "fleth | flesh"
+  ],
+  "new_text": "And my. bowe ſhal be in the cloudes, and I ſhal ſee it, and I ſhal remember the euerlaſting couenant, that was made betwen God, God and euerie liuing ſoule of al flesh which is vpon the: earth.",
+  "s_unresolved": [
+   "flesh"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p62",
+  "old_text": "and God bleſſed Noe and his ſonnes. And he ſaid to A them: Increaſe, multiplie, and replenish the earth. or",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0298,
+   0.905,
+   0.2811
+  ],
+  "crop_page": 62,
+  "r3_raw": "CHAP. IX. God reneweth the blessing of multiplication, 3 alloweth the eating offlesh, but not of blood. 8. promiseth never againe to destroy the world by water. 22. Cham saw, and reported his fathers nakednes, which Sem and Japheth covered. 24. For which he his cursed, and they are blessed. And God blessed Noe and his sonnes. And he said to them: :: Increase, & multiplie, and replenish the earth. † And your terror and dread be it vpon al the beasts of the earth, and vpon al the foules of the ayre, with al that moue",
+  "r3_verse": "CHAP. IX. God reneweth the blessing of multiplication, alloweth the eating offlesh, but not of blood. promiseth never againe to destroy the world by water. Cham saw, and reported his fathers nakednes, which Sem and Japheth covered. For which he his cursed, and they are blessed. And God blessed Noe and his sonnes. And he said to them: :: Increase, & multiplie, and replenish the earth.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "30": "fathers",
+   "45": "bleſſed."
+  },
+  "r2_attested": {
+   "16": "promiſeth",
+   "20": "deſtroy",
+   "26": "ſaw,",
+   "41": "curſed,"
+  },
+  "visual_readings": {
+   "30": "fathers",
+   "45": "bleſſed.",
+   "16": "promiſeth",
+   "20": "deſtroy",
+   "26": "ſaw,",
+   "41": "curſed,"
+  },
+  "new_text": "CHAP. IX. God reneweth the blessing of multiplication, alloweth the eating offlesh, but not of blood. promiſeth never againe to deſtroy the world by water. Cham ſaw, and reported his fathers nakednes, which Sem and Japheth covered. For which he his curſed, and they are bleſſed. And God bleſſed Noe and his ſonnes. And he ſaid to them: :: Increaſe, & multiplie, and replenish the earth.",
+  "s_unresolved": [
+   "blessing",
+   "offlesh,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p62",
+  "old_text": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ibed : for to the image God man was made.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.871,
+   "madueke_b": 0.871
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.3826,
+   0.905,
+   0.4893
+  ],
+  "crop_page": 62,
+  "r3_raw": "and at the hand of man, at the hand of eech man, and of his brother, wil I require the soule of man. † Who ſoever ſhal 6 ſheed mans bloud, his bloud ſhal be ſhed: for to the image of God man was made. † But increase you and multiplie; 7 and goe vpon the earth, and fill it.",
+  "r3_verse": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ſhed: : for to the image of God man was made.",
+  "arm_conflicts": [
+   "ibed : | ſhed:"
+  ],
+  "used_merge": true,
+  "new_text": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ſhed: : for to the image of God man was made.",
+  "s_unresolved": [
+   "ſhed:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p62",
+  "old_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   8
+  ],
+  "crop": [
+   0.08,
+   0.4642,
+   0.905,
+   0.5319
+  ],
+  "crop_page": 62,
+  "r3_raw": "and goe vpon the earth, and fill it. † Thus also said God to Noe, and to his sonnes with him: 8 † Behold I wil establish my couenant with you, and with 9",
+  "r3_verse": "Thus also said God to Noe, and to his sonnes with him:",
+  "arm_conflicts": [],
+  "new_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p62",
+  "old_text": "my bowe it wil I ſet in the clouds, and it ſhal be the ſigne of a couenant for betwen me and betwen the earth.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.6764,
+   0.905,
+   0.7943
+  ],
+  "crop_page": 62,
+  "r3_raw": "geue between me and you, and betwen euerie liuing soule, that is with you, for perpetual generations: † :: my bowe 13 wil I set in the clouds, and it ſhal be the signe of a couenant between me and between the earth. † And when I ſhal couer 14 the element with cloudes, my bowe ſhal appare in the",
+  "r3_verse": "my bowe wil I set in the clouds, and it ſhal be the signe of a couenant between me and between the earth.",
+  "arm_conflicts": [
+   "for betwen | between",
+   "betwen | between"
+  ],
+  "new_text": "my bowe wil I ſet in the clouds, and it ſhal be the ſigne of a couenant betwen me and betwen the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p62",
+  "old_text": "and I ſhal remember my oouenant with you, andry with euerie liuing ſoule that beareth flesh and there ſhal no in more be waters of a floud, to diſtroy al flesh.",
+  "old": {
+   "s_dismas": 0.962,
+   "odr_com": 0.962,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.7602,
+   0.905,
+   0.8692
+  ],
+  "crop_page": 62,
+  "r3_raw": "the element with cloudes, my bowe ſhal app are in the cloudes: † and I ſhal remember my couenant with you, and 15 with euerie liuing soule that beareth flesh: and there ſhal no more be waters of a floud, to distroy al flesh. † And my bowe ſhal be in the cloudes, and I ſhal see it, and I ſhal re-",
+  "r3_verse": "and I ſhal remember my couenant with you, and with euerie liuing soule that beareth flesh: and there ſhal no more be waters of a floud, to distroy al flesh.",
+  "arm_conflicts": [
+   "oouenant | couenant",
+   "andry | and"
+  ],
+  "new_text": "and I ſhal remember my couenant with you, and with euerie liuing ſoule that beareth flesh and there ſhal no more be waters of a floud, to diſtroy al flesh.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p68",
+  "old_text": "and God bleſſed Noe and his ſonnes. And he ſaid to com- A them: Increaſe, multiplie, and replenish the earth. or",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.899,
+   "madueke_b": 0.899
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0847,
+   0.8868,
+   0.3093
+  ],
+  "crop_page": 68,
+  "r3_raw": "CHAP. IX. God reneweth the blessing of multiplication, 3. alloweth the eating offlesh, but not of blood. 8. promiseth never againe to destroy the world by water. 22. Cham saw, and reported his fathers nakednes, which Sem and Iapheth covered. 24. For which he his cursed, and they are blessed. And God blessed Noe and his sonnes. And he said to them: Increase, & multiplie, and replenish the earth. † And your terror and dread be it vpon al the beasts of the earth, and vpon al the foules of the ayre, with al that moue",
+  "r3_verse": "CHAP. IX. God reneweth the blessing of multiplication, alloweth the eating offlesh, but not of blood. promiseth never againe to destroy the world by water. Cham saw, and reported his fathers nakednes, which Sem and Iapheth covered. For which he his cursed, and they are blessed. And God blessed Noe and his sonnes. And he said to them: Increase, & multiplie, and replenish the earth.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "30": "fathers",
+   "45": "bleſſed."
+  },
+  "r2_attested": {
+   "5": "bleſſing",
+   "16": "promiſeth",
+   "20": "deſtroy",
+   "26": "ſaw,",
+   "41": "curſed,"
+  },
+  "visual_readings": {
+   "30": "fathers",
+   "45": "bleſſed.",
+   "5": "bleſſing",
+   "16": "promiſeth",
+   "20": "deſtroy",
+   "26": "ſaw,",
+   "41": "curſed,"
+  },
+  "new_text": "CHAP. IX. God reneweth the bleſſing of multiplication, alloweth the eating offlesh, but not of blood. promiſeth never againe to deſtroy the world by water. Cham ſaw, and reported his fathers nakednes, which Sem and Iapheth covered. For which he his curſed, and they are bleſſed. And God bleſſed Noe and his ſonnes. And he ſaid to them: Increaſe, & multiplie, and replenish the earth.",
+  "s_unresolved": [
+   "offlesh,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p68",
+  "old_text": "And al that moueth, and liueth ſhal be yours you. eat: euen as the grene herbes haue I deliuered al to",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.2951,
+   0.875,
+   0.3902
+  ],
+  "crop_page": 68,
+  "r3_raw": "earth, and vpon all the fishes of the sea: vpon the earth: al the fishes of the sea are deliuered to your hand. † And\" al that moueth, and liueth thal be yours for meat: euuen as the grene herbes haue I deliuered al to you. † Saving that\" flesh with bloud you thal not eate. † For I",
+  "r3_verse": "And\" al that moueth, and liueth thal be yours for meat: euuen as the grene herbes haue I deliuered al to you.",
+  "arm_conflicts": [
+   "And | And\"",
+   "ſhal | thal",
+   "you. eat: euen | for meat: euuen"
+  ],
+  "lexicon_readings": {
+   "9": "for"
+  },
+  "visual_readings": {
+   "9": "for"
+  },
+  "new_text": "And al that moueth, and liueth thal be yours for meat: euen as the grene herbes haue I deliuered al to you.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p68",
+  "old_text": "†For al beaſts: wil require the bloud of your ſoules at the hands of and at the hand of man, at the hand of eech man, and of his brother, wil I require the ſoule of man.",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.885,
+   "sabates_a": 0.858,
+   "madueke_b": 0.858
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.3355,
+   0.875,
+   0.4738
+  ],
+  "crop_page": 68,
+  "r3_raw": "hand. † And all that moutheth, and hath meat: even as the grene herbes haue I deliuered al to you. † Saving that flesh with bloud you shal not eate. † For I wil require the bloud of your soules at the hands of al beasts: and at the hand of man, at the hand of eech man, and of his brother, wil I require the soule of man. † Who soever shal shed mans bloud, his bloud shal be ſhed: for to the image",
+  "r3_verse": "For I wil require the bloud of your soules at the hands of al beasts: and at the hand of man, at the hand of eech man, and of his brother, wil I require the soule of man.",
+  "arm_conflicts": [
+   "al beaſts: | I"
+  ],
+  "r2_attested": {
+   "14": "beaſts:"
+  },
+  "visual_readings": {
+   "14": "beaſts:"
+  },
+  "new_text": "†For I wil require the bloud of your ſoules at the hands of al beaſts: and at the hand of man, at the hand of eech man, and of his brother, wil I require the ſoule of man.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "p68",
+  "old_text": "ſoeuer ſhal ſheed mans bloud, his bloud ſhal be ſhed : for to the image God man was made.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.3934,
+   0.875,
+   0.5126
+  ],
+  "crop_page": 68,
+  "r3_raw": "wil require the bloud of your soules at the hands of man, and at the hand of man, at the hand of eech man, and of his brother, wil I require the soule of man. Who soever shal shed mans bloud, his bloud that be ſhed: for to the image of God man was made. But increase you and multiplie, and goe vpon the earth, and fill it.",
+  "r3_verse": "soever shal shed mans bloud, his bloud that be ſhed: for to the image of God man was made.",
+  "arm_conflicts": [
+   "ſoeuer | soever",
+   "ſheed | shed",
+   "ſhal | that"
+  ],
+  "new_text": "ſoeuer ſhal ſheed mans bloud, his bloud that be ſhed for to the image of God man was made.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.906,
+   "madueke_b": 0.906
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p68",
+  "old_text": "But increaſe you and multiplie, and goe vpon the earth, and filit Noe, and",
+  "old": {
+   "s_dismas": 0.873,
+   "odr_com": 0.873,
+   "sabates_a": 0.879,
+   "madueke_b": 0.879
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.4375,
+   0.875,
+   0.5481
+  ],
+  "crop_page": 68,
+  "r3_raw": "brother, will I require the loue of man? 7 shed mans bloud, his bloud that be shed: for to the image of God man was made. † But increase you and multiplie, and goe vpon the earth, and fill it. † Thus also said God to Noe, and to his sonnes with him: † Behold I will establish my couenant with you, and with",
+  "r3_verse": "But increase you and multiplie, and goe vpon the earth, and fill it.",
+  "arm_conflicts": [
+   "filit Noe, and | fill it."
+  ],
+  "new_text": "But increaſe you and multiplie, and goe vpon the earth, and fill it.",
+  "s_unresolved": [
+   "fill"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p68",
+  "old_text": "Thus alſo ſaid God to couenant with you, and with",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   8
+  ],
+  "crop": [
+   0.08,
+   0.487,
+   0.875,
+   0.5692
+  ],
+  "crop_page": 68,
+  "r3_raw": "and goe vpon the earth, and fill it. † Thus also said God to Noe, and to his sonnes with him: † Behold I wil establish my couenant with you, and with your seede after you: † and with euerie liuing soule, that is",
+  "r3_verse": "Thus also said God to Noe, and to his sonnes with him:",
+  "arm_conflicts": [
+   "couenant | Noe, and to his sonnes",
+   "you, and with | him:"
+  ],
+  "lexicon_readings": {
+   "9": "ſonnes"
+  },
+  "visual_readings": {
+   "9": "ſonnes"
+  },
+  "new_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p68",
+  "old_text": "Behold I wil eſtablish my euerie liuing ſoule, that your ſeede after you",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.5064,
+   0.875,
+   0.5979
+  ],
+  "crop_page": 68,
+  "r3_raw": "Thus also said God to Noe, and to his sonnes with him: Behold I wil establish my couenant with you, and with your seede after you: and with euerie liuing soule, that is with you, as wel in al foules as in cattle & beasts of the earth",
+  "r3_verse": "Behold I wil establish my couenant with you, and with your seede after you:",
+  "arm_conflicts": [
+   "euerie liuing ſoule, that | couenant with you, and with"
+  ],
+  "new_text": "Behold I wil eſtablish my couenant with you, and with your ſeede after you",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p68",
+  "old_text": "and with of the earth with you, as wel in al foules as in cattle beaſts al beaſts of that are come forth out of the arke, and in and al earth.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.5252,
+   0.875,
+   0.6581
+  ],
+  "crop_page": 68,
+  "r3_raw": "† Behold I wil establish my couenant with you, and with your seede after you: † and with euerie liuing soule, that is 10 with you, as wel in al foules as in cattle & beasts of the earth that are come forth out of the arke, and in al beasts of the earth. † I wil establish my couenant with you, and al flesh shal be no more destroyed with the waters of a floud, nei-",
+  "r3_verse": "and with euerie liuing soule, that is with you, as wel in al foules as in cattle & beasts of the earth that are come forth out of the arke, and in al beasts of the earth.",
+  "arm_conflicts": [
+   "of the earth | euerie liuing soule, that is",
+   "beaſts al | &"
+  ],
+  "lexicon_readings": {
+   "4": "ſoule,"
+  },
+  "r2_attested": {
+   "33": "beaſts"
+  },
+  "visual_readings": {
+   "4": "ſoule,",
+   "33": "beaſts"
+  },
+  "new_text": "and with euerie liuing ſoule, that is with you, as wel in al foules as in cattle & beaſts of the earth that are come forth out of the arke, and in al beaſts of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p68",
+  "old_text": "I wil eſtabliſh my couenant with you, of a floud, ſhal be no more deſtroyed with the waters the earth. ther fhal there be from henceforth a floud to waſt rain-",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.823,
+   "madueke_b": 0.823
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5833,
+   0.875,
+   0.72
+  ],
+  "crop_page": 68,
+  "r3_raw": "that are come forth out of the arke, and in al beasts of the earth. † I wil establish my couenant with you, and al flesh ſhall be no more destroyed with the waters of a floud, neither ſhal there be from henceforth a floud to wast the earth. † And God said: This is the signe of the couenant which I geue between me and you, and betwen euerie liuing soule,",
+  "r3_verse": "I wil establish my couenant with you, and al flesh ſhall be no more destroyed with the waters of a floud, neither ſhal there be from henceforth a floud to wast the earth.",
+  "arm_conflicts": [
+   "of a floud, ſhal | and al flesh ſhall",
+   "the earth. ther fhal | of a floud, neither ſhal",
+   "rain- | the earth."
+  ],
+  "lexicon_readings": {
+   "20": "floud,"
+  },
+  "visual_readings": {
+   "20": "floud,"
+  },
+  "new_text": "I wil eſtabliſh my couenant with you, and al flesh ſhal be no more deſtroyed with the waters of a floud, neither ſhal there be from henceforth a floud to waſt the earth.",
+  "s_unresolved": [
+   "flesh",
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p68",
+  "old_text": "my bowe as wil I ſet in the clouds, and it ſhal be the ſigne of a couenant it betwen me and bet wen the earth.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.68,
+   0.875,
+   0.8026
+  ],
+  "crop_page": 68,
+  "r3_raw": "And God said: This is the ligne of the couenant geue between me and you, and between euerie liuing soule, that is with you, for perpetual generations: † :: my bowe I wil I set in the clouds, and it shal be the signe of a couenant between me and between the earth. † And when I shal couer the element with cloudes, my bowe shal appeare in the",
+  "r3_verse": "my bowe I wil I set in the clouds, and it shal be the signe of a couenant between me and between the earth.",
+  "arm_conflicts": [
+   "as | I",
+   "it betwen | between",
+   "bet wen | between"
+  ],
+  "new_text": "my bowe I wil I ſet in the clouds, and it ſhal be the ſigne of a couenant betwen me and between the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p68",
+  "old_text": "And when I ſhal couer be, for the element with cloudes, my bowe ſhal appeare in recloudes",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.885,
+   "sabates_a": 0.866,
+   "madueke_b": 0.866
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.7228,
+   0.875,
+   0.8461
+  ],
+  "crop_page": 68,
+  "r3_raw": "that is with you, for perpetual generations: wil I set in the clouds, and it shalbe the signe of a couenant between me and betwen the earth. † And when I shal couer the element with cloudes, my bowe shal appeare in the cloudes: † and I shal remember my couenant with you, and with euerie liuing soule that beareth flesh: and there shal no",
+  "r3_verse": "And when I shal couer the element with cloudes, my bowe shal appeare in the cloudes:",
+  "arm_conflicts": [
+   "recloudes | the cloudes:"
+  ],
+  "new_text": "And when I ſhal couer the element with cloudes, my bowe ſhal appeare in the cloudes:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "chapter",
+  "old_text": "And ſhalreS. Tho. bowe ſbal be in the cloudes, and I ſhal ſee it, and I the euerlaſting couenant, that was made betwen member God and euerie liuing ſoule of al flesh which is vpon the earth.",
+  "old": {
+   "s_dismas": 0.821,
+   "odr_com": 0.821,
+   "sabates_a": 0.806,
+   "madueke_b": 0.806
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.8044,
+   0.875,
+   0.9357
+  ],
+  "crop_page": 68,
+  "crop_leaves": [
+   68,
+   69
+  ],
+  "r3_raw": "cloudes: † and I that remember my couenant with euerie liuing soule that beareth flesh: and there shal no more be waters of a floud, to distroy al flesh. † And my bowe shal be in the cloudes, and I shal see it, and I shal remember the everlasting couenant, that was made between God, and euerie liuing soule of al flesh which is vpon the earth. † And God said to Noe: This shal be the signe of the couenant, which I established, betwen me & al flesh of the",
+  "r3_verse": "And my bowe shal be in the cloudes, and I shal see it, and I shal remember the everlasting couenant, that was made between God, and euerie liuing soule of al flesh which is vpon the earth.",
+  "arm_conflicts": [
+   "ſhalreS. Tho. | my",
+   "ſbal | shal",
+   "euerlaſting | everlasting",
+   "betwen member | between"
+  ],
+  "r2_attested": {
+   "3": "ſhal",
+   "15": "ſhal"
+  },
+  "visual_readings": {
+   "3": "ſhal",
+   "15": "ſhal"
+  },
+  "new_text": "And my bowe ſhal be in the cloudes, and I ſhal ſee it, and I ſhal remember the euerlaſting couenant, that was made betwen God and euerie liuing ſoule of al flesh which is vpon the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p69",
+  "old_text": "And Noe a huſbandman began to til the grounde, and had clere planted a vineyard.",
+  "old": {
+   "s_dismas": 0.872,
+   "odr_com": 0.872,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.1716,
+   0.875,
+   0.2625
+  ],
+  "crop_page": 69,
+  "r3_raw": "of these was al mankind spred ouer the whole earth. And Noe a husbandman began to til the grounde, and planted a vineyard. And drinking of the wine was made drunke, and naked in his tabernacle. Which when",
+  "r3_verse": "And Noe a husbandman began to til the grounde, and planted a vineyard.",
+  "arm_conflicts": [],
+  "new_text": "And Noe a huſbandman began to til the grounde, and planted a vineyard.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p52",
+  "old_text": "And moueth and liueth ſhal be yours for meat : euen as the green haue I deliuered al to you.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.8125,
+   0.815,
+   0.9104
+  ],
+  "crop_page": 52,
+  "r3_raw": "all the Beasts of the earth; and vpon all the foules of the ayre, with al that moue vpon the earth: al the fishes of the sea are deliuered to your hand. 3. And \"al that moueth and liueth ſhal be yours for meat: euuen as the green hearbs haue I deliuered al to you. 4. Sauing that\" fleſh with bloud you ſhal not eate. 5. For I wil require the bloud of your soules at the",
+  "r3_verse": "And \"al that moueth and liueth ſhal be yours for meat: euuen as the green hearbs haue I deliuered al to you.",
+  "arm_conflicts": [
+   ": euen | euuen"
+  ],
+  "new_text": "And \"al that moueth and liueth ſhal be yours for meat euen as the green hearbs haue I deliuered al to you.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.962,
+   "odr_com": 0.962,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p52",
+  "old_text": "Sauing that fleſh with bloud not eate.",
+  "old": {
+   "s_dismas": 0.804,
+   "odr_com": 0.804,
+   "sabates_a": 0.795,
+   "madueke_b": 0.795
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.8486,
+   0.815,
+   0.9304
+  ],
+  "crop_page": 52,
+  "r3_raw": "\"al that moueth and liueth shal be yours for meat: euen as the green hearbs haue I deliuered al to you. 4. Sauing that\" flesh with bloud you ſhal not eate. 5. For I wil require the bloud of your soules at the",
+  "r3_verse": "Sauing that\" flesh with bloud you ſhal not eate.",
+  "arm_conflicts": [
+   "that | that\""
+  ],
+  "new_text": "Sauing that fleſh with bloud you ſhal not eate.",
+  "s_unresolved": [
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p53",
+  "old_text": "Thus alfo ſaid God to Noe, and to his ſonnes with him:",
+  "old": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.1693,
+   0.885,
+   0.2311
+  ],
+  "crop_page": 53,
+  "r3_raw": "8. Thus also said God to Noe, and to his sonnes with him: 9. Behold I wil establish my couenant with you, and with your seed after",
+  "r3_verse": "Thus also said God to Noe, and to his sonnes with him:",
+  "arm_conflicts": [
+   "alfo | also"
+  ],
+  "lexicon_readings": {
+   "1": "alſo"
+  },
+  "visual_readings": {
+   "1": "alſo"
+  },
+  "new_text": "Thus alſo ſaid God to Noe, and to his ſonnes with him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p53",
+  "old_text": "The founes therfore of Noe, that came out ot the arke, were Sem. Cham, and Iapheth: and Cham he is the tather ot Chanaan.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.948,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.5044,
+   0.885,
+   0.5894
+  ],
+  "crop_page": 53,
+  "r3_raw": "17. And God said to Noe: This shall be the sign of the covenant, which I established between me & al flesh of the earth. 18. The sonnes therefore of Noe, that came out of the arke, were Sem, Cham, and Iapheth: and Cham he is the father of Chanaan. 19. These three are the sonnes of Noe: and (i) of these was al mankind spread over the whole earth.",
+  "r3_verse": "The sonnes therefore of Noe, that came out of the arke, were Sem, Cham, and Iapheth: and Cham he is the father of Chanaan.",
+  "arm_conflicts": [
+   "founes therfore | sonnes therefore",
+   "ot | of",
+   "tather ot | father of"
+  ],
+  "r2_attested": {
+   "1": "ſonnes"
+  },
+  "visual_readings": {
+   "1": "ſonnes"
+  },
+  "new_text": "The ſonnes therefore of Noe, that came out of the arke, were Sem. Cham, and Iapheth: and Cham he is the father of Chanaan.",
+  "s_unresolved": [
+   "therefore",
+   "father"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.983,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p53",
+  "old_text": "Theſe is three are the ſonnes ot Noe: and () ot theſe was al maukind ſpred ouer the whole earth.",
+  "old": {
+   "s_dismas": 0.934,
+   "odr_com": 0.934,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.5209,
+   0.885,
+   0.6175
+  ],
+  "crop_page": 53,
+  "r3_raw": "The sonnes therefore of Noe, that came out of the arke, were Sem, Cham, and Iapheth: and Cham he is the father of Chanaan. 19. These three are the sonnes of Noe: and (i) of these was al mankind spred over the whole earth. 20. And Noe a husbandman began to til the ground, and planted a",
+  "r3_verse": "These three are the sonnes of Noe: and of these was al mankind spred over the whole earth.",
+  "arm_conflicts": [
+   "ot | of",
+   "() ot | of",
+   "maukind | mankind",
+   "ouer | over"
+  ],
+  "new_text": "Theſe three are the ſonnes of Noe: and of theſe was al mankind ſpred ouer the whole earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p53",
+  "old_text": "And Noe liued after the floud three hundrod fittie yeares.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.7858,
+   0.885,
+   0.8714
+  ],
+  "crop_page": 53,
+  "r3_raw": "Blessed be the Lord God of Sem, Chanaan be his servant. 27. \"God enlarge Iapheth, and dwel he in the tabernacles of Sem, and Chanaan be his servant. 28. And Noe liued after the flood three hundred fiftie yeares. 29. And al his dayes were in the whole nyne hundred fiftie yeares: and he died.",
+  "r3_verse": "And Noe liued after the flood three hundred fiftie yeares.",
+  "arm_conflicts": [
+   "floud | flood",
+   "hundrod fittie | hundred fiftie"
+  ],
+  "new_text": "And Noe liued after the flood three hundred fiftie yeares.",
+  "s_unresolved": [
+   "flood",
+   "fiftie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p53",
+  "old_text": "And al his dayes were in the whole nyne hundred ftue ycares : aud he died.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.8044,
+   0.885,
+   0.883
+  ],
+  "crop_page": 53,
+  "r3_raw": "and a charge vpon them; and over he in the tabernacles of Sem, and Chanaan be his seruant. 28. And Noe liued after the flood three hundred fiftie yeares. 29. And al his dayes were in the whole nyne hundred fiftie yeares: and he died.",
+  "r3_verse": "And al his dayes were in the whole nyne hundred fiftie yeares: and he died.",
+  "arm_conflicts": [
+   "ftue ycares : aud | fiftie yeares: and"
+  ],
+  "new_text": "And al his dayes were in the whole nyne hundred fiftie yeares: and he died.",
+  "s_unresolved": [
+   "fiftie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

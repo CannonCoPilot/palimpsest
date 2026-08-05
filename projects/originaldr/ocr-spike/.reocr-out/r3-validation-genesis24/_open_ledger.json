@@ -1,0 +1,117 @@
+{
+ "state": "OPEN",
+ "generated_by": "reOCR escalation ladder (reocr_core + xsrc_gate + reocr_r3); No Silent Degradation terminal",
+ "n_open": 5,
+ "by_reason": {
+  "xsrc<taux-after-R3": 2,
+  "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)": 3
+ },
+ "blocks_deliverable": true,
+ "entries": [
+  {
+   "locus_key": "genesis/24/12",
+   "locus": [
+    "genesis",
+    24,
+    12
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 99,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/24/27",
+   "locus": [
+    "genesis",
+    24,
+    27
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 99,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 1.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/24/28",
+   "locus": [
+    "genesis",
+    24,
+    28
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 99,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.967,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/24/29",
+   "locus": [
+    "genesis",
+    24,
+    29
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 99,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.9899,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+   "state": "OPEN"
+  },
+  {
+   "locus_key": "genesis/24/30",
+   "locus": [
+    "genesis",
+    24,
+    30
+   ],
+   "source": "archive-ot1-1609",
+   "page_index": 99,
+   "rungs_tried": [
+    "R2",
+    "R3-mlx"
+   ],
+   "best_score": 0.0,
+   "best_rung": "R3-mlx",
+   "reference_used": "s_dismas",
+   "reference_axis": "archaic",
+   "taux": 0.9,
+   "reason": "xsrc<taux-after-R3",
+   "state": "OPEN"
+  }
+ ]
+}

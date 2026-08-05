@@ -1,0 +1,3515 @@
+{
+ "reichenau_dr.mlmodel": {
+  "n": 145,
+  "content_mean": 0.9902314455311219,
+  "content_median": 1.0,
+  "cer": 0.009768554468878143,
+  "s_gt": 199,
+  "s_got": 203,
+  "s_recall": 0.9899497487437185,
+  "lines": [
+   {
+    "png": "line_0000.png",
+    "gt": "childeren of Ater, the childeren of Telmon, the childeren",
+    "got": "childeren of Atur, the childeren of Telmon, the childeren",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0001.png",
+    "gt": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "got": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0002.png",
+    "gt": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "got": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0003.png",
+    "gt": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "got": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0004.png",
+    "gt": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "got": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0005.png",
+    "gt": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "got": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0006.png",
+    "gt": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "got": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0007.png",
+    "gt": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "got": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0008.png",
+    "gt": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "got": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0009.png",
+    "gt": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "got": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0010.png",
+    "gt": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "got": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0011.png",
+    "gt": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "got": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0012.png",
+    "gt": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "got": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0013.png",
+    "gt": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "got": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0014.png",
+    "gt": "childeren of Hacupha, the childeren of Harur, † the childe-",
+    "got": "childeren of Hacupha, the childerenof Harur, † the childe-",
+    "content": 0.9814814814814815,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0015.png",
+    "gt": "uen: and among them ſinging men, & ſinging wemen, two",
+    "got": "uen: and among them ſinging men, & ſinging wemen, two",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0016.png",
+    "gt": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "got": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0017.png",
+    "gt": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "got": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0018.png",
+    "gt": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "got": "and the childeren of the ſeruanres of Salomon, three hundred",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0019.png",
+    "gt": "childeren of Geddel, the childeren of Gaher, † the childeren",
+    "got": "childeren of Geddel, the childcren of Gaher, † the childeren",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0020.png",
+    "gt": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "got": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0021.png",
+    "gt": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "got": "were of Iſcael. † The children of Dalaia, the childeren of To-",
+    "content": 0.9824561403508771,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0022.png",
+    "gt": "bia, the childeren of Necoda, ſix hundred fourtie two. † And",
+    "got": "bia, the childeren of Necoda, ſix hundred fourtie two. † And 63",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0023.png",
+    "gt": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "got": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0024.png",
+    "gt": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "got": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0025.png",
+    "gt": "childeren of Hatil, the chideren of Phohereth, who was",
+    "got": "childeren of Hatil, the chideren of Phohereth, who was",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0026.png",
+    "gt": "name. † Theſe ſought their writing in the regiſter, and found",
+    "got": "name. † Theſe ſought their writing in the regiſter, and found",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0027.png",
+    "gt": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "got": "oſ Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "content": 0.9827586206896551,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0028.png",
+    "gt": "hundred fourtie fiue. † Their horſes, two hundred fourtie ſix",
+    "got": "hundred fourtie fiue. † Their horſes, two hund red fourtie ſix",
+    "content": 0.9827586206896551,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0029.png",
+    "gt": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "got": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0030.png",
+    "gt": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "got": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0031.png",
+    "gt": "hundred thirtie eight. † The Nathineites: The childeren of",
+    "got": "hundred thittie eight. † The Nathincites: The childeren of",
+    "content": 0.962962962962963,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0032.png",
+    "gt": "ters of Berzellai a Galeadite, and he was called by their",
+    "got": "ters of Berzellai a Galeadire, and he was called by their",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0033.png",
+    "gt": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "got": "hundred ſixtie, † beſide their men ſeruants and wemen ſer- 67",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0034.png",
+    "gt": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites,",
+    "got": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites, 6",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0035.png",
+    "gt": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "got": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0036.png",
+    "gt": "nyntie two. † But theſe be they which came vp from Thel-",
+    "got": "nyntie two. † But theſe be they which came vp from Thel- 6",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0037.png",
+    "gt": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "got": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0038.png",
+    "gt": "the multitude as it were one man fourtie two thouſand three",
+    "got": "the multicude as it were one man fourtie two thouſand three",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0039.png",
+    "gt": "their mules two hundred fourtie fiue, † their camels, foure",
+    "got": "their mules two hundred fourtie fiue, † their camels, foure",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0040.png",
+    "gt": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "got": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0115.png",
+    "gt": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "got": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0116.png",
+    "gt": "shalt bring forth a ſonne : and thou shalt cal his name Iſ-",
+    "got": "shalt bring forth a ſonne : and thou shalt cal his name Iſ-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0117.png",
+    "gt": "be a wild man : his hand shal be againſt al men, and al mens",
+    "got": "be a wild man : his hand shal be againſt al men, and al mens",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0118.png",
+    "gt": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "got": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0119.png",
+    "gt": "ſaid : verily here haue I ſene the backe partes of him that",
+    "got": "ſaid : verily here haue I ſene the backe partes of him that",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0120.png",
+    "gt": "CHAP. XVI.",
+    "got": "CHAP. XVI.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0121.png",
+    "gt": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "got": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0122.png",
+    "gt": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "got": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0123.png",
+    "gt": "after that : Behold, ſaith he, thou art with child, and thou",
+    "got": "after that : Behold, ſaith he, thou art with child, and thou",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0124.png",
+    "gt": "was Abram when Agar brought him forth Iſmael.",
+    "got": "was Abram when Agar brought him forth Iſmael.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0125.png",
+    "gt": "and vndiſpenſable. The ſumme of vvhich veritie is this. By the firſt inſtitution",
+    "got": "and vndiſpenſable. The ſumme of which veritie is this. By the firſt inſtitution",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0126.png",
+    "gt": "one at once. And ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "got": "one at once. And ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0127.png",
+    "gt": "mael, becauſe the Lord hath heard thin affliction. † He shal",
+    "got": "mael, becauſe the Lord hath heard thin affliction. † He shal",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0128.png",
+    "gt": "pitch his tents. † And she called the name of our Lord that",
+    "got": "pitch his tents. † And she called the name of our Lord that",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0129.png",
+    "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+    "got": "him that liueth and ſeeth me. The ſame is berwen Cadeſſe,",
+    "content": 0.9818181818181818,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0130.png",
+    "gt": "hath ſene me. † Therfore she called that wel, the Wel of",
+    "got": "hath ſene me. † Therfore she called that wel, the Wel of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0131.png",
+    "gt": "and Barad. † And Agar brought forth a ſonne to Abram :",
+    "got": "and Barad. † And Agar brought forth a ſonne to Abram:",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0132.png",
+    "gt": "cent partie may marie an other, the firſt liuing. But the Catholique doctrin",
+    "got": "cent partie may marie an other, the firſt liuing. But the Catholique doctrin",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0133.png",
+    "gt": "procreation, and ſo were directly againſt the fruict of mariage. The other",
+    "got": "procreation, and ſo were directly againſt the fruict of mariage. The other",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0134.png",
+    "gt": "shal not be numbred for the multitude therof. † And againe",
+    "got": "shal not be numbred for the multitude therof. † And againe",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0135.png",
+    "gt": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "got": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0136.png",
+    "gt": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether vnlawful,",
+    "got": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether vnlawful,",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0137.png",
+    "gt": "times diſpenſeth, but neuer anie man. As in this preſent example : ſeeing it is",
+    "got": "times diſpenſeth, but neuer anie man. As in this preſent example: ſeeing it is",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0138.png",
+    "gt": "ation may rather be increaſed, then if ſome men haue manie wiues, and others",
+    "got": "ation may rather be increaſed, then if ſome men haue manie wiues, and others",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0139.png",
+    "gt": "may not haue more huſbands then one, becauſe the ſame would rather hinder",
+    "got": "may not haue more huſbands then one, becauſe the ſame would rather hinder",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0140.png",
+    "gt": "is conuenient alſo, there being ordinarily as manie men as wemen in the",
+    "got": "is conuenient alſo, there being ordinarily as manie men as wemen in the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0141.png",
+    "gt": "triarches for hauing manie wiues, condemning them of incontinencie and",
+    "got": "triarches for hauing manie wiues, condemning them of incontinencie and",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0142.png",
+    "gt": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "got": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0143.png",
+    "gt": "ſorte are as concluſions drawne from the firſt principles, in which God ſome-",
+    "got": "ſorte ate as concluſions drowne from the firſt principles, in which God ſome-",
+    "content": 0.9733333333333334,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0144.png",
+    "gt": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "got": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0145.png",
+    "gt": "adulterie for the ſame Luther in the contrarie extreme held it not vnlawful,",
+    "got": "adulterie for the ſame Luther in the contrarie extreme held ic not vnlawvful,",
+    "content": 0.9736842105263158,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0146.png",
+    "gt": "diſtinguiſhing times and cauſes, ſheweth how pluralitie of wiues was lavvful",
+    "got": "diſtinguiſhing times and cauſes, ſheweth how pluralitie of wiues was lavvful",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0147.png",
+    "gt": "but indifferent, now in the law of grace, for a man to haue more wiues then",
+    "got": "but indifferent, now in the law of grace, for a man to haue more wiues then",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0148.png",
+    "gt": "world, that euerie man likwiſe ſhould be reſtrained to one wife, for ſo procre-",
+    "got": "world, that euerie man likwiſe ſhould be reſtrained to one wife, for ſo procre-",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0149.png",
+    "gt": "againſt natural procreation that one woman ſhould haue manie huſbands, it",
+    "got": "againſt natural procreation that one woman ſhould haue manie huſbands, it",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0150.png",
+    "gt": "3. To vvife ] The Manichees did calumniat holie Abraham, and other Pa-",
+    "got": "3. To wviſe. I The Manichees did calumniat holie Abraham, and other Pa-",
+    "content": 0.9384615384615385,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0151.png",
+    "gt": "Chriſt, it is vnlawful for anie man to haue more wiues, and for anie woman to",
+    "got": "Chriſt, it is vnlawful for anie man to haue more wiues, and for anie woman to",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0152.png",
+    "gt": "haue more huſbands, then one : In the one part of vvhich Law notwith-",
+    "got": "haue more hulbands, then one: In the one part of which Law notwith-",
+    "content": 0.984375,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0153.png",
+    "gt": "by that occaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "got": "by that occaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0154.png",
+    "gt": "deede vvere like to make greatter procreation by pluralitie of wiues. VVhich",
+    "got": "deede wvere like romake greatter procreation by pluralitie of wiues. VVhich",
+    "content": 0.9589041095890412,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0155.png",
+    "gt": "ANNOTATIONS.",
+    "got": "ANNOTATIONS.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0156.png",
+    "gt": "nature, in which God neuer diſpēſeth, much leſſe anie man. As that one woman",
+    "got": "nature, in which God neuer diſpēſeth, much leſſe anie man. As that one woman",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0157.png",
+    "gt": "ſtanding God ſometimes diſpenſed. For there be two kindes of preceptes",
+    "got": "ſtanding God ſometimes diſpenſed. For there be two kindes of preceptes",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0158.png",
+    "gt": "pertaining to the lavv of nature. One ſorte are as firſt principles of the law of",
+    "got": "pertaining to the lav of nature. One ſorte are as firſt principles of the law of",
+    "content": 0.9873417721518988,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0235.png",
+    "gt": "conuert alſo his enemies to peace.",
+    "got": "conuert alſo his enemies to peace.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0236.png",
+    "gt": "erre in iudgement.",
+    "got": "erre in iudgement.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0237.png",
+    "gt": "thinges shal be beloued.",
+    "got": "thinges shal be beloued.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0238.png",
+    "gt": "kepeth his way.",
+    "got": "kepeth his way.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0239.png",
+    "gt": "hopeth in our Lord, is bleſſed.",
+    "got": "hopeth in our Lord, is bleſſed.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0240.png",
+    "gt": "the doctrine of fooles foolishnes.",
+    "got": "the doctrine of fooles fooliſhnes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0241.png",
+    "gt": "grace to his lippes.",
+    "got": "grace to his lippes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0242.png",
+    "gt": "† The path of the iuſt auoideth euils : the keper of his ſoule",
+    "got": "† The path of the iuſt auoideth euils: the keper of his ſoule",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0243.png",
+    "gt": "† The hart of man diſpoſeth his way : but it perteyneth to",
+    "got": "† The hatt of man diſpoſeth his way : bur it perteyneth to",
+    "content": 0.962962962962963,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0244.png",
+    "gt": "prudence,becauſe it is more precious then ſiluer.",
+    "got": "prudence, becauſe it is more precious then ſiluer.",
+    "content": 0.9791666666666666,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0245.png",
+    "gt": "becauſe the throne is eſtablisbed by iuſtice.",
+    "got": "becauſe the throne is eſtablished by iuſtice.",
+    "content": 0.9772727272727273,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0246.png",
+    "gt": "becauſe his mouth hath compelled him :",
+    "got": "becauſe his mouch hath compelled him:",
+    "content": 0.9722222222222222,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0247.png",
+    "gt": "endes therof lead to death.",
+    "got": "endes therof lead to death.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0248.png",
+    "gt": "† In the cherfulnes of the kings countenance is life : and his",
+    "got": "† In the cherfulnes of the kings countenance is life : and his",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0249.png",
+    "gt": "† Pride goeth before deſtruction, and before ruine the ſpirit",
+    "got": "† Pride goeth before deſtruction, and before ruine the ſpirir s",
+    "content": 0.95,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0250.png",
+    "gt": "health of the bones.",
+    "got": "he alth of the bones.",
+    "content": 0.95,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0251.png",
+    "gt": "† The kings indignation, meſſengers of death : and the wiſe",
+    "got": "† The kings indignation, meſſengers of death : and the wiſe",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0252.png",
+    "gt": "† They are abominable to the king that doe impiously :",
+    "got": "† They are abominable to the king that doe impiously",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0253.png",
+    "gt": "our Lord to direct his progreſſe.",
+    "got": "our Lord to direct his progreſſe.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0254.png",
+    "gt": "clemencie is as the later showre.",
+    "got": "clemencie is as the later showre.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0255.png",
+    "gt": "† Better is a litle with iuſtice, then much fruite with iniquitie.",
+    "got": "† Better is a litle with iuſtice, then much fruite with iniquitie.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0256.png",
+    "gt": "† He that is wiſe in hart,shal be called prudent : and he that is",
+    "got": "† He thar is wiſe in hart, shal be called prudent : and he that is",
+    "content": 0.9672131147540983,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0257.png",
+    "gt": "† The hart of the wiſe shal inſtruct his mouth : and shal adde",
+    "got": "† The hart of the wiſe shal inſtruct his mouth: and shal adde",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0258.png",
+    "gt": "of our Lord euil is auoided.",
+    "got": "of our Lord euil is auoided.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0259.png",
+    "gt": "† By mercie and truth iniquitie is redemed : and in the feare",
+    "got": "† By mercie and truth iniquitie is redemed : and in the feare",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0260.png",
+    "gt": "ſpoyles with the proude.",
+    "got": "ſpoyles with the proude.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0261.png",
+    "gt": "ſweete in ſpeach shal finde greater thinges.",
+    "got": "ſweete in ſpeach shal finde greater thinges.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0262.png",
+    "gt": "† When the wayes of man shal pleaſe our Lord , he wil",
+    "got": "† When the wayes of man shal pleaſe our Lord, he wil",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0263.png",
+    "gt": "† Poſſeſſe wiſdom , becauſe it is better then gold : and gette",
+    "got": "† Poſleſſe wiſdom, becauſe it is better then gold : and gette",
+    "content": 0.9821428571428571,
+    "s_gt": 6,
+    "s_got": 5
+   },
+   {
+    "png": "line_0264.png",
+    "gt": "† A fountaine of life the lerning of him that poſſeſſeth it :",
+    "got": "†A fountaine of life the Ierning of him that poſſeſſeth it :",
+    "content": 0.9824561403508771,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0265.png",
+    "gt": "man wil pacifie it.",
+    "got": "man wil pacifie it.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0266.png",
+    "gt": "† Wel ſet wordes are a honie combe:ſwetnes of the ſoule the",
+    "got": "† wel ſer wordes are a honie combe: ſwetnes of the ſoule the",
+    "content": 0.9649122807017544,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0267.png",
+    "gt": "shal be exalted.",
+    "got": "shal de exalted.",
+    "content": 0.9333333333333333,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0268.png",
+    "gt": "† It is better to be humbled with the meeke, then to diuide",
+    "got": "† It is better to be humbled with the meeke, then to diuide",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0269.png",
+    "gt": "† There is a way that ſeemeth to a man right : and the later",
+    "got": "† There is a way that ſeemeth to man right : and the later",
+    "content": 0.9642857142857143,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0270.png",
+    "gt": "† The wil of kinges are iuſt lippes : He that ſpeaketh right",
+    "got": "Mghteouſaes. † The wil of kinges are iuſt lippes : he that ſpeaketh right",
+    "content": 0.8235294117647058,
+    "s_gt": 2,
+    "s_got": 3
+   },
+   {
+    "png": "line_0271.png",
+    "gt": "† The lerned in word shal finde good thinges : and he that",
+    "got": "Hope in God. † The lerned in word ſhal finde good thinges : and he that o",
+    "content": 0.7941176470588236,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0272.png",
+    "gt": "† The ſoule of him that laboureth doth labour to himſelf,",
+    "got": "ſoule of him that hbouret doth labour to himſelf,",
+    "content": 0.8703703703703703,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0273.png",
+    "gt": "† Weight and balance are iudgements of our Lord : and his",
+    "got": "Weight and balance are iudgements of our Lord: and h",
+    "content": 0.9622641509433962,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0274.png",
+    "gt": "† :: Diuination is in the lippes of the king, his mouth shal not",
+    "got": "Diuination is in the lippes of the king, his mouth ſhal not",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0322.png",
+    "gt": "his Sainctes.",
+    "got": "his Sainctes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0323.png",
+    "gt": "† I wil render my vowes to our Lord in the ſight of al his",
+    "got": "† I wil render my vowes to our Lord in the ſight of al his",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0324.png",
+    "gt": "remaineth for euer.",
+    "got": "remaineth for euer.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0325.png",
+    "gt": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "got": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0326.png",
+    "gt": "† O Lord becauſe I am thy ſeruant : I am thy ſeruant, and",
+    "got": "† O Lord becauſe I am thy ſeruant : I am thy ſeruant, and",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0327.png",
+    "gt": "the name of our Lord.",
+    "got": "the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0328.png",
+    "gt": "people : † precious in the ſight of our Lord is the death of",
+    "got": "people : † precious in the ſight of our Lord is the death of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0329.png",
+    "gt": "hath rendred to me?",
+    "got": "hath rendred to me?",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0330.png",
+    "gt": "the ſonne of thy handmaide.",
+    "got": "the ſonne of thy handmaide.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0331.png",
+    "gt": "people : † in the courtes of the houſe of our Lord, in the",
+    "got": "people : † in the courtes of the houſe of our Lord, in the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0332.png",
+    "gt": "† What ſhal I render to our Lord, for al things that he",
+    "got": "† What ſhal I render to our Lord, for al thinges that he",
+    "content": 0.9811320754716981,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0333.png",
+    "gt": "† Becauſe his mercie is confirmed vpon vs : and his truth",
+    "got": "Becauſe his mercie is confirmed vpon vs : and his truth",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0334.png",
+    "gt": "Alleluia.",
+    "got": "Alleluia.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0335.png",
+    "gt": "PRAYSE our Lord al ye Gentiles : prayſe him al ye",
+    "got": "PRAYSE our Lord al ye Gentiles: prayſe him al ye",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0336.png",
+    "gt": "† I ſaid in mine exceſſe : Euerie man is a lyer.",
+    "got": "† I ſaid in mine exceſſe : Euerie man is a lyer.",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0337.png",
+    "gt": "† I wil render my vowes to our Lord before al his",
+    "got": "† I wil render my vowes to our Lord before al his",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0338.png",
+    "gt": "middes of thee ô Ieruſalem.",
+    "got": "middes of thee ô Ieruſalem-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0339.png",
+    "gt": "† I wil take the chalice of ſaluation : and I wil inuocat",
+    "got": "† I g wil take the chalice of ſaluation : and I wil inuocat",
+    "content": 0.9636363636363636,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0340.png",
+    "gt": "Thou haſt broken my bondes : † I wil ſacrifice to thee the",
+    "got": "Thou haſt broken my bondes : † I wil ſacrifice to thee the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0341.png",
+    "gt": "peoples.",
+    "got": "peoples.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   }
+  ]
+ },
+ "dr_v3_armA.mlmodel": {
+  "n": 145,
+  "content_mean": 0.9860075166641838,
+  "content_median": 1.0,
+  "cer": 0.013992483335816153,
+  "s_gt": 199,
+  "s_got": 198,
+  "s_recall": 0.9798994974874372,
+  "lines": [
+   {
+    "png": "line_0000.png",
+    "gt": "childeren of Ater, the childeren of Telmon, the childeren",
+    "got": "childeren of Atur, the childeren of Telmon, the childeren",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0001.png",
+    "gt": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "got": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0002.png",
+    "gt": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "got": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0003.png",
+    "gt": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "got": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0004.png",
+    "gt": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "got": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0005.png",
+    "gt": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "got": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0006.png",
+    "gt": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "got": "of Phaſea, † the childeren of Beſai, the childeren of Munim, 52",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0007.png",
+    "gt": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "got": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0008.png",
+    "gt": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "got": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0009.png",
+    "gt": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "got": "mela, Thelharſa, Cheruib, Addon, and Emmer: and could not",
+    "content": 0.9807692307692307,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0010.png",
+    "gt": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "got": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0011.png",
+    "gt": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "got": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0012.png",
+    "gt": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "got": "ſatha ſaid to them, that they ſbould not eate of the Holies of",
+    "content": 0.9836065573770492,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0013.png",
+    "gt": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "got": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0014.png",
+    "gt": "childeren of Hacupha, the childeren of Harur, † the childe-",
+    "got": "childeren of Hacupha, the childerenof Harur, † the childe- 5",
+    "content": 0.9814814814814815,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0015.png",
+    "gt": "uen: and among them ſinging men, & ſinging wemen, two",
+    "got": "uen: and among them ſinging men, & ſinging wemen, two",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0016.png",
+    "gt": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "got": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0017.png",
+    "gt": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "got": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0018.png",
+    "gt": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "got": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0019.png",
+    "gt": "childeren of Geddel, the childeren of Gaher, † the childeren",
+    "got": "childeren of Geddel, the childeren of Gaher, † the childeren yo",
+    "content": 0.9491525423728814,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0020.png",
+    "gt": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "got": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0021.png",
+    "gt": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "got": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0022.png",
+    "gt": "bia, the childeren of Necoda, ſix hundred fourtie two. † And",
+    "got": "bia, the childeren of Necoda, ſix hundred fourtie two. † And 63",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0023.png",
+    "gt": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "got": "the childeren of Nephuſſim, † the childeren of Bacbuc, the 53",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0024.png",
+    "gt": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "got": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0025.png",
+    "gt": "childeren of Hatil, the chideren of Phohereth, who was",
+    "got": "childeren of Hatil, the chideren of Phohereth, who was",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0026.png",
+    "gt": "name. † Theſe ſought their writing in the regiſter, and found",
+    "got": "name. † Theſe ſought their writing in the regiſter, and found",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0027.png",
+    "gt": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "got": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0028.png",
+    "gt": "hundred fourtie fiue. † Their horſes, two hundred fourtie ſix",
+    "got": "hundred fourtie fiue. † Their horſes, two hund red fourtie ſix",
+    "content": 0.9827586206896551,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0029.png",
+    "gt": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "got": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0030.png",
+    "gt": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "got": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0031.png",
+    "gt": "hundred thirtie eight. † The Nathineites: The childeren of",
+    "got": "hundred thirtie eight. † The Nathineites : The childeren of",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0032.png",
+    "gt": "ters of Berzellai a Galeadite, and he was called by their",
+    "got": "ters of Berzellai a Galeadire, and he was called by their",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0033.png",
+    "gt": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "got": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0034.png",
+    "gt": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites,",
+    "got": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites, 6o",
+    "content": 0.9615384615384616,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0035.png",
+    "gt": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "got": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0036.png",
+    "gt": "nyntie two. † But theſe be they which came vp from Thel-",
+    "got": "nyntie two. † But theſe be they which came vp from Thel-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0037.png",
+    "gt": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "got": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0038.png",
+    "gt": "the multitude as it were one man fourtie two thouſand three",
+    "got": "the multicude as it were one man fourtie two thouſand three",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0039.png",
+    "gt": "their mules two hundred fourtie fiue, † their camels, foure",
+    "got": "their mules two hundred fourtie fiue, † their camels, fpure",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0040.png",
+    "gt": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "got": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0115.png",
+    "gt": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "got": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0116.png",
+    "gt": "shalt bring forth a ſonne : and thou shalt cal his name Iſ-",
+    "got": "shalt bring forth a ſonne: and thou shalt cal his name Iſ-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0117.png",
+    "gt": "be a wild man : his hand shal be againſt al men, and al mens",
+    "got": "be a wild man : his hand shal be againſt al men, and al mens",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0118.png",
+    "gt": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "got": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0119.png",
+    "gt": "ſaid : verily here haue I ſene the backe partes of him that",
+    "got": "ſaid : verily here haue I ſene the backe partes of him that",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0120.png",
+    "gt": "CHAP. XVI.",
+    "got": "CHAP. XVI.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0121.png",
+    "gt": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "got": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0122.png",
+    "gt": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "got": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0123.png",
+    "gt": "after that : Behold, ſaith he, thou art with child, and thou",
+    "got": "after that : Behold, ſaith he, thou art with child, and thou",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0124.png",
+    "gt": "was Abram when Agar brought him forth Iſmael.",
+    "got": "wag Abram when Agar brought him forth Iſmael.",
+    "content": 0.9772727272727273,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0125.png",
+    "gt": "and vndiſpenſable. The ſumme of vvhich veritie is this. By the firſt inſtitution",
+    "got": "and vndiſpenſable. The ſumme of which veritie is this. By the firſt inſtitution",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0126.png",
+    "gt": "one at once. And ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "got": "one at once. Aad ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "content": 0.9863013698630136,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0127.png",
+    "gt": "mael, becauſe the Lord hath heard thin affliction. † He shal",
+    "got": "mael, becauſe the Lord hath heard thin affliction. † He shal",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0128.png",
+    "gt": "pitch his tents. † And she called the name of our Lord that",
+    "got": "pitch his tents. † And she called the name of our Lord that",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0129.png",
+    "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+    "got": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0130.png",
+    "gt": "hath ſene me. † Therfore she called that wel, the Wel of",
+    "got": "hath ſene me. † Therfore she called that wel, the wel of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0131.png",
+    "gt": "and Barad. † And Agar brought forth a ſonne to Abram :",
+    "got": "and Barad. † And Agar brought forth a ſonne to Abram :",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0132.png",
+    "gt": "cent partie may marie an other, the firſt liuing. But the Catholique doctrin",
+    "got": "cent partie may marie an other, the firſt liuing. But the Catholique doctrin",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0133.png",
+    "gt": "procreation, and ſo were directly againſt the fruict of mariage. The other",
+    "got": "procteation, and ſo were directly againſt the fruict of mariage. The other",
+    "content": 0.9861111111111112,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0134.png",
+    "gt": "shal not be numbred for the multitude therof. † And againe",
+    "got": "shal not be numbred for the multitude therof. † And againe",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0135.png",
+    "gt": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "got": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0136.png",
+    "gt": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether vnlawful,",
+    "got": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether valawful,",
+    "content": 0.9861111111111112,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0137.png",
+    "gt": "times diſpenſeth, but neuer anie man. As in this preſent example : ſeeing it is",
+    "got": "times diſpenſeth, but neuer anie man. As in this preſent example: ſeeing it is",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0138.png",
+    "gt": "ation may rather be increaſed, then if ſome men haue manie wiues, and others",
+    "got": "ation may rather be incteaſed, then if ſome men haue manie wiues , and others",
+    "content": 0.9864864864864865,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0139.png",
+    "gt": "may not haue more huſbands then one, becauſe the ſame would rather hinder",
+    "got": "may not haue more huſbands then one, becauſe the ſame would rather hinder",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0140.png",
+    "gt": "is conuenient alſo, there being ordinarily as manie men as wemen in the",
+    "got": "is conuenien: alſo, there being ordinarily as manie men as wemen in the",
+    "content": 0.9857142857142858,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0141.png",
+    "gt": "triarches for hauing manie wiues, condemning them of incontinencie and",
+    "got": "triarches for hauing mame wiues, condemning them of incontinencie and",
+    "content": 0.9710144927536232,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0142.png",
+    "gt": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "got": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0143.png",
+    "gt": "ſorte are as concluſions drawne from the firſt principles, in which God ſome-",
+    "got": "ſorte ate as concluſions drowne from the firſt principles, in which God ſome-",
+    "content": 0.9733333333333334,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0144.png",
+    "gt": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "got": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0145.png",
+    "gt": "adulterie for the ſame Luther in the contrarie extreme held it not vnlawful,",
+    "got": "adulterie for the ſame Luther in the contrarie extreme bald ic not vnlawful,",
+    "content": 0.96,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0146.png",
+    "gt": "diſtinguiſhing times and cauſes, ſheweth how pluralitie of wiues was lavvful",
+    "got": "diſtinguiſhing times and cauſes, ſheweth how pluralitie of wiues was lawful",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0147.png",
+    "gt": "but indifferent, now in the law of grace, for a man to haue more wiues then",
+    "got": "but indifferent, now in the law of grace, for a man to haue more wiues then",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0148.png",
+    "gt": "world, that euerie man likwiſe ſhould be reſtrained to one wife, for ſo procre-",
+    "got": "world, that euerie man likwiſe ſhould be reſtraied to one wife, for ſo procre-",
+    "content": 0.9868421052631579,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0149.png",
+    "gt": "againſt natural procreation that one woman ſhould haue manie huſbands, it",
+    "got": "againſt na: ural procreation that one woman ſhould haue manie huſbands, it",
+    "content": 0.9861111111111112,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0150.png",
+    "gt": "3. To vvife ] The Manichees did calumniat holie Abraham, and other Pa-",
+    "got": "The Manichees did calumniat holie Abraham, and other Pa-",
+    "content": 0.8709677419354839,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0151.png",
+    "gt": "Chriſt, it is vnlawful for anie man to haue more wiues, and for anie woman to",
+    "got": "Chriſt, it is vnlawful for anie man to haue more wiues, and for anie woman to",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0152.png",
+    "gt": "haue more huſbands, then one : In the one part of vvhich Law notwith-",
+    "got": "haue more huſbands, then one : In the one part of which Law notwith-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0153.png",
+    "gt": "by that occaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "got": "by that occaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0154.png",
+    "gt": "deede vvere like to make greatter procreation by pluralitie of wiues. VVhich",
+    "got": "deede were like to make greatter proerearion by pluralitie of wiues.",
+    "content": 0.8904109589041096,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0155.png",
+    "gt": "ANNOTATIONS.",
+    "got": "ANNOTATIONS.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0156.png",
+    "gt": "nature, in which God neuer diſpēſeth, much leſſe anie man. As that one woman",
+    "got": "ofnature. nature, in which God neuer diſpeſeth, much leſſe anie man. As that one womaa . ca. 17.",
+    "content": 0.8352941176470589,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0157.png",
+    "gt": "ſtanding God ſometimes diſpenſed. For there be two kindes of preceptes",
+    "got": "Two ſortas of ſtanding God ſometimes diſyenſed. For there be two kindes of preceptes",
+    "content": 0.8192771084337349,
+    "s_gt": 4,
+    "s_got": 5
+   },
+   {
+    "png": "line_0158.png",
+    "gt": "pertaining to the lavv of nature. One ſorte are as firſt principles of the law of",
+    "got": "precepnia the pertaining to the law of nature. One ſorte are as firſt principle: of the law",
+    "content": 0.797752808988764,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0235.png",
+    "gt": "conuert alſo his enemies to peace.",
+    "got": "conuert alſo his enemies to peace.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0236.png",
+    "gt": "erre in iudgement.",
+    "got": "erre in iudgement.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0237.png",
+    "gt": "thinges shal be beloued.",
+    "got": "thinges shal be beloued.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0238.png",
+    "gt": "kepeth his way.",
+    "got": "kepeth his way.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0239.png",
+    "gt": "hopeth in our Lord, is bleſſed.",
+    "got": "hopeth in our Lord, is bleſſed.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0240.png",
+    "gt": "the doctrine of fooles foolishnes.",
+    "got": "the doctrine of fooles foolishnes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0241.png",
+    "gt": "grace to his lippes.",
+    "got": "grace to his lippes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0242.png",
+    "gt": "† The path of the iuſt auoideth euils : the keper of his ſoule",
+    "got": "† The path of the iuſt auoideth euils : the keper of his ſoule",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0243.png",
+    "gt": "† The hart of man diſpoſeth his way : but it perteyneth to",
+    "got": "† The hatt of man diſpoſeth his way : bur it perteyneth to",
+    "content": 0.962962962962963,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0244.png",
+    "gt": "prudence,becauſe it is more precious then ſiluer.",
+    "got": "prudenee, becauſe it is more precious then ſiluer.",
+    "content": 0.9583333333333334,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0245.png",
+    "gt": "becauſe the throne is eſtablisbed by iuſtice.",
+    "got": "becauſe the throne is eſtablished by iuſtice.",
+    "content": 0.9772727272727273,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0246.png",
+    "gt": "becauſe his mouth hath compelled him :",
+    "got": "becauſe his mouth hath compelled him :",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0247.png",
+    "gt": "endes therof lead to death.",
+    "got": "endes therof lead to death.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0248.png",
+    "gt": "† In the cherfulnes of the kings countenance is life : and his",
+    "got": "† In the cherfulnes of the kings countenance is life : and his",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0249.png",
+    "gt": "† Pride goeth before deſtruction, and before ruine the ſpirit",
+    "got": "† Pride goeth before deſtruction, and before ruine the ſpirit",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0250.png",
+    "gt": "health of the bones.",
+    "got": "health of the bones.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0251.png",
+    "gt": "† The kings indignation, meſſengers of death : and the wiſe",
+    "got": "† The kings indignation, meſſengers of death : and the wiſe",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0252.png",
+    "gt": "† They are abominable to the king that doe impiously :",
+    "got": "† They are abominable to the king that doe impiously :2",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0253.png",
+    "gt": "our Lord to direct his progreſſe.",
+    "got": "our Lord to direct his progreſſe.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0254.png",
+    "gt": "clemencie is as the later showre.",
+    "got": "clemencie is as the later :howre.",
+    "content": 0.96875,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0255.png",
+    "gt": "† Better is a litle with iuſtice, then much fruite with iniquitie.",
+    "got": "† Better is a litle with iuſtice, then much fruite with iniquitie.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0256.png",
+    "gt": "† He that is wiſe in hart,shal be called prudent : and he that is",
+    "got": "† He that is wiſe in hart, shal be called prudent: and he that is 21",
+    "content": 0.9836065573770492,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0257.png",
+    "gt": "† The hart of the wiſe shal inſtruct his mouth : and shal adde",
+    "got": "† The hart of the wiſe shal inſtruct his mouth: and shal adde 23",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0258.png",
+    "gt": "of our Lord euil is auoided.",
+    "got": "ofout Lord euil is auoided.",
+    "content": 0.9259259259259259,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0259.png",
+    "gt": "† By mercie and truth iniquitie is redemed : and in the feare",
+    "got": "† By mercie and truth iniquitie is redemed : and in the feare 6.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0260.png",
+    "gt": "ſpoyles with the proude.",
+    "got": "ſpoyles with the preude.",
+    "content": 0.9565217391304348,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0261.png",
+    "gt": "ſweete in ſpeach shal finde greater thinges.",
+    "got": "ſweete in ſpeach shal finde greater thinges.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0262.png",
+    "gt": "† When the wayes of man shal pleaſe our Lord , he wil",
+    "got": "† When the wayes of man shal pleaſe our Lord, he wil",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0263.png",
+    "gt": "† Poſſeſſe wiſdom , becauſe it is better then gold : and gette",
+    "got": "† Poſleſſe wiſdom , becauſe it is better then gold : and gette",
+    "content": 0.9821428571428571,
+    "s_gt": 6,
+    "s_got": 5
+   },
+   {
+    "png": "line_0264.png",
+    "gt": "† A fountaine of life the lerning of him that poſſeſſeth it :",
+    "got": "† A fountaine of life the lerning of him that poſfeſſeth it : 22",
+    "content": 0.9824561403508771,
+    "s_gt": 4,
+    "s_got": 3
+   },
+   {
+    "png": "line_0265.png",
+    "gt": "man wil pacifie it.",
+    "got": "man wil pacifie it.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0266.png",
+    "gt": "† Wel ſet wordes are a honie combe:ſwetnes of the ſoule the",
+    "got": "†wel ſet wordes are a honie combe: ſwetnes of the ſoule the",
+    "content": 0.9824561403508771,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0267.png",
+    "gt": "shal be exalted.",
+    "got": "shal be exalted. -",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0268.png",
+    "gt": "† It is better to be humbled with the meeke, then to diuide",
+    "got": "† It is better to be humbled with the meeke, then to diuide",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0269.png",
+    "gt": "† There is a way that ſeemeth to a man right : and the later",
+    "got": "† There is a way that ſeemeth to a manright : and the later",
+    "content": 0.9821428571428571,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0270.png",
+    "gt": "† The wil of kinges are iuſt lippes : He that ſpeaketh right",
+    "got": "e† The wil of kinges are iuſt lippes : he that ſpeaketh right 3",
+    "content": 0.9655172413793104,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0271.png",
+    "gt": "† The lerned in word shal finde good thinges : and he that",
+    "got": "in God. † The lerned in word ſhal finde good thinges : and he thato",
+    "content": 0.8709677419354839,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0272.png",
+    "gt": "† The ſoule of him that laboureth doth labour to himſelf,",
+    "got": "† The ſoule of him that laboureth doth labour to himſelf,",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0273.png",
+    "gt": "† Weight and balance are iudgements of our Lord : and his",
+    "got": "ubees. † weight and balance are iudgements of our Lord : and his",
+    "content": 0.8983050847457628,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0274.png",
+    "gt": "† :: Diuination is in the lippes of the king, his mouth shal not",
+    "got": "† :: Diuination is in the lippes of the king, his mouth ſhal noto",
+    "content": 0.9830508474576272,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0322.png",
+    "gt": "his Sainctes.",
+    "got": "his Sainctes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0323.png",
+    "gt": "† I wil render my vowes to our Lord in the ſight of al his",
+    "got": "† I wil render my vowes to our Lord in the ſight of al his",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0324.png",
+    "gt": "remaineth for euer.",
+    "got": "remaineth for euer.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0325.png",
+    "gt": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "got": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0326.png",
+    "gt": "† O Lord becauſe I am thy ſeruant : I am thy ſeruant, and",
+    "got": "† O Lord becauſe I am thy ſeruant : I am thy ſeruant, and",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0327.png",
+    "gt": "the name of our Lord.",
+    "got": "the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0328.png",
+    "gt": "people : † precious in the ſight of our Lord is the death of",
+    "got": "people : † precious in the ſight of our Lord is the death of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0329.png",
+    "gt": "hath rendred to me?",
+    "got": "hath rendred to me?",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0330.png",
+    "gt": "the ſonne of thy handmaide.",
+    "got": "the ſonne of thy hand maide.",
+    "content": 0.962962962962963,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0331.png",
+    "gt": "people : † in the courtes of the houſe of our Lord, in the",
+    "got": "people : † in the courtes of the houſe of our Lord, in the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0332.png",
+    "gt": "† What ſhal I render to our Lord, for al things that he",
+    "got": "† What shal I render to our Lord, for al thinges that he",
+    "content": 0.9811320754716981,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0333.png",
+    "gt": "† Becauſe his mercie is confirmed vpon vs : and his truth",
+    "got": "† Becauſe his mercie is confirmed vpon vs : and his truth",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0334.png",
+    "gt": "Alleluia.",
+    "got": "Alleluia.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0335.png",
+    "gt": "PRAYSE our Lord al ye Gentiles : prayſe him al ye",
+    "got": "PRAYSE our Lord al ye Gentiles: prayſe him al ye",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0336.png",
+    "gt": "† I ſaid in mine exceſſe : Euerie man is a lyer.",
+    "got": "† I ſaid in mine exceſle : Euerie man is a lyer.",
+    "content": 0.9767441860465116,
+    "s_gt": 3,
+    "s_got": 2
+   },
+   {
+    "png": "line_0337.png",
+    "gt": "† I wil render my vowes to our Lord before al his",
+    "got": "† I wil i render my vowes to our Lord t before al his",
+    "content": 0.9215686274509804,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0338.png",
+    "gt": "middes of thee ô Ieruſalem.",
+    "got": "middes of  thee ô Ieruſalem:",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0339.png",
+    "gt": "† I wil take the chalice of ſaluation : and I wil inuocat",
+    "got": "† Igwil take the chalice of ſaluation : and I wil inuocat",
+    "content": 0.9811320754716981,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0340.png",
+    "gt": "Thou haſt broken my bondes : † I wil ſacrifice to thee the",
+    "got": "Thou haſt broken my bondes : † I wil ſacrifice to thee the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0341.png",
+    "gt": "peoples.",
+    "got": "peoples.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   }
+  ]
+ },
+ "dr_v3_armB.mlmodel": {
+  "n": 145,
+  "content_mean": 0.9836637212667726,
+  "content_median": 1.0,
+  "cer": 0.016336278733227405,
+  "s_gt": 199,
+  "s_got": 199,
+  "s_recall": 0.9748743718592965,
+  "lines": [
+   {
+    "png": "line_0000.png",
+    "gt": "childeren of Ater, the childeren of Telmon, the childeren",
+    "got": "childeren of Atar, the childeren of Telmon, the childeren",
+    "content": 0.9818181818181818,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0001.png",
+    "gt": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "got": "of Accub, the childeren of Hatita, the childeren of Sobai: an",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0002.png",
+    "gt": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "got": "Soha, the childeren of Haſupha, the childeren of Tebbaath,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0003.png",
+    "gt": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "got": "of Phadon, the childeren of Lebana, the childeren of Ha-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0004.png",
+    "gt": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "got": "of Raaia, the childeren of Raſin, the childeren of Necoda,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0005.png",
+    "gt": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "got": "† the childeren of Geſem, the childeren of Aza, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0006.png",
+    "gt": "of Phaſea, † the childeren of Beſai, the childeren of Munim,",
+    "got": "of Phaſea, † the childeren of Beſai, the childeren of Munim, 52",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0007.png",
+    "gt": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "got": "ren of Beſloth, the childeren of Mahida, the childeren of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0008.png",
+    "gt": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "got": "childeren of Sotai, the childeren of Sophereth, the childeren",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0009.png",
+    "gt": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "got": "mela, Thelharſa, Cherub, Addon, and Emmer: and could not",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0010.png",
+    "gt": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "got": "of the Prieſts, the childeren of Habia, the childeren of Accos,",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0011.png",
+    "gt": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "got": "holies, vntil there ſtood vp a Prieſt learned and cunning. † Al",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0012.png",
+    "gt": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "got": "ſatha ſaid to them, that they ſhould not eate of the Holies of",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0013.png",
+    "gt": "guba, the childeren of Seimai, † the childeren of Hanan, the",
+    "got": "guba, the childeren of Seimai, † the childeren of Hanan, the 49",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0014.png",
+    "gt": "childeren of Hacupha, the childeren of Harur, † the childe-",
+    "got": "childeren of Hacupha, the childeren of Harur, † the childe-54",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0015.png",
+    "gt": "uen: and among them ſinging men, & ſinging wemen, two",
+    "got": "uen: and among them ſinging men, & ſinging wemen, two",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0016.png",
+    "gt": "† the childeren of Ceros, the childeren of Siaa, the childeren",
+    "got": "† the childeren of Ceros, the childeren of Siaa, the childeren8",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0017.png",
+    "gt": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "got": "Harſa, † the childeren of Bercos, the childeren of Siſara, the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0018.png",
+    "gt": "and the childeren of the ſeruantes of Salomon, three hundred",
+    "got": "and the childeren of the ſeruanres of Salomon, three hundred",
+    "content": 0.9830508474576272,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0019.png",
+    "gt": "childeren of Geddel, the childeren of Gaher, † the childeren",
+    "got": "childeren of Geddel, the childeren of Gaher, † the childeren 50",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0020.png",
+    "gt": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "got": "childeren of Thema, † the childeren of Naſia, the childeren",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0021.png",
+    "gt": "were of Iſrael. † The children of Dalaia, the childeren of To-",
+    "got": "were of Iſrael. † The children of Dalaia, the childeren of To- 62",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0022.png",
+    "gt": "bia, the childeren of Necoda, ſix hundred fourtie two. † And",
+    "got": "bia, the childeren of Necoda, ſix hundred fourtie two. † And 63",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0023.png",
+    "gt": "the childeren of Nephuſſim, † the childeren of Bacbuc, the",
+    "got": "the childeren of Nephuſſim, † the childeren of Bacbuc, the 53",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0024.png",
+    "gt": "the childeren of Ieddel, † the childeren of Saphia, the",
+    "got": "the childeren of Ieddel, † the childeren of Saphia, the 59",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0025.png",
+    "gt": "childeren of Hatil, the chideren of Phohereth, who was",
+    "got": "childeren of Hatil, the chideren of Phohereth , who was",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0026.png",
+    "gt": "name. † Theſe ſought their writing in the regiſter, and found",
+    "got": "name. † Theſe ſought their writing in the regiſter, and found",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0027.png",
+    "gt": "of Phatida, † the childeren of Iahala, the childeren of Darcon,",
+    "got": "of Pharida, † the childeren of Iahala, the childeren of Darcon,8",
+    "content": 0.9827586206896551,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0028.png",
+    "gt": "hundred fourtie fiue. † Their horſes, two hundred fourtie ſix",
+    "got": "hundred fourtie fiue. † Their horſes, two hund red fourtie ſix",
+    "content": 0.9827586206896551,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0029.png",
+    "gt": "of Hatipha, † the childeren of the ſeruantes of Salomon, the",
+    "got": "of Hatipha, † the childeren of the ſeruantes of Salomon, the 57",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0030.png",
+    "gt": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "got": "uantes, which were ſeuen thouſand three hundred thirtie ſe-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0031.png",
+    "gt": "hundred thirtie eight. † The Nathineites: The childeren of",
+    "got": "hundred thirtie eight. † The Nathineites : The childeren of 47",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0032.png",
+    "gt": "ters of Berzellai a Galeadite, and he was called by their",
+    "got": "ters of Berzellai a Galeadire, and he was called by their",
+    "content": 0.9821428571428571,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0033.png",
+    "gt": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-",
+    "got": "hundred ſixtie, † beſide their men ſeruants and wemen ſer-6",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0034.png",
+    "gt": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites,",
+    "got": "borne vnto Sabaim, the ſonne of Amon. † Al Natheneites, 60",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0035.png",
+    "gt": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "got": "the childeren of Berzellai, who tooke a wife of the daugh-",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0036.png",
+    "gt": "nyntie two. † But theſe be they which came vp from Thel-",
+    "got": "nyntie two. † But theſe be they which came vp from Thel-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0037.png",
+    "gt": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "got": "ſhew the houſe of their fathers, and their ſeed, whether they",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0038.png",
+    "gt": "the multitude as it were one man fourtie two thouſand three",
+    "got": "the multicude as it were one man fourtie two thouland three",
+    "content": 0.9661016949152542,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0039.png",
+    "gt": "their mules two hundred fourtie fiue, † their camels, foure",
+    "got": "their mules two hundred fourtie fiue, † their camels, foure",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0040.png",
+    "gt": "it not: & they were caſt out of the Prieſthood. † And Ather-",
+    "got": "it not:& they were caſt out of the Prieſthood. † And Ather-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0115.png",
+    "gt": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "got": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. † And",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0116.png",
+    "gt": "shalt bring forth a ſonne : and thou shalt cal his name Iſ-",
+    "got": "ſhalt bring forth a ſonne: and thou shalt cal his name Iſ-",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 3
+   },
+   {
+    "png": "line_0117.png",
+    "gt": "be a wild man : his hand shal be againſt al men, and al mens",
+    "got": "be a wild man : his hand shal be againſt al men, and al mens",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0118.png",
+    "gt": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "got": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0119.png",
+    "gt": "ſaid : verily here haue I ſene the backe partes of him that",
+    "got": "ſaid : verily here haue I ſene the backe partes of him that",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0120.png",
+    "gt": "CHAP. XVI.",
+    "got": "CHAP. XVI.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0121.png",
+    "gt": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "got": "hands againſt him : and ouer againſt al his bretheren shal he",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0122.png",
+    "gt": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "got": "again : Multiplying, ſayth he, wil I multiplie thy ſeed, and it",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0123.png",
+    "gt": "after that : Behold, ſaith he, thou art with child, and thou",
+    "got": "after that : Behold, ſaith he, rhou art with child, and thou",
+    "content": 0.9818181818181818,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0124.png",
+    "gt": "was Abram when Agar brought him forth Iſmael.",
+    "got": "waz Abram when Agar brought him forth Iſmael.",
+    "content": 0.9772727272727273,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0125.png",
+    "gt": "and vndiſpenſable. The ſumme of vvhich veritie is this. By the firſt inſtitution",
+    "got": "and vndiſpenſable. The ſumme of which veritie is this. By the firſt inſtitution",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0126.png",
+    "gt": "one at once. And ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "got": "one at once. And ſome Engliſh Proteſtants hold, that for adulterie, the inno-",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0127.png",
+    "gt": "mael, becauſe the Lord hath heard thin affliction. † He shal",
+    "got": "mael, becauſe the Lord hath heard thin affliction. † He shal 12",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0128.png",
+    "gt": "pitch his tents. † And she called the name of our Lord that",
+    "got": "pitch his tents. † And she called the name of our Lord that 13",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0129.png",
+    "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+    "got": "him that liueth and ſeeth me. The ſame is berwen Cadeſſe,",
+    "content": 0.9818181818181818,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0130.png",
+    "gt": "hath ſene me. † Therfore she called that wel, the Wel of",
+    "got": "hath ſene me. † Therfore she called that wel, the Wel of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0131.png",
+    "gt": "and Barad. † And Agar brought forth a ſonne to Abram :",
+    "got": "and Barad. † And Agar brought forth a ſonne to Abram : 15",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0132.png",
+    "gt": "cent partie may marie an other, the firſt liuing. But the Catholique doctrin",
+    "got": "cent parrie may marie an other, the firſt liuing. But the Carholique doctrin",
+    "content": 0.972972972972973,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0133.png",
+    "gt": "procreation, and ſo were directly againſt the fruict of mariage. The other",
+    "got": "procreation, and ſo were directly againſt the fruict of mariage. The other",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0134.png",
+    "gt": "shal not be numbred for the multitude therof. † And againe",
+    "got": "ſhal not be numbred for the multitude therof. † And againe",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0135.png",
+    "gt": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "got": "who called his name Iſmael. † Eightie and ſixe yeares old",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0136.png",
+    "gt": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether vnlawful,",
+    "got": "ſometimes, and at other times, eſpecially ſince Chriſt, altogether valawful,",
+    "content": 0.9861111111111112,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0137.png",
+    "gt": "times diſpenſeth, but neuer anie man. As in this preſent example : ſeeing it is",
+    "got": "times diſpenſeth, but neuer anie man. As in this preſent example : ſeeing it is",
+    "content": 1.0,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0138.png",
+    "gt": "ation may rather be increaſed, then if ſome men haue manie wiues, and others",
+    "got": "ation may rather be inereaſed, then if ſome men haue manie wiues , and others",
+    "content": 0.9864864864864865,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0139.png",
+    "gt": "may not haue more huſbands then one, becauſe the ſame would rather hinder",
+    "got": "may not haue more huſbands rhen one, beeauſe the ſame would rather hinder",
+    "content": 0.9722222222222222,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0140.png",
+    "gt": "is conuenient alſo, there being ordinarily as manie men as wemen in the",
+    "got": "is conuenient alſo, there being ordinarily as manie men as wemen in the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0141.png",
+    "gt": "triarches for hauing manie wiues, condemning them of incontinencie and",
+    "got": "triarches for hauing mamie wiues, condemning them of incontinencie and",
+    "content": 0.9855072463768116,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0142.png",
+    "gt": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "got": "when there was ſcarſetie of people, God diſpenſed with ſuch men as in",
+    "content": 1.0,
+    "s_gt": 5,
+    "s_got": 5
+   },
+   {
+    "png": "line_0143.png",
+    "gt": "ſorte are as concluſions drawne from the firſt principles, in which God ſome-",
+    "got": "ſorte are as coneluſions drowne from the firſt principles, in which God ſome-",
+    "content": 0.9733333333333334,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0144.png",
+    "gt": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "got": "of Mariage in the ſtate of innocencie, and law of nature, and by the law of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0145.png",
+    "gt": "adulterie for the ſame Luther in the contrarie extreme held it not vnlawful,",
+    "got": "adulterie for the ſame Luther in the contrarie extreme hald ie not vnlawful,",
+    "content": 0.9733333333333334,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0146.png",
+    "gt": "diſtinguiſhing times and cauſes, ſheweth how pluralitie of wiues was lavvful",
+    "got": "diſtinguiſhing times and eauſes, ſheweth how pluralitie of wiues was lawful",
+    "content": 0.9864864864864865,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0147.png",
+    "gt": "but indifferent, now in the law of grace, for a man to haue more wiues then",
+    "got": "but indifferent, now in the law of grace, for a man to haue more wines then",
+    "content": 0.9863013698630136,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0148.png",
+    "gt": "world, that euerie man likwiſe ſhould be reſtrained to one wife, for ſo procre-",
+    "got": "world, that euerie man likwiſe ſhould be reſtramed to one wife, for ſo proe re-",
+    "content": 0.9473684210526316,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0149.png",
+    "gt": "againſt natural procreation that one woman ſhould haue manie huſbands, it",
+    "got": "againſt natural proereation that one woman ſhould haue manie huſbands, it",
+    "content": 0.9861111111111112,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0150.png",
+    "gt": "3. To vvife ] The Manichees did calumniat holie Abraham, and other Pa-",
+    "got": "Tovriſe ) The Manichees did calumniat holie Abraham, and other Pa-",
+    "content": 0.9516129032258065,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0151.png",
+    "gt": "Chriſt, it is vnlawful for anie man to haue more wiues, and for anie woman to",
+    "got": "Chriſt, itis vnlawful for anie man to haue more wiues, and for anie woman to",
+    "content": 0.9866666666666667,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0152.png",
+    "gt": "haue more huſbands, then one : In the one part of vvhich Law notwith-",
+    "got": "haue more huſbands, then one. In the one part of which Law notwith-",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0153.png",
+    "gt": "by that occaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "got": "by that oceaſion haue none at al, except in ſome ſpecial caſe. As after the floud,",
+    "content": 0.9873417721518988,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0154.png",
+    "gt": "deede vvere like to make greatter procreation by pluralitie of wiues. VVhich",
+    "got": "deede werelike to make greattet proereaaion by pluralitie of viues.V",
+    "content": 0.8493150684931507,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0155.png",
+    "gt": "ANNOTATIONS.",
+    "got": "ANNOTATIONS.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0156.png",
+    "gt": "nature, in which God neuer diſpēſeth, much leſſe anie man. As that one woman",
+    "got": "nature, in which God neuer diſpēſeth, much leſſe anie man. As that one",
+    "content": 0.9166666666666666,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0157.png",
+    "gt": "ſtanding God ſometimes diſpenſed. For there be two kindes of preceptes",
+    "got": "TVo ſortes of ſtanding God ſometimes diſvenſed. For there be two kindes of preceptes",
+    "content": 0.8192771084337349,
+    "s_gt": 4,
+    "s_got": 5
+   },
+   {
+    "png": "line_0158.png",
+    "gt": "pertaining to the lavv of nature. One ſorte are as firſt principles of the law of",
+    "got": "the pertamning ro the law of narure. One ſorte are as firſt principles of the law of",
+    "content": 0.9156626506024097,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0235.png",
+    "gt": "conuert alſo his enemies to peace.",
+    "got": "conuert alſo his enemies to peace.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0236.png",
+    "gt": "erre in iudgement.",
+    "got": "erre in iudgement.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0237.png",
+    "gt": "thinges shal be beloued.",
+    "got": "thinges shal be beloued.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0238.png",
+    "gt": "kepeth his way.",
+    "got": "kepeth his way.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0239.png",
+    "gt": "hopeth in our Lord, is bleſſed.",
+    "got": "hopeth in our Lord, is bleſſed.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0240.png",
+    "gt": "the doctrine of fooles foolishnes.",
+    "got": "the doctrine of fooles foolishnes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0241.png",
+    "gt": "grace to his lippes.",
+    "got": "grace to his lippes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0242.png",
+    "gt": "† The path of the iuſt auoideth euils : the keper of his ſoule",
+    "got": "† The path of the iuſt auoideth euils : the keper of his ſoule 17",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0243.png",
+    "gt": "† The hart of man diſpoſeth his way : but it perteyneth to",
+    "got": "† The hatt of man diſpoſeth his way : bur it perteyneth to",
+    "content": 0.962962962962963,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0244.png",
+    "gt": "prudence,becauſe it is more precious then ſiluer.",
+    "got": "prudence, becauſe it is more precious then ſiluer.",
+    "content": 0.9791666666666666,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0245.png",
+    "gt": "becauſe the throne is eſtablisbed by iuſtice.",
+    "got": "becauſe the throne is eſtablished by iuſtice.",
+    "content": 0.9772727272727273,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0246.png",
+    "gt": "becauſe his mouth hath compelled him :",
+    "got": "becauſe his mouch hath compelled him:",
+    "content": 0.9722222222222222,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0247.png",
+    "gt": "endes therof lead to death.",
+    "got": "endes therof lead to death.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0248.png",
+    "gt": "† In the cherfulnes of the kings countenance is life : and his",
+    "got": "† In the cherfulnes of the kings countenance is life : and his",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0249.png",
+    "gt": "† Pride goeth before deſtruction, and before ruine the ſpirit",
+    "got": "† Pride goeth before deſtruction, and before ruine the ſpirit",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0250.png",
+    "gt": "health of the bones.",
+    "got": "he alth of the bones.",
+    "content": 0.95,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0251.png",
+    "gt": "† The kings indignation, meſſengers of death : and the wiſe",
+    "got": "† The kings indignation, meſſengers of death : and the wiſe",
+    "content": 1.0,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0252.png",
+    "gt": "† They are abominable to the king that doe impiously :",
+    "got": "† They are abominable to the king that doe impiously : 12",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0253.png",
+    "gt": "our Lord to direct his progreſſe.",
+    "got": "our Lord to direct his progreſſe.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0254.png",
+    "gt": "clemencie is as the later showre.",
+    "got": "clemencie is as the later showre.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0255.png",
+    "gt": "† Better is a litle with iuſtice, then much fruite with iniquitie.",
+    "got": "† Berter is a litle with iuſtice, then much fruite with iniquitie.",
+    "content": 0.9838709677419355,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0256.png",
+    "gt": "† He that is wiſe in hart,shal be called prudent : and he that is",
+    "got": "† He thar is wiſe in hart, shal be called prudent : and he that is 21",
+    "content": 0.9672131147540983,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0257.png",
+    "gt": "† The hart of the wiſe shal inſtruct his mouth : and shal adde",
+    "got": "† The hart of the wiſe shal inſtruct his mouth : and shal adde 23",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0258.png",
+    "gt": "of our Lord euil is auoided.",
+    "got": "of our Lord euil is auoided.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0259.png",
+    "gt": "† By mercie and truth iniquitie is redemed : and in the feare",
+    "got": "† By mercie and truth iniquitie is redemed : and in the feare",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0260.png",
+    "gt": "ſpoyles with the proude.",
+    "got": "ſpoyles with the proude.",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0261.png",
+    "gt": "ſweete in ſpeach shal finde greater thinges.",
+    "got": "ſweete in ſpeach shal finde greater thinges.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0262.png",
+    "gt": "† When the wayes of man shal pleaſe our Lord , he wil",
+    "got": "† When the wayes of man shal pleaſe our Lord, he wil",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0263.png",
+    "gt": "† Poſſeſſe wiſdom , becauſe it is better then gold : and gette",
+    "got": "† Poſleſſe wiſdom , becauſe it is better then gold : and gette",
+    "content": 0.9821428571428571,
+    "s_gt": 6,
+    "s_got": 5
+   },
+   {
+    "png": "line_0264.png",
+    "gt": "† A fountaine of life the lerning of him that poſſeſſeth it :",
+    "got": "†Afountaine of life the lerning of him that poſſeſſeth it : 22",
+    "content": 0.9824561403508771,
+    "s_gt": 4,
+    "s_got": 4
+   },
+   {
+    "png": "line_0265.png",
+    "gt": "man wil pacifie it.",
+    "got": "man wil pacifie it.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0266.png",
+    "gt": "† Wel ſet wordes are a honie combe:ſwetnes of the ſoule the",
+    "got": "† wel ſer wordes are a honie combe: ſwernes of the ſoule the 24",
+    "content": 0.9473684210526316,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0267.png",
+    "gt": "shal be exalted.",
+    "got": "ſhal he exalted.",
+    "content": 0.9333333333333333,
+    "s_gt": 0,
+    "s_got": 1
+   },
+   {
+    "png": "line_0268.png",
+    "gt": "† It is better to be humbled with the meeke, then to diuide",
+    "got": "† It is better to be humbled with the meeke, then to diuide 19",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0269.png",
+    "gt": "† There is a way that ſeemeth to a man right : and the later",
+    "got": "† There is a way that ſeemeth to a man right : and the later 25",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0270.png",
+    "gt": "† The wil of kinges are iuſt lippes : He that ſpeaketh right",
+    "got": "The wil of kinges are iuſt lippes : he that ſpeaketh right 3",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0271.png",
+    "gt": "† The lerned in word shal finde good thinges : and he that",
+    "got": "in God. † The lerned in word shal finde good thinges : and he that 2o",
+    "content": 0.8571428571428572,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0272.png",
+    "gt": "† The ſoule of him that laboureth doth labour to himſelf,",
+    "got": "aboureth doth labour to himſelf,",
+    "content": 0.5740740740740741,
+    "s_gt": 2,
+    "s_got": 1
+   },
+   {
+    "png": "line_0273.png",
+    "gt": "† Weight and balance are iudgements of our Lord : and his",
+    "got": "† Weight and balance are iudgements of our Lord: and his 1",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0274.png",
+    "gt": "† :: Diuination is in the lippes of the king, his mouth shal not",
+    "got": ": Diuination is in the lippes of the king, his mouth shal not 10",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0322.png",
+    "gt": "his Sainctes.",
+    "got": "his Sainctes.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0323.png",
+    "gt": "† I wil render my vowes to our Lord in the ſight of al his",
+    "got": "† I wil render my vowes to our Lord in the ſight of al his",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0324.png",
+    "gt": "remaineth for euer.",
+    "got": "remaineth for euer.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0325.png",
+    "gt": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "got": "hoaſt of praiſe, and I wil inuocate the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0326.png",
+    "gt": "† O Lord becauſe I am thy ſeruant : I am thy ſeruant, and",
+    "got": "† O Lord becauſe m I am thy ſeruant : I am thy ſeruant, and",
+    "content": 0.962962962962963,
+    "s_gt": 3,
+    "s_got": 3
+   },
+   {
+    "png": "line_0327.png",
+    "gt": "the name of our Lord.",
+    "got": "the name of our Lord.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0328.png",
+    "gt": "people : † precious in the ſight of our Lord is the death of",
+    "got": "people : † ] precious in the ſight of our Lord is the death of",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0329.png",
+    "gt": "hath rendred to me?",
+    "got": "hath rendred to me?",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0330.png",
+    "gt": "the ſonne of thy handmaide.",
+    "got": "the ſonne of thy hand maide.",
+    "content": 0.962962962962963,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0331.png",
+    "gt": "people : † in the courtes of the houſe of our Lord, in the",
+    "got": "people : † in the courtes of the houſe of our Lord, in the",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0332.png",
+    "gt": "† What ſhal I render to our Lord, for al things that he",
+    "got": "† what shal I render to our Lord, for al thinges that he",
+    "content": 0.9811320754716981,
+    "s_gt": 1,
+    "s_got": 0
+   },
+   {
+    "png": "line_0333.png",
+    "gt": "† Becauſe his mercie is confirmed vpon vs : and his truth",
+    "got": "† Becauſe his mercie is confirmed vpon vs : and his truth",
+    "content": 1.0,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0334.png",
+    "gt": "Alleluia.",
+    "got": "Allelu ia.",
+    "content": 0.8888888888888888,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0335.png",
+    "gt": "PRAYSE our Lord al ye Gentiles : prayſe him al ye",
+    "got": "PRAYSE our Lord al ye Gentiles : prayſe him alye",
+    "content": 0.9787234042553191,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0336.png",
+    "gt": "† I ſaid in mine exceſſe : Euerie man is a lyer.",
+    "got": "† I ſaid in mine exceſle : Euerie man is a lyer.",
+    "content": 0.9767441860465116,
+    "s_gt": 3,
+    "s_got": 2
+   },
+   {
+    "png": "line_0337.png",
+    "gt": "† I wil render my vowes to our Lord before al his",
+    "got": "† I wil i render my vowes to our Lord k before al his",
+    "content": 0.9215686274509804,
+    "s_gt": 0,
+    "s_got": 0
+   },
+   {
+    "png": "line_0338.png",
+    "gt": "middes of thee ô Ieruſalem.",
+    "got": "middes of p thee ô Ieruſalem.",
+    "content": 0.9230769230769231,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0339.png",
+    "gt": "† I wil take the chalice of ſaluation : and I wil inuocat",
+    "got": "† I wil take the chalice of ſaluation : and h I wil inuocat",
+    "content": 0.9636363636363636,
+    "s_gt": 1,
+    "s_got": 1
+   },
+   {
+    "png": "line_0340.png",
+    "gt": "Thou haſt broken my bondes : † I wil ſacrifice to thee the",
+    "got": "8Thou haſt  broken my bondes : † I wil ſacrifice to thee the",
+    "content": 1.0,
+    "s_gt": 2,
+    "s_got": 2
+   },
+   {
+    "png": "line_0341.png",
+    "gt": "peoples.",
+    "got": "peoples.",
+    "content": 1.0,
+    "s_gt": 0,
+    "s_got": 0
+   }
+  ]
+ }
+}

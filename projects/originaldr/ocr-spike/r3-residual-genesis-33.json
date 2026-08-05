@@ -1,0 +1,1184 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "chapter",
+  "old_text": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly aſter him, as I ſh al ſee my lirle ones to be mammm to be able, vntil I come to my lord in Seir.",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   14
+  ],
+  "crop": [
+   0.049,
+   0.8253,
+   0.875,
+   1.0
+  ],
+  "crop_page": 127,
+  "crop_leaves": [
+   127,
+   128
+  ],
+  "r3_raw": "to overlaboure themselues in going, in one day al the flockes wil die. † It may please my lord to goe before his servant: and I wil folow softly after him, as I shal see my little ones O 2 GENESIS: \"to be able, vntil I come to my lord in Seir. † Esau answered: I beseech thee, that of my people at the leastwise, which\"",
+  "r3_verse": "It may please my lord to goe before his servant: and I wil folow softly after him, as I shal see my little ones O \"to be able, vntil I come to my lord in Seir.",
+  "arm_conflicts": [
+   "ſeruant: | servant:",
+   "aſter | after",
+   "ſh al | shal",
+   "lirle | little",
+   "to be mammm to | O \"to"
+  ],
+  "lexicon_readings": {
+   "15": "after"
+  },
+  "r2_attested": {
+   "19": "ſhal"
+  },
+  "visual_readings": {
+   "15": "after",
+   "19": "ſhal"
+  },
+  "new_text": "It may pleaſe my lord to goe before his ſeruant: and I wil folow ſoftly after him, as I ſhal ſee my little ones O to be able, vntil I come to my lord in Seir.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p128",
+  "old_text": "Eſau red I beſech thee, that of my people at the leaſtwiſe, is with me, there may remaine ſome to accompanie thee the way. It is not needful, ſaid he, this only I haue nede that I may finde grace (my lord) in thy ſight.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0292,
+   0.875,
+   0.1815
+  ],
+  "crop_page": 128,
+  "r3_raw": "GENESIS: 108 to be able, vntil I come to my lord in Seir. † Esau anfwered: I beseech thee, that of my people at the leastwise, which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight. † Esau therefore returned that day the same way, that he came into Seir.",
+  "r3_verse": "Esau anfwered: I beseech thee, that of my people at the leastwise, which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight.",
+  "arm_conflicts": [
+   "red | anfwered:",
+   "beſech | beseech"
+  ],
+  "new_text": "Eſau anfwered: I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+  "s_unresolved": [
+   "anfwered:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 0.996,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p128",
+  "old_text": "Eſau fore returned that day the ſame way, that he came into",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.866,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.112,
+   0.875,
+   0.2009
+  ],
+  "crop_page": 128,
+  "r3_raw": "the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight. † Esau therefore returned that day the same way, that he came into Seir. † And Jacob cometh into Socoth: where hauing built a",
+  "r3_verse": "Esau therefore returned that day the same way, that he came into Seir.",
+  "arm_conflicts": [
+   "fore | therefore"
+  ],
+  "new_text": "Eſau therefore returned that day the ſame way, that he came into Seir.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p128",
+  "old_text": "And Iacob corneth into Socoth where hauing built houſe, and pitched his tents, he called the name of place Socoth, that is, Tabernacles.",
+  "old": {
+   "s_dismas": 0.934,
+   "odr_com": 0.934,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.1522,
+   0.875,
+   0.2605
+  ],
+  "crop_page": 128,
+  "r3_raw": "fore returned that day the same way, that he came into Seir. † And Jacob cometh into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles. † And he passed into Salem a citie of the Sichimites, which is in the land of Ch",
+  "r3_verse": "And Jacob cometh into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "arm_conflicts": [
+   "Iacob corneth | Jacob cometh"
+  ],
+  "new_text": "And Iacob cometh into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p128",
+  "old_text": "And he paſſed Salem a citie of the Sichimites, which is in the land of naan, after he returned from Meſopotamia of Siria: he dwelt beſide the towne.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.1926,
+   0.875,
+   0.3219
+  ],
+  "crop_page": 128,
+  "r3_raw": "And Jacob came unto Socoth where building of a house, and pitched his tents, he called the name of that place Sochoth, that is, Tabernacles. † And he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beside the town. † And he bought that part of the field, wherin he had pitched his tents, of the children",
+  "r3_verse": "And he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beside the town.",
+  "arm_conflicts": [
+   "naan, | Chanaan,",
+   "towne. | town."
+  ],
+  "new_text": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p128",
+  "old_text": "And he bought that part the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+  "old": {
+   "s_dismas": 0.963,
+   "odr_com": 0.978,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.2548,
+   0.8764,
+   0.3627
+  ],
+  "crop_page": 128,
+  "r3_raw": "naan, after he returned from Mesopotamia of Siria: and he dwelt beside the towne. † And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes. † And erecting an altar there, on it he called vpon the",
+  "r3_verse": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+  "arm_conflicts": [],
+  "new_text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p128",
+  "old_text": "And erecting an altar there, on it he called vpon moſt mightie God of Iſrael.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "neighbours": [
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3162,
+   0.875,
+   1.0
+  ],
+  "crop_page": 128,
+  "r3_raw": "of Hemor, the father fo Sichem for an hundred lambes. † And erecting an altar there, on it he called vpon the most mightie God of Israel. CHAP. XXXIII. For rauishing Dina, the sichimetcs (being first circumcised) are slain Simeon and Levi her brothers. 27. The rest of Iacobs sonnes spoile the c 30. Jacob blameth them, fearing harme may come by this fact. And Dina (faith they returned. † Which when Hemor Sichchems father was e conie forth to speake vnto Iacob, and committed an vnlawful fact, in rauishing Iacobs daughter. † Hemor therfore spake to them: The soule of my sonne Sichem is fastened to your daughter; Geue her her unto him to",
+  "r3_verse": "And erecting an altar there, on it he called vpon the most mightie God of Israel. CHAP. XXXIII. For rauishing Dina, the sichimetcs (being first circumcised) are slain Simeon and Levi her brothers. The rest of Iacobs sonnes spoile the Jacob blameth them, fearing harme may come by this fact. And Dina (faith they returned. Which when Hemor Sichchems father was conie forth to speake vnto Iacob, and committed an vnlawful fact, in rauishing Iacobs daughter. Hemor therfore spake to them: The soule of my sonne Sichem is fastened to your daughter; Geue her her unto him to",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "24": "firſt",
+   "37": "ſonnes",
+   "59": "father",
+   "62": "forth",
+   "77": "therfore",
+   "82": "ſoule"
+  },
+  "r2_attested": {
+   "25": "circumciſed)",
+   "38": "ſpoile",
+   "64": "ſpeake",
+   "78": "ſpake",
+   "85": "ſonne"
+  },
+  "visual_readings": {
+   "24": "firſt",
+   "37": "ſonnes",
+   "59": "father",
+   "62": "forth",
+   "77": "therfore",
+   "82": "ſoule",
+   "25": "circumciſed)",
+   "38": "ſpoile",
+   "64": "ſpeake",
+   "78": "ſpake",
+   "85": "ſonne"
+  },
+  "new_text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael. CHAP. XXXIII. For rauishing Dina, the sichimetcs (being firſt circumciſed) are slain Simeon and Levi her brothers. The rest of Iacobs ſonnes ſpoile the Jacob blameth them, fearing harme may come by this fact. And Dina (faith they returned. Which when Hemor Sichchems father was conie forth to ſpeake vnto Iacob, and committed an vnlawful fact, in rauishing Iacobs daughter. Hemor therfore ſpake to them: The ſoule of my ſonne Sichem is fastened to your daughter; Geue her her unto him to",
+  "s_unresolved": [
+   "rauishing",
+   "sichimetcs",
+   "slain",
+   "rest",
+   "fearing",
+   "fact.",
+   "(faith",
+   "vnlawful",
+   "fact,",
+   "rauishing",
+   "fastened"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p132",
+  "old_text": "Eſau red Ibeſech thee, that of my people at the leaſtwiſe, is with me, there may remaine ſome to accompanie thee the way. It is not needful, ſaid he, this only I haue nede that I may finde grace (my lord) in thy ſight.",
+  "old": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0176,
+   0.875,
+   0.1675
+  ],
+  "crop_page": 132,
+  "r3_raw": "to be able, vntil I come to my lord in Seir. † Esau answered: I besech thee, that of my people at the leastwise, which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight. † Esau therefore returned that day the same way, that he came into Seir.",
+  "r3_verse": "Esau answered: I besech thee, that of my people at the leastwise, which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight.",
+  "arm_conflicts": [
+   "red Ibeſech | answered: I besech"
+  ],
+  "r2_attested": {
+   "3": "beſech"
+  },
+  "visual_readings": {
+   "3": "beſech"
+  },
+  "new_text": "Eſau answered: I beſech thee, that of my people at the leaſtwiſe, which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue nede of, that I may finde grace (my lord) in thy ſight.",
+  "s_unresolved": [
+   "answered:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p132",
+  "old_text": "Eſau fore returned that day the ſame way, that he came into",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.866,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.1008,
+   0.875,
+   0.1867
+  ],
+  "crop_page": 132,
+  "r3_raw": "the way. It is not needful, said he, this only I haue nede of, that I may finde grace (my lord) in thy sight. † Esau therefore returned that day the same way, that he came into Seir. † And Iacob cometh into Socoth: where hauing built a",
+  "r3_verse": "Esau therefore returned that day the same way, that he came into Seir.",
+  "arm_conflicts": [
+   "fore | therefore"
+  ],
+  "new_text": "Eſau therefore returned that day the ſame way, that he came into Seir.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p132",
+  "old_text": "And Iacob cometh into Socoth where hauing built houſe, and pitched his tents, he called the name of place Socoth, that is, Tabernacles.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.1427,
+   0.875,
+   0.251
+  ],
+  "crop_page": 132,
+  "r3_raw": "fore returned that day the same way, that he came into Seir. † And Iacob cometh into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles. † And he passed into Salem a citie of the Sichimites, which is in the land of Cha-",
+  "r3_verse": "And Iacob cometh into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "arm_conflicts": [],
+  "new_text": "And Iacob cometh into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p132",
+  "old_text": "And he paſſed Salem a citie of the Sichimites, whichis in the land of naan, after he returned from Meſopotamia of Siria: he dwelt beſide the towne.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.1843,
+   0.875,
+   0.3141
+  ],
+  "crop_page": 132,
+  "r3_raw": "house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles. † And he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beside the town. † And he bought that part of the field, wherin he had pitched his tents, of the children",
+  "r3_verse": "And he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beside the town.",
+  "arm_conflicts": [
+   "whichis | which is",
+   "naan, | Chanaan,",
+   "towne. | town."
+  ],
+  "new_text": "And he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p132",
+  "old_text": "And he bought that part the field, wherin he had pitohed his tents, of the children of Hemor, the father fo Sichem for an hundred",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.919,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.2467,
+   0.875,
+   0.354
+  ],
+  "crop_page": 132,
+  "r3_raw": "naan, after he returned from Mesopotamia of Siria: and he dwelt beside the towne. † And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes. † And erecting an altar there, on it he called vpon the",
+  "r3_verse": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+  "arm_conflicts": [
+   "pitohed | pitched"
+  ],
+  "new_text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father fo Sichem for an hundred lambes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p132",
+  "old_text": "And erecting an altar there, on it he called vpon moſt mightie God of Iſrael.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "neighbours": [
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3094,
+   0.8777,
+   0.9236
+  ],
+  "crop_page": 132,
+  "r3_raw": "of Hemor, the father fo Sichem for an hundred lambes. † And erecting an altar there, on it he called vpon the most mightie God of Israel. CHAP. XXXIII. For rauishing Dina, the sichimetes (being first circumcised) are slain Simeon and Lewi her brothers. 27. The rest of Iacobs sonnes spoile the ci 30. Jacob blameth them, fearing harme may come by this fact. And Dina the daughter of Lia went forth :: to see the wemen of that countrie. † Whom when Sichem had seene the sonne of Hemor the Heuite, he held his peace til and occupied in feeding of the cattle, he held his peace till they returned. † And when Hemor Sichems father was come forth to speake vnto Iacob, † behold his sonnes came out of the field: and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and committed an vnlawful fact; in rauishing Jacobs daughter. † Hemor therefore spake to them: The soule of my sonne Sichem is fastened to your daughter; Geue her vnto him to wife:",
+  "r3_verse": "And erecting an altar there, on it he called vpon the most mightie God of Israel. CHAP. XXXIII. For rauishing Dina, the sichimetes (being first circumcised) are slain Simeon and Lewi her brothers. The rest of Iacobs sonnes spoile the ci Jacob blameth them, fearing harme may come by this fact. And Dina the daughter of Lia went forth :: to see the wemen of that countrie. Whom when Sichem had seene the sonne of Hemor the Heuite, he held his peace til and occupied in feeding of the cattle, he held his peace till they returned. And when Hemor Sichems father was come forth to speake vnto Iacob, behold his sonnes came out of the field: and hearing what had passed, they were passing wrath, because he had done a foule thing in Israel, and committed an vnlawful fact; in rauishing Jacobs daughter. Hemor therefore spake to them: The soule of my sonne Sichem is fastened to your daughter; Geue her vnto him to wife:",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "24": "firſt",
+   "37": "ſonnes",
+   "58": "forth",
+   "101": "father",
+   "104": "forth",
+   "111": "ſonnes",
+   "126": "becauſe",
+   "131": "ſoule",
+   "134": "Iſrael,",
+   "150": "ſoule"
+  },
+  "r2_attested": {
+   "25": "circumciſed)",
+   "34": "reſt",
+   "38": "ſpoile",
+   "61": "ſee",
+   "73": "ſonne",
+   "106": "ſpeake",
+   "121": "paſſed,",
+   "146": "ſpake",
+   "153": "ſonne"
+  },
+  "visual_readings": {
+   "24": "firſt",
+   "37": "ſonnes",
+   "58": "forth",
+   "101": "father",
+   "104": "forth",
+   "111": "ſonnes",
+   "126": "becauſe",
+   "131": "ſoule",
+   "134": "Iſrael,",
+   "150": "ſoule",
+   "25": "circumciſed)",
+   "34": "reſt",
+   "38": "ſpoile",
+   "61": "ſee",
+   "73": "ſonne",
+   "106": "ſpeake",
+   "121": "paſſed,",
+   "146": "ſpake",
+   "153": "ſonne"
+  },
+  "new_text": "And erecting an altar there, on it he called vpon the moſt mightie God of Iſrael. CHAP. XXXIII. For rauishing Dina, the sichimetes (being firſt circumciſed) are slain Simeon and Lewi her brothers. The reſt of Iacobs ſonnes ſpoile the ci Jacob blameth them, fearing harme may come by this fact. And Dina the daughter of Lia went forth :: to ſee the wemen of that countrie. Whom when Sichem had seene the ſonne of Hemor the Heuite, he held his peace til and occupied in feeding of the cattle, he held his peace till they returned. And when Hemor Sichems father was come forth to ſpeake vnto Iacob, behold his ſonnes came out of the field: and hearing what had paſſed, they were passing wrath, becauſe he had done a ſoule thing in Iſrael, and committed an vnlawful fact; in rauishing Jacobs daughter. Hemor therefore ſpake to them: The ſoule of my ſonne Sichem is fastened to your daughter; Geue her vnto him to wife:",
+  "s_unresolved": [
+   "rauishing",
+   "sichimetes",
+   "slain",
+   "fearing",
+   "fact.",
+   "seene",
+   "feeding",
+   "field:",
+   "passing",
+   "vnlawful",
+   "fact;",
+   "rauishing",
+   "therefore",
+   "fastened",
+   "wife:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p117",
+  "old_text": "And himſelte going forward adoted proſtrate to the ground ſeauen times, vntil his brother came neer.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.5353,
+   0.885,
+   0.6192
+  ],
+  "crop_page": 117,
+  "r3_raw": "and then children foremost: and Lia and her chil- dren in the second place: and Rachel and Ioseph last. 2. And himselfe going forward adored prostrate to the ground seven times, vntil his brother came neer. 4. Esau therefore running to meet his brother, embraced him: and clasping him fast about",
+  "r3_verse": "And himselfe going forward adored prostrate to the ground seven times, vntil his brother came neer.",
+  "arm_conflicts": [
+   "himſelte | himselfe",
+   "adoted | adored",
+   "ſeauen | seven"
+  ],
+  "new_text": "And himselfe going forward adored proſtrate to the ground seven times, vntil his brother came neer.",
+  "s_unresolved": [
+   "himselfe",
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p117",
+  "old_text": "And the handmaids and their children comming neer bowed themſelues..",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.6414,
+   0.885,
+   0.725
+  ],
+  "crop_page": 117,
+  "r3_raw": "And doe they perteyue to thee? He answered: They are the litle ones which God hath giuen to me thy seruant. 6. And the handmaids and their children comming neer bowed themselues. 7. Lia also with her children came neer: and when they had adorcd in like manner, last Joseph and Rachel adored.",
+  "r3_verse": "And the handmaids and their children comming neer bowed themselues.",
+  "arm_conflicts": [],
+  "new_text": "And the handmaids and their children comming neer bowed themſelues..",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p117",
+  "old_text": "And Eſau ſaid: What are the troups that I did meet He anſwered : That I might find grace before my Lord.",
+  "old": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.6927,
+   0.885,
+   0.778
+  ],
+  "crop_page": 117,
+  "r3_raw": "children came neer: and when they had adorcd in like manner, last Ioseph and Rachel adored. 8. And Esau said: What are the troupes that I did meet? He answered: That I might find grace before my Lord. 9. But he said: I haue plentie, my brother, be thy things to thy selfe.",
+  "r3_verse": "And Esau said: What are the troupes that I did meet? He answered: That I might find grace before my Lord.",
+  "arm_conflicts": [
+   "troups | troupes",
+   "meet | meet?"
+  ],
+  "new_text": "And Eſau ſaid: What are the troupes that I did meet He anſwered That I might find grace before my Lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p117",
+  "old_text": "Eut he ſaid: I haue plentie, my brother, be thy things to thy",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   9
+  ],
+  "crop": [
+   0.155,
+   0.7299,
+   0.885,
+   0.7956
+  ],
+  "crop_page": 117,
+  "r3_raw": "8. And Esau said: What are the troupes that I did meet? He answered: That I might find grace before my Lord. 9. But he said: I haue plentie, my brother, be thy things to thy selfe. 10. And Jacob said: Doe not so, I beseech thee, but if I haue found",
+  "r3_verse": "But he said: I haue plentie, my brother, be thy things to thy selfe.",
+  "arm_conflicts": [
+   "Eut | But"
+  ],
+  "new_text": "But he ſaid: I haue plentie, my brother, be thy things to thy selfe.",
+  "s_unresolved": [
+   "selfe."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "chapter",
+  "old_text": "And Iacob ſaid: My Lord thou knoweſt that I haue with me litle ones, and IOI and kine with yong: which if I cauſe to ouerlabour themſelues in in one day al the flocks wil die.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.0643,
+   0.885,
+   0.1658
+  ],
+  "crop_page": 118,
+  "r3_raw": "Iacob. GENESIS. Sheep, and kine with yong: which if I cause to overlabour themselues in going, in one day all the flocks wil die. 14. It may please my Lord to goe before his servant: and I will follow softly after him, as I shal see my sonne.",
+  "r3_verse": "And Iacob. Sheep, My Lord thou knoweſt that I haue with me litle ones, and IOI and kine with yong: which if I cause to overlabour themselues in going, in one day all the flocks wil die.",
+  "arm_conflicts": [
+   "ſaid: My Lord thou knoweſt that I haue with me litle ones, and IOI | Sheep,",
+   "ouerlabour | overlabour",
+   "al | all"
+  ],
+  "used_merge": true,
+  "new_text": "And Iacob Sheep, My Lord thou knoweſt that I haue with me litle ones, and IOI and kine with yong: which if I cauſe to ouerlabour themſelues in going, in one day al the flocks wil die.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p118",
+  "old_text": "It may pleaſe my Lord to goe his ſeruant: and I wil follow ſoftlyatter him, as I ſhal ſee my to be able, vntil I come to my Lord in Seir.",
+  "old": {
+   "s_dismas": 0.861,
+   "odr_com": 0.861,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.1043,
+   0.885,
+   0.1988
+  ],
+  "crop_page": 118,
+  "r3_raw": "sheep, and kine with yong: which if I cause to overlabour themselues in going, in one day all the flocks wil die. 14. It may please my Lord to goe before his servant: and I will follow softly after him, as I shal see my litle ones to be able, vntil I come to my Lord in Seir. 15. Esau answered: I beseech thee that of my people at the least wise which is with me,",
+  "r3_verse": "It may please my Lord to goe before his servant: and I will follow softly after him, as I shal see my litle ones to be able, vntil I come to my Lord in Seir.",
+  "arm_conflicts": [
+   "ſeruant: | servant:",
+   "wil | will",
+   "ſoftlyatter | softly after"
+  ],
+  "lexicon_readings": {
+   "7": "before",
+   "15": "after"
+  },
+  "visual_readings": {
+   "7": "before",
+   "15": "after"
+  },
+  "new_text": "It may pleaſe my Lord to goe before his ſeruant: and I wil follow softly after him, as I ſhal ſee my litle ones to be able, vntil I come to my Lord in Seir.",
+  "s_unresolved": [
+   "softly"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p118",
+  "old_text": "Eſau anſwered: thee that of my people at the leaſt wiſe which is with me, remaine ſome to accompanie thee in the way. It is not needhe, this only I haue need of, that I may find grace (my Lord) ſight.",
+  "old": {
+   "s_dismas": 0.828,
+   "odr_com": 0.828,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.1391,
+   0.885,
+   0.2708
+  ],
+  "crop_page": 118,
+  "r3_raw": "before his servant: and I will follow softly after him, as I shall see my little ones to be able, until I come to my Lord in Seir. 15. Esau answered: I beseech thee that of my people at the least wise which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue need of, that I may find grace (my Lord) in thy sight. 16. Esau therefore returned that day the same way that he came, into Seir. 17. And Jacob commeth into Socoth: where hauing",
+  "r3_verse": "Esau answered: I beseech thee that of my people at the least wise which is with me, there may remaine some to accompanie thee in the way. It is not needful, said he, this only I haue need of, that I may find grace (my Lord) in thy sight.",
+  "arm_conflicts": [
+   "needhe, | needful, said he,"
+  ],
+  "lexicon_readings": {
+   "31": "ſaid"
+  },
+  "r2_attested": {
+   "3": "beſeech"
+  },
+  "visual_readings": {
+   "31": "ſaid",
+   "3": "beſeech"
+  },
+  "new_text": "Eſau anſwered: I beſeech thee that of my people at the leaſt wiſe which is with me, there may remaine ſome to accompanie thee in the way. It is not needful, ſaid he, this only I haue need of, that I may find grace (my Lord) in thy ſight.",
+  "s_unresolved": [
+   "needful,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p118",
+  "old_text": "Eſau therefore returned that day the ſame way that into Seir.",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.866,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.2108,
+   0.885,
+   0.2887
+  ],
+  "crop_page": 118,
+  "r3_raw": "ful, said he, this only I haue need of, that I may find grace (my Lord) in thy sight. 16. Esau therefore returned that day the same way that he came, into Seir. 17. And Jacob commeth into Socoth: where hauing built a house, and pitched his tents, he called the name of that place",
+  "r3_verse": "Esau therefore returned that day the same way that he came, into Seir.",
+  "arm_conflicts": [],
+  "new_text": "Eſau therefore returned that day the ſame way that he came, into Seir.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p118",
+  "old_text": "And Iacob commeth into Socoth where hauing a houſe, and pitched his tents, he called the name of that place that is Tabernacles,",
+  "old": {
+   "s_dismas": 0.898,
+   "odr_com": 0.898,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.2294,
+   0.885,
+   0.3221
+  ],
+  "crop_page": 118,
+  "r3_raw": "16. Esau therefore returned that day the same way that he came, into Seir. 17. And Iacob commeth into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles. 18. and he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned",
+  "r3_verse": "And Iacob commeth into Socoth: where hauing built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles.",
+  "arm_conflicts": [],
+  "new_text": "And Iacob commeth into Socoth where hauing built a houſe, and pitched his tents, he called the name of that place Socoth, that is Tabernacles,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p118",
+  "old_text": "and he paſſed into Salem a citie of which is in the land ot Chanaan, atter he returned Meſopotamiaof Siria: and he dwelt beſide the towne.",
+  "old": {
+   "s_dismas": 0.853,
+   "odr_com": 0.853,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.2649,
+   0.885,
+   0.3575
+  ],
+  "crop_page": 118,
+  "r3_raw": "built a house, and pitched his tents, he called the name of that place Socoth, that is, Tabernacles. 18. and he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beſide the towne. 19. And he bought that part of the field, wherin he had pitched his tents, of the",
+  "r3_verse": "and he passed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt beſide the towne.",
+  "arm_conflicts": [
+   "ot | of",
+   "atter | after",
+   "Meſopotamiaof | from Mesopotamia of"
+  ],
+  "lexicon_readings": {
+   "17": "after",
+   "20": "from"
+  },
+  "r2_attested": {
+   "21": "Meſopotamia"
+  },
+  "visual_readings": {
+   "17": "after",
+   "20": "from",
+   "21": "Meſopotamia"
+  },
+  "new_text": "and he paſſed into Salem a citie of the Sichimites, which is in the land of Chanaan, after he returned from Meſopotamia of Siria: and he dwelt beſide the towne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p118",
+  "old_text": "And that part of the field, wherin he had pitched his tents, of the of Hemor, the father of Sichem, tor an hundred lambs.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.831,
+   "sabates_a": 0.847,
+   "madueke_b": 0.847
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.2986,
+   0.885,
+   0.393
+  ],
+  "crop_page": 118,
+  "r3_raw": "the Sichimites, which is in the land of Chanaan, after he returned from Mesopotamia of Siria: and he dwelt belide the towne. 19. And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs. 20. And erecting an altar there, on it he called vpon the most Mightie",
+  "r3_verse": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs.",
+  "arm_conflicts": [
+   "tor | for"
+  ],
+  "lexicon_readings": {
+   "23": "for"
+  },
+  "visual_readings": {
+   "23": "for"
+  },
+  "new_text": "And he bought that part of the field, wherin he had pitched his tents, of the children of Hemor, the father of Sichem, for an hundred lambs.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.978,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p118",
+  "old_text": "erecting an altar there, ou it he called vpon the moſt Mightie Iſrael.",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.848,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "neighbours": [
+   20
+  ],
+  "crop": [
+   0.155,
+   0.353,
+   0.885,
+   0.4292
+  ],
+  "crop_page": 118,
+  "r3_raw": "children of Hemor, the father of Sichem, for an hundred lambs. 20. And erecting an altar there, on it he called vpon the most Mightie God of Israel.",
+  "r3_verse": "And erecting an altar there, on it he called vpon the most Mightie God of Israel.",
+  "arm_conflicts": [
+   "ou | on"
+  ],
+  "new_text": "And erecting an altar there, on it he called vpon the moſt Mightie God of Iſrael.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

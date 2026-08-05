@@ -1,0 +1,74 @@
+{
+  "locus": "matter-ot1-preface",
+  "page_index": 3,
+  "ocr_dir": "archive-ot1-1609",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot1-preface-p0003.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {"left": "", "center": "", "right": ""},
+  "layout_note": "Preface incipit. Ornamental floral woodcut headpiece (border art, ignored) across the top; 4-line display heading in roman capitals; ornamental woodcut drop-cap 'A' opening the prose (text wraps to its right for 5 lines). Single wide prose column with two small ROMAN side-notes in the right margin. Second paragraph ('If anie demand...') opens with a faint paragraph/pilcrow mark in the left margin (not transcribed into text). Foot bears signature '†2' (cross-shaped mark) centered and catchword 'we' at right. Language: English, period orthography. w/vv is per-glyph on this page (see notes).",
+  "body": [
+    {"line_index": 0, "role": "title_display", "text": "TO THE RIGHT;"},
+    {"line_index": 1, "role": "title_display", "text": "VVELBELOVED ENGLISH"},
+    {"line_index": 2, "role": "title_display", "text": "READER GRACE AND GLORIE"},
+    {"line_index": 3, "role": "title_display", "text": "IN IESVS CHRIST EVERLASTING."},
+
+    {"line_index": 4, "role": "drop_cap", "text": "A", "note": "ornamental woodcut initial; reads with the following small-caps 'T LAST' as 'AT LAST'"},
+
+    {"line_index": 5, "role": "prose", "text": "T LAST through Gods goodnes(moſt dearly", "note": "'T LAST' set in small capitals after the drop-cap A"},
+    {"line_index": 6, "role": "prose", "text": "beloued) we ſend you here the greater part"},
+    {"line_index": 7, "role": "prose", "text": "of the Old Teſtament: as long ſince you re-", "line_end_hyphen": true},
+    {"line_index": 8, "role": "prose", "text": "ceiued the New ; faithfully tranſlated into"},
+    {"line_index": 9, "role": "prose", "text": "English. The reſidue is in hãd to be finiſhed:", "note": "'hãd' = 'hand' with tilde/nasal abbreviation over the a, as printed. GLYPH-DRIVEN s-mix on this line: 'English' uses ROUND s (short curvy s, verified at high zoom), while 'reſidue' and 'finiſhed' use long-ſ; colon after 'finiſhed' is tight (no French space)."},
+
+    {"line_index": 10, "role": "prose", "text": "and your deſire therof shal not now (God proſpering our"},
+    {"line_index": 11, "role": "prose", "text": "intention) be long fruſtrate. As for the impediments, which"},
+    {"line_index": 12, "role": "prose", "text": "hitherto haue hindered this vvorke, they al proceded (as"},
+    {"line_index": 13, "role": "prose", "text": "manie do know)of one general cauſe, our poore eſtate in"},
+    {"line_index": 14, "role": "prose", "text": "banishment. VVherin expecting better meanes,greatter"},
+    {"line_index": 15, "role": "prose", "text": "difficulties rather enſued. Neuertheles you wil hereby the"},
+    {"line_index": 16, "role": "prose", "text": "more perceiue our feruent good wil,euer to ſerue you, in"},
+    {"line_index": 17, "role": "prose", "text": "that we haue brought forth this Tome, in theſe hardeſt"},
+    {"line_index": 18, "role": "prose", "text": "times, of aboue fourtie yeares, ſince this College was moſt"},
+    {"line_index": 19, "role": "prose", "text": "happely begune. VVherfore we nothing doubt, but you"},
+    {"line_index": 20, "role": "prose", "text": "our deareſt, for whom we haue dedicated our liues, wil"},
+    {"line_index": 21, "role": "prose", "text": "both pardon the long delay, which we could not wel pre-", "line_end_hyphen": true},
+    {"line_index": 22, "role": "prose", "text": "uent, and accept now this fruict of our laboures, with like"},
+    {"line_index": 23, "role": "prose", "text": "good affection, as we acknowlege them due, and offer"},
+    {"line_index": 24, "role": "prose", "text": "the ſame vnto you."},
+
+    {"line_index": 25, "role": "prose", "text": "If anie demand, why it is now allowed to haue the holie", "note": "paragraph opens with a faint pilcrow/paragraph mark set in the left margin"},
+    {"line_index": 26, "role": "prose", "text": "Scriptures in vulgar tongues, which generally is not per-", "line_end_hyphen": true},
+    {"line_index": 27, "role": "prose", "text": "mitted, but in the three ſacred only:for further declaration"},
+    {"line_index": 28, "role": "prose", "text": "of this, & other like pointes we remite you to the Preface,"},
+    {"line_index": 29, "role": "prose", "text": "before the New Teſtament.Only here, as by an Epitome,"},
+
+    {"line_index": 30, "role": "signature", "text": "†2", "note": "cross/dagger-shaped signature mark with figure 2, centered at foot"},
+    {"line_index": 31, "role": "catchword", "text": "we", "note": "catchword at foot-right anticipating first word of next page; excluded from prose concatenation"}
+  ],
+  "marginalia": [
+    {"anchor": "line_index 11-13 (impediments / delay passage)", "position": "right_margin", "text": "The cauſe of\ndelay in ſet-\nting forth this\nEnglish Bible.", "note": "small roman side-note; 'cauſe' and 'ſet-' long-ſ, 'English' ROUND s (verified at high zoom); 'The cauſe of' followed by a faint dot at line-end (likely stray ink; sentence continues, so not rendered as a period)"},
+    {"anchor": "line_index 25-28 (why now allowed passage)", "position": "right_margin", "text": "vvhy & how\nit is allowed\nto haue holie\nScriptures in\nvulgar ton-\ngues.", "note": "small roman side-note; apparatus face mixes w-forms: 'vvhy' set as spaced vv, 'how' and 'allowed' set with a real w"}
+  ],
+  "uncertain": [
+    {"line_index": 0, "span": "RIGHT;", "note": "at high zoom the mark at the lower-right of the final T is a TWO-part sort (a dot above a comma-with-tail) = a semicolon, so transcribed 'RIGHT;'. Grammatically anomalous mid-salutation and OCR scaffold shows none, so it remains flagged as possibly a decorative/stray mark; but diplomatically it is a printed two-part glyph and is rendered."},
+    {"line_index": 10, "span": "shal", "note": "the 'sh' cluster reads as round s + h (round-s 'shal') at high zoom, but this compositor sets 'shal' both ways; transcribed round-s 'shal'."},
+    {"line_index": 22, "span": "laboures", "note": "a faint raised mark/speck appears just after 'laboures' (OCR scaffold renders it as 'laboures*with'); read as an ink speck, not a printed reference glyph; transcribed 'laboures, with'."},
+    {"marginalia": 1, "span": "how", "note": "margin note 2 'vvhy & how': 'vvhy' is unambiguously spaced vv, but 'how' shows a compact w with a terminal curl (distinct from the vv), so read as a real w 'how'; could conceivably be 'hovv' in this small apparatus face."}
+  ],
+  "glyph_notes": {
+    "w_vs_vv": "Display capital W set as 'VV' (VVELBELOVED). Body: capital W = 'VV' (VVherin, VVherfore); lowercase w is a GENUINE w sort in which/we/whom/why/now/know/wil/allowed/acknowlege/remite/New, EXCEPT 'vvorke' (line 12) which is clearly a spaced 'vv'. Side-notes mix ('vvhy' vv; 'how','allowed' w).",
+    "long_s": "Glyph-driven, not positional. sh-clusters MIX on this page (verified at high zoom): 'finiſhed' uses long-ſ (ſh); 'English' (both body idx9 and margin), 'shal' (idx10) and 'banishment' (idx14) use ROUND s + h.",
+    "u_v": "Period swap preserved: beloued, ceiued, perceiue, feruent, liues, laboures, vnto, vulgar, haue, geue-style; IESVS.",
+    "typos_preserved": "'greatter' (line 14, double-t) alongside correct 'greater' (line 6); period spellings 'proceded','Neuertheles','acknowlege','remite','al','wel','manie','poore' left as printed.",
+    "long_s_count_total": 24,
+    "long_s_count_body_and_display": 22,
+    "long_s_count_marginalia": 2,
+    "long_s_count_note": "recount after correcting body 'English' and margin 'English' from long-ſ to round s (−2); to be recomputed authoritatively by script from the transcription."
+  },
+  "observer": "agent:matter-ot1-preface",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster with targeted high-zoom PIL crops per line and per glyph (heading punctuation, drop-cap wrap, w/vv discrimination, sh-cluster s-forms, French spacing at colons/semicolons, side-notes, signature/catchword); OCR scaffold used as dropped-line hint only. A second high-zoom verification pass corrected: heading 'RIGHT;' (semicolon confirmed as a two-part sort), 'Teſtament:' and 'finiſhed:' colons re-read as tight (no French space) while 'New ;' confirmed spaced, and both body+margin 'English' re-read as ROUND s (not long-ſ).",
+  "confidence": "high on display heading, drop-cap and body prose; medium on the two small roman side-notes, the heading terminal-semicolon (idx0), and the signature-mark identity (†2)"
+}

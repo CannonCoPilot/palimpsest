@@ -1,0 +1,43 @@
+{
+ "POP-2 archaic<0.2 & modern>0.9": {
+  "records": 1434,
+  "loci": 517,
+  "kinds": {
+   "OVERLONG (several verses merged)": 45,
+   "FRAGMENT (far shorter than the verse)": 5,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 467
+  },
+  "archaic_source": {
+   "s_dismas": 516,
+   "odr_com": 1
+  },
+  "floor_modern_mean": 0.0172
+ },
+ "POP-1 archaic<0.2 & modern<0.2": {
+  "records": 1499,
+  "loci": 998,
+  "kinds": {
+   "this verse (agrees with modern)": 854,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 135,
+   "OVERLONG (several verses merged)": 9
+  },
+  "archaic_source": {
+   "s_dismas": 965,
+   "odr_com": 33
+  },
+  "floor_modern_mean": 0.8739
+ },
+ "CONTROL archaic>0.9": {
+  "records": 13404,
+  "loci": 4714,
+  "kinds": {
+   "this verse (agrees with modern)": 4677,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 37
+  },
+  "archaic_source": {
+   "s_dismas": 4591,
+   "odr_com": 123
+  },
+  "floor_modern_mean": 0.9857
+ }
+}

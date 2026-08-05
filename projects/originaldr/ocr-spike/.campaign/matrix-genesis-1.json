@@ -1,0 +1,1566 @@
+{
+ "chapter": 1,
+ "n_verses": 31,
+ "n_cells": 124,
+ "n_pass": 124,
+ "rate": 1.0,
+ "ref_means": {
+  "s_dismas": 0.9833,
+  "odr_com": 0.9822,
+  "sabates_a": 0.9686,
+  "madueke_b": 0.9686
+ },
+ "src_rates": {
+  "S1": 1.0,
+  "S3": 1.0,
+  "S9": 1.0,
+  "S6": 1.0
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 0,
+ "open": [],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "IN THE beginning Gop created heauen and earth.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S3": {
+    "text": "IN THE beginning Gop created heauen and earth.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "IN THE beginning Gop created heauen and earth.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "in the beginning God created heauen and earth.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the Spirite of God moued ouer the waters.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the Spirite of God moued ouer the waters.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the Spirite of God moued ouer the waters.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.968,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "And the earth was void and vacant, and. darkenes was vpon the face of the depth: and \" the Spirit of God moued ouer the waters.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.919,
+     "odr_com": 0.95,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And God ſaid : Be light made. And light was made",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And God ſaid : Be light made. And light was made",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God ſaid : Be light made. And light was made.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And God iaid: Be light made. And light was made.",
+    "from": "p18",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "And God ſaw the light that it was good: & he diuided the light from the darkenes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S3": {
+    "text": "And God ſaw the light that it was good & he diuided the light from the darkenes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S9": {
+    "text": "And God ſaw the light that it was good: & he diuided the light from the darkenes.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.933,
+     "madueke_b": 0.933
+    }
+   },
+   "S6": {
+    "text": "And God ſaw the light that it was good and he diuided the light from the darkenes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "And he called the light, Day, and the darkenes, Night : and there was euening morning, that made one day.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "And he called the light, Day, and the darkenes, Night : and there was euening morning, that made one day.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And he called the light, Day, and the darkenes, Night : and there was euening morning, that made one day.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S6": {
+    "text": "And he called the light, Day, and the daakenes, Night and there was eue-ning & morning, that made one day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "God alſo ſaid: Be a firmament made amidſt the waters: and let it diuide betwene waters & waters.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "God alſo ſaid: Be : a firmament made amidſt the waters: and let it diuide betwene waters & waters.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "God alſo ſaid: Be : a firmament made amidſt the waters: and let it diuide betwene waters & waters.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "God alſo ſaid: Be a firme ment made amidſt the waters: and let it diuide between waters and waters.",
+    "from": "p18",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And God made a firmament, and diuided the waters, that were vnder the firmament, from thoſe, that were aboue the firmament. And it was ſo done.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And God made a firmament, and diuided the waters, that were vnder the firmament, from thoſe, that were aboue the firmament. And it was ſo done.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God made a firmament, and diuided the waters, that were vnder the firmament, from thoſe, that were aboue the firmament. And it was ſo done.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And God made a firmament, aud diuided the waters that were vnder the firmament, from thoſe that were aboue the firmament. And it was ſo done.",
+    "from": "p18",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "And God called the firmament, Heauen: and there was euening morning that made the ſecond day.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.947,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And God called the firmament, Heauen: and there was euening morning that made the ſecond day.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.947,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God called the firmament, :: Heauen:and there was euening & morning that made the ſecond day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.937,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And God called the firmament, Heauen: and there was euening & morning that made the ſecond day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.947,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "God alſo ſaid : Let the waters thar are vnder the heauen, be gathered together into one place : and let the drie land appeare. And it was ſo done.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "God alſo ſaid : Let the waters that are vnder the heauen, be gathered together into one place : and let the drie land appeare. And it was ſo done.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S9": {
+    "text": "God alſo ſaid : Let the waters that are vnder the heauen, be gathered together into one place and let the drie land appeare. And it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   },
+   "S6": {
+    "text": "God alſo ſaid Let the watets that are vnder the heauen be gathered together into one place: and let the drie land appeare. And it was ſo done.",
+    "from": "p18",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And God called the drie land, Earth : and the gathering of waters together, he called Seas. And God ſawe that it was good.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And God called the drie land, Earth : and the gathering of waters together, he called Seas. And God ſawe that it was good.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And God called the drie land, Earth: and the gathe- ringcof waters together, he called Seas. And God ſawe that Iit was good.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And God called the drie land, Earth, aud the gathering of waters together, he called Seas. And God ſaw that it was good.",
+    "from": "p18",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "And laid : Ler the earth ſhootforth grene, herbes, and ſuch as may ſeede, & fruite trees yelding fruit after his kinde, ſuch as may haue ſeede in it ſelfe vpon the earth. And it was ſo done.",
+    "from": "p21",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.989,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S3": {
+    "text": "And laid : Let the earth ſhootforth grene herbes, and ſuch as may ſeede, & fruite trees yelding fruit after his kinde, ſuch as may haue ſeede in it ſelfe vpon the earth. And it was ſo done.",
+    "from": "p25",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.994,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S9": {
+    "text": "And ſaid : Let the earth ſhootforth grene :: herbes, and ſuch as may ſeede, & fruite trees yelding fruit after his kinde, ſuch as may haue ſeede in it ſelfe vpon the the earth. And it was ſo done.",
+    "from": "p31",
+    "score": {
+     "s_dismas": 0.973,
+     "odr_com": 0.978,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "And ſaid: Let the earth ſhoot forth greeu herbes, and ſuch as may ſeed, fruit trees yealding fruit after his kind, ſuch as may haue ſeed in it ſelte vpon the earth. And it was ſo done.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.95,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "And the earth brought forth grene grene herbe, ſuch as ſeedeth according to his kinde, & tree that beareth fruite, hauing ſeede eche one according to his kinde. And God ſaw that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S3": {
+    "text": "And the earth broughr forth grene herbe, ſuch as ſeedeth according to his kinde, tree in that beareth fruite, hauing ſeede eche one according to kinde. And God ſaw that it was good.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.928,
+     "madueke_b": 0.928
+    }
+   },
+   "S9": {
+    "text": "And the earth brought forth grene herbe, ſuch as ſeedeth according to his kinde, tree in that beareth fruite, hauing ſeede eche one according to his kinde. And God ſaw that it was good.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And the earth brought forth green hearb, ſuch as ſeedeth according to his kind, and tree that beareth truit, hauing ſeed each one accordins to his kind. And God ſaw that is was good.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And there was euening & morning that made the third day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S3": {
+    "text": "And there was euening & morning that made the third day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S9": {
+    "text": "And there was euening & morning that made the third day.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S6": {
+    "text": "And there was euening and morning that made the third day.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "Againe God ſaid: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be :: for ſignes & ſeaſons, and dayes and yeares",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S3": {
+    "text": "Againe God ſaid: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be: for ſignes & ſeaſons, and dayes and yeares",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S9": {
+    "text": "Againe God ſaid: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be for ſignes & ſeaſons, and dayes and yeares :",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "Againe God ſaid: Be there lights made in the firmament of heauen, to diuide the day and the night, aud let them be () tor ſignes & ſeaſons, and dayes and veares :",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.947,
+     "odr_com": 0.947,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "to ſhine in the firmament heauen, & to giue light vpon the earth. And it was ſo done.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S3": {
+    "text": "to ſhine in the firmament of heauen, & to giue light vpon the earth. And it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "to ſhine in the firmament of heauen, & to giue light vpon the earth. And it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S6": {
+    "text": "to ſhine in the firmamentof heauen, and to giue light vpon the earth. And it was ſo done.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.942,
+     "sabates_a": 0.988,
+     "madueke_b": 0.988
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And God made two great lights : a greater light, to gouerne the day : and a leſſer light to gouerne the night: and ſtarres.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S3": {
+    "text": "And God made two :: great lights : a greater light, to gouerne the day: and a leſſer light to gouerne the night : and ſtarres.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And God made two great lights: a greater light, to gouerne the day : and a leſſer light to gouerne the night : and ſtarres.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "And God made two great lights : a greater light to gouerne the day, and a leſſer light to gouerne the night : and ſtarres.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And he ſet them in the firmament of heauen, to ſhine vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And he ſet them in the firmament of heauen, ſhine vpon the earth.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.955,
+     "odr_com": 0.955,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S9": {
+    "text": "And he ſet them in the firmament of heauen, to ſhine vpon the earth.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And he ſet them in the firmament of heauen, to ſhine vpon the earth,",
+    "from": "p19",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "and to gouerne the day & the night, and to diuide the light & the darkenes. And God ſawe that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "and to gouerne the day & the night, of and to diuide the light & the darkenes. And God fawe that it was good.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.904,
+     "madueke_b": 0.904
+    }
+   },
+   "S9": {
+    "text": "and to gouerne the day & the night, and to diuide the light & the darkenes. And God ſawe that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "and to gouerne the day & the night, and to diuide the light and the darkenes. And God ſaw that it was good.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.951,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And there was euening and morning that made the fourth day.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And there was euening and morning that made the fourth day.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And there was euening and morning that made the fourth day.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And there was euening and morning that made the fourth day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "God alſo ſaid : Let the waters bring forth creeping creature hauing life, and flying foule, ouer the earth vnder the firmament of heauen.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.971,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "God alſo ſaid : Let the waters bring forth creeping creature hauing life, and flying foule, ouer the earth vnder the firmament of heauen.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.971,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "God alſo ſaid : Let the waters bring forth creeping creature hauing life, and flying foule, ouer the earth vnder the firmament of heauen.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.971,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "God alſo ſaid : Let the waters bring forth creepins creature hauing lite and fivin foule, ouer the earth vnder the firmament of heauen.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.962,
+     "odr_com": 0.934,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And God created huge whales, and al liuing & mouing creature, that the waters brought forth, according to eche ſorte, & al foule according to their kinde. And God ſawe that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S3": {
+    "text": "And God created huge Whales, and al liuing & mouing creature, that the waters brought forth, according to eche ſorte, & al foule according to their kinde. And God ſawe that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S9": {
+    "text": "And God created huge Whales, and al liuing & mouing creature, that the waters brought forth, according to eche ſorte, & al foule according to their kinde. And God ſawe that it was good.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 1.0,
+     "sabates_a": 0.942,
+     "madueke_b": 0.942
+    }
+   },
+   "S6": {
+    "text": "And God created huge wlales, and al liuing and mouing creature, that the waters brought forth accordins to each ſort, and al toule accordins to their kind. And God ſaw that it was good.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.911,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "And he bleſſed them ſaying : Increaſe and multiplie, and repleniſh the waters of the ſea: and let the birds yet be multiplied vpon the earth.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 0.971,
+     "odr_com": 0.971,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "And he bleſſed them ſaying : Increaſe and multiplie, and repleniſh the waters of the ſea: and let the birds be multiplied vpon the earth.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And he bleſſed them ſaying : Increaſe and multi22 plie, and repleniſh the waters of the ſea: and let the birds be multiplied vpon the earth.",
+    "from": "p32",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And he bleſſed them ſaying : Increaſe and multiply, and repleniſh the waters of the ſea: and let the birds be multiplied vpon the earth.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And there was euening morning that made the fifth day.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S3": {
+    "text": "And there was euening & morning that made the fifth day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S9": {
+    "text": "And there was euening & morning that made the fifth day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   },
+   "S6": {
+    "text": "And there was euening and morning that made the fifth day.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "God ſaid moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & ſuch as creepe, & beaſtes of the earth according to their kindes: and it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S3": {
+    "text": "God ſaid moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & ſuch as creepe, & beaſtes of the earth according to their kindes: and it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S9": {
+    "text": "God ſaid moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & ſuch as creepe, & beaſtes of the earth according to their kindes: and it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.936,
+     "madueke_b": 0.936
+    }
+   },
+   "S6": {
+    "text": "God ſaid moreouer : Let the earth bring torth liuing creature in his kind, cattle, and ſuch as creep, and beaſts of the earth according to their kinds: aud it was ſo done.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   }
+  },
+  "25": {
+   "S1": {
+    "text": "And God made the beaſtes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind. And God ſaw that it was good,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "And God made the beaſtes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind. And God ſaw that it was good,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S9": {
+    "text": "And God made the beaſtes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind. And God ſaw that it was good,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S6": {
+    "text": "And God made the beaſts of the earth according to their kinds, and cattle, and al that creepeth on the earth in his kind. And God ſaw that it was good,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "26": {
+   "S1": {
+    "text": "and he ſaid Let vs make Man to our image, & likenes : and let him haue dominion of ouer the fi ſhes of the ſea, and the foules of the ayre, and the beaſtes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.982,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S3": {
+    "text": "and he ſaid Let vs make Man to our image, & likenes : and let him haue dominion of ouer the fi ſhes of the ſea, and the foules of the ayre, and beaſtes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+    "from": "p26",
+    "score": {
+     "s_dismas": 0.963,
+     "odr_com": 0.963,
+     "sabates_a": 0.951,
+     "madueke_b": 0.951
+    }
+   },
+   "S9": {
+    "text": "and he ſaid Let vs make Man to our image, & likenes and let him haue dominion ouer the fiſhes of the ſea, and the foules of the ayre, and the beaſtes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   },
+   "S6": {
+    "text": "and he ſaid Let vs make Man to our image & likenos: and let him haue dominion ouer the fiſhes of the ſea, and the foules of the ayre, and the beaſts, and the whole earth, and al creeping creature that moueth vpon the earth.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.985,
+     "madueke_b": 0.985
+    }
+   }
+  },
+  "27": {
+   "S1": {
+    "text": "And God created man, to his owne image: to the image of God he created him, male & female he created them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.962,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And God created man, to his owne image to the image of God he created him, male & female he created them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.962,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S9": {
+    "text": "And God created man, to his owne image to the image of God he created him, male & female he created them.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 0.962,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And God created man to his owno image: to the image of God he created him male and temale he created them.28.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.942,
+     "odr_com": 0.981,
+     "sabates_a": 0.979,
+     "madueke_b": 0.979
+    }
+   }
+  },
+  "28": {
+   "S1": {
+    "text": "And God bleſſed them, and Increaſe and multiplie, & repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+    "from": "p22",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.969,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   },
+   "S3": {
+    "text": "And God bleſſed them, and ſaith: Increaſe and multiplie, & &repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S9": {
+    "text": "And God bleſſed them, and ſaith: Increaſe and multiplie, & repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.98,
+     "odr_com": 1.0,
+     "sabates_a": 0.94,
+     "madueke_b": 0.94
+    }
+   },
+   "S6": {
+    "text": "And God bleſſed them, and ſaith: Increaſe and multitude, and repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and foules of the ayre& al liuing creatures that moue vpon the earth.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.964,
+     "sabates_a": 0.946,
+     "madueke_b": 0.946
+    }
+   }
+  },
+  "29": {
+   "S1": {
+    "text": "And God ſaid Behold I haue giuen you al maner of hearbe that ſeedeth vpon the earth, and A trees that haue in them ſelueſeede ſeede of their owne kinde, to be your meate",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.964,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "And God ſaid Behold I haue giuen you al maner of hearbe that deth vpon the earth, and al trees that haue in them ſelues of their owne kinde, to be your meate",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.945,
+     "odr_com": 0.939,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "And God ſaid Behold I haue giuen you al maner of hearbe that deth vpon the earth, and al trees that haue in them ſelues ſeede of their owne kinde, to be your meate",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.982,
+     "odr_com": 0.976,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And God ſaid : Behold I haue giuen vou al manner of hearb that ſeedeth vponthe earth, and al trees that haue in themſelues ſeed of their owne kind, to be vour meate:",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.951,
+     "odr_com": 0.958,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "30": {
+   "S1": {
+    "text": "†and to al beaſtes of the earth, and to euerie foule of the ayre, to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was ſo done.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S3": {
+    "text": "†and to al beaſtes of the earth, and to euerie foule of the ayre, to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was ſo done.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S9": {
+    "text": "†and to al:: beaſtes of the earth, and to euerie foule of the ayre, & to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was ſo done.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 1.0,
+     "sabates_a": 0.963,
+     "madueke_b": 0.963
+    }
+   },
+   "S6": {
+    "text": "and to al beaſts of the earth, and to euery foule of the ayre, and to al that moue vpon the earth, and wherein there is life, that they may haue to feed vpon. And it was ſo done.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.948,
+     "odr_com": 0.954,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "31": {
+   "S1": {
+    "text": "And God ſawe al things that he had made, and they were very good. And there was euening morning that made the ſixt day.",
+    "from": "p23",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S3": {
+    "text": "And God ſawe al things that he had made, and they were very good. And there was euening morning that made the ſixt day.",
+    "from": "p27",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S9": {
+    "text": "And God ſawe al things that he had made, and they. were very good. And there was euening morning that made the ſixt day.",
+    "from": "p33",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "And God ſaw al things that he had made, and they were very good. And there was eueniug and moruing that made the ſivt day.",
+    "from": "p19",
+    "score": {
+     "s_dismas": 0.933,
+     "odr_com": 0.933,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "In the beginning God created heauen and earth.",
+   "odr_com": "IN THE beginning GOD created heauen and earth.",
+   "sabates_a": "In the beginning God created heaven and earth.",
+   "madueke_b": "In the beginning God created heaven and earth."
+  },
+  "2": {
+   "s_dismas": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the the Spirite of God moued ouer the waters.",
+   "odr_com": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the Spirite of God moued ouer the waters.",
+   "sabates_a": "And the earth was void and vacant, and darkness was upon the face of the depth: and the Spirit of God moved over the waters.",
+   "madueke_b": "And the earth was void and vacant, and darkness was upon the face of the depth: and the Spirit of God moved over the waters."
+  },
+  "3": {
+   "s_dismas": "And God ſaid: Be light made. And light was made.",
+   "odr_com": "And God said: Be light made. And light was made.",
+   "sabates_a": "And God said: Be light made. And light was made.",
+   "madueke_b": "And God said: Be light made. And light was made."
+  },
+  "4": {
+   "s_dismas": "And God ſaw the light that it was good: & he diuided the light from the darkenes.",
+   "odr_com": "And God saw the light that it was good: & he diuided the light from the darkenes.",
+   "sabates_a": "And God saw the light that it was good: and he divided the light from the darkness.",
+   "madueke_b": "And God saw the light that it was good: and he divided the light from the darkness."
+  },
+  "5": {
+   "s_dismas": "And he called the light, Day, and the darkenes, Night: and there was euening & morning, that made one day.",
+   "odr_com": "And he called the light, Day, and the darkenes, Night: and there was euening & morning, that made one day.",
+   "sabates_a": "And he called the light, Day, and the darkness, Night: and there was evening & morning, that made one day.",
+   "madueke_b": "And he called the light, Day, and the darkness, Night: and there was evening & morning, that made one day."
+  },
+  "6": {
+   "s_dismas": "God alſo ſaid: Be a firmament made amidſt the waters: and let it diuide betwene waters & waters.",
+   "odr_com": "God also said: Be a firmament made amidst the waters: and let it diuide betwene waters & waters.",
+   "sabates_a": "God also said: Be a firmament made amidst the waters: and let it divide between waters and waters.",
+   "madueke_b": "God also said: Be a firmament made amidst the waters: and let it divide between waters and waters."
+  },
+  "7": {
+   "s_dismas": "And God made a firmament, and diuided the waters, that were vnder the firmament, from thoſe, that were aboue the firmament. And it was ſo done.",
+   "odr_com": "And God made a firmament, and diuided the waters, that were vnder the firmament, from those, that were aboue the firmament. And it was so done.",
+   "sabates_a": "And God made a firmament, and divided the waters that were under the firmament, from those that were above the firmament. And it was so done.",
+   "madueke_b": "And God made a firmament, and divided the waters that were under the firmament, from those that were above the firmament. And it was so done."
+  },
+  "8": {
+   "s_dismas": "And God called the firmament, Heauen: and there was euening & morning that made the ſecond day.",
+   "odr_com": "And God called the firmament, Heauen: and there was euening & morning made that made the second day.",
+   "sabates_a": "And God called the firmament, Heaven: and there was evening & morning that made the second day.",
+   "madueke_b": "And God called the firmament, Heaven: and there was evening & morning that made the second day."
+  },
+  "9": {
+   "s_dismas": "God alſo ſaid: Let the waters that are vnder the heauen, be gathered together into one place: and let the drie land appeare. And it was ſo done.",
+   "odr_com": "God also said: Let the waters that are vnder the heauen, be gathered together into one place: and let the drie land appeare. And it was so done.",
+   "sabates_a": "God also said: let the waters that are under heaven be gathered together into one place: and let the dry land appear. And it was so done.",
+   "madueke_b": "God also said: let the waters that are under heaven be gathered together into one place: and let the dry land appear. And it was so done."
+  },
+  "10": {
+   "s_dismas": "And God called the drie land, Earth: and the gathering of waters together, he called Seas. And God ſawe that it was good.",
+   "odr_com": "And God called the drie land, Earth: and the gathering of waters together, he called Seas. And God sawe that it was good.",
+   "sabates_a": "And God called the dry land, Earth, and the gathering of waters together, he called Seas. And God saw that it was good.",
+   "madueke_b": "And God called the dry land, Earth, and the gathering of waters together, he called Seas. And God saw that it was good."
+  },
+  "11": {
+   "s_dismas": "And ſaid: Let the earth ſhoot forth grene herbes, and ſuch as may ſeede, & fruite trees yelding fruit after his kinde, ſuch as may haue ſeede in it ſelfe vpon the earth. And it was ſo done.",
+   "odr_com": "And said: Let the earth shootforth grene herbes, and such as may seede, & fruite trees yelding fruit after his kinde, such as may haue seede in it selfe vpon the earth. And it was so done.",
+   "sabates_a": "And said: Let the earth shoot forth green herbs, and such as may seed, & fruit-trees yielding fruit after his kind, such as may have seed in itself upon the earth. And it was so done.",
+   "madueke_b": "And said: Let the earth shoot forth green herbs, and such as may seed, & fruit-trees yielding fruit after his kind, such as may have seed in itself upon the earth. And it was so done."
+  },
+  "12": {
+   "s_dismas": "And the earth brought forth grene herbe, ſuch as ſeedeth according to his kinde, & tree that beareth fruite, hauing ſeede eche one according to his kinde. And God ſaw that it was good.",
+   "odr_com": "And the earth brought forth grene herbe, such as seedeth according to his kinde, & tree that beareth fruite, hauing seede eche one according to his kinde. And God saw that it was good.",
+   "sabates_a": "And the earth brought forth green herb, such as seedeth according to his kind, and tree that beareth fruit, having seed each one according to his kind. And God saw that it was good.",
+   "madueke_b": "And the earth brought forth green herb, such as seedeth according to his kind, and tree that beareth fruit, having seed each one according to his kind. And God saw that it was good."
+  },
+  "13": {
+   "s_dismas": "And there was euening & morning that made the third day.",
+   "odr_com": "And there was euening & morning that made the third day.",
+   "sabates_a": "And there was evening and morning that made the third day.",
+   "madueke_b": "And there was evening and morning that made the third day."
+  },
+  "14": {
+   "s_dismas": "Againe God ſaid: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be for ſignes & ſeaſons, and dayes and yeares:",
+   "odr_com": "Againe God said: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be for signes & seasons, and dayes and yeares:",
+   "sabates_a": "Again God said: Be there lights made in the firmament of heaven, to divide the day and the night, and let them be for signs & seasons, and days and years;",
+   "madueke_b": "Again God said: Be there lights made in the firmament of heaven, to divide the day and the night, and let them be for signs & seasons, and days and years;"
+  },
+  "15": {
+   "s_dismas": "to ſhine in the firmament of heauen, & to giue light vpon the earth. And it was ſo done.",
+   "odr_com": "to shine in the firmament of heauen, & to giue light vpon the earth. And it was so done.",
+   "sabates_a": "to shine in the firmament of heaven, and to give light upon the earth. And it was so done.",
+   "madueke_b": "to shine in the firmament of heaven, and to give light upon the earth. And it was so done."
+  },
+  "16": {
+   "s_dismas": "And God made two great lights: a greater light, to gouerne the day: and a leſſer light to gouerne the night: and ſtarres.",
+   "odr_com": "And God made two great lights: a greater light to gouerne the day: and a lesser light to gouerne the night: and starres.",
+   "sabates_a": "And God made two great lights; a greater light to govern the day, and a lesser light to govern the night; and stars.",
+   "madueke_b": "And God made two great lights; a greater light to govern the day, and a lesser light to govern the night; and stars."
+  },
+  "17": {
+   "s_dismas": "And he ſet them in the firmament of heauen, to ſhine vpon the earth,",
+   "odr_com": "And he set them in the firmament of heauen, to shine vpon the earth.",
+   "sabates_a": "And he set them in the firmament of heaven, to shine upon the earth,",
+   "madueke_b": "And he set them in the firmament of heaven, to shine upon the earth,"
+  },
+  "18": {
+   "s_dismas": "and to gouerne the day & the night, and to diuide the light & the darkenes. And God ſawe that it was good.",
+   "odr_com": "and to gouerne the day & the night, and to diuide the light & the darkenes. And God sawe that it was good.",
+   "sabates_a": "and to govern the day & the night, and to divide the light and the darkness. And God saw that it was good.",
+   "madueke_b": "and to govern the day & the night, and to divide the light and the darkness. And God saw that it was good."
+  },
+  "19": {
+   "s_dismas": "And there was euening and morning that made the fourth day.",
+   "odr_com": "And there was euening and morning that made the fourth day.",
+   "sabates_a": "And there was evening and morning that made the fourth day.",
+   "madueke_b": "And there was evening and morning that made the fourth day."
+  },
+  "20": {
+   "s_dismas": "God alſo ſaid: Let the waters bring forth creeping creature hauing life, and flying foule, ouer the earth vnder the firmament of heauen.",
+   "odr_com": "God also said: Let the waters bring forth creeping creature hauing life, and and flying foule, ouer the earth vnder the firmament of heauen.",
+   "sabates_a": "God also said: Let the waters bring forth creeping creature having life, and flying fowl, over the earth under the firmament of heaven.",
+   "madueke_b": "God also said: Let the waters bring forth creeping creature having life, and flying fowl, over the earth under the firmament of heaven."
+  },
+  "21": {
+   "s_dismas": "And God created huge Whales, and al liuing & mouing creature, that the waters brought forth, according to eche ſorte, & al ſoule according to their kinde. And God ſaw that it was good.",
+   "odr_com": "And God created huge Whales, and al liuing & mouing creature, that the waters brought forth, according to eche sorte, & al foule according to their kinde. And God sawe that it was good.",
+   "sabates_a": "And God created huge whales, and all living and moving creature, that the waters brought forth according to each sort, and all fowl according to their kind. And God saw that it was good.",
+   "madueke_b": "And God created huge whales, and all living and moving creature, that the waters brought forth according to each sort, and all fowl according to their kind. And God saw that it was good."
+  },
+  "22": {
+   "s_dismas": "And he bleſſed them ſaying: Increaſe and multiplie, and repleniſh the waters of the ſea: and let the birds be multiplied vpon the earth.",
+   "odr_com": "And he blessed them saying: Increase and multiplie, and replenish the waters of the sea: and let the birds be multiplied vpon the earth.",
+   "sabates_a": "And he blessed them saying: Increase and multiply, and replenish the waters of the sea: and let the birds be multiplied upon the earth.",
+   "madueke_b": "And he blessed them saying: Increase and multiply, and replenish the waters of the sea: and let the birds be multiplied upon the earth."
+  },
+  "23": {
+   "s_dismas": "And there was euening & morning that made the fifth day.",
+   "odr_com": "And there was euening & morning that made the fifth day.",
+   "sabates_a": "And there was evening and morning that made the fifth day.",
+   "madueke_b": "And there was evening and morning that made the fifth day."
+  },
+  "24": {
+   "s_dismas": "God ſaid moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & ſuch as creepe, & beaſtes of the earth according to their kindes: and it was ſo done.",
+   "odr_com": "God said moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & such as creepe, & beastes of the earth according to their kindes: and it was so done.",
+   "sabates_a": "God said moreover: Let the earth bring forth living creature in his kind, cattle, and such as creep, and beasts of the earth according to their kinds: and it was so done.",
+   "madueke_b": "God said moreover: Let the earth bring forth living creature in his kind, cattle, and such as creep, and beasts of the earth according to their kinds: and it was so done."
+  },
+  "25": {
+   "s_dismas": "And God made the beaſtes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind. And God ſaw that it was good,",
+   "odr_com": "And God made the beastes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind. And God saw that it was good,",
+   "sabates_a": "And God made the beasts of the earth according to their kinds, and cattle, and all that creepeth on the earth in his kind. And God saw that it was good,",
+   "madueke_b": "And God made the beasts of the earth according to their kinds, and cattle, and all that creepeth on the earth in his kind. And God saw that it was good,"
+  },
+  "26": {
+   "s_dismas": "and he ſaid Let vs make Man to our image, & likenes: and let him haue dominion ouer the fiſhes of the ſea, and the foules of the ayre, and the beaſtes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+   "odr_com": "and he said Let vs make Man to our image & likenes: and let him haue dominion ouer the fishes of the sea, and the foules of the ayre, and the beastes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+   "sabates_a": "and he said Let us make Man to our image & likeness: and let him have dominion over the fishes of the sea, and the fowls of the air, and the beasts, and the whole earth, and all creeping creature that moveth upon the earth.",
+   "madueke_b": "and he said Let us make Man to our image & likeness: and let him have dominion over the fishes of the sea, and the fowls of the air, and the beasts, and the whole earth, and all creeping creature that moveth upon the earth."
+  },
+  "27": {
+   "s_dismas": "And God created man, to his owne image: to the image of God he created him, male & female he created them.",
+   "odr_com": "And God created man, to his owne image: to the image of God he created him, male and female he created them.",
+   "sabates_a": "And God created man to his own image: to the image of God he created him, male and female he created them.",
+   "madueke_b": "And God created man to his own image: to the image of God he created him, male and female he created them."
+  },
+  "28": {
+   "s_dismas": "And God bleſſed them, and ſaith: Increaſe and multiplie, & repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and the foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+   "odr_com": "And God blessed them, and saith: Increase and multiplie, & replenish the earth, and subdew it, and rule ouer the fishes of the sea, and foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+   "sabates_a": "And God blessed them, and saith: Increase and multiply, and replenish the earth, and subdue it, and rule over the fishes and the sea, and fowls of the air & all living creatures that move upon the earth.",
+   "madueke_b": "And God blessed them, and saith: Increase and multiply, and replenish the earth, and subdue it, and rule over the fishes and the sea, and fowls of the air & all living creatures that move upon the earth."
+  },
+  "29": {
+   "s_dismas": "And God ſaid: Behold I haue giuen you al maner of hearbe that ſeedeth vpon the earth, and al trees that haue in them ſelues ſeede of their owne kinde, to be your meate:",
+   "odr_com": "And God said: Behold I haue giuen you al manner of hearbe that seedeth vpon the earth, and al trees that haue in them selues seede of their owne kinde, to be your meate:",
+   "sabates_a": "And God said: Behold I have given you all manner of herb that seedeth upon the earth, and all trees that have in themselves seed of their own kind, to be your meat:",
+   "madueke_b": "And God said: Behold I have given you all manner of herb that seedeth upon the earth, and all trees that have in themselves seed of their own kind, to be your meat:"
+  },
+  "30": {
+   "s_dismas": "and to al beaſtes of the earth, and to euerie ſoule of the ayre, & to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was ſo done.",
+   "odr_com": "and to al beastes of the earth, and to euerie foule of the ayre, & to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was so done.",
+   "sabates_a": "and to all beasts of the earth, and to every fowl of the air, and to all that move upon the earth, and wherein there is life, that they may have to feed upon. And it was so done.",
+   "madueke_b": "and to all beasts of the earth, and to every fowl of the air, and to all that move upon the earth, and wherein there is life, that they may have to feed upon. And it was so done."
+  },
+  "31": {
+   "s_dismas": "And God ſawe al things that he had made, and they were very good. And there was euening & morning that made the ſixt day.",
+   "odr_com": "And God sawe al things that he had made, and they were very good. And there was euening & morning that made the sixt day.",
+   "sabates_a": "And God saw all things that he had made, and they were very good. And there was evening and morning that made the sixth day.",
+   "madueke_b": "And God saw all things that he had made, and they were very good. And there was evening and morning that made the sixth day."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "In the beginning God created heaven and earth.",
+  "2": "And the earth was void and vacant, and darkness was upon the face of the depth: and the Spirit of God moved over the waters.",
+  "3": "And God said: Be light made. And light was made.",
+  "4": "And God saw the light that it was good: and he divided the light from the darkness.",
+  "5": "And he called the light, Day, and the darkness, Night: and there was evening & morning, that made one day.",
+  "6": "God also said: Be a firmament made amidst the waters: and let it divide between waters and waters.",
+  "7": "And God made a firmament, and divided the waters that were under the firmament, from those that were above the firmament. And it was so done.",
+  "8": "And God called the firmament, Heaven: and there was evening & morning that made the second day.",
+  "9": "God also said: let the waters that are under heaven be gathered together into one place: and let the dry land appear. And it was so done.",
+  "10": "And God called the dry land, Earth, and the gathering of waters together, he called Seas. And God saw that it was good.",
+  "11": "And said: Let the earth shoot forth green herbs, and such as may seed, & fruit-trees yielding fruit after his kind, such as may have seed in itself upon the earth. And it was so done.",
+  "12": "And the earth brought forth green herb, such as seedeth according to his kind, and tree that beareth fruit, having seed each one according to his kind. And God saw that it was good.",
+  "13": "And there was evening and morning that made the third day.",
+  "14": "Again God said: Be there lights made in the firmament of heaven, to divide the day and the night, and let them be for signs & seasons, and days and years;",
+  "15": "to shine in the firmament of heaven, and to give light upon the earth. And it was so done.",
+  "16": "And God made two great lights; a greater light to govern the day, and a lesser light to govern the night; and stars.",
+  "17": "And he set them in the firmament of heaven, to shine upon the earth,",
+  "18": "and to govern the day & the night, and to divide the light and the darkness. And God saw that it was good.",
+  "19": "And there was evening and morning that made the fourth day.",
+  "20": "God also said: Let the waters bring forth creeping creature having life, and flying fowl, over the earth under the firmament of heaven.",
+  "21": "And God created huge whales, and all living and moving creature, that the waters brought forth according to each sort, and all fowl according to their kind. And God saw that it was good.",
+  "22": "And he blessed them saying: Increase and multiply, and replenish the waters of the sea: and let the birds be multiplied upon the earth.",
+  "23": "And there was evening and morning that made the fifth day.",
+  "24": "God said moreover: Let the earth bring forth living creature in his kind, cattle, and such as creep, and beasts of the earth according to their kinds: and it was so done.",
+  "25": "And God made the beasts of the earth according to their kinds, and cattle, and all that creepeth on the earth in his kind. And God saw that it was good,",
+  "26": "and he said Let us make Man to our image & likeness: and let him have dominion over the fishes of the sea, and the fowls of the air, and the beasts, and the whole earth, and all creeping creature that moveth upon the earth.",
+  "27": "And God created man to his own image: to the image of God he created him, male and female he created them.",
+  "28": "And God blessed them, and saith: Increase and multiply, and replenish the earth, and subdue it, and rule over the fishes and the sea, and fowls of the air & all living creatures that move upon the earth.",
+  "29": "And God said: Behold I have given you all manner of herb that seedeth upon the earth, and all trees that have in themselves seed of their own kind, to be your meat:",
+  "30": "and to all beasts of the earth, and to every fowl of the air, and to all that move upon the earth, and wherein there is life, that they may have to feed upon. And it was so done.",
+  "31": "And God saw all things that he had made, and they were very good. And there was evening and morning that made the sixth day."
+ },
+ "ref_coverage": {
+  "janvier": 31,
+  "have": {
+   "s_dismas": 31,
+   "odr_com": 31,
+   "sabates_a": 31,
+   "madueke_b": 31
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 124,
+ "triage": "CLEAN",
+ "secs": 6.2
+}

@@ -1,0 +1,1112 @@
+{
+  "locus": "matter/nt/books-of-new-testament",
+  "page_index": [
+    25,
+    26,
+    27
+  ],
+  "ocr_dir": "jp2-S08",
+  "scan": "S8",
+  "raster": "jp2-S08/1582_Rhemes_New_Testament_0025.jp2",
+  "raster_dpi": null,
+  "raster_note": "rendered via ocr-spike/jp2_page.py jp2-S08 25 -> /tmp/jp2-S08-0025.png at 5864x8562 (native jp2 raster). Read in 5 full-width horizontal bands + targeted 3.5-5x connectivity zooms for w/vv per §w-regime.",
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "FRONT-MATTER section-opening page of the 1582 Rheims New Testament (scan S8), distinct from the backmatter 'A TABLE OF' corruptions in matter-nt-table.json. Top: a printer's fleuron/leaf ornament, then a graduated display-caps title 'THE BOOKES OF THE NEVV / Teſtament, according to the counte of / the Catholike Churche.' No running header and no printed page number (unnumbered front matter; the display title IS the head). Middle: a TWO-COLUMN list of the books of the NT with three spaced-small-caps sub-headings ('4 GOSPELS.', 'S. PAVLES EPIST. 14.', 'THE 7 CATHOL. EPISTLES.'). Reading order = left column top-to-bottom (Gospels, Acts, then Romanes..1 Theſſalonians) then right column (2 Theſſaloniãs..Hebrevves, then the 7 Catholic epistles Iames..Iude, then the Apocalypse) — column order matches canonical book order. Lower half (single wide measure): the opening of a NUMBERED patristic catena on the authority of Scripture & the Church. Point '1' (short italic argument) + attribution 'S. Auguſtine li. 11. cont. Fauſtum. cap. 5.' + a large roman drop-cap-'T' prose quote; then point '2' (multi-line italic argument) + attribution 'S. Auguſtine cont. Epiſt. fundamenti cap. 5.' + a second large roman prose quote (opening 'I for my part...', the famous 'Ego vero Evangelio non crederem' passage). A right-margin italic gloss 'Luther. / Caluin.' anchors the '*' before 'Manichæus'. Foot: catchword 'ued' (right). FOUR co-present w/vv glyph regimes on this page, each decided PER-GLYPH by stroke connectivity (see glyph_regime_resolved): display-caps VV (NEVV), medium-roman list vv (Matthevv, Hebrevves), large-roman prose block-1 uniformly connected-w, and large-roman prose block-2 genuinely MIXED (vvilt and wilt = same word both ways on one line). Digitization show-through (mirror text from the facing leaf) is faintly visible in the margins and is NOT part of this page.",
+  "body": [
+    {
+      "line_index": 0,
+      "column": "C",
+      "role": "title_display",
+      "text": "THE BOOKES OF THE NEVV",
+      "marks": "printer's fleuron/leaf ornament precedes 'THE' (not transcribed); display titling caps"
+    },
+    {
+      "line_index": 1,
+      "column": "C",
+      "role": "title_display",
+      "text": "Teſtament, according to the counte of"
+    },
+    {
+      "line_index": 2,
+      "column": "C",
+      "role": "title_display",
+      "text": "the Catholike Churche."
+    },
+    {
+      "line_index": 3,
+      "column": "L",
+      "role": "section_header",
+      "text": "4 GOSPELS."
+    },
+    {
+      "line_index": 4,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Goſpel of S. Matthevv."
+    },
+    {
+      "line_index": 5,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Goſpel of S. Marke."
+    },
+    {
+      "line_index": 6,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Goſpel of S. Luke."
+    },
+    {
+      "line_index": 7,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Goſpel of S. Iohn."
+    },
+    {
+      "line_index": 8,
+      "column": "L",
+      "role": "list_item",
+      "text": "The ACTES of the Apoſtles."
+    },
+    {
+      "line_index": 9,
+      "column": "L",
+      "role": "section_header",
+      "text": "S. PAVLES EPIST. 14."
+    },
+    {
+      "line_index": 10,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Epiſtle to the Romanes."
+    },
+    {
+      "line_index": 11,
+      "column": "L",
+      "role": "list_item",
+      "text": "The 1 Epiſtle to the Corinthians."
+    },
+    {
+      "line_index": 12,
+      "column": "L",
+      "role": "list_item",
+      "text": "The 2 Epiſtle to the Corinthians."
+    },
+    {
+      "line_index": 13,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Epiſtle to the Galatians."
+    },
+    {
+      "line_index": 14,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Epiſtle to the Epheſians."
+    },
+    {
+      "line_index": 15,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Epiſtle to the Philippians."
+    },
+    {
+      "line_index": 16,
+      "column": "L",
+      "role": "list_item",
+      "text": "The Epiſtle to the Coloſſians."
+    },
+    {
+      "line_index": 17,
+      "column": "L",
+      "role": "list_item",
+      "text": "The 1 Epiſt. to the Theſſalonians."
+    },
+    {
+      "line_index": 18,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 2 Epiſtle to the Theſſaloniãs.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 19,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 1 Epiſtle to Timothee."
+    },
+    {
+      "line_index": 20,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 2 Epiſtle to Timothee."
+    },
+    {
+      "line_index": 21,
+      "column": "R",
+      "role": "list_item",
+      "text": "The Epiſtle to Titus."
+    },
+    {
+      "line_index": 22,
+      "column": "R",
+      "role": "list_item",
+      "text": "The Epiſtle to Philemon."
+    },
+    {
+      "line_index": 23,
+      "column": "R",
+      "role": "list_item",
+      "text": "The Epiſtle to the Hebrevves."
+    },
+    {
+      "line_index": 24,
+      "column": "R",
+      "role": "section_header",
+      "text": "THE 7 CATHOL. EPISTLES."
+    },
+    {
+      "line_index": 25,
+      "column": "R",
+      "role": "list_item",
+      "text": "The Epiſtle of S. Iames."
+    },
+    {
+      "line_index": 26,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 1 Epiſtle of S. Peter."
+    },
+    {
+      "line_index": 27,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 2 Epiſtle of S. Peter."
+    },
+    {
+      "line_index": 28,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 1 Epiſtle of S. Iohn."
+    },
+    {
+      "line_index": 29,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 2 Epiſtle of S. Iohn."
+    },
+    {
+      "line_index": 30,
+      "column": "R",
+      "role": "list_item",
+      "text": "The 3 Epiſtle of S. Iohn."
+    },
+    {
+      "line_index": 31,
+      "column": "R",
+      "role": "list_item",
+      "text": "The Epiſtle of S. Iude."
+    },
+    {
+      "line_index": 32,
+      "column": "R",
+      "role": "list_item",
+      "text": "The APOCALYPSE of S. Iohn."
+    },
+    {
+      "line_index": 33,
+      "column": "C",
+      "role": "argument",
+      "text": "1 The infallible authoritie and excellencie of them aboue al other Writings.",
+      "note": "numbered italic argument/rubric #1; leading '1' is the point-number, kept as printed"
+    },
+    {
+      "line_index": 34,
+      "column": "C",
+      "role": "attribution",
+      "text": "S. Auguſtine li. 11. cont. Fauſtum. cap. 5.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 35,
+      "column": "C",
+      "role": "prose",
+      "text": "THE excellencie of the Canonical authoritie of the old and new Teſtament, is",
+      "drop_cap": "T",
+      "note": "ornamental drop-cap 'T' (2 lines tall) opens 'THE'"
+    },
+    {
+      "line_index": 36,
+      "column": "C",
+      "role": "prose",
+      "text": "diſtincted from the bookes of later writers : which being confirmed in the"
+    },
+    {
+      "line_index": 37,
+      "column": "C",
+      "role": "prose",
+      "text": "Apoſtles times, by the ſucceſſions of Biſhops, and propagations of Churches , is"
+    },
+    {
+      "line_index": 38,
+      "column": "C",
+      "role": "prose",
+      "text": "placed as it were in a certaine throne on high, wherevnto euery faithful & godly"
+    },
+    {
+      "line_index": 39,
+      "column": "C",
+      "role": "prose",
+      "text": "vnderſtanding muſt be ſubiect and obedient. There, if any thing moue or trou-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 40,
+      "column": "C",
+      "role": "prose",
+      "text": "ble thee as abſurd, thou maieſt not ſay, The author of this booke held not the truth:"
+    },
+    {
+      "line_index": 41,
+      "column": "C",
+      "role": "prose",
+      "text": "but, either the copie is faultie , or the Tranſlatour erred , or thou vnderſtandeſt"
+    },
+    {
+      "line_index": 42,
+      "column": "C",
+      "role": "prose",
+      "text": "not. But in the workes of them that wrote afterward, which are conteined in in-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 43,
+      "column": "C",
+      "role": "prose",
+      "text": "finite bookes, but are in no caſe equal to that moſt ſacred authoritie of CANONI-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 44,
+      "column": "C",
+      "role": "prose",
+      "text": "CAL SCRIPTVRES : in which ſoeuer of them is found euen the ſame truth,"
+    },
+    {
+      "line_index": 45,
+      "column": "C",
+      "role": "prose",
+      "text": "yet the authoritie is far vnequal."
+    },
+    {
+      "line_index": 46,
+      "column": "C",
+      "role": "argument",
+      "text": "2 The diſcerning of Canonical from not Canonical, and of their infallible",
+      "note": "numbered italic argument/rubric #2; leading '2' is the point-number"
+    },
+    {
+      "line_index": 47,
+      "column": "C",
+      "role": "argument",
+      "text": "truth, and ſenſe, commeth vnto vs, only by the credite vve giue vnto"
+    },
+    {
+      "line_index": 48,
+      "column": "C",
+      "role": "argument",
+      "text": "the CATHOLIKE CHVRCHE : through vvhoſe cōmendation vve",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 49,
+      "column": "C",
+      "role": "argument",
+      "text": "beleeue both the Goſpel and Chriſt him ſelf. Vvhereas the Sectaries mea-",
+      "line_end_hyphen": true,
+      "has_uncertain": true
+    },
+    {
+      "line_index": 50,
+      "column": "C",
+      "role": "argument",
+      "text": "ſure the matter by their fantaſies and opinion."
+    },
+    {
+      "line_index": 51,
+      "column": "C",
+      "role": "attribution",
+      "text": "S. Auguſtine cont. Epiſt. fundamenti cap. 5."
+    },
+    {
+      "line_index": 52,
+      "column": "C",
+      "role": "prose",
+      "text": "I for my part, vvould not beleeue the Goſpel, vnles the authoritie of the CA-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 53,
+      "column": "C",
+      "role": "prose",
+      "text": "THOLIKE CHVRCH moued me. They therfore whom I obeied ſaying, Be-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 54,
+      "column": "C",
+      "role": "prose",
+      "text": "leeue the Goſpel : vvhy ſhould I not beleeue them ſaying, Beleeue not * Mani-",
+      "line_end_hyphen": true,
+      "anchor_glyph": "*",
+      "note": "'*' marginal-anchor before 'Manichæus' keys the right-margin gloss 'Luther. Caluin.'"
+    },
+    {
+      "line_index": 55,
+      "column": "C",
+      "role": "prose",
+      "text": "chæus? Chooſe vvhether thou vvilt. If thou wilt ſay, Beleeue the Catholikes:loe",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 56,
+      "column": "C",
+      "role": "prose",
+      "text": "they vvarne me that I giue no credite vnto you : and therefore beleeuing them, I"
+    },
+    {
+      "line_index": 57,
+      "column": "C",
+      "role": "prose",
+      "text": "muſt needes not beleeue thee. If thou ſay, Beleeue not the Catholikes:it is not the"
+    },
+    {
+      "line_index": 58,
+      "column": "C",
+      "role": "prose",
+      "text": "right vvay, by the Goſpel to driue me to the faith of Manichæus, becauſe I belee-",
+      "line_end_hyphen": true,
+      "note": "word 'belee-' completes via catchword 'ued' -> 'beleeued'; sentence continues on p26"
+    },
+    {
+      "line_index": 59,
+      "column": "C",
+      "role": "catchword",
+      "text": "ued",
+      "catchword_note": "reader/binder catchword; duplicates the head of page 26 ('ued the Goſpel it ſelf by the preaching of Catholikes.'); excluded from interval concatenation"
+    },
+    {
+      "page": 26,
+      "line_index": 60,
+      "column": "full",
+      "role": "heading",
+      "text": "Againe li. de vtilit. credend. cap. 14."
+    },
+    {
+      "page": 26,
+      "line_index": 61,
+      "column": "full",
+      "role": "prose",
+      "text": "I ſee that concerning Chriſt him ſelf, I haue beleeued none, but the confirmed and aſſured opinion of peoples and nations: and that theſe peoples haue on euery ſide poſſeſſed the myſteries of the CATHOLIKE CHVRCH. Vvhy ſhould I not therfore moſt diligently require, ſpecially among them, what Chriſt commaunded, by vvhoſe authoritie I vvas moued to beleeue, that Chriſt did commaund ſome profitable thing? Vvilt thou (ô Heretike) tel me better vvhat he ſaid? vvhom I vvould not thinke to haue been at al, or to be, if I muſt beleeue, becauſe thou ſaieſt it. Vvhat groſſe madnes is this, to ſay, Beleeue the Catholikes, that Chriſt is to be beleeued: and learne of vs, vvhat he ſaid."
+    },
+    {
+      "page": 26,
+      "line_index": 62,
+      "column": "full",
+      "role": "heading",
+      "text": "Againe cont. Fauſtum li. 11. cap. 1."
+    },
+    {
+      "page": 26,
+      "line_index": 63,
+      "column": "full",
+      "role": "prose",
+      "text": "Thou ſeeſt then in this matter what force the authoritie of the CATHOLIKE CHVRCH hath, vvhich euen from the moſt grounded and founded ſeates of the Apoſtles, is eſtabliſhed vntil this day, by the line of Biſhops ſucceeding one an other, & by the conſent of ſo many peoples. Vvhereas thou ſaieſt, This is Scripture, or, this is ſuch an Apoſtles, that is not: becauſe this ſoundeth for me, and the other againſt me. Thou then art the rule of truth. vvhatſoeuer is againſt thee, is not true."
+    },
+    {
+      "page": 26,
+      "line_index": 64,
+      "column": "full",
+      "role": "prose",
+      "text": "3 No heretikes haue right to the Scriptures, but are vſurpers: the Catholike Church being the true owner and faithful keeper of them. Heretikes abuſe them, corrupt them, and vtterly ſeeke to aboliſh them, though they pretend the contrarie."
+    },
+    {
+      "page": 26,
+      "line_index": 65,
+      "column": "full",
+      "role": "heading",
+      "text": "Tertullian li. De præſcriptionibus, bringeth in the CATHOLIKE CHVRCH ſpeaking thus to all Heretikes."
+    },
+    {
+      "page": 26,
+      "line_index": 66,
+      "column": "full",
+      "role": "prose",
+      "text": "Vvho are you, vvhen, and from vvhence came you? vvhat doe you in my poſſeſſion, that are none of mine? by vvhat right (Marcion) doeſt thou cut dovvne my wood? vvho gaue the licence (ô Valentine) to turne the courſe of my fountaines? by vvhat authoritie (Apelles) doeſt thou remoue my boundes? and * you the reſt, vvhy do yovv ſovv and feede for theſe companions at your pleaſure? It is my poſſeſſion, I poſſeſſe it of old, I haue aſſured origins thereof, euen from thoſe authors vvhoſe the thing vvas. I am the heire of the Apoſtles. As they prouided by their Teſtament, as they comitted it to my credite, as they adiured me, ſo doe I hold it. You ſurely they diſherited alvvaies and haue caſt you of, as forainers, as enemies."
+    },
+    {
+      "page": 26,
+      "line_index": 67,
+      "column": "full",
+      "role": "heading",
+      "text": "Againe in the ſame booke."
+    },
+    {
+      "page": 26,
+      "line_index": 68,
+      "column": "full",
+      "role": "prose",
+      "text": "Encountering vvith ſuch by Scriptures, auaileth nothing, but to ouerturne a mans ſtomake or his braine. This hereſie receiueth not certaine Scriptures: and if it do receiue ſome, yet by adding and taking avvay, it peruerteth the ſame to ſerue their purpoſe: and if it recciue any, it doth not receiue them vvholy: and if after a ſort it recciue them vvholy, neuertheles by diuiſing diuers expoſitions, it turneth them cleane an other vvay &c."
+    },
+    {
+      "page": 26,
+      "line_index": 69,
+      "column": "full",
+      "role": "prose",
+      "text": "4 Yet do they vaunt them ſelues of Scriptures exceedingly, but they are neuer the more to be truſted for that."
+    },
+    {
+      "page": 26,
+      "line_index": 70,
+      "column": "full",
+      "role": "heading",
+      "text": "S. Hierom aduerſus Luciferianos in fine."
+    },
+    {
+      "page": 26,
+      "line_index": 71,
+      "column": "full",
+      "role": "prose",
+      "text": "Let them not flatter them ſelues, if they ſeeme in their owne conceite to affirme that vvhich they ſay, out of the chapters of Scripture: vvhereas the Diuel alſo ſpake ſome thinges out of the Scriptures, and the Scriptures conſiſt not in the reading, but in the vnderſtanding."
+    },
+    {
+      "page": 27,
+      "line_index": 72,
+      "column": "full",
+      "role": "heading",
+      "text": "Vincentius Lirinenſis li. cont. prophanas hæreſum Nouationes."
+    },
+    {
+      "page": 27,
+      "line_index": 73,
+      "column": "full",
+      "role": "prose",
+      "text": "Here perhaps ſome man may aſke, vvhether heretikes alſo vſe not the teſtimonies of diuine Scripture. Yes in deede do they, and that vehemently. For thou ſhalt ſee them flie through euery one of the ſacred bookes of the Lavv, through Moyſes, the bookes of the kings, the Pſalmes, the Apoſtles, the Goſpels, the Prophets. For, vvhether among their ovvne fellowes, or ſtrangers: vvhether priuatly, or publikely: vvhether in talke, or in their bookes: vvhether in bankets, or in the ſtreates: they (ſ ſay) alleage nothing of their ovvne, which they endeuour not to ſhadow vvith the wordes of Scripture alſo. Read the vvorkes of Paulus Samoſatenus, of Priſcillian, of Eunomian, of Iouinian, * of the other plagues & peſtilences: thou ſhalt finde an infinite heape of examples, no page in a manner omitted or voide, which is not painted and coloured with the ſentences of the new or old teſtament. But they are ſo much the more to be taken heede of, & to be feared, the more ſecretly they lurke vnder the ſhadowes of Gods diuine law. For they knovy their ſtinkes vvould not eaſily pleaſe any man almoſt, if they were breathed out nakedly & ſimply them ſelues alone, & therfore they ſprinkle them as it vvere vvith certaine pretious ſpices of the heauenly vvord: to the end that he vvhich would eaſely deſpiſe the errour of man, may not eaſely contemne the oracles of God. So that they doe like vnto them, vvhich vvhen they vvil prepare certaine bitter potions for children, do firſt anoint the brimmes of the cup vvith honie, that the vnwarie age, vvhen it ſhal firſt feele the ſvvetnes, may not feare the bitternes."
+    },
+    {
+      "page": 27,
+      "line_index": 74,
+      "column": "full",
+      "role": "prose",
+      "text": "5 The cauſe vvhy, the Scriptures being perfit, yet vve vſe other Eccleſiaſtical vvritings and tradition."
+    },
+    {
+      "page": 27,
+      "line_index": 75,
+      "column": "full",
+      "role": "heading",
+      "text": "Vincentius Lirinenſis in his golden booke before cited, aduerſus prophanas hæreſum Nouationes."
+    },
+    {
+      "page": 27,
+      "line_index": 76,
+      "column": "full",
+      "role": "prose",
+      "text": "Here ſome man perhaps may aſke, for aſmuch as the Canon of the Scriptures is perfit, and in all pointes very ſufficient in it ſelf, vvhat neede is there, to ioyne therevnto the authoritie of the * Eccleſiaſtical vnderſtanding? for this cauſe ſurely, for that all take not the holy Scripture in one and the ſame ſenſe, becauſe of the deepenes thereof. but the ſpeaches thereof, ſome interpret one vvay, & ſome an other vvay, ſo that there may almoſt as many ſenſes be picked out of it, as there be men. for, Nouatian doth expound it one vvay, and Sabellius, an other vvay, othervviſe Donatus, othervviſe Arîus, Eunomius, Macedonius, othervviſe Photinus, Apollinaris, Priſcillianus, othervviſe Iouinian, Pelagius, Celeſtius, laſtly othervviſe Neſtorius. * And therfore very neceſſarie it is, becauſe of ſo great vvindinges and turninges of diuers errours, that the line of Prophetical and Apoſtolical interpretation, be directed according to the rule of the Eccleſiaſtical and Catholike ſenſe or vnderſtanding."
+    },
+    {
+      "page": 27,
+      "line_index": 77,
+      "column": "full",
+      "role": "heading",
+      "text": "S. Baſil li. de Spiritu ſancto cap. 27."
+    },
+    {
+      "page": 27,
+      "line_index": 78,
+      "column": "full",
+      "role": "prose",
+      "text": "Of ſuch articles of religion as are kept and preached in the Churche, ſome vvere taught by the vvritten vvord, other ſome vve haue receiued by the tradition of the Apoſtles, deliuered vnto vs as it vvere from hand to hand in myſterie ſecretly: both vvhich be of one force to Chriſtian religion: and this no man vvil deny that hath any litle ſkill of the Eccleſiaſtical rites or cuſtomes. for if vve goe about to reiect the cuſtomes not conteined in Scripture, as being of ſmal force, vve ſhal vnvvittingly and vnavvares mangle the GOSPEL it ſelf in the principal partes thereof, yea rather, vve ſhal abridge the very preaching of the Goſpel, and bring it to a bare name."
+    }
+  ],
+  "intervals": [
+    {
+      "idx": 0,
+      "kind": "title_block",
+      "text": "THE BOOKES OF THE NEVV Teſtament, according to the counte of the Catholike Churche.",
+      "lines": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "idx": 1,
+      "kind": "heading",
+      "text": "4 GOSPELS.",
+      "lines": [
+        3
+      ]
+    },
+    {
+      "idx": 2,
+      "kind": "list_item",
+      "text": "The Goſpel of S. Matthevv.",
+      "lines": [
+        4
+      ]
+    },
+    {
+      "idx": 3,
+      "kind": "list_item",
+      "text": "The Goſpel of S. Marke.",
+      "lines": [
+        5
+      ]
+    },
+    {
+      "idx": 4,
+      "kind": "list_item",
+      "text": "The Goſpel of S. Luke.",
+      "lines": [
+        6
+      ]
+    },
+    {
+      "idx": 5,
+      "kind": "list_item",
+      "text": "The Goſpel of S. Iohn.",
+      "lines": [
+        7
+      ]
+    },
+    {
+      "idx": 6,
+      "kind": "list_item",
+      "text": "The ACTES of the Apoſtles.",
+      "lines": [
+        8
+      ]
+    },
+    {
+      "idx": 7,
+      "kind": "heading",
+      "text": "S. PAVLES EPIST. 14.",
+      "lines": [
+        9
+      ]
+    },
+    {
+      "idx": 8,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Romanes.",
+      "lines": [
+        10
+      ]
+    },
+    {
+      "idx": 9,
+      "kind": "list_item",
+      "text": "The 1 Epiſtle to the Corinthians.",
+      "lines": [
+        11
+      ]
+    },
+    {
+      "idx": 10,
+      "kind": "list_item",
+      "text": "The 2 Epiſtle to the Corinthians.",
+      "lines": [
+        12
+      ]
+    },
+    {
+      "idx": 11,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Galatians.",
+      "lines": [
+        13
+      ]
+    },
+    {
+      "idx": 12,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Epheſians.",
+      "lines": [
+        14
+      ]
+    },
+    {
+      "idx": 13,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Philippians.",
+      "lines": [
+        15
+      ]
+    },
+    {
+      "idx": 14,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Coloſſians.",
+      "lines": [
+        16
+      ]
+    },
+    {
+      "idx": 15,
+      "kind": "list_item",
+      "text": "The 1 Epiſt. to the Theſſalonians.",
+      "lines": [
+        17
+      ]
+    },
+    {
+      "idx": 16,
+      "kind": "list_item",
+      "text": "The 2 Epiſtle to the Theſſaloniãs.",
+      "lines": [
+        18
+      ]
+    },
+    {
+      "idx": 17,
+      "kind": "list_item",
+      "text": "The 1 Epiſtle to Timothee.",
+      "lines": [
+        19
+      ]
+    },
+    {
+      "idx": 18,
+      "kind": "list_item",
+      "text": "The 2 Epiſtle to Timothee.",
+      "lines": [
+        20
+      ]
+    },
+    {
+      "idx": 19,
+      "kind": "list_item",
+      "text": "The Epiſtle to Titus.",
+      "lines": [
+        21
+      ]
+    },
+    {
+      "idx": 20,
+      "kind": "list_item",
+      "text": "The Epiſtle to Philemon.",
+      "lines": [
+        22
+      ]
+    },
+    {
+      "idx": 21,
+      "kind": "list_item",
+      "text": "The Epiſtle to the Hebrevves.",
+      "lines": [
+        23
+      ]
+    },
+    {
+      "idx": 22,
+      "kind": "heading",
+      "text": "THE 7 CATHOL. EPISTLES.",
+      "lines": [
+        24
+      ]
+    },
+    {
+      "idx": 23,
+      "kind": "list_item",
+      "text": "The Epiſtle of S. Iames.",
+      "lines": [
+        25
+      ]
+    },
+    {
+      "idx": 24,
+      "kind": "list_item",
+      "text": "The 1 Epiſtle of S. Peter.",
+      "lines": [
+        26
+      ]
+    },
+    {
+      "idx": 25,
+      "kind": "list_item",
+      "text": "The 2 Epiſtle of S. Peter.",
+      "lines": [
+        27
+      ]
+    },
+    {
+      "idx": 26,
+      "kind": "list_item",
+      "text": "The 1 Epiſtle of S. Iohn.",
+      "lines": [
+        28
+      ]
+    },
+    {
+      "idx": 27,
+      "kind": "list_item",
+      "text": "The 2 Epiſtle of S. Iohn.",
+      "lines": [
+        29
+      ]
+    },
+    {
+      "idx": 28,
+      "kind": "list_item",
+      "text": "The 3 Epiſtle of S. Iohn.",
+      "lines": [
+        30
+      ]
+    },
+    {
+      "idx": 29,
+      "kind": "list_item",
+      "text": "The Epiſtle of S. Iude.",
+      "lines": [
+        31
+      ]
+    },
+    {
+      "idx": 30,
+      "kind": "list_item",
+      "text": "The APOCALYPSE of S. Iohn.",
+      "lines": [
+        32
+      ]
+    },
+    {
+      "idx": 31,
+      "kind": "heading",
+      "text": "1 The infallible authoritie and excellencie of them aboue al other Writings.",
+      "lines": [
+        33
+      ],
+      "note": "numbered patristic-catena argument #1 (apparatus)"
+    },
+    {
+      "idx": 32,
+      "kind": "subtitle",
+      "text": "S. Auguſtine li. 11. cont. Fauſtum. cap. 5.",
+      "lines": [
+        34
+      ],
+      "note": "attribution: Augustine, Contra Faustum Manichaeum, bk 11 ch 5"
+    },
+    {
+      "idx": 33,
+      "kind": "paragraph",
+      "text": "THE excellencie of the Canonical authoritie of the old and new Teſtament, is diſtincted from the bookes of later writers : which being confirmed in the Apoſtles times, by the ſucceſſions of Biſhops, and propagations of Churches , is placed as it were in a certaine throne on high, wherevnto euery faithful & godly vnderſtanding muſt be ſubiect and obedient. There, if any thing moue or trouble thee as abſurd, thou maieſt not ſay, The author of this booke held not the truth: but, either the copie is faultie , or the Tranſlatour erred , or thou vnderſtandeſt not. But in the workes of them that wrote afterward, which are conteined in infinite bookes, but are in no caſe equal to that moſt ſacred authoritie of CANONICAL SCRIPTVRES : in which ſoeuer of them is found euen the ſame truth, yet the authoritie is far vnequal.",
+      "lines": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "w_regime": "block-1 large-roman prose: ALL w connected (new, writers, which, were, wherevnto, workes, wrote, afterward, which)"
+    },
+    {
+      "idx": 34,
+      "kind": "heading",
+      "text": "2 The diſcerning of Canonical from not Canonical, and of their infallible truth, and ſenſe, commeth vnto vs, only by the credite vve giue vnto the CATHOLIKE CHVRCHE : through vvhoſe cōmendation vve beleeue both the Goſpel and Chriſt him ſelf. Vvhereas the Sectaries meaſure the matter by their fantaſies and opinion.",
+      "lines": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "note": "numbered patristic-catena argument #2 (apparatus); italic face here sets gapped vv (vve, vvhoſe, vve, Vvhereas)"
+    },
+    {
+      "idx": 35,
+      "kind": "subtitle",
+      "text": "S. Auguſtine cont. Epiſt. fundamenti cap. 5.",
+      "lines": [
+        51
+      ],
+      "note": "attribution: Augustine, Contra Epistolam Manichaei quam vocant Fundamenti, ch 5"
+    },
+    {
+      "idx": 36,
+      "kind": "paragraph",
+      "text": "I for my part, vvould not beleeue the Goſpel, vnles the authoritie of the CATHOLIKE CHVRCH moued me. They therfore whom I obeied ſaying, Beleeue the Goſpel : vvhy ſhould I not beleeue them ſaying, Beleeue not * Manichæus? Chooſe vvhether thou vvilt. If thou wilt ſay, Beleeue the Catholikes:loe they vvarne me that I giue no credite vnto you : and therefore beleeuing them, I muſt needes not beleeue thee. If thou ſay, Beleeue not the Catholikes:it is not the right vvay, by the Goſpel to driue me to the faith of Manichæus, becauſe I beleeued the Goſpel it ſelf by the preaching of Catholikes.",
+      "lines": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "continues_on": "RESOLVED: completion added from p26 line 1",
+      "w_regime": "block-2 large-roman prose: MIXED per-glyph — gapped vv (vvould, vvhy, vvhether, vvilt, vvarne, vvay) + connected w (whom, wilt); vvilt & wilt = same word both ways on line 55"
+    },
+    {
+      "idx": 37,
+      "kind": "heading",
+      "text": "Againe li. de vtilit. credend. cap. 14.",
+      "lines": [
+        60
+      ],
+      "page": 26
+    },
+    {
+      "idx": 38,
+      "kind": "paragraph",
+      "text": "I ſee that concerning Chriſt him ſelf, I haue beleeued none, but the confirmed and aſſured opinion of peoples and nations: and that theſe peoples haue on euery ſide poſſeſſed the myſteries of the CATHOLIKE CHVRCH. Vvhy ſhould I not therfore moſt diligently require, ſpecially among them, what Chriſt commaunded, by vvhoſe authoritie I vvas moued to beleeue, that Chriſt did commaund ſome profitable thing? Vvilt thou (ô Heretike) tel me better vvhat he ſaid? vvhom I vvould not thinke to haue been at al, or to be, if I muſt beleeue, becauſe thou ſaieſt it. Vvhat groſſe madnes is this, to ſay, Beleeue the Catholikes, that Chriſt is to be beleeued: and learne of vs, vvhat he ſaid.",
+      "lines": [
+        61
+      ],
+      "page": 26
+    },
+    {
+      "idx": 39,
+      "kind": "heading",
+      "text": "Againe cont. Fauſtum li. 11. cap. 1.",
+      "lines": [
+        62
+      ],
+      "page": 26
+    },
+    {
+      "idx": 40,
+      "kind": "paragraph",
+      "text": "Thou ſeeſt then in this matter what force the authoritie of the CATHOLIKE CHVRCH hath, vvhich euen from the moſt grounded and founded ſeates of the Apoſtles, is eſtabliſhed vntil this day, by the line of Biſhops ſucceeding one an other, & by the conſent of ſo many peoples. Vvhereas thou ſaieſt, This is Scripture, or, this is ſuch an Apoſtles, that is not: becauſe this ſoundeth for me, and the other againſt me. Thou then art the rule of truth. vvhatſoeuer is againſt thee, is not true.",
+      "lines": [
+        63
+      ],
+      "page": 26
+    },
+    {
+      "idx": 41,
+      "kind": "paragraph",
+      "text": "3 No heretikes haue right to the Scriptures, but are vſurpers: the Catholike Church being the true owner and faithful keeper of them. Heretikes abuſe them, corrupt them, and vtterly ſeeke to aboliſh them, though they pretend the contrarie.",
+      "lines": [
+        64
+      ],
+      "page": 26
+    },
+    {
+      "idx": 42,
+      "kind": "heading",
+      "text": "Tertullian li. De præſcriptionibus, bringeth in the CATHOLIKE CHVRCH ſpeaking thus to all Heretikes.",
+      "lines": [
+        65
+      ],
+      "page": 26
+    },
+    {
+      "idx": 43,
+      "kind": "paragraph",
+      "text": "Vvho are you, vvhen, and from vvhence came you? vvhat doe you in my poſſeſſion, that are none of mine? by vvhat right (Marcion) doeſt thou cut dovvne my wood? vvho gaue the licence (ô Valentine) to turne the courſe of my fountaines? by vvhat authoritie (Apelles) doeſt thou remoue my boundes? and * you the reſt, vvhy do yovv ſovv and feede for theſe companions at your pleaſure? It is my poſſeſſion, I poſſeſſe it of old, I haue aſſured origins thereof, euen from thoſe authors vvhoſe the thing vvas. I am the heire of the Apoſtles. As they prouided by their Teſtament, as they comitted it to my credite, as they adiured me, ſo doe I hold it. You ſurely they diſherited alvvaies and haue caſt you of, as forainers, as enemies.",
+      "lines": [
+        66
+      ],
+      "page": 26
+    },
+    {
+      "idx": 44,
+      "kind": "heading",
+      "text": "Againe in the ſame booke.",
+      "lines": [
+        67
+      ],
+      "page": 26
+    },
+    {
+      "idx": 45,
+      "kind": "paragraph",
+      "text": "Encountering vvith ſuch by Scriptures, auaileth nothing, but to ouerturne a mans ſtomake or his braine. This hereſie receiueth not certaine Scriptures: and if it do receiue ſome, yet by adding and taking avvay, it peruerteth the ſame to ſerue their purpoſe: and if it recciue any, it doth not receiue them vvholy: and if after a ſort it recciue them vvholy, neuertheles by diuiſing diuers expoſitions, it turneth them cleane an other vvay &c.",
+      "lines": [
+        68
+      ],
+      "page": 26
+    },
+    {
+      "idx": 46,
+      "kind": "paragraph",
+      "text": "4 Yet do they vaunt them ſelues of Scriptures exceedingly, but they are neuer the more to be truſted for that.",
+      "lines": [
+        69
+      ],
+      "page": 26
+    },
+    {
+      "idx": 47,
+      "kind": "heading",
+      "text": "S. Hierom aduerſus Luciferianos in fine.",
+      "lines": [
+        70
+      ],
+      "page": 26
+    },
+    {
+      "idx": 48,
+      "kind": "paragraph",
+      "text": "Let them not flatter them ſelues, if they ſeeme in their owne conceite to affirme that vvhich they ſay, out of the chapters of Scripture: vvhereas the Diuel alſo ſpake ſome thinges out of the Scriptures, and the Scriptures conſiſt not in the reading, but in the vnderſtanding.",
+      "lines": [
+        71
+      ],
+      "page": 26
+    },
+    {
+      "idx": 49,
+      "kind": "heading",
+      "text": "Vincentius Lirinenſis li. cont. prophanas hæreſum Nouationes.",
+      "lines": [
+        72
+      ],
+      "page": 27
+    },
+    {
+      "idx": 50,
+      "kind": "paragraph",
+      "text": "Here perhaps ſome man may aſke, vvhether heretikes alſo vſe not the teſtimonies of diuine Scripture. Yes in deede do they, and that vehemently. For thou ſhalt ſee them flie through euery one of the ſacred bookes of the Lavv, through Moyſes, the bookes of the kings, the Pſalmes, the Apoſtles, the Goſpels, the Prophets. For, vvhether among their ovvne fellowes, or ſtrangers: vvhether priuatly, or publikely: vvhether in talke, or in their bookes: vvhether in bankets, or in the ſtreates: they (ſ ſay) alleage nothing of their ovvne, which they endeuour not to ſhadow vvith the wordes of Scripture alſo. Read the vvorkes of Paulus Samoſatenus, of Priſcillian, of Eunomian, of Iouinian, * of the other plagues & peſtilences: thou ſhalt finde an infinite heape of examples, no page in a manner omitted or voide, which is not painted and coloured with the ſentences of the new or old teſtament. But they are ſo much the more to be taken heede of, & to be feared, the more ſecretly they lurke vnder the ſhadowes of Gods diuine law. For they knovy their ſtinkes vvould not eaſily pleaſe any man almoſt, if they were breathed out nakedly & ſimply them ſelues alone, & therfore they ſprinkle them as it vvere vvith certaine pretious ſpices of the heauenly vvord: to the end that he vvhich would eaſely deſpiſe the errour of man, may not eaſely contemne the oracles of God. So that they doe like vnto them, vvhich vvhen they vvil prepare certaine bitter potions for children, do firſt anoint the brimmes of the cup vvith honie, that the vnwarie age, vvhen it ſhal firſt feele the ſvvetnes, may not feare the bitternes.",
+      "lines": [
+        73
+      ],
+      "page": 27
+    },
+    {
+      "idx": 51,
+      "kind": "paragraph",
+      "text": "5 The cauſe vvhy, the Scriptures being perfit, yet vve vſe other Eccleſiaſtical vvritings and tradition.",
+      "lines": [
+        74
+      ],
+      "page": 27
+    },
+    {
+      "idx": 52,
+      "kind": "heading",
+      "text": "Vincentius Lirinenſis in his golden booke before cited, aduerſus prophanas hæreſum Nouationes.",
+      "lines": [
+        75
+      ],
+      "page": 27
+    },
+    {
+      "idx": 53,
+      "kind": "paragraph",
+      "text": "Here ſome man perhaps may aſke, for aſmuch as the Canon of the Scriptures is perfit, and in all pointes very ſufficient in it ſelf, vvhat neede is there, to ioyne therevnto the authoritie of the * Eccleſiaſtical vnderſtanding? for this cauſe ſurely, for that all take not the holy Scripture in one and the ſame ſenſe, becauſe of the deepenes thereof. but the ſpeaches thereof, ſome interpret one vvay, & ſome an other vvay, ſo that there may almoſt as many ſenſes be picked out of it, as there be men. for, Nouatian doth expound it one vvay, and Sabellius, an other vvay, othervviſe Donatus, othervviſe Arîus, Eunomius, Macedonius, othervviſe Photinus, Apollinaris, Priſcillianus, othervviſe Iouinian, Pelagius, Celeſtius, laſtly othervviſe Neſtorius. * And therfore very neceſſarie it is, becauſe of ſo great vvindinges and turninges of diuers errours, that the line of Prophetical and Apoſtolical interpretation, be directed according to the rule of the Eccleſiaſtical and Catholike ſenſe or vnderſtanding.",
+      "lines": [
+        76
+      ],
+      "page": 27
+    },
+    {
+      "idx": 54,
+      "kind": "heading",
+      "text": "S. Baſil li. de Spiritu ſancto cap. 27.",
+      "lines": [
+        77
+      ],
+      "page": 27
+    },
+    {
+      "idx": 55,
+      "kind": "paragraph",
+      "text": "Of ſuch articles of religion as are kept and preached in the Churche, ſome vvere taught by the vvritten vvord, other ſome vve haue receiued by the tradition of the Apoſtles, deliuered vnto vs as it vvere from hand to hand in myſterie ſecretly: both vvhich be of one force to Chriſtian religion: and this no man vvil deny that hath any litle ſkill of the Eccleſiaſtical rites or cuſtomes. for if vve goe about to reiect the cuſtomes not conteined in Scripture, as being of ſmal force, vve ſhal vnvvittingly and vnavvares mangle the GOSPEL it ſelf in the principal partes thereof, yea rather, vve ſhal abridge the very preaching of the Goſpel, and bring it to a bare name.",
+      "lines": [
+        78
+      ],
+      "page": 27
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "line_index 54 (Beleeue not * Manichæus)",
+      "anchor_glyph": "*",
+      "position": "right_margin",
+      "text": "Luther.\nCaluin.",
+      "note": "italic editorial gloss identifying Augustine's rhetorical adversary 'Manichæus' with the modern heretics Luther and Calvin; set on two lines; terminal marks small (comma/period ambiguous). On the facing page 26 the parallel gloss expands to 'ô Luther, Zuinglius, Caluin.' + '* Their ſcholers & folovvers.'"
+    },
+    {
+      "page": 26,
+      "position": "left_margin",
+      "text": "ô Luther, Zuinglius, Caluin."
+    },
+    {
+      "page": 26,
+      "position": "left_margin",
+      "text": "* Their ſcholers & folovvers."
+    },
+    {
+      "page": 27,
+      "position": "left_margin",
+      "text": "* Of Caluin, of Iuel, of the reſt."
+    },
+    {
+      "page": 27,
+      "position": "left_margin",
+      "text": "* So he calleth the Churches ſenſe, and the fathers interpretations of Scriptures."
+    },
+    {
+      "page": 27,
+      "position": "left_margin",
+      "text": "* Othervviſe wicleffe, Luther, Caluin, Puritanes."
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 18,
+      "span": "Theſſaloniãs",
+      "note": "abbreviation 'Theſſaloniãs' (2 Thess.) — clear tilde/macron over the penultimate 'a' (ã = -an-, i.e. Theſſalonians), verified at 5x. A small mark over the 'o' is foxing/ink-speck, NOT a printed accent (English vowels are not accented in this fount); not transcribed. The left-column line 17 spells it 'Theſſalonians' in full (abbreviating 'Epiſt.' instead)."
+    },
+    {
+      "line_index": 34,
+      "span": "li. 11.",
+      "note": "the book numeral is set as two identical vertical strokes — typographically ambiguous between arabic '11' and roman 'II'. Content anchors it firmly: Augustine, Contra Faustum, book XI ch. 5 ('Distincta est a posteriorum libris excellentia canonicae auctoritatis…'). Transcribed '11'."
+    },
+    {
+      "line_index": 48,
+      "span": "cōmendation",
+      "note": "macron over the first 'o' (cō-) = nasal/doubled-consonant abbreviation for 'commendation'. Preserved diplomatically as 'cōmendation'."
+    },
+    {
+      "line_index": 49,
+      "span": "Vvhereas",
+      "note": "word-initial capital in the gapped-vv italic apparatus fount. Rendered 'Vvhereas' (capital V + lowercase v); could be read 'VVhereas'. The two strokes are clearly separated (vv regime), not a connected W."
+    },
+    {
+      "line_index": 55,
+      "span": "Catholikes:loe / Catholikes:it (line 57)",
+      "note": "these two colons in block-2 are set TIGHT (no preceding space), unlike the French-spaced colons elsewhere on the page ('Goſpel : vvhy', 'vnto you : and', 'SCRIPTVRES :'). Transcribed tight, as printed."
+    },
+    {
+      "line_index": 54,
+      "span": "*",
+      "note": "small marginal-anchor asterisk before 'Manichæus'; preserved in body text per guideline and earmarked to the right-margin gloss 'Luther. Caluin.'"
+    },
+    {
+      "line_index": -1,
+      "span": "marginalia 'Luther. / Caluin.'",
+      "note": "terminal punctuation of each name is a small raised mark, comma/period ambiguous (page carries foxing dots). Rendered with periods."
+    }
+  ],
+  "glyph_regime_resolved": "NT-1582 PER-GLYPH w/vv (decided by stroke connectivity at 3.5-5x per §w-regime; priors never override pixels). FOUR co-present regimes on this one page: (1) DISPLAY TITLING CAPS (title line 0) = genuine gapped VV, the large-caps fount has no W sort -> 'NEVV' KEPT. (2) MEDIUM-ROMAN BOOK-LIST face = gapped vv -> 'Matthevv', 'Hebrevves' (both verified as two separated strokes). (3) LARGE-ROMAN PROSE block-1 (Auguſtine cont. Fauſtum, drop-cap T) = uniformly CONNECTED w -> new, writers, which, were, wherevnto, workes, wrote, afterward, which (workes/wrote verified connected). (4) LARGE-ROMAN PROSE block-2 (Auguſtine cont. Epiſt. fundamenti, opening 'I for my part') = genuinely MIXED: gapped vv (vvould, vvhy, vvhether, vvilt, vvarne, vvay) AND connected w (whom, wilt) — the DECISIVE proof is line 55 where 'vvhether thou vvilt' (gapped) sits beside 'If thou wilt' (connected): the SAME word set both ways by the compositor grabbing whichever sort was in the case. ITALIC APPARATUS: point-1 header 'Writings' = connected capital W; point-2 argument = gapped vv (vve, vvhoſe, vve, Vvhereas). long-ſ read glyph-driven throughout (Teſtament, Goſpel, Apoſtles, Epiſtle, Epheſians, Coloſſians, Theſſalonians, Auguſtine, Fauſtum, diſtincted, ſucceſſions, Biſhops, abſurd, maieſt, Tranſlatour, vnderſtandeſt, caſe, moſt, ſacred, ſoeuer, ſame, ſenſe, fantaſies, Chooſe, muſt, becauſe). u/v swap (vpon>vnto, geue>giue, haue, moue, driue), i/j (Iohn, Iames, Iude, ſubiect), æ (Manichæus) preserved as printed.",
+  "observer": "agent:matter-nt-books-of-new-testament",
+  "observed_at": "2026-07-20",
+  "method": "Visual-multimodal read of the native jp2-S08 raster (page 25; ocr-spike/jp2_page.py). Per the MATTER brief efficiency rule, read in 5 full-width horizontal BANDS (title / list-top / list-bottom+arg1 / block-1 prose / block-2 prose), then targeted 3.5-5x connectivity micro-zooms ONLY for the genuine per-glyph w/vv calls (vvilt-vs-wilt, vvould, whom, vvay, block-1 workes/wrote, italic vve/vvhoſe/Vvhereas, list Matthevv/Hebrevves, Writings) and the Theſſaloniãs abbreviation mark. VALIDATIONS: (1) LOCALIZATION PASS — heading 'THE BOOKES OF THE NEVV Teſtament, according to the counte of the Catholike Churche.' at index 25, followed by the NT book-list and the Augustine testimonies; the content matches the task's described page (Augustine prose block with mixed w/vv) and is confirmed DISTINCT from matter-nt-table.json (that file is the p724 backmatter 'A TABLE OF' corruptions opening 'tranſlate ; thou wilt not leaue my carcas' — entirely different content). (2) IDENTITY PASS — 1582 Rheims New Testament, scan S8 (source file 1582_Rhemes_New_Testament_0025.jp2, ocr_dir jp2-S08); the same edition as matter-nt-preface.json but a different scan (S8 vs S1). (3) PLACEMENT PASS — front-matter section-opening page: no printed page number and no running header (the display title is the head); a printer's fleuron precedes the title; the following leaf (page 26) bears the gathering signature 'd ij' at foot-centre, placing this opening in gathering d. (4) COMPLETENESS NOTE (see confidence) — page 25 (heading + entire NT book-list + testimonies 1 & 2) is transcribed in full; the numbered patristic catena CONTINUES beyond this page and this GT is scoped to page 25 per the task's render bound.",
+  "confidence": "HIGH on the display title, the full two-column book-list, both Augustine attributions, and both prose quotes (large clear body type). HIGH on the w/vv adjudications — the four regimes were each verified per-glyph by connectivity zoom, incl. the decisive same-word-both-ways contrast (vvilt vs wilt, line 55). MEDIUM on: the 'li. 11.'/'II' numeral form (content-resolved), the tight-vs-spaced colons in block 2, the 'Vvhereas' vs 'VVhereas' capital form, and the small terminal marks of the marginal gloss. COMPLETENESS = NOTE, not PASS: this page's content (the NT book-list + the FIRST TWO numbered testimonies, Augustine cont. Fauſtum 11.5 and cont. Epiſt. fundamenti 5) is complete, but the section is a longer NUMBERED PATRISTIC CATENA on the authority of Scripture & the Church that continues onto page 26 (verified by render): block-2's sentence finishes on p26 line 1 ('ued the Goſpel it ſelf by the preaching of Catholikes.'), then p26 carries point '3' + Augustine 'de vtilit. credend. cap. 14' and 'cont. Fauſtum li. 11. cap. 1', a Tertullian 'De præſcriptionibus' quote + 'Againe in the ſame booke', and point '4' + 'S. Hierom aduerſus Luciferianos in fine', ending with catchword 'Vincentius' and signature 'd ij' (so it continues to page 27+). If the locus is intended to cover the WHOLE florilegium (points 1-4+), pages 26-27+ need their own GT extension; this file covers the page-25 core (heading + book-list + testimonies 1-2) per the task's 'render page 25 (and 26 only if it continues)' bound.",
+  "completeness_resolved_2026-07-21": "RESOLVED: the numbered patristic catena on the authority of Scripture & the Church is now COMPLETE. p25 (heading + NT book-list + testimonies 1-2) is extended with p26 (Augustine de vtilit.credend.14 & cont.Fauſtum 11.1; point 3; Tertullian De præſcriptionibus + Againe in the ſame booke; point 4; S. Hierom aduerſus Luciferianos) and p27 (Vincentius Lirinenſis cont.prophanas...; point 5; Vincentius in his golden booke; S. Baſil de Spiritu ſancto 27). The section ends at the foot of p27 (catchword 'THE' -> next section 'THE SVMME OF THE NEW TESTAMENT', p28). block-2 (interval 36) completed with its p26 first-line continuation."
+}

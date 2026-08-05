@@ -1,0 +1,1287 @@
+{
+ "chapter": 7,
+ "n_verses": 24,
+ "n_cells": 96,
+ "n_pass": 87,
+ "rate": 0.9062,
+ "ref_means": {
+  "s_dismas": 0.9783,
+  "odr_com": 0.9788,
+  "sabates_a": 0.9555,
+  "madueke_b": 0.9555
+ },
+ "src_rates": {
+  "S1": 0.875,
+  "S3": 0.8333,
+  "S9": 1.0,
+  "S6": 0.9167
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 9,
+ "open": [
+  {
+   "src": "S6",
+   "verse": 1,
+   "worst": 0.886,
+   "from": "p41",
+   "text": "are deſtroyed. NDour Lord ſaid to him : Get thee in, thou and al thy houſe into the arke: tor I haue ſeen thee iuſt ( in my ſight in this generation."
+  },
+  {
+   "src": "S1",
+   "verse": 3,
+   "worst": 0.891,
+   "from": "p46",
+   "text": "but tra- of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth."
+  },
+  {
+   "src": "S3",
+   "verse": 3,
+   "worst": 0.867,
+   "from": "p50",
+   "text": "of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth."
+  },
+  {
+   "src": "S3",
+   "verse": 6,
+   "worst": 0.859,
+   "from": "p50",
+   "text": "And he was ſix hundred old, when the waters of the floud flowed ouer the more"
+  },
+  {
+   "src": "S1",
+   "verse": 7,
+   "worst": 0.893,
+   "from": "p46",
+   "text": "And Noe enrred and his ſonnes, his wife and the wiues of ſince of his ſonnes with him into the arke, becauſe of the waters of the floud."
+  },
+  {
+   "src": "S3",
+   "verse": 10,
+   "worst": 0.84,
+   "from": "p50",
+   "text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in"
+  },
+  {
+   "src": "S1",
+   "verse": 24,
+   "worst": 0.889,
+   "from": "p47",
+   "text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP."
+  },
+  {
+   "src": "S3",
+   "verse": 24,
+   "worst": 0.889,
+   "from": "p51",
+   "text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP."
+  },
+  {
+   "src": "S6",
+   "verse": 24,
+   "worst": 0.79,
+   "from": "p42",
+   "text": "And the waters held on aboue the earth an hundredtttie dayes. CHAP. WII."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and our Lord ſaid to him Ger thee in, thou and al A thy houſe into the arke for I haue ſene thee iuſt in my ſighe in this generation.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.968,
+     "madueke_b": 0.968
+    }
+   },
+   "S3": {
+    "text": "and our Lord ſaid to him: Get thee in, thou and A thy houſe into the arke for I haue ſene thee iuſt my ſight in this generation.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "and our Lord ſaid to him: Get thee in, thou and al A thy houſe into the arke for I haue ſene thee iuſt in my ſight in this generation.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S6": {
+    "text": "are deſtroyed. NDour Lord ſaid to him : Get thee in, thou and al thy houſe into the arke: tor I haue ſeen thee iuſt ( in my ſight in this generation.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.886,
+     "odr_com": 0.886,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "Of al beaſts that are :: cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S3": {
+    "text": "Of al beaſts that are :: cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S9": {
+    "text": "Of al beaſts that are cleane, thou ſhalt take ſeauen, and ſeauen, male female",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.915,
+     "madueke_b": 0.915
+    }
+   },
+   "S6": {
+    "text": "Of al beaſts that are cleane, thou ſhalt take ſeauen and ſeauen, male and female:.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.949,
+     "odr_com": 0.949,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "but tra- of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+    "from": "p46",
+    "score": {
+     "s_dismas": 0.964,
+     "odr_com": 0.964,
+     "sabates_a": 0.891,
+     "madueke_b": 0.891
+    }
+   },
+   "S3": {
+    "text": "of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth.",
+    "from": "p50",
+    "score": {
+     "s_dismas": 0.93,
+     "odr_com": 0.93,
+     "sabates_a": 0.867,
+     "madueke_b": 0.867
+    }
+   },
+   "S9": {
+    "text": "but tra- of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.907,
+     "madueke_b": 0.907
+    }
+   },
+   "S6": {
+    "text": "but ofthe beaſts that are vucleane two and two, male and temale. Yea and ot the foules alſo of the ayre ſeauen and ſeauen, male and female: that ſeed mav be ſaued vpon the face of the whole earth.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.927,
+     "odr_com": 0.927,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "For yer a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I of wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+    "from": "p46",
+    "score": {
+     "s_dismas": 0.978,
+     "odr_com": 0.978,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S3": {
+    "text": "For yet a while, and after ſeauen dayes, I rayne vpon the earth fourtie dayes and fourtie nights: and of wil cleane deſtroy al ſubſtance, that I haue made, from face of the earth.",
+    "from": "p50",
+    "score": {
+     "s_dismas": 0.944,
+     "odr_com": 0.944,
+     "sabates_a": 0.914,
+     "madueke_b": 0.914
+    }
+   },
+   "S9": {
+    "text": "For yet a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.97,
+     "madueke_b": 0.97
+    }
+   },
+   "S6": {
+    "text": "For yet a while, and after ſeauen daves I wil rayne vpou the earth tourtie dayes and tourtie nights: and I wil cleane deſtroy al ſubſtance that I haue made, trom the face of the earth.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "Noe therfore did al thinges, which our Lord had commanded him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S3": {
+    "text": "Noe therfore did al thinges, which our Lord had commanded him.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S9": {
+    "text": "Noe therfore did al thinges, which our Lord had commanded him.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   },
+   "S6": {
+    "text": "Noe thertore did al things which our Lord had commanded him.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "And he was ſix hundred yeares old, when the waters of the floud flowed ouer the earth.",
+    "from": "p46",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "And he was ſix hundred old, when the waters of the floud flowed ouer the more",
+    "from": "p50",
+    "score": {
+     "s_dismas": 0.869,
+     "odr_com": 0.869,
+     "sabates_a": 0.859,
+     "madueke_b": 0.859
+    }
+   },
+   "S9": {
+    "text": "And he was ſix hundred yeares old, when the waters of the floud flowed ouer the earth.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "And he was ſix hundred yeares old, when the waters of the floud flowed ouer the earth.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "And Noe enrred and his ſonnes, his wife and the wiues of ſince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+    "from": "p46",
+    "score": {
+     "s_dismas": 0.925,
+     "odr_com": 0.947,
+     "sabates_a": 0.893,
+     "madueke_b": 0.893
+    }
+   },
+   "S3": {
+    "text": "And Noe entered and his ſonnes, his wife and the wiues of of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.992,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   },
+   "S9": {
+    "text": "And Noe entred and his ſonnes, his wife and the wiues of fince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.932,
+     "odr_com": 0.955,
+     "sabates_a": 0.902,
+     "madueke_b": 0.902
+    }
+   },
+   "S6": {
+    "text": "And Noe entred and his ſonnes, his wife and the wiues ot his ſonnes with him into the arke, becauſe of the waters of the floud.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.969,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "Of beaſts alſo the cleane and the vncleane,8 & of foules, and of al that moueth vpon the earth,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S3": {
+    "text": "Of beaſts alſo the cleane and the vncleane,8 &of foules, and of al that moueth vpon the earth,",
+    "from": "p50",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S9": {
+    "text": "Of beaſts alſo the cleane and the vncleane,8 &of foules, and of al that moueth vpon the earth,",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   },
+   "S6": {
+    "text": "Of beaſts alſo the cleane and the vncleane, and of foules, and of al that moueth vpon the earth,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.957,
+     "odr_com": 0.957,
+     "sabates_a": 0.977,
+     "madueke_b": 0.977
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "two & two went to Noe into the ar'ke, male and female, as our Lord had commanded Noe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.934,
+     "madueke_b": 0.934
+    }
+   },
+   "S3": {
+    "text": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S9": {
+    "text": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   },
+   "S6": {
+    "text": "two and two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.952,
+     "odr_com": 0.952,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And after the ſeauen dayes were paſſed, the waters of the floud flowed ouer the earth.",
+    "from": "p46",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S3": {
+    "text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in",
+    "from": "p50",
+    "score": {
+     "s_dismas": 0.869,
+     "odr_com": 0.869,
+     "sabates_a": 0.84,
+     "madueke_b": 0.84
+    }
+   },
+   "S9": {
+    "text": "And after the ſeauen dayes were paſſed, the waters of the floud flowed ouer the earth.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.962,
+     "madueke_b": 0.962
+    }
+   },
+   "S6": {
+    "text": "And after the ſeauen dayes were paſſed, the waters of the ſloud flowed ouer the earth.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.949,
+     "madueke_b": 0.949
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh dav of the moneth, al the founcal taines of the : greate deapth were broken vp, and the floud gates of heauen were opened :",
+    "from": "p46",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.941,
+     "madueke_b": 0.941
+    }
+   },
+   "S3": {
+    "text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh davof the moneth, al the cal taines of the :: greate deapth were broken vp, and :: the gates of heauen were opened :",
+    "from": "p50",
+    "score": {
+     "s_dismas": 0.939,
+     "odr_com": 0.939,
+     "sabates_a": 0.91,
+     "madueke_b": 0.91
+    }
+   },
+   "S9": {
+    "text": "In the ſix hundred yeare of the life of Noe, in the ſecond dan- moneth, in the ſeauententh day of the moneth, al the founcal. taines of the: greate deapth were brokon vp, and : the floud gates of heauen were opened :",
+    "from": "p56",
+    "score": {
+     "s_dismas": 0.956,
+     "odr_com": 0.956,
+     "sabates_a": 0.921,
+     "madueke_b": 0.921
+    }
+   },
+   "S6": {
+    "text": "In the ſix hundred veare of the life of Noe, in the ſecond month, in the ſeauenteenth day of the month, al the fountaines of the great depth were broken vp, and (4) the floud gates of heauen were opened:",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.97,
+     "odr_com": 0.97,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S3": {
+    "text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S9": {
+    "text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+    "from": "p56",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "In the verie point of that day entered Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.993,
+     "odr_com": 0.993,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "In the verie point of that day entered Noc, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S9": {
+    "text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.95,
+     "madueke_b": 0.95
+    }
+   },
+   "S6": {
+    "text": "In the verie point of that day entred Noe, and Sem, and Cham, and Iapheth his ſonnes: and his wite, and the three wiues of his ſonnes with them into the arke:",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "they and euerie beaſt accordinto their kind, and al cattle in their kinde, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "they and euerie beaſt accordingto their kind, and al cattle in their kinde, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "they and euerie beaſt accordins their to their kind, and al cattle in their kinde, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.965,
+     "odr_com": 0.965,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "they and euerie beaſt according to their kind, and al cattle in their kind, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.995,
+     "madueke_b": 0.995
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "went to Noe into the arke, two and two of al fleſh, wherin there was breath of life.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "went to Noe into the arke, two and two of al fleſh, wherin there was breath of life.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S9": {
+    "text": "went to Noe into the arke, two and two of al fle ſh, wherin there was breath of life.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S6": {
+    "text": "went to Noe into the arke, two and two ot al fleſh, wherin there was breath of life.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "And ſuch as entred in, male and female of al fle ſh did enter in, as God had commanded him: and our Lord ſhut him in on the out ſide.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "And ſuch as entred in, male and female of al fleſh did enter in, as God had commanded him: and our Lord ſhut him in on the out ſide.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And ſuch as entred in, male and female of al fle ſh did enter in, as God had commanded him: and our Lord ſ ut him in on the out ſide.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 0.985,
+     "odr_com": 0.985,
+     "sabates_a": 0.976,
+     "madueke_b": 0.976
+    }
+   },
+   "S6": {
+    "text": "And ſuch as entred in, male and female ot al fleſh did enter in, as God had commanded him: and our Lord ſhut him in on the out ſide.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And the floud grew fourtie daies vpon the earth: and the waters increaſed, and lifted vp the arke on high from the earth.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S3": {
+    "text": "And the floud grew fourtie daies vpon the earth: and the waters increaſed, and lifted vp the arke on high from the earth.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S9": {
+    "text": "And the floud grew fourtie daies vpon the earth: and the waters increaſed, and lifted vp the arke on high from the earth.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   },
+   "S6": {
+    "text": "And the floud grew fourtie daies vpon the earth: and the waters increaſed, and lifted vp the arke on high from the earth.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "For they ouerflowed excedingly: and filled al on the face of the earth: moreouer the arke fleered vpon the waters.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "For they ouerflowed excedingly: and filled al on the face of the earth: moreouer the arke fleeted vpon the waters.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "For they ouerflowed excedingly and filled al on the face of the earth: moreouer the arke fleeted vpon the waters.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "For they ouerflowed exceedingly: and filled al on the face of the earth: moreouer the arke fleeted vpon the waters.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.991,
+     "odr_com": 0.991,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And the waters preuailed out of meaſure vpon the earth : and al the hiegh mountaines vnder the whole heauen were couered.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S3": {
+    "text": "And the waters preuailed out of meaſure vpon the earth: and al the hiegh mountaines vnder the whole heauen were couered.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S9": {
+    "text": "And the waters preuailed out of meaſure vpon the earth : and al the hiegh mountaines vnder the whole heauen were couered.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And the waters preuailed out ot meaſure vpon the earth: and al the high mountaines vnder the whole heauen were couered.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "†Fiftene cubites higher was the water aboue rhe mountaines, which it couered.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   },
+   "S3": {
+    "text": "Fiftene cubites higher was the water aboue the mountaines, which it couered.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S9": {
+    "text": "Fiftene cubites higher was the water aboue the mountaines, which it couered.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S6": {
+    "text": "Fifteen cubits higher was the water aboue the mountaines, which it couered.",
+    "from": "p41",
+    "score": {
+     "s_dismas": 0.96,
+     "odr_com": 0.96,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "21": {
+   "S1": {
+    "text": "And al flesh was conſumed that moued vpon the earth, of foule, of cattle, of beaſts, and of al creepers, that creepe vpon the earth: al men,",
+    "from": "p47",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S3": {
+    "text": "And al flesh was conſumed that moued vpon the earth, of foule, of cattle, of beaſts, and of al creepers, that creepe vpon the earth al men,",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And al flesh was conſumed that moued vpon the earth, of foule, of cattle, of beaſts, and of al creepers, that creepe vpon the earth al men,",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And al fleſh was conſumed that Noe. moued vpon the earth, of toule, ot cattle, ot beaſts, and of al creepers, that creep vpon the earth: al men,",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.941,
+     "odr_com": 0.941,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   }
+  },
+  "22": {
+   "S1": {
+    "text": "and al things, wherin there is breath of life on the earth, died.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "and al things, wherin there is breath of lire on the earth, died.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S9": {
+    "text": "and al things, wherin there is breath of life on the earth, died.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S6": {
+    "text": "and al things, wherin there is breath of life on the earth,died.23.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   }
+  },
+  "23": {
+   "S1": {
+    "text": "And he cleane deſtroied al ſubſtance, that was vpon the earth, from man euen to beaſt, as wel ir that creepeth, as the foules of the ayre: and they were deſtroied from of the earth but onlie Noe remained, and they that were with him in the arke.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 0.996,
+     "odr_com": 0.996,
+     "sabates_a": 0.987,
+     "madueke_b": 0.987
+    }
+   },
+   "S3": {
+    "text": "And he cleane deſtroied al ſubſtance, that was vpon the earth, from man euen to beaſt, as wel it that creepeth, as the foules of the ayre and they were deſtroied from of the earth: but onlie Noe remained, and they that were with him in the arke.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S9": {
+    "text": "And he cleane deſtroied al ſubſtance, that was vpon the earth, from man euen to beaſt, as wel it that creepeth, as the foules of the ayre and they were deſtroied from of the earth: but onlie Noe remained, and they that were with him in the arke.",
+    "from": "p57",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.991,
+     "madueke_b": 0.991
+    }
+   },
+   "S6": {
+    "text": "And he cleane deſtroied al ſubſtance that was vpon the earth, trom man euen to beaſt, as wel it that creeec..39. peth, as the foules of the avre : aud they were deitroyed trom of the earth : but only Noe remained, and they that were with him in the Pot.",
+    "from": "p42",
+    "score": {
+     "s_dismas": 0.937,
+     "odr_com": 0.937,
+     "sabates_a": 0.947,
+     "madueke_b": 0.947
+    }
+   }
+  },
+  "24": {
+   "S1": {
+    "text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP.",
+    "from": "p47",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S3": {
+    "text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP.",
+    "from": "p51",
+    "score": {
+     "s_dismas": 0.91,
+     "odr_com": 0.91,
+     "sabates_a": 0.889,
+     "madueke_b": 0.889
+    }
+   },
+   "S9": {
+    "text": "And the waters held on aboue the earth an hundred fiſtie dayes.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.966,
+     "madueke_b": 0.966
+    }
+   },
+   "S6": {
+    "text": "And the waters held on aboue the earth an hundredtttie dayes. CHAP. WII.",
+    "from": "p42",
+    "score": {
+     "s_dismas": 0.812,
+     "odr_com": 0.812,
+     "sabates_a": 0.79,
+     "madueke_b": 0.79
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And our Lord ſaid to him: Get thee in, thou and al thy houſe into the arke: for I haue ſene thee iuſt in my ſight in this generation.",
+   "odr_com": "AND our Lord said to him: Get thee in, thou and al thy house into the arke: for I haue sene thee iust in my sight in this generation.",
+   "sabates_a": "And our Lord said to him: Get thee in, thou and all thy house into the ark; for I have seen thee just in my sight in this generation.",
+   "madueke_b": "And our Lord said to him: Get thee in, thou and all thy house into the ark; for I have seen thee just in my sight in this generation."
+  },
+  "2": {
+   "s_dismas": "Of al beaſts that are cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+   "odr_com": "Of al beasts that are cleane, thou shalt take seauen, and seauen, male & female:",
+   "sabates_a": "Of all beasts that are clean, thou shalt take seven and seven, male and female:",
+   "madueke_b": "Of all beasts that are clean, thou shalt take seven and seven, male and female:"
+  },
+  "3": {
+   "s_dismas": "but of the beaſts that are vncleane two and two, male & female. Yea and of the foules alſo of the ayre ſeauen & ſeauen, male and female: that ſeede may be ſaued vpon the face of the whole earth.",
+   "odr_com": "but of the beasts that are vncleane two and two, male & female. Yea and of the foules also of the ayre seauen & seauen, male and female: that seede may be saued vpon the face of the whole earth.",
+   "sabates_a": "but of the beasts that are unclean two and two, male and female. Yea and of the fowls also of the air seven and seven, male and female: that seed may be saved upon the face of the whole earth.",
+   "madueke_b": "but of the beasts that are unclean two and two, male and female. Yea and of the fowls also of the air seven and seven, male and female: that seed may be saved upon the face of the whole earth."
+  },
+  "4": {
+   "s_dismas": "For yet a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+   "odr_com": "For yet a while, and after seauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane destroy al substance, that I haue made, from the face of the earth.",
+   "sabates_a": "For yet a while, and after seven days I will rain upon the earth forty days and forty nights: and I will clean destroy all substance that I have made, from the face of the earth.",
+   "madueke_b": "For yet a while, and after seven days I will rain upon the earth forty days and forty nights: and I will clean destroy all substance that I have made, from the face of the earth."
+  },
+  "5": {
+   "s_dismas": "Noe therfore did al thinges, which our Lord had commanded him.",
+   "odr_com": "Noe therfore did al thinges, which our Lord had commanded him.",
+   "sabates_a": "Noe therefore did all things which our Lord had commanded him.",
+   "madueke_b": "Noe therefore did all things which our Lord had commanded him."
+  },
+  "6": {
+   "s_dismas": "And he was ſix hundred yeares old, when the waters of the floud flowed ouer the earth.",
+   "odr_com": "And he was six hundred yeares old, when the waters of the floud flowed ouer the earth.",
+   "sabates_a": "And he was six hundred years old, when the waters of the flood flowed over the earth.",
+   "madueke_b": "And he was six hundred years old, when the waters of the flood flowed over the earth."
+  },
+  "7": {
+   "s_dismas": "And Noe entred and his ſonnes, his wife and the wiues of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+   "odr_com": "And Noe entred and his sonnes, his wife and the wiues of of his sonnes with him into the arke, because of the waters of the floud.",
+   "sabates_a": "And Noe entered and his sons, his wife and the wives of his sons with him into the ark, because of the waters of the flood.",
+   "madueke_b": "And Noe entered and his sons, his wife and the wives of his sons with him into the ark, because of the waters of the flood."
+  },
+  "8": {
+   "s_dismas": "Of beaſts alſo the cleane and the vncleane, & of foules, and of al that moueth vpon the earth,",
+   "odr_com": "Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth,",
+   "sabates_a": "Of beasts also the clean and the unclean, and of fowls, and of all that moveth upon the earth.",
+   "madueke_b": "Of beasts also the clean and the unclean, and of fowls, and of all that moveth upon the earth."
+  },
+  "9": {
+   "s_dismas": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+   "odr_com": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+   "sabates_a": "two and two went to Noe into the ark, male and female, as our Lord had commanded Noe.",
+   "madueke_b": "two and two went to Noe into the ark, male and female, as our Lord had commanded Noe."
+  },
+  "10": {
+   "s_dismas": "And after the ſeauen dayes were paſſed, the waters of the floud flowed ouer the earth.",
+   "odr_com": "And after the seauen dayes were passed, the waters of the floud flowed ouer the earth.",
+   "sabates_a": "And after the seven days were passed, the waters of the flood flowed over the earth.",
+   "madueke_b": "And after the seven days were passed, the waters of the flood flowed over the earth."
+  },
+  "11": {
+   "s_dismas": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh day of the moneth, al the fountaines of the greate deapth were broken vp, and the floud gates of heauen were opened:",
+   "odr_com": "In the six hundred yeare of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the fountaines of the greate deapth were broken vp, and the floud gates of heauen were opened:",
+   "sabates_a": "In the six hundred year of the life of Noe, in the second month, in the seventeenth day of the month, all the fountains of the great depth were broken up, and the flood-gates of heaven were opened:",
+   "madueke_b": "In the six hundred year of the life of Noe, in the second month, in the seventeenth day of the month, all the fountains of the great depth were broken up, and the flood-gates of heaven were opened:"
+  },
+  "12": {
+   "s_dismas": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+   "odr_com": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+   "sabates_a": "and the rain fell upon the earth forty days and forty nights.",
+   "madueke_b": "and the rain fell upon the earth forty days and forty nights."
+  },
+  "13": {
+   "s_dismas": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke:",
+   "odr_com": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke:",
+   "sabates_a": "In the very point of that day entered Noe, and Sem, and Cham, and Japheth his sons; and his wife, and the three wives of his sons with them into the ark.",
+   "madueke_b": "In the very point of that day entered Noe, and Sem, and Cham, and Japheth his sons; and his wife, and the three wives of his sons with them into the ark."
+  },
+  "14": {
+   "s_dismas": "they and euerie beaſt according to their kind, and al cattle in their kinde, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+   "odr_com": "they and euerie beast according to their kind, and al cattle in their kinde, and al that moueth vpon the earth according to their kind, and al foule according to their kind, al birds, and al that fly",
+   "sabates_a": "they and every beast according to their kind, and all cattle in their kind, and all that moveth upon the earth according to their kind, and all fowl according to their kind, all birds, and all that fly.",
+   "madueke_b": "they and every beast according to their kind, and all cattle in their kind, and all that moveth upon the earth according to their kind, and all fowl according to their kind, all birds, and all that fly."
+  },
+  "15": {
+   "s_dismas": "went to Noe into the arke, two and two of al fleſh, wherin there was breath of life.",
+   "odr_com": "went to Noe into the arke, two and two of al flesh, wherin there was breath of life.",
+   "sabates_a": "went to Noe into the ark, two and two of all flesh, wherein there was breath of life.",
+   "madueke_b": "went to Noe into the ark, two and two of all flesh, wherein there was breath of life."
+  },
+  "16": {
+   "s_dismas": "And ſuch as entred in, male and female of al fleſh did enter in, as God had commanded him: and our Lord ſhut him in on the out ſide.",
+   "odr_com": "And such as entred in, male and female of al flesh did enter in, as God had commanded him: and our Lord shut him in on the out side.",
+   "sabates_a": "And such as entered in, male and female of all flesh did enter in, as God had commanded him: and our Lord shut him in on the out side.",
+   "madueke_b": "And such as entered in, male and female of all flesh did enter in, as God had commanded him: and our Lord shut him in on the out side."
+  },
+  "17": {
+   "s_dismas": "And the floud grew fourtie daies vpon the earth: and the waters increaſed, and lifted vp the arke on high from the earth.",
+   "odr_com": "And the floud grew fourtie daies vpon the earth: and the waters increased, and lifted vp the arke on high from the earth.",
+   "sabates_a": "And the flood grew forty days upon the earth: and the waters increased, and lifted up the ark on high from the earth.",
+   "madueke_b": "And the flood grew forty days upon the earth: and the waters increased, and lifted up the ark on high from the earth."
+  },
+  "18": {
+   "s_dismas": "For they ouerflowed excedingly: and filled al on the face of the earth: moreouer the arke fleeted vpon the waters.",
+   "odr_com": "For they ouerflowed excedingly: and filled al on the face of the earth: moreouer the arke fleeted vpon the waters.",
+   "sabates_a": "For they overflowed exceedingly; and filled all on the face of the earth: moreover the ark fleeted upon the waters.",
+   "madueke_b": "For they overflowed exceedingly; and filled all on the face of the earth: moreover the ark fleeted upon the waters."
+  },
+  "19": {
+   "s_dismas": "And the waters preuailed out of meaſure vpon the earth: and al the hiegh mountaines vnder the whole heauen were couered.",
+   "odr_com": "And the waters preuailed out of measure vpon the earth: and al the hiegh mountaines vnder the whole heauen were couered.",
+   "sabates_a": "And the waters prevailed out of measure upon the earth; and all the high mountains under the whole heaven were covered.",
+   "madueke_b": "And the waters prevailed out of measure upon the earth; and all the high mountains under the whole heaven were covered."
+  },
+  "20": {
+   "s_dismas": "Fiftene cubites higher was the water aboue the mountaines, which it couered.",
+   "odr_com": "Fiftene cubites higher was the water aboue the mountaines, which it couered.",
+   "sabates_a": "Fifteen cubits higher was the water above the mountains, which it covered.",
+   "madueke_b": "Fifteen cubits higher was the water above the mountains, which it covered."
+  },
+  "21": {
+   "s_dismas": "And al flesh was conſumed that moued vpon the earth, of foule, of cattle, of beaſts, and of al creepers, that creepe vpon the earth: al men,",
+   "odr_com": "And al flesh was consumed that moued vpon the earth, of foule, of cattle, of beasts, and of al creepers, that creepe vpon the earth: al men,",
+   "sabates_a": "And all flesh was consumed that moved upon the earth, of fowl, of cattle, of beasts, and of all creepers, that creep upon the earth: all men,",
+   "madueke_b": "And all flesh was consumed that moved upon the earth, of fowl, of cattle, of beasts, and of all creepers, that creep upon the earth: all men,"
+  },
+  "22": {
+   "s_dismas": "and al things, wherin there is breath of life on the earth, died.",
+   "odr_com": "and al things, wherin there is breath of life on the earth, died.",
+   "sabates_a": "and all things, wherein there is breath of life on the earth, died.",
+   "madueke_b": "and all things, wherein there is breath of life on the earth, died."
+  },
+  "23": {
+   "s_dismas": "And he cleane deſtroied al ſubſtance, that was vpon the earth, from man euen to beaſt, as wel it that creepeth, as the foules of the ayre: and they were deſtroied from of the earth: but onlie Noe remained, and they that were with him in the arke.",
+   "odr_com": "And he cleane destroied al substance, that was vpon the earth, from man euen to beast, as wel it that creepeth, as the foules of the ayre: and they were destroied from of the earth: but onlie Noe remained, and they that were with him in the arke.",
+   "sabates_a": "And he clean destroyed all substance that was upon the earth, from man even to beast, as well it that creepeth, as the fowls of the air: and they were destroyed from off the earth: but only Noe remained, and they that were with him in the ark.",
+   "madueke_b": "And he clean destroyed all substance that was upon the earth, from man even to beast, as well it that creepeth, as the fowls of the air: and they were destroyed from off the earth: but only Noe remained, and they that were with him in the ark."
+  },
+  "24": {
+   "s_dismas": "And the waters held on aboue the earth an hundred fiftie dayes.",
+   "odr_com": "And the waters held on aboue the earth an hundred fiftie dayes.",
+   "sabates_a": "And the waters held on above the earth an hundred fifty days.",
+   "madueke_b": "And the waters held on above the earth an hundred fifty days."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And our Lord said to him: Get thee in, thou and all thy house into the ark; for I have seen thee just in my sight in this generation.",
+  "2": "Of all beasts that are clean, thou shalt take seven and seven, male and female:",
+  "3": "but of the beasts that are unclean two and two, male and female. Yea and of the fowls also of the air seven and seven, male and female: that seed may be saved upon the face of the whole earth.",
+  "4": "For yet a while, and after seven days I will rain upon the earth forty days and forty nights: and I will clean destroy all substance that I have made, from the face of the earth.",
+  "5": "Noe therefore did all things which our Lord had commanded him.",
+  "6": "And he was six hundred years old, when the waters of the flood flowed over the earth.",
+  "7": "And Noe entered and his sons, his wife and the wives of his sons with him into the ark, because of the waters of the flood.",
+  "8": "Of beasts also the clean and the unclean, and of fowls, and of all that moveth upon the earth.",
+  "9": "two and two went to Noe into the ark, male and female, as our Lord had commanded Noe.",
+  "10": "And after the seven days were passed, the waters of the flood flowed over the earth.",
+  "11": "In the six hundred year of the life of Noe, in the second month, in the seventeenth day of the month, all the fountains of the great depth were broken up, and the flood-gates of heaven were opened:",
+  "12": "and the rain fell upon the earth forty days and forty nights.",
+  "13": "In the very point of that day entered Noe, and Sem, and Cham, and Japheth his sons; and his wife, and the three wives of his sons with them into the ark.",
+  "14": "they and every beast according to their kind, and all cattle in their kind, and all that moveth upon the earth according to their kind, and all fowl according to their kind, all birds, and all that fly.",
+  "15": "went to Noe into the ark, two and two of all flesh, wherein there was breath of life.",
+  "16": "And such as entered in, male and female of all flesh did enter in, as God had commanded him: and our Lord shut him in on the out side.",
+  "17": "And the flood grew forty days upon the earth: and the waters increased, and lifted up the ark on high from the earth.",
+  "18": "For they overflowed exceedingly; and filled all on the face of the earth: moreover the ark fleeted upon the waters.",
+  "19": "And the waters prevailed out of measure upon the earth; and all the high mountains under the whole heaven were covered.",
+  "20": "Fifteen cubits higher was the water above the mountains, which it covered.",
+  "21": "And all flesh was consumed that moved upon the earth, of fowl, of cattle, of beasts, and of all creepers, that creep upon the earth: all men,",
+  "22": "and all things, wherein there is breath of life on the earth, died.",
+  "23": "And he clean destroyed all substance that was upon the earth, from man even to beast, as well it that creepeth, as the fowls of the air: and they were destroyed from off the earth: but only Noe remained, and they that were with him in the ark.",
+  "24": "And the waters held on above the earth an hundred fifty days."
+ },
+ "ref_coverage": {
+  "janvier": 24,
+  "have": {
+   "s_dismas": 24,
+   "odr_com": 24,
+   "sabates_a": 24,
+   "madueke_b": 24
+  },
+  "n_incomplete_verses": 0,
+  "incomplete": [],
+  "blocked_cells": 0,
+  "gaps": []
+ },
+ "ref_gaps": [],
+ "blocked_cells": 0,
+ "achievable": 96,
+ "triage": "SOURCE-SKEW",
+ "secs": 5.4
+}

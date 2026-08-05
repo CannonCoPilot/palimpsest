@@ -1,0 +1,2888 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p154",
+  "old_text": "And in the ſackes mouth of the younger put his ſiluer cup, and the price which he gaue for the wheat. it was ſo done.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.5078,
+   0.875,
+   0.6148
+  ],
+  "crop_page": 154,
+  "r3_raw": "hold: and put the money of euerie one in the top of his sack. † And in the sackes mouth :: of the younger put my 2 silver cup, and the price which he gaue for the wheat. And it was so done. † And when the morning rose, they were ; dismift with their asses. † And they were now departed out",
+  "r3_verse": "And in the sackes mouth :: of the younger put my silver cup, and the price which he gaue for the wheat. And it was so done.",
+  "arm_conflicts": [
+   "his ſiluer | my silver"
+  ],
+  "new_text": "And in the ſackes mouth :: of the younger put my ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p154",
+  "old_text": "And they were now departed they of the citie, and had gone forward a lirtle way then Ioſeph ſending for the ſteward of his houſe, ſaid Ariſe, quoth him and purſew the men: and ouertaking them ſay to them: haue you rendred euil for good?",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.953,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5693,
+   0.875,
+   0.7155
+  ],
+  "crop_page": 154,
+  "r3_raw": "it was so done. † And when the morning rose, they were ; dismiss with their asses. † And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursue the men: and ouertaking them say to them: Why haue you rendred evil for good? † The cup which you haue stollen, is that wherin my lord doth drinke,and wherin",
+  "r3_verse": "And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursue the men: and ouertaking them say to them: Why haue you rendred evil for good?",
+  "arm_conflicts": [
+   "they | out",
+   "lirtle | little",
+   "him | he,",
+   "purſew | pursue",
+   "euil | evil"
+  ],
+  "new_text": "And they were now departed out of the citie, and had gone forward a little way then Ioſeph ſending for the ſteward of his houſe, ſaid Ariſe, quoth he, and pursue the men: and ouertaking them ſay to them: Why haue you rendred euil for good?",
+  "s_unresolved": [
+   "pursue"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.991,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p154",
+  "old_text": "did as he had commanded. And hauing ouertaken them, Gen. he ſpake to them in the ſame order.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.7111,
+   0.875,
+   0.7983
+  ],
+  "crop_page": 154,
+  "r3_raw": "he is wont to diuine: you haue done a verie euil thing. † He 6 did as he had commanded. And hauing ouertaken them, in Gen. he spake to them in the same order. † Who answered: Why doth our lord speake so, as though thy seruautes had com-",
+  "r3_verse": "He did as he had commanded. And hauing ouertaken them, in Gen. he spake to them in the same order.",
+  "arm_conflicts": [],
+  "new_text": "He did as he had commanded. And hauing ouertaken them, in Gen. he ſpake to them in the ſame order.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p154",
+  "old_text": "The money, that we found the top of our ſackes, we recaried to thee from the land Chanaan: and how foloweth it, that we haue ſtollen out thy lordes houſe, gold or ſiluer",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.7716,
+   0.875,
+   0.899
+  ],
+  "crop_page": 154,
+  "r3_raw": "doth our lord speake so, as though thy seruautes had com- mitted so haynous a fact? † The money, that we found in 8 the top of our sackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of 9 thy seruantes that shal be found, which thou seekest, let",
+  "r3_verse": "The money, that we found in the top of our sackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer?",
+  "arm_conflicts": [
+   "foloweth | followeth",
+   "ſiluer | siluer?"
+  ],
+  "new_text": "The money, that we found in the top of our ſackes, we recaried to thee from the land of Chanaan: and how foloweth it, that we haue ſtollen out of thy lordes houſe, gold or ſiluer",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "With whom ſoeuer thy ſeruantes that shal be found, which thou ſeekeſt him die, and we wil be the bondmen of our lord.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8321,
+   0.875,
+   0.9362
+  ],
+  "crop_page": 154,
+  "crop_leaves": [
+   154,
+   155
+  ],
+  "r3_raw": "Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of thy servantes that shal be found, which thou seekest, let him die, GENESIS. 10 him die, and we will be the bondmen of our lord. † Who said to them: Be it done according to your sentence: with",
+  "r3_verse": "With whom soever of thy servantes that shal be found, which thou seekest, let him die, him die, and we will be the bondmen of our lord.",
+  "arm_conflicts": [
+   "ſoeuer | soever of",
+   "ſeruantes | servantes",
+   "wil | will"
+  ],
+  "new_text": "With whom ſoeuer of thy ſeruantes that shal be found, which thou ſeekeſt let him die, him die, and we wil be the bondmen of our lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p155",
+  "old_text": "Wherunto he anſwered: Vou know thar my wife bare me two.",
+  "old": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.8137,
+   0.875,
+   0.8983
+  ],
+  "crop_page": 155,
+  "r3_raw": "vs, we will set forward together: otherwise he being absent, 27 we dare not see the mans face. † Wherunto he answered: 28 You know that my wife bare me two. † One went forth, and you said: A beast did devour him: and hitherto he appeareth",
+  "r3_verse": "Wherunto he answered: You know that my wife bare me two.",
+  "arm_conflicts": [
+   "Vou | You",
+   "thar | that"
+  ],
+  "used_merge": true,
+  "new_text": "Wherunto he anſwered: You know that my wife bare me two.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p156",
+  "old_text": "If you take this alſo, and oughtibefal him in the way, shal bring downe : my hoare hayres with ſorow vnto Therfore",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.0243,
+   0.875,
+   0.1342
+  ],
+  "crop_page": 156,
+  "r3_raw": "not. † If you take this also, and ought: befal him in the way, you shal bring downe :: my hoare hayres with sorrow vnto hel. † Therfore if I shal enter to thy servant our father, and the boy be wanting (wheras his life dependeth vpon the life of",
+  "r3_verse": "If you take this also, and ought: befal him in the way, you shal bring downe :: my hoare hayres with sorrow vnto hel.",
+  "arm_conflicts": [
+   "oughtibefal | ought: befal",
+   "ſorow | sorrow",
+   "Therfore | hel."
+  ],
+  "new_text": "If you take this alſo, and ought: befal him in the way, you shal bring downe :: my hoare hayres with ſorow vnto hel.",
+  "s_unresolved": [
+   "befal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 30,
+  "from": "p156",
+  "old_text": "if I shal enter to thy ſeruant our father, and the boy be wanting (wheras his life dependeth vpon the life him)",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.0677,
+   0.875,
+   0.1737
+  ],
+  "crop_page": 156,
+  "r3_raw": "pag.130. you shal bring downe: my hoare hayres with sorrow vnto hel. † Therfore if I shal enter to thy servant our father, and the 30 boy be wanting (wheras his life dependeth vpon the life of him) † and he shal see that he is not with vs, he wil dye, & thy 31 seruants shal bring downe his hoare hayres with sorrow",
+  "r3_verse": "if I shal enter to thy servant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "arm_conflicts": [
+   "ſeruant | servant"
+  ],
+  "new_text": "if I shal enter to thy ſeruant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p156",
+  "old_text": "Let me be thy proper ſeruant, thar did take him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father euer. I therfore rhy",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.1493,
+   0.875,
+   0.277
+  ],
+  "crop_page": 156,
+  "r3_raw": "seruants shal bring downe his hoare hayres with sorrow vnto hel. † Let me be thy proper seruant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer. † I therefore thy seruant will tary in stead of the childe in the service of my lord, and let the childe goe vp with his bre-",
+  "r3_verse": "Let me be thy proper seruant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer.",
+  "arm_conflicts": [
+   "thar | that"
+  ],
+  "lexicon_readings": {
+   "30": "for"
+  },
+  "visual_readings": {
+   "30": "for"
+  },
+  "new_text": "Let me be thy proper ſeruant, that did take him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 33,
+  "from": "p156",
+  "old_text": "ſeruant wil rary in ſteed of the childe the ſeruice of my lord, and let the childe goe vp with his brethren.",
+  "old": {
+   "s_dismas": 0.847,
+   "odr_com": 0.847,
+   "sabates_a": 0.826,
+   "madueke_b": 0.819
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.2133,
+   0.875,
+   0.297
+  ],
+  "crop_page": 156,
+  "r3_raw": "him againe I wil be guilty of sinne against my father for euer. † I therefore thy feruant will tary in steed of the childe in the service of my lord, and let the childe goe vp with his brethren. † For I can not returne to my father, the childe being",
+  "r3_verse": "therefore thy feruant will tary in steed of the childe in the service of my lord, and let the childe goe vp with his brethren.",
+  "arm_conflicts": [
+   "ſeruant wil rary | therefore thy feruant will tary",
+   "ſeruice | service"
+  ],
+  "lexicon_readings": {
+   "2": "ſeruant"
+  },
+  "visual_readings": {
+   "2": "ſeruant"
+  },
+  "new_text": "therefore thy ſeruant wil tary in ſteed of the childe in the ſeruice of my lord, and let the childe goe vp with his brethren.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.974,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p158",
+  "old_text": "And in the ſackes mouth: of the younger put his ſiluer cup, and the price which he gaue for the wheat. it was ſo done.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.512,
+   0.875,
+   0.6177
+  ],
+  "crop_page": 158,
+  "r3_raw": "hold: and put the money of euerie one in the top of his sack. † And in the fackes mouth :: of the younger put my 2 silver cup, and the price which he gaue for the wheat. And it was so done. † And when the morning rose, they were 3 dismist with their asses. † And they were now departed out",
+  "r3_verse": "And in the fackes mouth :: of the younger put my silver cup, and the price which he gaue for the wheat. And it was so done.",
+  "arm_conflicts": [
+   "ſackes | fackes",
+   "his ſiluer | my silver"
+  ],
+  "new_text": "And in the fackes mouth: :: of the younger put my ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
+  "s_unresolved": [
+   "fackes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p158",
+  "old_text": "And they were now departed they of the oitie, and had gone forward a little way : then Ioſeph ſending for the ſteward of his houſe, ſaid: Ariſe, quoth him and purſew the men: and ouertaking them ſay to them: : haue you rendred euil for good?",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.953,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5721,
+   0.875,
+   0.7217
+  ],
+  "crop_page": 158,
+  "r3_raw": "it was so done. † And when the morning rose, they were 3 dismist with their asses. † And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursew the men: and ouertaking them say to them: Why haue you rendred evil for good? † The cup which you haue stollen, is that wherin my lord doth drinke, and wherin",
+  "r3_verse": "And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursew the men: and ouertaking them say to them: Why haue you rendred evil for good?",
+  "arm_conflicts": [
+   "they | out",
+   "oitie, | citie,",
+   "him | he,",
+   ": | Why",
+   "euil | evil"
+  ],
+  "new_text": "And they were now departed out of the citie, and had gone forward a little way then Ioſeph ſending for the ſteward of his houſe, ſaid: Ariſe, quoth he, and purſew the men: and ouertaking them ſay to them: Why haue you rendred euil for good?",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p158",
+  "old_text": "The money, that we found the top of our ſackes, we recaried to thee from the land Chanaan: aud how foloweth it, that we haue ſtollen out thy lordes houſe, gold or ſiluer",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.7823,
+   0.875,
+   0.9121
+  ],
+  "crop_page": 158,
+  "r3_raw": "doth our lord speake so, as though thy seruautes had committed so haynous a fact? † The money, that we found in & the top of our lackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of 9 thy seruantes that shal be found, which thou seekest, let",
+  "r3_verse": "The money, that we found in & the top of our lackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer?",
+  "arm_conflicts": [
+   "ſackes, | lackes,",
+   "aud | and",
+   "foloweth | followeth",
+   "ſiluer | siluer?"
+  ],
+  "new_text": "The money, that we found in & the top of our lackes, we recaried to thee from the land of Chanaan: and how foloweth it, that we haue ſtollen out of thy lordes houſe, gold or ſiluer",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "with whom ſoeuer thy ſeruantes that shal be found, which thou ſeekeſt, him die, and we wib be the bondmen of our lord.",
+  "old": {
+   "s_dismas": 0.934,
+   "odr_com": 0.934,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8473,
+   0.875,
+   0.9375
+  ],
+  "crop_page": 158,
+  "crop_leaves": [
+   158,
+   159
+  ],
+  "r3_raw": "Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of 9 thy seruantes that shal be found, which thou seekest, let him die, GENESIS. 10 him die, and we wil be the bondmen of our lord. † who said to them: Be it done according to your sentence: with",
+  "r3_verse": "With whom soever of thy seruantes that shal be found, which thou seekest, let him die, him die, and we wil be the bondmen of our lord.",
+  "arm_conflicts": [
+   "ſoeuer | soever of",
+   "wib | wil"
+  ],
+  "new_text": "with whom ſoeuer of thy ſeruantes that shal be found, which thou ſeekeſt, let him die, him die, and we wil be the bondmen of our lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p160",
+  "old_text": "If you take this alſo, and oughtibefal him in the way, you shal bring downe :: my hoare hayres with ſorow vnto Therfore",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.0087,
+   0.875,
+   0.118
+  ],
+  "crop_page": 160,
+  "r3_raw": "not. † If you take this also, and ought befal him in the way, you shal bring downe :: my hoare hayres with sorrow vnto hel. † Therfore if I shal enter to thy seruant our father, and the boy be wanting (wheras his life dependeth vpon the life of",
+  "r3_verse": "If you take this also, and ought befal him in the way, you shal bring downe :: my hoare hayres with sorrow vnto hel.",
+  "arm_conflicts": [
+   "oughtibefal | ought befal",
+   "ſorow | sorrow",
+   "Therfore | hel."
+  ],
+  "new_text": "If you take this alſo, and ought befal him in the way, you shal bring downe :: my hoare hayres with ſorow vnto hel.",
+  "s_unresolved": [
+   "befal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p160",
+  "old_text": "if I shal enter to thy ſeruant our father, and boy be wanting (wheras his life dependeth vpon the life him)",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.0526,
+   0.875,
+   0.1599
+  ],
+  "crop_page": 160,
+  "r3_raw": "you shal bring downe: my hoare hayres with sorrow unto hel. † Therfore if I shal enter to thy seruant our father, and the 30 boy be wanting (wheras his life dependeth vpon the life of him) † and he shal see that he is not with vs, he wil dye, & thy 31 seruants shal bring downe his hoare hayres with sorrow",
+  "r3_verse": "if I shal enter to thy seruant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "arm_conflicts": [],
+  "new_text": "if I shal enter to thy ſeruant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p160",
+  "old_text": "Let me be thy proper ſeruant, that did take him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father euer. I therfore",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.1368,
+   0.875,
+   0.2655
+  ],
+  "crop_page": 160,
+  "r3_raw": "seruants shal bring downe his hoare hayres with sorrow vnto hel. † Let me be thy proper seruant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer. † I therefore thy seruant will tary in stead of the childe in the seruice of my lord, and let the childe goe vp with his bre-",
+  "r3_verse": "Let me be thy proper seruant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "30": "for"
+  },
+  "visual_readings": {
+   "30": "for"
+  },
+  "new_text": "Let me be thy proper ſeruant, that did take him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p160",
+  "old_text": "thy ſeruant wil tary in ſteed of the childe the ſeruice of my lord, and let the childe goe vp with his brethren.",
+  "old": {
+   "s_dismas": 0.887,
+   "odr_com": 0.887,
+   "sabates_a": 0.87,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.1988,
+   0.875,
+   0.2863
+  ],
+  "crop_page": 160,
+  "r3_raw": "him againe I wil be guilty of sinne against my father for euer. † I therefore thy feruant will tary in steed of the childe in 33 the seruice of my lord, and let the childe goe vp with his brethren. † For I can not returne to my father, the childe being 14",
+  "r3_verse": "thy feruant will tary in steed of the childe in the seruice of my lord, and let the childe goe vp with his brethren.",
+  "arm_conflicts": [
+   "ſeruant wil | feruant will"
+  ],
+  "lexicon_readings": {
+   "1": "ſeruant"
+  },
+  "visual_readings": {
+   "1": "ſeruant"
+  },
+  "new_text": "thy ſeruant wil tary in ſteed of the childe in the ſeruice of my lord, and let the childe goe vp with his brethren.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.896,
+   "madueke_b": 0.888
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p166",
+  "old_text": "And when the morning roſe, they were diſmiſt with their afſes.",
+  "old": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5405,
+   0.875,
+   0.6275
+  ],
+  "crop_page": 166,
+  "r3_raw": "siluer cup, and the price which he gaue for the wheat. And it was so done. † And when the morning rose, they were 3 dismiss with their asses. † And they were now departed out of the citie, and had gone forward a little way: then Ioseph",
+  "r3_verse": "And when the morning rose, they were dismiss with their asses.",
+  "arm_conflicts": [
+   "diſmiſt | dismiss",
+   "afſes. | asses."
+  ],
+  "new_text": "And when the morning roſe, they were dismiss with their asses.",
+  "s_unresolved": [
+   "dismiss",
+   "asses."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p166",
+  "old_text": "And they were now departed they of the citie, and had gone forward a little way then Ioſeph intrete ſending for the ſteward of his houſe, ſaid Ariſe, quoth him and purſew the mon: and ouertaking them ſay to them: Why haue you rendred euil for good",
+  "old": {
+   "s_dismas": 0.934,
+   "odr_com": 0.938,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5604,
+   0.875,
+   0.7068
+  ],
+  "crop_page": 166,
+  "r3_raw": "it was so done. † And when the morning rose, they were 3 dismiss with their asses. † And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursue the men: and ouertaking them say to them: Why haue you rendred euil for good? † The cup which you haue stollen, is that wherin my lord doth drinke, and wherin",
+  "r3_verse": "And they were now departed out of the citie, and had gone forward a little way: then Ioseph sending for the steward of his house, said: Arise, quoth he, and pursue the men: and ouertaking them say to them: Why haue you rendred euil for good?",
+  "arm_conflicts": [
+   "they | out",
+   "him | he,",
+   "purſew | pursue",
+   "mon: | men:",
+   "good | good?"
+  ],
+  "new_text": "And they were now departed out of the citie, and had gone forward a little way then Ioſeph ſending for the ſteward of his houſe, ſaid Ariſe, quoth he, and pursue the men: and ouertaking them ſay to them: Why haue you rendred euil for good",
+  "s_unresolved": [
+   "pursue"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.991,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p166",
+  "old_text": "The cup which you had him be haue ſtollen, is that wherin my lord doth drinke, and wherin capti- he is wont to diuine: you haue done a verie euil thing.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.869,
+   "madueke_b": 0.869
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.6427,
+   0.875,
+   0.7558
+  ],
+  "crop_page": 166,
+  "r3_raw": "or Benjamin, nor suffer him and pursue them: and ouertaking them say to them: Why to be captiue: haue you rendred euil for good? † The cup which you as they had be haue stollen, is that wherin my lord doth drinke, and wherin fore told him he is wont to diuine: you haue done a verie euil thing. † He 6 eſelfe to captiuitie. Theod. did as he had commanded. And hauing ouertaken them,",
+  "r3_verse": "The cup which you as they had be haue stollen, is that wherin my lord doth drinke, and wherin fore told him he is wont to diuine: you haue done a verie euil thing.",
+  "arm_conflicts": [
+   "capti- | fore told him"
+  ],
+  "new_text": "The cup which you as they had be haue ſtollen, is that wherin my lord doth drinke, and wherin fore told him he is wont to diuine: you haue done a verie euil thing.",
+  "s_unresolved": [
+   "fore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.818,
+   "odr_com": 0.818,
+   "sabates_a": 0.804,
+   "madueke_b": 0.804
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "p166",
+  "old_text": "Theod, did as he had commanded. And hauing ouertaken them, Gen. he ſpake to them in the ſame order.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.7009,
+   0.875,
+   0.7915
+  ],
+  "crop_page": 166,
+  "r3_raw": "he is wont to diuine: you haue done a verie euil thing. † He 6 did as he had commanded. And hauing ouertaken them, he spake to them in the same order. † Who answered: Why doth our lord speakeso, as though thy seruautes had com-",
+  "r3_verse": "He did as he had commanded. And hauing ouertaken them, he spake to them in the same order.",
+  "arm_conflicts": [
+   "Theod, | He"
+  ],
+  "new_text": "He did as he had commanded. And hauing ouertaken them, he ſpake to them in the ſame order.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p166",
+  "old_text": "The money, that we found the top of our ſackes, we recaried to thee from the land Chanaan: and how foloweth it, that we haue ſtollen out thy lordes houſe, gold or ſiluer",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.7621,
+   0.875,
+   0.8914
+  ],
+  "crop_page": 166,
+  "r3_raw": "doth our lord speakes so, as though thy seruautes had committed so haynous a fact? † The money, that we found in 8 the top of our sackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of 9 thy seruantes that shal be found, which thou seekest, let",
+  "r3_verse": "The money, that we found in the top of our sackes, we recaried to thee from the land of Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer?",
+  "arm_conflicts": [
+   "foloweth | followeth",
+   "ſiluer | siluer?"
+  ],
+  "new_text": "The money, that we found in the top of our ſackes, we recaried to thee from the land of Chanaan: and how foloweth it, that we haue ſtollen out of thy lordes houſe, gold or ſiluer",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "With whom ſoeuer thy ſeruantes that shal be found, which thou ſeekeſt, him die, and we wil be the bondmen of our lord.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8226,
+   0.875,
+   0.9115
+  ],
+  "crop_page": 166,
+  "crop_leaves": [
+   166,
+   167
+  ],
+  "r3_raw": "Chanaan: and how followeth it, that we haue stollen out of thy lordes house, gold or siluer? † With whom soever of 9 thy servantes that shal be found, which thou seekest, let him die, GENESIS. 10 him die, and we wil be the bondmen of our lord. + Who said to them: Be it done according to your sentence: with",
+  "r3_verse": "With whom soever of thy servantes that shal be found, which thou seekest, let him die, him die, and we wil be the bondmen of our lord. +",
+  "arm_conflicts": [
+   "ſoeuer | soever of",
+   "ſeruantes | servantes"
+  ],
+  "new_text": "With whom ſoeuer of thy ſeruantes that shal be found, which thou ſeekeſt, let him die, him die, and we wil be the bondmen of our lord. +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p167",
+  "old_text": "To whom Iudas ſaid : What shal we an- :: ſwere, my lord or what shal we ſpeake, or be able iuſtly to ing pretend God hath found the iniquitie of thy ſeruantes : loe wing we are al bondmen to my lord, both we, & he, with whom then the cup was found.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.29,
+   0.875,
+   0.4427
+  ],
+  "crop_page": 167,
+  "r3_raw": "know you not that there is not the like to me in the science of divining. To whom Iudas said: What shal we answere, my lord? or what shal we speake, or be able iustly to pretend? God hath found the iniquitie of thy seruantes: loe we are al bondmen to my lord, both we, & he, with whom the cup was found. Ioseph answered: God forbid that I should so doe: he that stole the cup, the same be my bond-",
+  "r3_verse": "To whom Iudas said: What shal we answere, my lord? or what shal we speake, or be able iustly to pretend? God hath found the iniquitie of thy seruantes: loe we are al bondmen to my lord, both we, & he, with whom the cup was found.",
+  "arm_conflicts": [
+   "an- :: ſwere, | answere,",
+   "lord | lord?",
+   "ing pretend | pretend?"
+  ],
+  "new_text": "To whom Iudas ſaid What shal we answere, my lord or what shal we ſpeake, or be able iuſtly to pretend God hath found the iniquitie of thy ſeruantes loe we are al bondmen to my lord, both we, & he, with whom the cup was found.",
+  "s_unresolved": [
+   "answere,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p167",
+  "old_text": "Ioſeph anſwered : God forbid that rers I should ſo doe : he that ſtole the cup, the ſame be my bond- ſpoke man: and goe you free vnto your father.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.3718,
+   0.875,
+   0.4839
+  ],
+  "crop_page": 167,
+  "r3_raw": "we are al bondmen to my lord, both we, & he, with whom the cup was found. † Ioseph answered: God forbid that I should so doe: he that stole the cup, the same be my bond-man: and goe you free vnto your father. † And Iudas approching nearer, said boldly: I beseech thee my lord, let thy",
+  "r3_verse": "Ioseph answered: God forbid that I should so doe: he that stole the cup, the same be my bond-man: and goe you free vnto your father.",
+  "arm_conflicts": [
+   "bond- ſpoke man: | bond-man:"
+  ],
+  "new_text": "Ioſeph anſwered God forbid that I should ſo doe he that ſtole the cup, the ſame be my bond-man: and goe you free vnto your father.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p167",
+  "old_text": "And Iudas appro- ſelfeas ching nearer, ſaid boldly : I beſeech thee my lord, let thy that ſeruant ſpeake a word in thine eares, and be not angrie Aug. with thyſeruant: for after Pharao thou art,",
+  "old": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.4106,
+   0.875,
+   0.5442
+  ],
+  "crop_page": 167,
+  "r3_raw": "I should so doe: he that stole the cup, the same be my bond-man: and goe you free vnto your father. † And Iudas approaching nearer, said boldly: I beseech thee my lord, let thy seruant speake a word in thine eares, and be not angrie with thy seruant: for after Pharao thou art, † my lord. Thou didest aske thy seruantes the first time: Haue you a father or",
+  "r3_verse": "And Iudas approaching nearer, said boldly: I beseech thee my lord, let thy seruant speake a word in thine eares, and be not angrie with thy seruant: for after Pharao thou art,",
+  "arm_conflicts": [
+   "appro- ſelfeas ching | approaching",
+   "thyſeruant: | thy seruant:"
+  ],
+  "lexicon_readings": {
+   "26": "ſeruant:"
+  },
+  "visual_readings": {
+   "26": "ſeruant:"
+  },
+  "new_text": "And Iudas approaching nearer, ſaid boldly I beſeech thee my lord, let thy ſeruant ſpeake a word in thine eares, and be not angrie with thy ſeruant: for after Pharao thou art,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p167",
+  "old_text": "my lord. Thou ſuper dideſt aske thy ſeruantes the firſt time : Haue you a father ora brother",
+  "old": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.4716,
+   0.875,
+   0.5828
+  ],
+  "crop_page": 167,
+  "r3_raw": "seruant speake a word in thine eares, and be not angrie Aug. q. 14 with thy seruant: for after Pharao thou art, † my lord. Thou didest aske thy seruantes the first time: Haue you a father or a brother? † and we answered thee my lord: We haue a father an old man, and a little boy, that was borne in his old",
+  "r3_verse": "my lord. Thou didest aske thy seruantes the first time: Haue you a father or a brother?",
+  "arm_conflicts": [
+   "ora brother | or a brother?"
+  ],
+  "new_text": "my lord. Thou dideſt aske thy ſeruantes the firſt time Haue you a father or a brother",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 27,
+  "from": "p167",
+  "old_text": "Wherunto he anſwered: know that my wifebare me two.",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.7899,
+   0.875,
+   0.8829
+  ],
+  "crop_page": 167,
+  "r3_raw": "vs, we wil set forward together: otherwise he being absent, 27 we dare not see the mans face. † Wherunto he answered: 28 You know that my wife bare me two. † One went forth, and you said: A beast did devour him: and hitherto he appeareth",
+  "r3_verse": "Wherunto he answered: You know that my wife bare me two.",
+  "arm_conflicts": [
+   "wifebare | wife bare"
+  ],
+  "used_merge": true,
+  "new_text": "Wherunto he anſwered: You know that my wife bare me two.",
+  "s_unresolved": [
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p168",
+  "old_text": "If you take this alſo, and ought befal him in the way, 13.you shal bring downe : my hoare hayres with ſorow vnto Therfore",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.0253,
+   0.875,
+   0.1324
+  ],
+  "crop_page": 168,
+  "r3_raw": "not. † If you take this also, and ought befal him in the way, you shal bring downe: my hoare hayres with sorrow vnto hel. † Therfore if I shal enter to thy seruant our father, and the boy be wanting (wheras his life dependeth vpon the life of",
+  "r3_verse": "If you take this also, and ought befal him in the way, you shal bring downe: my hoare hayres with sorrow vnto hel.",
+  "arm_conflicts": [
+   "13.you | you",
+   "ſorow | sorrow",
+   "Therfore | hel."
+  ],
+  "new_text": "If you take this alſo, and ought befal him in the way, 13.you shal bring downe my hoare hayres with ſorow vnto hel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 30,
+  "from": "p168",
+  "old_text": "if I shal enter to thy ſeruant our father, and boy be wanting (wheras his life dependeth vpon the life him)",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.0676,
+   0.875,
+   0.1751
+  ],
+  "crop_page": 168,
+  "r3_raw": "you shal bring downe: my hoare hayres with sorrow unto hel. † Therfore if I shal enter to thy seruant our father, and the 30 boy be wanting (wheras his life dependeth vpon the life of him) † and he shal see that he is not with vs, he wil dye, & thy 31 seruants shal bring downe his hoare hayres with sorrow",
+  "r3_verse": "if I shal enter to thy seruant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "arm_conflicts": [],
+  "new_text": "if I shal enter to thy ſeruant our father, and the boy be wanting (wheras his life dependeth vpon the life of him)",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 31,
+  "from": "p168",
+  "old_text": "and he shal ſee that he is not with vs, he wil dye, ſeruants shal bring downe his hoare hayres with ſorow vnto hel.",
+  "old": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.08,
+   0.1076,
+   0.875,
+   0.2154
+  ],
+  "crop_page": 168,
+  "r3_raw": "boy be wanting (wheras his life dependeth vpon the life of him)† and he shal see that he is not with vs, he wil dye, & thy ſervuants shal bring downe his hoare hayres with sorrow unto hel. † Let me be thy proper ſervant, that did take 32 him into my protection and promised saying: Vnlesse I bring",
+  "r3_verse": "and he shal see that he is not with vs, he wil dye, & thy ſervuants shal bring downe his hoare hayres with sorrow unto hel.",
+  "arm_conflicts": [
+   "ſeruants | & thy ſervuants",
+   "ſorow vnto | sorrow unto"
+  ],
+  "new_text": "and he shal ſee that he is not with vs, he wil dye, & thy ſeruants shal bring downe his hoare hayres with ſorow vnto hel.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 32,
+  "from": "p168",
+  "old_text": "Let me be thy proper ſeruant, that did him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father euer. I therfore",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.904,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.149,
+   0.875,
+   0.2766
+  ],
+  "crop_page": 168,
+  "r3_raw": "servuants shal bring downe his hoare hayres with sorrow vnto hel. † Let me be thy proper servant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer. † I therefore thy servant wiltary in stead of the childe in the service of my lord, and let the childe goe vp with his bre-",
+  "r3_verse": "Let me be thy proper servant, that did take him into my protection and promised saying: Vnlesse I bring him againe I wil be guilty of sinne against my father for euer.",
+  "arm_conflicts": [
+   "ſeruant, | servant,"
+  ],
+  "lexicon_readings": {
+   "30": "for"
+  },
+  "visual_readings": {
+   "30": "for"
+  },
+  "new_text": "Let me be thy proper ſeruant, that did take him into my protection and promiſed ſaying Vnleſſe I bring him againe I wil be guilty of ſinne againſt my father for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 33,
+  "from": "p168",
+  "old_text": "thy ſeruant wil tary in ſteed of the childe the ſeruice of my lord, and let the childe goe vp with his thren.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.863,
+   "sabates_a": 0.844,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.2098,
+   0.875,
+   0.316
+  ],
+  "crop_page": 168,
+  "r3_raw": "him againe I wil be guilty of sinne against my father for euer. † I therefore thy feruant will tary in stead of the childe in 33 the seruice of my lord, and let the childe goe vp with his brethren. † For I can not returne to my father, the childe being 14 absent; lest I stand by a witnes of the calamitie, that ſhal op-",
+  "r3_verse": "thy feruant will tary in stead of the childe in the seruice of my lord, and let the childe goe vp with his brethren.",
+  "arm_conflicts": [
+   "ſeruant wil | feruant will",
+   "ſteed | stead",
+   "thren. | brethren."
+  ],
+  "lexicon_readings": {
+   "1": "ſeruant"
+  },
+  "visual_readings": {
+   "1": "ſeruant"
+  },
+  "new_text": "thy ſeruant wil tary in stead of the childe in the ſeruice of my lord, and let the childe goe vp with his brethren.",
+  "s_unresolved": [
+   "stead"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.904,
+   "madueke_b": 0.897
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p141",
+  "old_text": "And in the ſackes mouth ()ot the vonget put my ſiluer cup, and the priee which he gaue for the wheat. And it was ſo done.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.522,
+   0.885,
+   0.6213
+  ],
+  "crop_page": 141,
+  "r3_raw": "laying: 1. In their saddle with corne; as much as they can hold: and put the money of cuerie one in the top of his sack. 2. And in the sackes mouth (a)of the yonger put my siluer cup, and the price which he gaue for the wheat. And it was so done. 3. And when the mor- ning rose, they were dismift with their asses. 4. And they were now",
+  "r3_verse": "And in the sackes mouth (a)of the yonger put my siluer cup, and the price which he gaue for the wheat. And it was so done.",
+  "arm_conflicts": [
+   "()ot | (a)of",
+   "vonget | yonger",
+   "priee | price"
+  ],
+  "new_text": "And in the ſackes mouth (a)of the yonger put my ſiluer cup, and the price which he gaue for the wheat. And it was ſo done.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.964,
+   "madueke_b": 0.964
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p141",
+  "old_text": "And when the morning roſe, they were diſmiſt with theit aſſes.",
+  "old": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.5564,
+   0.885,
+   0.6392
+  ],
+  "crop_page": 141,
+  "r3_raw": "of his lack. 2. And in the failes mouth (a) of the yonger put my siluer cup, and the price which he gaue for the wheat. And it was so done. 3. And when the mor- ning rose, they were dismitt with their asses. 4. And they were now departed out of the citie; and had gone forward a little way: then Ioseph",
+  "r3_verse": "And when the mor- ning rose, they were dismitt with their asses.",
+  "arm_conflicts": [
+   "morning | mor- ning",
+   "diſmiſt | dismitt",
+   "theit | their"
+  ],
+  "new_text": "And when the mor- ning roſe, they were dismitt with their aſſes.",
+  "s_unresolved": [
+   "dismitt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p141",
+  "old_text": "Who anſwered : Why doth our Lord ſpeake ſo, as though thy ſeruāts had committed fo haynous a factr",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.6994,
+   0.885,
+   0.7794
+  ],
+  "crop_page": 141,
+  "r3_raw": "6. He did as he had commanded. And having overtaken them, he spake to them in the same order. 7. Who answered: Why doth our Lord speake so, as though thy seruats had committed so haynous a fact? 8. The money that we found in the top of our sackes, we recarred to",
+  "r3_verse": "Who answered: Why doth our Lord speake so, as though thy seruats had committed so haynous a fact?",
+  "arm_conflicts": [
+   "ſeruāts | seruats",
+   "fo | so",
+   "factr | fact?"
+  ],
+  "r2_attested": {
+   "14": "ſo"
+  },
+  "visual_readings": {
+   "14": "ſo"
+  },
+  "new_text": "Who anſwered Why doth our Lord ſpeake ſo, as though thy ſeruāts had committed ſo haynous a fact?",
+  "s_unresolved": [
+   "fact?"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p141",
+  "old_text": "The money that we found in the top of our ſackes, we recarred to thee trom the land of Chanaan: & how followeth it, that we haue ſtollen out of thy Lordes houſe gold or ſiluer .",
+  "old": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.7362,
+   0.885,
+   0.8338
+  ],
+  "crop_page": 141,
+  "r3_raw": "8. Why doth our Lord speake so, as though thy seruāts had committed so haynous a fact? 8. The moncy that we found in the top of our sackes, we recarred to thee from the land of Chanaan: & how followeth it,that we haue stollen out of thy Lordes house gold or siluer? 9. With whom soever of thy seruants that ſhall be found which thou seekest, let him die, and we wil",
+  "r3_verse": "The moncy that we found in the top of our sackes, we recarred to thee from the land of Chanaan: & how followeth it,that we haue stollen out of thy Lordes house gold or siluer?",
+  "arm_conflicts": [
+   "money | moncy",
+   "trom | from",
+   "it, that | it,that",
+   "ſiluer . | siluer?"
+  ],
+  "lexicon_readings": {
+   "15": "from"
+  },
+  "visual_readings": {
+   "15": "from"
+  },
+  "new_text": "The moncy that we found in the top of our ſackes, we recarred to thee from the land of Chanaan: & how followeth it,that we haue ſtollen out of thy Lordes houſe gold or ſiluer",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "With whom ſoeuer of thy uants that ſhal be found which thou ſrekeſt, let him die, and we wil be the boudmen ot our Lord..Who",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   9
+  ],
+  "skip": "no crop geometry; leaves tried: [142]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "chapter",
+  "old_text": "ſaic to them: Be it doue according to vour ſentence : with whom ſoeuer it ſhal be found, be he my bondmen, and you ſhal be guiltles.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   10
+  ],
+  "skip": "no crop geometry; leaves tried: [142]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p141",
+  "old_text": "Therfore in haſt taking dowue thcir ſackes vpon the ground, euerie mā opened.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.8444,
+   0.885,
+   0.9238
+  ],
+  "crop_page": 141,
+  "r3_raw": "ding to your sentence: with whom soever it shal be found, be he my bondmen, and you shal be guiltles. 11. Therfore in haſt taking downe their sackes vpon the ground, cuerie ma opened. 12. Which when he had",
+  "r3_verse": "Therfore in haſt taking downe their sackes vpon the ground, cuerie ma opened.",
+  "arm_conflicts": [
+   "dowue thcir | downe their",
+   "euerie mā | cuerie ma"
+  ],
+  "used_merge": true,
+  "new_text": "Therfore in haſt taking downe their ſackes vpon the ground, cuerie mā opened.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "chapter",
+  "old_text": "Which when he had I beginning trom the elder euen to the vongeſt, he found the cup ſack.",
+  "old": {
+   "s_dismas": 0.776,
+   "odr_com": 0.776,
+   "sabates_a": 0.755,
+   "madueke_b": 0.755
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.0559,
+   0.885,
+   0.1616
+  ],
+  "crop_page": 142,
+  "r3_raw": "Ioseph. GENESIS. searched, beginning from the elder euen to the yongest, he found the cup in Beniamins sack. 12. But they (b) renting their garments, and loading their asses againe, returned into the towne. 14. And Iudas foremost with",
+  "r3_verse": "Ioseph. searched, beginning from the elder euen to the yongest, he found the cup in Beniamins sack.",
+  "arm_conflicts": [
+   "Which when he had I | Ioseph. searched,",
+   "trom | from",
+   "vongeſt, | yongest,"
+  ],
+  "lexicon_readings": {
+   "3": "from"
+  },
+  "r2_attested": {
+   "0": "Ioſeph.",
+   "1": "ſearched,",
+   "9": "yongeſt,"
+  },
+  "visual_readings": {
+   "3": "from",
+   "0": "Ioſeph.",
+   "1": "ſearched,",
+   "9": "yongeſt,"
+  },
+  "new_text": "Ioſeph. ſearched, beginning from the elder euen to the yongeſt, he found the cup in Beniamins ſack.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.86,
+   "odr_com": 0.86,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p142",
+  "old_text": "But they renting their garments, and loading (b)O againe, returned into the towne.",
+  "old": {
+   "s_dismas": 0.872,
+   "odr_com": 0.872,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.1015,
+   0.885,
+   0.1781
+  ],
+  "crop_page": 142,
+  "r3_raw": "searched, beginning from the elder euen to the yongest, he found the cup in Beniamins sack. 13. But they (b) renting their garments, and loading their asses againe, returned into the towne. 14. And Iudas foremost with his brethren entered in to Joseph (for he was not yet gone out of the",
+  "r3_verse": "But they renting their garments, and loading their asses againe, returned into the towne.",
+  "arm_conflicts": [
+   "(b)O | their asses"
+  ],
+  "r2_attested": {
+   "8": "aſſes"
+  },
+  "visual_readings": {
+   "8": "aſſes"
+  },
+  "new_text": "But they renting their garments, and loading their aſſes againe, returned into the towne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p142",
+  "old_text": "And Iudas foremoſt with of mercie entred in to Ioſeph ( for he was not yet gone out of the vexeth he loueth. they fel together betore him on the ground.",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.823,
+   "madueke_b": 0.823
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.1149,
+   0.885,
+   0.2202
+  ],
+  "crop_page": 142,
+  "r3_raw": "searched, beginning from the elder even unto the youngest, he found the cup in Beniamins sack. 12. But they (b) renting their garments, and loading their asses againe, returned into the towne. 14. And Iudas foremost with his brethren entered in to Joseph (for he was not yet gone out of the place) and they fell together before him on the ground. 15. To whom he said: Why would you doe so? know you not that there is not the like (b) O torments of mercie! he vexeth whom he loueth.S. Greg. ho. 22. in Fzech. (c) Joseph be",
+  "r3_verse": "And Iudas foremost with his brethren entered in to Joseph (for he was not yet gone out of the place) and they fell together before him on the ground.",
+  "arm_conflicts": [
+   "of mercie entred | his brethren entered",
+   "Ioſeph ( | Joseph",
+   "vexeth he loueth. | place) and",
+   "fel | fell",
+   "betore | before"
+  ],
+  "lexicon_readings": {
+   "24": "before"
+  },
+  "visual_readings": {
+   "24": "before"
+  },
+  "new_text": "And Iudas foremoſt with his brethren entered in to Ioſeph for he was not yet gone out of the place) and they fel together before him on the ground.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p142",
+  "old_text": "To whom he Greg. ho. would you doe fo know vou not that there is not the like Exech. the ſcience of diuinins.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.1549,
+   0.885,
+   0.2483
+  ],
+  "crop_page": 142,
+  "r3_raw": "his brethren entered in unto Joseph (for he was not yet gone out of the place) and they fell together before him on the ground. 15. To whom he said: Why would you do so? know you not that there is not the like to me in the science (c) of divining. 16. To whom Judas said: What shall we answer, my Lord? or what shall we speak, or be able justly to pretend:",
+  "r3_verse": "To whom he said: Why would you do so? know you not that there is not the like to me in the science of divining.",
+  "arm_conflicts": [
+   "Greg. ho. | said: Why",
+   "doe fo | do so?",
+   "vou | you",
+   "Exech. | to me in",
+   "diuinins. | divining."
+  ],
+  "lexicon_readings": {
+   "3": "ſaid:"
+  },
+  "r2_attested": {
+   "8": "ſo?"
+  },
+  "visual_readings": {
+   "3": "ſaid:",
+   "8": "ſo?"
+  },
+  "new_text": "To whom he ſaid: Why would you doe ſo? know you not that there is not the like to me in the ſcience of divining.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p142",
+  "old_text": "To whom Iudas ſaid: What ſhal (cIoſeph my Lordror what shal we ſpeake, or be able iuſtly to preted ing indeed found the iuiquitie of thy ſeruants: loe we are al bondmen to Prophet, ng more both we, & he with whom the cup was tound.",
+  "old": {
+   "s_dismas": 0.847,
+   "odr_com": 0.847,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.1893,
+   0.885,
+   0.3045
+  ],
+  "crop_page": 142,
+  "r3_raw": "said: Why would you doe so? know you not that there is not the like to me in the science (c) of divining. 16. To whom Iudas said: What shal we answer, my Lord? or what shal we speake, or be able iustly to pretend? God hath found the iniquitie of thy seruants: loe we are al bondmen to my Lord, both we, & he with whom the cup was found. 17. Ioseph answered: God forbid that I should so doe: he that stole the cup, the same",
+  "r3_verse": "To whom Iudas said: What shal we answer, my Lord? or what shal we speake, or be able iustly to pretend? God hath found the iniquitie of thy seruants: loe we are al bondmen to my Lord, both we, & he with whom the cup was found.",
+  "arm_conflicts": [
+   "(cIoſeph | we answer,",
+   "Lordror | Lord? or",
+   "preted ing indeed | pretend? God hath",
+   "iuiquitie | iniquitie",
+   "Prophet, ng more | my Lord,",
+   "tound. | found."
+  ],
+  "r2_attested": {
+   "7": "anſwer,"
+  },
+  "visual_readings": {
+   "7": "anſwer,"
+  },
+  "new_text": "To whom Iudas ſaid: What ſhal we anſwer, my Lord? or what shal we ſpeake, or be able iuſtly to pretend? God hath found the iniquitie of thy ſeruants: loe we are al bondmen to my Lord, both we, & he with whom the cup was found.",
+  "s_unresolved": [
+   "found."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p142",
+  "old_text": "Ioſeph an- al then : God fotbid that I fhould ſo doe : he that ſtole the cup, the ſame res in and goe you free vnto your tather..",
+  "old": {
+   "s_dismas": 0.841,
+   "odr_com": 0.841,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.2427,
+   0.885,
+   0.3358
+  ],
+  "crop_page": 142,
+  "r3_raw": "God hath found the iniquitie of thy seruants: loe we are al bondmen to my Lord, both we, & he with whom the cup was found. 17. Ioseph answered: God forbid that I should so doe: he that stole the cup, the same be my bondman: and goe you free vnto your father. 18. And Iudas approaching neerer said boldly: I beseech thee my Lord, let thy seruant",
+  "r3_verse": "Ioseph answered: God forbid that I should so doe: he that stole the cup, the same be my bondman: and goe you free vnto your father.",
+  "arm_conflicts": [
+   "an- al then : | answered:",
+   "fotbid | forbid",
+   "fhould | should",
+   "res in | be my bondman:",
+   "tather.. | father."
+  ],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "Ioſeph anſwered: God forbid that I should ſo doe he that ſtole the cup, the ſame be my bondman: and goe you free vnto your father.",
+  "s_unresolved": [
+   "forbid",
+   "should",
+   "father."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p142",
+  "old_text": "And Iudas ap- ſpoke of neerer ſaid boldly: I beſeech thee my Lord, let thy ſeruant folfe as he eſtee med a word in thine eares, and be not angrie with thy ſeruant : for thou art",
+  "old": {
+   "s_dismas": 0.766,
+   "odr_com": 0.766,
+   "sabates_a": 0.758,
+   "madueke_b": 0.758
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.2775,
+   0.885,
+   0.3888
+  ],
+  "crop_page": 142,
+  "r3_raw": "swered: God forbid that I should so doe: he that stole the cup, the same be my bondman:and goe you free vnto your father. 18. And Iudas approaching neerer said boldly: I beseech thee my Lord, let thy servant speake a word in thine eares, and be not angrie with thy servant: for after Pharao thou art 19.my Lord. Thou didest aske thy seruantes the first time: Haue you a father or a brother? 20.and we answered thee",
+  "r3_verse": "And Iudas approaching neerer said boldly: I beseech thee my Lord, let thy servant speake a word in thine eares, and be not angrie with thy servant: for after Pharao thou art 19.my",
+  "arm_conflicts": [
+   "ap- ſpoke of | approaching",
+   "ſeruant folfe as he eſtee med | servant speake",
+   "ſeruant : | servant:"
+  ],
+  "lexicon_readings": {
+   "28": "after"
+  },
+  "r2_attested": {
+   "14": "ſpeake"
+  },
+  "visual_readings": {
+   "28": "after",
+   "14": "ſpeake"
+  },
+  "new_text": "And Iudas approaching neerer ſaid boldly: I beſeech thee my Lord, let thy ſeruant ſpeake a word in thine eares, and be not angrie with thy ſeruant for after Pharao thou art 19.my",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p142",
+  "old_text": "my Lord. Thou dideſt aske thy ſeruantes the that place. u: : Haue you a father or a brother",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.3214,
+   0.885,
+   0.4088
+  ],
+  "crop_page": 142,
+  "r3_raw": "approaching neerer fand boldly: I beſeech thee my Lord, let thy fervant speake a word in thine eares, and be not angrie with thy fervant: for after Pharao thou art 19. my Lord. Thou didest asketh thy seruantes the first time: Haue you a father or a brother? 20. and we answered thee my Lord: We haue a father an old man, and a little boy, that was borne",
+  "r3_verse": "my Lord. Thou didest asketh thy seruantes the first time: Haue you a father or a brother?",
+  "arm_conflicts": [
+   "aske | asketh",
+   "that place. u: : | first time:",
+   "brother | brother?"
+  ],
+  "lexicon_readings": {
+   "8": "firſt"
+  },
+  "visual_readings": {
+   "8": "firſt"
+  },
+  "new_text": "my Lord. Thou dideſt asketh thy ſeruantes the firſt time: Haue you a father or a brother",
+  "s_unresolved": [
+   "asketh"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p142",
+  "old_text": "and we anſwered thee. We haue a father an old man, and a little boy, that was borne age: whoſe brother by the mother is dead: and his mother only, and his father loueth him tenderly.",
+  "old": {
+   "s_dismas": 0.862,
+   "odr_com": 0.862,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.3481,
+   0.885,
+   0.4605
+  ],
+  "crop_page": 142,
+  "r3_raw": "after Pharao thou art 19. my Lord. Thou didest asketh thy seruants the first time: Haue you a father or a brother? 20. and we answered thee my Lord: We haue a father an old man, and a little boy, that was borne in his old age; whose brother by the mother is dead: and his mother hath him only, and his father loueth him tenderly. 21. And thou saidst to thy seruants: Bring him hither to me, and I wil set mine eyes on him.",
+  "r3_verse": "and we answered thee my Lord: We haue a father an old man, and a little boy, that was borne in his old age; whose brother by the mother is dead: and his mother hath him only, and his father loueth him tenderly.",
+  "arm_conflicts": [],
+  "new_text": "and we anſwered thee. my Lord: We haue a father an old man, and a little boy, that was borne in his old age: whoſe brother by the mother is dead: and his mother hath him only, and his father loueth him tenderly.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p142",
+  "old_text": "And thou ſaidſt : Bring him hither to me, and I wil ſet mine eyes on him.",
+  "old": {
+   "s_dismas": 0.786,
+   "odr_com": 0.786,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.4015,
+   0.885,
+   0.4791
+  ],
+  "crop_page": 142,
+  "r3_raw": "in his old age; whose brother by the mother is dead: and his mother hath him only, and his father loueth him tenderly. 2:. And thou saidst to thy seruants: Bring him hither to me, and I will set mine eyes on him. 21. We suggested to my Lord: The boy can not leaue his father: for if",
+  "r3_verse": "And thou saidst to thy seruants: Bring him hither to me, and I will set mine eyes on him.",
+  "arm_conflicts": [
+   ": | to thy seruants:",
+   "wil | will"
+  ],
+  "r2_attested": {
+   "5": "ſeruants:"
+  },
+  "visual_readings": {
+   "5": "ſeruants:"
+  },
+  "new_text": "And thou ſaidſt to thy ſeruants: Bring him hither to me, and I wil ſet mine eyes on him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p142",
+  "old_text": "ſuggeſted to my Lord : The boy can not leaue his father : fot it him, he wil die.",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "neighbours": [
+   22,
+   23
+  ],
+  "crop": [
+   0.155,
+   0.437,
+   0.885,
+   0.5132
+  ],
+  "crop_page": 142,
+  "r3_raw": "to thy seruants: Bring him hither to me, and I wil set mine eyes on him. 21. We suggested to my Lord: The boy can not leaue his father: for if he leaue him, he wil die. 23. And thou saideſt to thy seruants: Vnleſe your yongest brother come with you, you ſhal no more see my face. 24. Ther-",
+  "r3_verse": "We suggested to my Lord: The boy can not leaue his father: for if he leaue him, he wil die.",
+  "arm_conflicts": [
+   ": fot it | for if he leaue"
+  ],
+  "lexicon_readings": {
+   "12": "for"
+  },
+  "visual_readings": {
+   "12": "for"
+  },
+  "new_text": "We ſuggeſted to my Lord The boy can not leaue his father for if he leaue him, he wil die.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p142",
+  "old_text": "And thou ſaideſt to thy ſeruats: Vnleſſe your brother come with you, you shal no more ſee my tace.",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.4549,
+   0.885,
+   0.5318
+  ],
+  "crop_page": 142,
+  "r3_raw": "21. We suggested to my Lord: The boy can not leaue his father: for if he leaue him, he wil die. 23. And thou saideſt to thy ſervuants: Vileſſe your yongest brother come with you, you ſhal no more see my face. 24. Therfore when we were gone vp to thy ſervant our father, we told him al",
+  "r3_verse": "And thou saideſt to thy ſervuants: Vileſſe your yongest brother come with you, you ſhal no more see my face. Therfore",
+  "arm_conflicts": [
+   "ſeruats: Vnleſſe | ſervuants: Vileſſe",
+   "tace. | face. Therfore"
+  ],
+  "lexicon_readings": {
+   "20": "Therfore"
+  },
+  "r2_attested": {
+   "8": "yongeſt"
+  },
+  "visual_readings": {
+   "20": "Therfore",
+   "8": "yongeſt"
+  },
+  "new_text": "And thou ſaideſt to thy ſervuants: Vileſſe your yongeſt brother come with you, you shal no more ſee my face. Therfore",
+  "s_unresolved": [
+   "ſervuants:",
+   "Vileſſe",
+   "face."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p142",
+  "old_text": "Therwe were gone vp to thy ſeruant our tather, we told him al my Lord did ſpeake.",
+  "old": {
+   "s_dismas": 0.772,
+   "odr_com": 0.772,
+   "sabates_a": 0.76,
+   "madueke_b": 0.76
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.4724,
+   0.885,
+   0.5694
+  ],
+  "crop_page": 142,
+  "r3_raw": "he leaue him, he wil die. 23. And thou saideſt to thy seruants: Vnleſe your yongest brother come with you, you ſhal no more see my face. 24. Therfore when we were gone vp to thy seruant our father, we told him al things that my Lord did speake. 25. And our father said: Goe againe, and buy vs a little wheat. 26. To whom we ſaid: We can not goe: if our",
+  "r3_verse": "when we were gone vp to thy seruant our father, we told him al things that my Lord did speake.",
+  "arm_conflicts": [
+   "Therwe | when we",
+   "tather, | father,"
+  ],
+  "new_text": "when we were gone vp to thy ſeruant our father, we told him al things that my Lord did ſpeake.",
+  "s_unresolved": [
+   "father,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.906,
+   "madueke_b": 0.906
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p142",
+  "old_text": "And our father ſaid : Goe againe, vs a litle wheat.",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.5072,
+   0.885,
+   0.5841
+  ],
+  "crop_page": 142,
+  "r3_raw": "therefore when we were gone vp to thy servant our father, we told him all things that my Lord did speake. 25. And our father said: Goe againe, and buy vs a little wheat. 26. To whom we said: We can not goe: if our yongest brother shal goe downe with vs, we wil set forward together:",
+  "r3_verse": "And our father said: Goe againe, and buy vs a little wheat.",
+  "arm_conflicts": [
+   "litle | little"
+  ],
+  "new_text": "And our father ſaid Goe againe, and buy vs a litle wheat.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p142",
+  "old_text": "To whom we ſaid : We can not goe: if our brother ſhal goe downe with vs, we wil ſet torward together: he being abſent, we dare not ſee the maus tace. Wherunto",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.775,
+   "madueke_b": 0.775
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.5258,
+   0.885,
+   0.621
+  ],
+  "crop_page": 142,
+  "r3_raw": "things that my Lord did speake. 25. And our father said: Goe againe, and buy vs a little wheat. 26. To whom we said: We can not goe: if our yongest brother ſhal goe downe with vs, we wil set forward together: otherwise he being absent, we dare not see the mans face. 27. Wherunto he answered: You know that my wife bare me two. 28. One went",
+  "r3_verse": "To whom we said: We can not goe: if our yongest brother ſhal goe downe with vs, we wil set forward together: otherwise he being absent, we dare not see the mans face. Wherunto",
+  "arm_conflicts": [
+   "torward | forward",
+   "maus tace. | mans face."
+  ],
+  "r2_attested": {
+   "10": "yongeſt",
+   "22": "otherwiſe"
+  },
+  "visual_readings": {
+   "10": "yongeſt",
+   "22": "otherwiſe"
+  },
+  "new_text": "To whom we ſaid We can not goe: if our yongeſt brother ſhal goe downe with vs, we wil ſet forward together: otherwiſe he being abſent, we dare not ſee the mans face. Wherunto",
+  "s_unresolved": [
+   "forward",
+   "face."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p142",
+  "old_text": "You know that my wife bare me two.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.5789,
+   0.885,
+   0.6382
+  ],
+  "crop_page": 142,
+  "r3_raw": "otherwise he being absent, we dare not see the mans face. 27. Wherunto he answered: You know that my wife bare me two. 28. One went forth, and you said: A beast did devour him; and hitherto he appeareth",
+  "r3_verse": "he answered: You know that my wife bare me two.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "he anſwered: You know that my wife bare me two.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.833,
+   "odr_com": 0.833,
+   "sabates_a": 0.804,
+   "madueke_b": 0.804
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p142",
+  "old_text": "One went vou ſaid: A beaſt did deuour him: and hitherto he appeareth",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.805,
+   "madueke_b": 0.805
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.5789,
+   0.885,
+   0.6547
+  ],
+  "crop_page": 142,
+  "r3_raw": "otherwise he being absent, we dare not see the mans face. 27. Wherunto he answered: You know that my wife bare me two. 28. One went forth, and you said: A beast did devour him: and hitherto he appeareth not. 29. If you take this also, and ought befall him in the way, you shal",
+  "r3_verse": "One went forth, and you said: A beast did devour him: and hitherto he appeareth not.",
+  "arm_conflicts": [
+   "vou | forth, and you",
+   "deuour | devour"
+  ],
+  "new_text": "One went forth, and you ſaid: A beaſt did deuour him: and hitherto he appeareth not.",
+  "s_unresolved": [
+   "forth,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p142",
+  "old_text": "If you take this alſo, and ought betal him in the way, you ſhal See (4) my hoare hayres with ſorow vnto hel.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.6133,
+   0.885,
+   0.6965
+  ],
+  "crop_page": 142,
+  "r3_raw": "forth, and you said: A beast did devour him: and hitherto he appeareth not. 29. If you take this also, and ought beſeech him in the way, you ſhal bring downe (d) my hoare hayres with sorrow vnto hel. 30. Therfore if I ſhal enter to thy ſervant our father, and the boy be wanting (wheras his life dependeth upon the life of him), and he ſhall ſee that he is not",
+  "r3_verse": "If you take this also, and ought beſeech him in the way, you ſhal bring downe my hoare hayres with sorrow vnto hel. Therfore",
+  "arm_conflicts": [
+   "betal | beſeech",
+   "See (4) | bring downe",
+   "ſorow | sorrow"
+  ],
+  "lexicon_readings": {
+   "23": "Therfore"
+  },
+  "visual_readings": {
+   "23": "Therfore"
+  },
+  "new_text": "If you take this alſo, and ought beſeech him in the way, you ſhal bring downe my hoare hayres with ſorow vnto hel. Therfore",
+  "s_unresolved": [
+   "beſeech"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p142",
+  "old_text": "Therfore if 4v. to thy ſeruant our tather, and the boy be wanting (wheras dependeth vpon the lite of him)",
+  "old": {
+   "s_dismas": 0.808,
+   "odr_com": 0.808,
+   "sabates_a": 0.793,
+   "madueke_b": 0.793
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.6316,
+   0.885,
+   0.725
+  ],
+  "crop_page": 142,
+  "r3_raw": "not. 29. If you take this also, and ought befal him in the way, you shal bring downe (d) my hoare hayres with sorrow vnto hel. 30. Therfore if I shal enter to thy servant our father, and the boy be wanting (wheras his life dependeth vpon the lice of him) 31. and he shal see that he is not with vs, he wil dye, and thy scruants shal bring downe his hoare hayres",
+  "r3_verse": "Therfore if I shal enter to thy servant our father, and the boy be wanting (wheras his life dependeth vpon the lice of him)",
+  "arm_conflicts": [
+   "4v. | I shal enter",
+   "ſeruant | servant",
+   "tather, | father,",
+   "lite | lice"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "17": "life"
+  },
+  "visual_readings": {
+   "17": "life"
+  },
+  "new_text": "Therfore if I shal enter to thy ſeruant our father, and the boy be wanting (wheras his life dependeth vpon the lice of him)",
+  "s_unresolved": [
+   "shal",
+   "father,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p142",
+  "old_text": "and he ſhal ſee that he is uot he wil dye, and thy ſcruants ſhal bring downe his hoare hayres vnto hel.",
+  "old": {
+   "s_dismas": 0.784,
+   "odr_com": 0.784,
+   "sabates_a": 0.812,
+   "madueke_b": 0.812
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.6653,
+   0.885,
+   0.7597
+  ],
+  "crop_page": 142,
+  "r3_raw": "I shal enter to thy servant our father, and the boy be wanting (wheras his life dependeth vpon the lice of him) 1. And he shal see that he is not with vs, he wil dye, and thy scruants shal bring downe his hoare hayres with sorrow vnto hel. 2. Let me be thy proper servant that did take him into my protection and promised, saying: Unleſs I bring him againe I",
+  "r3_verse": "And he shal see that he is not with vs, he wil dye, and thy scruants shal bring downe his hoare hayres with sorrow vnto hel.",
+  "arm_conflicts": [
+   "uot | not with vs,"
+  ],
+  "new_text": "and he ſhal ſee that he is not with vs, he wil dye, and thy ſcruants ſhal bring downe his hoare hayres with sorrow vnto hel.",
+  "s_unresolved": [
+   "sorrow"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p142",
+  "old_text": "Let me be thy proper ſeruant that did take him protection and promiſed, ſayiug: Vnleſſe I bring him againe I guilty of ſinne againſt my father for euer.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.155,
+   0.7025,
+   0.885,
+   0.7977
+  ],
+  "crop_page": 142,
+  "r3_raw": "with vs, he wil dye, and thy scruants shal bring downe his hoare hayres with sorrow vnto hel.; 2. Let me be thy proper seruant that did take him into my protection and promised, saying: Vnleſfe I bring him againe I will be guilty of sinne against my father for euer. 33. I therfore thy servant wil tary instead of the child in the service of my Lord, and let the",
+  "r3_verse": "Let me be thy proper seruant that did take him into my protection and promised, saying: Vnleſfe I bring him againe I will be guilty of sinne against my father for euer. I therfore",
+  "arm_conflicts": [
+   "ſayiug: Vnleſſe | saying: Vnleſfe"
+  ],
+  "lexicon_readings": {
+   "33": "therfore"
+  },
+  "visual_readings": {
+   "33": "therfore"
+  },
+  "new_text": "Let me be thy proper ſeruant that did take him into my protection and promiſed, saying: Vnleſfe I bring him againe I will be guilty of ſinne againſt my father for euer. I therfore",
+  "s_unresolved": [
+   "saying:",
+   "Vnleſfe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p142",
+  "old_text": "thertore thy ſertary inſtead ot the child in the ſeruice of my Lord, and let the vp with his brethren.",
+  "old": {
+   "s_dismas": 0.782,
+   "odr_com": 0.782,
+   "sabates_a": 0.809,
+   "madueke_b": 0.802
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.7369,
+   0.885,
+   0.8338
+  ],
+  "crop_page": 142,
+  "r3_raw": "into my protection and promised, saying: Vnleffe I bring him againe I wil be guilty of sinne against my father for euer. 33. I therefore thy seruant wiltary instead of the child in the service of my Lord, and let the child goe vp with his brethren. 34. For I can not returne to my father, the child being absent; leſt I ſtaud by a witnes of the calamitie that",
+  "r3_verse": "thertore thy seruant wiltary instead of the child in the service of my Lord, and let the child goe vp with his brethren.",
+  "arm_conflicts": [
+   "ſertary | seruant wiltary",
+   "ot | of",
+   "ſeruice | service"
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "2": "ſeruant"
+  },
+  "visual_readings": {
+   "2": "ſeruant"
+  },
+  "new_text": "thertore thy ſeruant wiltary inſtead of the child in the ſeruice of my Lord, and let the child goe vp with his brethren.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.965,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p142",
+  "old_text": "For I can not returne to my father, being abſent : lett I ſtaud by a witnes ot the calamitie that my father.",
+  "old": {
+   "s_dismas": 0.783,
+   "odr_com": 0.783,
+   "sabates_a": 0.79,
+   "madueke_b": 0.79
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.7731,
+   0.885,
+   0.8697
+  ],
+  "crop_page": 142,
+  "r3_raw": "uant wil tary inſtead of the child in the seruice of my Lord, and let the child goe vp with his brethren. 34. For I can not returne to my father, the child being absent; lett I ſtand by a witnes of the calamitie that ſhal oppresse my father.",
+  "r3_verse": "For I can not returne to my father, the child being absent; lett I ſtand by a witnes of the calamitie that ſhal oppresse my father.",
+  "arm_conflicts": [
+   "ſtaud | ſtand",
+   "ot | of"
+  ],
+  "r2_attested": {
+   "23": "oppreſſe"
+  },
+  "visual_readings": {
+   "23": "oppreſſe"
+  },
+  "new_text": "For I can not returne to my father, the child being abſent lett I ſtand by a witnes of the calamitie that ſhal oppreſſe my father.",
+  "s_unresolved": [
+   "ſtand",
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

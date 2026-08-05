@@ -1,0 +1,377 @@
+{
+  "locus": "scripture/psalms/118",
+  "page_index": 227,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": "diag-reocr/psalms118-S1-p227-400dpi.png",
+  "raster_dpi": 400,
+  "page_label_printed": "217",
+  "running_header": {
+    "left": "",
+    "center": "OF PSALMES",
+    "right": "217"
+  },
+  "verses_on_page": [
+    "118:103",
+    "118:104",
+    "118:105",
+    "118:106",
+    "118:107",
+    "118:108",
+    "118:109",
+    "118:110",
+    "118:111",
+    "118:112",
+    "118:113",
+    "118:114"
+  ],
+  "layout_note": "Acrostic Psalm 118 (Vulgate; = Ps 119 Hebrew). Page spans tail of MEM (103-104), NUN (105-112), start of SAMECH (113-114). Roman scripture body is interleaved with ITALIC annotations keyed by reference letters (a-f), Hebrew section headers with Latin-meaning glosses, and left/right marginalia. body[] holds SCRIPTURE ONLY (clean for recall scoring); everything else is in apparatus[] with reading-order anchors.",
+  "body": [
+    {
+      "line_index": 0,
+      "verse": "118:103",
+      "verse_number_printed": "103",
+      "ref_letter": "c",
+      "text": "How ſweete are thy * wordes to my iawes, more then",
+      "inline_marker": "*",
+      "_pre_review": "103 c How ſweete are thy * wordes to my iawes, more then",
+      "reviewed": true
+    },
+    {
+      "line_index": 1,
+      "verse": "118:103",
+      "text": "honie to my mouth!"
+    },
+    {
+      "line_index": 2,
+      "verse": "118:104",
+      "ref_letter": "e",
+      "text": "By the commandments I haue vnderſtood : therefore haue",
+      "_pre_review": "e By the commandments I haue vnderſtood : therefore haue",
+      "reviewed": true
+    },
+    {
+      "line_index": 3,
+      "verse": "118:104",
+      "text": "I hated al the way of iniquitie.",
+      "_pre_review": "I hated the way of iniquitie.",
+      "reviewed": true
+    },
+    {
+      "line_index": 4,
+      "verse": "118:105",
+      "verse_number_printed": "105",
+      "ref_letter": "a",
+      "text": "Thy word is a lampe to my feete, and a light to my pathes.",
+      "_pre_review": "105 a Thy word is a lampe to my feete, and a light to my pathes.",
+      "reviewed": true
+    },
+    {
+      "line_index": 5,
+      "verse": "118:106",
+      "verse_number_printed": "106",
+      "ref_letter": "b",
+      "text": "I ſware, and haue determined to keepe the iudgements",
+      "has_uncertain": true,
+      "_pre_review": "106 b I b ſware, and haue determined to keepe the iuſtifications",
+      "reviewed": true
+    },
+    {
+      "line_index": 6,
+      "verse": "118:106",
+      "text": "of thy iuſtice."
+    },
+    {
+      "line_index": 7,
+      "verse": "118:107",
+      "verse_number_printed": "107",
+      "ref_letter": "c",
+      "text": "I am humbled exceedingly ô Lord : quicken me according",
+      "has_uncertain": true,
+      "_pre_review": "107 c I am e humbled exceedingly ⟨ô?⟩ Lord: quicken me according",
+      "reviewed": true
+    },
+    {
+      "line_index": 8,
+      "verse": "118:107",
+      "text": "to thy word."
+    },
+    {
+      "line_index": 9,
+      "verse": "118:108",
+      "verse_number_printed": "108",
+      "ref_letter": "d",
+      "text": "The voluntaries of my mouth make acceptable ô Lord:",
+      "has_uncertain": true,
+      "_pre_review": "108 d The d voluntaries of my mouth make acceptable ⟨ô?⟩ Lord:",
+      "reviewed": true
+    },
+    {
+      "line_index": 10,
+      "verse": "118:108",
+      "text": "and teach me thy iudgementes.",
+      "_pre_review": "and teach me thy iudgements.",
+      "reviewed": true
+    },
+    {
+      "line_index": 11,
+      "verse": "118:109",
+      "verse_number_printed": "109",
+      "ref_letter": "e",
+      "text": "My ſoule is in my handes alwaies : and I haue not forgot-",
+      "line_end_hyphen": true,
+      "_pre_review": "109 e My e ſoule is in my handes alwaies : and I haue not forgot-",
+      "reviewed": true
+    },
+    {
+      "line_index": 12,
+      "verse": "118:109",
+      "text": "ten thy law."
+    },
+    {
+      "line_index": 13,
+      "verse": "118:110",
+      "verse_number_printed": "110",
+      "ref_letter": "f",
+      "text": "Sinners laid a ſnare for me : and I haue not erred from thy",
+      "_pre_review": "110 f Sinners laid a ſnare for me : and I haue not erred from thy",
+      "reviewed": true
+    },
+    {
+      "line_index": 14,
+      "verse": "118:110",
+      "text": "commandments."
+    },
+    {
+      "line_index": 15,
+      "verse": "118:111",
+      "verse_number_printed": "111",
+      "verse_marker": "†",
+      "text": "† For inheritance I haue purchaſed thy teſtimonies for euer:",
+      "_pre_review": "111 † For inheritance I haue purchaſed thy teſtimonies for euer:",
+      "reviewed": true
+    },
+    {
+      "line_index": 16,
+      "verse": "118:111",
+      "text": "becauſe they are the ioy of my hart."
+    },
+    {
+      "line_index": 17,
+      "verse": "118:112",
+      "verse_number_printed": "112",
+      "verse_marker": "†",
+      "text": "† I haue inclined my hart to doe thy iuſtifications for euer,",
+      "_pre_review": "112 † I haue inclined my hart to doe thy iuſtifications for euer,",
+      "reviewed": true
+    },
+    {
+      "line_index": 18,
+      "verse": "118:112",
+      "ref_letter": "f",
+      "text": "for reward.",
+      "_pre_review": "f for reward.",
+      "reviewed": true
+    },
+    {
+      "line_index": 19,
+      "verse": "118:113",
+      "verse_number_printed": "113",
+      "verse_marker": "†",
+      "text": "† I haue hated the vniuſt : and I haue loued thy law.",
+      "has_uncertain": true,
+      "_pre_review": "113 † I haue e hated the vniuſt : and I haue ⟨ô?⟩ loued thy law.",
+      "reviewed": true
+    },
+    {
+      "line_index": 20,
+      "verse": "118:114",
+      "verse_number_printed": "114",
+      "verse_marker": "†",
+      "text": "† Thou art my helper, and protectour : and vpon thy word",
+      "_pre_review": "114 † Thou art my helper, and protectour : and vpon thy word",
+      "reviewed": true
+    },
+    {
+      "line_index": 21,
+      "verse": "118:114",
+      "text": "I haue much hoped."
+    }
+  ],
+  "apparatus": [
+    {
+      "role": "section_marker",
+      "after_body_line": 3,
+      "hebrew_letter": "Nun",
+      "text": "Nun.",
+      "gloss": "Euerlaſting.",
+      "note": "14th Hebrew letter; traditional Latin-meaning gloss 'everlasting' (sempiternus)"
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "a",
+      "anchor_verse": "118:105",
+      "after_body_line": 4,
+      "text": "a The vvord or lavv of God declared by Prophets, Paſtors, or other Preachers is the ordi-\nnarie meanes for others to ſerue, hovv to direct their vvayes, and actions.",
+      "_pre_footnote_vv": "a The word or law of God declared by Prophets, Paſtors, or other Preachers is the ordi-\nnarie meanes for others to ſerue, how to direct their wayes, and actions.",
+      "footnote_vv_applied": true,
+      "needs_review": "ſ/f verification of footnote face (vv applied per Sir's rule, not visually re-confirmed)"
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "b",
+      "anchor_verse": "118:106",
+      "after_body_line": 6,
+      "text": "b Such profeſſion Gods people made in the old lavv, in Circumciſion, or at other times:\nChriſtians make it in Baptiſme.",
+      "_pre_footnote_vv": "b Such profeſſion Gods people made in the old law, in Circumciſion, or at other times:\nChriſtians make it in Baptiſme.",
+      "footnote_vv_applied": true,
+      "needs_review": "ſ/f verification of footnote face (vv applied per Sir's rule, not visually re-confirmed)"
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "c",
+      "anchor_verse": "118:107",
+      "after_body_line": 8,
+      "text": "c All that wil liue godly in Chriſt Ieſus, that ſuffer perſecution. 2. Tim. 3. v. 12.",
+      "_pre_review": "c All that will liue godly in Chriſt Ieſus, that ſuffer perſecution. 2. Tim. 3. v. 12."
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "d",
+      "anchor_verse": "118:108",
+      "after_body_line": 10,
+      "text": "d Beſides the commandments, the iuſt alſo offer voluntarie vvorkes of ſupererogation,\nacceptable to God.",
+      "_pre_footnote_vv": "d Beſides the commandments, the iuſt alſo offer voluntarie workes of ſupererogation,\nacceptable to God.",
+      "footnote_vv_applied": true,
+      "needs_review": "ſ/f verification of footnote face (vv applied per Sir's rule, not visually re-confirmed)"
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "e",
+      "anchor_verse": "118:109",
+      "after_body_line": 12,
+      "text": "e By this Hebrew prouerb is ſignified, that a iuſt mans temporal life is in continual danger,\nas the thing that is in ones hand, is readie to be laid by, put out of his hand, or to be by and\nby diſpoſed of, or may forthvvith fal from his hand.",
+      "has_uncertain": true,
+      "_pre_review": "e By this Hebrew prouerb is ſignified, that a iuſt mans temporal life is in continual danger,\nas the thing that is in ones hand, is ⟨reidie?⟩ to be laid by, put out of his hand, or to be by and\nby ⟨diſplaſed?⟩ of, and ſo eaſily throwen with fal from his hand."
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "f",
+      "anchor_verse": "118:112",
+      "after_body_line": 18,
+      "text": "f A moſt euident place, that the keping of Gods commandments merite revvard, and are\nrightly obſerued in reſpect of revvard.",
+      "_pre_footnote_vv": "f A moſt euident place, that the keping of Gods commandments merite reward, and are\nrightly obſerued in reſpect of reward.",
+      "footnote_vv_applied": true,
+      "needs_review": "ſ/f verification of footnote face (vv applied per Sir's rule, not visually re-confirmed)"
+    },
+    {
+      "role": "section_marker",
+      "after_body_line": 18,
+      "hebrew_letter": "Samech",
+      "text": "Samech.",
+      "gloss": "Helpe.",
+      "note": "15th Hebrew letter; Latin-meaning gloss 'help' (adiutorium)"
+    },
+    {
+      "role": "annotation",
+      "ref_letter": "a",
+      "anchor_verse": "118:113",
+      "after_body_line": 19,
+      "text": "a Not anie mortal man is to be hated, in his perſon, but his iniquitie, by vvhich he is an eni-\nmie to Gods lavv, b vvhich euerie iuſt man loueth.",
+      "has_uncertain": true,
+      "_pre_review": "a Not ⟨vniuſt?⟩ moral men is to be hated, in his perſon, but his iniquitie, by which he is an ene-\nmie to Gods law, & which euerie iuſt man loueth."
+    },
+    {
+      "role": "signature",
+      "after_body_line": 21,
+      "text": "Ec 2",
+      "note": "gathering signature, foot of page (could read 'Ee 2')"
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor_verse": "118:103",
+      "anchor_glyph": "*",
+      "position": "left_margin",
+      "text": "elogia",
+      "note": "left-margin italic gloss keyed to the '*' in 'thy * wordes'; Latin 'elogia' = sayings/praises"
+    },
+    {
+      "anchor_verse": "118:104",
+      "anchor_glyph": "‖",
+      "position": "right_margin",
+      "text": "It brideth\nalſo iuſt, ha-\ntred to ſinne.",
+      "note": "right-margin annotation; 'bridleth' possibly printed 'brideth' — flagged",
+      "has_uncertain": true,
+      "_pre_review": "It ⟨bridleth?⟩\nalſo luſt, ha-\ntred to ſinne."
+    }
+  ],
+  "catchword": {
+    "text": "† c Depart",
+    "position": "foot_right",
+    "note": "catchword anticipating v115 ('Depart from me ye malignant...') at head of next page; EXCLUDED from body concat per §catchwords"
+  },
+  "uncertain": [
+    {
+      "span": "reidie (annotation e)",
+      "note": "'reidie' likely = 'readie' (ready); transcribed as printed"
+    },
+    {
+      "span": "diſplaſed (annotation e)",
+      "note": "likely = 'diſplaced' (displaced); the medial letters are compressed"
+    },
+    {
+      "span": "vniuſt (annotation a2)",
+      "note": "'Not vniuſt moral men' reads awkwardly; 'vniuſt' vs 'a iuſt' — the leading word is unclear"
+    },
+    {
+      "span": "bridleth (right marginalia)",
+      "note": "'It bridleth also lust, hatred to sin' — printed form may be 'brideth' (missing l)"
+    }
+  ],
+  "sfoot_note": "ſ-PLACEMENT CAVEAT: per §long-ſ, ſ is glyph-driven not positional. I transcribed long-ſ in initial/medial and round-s word-finally (the edition's norm) but at 400 DPI cannot resolve every sort with certainty on this dense page — reviewer's ſ/s corrections expected. No obvious ſh-ligature/round-s 'sh' ambiguities on this page (few sh clusters).",
+  "observer": "jarvis",
+  "observed_at": "2026-07-12",
+  "method": "visual-multimodal-read of 400 DPI raster (diag-reocr/psalms118-S1-p227-400dpi.png); s_dismas/Madueke used ONLY as content anchor to confirm verse identity and catch dropped lines, never as spelling oracle",
+  "confidence": "medium — dense interleaved layout; body scripture high-confidence on words, medium on ſ-placement and the vocative-O glyphs; annotations medium; two marginalia words flagged",
+  "resolved_uncertain": [
+    {
+      "line_index": 5,
+      "span": "I b ſware",
+      "note": "the second 'b' is the annotation reference-letter b sitting inside the verse ('I ſware'); kept inline as printed but it is an apparatus key, not scripture",
+      "resolved_to": "I ſware, and haue determined to keepe the iudgements",
+      "resolved_by": "sir"
+    },
+    {
+      "line_index": 7,
+      "span": "ô",
+      "printed_appears_as": "small 'o' with a diacritic mark before 'Lord'",
+      "note": "vocative 'O Lord' (DR 118:107 'I have been humbled, O Lord'); unsure if circumflex ô, macron ō, or plain O — flagged for review",
+      "resolved_to": "I am humbled exceedingly ô Lord : quicken me according",
+      "resolved_by": "sir"
+    },
+    {
+      "line_index": 9,
+      "span": "ô",
+      "note": "same vocative-O glyph before 'Lord' as line 7",
+      "resolved_to": "The voluntaries of my mouth make acceptable ô Lord:",
+      "resolved_by": "sir"
+    },
+    {
+      "line_index": 19,
+      "span": "ô",
+      "printed_appears_as": "same glyph as lines 7/9 but here before 'loued' where a vocative-O makes no sense (DR: 'and have loved thy law')",
+      "note": "may be a reference-letter, an artifact, or a mis-set sort — genuinely unsure; could be that there is no glyph and it is ink noise. NEEDS review.",
+      "resolved_to": "† I haue hated the vniuſt : and I haue loued thy law.",
+      "resolved_by": "sir"
+    }
+  ],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": null,
+    "n_applied": 18,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/scripture-psalms-118.corrections.json"
+  }
+}

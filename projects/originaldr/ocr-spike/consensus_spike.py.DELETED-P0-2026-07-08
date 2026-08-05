@@ -1,0 +1,342 @@
+#!/usr/bin/env python3
+"""consensus_spike.py -- multi-witness consensus-OCR proof-of-thesis.
+
+=== SUPERSEDED / DEAD — DO NOT RUN OR RESURRECT ===========================================
+This early proof-of-thesis PREDATES the QC contract (Sir 2026-07-08). It still contains a
+book-level COVER_FLOOR=0.5 DROP (below) that launders present-but-weak books to zero — the exact
+anti-pattern the QC contract forbids. The live path is consensus_v2.py (NO book-level gate;
+per-verse ATTEST_THRESHOLD + qc_audit char-identity are the only gates). Nothing imports this file;
+it is kept solely as a historical artifact. Do not reintroduce its gating into the live pipeline.
+==========================================================================================
+
+Demonstrates the MSA-consensus approach: align each scan source's diplomatic OCR to
+the verse skeleton, fuse with the existing text witnesses (archaic/diplomatic preferred),
+and emit a TWO-LAYER result per verse:
+  - diplomatic layer: each scan source's raw ſ-preserving surface (conservative, preserved)
+  - cleaned layer:    per-token archaic-preferred consensus reading + confidence (aggressive)
+Then measure the accuracy lift of cleaned-consensus vs a single scan, scored against the
+held-out s_dismas ſ-preserving ground truth, decomposed by witness depth.
+
+Reuses detect_our_ocr primitives (Stream/aligner/anchor) -- extends them to keep EVERY
+covering source separate (detect_our_ocr collapses to one best alias/book; consensus needs all).
+
+Run:  core/.venv/bin/python consensus_spike.py --book genesis --chapters 1
+"""
+from __future__ import annotations
+
+import argparse
+import difflib
+import json
+import re
+import sys
+from collections import Counter
+from pathlib import Path
+
+# detect_our_ocr lives in the recon dir; add it to path (keep this spike in scratch, gitignored)
+RECON = Path("/Users/nathanielcannon/Claude/Projects/palimpsest/core/tests/fixtures/gold/"
+             "mask_engine/originaldr_reconstruction")
+sys.path.insert(0, str(RECON))
+import detect_our_ocr as D  # noqa: E402  # type: ignore[import-not-found]
+
+COVER_FLOOR = 0.5  # DEAD SPIKE GATE — book-level drop, forbidden by the QC contract. Live path
+                   # (consensus_v2.py) has NO book gate; see the SUPERSEDED banner above. Not enforced
+                   # by guard_no_book_gates.py only because nothing imports this file.
+
+UPSCALE = getattr(D, "UPSCALE", 2)
+GT_SRC = "s_dismas"                       # held-out ground truth (ſ-preserving archaic)
+TEXT_WITNESSES = ["odr_com", "madueke_a"]  # "existing text" streamed into consensus
+ARCHAIC_MARKERS = ("ſ", "æ", "œ", "⁊", "ꝫ")
+
+
+# --------------------------------------------------------------------------- #
+# folding / tokenizing
+# --------------------------------------------------------------------------- #
+def fold_tok(text: str) -> list[str]:
+    t = (text.lower().replace("ſ", "s").replace("æ", "ae").replace("œ", "oe")
+         .replace("⁊", "and").replace("ꝫ", "us").replace("v", "u").replace("j", "i"))
+    return re.findall(r"[a-z]+", t)
+
+
+def fold1(word: str) -> str:
+    f = fold_tok(word)
+    return f[0] if f else ""
+
+
+def archaic_score(w: str) -> int:
+    return sum(w.count(c) for c in ARCHAIC_MARKERS)
+
+
+# --------------------------------------------------------------------------- #
+# witness surfaces (text scaffold) from reads/<src>.json
+# --------------------------------------------------------------------------- #
+def load_reads_surfaces(name: str) -> dict[str, str]:
+    p = D.READS_DIR / f"{name}.json"
+    out: dict[str, str] = {}
+    if not p.exists():
+        return out
+    for r in json.loads(p.read_text()).get("reads", []):
+        sk = r.get("skeleton_id", "")
+        if sk.startswith("scripture/"):
+            out[sk] = r.get("surface", "")
+    return out
+
+
+# --------------------------------------------------------------------------- #
+# per-alias verse extraction (mirrors detect_our_ocr.detect_book, but per source)
+# --------------------------------------------------------------------------- #
+def extract_alias_verses(book: str, chapters: dict[int, dict[int, str]],
+                         st) -> dict[tuple[int, int], tuple[str, float]]:
+    """Chapter-level GLOBAL alignment: align the whole scan token-stream against the chapter's
+    concatenated known verses once, then cut at verse boundaries. Monotone by construction, so
+    recurring vocabulary can't make an early verse latch onto a later verse's denser window."""
+    folded, raw = st.fold, st.raw
+    out: dict[tuple[int, int], tuple[str, float]] = {}
+    cursor = 0
+    maxch = D._BOOK_CH.get(book, 0)
+    for ch in sorted(chapters):
+        if maxch and ch > maxch:
+            continue
+        verses = chapters[ch]
+        vlist = sorted(verses)
+        # reference fold sequence + per-verse boundary offsets
+        ref: list[str] = []
+        bounds: list[tuple[int, int]] = []  # (verse, ref_start)
+        for v in vlist:
+            bounds.append((v, len(ref)))
+            ref.extend(fold_tok(verses[v]))
+        bounds.append((-1, len(ref)))  # end sentinel
+        if not ref:
+            continue
+        # locate chapter window in the scan stream
+        _, a, b = D.locate_region(D._probe(" ".join(verses[v] for v in vlist)), folded, cursor)
+        ca = max(0, a - D.CHAP_PAD)
+        cb = min(len(folded), b + D.CHAP_PAD)
+        cursor = a
+        scan = folded[ca:cb]
+        # global align ref -> scan; build ref_index -> scan_index map
+        ref2scan: dict[int, int] = {}
+        for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(
+                a=ref, b=scan, autojunk=False).get_opcodes():
+            if tag in ("equal", "replace"):
+                for k in range(min(i2 - i1, j2 - j1)):
+                    ref2scan[i1 + k] = j1 + k
+
+        def scan_at(ref_idx: int, default: int) -> int:
+            for r in range(ref_idx, len(ref) + 1):
+                if r in ref2scan:
+                    return ref2scan[r]
+            return default
+
+        for i, (v, rstart) in enumerate(bounds[:-1]):
+            rend = bounds[i + 1][1]
+            s0 = scan_at(rstart, 0)
+            s1 = scan_at(rend, len(scan))
+            if s1 <= s0:
+                s1 = min(len(scan), s0 + (rend - rstart))
+            surface = " ".join(raw[ca + s0:ca + s1]).strip()
+            vset = set(fold_tok(verses[v]))
+            got = set(scan[s0:s1])
+            rec = len(vset & got) / len(vset) if vset else 0.0
+            if surface and rec >= D.ATTEST_THRESHOLD:
+                out[(ch, v)] = (surface, round(rec, 3))
+    return out
+
+
+def book_coverage(chapters: dict[int, dict[int, str]], st) -> float:
+    """Mid-chapter probe recall of this source's fold (mirrors resolve_alias's gate)."""
+    chs = sorted(chapters)
+    if not chs or not st.fold:
+        return 0.0
+    mid = chs[len(chs) // 2]
+    probe = D._probe(" ".join(chapters[mid][v] for v in sorted(chapters[mid])))
+    if not probe:
+        return 0.0
+    r, _, _ = D.locate_region(probe, st.fold)
+    return round(r, 3)
+
+
+# --------------------------------------------------------------------------- #
+# consensus: align each witness onto the anchor frame, vote per column
+# --------------------------------------------------------------------------- #
+def align_to_anchor(anchor_folds: list[str], surface: str) -> list[str | None]:
+    wtoks = surface.split()
+    wfolds = [fold1(w) for w in wtoks]
+    res: list[str | None] = [None] * len(anchor_folds)
+    sm = difflib.SequenceMatcher(a=anchor_folds, b=wfolds, autojunk=False)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag in ("equal", "replace"):
+            for k in range(min(i2 - i1, j2 - j1)):
+                res[i1 + k] = wtoks[j1 + k]
+    return res
+
+
+def consensus_reading(anchor_text: str,
+                      witnesses: list[tuple[str, str]]) -> tuple[str, list[dict]]:
+    """witnesses: [(label, surface)]. Returns (cleaned_text, columns[])."""
+    anchor_folds = fold_tok(anchor_text)
+    aligned = {lab: align_to_anchor(anchor_folds, surf) for lab, surf in witnesses}
+    n = max(1, len(witnesses))
+    cleaned: list[str] = []
+    cols: list[dict] = []
+    for i, af in enumerate(anchor_folds):
+        cands: list[tuple[str, str]] = []
+        for lab in aligned:
+            w = aligned[lab][i]
+            if w:
+                cands.append((lab, w))
+        foldvotes = Counter(fold1(w) for _, w in cands if fold1(w))
+        if foldvotes:
+            win_fold, win_n = foldvotes.most_common(1)[0]
+            winners = [w for _, w in cands if fold1(w) == win_fold]
+            surface = max(winners, key=archaic_score)
+        else:
+            win_fold, win_n, surface = af, 0, af
+        cleaned.append(surface)
+        cols.append({"anchor_fold": af, "cleaned": surface,
+                     "confidence": round(win_n / n, 3),
+                     "votes": dict(foldvotes)})
+    return " ".join(cleaned), cols
+
+
+# --------------------------------------------------------------------------- #
+# scoring vs GT (token-set recall on folded tokens)
+# --------------------------------------------------------------------------- #
+def recall_vs_gt(reading: str, gt: str) -> float | None:
+    g = set(fold_tok(gt))
+    if not g:
+        return None
+    r = set(fold_tok(reading))
+    return round(len(r & g) / len(g), 3)
+
+
+def mean(xs: list[float]) -> float | None:
+    xs = [x for x in xs if x is not None]
+    return round(sum(xs) / len(xs), 3) if xs else None
+
+
+# --------------------------------------------------------------------------- #
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--book", default="genesis")
+    ap.add_argument("--chapters", default="1", help="comma list, e.g. 1,2")
+    ap.add_argument("--out", default=str(Path(__file__).with_name("consensus-spike.json")))
+    args = ap.parse_args()
+    book = args.book
+    want_ch = {int(c) for c in args.chapters.split(",")}
+
+    # 1. reference anchor (modern locator text) restricted to book/chapters
+    anchor = D.anchor_by_book(D.load_anchor()).get(book, {})
+    chapters = {ch: vs for ch, vs in anchor.items() if ch in want_ch}
+    if not chapters:
+        print(f"no anchor text for {book} ch {sorted(want_ch)}", file=sys.stderr)
+        return 1
+
+    # 2. load every archive scan stream; gate to sources that genuinely cover the book
+    #    (testament-match via candidate_aliases + mid-chapter locate recall >= floor).
+    prefix = D.LINE_PREFIX["archive"]
+    streams = {}
+    for d in sorted(D.DIPL_ROOT.glob(f"{prefix}*")):
+        if not d.is_dir():
+            continue
+        alias = d.name[len(prefix):]
+        st = D.load_stream(d, alias, UPSCALE)
+        if st.n_body_lines > 0:
+            streams[alias] = st
+
+    cov = {a: book_coverage(chapters, streams[a])
+           for a in D.candidate_aliases(book, list(streams))}
+    covering = {a: r for a, r in cov.items() if r >= COVER_FLOOR}
+    print(f"book-coverage recall (gate>={COVER_FLOOR}): {cov}")
+    print(f"sources kept for {book}: {sorted(covering)}")
+
+    scan_verses: dict[str, dict] = {}
+    for alias in covering:
+        ext = extract_alias_verses(book, chapters, streams[alias])
+        if ext:
+            scan_verses[alias] = ext
+    scan_aliases = sorted(scan_verses, key=lambda a: -len(scan_verses[a]))
+
+    # 3. text-witness surfaces + GT
+    text_surf = {w: load_reads_surfaces(w) for w in TEXT_WITNESSES}
+    gt_surf = load_reads_surfaces(GT_SRC)
+
+    # 4. per verse: two-layer consensus + scored at increasing witness depth
+    primary = scan_aliases[0] if scan_aliases else None
+    records = []
+    agg = {"single_scan": [], "scans_only": [], "scans_plus_text": []}
+    per_source_single: dict[str, list[float]] = {a: [] for a in scan_aliases}
+    for ch in sorted(chapters):
+        for v in sorted(chapters[ch]):
+            sk = f"scripture/{book}/{ch}/{v}"
+            gt = gt_surf.get(sk, "")
+            anchor_text = chapters[ch][v]
+            diplomatic = {a: scan_verses[a][(ch, v)][0]
+                          for a in scan_aliases if (ch, v) in scan_verses[a]}
+            if not diplomatic:
+                continue
+            scan_wit = [(a, s) for a, s in diplomatic.items()]
+            text_wit = [(w, text_surf[w][sk]) for w in TEXT_WITNESSES if sk in text_surf[w]]
+
+            clean_scans, _ = consensus_reading(anchor_text, scan_wit)
+            clean_all, cols = consensus_reading(anchor_text, scan_wit + text_wit)
+
+            r_single = recall_vs_gt(diplomatic.get(primary, "") if primary else "", gt)
+            r_scans = recall_vs_gt(clean_scans, gt)
+            r_all = recall_vs_gt(clean_all, gt)
+            for a, s in diplomatic.items():
+                rv = recall_vs_gt(s, gt)
+                if rv is not None:
+                    per_source_single[a].append(rv)
+            for k, val in (("single_scan", r_single), ("scans_only", r_scans),
+                           ("scans_plus_text", r_all)):
+                if val is not None:
+                    agg[k].append(val)
+
+            records.append({
+                "coord": sk, "anchor": anchor_text, "gt": gt,
+                "diplomatic_layer": diplomatic,
+                "cleaned_layer": {"reading": clean_all,
+                                  "tokens": [{"t": c["cleaned"], "conf": c["confidence"]}
+                                             for c in cols]},
+                "scores_vs_gt": {"single_scan(%s)" % primary: r_single,
+                                 "scans_only": r_scans, "scans_plus_text": r_all},
+            })
+
+    summary = {
+        "book": book, "chapters": sorted(want_ch),
+        "scan_sources": scan_aliases,
+        "text_witnesses": TEXT_WITNESSES, "ground_truth": GT_SRC,
+        "verses_scored": len(records),
+        "mean_recall_vs_gt": {
+            **{"single_scan[%s]" % a: mean(per_source_single[a]) for a in scan_aliases},
+            "consensus_scans_only": mean(agg["scans_only"]),
+            "consensus_scans_plus_text": mean(agg["scans_plus_text"]),
+        },
+    }
+    Path(args.out).write_text(json.dumps({"summary": summary, "verses": records},
+                                         ensure_ascii=False, indent=2))
+
+    # console report
+    print("\n===== CONSENSUS SPIKE: %s ch%s =====" % (book, args.chapters))
+    print("scan sources :", scan_aliases)
+    print("text scaffold:", TEXT_WITNESSES, "| GT (held out):", GT_SRC)
+    print("verses scored:", len(records))
+    m = summary["mean_recall_vs_gt"]
+    print("\nmean token-recall vs GT (higher=better):")
+    for k, val in m.items():
+        bar = "#" * int((val or 0) * 40)
+        print(f"  {k:34s} {val}  {bar}")
+    if records:
+        print("\nsample verse (first):")
+        r = records[0]
+        print("  coord :", r["coord"])
+        print("  GT    :", r["gt"][:90])
+        for a, s in r["diplomatic_layer"].items():
+            print(f"  {a:16s}: {s[:90]}")
+        print("  CLEANED:", r["cleaned_layer"]["reading"][:90])
+    print("\nwrote", args.out)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

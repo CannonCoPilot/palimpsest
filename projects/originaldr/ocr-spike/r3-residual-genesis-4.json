@@ -1,0 +1,2588 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p34",
+  "old_text": "thou doeſt caſt me our this day from the face of earth, and from thy face ſhal I be hid, and I ſhal be a bound fugitiue on the earth: euerie one therfore that de th me, fhal kil me.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.1127,
+   0.875,
+   0.2397
+  ],
+  "crop_page": 34,
+  "r3_raw": "Myne iniquitie is greater, then that I may deserue pardon. † Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth; euerie one therefore that fin- deth me, ſhal kil me. † And our Lord said to him: No, it ſhal not so be: but whoſoever ſhal kil Cain, ſhalbe punished sea-",
+  "r3_verse": "Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth; euerie one therefore that fin- deth me, ſhal kil me.",
+  "arm_conflicts": [
+   "our | out",
+   "bound fugitiue | vagabound & fugitive",
+   "therfore | therefore",
+   "de th | fin- deth",
+   "fhal | ſhal"
+  ],
+  "new_text": "Loe thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitiue on the earth: euerie one therefore that fin- deth me, ſhal kil me.",
+  "s_unresolved": [
+   "therefore",
+   "fin-",
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p34",
+  "old_text": "And our Lord ſaid to him: No, it in- not ſo be: hut whoſoeuer ſhal kil Cain, shalbe punished Auen fould. And our Lord put a marke on Cain, that ſoeuer found him should not kil him.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.944,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.1726,
+   0.875,
+   0.2993
+  ],
+  "crop_page": 34,
+  "r3_raw": "bound & fugitive on the earth: euerie one therefore that findeth me, ſhall kil me. † And our Lord said to him: No, it ſhall not so be: but whosoeuer ſhall kil Cain, ſhalbe punished seven fould. And our Lord put a marke on Cain, that whosoeuer found him should not kil him. † And \"Cain went forth from the face of our Lord, and",
+  "r3_verse": "And our Lord said to him: No, it ſhall not so be: but whosoeuer ſhall kil Cain, ſhalbe punished seven fould. And our Lord put a marke on Cain, that whosoeuer found him should not kil him.",
+  "arm_conflicts": [
+   "in- | ſhall",
+   "hut | but",
+   "ſhal | ſhall",
+   "Auen | seven",
+   "ſoeuer | whosoeuer"
+  ],
+  "r2_attested": {
+   "30": "whoſoeuer"
+  },
+  "visual_readings": {
+   "30": "whoſoeuer"
+  },
+  "new_text": "And our Lord ſaid to him: No, it ſhall not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished seven fould. And our Lord put a marke on Cain, that whoſoeuer found him should not kil him.",
+  "s_unresolved": [
+   "ſhall",
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.989,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p34",
+  "old_text": "And Cain went forth from the face of our Lord, be- dwelt as a fugitiue on the earth at the eaſt ſide of iſſues",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.2489,
+   0.875,
+   0.3598
+  ],
+  "crop_page": 34,
+  "r3_raw": "And our Lord put a marke on Cain, that who- soever found him should not kil him. † And \"Cain went forth from the face of our Lord, and dwelt as a fugitive on the earth at the east side of Eden. † And Cain knewe his wife, who conceived, and brought forth Enoch: And he built a citie, & called the name ther-",
+  "r3_verse": "And \"Cain went forth from the face of our Lord, and dwelt as a fugitive on the earth at the east side of Eden.",
+  "arm_conflicts": [
+   "Cain | \"Cain",
+   "be- | and",
+   "fugitiue | fugitive",
+   "iſſues | Eden."
+  ],
+  "new_text": "And Cain went forth from the face of our Lord, and dwelt as a fugitiue on the earth at the eaſt ſide of Eden.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p34",
+  "old_text": "And Cain knewe his wife, who conceiued, and brought and forth Enoch And he built a citie, called the name licle of by the name of his ſonne, Enoch.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.2955,
+   0.875,
+   0.3999
+  ],
+  "crop_page": 34,
+  "r3_raw": "dwelt as a fugitive on the earth at the east side of Eden. † And Cain knewe his wife, who conceiued, and brought forth Enoch: And:: he built a citie, & called the name thereof by the name of his sonne, Enoch. † Moreouer Enoch be gat Iraď, and Iraď begat Mauiael, and Mauiael begat Ma-",
+  "r3_verse": "And Cain knewe his wife, who conceiued, and brought forth Enoch: And:: he built a citie, & called the name thereof by the name of his sonne, Enoch.",
+  "arm_conflicts": [
+   "licle of | thereof"
+  ],
+  "new_text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p34",
+  "old_text": "Moreouer Enoch to gat Trad, aid Irad begat Mauiael, and Mauiael begat thuſael, and Mathuſael begat Lamech.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.3328,
+   0.875,
+   0.4417
+  ],
+  "crop_page": 34,
+  "r3_raw": "forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch. † Moreouer Enoch be gat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. † Who tooke two wiues, the name of the one was Ada, and the name of the",
+  "r3_verse": "Moreouer Enoch be gat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech.",
+  "arm_conflicts": [
+   "to | be",
+   "Trad, aid | Irad, and",
+   "thuſael, | Mathusael,"
+  ],
+  "r2_attested": {
+   "12": "Mathuſael,"
+  },
+  "visual_readings": {
+   "12": "Mathuſael,"
+  },
+  "new_text": "Moreouer Enoch be gat Irad, and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p34",
+  "old_text": "who tooke wiues, the name of the one was Ada, and the name of able other Sella.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.899,
+   "madueke_b": 0.899
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3777,
+   0.875,
+   0.4825
+  ],
+  "crop_page": 34,
+  "r3_raw": "gat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. † Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella. † And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen. †",
+  "r3_verse": "Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "arm_conflicts": [
+   "able | the"
+  ],
+  "new_text": "who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p34",
+  "old_text": "And Ada brought forth Iabel, who was I it father of them that dwel in tents, and of heardſmen.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.4153,
+   0.875,
+   0.5074
+  ],
+  "crop_page": 34,
+  "r3_raw": "wiues, the name of the one was Ada, and the name of the other Sella. † And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen. † And his brothers name was Iubal: he was the father of them that",
+  "r3_verse": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen.",
+  "arm_conflicts": [
+   "I it | the"
+  ],
+  "new_text": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 21,
+  "from": "p34",
+  "old_text": "his brothers name was Iubal: he was the father of them ſing on harpe organes.",
+  "old": {
+   "s_dismas": 0.893,
+   "odr_com": 0.893,
+   "sabates_a": 0.863,
+   "madueke_b": 0.863
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.457,
+   0.875,
+   0.5443
+  ],
+  "crop_page": 34,
+  "r3_raw": "father of them that dwel in tents, and of heardsmen. † And his brothers name was Iubal: he was the father of them that sing on harpe & organes. † Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse",
+  "r3_verse": "And his brothers name was Iubal: he was the father of them that sing on harpe & organes.",
+  "arm_conflicts": [],
+  "new_text": "And his brothers name was Iubal: he was the father of them that ſing on harpe & organes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 22,
+  "from": "p34",
+  "old_text": "Sella alſo brought forth Tubalin as cain, who was a hammerer worker in al worke of braſſe iron. And the ſiſter of Tubalcain was Noema.",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.4768,
+   0.875,
+   0.5818
+  ],
+  "crop_page": 34,
+  "r3_raw": "his brothers name was Iubal: he was the father of them that sing on harpe & organes. † Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Nocina. † And Lamech said to his wiues Ada and Sella: Heare my voice ye",
+  "r3_verse": "Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Nocina.",
+  "arm_conflicts": [
+   "Tubalin as cain, | Tubalcain,",
+   "Noema. | Nocina."
+  ],
+  "new_text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & iron. And the ſiſter of Tubalcain was Nocina.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 23,
+  "from": "p34",
+  "old_text": "And mech ſaid to his wiues Ada and Sella: Heare my voice a wiues of Lamech, harken to my talke: for I haue ſlaine a to the wounding ofmy ſelfe, and a ſtripeling to mine owne blowe brewſing. Seuenfould",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.873,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.5172,
+   0.875,
+   0.6637
+  ],
+  "crop_page": 34,
+  "r3_raw": "cain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Nocina. † And Lamech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech,harken to my talke:for\" I haue slaine a má to the wounding of my selfe, and a stripeling to mine owne drie blowe brewing. † Seuenfould vengeance shal be ta- ken of Cain; but of Lamech seuentie times seven fould.",
+  "r3_verse": "And Lamech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech,harken to my talke:for\" I haue slaine a má to the wounding of my selfe, and a stripeling to mine owne drie blowe brewing. Seuenfould",
+  "arm_conflicts": [
+   "mech | Lamech",
+   "a | ye",
+   "Lamech, harken | Lamech,harken",
+   "talke: for | talke:for\"",
+   "ofmy | of my",
+   "brewſing. | brewing."
+  ],
+  "new_text": "And Lamech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech,harken to my talke:for\" I haue ſlaine a má to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewing. Seuenfould",
+  "s_unresolved": [
+   "talke:for\""
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.931,
+   "odr_com": 0.921,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p34",
+  "old_text": "vengeance shal be ken of Cain: bur of Lamech ſeuentie times ſeuen fould.",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.81,
+   "madueke_b": 0.81
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.5949,
+   0.875,
+   0.6815
+  ],
+  "crop_page": 34,
+  "r3_raw": "to the wounding of my selfe, and a stripeling to mine owne drie blowe brewing. † Seuen fould vengeance shal be ta- ken of Cain: but of Lamech seuentie times leuen fould. † Adam also knewe his wife again: and she brought forth a",
+  "r3_verse": "fould vengeance shal be ta- ken of Cain: but of Lamech seuentie times leuen fould.",
+  "arm_conflicts": [
+   "bur | but",
+   "ſeuen fould. | leuen"
+  ],
+  "used_merge": true,
+  "new_text": "fould vengeance shal be ta- ken of Cain: but of Lamech ſeuentie times leuen fould.",
+  "s_unresolved": [
+   "fould"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "p34",
+  "old_text": "Adam alſo knewe his wife again and she brought forth ſonne, and called his name Serh, ſaying God hath giuen is noother ſeede for Abel, whom Cain ſlewe.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.6353,
+   0.875,
+   0.7414
+  ],
+  "crop_page": 34,
+  "r3_raw": "ken of Cain: but of Lamech seuentie times feuen fould. † Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slewe. † But to Seth also was boirne a sonne, whom he called Enos, this man\" began",
+  "r3_verse": "Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slewe.",
+  "arm_conflicts": [
+   "Serh, | Seth,",
+   "is noother | me other"
+  ],
+  "new_text": "Adam alſo knewe his wife again and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p34",
+  "old_text": "But to Seth was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.679,
+   0.875,
+   0.9397
+  ],
+  "crop_page": 34,
+  "r3_raw": "fonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slewe. † But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. ANNOTATIONS. CHAP. IIII 3. Offered gifts: ] Either God him selfe taught Adam, and he his children or els they knew by instinct of nature, that sacrifice must be offered to God to acknowledge thereby his supreme dominion over man, and mans due ful",
+  "r3_verse": "But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. CHAP. IIII Offered gifts: ] Either God him selfe taught Adam, and he his children or els they knew by instinct of nature, that sacrifice must be offered to God to acknowledge thereby his supreme dominion over man, and mans due ful",
+  "arm_conflicts": [
+   "man | man\""
+  ],
+  "lexicon_readings": {
+   "24": "Offered",
+   "30": "ſelfe",
+   "49": "offered"
+  },
+  "r2_attested": {
+   "3": "alſo",
+   "47": "muſt",
+   "56": "ſupreme"
+  },
+  "visual_readings": {
+   "24": "Offered",
+   "30": "ſelfe",
+   "49": "offered",
+   "3": "alſo",
+   "47": "muſt",
+   "56": "ſupreme"
+  },
+  "new_text": "But to Seth alſo was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord. CHAP. IIII Offered gifts: ] Either God him ſelfe taught Adam, and he his children or els they knew by instinct of nature, that sacrifice muſt be offered to God to acknowledge thereby his ſupreme dominion over man, and mans due ful",
+  "s_unresolved": [
+   "gifts:",
+   "instinct",
+   "sacrifice",
+   "ful"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p37",
+  "old_text": "and Adam Eue his wife: who conceiued and A brought forth Cain, ſaying I haue gotten a man through God.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.0242,
+   0.875,
+   0.4903
+  ],
+  "crop_page": 37,
+  "r3_raw": "GENESIS. good, and either auoideth or disposeth of euil which he suffereth, by ordinarie reth with rat. meanes, as appeareth A& 27, v.31. and that because man hath freewil, with mans fruber. which God concurreth, & destroyeth not nor forceth. as S. Augustin teacheth. c.6. 24. Placed Cherubins] Man being cast out of paradis, the fame is defended Paradise with duble gard. with Angels, that are watchful, wise, and potent; and with fire ded by A & sword, most terrible armoure to man. wherby againe we see, that God and by vseth ordinarie meanes in his prouidence, as the ministrie of Angels & humane sworde. terror, and would neither destroy the tree, nor depriue it of the vertue to pro- long life, nor bereue man of freewil, by which he might desire to returne: but conserving nature in al creatures, preventeth inconueniences otherwise. These Angels also hinder the diuel, that he can not enter paradise, lest he should take of the fruite of the tree, and geue it to men to prolong their lives, and thereby draw them to his seruice.",
+  "r3_verse": "and Adam Eue his wife: who conceiued and A brought forth Cain, ſaying I haue gotten a man through God.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "and Adam Eue his wife: who conceiued and A brought forth Cain, ſaying I haue gotten a man through God.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p38",
+  "old_text": "thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound fugitiue on the earth: euerie one therfore that findeth me, fhal kil me.",
+  "old": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.0998,
+   0.915,
+   0.2283
+  ],
+  "crop_page": 38,
+  "r3_raw": "Myne iniquitie is greater, then that I may deserue pardon. † Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth: euerie one therefore that fin-deth me, ſhal kil me. † And our Lord said to him: No, it ſhal not so be: but whosoeuer ſhal kil Cain, shalbe punished sea-",
+  "r3_verse": "Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth: euerie one therefore that fin-deth me, ſhal kil me.",
+  "arm_conflicts": [
+   "fugitiue | & fugitive",
+   "therfore | therefore",
+   "findeth | fin-deth",
+   "fhal | ſhal"
+  ],
+  "new_text": "Loe thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitiue on the earth: euerie one therefore that fin-deth me, ſhal kil me.",
+  "s_unresolved": [
+   "therefore",
+   "fin-deth",
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p38",
+  "old_text": "And our Lord ſaid to him: No, it ſhal in not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished ſeafould. And our Lord put a marke on Cain, that whoſoeuer found him should not kil him.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.961,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.1609,
+   0.915,
+   0.2883
+  ],
+  "crop_page": 38,
+  "r3_raw": "bound & fugitive on the earth: euerie one therefore that findeth me, ſhall kil me. † And our Lord said to him: No, it ſhal not so be: but whosoeuer ſhall kil Cain, ſhalbe punished ſeauen fould. And our Lord put a marke on Cain, that whoſocuer found him should not kil him. † And \"Cain went forth from the face of our Lord, and",
+  "r3_verse": "And our Lord said to him: No, it ſhal not so be: but whosoeuer ſhall kil Cain, ſhalbe punished ſeauen fould. And our Lord put a marke on Cain, that whoſocuer found him should not kil him.",
+  "arm_conflicts": [
+   "ſhal | ſhall",
+   "ſeafould. | ſeauen fould.",
+   "whoſoeuer | whoſocuer"
+  ],
+  "new_text": "And our Lord ſaid to him: No, it ſhal not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished ſeauen fould. And our Lord put a marke on Cain, that whoſocuer found him should not kil him.",
+  "s_unresolved": [
+   "ſeauen",
+   "fould.",
+   "whoſocuer"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.994,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p38",
+  "old_text": "And Cain knewe his wife, who conceiued, and brought litle and forth Enoch And he built a citie, called the name therofby the name of his ſonne, Enoch.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.2859,
+   0.915,
+   0.3936
+  ],
+  "crop_page": 38,
+  "r3_raw": "dwelt as a fugitive on the earth at the east side of Eden. † And Cain knewe his wife, who conceived, and brought forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch. † Moreover Enoch be gat Iraď, and Iraď begat Mauiael, and Mauiael begat Ma-",
+  "r3_verse": "And Cain knewe his wife, who conceived, and brought forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch.",
+  "arm_conflicts": [
+   "conceiued, | conceived,",
+   "therofby | thereof by"
+  ],
+  "new_text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p38",
+  "old_text": "Moreouer Enoch be to gat Trad, aud Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.3272,
+   0.915,
+   0.4339
+  ],
+  "crop_page": 38,
+  "r3_raw": "forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch. + Moreouer Enoch be 18 gat Iraď, and Iraď begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. + Who tooke two wiues, the name of the one was Ada, and the name of the",
+  "r3_verse": "Moreouer Enoch be gat Iraď, and Iraď begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. +",
+  "arm_conflicts": [
+   "Trad, aud Irad | Iraď, and Iraď"
+  ],
+  "new_text": "Moreouer Enoch be gat Irad and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech. +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p38",
+  "old_text": "Who tooke two wiues, the name of the one was Ada, and the name of the able other Sella.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3704,
+   0.915,
+   0.4764
+  ],
+  "crop_page": 38,
+  "r3_raw": "gat Irad, and Iraad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. † Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella. † And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen. †",
+  "r3_verse": "Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "arm_conflicts": [],
+  "new_text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 22,
+  "from": "p38",
+  "old_text": "Sella alſo brought forth Tubal inas cain, who was a hammerer worker in al worke of braſſe &iron. And the ſiſter of Tubalcain was Noema.",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.4731,
+   0.915,
+   0.5801
+  ],
+  "crop_page": 38,
+  "r3_raw": "his brothers name was Iubal: he was the father of them that sing on harpe & organes. † Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema. † And Lamech said to his wiues Ada and Sella: Heare my voice ye",
+  "r3_verse": "Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema.",
+  "arm_conflicts": [
+   "Tubal inas cain, | Tubalcain,",
+   "&iron. | & iron."
+  ],
+  "new_text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & &iron. And the ſiſter of Tubalcain was Noema.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 23,
+  "from": "p38",
+  "old_text": "And Laa mech ſaid to his wiues Ada and Sella: Heare my voice ye a wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding ofmy ſelfe, and a ſtripeling to mine owne l15 drie blowe brewſing. Seuenfould",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.905,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.5143,
+   0.915,
+   0.6636
+  ],
+  "crop_page": 38,
+  "r3_raw": "cain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema. † And Lamech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for \"I haue slaine a má to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing. † Seuenfould vengeance shal be ta- ken of Cain; but of Lamech seuentie times seven fould.",
+  "r3_verse": "And Lamech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for \"I haue slaine a má to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing. Seuenfould",
+  "arm_conflicts": [
+   "Laa mech | Lamech",
+   "I | \"I",
+   "mā | má",
+   "ofmy | of my"
+  ],
+  "new_text": "And Lamech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewſing. Seuenfould",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.937,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p38",
+  "old_text": "vengeance shal be taken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+  "old": {
+   "s_dismas": 0.868,
+   "odr_com": 0.868,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.5916,
+   0.915,
+   0.6814
+  ],
+  "crop_page": 38,
+  "r3_raw": "wides of Lamech, harken to my talk: for I haue name a ma to the wounding of my selfe, and a stripeling to mine owne drie blowe brewing. † Seuenfould vengeance shal be ta- ken of Cain: but of Lamech seuentie times seven fould. † Adam also knewe his wife again: and she brought forth a",
+  "r3_verse": "vengeance shal be ta- ken of Cain: but of Lamech seuentie times seven fould.",
+  "arm_conflicts": [
+   "taken | ta- ken",
+   "ſeuen | seven"
+  ],
+  "new_text": "vengeance shal be ta- ken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "p38",
+  "old_text": "Adam alfo knewe his wife again and she brought forth a ſonne, and called his naie Seth, ſaying God hath giuen me no- other ſeede for Abel, whom Cain ſlewe.",
+  "old": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.6387,
+   0.915,
+   0.7444
+  ],
+  "crop_page": 38,
+  "r3_raw": "ken of Cain: but of Lamech seuentie times seven fould. † Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slew. † But to Seth also was borne a sonne, whom he called Enos, this man\" began",
+  "r3_verse": "Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slew.",
+  "arm_conflicts": [
+   "alfo | also",
+   "naie | name",
+   "ſlewe. | slew."
+  ],
+  "r2_attested": {
+   "1": "alſo"
+  },
+  "visual_readings": {
+   "1": "alſo"
+  },
+  "new_text": "Adam alſo knewe his wife again and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p43",
+  "old_text": "and Adam Eue his wife: who conceiued and brought forth Cain, ſaying I haue gotten a man through God.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.0321,
+   0.895,
+   0.4875
+  ],
+  "crop_page": 43,
+  "r3_raw": "good, and either avoideth or disposeth of euil which he suffereth, by ordinari reth with meanes, as appeareth Act. 27, v.31. and that because man hath freewil, with mans free wi which God concurreth, & destroyeth not nor forceth. as S. Augustin teacheth. 24. Placed Cherubins.] Man being cast out of paradise, the same is defended Paradise defe with duble gard. with Angels, that are watchful, wise, and potent; and with fire ded by Ange and sword, most terrible armoure to man. wherby againe we see, that God and by fire a vseth ordinari meanes in his providence, as the ministrie of Angels & humane sworde. terror, and would neither destroy the tree, nor depriue it of the vertue to pro- long life, nor bereue man of freewil, by which he might desire to returne: but conserving nature in al creatures, preuenteth inconueniences otherwise. These Angels also hinder the diuel, that he can not enter paradise, lest he should take of the fruite of the tree, and geue it to men to prolong their liues, and therby draw them to his service.",
+  "r3_verse": "and Adam Eue his wife: who conceiued and brought forth Cain, ſaying I haue gotten a man through God.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "and Adam Eue his wife: who conceiued and brought forth Cain, ſaying I haue gotten a man through God.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p43",
+  "old_text": "Abel alſo offred A of the firſt begotten of his flocke, and of their fat: and our the Lord had reſpect to Abel, to his giftes.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.049,
+   0.481,
+   0.895,
+   0.5887
+  ],
+  "crop_page": 43,
+  "r3_raw": "3 † And it befel after manie dayes that Cain \" offred of the 4 fruities of the earth giftes to our Lord. † Abel also :: offred of the first begotten of his hocke, and of their fat: and our 5 Lord\" had respect to Abel, &C to his giftes. † But to Cain, and to his giftes he had not respect: &C Cain was exceeding",
+  "r3_verse": "Abel also :: offred of the first begotten of his hocke, and of their fat: and our Lord\" had respect to Abel, &C to his giftes.",
+  "arm_conflicts": [
+   "flocke, | hocke,",
+   "the Lord | Lord\""
+  ],
+  "new_text": "Abel alſo :: offred of the firſt begotten of his hocke, and of their fat: and our Lord had reſpect to Abel, &C to his giftes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p43",
+  "old_text": "But to Cain, tkat and to his giftes he had not reſpect: Cain was exceeding ſlaine angrie, and his countenance abated.",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.852,
+   "madueke_b": 0.852
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.049,
+   0.522,
+   0.895,
+   0.6358
+  ],
+  "crop_page": 43,
+  "r3_raw": "of the first begotten of his hocke, and of their fat: and our Lord \"had respect to Abel, &C to his giftes. † But to Cain, and to his giftes he had not respect: & Cain was exceeding angrie, and his countenance abated. † And our Lord said to him: Why art thou angrie? and why is thy countinance fallen? † If thou doest well, beſeech the Sonne of God",
+  "r3_verse": "But to Cain, and to his giftes he had not respect: & Cain was exceeding angrie, and his countenance abated.",
+  "arm_conflicts": [],
+  "new_text": "But to Cain, and to his giftes he had not reſpect: & Cain was exceeding angrie, and his countenance abated.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "p43",
+  "old_text": "And our Lord ſaid the of the to him Why art thou angrie and why is thy countinance Apoc. fallen",
+  "old": {
+   "s_dismas": 0.83,
+   "odr_com": 0.83,
+   "sabates_a": 0.832,
+   "madueke_b": 0.832
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.5602,
+   0.895,
+   0.669
+  ],
+  "crop_page": 43,
+  "r3_raw": "and to his giftes he had not respect: & Cain was exceeding angrie, and his countenance abated. † And our Lord said to him: Why art thou angrie? and why is thy countinance fallen? † If thou doe wel,\" shalt thou not receive againe: but if thou doest il, ſhal not thy sinne forthwith be present",
+  "r3_verse": "And our Lord said to him: Why art thou angrie? and why is thy countinance fallen?",
+  "arm_conflicts": [
+   "angrie | angrie?",
+   "Apoc. fallen | fallen?"
+  ],
+  "new_text": "And our Lord ſaid to him Why art thou angrie and why is thy countinance fallen",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p43",
+  "old_text": "And he ſaid to him What haſt thou done:: the voice of thy brothers bloud crieth to murther me out of the earth.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.763,
+   0.895,
+   0.8717
+  ],
+  "crop_page": 43,
+  "r3_raw": "Cain: Where is Abel thy brother? Who answered: I know not: am I my brothers keper? † And he said to him: What hast thou done? :: the voice of thy brothers bloud crieth unto me out of the earth. † Now therefore cursed shalt thou be vpon the earth, which hath opened her mouth, & received",
+  "r3_verse": "And he said to him: What hast thou done? :: the voice of thy brothers bloud crieth unto me out of the earth.",
+  "arm_conflicts": [
+   "done:: | done? ::",
+   "to murther | unto"
+  ],
+  "new_text": "And he ſaid to him What haſt thou done:: :: the voice of thy brothers bloud crieth unto me out of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.958,
+   "madueke_b": 0.958
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p43",
+  "old_text": "Now therfore curſed ſhalt thoube one vpon the earth, which hath opened her mouth, receiued ſinnes erie the bloud of thy brother at thy hand.",
+  "old": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.049,
+   0.8026,
+   0.895,
+   0.9191
+  ],
+  "crop_page": 43,
+  "r3_raw": "hast thou done? :: the voice of thy brothers bloud crieth to me out of the earth. † Now therefore cursed shalt thou be vpon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand. † When thou shalt til",
+  "r3_verse": "Now therefore cursed shalt thou be vpon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "thoube one | thou be"
+  ],
+  "new_text": "Now therefore curſed ſhalt thou be vpon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "chapter",
+  "old_text": "When thou ſhalt til for it, it ſhal not yeld to thee her fruite a roag and vagabound ſhalt thou be vpon the earth.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.0233,
+   0.875,
+   0.1172
+  ],
+  "crop_page": 44,
+  "crop_leaves": [
+   43,
+   44
+  ],
+  "r3_raw": "Now therefore vnto thee be finnes that eie to God upon the earth, which hath opened her mouth, & receiued the bloud of thy brother at thy hand. † When thou shalt til for revengc it, it GENESIS. it, it ſhall not yeld to thee her fruïte: a roag and vagabound ſhalt thou be vpon the earth. † And Cain said to our Lord: 13 Myne iniquitie is greater, then that I may deserue pardon.",
+  "r3_verse": "When thou shalt til for revengc it, it it, it ſhall not yeld to thee her fruïte: a roag and vagabound ſhalt thou be vpon the earth.",
+  "arm_conflicts": [
+   "ſhal | it, it ſhall",
+   "fruite | fruïte:"
+  ],
+  "new_text": "When thou ſhalt til for revengc it, it it, it ſhal not yeld to thee her fruite a roag and vagabound ſhalt thou be vpon the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.828,
+   "madueke_b": 0.828
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p44",
+  "old_text": "thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound fugitiue on the earth: euerie one therfore that findeth me, fhal kil me.",
+  "old": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.0856,
+   0.875,
+   0.2204
+  ],
+  "crop_page": 44,
+  "r3_raw": "Myne iniquitie is greater, then that I may deserue pardon. † Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth: euerie one therfore that finneth me, ſhal kil me. † And our Lord said to him: No, it ſhal not so be: but whosoeuer ſhal kil Cain, ſhalbe punished sea-",
+  "r3_verse": "Loe thou doest cast me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitive on the earth: euerie one therfore that finneth me, ſhal kil me.",
+  "arm_conflicts": [
+   "fugitiue | & fugitive",
+   "findeth | finneth",
+   "fhal | ſhal"
+  ],
+  "new_text": "Loe thou doeſt caſt me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabound & fugitiue on the earth: euerie one therfore that finneth me, ſhal kil me.",
+  "s_unresolved": [
+   "finneth",
+   "ſhal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 15,
+  "from": "p44",
+  "old_text": "And our Lord ſaid to him: No, it ſhal in- not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished ſeafould. And our Lord put a marke on Cain, that whoſeede ſoeuer found him should not kil him.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.929,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.1472,
+   0.875,
+   0.28
+  ],
+  "crop_page": 44,
+  "r3_raw": "bound & fugitive on the earth: euerie one therefore that finneth me, ſhall kil me. † And our Lord said to him: No, it ſhal 15 not so be: but whosoeuer ſhall kil Cain, ſhalbe punished seven fould. And our Lord put a marke on Cain, that whoſoever found him should not kil him. † And \"Cain went forth from the face of our Lord, and 16",
+  "r3_verse": "And our Lord said to him: No, it ſhal not so be: but whosoeuer ſhall kil Cain, ſhalbe punished seven fould. And our Lord put a marke on Cain, that whoſoever found him should not kil him.",
+  "arm_conflicts": [
+   "ſhal | ſhall",
+   "ſeafould. | seven fould.",
+   "whoſeede ſoeuer | whoſoever"
+  ],
+  "new_text": "And our Lord ſaid to him: No, it ſhal not ſo be: but whoſoeuer ſhal kil Cain, shalbe punished seven fould. And our Lord put a marke on Cain, that whoſoever found him should not kil him.",
+  "s_unresolved": [
+   "seven",
+   "fould.",
+   "whoſoever"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.994,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p44",
+  "old_text": "And Cain went forth from the of Eden. be- dwelt as a fugitiue on the earth at the eaſt ſide of iſſues",
+  "old": {
+   "s_dismas": 0.804,
+   "odr_com": 0.804,
+   "sabates_a": 0.812,
+   "madueke_b": 0.812
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.2308,
+   0.875,
+   0.344
+  ],
+  "crop_page": 44,
+  "r3_raw": "soever found him should not kil him. † And \" Cain went forth from the face of our Lord, and 16 dwelt as a fugitue on the earth at the east side of Eden. † And Cain knewe his wife, who conceived, and brought 17 forth Enoch: And:: he built a citie, & called the name ther-",
+  "r3_verse": "And \" Cain went forth from the face of our Lord, and dwelt as a fugitue on the earth at the east side of Eden.",
+  "arm_conflicts": [
+   "Eden. be- | our Lord, and",
+   "fugitiue | fugitue",
+   "iſſues | Eden."
+  ],
+  "new_text": "And \" Cain went forth from the face of our Lord, and dwelt as a fugitue on the earth at the eaſt ſide of Eden.",
+  "s_unresolved": [
+   "face",
+   "fugitue"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p44",
+  "old_text": "And Cain knewe his wife, who conceiued, and brought and forth Enoch And he built a citie, called the name therin litle of by the name of his ſonne, Enoch.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.883,
+   "madueke_b": 0.883
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.2698,
+   0.875,
+   0.3836
+  ],
+  "crop_page": 44,
+  "r3_raw": "dwelt as a fugitive on the earth at the east side of Eden. † And Cain knewe his wife, who conceiued, and brought forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch. † Moreouer Enoch be gat Iraď, and Iraď begat Mauiael, and Mauiael begat Ma-",
+  "r3_verse": "And Cain knewe his wife, who conceiued, and brought forth Enoch: And he built a citie, & called the name thereof by the name of his sonne, Enoch.",
+  "arm_conflicts": [
+   "therin litle of | thereof"
+  ],
+  "new_text": "And Cain knewe his wife, who conceiued, and brought forth Enoch And he built a citie, & called the name thereof by the name of his ſonne, Enoch.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p44",
+  "old_text": "Who tooke two thou- wiues, the name of the one was Ada, and the name of the able other Sella.",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3524,
+   0.875,
+   0.4672
+  ],
+  "crop_page": 44,
+  "r3_raw": "gat Iraad, and Iraad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. † Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella. † And Ada brought forth Iabel, who was the father of them that dwell in tents, and of heardsmen. †",
+  "r3_verse": "Who tooke: two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "arm_conflicts": [],
+  "new_text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p44",
+  "old_text": "And Ada brought forth Iabel, who was the armes I it father of them that dwel in tents, and of heardſmen.",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.88,
+   "madueke_b": 0.88
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.391,
+   0.875,
+   0.4926
+  ],
+  "crop_page": 44,
+  "r3_raw": "wiues, the name of the one was Ada, and the name of the other Sella. † And Ada brought forth Iabel, who was the father of them that dwell in tents, and of heardsmen. † And his brothers name was Iubal: he was the father of them that",
+  "r3_verse": "And Ada brought forth Iabel, who was the father of them that dwell in tents, and of heardsmen.",
+  "arm_conflicts": [
+   "dwel | dwell"
+  ],
+  "new_text": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p44",
+  "old_text": "Sella alſo brought forth Tubalimas cain, who was a hammerer worker in al worke of braſſe yeares iron. And the ſiſter of Tubalcain was Noema.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.4533,
+   0.875,
+   0.5715
+  ],
+  "crop_page": 44,
+  "r3_raw": "his brothers name was Iubal: he was the father of them that sing on harpe & organes. † Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema. † And La-",
+  "r3_verse": "Sella also brought forth Tubalcain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema.",
+  "arm_conflicts": [
+   "Tubalimas cain, | Tubalcain,",
+   "yeares | &"
+  ],
+  "new_text": "Sella alſo brought forth Tubalcain, who was a hammerer & worker in al worke of braſſe & iron. And the ſiſter of Tubalcain was Noema.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 23,
+  "from": "p44",
+  "old_text": "And ſuffice a mech ſaid to his wiues Ada and Sella: Heare my voice yea a wiues of Lamech, harken to my talke: for I haue ſlaine a coun- to the wounding of my ſelfe, and a ſtripeling to mine owne be drie blowe brewſing. Seuenfould",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.87,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.4942,
+   0.875,
+   0.6503
+  ],
+  "crop_page": 44,
+  "r3_raw": "cain, who was a hammerer & worker in al worke of brasse & iron. And the sister of Tubalcain was Noema.† And La- 23 mech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for\" I haue slaine a mā to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing. † Seuenfould vengeance shal be ta- 24 ken of Cain: but of Lamech seuentie times seven fould.",
+  "r3_verse": "And La- mech said to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for\" I haue slaine a mā to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing. Seuenfould",
+  "arm_conflicts": [
+   "ſuffice a | La-",
+   "yea a | ye",
+   "for | for\"",
+   "coun- | mā"
+  ],
+  "new_text": "And La- mech ſaid to his wiues Ada and Sella: Heare my voice ye wiues of Lamech, harken to my talke: for I haue ſlaine a mā to the wounding of my ſelfe, and a ſtripeling to mine owne drie blowe brewſing. Seuenfould",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.932,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 24,
+  "from": "p44",
+  "old_text": "vengeance shal La- ken of Cain: but of Lamech ſeuentie times ſeuen",
+  "old": {
+   "s_dismas": 0.747,
+   "odr_com": 0.747,
+   "sabates_a": 0.747,
+   "madueke_b": 0.747
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.5748,
+   0.875,
+   0.6744
+  ],
+  "crop_page": 44,
+  "r3_raw": "to the wounding of my selfe, and a stripeling to mine owne drie blowe brewsing. † Seuenfould vengeance shal be ta- 24 ken of Cain: but of Lamech seuentie times seven fould. † Adam also knewe his wife again: and she brought forth a",
+  "r3_verse": "vengeance shal be ta- ken of Cain: but of Lamech seuentie times seven fould.",
+  "arm_conflicts": [
+   "La- | be ta-",
+   "ſeuen | seven fould."
+  ],
+  "new_text": "vengeance shal be ta- ken of Cain: but of Lamech ſeuentie times ſeuen fould.",
+  "s_unresolved": [
+   "fould."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 25,
+  "from": "p44",
+  "old_text": "Adam alſo knewe his wife again: and she brought forth is the ſonne, and called his name Seth, ſaying God hath giuen is no- other ſeede for Abel, whom Cain ſlewe.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.6164,
+   0.875,
+   0.7319
+  ],
+  "crop_page": 44,
+  "r3_raw": "ken of Cain: but of Lamech seuentie times seven fould. † Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slew. † But to Seth also was borne a sonne, whom he called Enos, this man\" began",
+  "r3_verse": "Adam also knewe his wife again: and she brought forth a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slew.",
+  "arm_conflicts": [
+   "is the | a",
+   "is no- | me",
+   "ſlewe. | slew."
+  ],
+  "new_text": "Adam alſo knewe his wife again: and she brought forth a ſonne, and called his name Seth, ſaying God hath giuen me other ſeede for Abel, whom Cain ſlewe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "p44",
+  "old_text": "But to Seth Scrip- haue was borne a ſonne, whom he called Enos, this man began two to inuocate the name of our Lord.",
+  "old": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.6567,
+   0.875,
+   0.9276
+  ],
+  "crop_page": 44,
+  "r3_raw": "† Adam also knewe his wif again: and of her was born a sonne, and called his name Seth, saying: God hath giuen me other seede for Abel, whom Cain slewe. † But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. ANNOTATIONS. CHAP. IIII 3. Offered giftes] Either God him selfe taught Adam, and he his children or els they knew by instinct of nature, that Sacrifice must be offered to God to acknowledge therby his supreme dominion over man, and mans due su",
+  "r3_verse": "But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. CHAP. IIII Offered giftes] Either God him selfe taught Adam, and he his children or els they knew by instinct of nature, that Sacrifice must be offered to God to acknowledge therby his supreme dominion over man, and mans due su",
+  "arm_conflicts": [
+   "Scrip- haue | also",
+   "man | man\""
+  ],
+  "lexicon_readings": {
+   "24": "Offered",
+   "29": "ſelfe",
+   "48": "offered"
+  },
+  "r2_attested": {
+   "3": "alſo",
+   "41": "inſtinct",
+   "46": "muſt",
+   "55": "ſupreme"
+  },
+  "visual_readings": {
+   "24": "Offered",
+   "29": "ſelfe",
+   "48": "offered",
+   "3": "alſo",
+   "41": "inſtinct",
+   "46": "muſt",
+   "55": "ſupreme"
+  },
+  "new_text": "But to Seth alſo was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord. CHAP. IIII Offered giftes] Either God him ſelfe taught Adam, and he his children or els they knew by inſtinct of nature, that Sacrifice muſt be offered to God to acknowledge therby his ſupreme dominion over man, and mans due su",
+  "s_unresolved": [
+   "giftes]",
+   "Sacrifice",
+   "su"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p29",
+  "old_text": "And it befel after mauie dayes that Cain offred of the fruts of the earth guitts to our Lord.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   3
+  ],
+  "crop": [
+   0.155,
+   0.3903,
+   0.885,
+   0.4699
+  ],
+  "crop_page": 29,
+  "r3_raw": "ther Abel. And Abel was a shephard, & Cain a husbandman. 3. And it befel after manie dayes that Cain offered of the fruits of the earth guitts to our Lord. 4. Abel also (a) offered of the first-begotten of his focke, and of their",
+  "r3_verse": "And it befel after manie dayes that Cain offered of the fruits of the earth guitts to our Lord.",
+  "arm_conflicts": [
+   "mauie | manie",
+   "offred | offered",
+   "fruts | fruits"
+  ],
+  "new_text": "And it befel after manie dayes that Cain offered of the fruits of the earth guitts to our Lord.",
+  "s_unresolved": [
+   "offered",
+   "fruits"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p29",
+  "old_text": "Abel alſo offred of the firſt begotten of his fiocke, and ot their fat: and our Lord had reſpect to Abel, to his guitts.",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.4254,
+   0.885,
+   0.5033
+  ],
+  "crop_page": 29,
+  "r3_raw": "\"offred of the fruits of the earth guitts to our Lord. 4. Abel also (a) offred of the first-begotten of his fiocke, and of their fat: and our Lord\" had respect to Abel, & to his guitts. 5. But to Cain, and to his guitts he had not respect: And Cain was exceeding",
+  "r3_verse": "Abel also offred of the first-begotten of his fiocke, and of their fat: and our Lord\" had respect to Abel, & to his guitts.",
+  "arm_conflicts": [
+   "firſt begotten | first-begotten",
+   "ot | of",
+   "Lord | Lord\""
+  ],
+  "r2_attested": {
+   "5": "firſt-begotten"
+  },
+  "visual_readings": {
+   "5": "firſt-begotten"
+  },
+  "new_text": "Abel alſo offred of the firſt-begotten of his fiocke, and of their fat: and our Lord had reſpect to Abel, & to his guitts.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p29",
+  "old_text": "But to Cain, and to his guitts he had not reſpect And Catn was exceeding angrie, and his countenance abated.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.4436,
+   0.885,
+   0.5405
+  ],
+  "crop_page": 29,
+  "r3_raw": "4. Abel also (a) offered of the first-begotten of his focke, and of their fat: and our Lord\" had respect to Abel, & to his guifts. 5. But to Cain, and to his guifts he had not respect: And Cain was exceeding angrie, and his countenance abated.6. And our Lord said to him: Why art thou angrie? and why is thy countenance fallen:. 7. If thou doe wel,",
+  "r3_verse": "But to Cain, and to his guifts he had not respect: And Cain was exceeding angrie, and his countenance abated.6.",
+  "arm_conflicts": [
+   "guitts | guifts",
+   "Catn | Cain",
+   "abated. | abated.6."
+  ],
+  "new_text": "But to Cain, and to his guifts he had not reſpect And Cain was exceeding angrie, and his countenance abated.",
+  "s_unresolved": [
+   "guifts"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p29",
+  "old_text": "And Cain ſaid to Abel his brother Let vs goe forth abroad. And when they, were in the field, Cain roſe vp againſt his brother Abel and ſtew him,",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5676,
+   0.885,
+   0.6614
+  ],
+  "crop_page": 29,
+  "r3_raw": "forthwith be proude at last here: But the right shalbe vnder thee, and thou shalt haue dominion ouer it. 8. And Cain said to Abel his brother: Let vs goe forth abroad. And when they were in the field, Cain rose vp against his brother Abel, and slew him. 9. And our Lord said to Cain: Where is Abel thy brother? Who answered: I know not, am I my brothers keeper? 10. And",
+  "r3_verse": "And Cain said to Abel his brother: Let vs goe forth abroad. And when they were in the field, Cain rose vp against his brother Abel, and slew him.",
+  "arm_conflicts": [
+   "ſtew | slew"
+  ],
+  "new_text": "And Cain ſaid to Abel his brother Let vs goe forth abroad. And when they, were in the field, Cain roſe vp againſt his brother Abel and slew him,",
+  "s_unresolved": [
+   "slew"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p29",
+  "old_text": "thou doſt caſt me out this day from the face of the earth, and from thy tace ſhal I be hid, and I ſhal be a vagabond and fugitiue on the earth: euerie one thertore that findeth me ſual kil me.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.7461,
+   0.885,
+   0.8581
+  ],
+  "crop_page": 29,
+  "r3_raw": "And Cain said to our Lord: Myne iniquitie is greater then that I may deserue pardon. 14. Loe thou dost call me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabond and fugitive on the earth: euerie one therefore that findeth me ſhall kil me. 15. And our Lord said to him: No, it ſhall not so be: but whosoeuer ſhall kil Cain, ſhall be punished ſeauen-fold. And our Lord put a marke",
+  "r3_verse": "thou dost call me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabond and fugitive on the earth: euerie one therefore that findeth me ſhall kil me.",
+  "arm_conflicts": [
+   "caſt | call",
+   "tace | face",
+   "fugitiue | fugitive",
+   "thertore | therefore",
+   "ſual | ſhall"
+  ],
+  "new_text": "thou doſt call me out this day from the face of the earth, and from thy face ſhal I be hid, and I ſhal be a vagabond and fugitiue on the earth: euerie one therefore that findeth me ſhall kil me.",
+  "s_unresolved": [
+   "face",
+   "therefore",
+   "ſhall"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "chapter",
+  "old_text": "And Cain knew his who conceiued and brought forth Enoch And he buiſt a and called the name therof by the name ot his ſonne, Enoch.",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.904,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.0847,
+   0.815,
+   0.171
+  ],
+  "crop_page": 30,
+  "r3_raw": "Adam. GENESIS. wife, who conceived and brought forth Enoch: And (c) he built a citie, and called the name therof by the name of his sonne, Enoch. 18. Moreouer Enoch begat Iraď, and Iraď begat Mauiael, and Mauiael",
+  "r3_verse": "Adam. wife, knew his who conceived and brought forth Enoch: And he built a citie, and called the name therof by the name of his sonne, Enoch.",
+  "arm_conflicts": [
+   "And Cain knew his | Adam. wife,",
+   "conceiued | conceived",
+   "buiſt | built",
+   "ot | of"
+  ],
+  "used_merge": true,
+  "new_text": "Adam. wife, knew his who conceiued and brought forth Enoch And he built a citie, and called the name therof by the name of his ſonne, Enoch.",
+  "s_unresolved": [
+   "wife,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p30",
+  "old_text": "Enoch. Enoch begat Irad, and Irad begat Mauiael, and Mauiael and Mathuſael begat Lamech.",
+  "old": {
+   "s_dismas": 0.777,
+   "odr_com": 0.777,
+   "sabates_a": 0.777,
+   "madueke_b": 0.777
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.1093,
+   0.815,
+   0.2093
+  ],
+  "crop_page": 30,
+  "r3_raw": "wife, who conceived and brought forth Enoch: And (c) he built a citie, and called the name therof by the name of his sonne, Enoch. 18. Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. 19. Who tooke (d) two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "r3_verse": "Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech.",
+  "arm_conflicts": [
+   "Enoch. | Moreouer"
+  ],
+  "r2_attested": {
+   "11": "Mathuſael,"
+  },
+  "visual_readings": {
+   "11": "Mathuſael,"
+  },
+  "new_text": "Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathuſael, and Mathuſael begat Lamech.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p30",
+  "old_text": "Who tooke two the name of the one was Ada, and the name of the other Sella.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.1447,
+   0.815,
+   0.2248
+  ],
+  "crop_page": 30,
+  "r3_raw": "18. Moreouer Enoch begat Irad, and Irad begat Mauiael, and Mauiael begat Mathusael, and Mathusael begat Lamech. 19. Who tooke (d) two wiues, the name of the one was Ada, and the name of the other Sella. 20. And Ada brought forth Iabel, who was the father of them that",
+  "r3_verse": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "arm_conflicts": [],
+  "new_text": "Who tooke two wiues, the name of the one was Ada, and the name of the other Sella.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p30",
+  "old_text": "Ada brought forth Iabel, who was the tather of them that tents, and ot heardſmen.",
+  "old": {
+   "s_dismas": 0.844,
+   "odr_com": 0.844,
+   "sabates_a": 0.83,
+   "madueke_b": 0.83
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.1802,
+   0.815,
+   0.261
+  ],
+  "crop_page": 30,
+  "r3_raw": "wiues, the name of the one was Ada, and the name of the other Sella. 10. And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen. 21. And his brothers name was Iubal: he was the father of them that sing on harp & organes. 22. Sella also",
+  "r3_verse": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardsmen.",
+  "arm_conflicts": [
+   "tather | father",
+   "ot | of"
+  ],
+  "new_text": "And Ada brought forth Iabel, who was the father of them that dwel in tents, and of heardſmen.",
+  "s_unresolved": [
+   "father"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p30",
+  "old_text": "And his brothers name was Iubal: the father of them that ſing on harp organes.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.9,
+   "madueke_b": 0.9
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.1985,
+   0.815,
+   0.2785
+  ],
+  "crop_page": 30,
+  "r3_raw": "10. And Ada brought forth Iabel, who was the father of them that dwell in tents, and of heardsmen. 21. And his brothers name was Lubal: he was the father of them that sing on harp & organes. 22. Sella also brought forth Tubalcain, who was a hammerer and worker in al",
+  "r3_verse": "And his brothers name was Lubal: he was the father of them that sing on harp & organes.",
+  "arm_conflicts": [
+   "Iubal: | Lubal: he was"
+  ],
+  "new_text": "And his brothers name was Lubal: he was the father of them that ſing on harp & organes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p30",
+  "old_text": "Sella alſo torth Tubalcain, who was a hammeret and worker in al of braſſe and iron. And the ſiſter of Tubalcain was Noema.",
+  "old": {
+   "s_dismas": 0.816,
+   "odr_com": 0.816,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.2167,
+   0.815,
+   0.3154
+  ],
+  "crop_page": 30,
+  "r3_raw": "18. And Ada brought forth Laseb; who was a chief of men that dwel in tents, and of heardsmen. 21. And his brothers name was Iubal: he was the father of them that sing on harp & organes. 22. Sella also brought forth Tubalcain, who was a hammerer and worker in all worke of brasse and iron. And the sister of Tubalcain was Noema. 23. And Lamech said to his wiues Ada and Sella: Heare my voice ye",
+  "r3_verse": "Sella also brought forth Tubalcain, who was a hammerer and worker in all worke of brasse and iron. And the sister of Tubalcain was Noema.",
+  "arm_conflicts": [
+   "torth | brought forth",
+   "hammeret | hammerer",
+   "al | all worke"
+  ],
+  "new_text": "Sella alſo brought forth Tubalcain, who was a hammerer and worker in al worke of braſſe and iron. And the ſiſter of Tubalcain was Noema.",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p30",
+  "old_text": "Lamech ſaid to his wiues Ada and Sella : Heare my voice of Lamech, harken to my talke: for I haue ſlaine a man to the of my ſelte, and a ſtripeling to mine owne drie blow bruSeauen",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.848,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "neighbours": [
+   23
+  ],
+  "crop": [
+   0.155,
+   0.2719,
+   0.815,
+   0.366
+  ],
+  "crop_page": 30,
+  "r3_raw": "worke of brasse and iron. And the sister of Tubalcain was Noema. 2;. And Lamech said to his wiues Ada and Sella: Heare my voice ye wiucs of Lamech, harken to my talke: for \" I haue slaine a man to the wounding of my selfe, and a stripeling to mine owne drie blow bru- sing. 24. Seauen-fold vengeance shal be taken of Cain: but of Lamech",
+  "r3_verse": "And Lamech said to his wiues Ada and Sella: Heare my voice ye wiucs of Lamech, harken to my talke: for \" I haue slaine a man to the wounding of my selfe, and a stripeling to mine owne drie blow bru- sing. Seauen-fold",
+  "arm_conflicts": [
+   "ſelte, | selfe,",
+   "bruSeauen | bru- sing. Seauen-fold"
+  ],
+  "r2_attested": {
+   "42": "ſing."
+  },
+  "visual_readings": {
+   "42": "ſing."
+  },
+  "new_text": "And Lamech ſaid to his wiues Ada and Sella Heare my voice ye wiucs of Lamech, harken to my talke: for \" I haue ſlaine a man to the wounding of my selfe, and a ſtripeling to mine owne drie blow bru- ſing. Seauen-fold",
+  "s_unresolved": [
+   "selfe,",
+   "Seauen-fold"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.918,
+   "odr_com": 0.927,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p30",
+  "old_text": "told vengeance ſhal be taken of Cain: but of Lamech times ſeauen-",
+  "old": {
+   "s_dismas": 0.723,
+   "odr_com": 0.723,
+   "sabates_a": 0.734,
+   "madueke_b": 0.734
+  },
+  "neighbours": [
+   24
+  ],
+  "crop": [
+   0.155,
+   0.3232,
+   0.815,
+   0.4004
+  ],
+  "crop_page": 30,
+  "r3_raw": "wounding of my selfe, and a stripeling to mine owne drie blow bru- sing. 24. Seauen-fold vengeance shal be taken of Cain: but of Lamech sequentic times seauen-fold. 2). Adam also knew his wifc againe:and she brought forth a sonne,",
+  "r3_verse": "of my selfe, and a stripeling to mine owne drie blow bru- sing. Seauen-fold vengeance shal be taken of Cain: but of Lamech sequentic times seauen-fold. 2).",
+  "arm_conflicts": [
+   "told | of my selfe, and a stripeling to mine owne drie blow bru- sing. Seauen-fold",
+   "ſeauen- | seauen-fold. 2)."
+  ],
+  "r2_attested": {
+   "5": "ſtripeling",
+   "12": "ſing."
+  },
+  "visual_readings": {
+   "5": "ſtripeling",
+   "12": "ſing."
+  },
+  "new_text": "of my selfe, and a ſtripeling to mine owne drie blow bru- ſing. Seauen-fold vengeance ſhal be taken of Cain: but of Lamech sequentic times seauen-fold. 2).",
+  "s_unresolved": [
+   "selfe,",
+   "Seauen-fold",
+   "sequentic",
+   "seauen-fold."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p30",
+  "old_text": "Adam alſoknew his wite againe: and ſhe brought torth a ſonne, his name Seth, ſaying: God hath giuen me other ſeed tor Abel, Cain flew.",
+  "old": {
+   "s_dismas": 0.83,
+   "odr_com": 0.83,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.3611,
+   0.815,
+   0.4534
+  ],
+  "crop_page": 30,
+  "r3_raw": "sequentie times seauen-fold. 2). Adam also knew his wifc againe:and she brought forth a sonne, & called his name Seth, saying:God hath giuen me other seed for Abel, whom Cain slew. 26. But to Seth alfo was borne a sonne, whom he cal- led Enos, this man\" began to inuocate the name of our Lord.",
+  "r3_verse": "sequentie times seauen-fold. 2). Adam also knew his wifc againe:and she brought forth a sonne, & called his name Seth, saying:God hath giuen me other seed for Abel, whom Cain slew.",
+  "arm_conflicts": [
+   "alſoknew | also knew",
+   "wite againe: and | wifc againe:and",
+   "torth | forth",
+   "ſaying: God | saying:God",
+   "tor | for",
+   "flew. | slew."
+  ],
+  "lexicon_readings": {
+   "5": "alſo",
+   "26": "for"
+  },
+  "visual_readings": {
+   "5": "alſo",
+   "26": "for"
+  },
+  "new_text": "sequentie times seauen-fold. 2). Adam alſo knew his wifc againe:and ſhe brought forth a ſonne, & called his name Seth, saying:God hath giuen me other ſeed for Abel, whom Cain slew.",
+  "s_unresolved": [
+   "sequentie",
+   "seauen-fold.",
+   "wifc",
+   "forth",
+   "saying:God",
+   "slew."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.777,
+   "odr_com": 0.777,
+   "sabates_a": 0.824,
+   "madueke_b": 0.824
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p30",
+  "old_text": "But to Seth alfo was borne a ſonne, whom he calthis man began to inuocate the name ot our Lord.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.3955,
+   0.815,
+   0.9266
+  ],
+  "crop_page": 30,
+  "r3_raw": "& called his name Seth, saying: God hath giuen me other seed for Abel, whom Cain slew. 26. But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. ANNOTATIONS. CHAP. IIII. 1. Offered guifes.) Either God himselfe taught Adam, and he his children, or els they knew by instinct of nature, that Sacrifice must be offered to God, to acknowledge thereby his supreme dominion over man, and mans due subiection to his diuine Maiestic. And that not only in internal affection, which (as S. Augustin, and all Catholike Doctours teach) is principally required, but also by Gods goodnes, the use of corporal things. As here we see example in the law of grace and new Testament, to wit, the same which Christ instituted, and left in his Church, to continue to the end of the world. Moreover this homage or offering Sacrifice is so peculiar to God only, that albeit manie other exterior our rites and services are used both to God & men, as to be bare-head, to bow, to kneel, & the like before them, either of greas humilitie (faith S. Augustin) or of periferous flatterie, so such as are homines ciendi, venerandi, siantem eis mulium addituri, or adorandi: men to be worshipped, reverenced, and if much be given them, adored; (for this terme of adoring is also applied to men in holic Scriptures, Gen. 23. v.7.17. v.29) yet Sacrifice is due to God only, and to no creature how excellent so ever. In so much (faith the same Doctor) that as all nations found it necessary to offer Sacrifice, so none durst sacrifice unto anic, nisi ei quem Deum aut simus, aut pueramit, aut finxit; but to him whom they either knew, or thought, or fained to be God.",
+  "r3_verse": "But to Seth also was borne a sonne, whom he called Enos, this man\" began to inuocate the name of our Lord. CHAP. IIII. Offered guifes.) Either God himselfe taught Adam, and he his children, or els they knew by instinct of nature, that Sacrifice must be offered to God, to acknowledge thereby his supreme dominion over man, and mans due subiection to his diuine Maiestic. And that not only in internal affection, which (as Augustin, and all Catholike Doctours teach) is principally required, but also by Gods goodnes, the use of corporal things. As here we see example in the law of grace and new Testament, to wit, the same which Christ instituted, and left in his Church, to continue to the end of the world. Moreover this homage or offering Sacrifice is so peculiar to God only, that albeit manie other exterior our rites and services are used both to God & men, as to be bare-head, to bow, to kneel, & the like before them, either of greas humilitie (faith Augustin) or of periferous flatterie, so such as are homines ciendi, venerandi, siantem eis mulium addituri, or adorandi: men to be worshipped, reverenced, and if much be given them, adored; (for this terme of adoring is also applied to men in holic Scriptures, Gen. v.7.17. v.29) yet Sacrifice is due to God only, and to no creature how excellent so ever. In so much (faith the same Doctor) that as all nations found it necessary to offer Sacrifice, so none durst sacrifice unto anic, nisi ei quem Deum aut simus, aut pueramit, aut finxit; but to him whom they either knew, or thought, or fained to be God.",
+  "arm_conflicts": [
+   "alfo | also",
+   "calthis man | called Enos, this man\"",
+   "ot | of"
+  ],
+  "lexicon_readings": {
+   "3": "alſo",
+   "44": "Sacrifice",
+   "45": "muſt",
+   "85": "alſo",
+   "106": "Teſtament,",
+   "110": "ſame",
+   "112": "Chriſt",
+   "132": "Sacrifice",
+   "166": "before",
+   "179": "ſuch",
+   "203": "(for",
+   "209": "alſo",
+   "220": "Sacrifice",
+   "239": "ſame",
+   "250": "Sacrifice,",
+   "254": "ſacrifice"
+  },
+  "r2_attested": {
+   "28": "himſelfe",
+   "40": "inſtinct",
+   "54": "ſupreme",
+   "75": "Auguſtin,",
+   "97": "ſee",
+   "113": "inſtituted,",
+   "134": "ſo",
+   "173": "Auguſtin)",
+   "178": "ſo",
+   "232": "ſo",
+   "235": "ſo",
+   "251": "ſo",
+   "253": "durſt",
+   "257": "niſi"
+  },
+  "visual_readings": {
+   "3": "alſo",
+   "44": "Sacrifice",
+   "45": "muſt",
+   "85": "alſo",
+   "106": "Teſtament,",
+   "110": "ſame",
+   "112": "Chriſt",
+   "132": "Sacrifice",
+   "166": "before",
+   "179": "ſuch",
+   "203": "(for",
+   "209": "alſo",
+   "220": "Sacrifice",
+   "239": "ſame",
+   "250": "Sacrifice,",
+   "254": "ſacrifice",
+   "28": "himſelfe",
+   "40": "inſtinct",
+   "54": "ſupreme",
+   "75": "Auguſtin,",
+   "97": "ſee",
+   "113": "inſtituted,",
+   "134": "ſo",
+   "173": "Auguſtin)",
+   "178": "ſo",
+   "232": "ſo",
+   "235": "ſo",
+   "251": "ſo",
+   "253": "durſt",
+   "257": "niſi"
+  },
+  "new_text": "But to Seth alſo was borne a ſonne, whom he called Enos, this man began to inuocate the name of our Lord. CHAP. IIII. Offered guifes.) Either God himſelfe taught Adam, and he his children, or els they knew by inſtinct of nature, that Sacrifice muſt be offered to God, to acknowledge thereby his ſupreme dominion over man, and mans due subiection to his diuine Maiestic. And that not only in internal affection, which (as Auguſtin, and all Catholike Doctours teach) is principally required, but alſo by Gods goodnes, the use of corporal things. As here we ſee example in the law of grace and new Teſtament, to wit, the ſame which Chriſt inſtituted, and left in his Church, to continue to the end of the world. Moreover this homage or offering Sacrifice is ſo peculiar to God only, that albeit manie other exterior our rites and services are used both to God & men, as to be bare-head, to bow, to kneel, & the like before them, either of greas humilitie (faith Auguſtin) or of periferous flatterie, ſo ſuch as are homines ciendi, venerandi, siantem eis mulium addituri, or adorandi: men to be worshipped, reverenced, and if much be given them, adored; (for this terme of adoring is alſo applied to men in holic Scriptures, Gen. v.7.17. v.29) yet Sacrifice is due to God only, and to no creature how excellent ſo ever. In ſo much (faith the ſame Doctor) that as all nations found it necessary to offer Sacrifice, ſo none durſt ſacrifice unto anic, niſi ei quem Deum aut simus, aut pueramit, aut finxit; but to him whom they either knew, or thought, or fained to be God.",
+  "s_unresolved": [
+   "Offered",
+   "guifes.)",
+   "offered",
+   "subiection",
+   "Maiestic.",
+   "affection,",
+   "use",
+   "left",
+   "offering",
+   "services",
+   "used",
+   "(faith",
+   "periferous",
+   "flatterie,",
+   "siantem",
+   "worshipped,",
+   "(faith",
+   "found",
+   "necessary",
+   "offer",
+   "simus,",
+   "finxit;",
+   "fained"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

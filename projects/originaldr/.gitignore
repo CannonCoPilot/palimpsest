@@ -1,0 +1,87 @@
+# ============================================================
+# OriginalDR — what is tracked and why
+#
+# TRACKED:  source code, docs, hand-made ground-truth TEXT,
+#           campaign/attestation state, manifests, tests.
+# IGNORED:  anything rebuildable from the source PDFs or from
+#           a pipeline run — rasters, crops, model weights,
+#           venvs, arrow datasets, logs.
+#
+# Rule of thumb: if a human typed it, track it.
+#                if a script emitted it, don't.
+# ============================================================
+
+# --- virtualenvs (rebuild from requirements) ---
+calamari-venv/
+ocr-venv/
+ocr-mlx-venv/
+
+# --- model weights + OCR engine data (~2.8G) ---
+ocr-spike/models/
+ocr-spike/tessdata/
+
+# --- derived rasters and crops (keep the .gt.txt beside them) ---
+*.png
+*.jpg
+*.jpeg
+*.jp2
+*.tif
+*.tiff
+ocr-spike/.gt-rasters/
+ocr-spike/.tmp-crops/
+ocr-spike/.scratch-crops/
+ocr-spike/.claude-crops/
+ocr-spike/.render-tmp/
+ocr-spike/.ps118-render/
+.gt-crops/
+.gt-renders/
+.claude-scratch-pages/
+diag-pages/
+p14-render/
+dr-verify/
+
+# --- derived datasets (rebuildable from the .gt.txt corpus) ---
+*.arrow
+
+# --- bulk pipeline output ---
+ocr-spike/consensus-full/
+ocr-spike/consensus-full.pre-*/
+ocr-spike/diag-reocr/
+ocr-spike/reports-archive/
+ocr-spike/.s-arbiter/
+reconstruction/
+sources/
+ocrtest/
+ocr-validation/
+p14-tome-text/
+
+# --- logs, pids, run detritus ---
+*.log
+*.err
+*.out
+*-pid
+logs/
+ocr-spike/logs/
+
+# --- python ---
+__pycache__/
+*.pyc
+
+# --- OS ---
+.DS_Store
+
+# --- derived audit output + its snapshot history (rebuildable, 500M+) ---
+ocr-spike/coverage-audit-*.json
+ocr-spike/coverage-audit-*.json.*
+ocr-spike/*.json.pre-*
+ocr-spike/*.json.detect-baseline
+ocr-spike/*.json.floor050
+ocr-spike/*.json.stage1-9vol
+ocr-spike/.qc-pilot-vs.json
+ocr-spike/*.pre-review
+ocr-spike/*.pre-vvfix
+ocr-spike/*.pre-jp2-rebuild
+ocr-spike/*.pre-curated
+ocr-spike/.qc-*.json
+ocr-spike/reocr-report-*.html
+ocr-spike/selector-corpus-probe.json

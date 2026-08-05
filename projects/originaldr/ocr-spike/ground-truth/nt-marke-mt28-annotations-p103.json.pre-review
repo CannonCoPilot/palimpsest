@@ -1,0 +1,124 @@
+{
+  "locus": "nt/marke/mt28-annotations#p103",
+  "page_index": 103,
+  "ocr_dir": "archive-nt-1582",
+  "scan": "S1",
+  "raster": ".gt-rasters/scripture-matthew-28-p0103.png",
+  "raster_dpi": 400,
+  "page_label_printed": "78",
+  "running_header": {
+    "left": "78",
+    "center": "THE GHOSPEL",
+    "right": ""
+  },
+  "page_kind": "annotations",
+  "layout_note": "END of S. Matthew ch.28: this page carries NO scripture body[]. It is the tail of the ANNOTATIONS apparatus for CHAP. XXVIII (the ch.28 scripture surface itself sits on the preceding pages, not in this three-page set). Layout = single main annotation column (roman commentary with embedded italic lemmas and an italic S.Hierom quotation) flanked by left-margin key-glosses and a right-margin patristic citation, with a large floriated woodcut printer's ornament filling the lower half of the leaf. TWO glyph regimes on the page: roman commentary sets a REAL w; the italic quotation/lemmas set vv (per §footnote-typeface). Modern digitization watermark 'www.fatimamovement.com' + papal-keys logo at bottom-left are NOT part of the 1582 print and are excluded.",
+  "verses_on_page": [
+    "28:1 (annotation anchor)",
+    "28:19 (annotation anchor)",
+    "28:20 (annotation anchor)"
+  ],
+  "body": [],
+  "apparatus": [
+    {
+      "role": "annotations_heading",
+      "text": "ANNOTATIONS.",
+      "note": "centered section heading below the header rule"
+    },
+    {
+      "role": "chapter_heading",
+      "text": "CHAP. XXVIII.",
+      "note": "small-cap chapter label; roman numeral XXVIII = 28"
+    },
+    {
+      "role": "annotation",
+      "anchor_verse": "28:1",
+      "verse_number_printed": "1",
+      "lemma": "To ſee the Sepulcher.)",
+      "face": "roman commentary (real w) with an italic S.Hierom quotation in the vv-face",
+      "text": "1. To ſee the Sepulcher.) The deuout women came to viſit our Sauiours ſepulcher, and\nfor their deuotion firſt deſerued to know the Reſurrection, and to ſee him riſen. The ho-\nnour of the which Sepulcher , and the Pilgrimage thereunto in the Primitiue Church,\nS.Hierom declareth in theſe wordes: The Iewes ſometime honoured Sancta Sanctorum, becauſe\nthere vvere the Cherubs & the Propitiatorie, & the Arke of the Teſtament, Manna, Aarons rod, &\nthe golden Altar. Doth not the Sepulcher of our Lord ſeeme vnto thee more honorable? VVhich as often\nas vve enter into ſo often doe vve ſee our Sauiour lie in the ſindon & ſtaying there a vvhile, vve ſee the An-\ngel againe ſit at his feet, & at his head the napkin vvrapped togeather. The glorie of vvhoſe Sepulcher,\nvve knovv vvas long prophecied before Ioſeph hevved it out, by Eſay ſaying: And his reſt ſhal be honour,\nto vvit, becauſe the place of our Lordes burial ſhould be honoured of al men. And at this preſent,\nnotwithſtanding the Turkes dominion , yet doe the Religious Chriſtian Catholike\nmen by Gods mighty prouidence keepe the holy Sepulcher , which is within a goodly\nChurch, and Chriſtians come out of al the world in Pilgrimage to it.",
+      "marginal_key_left": "The holy Sepulcher, and Pilgrimage therunto.",
+      "marginal_ref_right": "In Ep. 17. Paule & Euſtoch. ad marcel. 10. t. Eſa. 11."
+    },
+    {
+      "role": "annotation",
+      "anchor_verse": "28:19",
+      "verse_number_printed": "19",
+      "ref_letter": "a",
+      "lemma": "Going therfore.)",
+      "face": "roman (real w)",
+      "text": "19. Going therfore.) a Commiſſion to baptize and preach to al Nations giuen to the\nApoſtles, and grounded vpon Chriſts ſoueraigne authority, to whom was giuen al power\nin Heauen and in earth.",
+      "marginal_key_left": "a The Catholike Church to be gathered of al Nations."
+    },
+    {
+      "role": "annotation",
+      "anchor_verse": "28:20",
+      "verse_number_printed": "20",
+      "ref_letter": "b",
+      "lemma": "VVith you al daies.)",
+      "face": "roman commentary (real w); italic lemma in vv-face",
+      "text": "20. VVith you al daies.)b Here Chriſt doth promiſe his concurrence with his Apoſtles &\ntheir Succeſſours, as wel in preaching as miniſtring the Sacraments, and his protection\nof the Church neuer to ceaſe til the worlds end : contrary to our Aduerſaries , ſaying\nthat the Church hath failed many hundred yeares til Luther and Caluin.",
+      "marginal_key_left": "b Chriſts continual protection of the ſame Church."
+    },
+    {
+      "role": "ornament",
+      "position": "lower_half_center",
+      "description": "large floriated woodcut printer's ornament / grotesque: a winged central figure (bare-breasted term/caryatid) with foliage, birds (two flanking), grape-clusters and leaf-scrolls; purely decorative, no legible letterpress text (a small mark resembling 'D' sits at its base and belongs to the cut).",
+      "text": null
+    }
+  ],
+  "marginalia": [
+    {
+      "position": "left_margin",
+      "anchor_verse": "28:1",
+      "anchor_annotation": 1,
+      "text": "The holy Se-\npulcher, and\nPilgrimage\ntherunto.",
+      "note": "left-margin key-gloss (roman) for the verse-1 annotation; line-end word-splits as printed"
+    },
+    {
+      "position": "left_margin",
+      "anchor_verse": "28:19",
+      "ref_letter": "a",
+      "anchor_annotation": 2,
+      "text": "a The Catho-\nlike Church to\nbe gathered of\nal Nations."
+    },
+    {
+      "position": "left_margin",
+      "anchor_verse": "28:20",
+      "ref_letter": "b",
+      "anchor_annotation": 3,
+      "text": "b Chriſts con-\ntinual protec-\ntion of the\nſame Church."
+    },
+    {
+      "position": "right_margin",
+      "anchor_verse": "28:1",
+      "anchor_annotation": 1,
+      "text": "In Ep.\n17.Pau-\nle &\nEuſtoch.\nad mar-\ncel.10. t.\nEſa.11.",
+      "has_uncertain": true,
+      "note": "italic patristic citation keyed to the Holy-Sepulchre annotation (S.Hierom, Ep. 17 of Paula & Eustochium ad Marcellam; Esay/Isaiah 11). Near the page edge and slightly out of focus — 'Euſtoch.' and the 'cel.10. t.' tail are low-confidence."
+    }
+  ],
+  "uncertain": [
+    {
+      "span": "Euſtoch. (right marginalia)",
+      "note": "abbreviation for Eustochium in 'In Ep. 17. Paule & Euſtoch. ad marcel.'; glyph reads between 'Eutoch.' and 'Euſtoch.' at scan resolution near the page edge."
+    },
+    {
+      "span": "cel.10. t. (right marginalia)",
+      "note": "token after 'ad marcel.' unclear — could be '10. t.', '10. 1.', or a section/chapter mark; blurry at the right edge."
+    },
+    {
+      "span": "prophecied (annotation 1, italic quote)",
+      "note": "medial letter could be 'c' (prophecied) or long-ſ (propheſied); transcribed 'prophecied'."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 49,
+    "note": "counted by script over running_header + apparatus[].text (lemma inline) + marginalia[].text; not hand-counted."
+  },
+  "observer": "agent:matthew-28",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (.gt-rasters/scripture-matthew-28-p0103.png) with region crops upscaled 2.2-5x for the small annotation and marginal faces; per-word roman-vs-italic face determined to apply the w/vv rule (roman commentary=real w; italic lemma+S.Hierom quotation=vv). No content-anchor consulted for spelling; janvier/Madueke not applicable (this is apparatus, not scripture).",
+  "confidence": "high on the roman commentary and italic quotation body; medium on the right-margin citation (edge blur); ornament described not transcribed.",
+  "relabel_note": "RELABELED from 'scripture-matthew-28-p103': this leaf is NOT Mt28 body — it is the tail of the Mt28 ANNOTATIONS apparatus. The true Mt28 verse body is scripture-matthew-28-p102."
+}

@@ -1,0 +1,549 @@
+[
+  {
+    "slug": "scripture-psalms-118",
+    "book": "psalms",
+    "ocr_dir": "archive-ot2-1610",
+    "page_index": 227,
+    "chapters": [
+      {
+        "chapter": 118,
+        "book": "psalms",
+        "n_verses": 12,
+        "sd_witness": "s_dismas",
+        "localized": [
+          103,
+          114
+        ],
+        "NEW_witness_mean": 0.9415,
+        "OLD_witness_mean": 0.9415,
+        "gold_content_mean": 0.9821,
+        "NEW_pass@.90": [
+          9,
+          12
+        ],
+        "OLD_pass@.90": [
+          9,
+          12
+        ],
+        "open_verses": 0,
+        "len_ratio_span": [
+          0.98,
+          1.077
+        ],
+        "ocr_archaic_mean": 0.9362,
+        "ocr_pass@.90": [
+          8,
+          12
+        ],
+        "rows": [
+          {
+            "v": 103,
+            "new_wit": 0.8904,
+            "old_wit": 0.8904,
+            "gold_content": 0.9333,
+            "len_ratio": 1.062,
+            "open": false,
+            "reason": "",
+            "anchor": 8,
+            "ocr": {
+              "archaic_id": 0.9846,
+              "modern_id": 0.9167,
+              "passed": true
+            }
+          },
+          {
+            "v": 104,
+            "new_wit": 0.713,
+            "old_wit": 0.713,
+            "gold_content": 0.987,
+            "len_ratio": 1.015,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": {
+              "archaic_id": 0.7232,
+              "modern_id": 0.7143,
+              "passed": false
+            }
+          },
+          {
+            "v": 105,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9811,
+            "len_ratio": 1.077,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": {
+              "archaic_id": 0.8571,
+              "modern_id": 0.8654,
+              "passed": false
+            }
+          },
+          {
+            "v": 106,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9833,
+            "len_ratio": 1.038,
+            "open": false,
+            "reason": "",
+            "anchor": 10,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9833,
+              "passed": true
+            }
+          },
+          {
+            "v": 107,
+            "new_wit": 0.9839,
+            "old_wit": 0.9839,
+            "gold_content": 1.0,
+            "len_ratio": 0.98,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": {
+              "archaic_id": 0.9839,
+              "modern_id": 0.9672,
+              "passed": true
+            }
+          },
+          {
+            "v": 108,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.973,
+            "len_ratio": 1.016,
+            "open": false,
+            "reason": "",
+            "anchor": 12,
+            "ocr": {
+              "archaic_id": 0.8442,
+              "modern_id": 0.8333,
+              "passed": false
+            }
+          },
+          {
+            "v": 109,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9677,
+            "len_ratio": 1.062,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": {
+              "archaic_id": 0.9848,
+              "modern_id": 0.9375,
+              "passed": true
+            }
+          },
+          {
+            "v": 110,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 14,
+            "ocr": {
+              "archaic_id": 0.9722,
+              "modern_id": 0.9697,
+              "passed": true
+            }
+          },
+          {
+            "v": 111,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9888,
+            "len_ratio": 0.987,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9888,
+              "passed": true
+            }
+          },
+          {
+            "v": 112,
+            "new_wit": 0.7113,
+            "old_wit": 0.7113,
+            "gold_content": 0.9853,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9853,
+              "passed": true
+            }
+          },
+          {
+            "v": 113,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 11,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 1.0,
+              "passed": true
+            }
+          },
+          {
+            "v": 114,
+            "new_wit": 1.0,
+            "old_wit": 1.0,
+            "gold_content": 0.9853,
+            "len_ratio": 1.018,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": {
+              "archaic_id": 0.8846,
+              "modern_id": 0.8933,
+              "passed": false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "scripture-genesis-24",
+    "book": "genesis",
+    "ocr_dir": "archive-ot1-1609",
+    "page_index": 99,
+    "chapters": [
+      {
+        "chapter": 24,
+        "book": "genesis",
+        "n_verses": 19,
+        "sd_witness": "s_dismas",
+        "localized": [
+          12,
+          30
+        ],
+        "NEW_witness_mean": 0.9376,
+        "OLD_witness_mean": 0.6381,
+        "gold_content_mean": 0.921,
+        "NEW_pass@.90": [
+          17,
+          19
+        ],
+        "OLD_pass@.90": [
+          2,
+          19
+        ],
+        "open_verses": 1,
+        "len_ratio_span": [
+          0.288,
+          1.111
+        ],
+        "ocr_archaic_mean": 0.9557,
+        "ocr_pass@.90": [
+          15,
+          19
+        ],
+        "rows": [
+          {
+            "v": 12,
+            "new_wit": 0.5588,
+            "old_wit": 0.5294,
+            "gold_content": 0.5426,
+            "len_ratio": 0.592,
+            "open": false,
+            "reason": "",
+            "anchor": 8,
+            "ocr": {
+              "archaic_id": 0.9828,
+              "modern_id": 0.0,
+              "passed": true
+            }
+          },
+          {
+            "v": 13,
+            "new_wit": 1.0,
+            "old_wit": 0.848,
+            "gold_content": 0.9365,
+            "len_ratio": 1.111,
+            "open": false,
+            "reason": "",
+            "anchor": 21,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9365,
+              "passed": true
+            }
+          },
+          {
+            "v": 14,
+            "new_wit": 0.9963,
+            "old_wit": 0.9458,
+            "gold_content": 0.9551,
+            "len_ratio": 0.991,
+            "open": false,
+            "reason": "",
+            "anchor": 44,
+            "ocr": {
+              "archaic_id": 0.9963,
+              "modern_id": 0.9551,
+              "passed": true
+            }
+          },
+          {
+            "v": 15,
+            "new_wit": 1.0,
+            "old_wit": 0.7538,
+            "gold_content": 0.9891,
+            "len_ratio": 1.019,
+            "open": false,
+            "reason": "",
+            "anchor": 31,
+            "ocr": {
+              "archaic_id": 0.9847,
+              "modern_id": 0.973,
+              "passed": true
+            }
+          },
+          {
+            "v": 16,
+            "new_wit": 1.0,
+            "old_wit": 0.478,
+            "gold_content": 0.9925,
+            "len_ratio": 1.045,
+            "open": false,
+            "reason": "",
+            "anchor": 22,
+            "ocr": {
+              "archaic_id": 0.9931,
+              "modern_id": 0.9779,
+              "passed": true
+            }
+          },
+          {
+            "v": 17,
+            "new_wit": 0.9889,
+            "old_wit": 0.6293,
+            "gold_content": 0.9877,
+            "len_ratio": 1.045,
+            "open": false,
+            "reason": "",
+            "anchor": 15,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9877,
+              "passed": true
+            }
+          },
+          {
+            "v": 18,
+            "new_wit": 1.0,
+            "old_wit": 0.85,
+            "gold_content": 1.0,
+            "len_ratio": 1.052,
+            "open": false,
+            "reason": "",
+            "anchor": 15,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 1.0,
+              "passed": true
+            }
+          },
+          {
+            "v": 19,
+            "new_wit": 1.0,
+            "old_wit": 0.3656,
+            "gold_content": 0.9884,
+            "len_ratio": 1.074,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9884,
+              "passed": true
+            }
+          },
+          {
+            "v": 20,
+            "new_wit": 1.0,
+            "old_wit": 0.5528,
+            "gold_content": 0.9748,
+            "len_ratio": 1.051,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": {
+              "archaic_id": 0.9922,
+              "modern_id": 0.9664,
+              "passed": true
+            }
+          },
+          {
+            "v": 21,
+            "new_wit": 1.0,
+            "old_wit": 0.6607,
+            "gold_content": 1.0,
+            "len_ratio": 1.0,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 1.0,
+              "passed": true
+            }
+          },
+          {
+            "v": 22,
+            "new_wit": 0.9859,
+            "old_wit": 0.5319,
+            "gold_content": 0.9403,
+            "len_ratio": 1.027,
+            "open": false,
+            "reason": "",
+            "anchor": 18,
+            "ocr": {
+              "archaic_id": 0.993,
+              "modern_id": 0.9474,
+              "passed": true
+            }
+          },
+          {
+            "v": 23,
+            "new_wit": 1.0,
+            "old_wit": 0.2804,
+            "gold_content": 0.9892,
+            "len_ratio": 1.013,
+            "open": false,
+            "reason": "",
+            "anchor": 20,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9892,
+              "passed": true
+            }
+          },
+          {
+            "v": 24,
+            "new_wit": 1.0,
+            "old_wit": 0.4393,
+            "gold_content": 1.0,
+            "len_ratio": 1.015,
+            "open": false,
+            "reason": "",
+            "anchor": 16,
+            "ocr": {
+              "archaic_id": 0.9882,
+              "modern_id": 0.9873,
+              "passed": true
+            }
+          },
+          {
+            "v": 25,
+            "new_wit": 1.0,
+            "old_wit": 0.7963,
+            "gold_content": 1.0,
+            "len_ratio": 1.014,
+            "open": false,
+            "reason": "",
+            "anchor": 19,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 1.0,
+              "passed": true
+            }
+          },
+          {
+            "v": 26,
+            "new_wit": 1.0,
+            "old_wit": 0.9348,
+            "gold_content": 0.9756,
+            "len_ratio": 1.029,
+            "open": false,
+            "reason": "",
+            "anchor": 7,
+            "ocr": {
+              "archaic_id": 1.0,
+              "modern_id": 0.9756,
+              "passed": true
+            }
+          },
+          {
+            "v": 27,
+            "new_wit": 1.0,
+            "old_wit": 0.8864,
+            "gold_content": 0.9881,
+            "len_ratio": 1.007,
+            "open": false,
+            "reason": "",
+            "anchor": 33,
+            "ocr": {
+              "archaic_id": 0.8838,
+              "modern_id": 0.8723,
+              "passed": false
+            }
+          },
+          {
+            "v": 28,
+            "new_wit": 1.0,
+            "old_wit": 0.8165,
+            "gold_content": 0.9762,
+            "len_ratio": 1.014,
+            "open": false,
+            "reason": "",
+            "anchor": 13,
+            "ocr": {
+              "archaic_id": 0.7768,
+              "modern_id": 0.78,
+              "passed": false
+            }
+          },
+          {
+            "v": 29,
+            "new_wit": 1.0,
+            "old_wit": 0.5354,
+            "gold_content": 0.9894,
+            "len_ratio": 1.013,
+            "open": false,
+            "reason": "",
+            "anchor": 18,
+            "ocr": {
+              "archaic_id": 0.8761,
+              "modern_id": 0.8692,
+              "passed": false
+            }
+          },
+          {
+            "v": 30,
+            "new_wit": 0.2851,
+            "old_wit": 0.2895,
+            "gold_content": 0.2727,
+            "len_ratio": 0.288,
+            "open": true,
+            "reason": "len-short(0.29x)",
+            "anchor": 10,
+            "ocr": {
+              "archaic_id": 0.6915,
+              "modern_id": 0.0,
+              "passed": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,940 @@
+[
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p81",
+  "old_text": "I wil bleſſe them and bleſſe thee, and curſſe them that curſſe thee, : In IN THEE ſhal al the kindreds of the earth be bleſſed.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.984,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.3345,
+   0.875,
+   0.4481
+  ],
+  "crop_page": 81,
+  "r3_raw": "I wil make thee into a great nation, and I wil blesse thee, and magnifie thy name, and thou shalt be blessed. † I wil blesse them and blesse thee, and curse them that curse thee, and: IN THEE shal al the kindreds of the earth be blessed. † Abram therefore went out as our Lord had commanded him.",
+  "r3_verse": "I wil blesse them and blesse thee, and curse them that curse thee, and: IN THEE shal al the kindreds of the earth be blessed.",
+  "arm_conflicts": [
+   "curſſe | curse",
+   "curſſe | curse",
+   ": In | and:"
+  ],
+  "new_text": "I wil bleſſe them and bleſſe thee, and curſſe them that curſſe thee, and: IN THEE ſhal al the kindreds of the earth be bleſſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p81",
+  "old_text": "Abram therfore went out as our Lord had commanded hames him, and with him went Lot ſeauentie fiue yeares old was al Abram when he went forth out of Haran.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.049,
+   0.3954,
+   0.875,
+   0.5016
+  ],
+  "crop_page": 81,
+  "r3_raw": "and: IN THEE shal al the kindreds of the earth be blessed. 4 † Abram therefore went out as our Lord had commanded him, and with him went Lot: seauentie fiue yeares old was 5 Abram when he went forth out of Haran. † And he tooke Sarai his wife, and Lot his brothers sonne, and al the sub-",
+  "r3_verse": "Abram therefore went out as our Lord had commanded him, and with him went Lot: seauentie fiue yeares old was Abram when he went forth out of Haran.",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "Abram therefore went out as our Lord had commanded him, and with him went Lot ſeauentie fiue yeares old was Abram when he went forth out of Haran.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p81",
+  "old_text": "And our Lordrappeared to Abram, and ſaidto dicated him: To thy ſeed wil I giue this land. Who builded there :an to altar to our Lord, that had appeared to him.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.5767,
+   0.875,
+   0.6849
+  ],
+  "crop_page": 81,
+  "r3_raw": "as the noble vale: and the Cananite was at that time in the countrie. † And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who builded there: an altar to our Lord, that had appeared to him. † And marching on from thence to a mountaine, that was on the east side of",
+  "r3_verse": "And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who builded there: an altar to our Lord, that had appeared to him.",
+  "arm_conflicts": [
+   "Lordrappeared | Lord appeared",
+   "ſaidto dicated | said to"
+  ],
+  "lexicon_readings": {
+   "7": "ſaid"
+  },
+  "visual_readings": {
+   "7": "ſaid"
+  },
+  "new_text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there :an altar to our Lord, that had appeared to him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p81",
+  "old_text": "And marching ally on from thence to a mountaine, that was on the eaſt ſide of places he Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: the builded there alſo an altar to our Lord, and called vpon his name.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.927,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.049,
+   0.6134,
+   0.875,
+   0.7638
+  ],
+  "crop_page": 81,
+  "r3_raw": "him: To thy seed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him. † And marching on from thence to a mountaine, that was on the east side of Bethel, there he pitched his tent, hauing Bethel on the west, and Hay on the east: he builded there also an altar to our Lord, and called vpon his name. † And Abram went for- ward going, and proceeding on to the south. † And there",
+  "r3_verse": "And marching on from thence to a mountaine, that was on the east side of Bethel, there he pitched his tent, hauing Bethel on the west, and Hay on the east: he builded there also an altar to our Lord, and called vpon his name.",
+  "arm_conflicts": [
+   "the | he"
+  ],
+  "new_text": "And marching on from thence to a mountaine, that was on the eaſt ſide of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar to our Lord, and called vpon his name.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 0.995,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p82",
+  "old_text": "When Abram therfore was entred into Egypt, the cor. Agiptians ſawe the woman that ſhe was paſſing beautiful.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   14
+  ],
+  "crop": [
+   0.08,
+   0.085,
+   0.875,
+   0.1748
+  ],
+  "crop_page": 82,
+  "r3_raw": "for thy sake. † When Abram therefore was entred into Ægypt, the 14 Ægiptians sawe the woman that she was passing beautiful. And the princes told Pharao, and praised her to him: and 15",
+  "r3_verse": "When Abram therefore was entred into Ægypt, the Ægiptians sawe the woman that she was passing beautiful.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Egypt, | Ægypt,",
+   "cor. Agiptians | Ægiptians"
+  ],
+  "new_text": "When Abram therefore was entred into Ægypt, the Ægiptians ſawe the woman that ſhe was paſſing beautiful.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p82",
+  "old_text": "But our Lord : ſcourged Phaho. rao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+  "old": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.2061,
+   0.875,
+   0.3183
+  ],
+  "crop_page": 82,
+  "r3_raw": "oxen and he asses, and men seruants, and maid seruants, and shee asses, and Cammels. † But our Lord :: scourged Pha-rao with very sore plagues, and his house for Sarai Abrams wife. † And Pharao called Abram, and said to him: What is this that thou hast done to me? Why didſt thou not tel me",
+  "r3_verse": "But our Lord :: scourged Pha-rao with very sore plagues, and his house for Sarai Abrams wife.",
+  "arm_conflicts": [
+   "Phaho. rao | Pha-rao"
+  ],
+  "new_text": "But our Lord :: ſcourged Pha-rao with very ſore plagues, and his houſe for Sarai Abrams wife.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p66",
+  "old_text": "and our Lord ſaid to Abram: Goe forth of thy coun- ſeed, and mandment trie and out of thy kindred, and out of thy tathers Circumciūou. houſe and come into a land which I wil ſhew thee.",
+  "old": {
+   "s_dismas": 0.819,
+   "odr_com": 0.819,
+   "sabates_a": 0.82,
+   "madueke_b": 0.82
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.155,
+   0.2125,
+   0.8918,
+   0.4598
+  ],
+  "crop_page": 66,
+  "r3_raw": "Abram commanded by God to leaue his countrie, with promise to be blessed in his Seed, 5. taking his wife sarai, and his nephew Lot, 6. wandreth in the land of Chanaan, 7. erecteth an Altar in Sichem, 8. another in Bethel. 10. Thence by occasion of famine passeth into Ægypt: 14. where his wife (called his sister) is taken into the Kings house, 19. but vntouched is restored to him. ND our Lord said to Abram: Goe forth of thy countrie, and out of thy kindred, and out of thy fathers house, and come into a land which I wil shew thee. 2. And I will make thee into a great nation, and I will be unto thee an everlaſting covenant, and to thy seed after thee:",
+  "r3_verse": "Abram commanded by God to leaue his countrie, with promise to be blessed in his Seed, taking his wife sarai, and his nephew Lot, wandreth in the land of Chanaan, erecteth an Altar in Sichem, another in Bethel. Thence by occasion of famine passeth into Ægypt: where his wife (called his sister) is taken into the Kings house, but vntouched is restored to him. ND our Lord said to Abram: Goe forth of thy countrie, and out of thy kindred, and out of thy fathers house, and come into a land which I wil shew thee.",
+  "arm_conflicts": [
+   "coun- ſeed, and mandment trie | countrie,",
+   "tathers Circumciūou. | fathers"
+  ],
+  "r2_attested": {
+   "9": "promiſe",
+   "12": "bleſſed",
+   "40": "occaſion",
+   "43": "paſſeth",
+   "51": "ſiſter)",
+   "57": "houſe,",
+   "61": "reſtored"
+  },
+  "visual_readings": {
+   "9": "promiſe",
+   "12": "bleſſed",
+   "40": "occaſion",
+   "43": "paſſeth",
+   "51": "ſiſter)",
+   "57": "houſe,",
+   "61": "reſtored"
+  },
+  "new_text": "Abram commanded by God to leaue his countrie, with promiſe to be bleſſed in his Seed, taking his wife sarai, and his nephew Lot, wandreth in the land of Chanaan, erecteth an Altar in Sichem, another in Bethel. Thence by occaſion of famine paſſeth into Ægypt: where his wife (called his ſiſter) is taken into the Kings houſe, but vntouched is reſtored to him. ND our Lord ſaid to Abram: Goe forth of thy countrie, and out of thy kindred, and out of thy fathers houſe and come into a land which I wil ſhew thee.",
+  "s_unresolved": [
+   "wife",
+   "sarai,",
+   "famine",
+   "wife",
+   "fathers"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p66",
+  "old_text": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnife thy name and thou ſhalt be",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   2
+  ],
+  "crop": [
+   0.155,
+   0.417,
+   0.885,
+   0.4952
+  ],
+  "crop_page": 66,
+  "r3_raw": "tric; and out of thy father's house, and come into a land which I will shew thee. 2. And I will make thee into a great nation, and I will bless thee, and magnifie thy name, and thou shalt be blessed. 3. I will blesse them that blesse thee, and curse them that curſe",
+  "r3_verse": "And I will make thee into a great nation, and I will bless thee, and magnifie thy name, and thou shalt be blessed.",
+  "arm_conflicts": [
+   "wil | will",
+   "wil bleſſe | will bless",
+   "magnife | magnifie"
+  ],
+  "r2_attested": {
+   "22": "bleſſed."
+  },
+  "visual_readings": {
+   "22": "bleſſed."
+  },
+  "new_text": "And I wil make thee into a great nation, and I wil bleſſe thee, and magnifie thy name and thou ſhalt be bleſſed.",
+  "s_unresolved": [
+   "magnifie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p66",
+  "old_text": "I wil bleſſe them that bleſſe thee, and curſe them that curſe (2) In and () ITH ſhal al the kindreds of the earth be bleſſed.",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.886,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.451,
+   0.885,
+   0.5349
+  ],
+  "crop_page": 66,
+  "r3_raw": "And I will make thee into a great nation; and I will bless thee, and magnifie thy name, and thou shalt be blessed. 3. I wil blesse them that blesse thee, and curse them that curse thee, and (a) in this: shal al the kindreds of the earth be blessed. 4. Abram therefore went out as our Lord had commanded him, and vnto",
+  "r3_verse": "I wil blesse them that blesse thee, and curse them that curse thee, and in this: shal al the kindreds of the earth be blessed.",
+  "arm_conflicts": [
+   "(2) | thee, and",
+   "and () ITH | this:"
+  ],
+  "new_text": "I wil bleſſe them that bleſſe thee, and curſe them that curſe thee, and in this: ſhal al the kindreds of the earth be bleſſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.935,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p66",
+  "old_text": "borne of therfore went out as our Lord had commanded him, and haus him went Lot: ſeauentie fiue veares old was Abram when he wentnations out of Haran.",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.871,
+   "sabates_a": 0.837,
+   "madueke_b": 0.837
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.4686,
+   0.885,
+   0.5862
+  ],
+  "crop_page": 66,
+  "r3_raw": "2. Beleve thee, and magnifie thy name; and thou shalt be blessed. 3. I wil blesse them that blesse thee, and curse them that curse thee, and (a) IN TH: shal al the kindreds of the earth be blessed. 4. Abram therfore went out as our Lord had commanded him, and with him went Lot: seauentie five yeares old was Abram when he went forth out of Haran. 5. And he tooke Sarai his wife, and Lot his brothers sonne, and al the substance which they had possessed, and the",
+  "r3_verse": "Abram therfore went out as our Lord had commanded him, and with him went Lot: seauentie five yeares old was Abram when he went forth out of Haran.",
+  "arm_conflicts": [
+   "borne of | Abram",
+   "haus | with",
+   "fiue veares | five yeares",
+   "wentnations | went forth"
+  ],
+  "new_text": "Abram therfore went out as our Lord had commanded him, and with him went Lot: ſeauentie fiue yeares old was Abram when he went forth out of Haran.",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.964,
+   "madueke_b": 0.964
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p66",
+  "old_text": "And he tooke Sarai his wife, and Lot his bro- lblelſed. ſonne and al the ſubſtance wnch they had poſſeſſed, aud the which they had gotten in Haran: and wen: torth to goe into the Chanaan. And when they were come into it,",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.522,
+   0.885,
+   0.6361
+  ],
+  "crop_page": 66,
+  "r3_raw": "4. Abram therefore went out as our Lord had commanded him; and with him went Lot: seauentie five yeares old was Abram when he went forth out of Haran. 5. And he tooke Sarai his wife, and Lot his brothers sonne, and al the substance which they had possessed, and the soules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it, 6. Abram passed through the countrie vnto the place Sichem, as farre as the noble vale:",
+  "r3_verse": "And he tooke Sarai his wife, and Lot his brothers sonne, and al the substance which they had possessed, and the soules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it,",
+  "arm_conflicts": [
+   "bro- lblelſed. | brothers",
+   "wnch | which",
+   "aud | and",
+   "wen: torth | went forth"
+  ],
+  "r2_attested": {
+   "21": "ſoules"
+  },
+  "visual_readings": {
+   "21": "ſoules"
+  },
+  "new_text": "And he tooke Sarai his wife, and Lot his brothers ſonne and al the ſubſtance which they had poſſeſſed, and the ſoules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it,",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p66",
+  "old_text": "Abram paffed the countrie vnto the place Sichem, as farre as the noble vale: Cananite was at that time in the countrie.",
+  "old": {
+   "s_dismas": 0.864,
+   "odr_com": 0.864,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.5789,
+   0.885,
+   0.6705
+  ],
+  "crop_page": 66,
+  "r3_raw": "soules which they had gotten in Haran: and went forth to goe into the land of Chanaan. And when they were come into it, 6. Abram passed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie. 7. And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who",
+  "r3_verse": "Abram passed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+  "arm_conflicts": [
+   "paffed | passed through"
+  ],
+  "new_text": "Abram passed through the countrie vnto the place Sichem, as farre as the noble vale: and the Cananite was at that time in the countrie.",
+  "s_unresolved": [
+   "passed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p66",
+  "old_text": "And oui Lord apto Abram, and ſaid to him: To thy ſeed wil Igiue this laud. Who b) Abram there an altar to our Lord, that had appearod to him..",
+  "old": {
+   "s_dismas": 0.881,
+   "odr_com": 0.881,
+   "sabates_a": 0.884,
+   "madueke_b": 0.884
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.6126,
+   0.885,
+   0.7137
+  ],
+  "crop_page": 66,
+  "r3_raw": "through the countrie vnto the place Sichem , as farre as the noble vale: and the Cananite was at that time in the countric. 7. And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who builded there (b) an altar to our Lord, that had appeared to him. 8. And marching on from thence to a mountaine , that was on the cast side of Bethel, there he pitched his tent .",
+  "r3_verse": "And our Lord appeared to Abram, and said to him: To thy seed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him.",
+  "arm_conflicts": [
+   "oui | our",
+   "apto | appeared to",
+   "Igiue | I giue",
+   "laud. | land.",
+   "b) Abram | builded",
+   "appearod | appeared"
+  ],
+  "new_text": "And our Lord appeared to Abram, and ſaid to him: To thy ſeed wil I giue this land. Who builded there an altar to our Lord, that had appeared to him..",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p66",
+  "old_text": "And dicated on from thence to a mountaine, that was on the eaſtde ot to God there he pitched his tent, hauing Bethel on the weſt, and Hay cialiy eaſt: he builded there alſo an altar to our Lord, and calice von places",
+  "old": {
+   "s_dismas": 0.844,
+   "odr_com": 0.839,
+   "sabates_a": 0.845,
+   "madueke_b": 0.845
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.6481,
+   0.885,
+   0.7594
+  ],
+  "crop_page": 66,
+  "r3_raw": "appeared to Abram, and said to him: To thy seed will I give this land. Who builded there (b) an altar to our Lord, that had appeared to him. 8. And marching on from thence to a mountaine, that was on the east side of Bethel, there he pitched his tent, having Bethel on the west, and Hay on the east: he builded there also an altar to our Lord, and called upon his name. 9. And Abram went forward going, and proceeding on to the",
+  "r3_verse": "And marching on from thence to a mountaine, that was on the east side of Bethel, there he pitched his tent, having Bethel on the west, and Hay on the east: he builded there also an altar to our Lord, and called upon his name.",
+  "arm_conflicts": [
+   "dicated | marching",
+   "eaſtde ot to God | east side of Bethel,",
+   "hauing | having",
+   "cialiy | on the",
+   "calice von places | called upon his name."
+  ],
+  "r2_attested": {
+   "12": "eaſt"
+  },
+  "visual_readings": {
+   "12": "eaſt"
+  },
+  "new_text": "And marching on from thence to a mountaine, that was on the eaſt side of Bethel, there he pitched his tent, hauing Bethel on the weſt, and Hay on the eaſt: he builded there alſo an altar to our Lord, and called upon his name.",
+  "s_unresolved": [
+   "side"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 0.995,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p66",
+  "old_text": "And Abram went forward going, and proceeding on to the",
+  "old": {
+   "s_dismas": 0.879,
+   "odr_com": 0.879,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   9
+  ],
+  "crop": [
+   0.155,
+   0.7187,
+   0.885,
+   0.7776
+  ],
+  "crop_page": 66,
+  "r3_raw": "on the east: he builded there also an altar to our Lord, and called upon his name. 9. And Abram went forward going, and proceeding on to the south. 10. And there came a famine in the countrie: and Abram descen-",
+  "r3_verse": "And Abram went forward going, and proceeding on to the south.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "10": "ſouth."
+  },
+  "visual_readings": {
+   "10": "ſouth."
+  },
+  "new_text": "And Abram went forward going, and proceeding on to the ſouth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p66",
+  "old_text": "And there came a famine in the countrie: and Abtam deſcen- pron bencſits. Egypt, to be as a pilgrime there: for the tamine was very ſore Chviſois. land.",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.848,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.7341,
+   0.885,
+   0.8331
+  ],
+  "crop_page": 66,
+  "r3_raw": "on the ealt: he builded there unto an altar to our Lord; and called vpon his name. 9. And Abram went forward going, and proceeding on to the south. 10. And there came a famine in the countrie: and Abram descended into Ægypt, to be as a pilgriime there: for the famine was very sore in the land. 11. And when he was neer to enter into Ægypt, he said to Sarai his wise: I know that thou art a fayre woman, 12. and that whent",
+  "r3_verse": "And there came a famine in the countrie: and Abram descended into Ægypt, to be as a pilgriime there: for the famine was very sore in the land.",
+  "arm_conflicts": [
+   "Abtam deſcen- pron bencſits. Egypt, | Abram descended into Ægypt,",
+   "pilgrime | pilgriime",
+   "tamine | famine",
+   "Chviſois. | in the"
+  ],
+  "new_text": "And there came a famine in the countrie: and Abram descended into Ægypt, to be as a pilgrime there: for the famine was very ſore in the land.",
+  "s_unresolved": [
+   "descended",
+   "famine"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p66",
+  "old_text": "And when he was neer to enter into Egypt, he iaid to 31.1Gen. his wife: Tknow that thou art a fayre woman,",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.7728,
+   0.885,
+   0.8503
+  ],
+  "crop_page": 66,
+  "r3_raw": "ded into Ægypt, to be as a pilgriime there: for the famine was very sore in the land. 11. And when he was neer to enter into Ægypt, he laid to Sarai his wife: I know that thou art a fayre woman, 12. and that when the Ægyptians shal see thee, they wil lay: She is his wife; and they will",
+  "r3_verse": "And when he was neer to enter into Ægypt, he laid to Sarai his wife: I know that thou art a fayre woman,",
+  "arm_conflicts": [
+   "Egypt, | Ægypt,",
+   "iaid | laid",
+   "31.1Gen. | Sarai",
+   "Tknow | I know"
+  ],
+  "new_text": "And when he was neer to enter into Ægypt, he laid to Sarai his wife: I know that thou art a fayre woman,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p66",
+  "old_text": "and that ſhal ſee thee, they wil ſay: She is his wife, and they wil and reſerue thee.",
+  "old": {
+   "s_dismas": 0.75,
+   "odr_com": 0.75,
+   "sabates_a": 0.75,
+   "madueke_b": 0.75
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.7903,
+   0.885,
+   0.8865
+  ],
+  "crop_page": 66,
+  "r3_raw": "in the land. 11. And when he was neer to enter into Ægypt, he said to Sarai his wife: I know that thou art a fayre woman, 12. and that vſen the Ægyptians ſhal see thee, they wil lay: She is his wife; and they wil kilme, and reſerue thee. 13. \"Say therefore, I pray thee, that thou art my sister: that I may be wel vsed for thee, and that my soule may liue for",
+  "r3_verse": "and that vſen the Ægyptians ſhal see thee, they wil lay: She is his wife; and they wil kilme, and reſerue thee.",
+  "arm_conflicts": [
+   "ſay: | lay:"
+  ],
+  "new_text": "and that vſen the Ægyptians ſhal ſee thee, they wil lay: She is his wife, and they wil kilme, and reſerue thee.",
+  "s_unresolved": [
+   "vſen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.963,
+   "odr_com": 0.954,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "chapter",
+  "old_text": "Say therfore, I pray thee, that thou art my that I may be wel vſod for thee, and that my ſoule may liue tor Abtam",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.86,
+   "madueke_b": 0.86
+  },
+  "neighbours": [
+   13
+  ],
+  "skip": "no crop geometry; leaves tried: [67]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "chapter",
+  "old_text": "therefore was entred into Egypt, the Agyptians Abram ſaw the woman that ſhe was paſſing beautiful.",
+  "old": {
+   "s_dismas": 0.796,
+   "odr_com": 0.796,
+   "sabates_a": 0.798,
+   "madueke_b": 0.798
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.0569,
+   0.885,
+   0.1426
+  ],
+  "crop_page": 67,
+  "r3_raw": "saw the woman that she was passing beautiful. 15. And the Princes told Pharao, and praised her to him: and the woman was taken into the",
+  "r3_verse": "therefore was entred into Egypt, the Agyptians Abram saw the woman that she was passing beautiful.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "therefore was entred into Egypt, the Agyptians Abram ſaw the woman that ſhe was paſſing beautiful.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.796,
+   "odr_com": 0.796,
+   "sabates_a": 0.798,
+   "madueke_b": 0.798
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p67",
+  "old_text": "For what eauſe didſt thou ſay ſhe was thy ſiſtet, that I might take her to my wifer Now therfore there is thy wite, take her, and goe thy wayes.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.2066,
+   0.885,
+   0.3031
+  ],
+  "crop_page": 67,
+  "r3_raw": "called Abram, and said to him: What is this that thou hast done to me? Why didst thou not tell me that she was thy wife? 19. For what cause didst thou say she was thy sister, that I might take her to my wife? Now therefore there is thy wife, take her, and goe thy wayes. 20. And Pharao gaue certaine men commandement in the behalfe of Abram:",
+  "r3_verse": "For what cause didst thou say she was thy sister, that I might take her to my wife? Now therefore there is thy wife, take her, and goe thy wayes.",
+  "arm_conflicts": [
+   "eauſe | cause",
+   "ſiſtet, | sister,",
+   "wifer | wife?",
+   "therfore | therefore",
+   "wite, | wife,"
+  ],
+  "r2_attested": {
+   "9": "ſiſter,"
+  },
+  "visual_readings": {
+   "9": "ſiſter,"
+  },
+  "new_text": "For what cause didſt thou ſay ſhe was thy ſiſter, that I might take her to my wife? Now therefore there is thy wife, take her, and goe thy wayes.",
+  "s_unresolved": [
+   "cause",
+   "wife?",
+   "therefore",
+   "wife,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

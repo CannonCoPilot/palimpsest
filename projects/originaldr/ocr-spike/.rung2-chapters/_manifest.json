@@ -1,0 +1,4168 @@
+{
+ "stats": {
+  "rows_emitted": 218,
+  "leaves": 34,
+  "cells_used": 188,
+  "rejected": {
+   "too_short": 45,
+   "no_match": 535,
+   "low_cover": 225,
+   "would_unlearn_s": 0,
+   "ink_absent_from_target": 169,
+   "hyphen_broken_at_measure": 36
+  }
+ },
+ "n_leaves": 18,
+ "n_val_leaves": 4,
+ "n_train": 181,
+ "n_val": 37,
+ "min_cover": 0.7,
+ "chapters": [
+  1,
+  16
+ ],
+ "lines": [
+  {
+   "bbox": [
+    900,
+    1293.25,
+    1777,
+    1375.25
+   ],
+   "r2": "voide & vacant, and darkenes was",
+   "gt": "voide & vacant, and darkenes was",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 2,
+   "stem": "line_00001",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    901,
+    1355.8,
+    1778,
+    1443.2
+   ],
+   "r2": "vpon the face of the deapth: and the",
+   "gt": "vpon the face of the deapth: and the",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 3,
+   "stem": "line_00002",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    911,
+    1544.4,
+    1769,
+    1626.1
+   ],
+   "r2": "And light was made † And God",
+   "gt": "And light was made † And God",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 6,
+   "stem": "line_00003",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    900,
+    1609.3,
+    1770,
+    1685.2
+   ],
+   "r2": "ſaw the light thatit was good: & he",
+   "gt": "ſaw the light that it was good: & he",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 7,
+   "stem": "line_00004",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    352,
+    1669.45,
+    1764,
+    1751.55
+   ],
+   "r2": "diuided the light from the darkenes. † And he called the",
+   "gt": "diuided the light from the darkenes. † And he called the",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 8,
+   "stem": "line_00005",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    362,
+    1729.75,
+    1763,
+    1811.25
+   ],
+   "r2": "light, Day, and the darkenes, Night : and there was euening",
+   "gt": "light, Day, and the darkenes, Night : and there was euening",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 9,
+   "stem": "line_00006",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    361,
+    2042.7,
+    1759,
+    2120.8
+   ],
+   "r2": "that were aboue the firmament. And it was ſo done. † And",
+   "gt": "that were aboue the firmament. And it was ſo done. † And",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 14,
+   "stem": "line_00007",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    366,
+    2102.6,
+    1759,
+    2184.9
+   ],
+   "r2": "God called the firmament, Heauen: and there was euening",
+   "gt": "God called the firmament, Heauen: and there was euening",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 15,
+   "stem": "line_00008",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    451,
+    2169.85,
+    1763,
+    2245.65
+   ],
+   "r2": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "gt": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 16,
+   "stem": "line_00009",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    366,
+    2228.4,
+    1764,
+    2308.6
+   ],
+   "r2": "the waters thar are vnder the heauen, be gathered together",
+   "gt": "the waters thar are vnder the heauen, be gathered together",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 17,
+   "stem": "line_00010",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    367,
+    2291.15,
+    1749,
+    2366.35
+   ],
+   "r2": "into one place : and let the drie land appeare. And it was ſo",
+   "gt": "into one place : and let the drie land appeare. And it was ſo",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 18,
+   "stem": "line_00011",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    364,
+    2479.35,
+    1785,
+    2551.15
+   ],
+   "r2": "it was good. † And laid : Ler the earth ſhootforth grene,",
+   "gt": "it was good. † And laid : Ler the earth ſhootforth grene,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 21,
+   "stem": "line_00012",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    367,
+    2538.5,
+    1763,
+    2612.0
+   ],
+   "r2": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "gt": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 22,
+   "stem": "line_00013",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    366,
+    2601.05,
+    1766,
+    2676.45
+   ],
+   "r2": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the",
+   "gt": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 23,
+   "stem": "line_00014",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    368,
+    2661.0,
+    1753,
+    2776.5
+   ],
+   "r2": "earth. And it was ſo done. † And the earth broughr forth",
+   "gt": "earth. And it was ſo done. † And the earth brought forth",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 21,
+   "row": 24,
+   "stem": "line_00015",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    408,
+    144.5,
+    1821,
+    256.9
+   ],
+   "r2": "grene herbe, ſuch as ſeedeth according to his kinde, & tree",
+   "gt": "grene herbe, ſuch as ſeedeth according to his kinde, & tree",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 0,
+   "stem": "line_00016",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    405,
+    297.75,
+    1706,
+    380.25
+   ],
+   "r2": "kinde. And God ſaw that it was good. † And there",
+   "gt": "kinde. And God ſaw that it was good. † And there",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 2,
+   "stem": "line_00017",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    358.0,
+    1816,
+    451.5
+   ],
+   "r2": "euening & morning that made the third day. † Againe God",
+   "gt": "euening & morning that made the third day. † Againe God",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 3,
+   "stem": "line_00018",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    403,
+    434.85,
+    1763,
+    500.15
+   ],
+   "r2": "ſaid: Be there lightes made in the firmament of heauen,",
+   "gt": "ſaid: Be there lightes made in the firmament of heauen,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 4,
+   "stem": "line_00019",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    402,
+    482.85,
+    1758,
+    566.15
+   ],
+   "r2": "diuide the day & the night, and let them be for ſignes",
+   "gt": "diuide the day & the night, and let them be :: for ſignes",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 5,
+   "stem": "line_00020",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    610.75,
+    1827,
+    696.75
+   ],
+   "r2": "heauen, & to giue light vpon the earth. And it was ſo done.",
+   "gt": "heauen, & to giue light vpon the earth. And it was ſo done.",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 7,
+   "stem": "line_00021",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    804.8,
+    1753,
+    891.7
+   ],
+   "r2": "ſtarres. † And he ſer them in the firmament of heauen,",
+   "gt": "ſtarres. † And he ſer them in the firmament of heauen,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 10,
+   "stem": "line_00022",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    404,
+    870.5,
+    1825,
+    949.0
+   ],
+   "r2": "ſhine vpon the earth. † and to gouerne the day & the night,",
+   "gt": "ſhine vpon the earth. † and to gouverne the day & the night,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 11,
+   "stem": "line_00023",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    398,
+    994.5,
+    1811,
+    1072.5
+   ],
+   "r2": "that it was good. † And there was euening and morning",
+   "gt": "that it was good. † And there was euening and morning",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 13,
+   "stem": "line_00024",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    398,
+    1056.25,
+    1815,
+    1138.25
+   ],
+   "r2": "that made the fourth day. † God alſo ſaid : Let the waters",
+   "gt": "that made the fourth day. † God alſo ſaid : Let the waters",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 14,
+   "stem": "line_00025",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    1119.75,
+    1821,
+    1204.75
+   ],
+   "r2": "bring forth creeping creature hauing life, and flying foule,",
+   "gt": "bring forth creeping creature hauing life, and flying foule,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 15,
+   "stem": "line_00026",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    397,
+    1185.45,
+    1804,
+    1262.55
+   ],
+   "r2": "ouer the earth vnder the firmament of heauen. † And God",
+   "gt": "ouer the earth vnder the firmament of heauen. † And God",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 16,
+   "stem": "line_00027",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    394,
+    1376.0,
+    1817,
+    1452.0
+   ],
+   "r2": "foule according to their kinde. And God ſawe that it was",
+   "gt": "foule according to their kinde. And God ſawe that it was",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 19,
+   "stem": "line_00028",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    324,
+    1558.2,
+    1713,
+    1641.3
+   ],
+   "r2": "yet be multiplied vpon the earth. † And there was euening",
+   "gt": "yet be multiplied vpon the earth. † And there was euening",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 22,
+   "stem": "line_00029",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    402,
+    1639.25,
+    1818,
+    1705.75
+   ],
+   "r2": "morning that made the fifth day. † God ſaid moreouer: Let",
+   "gt": "morning that made the fifth day. † God ſaid moreouer: Let",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 23,
+   "stem": "line_00030",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    402,
+    1686.6,
+    1820,
+    1768.9
+   ],
+   "r2": "the earth bring forth liuing creature, in his kind, cattle,",
+   "gt": "the earth bring forth liuing creature, in his kind, cattle,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 24,
+   "stem": "line_00031",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    496,
+    1747.9,
+    1815,
+    1828.6
+   ],
+   "r2": "ſuch as creepe, & beaſtes of the earth according to their",
+   "gt": "ſuch as creepe, & beaſtes of the earth according to their",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 25,
+   "stem": "line_00032",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    1885.45,
+    1820,
+    1952.55
+   ],
+   "r2": "the earth according ro their kindes, and cattle, & al that",
+   "gt": "the earth according to their kindes, and cattle, & al that",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 27,
+   "stem": "line_00033",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    399,
+    1935.35,
+    1155,
+    2009.65
+   ],
+   "r2": "crepeth on the earth in his kind.",
+   "gt": "crepeth on the earth in his kind.",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 28,
+   "stem": "line_00034",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    473,
+    1991.0,
+    1812,
+    2077.5
+   ],
+   "r2": "And God ſaw that it was good, † and he ſaid Let vs make",
+   "gt": "And God ſaw that it was good, † and he ſaid Let vs make",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 29,
+   "stem": "line_00035",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    408,
+    2058.55,
+    1800,
+    2130.95
+   ],
+   "r2": "Man to our image, & likenes : and let him haue dominion",
+   "gt": "Man to our image, & likenes : and let him haue dominion",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 30,
+   "stem": "line_00036",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    339,
+    2120.45,
+    1804,
+    2197.05
+   ],
+   "r2": "of ouer the fi ſhes of the ſea, and the foules of the ayre, and the",
+   "gt": "of ouer the fi ſhes of the ſea, and the foules of the ayre, and the",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 31,
+   "stem": "line_00037",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    2179.8,
+    1815,
+    2265.2
+   ],
+   "r2": "beaſtes, and the whole earth, and al creeping creature, that",
+   "gt": "beaſtes, and the whole earth, and al creeping creature, that",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 32,
+   "stem": "line_00038",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    405,
+    2243.9,
+    1729,
+    2325.1
+   ],
+   "r2": "moueth vpon the earth. † And God created man, to",
+   "gt": "moueth vpon the earth. † And God created man, to",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 33,
+   "stem": "line_00039",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    405,
+    2306.15,
+    1713,
+    2381.85
+   ],
+   "r2": "owne image: to the image of God he created him, male",
+   "gt": "owne image: to the image of God he created him, male",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 34,
+   "stem": "line_00040",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    408,
+    2363.55,
+    1668,
+    2447.45
+   ],
+   "r2": "female he created them. † And God bleſſed them, and",
+   "gt": "female he created them. † And God bleſſed them, and",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 35,
+   "stem": "line_00041",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    447,
+    2429.55,
+    1792,
+    2510.45
+   ],
+   "r2": "Increaſe and multiplie, & repleniſh the earth, and ſubdew",
+   "gt": "Increaſe and multiplie, & repleniſh the earth, and ſubdew",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 36,
+   "stem": "line_00042",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    405,
+    2491.0,
+    1808,
+    2568.5
+   ],
+   "r2": "it, and rule ouer the fiſhes of the ſea, and foules of the ayre,",
+   "gt": "it, and rule ouer the fiſhes of the ſea, and foules of the ayre,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 37,
+   "stem": "line_00043",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    410,
+    2551.05,
+    1800,
+    2634.45
+   ],
+   "r2": "& al liuing creatures, that moue vpon the earth. † And God",
+   "gt": "& al liuing creatures, that moue vpon the earth. † And God",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 22,
+   "row": 38,
+   "stem": "line_00044",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    372,
+    287.15,
+    1763,
+    373.35
+   ],
+   "r2": "that moue vpon the earth, and wherein there is life, that",
+   "gt": "that moue vpon the earth, and wherein there is life, that",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 23,
+   "row": 2,
+   "stem": "line_00045",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    369,
+    419.9,
+    1789,
+    497.6
+   ],
+   "r2": "God ſawe al things that he had made, and they were very",
+   "gt": "God ſawe al things that he had made, and they were very",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 23,
+   "row": 4,
+   "stem": "line_00046",
+   "chapter": 1,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    902,
+    1244.85,
+    1789,
+    1328.15
+   ],
+   "r2": "voide & vacant, and darkenes was",
+   "gt": "voide & vacant, and darkenes was",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 2,
+   "stem": "line_00047",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    898,
+    1309.4,
+    1780,
+    1395.6
+   ],
+   "r2": "vpon the face of the deapth: and the",
+   "gt": "vpon the face of the deapth: and the",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 3,
+   "stem": "line_00048",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    910,
+    1503.65,
+    1772,
+    1581.85
+   ],
+   "r2": "And light was made † And God",
+   "gt": "And light was made † And God",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 6,
+   "stem": "line_00049",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    898,
+    1566.65,
+    1779,
+    1645.35
+   ],
+   "r2": "ſaw the light that it was good : & he",
+   "gt": "ſaw the light that it was good : & he",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 7,
+   "stem": "line_00050",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    339,
+    1630.15,
+    1773,
+    1706.35
+   ],
+   "r2": "diuided the light trom the darkenes. † And he called the",
+   "gt": "diuided the light trom the darkenes. † And he called the",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 8,
+   "stem": "line_00051",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    352,
+    1687.7,
+    1774,
+    1774.3
+   ],
+   "r2": "light, Day, and the darkenes, Night : and there was euening",
+   "gt": "light, Day, and the darkenes, Night : and there was euening",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 9,
+   "stem": "line_00052",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    346,
+    2014.05,
+    1758,
+    2086.95
+   ],
+   "r2": "that were aboue the firmament. And it was ſo done. † And",
+   "gt": "that were aboue the firmament. And it was ſo done. † And",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 14,
+   "stem": "line_00053",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    350,
+    2070.25,
+    1762,
+    2157.75
+   ],
+   "r2": "God called the firmament, Heauen: and there was euening",
+   "gt": "God called the firmament, Heauen: and there was euening",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 15,
+   "stem": "line_00054",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    438,
+    2142.7,
+    1774,
+    2221.3
+   ],
+   "r2": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "gt": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 16,
+   "stem": "line_00055",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    354,
+    2202.75,
+    1777,
+    2285.25
+   ],
+   "r2": "the waters that are vnder the heauen, be gathered together",
+   "gt": "the waters that are vnder the heauen, be gathered together",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 17,
+   "stem": "line_00056",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    353,
+    2269.95,
+    1758,
+    2345.55
+   ],
+   "r2": "into one place : and let the drie land appeare. And it was ſo",
+   "gt": "into one place : and let the drie land appeare. And it was ſo",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 18,
+   "stem": "line_00057",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    349,
+    2460.7,
+    1767,
+    2535.3
+   ],
+   "r2": "it was good. † And laid : Let the earth ſhootforth grene",
+   "gt": "it was good. † And laid : Let the earth ſhootforth grene",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 21,
+   "stem": "line_00058",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    356,
+    2517.95,
+    1774,
+    2600.05
+   ],
+   "r2": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "gt": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 22,
+   "stem": "line_00059",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    352,
+    2584.4,
+    1768,
+    2663.1
+   ],
+   "r2": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the",
+   "gt": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 23,
+   "stem": "line_00060",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    351,
+    2645.3,
+    1760,
+    2773.5
+   ],
+   "r2": "earth. And it was ſo done. † And the earth broughr forth",
+   "gt": "earth. And it was ſo done. † And the earth broughr forth",
+   "ocr_dir": "pdf-S03a",
+   "page": 25,
+   "row": 24,
+   "stem": "line_00061",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    326,
+    183.2,
+    1724,
+    265.3
+   ],
+   "r2": "in that beareth fruite, hauing ſeede eche one according to",
+   "gt": "in that beareth fruite, hauing ſeede eche one according to",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 1,
+   "stem": "line_00062",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    397,
+    308.05,
+    1818,
+    394.45
+   ],
+   "r2": "euening & morning that made the third day. † Againe God",
+   "gt": "euening & morning that made the third day. † Againe God",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 3,
+   "stem": "line_00063",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    397,
+    379.35,
+    1770,
+    451.65
+   ],
+   "r2": "ſaid: Be there lightes made in the firmament of heauen,",
+   "gt": "ſaid: Be there lightes made in the firmament of heauen,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 4,
+   "stem": "line_00064",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    433.4,
+    1760,
+    523.1
+   ],
+   "r2": "diuide the day & the night, and let them be: for ſignes",
+   "gt": "diuide the day & the night, and let them be for ſignes",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 5,
+   "stem": "line_00065",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    389,
+    563.75,
+    1829,
+    652.25
+   ],
+   "r2": "heauen, & to giue light vpon the earth. And it was ſo done.",
+   "gt": "heauen, & to giue light vpon the earth. And it was ſo done.",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 7,
+   "stem": "line_00066",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    757.95,
+    1761,
+    841.05
+   ],
+   "r2": "ſtarres. † And he ſet them in the firmament of heauen,",
+   "gt": "ſtarres. † And he ſet them in the firmament of heauen,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 10,
+   "stem": "line_00067",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    399,
+    823.1,
+    1832,
+    900.9
+   ],
+   "r2": "ſhine vpon the earth. † and to gouerne the day & the night,",
+   "gt": "ſhine vpon the earth. † and to gouerne the day & the night,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 11,
+   "stem": "line_00068",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    323,
+    885.2,
+    1824,
+    964.8
+   ],
+   "r2": "of and to diuide the light & the darkenes. And God fawe",
+   "gt": "of and to diuide the light & the darkenes. And God fawe",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 12,
+   "stem": "line_00069",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    946.1,
+    1821,
+    1029.4
+   ],
+   "r2": "that it was good. † And there was euening and morning",
+   "gt": "that it was good. † And there was euening and morning",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 13,
+   "stem": "line_00070",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    1011.15,
+    1828,
+    1092.35
+   ],
+   "r2": "that made the fourth day. † God alſo ſaid : Let the waters",
+   "gt": "that made the fourth day. † God alſo ſaid : Let the waters",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 14,
+   "stem": "line_00071",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    396,
+    1074.4,
+    1834,
+    1161.1
+   ],
+   "r2": "bring forth creeping creature hauing life, and flying foule,",
+   "gt": "bring forth creeping creature hauing life, and flying foule,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 15,
+   "stem": "line_00072",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    394,
+    1146.3,
+    1814,
+    1217.2
+   ],
+   "r2": "ouer the earth vnder the firmament of heauen. † And God",
+   "gt": "ouer the earth vnder the firmament of heauen. † And God",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 16,
+   "stem": "line_00073",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    394,
+    1203.9,
+    1833,
+    1286.6
+   ],
+   "r2": "created huge Whales, and al liuing & mouing creature,",
+   "gt": "created huge whales, and al liuing & mouing creature,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 17,
+   "stem": "line_00074",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    393,
+    1334.8,
+    1829,
+    1413.7
+   ],
+   "r2": "foule according to their kinde. And God ſawe that it was",
+   "gt": "foule according to their kinde. And God ſawe that it was",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 19,
+   "stem": "line_00075",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    397,
+    1522.6,
+    1767,
+    1605.4
+   ],
+   "r2": "be multiplied vpon the earth. † And there was euening &",
+   "gt": "be multiplied vpon the earth. † And there was euening &",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 22,
+   "stem": "line_00076",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    492,
+    1719.95,
+    1830,
+    1795.05
+   ],
+   "r2": "ſuch as creepe, & beaſtes of the earth according to their",
+   "gt": "ſuch as creepe, & beaſtes of the earth according to their",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 25,
+   "stem": "line_00077",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    400,
+    1778.15,
+    1766,
+    1857.85
+   ],
+   "r2": "kindes: and it was ſo done. † And God made the beaſtes",
+   "gt": "kindes: and it was ſo done. † And God made the beaſtes",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 26,
+   "stem": "line_00078",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    395,
+    1912.7,
+    1163,
+    1983.3
+   ],
+   "r2": "crepeth on the earth in his kind.",
+   "gt": "crepeth on the earth in his kind.",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 28,
+   "stem": "line_00079",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    472,
+    1974.7,
+    1830,
+    2051.3
+   ],
+   "r2": "And God ſaw that it was good, † and he ſaid Let vs make",
+   "gt": "And God ſaw that it was good, † and he ſaid Let vs make",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 29,
+   "stem": "line_00080",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    406,
+    2036.6,
+    1817,
+    2108.4
+   ],
+   "r2": "Man to our image, & likenes : and let him haue dominion",
+   "gt": "Man to our image, & likenes : and let him haue dominion",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 30,
+   "stem": "line_00081",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    333,
+    2097.95,
+    1729,
+    2174.55
+   ],
+   "r2": "of ouer the fi ſhes of the ſea, and the foules of the ayre, and",
+   "gt": "of ouer the fi ſhes of the ſea, and the foules of the ayre, and",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 31,
+   "stem": "line_00082",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    396,
+    2161.4,
+    1834,
+    2245.1
+   ],
+   "r2": "beaſtes, and the whole earth, and al creeping creature, that",
+   "gt": "beaſtes, and the whole earth, and al creeping creature, that",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 32,
+   "stem": "line_00083",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    404,
+    2229.0,
+    1741,
+    2304.0
+   ],
+   "r2": "moueth vpon the earth. † And God created man, to",
+   "gt": "moueth vpon the earth. † And God created man, to",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 33,
+   "stem": "line_00084",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    401,
+    2352.1,
+    1688,
+    2432.4
+   ],
+   "r2": "female he created them. † And God bleſſed them, and",
+   "gt": "female he created them. † And God bleſſed them, and",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 35,
+   "stem": "line_00085",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    443,
+    2419.45,
+    1809,
+    2495.55
+   ],
+   "r2": "Increaſe and multiplie, &repleniſh the earth, and ſubdew",
+   "gt": "Increaſe and multiplie, &repleniſh the earth, and ſubdew",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 36,
+   "stem": "line_00086",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    405,
+    2483.15,
+    1834,
+    2555.85
+   ],
+   "r2": "it, and rule ouer the fiſhes of the ſea, and foules of the ayre,",
+   "gt": "it, and rule ouer the fiſhes of the ſea, and foules of the ayre,",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 37,
+   "stem": "line_00087",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    407,
+    2546.7,
+    1821,
+    2619.8
+   ],
+   "r2": "& al liuing creatures, that moue vpon the earth. † And God",
+   "gt": "& al liuing creatures, that moue vpon the earth. † And God",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 38,
+   "stem": "line_00088",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    410,
+    2670.8,
+    1835,
+    2786.0
+   ],
+   "r2": "deth vpon the earth, and al trees that haue in them ſelues",
+   "gt": "deth vpon the earth, and al trees that haue in them ſelues",
+   "ocr_dir": "pdf-S03a",
+   "page": 26,
+   "row": 40,
+   "stem": "line_00089",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    369,
+    229.15,
+    1765,
+    313.85
+   ],
+   "r2": "that moue vpon the earth, and wherein there is life, that",
+   "gt": "that moue vpon the earth, and wherein there is life, that",
+   "ocr_dir": "pdf-S03a",
+   "page": 27,
+   "row": 2,
+   "stem": "line_00090",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    373,
+    366.0,
+    1794,
+    444.0
+   ],
+   "r2": "God ſawe al things that he had made, and they were very",
+   "gt": "God ſawe al things that he had made, and they were very",
+   "ocr_dir": "pdf-S03a",
+   "page": 27,
+   "row": 4,
+   "stem": "line_00091",
+   "chapter": 1,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    911,
+    1248.15,
+    1748,
+    1325.35
+   ],
+   "r2": "voide & vacant, and darkenes was",
+   "gt": "voide & vacant, and darkenes was",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 2,
+   "stem": "line_00092",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    910,
+    1309.4,
+    1742,
+    1383.1
+   ],
+   "r2": "vpon the face of the deapth: and the",
+   "gt": "vpon the face of the deapth: and the",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 3,
+   "stem": "line_00093",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    914,
+    1495.5,
+    1735,
+    1570.0
+   ],
+   "r2": "And light was made. † And God",
+   "gt": "And light was made. † And God",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 6,
+   "stem": "line_00094",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    905,
+    1552.35,
+    1736,
+    1626.15
+   ],
+   "r2": "ſaw the light that it was good: & he",
+   "gt": "ſaw the light that it was good: & he",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 7,
+   "stem": "line_00095",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    384,
+    1612.0,
+    1729,
+    1684.0
+   ],
+   "r2": "diuided the light from the darkenes. † And he called the",
+   "gt": "diuided the light from the darkenes. † And he called the",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 8,
+   "stem": "line_00096",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    388,
+    1674.75,
+    1731,
+    1741.75
+   ],
+   "r2": "light, Day, and the darkenes, Night : and there was euening",
+   "gt": "light, Day, and the darkenes, Night : and there was euening",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 9,
+   "stem": "line_00097",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    391,
+    2033.3,
+    1721,
+    2106.2
+   ],
+   "r2": "God called the firmament, Heauen: and there was euening",
+   "gt": "God called the firmament, :: Heauen:and there was euening",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 15,
+   "stem": "line_00098",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    468,
+    2098.4,
+    1735,
+    2164.6
+   ],
+   "r2": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "gt": "morning that made the ſecond day. † God alſo ſaid : Let",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 16,
+   "stem": "line_00099",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    389,
+    2334.5,
+    1729,
+    2406.5
+   ],
+   "r2": "ringcof waters together, he called Seas. And God ſawe that",
+   "gt": "ringcof waters together, he called Seas. And God ſawe that",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 20,
+   "stem": "line_00100",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    318,
+    2397.6,
+    1788,
+    2464.4
+   ],
+   "r2": "Iit was good. † And ſaid : Let the earth ſhootforth grene ::",
+   "gt": "Iit was good. † And ſaid : Let the earth ſhootforth grene ::",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 21,
+   "stem": "line_00101",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    388,
+    2462.25,
+    1731,
+    2528.75
+   ],
+   "r2": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "gt": "herbes, and ſuch as may ſeede, & fruite trees yelding fruit",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 22,
+   "stem": "line_00102",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    387,
+    2521.6,
+    1815,
+    2586.4
+   ],
+   "r2": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the the",
+   "gt": "after his kinde, ſuch as may haue ſeede in it ſelfe vpon the the",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 23,
+   "stem": "line_00103",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    388,
+    2572.9,
+    1714,
+    2680.0
+   ],
+   "r2": "earth. And it was ſo done. † And the earth brought forth",
+   "gt": "earth. And it was ſo done. † And the earth brought forth",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 31,
+   "row": 24,
+   "stem": "line_00104",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    343,
+    192.35,
+    1781,
+    264.15
+   ],
+   "r2": "in that beareth fruite, hauing ſeede eche one according to his",
+   "gt": "in that beareth fruite, hauing ſeede eche one according to his",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 1,
+   "stem": "line_00105",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    401,
+    309.5,
+    1773,
+    392.0
+   ],
+   "r2": "euening & morning that made the third day. † Againe God",
+   "gt": "euening & morning that made the third day. † Againe God",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 3,
+   "stem": "line_00106",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    407,
+    383.15,
+    1769,
+    441.35
+   ],
+   "r2": "ſaid: Be there lightes made in the firmament of heauen, to",
+   "gt": "ſaid: Be there lightes made in the firmament of heauen, to",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 4,
+   "stem": "line_00107",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    413,
+    435.0,
+    1752,
+    509.0
+   ],
+   "r2": "diuide the day & the night, and let them be for ſignes &",
+   "gt": "diuide the day & the night, and let them be for ſignes &",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 5,
+   "stem": "line_00108",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    412,
+    504.85,
+    1790,
+    569.65
+   ],
+   "r2": "ſeaſons, and dayes and yeares : † to ſhine in the firmament of",
+   "gt": "ſeaſons, and dayes and yeares : † to ſhine in the firmament of",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 6,
+   "stem": "line_00109",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    420,
+    751.85,
+    1784,
+    817.15
+   ],
+   "r2": "ſtarres. † And he ſet them in the firmament of heauen, to",
+   "gt": "ſtarres. † And he ſet them in the firmament of heauen, to",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 10,
+   "stem": "line_00110",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    424,
+    810.4,
+    1798,
+    878.1
+   ],
+   "r2": "ſhine vpon the earth. † and to gouerne the day & the night,",
+   "gt": "ſhine vpon the earth. † and to gouverne the day & the night,",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 11,
+   "stem": "line_00111",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    432,
+    1428.05,
+    1806,
+    1498.45
+   ],
+   "r2": "plie, and repleniſh the waters of the ſea: and let the birds",
+   "gt": "plie, and repleniſh the waters of the ſea: and let the birds",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 21,
+   "stem": "line_00112",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    436,
+    1490.5,
+    1753,
+    1557.5
+   ],
+   "r2": "be multiplied vpon the earth. † And there was euening &",
+   "gt": "be multiplied vpon the earth. † And there was euening &",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 22,
+   "stem": "line_00113",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    515,
+    1921.4,
+    1822,
+    1987.1
+   ],
+   "r2": "And God ſaw that it was good, † and he ſaid Let vs make",
+   "gt": "And God ſaw that it was good, † and he ſaid \"Let vs make",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 29,
+   "stem": "line_00114",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    456,
+    2286.0,
+    1843,
+    2351.5
+   ],
+   "r2": "female he created them. † And God bleſſed them, and ſaith:",
+   "gt": "female he created them. † And God bleſſed them, and ſaith:",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 35,
+   "stem": "line_00115",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    496,
+    2344.5,
+    1815,
+    2417.5
+   ],
+   "r2": "Increaſe and multiplie, & repleniſh the earth, and ſubdew",
+   "gt": "Increaſe and multiplie, & repleniſh the earth, and ſubdew",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 36,
+   "stem": "line_00116",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    458,
+    2409.45,
+    1707,
+    2476.55
+   ],
+   "r2": "it, and rule ouer the fiſhes of the ſea, and foules of the",
+   "gt": "it, and rule ouer the fiſhes of the ſea, and foules of the",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 37,
+   "stem": "line_00117",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    468,
+    2475.15,
+    1824,
+    2536.85
+   ],
+   "r2": "& al liuing creatures, that moue vpon the earth. † And God",
+   "gt": "& al liuing creatures, that moue vpon the earth. † And God",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 38,
+   "stem": "line_00118",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    470,
+    2591.45,
+    1837,
+    2689.25
+   ],
+   "r2": "deth vpon the earth, and al trees that haue in them ſelues",
+   "gt": "deth vpon the earth, and al trees that haue in them ſelues",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 32,
+   "row": 40,
+   "stem": "line_00119",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    379,
+    208.95,
+    1739,
+    290.05
+   ],
+   "r2": "beaſtes of the earth, and to euerie foule of the ayre, & to al",
+   "gt": "beaſtes of the earth, and to euerie foule of the ayre, & to al",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 33,
+   "row": 1,
+   "stem": "line_00120",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    383,
+    398.95,
+    1725,
+    474.05
+   ],
+   "r2": "God ſawe al things that he had made, and they. were very",
+   "gt": "God ſawe al things that he had made, and they. were very",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 33,
+   "row": 4,
+   "stem": "line_00121",
+   "chapter": 1,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    852,
+    1702.65,
+    1667,
+    1763.35
+   ],
+   "r2": "and. darkenes was vpon the face or the depth:",
+   "gt": "and darkenes; was vpon the face of the depth:",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 9,
+   "stem": "line_00122",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    851,
+    1750.05,
+    1662,
+    1815.45
+   ],
+   "r2": "and the Spirit of God moued ouer the",
+   "gt": "and \" the Spirit of God moued ouer the",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 10,
+   "stem": "line_00123",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    389,
+    2107.6,
+    1657,
+    2165.4
+   ],
+   "r2": "ment made amidſt the waters: and let it diuide between waters and",
+   "gt": "ment made amidſt the waters: and let it diuide between waters and",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 17,
+   "stem": "line_00124",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    393,
+    2154.15,
+    1664,
+    2216.85
+   ],
+   "r2": "waters. And God made a firmament, aud diuided the waters",
+   "gt": "waters. And God made a firmament, aud diuided the waters",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 18,
+   "stem": "line_00125",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    391,
+    2203.4,
+    1660,
+    2271.1
+   ],
+   "r2": "that were vnder the firmament, from thoſe that were aboue the",
+   "gt": "that were vnder the firmament, from thoſe that were aboue the",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 19,
+   "stem": "line_00126",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    383,
+    2514.7,
+    1672,
+    2575.8
+   ],
+   "r2": "of waters together, he called Seas. And God ſaw that it was good.",
+   "gt": "of waters together, he called Seas. And God ſaw that it was good.",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 25,
+   "stem": "line_00127",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    388,
+    2563.0,
+    1666,
+    2630.5
+   ],
+   "r2": "And ſaid: Let the earth ſhoot forth greeu herbes, and ſuch as may",
+   "gt": "And ſaid: Let the earth ſhoot forth greeu herbes, and ſuch as may",
+   "ocr_dir": "jp2-S06",
+   "page": 18,
+   "row": 26,
+   "stem": "line_00128",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "val"
+  },
+  {
+   "bbox": [
+    493,
+    396.7,
+    1776,
+    462.3
+   ],
+   "r2": "forth green hearb, ſuch as ſeedeth according to his kind, and tree that",
+   "gt": "forth green hearb, ſuch as ſeedeth according to his kind, and tree that",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 2,
+   "stem": "line_00129",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    497,
+    449.35,
+    1756,
+    512.65
+   ],
+   "r2": "beareth truit, hauing ſeed each one accordins to his kind. And God ſaw",
+   "gt": "beareth truit, hauing ſeed each one accordins to his kind. And God ſaw",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 3,
+   "stem": "line_00130",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    498,
+    701.6,
+    1766,
+    762.9
+   ],
+   "r2": "heauen, and to giue light vpon the earth. And it was ſo done. And",
+   "gt": "heauen, and to giue light vpon the earth. And it was ſo done. And",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 8,
+   "stem": "line_00131",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    496,
+    896.9,
+    1769,
+    964.6
+   ],
+   "r2": "the day & the night, and to diuide the light and the darkenes. And God",
+   "gt": "the day & the night, and to diuide the light and the darkenes. And God",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 12,
+   "stem": "line_00132",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    499,
+    999.85,
+    1770,
+    1062.15
+   ],
+   "r2": "the fourth dav. God alſo ſaid : Let the waters bring forth creepins",
+   "gt": "the fourth day. God alſo ſaid : Let the waters bring forth creepins",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 14,
+   "stem": "line_00133",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    501,
+    1152.85,
+    1776,
+    1214.15
+   ],
+   "r2": "mouing creature, that the waters brought forth accordins to each ſort,",
+   "gt": "mouing creature, that the waters brought forth accordins to each ſort,",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 17,
+   "stem": "line_00134",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    503,
+    1202.15,
+    1785,
+    1261.85
+   ],
+   "r2": "and al toule accordins to their kind. And God ſaw that it was good.",
+   "gt": "and al toule accordins to their kind. And God ſaw that it was good.",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 18,
+   "stem": "line_00135",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    536,
+    1248.4,
+    1773,
+    1314.6
+   ],
+   "r2": "And he bleſſed them ſaying : Increaſe and multiply, and repleniſh",
+   "gt": "And he bleſſed them ſaying : Increaſe and multiply, and repleniſh",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 19,
+   "stem": "line_00136",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 5,
+   "n_s_r2": 5,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    503,
+    1302.95,
+    1786,
+    1360.05
+   ],
+   "r2": "the waters of the ſea: and let the birds be multiplied vpon the earth.",
+   "gt": "the waters of the ſea: and let the birds be multiplied vpon the earth.",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 20,
+   "stem": "line_00137",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    508,
+    1403.5,
+    1781,
+    1465.0
+   ],
+   "r2": "God ſaid moreouer : Let the earth bring torth liuing creature in his",
+   "gt": "God ſaid moreouer : Let the earth bring torth liuing creature in his",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 22,
+   "stem": "line_00138",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    512,
+    1453.2,
+    1773,
+    1515.3
+   ],
+   "r2": "kind, cattle, and ſuch as creep, and beaſts of the earth according to",
+   "gt": "kind, cattle, and ſuch as creep, and beaſts of the earth according to",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 23,
+   "stem": "line_00139",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    507,
+    1553.15,
+    1774,
+    1616.35
+   ],
+   "r2": "earth according to their kinds, and cattle, and al that creepeth on the",
+   "gt": "earth according to their kinds, and cattle, and al that creepeth on the",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 25,
+   "stem": "line_00140",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    506,
+    1703.15,
+    1777,
+    1764.85
+   ],
+   "r2": "to our image & likenos: and let him haue dominion ouer the fiſhes of",
+   "gt": "to our image & likenos: and let him haue dominion ouer the fiſhes of",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 28,
+   "stem": "line_00141",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    501,
+    1753.4,
+    1788,
+    1819.6
+   ],
+   "r2": "the ſea, and the foules of the ayre, and the beaſts, and the whole earth,",
+   "gt": "the ſea, and the foules of the ayre, and the beaſts, and the whole earth,",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 29,
+   "stem": "line_00142",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    507,
+    2003.15,
+    1786,
+    2065.85
+   ],
+   "r2": "ouer the fiſhes of the ſea, and foules of the ayre& al liuing creatures",
+   "gt": "ouer the fiſhes of the ſea, and foules of the ayre& al liuing creatures",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 34,
+   "stem": "line_00143",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    504,
+    2103.5,
+    1773,
+    2167.0
+   ],
+   "r2": "al manner of hearb that ſeedeth vponthe earth, and al trees that haue in",
+   "gt": "al manner of hearb that ſeedeth vponthe earth, and al trees that haue in",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 36,
+   "stem": "line_00144",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    506,
+    2206.8,
+    1780,
+    2269.7
+   ],
+   "r2": "of the earth, and to euery foule of the ayre, and to al that moue vpon the",
+   "gt": "of the earth, and to euery foule of the ayre, and to al that moue vpon the",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 38,
+   "stem": "line_00145",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    507,
+    2259.3,
+    1775,
+    2318.2
+   ],
+   "r2": "earth, and wherein there is life, that they may haue to feed vpon. And",
+   "gt": "earth, and wherein there is life, that they may haue to feed vpon. And",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 39,
+   "stem": "line_00146",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    510,
+    2356.55,
+    1789,
+    2429.45
+   ],
+   "r2": "were very good. And there was eueniug and moruing that made the ſivt",
+   "gt": "were very good. And there was eueniug and moruing that made the ſivt",
+   "ocr_dir": "jp2-S06",
+   "page": 19,
+   "row": 41,
+   "stem": "line_00147",
+   "chapter": 1,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    360,
+    1738.8,
+    1769,
+    1814.7
+   ],
+   "r2": "Egyptian her handmaid tenne yeares after that they firſt",
+   "gt": "Egyptian her handmaid tenne yeares after that they firſt",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 8,
+   "stem": "line_00148",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    392,
+    1925.65,
+    1778,
+    2004.85
+   ],
+   "r2": "perceauing that she was with childe, deſpiſed her miſtreſſe.",
+   "gt": "perceauing that she was with childe, deſpiſed her miſtreſſe.",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 11,
+   "stem": "line_00149",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 5,
+   "n_s_r2": 5,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    355,
+    2052.1,
+    1766,
+    2130.9
+   ],
+   "r2": "I gaue my handmaid into thy boſome, who perceauing",
+   "gt": "I gaue my handmaid into thy boſome, who perceauing",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 13,
+   "stem": "line_00150",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    361,
+    2234.6,
+    1772,
+    2317.9
+   ],
+   "r2": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+   "gt": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 16,
+   "stem": "line_00151",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    353,
+    2302.7,
+    1765,
+    2387.3
+   ],
+   "r2": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+   "gt": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 17,
+   "stem": "line_00152",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    362,
+    2434.95,
+    1756,
+    2501.05
+   ],
+   "r2": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "gt": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 19,
+   "stem": "line_00153",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    359,
+    2557.1,
+    1778,
+    2632.4
+   ],
+   "r2": "handmaid of Sarai, whence comeſt thou? and whither goeſt",
+   "gt": "handmaid of Sarai, whence comeſt thou? and whither goeſt",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 81,
+   "row": 21,
+   "stem": "line_00154",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    429,
+    119.5,
+    1718,
+    220.2
+   ],
+   "r2": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. †",
+   "gt": "to thy miſtreſſe, and humble thy ſelfe vnder her hand. †",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 0,
+   "stem": "line_00155",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    426,
+    268.55,
+    1842,
+    346.45
+   ],
+   "r2": "shal not be numbred for the multitude therof. † And againe",
+   "gt": "shal not be numbred for the multitude thereof. † And againe",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 2,
+   "stem": "line_00156",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    424,
+    387.4,
+    1751,
+    471.6
+   ],
+   "r2": "shalt bring forth a ſonne: and thou shalt cal his name",
+   "gt": "shalt bring forth a ſonne: and thou shalt cal his name",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 4,
+   "stem": "line_00157",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    425,
+    582.75,
+    1769,
+    657.25
+   ],
+   "r2": "hands againſt him: and ouer againſt al his bretheren shal",
+   "gt": "hands againſt him: and ouer againſt al his bretheren shal",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 7,
+   "stem": "line_00158",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    422,
+    640.55,
+    1718,
+    725.45
+   ],
+   "r2": "pitch his tents. † And she called the name of our Lord",
+   "gt": "pitch his tents. † And she called the name of our Lord",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 8,
+   "stem": "line_00159",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    421,
+    830.75,
+    1783,
+    913.25
+   ],
+   "r2": "hath ſene me. † Therfore she called that wel, the wel",
+   "gt": "hath ſene me. † Therfore she called that wel, the Wel",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 11,
+   "stem": "line_00160",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    420,
+    893.6,
+    1844,
+    978.4
+   ],
+   "r2": "him that liueth and ſeeth me. The ſame is berwen Cadeſſe,",
+   "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 12,
+   "stem": "line_00161",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    420,
+    958.95,
+    1846,
+    1042.05
+   ],
+   "r2": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "gt": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 13,
+   "stem": "line_00162",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    424,
+    1021.8,
+    1735,
+    1104.7
+   ],
+   "r2": "who called his name Iſmael. † Eightie and ſixe yeares",
+   "gt": "who called his name Iſmael. † Eightie and ſixe yeares",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 14,
+   "stem": "line_00163",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    426,
+    1083.4,
+    1629,
+    1204.5
+   ],
+   "r2": "was Abram when Agar brought him forth Iſmael.",
+   "gt": "was Abram when Agar brought him forth Iſmael.",
+   "ocr_dir": "archive-ot1-1609",
+   "page": 82,
+   "row": 15,
+   "stem": "line_00164",
+   "chapter": 16,
+   "source": "S1",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    351,
+    1280.2,
+    1751,
+    1404.8
+   ],
+   "r2": "SARAI therfore, the wife of Abram, had brought forth",
+   "gt": "SARAI therfore, the wife of Abram, had brought forth",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 2,
+   "stem": "line_00165",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    347,
+    1640.35,
+    1763,
+    1724.15
+   ],
+   "r2": "when he agreed to her in this requeſt, † she toke Agar the",
+   "gt": "when he agreed to her in this requeſt, † she toke Agar the",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 7,
+   "stem": "line_00166",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    369,
+    1706.8,
+    1771,
+    1779.7
+   ],
+   "r2": "Egyptian her handmaid tenne yeares after that they firſt",
+   "gt": "Egyptian her handmaid tenne yeares after that they firſt",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 8,
+   "stem": "line_00167",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    346,
+    1761.75,
+    1776,
+    1843.75
+   ],
+   "r2": "dwelled in the land of Chanaan : and gaue her vnto her",
+   "gt": "dwelled in the land of Chanaan : and gaue her vnto her",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 9,
+   "stem": "line_00168",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    343,
+    1826.6,
+    1763,
+    1912.4
+   ],
+   "r2": "huſband to wife. † Who did companie with her, but she",
+   "gt": "huſband to wife. † Who did companie with her, but she",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 10,
+   "stem": "line_00169",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    380,
+    1893.15,
+    1777,
+    1980.85
+   ],
+   "r2": "perceauing that she was with childe, deſpiſed her miſtreſſe.",
+   "gt": "perceauing that she was with childe, deſpiſed her miſtreſſe.",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 11,
+   "stem": "line_00170",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 5,
+   "n_s_r2": 5,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    353,
+    1961.45,
+    1776,
+    2038.55
+   ],
+   "r2": "† And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me:",
+   "gt": "† And Sarai ſaid to Abram : Thou doeſt vniuſtly againſt me:",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 12,
+   "stem": "line_00171",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    350,
+    2022.25,
+    1772,
+    2097.25
+   ],
+   "r2": "I gaue my handmaid into thy boſome, who perceauing",
+   "gt": "I gaue my handmaid into thy boſome, who perceauing",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 13,
+   "stem": "line_00172",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    353,
+    2213.4,
+    1774,
+    2292.1
+   ],
+   "r2": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+   "gt": "Behold, ſaith he, thy hādmaid is in thine owne hand, vſe her",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 16,
+   "stem": "line_00173",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    348,
+    2277.45,
+    1765,
+    2352.55
+   ],
+   "r2": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+   "gt": "as it pleaſeth thee. When Sarai therfore did afflict her, she",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 17,
+   "stem": "line_00174",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    355,
+    2337.6,
+    1783,
+    2422.4
+   ],
+   "r2": "ranne away. † And an angel of our Lord hauing found her,",
+   "gt": "ranne away. † And an angel of our Lord hauing found her,",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 18,
+   "stem": "line_00175",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    351,
+    2409.6,
+    1766,
+    2489.4
+   ],
+   "r2": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "gt": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 19,
+   "stem": "line_00176",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    363,
+    2475.15,
+    1769,
+    2548.85
+   ],
+   "r2": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+   "gt": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 20,
+   "stem": "line_00177",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    347,
+    2530.7,
+    1776,
+    2611.3
+   ],
+   "r2": "handmaid of Sarai, whence comeſt thou? and whither goeſt",
+   "gt": "handmaid of Sarai, whence comeſt thou? and whither goeſt",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 21,
+   "stem": "line_00178",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    346,
+    2595.9,
+    1770,
+    2675.6
+   ],
+   "r2": "thou ? who anſwered : From the face of Sarai my miſtreſſe",
+   "gt": "thou ? who anſwered : From the face of Sarai my miſtreſſe",
+   "ocr_dir": "pdf-S03a",
+   "page": 85,
+   "row": 22,
+   "stem": "line_00179",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    424,
+    223.45,
+    1849,
+    299.05
+   ],
+   "r2": "shal not be numbred for the multitude therof. † And againe",
+   "gt": "shal not be numbred for the multitude therof. † And againe",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 2,
+   "stem": "line_00180",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    416,
+    601.3,
+    1722,
+    681.2
+   ],
+   "r2": "pitch his tents. † And she called the name of our Lord",
+   "gt": "pitch his tents. † And she called the name of our Lord",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 8,
+   "stem": "line_00181",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    417,
+    727.25,
+    1703,
+    805.25
+   ],
+   "r2": "ſaid: verily here haue I ſene the backe partes of him",
+   "gt": "ſaid: verily here haue I ſene the backe partes of him",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 10,
+   "stem": "line_00182",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    417,
+    788.1,
+    1780,
+    869.4
+   ],
+   "r2": "hath ſene me. † Therfore she called that wel, the Wel",
+   "gt": "hath ſene me. † Therfore she called that wel, the Wel",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 11,
+   "stem": "line_00183",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    420,
+    854.2,
+    1856,
+    938.8
+   ],
+   "r2": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+   "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 12,
+   "stem": "line_00184",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    414,
+    920.3,
+    1848,
+    1001.2
+   ],
+   "r2": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "gt": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 13,
+   "stem": "line_00185",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    424,
+    981.95,
+    1742,
+    1070.55
+   ],
+   "r2": "who called his name Iſmael. † Eightie and ſixe yeares",
+   "gt": "who called his name Iſmael. † Eightie and ſixe yeares",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 14,
+   "stem": "line_00186",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    423,
+    1048.3,
+    1644,
+    1163.0
+   ],
+   "r2": "was Abram when Agar brought him forth Iſmael.",
+   "gt": "was Abram when Agar brought him forth Iſmael.",
+   "ocr_dir": "pdf-S03a",
+   "page": 86,
+   "row": 15,
+   "stem": "line_00187",
+   "chapter": 16,
+   "source": "S3",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    380,
+    1272.5,
+    1703,
+    1372.6
+   ],
+   "r2": "SARAI therfore, the wife of Abram, had brought forth",
+   "gt": "SARAI therfore, the wife of Abram, had brought forth",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 1,
+   "stem": "line_00188",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    398,
+    1657.25,
+    1715,
+    1737.75
+   ],
+   "r2": "Agyptian her handmaid tenne yeares after that they firſt",
+   "gt": "Agyptian her handmaid tenne yeares after that they firſt",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 7,
+   "stem": "line_00189",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    378,
+    1716.5,
+    1774,
+    1792.0
+   ],
+   "r2": "dwelled in the land of Chanaan : and gaue her vnto her::",
+   "gt": "dwelled in the land of Chanaan : and gaue her vnto her::",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 8,
+   "stem": "line_00190",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    380,
+    1776.1,
+    1706,
+    1846.4
+   ],
+   "r2": "huſband to wife. † Who did companie with her, but she",
+   "gt": "huſband to wife. † Who did companie with her, but she",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 9,
+   "stem": "line_00191",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    383,
+    2255.55,
+    1721,
+    2329.45
+   ],
+   "r2": "ranne away. † And an angel of our Lord hauing found her,",
+   "gt": "ranne away. † And an angel of our Lord hauing found her,",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 17,
+   "stem": "line_00192",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    384,
+    2311.35,
+    1704,
+    2388.15
+   ],
+   "r2": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "gt": "beſide a fountaine of water in the wilderneſſe, which is in",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 18,
+   "stem": "line_00193",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    394,
+    2369.9,
+    1708,
+    2453.1
+   ],
+   "r2": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+   "gt": "the way to Sur in the deſert, † he ſaid to her : Agar, the",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 19,
+   "stem": "line_00194",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    389,
+    2434.9,
+    1723,
+    2505.6
+   ],
+   "r2": "handmaid of Sarai, whence comeſt thou and whither goeſt",
+   "gt": "handmaid of Sarai, whence comeſt thou and whither goeſt",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 20,
+   "stem": "line_00195",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    386,
+    2492.15,
+    1716,
+    2559.85
+   ],
+   "r2": "thou who anſwered : From the face of Sarai my miſtreſſe",
+   "gt": "thou who anſwered : From the face of Sarai my miſtreſſe",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 91,
+   "row": 21,
+   "stem": "line_00196",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    423,
+    692.45,
+    1776,
+    755.55
+   ],
+   "r2": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+   "gt": "ſpake vnto her : Thou the God which haſt ſene me. For she",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 9,
+   "stem": "line_00197",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    425,
+    753.95,
+    1786,
+    809.05
+   ],
+   "r2": "ſaid : verily here haue I ſene the backe partes of him that",
+   "gt": "ſaid : verily here haue I ſene the backe partes of him that",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 10,
+   "stem": "line_00198",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    426,
+    807.95,
+    1782,
+    874.55
+   ],
+   "r2": "hath ſene me. † Therfore she called that wel, the Wel of",
+   "gt": "hath ſene me. † Therfore she called that wel, the Wel of",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 11,
+   "stem": "line_00199",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    427,
+    868.5,
+    1789,
+    937.5
+   ],
+   "r2": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+   "gt": "him that liueth and ſeeth me. The ſame is betwen Cadeſſe,",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 12,
+   "stem": "line_00200",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    429,
+    931.05,
+    1788,
+    996.45
+   ],
+   "r2": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "gt": "and Barad. † And Agar brought forth a ſonne to Abram:",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 13,
+   "stem": "line_00201",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    435,
+    987.8,
+    1775,
+    1057.2
+   ],
+   "r2": "who called his name Iſmael. † Eightie and ſixe veares old",
+   "gt": "who called his name Iſmael. † Eightie and ſixe veares old",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 14,
+   "stem": "line_00202",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    442,
+    1051.25,
+    1591,
+    1147.75
+   ],
+   "r2": "was Abram when Agar brought him forth Iſmael.",
+   "gt": "was Abram when Agar brought him forth Iſmael.",
+   "ocr_dir": "archive-holiebible-ot1",
+   "page": 92,
+   "row": 15,
+   "stem": "line_00203",
+   "chapter": 16,
+   "source": "S9",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    821,
+    762.0,
+    1637,
+    834.8
+   ],
+   "r2": "SARAI therfore the wife of Abtam had",
+   "gt": "SARAI therfore the wife of Abtam had",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 0,
+   "stem": "line_00204",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    818,
+    821.2,
+    1641,
+    888.3
+   ],
+   "r2": "brought forth no children: but hauing an",
+   "gt": "brought forth no children: but hauing an",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 1,
+   "stem": "line_00205",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    813,
+    926.15,
+    1637,
+    984.85
+   ],
+   "r2": "ſaid to her huſband: Behold, our Lord hath",
+   "gt": "ſaid to her huſband: Behold, our Lord hath",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 3,
+   "stem": "line_00206",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    810,
+    976.75,
+    1636,
+    1033.25
+   ],
+   "r2": "cloſed me, that I might not beare: Goe in vnto",
+   "gt": "cloſed me, that I might not beare: Goe in vnto",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 4,
+   "stem": "line_00207",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    810,
+    1022.1,
+    1645,
+    1087.9
+   ],
+   "r2": "my handrnaid, if happily of her at the leaſt I",
+   "gt": "my handrnaid, if happily of her at the leaſt I",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 5,
+   "stem": "line_00208",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    812,
+    1075.65,
+    1642,
+    1132.85
+   ],
+   "r2": "may haue children. And when he agreed to her",
+   "gt": "may haue children. And when he agreed to her",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 6,
+   "stem": "line_00209",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 0,
+   "n_s_r2": 0,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    811,
+    1177.65,
+    1641,
+    1233.35
+   ],
+   "r2": "her handmaid tenne yeares atter that they firſt",
+   "gt": "her handmaid tenne yeares after that they firſt",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 8,
+   "stem": "line_00210",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    525,
+    1222.05,
+    1631,
+    1283.95
+   ],
+   "r2": "in the land of Chanaan, and gaue her vnto her huſband to",
+   "gt": "in the land of Chanaan, and gaue her vnto her huſband to",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 9,
+   "stem": "line_00211",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    532,
+    2026.15,
+    1619,
+    2081.85
+   ],
+   "r2": "art with child, and thou ſhalt bring forth a ſonne: and thou",
+   "gt": "art with child, and thou ſhalt bring forth a ſonne; and thou",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 25,
+   "stem": "line_00212",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    512,
+    2074.35,
+    1634,
+    2133.65
+   ],
+   "r2": "his name Iſmael, becauſe the Lord hath heard thine affliction.",
+   "gt": "his name Iſmael, becauſe the Lord hath heard thine affliction.",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 26,
+   "stem": "line_00213",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    588,
+    2175.95,
+    1620,
+    2242.05
+   ],
+   "r2": "againſt himꝫ and ouer againſt al his brethren ſhal he pitch",
+   "gt": "againſt him; and ouer againſt al his brethren ſhal he pitch",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 28,
+   "stem": "line_00214",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 3,
+   "n_s_r2": 3,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    533,
+    2280.0,
+    1616,
+    2339.0
+   ],
+   "r2": "God which haſt ſeen me. For ihe ſaid: verily here haue I ſeen",
+   "gt": "God which hath ſeen me. For ſhe ſaid: verily here haue I ſeen",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 30,
+   "stem": "line_00215",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 4,
+   "n_s_r2": 4,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    541,
+    2331.15,
+    1627,
+    2390.35
+   ],
+   "r2": "parts ot him that hath ſeen me. Therfore ſhe called that",
+   "gt": "parts of him that hath ſeen me. Therfore Therfore ſhe called that",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 31,
+   "stem": "line_00216",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    540,
+    2384.75,
+    1616,
+    2439.75
+   ],
+   "r2": "wel ot him that liueth and ſeeth me. The ſame is between",
+   "gt": "wel, the wel of him that liueth and ſeeth me. The ſame is between",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 32,
+   "stem": "line_00217",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 2,
+   "n_s_r2": 2,
+   "split": "train"
+  },
+  {
+   "bbox": [
+    474,
+    2529.8,
+    1039,
+    2605.5
+   ],
+   "r2": "Agar brought him forth Iſmael.",
+   "gt": "Agar brought him forth Iſmael.",
+   "ocr_dir": "jp2-S06",
+   "page": 76,
+   "row": 35,
+   "stem": "line_00218",
+   "chapter": 16,
+   "source": "S6",
+   "n_s_gt": 1,
+   "n_s_r2": 1,
+   "split": "train"
+  }
+ ]
+}

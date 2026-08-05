@@ -1,0 +1,75 @@
+{
+  "_doc": "Per-iteration re-OCR instrumentation schema (OriginalDR QC contract). The double-bind audit (qc_audit.py -> coverage-audit.json) records a per-locus x per-source verdict for ONE state of the corpus. This schema defines the SUPERSET record that every re-OCR ITERATION PHASE must emit so the whole trajectory (baseline -> archaic-preeminent verse-grain -> P3 layout-aware re-OCR -> P4 apparatus -> vision-LLM rung) is captured uniformly and the statistical report (build_reocr_report.py) can render exhaustive cross-phase comparisons without re-deriving anything. Each iteration appends an array of `iteration_record`s tagged with a `phase`. coverage-audit.json is the chapter-grain projection of the P2-baseline phase; its per-source dicts already carry the identity core (modern_id/archaic_id/passed/...). Fields marked instrument@P3 are NOT yet populated (baseline OCR was not cost-instrumented) and MUST be captured when the re-OCR ladder runs.",
+  "schema_version": "1.0.0",
+  "grain_note": "REVISED 2026-07-10 (Sir): uniform verse/element grain is the target. locus.grain records the grain the record was actually scored at, so chapter-grain baseline records and verse-grain reworked records coexist honestly in one file and the report never silently conflates them.",
+
+  "phase_enum": {
+    "P2-baseline": "Diplomatic OCR as-is, chapter-grain concat, modern-primary AND-gate. The current coverage-audit.json. method=diplomatic-ocr-existing.",
+    "P2-archaic-preeminent": "Same OCR, re-scored under archaic-preeminent gating (Sir 2026-07-10 sec 1.4). Chapter-grain until the verse-grain rework (tasks 8-10) lands; then re-emitted at verse grain.",
+    "P3-rung1-baseline-kraken": "Re-OCR, escalation rung 1: baseline kraken segmentation.",
+    "P3-rung2-layout-aware": "Re-OCR rung 2: layout-aware segmentation (column detect, verse-line, marginal/inline-annotation separation).",
+    "P3-rung3-region-model": "Re-OCR rung 3: region / half-page models.",
+    "P3-rung4-vision-llm": "Re-OCR rung 4: multimodal vision-LLM page reading (the costly rung; cost fields REQUIRED).",
+    "P4-apparatus": "Apparatus per-element channel-typed localize+identity+consensus."
+  },
+
+  "governing_gate_enum": {
+    "archaic": "archaic_ref exists at locus -> PASS iff archaic_id >= threshold (+ long-s rule). modern_id recorded as signal only.",
+    "modern": "no archaic_ref -> PASS iff modern_id >= threshold. The ONLY place the modern gate governs.",
+    "needs-reference": "neither reference present -> loud OPEN alert; never a silent pass or park (No Silent Degradation)."
+  },
+
+  "method_enum": ["diplomatic-ocr-existing", "baseline-kraken", "layout-aware-seg", "region-model", "vision-llm", "transcription"],
+
+  "iteration_record": {
+    "phase":              {"type": "string", "required": true, "enum_ref": "phase_enum", "desc": "Which iteration produced this record."},
+    "captured_at":        {"type": "string", "required": true, "desc": "ISO-8601 UTC when this record was scored."},
+    "locus":              {"type": "string", "required": true, "desc": "skeleton_id: scripture/{book}/{ch}[/{v}] or apparatus/{channel}/{anchor}/{marker}."},
+    "grain":              {"type": "string", "required": true, "enum": ["verse", "chapter", "apparatus-element", "front-back-slot"], "desc": "Grain this record was scored at. Target = verse/element; chapter allowed only for the baseline projection."},
+    "book":               {"type": "string", "required": true},
+    "chapter":            {"type": "integer", "required": false},
+    "verse":              {"type": "integer", "required": false, "desc": "Present iff grain=verse."},
+    "testament":          {"type": "string", "required": true, "enum": ["OT", "NT", "appendix"]},
+
+    "source":             {"type": "string", "required": true, "desc": "Witness id (S1..S15, sabates_a, madueke_b, s_dismas, odr_com)."},
+    "kind":               {"type": "string", "required": true, "enum": ["scan", "transcription"]},
+    "ocr_dir":            {"type": "string", "required": false, "desc": "Diplomatic OCR directory scored (scan only)."},
+    "best_raster":        {"type": "string", "required": false, "desc": "Raster tier scored: jp2-master | pdf-content | eebo-scan. instrument@P3."},
+    "method":             {"type": "string", "required": true, "enum_ref": "method_enum", "desc": "How this OCR text was produced for THIS attempt (the escalation rung)."},
+
+    "localized":          {"type": "boolean", "required": true, "desc": "FORWARD gate step 1: anchors found AND contiguous span."},
+    "probe_recall":       {"type": "number", "required": false, "desc": "|probe_types union window_types| / |probe_types| at localization."},
+
+    "modern_id":          {"type": "number|null", "required": true, "desc": "char-level identity (normalized Levenshtein, both sides modern-folded) vs modern_ref. null for transcriptions (they ARE references)."},
+    "archaic_id":         {"type": "number|null", "required": true, "desc": "char-level identity (both sides s-folded) vs archaic_ref. null where no archaic_ref."},
+    "archaic_ref_exists": {"type": "boolean", "required": true},
+    "archaic_rule_pass":  {"type": "boolean|null", "required": true, "desc": "Reference-free long-s placement rule (R12). Auxiliary s-conformance signal; the gate where no archaic_ref exists."},
+    "f_to_s_suspect":     {"type": "boolean", "required": false, "desc": "OCR with no s-long but f in initial/medial s-positions -> suspected s->f misread; route to re-OCR. instrument@P3."},
+
+    "governing_gate":     {"type": "string", "required": true, "enum_ref": "governing_gate_enum"},
+    "modern_pass":        {"type": "boolean", "required": true, "desc": "modern_id >= threshold (recorded regardless of whether modern governs)."},
+    "archaic_pass":       {"type": "boolean", "required": true, "desc": "archaic_id >= threshold (or rule_pass where no ref)."},
+    "passed":             {"type": "boolean", "required": true, "desc": "Final verdict under the GOVERNING gate. archaic-preeminent: passed = archaic_pass if archaic_ref_exists else modern_pass."},
+
+    "witness_count":      {"type": "integer", "required": true, "desc": "BACKWARD gate: passing witnesses at this locus."},
+    "E_v":                {"type": "integer|null", "required": true, "desc": "Expected witness count for the locus (source-index loci_ev)."},
+    "shortfall_flag":     {"type": "boolean", "required": true, "desc": "witness_count < E_v. A shortfall locus stays OPEN and blocks ship; never parked."},
+
+    "cost_pages":         {"type": "integer", "required": false, "desc": "Pages OCR'd for this attempt. instrument@P3."},
+    "cost_seconds":       {"type": "number", "required": false, "desc": "Wall-clock seconds for this attempt. instrument@P3."},
+    "cost_tokens":        {"type": "integer", "required": false, "desc": "Model tokens (vision-LLM rung). instrument@P3-rung4."},
+    "cost_usd":           {"type": "number|null", "required": false, "desc": "Direct $ if measurable; null by design where only utilization fractions exist."},
+
+    "text_sha256":        {"type": "string", "required": false, "desc": "sha256 of the exact OCR surface text scored -> provenance / dedup across attempts. instrument@P3."}
+  },
+
+  "file_layout": {
+    "phase":       "string  -- phase tag (phase_enum key)",
+    "captured_at": "string  -- ISO-8601 UTC",
+    "scope_books": "string[] -- books scored this phase",
+    "identity_bar": {"threshold": 0.9, "metric": "normalized-Levenshtein (difflib.ratio in the P2-baseline artifact; metric swap pending per plan sec1.4)"},
+    "records":     "iteration_record[]  -- one per (locus, source) attempt"
+  },
+
+  "report_consumption": "build_reocr_report.py reads coverage-audit.json (P2-baseline projection) plus any number of phase files named coverage-audit.<phase>.json, unions their records keyed by (phase, locus, source), and renders per-phase panels + cross-phase delta plots. Adding a phase requires NO report change: drop a conforming file in the dir."
+}

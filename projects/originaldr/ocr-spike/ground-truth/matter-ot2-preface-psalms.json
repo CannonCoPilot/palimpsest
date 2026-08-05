@@ -1,0 +1,311 @@
+{
+  "locus": "matter/ot2/preface-psalms",
+  "page_index": 3,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot2-preface-psalms-p0003.png",
+  "raster_dpi": 400,
+  "page_label_printed": "3",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": "3"
+  },
+  "layout_note": "First page of 'PROEMIAL ANNOTATIONS vpon the Booke of Pſalmes'. TOP: ornamental woodcut headpiece band (decorative, no text). Then large roman display heading + smaller subtitle. Body opens with a large ~3-line drop-cap 'T'. LAYOUT IS ONE WIDE COLUMN of roman prose (NOT two prose columns) flanked by small marginal notes: one ITALIC source-reference note in the LEFT margin, and four small ROMAN summary/gloss notes in the RIGHT margin. All body prose lines tagged column:'L' (single body column = left); the outer notes are marginalia, not a column-R prose. Folio '3' top-right. Foot: signature 'A 2' (centre) and catchword 'not' (right). TWO GLYPH REGIMES on the page: (a) roman body + roman right-margin notes use a REAL 'w'; (b) the ITALIC embedded Augustine quotation uses 'vv' for w ('vvho'). Proper names of putative Psalm-authors and the Augustine quotation are set in italic (flagged has_italic). ſh clusters here are ROUND-s ('shewed','shal') per §long-ſ. The modern coat-of-arms and 'www.fatimamovement.com' watermark at foot are digitisation marks, not part of the original page.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "heading",
+      "text": "PROEMIAL ANNOTATIONS",
+      "note": "large roman display caps; a stray ink dot sits between the T and A of ANNOTATIONS (plate defect), word is ANNOTATIONS"
+    },
+    {
+      "line_index": 1,
+      "role": "subtitle",
+      "text": "vpon the Booke of Pſalmes."
+    },
+    {
+      "line_index": 2,
+      "role": "prose",
+      "column": "L",
+      "text": "THE authoritie of this Booke was euer authenti-",
+      "line_end_hyphen": true,
+      "drop_cap": "T",
+      "note": "opens with large drop-cap 'T'; 'HE' set in small caps → 'THE'"
+    },
+    {
+      "line_index": 3,
+      "role": "prose",
+      "column": "L",
+      "text": "cal, and certaine, as the aſſured word of God, and"
+    },
+    {
+      "line_index": 4,
+      "role": "prose",
+      "column": "L",
+      "text": "Canonical Scripture. But concerning the author,"
+    },
+    {
+      "line_index": 5,
+      "role": "prose",
+      "column": "L",
+      "text": "there be diuers opinions. For although it be manifeſt by"
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "column": "L",
+      "text": "the teſtimonie of Philo, and Ioſephus, that in their time,"
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "column": "L",
+      "text": "and alwaies before, only King Dauid was by al Hebrew"
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "column": "L",
+      "text": "Doctors holden for Author of al the Pſalmes: yet after that"
+    },
+    {
+      "line_index": 9,
+      "role": "prose",
+      "column": "L",
+      "text": "lerned Origen, and other Chriſtian Doctors, expounded"
+    },
+    {
+      "line_index": 10,
+      "role": "prose",
+      "column": "L",
+      "text": "manie Pſalmes of Chriſt, the Iewes being preſſed ther-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 11,
+      "role": "prose",
+      "column": "L",
+      "text": "with, begane to denie that al were Dauids: alleaging for"
+    },
+    {
+      "line_index": 12,
+      "role": "prose",
+      "column": "L",
+      "text": "their new opinion, the titles of diuers Pſalmes, and ſome"
+    },
+    {
+      "line_index": 13,
+      "role": "prose",
+      "column": "L",
+      "text": "other difficulties , miniſtring occaſion of much needles",
+      "note": "compositor's space before the comma ('difficulties ,') preserved"
+    },
+    {
+      "line_index": 14,
+      "role": "prose",
+      "column": "L",
+      "text": "diſpute, ſtil acknowledging the whole booke to be Ca-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 15,
+      "role": "prose",
+      "column": "L",
+      "text": "nonical. Wherupon S. Ierom, and S. Auguſtin, ſome-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 16,
+      "role": "prose",
+      "column": "L",
+      "text": "times admitted thoſe as authores of certaine Pſalmes ,",
+      "note": "compositor's space before the comma ('Pſalmes ,') preserved"
+    },
+    {
+      "line_index": 17,
+      "role": "prose",
+      "column": "L",
+      "text": "whoſe names are in the titles thereof. S. Cyprian, S. Cyril,"
+    },
+    {
+      "line_index": 18,
+      "role": "prose",
+      "column": "L",
+      "text": "S. Athanaſius, and others agree in general, that Dauid"
+    },
+    {
+      "line_index": 19,
+      "role": "prose",
+      "column": "L",
+      "text": "writte not al: but differ much in particular, touching other"
+    },
+    {
+      "line_index": 20,
+      "role": "prose",
+      "column": "L",
+      "text": "ſuppoſed authores. In ſo much that Melchiſedech, Moyſes,",
+      "has_italic": true,
+      "note": "'Melchiſedech, Moyſes' (proper names) set in italic"
+    },
+    {
+      "line_index": 21,
+      "role": "prose",
+      "column": "L",
+      "text": "Aſaph, Eman, Idithun, The ſonnes of Core, Salomon, Ieremie,",
+      "has_italic": true,
+      "note": "whole line italic (list of putative author names)"
+    },
+    {
+      "line_index": 22,
+      "role": "prose",
+      "column": "L",
+      "text": "Ezechiel, Eſdras, Aggeus, and Zacharias, are al (with more or",
+      "has_italic": true,
+      "note": "names italic; trailing 'are al (with more or' roman"
+    },
+    {
+      "line_index": 23,
+      "role": "prose",
+      "column": "L",
+      "text": "leſſe probabilitie ) reputed authores of ſeueral Pſalmes. Ne-",
+      "line_end_hyphen": true,
+      "has_italic": true,
+      "note": "'reputed authores of ſeueral Pſalmes' italic; space before ')' preserved"
+    },
+    {
+      "line_index": 24,
+      "role": "prose",
+      "column": "L",
+      "text": "uertheles it ſemeth that S. Ierom rather related other mens"
+    },
+    {
+      "line_index": 25,
+      "role": "prose",
+      "column": "L",
+      "text": "iudgement, then shewed his owne; as we shal note by and",
+      "note": "'shewed' and 'shal' are ROUND-s + h (no ſh ligature) per §long-ſ"
+    },
+    {
+      "line_index": 26,
+      "role": "prose",
+      "column": "L",
+      "text": "by. And S. Auguſtin (li. 17. c. 14. de ciuit) maturely diſ-",
+      "line_end_hyphen": true,
+      "has_italic": true,
+      "note": "'li. 17. c. 14. de ciuit' set in italic"
+    },
+    {
+      "line_index": 27,
+      "role": "prose",
+      "column": "L",
+      "text": "cuſſing this doubt, ſaith plainly, that their Iudgement ſemed",
+      "has_italic": true,
+      "note": "'their Iudgement ſemed' begins the italic Augustine quotation"
+    },
+    {
+      "line_index": 28,
+      "role": "prose",
+      "column": "L",
+      "text": "to him more credible, vvho attribute al the hundred fiftie Pſalmes",
+      "has_italic": true,
+      "note": "whole line is the italic Augustine quotation; italic face sets 'vvho' (vv-for-w)"
+    },
+    {
+      "line_index": 29,
+      "role": "prose",
+      "column": "L",
+      "text": "to Dauid alone. Further explicating that wheras ſome Pſal-",
+      "line_end_hyphen": true,
+      "has_italic": true,
+      "note": "'to Dauid alone' italic (end of quote); remainder roman"
+    },
+    {
+      "line_index": 30,
+      "role": "prose",
+      "column": "L",
+      "text": "mes haue Dauids owne name in their titles, ſome haue"
+    },
+    {
+      "line_index": 31,
+      "role": "prose",
+      "column": "L",
+      "text": "other mens names, ſome none at al, this diuerſitie importeth",
+      "has_italic": true,
+      "note": "'this diuerſitie importeth' set in italic (continues onto next page)"
+    },
+    {
+      "line_index": 32,
+      "role": "excluded",
+      "text": "A 2",
+      "note": "gathering signature, foot centre",
+      "excluded_reason": "reviewer removed (empty correction)"
+    },
+    {
+      "line_index": 33,
+      "role": "catchword",
+      "text": "not",
+      "note": "catchword, foot right; anticipates first word of next page ('not...'); EXCLUDED from prose concatenation per §catchwords",
+      "excluded_reason": "reviewer removed (empty correction)",
+      "catchword_note": "reader-convenience catchword duplicating the first word(s) of the next page; excluded from body concat (Sir, 2026-07-12)"
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": 15,
+      "anchor_note": "beside body lines 14-17 ('nonical. Wherupon S. Ierom ... whoſe names are in the titles thereof')",
+      "position": "left_margin",
+      "text": "Prefat.in\nPſal. E-\npiſt. 134.\n139.",
+      "note": "ITALIC source reference (Jerome's Preface / Epistles on the Psalms): 'Præfat. in Pſal. Epiſt. 134. 139.'; 'E-piſt' hyphen-split across two lines"
+    },
+    {
+      "anchor": 2,
+      "anchor_note": "beside body lines 2-4 (drop-cap opening ... 'Canonical Scripture')",
+      "position": "right_margin",
+      "text": "This booke\nvndoubtedly\nis canonical\nScripture.",
+      "note": "small roman summary gloss"
+    },
+    {
+      "anchor": 7,
+      "anchor_note": "beside body lines 7-12 ('King Dauid was by al Hebrew ... Iewes being preſſed')",
+      "position": "right_margin",
+      "text": "Late Hebrew\nDoctors and\nſome Catholi-\nques hold di-\nuers authors\nof ſundry\nPſalmes.",
+      "note": "small roman summary gloss; 'Hebrew' set with a real 'w' (roman face, not vv); 'Catholi-ques' and 'di-uers' hyphen-split"
+    },
+    {
+      "anchor": 24,
+      "anchor_note": "beside body lines 23-26 ('Ne-uertheles it ſemeth ... maturely diſ-')",
+      "position": "right_margin",
+      "text": "It is much\nmore proba-\nble that Dauid\nwas author of\nal.",
+      "note": "small roman summary gloss; 'was' set with a real 'w' (roman face)"
+    },
+    {
+      "anchor": 28,
+      "anchor_note": "beside body lines 27-31 ('their Iudgement ſemed to him more credible, vvho ... other mens names')",
+      "position": "right_margin",
+      "text": "Proued by S.\nAuguſtin, S.\nChryſoſtom,\nand greateſt\npart of Do-\nctors.",
+      "note": "small roman summary gloss; 'Proued' (u/v swap); 'Do-ctors' hyphen-split"
+    }
+  ],
+  "uncertain": [],
+  "sfoot_glyphs": {
+    "long_s_count": 58,
+    "long_s_count_body": 49,
+    "long_s_count_marginalia": 9,
+    "note": "hand-tallied glyph-driven per §long-ſ; capital S (Scripture, Salomon, the 'S.' abbreviations) NOT counted as long-ſ; ſh clusters on line 25 are round-s so contribute 0"
+  },
+  "sfoot_note": "GLYPH-REGIME CAVEATS: (1) §long-ſ verified glyph-by-glyph on the two sh-clusters — 'shewed' and 'shal' (line 25) are ROUND s + h, not ſh, confirmed by absence of the long ascender/crossbar at 400 DPI. (2) TWO w-regimes: roman body AND the small roman right-margin notes use a REAL 'w' ('word','whole','Wherupon','wheras','owne','Hebrew','was'); the ITALIC embedded Augustine quotation uses 'vv' ('vvho', line 28). The left-margin note is italic but contains no w. (3) French spacing: compositor spaces before the comma preserved on lines 13 ('difficulties ,') and 16 ('Pſalmes ,') and before ')' on line 23 ('probabilitie )'); colons on lines 8/11/19 are tight (no space). (4) Heading 'ANNOTATIONS' carries a stray ink dot between T and A (plate defect), not a glyph.",
+  "observer": "agent:matter-ot2-preface-psalms",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster with PIL region-zoom for glyph disambiguation (sh-clusters, italic vv-quote, small marginal type); OCR scaffold used only as dropped-line hint, never as spelling oracle",
+  "confidence": "high on roman body scripture words and hyphenation; high on ſ-placement (hand-verified, glyph-driven); medium-high on small marginal-note glyphs (small type but legible at 400 DPI); italic proper names and Augustine quotation read with high confidence",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-15T03:03:13.626673+00:00",
+    "n_applied": 0,
+    "n_excluded": 2,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-ot2-preface-psalms.corrections.json"
+  }
+}

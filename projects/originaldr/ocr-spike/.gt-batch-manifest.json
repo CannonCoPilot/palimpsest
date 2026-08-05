@@ -1,0 +1,251 @@
+{
+  "schema": "gt-batch/v2",
+  "dpi": 400,
+  "loci": {
+    "scripture-genesis-16": {
+      "ocr_dir": "archive-ot1-1609",
+      "kind": "body",
+      "human": "Genesis 16 (prose, short chapter)",
+      "pages": [
+        {
+          "page_index": 81,
+          "raster": "ocr-spike/.gt-rasters/scripture-genesis-16-p0081.png",
+          "w": 4445,
+          "h": 6245
+        },
+        {
+          "page_index": 82,
+          "raster": "ocr-spike/.gt-rasters/scripture-genesis-16-p0082.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-psalms-001": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "body",
+      "human": "Psalm 1 (single-page incipit)",
+      "pages": [
+        {
+          "page_index": 15,
+          "raster": "ocr-spike/.gt-rasters/scripture-psalms-001-p0015.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-psalms-074": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "body",
+      "human": "Psalm 74 (single-page mid)",
+      "pages": [
+        {
+          "page_index": 138,
+          "raster": "ocr-spike/.gt-rasters/scripture-psalms-074-p0138.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-psalms-115-116": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "body",
+      "human": "Psalms 115+116 (two psalms/page)",
+      "pages": [
+        {
+          "page_index": 211,
+          "raster": "ocr-spike/.gt-rasters/scripture-psalms-115-116-p0211.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-psalms-150": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "body",
+      "human": "Psalm 150 (single-page doxology)",
+      "pages": [
+        {
+          "page_index": 265,
+          "raster": "ocr-spike/.gt-rasters/scripture-psalms-150-p0265.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-matthew-28": {
+      "ocr_dir": "archive-nt-1582",
+      "kind": "body",
+      "human": "Matthew 28 (short, book-end)",
+      "pages": [
+        {
+          "page_index": 103,
+          "raster": "ocr-spike/.gt-rasters/scripture-matthew-28-p0103.png",
+          "w": 4445,
+          "h": 6245
+        },
+        {
+          "page_index": 104,
+          "raster": "ocr-spike/.gt-rasters/scripture-matthew-28-p0104.png",
+          "w": 4445,
+          "h": 6245
+        },
+        {
+          "page_index": 105,
+          "raster": "ocr-spike/.gt-rasters/scripture-matthew-28-p0105.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "scripture-2john": {
+      "ocr_dir": "archive-nt-1582",
+      "kind": "body",
+      "human": "2 John (whole book ~1pg)",
+      "pages": [
+        {
+          "page_index": 664,
+          "raster": "ocr-spike/.gt-rasters/scripture-2john-p0664.png",
+          "w": 4445,
+          "h": 6245
+        },
+        {
+          "page_index": 665,
+          "raster": "ocr-spike/.gt-rasters/scripture-2john-p0665.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot1-title": {
+      "ocr_dir": "archive-ot1-1609",
+      "kind": "matter",
+      "human": "OT1 title page",
+      "pages": [
+        {
+          "page_index": 0,
+          "raster": "ocr-spike/.gt-rasters/matter-ot1-title-p0000.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot1-approbatio": {
+      "ocr_dir": "archive-ot1-1609",
+      "kind": "matter",
+      "human": "OT1 Approbatio (Latin)",
+      "pages": [
+        {
+          "page_index": 2,
+          "raster": "ocr-spike/.gt-rasters/matter-ot1-approbatio-p0002.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot1-preface": {
+      "ocr_dir": "archive-ot1-1609",
+      "kind": "matter",
+      "human": "OT1 preface incipit",
+      "pages": [
+        {
+          "page_index": 3,
+          "raster": "ocr-spike/.gt-rasters/matter-ot1-preface-p0003.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot1-colophon": {
+      "ocr_dir": "archive-ot1-1609",
+      "kind": "matter",
+      "human": "OT1 end-of-tome colophon",
+      "pages": [
+        {
+          "page_index": 1132,
+          "raster": "ocr-spike/.gt-rasters/matter-ot1-colophon-p1132.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot2-title": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "matter",
+      "human": "OT2 title page",
+      "pages": [
+        {
+          "page_index": 0,
+          "raster": "ocr-spike/.gt-rasters/matter-ot2-title-p0000.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot2-preface-psalms": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "matter",
+      "human": "OT2 Proemial Annotations on Psalmes",
+      "pages": [
+        {
+          "page_index": 3,
+          "raster": "ocr-spike/.gt-rasters/matter-ot2-preface-psalms-p0003.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-ot2-backmatter": {
+      "ocr_dir": "archive-ot2-1610",
+      "kind": "matter",
+      "human": "OT2 backmatter appendix",
+      "pages": [
+        {
+          "page_index": 988,
+          "raster": "ocr-spike/.gt-rasters/matter-ot2-backmatter-p0988.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-nt-title": {
+      "ocr_dir": "archive-nt-1582",
+      "kind": "matter",
+      "human": "NT title page",
+      "pages": [
+        {
+          "page_index": 0,
+          "raster": "ocr-spike/.gt-rasters/matter-nt-title-p0000.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-nt-preface": {
+      "ocr_dir": "archive-nt-1582",
+      "kind": "matter",
+      "human": "NT preface incipit",
+      "pages": [
+        {
+          "page_index": 4,
+          "raster": "ocr-spike/.gt-rasters/matter-nt-preface-p0004.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    },
+    "matter-nt-table": {
+      "ocr_dir": "archive-nt-1582",
+      "kind": "matter",
+      "human": "NT backmatter table",
+      "pages": [
+        {
+          "page_index": 724,
+          "raster": "ocr-spike/.gt-rasters/matter-nt-table-p0724.png",
+          "w": 4445,
+          "h": 6245
+        }
+      ]
+    }
+  }
+}

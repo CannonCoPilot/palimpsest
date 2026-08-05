@@ -1,0 +1,2389 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p148",
+  "old_text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+  "old": {
+   "s_dismas": 0.819,
+   "odr_com": 0.819,
+   "sabates_a": 0.791,
+   "madueke_b": 0.791
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5764,
+   0.875,
+   0.6653
+  ],
+  "crop_page": 148,
+  "r3_raw": "cessaries, that we may liue, and not be consumed with lacke. † Therfore the tenne brethren of Ioseph going downe, to ; bye corne in Ægypt, † Beniamin being kept at home by 4 Iacob, who said to his brethren: Lest perhaps he take any",
+  "r3_verse": "the tenne brethren of Ioseph going downe, to ; bye corne in Ægypt,",
+  "arm_conflicts": [
+   "Egypt, | Ægypt,"
+  ],
+  "new_text": "the tenne brethren of Ioſeph going downe, to ; bye corne in Ægypt,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p148",
+  "old_text": "Beniamin being kepr at home Iacob, who ſaid to his brethren : Leſt perhaps he rake harme in the iourney:",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5981,
+   0.875,
+   0.7041
+  ],
+  "crop_page": 148,
+  "r3_raw": "† Therfore the tenne brethren of Ioseph going downe, to ; bye corne in Ægypt, † Beniamin being kept at home by 4 Iacob, who said to his brethren: Lest perhaps he take any harme in the iourney: † entered into the land of Ægypt with others that went to bye. for the famine was in the land",
+  "r3_verse": "Beniamin being kept at home by Iacob, who said to his brethren: Lest perhaps he take any harme in the iourney:",
+  "arm_conflicts": [
+   "kepr | kept",
+   "rake | take any"
+  ],
+  "new_text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p148",
+  "old_text": "into the land of Egype with others thar went to bye. for the famine was in the of Chanaan.",
+  "old": {
+   "s_dismas": 0.852,
+   "odr_com": 0.852,
+   "sabates_a": 0.825,
+   "madueke_b": 0.825
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.6389,
+   0.875,
+   0.7449
+  ],
+  "crop_page": 148,
+  "r3_raw": "Jacob, who said to his brethren: Lest perhaps he take any harme in the journey: † entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan. † And Ioseph was prince in the land of Ægypt, and at his pleasure corne was fold to the people.",
+  "r3_verse": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "arm_conflicts": [
+   "Egype | Ægypt",
+   "thar | that"
+  ],
+  "new_text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p148",
+  "old_text": "And Ioſeph was prince in the land of and at his pleaſure corne was ſold to the people. And when his brethren had adored him,",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.6787,
+   0.875,
+   0.786
+  ],
+  "crop_page": 148,
+  "r3_raw": "with others that went to bye. for the famine was in the land of Chanaan. † And Ioseph was prince in the land of Ægypt, 6 and at his pleasure corne was told to the people. And when his brethren had adored him, † and he knewe them, he 7 spake as it were to strangers \"somewhat roughly, asking",
+  "r3_verse": "And Ioseph was prince in the land of Ægypt, and at his pleasure corne was told to the people. And when his brethren had adored him,",
+  "arm_conflicts": [
+   "ſold | told"
+  ],
+  "new_text": "And Ioſeph was prince in the land of Ægypt, and at his pleaſure corne was told to the people. And when his brethren had adored him,",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p148",
+  "old_text": "and he knewe them, ſpake as it were to ſtrangers ſomewhat roughlv, asking them: From whence came you? wno anſwered: From Land of chanaan, that we may bye neceſlaries to liue.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.7195,
+   0.875,
+   0.8452
+  ],
+  "crop_page": 148,
+  "r3_raw": "and at his pleasure corne was told to the people. And when his brethren had adored him, † and he knewe them, he 7 spake as it were to strangers \"somewhat roughly, asking them: From whence came you? Who answered: From the Land of chanaan, that we may bye necessaries to liue. † And 8 yet himself knowing his brethren, was not knowne of",
+  "r3_verse": "and he knewe them, he spake as it were to strangers \"somewhat roughly, asking them: From whence came you? Who answered: From the Land of chanaan, that we may bye necessaries to liue.",
+  "arm_conflicts": [
+   "ſomewhat roughlv, | \"somewhat roughly,",
+   "wno | Who",
+   "neceſlaries | necessaries"
+  ],
+  "new_text": "and he knewe them, he ſpake as it were to ſtrangers ſomewhat roughly, asking them: From whence came you? Who anſwered: From the Land of chanaan, that we may bye necessaries to liue.",
+  "s_unresolved": [
+   "necessaries"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p148",
+  "old_text": "yet himſclfe knowing his brethren, was not krowen them.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.828,
+   "madueke_b": 0.828
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8014,
+   0.875,
+   0.8838
+  ],
+  "crop_page": 148,
+  "r3_raw": "Land of chanaan, that we may bye necessaries to liue. † And 8 yet himelfe knowing his brethren, was not knownen of them. † And remembiring the dreames, which some times 9 he had ſcene, he said to them: \"You are spies: to view the",
+  "r3_verse": "And yet himelfe knowing his brethren, was not knownen of them.",
+  "arm_conflicts": [
+   "himſclfe | himelfe",
+   "krowen | knownen of"
+  ],
+  "new_text": "And yet himelfe knowing his brethren, was not knownen of them.",
+  "s_unresolved": [
+   "himelfe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "And remembrine the dreames, which ſome times he had ſeene, he ſaid to them You are ſpies to view weaher com weaker parts of the land you are come.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8211,
+   0.875,
+   1.0
+  ],
+  "crop_page": 148,
+  "crop_leaves": [
+   148,
+   149
+  ],
+  "r3_raw": "yet himelfe knowing his brethren, was not knownen of them. † And remembiring the dreames, which some times 9 he had ſcene, he said to them: \"You are spies: to view the weaker GENESIS. 10 weaker parts of the land you are come. † Who said: It is not so, my lord, but thy seruantes are come to bye victu-",
+  "r3_verse": "And remembiring the dreames, which some times he had ſcene, he said to them: \"You are spies: to view the weaker weaker parts of the land you are come.",
+  "arm_conflicts": [
+   "remembrine | remembiring",
+   "ſeene, | ſcene,",
+   "You | \"You",
+   "weaher com | the weaker"
+  ],
+  "new_text": "And remembiring the dreames, which ſome times he had ſcene, he ſaid to them You are ſpies to view the weaker weaker parts of the land you are come.",
+  "s_unresolved": [
+   "ſcene,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p149",
+  "old_text": "Send you one of you to bring him : and you ial be in priſon, ril the thinges be proued which you haue ſaid, whether they be true or falſe: by the health of Pharao you are ſpies.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.2564,
+   0.875,
+   0.3844
+  ],
+  "crop_page": 149,
+  "r3_raw": "you: \" by the health of Pharao you shal not depart hence, 16 vntil your youngett brother do come. † Send you one of you to bring him: and you ſhall be in prison, til the thinges be proued which you haue said, whether they be true or false: 17 :: otherwise by the health of Pharao you are spies. † Ther- 18 fore he put them in prison three dayes. † And the third day thi",
+  "r3_verse": "Send you one of you to bring him: and you ſhall be in prison, til the thinges be proued which you haue said, whether they be true or false: :: otherwise by the health of Pharao you are spies. Ther- fore",
+  "arm_conflicts": [
+   "ial | ſhall",
+   "ril | til"
+  ],
+  "lexicon_readings": {
+   "30": "otherwiſe"
+  },
+  "visual_readings": {
+   "30": "otherwiſe"
+  },
+  "new_text": "Send you one of you to bring him and you ſhall be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe: :: otherwiſe by the health of Pharao you are ſpies. Ther- fore",
+  "s_unresolved": [
+   "ſhall",
+   "fore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p149",
+  "old_text": "Therfore he put them in priſon three dayes.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.3179,
+   0.875,
+   0.4058
+  ],
+  "crop_page": 149,
+  "r3_raw": "proued which you haue said, whether they be true or false: 17 :: otherwise by the health of Pharao you are spies. † Ther- fore he put them in prison three dayes. † And the third day bringing them out of prison, he said: Doe as I haue faid,",
+  "r3_verse": "Therfore he put them in prison three dayes.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Therfore he put them in priſon three dayes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "chapter",
+  "old_text": "he ſaid to brethren My money is geuen me againe, behold it is in the ſacke. ſacke. And being aſtonyed, and trubled amongeſt themſelues, they ſaid What is this, that God hath done vnto vs?",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.944,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.8253,
+   0.875,
+   0.9397
+  ],
+  "crop_page": 149,
+  "crop_leaves": [
+   149,
+   150
+  ],
+  "r3_raw": "opening his sacke, to geue his beast proucnder in the inne, 28 beholding the money in the sackes mouth, † he said to his brethren: My money is geuen me againe, behold it is in the sacke. facke: And being astonyed, and trubled amongef them- selues, they said: What is this, that God hath done vnto vs? + And they came to Iacob their father into the land of 29",
+  "r3_verse": "he said to his brethren: My money is geuen me againe, behold it is in the sacke. facke: And being astonyed, and trubled amongef them- selues, they said: What is this, that God hath done vnto vs? +",
+  "arm_conflicts": [
+   "ſacke. | facke:",
+   "amongeſt themſelues, | amongef them- selues,"
+  ],
+  "r2_attested": {
+   "25": "ſelues,"
+  },
+  "visual_readings": {
+   "25": "ſelues,"
+  },
+  "new_text": "he ſaid to his brethren My money is geuen me againe, behold it is in the ſacke. facke: And being aſtonyed, and trubled amongef them- ſelues, they ſaid What is this, that God hath done vnto vs? +",
+  "s_unresolved": [
+   "facke:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 30,
+  "from": "p150",
+  "old_text": "The lord of the land ſpake to vs roughly, and thoughr vs to be ſpies of the prouince,",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.1221,
+   0.875,
+   0.2142
+  ],
+  "crop_page": 150,
+  "r3_raw": "† And they came to Iaueb when he was in Chanaan, and they told him al things that had chanced vnto them, saying: † The lord of the land spake to vs ſo roughly, and thought vs to be spies of the prouince, † to whom we answered: We are men of peace, neither do we",
+  "r3_verse": "The lord of the land spake to vs ſo roughly, and thought vs to be spies of the prouince,",
+  "arm_conflicts": [
+   "thoughr | thought"
+  ],
+  "lexicon_readings": {
+   "8": "ſo"
+  },
+  "visual_readings": {
+   "8": "ſo"
+  },
+  "new_text": "The lord of the land ſpake to vs ſo roughly, and thought vs to be ſpies of the prouince,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p152",
+  "old_text": "I haue that wheat is ſold in Egypt Goe ye downe, and bye vs ceſſaries, that we may liue, and not be conſumed with Therfore",
+  "old": {
+   "s_dismas": 0.872,
+   "odr_com": 0.872,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.516,
+   0.875,
+   0.6431
+  ],
+  "crop_page": 152,
+  "r3_raw": "And Iacob hearing, that victuals were sold in Aegypt, he said to his sonnes: Why neglect ye? † I haue heard that wheat is sold in Aegypt: Goe ye downe, and bye vs necessaries, that we may liue, and not be consumed with lacke. † Therfore the tenne brethren of Ioseph going downe, to bye corne in Aegypt, † Beniamin being kept at home by",
+  "r3_verse": "I haue heard that wheat is sold in Aegypt: Goe ye downe, and bye vs necessaries, that we may liue, and not be consumed with lacke.",
+  "arm_conflicts": [
+   "Egypt | Aegypt:",
+   "ceſſaries, | necessaries,",
+   "Therfore | lacke."
+  ],
+  "r2_attested": {
+   "15": "neceſſaries,"
+  },
+  "visual_readings": {
+   "15": "neceſſaries,"
+  },
+  "new_text": "I haue heard that wheat is ſold in Aegypt: Goe ye downe, and bye vs neceſſaries, that we may liue, and not be conſumed with lacke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p152",
+  "old_text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+  "old": {
+   "s_dismas": 0.819,
+   "odr_com": 0.819,
+   "sabates_a": 0.791,
+   "madueke_b": 0.791
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5793,
+   0.875,
+   0.6665
+  ],
+  "crop_page": 152,
+  "r3_raw": "cessaries, that we may liue, and not be consumed with lacke. † Therfore the tenne brethren of Ioseph going downe, to 3 bye corne in Ægypt, † Beniamin being kept at home by 4 Iacob, who said to his brethren: Lest perhaps he take any",
+  "r3_verse": "the tenne brethren of Ioseph going downe, to bye corne in Ægypt,",
+  "arm_conflicts": [
+   "Egypt, | Ægypt,"
+  ],
+  "new_text": "the tenne brethren of Ioſeph going downe, to bye corne in Ægypt,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p152",
+  "old_text": "Beniamin being kept at home Iacob, who ſaid to his brethren : Leſt perhaps he take harme in the iourney:",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5998,
+   0.875,
+   0.7055
+  ],
+  "crop_page": 152,
+  "r3_raw": "† Therfore the tenne brethren of Ioseph going downe, to 3 bye corne in Ægypt, † Beniamin being kept at home by 4 Iacob, who said to his brethren: Lest perhaps he take any harme in the journey: † entered into the land of Ægypt with others that went to bye. for the famine was in the land",
+  "r3_verse": "Beniamin being kept at home by Iacob, who said to his brethren: Lest perhaps he take any harme in the journey:",
+  "arm_conflicts": [
+   "iourney: | journey:"
+  ],
+  "new_text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p152",
+  "old_text": "into the land of Egypt with others that went to bye. for the famine was in the of Chanaan.",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.871,
+   "sabates_a": 0.845,
+   "madueke_b": 0.845
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.643,
+   0.875,
+   0.7514
+  ],
+  "crop_page": 152,
+  "r3_raw": "Iacob, who said to his brethren: Lest perhaps he take any harme in the journey: † entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan. † And Ioseph was prince in the land of Ægypt, and at his pleasure corne was sold to the people. And when",
+  "r3_verse": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "arm_conflicts": [
+   "Egypt | Ægypt"
+  ],
+  "new_text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p152",
+  "old_text": "yet himſdlfe knowing his brethren, was not knowen them.",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.845,
+   "madueke_b": 0.845
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8094,
+   0.875,
+   0.8976
+  ],
+  "crop_page": 152,
+  "r3_raw": "Land of chanaan, that we may bye necessaries to liue. † And 8 yet himſelfe knowing his brethren, was not knownen of them. † And remembring the dreames, which some times 9 he had ſcene, he said to them: \"You are spies: to view the",
+  "r3_verse": "And yet himſelfe knowing his brethren, was not knownen of them.",
+  "arm_conflicts": [
+   "himſdlfe | himſelfe",
+   "knowen | knownen of"
+  ],
+  "new_text": "And yet himſelfe knowing his brethren, was not knownen of them.",
+  "s_unresolved": [
+   "himſelfe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "And remembring the dreames, which ſome rimes he had ſeene, he ſaid to them Vou are ſpies: to view weaker parts of the land you are come.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8305,
+   0.875,
+   0.9299
+  ],
+  "crop_page": 152,
+  "crop_leaves": [
+   152,
+   153
+  ],
+  "r3_raw": "yet himſelfe knowing his brethren, was not knownen of them. † And rememb'ring the dreames, which some times he had ſcene, he said to them: \"You are spies: to view the weaker GENESIS. 10 weaker parts of the land you are come. † Who said: It is not so, my lord, but thy seruantes are come to bye victu-",
+  "r3_verse": "And rememb'ring the dreames, which some times he had ſcene, he said to them: \"You are spies: to view the weaker weaker parts of the land you are come.",
+  "arm_conflicts": [
+   "remembring | rememb'ring",
+   "rimes | times",
+   "ſeene, | ſcene,",
+   "Vou | \"You"
+  ],
+  "new_text": "And rememb'ring the dreames, which ſome times he had ſcene, he ſaid to them \"You are ſpies: to view the weaker weaker parts of the land you are come.",
+  "s_unresolved": [
+   "ſcene,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p153",
+  "old_text": "Who ſaid : It not ſo, my lord, but thy ſeruantes are come to bye victuals.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.0137,
+   0.875,
+   0.1025
+  ],
+  "crop_page": 153,
+  "r3_raw": "GENESIS. 10 weaker parts of the land you are come. † Who said: It is not so, my lord, but thy seruantes are come to bye victuals. † Weare al the sonnes of one man: we are come as",
+  "r3_verse": "Who said: It is not so, my lord, but thy seruantes are come to bye victuals. Weare",
+  "arm_conflicts": [],
+  "new_text": "Who ſaid It is not ſo, my lord, but thy ſeruantes are come to bye victuals. Weare",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p153",
+  "old_text": "fore he put them in priſon three dayes.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.3308,
+   0.875,
+   0.3969
+  ],
+  "crop_page": 153,
+  "r3_raw": "17 \"otherwise by the health of Pharao you are spies.\" † Ther- 18 fore he put them in prison three dayes. † And the third day bringing them out of prison, he said: Doe as I haue said,",
+  "r3_verse": "fore he put them in prison three dayes.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "fore he put them in priſon three dayes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "chapter",
+  "old_text": "he ſaid to brethren My money is geuen me againe, behold it is in ſacke. And being aſtonyed, and trubled amongeſt themſelues, they ſaid What is this, that God hath done vnto vs?",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.955,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.8348,
+   0.875,
+   0.9339
+  ],
+  "crop_page": 153,
+  "crop_leaves": [
+   153,
+   154
+  ],
+  "r3_raw": "opening his sacke, to geue his beast prouender in the inne, 28 beholding the money in the sackes mouth, † he said to his brethren: My money is geuen me againe, behold it is in the sacke. facke. And being astonyed, and trubled amongst themſelues, they said: What is this, that God hath done vnto vs? And they came to Iacob their father into the land of 29",
+  "r3_verse": "he said to his brethren: My money is geuen me againe, behold it is in the sacke. facke. And being astonyed, and trubled amongst themſelues, they said: What is this, that God hath done vnto vs?",
+  "arm_conflicts": [
+   "amongeſt | amongst"
+  ],
+  "lexicon_readings": {
+   "23": "amongſt"
+  },
+  "visual_readings": {
+   "23": "amongſt"
+  },
+  "new_text": "he ſaid to his brethren My money is geuen me againe, behold it is in the ſacke. facke. And being aſtonyed, and trubled amongſt themſelues, they ſaid What is this, that God hath done vnto vs?",
+  "s_unresolved": [
+   "facke."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.962,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p154",
+  "old_text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.11,
+   0.875,
+   0.2015
+  ],
+  "crop_page": 154,
+  "r3_raw": "Chanaan, and they told him al thinges that had chanced vnto them, saying: † The lord of the land spake to vs 30 roughly, and thought vs to be spies of the prouince, † to 31 whom we answered: We are men of peace, neither do we",
+  "r3_verse": "The lord of the land spake to vs roughly, and thought vs to be spies of the prouince,",
+  "arm_conflicts": [],
+  "new_text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p160",
+  "old_text": "the tenne brethren of Ioſeph going downe, bye corne in Egypt,",
+  "old": {
+   "s_dismas": 0.819,
+   "odr_com": 0.819,
+   "sabates_a": 0.791,
+   "madueke_b": 0.791
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5809,
+   0.875,
+   0.6741
+  ],
+  "crop_page": 160,
+  "r3_raw": "cessaries, that we may liue, and not be consumed with lacke. † Therfore the tenne brethren of Ioseph going downe, to 3 bye corne in Ægypt, † Beniamin being kept at home by 4 Jacob, who said to his brethren: Lest perhaps he take any",
+  "r3_verse": "the tenne brethren of Ioseph going downe, to bye corne in Ægypt,",
+  "arm_conflicts": [
+   "Egypt, | Ægypt,"
+  ],
+  "new_text": "the tenne brethren of Ioſeph going downe, to bye corne in Ægypt,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 5,
+  "from": "p160",
+  "old_text": "into the land of Egypt land with others that went to bye. for the famine was in the of Chanaan.",
+  "old": {
+   "s_dismas": 0.822,
+   "odr_com": 0.822,
+   "sabates_a": 0.794,
+   "madueke_b": 0.794
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.6437,
+   0.875,
+   0.7551
+  ],
+  "crop_page": 160,
+  "r3_raw": "Jacob, who said to his brethren: Lest perhaps he take any harme in the journey: † entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan. † And Ioseph was prince in the land of Ægypt, 6 and at his pleasure corne was sold to the people. And when",
+  "r3_verse": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "arm_conflicts": [
+   "Egypt land | Ægypt"
+  ],
+  "new_text": "entered into the land of Ægypt with others that went to bye. for the famine was in the land of Chanaan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p160",
+  "old_text": "yet himſelfe knowing his brethren, was not knowen them.",
+  "old": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.8028,
+   0.875,
+   0.897
+  ],
+  "crop_page": 160,
+  "r3_raw": "Land of chanaan, that we may bye necessaries to liue. † And yet himſelfe knowing his brethren, was not knownen of them. † And remembring the dreames, which some times he had ſcene, he said to them: \"You are spies: to view the",
+  "r3_verse": "And yet himſelfe knowing his brethren, was not knownen of them.",
+  "arm_conflicts": [
+   "knowen | knownen of"
+  ],
+  "new_text": "And yet himſelfe knowing his brethren, was not knownen of them.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p161",
+  "old_text": "Send you one of you to bring him: and you ſnal be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe : by the health of Pharao you are ſpies.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.2456,
+   0.875,
+   0.3739
+  ],
+  "crop_page": 161,
+  "r3_raw": "you: \" by the health of Pharao you shal not depart hence, 16 vntil your younges brother do come. † Send you one of you to bring him: and you ſhall be in prison, til the thinges be proued which you haue said, whether they be true or false: 17 :: otherwise by the health of Pharao you are spies. † Ther- 18 fore he put them in prison three dayes. † And the third day things",
+  "r3_verse": "Send you one of you to bring him: and you ſhall be in prison, til the thinges be proued which you haue said, whether they be true or false: :: otherwise by the health of Pharao you are spies. Ther- fore",
+  "arm_conflicts": [
+   "ſnal | ſhall"
+  ],
+  "lexicon_readings": {
+   "30": "otherwiſe"
+  },
+  "visual_readings": {
+   "30": "otherwiſe"
+  },
+  "new_text": "Send you one of you to bring him: and you ſhall be in priſon, til the thinges be proued which you haue ſaid, whether they be true or falſe :: otherwiſe by the health of Pharao you are ſpies. Ther- fore",
+  "s_unresolved": [
+   "ſhall",
+   "fore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p161",
+  "old_text": "fore he put them in priſon three dayes.",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.3243,
+   0.875,
+   0.3936
+  ],
+  "crop_page": 161,
+  "r3_raw": "17 :: otherwise by the health of Pharao you are spies. † Ther- 18 fore he put them in prison three dayes. † And the third day things w bringing them out of prison, he said: Doe as I haue said, ye say be",
+  "r3_verse": "fore he put them in prison three dayes.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "fore he put them in priſon three dayes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p161",
+  "old_text": "If you be men of peace, are ued let one of your brethren be bounde in priſon: and goe ye as your wayes, and carie the corne that you haue bought, vnto your houſes,",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.3635,
+   0.875,
+   0.4935
+  ],
+  "crop_page": 161,
+  "r3_raw": "bringing them out of prison, he said: Doe as I haue said, 19 and you shal liue: for I feare God. † If you be men of peace, let one of your brethren be bounde in prison: and goe ye your wayes, and carie the corne that you haue bought, vnto 20 your houses, † and bring your youngest brother to me, that I may proue your sayings to be true, and that you die",
+  "r3_verse": "If you be men of peace, let one of your brethren be bounde in prison: and goe ye your wayes, and carie the corne that you haue bought, vnto your houses,",
+  "arm_conflicts": [],
+  "new_text": "If you be men of peace, let one of your brethren be bounde in priſon: and goe ye your wayes, and carie the corne that you haue bought, vnto your houſes,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 30,
+  "from": "p162",
+  "old_text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.111,
+   0.875,
+   0.1992
+  ],
+  "crop_page": 162,
+  "r3_raw": "Chanaan, and they told him al things that had chanced vnto them, saying: † The lord of the land spake to vs 30 roughly, and thought vs to be spies of the prouince, † to 31 whom we answered: We are men of peace, neither do we",
+  "r3_verse": "The lord of the land spake to vs roughly, and thought vs to be spies of the prouince,",
+  "arm_conflicts": [],
+  "new_text": "The lord of the land ſpake to vs roughly, and thought vs to be ſpies of the prouince,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 38,
+  "from": "p162",
+  "old_text": "But he ſaid My ſonne ſhal̓ not go downe with you:8 his brother is dead, and he alone is remayning: if any adage uerſitie shal chance to him in the land to the which you old goe, you shalt bring downe my hoare heares with ſorowe vnto hel.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.961,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.5194,
+   0.8832,
+   0.9165
+  ],
+  "crop_page": 162,
+  "r3_raw": "thee: deliuer him into my hand, and I wil restore him vnto thee. † But he said: My sonne ſhall not go downe with you: 38 his brother is dead, and he alone is remayning: if any aduersitie ſhal chance to him in the land to the which you goe, you ſhal bring downe :: my hoare heares with sorowe vnto hel. ANNOTATIONS CHAP. XLII, 7. Some vvhat roughly] Iosephh afflicted his bretheren to bring them into consideration of their former faultes, and to true contrition. VVithout which, though iniuries be remitted by men, yet the offenders are not absolued before God. Therfore he loving them and hating their sinne, by affliction brought them to understanding. VVho being at last truly penitent, he acknowledgded and most louingly embraced them, and prouided for them in their necessitie. S. Aug. ser. 82. de temp. And this example S. Gregorie (ho. 22. in Ezech) applieth the to the instruction of pastors offoulles: that they procure true repentance before",
+  "r3_verse": "But he said: My sonne ſhall not go downe with you: his brother is dead, and he alone is remayning: if any aduersitie ſhal chance to him in the land to the which you goe, you ſhal bring downe :: my hoare heares with sorowe vnto hel. CHAP. XLII, Some vvhat roughly] Iosephh afflicted his bretheren to bring them into consideration of their former faultes, and to true contrition. VVithout which, though iniuries be remitted by men, yet the offenders are not absolued before God. Therfore he loving them and hating their sinne, by affliction brought them to understanding. VVho being at last truly penitent, he acknowledgded and most louingly embraced them, and prouided for them in their necessitie. Aug. ser. de temp. And this example Gregorie (ho. in Ezech) applieth the to the instruction of pastors offoulles: that they procure true repentance before",
+  "arm_conflicts": [
+   "ſhal̓ | ſhall",
+   "you:8 | you:",
+   "adage uerſitie | aduersitie",
+   "shalt | ſhal"
+  ],
+  "lexicon_readings": {
+   "53": "afflicted",
+   "63": "former",
+   "83": "before",
+   "85": "Therfore",
+   "92": "ſinne,",
+   "94": "affliction",
+   "102": "laſt",
+   "108": "moſt",
+   "114": "for",
+   "143": "before"
+  },
+  "r2_attested": {
+   "60": "conſideration",
+   "118": "neceſſitie.",
+   "120": "ſer.",
+   "134": "inſtruction",
+   "136": "paſtors"
+  },
+  "visual_readings": {
+   "53": "afflicted",
+   "63": "former",
+   "83": "before",
+   "85": "Therfore",
+   "92": "ſinne,",
+   "94": "affliction",
+   "102": "laſt",
+   "108": "moſt",
+   "114": "for",
+   "143": "before",
+   "60": "conſideration",
+   "118": "neceſſitie.",
+   "120": "ſer.",
+   "134": "inſtruction",
+   "136": "paſtors"
+  },
+  "new_text": "But he ſaid My ſonne ſhal̓ not go downe with you:8 his brother is dead, and he alone is remayning: if any aduersitie shal chance to him in the land to the which you goe, you ſhal bring downe :: my hoare heares with ſorowe vnto hel. CHAP. XLII, Some vvhat roughly] Iosephh afflicted his bretheren to bring them into conſideration of their former faultes, and to true contrition. VVithout which, though iniuries be remitted by men, yet the offenders are not absolued before God. Therfore he loving them and hating their ſinne, by affliction brought them to understanding. VVho being at laſt truly penitent, he acknowledgded and moſt louingly embraced them, and prouided for them in their neceſſitie. Aug. ſer. de temp. And this example Gregorie (ho. in Ezech) applieth the to the inſtruction of paſtors offoulles: that they procure true repentance before",
+  "s_unresolved": [
+   "aduersitie",
+   "ſhal",
+   "Iosephh",
+   "faultes,",
+   "offenders",
+   "absolued",
+   "understanding.",
+   "offoulles:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p136",
+  "old_text": "hearing that victuals were ſold in AEgypt, he ſaid to his ſonnes Why neglectye",
+  "old": {
+   "s_dismas": 0.865,
+   "odr_com": 0.865,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.1409,
+   0.885,
+   0.3646
+  ],
+  "crop_page": 136,
+  "r3_raw": "CHAP. XLII. Jacob sendeth ten of his sonnes to buy corne in AEgypt. 7. where Ioseph knowing them, they not knowing him, with hard speaches putteh them in prison. 18. At last simeon remayning in custodie, all Beniamin be brought, the rest are dismissed, 25. with their money, vnto knownen to them, in their sackes: ND Iacob hearing that victuals were sold in AEgypt, he said to his sonnes: Why neglect ye? 2. I haue heard that wheat is sold in AEgypt: Goe ye downe and buy",
+  "r3_verse": "CHAP. XLII. Jacob sendeth ten of his sonnes to buy corne in AEgypt. where Ioseph knowing them, they not knowing him, with hard speaches putteh them in prison. At last simeon remayning in custodie, all Beniamin be brought, the rest are dismissed, with their money, vnto knownen to them, in their sackes: ND Iacob hearing that victuals were sold in AEgypt, he said to his sonnes: Why neglect ye?",
+  "arm_conflicts": [
+   "neglectye | neglect ye?"
+  ],
+  "r2_attested": {
+   "3": "ſendeth",
+   "7": "ſonnes",
+   "14": "Ioſeph",
+   "27": "priſon.",
+   "29": "laſt",
+   "33": "cuſtodie,",
+   "39": "reſt"
+  },
+  "visual_readings": {
+   "3": "ſendeth",
+   "7": "ſonnes",
+   "14": "Ioſeph",
+   "27": "priſon.",
+   "29": "laſt",
+   "33": "cuſtodie,",
+   "39": "reſt"
+  },
+  "new_text": "CHAP. XLII. Jacob ſendeth ten of his ſonnes to buy corne in AEgypt. where Ioſeph knowing them, they not knowing him, with hard speaches putteh them in priſon. At laſt simeon remayning in cuſtodie, all Beniamin be brought, the reſt are dismissed, with their money, vnto knownen to them, in their sackes: ND Iacob hearing that victuals were ſold in AEgypt, he ſaid to his ſonnes Why neglect ye?",
+  "s_unresolved": [
+   "speaches",
+   "simeon",
+   "dismissed,",
+   "sackes:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p136",
+  "old_text": "I haue heard that wheat is ſold inEgypt: Goe ye downe and buv vs neceſſaries, that we may liue aud not be conſumed with lacke.. Therfore",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.3024,
+   0.885,
+   0.4176
+  ],
+  "crop_page": 136,
+  "r3_raw": "ND Iacob hearing that victuals were sold in AEgypt, he said to his sonnes: Why neglect ye? 2. I haue heard that wheat is sold in AEgypt: Goe ye downe and buy vs necessaries, that we may liue and not be consumed with lacke. 3. Therfore the ten brethren of Ioseph going downe to buy corne in AEgypt, 4. Beniamin being kept at home by",
+  "r3_verse": "I haue heard that wheat is sold in AEgypt: Goe ye downe and buy vs necessaries, that we may liue and not be consumed with lacke. Therfore",
+  "arm_conflicts": [
+   "inEgypt: | in AEgypt:",
+   "buv | buy",
+   "aud | and"
+  ],
+  "new_text": "I haue heard that wheat is ſold in AEgypt: Goe ye downe and buy vs neceſſaries, that we may liue and not be conſumed with lacke.. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p136",
+  "old_text": "Therfore the ten brethren of Ioſeph going to buy corne in Agypt,",
+  "old": {
+   "s_dismas": 0.847,
+   "odr_com": 0.847,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.3558,
+   0.885,
+   0.4355
+  ],
+  "crop_page": 136,
+  "r3_raw": "vs necessaries, that we may liue and not be consumed with lacke.; Therfore the ten brethren of Ioseph going downe to buy corne in AEgypt , 4. Beniamin being kept at home by Jacob, who said to his brethren: Lest perhaps he take any harme in",
+  "r3_verse": "Therfore the ten brethren of Ioseph going downe to buy corne in AEgypt ,",
+  "arm_conflicts": [
+   "Agypt, | AEgypt ,"
+  ],
+  "used_merge": true,
+  "new_text": "Therfore the ten brethren of Ioſeph going downe to buy corne in AEgypt ,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p136",
+  "old_text": "Beniamin beiug kept at home by who ſaid to his brethren Leſt pethaps he take any harme in entred",
+  "old": {
+   "s_dismas": 0.851,
+   "odr_com": 0.851,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.3748,
+   0.885,
+   0.471
+  ],
+  "crop_page": 136,
+  "r3_raw": "with lacke. 3. Therfore the ten brethren of Ioseph going downe to buy corne in AEgypt, 4. Beniamin being kept at home by Iacob, who said to his brethren: Lest perhaps he take any harme in the iourney: 5- entered into the land of AEgypt with others that went to buy. For the famine was in the land of Chanaan. 6. And Ioseph",
+  "r3_verse": "Beniamin being kept at home by Iacob, who said to his brethren: Lest perhaps he take any harme in the iourney: 5-",
+  "arm_conflicts": [
+   "beiug | being",
+   "pethaps | perhaps",
+   "entred | the iourney: 5-"
+  ],
+  "new_text": "Beniamin being kept at home by Iacob, who ſaid to his brethren Leſt perhaps he take any harme in the iourney: 5-",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "chapter",
+  "old_text": "entred into the land ot AEgypt with others that went For the famine was in the land ot Chanaau.",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   5
+  ],
+  "skip": "no crop geometry; leaves tried: [137]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p136",
+  "old_text": "And Ioſeph in the laud ot AEgypt, and at his pleaſure corne was ſold people. And when his brethren had adored him,.",
+  "old": {
+   "s_dismas": 0.845,
+   "odr_com": 0.845,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.4275,
+   0.885,
+   0.5209
+  ],
+  "crop_page": 136,
+  "r3_raw": "5. entred into the land of AEgypt with others that went to buy. For the famine was in the land of Chanaan. 6. And Ioseph was Prince in the land of AEgypt, and at his pleasure corne was sold to the people. And when his brethren had adored him, 7. and he knew them, he spake as it were to strangers \"somewhat roughly, asking",
+  "r3_verse": "And Ioseph was Prince in the land of AEgypt, and at his pleasure corne was sold to the people. And when his brethren had adored him,",
+  "arm_conflicts": [
+   "laud ot | land of"
+  ],
+  "new_text": "And Ioſeph was Prince in the land of AEgypt, and at his pleaſure corne was ſold to the people. And when his brethren had adored him,.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p136",
+  "old_text": "and he knew he ſpake as it were to ſtrangers ſomewhat roughly, askng From whenee came vou Who anſwered: From the Land of that we may buy neceſſaries to liue.",
+  "old": {
+   "s_dismas": 0.862,
+   "odr_com": 0.862,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.4626,
+   0.885,
+   0.5753
+  ],
+  "crop_page": 136,
+  "r3_raw": "was Prince in the land of A Egypt, and at his pleasure corne was sold to the people. And when his brethren had adored him, 7. and he knew them, he spake as it were to strangers\" somewhat roughly, asking them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to liue. 8. And yet himselfe knowing his brethren, was not knownen of them. 9. And remembring",
+  "r3_verse": "and he knew them, he spake as it were to strangers\" somewhat roughly, asking them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to liue.",
+  "arm_conflicts": [
+   "ſtrangers | strangers\"",
+   "askng | asking them:",
+   "whenee | whence",
+   "vou | you?"
+  ],
+  "new_text": "and he knew them, he ſpake as it were to ſtrangers ſomewhat roughly, asking them: From whence came you? Who anſwered: From the Land of Chanaan, that we may buy neceſſaries to liue.",
+  "s_unresolved": [
+   "asking"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p136",
+  "old_text": "And yet himſelfe his brethren, was not knowen ot them.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.828,
+   "madueke_b": 0.828
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5153,
+   0.885,
+   0.5943
+  ],
+  "crop_page": 136,
+  "r3_raw": "them: From whence came you? Who answered: From the Land of Chanaan, that we may buy necessaries to liue. 8. And yet himselfe knowing his brethren, was not knownen of them. 9. And remembiring the dreames, which sometimes he had seen, he said to them: \"You",
+  "r3_verse": "And yet himselfe knowing his brethren, was not knownen of them.",
+  "arm_conflicts": [
+   "knowen ot | knownen of"
+  ],
+  "new_text": "And yet himſelfe knowing his brethren, was not knownen of them.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p136",
+  "old_text": "And remembring which fometimes he had ſeen, he ſaid to them: Vou to view the weaker parts of the land vou are come.",
+  "old": {
+   "s_dismas": 0.801,
+   "odr_com": 0.801,
+   "sabates_a": 0.816,
+   "madueke_b": 0.816
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.5339,
+   0.885,
+   0.6266
+  ],
+  "crop_page": 136,
+  "r3_raw": "Chanaan, that we may buy necessaries to liue. 8. And yet himselfe knowing his brethren, was not knownen of them. 9. And remembiring the dreames, which sometimes he had seen, he said to them: \"You are spies: to view the weaker parts of the land you are come. 10. Who said: It is not so, my Lord, but thy seruantes are come to buy victuals.",
+  "r3_verse": "And remembiring the dreames, which sometimes he had seen, he said to them: \"You are spies: to view the weaker parts of the land you are come.",
+  "arm_conflicts": [
+   "remembring | remembiring the dreames,",
+   "fometimes | sometimes",
+   "Vou | \"You are spies:",
+   "vou | you"
+  ],
+  "r2_attested": {
+   "15": "ſpies:"
+  },
+  "visual_readings": {
+   "15": "ſpies:"
+  },
+  "new_text": "And remembiring the dreames, which sometimes he had ſeen, he ſaid to them: \"You are ſpies: to view the weaker parts of the land you are come.",
+  "s_unresolved": [
+   "sometimes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p136",
+  "old_text": "Who It is not ſo my Lord, but thy ſeruantes are come to buy victuals.",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.5694,
+   0.885,
+   0.6466
+  ],
+  "crop_page": 136,
+  "r3_raw": "the dreames, which sometimes he had seen, he said to them: \"You are spies: to view the weaker parts of the land you are come. 10. Who said: It is not so, my Lord, but thy seruantes are come to buy victuals. 11. We are all the ſones of one man: we are come as men of peace, neither",
+  "r3_verse": "Who said: It is not so, my Lord, but thy seruantes are come to buy victuals.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "1": "ſaid:"
+  },
+  "visual_readings": {
+   "1": "ſaid:"
+  },
+  "new_text": "Who ſaid: It is not ſo my Lord, but thy ſeruantes are come to buy victuals.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p136",
+  "old_text": "are al the ſones, of one mamwe are come as men ot peace, neither ſeruantes goe about anie euil.",
+  "old": {
+   "s_dismas": 0.865,
+   "odr_com": 0.865,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.6049,
+   0.885,
+   0.68
+  ],
+  "crop_page": 136,
+  "r3_raw": "said: It is not so, my Lord, but thy seruantes are come to buy victuals. 11. We are all the ſones of one man: we are come as men of peace, neither doe thy seruantes goe about anie euil. 12. To whom he answered: It is otherwise: you came to consider the vndefensed parts of this land.",
+  "r3_verse": "We are all the ſones of one man: we are come as men of peace, neither doe thy seruantes goe about anie euil.",
+  "arm_conflicts": [
+   "al | all",
+   "mamwe | man: we",
+   "ot | of"
+  ],
+  "new_text": "We are al the ſones, of one man: we are come as men of peace, neither doe thy ſeruantes goe about anie euil.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p136",
+  "old_text": "To whom he aufwered It is you came to conſider the vndefenſed patts of this land.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.861,
+   "madueke_b": 0.861
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.6214,
+   0.885,
+   0.7169
+  ],
+  "crop_page": 136,
+  "r3_raw": "11. We are all the ſonnes of one man: we are come as men of peace, neither doe thy ſervantes goe about anie euil. 12. To whom he answered: It is otherwise: you came to consider the vndefended parts of this land. 13. But they: We thy ſervantes, say they, are twelue brethren, the sonnes of one man in the Land of Chanaan: the yongest is with our father,",
+  "r3_verse": "To whom he answered: It is otherwise: you came to consider the vndefended parts of this land.",
+  "arm_conflicts": [
+   "aufwered | answered:",
+   "vndefenſed patts | vndefended parts"
+  ],
+  "r2_attested": {
+   "6": "otherwiſe:"
+  },
+  "visual_readings": {
+   "6": "otherwiſe:"
+  },
+  "new_text": "To whom he answered: It is otherwiſe: you came to conſider the vndefended parts of this land.",
+  "s_unresolved": [
+   "answered:",
+   "vndefended"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p136",
+  "old_text": "We thy ſeruantes, ſay they, are twelue brethren, the ſonnes man in the Land ot Chanaan: the yongeſt is with our tather, is not liuing.",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.797,
+   "madueke_b": 0.797
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.6572,
+   0.885,
+   0.7499
+  ],
+  "crop_page": 136,
+  "r3_raw": "otherwise: you came to consider the undefensed parts of this land. 13. But they: We thy seruantes, say they, are twelue brethren, the sonnes of one man in the Land of Chanaan: the yongest is with our father, the other is not liuing. 14. This is it, quoth he, that I said: You are spies. 15. Now presently I will take a trial of you: \" by the health of",
+  "r3_verse": "But they: We thy seruantes, say they, are twelue brethren, the sonnes of one man in the Land of Chanaan: the yongest is with our father, the other is not liuing.",
+  "arm_conflicts": [
+   "ot | of",
+   "tather, | father, the other"
+  ],
+  "new_text": "But they: We thy ſeruantes, ſay they, are twelue brethren, the ſonnes of one man in the Land of Chanaan: the yongeſt is with our father, the other is not liuing.",
+  "s_unresolved": [
+   "father,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p136",
+  "old_text": "This is it, quoth he, that I ſaid: You ate.",
+  "old": {
+   "s_dismas": 0.844,
+   "odr_com": 0.844,
+   "sabates_a": 0.837,
+   "madueke_b": 0.837
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.692,
+   0.885,
+   0.7499
+  ],
+  "crop_page": 136,
+  "r3_raw": "of one man in the Land of Chanaan: the yongest is with our father, the other is not liuing. 14. This is it, quoth he, that I said: You are spies. 15. Now presently I will take a trial of you: \" by the health of",
+  "r3_verse": "This is it, quoth he, that I said: You are spies.",
+  "arm_conflicts": [
+   "ate. | are spies."
+  ],
+  "r2_attested": {
+   "10": "ſpies."
+  },
+  "visual_readings": {
+   "10": "ſpies."
+  },
+  "new_text": "This is it, quoth he, that I ſaid: You are ſpies.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p136",
+  "old_text": "Now preſently I wil tako a trial of you:by the health of vou ſhal not depart hence, vntil your yongeſt brother doe come.",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.904,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   15
+  ],
+  "crop": [
+   0.155,
+   0.7092,
+   0.885,
+   0.7871
+  ],
+  "crop_page": 136,
+  "r3_raw": "the other is not liuing. 14. This is it, quoth he, that I said: You are spies. 15. Now presently I will take a trial of you: \"by the health of Pharao you shal not depart hence, vntil your yongest brother doe come. 16. Send you one of you to bring him: and you thal be in prison til the",
+  "r3_verse": "Now presently I will take a trial of you: \"by the health of Pharao you shal not depart hence, vntil your yongest brother doe come.",
+  "arm_conflicts": [
+   "wil tako | will take",
+   "you:by | you: \"by",
+   "vou | Pharao you"
+  ],
+  "new_text": "Now preſently I wil take a trial of you: \"by the health of Pharao you ſhal not depart hence, vntil your yongeſt brother doe come.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.984,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p136",
+  "old_text": "vou one ot you to bring him: aud you thal be in prifon til the be proued which you haue ſaid, whether they be true or falſe: by the healthot Pharao you are ſpies.",
+  "old": {
+   "s_dismas": 0.835,
+   "odr_com": 0.835,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.7447,
+   0.885,
+   0.8391
+  ],
+  "crop_page": 136,
+  "r3_raw": "Pharao you shal not depart hence, vntil your yongest brother doe come. 16. Send you one of you to bring him: and you thal be in prison til the things be proued which you haue said, whether they be true or false: (4) otherwise by the health of Pharao you are spies. 17. Therfore he put them in prison three dayes. 18. And the third day bringing them out of",
+  "r3_verse": "Send you one of you to bring him: and you thal be in prison til the things be proued which you haue said, whether they be true or false: (4) otherwise by the health of Pharao you are spies. Therfore",
+  "arm_conflicts": [
+   "vou | Send you",
+   "ot | of",
+   "aud | and",
+   "prifon | prison",
+   "healthot | health of"
+  ],
+  "lexicon_readings": {
+   "39": "Therfore"
+  },
+  "r2_attested": {
+   "13": "priſon",
+   "30": "otherwiſe"
+  },
+  "visual_readings": {
+   "39": "Therfore",
+   "13": "priſon",
+   "30": "otherwiſe"
+  },
+  "new_text": "Send you one of you to bring him: and you thal be in priſon til the things be proued which you haue ſaid, whether they be true or falſe: (4) otherwiſe by the health of Pharao you are ſpies. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p136",
+  "old_text": "tore he put (If priſon three dayes.",
+  "old": {
+   "s_dismas": 0.762,
+   "odr_com": 0.762,
+   "sabates_a": 0.692,
+   "madueke_b": 0.692
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.7798,
+   0.885,
+   0.8563
+  ],
+  "crop_page": 136,
+  "r3_raw": "things be proued which you haue said, whether they be true or false: (4) otherwise by the health of Pharao you are spies. 17. Therfore he put them in prison three dayes. 18. And the third day bringing them out of prison, he said: Doe as I haue said, and you that liue: for I feare God.",
+  "r3_verse": "tore he put them in prison three dayes.",
+  "arm_conflicts": [
+   "(If | them in"
+  ],
+  "used_merge": true,
+  "new_text": "tore he put them in priſon three dayes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p136",
+  "old_text": "And the third day bringing them out of chius he ſaid: Doe as I haue ſaid, and vou ſhal liue : tor I teare God.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.797,
+   0.885,
+   0.882
+  ],
+  "crop_page": 136,
+  "r3_raw": "(4) otherwise by the health of Pharao you are spies. 17. Therefore he put them in prison three dayes. 18. And the third day bringing them out of prison, he said: Doe as I haue said, and you shal liue: for I feare God. 19. If you be men of peace, let one of your brethen be bound in prison:",
+  "r3_verse": "And the third day bringing them out of prison, he said: Doe as I haue said, and you shal liue: for I feare God.",
+  "arm_conflicts": [
+   "chius | prison,",
+   "vou | you",
+   ": tor | for",
+   "teare | feare"
+  ],
+  "lexicon_readings": {
+   "20": "for"
+  },
+  "r2_attested": {
+   "8": "priſon,"
+  },
+  "visual_readings": {
+   "20": "for",
+   "8": "priſon,"
+  },
+  "new_text": "And the third day bringing them out of priſon, he ſaid: Doe as I haue ſaid, and you ſhal liue for I feare God.",
+  "s_unresolved": [
+   "feare"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p136",
+  "old_text": "be en of peace, letoue ot your brethenbe bound po: are to be ve your wayes, aud carie the corne that you haue bought vnto as ſpies",
+  "old": {
+   "s_dismas": 0.755,
+   "odr_com": 0.755,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   19
+  ],
+  "crop": [
+   0.155,
+   0.837,
+   0.885,
+   0.9115
+  ],
+  "crop_page": 136,
+  "r3_raw": "prison, he said: Doe as I haue said, and you shal liue: for I feare God. 19. If you be men of peace, let one of your brethen be bound in prison: and goe ye your wayes, and carie the corne that you haue bought vnto your houses, 20. and bring your yongelt brother to me, that I may",
+  "r3_verse": "If you be men of peace, let one of your brethen be bound in prison: and goe ye your wayes, and carie the corne that you haue bought vnto your houses,",
+  "arm_conflicts": [
+   "en | men",
+   "letoue ot | let one of",
+   "brethenbe | brethen be",
+   "po: are to be ve | in prison: and goe ye",
+   "aud | and",
+   "as ſpies | your houses,"
+  ],
+  "r2_attested": {
+   "14": "priſon:",
+   "30": "houſes,"
+  },
+  "visual_readings": {
+   "14": "priſon:",
+   "30": "houſes,"
+  },
+  "new_text": "If you be men of peace, let one of your brethen be bound in priſon: and goe ye your wayes, and carie the corne that you haue bought vnto your houſes,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "chapter",
+  "old_text": "and bring your yongeſt brother to me, that I may your ug. I2O Ioſephproue your ſavings to be true, and that you die not. They did as he had ſaid, 1and",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.826,
+   "madueke_b": 0.826
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.0555,
+   0.885,
+   0.1637
+  ],
+  "crop_page": 137,
+  "r3_raw": "proue your sayings to be true, and that you die not. They did as he had said, 11. and they talked one to an other: Worthily doe we suffer these things, because we haue sinned against our brother, seeing the life of our ſonne is in your handes.",
+  "r3_verse": "proue bring your sayings brother to me, that I may your ug. I2O Ioſephproue your ſavings to be true, and that you die not. They did as he had said, 1and",
+  "arm_conflicts": [
+   "and bring | proue",
+   "yongeſt brother to me, that I may your ug. I2O Ioſephproue your ſavings | sayings"
+  ],
+  "used_merge": true,
+  "new_text": "proue bring your sayings brother to me, that I may your ug. I2O Ioſephproue your ſavings to be true, and that you die not. They did as he had ſaid, 1and",
+  "s_unresolved": [
+   "sayings"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.772,
+   "odr_com": 0.772,
+   "sabates_a": 0.768,
+   "madueke_b": 0.768
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p137",
+  "old_text": "And they came to Iacob their tather into the land of Chanaan, & they told him al things that had chanced vnto them, ſayins :",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.4008,
+   0.885,
+   0.497
+  ],
+  "crop_page": 137,
+  "r3_raw": "astonished and troubled amongst themselues, they said: What is this, that God hath done vnto vs? 29. And they came to Iacob their father into the land of Chanaan, & they told him al things that had chanced vnto them, saying: 3c. The Lord of the land spake to vs roughly, & thought vs to be ſpices of the prouincc, 31. to whom we answered: We",
+  "r3_verse": "And they came to Iacob their father into the land of Chanaan, & they told him al things that had chanced vnto them, saying: 3c.",
+  "arm_conflicts": [
+   "tather | father",
+   "ſayins : | saying: 3c."
+  ],
+  "new_text": "And they came to Iacob their father into the land of Chanaan, & they told him al things that had chanced vnto them, saying: 3c.",
+  "s_unresolved": [
+   "father",
+   "saying:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p137",
+  "old_text": "The Lord of the land ipake to vs roughly, & thought vs to be ſpies ot the prouince,",
+  "old": {
+   "s_dismas": 0.928,
+   "odr_com": 0.928,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.4359,
+   0.885,
+   0.5139
+  ],
+  "crop_page": 137,
+  "r3_raw": "into the land of Chanaan, & they told him al things that had chanced vnto them, saying: 3c. The Lord of the land spake to vs roughly, & thought vs to be ſpices of the prouincce, 31. to whom we answered: We are men of peace, neither doe we attempt any treachery. 32. We",
+  "r3_verse": "The Lord of the land spake to vs roughly, & thought vs to be ſpices of the prouincce,",
+  "arm_conflicts": [
+   "ipake | spake",
+   "ſpies ot | ſpices of",
+   "prouince, | prouincce,"
+  ],
+  "r2_attested": {
+   "5": "ſpake"
+  },
+  "visual_readings": {
+   "5": "ſpake"
+  },
+  "new_text": "The Lord of the land ſpake to vs roughly, & thought vs to be ſpices of the prouince,",
+  "s_unresolved": [
+   "ſpices"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p137",
+  "old_text": "to whom we anſwered: We areen ot peace, neither doe we attempt any treachery.",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.932,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.4538,
+   0.885,
+   0.5321
+  ],
+  "crop_page": 137,
+  "r3_raw": "unto them, saying: 3c. The Lord of the land spake to vs roughly, & thought vs to be spies of the prouince, 31. to whom we answered: We are men of peace, neither doe we attempt any treachery. 32. We are twelve brethren borne of one father: onc is not liuing, the yongest is",
+  "r3_verse": "to whom we answered: We are men of peace, neither doe we attempt any treachery.",
+  "arm_conflicts": [
+   "areen ot | are men of"
+  ],
+  "new_text": "to whom we anſwered: We are men of peace, neither doe we attempt any treachery.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.974,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p137",
+  "old_text": "and bring your yongeſt brother to me, that I may kuow you are not ſpies: and you mav recciue this telow againe, that is kept in priſon: and afterwards iny haue licence to buy what things you wil.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.5599,
+   0.885,
+   0.6554
+  ],
+  "crop_page": 137,
+  "r3_raw": "and take ye prouition nccessarie for your houses, and goe your wayes, 43.and bring your yongest brother to me, that I may know you are not spies: and you may reccive this felow againe, that is kept in prison: and afterwards my haue licence to buy what things you wil. 35. This being said, when they powred out their corne, euerie man found his",
+  "r3_verse": "and bring your yongest brother to me, that I may know you are not spies: and you may reccive this felow againe, that is kept in prison: and afterwards my haue licence to buy what things you wil.",
+  "arm_conflicts": [
+   "kuow | know",
+   "mav recciue | may reccive",
+   "telow | felow",
+   "iny | my"
+  ],
+  "used_merge": true,
+  "new_text": "and bring your yongeſt brother to me, that I may know you are not ſpies: and you may recciue this felow againe, that is kept in priſon: and afterwards my haue licence to buy what things you wil.",
+  "s_unresolved": [
+   "felow"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

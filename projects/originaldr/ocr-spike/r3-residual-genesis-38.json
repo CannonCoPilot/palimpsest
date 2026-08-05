@@ -1,0 +1,3020 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "p139",
+  "old_text": "and Zara. HIſame time Iudas going downe from his brethren, :: Iturned in to a man an Odollamite, named Hiras.",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.1764,
+   0.875,
+   0.3129
+  ],
+  "crop_page": 139,
+  "r3_raw": "the third Wrib ber. 15. But himselfe beggeth of her (taking her for a barlote) two sonnes in innes, Pheares and Zara. The same time Iudas going downe from his brethren, turned into a man an Odollamite,named Hiras. And he sawe there the daughter of a man of Chanaan, called",
+  "r3_verse": "the third Wrib ber. But himselfe beggeth of her (taking her for a barlote) two sonnes in innes, Pheares and Zara. The same time Iudas going downe from his brethren, turned into a man an Odollamite,named Hiras.",
+  "arm_conflicts": [
+   "HIſame | The same",
+   ":: Iturned in to | turned into",
+   "Odollamite, named | Odollamite,named"
+  ],
+  "lexicon_readings": {
+   "11": "for",
+   "15": "ſonnes",
+   "22": "ſame"
+  },
+  "r2_attested": {
+   "5": "himſelfe"
+  },
+  "visual_readings": {
+   "11": "for",
+   "15": "ſonnes",
+   "22": "ſame",
+   "5": "himſelfe"
+  },
+  "new_text": "the third Wrib ber. But himſelfe beggeth of her (taking her for a barlote) two ſonnes in innes, Pheares and Zara. The ſame time Iudas going downe from his brethren, turned into a man an Odollamite,named Hiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p139",
+  "old_text": "And this ſawe there the daughter of a man of Chanaan, called be and raking her to wife, he did companie with her.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.2383,
+   0.875,
+   0.3436
+  ],
+  "crop_page": 139,
+  "r3_raw": "1 The same time Iudas going downe from his brethren, 2 turned in to a man an Odollamite,named Hiras. 3 And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her. † Who conceaued, and bare a sonne, and called his name",
+  "r3_verse": "And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her.",
+  "arm_conflicts": [
+   "this | he",
+   "be | Sue:",
+   "raking | taking"
+  ],
+  "new_text": "And he ſawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p139",
+  "old_text": "Who conceaued, and bare a ſonne, and called his name",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   3
+  ],
+  "crop": [
+   0.08,
+   0.3001,
+   0.875,
+   0.3653
+  ],
+  "crop_page": 139,
+  "r3_raw": "Sue: and taking her to wife, he did companie with her. 3 † Who conceaued, and bare a sonne, and called his name borne of Her. † And conceauing a childe againe, she called her sonne genealog",
+  "r3_verse": "Who conceaued, and bare a sonne, and called his name borne of Her.",
+  "arm_conflicts": [],
+  "new_text": "Who conceaued, and bare a ſonne, and called his name borne of Her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p139",
+  "old_text": "And conceauing a childe againe, ſhe called her ſonne he was borne, Onan.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3198,
+   0.875,
+   0.4048
+  ],
+  "crop_page": 139,
+  "r3_raw": "3 † Who conceaued, and bare a sonne, and called his name borne of genealog Iudas & Res. Mat. 4 Her. † And conceauing a childe againe, she called her sonne 5 after he was borne, Onan. † She bare also the third: whom the called Sela. after whose birth, she ceased to beare any",
+  "r3_verse": "And conceauing a childe againe, she called her sonne after he was borne, Onan.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "9": "after"
+  },
+  "visual_readings": {
+   "9": "after"
+  },
+  "new_text": "And conceauing a childe againe, ſhe called her ſonne after he was borne, Onan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p139",
+  "old_text": "She bare alſo the third: whom called Sela after hoſe birth, ſhe ceaſed to beare any res.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3408,
+   0.875,
+   0.4271
+  ],
+  "crop_page": 139,
+  "r3_raw": "4 Her. † And conceauing a childe againe, she called her sonne genealog 5 after he was borne, Onan. † She bare also the third: whom Iudas & L the called Sela. after whose birth, she ceased to beare any res. Mat. 6 more. † And Iudas gave a wife to Her his first begotten,",
+  "r3_verse": "She bare also the third: whom Iudas & the called Sela. after whose birth, she ceased to beare any res. Mat. more.",
+  "arm_conflicts": [
+   "hoſe | whose"
+  ],
+  "lexicon_readings": {
+   "12": "whoſe"
+  },
+  "visual_readings": {
+   "12": "whoſe"
+  },
+  "new_text": "She bare alſo the third: whom Iudas & the called Sela after whoſe birth, ſhe ceaſed to beare any res. Mat. more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p139",
+  "old_text": "And Iudas gaue a wife to Her his firſt begotten, Thamar.",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.3813,
+   0.875,
+   0.4682
+  ],
+  "crop_page": 139,
+  "r3_raw": "the called Sela. after whose birth, she ceased to bear any more. † And Iudas gave a wife to Her his first begotten, named Thamar. † Also Her the first begotten of Iudas, was wicked in the sight of our Lord: and was slaine of him.",
+  "r3_verse": "And Iudas gave a wife to Her his first begotten, named Thamar.",
+  "arm_conflicts": [
+   "gaue | gave"
+  ],
+  "new_text": "And Iudas gaue a wife to Her his firſt begotten, named Thamar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p139",
+  "old_text": "He knowing that the chilihould not be borne to himſelfe, companying with his wife, ſt ed his ſeede vpon the ground, leſt children be borne in his brothersname.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.863,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.4826,
+   0.875,
+   0.6093
+  ],
+  "crop_page": 139,
+  "r3_raw": "thy brothers wife, and be joyned to her, that thou mayest rayle seede to thy brother. † He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſet ed his seede vpon the ground, left children might be borne in his brothers name. † And therefore our Lord stroke him, because he did a detestable thing. † For",
+  "r3_verse": "He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſet ed his seede vpon the ground, left children might be borne in his brothers name.",
+  "arm_conflicts": [
+   "chilihould | children should",
+   "ſt | ſet",
+   "leſt | left",
+   "brothersname. | brothers name."
+  ],
+  "lexicon_readings": {
+   "16": "ſet"
+  },
+  "r2_attested": {
+   "5": "ſhould"
+  },
+  "visual_readings": {
+   "16": "ſet",
+   "5": "ſhould"
+  },
+  "new_text": "He knowing that the children ſhould not be borne to himſelfe, companying with his brothers wife, ſet ed his ſeede vpon the ground, left children might be borne in his brothers name.",
+  "s_unresolved": [
+   "left"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p139",
+  "old_text": "And rherfore our ſtroke him, becauſe he did a dereſtable thing.",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.5421,
+   0.875,
+   0.6294
+  ],
+  "crop_page": 139,
+  "r3_raw": "brothers wife, ſt.ed his seede vpon the ground, leſt children might be borne in his brothers name. † And therefore our Lord stroke him, because he did a detestable thing. † For the which cause Iudas said to Thamar his daughter in lawe:",
+  "r3_verse": "And therefore our Lord stroke him, because he did a detestable thing.",
+  "arm_conflicts": [
+   "rherfore | therefore",
+   "dereſtable | detestable"
+  ],
+  "r2_attested": {
+   "10": "deteſtable"
+  },
+  "visual_readings": {
+   "10": "deteſtable"
+  },
+  "new_text": "And therefore our Lord ſtroke him, becauſe he did a deteſtable thing.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p139",
+  "old_text": "For which cauſe Iudas ſaid to Thamar his daughter in lawe: a widowe in thy fathers houſe, til Sela my ſonne growe for he feared leſt he alſo might dye, as his brethren. Who her way and dwelt in her fathers houſe.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5616,
+   0.875,
+   0.7071
+  ],
+  "crop_page": 139,
+  "r3_raw": "10 might be borne in his brothers name. † And therefore our Lord stroke him, because he did a detestable thing. † For the which cause Iudas said to Thamar his daughter in lawe: Be a widow in thy fathers house, til Sela my sonne growe vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house. † And after many dayes were come and gone: the daughter of Sue the",
+  "r3_verse": "For the which cause Iudas said to Thamar his daughter in lawe: Be a widow in thy fathers house, til Sela my sonne growe vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house.",
+  "arm_conflicts": [
+   "widowe | widow"
+  ],
+  "new_text": "For the which cauſe Iudas ſaid to Thamar his daughter in lawe: Be a widowe in thy fathers houſe, til Sela my ſonne growe vp: for he feared leſt he alſo might dye, as his brethren. Who went her way and dwelt in her fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p139",
+  "old_text": "And after dayes were come and gone the daughter of Sue the wife of Iudas died who after his mourning hauing receiconſolation, went vp to the ſhearers of his ſhcepe, himſchſe and Hiras his shepheard of his flocke, the Odointo Thamnas.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.6415,
+   0.875,
+   0.81
+  ],
+  "crop_page": 139,
+  "r3_raw": "vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house. † And after many dayes were come and gone: the daughter of Sue the wife of Judas died: who after his mourning having received consolation, went vp to the hearers of his sheepe, himselfe and Hiras his shepheard of his flocke, the Odo- lamite,into Thamnas. † And it was told :: Thamar that her father in law came vp into Thamnias to sheare his sheepe.",
+  "r3_verse": "And after many dayes were come and gone: the daughter of Sue the wife of Judas died: who after his mourning having received consolation, went vp to the hearers of his sheepe, himselfe and Hiras his shepheard of his flocke, the Odo- lamite,into Thamnas.",
+  "arm_conflicts": [
+   "Iudas | Judas",
+   "hauing receiconſolation, | having received consolation,",
+   "ſhearers | hearers",
+   "ſhcepe, himſchſe | sheepe, himselfe",
+   "Odointo | Odo- lamite,into"
+  ],
+  "r2_attested": {
+   "23": "conſolation,",
+   "32": "himſelfe"
+  },
+  "visual_readings": {
+   "23": "conſolation,",
+   "32": "himſelfe"
+  },
+  "new_text": "And after many dayes were come and gone the daughter of Sue the wife of Iudas died who after his mourning hauing received conſolation, went vp to the hearers of his sheepe, himſelfe and Hiras his shepheard of his flocke, the Odo- lamite,into Thamnas.",
+  "s_unresolved": [
+   "sheepe,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p139",
+  "old_text": "Who putting of the garnients of her widowhood, tooke to ther and changing her habite, ſate in the croſſe way, that leadeth to Thamnas: becauſe Sela was growne, and she had taken him to her huſband.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.933,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.7813,
+   0.875,
+   0.9219
+  ],
+  "crop_page": 139,
+  "r3_raw": "father in law came vp into Thamnas to sheare his sheepe. † Who putting of the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way, that leadeth to Thamnas: because Sela was growne, and she had not taken him to her husband. † Whom when Iudas had",
+  "r3_verse": "Who putting of the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way, that leadeth to Thamnas: because Sela was growne, and she had not taken him to her husband.",
+  "arm_conflicts": [
+   "garnients | garments",
+   "to ther | a veile:"
+  ],
+  "new_text": "Who putting of the garments of her widowhood, tooke a veile: and changing her habite, ſate in the croſſe way, that leadeth to Thamnas: becauſe Sela was growne, and she had not taken him to her huſband.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "chapter",
+  "old_text": "Whom when Iudas had ſeene. mamo com ſeene, he ſuppoſed her to be an harlot for she had her face, leſt she should be knowen.",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.796,
+   "madueke_b": 0.796
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0269,
+   0.875,
+   0.1171
+  ],
+  "crop_page": 140,
+  "crop_leaves": [
+   139,
+   140
+  ],
+  "r3_raw": "leadeth to Thamnas: because Sela was growne, and she had age. If not taken him to her husband, † Whom when Iudas had seene, GENESIS. scene, he supposed her to be an harlot: for she had covered her face, lest she should be knownen. † And going vnto her, he said: Suffer me to lye with thee: for he knew her",
+  "r3_verse": "Whom when Iudas had seene, scene, he supposed her to be an harlot: for she had covered her face, lest she should be knownen.",
+  "arm_conflicts": [
+   "mamo com ſeene, | scene,",
+   "knowen. | knownen."
+  ],
+  "new_text": "Whom when Iudas had ſeene, scene, he ſuppoſed her to be an harlot for she had covered her face, leſt she should be knownen.",
+  "s_unresolved": [
+   "scene,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p140",
+  "old_text": "And going har- her, he ſaid : Suffer me to lye with thee : for he knew li not to be his daughter in law. Who anſwering : What thou geue me that thou maieſt enioy my companie?",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0499,
+   0.875,
+   0.1828
+  ],
+  "crop_page": 140,
+  "r3_raw": "scene, he supposed her to be an harlot: for she had covered her face, lest she should be knownen. † And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou geue me that thou maiest enjoy my companie? † He said: I wil send thee a kid out of the flockes. And when the",
+  "r3_verse": "And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou geue me that thou maiest enjoy my companie?",
+  "arm_conflicts": [
+   "har- | vnto",
+   "li | her",
+   "enioy | enjoy"
+  ],
+  "new_text": "And going vnto her, he ſaid Suffer me to lye with thee for he knew her not to be his daughter in law. Who anſwering What wilt thou geue me that thou maieſt enioy my companie?",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p140",
+  "old_text": "ſaid : I wil ſend thee a kid out of the flockes. And when ſaid againe : I wil ſuffer that thou wilt, if thou geue pledge, til thou ſend that which thou doeſt promiſe,",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   17
+  ],
+  "crop": [
+   0.08,
+   0.1321,
+   0.875,
+   0.241
+  ],
+  "crop_page": 140,
+  "r3_raw": "cont. Faust. thou geue me that thou maieſt enjoy my companie? † He said: I wil send thee a kid out of the flockes. And when he said againe: I wil ſuffer that thou wilt, if thou geue me a pledge, til thou send that which thou doest promise; † Iudas said: What wilt thou to be geuen thee for a pledge?",
+  "r3_verse": "He said: I wil send thee a kid out of the flockes. And when he said againe: I wil ſuffer that thou wilt, if thou geue me a pledge, til thou send that which thou doest promise;",
+  "arm_conflicts": [],
+  "new_text": "He ſaid I wil ſend thee a kid out of the flockes. And when he ſaid againe I wil ſuffer that thou wilt, if thou geue me a pledge, til thou ſend that which thou doeſt promiſe,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p140",
+  "old_text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge? She anſwered : Thy ring, and bracelet, and ſtaffe thou holdeſt in thy hand. The woman therfore by companying conceaued,",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.1926,
+   0.875,
+   0.3232
+  ],
+  "crop_page": 140,
+  "r3_raw": "pledge, til thou send that which thou doest promise; † Iudas said: What wilt thou to be geuen thee for a pledge? She answered: Thy ring, and bracelet, and staffe which thou holdest in thy hand. The woman therefore by once companying conceaued, † and rising she went her way: and putting of the apparel which she had taken, put on the gar-",
+  "r3_verse": "Iudas said: What wilt thou to be geuen thee for a pledge? She answered: Thy ring, and bracelet, and staffe which thou holdest in thy hand. The woman therefore by once companying conceaued,",
+  "arm_conflicts": [
+   "therfore | therefore"
+  ],
+  "new_text": "Iudas ſaid What wilt thou to be geuen thee for a pledge? She anſwered Thy ring, and bracelet, and ſtaffe which thou holdeſt in thy hand. The woman therefore by once companying conceaued,",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p140",
+  "old_text": "and riſing ihe went her way: putring of the apparel which ine had taken, put on the ments of her widowhood.",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.2586,
+   0.875,
+   0.3643
+  ],
+  "crop_page": 140,
+  "r3_raw": "thou holdest in thy hand. The woman therefore by once companying conceaued, † and rising she went her way: and putting of the apparel which she had taken, put on the garments of her widowhood. † And Iudas sent a kid by his shepherd the Odolamite, that he might receive the pledge",
+  "r3_verse": "and rising she went her way: and putting of the apparel which she had taken, put on the garments of her widowhood.",
+  "arm_conflicts": [
+   "ihe | she",
+   "putring | and putting",
+   "ine | she",
+   "ments | garments"
+  ],
+  "new_text": "and riſing she went her way: and putting of the apparel which she had taken, put on the garments of her widowhood.",
+  "s_unresolved": [
+   "she",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p140",
+  "old_text": "And Iudas ſent kid by shephard the Odolamite, that he might receiue the againe, which he had geuen to the woman : who when had not found her,",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2972,
+   0.875,
+   0.4265
+  ],
+  "crop_page": 140,
+  "r3_raw": "putting of the apparel which she had taken, put on the garments of her widowhood. † And Iudas sent a kid by his shepherd the Odolamite, that he might receive the pledge againe, which he had geuen to the woman: who when he had not found her, † he asked the men of that place: Where is the woman that sate in the crosse way? Al making answere:",
+  "r3_verse": "And Iudas sent a kid by his shepherd the Odolamite, that he might receive the pledge againe, which he had geuen to the woman: who when he had not found her,",
+  "arm_conflicts": [
+   "shephard | his shepherd",
+   "receiue | receive"
+  ],
+  "new_text": "And Iudas ſent a kid by his shepherd the Odolamite, that he might receiue the pledge againe, which he had geuen to the woman who when he had not found her,",
+  "s_unresolved": [
+   "shepherd"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 22,
+  "from": "p140",
+  "old_text": "He returned to and ſaid to him : I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot",
+  "old": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.875,
+   "madueke_b": 0.875
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.3994,
+   0.875,
+   0.5064
+  ],
+  "crop_page": 140,
+  "r3_raw": "is the woman that sat in the crosse way? Al making answere: There was no harlot in this place. † He returned to Iudas, 21 and said to him: I haue not found her: yea the men also of that place said vnto me, that there never late harlot there. † Iudas said: Let her take it to her, surely she can not charge",
+  "r3_verse": "He returned to Iudas, and said to him: I haue not found her: yea the men also of that place said vnto me, that there never late harlot there.",
+  "arm_conflicts": [
+   "neuer ſate | never late"
+  ],
+  "new_text": "He returned to Iudas, and ſaid to him I haue not found her: yea the men also of that place ſaid vnto me, that there neuer late harlot there.",
+  "s_unresolved": [
+   "also"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 23,
+  "from": "p140",
+  "old_text": "Iudas ſaid : Let her take it to her, ſurely she can not vs with a lye, I ſent the kid which I promiſed: and dideſt not find her.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.4599,
+   0.875,
+   0.5679
+  ],
+  "crop_page": 140,
+  "r3_raw": "of that place said vnto me, that there never late harlot there. † Iudas said: Let her take it to her, surely she can not charge vs with a lye, I sent the kid which I promised: and thou didest not find her. † And behold after three moneths they told Iudas, laying: Thamar thy daughter in law hath played",
+  "r3_verse": "Iudas said: Let her take it to her, surely she can not charge vs with a lye, I sent the kid which I promised: and thou didest not find her.",
+  "arm_conflicts": [],
+  "new_text": "Iudas ſaid Let her take it to her, ſurely she can not charge vs with a lye, I ſent the kid which I promiſed: and thou dideſt not find her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p140",
+  "old_text": "And behold after three moneths told Iudas, ſaying : Thamar thy daughter in law hath played the harlot, and her bellie ſemeth to ſwel. And Iudas pu- Bring her forth : that she may be burnt.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.4994,
+   0.875,
+   0.6329
+  ],
+  "crop_page": 140,
+  "r3_raw": "vs with a lyce, I sent the kid which I promised: and thou didest not find her. † And behold after three moneths they told Iudas, (saying: Thamar thy daughter in law hath played the harlot, and her bellie semeth to wel. And Iudas said: Bring her forth :: that she may be burnt. † Who when she was led to execution, she sent to her father in law, saying:",
+  "r3_verse": "And behold after three moneths they told Iudas, (saying: Thamar thy daughter in law hath played the harlot, and her bellie semeth to wel. And Iudas said: Bring her forth :: that she may be burnt.",
+  "arm_conflicts": [
+   "ſwel. | wel.",
+   "pu- | said:"
+  ],
+  "lexicon_readings": {
+   "26": "ſaid:"
+  },
+  "visual_readings": {
+   "26": "ſaid:"
+  },
+  "new_text": "And behold after three moneths they told Iudas, ſaying Thamar thy daughter in law hath played the harlot, and her bellie ſemeth to wel. And Iudas ſaid: Bring her forth :: that she may be burnt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "p140",
+  "old_text": "who when was led to execution, she ſent to her ſather in law, ſaying: the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.951,
+   "madueke_b": 0.951
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.5599,
+   0.875,
+   0.6915
+  ],
+  "crop_page": 140,
+  "r3_raw": "the harlot, and her bellie semeth to wel. And Iudas said: Bring her forth :: that she may be burnt. † Who when she was led to execution, she sent to her father in law, saying: By that man, whose these things are, haue I conceaued: looke whose the ring is, and the bracelet, and the staffe. † Who acknowledging the giftes, said: She is iuster then I:",
+  "r3_verse": "Who when she was led to execution, she sent to her father in law, saying: By that man, whose these things are, haue I conceaued: looke whose the ring is, and the bracelet, and the staffe.",
+  "arm_conflicts": [
+   "ſather | father"
+  ],
+  "lexicon_readings": {
+   "11": "father"
+  },
+  "visual_readings": {
+   "11": "father"
+  },
+  "new_text": "who when she was led to execution, she ſent to her father in law, ſaying: By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p140",
+  "old_text": "Who acknowledging the giftes, ſaid : She is iuſter then becauſe I did not geue her to Sela my ſonne. But he knew no more.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.6431,
+   0.875,
+   0.7504
+  ],
+  "crop_page": 140,
+  "r3_raw": "looke whose the ring is, and the bracelet, and the staffe. † Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more. † And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deli-",
+  "r3_verse": "Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more.",
+  "arm_conflicts": [],
+  "new_text": "Who acknowledging the giftes, ſaid She is iuſter then I: becauſe I did not geue her to Sela my ſonne. But he knew her no more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p140",
+  "old_text": "And when she was readie to be brought to there appeared twinnes in her bellie: and in the verie uerie of the infants, one put forth the hand, wherin midwife tyed a ſkarlet ſtring, ſaving :",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.6855,
+   0.875,
+   0.8109
+  ],
+  "crop_page": 140,
+  "r3_raw": "because I did not geue her to Sela my sonne. But he knew her no more. † And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet string, saying: † This shal come forth the former. † But he drawing backe his hand, the o-",
+  "r3_verse": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet string, saying:",
+  "arm_conflicts": [
+   "uerie | deliuerie",
+   "ſaving : | saying:"
+  ],
+  "r2_attested": {
+   "36": "ſaying:"
+  },
+  "visual_readings": {
+   "36": "ſaying:"
+  },
+  "new_text": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet ſtring, ſaying:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p140",
+  "old_text": "This shal forth the former.",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.7425,
+   0.875,
+   0.8304
+  ],
+  "crop_page": 140,
+  "r3_raw": "uerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet string, saying: † This shal come 28 forth the former. † But he drawing backe his hand, the o- ther came forth: and the woman said: Why is the partition",
+  "r3_verse": "This shal come forth the former.",
+  "arm_conflicts": [],
+  "new_text": "This shal come forth the former.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 30,
+  "from": "p140",
+  "old_text": "Afterward his brother came forth, in whoſe hand was ſkarelet ſtring : whom she called Zara.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.956,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   30
+  ],
+  "crop": [
+   0.08,
+   0.826,
+   0.875,
+   0.9181
+  ],
+  "crop_page": 140,
+  "r3_raw": "divided for thee? and for this cause called his name Phares. † Afterward his brother came forth, in whose hand was the 30 skarcel string: whom she called Zara. ANNOC",
+  "r3_verse": "Afterward his brother came forth, in whose hand was the skarcel string: whom she called Zara. ANNOC",
+  "arm_conflicts": [
+   "ſkarelet | the skarcel"
+  ],
+  "new_text": "Afterward his brother came forth, in whoſe hand was the skarcel ſtring whom she called Zara. ANNOC",
+  "s_unresolved": [
+   "skarcel"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.917,
+   "odr_com": 0.906,
+   "sabates_a": 0.911,
+   "madueke_b": 0.911
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p143",
+  "old_text": "And ſawe there the daughter of a man of Chanaan, called this be and taking her to wife, he did companie with her.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.2249,
+   0.875,
+   0.3325
+  ],
+  "crop_page": 143,
+  "r3_raw": "The same time Iudas going downe from his brethren, turned in to a man an Odollamite, named Hiras. And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her. Who conceaued, and bare a sonne, and called his name",
+  "r3_verse": "And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her.",
+  "arm_conflicts": [
+   "this be | Sue:"
+  ],
+  "new_text": "And he ſawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p143",
+  "old_text": "Who conceaued, and bare a ſonne, and called his name",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   3
+  ],
+  "crop": [
+   0.08,
+   0.2876,
+   0.875,
+   0.3504
+  ],
+  "crop_page": 143,
+  "r3_raw": "Sue: and taking her to wife, he did companie with her. 3 † Who conceaued, and bare a sonne, and called his name borne of Her. † And conceauing a childe againe, she called her sonne genealog",
+  "r3_verse": "Who conceaued, and bare a sonne, and called his name borne of Her.",
+  "arm_conflicts": [],
+  "new_text": "Who conceaued, and bare a ſonne, and called his name borne of Her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p143",
+  "old_text": "And conceauing a childe againe, ſhe called her ſonne he was borne, Onan.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3081,
+   0.875,
+   0.3936
+  ],
+  "crop_page": 143,
+  "r3_raw": "3 † Who conceaued, and bare a sonne, and called his name 4 Her. † And conceauing a childe againe, she called her sonne 5 after he was borne, Onan. † She bare also the third: whom the called Sela. after whose birth, she ceased to beare any",
+  "r3_verse": "And conceauing a childe againe, she called her sonne after he was borne, Onan.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "9": "after"
+  },
+  "visual_readings": {
+   "9": "after"
+  },
+  "new_text": "And conceauing a childe againe, ſhe called her ſonne after he was borne, Onan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p143",
+  "old_text": "She bare alſo the third whom called Sela after whoſe birth, ſhe ceaſed to beare any res.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.3292,
+   0.875,
+   0.4147
+  ],
+  "crop_page": 143,
+  "r3_raw": "4 Her. † And conceauing a childe againe, she called her sonne genealog. 5 after he was borne, Onan. † She bare also the third: whom Iudas & N. the called Sela. after whose birth, she ceased to beare any res. Mat. 6 more. † And Iudas gaue a wife to Her his first begotten,",
+  "r3_verse": "She bare also the third: whom Iudas & the called Sela. after whose birth, she ceased to beare any res. Mat. more.",
+  "arm_conflicts": [],
+  "new_text": "She bare alſo the third whom Iudas & the called Sela after whoſe birth, ſhe ceaſed to beare any res. Mat. more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p143",
+  "old_text": "And Iudas gaue a wife to Her his firſt begotten, Thamar.",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.3711,
+   0.875,
+   0.457
+  ],
+  "crop_page": 143,
+  "r3_raw": "the called Sela after whose birth, she ceased to beare any more. † And Iudas gaue a wife to Her his first begotten, named Thamar. † Also Her the first begotten of Iudas, was wicked in the sight of our Lord: and was slaine of him.",
+  "r3_verse": "And Iudas gaue a wife to Her his first begotten, named Thamar.",
+  "arm_conflicts": [],
+  "new_text": "And Iudas gaue a wife to Her his firſt begotten, named Thamar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "p143",
+  "old_text": "He knowing that the chilſould not be borne to himſelfe, companying with his wife, ſhed his ſeede vpon the ground, leſt children be borne in his brothers name.",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.86,
+   "madueke_b": 0.86
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.4764,
+   0.875,
+   0.6042
+  ],
+  "crop_page": 143,
+  "r3_raw": "thy brothers wife, and be joyned to her, that thou mayest rayse seede to thy brother. † He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſhed his seede vpon the ground, left children might be borne in his brothers name. † And therfore our Lord stroke him, because he did a detestable thing. † For",
+  "r3_verse": "He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſhed his seede vpon the ground, left children might be borne in his brothers name.",
+  "arm_conflicts": [
+   "chilſould | children should",
+   "leſt | left"
+  ],
+  "r2_attested": {
+   "5": "ſhould"
+  },
+  "visual_readings": {
+   "5": "ſhould"
+  },
+  "new_text": "He knowing that the children ſhould not be borne to himſelfe, companying with his brothers wife, ſhed his ſeede vpon the ground, left children might be borne in his brothers name.",
+  "s_unresolved": [
+   "left"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p143",
+  "old_text": "And therfore our ſtroke him, becauſe he did a deteſtable thing.",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.5384,
+   0.875,
+   0.6253
+  ],
+  "crop_page": 143,
+  "r3_raw": "brothers wife, ſhed his seede vpon the ground, leſt children might be borne in his brothers name. † And therfore our Lord stroke him, because he did a detestable thing. † For the which cause Iudas said to Thamar his daughter in lawe:",
+  "r3_verse": "And therfore our Lord stroke him, because he did a detestable thing.",
+  "arm_conflicts": [],
+  "new_text": "And therfore our Lord ſtroke him, becauſe he did a deteſtable thing.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p143",
+  "old_text": "For which cauſe Iudas ſaid to Thamar his daughter in lawe: a widowe in thy fathers houſe, til Sela my ſonne growe for he feared leſt he alſo might dye, as his brethren. Who her way and dwelt in her fathers houſe.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.5589,
+   0.875,
+   0.7098
+  ],
+  "crop_page": 143,
+  "r3_raw": "10 might be borne in his brothers name. † And therefore our Lord stroke him, because he did a detestable thing. † For the which cause Iudas said to Thamar his daughter in lawe: Be a widow in thy fathers house, til Sela my sonne growe vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house. † And after many dayes were come and gone: the daughter of Sue the",
+  "r3_verse": "For the which cause Iudas said to Thamar his daughter in lawe: Be a widow in thy fathers house, til Sela my sonne growe vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house.",
+  "arm_conflicts": [
+   "widowe | widow"
+  ],
+  "new_text": "For the which cauſe Iudas ſaid to Thamar his daughter in lawe: Be a widowe in thy fathers houſe, til Sela my ſonne growe vp: for he feared leſt he alſo might dye, as his brethren. Who went her way and dwelt in her fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p143",
+  "old_text": "And after dayes were come and gone the daughter of Sue the of Iudas died who after his mourning hauing receiconſolation, went vp to the ſhearers of his ſheepe, and Hiras his shepheard of his flocke, the Odointo Thamnas.",
+  "old": {
+   "s_dismas": 0.878,
+   "odr_com": 0.878,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.6437,
+   0.875,
+   0.817
+  ],
+  "crop_page": 143,
+  "r3_raw": "vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house. † And after many dayes were come and gone: the daughter of Sue the wife of Iudas died: who after his mourning having received consolation, went vp to the hearers of his sheepe, himselfe and Hiras his shepheard of his flocke, the Odo. lamite,into Thamnas. † And it was told :: Thamar that her :: father in law came vp into Thamnas to sheare his sheepe.",
+  "r3_verse": "And after many dayes were come and gone: the daughter of Sue the wife of Iudas died: who after his mourning having received consolation, went vp to the hearers of his sheepe, himselfe and Hiras his shepheard of his flocke, the Odo. lamite,into Thamnas.",
+  "arm_conflicts": [
+   "hauing receiconſolation, | having received consolation,",
+   "ſhearers | hearers",
+   "Odointo | Odo. lamite,into"
+  ],
+  "r2_attested": {
+   "23": "conſolation,",
+   "32": "himſelfe"
+  },
+  "visual_readings": {
+   "23": "conſolation,",
+   "32": "himſelfe"
+  },
+  "new_text": "And after many dayes were come and gone the daughter of Sue the wife of Iudas died who after his mourning hauing received conſolation, went vp to the hearers of his ſheepe, himſelfe and Hiras his shepheard of his flocke, the Odo. lamite,into Thamnas.",
+  "s_unresolved": [
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p143",
+  "old_text": "And it was told :: Thamar that her :: in law came vp into Thamnas to sheare his sheepe,",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7477,
+   0.875,
+   0.8355
+  ],
+  "crop_page": 143,
+  "r3_raw": "himselfe and Hiras his shepheard of his flocke, the Odo- lamite,into Thamnas. † And it was told :: Thamar that her :: Thama father in law came vp into Thamnas to sheare his sheepe. † Who putting of the garments of her widowhood, tooke",
+  "r3_verse": "And it was told :: Thamar that her :: Thama father in law came vp into Thamnas to sheare his sheepe.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "10": "father"
+  },
+  "visual_readings": {
+   "10": "father"
+  },
+  "new_text": "And it was told :: Thamar that her :: Thama father in law came vp into Thamnas to sheare his sheepe,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p143",
+  "old_text": "Who puttingof the garments of her widowhood, tooke to vcile and changing her habite, ſate in the croſſe way, that ther to Thamnas becauſe Sela was growne, and she had age. taken him to her huſband.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.933,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.7899,
+   0.875,
+   0.9342
+  ],
+  "crop_page": 143,
+  "r3_raw": "father in law came vp into Thamnas to sheare his sheepe. Who putting of the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way, that leadeth to Thamnas: because Sela was growne, and she had not taken him to her husband. Whom when Iudas had seene,",
+  "r3_verse": "Who putting of the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way, that leadeth to Thamnas: because Sela was growne, and she had not taken him to her husband.",
+  "arm_conflicts": [
+   "puttingof | putting of",
+   "to vcile | a veile:",
+   "ther | leadeth",
+   "age. | not"
+  ],
+  "new_text": "Who putting of the garments of her widowhood, tooke a veile: and changing her habite, ſate in the croſſe way, that leadeth to Thamnas becauſe Sela was growne, and she had not taken him to her huſband.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "chapter",
+  "old_text": "Whom when Iudas had ſeene, he ſuppoſed her to be an harlot for she had har- her face, leſt she should be knowen.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0081,
+   0.875,
+   0.1084
+  ],
+  "crop_page": 144,
+  "crop_leaves": [
+   143,
+   144
+  ],
+  "r3_raw": "leadeth to Thamnas: because Sela was growne, and she had if not taken him to her husband. † Whom when Iudas had seene, GENESIS. scene, he supposed her to be an harlot: for she had couered her face, leſt she should be knownen. † And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt",
+  "r3_verse": "Whom when Iudas had seene, scene, he supposed her to be an harlot: for she had couered her face, leſt she should be knownen.",
+  "arm_conflicts": [
+   "har- | couered",
+   "knowen. | knownen."
+  ],
+  "new_text": "Whom when Iudas had ſeene, scene, he ſuppoſed her to be an harlot for she had couered her face, leſt she should be knownen.",
+  "s_unresolved": [
+   "scene,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p144",
+  "old_text": "And going li her, he ſaid: Suffer me to lye with thee : for he knew & not to be his daughter in law. Who anſwering : What thou geue me that thou maieſt enioy my companie:",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.0305,
+   0.875,
+   0.1632
+  ],
+  "crop_page": 144,
+  "r3_raw": "scene, he supposed her to be an harlot: for she had covered her face, lest she should be knownen. † And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou geue me that thou maiest enjoy my companie? † He said: I wil send thee a kid out of the flockes. And when she",
+  "r3_verse": "And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou geue me that thou maiest enjoy my companie?",
+  "arm_conflicts": [
+   "li | vnto",
+   "& | her",
+   "enioy | enjoy",
+   "companie: | companie?"
+  ],
+  "new_text": "And going vnto her, he ſaid: Suffer me to lye with thee for he knew her not to be his daughter in law. Who anſwering What wilt thou geue me that thou maieſt enioy my companie:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p144",
+  "old_text": "ſaid : I wil ſend thee a kid out of the flockes. And when ſaid againe : I wil ſuffer that thou wilt, if thou geue pledge, til thou ſend that which thou doeſt promiſe:",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   17
+  ],
+  "crop": [
+   0.08,
+   0.1143,
+   0.8782,
+   0.225
+  ],
+  "crop_page": 144,
+  "r3_raw": "cont. Faust. thou geue me that thou maiest enjoy my companie? † He said: I wil send thee a kid out of the flockes. And when he said againe: I wil suffer that thou wilt, if thou geue me a pledge, til thou send that which thou doest promise; † Iudas said: What wilt thou to be geuen thee for a pledge?",
+  "r3_verse": "He said: I wil send thee a kid out of the flockes. And when he said againe: I wil suffer that thou wilt, if thou geue me a pledge, til thou send that which thou doest promise;",
+  "arm_conflicts": [],
+  "new_text": "He ſaid I wil ſend thee a kid out of the flockes. And when he ſaid againe I wil ſuffer that thou wilt, if thou geue me a pledge, til thou ſend that which thou doeſt promiſe:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p144",
+  "old_text": "Iudas ſaid : What wilt thou to be geuen thee for a pledge She anſwered : Thy ring, and bracelet, and ſtaffe thou holdeſt in thy hand. The woman therfore by companying conceaued,",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.178,
+   0.875,
+   0.3101
+  ],
+  "crop_page": 144,
+  "r3_raw": "pledge, til thou send that which thou doest promise; † Iudas said: What wilt thou to be geuen thee for a pledge? She answered: Thy ring, and bracelet, and staffe which thou holdest in thy hand. The woman therefore by once companying conceaued, † and rising the went her way: and putting of the apparel which she had taken, put on the gar-",
+  "r3_verse": "Iudas said: What wilt thou to be geuen thee for a pledge? She answered: Thy ring, and bracelet, and staffe which thou holdest in thy hand. The woman therefore by once companying conceaued,",
+  "arm_conflicts": [
+   "pledge | pledge?",
+   "therfore | therefore"
+  ],
+  "new_text": "Iudas ſaid What wilt thou to be geuen thee for a pledge She anſwered Thy ring, and bracelet, and ſtaffe which thou holdeſt in thy hand. The woman therefore by once companying conceaued,",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p144",
+  "old_text": "and riſing ſhe went her way : putting of the apparel which ine had taken, put on the ments of her widowhood.",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.2437,
+   0.875,
+   0.351
+  ],
+  "crop_page": 144,
+  "r3_raw": "thou holdest in thy hand. The woman therefore by once companying conceaued, † and rising she went her way: and putting of the apparel which she had taken, put on the garments of her widowhood. † And Iudas sent a kid by his shepherd the Odolamite, that he might receiue the pledge",
+  "r3_verse": "and rising she went her way: and putting of the apparel which she had taken, put on the garments of her widowhood.",
+  "arm_conflicts": [
+   ": | and",
+   "ine | she",
+   "ments | garments"
+  ],
+  "new_text": "and riſing ſhe went her way and putting of the apparel which she had taken, put on the garments of her widowhood.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p144",
+  "old_text": "And Iudas ſent a kid by shephard the Odolamite, that he might receiue the againe, which he had geuen to the woman : who when had not found her,",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2843,
+   0.875,
+   0.4144
+  ],
+  "crop_page": 144,
+  "r3_raw": "putting of the apparel which she had taken, put on the garments of her widowhood. † And Iudas sent a kid by his shepherd the Odolamite, that he might receive the pledge againe, which he had geuen unto the woman: who when he had not found her, † he asked the men of that place: Where is the woman that sate in the crosse way? Al making answere:",
+  "r3_verse": "And Iudas sent a kid by his shepherd the Odolamite, that he might receive the pledge againe, which he had geuen unto the woman: who when he had not found her,",
+  "arm_conflicts": [
+   "shephard | his shepherd",
+   "receiue | receive",
+   "to | unto"
+  ],
+  "new_text": "And Iudas ſent a kid by his shepherd the Odolamite, that he might receiue the pledge againe, which he had geuen unto the woman who when he had not found her,",
+  "s_unresolved": [
+   "shepherd"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 22,
+  "from": "p144",
+  "old_text": "He returned to and ſaid to him: I haue not found her: yea the men of that place ſaid vnto me, that there neuer ſate harlot",
+  "old": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.875,
+   "madueke_b": 0.875
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.3899,
+   0.875,
+   0.4966
+  ],
+  "crop_page": 144,
+  "r3_raw": "is the woman that sate in the crosse way? Al making answere: There was no harlot in this place. † He returned to Iudas, and said to him: I haue not found her: yea the men also of that place said vnto me, that there never sate harlot there. † Iudas said: Let her take it to her, surely she can not charge",
+  "r3_verse": "He returned to Iudas, and said to him: I haue not found her: yea the men also of that place said vnto me, that there never sate harlot there.",
+  "arm_conflicts": [
+   "neuer | never"
+  ],
+  "new_text": "He returned to Iudas, and ſaid to him: I haue not found her: yea the men also of that place ſaid vnto me, that there neuer ſate harlot there.",
+  "s_unresolved": [
+   "also"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 23,
+  "from": "p144",
+  "old_text": "Iudas ſaid : Let her take it to her, ſurely she can not vs with a lye, I ſent the kid which I promiſed : and dideſt not find her.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.4533,
+   0.875,
+   0.5609
+  ],
+  "crop_page": 144,
+  "r3_raw": "of that place said vnto me, that there never sate harlot there. † Iudas said: Let her take it to her, surely she can not charge vs with a lye, I sent the kid which I promised: and thou didest not find her. † And behold after three moneths they told Iudas, saying: Thamar thy daughter in law hath played",
+  "r3_verse": "Iudas said: Let her take it to her, surely she can not charge vs with a lye, I sent the kid which I promised: and thou didest not find her.",
+  "arm_conflicts": [],
+  "new_text": "Iudas ſaid Let her take it to her, ſurely she can not charge vs with a lye, I ſent the kid which I promiſed and thou dideſt not find her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p144",
+  "old_text": "And behold after three moneths told Iudas, ſaying : Thamar thy daughter in law hath the harlot, and her bellie ſemeth to ſwel. And Iudas pu- Bring her forth :: that she may be burnt.",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.4942,
+   0.875,
+   0.6306
+  ],
+  "crop_page": 144,
+  "r3_raw": "vs with a lye, I sent the kid which I promised: and thou didest not find her. † And behold after three moneths they told Iudas, saying: Thamar thy daughter in law hath played the harlot, and her bellie semeth to ſwel. And Iudas said: Bring her forth:: that she may be burnt. † Who when she was led to execution, she sent to her father in law, saying:",
+  "r3_verse": "And behold after three moneths they told Iudas, saying: Thamar thy daughter in law hath played the harlot, and her bellie semeth to ſwel. And Iudas said: Bring her forth:: that she may be burnt.",
+  "arm_conflicts": [
+   "pu- | said:"
+  ],
+  "lexicon_readings": {
+   "26": "ſaid:"
+  },
+  "visual_readings": {
+   "26": "ſaid:"
+  },
+  "new_text": "And behold after three moneths they told Iudas, ſaying Thamar thy daughter in law hath played the harlot, and her bellie ſemeth to ſwel. And Iudas ſaid: Bring her forth that she may be burnt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "p144",
+  "old_text": "Who when was led to execution, she ſent to her father in law, ſaying the By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.5576,
+   0.875,
+   0.6877
+  ],
+  "crop_page": 144,
+  "r3_raw": "the harlot, and her bellie semeth to swel. And Iudas said: Bring her forth :: that she may be burnt. † Who when she was led to execution, she sent to her father in law, saying: By that man, whose these things are, haue I conceaued: looke whose the ring is, and the bracelet, and the staffe. † Who acknowledging the giftes, said: She is iuster then I:",
+  "r3_verse": "Who when she was led to execution, she sent to her father in law, saying: By that man, whose these things are, haue I conceaued: looke whose the ring is, and the bracelet, and the staffe.",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "35": "ſtaffe."
+  },
+  "visual_readings": {
+   "35": "ſtaffe."
+  },
+  "new_text": "Who when she was led to execution, she ſent to her father in law, ſaying By that man, whoſe theſe things are, haue I conceaued: looke whoſe the ring is, and the bracelet, and the ſtaffe.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 26,
+  "from": "p144",
+  "old_text": "Who acknowledging the giftes, ſaid : She is iuſter then becauſe I did not geue her to Sela my ſonne. But he knew no more.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.6427,
+   0.875,
+   0.7494
+  ],
+  "crop_page": 144,
+  "r3_raw": "looke whose the ring is, and the bracelet, and the staffe. † Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more. † And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deli-",
+  "r3_verse": "Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more.",
+  "arm_conflicts": [],
+  "new_text": "Who acknowledging the giftes, ſaid She is iuſter then I: becauſe I did not geue her to Sela my ſonne. But he knew her no more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "p144",
+  "old_text": "And when she was readie to be brought to there appeared twinnes in her bellie: and in the verie uerie of the infants, one put forth the hand, wherin midwife tyed a ſkarlet ſtring, ſaying :",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.6853,
+   0.875,
+   0.8144
+  ],
+  "crop_page": 144,
+  "r3_raw": "because I did not geue her to Sela my sonne. But he knew her no more. † And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet string, saying: † This shal come forth the former. † But he drawing backe his hand, the o-",
+  "r3_verse": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet string, saying:",
+  "arm_conflicts": [
+   "uerie | deliuerie"
+  ],
+  "new_text": "And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deliuerie of the infants, one put forth the hand, wherin the midwife tyed a ſkarlet ſtring, ſaying",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p144",
+  "old_text": "This shal forth the former.",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.7486,
+   0.875,
+   0.8349
+  ],
+  "crop_page": 144,
+  "r3_raw": "uerie of the infants, one put forth the hand, wherin the midwife tyed a fkarlet string, saying: † This shal come 2 forth the former. † But he drawing backe his hand, the o- ther came forth: and the woman said: Why is the partition",
+  "r3_verse": "This shal come forth the former.",
+  "arm_conflicts": [],
+  "new_text": "This shal come forth the former.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p144",
+  "old_text": "Afterward his brother came forth, in whoſe hand was ſkar eler ſtring : whom she called Zara.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.934,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   30
+  ],
+  "crop": [
+   0.08,
+   0.8325,
+   0.875,
+   0.9309
+  ],
+  "crop_page": 144,
+  "r3_raw": "divided for thee? and for this cause called his name Phares. † Afterward his brother came forth, in whose hand was the 39 ſkarelet string: whom she called Zara. ANN",
+  "r3_verse": "Afterward his brother came forth, in whose hand was the ſkarelet string: whom she called Zara. ANN",
+  "arm_conflicts": [
+   "ſkar eler | the ſkarelet"
+  ],
+  "new_text": "Afterward his brother came forth, in whoſe hand was the ſkarelet ſtring whom she called Zara. ANN",
+  "s_unresolved": [
+   "ſkarelet"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.947,
+   "odr_com": 0.958,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p151",
+  "old_text": "and Zara. THE:ſame time Iudas going downe from his brethren, :: turned in to a man an Odollamite, named Hiras.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.1688,
+   0.875,
+   0.2915
+  ],
+  "crop_page": 151,
+  "r3_raw": "the third with her. 15. But him selfe begetteth of her (taking her for a barlote) two sonnes twinnes, Phares and Zara. The same time Iudas going downe from his brethren, turned in to a man an Odollamite, named Hiras. And he sawe there the daughter of a man of Chanaan, called",
+  "r3_verse": "the third with her. But him selfe begetteth of her (taking her for a barlote) two sonnes twinnes, Phares and Zara. The same time Iudas going downe from his brethren, turned in to a man an Odollamite, named Hiras.",
+  "arm_conflicts": [
+   "THE:ſame | The same"
+  ],
+  "lexicon_readings": {
+   "6": "ſelfe",
+   "12": "for",
+   "16": "ſonnes",
+   "22": "ſame"
+  },
+  "visual_readings": {
+   "6": "ſelfe",
+   "12": "for",
+   "16": "ſonnes",
+   "22": "ſame"
+  },
+  "new_text": "the third with her. But him ſelfe begetteth of her (taking her for a barlote) two ſonnes twinnes, Phares and Zara. The ſame time Iudas going downe from his brethren, turned in to a man an Odollamite, named Hiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p151",
+  "old_text": "And he ſawe there the daughter of a man of Chanaan, called be this Sue and taking her to wife, he did companie with her.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.2288,
+   0.875,
+   0.3337
+  ],
+  "crop_page": 151,
+  "r3_raw": "The same time Iudas going downe from his brethren, turned in to a man an Odollamite, named Hiras. And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her. Who conceaued, and bare a sonne, and called his name",
+  "r3_verse": "And he sawe there the daughter of a man of Chanaan, called Sue: and taking her to wife, he did companie with her.",
+  "arm_conflicts": [],
+  "new_text": "And he ſawe there the daughter of a man of Chanaan, called Sue and taking her to wife, he did companie with her.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "p152",
+  "old_text": "Who acknowledging the giftes, ſaid : She is iuſter then becauſe I did not geue her to Sela my ſonne. But he knew no more.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.6308,
+   0.875,
+   0.7409
+  ],
+  "crop_page": 152,
+  "r3_raw": "looke whose the ring is, and the bracelet, and the staffe. † Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more. † And when she was readie to be brought to bed, there appeared twinnes in her bellie: and in the verie deli-",
+  "r3_verse": "Who acknowledging the giftes, said: She is iuster then I: because I did not geue her to Sela my sonne. But he knew her no more.",
+  "arm_conflicts": [],
+  "new_text": "Who acknowledging the giftes, ſaid She is iuſter then I: becauſe I did not geue her to Sela my ſonne. But he knew her no more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p128",
+  "old_text": "and Zura: yſame time Iudas going downe from his brethren, turned in to a man an Odolamite, named Hiras.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.2332,
+   0.8144,
+   0.3653
+  ],
+  "crop_page": 128,
+  "r3_raw": "third with her. 15. But himselfe legeteth of her (taking her for a harlot) two sonnes twinnes, Phares and Zara: HE (a) same time Iudas going downe from his brethren, turned in to a man an Odolamite, named Hiras. 2. And he saw there the daughter of a man of Chanaan, called Sue:",
+  "r3_verse": "third with her. But himselfe legeteth of her (taking her for a harlot) two sonnes twinnes, Phares and Zara: HE same time Iudas going downe from his brethren, turned in to a man an Odolamite, named Hiras.",
+  "arm_conflicts": [
+   "Zura: yſame | Zara: HE same"
+  ],
+  "lexicon_readings": {
+   "10": "for",
+   "20": "ſame"
+  },
+  "r2_attested": {
+   "4": "himſelfe",
+   "14": "ſonnes"
+  },
+  "visual_readings": {
+   "10": "for",
+   "20": "ſame",
+   "4": "himſelfe",
+   "14": "ſonnes"
+  },
+  "new_text": "third with her. But himſelfe legeteth of her (taking her for a harlot) two ſonnes twinnes, Phares and Zara: HE ſame time Iudas going downe from his brethren, turned in to a man an Odolamite, named Hiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p128",
+  "old_text": "conceauing a child againe, ſhe called her ſonne atter he was Onan.",
+  "old": {
+   "s_dismas": 0.84,
+   "odr_com": 0.84,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.3755,
+   0.8144,
+   0.4527
+  ],
+  "crop_page": 128,
+  "r3_raw": "conceaued, and bare a sonne, and called his name Her. 4. And conceuing a child againe, she called her sonne after he was borne, Onan. 5. She bare also the third, whom she called Sela: after whose birth, she ceased to beare any more. 6. And Iudas gaue a wife to",
+  "r3_verse": "And conceuing a child againe, she called her sonne after he was borne, Onan.",
+  "arm_conflicts": [
+   "conceauing | And conceuing",
+   "atter | after"
+  ],
+  "lexicon_readings": {
+   "9": "after"
+  },
+  "visual_readings": {
+   "9": "after"
+  },
+  "new_text": "And conceuing a child againe, ſhe called her ſonne after he was borne, Onan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.973,
+   "odr_com": 0.973,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p128",
+  "old_text": "She bare alſo the third, whom ſhe called Sela atter birth, ſhe ceaſed to beare any more.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.3931,
+   0.8144,
+   0.471
+  ],
+  "crop_page": 128,
+  "r3_raw": "4. And conceuing a child againe, she called her sonne after he was borne, Onan. 5. She bare also the third, whom she called Sela: after whose birth, she ceased to beare any more. 6. And Iudas gaue a wife to Her his first-begotten, named Thamar. 7. Also Her the first-begotten",
+  "r3_verse": "She bare also the third, whom she called Sela: after whose birth, she ceased to beare any more.",
+  "arm_conflicts": [
+   "atter | after whose"
+  ],
+  "lexicon_readings": {
+   "9": "after"
+  },
+  "r2_attested": {
+   "10": "whoſe"
+  },
+  "visual_readings": {
+   "9": "after",
+   "10": "whoſe"
+  },
+  "new_text": "She bare alſo the third, whom ſhe called Sela after whoſe birth, ſhe ceaſed to beare any more.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p128",
+  "old_text": "And Iudas gaue a wife to firſt.begotten, named Thamar.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.86,
+   "madueke_b": 0.86
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.4113,
+   0.8144,
+   0.4886
+  ],
+  "crop_page": 128,
+  "r3_raw": "borne, Onan. 5. She bare also the third, whom she called Sela: after whose birth, she ceased to beare any more. 6. And Iudas gaue a wife to Her his first-begotten, named Thamar. 7. Also Her the first-begotten of Iudas, was wicked in the sight of our Lord, and was slaine of him.",
+  "r3_verse": "And Iudas gaue a wife to Her his first-begotten, named Thamar.",
+  "arm_conflicts": [
+   "firſt.begotten, | Her his first-begotten,"
+  ],
+  "new_text": "And Iudas gaue a wife to Her his firſt.begotten, named Thamar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p128",
+  "old_text": "Alſo Her the hrſtbegotten was wicked in the ſight orour Lord, and was ilaine ot him.",
+  "old": {
+   "s_dismas": 0.83,
+   "odr_com": 0.83,
+   "sabates_a": 0.822,
+   "madueke_b": 0.822
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.4292,
+   0.8144,
+   0.5072
+  ],
+  "crop_page": 128,
+  "r3_raw": "whose birth, she ceased to bear any more. 6. And Iudas gave a wife to Her his first-begotten, named Thamar. 7. Also Her the first-begotten of Iudas, was wicked in the sight of our Lord, and was slain of him. 8. Iudas therefore said to Onan his sonne: Companie with thy brothers",
+  "r3_verse": "Also Her the first-begotten of Iudas, was wicked in the sight of our Lord, and was slain of him.",
+  "arm_conflicts": [
+   "hrſtbegotten | first-begotten of Iudas,",
+   "orour | of our",
+   "ilaine ot | slain of"
+  ],
+  "new_text": "Alſo Her the first-begotten of Iudas, was wicked in the ſight of our Lord, and was slain of him.",
+  "s_unresolved": [
+   "first-begotten",
+   "slain"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p128",
+  "old_text": "thertore ſaid to Onan his ſonne: Companie with thy brothers and be ioyned to her, that thou mayeſt rayſe ſeed to thy bro.",
+  "old": {
+   "s_dismas": 0.873,
+   "odr_com": 0.873,
+   "sabates_a": 0.866,
+   "madueke_b": 0.866
+  },
+  "neighbours": [
+   8
+  ],
+  "crop": [
+   0.155,
+   0.4644,
+   0.8144,
+   0.5444
+  ],
+  "crop_page": 128,
+  "r3_raw": "of Iudas, was wicked in the sight of our Lord, and was slain of him. 8. Iudas therefore said to Onan his sonne: Companie with thy brothers wife, and be joyned to her, that thou mayest \" rayfe seed to thy brother. 9. He knowing that the children should not be borne to himselfe,",
+  "r3_verse": "Iudas therefore said to Onan his sonne: Companie with thy brothers wife, and be joyned to her, that thou mayest \" rayfe seed to thy brother.",
+  "arm_conflicts": [
+   "thertore | Iudas therefore",
+   "ioyned | joyned",
+   "rayſe | \" rayfe",
+   "bro. | brother."
+  ],
+  "new_text": "Iudas therefore ſaid to Onan his ſonne: Companie with thy brothers wife, and be ioyned to her, that thou mayeſt \" rayfe ſeed to thy brother.",
+  "s_unresolved": [
+   "therefore",
+   "wife,",
+   "rayfe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p128",
+  "old_text": "He knowing that the children hould not be botne to himſelfe, with his brothers wite, ſhod his ſeed vpon the ground, leſt inight be borne in ais brothers name.10.And thertore",
+  "old": {
+   "s_dismas": 0.789,
+   "odr_com": 0.789,
+   "sabates_a": 0.774,
+   "madueke_b": 0.774
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.5009,
+   0.8144,
+   0.5964
+  ],
+  "crop_page": 128,
+  "r3_raw": "wife, and be joyned to her, that thou mayest \" rayfe seed to thy brother. 9. He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſhed his seed vpon the ground, lest children might be borne in his brothers name. 10. And therefore our Lord struck him, because he did a detestable thing. 11. For the which",
+  "r3_verse": "He knowing that the children should not be borne to himselfe, companying with his brothers wife, ſhed his seed vpon the ground, lest children might be borne in his brothers name.",
+  "arm_conflicts": [
+   "hould | should",
+   "botne | borne",
+   "wite, ſhod | wife, ſhed",
+   "inight | children might",
+   "ais | his",
+   "name.10.And thertore | name."
+  ],
+  "r2_attested": {
+   "5": "ſhould"
+  },
+  "visual_readings": {
+   "5": "ſhould"
+  },
+  "new_text": "He knowing that the children ſhould not be borne to himſelfe, companying with his brothers wife, ſhed his ſeed vpon the ground, leſt children might be borne in his brothers name.",
+  "s_unresolved": [
+   "wife,",
+   "ſhed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p128",
+  "old_text": "our him, becauſe he did a deteſtable thins.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5374,
+   0.8144,
+   0.6147
+  ],
+  "crop_page": 128,
+  "r3_raw": "companying with his brothers wife, shed his seed vpon the ground, lest children might be borne in his brothers name. 10. And therefore our Lord struck him, because he did a detestable thing. 11. For the which cause Iudas said to Thamar his daughter in law: Be a widow in thy fa-",
+  "r3_verse": "And therefore our Lord struck him, because he did a detestable thing.",
+  "arm_conflicts": [
+   "thins. | thing."
+  ],
+  "r2_attested": {
+   "4": "ſtruck"
+  },
+  "visual_readings": {
+   "4": "ſtruck"
+  },
+  "new_text": "And therefore our Lord ſtruck him, becauſe he did a deteſtable thing.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p128",
+  "old_text": "For the which ſaid to Thamar his daughter in law Be a widow in thy fatil Sela my ſonne grow vp: for he feared leſt he alſo might his brethren. Who went her way aud dwelt in her fathers",
+  "old": {
+   "s_dismas": 0.815,
+   "odr_com": 0.815,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5543,
+   0.8144,
+   0.6681
+  ],
+  "crop_page": 128,
+  "r3_raw": "children might be borne in his brothers name. 10. And therefore our Lord struck him, because he did a detestable thing. 11. For the which cause Iudas said to Thamar his daughter in law: Be a widow in thy fathers house, til Sela my sonne grow vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house. 12. And after many dayes were come and gone, the daughter",
+  "r3_verse": "For the which cause Iudas said to Thamar his daughter in law: Be a widow in thy fathers house, til Sela my sonne grow vp: for he feared lest he also might dye, as his brethren. Who went her way and dwelt in her fathers house.",
+  "arm_conflicts": [
+   "fatil | fathers house, til",
+   "aud | and"
+  ],
+  "r2_attested": {
+   "3": "cauſe",
+   "18": "houſe,",
+   "45": "houſe."
+  },
+  "visual_readings": {
+   "3": "cauſe",
+   "18": "houſe,",
+   "45": "houſe."
+  },
+  "new_text": "For the which cauſe Iudas ſaid to Thamar his daughter in law Be a widow in thy fathers houſe, til Sela my ſonne grow vp: for he feared leſt he alſo might dye, as his brethren. Who went her way and dwelt in her fathers houſe.",
+  "s_unresolved": [
+   "fathers"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p128",
+  "old_text": "And after many dayes were come and gone, the daughter the wite ot Iudas died. Who after his mourniug hauing receiwent vp to the thearers of his ſheep, hifelfe and his ſhepheard of his flocke the Odolamte into Thamnas.",
+  "old": {
+   "s_dismas": 0.849,
+   "odr_com": 0.849,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "neighbours": [
+   12
+  ],
+  "crop": [
+   0.155,
+   0.6266,
+   0.8144,
+   0.7387
+  ],
+  "crop_page": 128,
+  "r3_raw": "dye, as his brethren. Who went her way and dwelt in her fathers house. 12. And after many dayes were come and gone, the daughter of Sue the wife of Iudas died. Who after his mourning hauing receiued consolation, went vpto the incarers of his sheep, himselfe and Hiras his shepheard of his flocke, the Odolamite, into Thannas. 13. And it was told (b) Thanatar that her father in law came vp into",
+  "r3_verse": "And after many dayes were come and gone, the daughter of Sue the wife of Iudas died. Who after his mourning hauing receiued consolation, went vpto the incarers of his sheep, himselfe and Hiras his shepheard of his flocke, the Odolamite, into Thannas.",
+  "arm_conflicts": [
+   "wite ot | wife of",
+   "mourniug | mourning",
+   "receiwent vp to | receiued consolation, went vpto",
+   "thearers | incarers",
+   "hifelfe | himselfe",
+   "Odolamte | Odolamite,",
+   "Thamnas. | Thannas."
+  ],
+  "r2_attested": {
+   "23": "conſolation,",
+   "31": "himſelfe"
+  },
+  "visual_readings": {
+   "23": "conſolation,",
+   "31": "himſelfe"
+  },
+  "new_text": "And after many dayes were come and gone, the daughter of Sue the wife of Iudas died. Who after his mourning hauing receiued conſolation, went vpto the incarers of his ſheep, himſelfe and Hiras his ſhepheard of his flocke the Odolamite, into Thannas.",
+  "s_unresolved": [
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p128",
+  "old_text": "it was told Thamiar that her father in law came vp into to ſheare his ſheep.",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.6983,
+   0.8144,
+   0.7748
+  ],
+  "crop_page": 128,
+  "r3_raw": "Hiras his shepheard of his flocke, the Odolamite, into Thammas. 13. And it was told (b) Tamar that her father in law came vp into Thammas to sheare his sheep. 14. Who putting off the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse",
+  "r3_verse": "And it was told Tamar that her father in law came vp into Thammas to sheare his sheep.",
+  "arm_conflicts": [
+   "Thamiar | Tamar"
+  ],
+  "new_text": "And it was told Tamar that her father in law came vp into Thammas to ſheare his ſheep.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.966,
+   "odr_com": 0.966,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p128",
+  "old_text": "Who putting off the garments of her tooke a veile: and changing her habite, ſate in the croſſe leadeth to Thamnas: becauſe Scla was growue, and ſhe had him to her huſband.",
+  "old": {
+   "s_dismas": 0.821,
+   "odr_com": 0.835,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.7148,
+   0.8144,
+   0.8272
+  ],
+  "crop_page": 128,
+  "r3_raw": "13. And it was told (b) Thaniar that her father in law came vp into Thamnas to sheare his sheep. 14. Who putting off the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way that leadeth to Thamnas: because Scla was growne, and she had not taken him to her husband. 15. Whom when Iudas had seen, he supposed her to be an hariot: for he had couered her face, lest she",
+  "r3_verse": "Who putting off the garments of her widowhood, tooke a veile: and changing her habite, sate in the crosse way that leadeth to Thamnas: because Scla was growne, and she had not taken him to her husband.",
+  "arm_conflicts": [
+   "growue, | growne,"
+  ],
+  "new_text": "Who putting off the garments of her widowhood, tooke a veile: and changing her habite, ſate in the croſſe way that leadeth to Thamnas: becauſe Scla was growne, and ſhe had not taken him to her huſband.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.99,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p128",
+  "old_text": "Whom when Iudas had ſeeu, he her to be an hariot for ine had couered her face, leſt ſhe be knowen.",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.804,
+   "madueke_b": 0.804
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.7682,
+   0.8144,
+   0.8655
+  ],
+  "crop_page": 128,
+  "r3_raw": "way that leadeth to Thamnas: because Scla was growne, and she had not taken him to her husband. 15. Whom when Iudas had seen, he supposed her to be an hariot: for she had couered her face, lest she should be knownen. 16. And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who an-",
+  "r3_verse": "Whom when Iudas had seen, he supposed her to be an hariot: for she had couered her face, lest she should be knownen.",
+  "arm_conflicts": [
+   "ſeeu, | seen,",
+   "ine | she",
+   "knowen. | knownen."
+  ],
+  "r2_attested": {
+   "6": "ſuppoſed",
+   "20": "ſhould"
+  },
+  "visual_readings": {
+   "6": "ſuppoſed",
+   "20": "ſhould"
+  },
+  "new_text": "Whom when Iudas had seen, he ſuppoſed her to be an hariot for she had couered her face, leſt ſhe ſhould be knownen.",
+  "s_unresolved": [
+   "seen,",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.973,
+   "odr_com": 0.973,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p128",
+  "old_text": "And going vnto her, he ſaid: Sutter me to lye tor he kncw her not to be his daughter in law. Who anWhat wilt thou giue me that thou maieſt copa",
+  "old": {
+   "s_dismas": 0.795,
+   "odr_com": 0.795,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.8047,
+   0.8144,
+   0.9009
+  ],
+  "crop_page": 128,
+  "r3_raw": "supposed her to be an hariot: for she had couered her face, leſt she should be knownen. 16. And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou giue me that thou maieſt enice my companie? 17. He ſaid; I wil send thee a kid out of the flockes. And when she said",
+  "r3_verse": "And going vnto her, he said: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou giue me that thou maieſt enice my companie?",
+  "arm_conflicts": [
+   "Sutter | Suffer",
+   "tor | with thee: for",
+   "kncw | knew",
+   "anWhat | answering: What",
+   "copa | enice my companie?"
+  ],
+  "lexicon_readings": {
+   "12": "for"
+  },
+  "visual_readings": {
+   "12": "for"
+  },
+  "new_text": "And going vnto her, he ſaid: Suffer me to lye with thee: for he knew her not to be his daughter in law. Who answering: What wilt thou giue me that thou maieſt enice my companie?",
+  "s_unresolved": [
+   "Suffer",
+   "answering:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "chapter",
+  "old_text": "ſaid I wil ſend thee a kid out ot the flockes. Andwhen ie ſaid I wil ſuffer that thou wilt, it thou giue ine a plodge, til thou II2 Toſeph. ſend that which thou doeſt promiſe",
+  "old": {
+   "s_dismas": 0.829,
+   "odr_com": 0.829,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.0527,
+   0.885,
+   0.1408
+  ],
+  "crop_page": 129,
+  "r3_raw": "send that which thou doest promise; 13. Iudas said: What wilt thou to be giuen thee for a pledge? She answered: Thy ring, and bracelet, and",
+  "r3_verse": "ſaid I wil ſend thee a kid out ot the flockes. Andwhen ie ſaid I wil ſuffer that thou wilt, it thou giue ine a plodge, til thou II2 Toſeph. send that which thou doest promise;",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "ſaid I wil ſend thee a kid out ot the flockes. Andwhen ie ſaid I wil ſuffer that thou wilt, it thou giue ine a plodge, til thou II2 Toſeph. ſend that which thou doeſt promiſe",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.829,
+   "odr_com": 0.829,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

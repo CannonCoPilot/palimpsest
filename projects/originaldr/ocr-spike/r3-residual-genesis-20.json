@@ -1,0 +1,1581 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "And Abimelech called called alſo for Abraham, and ſaid to him: What haſt thou to vs what haue we offended againſt thee, that thou bur brought vpon me and vpon my kingdom a great ſinne? Ii. which thou oughteſt not to doe, thou haſt done to vs.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   9
+  ],
+  "crop": [
+   0.08,
+   0.0347,
+   0.875,
+   0.1676
+  ],
+  "crop_page": 92,
+  "crop_leaves": [
+   91,
+   92
+  ],
+  "r3_raw": "called al his seruantes: and he spake al these words to their cares, and al the men were sore afraid. † And Abimelech called also for Abraham, and said to him: What haft thou done to vs? what haue we offended against thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughtest not to doe, thou haſt done to vs. † And again expostulating, he said: What saweft thou, that thou",
+  "r3_verse": "And Abimelech called also for Abraham, and said to him: What haft thou done to vs? what haue we offended against thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughtest not to doe, thou haſt done to vs.",
+  "arm_conflicts": [
+   "haſt | haft",
+   "vs | vs?",
+   "bur | haſt",
+   "Ii. | that"
+  ],
+  "lexicon_readings": {
+   "11": "haſt",
+   "24": "haſt"
+  },
+  "visual_readings": {
+   "11": "haſt",
+   "24": "haſt"
+  },
+  "new_text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done to vs what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughteſt not to doe, thou haſt done to vs.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 10,
+  "from": "p92",
+  "old_text": "again expoſtulating, he ſaid What ſaweſt thou, that 1dideſt de this",
+  "old": {
+   "s_dismas": 0.829,
+   "odr_com": 0.829,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.1211,
+   0.875,
+   0.2181
+  ],
+  "crop_page": 92,
+  "r3_raw": "which thou oughtest not to doe, thou hast done to vs. † And again expostulating, he said: What sawest thou, that thou didest this? † Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place:",
+  "r3_verse": "And again expostulating, he said: What sawest thou, that thou didest this?",
+  "arm_conflicts": [
+   "1dideſt de this | thou didest this?"
+  ],
+  "new_text": "And again expoſtulating, he ſaid What ſaweſt thou, that thou 1dideſt this",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p92",
+  "old_text": "Abraham auſwered I thought with my ſaying: Perhaps there is not the feare of God in this of and they wil kil me for my wife:",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1408,
+   0.875,
+   0.2491
+  ],
+  "crop_page": 92,
+  "r3_raw": "again expostulating, he said: What sawest thou, that thou didest this? † Abraham answered: I thought with myselfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife: † howbeit otherwile also in verie deed she is my sister,: the daughter of my father, and",
+  "r3_verse": "Abraham answered: I thought with myselfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+  "arm_conflicts": [
+   "auſwered | answered:",
+   "my | myselfe,",
+   "of | place:"
+  ],
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "1": "anſwered:"
+  },
+  "new_text": "Abraham anſwered: I thought with myselfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+  "s_unresolved": [
+   "myselfe,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p92",
+  "old_text": "howbeit otherwiſe eſte in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, and I tooke her to Andafter",
+  "old": {
+   "s_dismas": 0.898,
+   "odr_com": 0.898,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.1803,
+   0.875,
+   0.3106
+  ],
+  "crop_page": 92,
+  "r3_raw": "saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife: † howbeit otherwile also in verie deed the is my sister,:: the daughter of my father, and not the daughter of my mother, and I tooke her to wifc. † And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie",
+  "r3_verse": "howbeit otherwile also in verie deed the is my sister,:: the daughter of my father, and not the daughter of my mother, and I tooke her to wifc.",
+  "arm_conflicts": [
+   "otherwiſe eſte | otherwile also",
+   "ſhe | the",
+   "Andafter | wifc."
+  ],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "howbeit otherwile alſo in verie deed the is my ſiſter, the daughter of my father, and not the daughter of my mother, and I tooke her to wifc.",
+  "s_unresolved": [
+   "wifc."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p92",
+  "old_text": "that God brought me out of my fathers houſe, God, ſaid to her This mercie thou ſhalt doe with me In ſub- place, which we shal come vnto, thou ſhalt ſay that I am brother. Therfore",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.838,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.2421,
+   0.875,
+   0.3698
+  ],
+  "crop_page": 92,
+  "r3_raw": "not the daughter of my mother, and I tooke her to wife. † And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother. † Therfore Abimelech :: tooke ſepe & oxen, and seruants, and handmayds, and gaue to Abraham: and resto-",
+  "r3_verse": "And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother.",
+  "arm_conflicts": [
+   "God, | I",
+   "ſub- | euerie"
+  ],
+  "lexicon_readings": {
+   "1": "after"
+  },
+  "visual_readings": {
+   "1": "after"
+  },
+  "new_text": "And after that God brought me out of my fathers houſe, I ſaid to her This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p92",
+  "old_text": "Therfore Abimelech : tooke ſrepe & oxen, ſeruants, and handmayds, and gaue to Abraham: and the red to him Sara his wife,",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.3036,
+   0.875,
+   0.4103
+  ],
+  "crop_page": 92,
+  "r3_raw": "place, which we shal co:ne vnto, thou thalt say that I am thy brother. † Therfore Abimelech :: tooke ſepe & oxen, and seruants, and handwayds, and gaue to Abraham: and restored to him Sara his wife, † and said: The land is before you, dwel whertoever it thal please thee. † And to Sara he laid:",
+  "r3_verse": "Therfore Abimelech :: tooke ſepe & oxen, and seruants, and handwayds, and gaue to Abraham: and restored to him Sara his wife,",
+  "arm_conflicts": [
+   "ſrepe | ſepe",
+   "handmayds, | handwayds,",
+   "the red | restored"
+  ],
+  "lexicon_readings": {
+   "16": "reſtored"
+  },
+  "visual_readings": {
+   "16": "reſtored"
+  },
+  "new_text": "Therfore Abimelech :: tooke ſepe & oxen, and ſeruants, and handwayds, and gaue to Abraham: and reſtored to him Sara his wife,",
+  "s_unresolved": [
+   "ſepe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p92",
+  "old_text": "and ſaid: The land is before dwel wherloeuer it ſhal pleaſe thee.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.3438,
+   0.875,
+   0.4297
+  ],
+  "crop_page": 92,
+  "r3_raw": "servants, and handn'ayds, and gaue to Abraham: and restored to him Sara his wife, † and said: The land is before you, dwel wherloever it (hal please thee.. † And to Sara he laid: Behold I haue geuen thy brother a thousand pecces of sil-",
+  "r3_verse": "and said: The land is before you, dwel wherloever it (hal please thee..",
+  "arm_conflicts": [
+   "wherloeuer | wherloever",
+   "ſhal | (hal"
+  ],
+  "new_text": "and ſaid: The land is before you, dwel wherloeuer it (hal pleaſe thee.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p92",
+  "old_text": "And to Sara he Behold I haue geuen thy brother a thouſand pecces of to uer, this ſhal ſerue thee for a veile of thine eves to al that offer with thee, and whither ſoeuer thou shalt goe, remenber thou waſt taken.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.3648,
+   0.875,
+   0.5116
+  ],
+  "crop_page": 92,
+  "r3_raw": "red to him Sara his wife, † and said: The land is before you, r dwel wherloever it thal please thee. † And to Sara he said: Behold I haue geuen thy brother a thousand peeces of siluer, this ſhal serue thee for a veile of thine eyes to al that are with thee, and whither foever thou shalt goe, remenber also thou wast taken. † And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare chil-",
+  "r3_verse": "And to Sara he said: Behold I haue geuen thy brother a thousand peeces of siluer, this ſhal serue thee for a veile of thine eyes to al that are with thee, and whither foever thou shalt goe, remenber also thou wast taken.",
+  "arm_conflicts": [
+   "pecces | peeces",
+   "to uer, | siluer,",
+   "eves | eyes",
+   "offer | are",
+   "ſoeuer | foever"
+  ],
+  "lexicon_readings": {
+   "4": "ſaid:"
+  },
+  "r2_attested": {
+   "39": "alſo"
+  },
+  "visual_readings": {
+   "4": "ſaid:",
+   "39": "alſo"
+  },
+  "new_text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand pecces of siluer, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither foever thou shalt goe, remenber alſo thou waſt taken.",
+  "s_unresolved": [
+   "siluer,",
+   "foever"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p92",
+  "old_text": "And Abraham praying, God healed melech and his wife, and his handmaids, and they bare Aug dren:",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4467,
+   0.875,
+   0.5537
+  ],
+  "crop_page": 92,
+  "r3_raw": "with thee, and whither soever thou shalt goe, remember also thou wast taken. † And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children: for our Lord had closed vp euerie mattrice of the house of Abimelech for Sara Abrahams wife.",
+  "r3_verse": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+  "arm_conflicts": [
+   "melech | Abimelech",
+   "Aug dren: | children:"
+  ],
+  "new_text": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p92",
+  "old_text": "for our Lord had cloſed vp euerie matrice of the of Abimclech for Sara Abrahams wife.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4806,
+   0.9177,
+   0.9317
+  ],
+  "crop_page": 92,
+  "r3_raw": "thou wert taken. | And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children: for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife. CHAP. XXI. Isaac is borne. 4. circumcised, 8. and weaned. 9. Agar and Ismael are put forth of Abraham's house, 15. but after desolation are nourished, and prosper in the desert. 21. King Abimelech and Abraham make a league confirming it with oath. And our Lord visited Sara, as he had promised: and she conceived and bare a sonne in her old age, at the time that God had forctold her. † And she circumcised his sonne, which Sara bare him, :: Isaac: † and he was an hundred years old: for at this age of his father,",
+  "r3_verse": "for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife. CHAP. XXI. Isaac is borne. circumcised, and weaned. Agar and Ismael are put forth of Abraham's house, but after desolation are nourished, and prosper in the desert. King Abimelech and Abraham make a league confirming it with oath. And our Lord visited Sara, as he had promised: and she conceived and bare a sonne in her old age, at the time that God had forctold her. And she circumcised his sonne, which Sara bare him, :: Isaac: and he was an hundred years old: for at this age of his father,",
+  "arm_conflicts": [
+   "Abimclech | Abimelech"
+  ],
+  "lexicon_readings": {
+   "10": "houſe",
+   "19": "Iſaac",
+   "27": "Iſmael",
+   "30": "forth",
+   "33": "houſe,",
+   "35": "after",
+   "40": "proſper",
+   "43": "deſert.",
+   "63": "promiſed:",
+   "93": "Iſaac:",
+   "101": "for",
+   "107": "father,"
+  },
+  "r2_attested": {
+   "22": "circumciſed,",
+   "58": "viſited",
+   "70": "ſonne",
+   "85": "circumciſed",
+   "87": "ſonne,"
+  },
+  "visual_readings": {
+   "10": "houſe",
+   "19": "Iſaac",
+   "27": "Iſmael",
+   "30": "forth",
+   "33": "houſe,",
+   "35": "after",
+   "40": "proſper",
+   "43": "deſert.",
+   "63": "promiſed:",
+   "93": "Iſaac:",
+   "101": "for",
+   "107": "father,",
+   "22": "circumciſed,",
+   "58": "viſited",
+   "70": "ſonne",
+   "85": "circumciſed",
+   "87": "ſonne,"
+  },
+  "new_text": "for our Lord had cloſed vp euerie matrice of the houſe of Abimelech for Sara Abrahams wife. CHAP. XXI. Iſaac is borne. circumciſed, and weaned. Agar and Iſmael are put forth of Abraham's houſe, but after desolation are nourished, and proſper in the deſert. King Abimelech and Abraham make a league confirming it with oath. And our Lord viſited Sara, as he had promiſed: and she conceived and bare a ſonne in her old age, at the time that God had forctold her. And she circumciſed his ſonne, which Sara bare him, :: Iſaac: and he was an hundred years old: for at this age of his father,",
+  "s_unresolved": [
+   "desolation",
+   "nourished,",
+   "confirming",
+   "she",
+   "forctold",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "chapter",
+  "old_text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou but to vs what haue we offended againſt thee, that thou brought vpon me and vpon my kingdom a great ſmne? Ii. which thou oughteſt not to doe, thou haſt done tovs.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   9
+  ],
+  "crop": [
+   0.08,
+   0.0216,
+   0.875,
+   0.155
+  ],
+  "crop_page": 96,
+  "crop_leaves": [
+   95,
+   96
+  ],
+  "r3_raw": "called al his seruantes: and he spake al these words to their cares, and al the men were sore afraid. † And Abimelech called also for Abraham, and said to him: What hast thou done unto vs? what haue we offended against thee, that thou hast brought vpon me and vpon my kingdom a great sinne? that which thou oughtest not to doe, thou hast done unto vs. † And again expostulating, he said: What sawest thou, that thou",
+  "r3_verse": "And Abimelech called also for Abraham, and said to him: What hast thou done unto vs? what haue we offended against thee, that thou hast brought vpon me and vpon my kingdom a great sinne? that which thou oughtest not to doe, thou hast done unto vs.",
+  "arm_conflicts": [
+   "but to vs | done unto vs?",
+   "ſmne? Ii. | sinne? that",
+   "tovs. | unto vs."
+  ],
+  "lexicon_readings": {
+   "24": "haſt",
+   "34": "ſinne?"
+  },
+  "visual_readings": {
+   "24": "haſt",
+   "34": "ſinne?"
+  },
+  "new_text": "And Abimelech called alſo for Abraham, and ſaid to him: What haſt thou done unto vs what haue we offended againſt thee, that thou haſt brought vpon me and vpon my kingdom a great ſinne? that which thou oughteſt not to doe, thou haſt done unto vs.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p96",
+  "old_text": "again expoſtulating, he ſaid What ſaweſt thou, that dideſt this",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.871,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.1087,
+   0.875,
+   0.1949
+  ],
+  "crop_page": 96,
+  "r3_raw": "which thou oughtest not to doe, thou hast done to vs. † And again expostulating, he said: What sawest thou, that thou didest this? † Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place:",
+  "r3_verse": "And again expostulating, he said: What sawest thou, that thou didest this?",
+  "arm_conflicts": [
+   "this | this?"
+  ],
+  "new_text": "And again expoſtulating, he ſaid What ſaweſt thou, that thou dideſt this",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p96",
+  "old_text": "Abraham auſwered I thought with my de ſaying: Perhaps there is not the feare of God in this of and they wil kil me for my wife:",
+  "old": {
+   "s_dismas": 0.924,
+   "odr_com": 0.924,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1288,
+   0.875,
+   0.2388
+  ],
+  "crop_page": 96,
+  "r3_raw": "again expostulating, he said: What sawest thou, that thou didest this? + Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wise: + howbeit otherwise also in verie deed she is my sister,: the daughter of my father, and",
+  "r3_verse": "Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wise: +",
+  "arm_conflicts": [
+   "auſwered | answered:",
+   "de | selfe,",
+   "of | place:",
+   "wife: | wise: +"
+  ],
+  "lexicon_readings": {
+   "6": "ſelfe,",
+   "26": "wiſe:"
+  },
+  "r2_attested": {
+   "1": "anſwered:"
+  },
+  "visual_readings": {
+   "6": "ſelfe,",
+   "26": "wiſe:",
+   "1": "anſwered:"
+  },
+  "new_text": "Abraham anſwered: I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wiſe: +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.951,
+   "madueke_b": 0.951
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p96",
+  "old_text": "howbeit otherwiſe eſte in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, and I tooke her to",
+  "old": {
+   "s_dismas": 0.905,
+   "odr_com": 0.905,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1721,
+   0.875,
+   0.2794
+  ],
+  "crop_page": 96,
+  "r3_raw": "saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife: † howbeit otherwise also in verie deed she is my sister, :: the daughter of my father, and not the daughter of my mother, and I tooke her to wife. † And after that God brought me out of my fathers house, I",
+  "r3_verse": "howbeit otherwise also in verie deed she is my sister, :: the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+  "arm_conflicts": [
+   "eſte | also"
+  ],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, :: the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+  "s_unresolved": [
+   "wife."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "p96",
+  "old_text": "And after that God brought me out of my fathers houſe, God, ſaid to her: This mercie thou ſhalt doe with me : In ſub- place, which we shal come vnto, thou ſhalt ſay that I am brother.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.2348,
+   0.875,
+   0.3626
+  ],
+  "crop_page": 96,
+  "r3_raw": "not the daughter of my mother, and I tooke her to wife. † And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother. † Therfore Abimelech tooke ſhepe & oxen, and seruants, and handmayds, and gaue to Abraham: and resto-",
+  "r3_verse": "And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother.",
+  "arm_conflicts": [
+   "God, | I",
+   "ſub- | euerie"
+  ],
+  "new_text": "And after that God brought me out of my fathers houſe, I ſaid to her: This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p96",
+  "old_text": "Therfore Abimelech : tooke ſhepe & oxen, ſeruants, and handmayds, and gaue to Abraham: and the red to him Sara his wife,",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.2965,
+   0.875,
+   0.4038
+  ],
+  "crop_page": 96,
+  "r3_raw": "place, which we shal come vnto, thou shalt say that I am thy brother. † Therfore Abimelech :: tooke shepe & oxen, and seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife, † and said: The land is before you, dwel wherſoever it ſhal please thee. † And to Sara he ſaid:",
+  "r3_verse": "Therfore Abimelech :: tooke shepe & oxen, and seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife,",
+  "arm_conflicts": [
+   "the red | restored"
+  ],
+  "lexicon_readings": {
+   "16": "reſtored"
+  },
+  "visual_readings": {
+   "16": "reſtored"
+  },
+  "new_text": "Therfore Abimelech :: tooke ſhepe & oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p96",
+  "old_text": "and ſaid: The land is before dwel wherſoeuer it ſhal pleaſe thee.",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.3387,
+   0.875,
+   0.4266
+  ],
+  "crop_page": 96,
+  "r3_raw": "servuants, and handmayds, and gaue to Abraham: and restored to him Sara his wife, † and said: The land is before you, I dwel wherſoever it ſhal please thee. † And to Sara he ſaid: Behold I haue geuen thy brother a thousand peeces of sil-",
+  "r3_verse": "and said: The land is before you, I dwel wherſoever it ſhal please thee.",
+  "arm_conflicts": [
+   "wherſoeuer | wherſoever"
+  ],
+  "new_text": "and ſaid: The land is before you, I dwel wherſoeuer it ſhal pleaſe thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p96",
+  "old_text": "And to Sara he Behold I haue geuen thy brother a thouſand pecces of to uer, this ſhal ſerue thee for a veile of thine eves to al that offer with thee, and whither ſoeuer thou shalt goe, remenber thou waſt taken.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.3592,
+   0.875,
+   0.5111
+  ],
+  "crop_page": 96,
+  "r3_raw": "red to him Sara his wife, † and said: The land is before you, r, dwel wherfoeuer it thal please thee.. † And to Sara he said: Behold I haue geuen thy brother a thousand peeces of sil- uier, this ſhal serue thee for a veile of thine eyes to al that are with thee, and whither soeuer thou shalt goe, remenber also thou wast taken. † And Abraham praying, God healed Abi- melech and his wife, and his handmaids, and they bare chil-",
+  "r3_verse": "And to Sara he said: Behold I haue geuen thy brother a thousand peeces of sil- uier, this ſhal serue thee for a veile of thine eyes to al that are with thee, and whither soeuer thou shalt goe, remenber also thou wast taken.",
+  "arm_conflicts": [
+   "pecces | peeces",
+   "to uer, | sil- uier,",
+   "eves | eyes",
+   "offer | are"
+  ],
+  "lexicon_readings": {
+   "4": "ſaid:"
+  },
+  "r2_attested": {
+   "15": "ſil-",
+   "40": "alſo"
+  },
+  "visual_readings": {
+   "4": "ſaid:",
+   "15": "ſil-",
+   "40": "alſo"
+  },
+  "new_text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand pecces of ſil- uier, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither ſoeuer thou shalt goe, remenber alſo thou waſt taken.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p96",
+  "old_text": "And Abraham praying, God healed melech and his wife, and his handmaids, and they bare Aug dren",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4437,
+   0.875,
+   0.5533
+  ],
+  "crop_page": 96,
+  "r3_raw": "with thee, and whither soever thou shalt goe, remenber also thou wast taken. † And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children: for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife.",
+  "r3_verse": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+  "arm_conflicts": [
+   "melech | Abimelech",
+   "Aug dren | children:"
+  ],
+  "new_text": "And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare children:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p96",
+  "old_text": "for our Lord had cloſed vp euerie matrice of the of Abimelech for Sara Abrahams wife.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.4836,
+   0.875,
+   0.9388
+  ],
+  "crop_page": 96,
+  "r3_raw": "melech and his wife, and his handmaids, and they bare children: for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife. CHAP. XXI. Isaac is borne. 4. circumcised, 8. and weaned. 9. Agar and Ismael are forth of Abraham's house, 15. but after desolation are nourished, prosper in the desert. 22. King Abimelech and Abraham make league confirming it with oath. And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. † And Abraham called his sonne, which Sara bare him, Isaac: † when he was an hundred yeares old: for at this age of his father,",
+  "r3_verse": "for our Lord had closed vp euerie matrice of the house of Abimelech for Sara Abrahams wife. CHAP. XXI. Isaac is borne. circumcised, and weaned. Agar and Ismael are forth of Abraham's house, but after desolation are nourished, prosper in the desert. King Abimelech and Abraham make league confirming it with oath. And our Lord visited Sara, as he had promised: and fulfilled the things which he spake. And Abraham called his sonne, which Sara bare him, Isaac: when he was an hundred yeares old: for at this age of his father,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "10": "houſe",
+   "19": "Iſaac",
+   "27": "Iſmael",
+   "29": "forth",
+   "32": "houſe,",
+   "34": "after",
+   "38": "proſper",
+   "41": "deſert.",
+   "60": "promiſed:",
+   "77": "Iſaac:",
+   "85": "for",
+   "91": "father,"
+  },
+  "r2_attested": {
+   "22": "circumciſed,",
+   "35": "deſolation",
+   "55": "viſited",
+   "67": "ſpake.",
+   "72": "ſonne,"
+  },
+  "visual_readings": {
+   "10": "houſe",
+   "19": "Iſaac",
+   "27": "Iſmael",
+   "29": "forth",
+   "32": "houſe,",
+   "34": "after",
+   "38": "proſper",
+   "41": "deſert.",
+   "60": "promiſed:",
+   "77": "Iſaac:",
+   "85": "for",
+   "91": "father,",
+   "22": "circumciſed,",
+   "35": "deſolation",
+   "55": "viſited",
+   "67": "ſpake.",
+   "72": "ſonne,"
+  },
+  "new_text": "for our Lord had cloſed vp euerie matrice of the houſe of Abimelech for Sara Abrahams wife. CHAP. XXI. Iſaac is borne. circumciſed, and weaned. Agar and Iſmael are forth of Abraham's houſe, but after deſolation are nourished, proſper in the deſert. King Abimelech and Abraham make league confirming it with oath. And our Lord viſited Sara, as he had promiſed: and fulfilled the things which he ſpake. And Abraham called his ſonne, which Sara bare him, Iſaac: when he was an hundred yeares old: for at this age of his father,",
+  "s_unresolved": [
+   "nourished,",
+   "confirming",
+   "fulfilled"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p102",
+  "old_text": "Abraham anſwered I thought with my ſelfe, de ſaying: Perhaps there is not the feare of God in this place: of and they wil kil me for my wife:",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1288,
+   0.895,
+   0.2444
+  ],
+  "crop_page": 102,
+  "r3_raw": "again expostulating, he said: What sawest thou, that thou didest this? † Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife: † howbeit otherwise also in verie deed she is my sister,: the daughter of my father, and",
+  "r3_verse": "Abraham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+  "arm_conflicts": [],
+  "new_text": "Abraham anſwered I thought with my ſelfe, ſaying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p102",
+  "old_text": "†howbeit otherwiſe alſo eſte- in verie deed ſhe is my ſiſter, the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.1696,
+   0.895,
+   0.2845
+  ],
+  "crop_page": 102,
+  "r3_raw": "saying: Perhaps there is not the feare of God in this place: and they wil kil me for my wife: † howbeit otherwise also 12 in verie deed ſhe is my sister,:: the daughter of my father, and not the daughter of my mother, and I tooke her to wife. † And after that God brought me out of my fathers house, I 13",
+  "r3_verse": "howbeit otherwise also in verie deed ſhe is my sister,:: the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+  "arm_conflicts": [],
+  "new_text": "†howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, and not the daughter of my mother, and I tooke her to wife.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p102",
+  "old_text": "And after that God brought me out ofmy fathers houſe, I God, ſaid to her: This mercie thou ſhalt doe with me : In euerie that I thy ſub- place, which we shal come vnto, thou ſhalt ſay am oxen, and to brother.",
+  "old": {
+   "s_dismas": 0.843,
+   "odr_com": 0.843,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "neighbours": [
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.2292,
+   0.895,
+   0.3638
+  ],
+  "crop_page": 102,
+  "r3_raw": "not the daughter of my mother, and I tooke her to wife. † And after that God brought me out of my fathers house, I 13 said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother. † Therfore Abimelech :: tooke shepe & oxen, and 14 seruants, and handmayds, and gaue to Abraham: and resto-",
+  "r3_verse": "And after that God brought me out of my fathers house, I said to her: This mercie thou shalt doe with me: In euerie place, which we shal come vnto, thou shalt say that I am thy brother. Therfore",
+  "arm_conflicts": [
+   "ofmy | of my",
+   "oxen, and to | thy"
+  ],
+  "lexicon_readings": {
+   "38": "Therfore"
+  },
+  "visual_readings": {
+   "38": "Therfore"
+  },
+  "new_text": "And after that God brought me out of my fathers houſe, I ſaid to her: This mercie thou ſhalt doe with me In euerie place, which we shal come vnto, thou ſhalt ſay that I am thy brother. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p102",
+  "old_text": "Therfore Abimelech tooke ſhepe & reſtoſeruants, and handmayds, and gaue to Abraham : and the red to him Sara his wife,",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.2924,
+   0.895,
+   0.407
+  ],
+  "crop_page": 102,
+  "r3_raw": "place, which we shal come vnto, thou shalt say that I am thy brother. † Therfore Abimelech: tooke shepe & oxen, and 14 seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife, † and said: The land is before you, 15 dwel whersoeuer it shal please thee. † And to Sara he said: 16",
+  "r3_verse": "Therfore Abimelech: tooke shepe & oxen, and seruants, and handmayds, and gaue to Abraham: : and restored red to him Sara his wife,",
+  "arm_conflicts": [
+   "reſtoſeruants, | oxen, and seruants,",
+   "the red | restored"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "16": "reſtored"
+  },
+  "r2_attested": {
+   "7": "ſeruants,"
+  },
+  "visual_readings": {
+   "16": "reſtored",
+   "7": "ſeruants,"
+  },
+  "new_text": "Therfore Abimelech tooke ſhepe & oxen, and ſeruants, and handmayds, and gaue to Abraham : and reſtored red to him Sara his wife,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p102",
+  "old_text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand peeces of ſiluer, this ſhal ſerue thee for a veile of thine eyes to al that are alſo to offer with thee, and whither ſoeuer thou shalt goe, remenber thou waſt taken.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.915,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.3502,
+   0.895,
+   0.5066
+  ],
+  "crop_page": 102,
+  "r3_raw": "red to him Sara his wife, † and said: The land is before you, 15 dwel whersoever it shal please thee. † And to Sara he said: 16 Behold I haue geuen thy brother a thousand peeces of siluer, this shal serue thee for a veile of thine eyes to al that are with thee, and whither soever thou shalt goe, remenber also thou wast taken. † And Abraham praying, God healed Abimelech and his wife, and his handmaids, and they bare chil-",
+  "r3_verse": "And to Sara he said: Behold I haue geuen thy brother a thousand peeces of siluer, this shal serue thee for a veile of thine eyes to al that are with thee, and whither soever thou shalt goe, remenber also thou wast taken.",
+  "arm_conflicts": [
+   "ſoeuer | soever"
+  ],
+  "r2_attested": {
+   "39": "alſo"
+  },
+  "visual_readings": {
+   "39": "alſo"
+  },
+  "new_text": "And to Sara he ſaid: Behold I haue geuen thy brother a thouſand peeces of ſiluer, this ſhal ſerue thee for a veile of thine eyes to al that are with thee, and whither ſoeuer thou shalt goe, remenber alſo thou waſt taken.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p85",
+  "old_text": "Abraham. remoued from thence into the ſouth cou rie, and dwelt between Cades, and Sur: and he liued aꝫ a gre in Gerara.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.0548,
+   0.885,
+   0.3783
+  ],
+  "crop_page": 85,
+  "r3_raw": "he is the (e) father of the Moabites euen to this present day. 38. The yonger also bare a sonne, and she called his name Ammon, that is the sonne of my people: he is the father of the Ammonites euen to this day. CHAP. XX. Abraham being in Gerar, his wife is taken into King Abimelechs house, but by Gods commandement in restored untouched, 14. with great guifts, 17. and Abraham praying Abimelech's house is cured.",
+  "r3_verse": "Abraham. remoued from thence into the ſouth cou rie, and dwelt between Cades, and Sur: and he liued aꝫ a gre in Gerara.",
+  "arm_conflicts": [],
+  "used_merge": true,
+  "new_text": "Abraham. remoued from thence into the ſouth cou rie, and dwelt between Cades, and Sur: and he liued aꝫ a gre in Gerara.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p85",
+  "old_text": "But Abrmelech had not touched her, and he ſaid: Lord wilt thoukila Nation that is ignotan tDid",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.3881,
+   0.885,
+   0.4854
+  ],
+  "crop_page": 85,
+  "r3_raw": "3. Had God saith so at Sichron in a dreame by night, and said to him: Loe thou shalt dye for the woman that thou hast taken: for she hath a husband. 4. But Abimelech had not touched her, and he said: Lord wilt thou kil a Nation that is ignorant & iust? 5. Did not he say to me: She is my sister? and she say, He is my brother: In simplicitie of my hart and cleanenes of my hands haue I",
+  "r3_verse": "But Abimelech had not touched her, and he said: Lord wilt thou kil a Nation that is ignorant & iust?",
+  "arm_conflicts": [
+   "Abrmelech | Abimelech",
+   "thoukila | thou kil a",
+   "ignotan tDid | ignorant & iust?"
+  ],
+  "new_text": "But Abimelech had not touched her, and he ſaid: Lord wilt thou kil a Nation that is ignorant & iust?",
+  "s_unresolved": [
+   "iust?"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p85",
+  "old_text": "not he ſay to me: Sheis ny ſiſter and ſhe ſay, Hes mv brother: In ſimplicitie of my hart and cleanenes of my hands haue I done this.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.4271,
+   0.885,
+   0.5181
+  ],
+  "crop_page": 85,
+  "r3_raw": "touched her, and he said: Lord wilt thou kil a Nation that is ignorant & just? 5. Did not he say to me: She is my sister? and she say, He is my brother: In simplicitie of my hart and cleanenes of my hands haue I done this. 6. And God said to him: And I doe know that thou didest it with a sincere hart: and therfore I kept thee that thou shouldest not",
+  "r3_verse": "Did not he say to me: She is my sister? and she say, He is my brother: In simplicitie of my hart and cleanenes of my hands haue I done this.",
+  "arm_conflicts": [
+   "Sheis ny ſiſter | She is my sister?",
+   "Hes mv | He is my"
+  ],
+  "new_text": "Did not he ſay to me: She is my ſiſter and ſhe ſay, He is my brother: In ſimplicitie of my hart and cleanenes of my hands haue I done this.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p85",
+  "old_text": "And Abimekch torthwith tiuns vp in the night, ealled al ſeruants: and he ſpake al theſe words to their eares, and al the men were ſore atraid.",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.5669,
+   0.885,
+   0.661
+  ],
+  "crop_page": 85,
+  "r3_raw": "restore her, know thou that dying thou shalt dye, thou and all things that are thine. 8. And Abimelech forthwith rising up in the night, called al his seruants: and he spake al these words to their cares, and al the men were sore afraid. 9. And Abimelech called also for Abraham, & said to him: What haſt thou done to vs: what haue we offended against thee,",
+  "r3_verse": "And Abimelech forthwith rising up in the night, called al his seruants: and he spake al these words to their cares, and al the men were sore afraid.",
+  "arm_conflicts": [
+   "Abimekch torthwith tiuns vp | Abimelech forthwith rising up",
+   "ealled | called",
+   "eares, | cares,",
+   "atraid. | afraid."
+  ],
+  "r2_attested": {
+   "3": "riſing"
+  },
+  "visual_readings": {
+   "3": "riſing"
+  },
+  "new_text": "And Abimelech forthwith riſing vp in the night, called al his ſeruants: and he ſpake al theſe words to their cares, and al the men were ſore afraid.",
+  "s_unresolved": [
+   "forthwith",
+   "afraid."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p85",
+  "old_text": "howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, not the daughter of my mother, I tooke her to wife.",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.7092,
+   0.885,
+   0.8054
+  ],
+  "crop_page": 85,
+  "r3_raw": "ham answered: I thought with my selfe, saying: Perhaps there is not the feare of God in this place, & they wil kil me for my wife: 12. howbeit otherwise also in verie deed she is my sister, (b) the daughter of my father, & not the daughter of my mother, & I tooke her to wife..13. And after that God brought me out of my fathers house, I said to her: This",
+  "r3_verse": "howbeit otherwise also in verie deed she is my sister, the daughter of my father, & not the daughter of my mother, & I tooke her to wife..13.",
+  "arm_conflicts": [
+   "wife. | wife..13."
+  ],
+  "new_text": "howbeit otherwiſe alſo in verie deed ſhe is my ſiſter, the daughter of my father, & not the daughter of my mother, & I tooke her to wife.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p85",
+  "old_text": "Thertore Abimelech tooke ſhee and oxe and ſeruants, and handinavds, and gaue to Abraham: and reſtored to him Sara his wife,",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.7991,
+   0.885,
+   0.895
+  ],
+  "crop_page": 85,
+  "r3_raw": "mercie thou shalt doe with me: In euerie place which we shal come vnto, thou shalt say that I am thy brother. 14. Thertfore Abimelech (c) tooke sheep and oxen, and seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife, 15.-and said: The land is before you, dwel whersoeuer it shal please thee. 16. And to Sara he said:",
+  "r3_verse": "Thertore Abimelech tooke sheep and oxen, and seruants, and handmayds, and gaue to Abraham: and restored to him Sara his wife, 15.-and",
+  "arm_conflicts": [
+   "ſhee | sheep",
+   "oxe | oxen,",
+   "handinavds, | handmayds,"
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "3": "ſheep"
+  },
+  "visual_readings": {
+   "3": "ſheep"
+  },
+  "new_text": "Thertore Abimelech tooke ſheep and oxen, and ſeruants, and handmayds, and gaue to Abraham: and reſtored to him Sara his wife, 15.-and",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "chapter",
+  "old_text": "Aud to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee tor a veile of thine eves to al that are with thee, and whitherſoeuer thou shalt goe, temember alſo thou waſt taken.7.",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.08,
+   0.0643,
+   0.805,
+   0.1703
+  ],
+  "crop_page": 86,
+  "r3_raw": "serve thee for a veile of thine eyes to all that are with thee, and whithersoever thou shalt goe, remember also thou wast taken. 17. And Abraham praying, God healed Abimelech and his wife, and his handmaids,",
+  "r3_verse": "serve to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee for a veile of thine eyes to all that are with thee, and whithersoever thou shalt goe, remember also thou wast taken.",
+  "arm_conflicts": [
+   "Aud to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue | serve",
+   "tor | for",
+   "eves | eyes",
+   "al | all",
+   "whitherſoeuer | whithersoever",
+   "temember | remember",
+   "taken.7. | taken."
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "21": "for"
+  },
+  "visual_readings": {
+   "21": "for"
+  },
+  "new_text": "serve to Sara he ſaid: Behold I haue giuen thy brothet a thouſand pieces of ſiluer, this shal Abtaham. ſerue thee for a veile of thine eyes to al that are with thee, and whitherſoeuer thou shalt goe, remember alſo thou waſt taken.7.",
+  "s_unresolved": [
+   "serve"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

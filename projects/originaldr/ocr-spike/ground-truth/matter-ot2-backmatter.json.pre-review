@@ -1,0 +1,347 @@
+{
+  "locus": "matter-ot2-backmatter",
+  "page_index": 988,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot2-backmatter-p0988.png",
+  "raster_dpi": 400,
+  "page_label_printed": "988",
+  "running_header": {
+    "left": "988",
+    "center": "CONTINVANCE OF THE",
+    "right": ""
+  },
+  "layout_note": "Single wide text column with a narrow LEFT margin for glosses (marginalia). THREE stacked regions: (1) tail of the translators' preface set in ROMAN upright body type (lines 0-8); a triple horizontal rule; (2) a display SECTION HEADER in roman caps + roman descriptive lines (lines 9-12); (3) the treatise 'The Continuance of the Church...' set in a flowing ITALIC chancery body opening with a 2-line drop-cap 'S' (lines 13-41), whose embedded scripture QUOTATIONS are set in ROMAN upright (mixed lines flagged). TWO w-regimes on the page: roman preface uses a REAL single 'w' sort in some words (we, worke, worthely, nowiſe, wel, acknowlege) but 'vv' in others (vvith, Likevviſe, vvelbeloued, vvhom, vve) — transcribed per the glyph actually set; the italic treatise body uses a REAL italic 'w' throughout (without, knowne, were, with, lawes, knowlege, sheweth); the small roman marginal glosses use 'vv' (alvvayes). Excluded: red papal-keys shield + 'www.fatimamovement.com' watermark (bottom-left) and a hand-inked pennant/mark at top-right.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "prose",
+      "text": "gliſh old Teſtament iuſtly fearing, that we haue not worthely diſcharged ſo",
+      "face": "roman"
+    },
+    {
+      "line_index": 1,
+      "role": "prose",
+      "text": "great a worke: and in nowiſe preſuming that we haue auoided al errors, as wel",
+      "face": "roman"
+    },
+    {
+      "line_index": 2,
+      "role": "prose",
+      "text": "of doctrine as hiſtorie : much more we acknowlege that our ſtile is rude and",
+      "face": "roman"
+    },
+    {
+      "line_index": 3,
+      "role": "prose",
+      "text": "vnpoliſhed. And therfore we neceſſarily, and vvith al humilitie craue pardon of",
+      "face": "roman"
+    },
+    {
+      "line_index": 4,
+      "role": "prose",
+      "text": "God, and al his glorious Sainctes. Likevviſe of the Chruch militant, and par-",
+      "face": "roman",
+      "line_end_hyphen": true,
+      "note": "printed typo 'Chruch' for 'Church' preserved"
+    },
+    {
+      "line_index": 5,
+      "role": "prose",
+      "text": "ticularly of you right vvelbeloued Engliſh readers ; to vvhom as at the begin-",
+      "face": "roman",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "text": "ning vve directed and dedicated theſe our endeuoures : ſo to you vve offer the",
+      "face": "roman"
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "text": "reſt of our laboures, euen to the end of our liues : in our B. Sauiour IESVS",
+      "face": "roman"
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "text": "Chriſt, to vvhom be al praiſe and glorie. Amen.",
+      "face": "roman"
+    },
+    {
+      "line_index": 9,
+      "role": "section_header",
+      "text": "THE CONTINVANCE OF THE CHVRCH,",
+      "face": "roman-display"
+    },
+    {
+      "line_index": 10,
+      "role": "section_header",
+      "text": "AND RELIGION IN THE SIXTH AGE:",
+      "face": "roman-display"
+    },
+    {
+      "line_index": 11,
+      "role": "subtitle",
+      "text": "from the captiuitie in Babylon to the coming of our",
+      "face": "roman"
+    },
+    {
+      "line_index": 12,
+      "role": "subtitle",
+      "text": "Sauiour, nere the ſpace of 640. yeares:",
+      "face": "roman"
+    },
+    {
+      "line_index": 13,
+      "role": "prose",
+      "text": "SVCH is the prouidence of Almightie God, that not obſcurely, or at",
+      "face": "italic",
+      "drop_cap": "S",
+      "note": "opens with 2-line drop-cap 'S'; 'SVCH' set in roman caps, rest italic"
+    },
+    {
+      "line_index": 14,
+      "role": "prose",
+      "text": "ſome times only, but manifeſtly, and without intermiſſion his Diuine",
+      "face": "italic"
+    },
+    {
+      "line_index": 15,
+      "role": "prose",
+      "text": "Maieſtie is acknowleged, his name glorified; his Religion profeſſed, and his",
+      "face": "italic"
+    },
+    {
+      "line_index": 16,
+      "role": "prose",
+      "text": "preceptes obſerued by a viſible knowne Church, from the beginning of the",
+      "face": "italic"
+    },
+    {
+      "line_index": 17,
+      "role": "prose",
+      "text": "world to the end therof, as we haue already shewed in the other fiue ages ;",
+      "face": "italic"
+    },
+    {
+      "line_index": 18,
+      "role": "prose",
+      "text": "and ſhal no leſſe clerly declare the ſame in this ſixth. For albeit the peculiar",
+      "face": "italic"
+    },
+    {
+      "line_index": 19,
+      "role": "prose",
+      "text": "people of God were for their ſinnes caried forth of their countrie, and held",
+      "face": "italic"
+    },
+    {
+      "line_index": 20,
+      "role": "prose",
+      "text": "captiues in Babylon ſeuentie yeares, and after their reduction were ſubiect",
+      "face": "italic"
+    },
+    {
+      "line_index": 21,
+      "role": "prose",
+      "text": "to ſtrangers ruling ouer them, and ſometimes extremely afflicted with perſe-",
+      "face": "italic",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 22,
+      "role": "prose",
+      "text": "cution, yet they ſtil perſeuered in the ſame fayth and religion, had ſucceſſion",
+      "face": "italic"
+    },
+    {
+      "line_index": 23,
+      "role": "prose",
+      "text": "of Prieſtes, and of one Highprieſt, with conſeruation alſo of the royal line",
+      "face": "italic"
+    },
+    {
+      "line_index": 24,
+      "role": "prose",
+      "text": "of Dauid, euen to Chriſt our eternal King and Prieſt.",
+      "face": "italic"
+    },
+    {
+      "line_index": 25,
+      "role": "prose",
+      "text": "Firſt therfore concerning Articles of fayth and religion, the beleefe in",
+      "face": "italic"
+    },
+    {
+      "line_index": 26,
+      "role": "prose",
+      "text": "one God was ſo generally confeſſed by the whole Iewiſh nation, that their",
+      "face": "italic"
+    },
+    {
+      "line_index": 27,
+      "role": "prose",
+      "text": "Prieſtes and Prophetes did vſe it for a principle, in confirmation of other",
+      "face": "italic"
+    },
+    {
+      "line_index": 28,
+      "role": "prose",
+      "text": "pointes, as wel doctrinal as moral. So Malachie teaching that our neighbour",
+      "face": "italic"
+    },
+    {
+      "line_index": 29,
+      "role": "prose",
+      "text": "is to be beloued, God to be ſerued, and his lawes to be kept : Is there not",
+      "face": "mixed",
+      "note": "'Is there not' (tail) set in roman upright: start of the Malachie quotation"
+    },
+    {
+      "line_index": 30,
+      "role": "prose",
+      "text": "one Father of vs al ( ſayth he. ch.2. v.10. ) Hath not one God crea-",
+      "face": "mixed",
+      "line_end_hyphen": true,
+      "note": "'one Father of vs al' and 'Hath not one God crea-' roman quote; '( ſayth he. ch.2. v.10. )' italic reference"
+    },
+    {
+      "line_index": 31,
+      "role": "prose",
+      "text": "ted vs? Why then doth euerie one of vs deſpiſe his brother, viola-",
+      "face": "roman",
+      "line_end_hyphen": true,
+      "note": "roman upright: continuation of Malachie quotation"
+    },
+    {
+      "line_index": 32,
+      "role": "prose",
+      "text": "ting the couenant of our fathers ? More expreſly Ieremie in his Epiſtle",
+      "face": "mixed",
+      "note": "'ting the couenant of our fathers ?' roman (end of quote); 'More expreſly Ieremie in his Epiſtle' italic"
+    },
+    {
+      "line_index": 33,
+      "role": "prose",
+      "text": "(Baruc. 6. ) sheweth the vanitie and abſurditie of manie goddes : exhor-",
+      "face": "italic",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 34,
+      "role": "prose",
+      "text": "ting the people to ſerue the one omnipotent God, ſaying to him ſincerely in",
+      "face": "italic"
+    },
+    {
+      "line_index": 35,
+      "role": "prose",
+      "text": "their hartes ; (v. 5. ) Thou oughteſt to be adored ô Lord. Likewiſe,",
+      "face": "mixed",
+      "note": "'Thou oughteſt to be adored ô Lord.' roman quote; rest italic"
+    },
+    {
+      "line_index": 36,
+      "role": "prose",
+      "text": "when the Magicians of Chaldea aſcribed the knowlege of dreames to falſe",
+      "face": "italic"
+    },
+    {
+      "line_index": 37,
+      "role": "prose",
+      "text": "goddes, Daniel with the other three children (ch.2.v.18 ) prayed the God",
+      "face": "mixed",
+      "note": "'prayed the God' (tail) roman; rest italic"
+    },
+    {
+      "line_index": 38,
+      "role": "prose",
+      "text": "of heauen : and the myſterie was reueled to Daniel. and he declared",
+      "face": "mixed",
+      "note": "'of heauen : and the myſterie was reueled to Daniel.' roman quote/paraphrase; 'and he declared' italic"
+    },
+    {
+      "line_index": 39,
+      "role": "prose",
+      "text": "and expounded the kings dreame : Who therupon confeſſed to Daniel (v. 47.)",
+      "face": "italic"
+    },
+    {
+      "line_index": 40,
+      "role": "prose",
+      "text": "In very dede your God is the God of goddes, and Lord of kinges.",
+      "face": "roman",
+      "note": "roman upright: closing Daniel quotation"
+    },
+    {
+      "line_index": 41,
+      "role": "catchword",
+      "text": "The",
+      "face": "italic",
+      "excluded_from_concat": true,
+      "catchword_note": "foot-of-page right-justified catchword anticipating first word of next page; exclude from body concat"
+    }
+  ],
+  "marginalia": [
+    {
+      "anchor": "line_index 0 (top-left, alongside preface opening)",
+      "position": "left_margin",
+      "face": "roman",
+      "text": "not for the\ndoctrine nor\nhiſtorie.",
+      "note": "first left-margin gloss; reads with next note: '...craue pardon] not for the doctrine nor hiſtorie. But the auctors of theſe Annotations craue pardon for al defectes.'"
+    },
+    {
+      "anchor": "line_index 4-8 (preface, left margin)",
+      "position": "left_margin",
+      "face": "roman",
+      "text": "But the au-\nctors of theſe\nAnnotations\ncraue pardon\nfor al defectes.",
+      "note": "line-end hyphen 'au-\\nctors' as printed"
+    },
+    {
+      "anchor": "line_index 13-16 (drop-cap paragraph, left margin)",
+      "position": "left_margin",
+      "face": "roman-uses-vv",
+      "text": "Gods true Ser-\nuice hath al-\nvvayes conti-\nnued in the vi-\nſible Church.",
+      "note": "small roman annotation face uses 'vv' for w ('alvvayes'); reads 'Gods true Seruice hath alvvayes continued in the viſible Church.'"
+    },
+    {
+      "anchor": "line_index 24-27 (second paragraph, left margin)",
+      "position": "left_margin",
+      "face": "roman",
+      "text": "Faith in one\nGod is the\nground of al\nreligion.",
+      "note": "reads 'Faith in one God is the ground of al religion.'"
+    }
+  ],
+  "uncertain": [
+    {
+      "line_index": 15,
+      "span": "doctrinal",
+      "note": "the 'o' of 'doctrinal' images as a colon-like / broken sort (reads almost 'd:ctrinal'); word is unambiguous from context ('as wel doctrinal as moral'); OCR scaffold read 'd:ctrival'. Transcribed 'doctrinal'."
+    },
+    {
+      "line_index": 7,
+      "span": "ſeuentie",
+      "note": "middle glyphs are the u/n-ambiguous italic minim cluster; resolved to 'ſeuentie' (seventy, Babylonian captivity) but could image as 'ſenentie'. OCR scaffold read 'fenentie'."
+    },
+    {
+      "line_index": 2,
+      "span": "hiſtorie :",
+      "note": "French-spacing space before ':' preserved; faint but present. Same judgement applied to 'endeuoures :', 'liues :', 'readers ;', 'kept :', 'fathers ?', 'goddes :', 'hartes ;', 'heauen :', 'dreame :', 'ages ;'."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 80,
+    "note": "counted from transcribed text; source of truth is the transcription itself"
+  },
+  "typos_preserved": [
+    "Chruch (line 4) for 'Church'"
+  ],
+  "faces_note": "w/vv is per-glyph on this page: roman preface = mixed real-w and vv (read each sort); italic treatise body = real italic-w; small roman marginal glosses = vv. Scripture quotations inside the italic treatise are set roman upright (lines flagged face='mixed'/'roman').",
+  "observer": "jarvis-matter-gt-agent",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster (.gt-rasters/matter-ot2-backmatter-p0988.png), region-by-region zoom crops; OCR scaffold used only as a dropped-line/hint check, never as spelling oracle",
+  "confidence": "high on roman preface (lines 0-8) and section header (9-12); high on italic treatise body (13-41) with 2 flagged glyph-level uncertains (ſeuentie u/n, doctrinal 'o'); medium on small left-margin glosses (tiny font)"
+}

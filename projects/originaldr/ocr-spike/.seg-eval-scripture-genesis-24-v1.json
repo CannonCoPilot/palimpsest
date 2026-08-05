@@ -1,0 +1,780 @@
+{
+  "summary": {
+    "slug": "scripture-genesis-24",
+    "dpi": 300,
+    "clf": "v1",
+    "W": 3334,
+    "H": 4684,
+    "kraken_lines": 50,
+    "surya_regions": [
+      "PageFooter",
+      "PageHeader",
+      "Picture",
+      "Text"
+    ],
+    "confusion": {
+      "body->body": 41,
+      "body->app": 0,
+      "app->body": 0,
+      "app->app": 8,
+      "weak": 1
+    },
+    "body_precision": 1.0,
+    "body_recall": 1.0,
+    "e2e_body_concat_vs_GT": 0.921,
+    "gt_body_chars": 2352,
+    "body_ocr_chars": 2396
+  },
+  "rows": [
+    {
+      "text": "Abraham.",
+      "nb": [
+        0.014,
+        0.038,
+        0.133,
+        0.074
+      ],
+      "surya": "PageHeader",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "header",
+      "match": 1.0,
+      "gt_src": "header.left"
+    },
+    {
+      "text": "GEN ES1S.",
+      "nb": [
+        0.385,
+        0.038,
+        0.542,
+        0.064
+      ],
+      "surya": "PageHeader",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "header",
+      "match": 0.714,
+      "gt_src": "header.center"
+    },
+    {
+      "text": "I beſeech thee, and doe mercifully with my maiſter Abra¬",
+      "nb": [
+        0.133,
+        0.058,
+        0.809,
+        0.086
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.963,
+      "gt_src": "body[0]"
+    },
+    {
+      "text": "13 ham. I Ichold I ſtand nigh to the fountainc of vater, and",
+      "nb": [
+        0.106,
+        0.081,
+        0.809,
+        0.108
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.891,
+      "gt_src": "body[1]"
+    },
+    {
+      "text": "the daughters oftlic inhabiters ofihis citie, wil come forth",
+      "nb": [
+        0.135,
+        0.103,
+        0.809,
+        0.129
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.9,
+      "gt_src": "body[2]"
+    },
+    {
+      "text": "14 to drawe vater. I Therfore/ the maid, to vhom I shal ſay¬",
+      "nb": [
+        0.1,
+        0.123,
+        0.807,
+        0.149
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.906,
+      "gt_src": "body[3]"
+    },
+    {
+      "text": "Bove dovne thy tankard that I may drinke: and she shal",
+      "nb": [
+        0.133,
+        0.145,
+        0.809,
+        0.169
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.962,
+      "gt_src": "body[4]"
+    },
+    {
+      "text": "anſwere, Drinke, yea to thy camels alſo wil I geue drinke:",
+      "nb": [
+        0.13,
+        0.164,
+        0.808,
+        0.189
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 1.0,
+      "gt_src": "body[5]"
+    },
+    {
+      "text": "she it is. vhom thou haſt prouided for thy ſeruant Iſaac:",
+      "nb": [
+        0.131,
+        0.186,
+        0.808,
+        0.209
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.982,
+      "gt_src": "body[6]"
+    },
+    {
+      "text": "and by this I ſhal vnderſtand, that thou haſt deli mercifully",
+      "nb": [
+        0.132,
+        0.205,
+        0.809,
+        0.232
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.983,
+      "gt_src": "body[7]"
+    },
+    {
+      "text": "15 with my maiſter. I Neyther had he yet ended theſe wordes",
+      "nb": [
+        0.104,
+        0.228,
+        0.809,
+        0.253
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.673,
+      "gt_src": "body[9]"
+    },
+    {
+      "text": "vithin him ſelfe, & behold Rebecca came forth, the daugh¬",
+      "nb": [
+        0.133,
+        0.247,
+        0.807,
+        0.272
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.981,
+      "gt_src": "body[10]"
+    },
+    {
+      "text": "ter of Bathuel, the ſonne of Melcha wife to Nachor the bro¬",
+      "nb": [
+        0.133,
+        0.268,
+        0.807,
+        0.295
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 1.0,
+      "gt_src": "body[11]"
+    },
+    {
+      "text": "16 ther ofAbraham, hauinga tankard on her shoulder: I a paſ¬",
+      "nb": [
+        0.099,
+        0.288,
+        0.808,
+        0.315
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.926,
+      "gt_src": "body[12]"
+    },
+    {
+      "text": "ſing comcly maide, & moſt beautiful virgin. & not knowen",
+      "nb": [
+        0.132,
+        0.309,
+        0.807,
+        0.334
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.98,
+      "gt_src": "body[13]"
+    },
+    {
+      "text": "to man: and she was gone do vne to the ſountaine, and had",
+      "nb": [
+        0.134,
+        0.33,
+        0.808,
+        0.353
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.945,
+      "gt_src": "body[14]"
+    },
+    {
+      "text": "17 filled her tankard, and came backe. F And the ſeruant ranne",
+      "nb": [
+        0.099,
+        0.349,
+        0.807,
+        0.374
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.965,
+      "gt_src": "body[15]"
+    },
+    {
+      "text": "to mete her, and ſaid: Geuc me a little vater to drinke ofthy",
+      "nb": [
+        0.134,
+        0.371,
+        0.805,
+        0.395
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.95,
+      "gt_src": "body[16]"
+    },
+    {
+      "text": "18 tankard. I Vho anſwered: Drinke my lord. And quickly",
+      "nb": [
+        0.1,
+        0.389,
+        0.805,
+        0.416
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.939,
+      "gt_src": "body[17]"
+    },
+    {
+      "text": "she let do vne the tankard vpon her arme, and gaue him",
+      "nb": [
+        0.133,
+        0.412,
+        0.806,
+        0.438
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.962,
+      "gt_src": "body[18]"
+    },
+    {
+      "text": "19 drinke. I And vhen he had druncke, she added: but for",
+      "nb": [
+        0.1,
+        0.432,
+        0.807,
+        0.457
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.94,
+      "gt_src": "body[19]"
+    },
+    {
+      "text": "20 thy camels alſo I vil drave vater, til al doc drinke. I And",
+      "nb": [
+        0.097,
+        0.453,
+        0.806,
+        0.479
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.895,
+      "gt_src": "body[20]"
+    },
+    {
+      "text": "powring out the tankard into the trouglies, che ranne",
+      "nb": [
+        0.136,
+        0.474,
+        0.805,
+        0.5
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.942,
+      "gt_src": "body[21]"
+    },
+    {
+      "text": "backe to the vel to drave waier: and bcing drawen gaue",
+      "nb": [
+        0.136,
+        0.494,
+        0.806,
+        0.52
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.925,
+      "gt_src": "body[22]"
+    },
+    {
+      "text": "21 it to al the camels. I Iut he muſing beheld her vith ſilence,",
+      "nb": [
+        0.1,
+        0.514,
+        0.805,
+        0.54
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.932,
+      "gt_src": "body[23]"
+    },
+    {
+      "text": "deſirous to knοw vhether our Lord had made his iourncy",
+      "nb": [
+        0.135,
+        0.534,
+        0.806,
+        0.56
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.944,
+      "gt_src": "body[24]"
+    },
+    {
+      "text": "22 proſperous, oc nor. F And aſter that thc camels had drunck.",
+      "nb": [
+        0.099,
+        0.555,
+        0.805,
+        0.582
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.893,
+      "gt_src": "body[25]"
+    },
+    {
+      "text": "the man plucked forch golden carclertes, veying two ſicles:",
+      "nb": [
+        0.137,
+        0.575,
+        0.807,
+        0.603
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.93,
+      "gt_src": "body[26]"
+    },
+    {
+      "text": "23 and as manie braceletts of tenne ſicles veighe. I And he",
+      "nb": [
+        0.101,
+        0.596,
+        0.806,
+        0.621
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.909,
+      "gt_src": "body[27]"
+    },
+    {
+      "text": "ſaid to her: vhoſe daughter art thour she ꝟ me: is therc",
+      "nb": [
+        0.134,
+        0.616,
+        0.805,
+        0.643
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.923,
+      "gt_src": "body[28]"
+    },
+    {
+      "text": "24 anie place in thy fatliers houſe to lodger I vho anſwered:",
+      "nb": [
+        0.1,
+        0.637,
+        0.807,
+        0.665
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.895,
+      "gt_src": "body[29]"
+    },
+    {
+      "text": "I am the daughter of Hathuel, the ſonne of Melcha, vhom",
+      "nb": [
+        0.139,
+        0.657,
+        0.805,
+        0.681
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.925,
+      "gt_src": "body[30]"
+    },
+    {
+      "text": "25 she bare to Nachor. F And she added, ſaying: Of ſtra we alſo",
+      "nb": [
+        0.105,
+        0.678,
+        0.805,
+        0.705
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.947,
+      "gt_src": "body[31]"
+    },
+    {
+      "text": "and hay we haue good ſtore and a large place to lodge",
+      "nb": [
+        0.139,
+        0.698,
+        0.806,
+        0.727
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 1.0,
+      "gt_src": "body[32]"
+    },
+    {
+      "text": "26 in. f The man boved him ſelfe. and adored our Lord,",
+      "nb": [
+        0.104,
+        0.718,
+        0.805,
+        0.746
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.938,
+      "gt_src": "body[33]"
+    },
+    {
+      "text": "27 τ ſaying: Bleſſed be the Lord God of my lord Abralam,",
+      "nb": [
+        0.106,
+        0.738,
+        0.804,
+        0.767
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.98,
+      "gt_src": "body[34]"
+    },
+    {
+      "text": "chat hath nor taleꝝ away his mercic & truth from my",
+      "nb": [
+        0.141,
+        0.759,
+        0.801,
+        0.785
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.898,
+      "gt_src": "body[35]"
+    },
+    {
+      "text": "lord, and hath brought me thc ſtreiglit way into the houſe",
+      "nb": [
+        0.139,
+        0.778,
+        0.801,
+        0.809
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.947,
+      "gt_src": "body[36]"
+    },
+    {
+      "text": ": Her father",
+      "nb": [
+        0.809,
+        0.758,
+        0.928,
+        0.78
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "marginalia",
+      "match": 1.0,
+      "gt_src": "marg[0].0"
+    },
+    {
+      "text": "hauing pet¬",
+      "nb": [
+        0.809,
+        0.775,
+        0.924,
+        0.798
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "marginalia",
+      "match": 0.9,
+      "gt_src": "marg[0].1"
+    },
+    {
+      "text": "haps manic",
+      "nb": [
+        0.807,
+        0.792,
+        0.923,
+        0.814
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "marginalia",
+      "match": 0.9,
+      "gt_src": "marg[0].2"
+    },
+    {
+      "text": "18 ofmy lords brother.  The maide cherfore ranne, and re. viues and e¬",
+      "nb": [
+        0.105,
+        0.799,
+        0.931,
+        0.829
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.774,
+      "gt_src": "body[37]"
+    },
+    {
+      "text": "ported intoˣ hec mothers houſe al things thatihe had hcard. uerie onc a",
+      "nb": [
+        0.142,
+        0.822,
+        0.922,
+        0.847
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.768,
+      "gt_src": "body[38]"
+    },
+    {
+      "text": "29 And Rebecca had a brothet named Laban, who in al haiſt ſcueral houſe",
+      "nb": [
+        0.104,
+        0.84,
+        0.931,
+        0.869
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.776,
+      "gt_src": "body[39]"
+    },
+    {
+      "text": "30 vent forth to clie mun, wlicre ihe fountaine was. I And",
+      "nb": [
+        0.11,
+        0.862,
+        0.801,
+        0.887
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.792,
+      "gt_src": "body[40]"
+    },
+    {
+      "text": "ſhe vent to",
+      "nb": [
+        0.808,
+        0.858,
+        0.922,
+        0.877
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "marginalia",
+      "match": 0.667,
+      "gt_src": "marg[0].5"
+    },
+    {
+      "text": "her mother",
+      "nb": [
+        0.808,
+        0.873,
+        0.92,
+        0.904
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "marginalia",
+      "match": 0.8,
+      "gt_src": "marg[0].0"
+    },
+    {
+      "text": "vhen he had ſcenc the careletts and braceletts in his ſiſters hoeſc.",
+      "nb": [
+        0.143,
+        0.88,
+        0.871,
+        0.918
+      ],
+      "surya": "Text",
+      "pred": "body",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.851,
+      "gt_src": "body[41]"
+    },
+    {
+      "text": "hand,",
+      "nb": [
+        0.723,
+        0.904,
+        0.804,
+        0.938
+      ],
+      "surya": "Text",
+      "pred": "apparatus",
+      "true": "apparatus",
+      "true_role": "catchword",
+      "match": 0.8,
+      "gt_src": "body[42]"
+    },
+    {
+      "text": "M. faumambrement. Com",
+      "nb": [
+        0.104,
+        0.984,
+        0.297,
+        0.999
+      ],
+      "surya": "PageFooter",
+      "pred": "apparatus",
+      "true": "body",
+      "true_role": "body",
+      "match": 0.226,
+      "gt_src": "body[30]"
+    }
+  ]
+}

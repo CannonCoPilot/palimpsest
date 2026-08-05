@@ -1,0 +1,1892 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p46",
+  "old_text": "Of al beaſts that are cleane, thou ſhalt take ſeauen, and ſeauen, male female:",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.3337,
+   0.925,
+   0.4197
+  ],
+  "crop_page": 46,
+  "r3_raw": "A thy house into the arke: for I haue fene thee iust :: in my light in this generation. † Of al beaſts that are :: cleane, 2 thou ſhalt take ſeauen, and ſeauen, male & female: † but 3 of the beaſts that are vncleane two and two, male.& femate.",
+  "r3_verse": "Of al beaſts that are :: cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+  "arm_conflicts": [],
+  "new_text": "Of al beaſts that are :: cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p46",
+  "old_text": "but tra- of the beaſts that are vncleane two and two, male female. of Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.3525,
+   0.925,
+   0.5009
+  ],
+  "crop_page": 46,
+  "r3_raw": "my sight in this generation. † Of al beasts that are :: cleane, 2 thou shalt take feauen, and feauen, male & female: † but 3 of the beasts that are vncleane two and two, male.& femate. Yea and of the foules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after feauen dayes, I wil 4 rayne vpon the earth fourtie dayes and fourtie nights: and I",
+  "r3_verse": "but of the beasts that are vncleane two and two, male.& femate. Yea and of the foules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth.",
+  "arm_conflicts": [
+   "male female. of | male.& femate.",
+   "ſeauen ſeauen, | feauen & feauen,"
+  ],
+  "new_text": "but of the beaſts that are vncleane two and two, male femate. Yea and of the foules alſo of the ayre feauen & feauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+  "s_unresolved": [
+   "femate.",
+   "feauen",
+   "feauen,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p46",
+  "old_text": "For yer a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I of wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+  "old": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.4344,
+   0.925,
+   0.5598
+  ],
+  "crop_page": 46,
+  "r3_raw": "and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleans destroy al substance, that I haue made, from the face of the earth. † Noe therfore did all things, which our Lord had commanded him. † And he was six hundred yeares",
+  "r3_verse": "For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleans destroy al substance, that I haue made, from the face of the earth.",
+  "arm_conflicts": [
+   "yer | yet",
+   "ſeauen | seven",
+   "cleane | cleans"
+  ],
+  "new_text": "For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleans deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p46",
+  "old_text": "Noe therfore did al thinges, which our new Lord had commanded him.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.4942,
+   0.925,
+   0.5792
+  ],
+  "crop_page": 46,
+  "r3_raw": "wil cleane destroy al substance, that I haue made, from the face of the earth. † Noe therfore did al thinges, which our Lord had commanded him. † And he was fix hundred yeares 6 old, when the waters of the floud flowed ouer the earth.",
+  "r3_verse": "Noe therfore did al thinges, which our Lord had commanded him.",
+  "arm_conflicts": [],
+  "new_text": "Noe therfore did al thinges, which our Lord had commanded him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p46",
+  "old_text": "And Noe enrred and his ſonnes, his wife and the wiues of ſince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.947,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.5531,
+   0.925,
+   0.6637
+  ],
+  "crop_page": 46,
+  "r3_raw": "Lord had commanded him: And he was six hundred years old, when the waters of the flood flowed over the earth. † And Noe entered and his sonnes, his wife and the wiues of 7 of his sonnes with him into the arke, because of the waters of the flood. † Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth, two &",
+  "r3_verse": "And Noe entered and his sonnes, his wife and the wiues of of his sonnes with him into the arke, because of the waters of the flood.",
+  "arm_conflicts": [
+   "enrred | entered",
+   "floud. | flood."
+  ],
+  "new_text": "And Noe entered and his ſonnes, his wife and the wiues of of his ſonnes with him into the arke, becauſe of the waters of the flood.",
+  "s_unresolved": [
+   "flood."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.961,
+   "odr_com": 0.984,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p46",
+  "old_text": "Of beaſes alſo the cleane and the vncleane,8 ah of foules, and of al that moueth vpon the earth,",
+  "old": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.5965,
+   0.925,
+   0.6838
+  ],
+  "crop_page": 46,
+  "r3_raw": "of his sonnes with him into the arke, because of the waters of the floud. † Of beasts also the cleane and the vncleane, 8 & of foules, and of al that moueth vpon the earth, † two & 9 two went to Noe into the ar'ke, male and female, as our",
+  "r3_verse": "Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth,",
+  "arm_conflicts": [
+   "beaſes | beasts",
+   "vncleane,8 ah | vncleane, &"
+  ],
+  "r2_attested": {
+   "1": "beaſts"
+  },
+  "visual_readings": {
+   "1": "beaſts"
+  },
+  "new_text": "Of beaſts alſo the cleane and the vncleane,8 & of foules, and of al that moueth vpon the earth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p46",
+  "old_text": "two or two went to Noe into the arke, male and female, as our by Lord had commanded Noe.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.6175,
+   0.925,
+   0.7255
+  ],
+  "crop_page": 46,
+  "r3_raw": "of the floud. † Of beasts also the cleane and the vncleane, 8 & of foules, and of al that moueth vpon the earth, † two & 9 two went to Noe into the ar'ke, male and female, as our Lord had commanded Noe. † And after the seaven dayes 10 were passed, the waters of the floud flowed over the earth.",
+  "r3_verse": "two & two went to Noe into the ar'ke, male and female, as our Lord had commanded Noe.",
+  "arm_conflicts": [
+   "or | &",
+   "arke, | ar'ke,"
+  ],
+  "new_text": "two & two went to Noe into the ar'ke, male and female, as our Lord had commanded Noe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p46",
+  "old_text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh dav of the moneth, al the founcal taines of the : greate deapth were broken vp, and the floud gates of heauen were opened :",
+  "old": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.6975,
+   0.925,
+   0.8255
+  ],
+  "crop_page": 46,
+  "r3_raw": "were passed, the waters of the flood flowed over the earth. † In the six hundred yeare: of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the fountaines of the greate deapth were broken vp, and the flood gates of heauen were opened: † and the raine fel vpon the earth fourtie dayes and fourtie nights. † In the verie point",
+  "r3_verse": "In the six hundred yeare: of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the fountaines of the greate deapth were broken vp, and the flood gates of heauen were opened:",
+  "arm_conflicts": [
+   "dav | day",
+   "founcal taines | fountaines",
+   "floud | flood"
+  ],
+  "new_text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh day of the moneth, al the fountaines of the greate deapth were broken vp, and the flood gates of heauen were opened",
+  "s_unresolved": [
+   "fountaines",
+   "flood"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p46",
+  "old_text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his Chr. ſonnes: and his wife, and the three wiues of his ſonues with Gen. them into the arke :",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7803,
+   0.925,
+   0.9203
+  ],
+  "crop_page": 46,
+  "r3_raw": "gates of heauen were opened: † and the raine fel vpon the earth fourtie dayes and fourtie nights. † In the verie point of that day entered Noe, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke: † they and cucrie beast according to their",
+  "r3_verse": "In the verie point of that day entered Noe, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke:",
+  "arm_conflicts": [
+   "entred | entered",
+   "ſonues | sonnes"
+  ],
+  "lexicon_readings": {
+   "26": "ſonnes"
+  },
+  "visual_readings": {
+   "26": "ſonnes"
+  },
+  "new_text": "In the verie point of that day entered Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p47",
+  "old_text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.049,
+   0.4709,
+   0.875,
+   0.6362
+  ],
+  "crop_page": 47,
+  "r3_raw": "earth: \" but onlie Noe remained, and they that were with him in the arke. † And the waters held on aboue the earth an hundred fiftie dayes. ANNOTATIONS. CHAP. VII.",
+  "r3_verse": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "arm_conflicts": [
+   "fiſtie | fiftie"
+  ],
+  "new_text": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "s_unresolved": [
+   "fiftie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p50",
+  "old_text": "Of al beaſts that are cleane, thou ſhalt take ſeauen, and ſeauen, male female: tra-",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.863,
+   "madueke_b": 0.863
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.3259,
+   0.875,
+   0.4339
+  ],
+  "crop_page": 50,
+  "r3_raw": "A thy house into the arke: for I haue fene thee iust :: in my sight in this generation. † Of al beasts that are :: cleane, thou shalt take ſeauen, and ſeauen, male & female: † but of the beasts that are vncleane two and two, male & female. Yea and of the foules also of the ayre ſeauen & ſeauen, male",
+  "r3_verse": "Of al beasts that are :: cleane, thou shalt take ſeauen, and ſeauen, male & female:",
+  "arm_conflicts": [],
+  "new_text": "Of al beaſts that are :: cleane, thou ſhalt take ſeauen, and ſeauen, male & female:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p50",
+  "old_text": "of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, and female that ſeede may be ſaued vpon the face of whole earth.",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.3675,
+   0.875,
+   0.4976
+  ],
+  "crop_page": 50,
+  "r3_raw": "thou shalt take feauen, and feauen, male & female: † but of the beasts that are vncleane two and two, male & female. Yea and of the foules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after feauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I",
+  "r3_verse": "but of the beasts that are vncleane two and two, male & female. Yea and of the foules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth.",
+  "arm_conflicts": [
+   "ſeauen ſeauen, | feauen & feauen, male"
+  ],
+  "new_text": "but of the beaſts that are vncleane two and two, male & female. Yea and of the foules alſo of the ayre feauen & feauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+  "s_unresolved": [
+   "feauen",
+   "feauen,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p50",
+  "old_text": "For yet a while, and after ſeauen dayes, I rayne vpon the earth fourtie dayes and fourtie nights: and of wil cleane deſtroy al ſubſtance, that I haue made, from face of the earth.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.914,
+   "madueke_b": 0.914
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.4315,
+   0.875,
+   0.5599
+  ],
+  "crop_page": 50,
+  "r3_raw": "and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane destroy al substance, that I haue made, from the face of the earth. † Noe therfore did all things, which our Lord had commanded him. † And he was six hundred yeares",
+  "r3_verse": "For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane destroy al substance, that I haue made, from the face of the earth.",
+  "arm_conflicts": [
+   "ſeauen | seven",
+   "of | I"
+  ],
+  "new_text": "For yet a while, and after seven dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p50",
+  "old_text": "Noe therfore did al thinges, which new Lord had commanded him.",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.4922,
+   0.875,
+   0.5827
+  ],
+  "crop_page": 50,
+  "r3_raw": "wil cleane destroy al substance, that I haue made, from the face of the earth. † Noe therfore did al thinges, which our Lord had commanded him. † And he was six hundred yeares old, when the waters of the flood flowed over the earth.",
+  "r3_verse": "Noe therfore did al thinges, which our Lord had commanded him.",
+  "arm_conflicts": [
+   "new | our"
+  ],
+  "new_text": "Noe therfore did al thinges, which our Lord had commanded him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p50",
+  "old_text": "And he was ſix hundred old, when the waters of the floud flowed ouer the more",
+  "old": {
+   "s_dismas": 0.869,
+   "odr_com": 0.869,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.08,
+   0.5133,
+   0.875,
+   0.6233
+  ],
+  "crop_page": 50,
+  "r3_raw": "face of the earth. † Noe therfore did al thinges, which our Lord had commanded him. † And he was six hundred yeares old, when the waters of the flood flowed over the earth. † And Noe entered and his sonnes, his wife and the wiues of his sonnes with him into the arke, because of the waters",
+  "r3_verse": "And he was six hundred yeares old, when the waters of the flood flowed over the earth.",
+  "arm_conflicts": [
+   "floud | flood",
+   "ouer | over",
+   "more | earth."
+  ],
+  "new_text": "And he was ſix hundred yeares old, when the waters of the flood flowed ouer the earth.",
+  "s_unresolved": [
+   "flood"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p50",
+  "old_text": "And Noe entred and his ſonnes, his wife and the wiues ſince of his ſonnes with him into the arke, becauſeof the of the floud.",
+  "old": {
+   "s_dismas": 0.887,
+   "odr_com": 0.898,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.5543,
+   0.8918,
+   0.6649
+  ],
+  "crop_page": 50,
+  "r3_raw": "old, when the waters of the floud flowed over the earth. † And Noe entered and his sonnes, his wife and the wiues of 7 of his sonnes with him into the arke, because of the waters of the floud. † Of beasts also the cleane and the vncleane, 8 & of foules, and of al that moueth vpon the earth, † two & 9",
+  "r3_verse": "And Noe entered and his sonnes, his wife and the wiues of of his sonnes with him into the arke, because of the waters of the floud.",
+  "arm_conflicts": [
+   "entred | entered",
+   "ſince | of",
+   "becauſeof | because of"
+  ],
+  "lexicon_readings": {
+   "20": "becauſe"
+  },
+  "visual_readings": {
+   "20": "becauſe"
+  },
+  "new_text": "And Noe entered and his ſonnes, his wife and the wiues of of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.992,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 8,
+  "from": "p50",
+  "old_text": "Of beaſts alſo the cleane and the vncleane,8 &of foules, and of al that moueth vpon the earth,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.5972,
+   0.8918,
+   0.687
+  ],
+  "crop_page": 50,
+  "r3_raw": "of his sonnes with him into the arke, because of the waters of the flood. † Of beasts also the cleane and the vncleane, 8 & of foules, and of al that moueth vpon the earth, † two & 9 two went to Noe into the arke, male and female, as our",
+  "r3_verse": "Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth,",
+  "arm_conflicts": [
+   "vncleane,8 &of | vncleane, & of"
+  ],
+  "new_text": "Of beaſts alſo the cleane and the vncleane,8 & &of foules, and of al that moueth vpon the earth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 9,
+  "from": "p50",
+  "old_text": "two or two went to Noe into the arke, male and female, as by Lord had commanded Noe.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.6203,
+   0.875,
+   0.7302
+  ],
+  "crop_page": 50,
+  "r3_raw": "of the flood. † Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth, † two & 9 two went to Noe into the arke, male and female, as our Lord had commanded Noe. † And after the seauen dayes were passed, the waters of the flood flowed over the earth.",
+  "r3_verse": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+  "arm_conflicts": [
+   "or | &",
+   "by | our"
+  ],
+  "new_text": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p50",
+  "old_text": "And after the ſeauen were paſſed, the waters of the floud flowed ouer the in",
+  "old": {
+   "s_dismas": 0.869,
+   "odr_com": 0.869,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.6609,
+   0.875,
+   0.7702
+  ],
+  "crop_page": 50,
+  "r3_raw": "two went to Noe into the arke, male and female, as our Lord had commanded Noe. † And after the seauen dayes were passed, the waters of the flood flowed over the earth. † In the six hundred yeare of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the foun-",
+  "r3_verse": "And after the seauen dayes were passed, the waters of the flood flowed over the earth.",
+  "arm_conflicts": [
+   "floud | flood",
+   "ouer | over",
+   "in | earth."
+  ],
+  "new_text": "And after the ſeauen dayes were paſſed, the waters of the flood flowed ouer the earth.",
+  "s_unresolved": [
+   "flood"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p50",
+  "old_text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh davof the moneth, al the cal taines of the :: greate deapth were broken vp, and :: the gates of heauen were opened :",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.7028,
+   0.875,
+   0.8342
+  ],
+  "crop_page": 50,
+  "r3_raw": "were passed, the waters of the flood flowed over the earth. † In the six hundred yeare of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the fountaines of the greate deapth were brokcn vp, and the flood gates of heauen were opened: † and the raine fel vpon the earth fourtie days and fourtie nights. † In the verie point",
+  "r3_verse": "In the six hundred yeare of the life of Noe, in the second moneth, in the seauententh day of the moneth, al the fountaines of the greate deapth were brokcn vp, and the flood gates of heauen were opened:",
+  "arm_conflicts": [
+   "davof | day of",
+   "cal taines | fountaines",
+   "broken | brokcn"
+  ],
+  "new_text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the ſeauententh day of the moneth, al the fountaines of the greate deapth were brokcn vp, and the flood gates of heauen were opened",
+  "s_unresolved": [
+   "fountaines",
+   "flood"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p50",
+  "old_text": "and the raine fel vpon earth fourtie dayes and fourtie nights.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7668,
+   0.875,
+   0.855
+  ],
+  "crop_page": 50,
+  "r3_raw": "taines of the greate deapth were brokcn vp, and the floud gates of heauen were opened: † and the raine fel vpon the earth fourtie dayes and fourtie nights. † In the verie point of that day entredd Noe, and Sem, and Cham, & Iapheth his",
+  "r3_verse": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+  "arm_conflicts": [],
+  "new_text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 13,
+  "from": "chapter",
+  "old_text": "In the verie of that day entred Noe, and Sem, and Cham, Iapheth Chr. ſonnes: and his wife, and the three wiues of his ſonnes Gen them into the arke",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.858,
+   "madueke_b": 0.858
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7896,
+   0.875,
+   0.9309
+  ],
+  "crop_page": 50,
+  "r3_raw": "gates of heauen were opened: † and the raine fel vpon the earth fourtie dayes and fourtie nights. † In the verie point of that day entered Noc, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke: † they and euerie beast according to their",
+  "r3_verse": "In the verie point of that day entered Noc, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke:",
+  "arm_conflicts": [
+   "entred Noe, | entered Noc,",
+   "Chr. | his",
+   "Gen | with"
+  ],
+  "new_text": "In the verie point of that day entered Noc, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p51",
+  "old_text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.049,
+   0.4711,
+   0.875,
+   0.6391
+  ],
+  "crop_page": 51,
+  "r3_raw": "earth: \"but onlie Noe remained, and they that were with him in the arke. † And the waters held on aboue the earth an hundred fiftie dayes. ANNOTATIONS. CHAP. VII.",
+  "r3_verse": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "arm_conflicts": [
+   "fiſtie | fiftie"
+  ],
+  "new_text": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "s_unresolved": [
+   "fiftie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p56",
+  "old_text": "Of al beaſts that are cleane, thou ſhalt take ſeauen, and ſeauen, male female",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.3241,
+   0.875,
+   0.4143
+  ],
+  "crop_page": 56,
+  "r3_raw": "AND our Lord said to him: Go into thy house into the arke: for I haue sene thee iust :: in my sight in this generation. † Of al beasts that are :: cleane, 2 and vncleanne thou shalt take ſeauen, and ſeauen, male & female: † but of the beasts that are vnclean two and two, male & female.",
+  "r3_verse": "Of al beasts that are :: cleane, and vncleanne thou shalt take ſeauen, and ſeauen, male & female:",
+  "arm_conflicts": [],
+  "new_text": "Of al beaſts that are :: cleane, and vncleanne thou ſhalt take ſeauen, and ſeauen, male & female",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.841,
+   "odr_com": 0.841,
+   "sabates_a": 0.778,
+   "madueke_b": 0.778
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p56",
+  "old_text": "but tra- of the beaſts that are vncleane two and two, male female. Yea and of the foules alſo of the ayre ſeauen ſeauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+  "old": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.3439,
+   0.875,
+   0.4973
+  ],
+  "crop_page": 56,
+  "r3_raw": "my sight in this generation. † Of al beasts that are :: cleane, thou shalt take feauen, and feauen, male & female: † but 3 of the beasts that are vncleane two and two, male & female. Yea and of the soules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after feauen dayes, I wil 4 rayne vpon the earth fourtie dayes and fourtie nights: and I",
+  "r3_verse": "but of the beasts that are vncleane two and two, male & female. Yea and of the soules also of the ayre feauen & feauen, male and female: that seede may be saued vpon the face of the whole earth.",
+  "arm_conflicts": [
+   "foules | soules",
+   "ſeauen ſeauen, | feauen & feauen,"
+  ],
+  "new_text": "but of the beaſts that are vncleane two and two, male & female. Yea and of the soules alſo of the ayre feauen & feauen, male and female that ſeede may be ſaued vpon the face of the whole earth.",
+  "s_unresolved": [
+   "soules",
+   "feauen",
+   "feauen,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p56",
+  "old_text": "For yet a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance, that I haue made, from the of face of the carth.",
+  "old": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.4248,
+   0.875,
+   0.5571
+  ],
+  "crop_page": 56,
+  "r3_raw": "and female: that seede may be saued vpon the face of the whole earth. † For yet a while, and after seauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I will cleane destroy al substance, that I haue made, from the face of the earth. † Noe therfore did al thinges, which our Lord had commanded him. † And he was six hundred yeares",
+  "r3_verse": "For yet a while, and after seauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I will cleane destroy al substance, that I haue made, from the face of the earth.",
+  "arm_conflicts": [
+   "wil | will",
+   "carth. | earth."
+  ],
+  "new_text": "For yet a while, and after ſeauen dayes, I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance, that I haue made, from the face of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p56",
+  "old_text": "And Noe entred and his ſonnes, his wife and the wiues of fince of his ſonnes with him into the arke, becauſe of the waters of the floud.",
+  "old": {
+   "s_dismas": 0.932,
+   "odr_com": 0.955,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.5459,
+   0.875,
+   0.6565
+  ],
+  "crop_page": 56,
+  "r3_raw": "old, when the waters of the flood flowed over the earth. † And Noe entered and his sonnes; his wife and the wiues of 7 of his sonnes with him into the arke, because of the waters of the flood. † Of beasts also the cleane and the uncleane, 8 & of foules, and of al that moueth vpon the earth, † two &",
+  "r3_verse": "And Noe entered and his sonnes; his wife and the wiues of of his sonnes with him into the arke, because of the waters of the flood.",
+  "arm_conflicts": [
+   "entred | entered",
+   "floud. | flood."
+  ],
+  "new_text": "And Noe entered and his ſonnes, his wife and the wiues of of his ſonnes with him into the arke, becauſe of the waters of the flood.",
+  "s_unresolved": [
+   "flood."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.961,
+   "odr_com": 0.984,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p56",
+  "old_text": "Of beaſts alſo the cleane and the vncleane,8 &of foules, and of al that moueth vpon the earth,",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.586,
+   0.875,
+   0.6802
+  ],
+  "crop_page": 56,
+  "r3_raw": "And Noe entered into his sonnes with him into the arke, because of the waters of the flood. Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth, two went to Noe into the arke, male and female, as our",
+  "r3_verse": "Of beasts also the cleane and the vncleane, & of foules, and of al that moueth vpon the earth,",
+  "arm_conflicts": [
+   "vncleane,8 &of | vncleane, & of"
+  ],
+  "new_text": "Of beaſts alſo the cleane and the vncleane,8 & &of foules, and of al that moueth vpon the earth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p56",
+  "old_text": "two &9 two went to Noe into the arke, male and female, as our by or Lord had commanded Noe.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.6078,
+   0.875,
+   0.7264
+  ],
+  "crop_page": 56,
+  "r3_raw": "of his familes with him into the arke; of the flood. † Of beasts also the cleane and the vncleane, 8 & of foules, and of al that moueth vpon the earth, † two & 9 two went to Noe into the arke, male and female, as our Lord had commanded Noe. † And after the seauen dayes were passed, the waters of the flood flowed over the earth.",
+  "r3_verse": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+  "arm_conflicts": [
+   "&9 | &"
+  ],
+  "new_text": "two & two went to Noe into the arke, male and female, as our Lord had commanded Noe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p56",
+  "old_text": "In the ſix hundred yeare of the life of Noe, in the ſecond dan- moneth, in the ſeauententh day of the moneth, al the founcal. taines of the: greate deapth were brokon vp, and : the floud gates of heauen were opened :",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.6864,
+   0.875,
+   0.822
+  ],
+  "crop_page": 56,
+  "r3_raw": "windowes, by which water fell downe in great abudantie from the heauen, here cal'd heaven. Lord had commanded Noe: And after the seaven dayes were passed, the waters of the floud flowed over the earth. † In the six hundred yeare of the life of Noe, in the second moneth, in the feauententh day of the moneth, al the fountains of the greate deapth were broken vp; and the floud gates of heauen were opened: † and the raine fel vpon the earth fourtie days and fourtie nights. † In the verie point",
+  "r3_verse": "In the six hundred yeare of the life of Noe, in the second moneth, in the feauententh day of the moneth, al the fountains of the greate deapth were broken vp; and the floud gates of heauen were opened:",
+  "arm_conflicts": [
+   "ſeauententh | feauententh",
+   "founcal. taines | fountains",
+   "brokon | broken"
+  ],
+  "new_text": "In the ſix hundred yeare of the life of Noe, in the ſecond moneth, in the feauententh day of the moneth, al the fountains of the: greate deapth were broken vp, and the floud gates of heauen were opened",
+  "s_unresolved": [
+   "feauententh",
+   "fountains"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p56",
+  "old_text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with Chr. Gen them into the arke:",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.7696,
+   0.875,
+   0.9203
+  ],
+  "crop_page": 56,
+  "r3_raw": "gates of heauen were opened: † and the raine fel vpon the earth fourtie dayes and fourtie nights. † In the verie point of that day entredd Noe, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke: † they and euerie beast according to their",
+  "r3_verse": "In the verie point of that day entredd Noe, and Sem, and Cham, & Iapheth his sonnes: and his wife, and the three wiues of his sonnes with them into the arke:",
+  "arm_conflicts": [
+   "entred | entredd"
+  ],
+  "new_text": "In the verie point of that day entred Noe, and Sem, and Cham, & Iapheth his ſonnes: and his wife, and the three wiues of his ſonnes with them into the arke:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 24,
+  "from": "p57",
+  "old_text": "And the waters held on aboue the earth an hundred fiſtie dayes. CHAP.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.049,
+   0.4723,
+   0.875,
+   0.631
+  ],
+  "crop_page": 57,
+  "r3_raw": "earth: \"but onlie Noe remained, and they that were with him in the arke. † And the waters held on aboue the earth an hundred fiftie dayes. ANNOTATIONS. CHAP. VII.",
+  "r3_verse": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "arm_conflicts": [
+   "fiſtie | fiftie"
+  ],
+  "new_text": "And the waters held on aboue the earth an hundred fiftie dayes.",
+  "s_unresolved": [
+   "fiftie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p41",
+  "old_text": "are deſtroyed. NDour Lord ſaid to him : Get thee in, thou and al thy houſe into the arke: tor I haue ſeen thee iuſt ( in my ſight in this generation.",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.195,
+   0.885,
+   0.3273
+  ],
+  "crop_page": 41,
+  "r3_raw": "into the arke, 12. it raineth fourtie daies and fourtie nights. 21. All men and other living creatures on the earth, without the arke, are destroyed. ND our Lord said to him: Get thee in, thou and all thy house into the arke; for I have seen thee iust (a) in my sight in this generation. 2. Of al beasts that are (b) cleane, thou shalt take seven and seven, male and female: 3. but of the beasts",
+  "r3_verse": "into the arke, it raineth fourtie daies and fourtie nights. All men and other living creatures on the earth, without the arke, are destroyed. ND our Lord said to him: Get thee in, thou and all thy house into the arke; for I have seen thee iust in my sight in this generation.",
+  "arm_conflicts": [
+   "NDour | ND our",
+   "al | all",
+   "tor | for",
+   "haue | have"
+  ],
+  "lexicon_readings": {
+   "41": "for"
+  },
+  "visual_readings": {
+   "41": "for"
+  },
+  "new_text": "into the arke, it raineth fourtie daies and fourtie nights. All men and other living creatures on the earth, without the arke, are deſtroyed. ND our Lord ſaid to him Get thee in, thou and al thy houſe into the arke: for I haue ſeen thee iuſt in my ſight in this generation.",
+  "s_unresolved": [
+   "fourtie",
+   "fourtie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p41",
+  "old_text": "Of al beaſts that are cleane, thou ſhalt take ſeauen and ſeauen, male and female:.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.2628,
+   0.885,
+   0.3453
+  ],
+  "crop_page": 41,
+  "r3_raw": "N.B our Lord saith unto thee: Get thee in, thou and all thy house into the arke; for I have seen thee iust (a) in my sight in this generation. 2. Of al beasts that are (b) cleane, thou shalt take seauen and seauen, male and female: 3. but of the beasts that are vnclean two and two, male and fe-",
+  "r3_verse": "Of al beasts that are cleane, thou shalt take seauen and seauen, male and female:",
+  "arm_conflicts": [],
+  "new_text": "Of al beaſts that are cleane, thou ſhalt take ſeauen and ſeauen, male and female:.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p41",
+  "old_text": "but ofthe beaſts that are vucleane two and two, male and temale. Yea and ot the foules alſo of the ayre ſeauen and ſeauen, male and female: that ſeed mav be ſaued vpon the face of the whole earth.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.2793,
+   0.885,
+   0.3958
+  ],
+  "crop_page": 41,
+  "r3_raw": "houre into the arke; for I haue beene thus (a) in my sight in this generation. 2. Of al beasts that are (b) cleane, thou shalt take ſeaucen and ſeaucen, male and female: 3. but of the beaſts that are vnclean two and two, male and fe- male. Yea and of the foules also of the ayre ſeaucen and ſeaucen, male and female: that seed may be faued vpon the face of the whole earth. 4. For yet a while, and after ſeaucen dayes I wil rayne vpon the earth fourtie",
+  "r3_verse": "but of the beaſts that are vnclean two and two, male and fe- male. Yea and of the foules also of the ayre ſeaucen and ſeaucen, male and female: that seed may be faued vpon the face of the whole earth.",
+  "arm_conflicts": [
+   "ofthe | of the",
+   "vucleane | vnclean",
+   "temale. | fe- male.",
+   "ot | of",
+   "ſeauen | ſeaucen",
+   "ſeauen, | ſeaucen,",
+   "mav | may",
+   "ſaued | faued"
+  ],
+  "new_text": "but of the beaſts that are vnclean two and two, male and fe- male. Yea and of the foules alſo of the ayre ſeaucen and ſeaucen, male and female: that ſeed may be faued vpon the face of the whole earth.",
+  "s_unresolved": [
+   "fe-",
+   "ſeaucen",
+   "ſeaucen,",
+   "faued"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.928,
+   "odr_com": 0.928,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p41",
+  "old_text": "For yet a while, and after ſeauen daves I wil rayne vpou the earth tourtie dayes and tourtie nights: and I wil cleane deſtroy al ſubſtance that I haue made, trom the face of the earth.",
+  "old": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.3302,
+   0.885,
+   0.4492
+  ],
+  "crop_page": 41,
+  "r3_raw": "of the beasts that are vnto them two and two, male and female. Yea and of the foules also of the ayre seven and seven, male and female: that seed may be saued vpon the face of the whole earth. 4. For yet a while, and after seven dayes I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane destroy al substance that I haue made, from the face of the earth. 5. Noetherfore did all things which our Lord had commanded him. c. And he was six hundred years old",
+  "r3_verse": "For yet a while, and after seven dayes I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane destroy al substance that I haue made, from the face of the earth. Noetherfore",
+  "arm_conflicts": [
+   "ſeauen daves | seven dayes",
+   "vpou | vpon",
+   "tourtie | fourtie",
+   "tourtie | fourtie",
+   "trom | from"
+  ],
+  "lexicon_readings": {
+   "30": "from"
+  },
+  "visual_readings": {
+   "30": "from"
+  },
+  "new_text": "For yet a while, and after seven dayes I wil rayne vpon the earth fourtie dayes and fourtie nights: and I wil cleane deſtroy al ſubſtance that I haue made, from the face of the earth. Noetherfore",
+  "s_unresolved": [
+   "seven",
+   "fourtie",
+   "fourtie",
+   "Noetherfore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.932,
+   "odr_com": 0.932,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p41",
+  "old_text": "Of beaſts alſo the cleane and the vncleane, and ot foules, and of al that moueth vpon the earth,",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.4524,
+   0.885,
+   0.5574
+  ],
+  "crop_page": 41,
+  "r3_raw": "Noe entred and his sonines, his wife and the wiues of his sonnes with him into the arke, beſeeue of the waters of the floud. 8. Of beasts also the cleane and the vncleane, and of foules, and of al that moueth vpon the earth, 9. two and two went to Noe into the arke, male and female, as our Lord had commanded Noc. 10. And after the seauen dayes were passed, the waters of the floud flowed over the earth.",
+  "r3_verse": "Of beasts also the cleane and the vncleane, and of foules, and of al that moueth vpon the earth,",
+  "arm_conflicts": [
+   "ot | of"
+  ],
+  "new_text": "Of beaſts alſo the cleane and the vncleane, and of foules, and of al that moueth vpon the earth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p41",
+  "old_text": "And after the ſeauen dayes were paſſed, the waters of the ſloud flowed ouer the earth.",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5065,
+   0.885,
+   0.5897
+  ],
+  "crop_page": 41,
+  "r3_raw": "the earth, 9. two and two went to Noe into the arke, male and female, as our Lord had commanded Noc. 1c. And after the seauen dayes were passed, the waters of the flood flowed over the earth. 11. In the six hundred yeare of the life of Noe, in the second month, in the seauenteenth",
+  "r3_verse": "And after the seauen dayes were passed, the waters of the flood flowed over the earth.",
+  "arm_conflicts": [
+   "ſloud | flood",
+   "ouer | over"
+  ],
+  "new_text": "And after the ſeauen dayes were paſſed, the waters of the flood flowed ouer the earth.",
+  "s_unresolved": [
+   "flood"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p41",
+  "old_text": "and the raine fel vpon the earth fourtie dayes and fourtie nighis.",
+  "old": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.5782,
+   0.885,
+   0.6621
+  ],
+  "crop_page": 41,
+  "r3_raw": "day of the month, al the fountaines of the (c) great depth were broken vp, and (d)the floud-gates of heauen were opened: 12. and the raine fel vpon the earth fourtie dayes and fourtie nights. 13. In the verie point of that day entred Noe, and Sem,and Cham, and Iapheth his sonnes; and",
+  "r3_verse": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+  "arm_conflicts": [
+   "nighis. | nights."
+  ],
+  "new_text": "and the raine fel vpon the earth fourtie dayes and fourtie nights.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "chapter",
+  "old_text": "And al fleſh was conſumed that Noe. moued vpon the earth, of toule, ot cattle, ot beaſts, and of al creepers, that creep vpon the earth: al men,",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.04,
+   0.0611,
+   0.825,
+   0.17
+  ],
+  "crop_page": 42,
+  "r3_raw": "moued vpon the earth, of foule, ot cattle, of beasts, and of al creepers, that creep vpon the earth: al men, 22. and al things, wherin there is breath of life on the earth,died.23. And he cleane destroied al substance",
+  "r3_verse": "And al fleſh was conſumed that Noe. moued vpon the earth, of foule, ot cattle, of beasts, and of al creepers, that creep vpon the earth: al men,",
+  "arm_conflicts": [
+   "toule, | foule,",
+   "ot | of"
+  ],
+  "used_merge": true,
+  "new_text": "And al fleſh was conſumed that Noe. moued vpon the earth, of foule, ot cattle, of beaſts, and of al creepers, that creep vpon the earth: al men,",
+  "s_unresolved": [
+   "foule,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p42",
+  "old_text": "and al thines, wherin there is Sap. breath of Iife on the earth, died.",
+  "old": {
+   "s_dismas": 0.909,
+   "odr_com": 0.909,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.04,
+   0.1054,
+   0.825,
+   0.1847
+  ],
+  "crop_page": 42,
+  "r3_raw": "moued vpon the earth, of foule, ot cattle, of beasts, and of al creepers, that creep vpon the earth: al men, 22. and al things, wherin there is breath of life on the earth,died.23. And he cleane destroied al substance that was vpon the earth, from man euon to beast, as wel it that cree-",
+  "r3_verse": "and al things, wherin there is breath of life on the earth,died.23.",
+  "arm_conflicts": [
+   "thines, | things,",
+   "Iife | life",
+   "earth, died. | earth,died.23."
+  ],
+  "lexicon_readings": {
+   "8": "life"
+  },
+  "visual_readings": {
+   "8": "life"
+  },
+  "new_text": "and al things, wherin there is breath of life on the earth,died.23.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p42",
+  "old_text": "And he cleane deſtroied al ſubſtance that was vpon the earth, trom man euen to beaſt, as wel it that creeec..39. peth, as the foules of the avre : aud they were deitroyed trom of the earth : but only Noe remained, and they that were with him in the Pot.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.04,
+   0.1226,
+   0.825,
+   0.2553
+  ],
+  "crop_page": 42,
+  "r3_raw": "moued vpon the earth, or foule, or cattle, or birds, and of all creeping that creep vpon the earth: al men, 22. and al things, wherin there is breath of life on the earth,died.23. And he cleane destroied al substance that was vpon the earth, from man euen to beast, as wel it that cree-peth, as the foules of the ayre: and they were destroyed from of the earth:\" but only Noe remained, and they that were with him in the arke. 24. And the waters held on aboue the earth an hundred fiftie dayes.",
+  "r3_verse": "And he cleane destroied al substance that was vpon the earth, from man euen to beast, as wel it that cree-peth, as the foules of the ayre: and they were destroyed from of the earth:\" but only Noe remained, and they that were with him in the arke.",
+  "arm_conflicts": [
+   "trom | from",
+   "creeec..39. peth, | cree-peth,",
+   "avre : aud | ayre: and",
+   "deitroyed trom | destroyed from",
+   "earth : | earth:\"",
+   "Pot. | arke."
+  ],
+  "lexicon_readings": {
+   "11": "from",
+   "31": "from"
+  },
+  "visual_readings": {
+   "11": "from",
+   "31": "from"
+  },
+  "new_text": "And he cleane deſtroied al ſubſtance that was vpon the earth, from man euen to beaſt, as wel it that cree-peth, as the foules of the ayre: and they were destroyed from of the earth but only Noe remained, and they that were with him in the arke.",
+  "s_unresolved": [
+   "destroyed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p42",
+  "old_text": "And the waters held on aboue the earth an hundredtttie dayes. CHAP. WII.",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.79,
+   "madueke_b": 0.79
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.04,
+   0.1932,
+   0.825,
+   0.3772
+  ],
+  "crop_page": 42,
+  "r3_raw": "peth, as the fowles of the ayre: and they were deloryed from off the earth:\" but only Noe remained, and they that were with him in the arke. 24. And the waters held on aboue the earth an hundred nittie dayes. ANNOTATIONS. CHAP. VII.",
+  "r3_verse": "And the waters held on aboue the earth an hundred nittie dayes. CHAP. VII.",
+  "arm_conflicts": [
+   "hundredtttie | hundred nittie",
+   "WII. | VII."
+  ],
+  "new_text": "And the waters held on aboue the earth an hundred nittie dayes. CHAP. VII.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.845,
+   "odr_com": 0.845,
+   "sabates_a": 0.831,
+   "madueke_b": 0.831
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ }
+]

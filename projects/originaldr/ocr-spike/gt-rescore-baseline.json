@@ -1,0 +1,1068 @@
+{
+ "metric": "fold_archaic + edit_ratio (pilot metric)",
+ "n_verses": 131,
+ "overall": {
+  "A_ocr_vs_gt": 0.622173075205231,
+  "B_sdismas_vs_gt": 0.8001143460478799,
+  "C_odrcom_vs_gt": 0.8110306271499903,
+  "D_ocr_vs_sdismas": 0.6698288715876873,
+  "pass_A": [
+   9,
+   113
+  ],
+  "pass_D": [
+   6,
+   111
+  ]
+ },
+ "rows": [
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/13",
+   "A_ocr_gt": 0.9,
+   "B_sd_gt": 0.848,
+   "C_oc_gt": 0.848,
+   "D_ocr_sd": 0.792
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/14",
+   "A_ocr_gt": 0.8542372881355932,
+   "B_sd_gt": 0.9457627118644067,
+   "C_oc_gt": 0.9457627118644067,
+   "D_ocr_sd": 0.8631578947368421
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/15",
+   "A_ocr_gt": 0.7784090909090909,
+   "B_sd_gt": 0.7487179487179487,
+   "C_oc_gt": 0.7487179487179487,
+   "D_ocr_sd": 0.7743589743589744
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/16",
+   "A_ocr_gt": 0.54375,
+   "B_sd_gt": 0.475,
+   "C_oc_gt": 0.475,
+   "D_ocr_sd": 0.863013698630137
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/17",
+   "A_ocr_gt": 0.5258620689655172,
+   "B_sd_gt": 0.6293103448275862,
+   "C_oc_gt": 0.6379310344827587,
+   "D_ocr_sd": 0.8426966292134832
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/18",
+   "A_ocr_gt": 0.9,
+   "B_sd_gt": 0.85,
+   "C_oc_gt": 0.85,
+   "D_ocr_sd": 0.75
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/19",
+   "A_ocr_gt": 0.4158415841584159,
+   "B_sd_gt": 0.3655913978494624,
+   "C_oc_gt": 0.3655913978494624,
+   "D_ocr_sd": 0.7623762376237624
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/20",
+   "A_ocr_gt": 0.8881987577639752,
+   "B_sd_gt": 0.5527950310559007,
+   "C_oc_gt": 0.5527950310559007,
+   "D_ocr_sd": 0.5103448275862069
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/21",
+   "A_ocr_gt": 0.4910714285714286,
+   "B_sd_gt": 0.6607142857142857,
+   "C_oc_gt": 0.6607142857142857,
+   "D_ocr_sd": 0.8214285714285714
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/22",
+   "A_ocr_gt": 0.4864864864864865,
+   "B_sd_gt": 0.5319148936170213,
+   "C_oc_gt": 0.5319148936170213,
+   "D_ocr_sd": 0.8986486486486487
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/23",
+   "A_ocr_gt": 0.26168224299065423,
+   "B_sd_gt": 0.28037383177570097,
+   "C_oc_gt": 0.28037383177570097,
+   "D_ocr_sd": 0.7961165048543689
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/24",
+   "A_ocr_gt": 0.5981308411214954,
+   "B_sd_gt": 0.4392523364485982,
+   "C_oc_gt": 0.4392523364485982,
+   "D_ocr_sd": 0.6777777777777778
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/25",
+   "A_ocr_gt": 0.6388888888888888,
+   "B_sd_gt": 0.7962962962962963,
+   "C_oc_gt": 0.7962962962962963,
+   "D_ocr_sd": 0.8152173913043479
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/26",
+   "A_ocr_gt": 0.8181818181818181,
+   "B_sd_gt": 0.9347826086956522,
+   "C_oc_gt": 0.9347826086956522,
+   "D_ocr_sd": 0.7636363636363637
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/27",
+   "A_ocr_gt": 0.8070175438596492,
+   "B_sd_gt": 0.8863636363636364,
+   "C_oc_gt": 0.8863636363636364,
+   "D_ocr_sd": 0.7784090909090909
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/28",
+   "A_ocr_gt": 0.6636363636363636,
+   "B_sd_gt": 0.8090909090909091,
+   "C_oc_gt": 0.8090909090909091,
+   "D_ocr_sd": 0.8043478260869565
+  },
+  {
+   "locus": "scripture-genesis-24",
+   "skel": "scripture/genesis/24/29",
+   "A_ocr_gt": 0.5157894736842106,
+   "B_sd_gt": 0.5353535353535354,
+   "C_oc_gt": 0.5353535353535354,
+   "D_ocr_sd": 0.5555555555555556
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/1",
+   "A_ocr_gt": 0.8230088495575221,
+   "B_sd_gt": 0.926605504587156,
+   "C_oc_gt": 0.926605504587156,
+   "D_ocr_sd": 0.8938053097345133
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/2",
+   "A_ocr_gt": 0.5606060606060606,
+   "B_sd_gt": 0.7525773195876289,
+   "C_oc_gt": 0.7525773195876289,
+   "D_ocr_sd": 0.696969696969697
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/3",
+   "A_ocr_gt": 0.5481927710843373,
+   "B_sd_gt": 0.30405405405405406,
+   "C_oc_gt": 0.6746987951807228,
+   "D_ocr_sd": 0.4695945945945946
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/4",
+   "A_ocr_gt": 0.5555555555555556,
+   "B_sd_gt": 0.8518518518518519,
+   "C_oc_gt": 0.8518518518518519,
+   "D_ocr_sd": 0.5434782608695652
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/5",
+   "A_ocr_gt": 0.625,
+   "B_sd_gt": 0.9090909090909091,
+   "C_oc_gt": 0.9090909090909091,
+   "D_ocr_sd": 0.5681818181818181
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/6",
+   "A_ocr_gt": 0.654320987654321,
+   "B_sd_gt": 0.8271604938271605,
+   "C_oc_gt": 0.8271604938271605,
+   "D_ocr_sd": 0.5641025641025641
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/7",
+   "A_ocr_gt": 0.7259259259259259,
+   "B_sd_gt": 0.689922480620155,
+   "C_oc_gt": 0.689922480620155,
+   "D_ocr_sd": 0.7777777777777778
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/8",
+   "A_ocr_gt": 0.8198757763975155,
+   "B_sd_gt": 0.7515527950310559,
+   "C_oc_gt": 0.7515527950310559,
+   "D_ocr_sd": 0.7902097902097902
+  },
+  {
+   "locus": "scripture-genesis-16-p081",
+   "skel": "scripture/genesis/16/9",
+   "A_ocr_gt": 0.5319148936170213,
+   "B_sd_gt": 0.34693877551020413,
+   "C_oc_gt": 0.34693877551020413,
+   "D_ocr_sd": 0.26530612244897955
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/10",
+   "A_ocr_gt": 0.25217391304347825,
+   "B_sd_gt": 0.23478260869565215,
+   "C_oc_gt": 0.23478260869565215,
+   "D_ocr_sd": 0.691588785046729
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/11",
+   "A_ocr_gt": 0.25595238095238093,
+   "B_sd_gt": 0.45614035087719296,
+   "C_oc_gt": 0.45614035087719296,
+   "D_ocr_sd": 0.7485380116959064
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/12",
+   "A_ocr_gt": 0.7183908045977012,
+   "B_sd_gt": 0.6264367816091954,
+   "C_oc_gt": 0.6264367816091954,
+   "D_ocr_sd": 0.4184397163120568
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/13",
+   "A_ocr_gt": 0.8284023668639053,
+   "B_sd_gt": 0.8284023668639053,
+   "C_oc_gt": 0.8284023668639053,
+   "D_ocr_sd": 0.7951807228915663
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/14",
+   "A_ocr_gt": 0.5925925925925926,
+   "B_sd_gt": 0.787037037037037,
+   "C_oc_gt": 0.787037037037037,
+   "D_ocr_sd": 0.8
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/15",
+   "A_ocr_gt": 0.5714285714285714,
+   "B_sd_gt": 0.43939393939393945,
+   "C_oc_gt": 0.43939393939393945,
+   "D_ocr_sd": 0.7575757575757576
+  },
+  {
+   "locus": "scripture-genesis-16-p082",
+   "skel": "scripture/genesis/16/16",
+   "A_ocr_gt": 0.6767676767676767,
+   "B_sd_gt": 0.7272727272727273,
+   "C_oc_gt": 0.7272727272727273,
+   "D_ocr_sd": 0.7638888888888888
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/1",
+   "A_ocr_gt": 0.5974025974025974,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.5974025974025974
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/2",
+   "A_ocr_gt": 0.7325581395348837,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7325581395348837
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/3",
+   "A_ocr_gt": 0.31550802139037437,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.31550802139037437
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/4",
+   "A_ocr_gt": 0.31999999999999995,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.31999999999999995
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/5",
+   "A_ocr_gt": 0.3877551020408163,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 0.9876543209876543,
+   "D_ocr_sd": 0.3877551020408163
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/6",
+   "A_ocr_gt": 0.24489795918367352,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 0.9893617021276596,
+   "D_ocr_sd": 0.24489795918367352
+  },
+  {
+   "locus": "scripture-psalms-001",
+   "skel": "scripture/psalms/1/7",
+   "A_ocr_gt": null,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/14",
+   "A_ocr_gt": 0.808695652173913,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.808695652173913
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/15",
+   "A_ocr_gt": 0.9367088607594937,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.9367088607594937
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/16",
+   "A_ocr_gt": 0.9047619047619048,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.9047619047619048
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/17",
+   "A_ocr_gt": 0.3917525773195877,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.3917525773195877
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/18",
+   "A_ocr_gt": 0.7346938775510203,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7346938775510203
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/19",
+   "A_ocr_gt": 0.7413793103448276,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7413793103448276
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/20",
+   "A_ocr_gt": 0.7477477477477478,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7477477477477478
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/21",
+   "A_ocr_gt": 0.8494623655913979,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8494623655913979
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/22",
+   "A_ocr_gt": 0.8217821782178218,
+   "B_sd_gt": 0.9900990099009901,
+   "C_oc_gt": 0.9900990099009901,
+   "D_ocr_sd": 0.81
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/73/23",
+   "A_ocr_gt": 0.8172043010752688,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8172043010752688
+  },
+  {
+   "locus": "scripture-psalms-074-p137",
+   "skel": "scripture/psalms/74/1",
+   "A_ocr_gt": 0.7101449275362319,
+   "B_sd_gt": 0.2450980392156863,
+   "C_oc_gt": 0.962962962962963,
+   "D_ocr_sd": 0.28431372549019607
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/2",
+   "A_ocr_gt": 0.6436781609195402,
+   "B_sd_gt": null,
+   "C_oc_gt": 0.6764705882352942,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/3",
+   "A_ocr_gt": 0.8441558441558441,
+   "B_sd_gt": 0.5714285714285714,
+   "C_oc_gt": 0.5714285714285714,
+   "D_ocr_sd": 0.5
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/4",
+   "A_ocr_gt": 0.6979166666666667,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.6979166666666667
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/5",
+   "A_ocr_gt": 0.75,
+   "B_sd_gt": 0.8271604938271605,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.77
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/6",
+   "A_ocr_gt": 0.8142857142857143,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8142857142857143
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/7",
+   "A_ocr_gt": 0.8170731707317074,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8170731707317074
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/8",
+   "A_ocr_gt": 0.18309859154929575,
+   "B_sd_gt": 0.3278688524590164,
+   "C_oc_gt": 0.3278688524590164,
+   "D_ocr_sd": 0.3943661971830986
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/9",
+   "A_ocr_gt": null,
+   "B_sd_gt": 0.8319672131147541,
+   "C_oc_gt": 0.8319672131147541,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/10",
+   "A_ocr_gt": 0.8032786885245902,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8032786885245902
+  },
+  {
+   "locus": "scripture-psalms-074-p138",
+   "skel": "scripture/psalms/74/11",
+   "A_ocr_gt": 0.9166666666666666,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.9166666666666666
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/2",
+   "A_ocr_gt": null,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/3",
+   "A_ocr_gt": 0.6901408450704225,
+   "B_sd_gt": 0.9861111111111112,
+   "C_oc_gt": 0.9861111111111112,
+   "D_ocr_sd": 0.7083333333333333
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/4",
+   "A_ocr_gt": 0.7529411764705882,
+   "B_sd_gt": 0.9866666666666667,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7411764705882353
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/5",
+   "A_ocr_gt": 0.6666666666666667,
+   "B_sd_gt": 0.8703703703703703,
+   "C_oc_gt": 0.8703703703703703,
+   "D_ocr_sd": 0.7681159420289855
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/6",
+   "A_ocr_gt": 0.6521739130434783,
+   "B_sd_gt": 0.3254437869822485,
+   "C_oc_gt": 0.8985507246376812,
+   "D_ocr_sd": 0.21301775147928992
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/7",
+   "A_ocr_gt": 0.6481481481481481,
+   "B_sd_gt": null,
+   "C_oc_gt": 0.7523809523809524,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/8",
+   "A_ocr_gt": 0.5818181818181818,
+   "B_sd_gt": 0.7545454545454545,
+   "C_oc_gt": 0.7545454545454545,
+   "D_ocr_sd": 0.6938775510204082
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/9",
+   "A_ocr_gt": 0.9310344827586207,
+   "B_sd_gt": 0.8888888888888888,
+   "C_oc_gt": 0.8888888888888888,
+   "D_ocr_sd": 0.8253968253968254
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/115/10",
+   "A_ocr_gt": 0.8333333333333334,
+   "B_sd_gt": 0.9102564102564102,
+   "C_oc_gt": 0.9102564102564102,
+   "D_ocr_sd": 0.9178082191780822
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/116/0",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/116/1",
+   "A_ocr_gt": 0.31746031746031744,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 0.859375,
+   "D_ocr_sd": 0.31746031746031744
+  },
+  {
+   "locus": "scripture-psalms-115-116",
+   "skel": "scripture/psalms/116/2",
+   "A_ocr_gt": 0.92,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.92
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/103",
+   "A_ocr_gt": 0.7792207792207793,
+   "B_sd_gt": 0.8904109589041096,
+   "C_oc_gt": 0.43624161073825507,
+   "D_ocr_sd": 0.6753246753246753
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/104",
+   "A_ocr_gt": 0.8089887640449438,
+   "B_sd_gt": 0.7130434782608696,
+   "C_oc_gt": null,
+   "D_ocr_sd": 0.5913043478260869
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/105",
+   "A_ocr_gt": 0.36764705882352944,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.36764705882352944
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/106",
+   "A_ocr_gt": 0.8695652173913043,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8695652173913043
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/107",
+   "A_ocr_gt": 0.6753246753246753,
+   "B_sd_gt": 0.9838709677419355,
+   "C_oc_gt": null,
+   "D_ocr_sd": 0.6883116883116883
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/108",
+   "A_ocr_gt": 0.961038961038961,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 0.987012987012987,
+   "D_ocr_sd": 0.961038961038961
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/109",
+   "A_ocr_gt": 0.5,
+   "B_sd_gt": 0.9848484848484849,
+   "C_oc_gt": 0.9848484848484849,
+   "D_ocr_sd": 0.5142857142857142
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/110",
+   "A_ocr_gt": 0.7023809523809523,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7023809523809523
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/111",
+   "A_ocr_gt": 0.7058823529411764,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7058823529411764
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/112",
+   "A_ocr_gt": 0.9027777777777778,
+   "B_sd_gt": 0.711340206185567,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.6391752577319587
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/113",
+   "A_ocr_gt": 0.6307692307692307,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.6307692307692307
+  },
+  {
+   "locus": "scripture-psalms-118",
+   "skel": "scripture/psalms/118/114",
+   "A_ocr_gt": 0.782608695652174,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.782608695652174
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/2",
+   "A_ocr_gt": 0.8064516129032258,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8064516129032258
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/3",
+   "A_ocr_gt": 0.6413043478260869,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.6413043478260869
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/4",
+   "A_ocr_gt": 0.3793103448275862,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.3793103448275862
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/5",
+   "A_ocr_gt": 0.64,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.64
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/6",
+   "A_ocr_gt": 0.32098765432098764,
+   "B_sd_gt": 0.9868421052631579,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.308641975308642
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/7",
+   "A_ocr_gt": 0.7702702702702703,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 0.9836065573770492,
+   "D_ocr_sd": 0.7702702702702703
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/8",
+   "A_ocr_gt": null,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/149/9",
+   "A_ocr_gt": 0.8165137614678899,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.8165137614678899
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/150/1",
+   "A_ocr_gt": 0.19318181818181823,
+   "B_sd_gt": 0.8977272727272727,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.20481927710843373
+  },
+  {
+   "locus": "scripture-psalms-150-p265",
+   "skel": "scripture/psalms/150/2",
+   "A_ocr_gt": 0.23809523809523814,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.23809523809523814
+  },
+  {
+   "locus": "scripture-psalms-150-p266",
+   "skel": "scripture/psalms/150/3",
+   "A_ocr_gt": 0.7638888888888888,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.7638888888888888
+  },
+  {
+   "locus": "scripture-psalms-150-p266",
+   "skel": "scripture/psalms/150/4",
+   "A_ocr_gt": 0.273972602739726,
+   "B_sd_gt": 1.0,
+   "C_oc_gt": 1.0,
+   "D_ocr_sd": 0.273972602739726
+  },
+  {
+   "locus": "scripture-psalms-150-p266",
+   "skel": "scripture/psalms/150/5",
+   "A_ocr_gt": 0.4375,
+   "B_sd_gt": 0.7012987012987013,
+   "C_oc_gt": 0.7012987012987013,
+   "D_ocr_sd": 0.6458333333333333
+  },
+  {
+   "locus": "scripture-psalms-150-p266",
+   "skel": "scripture/psalms/150/6",
+   "A_ocr_gt": null,
+   "B_sd_gt": 0.6461538461538461,
+   "C_oc_gt": 0.6461538461538461,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/1",
+   "A_ocr_gt": 0.5763888888888888,
+   "B_sd_gt": 0.9513888888888888,
+   "C_oc_gt": 0.9444444444444444,
+   "D_ocr_sd": 0.6071428571428572
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/2",
+   "A_ocr_gt": 0.6068965517241379,
+   "B_sd_gt": 0.8896551724137931,
+   "C_oc_gt": 0.8896551724137931,
+   "D_ocr_sd": 0.5957446808510638
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/3",
+   "A_ocr_gt": 0.4117647058823529,
+   "B_sd_gt": 0.7333333333333334,
+   "C_oc_gt": 0.7333333333333334,
+   "D_ocr_sd": 0.6470588235294117
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/4",
+   "A_ocr_gt": 0.6323529411764706,
+   "B_sd_gt": 0.803030303030303,
+   "C_oc_gt": 0.803030303030303,
+   "D_ocr_sd": 0.8088235294117647
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/5",
+   "A_ocr_gt": 0.4409448818897638,
+   "B_sd_gt": 0.7716535433070866,
+   "C_oc_gt": 0.7716535433070866,
+   "D_ocr_sd": 0.6074766355140186
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/6",
+   "A_ocr_gt": 0.7037037037037037,
+   "B_sd_gt": 0.7159090909090908,
+   "C_oc_gt": 0.7159090909090908,
+   "D_ocr_sd": 0.8863636363636364
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/7",
+   "A_ocr_gt": 0.891156462585034,
+   "B_sd_gt": 0.9931972789115646,
+   "C_oc_gt": 0.9931972789115646,
+   "D_ocr_sd": 0.8835616438356164
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/8",
+   "A_ocr_gt": 0.7131147540983607,
+   "B_sd_gt": 0.8278688524590164,
+   "C_oc_gt": 0.8278688524590164,
+   "D_ocr_sd": 0.8613861386138614
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/9",
+   "A_ocr_gt": 0.5419847328244275,
+   "B_sd_gt": 0.46564885496183206,
+   "C_oc_gt": 0.46564885496183206,
+   "D_ocr_sd": 0.883495145631068
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/10",
+   "A_ocr_gt": 0.42727272727272725,
+   "B_sd_gt": 0.5339805825242718,
+   "C_oc_gt": 0.5339805825242718,
+   "D_ocr_sd": 0.8272727272727273
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/11",
+   "A_ocr_gt": 0.7329842931937173,
+   "B_sd_gt": 0.7120418848167539,
+   "C_oc_gt": 0.7120418848167539,
+   "D_ocr_sd": 0.8865248226950355
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/12",
+   "A_ocr_gt": 0.23636363636363633,
+   "B_sd_gt": 0.4464285714285714,
+   "C_oc_gt": 0.4464285714285714,
+   "D_ocr_sd": 0.7678571428571428
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/13",
+   "A_ocr_gt": 0.3037037037037037,
+   "B_sd_gt": 0.5333333333333333,
+   "C_oc_gt": 0.5333333333333333,
+   "D_ocr_sd": 0.6395348837209303
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/14",
+   "A_ocr_gt": 0.25233644859813087,
+   "B_sd_gt": 0.25316455696202533,
+   "C_oc_gt": 0.25316455696202533,
+   "D_ocr_sd": 0.5327102803738317
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/15",
+   "A_ocr_gt": 0.5808823529411764,
+   "B_sd_gt": 0.6752136752136753,
+   "C_oc_gt": 0.6036036036036037,
+   "D_ocr_sd": 0.8014705882352942
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/16",
+   "A_ocr_gt": 0.5887096774193548,
+   "B_sd_gt": 0.7096774193548387,
+   "C_oc_gt": 0.7096774193548387,
+   "D_ocr_sd": 0.75
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/17",
+   "A_ocr_gt": 0.30000000000000004,
+   "B_sd_gt": 0.22807017543859653,
+   "C_oc_gt": 0.22807017543859653,
+   "D_ocr_sd": 0.5571428571428572
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/18",
+   "A_ocr_gt": 0.5178571428571428,
+   "B_sd_gt": 0.30107526881720426,
+   "C_oc_gt": 0.30107526881720426,
+   "D_ocr_sd": 0.5714285714285714
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/19",
+   "A_ocr_gt": 0.2777777777777778,
+   "B_sd_gt": 0.6283185840707964,
+   "C_oc_gt": 0.6403508771929824,
+   "D_ocr_sd": 0.33333333333333337
+  },
+  {
+   "locus": "scripture-matthew-28-p102",
+   "skel": "scripture/matthew/28/20",
+   "A_ocr_gt": 0.24806201550387597,
+   "B_sd_gt": 0.8602941176470589,
+   "C_oc_gt": 0.8478260869565217,
+   "D_ocr_sd": 0.2279411764705882
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/1",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/2",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/3",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/4",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/5",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/6",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/7",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/8",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/9",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/10",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/11",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  },
+  {
+   "locus": "scripture-2john",
+   "skel": "scripture/2john/1/12",
+   "A_ocr_gt": null,
+   "B_sd_gt": null,
+   "C_oc_gt": null,
+   "D_ocr_sd": null
+  }
+ ]
+}

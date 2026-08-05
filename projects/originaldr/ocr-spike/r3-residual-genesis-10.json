@@ -1,0 +1,2722 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "are the generations of the ſonnes of Noe, Semn, I Cham, and Iapheth and children were borne to thei after the floud.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.913,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.1328,
+   0.875,
+   0.2844
+  ],
+  "crop_page": 61,
+  "r3_raw": "The genealogie of Noes children, by whom the world was increased againe, after the flood. These are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the flood. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and",
+  "r3_verse": "These are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the flood.",
+  "arm_conflicts": [
+   "Semn, I | Sem,",
+   "thei | them",
+   "floud. | flood."
+  ],
+  "lexicon_readings": {
+   "0": "Theſe"
+  },
+  "visual_readings": {
+   "0": "Theſe"
+  },
+  "new_text": "Theſe are the generations of the ſonnes of Noe, Sem, Cham, and Iapheth and children were borne to them after the flood.",
+  "s_unresolved": [
+   "flood."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.991,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p61",
+  "old_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.2175,
+   0.875,
+   0.3219
+  ],
+  "crop_page": 61,
+  "r3_raw": "Cham, and Iapheth: and children were borne to them after the flood. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras. † Moreover the children of Gomer: Ascenez and Riphath and Thogorma. † And the sonnes of Iauan: Elisa",
+  "r3_verse": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras.",
+  "arm_conflicts": [],
+  "new_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p61",
+  "old_text": "And the ſonnes of Cham Chus, and Meſraim, and Phut, and Chanaan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.3609,
+   0.875,
+   0.4472
+  ],
+  "crop_page": 61,
+  "r3_raw": "according to his tongue and their families in their nations. 6 † And the sonnes of Cham: Chus; and Mefraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha,and Regma,& Sabathaca.The sonnes of Regma:",
+  "r3_verse": "And the sonnes of Cham: Chus; and Mefraim, and Phut, and Chanaan.",
+  "arm_conflicts": [
+   "Meſraim, | Mefraim,"
+  ],
+  "new_text": "And the ſonnes of Cham Chus, and Mefraim, and Phut, and Chanaan.",
+  "s_unresolved": [
+   "Mefraim,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.825,
+   "madueke_b": 0.825
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p61",
+  "old_text": "And the ſonnes of Chus: Saba, and Heuila, Sabatha, and Regma, Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.38,
+   0.875,
+   0.486
+  ],
+  "crop_page": 61,
+  "r3_raw": "6 † And the sonnes of Cham: Chus; and Mesraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The sonnes of Regma: 8 Saba, and Dadan. † Moreouer Chus begat\" Nemrod: he be- 9 gan to be mightie in the earth, † and he was a valiaunt hun-",
+  "r3_verse": "And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The sonnes of Regma: Saba, and Dadan.",
+  "arm_conflicts": [],
+  "new_text": "And the ſonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p61",
+  "old_text": "Out of that land came forth Aſſur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.049,
+   0.5221,
+   0.875,
+   0.6287
+  ],
+  "crop_page": 61,
+  "r3_raw": "beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar. † Out of that land came forth Assur, and builded Niniue, and the streets of the citie, and Chale. † Resen also betwen Niniue and Chale: this is the great citie. † But Mesraim also begat",
+  "r3_verse": "Out of that land came forth Assur, and builded Niniue, and the streets of the citie, and Chale.",
+  "arm_conflicts": [],
+  "new_text": "Out of that land came forth Aſſur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "p61",
+  "old_text": "Reſen alſo betwen Niniue and Chale this is the great citie.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.049,
+   0.5609,
+   0.875,
+   0.6494
+  ],
+  "crop_page": 61,
+  "r3_raw": "land came forth: Assur, and builded Ninive, and the streets of the citie, and Chale. † Resen also between Ninive and Chale: this is the great citie. † But Mesraim also begat the Ludims, & the Anamims, & the Laabims, the Nephthu-",
+  "r3_verse": "Resen also between Ninive and Chale: this is the great citie.",
+  "arm_conflicts": [
+   "betwen Niniue | between Ninive"
+  ],
+  "new_text": "Reſen alſo betwen Niniue and Chale this is the great citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 14,
+  "from": "p61",
+  "old_text": "and the Phetruſims, and the Caſlulms: of whom came forth the Philiſtims the Caphtorims.",
+  "old": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.049,
+   0.6227,
+   0.875,
+   0.7093
+  ],
+  "crop_page": 61,
+  "r3_raw": "the Ludims, & the Anamimns, & the Laabims, the Nephthu- 14 ims, † and the Phetrusims, and the Caslulms: of whom 15 came forth the Philistims & the Caphtorims. † And 16 Canaan begat Sidon his first begotten, Hethæus, † and",
+  "r3_verse": "and the Phetrusims, and the Caslulms: of whom came forth the Philistims & the Caphtorims.",
+  "arm_conflicts": [],
+  "new_text": "and the Phetruſims, and the Caſlulms: of whom came forth the Philiſtims & the Caphtorims.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p61",
+  "old_text": "Heuæus and Araceus Sineus,",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.6826,
+   0.875,
+   0.7698
+  ],
+  "crop_page": 61,
+  "r3_raw": "16 Canaan begat Sidon his first begotten, Hethæus, † and Iebuſæus, and Amorrihæus, and Gergefæus, † Heuæus and Aracæus: Sinæus†, † and Aradius, Samaræus, and Hamathæus: and afterwardes were spred the people of the Chana-",
+  "r3_verse": "Heuæus and Aracæus: Sinæus†,",
+  "arm_conflicts": [
+   "Araceus Sineus, | Aracæus: Sinæus†,"
+  ],
+  "new_text": "Heuæus and Aracæus: Sinæus†,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 19,
+  "from": "p61",
+  "old_text": "And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodomaeth Gomorrha, and Adama, Seboim euen to Leſa.",
+  "old": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.7425,
+   0.875,
+   0.8511
+  ],
+  "crop_page": 61,
+  "r3_raw": "thæus: and afterwardes were spred the people of the Chananits. † And the limitts of Chanaan were from Sidon as we come to Gerara cuen to Gaza, vntil thou enter to Sodoma & Gomorra, and Adama, & Seboim cuen to Leſa. † These are the children of Chain in their kinreds, and tongues, and",
+  "r3_verse": "And the limitts of Chanaan were from Sidon as we come to Gerara cuen to Gaza, vntil thou enter to Sodoma & Gomorra, and Adama, & Seboim cuen to Leſa.",
+  "arm_conflicts": [
+   "euen | cuen",
+   "Sodomaeth Gomorrha, | Sodoma & Gomorra,",
+   "euen | cuen"
+  ],
+  "new_text": "And the limitts of Chanaan were from Sidon as we come to Gerara cuen to Gaza, vntil thou enter to Sodoma & Gomorra, and Adama, & Seboim cuen to Leſa.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p61",
+  "old_text": "Theſe are the children of Cham in their kinreds, and tongues, and generations lands, and nations.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.7823,
+   0.875,
+   0.8915
+  ],
+  "crop_page": 61,
+  "r3_raw": "come to Gerara cuen tō Gaza, vntil thou enter to Sodoma & Gomorra, and Adama, & Seboim cuen to Lefa. † These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations. † Of Sem alſo: father of all the children of Herber, the elder brother of Iapheth were",
+  "r3_verse": "These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "arm_conflicts": [
+   "Cham | Chain"
+  ],
+  "new_text": "Theſe are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p62",
+  "old_text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- li dren of Iectan.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.2075,
+   0.945,
+   0.3038
+  ],
+  "crop_page": 62,
+  "r3_raw": "and Vzal, and Decla, † and Ebal, and Abimael, Saba, 28 leg, which † and Ophir, and Heuila, and Iobab. al these were the chil- dren of Ie̲ctan. † And their dwelling was from Meſfa as we goe on as far as Sephar a mountaine in the east. † These are",
+  "r3_verse": "and Ophir, and Heuila, and Iobab. al these were the chil- dren of Ie̲ctan.",
+  "arm_conflicts": [
+   "Iectan. | Ie̲ctan."
+  ],
+  "new_text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- dren of Ie̲ctan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "are the generations of the ſonnes of Noe, Sem, I Cham, and Iapheth and children were borne to them after the floud.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.93,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.1183,
+   0.875,
+   0.2692
+  ],
+  "crop_page": 65,
+  "r3_raw": "The genealogie of Noes children, by whom the World was increased againe, after the flood. These are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the floud. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and",
+  "r3_verse": "These are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the floud.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "0": "Theſe"
+  },
+  "visual_readings": {
+   "0": "Theſe"
+  },
+  "new_text": "Theſe are the generations of the ſonnes of Noe, Sem, Cham, and Iapheth and children were borne to them after the floud.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p65",
+  "old_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.2048,
+   0.875,
+   0.3127
+  ],
+  "crop_page": 65,
+  "r3_raw": "Cham, and Iapheth: and children were borne to them after the flood. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras. † Moreouer the children of Gomer: Ascenez and Riphath and Thogorma. † And the sonnes of Iauan: Elifa",
+  "r3_verse": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras.",
+  "arm_conflicts": [],
+  "new_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p65",
+  "old_text": "And the ſonnes of Cham Chus, and Meſraim, and Phut, and Chanaan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.3549,
+   0.875,
+   0.4398
+  ],
+  "crop_page": 65,
+  "r3_raw": "according to his tongue and their families in their nations. 6 † And the sonnes of Cham: Chus, and Mesraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The sonnes of Regma:",
+  "r3_verse": "And the sonnes of Cham: Chus, and Mesraim, and Phut, and Chanaan.",
+  "arm_conflicts": [],
+  "new_text": "And the ſonnes of Cham Chus, and Meſraim, and Phut, and Chanaan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p65",
+  "old_text": "And the ſonnes of Chus: Saba, and Heuila, Sabatha, and Regma, Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.3744,
+   0.875,
+   0.4877
+  ],
+  "crop_page": 65,
+  "r3_raw": "6 † And the sonnes of Cham: Chus, and Mesraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The sonnes of Regma: 8 Saba, and Dadan. † Moreouer Chus begat \"Nemrod: he be- 9 gan to be mightie in the earth, † and he was a valiaunt hun-",
+  "r3_verse": "And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The sonnes of Regma: Saba, and Dadan.",
+  "arm_conflicts": [],
+  "new_text": "And the ſonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p65",
+  "old_text": "Out of that land came forth Aſfur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.049,
+   0.5255,
+   0.875,
+   0.6286
+  ],
+  "crop_page": 65,
+  "r3_raw": "beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar. † Out of that land came forth\" Assur, and builded Niniue, and the streets of the citie, and Chale. † Resen also betwen Niniue and Chale: this is the great citie. † But Mesraim also begat",
+  "r3_verse": "Out of that land came forth\" Assur, and builded Niniue, and the streets of the citie, and Chale.",
+  "arm_conflicts": [
+   "forth Aſfur, | forth\" Assur,"
+  ],
+  "r2_attested": {
+   "6": "Aſſur,"
+  },
+  "visual_readings": {
+   "6": "Aſſur,"
+  },
+  "new_text": "Out of that land came forth Aſſur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p65",
+  "old_text": "Reſen alſo betwen Niniue and Chale this is the great citie.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.049,
+   0.5625,
+   0.875,
+   0.6537
+  ],
+  "crop_page": 65,
+  "r3_raw": "land came forth\" Assur, and builded Ninieue, and the streets 12 of the citie, and Chale. † Resen also between Ninieue and 13 Chale: this is the great citie. † But Mesraim also begat the Ludims, & the Anamims, & the Laabims, the Nephthu-",
+  "r3_verse": "Resen also between Ninieue and Chale: this is the great citie.",
+  "arm_conflicts": [
+   "betwen Niniue | between Ninieue"
+  ],
+  "new_text": "Reſen alſo betwen Ninieue and Chale this is the great citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p65",
+  "old_text": "and the Phetruſims, and the Caſluims: of whom came forth the Philiſtims the Caphtorims.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.049,
+   0.6288,
+   0.875,
+   0.7114
+  ],
+  "crop_page": 65,
+  "r3_raw": "the Ludims, & the Anamims, & the Laabims, the Nephthu- 14 ims, † and the Phetrusims, and the Casluims: of whom 15 came forth the Philistims &C the Caphtorims. † And 16 Canaan begat Sidon his first begotten, Hethæus, † and",
+  "r3_verse": "and the Phetrusims, and the Casluims: of whom came forth the Philistims &C the Caphtorims.",
+  "arm_conflicts": [],
+  "new_text": "and the Phetruſims, and the Caſluims: of whom came forth the Philiſtims &C the Caphtorims.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p65",
+  "old_text": "and Aracaus: Sineus,",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.6899,
+   0.875,
+   0.7748
+  ],
+  "crop_page": 65,
+  "r3_raw": "16 Canaan begat Sidon his first begotten, Hethæus, † and 17 Iebusæus, and Amorrrhaeus, and Gergesæus, † Heuæus and 18 Aracæus: Sinæus†, † and Aradius, Samaræus, and Hama-thæus: and afterwardes were spred the people of the Chana-",
+  "r3_verse": "Heuæus and Aracæus: Sinæus†,",
+  "arm_conflicts": [
+   "Aracaus: Sineus, | Aracæus: Sinæus†,"
+  ],
+  "new_text": "Heuæus and Aracæus: Sinæus†,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p65",
+  "old_text": "And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma &Gomorrha, and Adama, Seboim euen to Leſa.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.7536,
+   0.875,
+   0.8616
+  ],
+  "crop_page": 65,
+  "r3_raw": "thæus: and afterwardes were spred the people of the Chananits. 19 And the limitts of Chanaan were from Sidon as we come to Gerara euuen to Gaza, vntil thou enter to Sodoma & Gomorrha, and Adama, & Sehoim euuen to Lesa. † These are the children of Chain in their kinreds, and tongues, and",
+  "r3_verse": "And the limitts of Chanaan were from Sidon as we come to Gerara euuen to Gaza, vntil thou enter to Sodoma & Gomorrha, and Adama, & Sehoim euuen to Lesa.",
+  "arm_conflicts": [
+   "euen | euuen",
+   "&Gomorrha, | & Gomorrha,",
+   "Seboim euen | & Sehoim euuen"
+  ],
+  "new_text": "And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma & &Gomorrha, and Adama, & Sehoim euen to Leſa.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p65",
+  "old_text": "Theſe are the children of Chain in their kinreds, and tongues, and generations lands, and nations.",
+  "old": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.7982,
+   0.875,
+   0.9025
+  ],
+  "crop_page": 65,
+  "r3_raw": "come to Gerara euon to Gaza, vntil thou enter to Sodoma & Gomorrrha, and Adama, & Seboim euon to Lesa. † These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations. † Of Sem also: father of al the children of Herber, the elder brother of Iapheth were",
+  "r3_verse": "These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "arm_conflicts": [],
+  "new_text": "Theſe are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "are the generations of the ſonnes of Noe, Sem, I Cham, and Iapheth: and children were borne to them after the floud.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.93,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.049,
+   0.1158,
+   0.875,
+   0.2648
+  ],
+  "crop_page": 71,
+  "r3_raw": "The genealogie of Noes children, by whom the World was increased againe, after the flood. 1 THESE are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them 2 after the Houd. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and",
+  "r3_verse": "The genealogie of Noes children, by whom the World was increased againe, after the flood. THESE are the generations of the sonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the Houd.",
+  "arm_conflicts": [
+   "floud. | Houd."
+  ],
+  "lexicon_readings": {
+   "12": "after"
+  },
+  "r2_attested": {
+   "10": "increaſed"
+  },
+  "visual_readings": {
+   "12": "after",
+   "10": "increaſed"
+  },
+  "new_text": "The genealogie of Noes children, by whom the World was increaſed againe, after the flood. THESE are the generations of the ſonnes of Noe, Sem, Cham, and Iapheth: and children were borne to them after the Houd.",
+  "s_unresolved": [
+   "flood."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p71",
+  "old_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.049,
+   0.1997,
+   0.875,
+   0.3049
+  ],
+  "crop_page": 71,
+  "r3_raw": "Cham, and Iapheth: and children were borne to them after the flood. † The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras. † Moreouer the children of Gomer: Ascenez and Riphath and Thogorma. † And the sonnes of Iauan: Elisa",
+  "r3_verse": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Mosoch, and Thiras.",
+  "arm_conflicts": [],
+  "new_text": "The children of Iapheth: Gomer, and Magog, and Madai, and Iauan, and Thubal, and Moſoch, and Thiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 6,
+  "from": "p71",
+  "old_text": "And the ſonnes of Cham: Chus, and Meſraim, and Phut, and Chanaan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.3415,
+   0.875,
+   0.4247
+  ],
+  "crop_page": 71,
+  "r3_raw": "according to his tongue and their families in their nations. 6 † And the sonnes of Cham: Chus, and Mesraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha,and Regma,& Sabbathaca.The sonnes of Regma:",
+  "r3_verse": "And the sonnes of Cham: Chus, and Mesraim, and Phut, and Chanaan.",
+  "arm_conflicts": [],
+  "new_text": "And the ſonnes of Cham: Chus, and Meſraim, and Phut, and Chanaan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p71",
+  "old_text": "And the ſonnes of Chus: Saba, and Heuila, &Sabatha, and Regma, Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.3609,
+   0.875,
+   0.4655
+  ],
+  "crop_page": 71,
+  "r3_raw": "6 † And the sonnes of Cham: Chus, and Mesraim, and Phut, 7 and Chanaan. † And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabbathaca. The sonnes of Regma: 8 Saba, and Dadan. † Moreouer Chus begat \"Nemrod: he be- 9 gan to be mightie in the earth, † and he was a valiaunt hun-",
+  "r3_verse": "And the sonnes of Chus: Saba, and Heuila, & Sabatha, and Regma, & Sabbathaca. The sonnes of Regma: Saba, and Dadan.",
+  "arm_conflicts": [
+   "&Sabatha, | & Sabatha,",
+   "Sabathaca. | & Sabbathaca."
+  ],
+  "new_text": "And the ſonnes of Chus: Saba, and Heuila, & &Sabatha, and Regma, & Sabathaca. The ſonnes of Regma: Saba, and Dadan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p71",
+  "old_text": "and he was a valiaunt hunter before our Lord. Therof roſe a prouerbe As it were in Nemrod the valiaunt hunter before our Lord.",
+  "old": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.049,
+   0.4225,
+   0.875,
+   0.5334
+  ],
+  "crop_page": 71,
+  "r3_raw": "8 Saba, and Dadan. † Moreouer Chus begat \"Nemrod: he began to be mightie in the earth, † and he was a valiaunt hunter :: before our Lord. Therof rose a prouerbe: As it were Nemrod the valiaunt hunter before our Lord. † And the beginning of his kingdome was Babylon, and Arach, and",
+  "r3_verse": "and he was a valiaunt hunter :: before our Lord. Therof rose a prouerbe: As it were Nemrod the valiaunt hunter before our Lord.",
+  "arm_conflicts": [],
+  "new_text": "and he was a valiaunt hunter :: before our Lord. Therof roſe a prouerbe As it were Nemrod the valiaunt hunter before our Lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p71",
+  "old_text": "And the who beginning of his kingdome was Babylon, and Arach, and be Achad, and Chalanne in the land of Sennaar.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.049,
+   0.4616,
+   0.875,
+   0.5698
+  ],
+  "crop_page": 71,
+  "r3_raw": "ter :: before our Lord. Theroft rose a prouerbe: As it were :: That is in his sight who can ne be deceiued 10 Nemrod the valiaunt hunter before our Lord. † And the beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar. † Out of that land came forth\" Assur, and builded Ninue, and the streets",
+  "r3_verse": "And the beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar.",
+  "arm_conflicts": [],
+  "new_text": "And the beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p71",
+  "old_text": "Out of that land came forth Aſſur, and builded Niniue, and the ſtreets of the citie, and Chale.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.904,
+   "madueke_b": 0.904
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.049,
+   0.5014,
+   0.875,
+   0.6036
+  ],
+  "crop_page": 71,
+  "r3_raw": "beginning of his kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar. † Out of that land came forth\" Assur, and builded Ninieue, and the streets of the citie, and Chale. † Resen also between Ninieue and Chale: this is the great citie. † But Mesraim also begat",
+  "r3_verse": "Out of that land came forth\" Assur, and builded Ninieue, and the streets of the citie, and Chale.",
+  "arm_conflicts": [
+   "forth | forth\"",
+   "Niniue, | Ninieue,"
+  ],
+  "new_text": "Out of that land came forth Aſſur, and builded Ninieue, and the ſtreets of the citie, and Chale.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p71",
+  "old_text": "Reſen alſo betwen Niniue and Chale this is the great citie.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.049,
+   0.5415,
+   0.875,
+   0.6247
+  ],
+  "crop_page": 71,
+  "r3_raw": "land came forth\" Assur, and builded Niniu, and the streets of the citie, and Chale. † Resen also betwen Niniue and Chale: this is the great citie. † But Mesraim also begat the Ludims, & the Anamims, & the Laabims, the Nephthu-",
+  "r3_verse": "Resen also betwen Niniue and Chale: this is the great citie.",
+  "arm_conflicts": [],
+  "new_text": "Reſen alſo betwen Niniue and Chale this is the great citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p71",
+  "old_text": "and the Phetruſims, and the Caſluims: of whom came forth the Philiſtims the Caphtorims.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.049,
+   0.6031,
+   0.875,
+   0.6862
+  ],
+  "crop_page": 71,
+  "r3_raw": "the Ludims, & the Anamims, & the Laabims, the Nephthu- 14 ims, † and the Phetrusims, and the Casluims: of whom 15 came forth the Philistims &C the Caphtorims. † And 16 Canaan begat Sidon his first begotten, Hethæus, † and",
+  "r3_verse": "and the Phetrusims, and the Casluims: of whom came forth the Philistims &C the Caphtorims.",
+  "arm_conflicts": [],
+  "new_text": "and the Phetruſims, and the Caſluims: of whom came forth the Philiſtims &C the Caphtorims.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "p71",
+  "old_text": "and Iebuſeus, and Amorrheus, and Gergeſeus,",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.6405,
+   0.875,
+   0.7277
+  ],
+  "crop_page": 71,
+  "r3_raw": "15 came forth the Philistims &C the Caphtorims. † And 16 Canaan begat Sidon his first begotten, Hethæus, † and 17 Iebusæus, and Amorrhæus, and Gergesæus, † Heuæus and 18 Aracæus: Sinæus', † and Aradius, Samaræus, and Hamat.",
+  "r3_verse": "and Iebusæus, and Amorrhæus, and Gergesæus,",
+  "arm_conflicts": [
+   "Iebuſeus, | Iebusæus,",
+   "Amorrheus, | Amorrhæus,",
+   "Gergeſeus, | Gergesæus,"
+  ],
+  "new_text": "and Iebusæus, and Amorrhæus, and Gergesæus,",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 17,
+  "from": "p71",
+  "old_text": "Heuæus and Araceus Sineus,",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.6609,
+   0.875,
+   0.7478
+  ],
+  "crop_page": 71,
+  "r3_raw": "16 Canaan begat Sidon his first begotten, Hethæus, † and 17 Iebusæus, and Amorrrhæus, and Gergesæus, † Heuxæus and 18 Aracæus: Sinæus', † and Aradius, Samaræus, and Hamathæus: and afterwardes were spred the people of the Chana-",
+  "r3_verse": "Heuæus and Aracæus: Sinæus',",
+  "arm_conflicts": [
+   "Araceus Sineus, | Aracæus: Sinæus',"
+  ],
+  "used_merge": true,
+  "new_text": "Heuæus and Aracæus: Sinæus',",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p71",
+  "old_text": "and Aradius, Samareus, and Hamatheus: and afterwardes were ſpred the people of the Chananits.",
+  "old": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.049,
+   0.683,
+   0.875,
+   0.7672
+  ],
+  "crop_page": 71,
+  "r3_raw": "17 Iebusæus, and Amorrahæus, and Gergefæus, † Heuæus and 18 Aracæus: Sinæus', † and Aradius, Samaræus, and Hamathæus: and afterwardes were spred the people of the Chana- nits. † And the limitts of Chanaan were from Sidon as we",
+  "r3_verse": "and Aradius, Samaræus, and Hamathæus: and afterwardes were spred the people of the Chana- nits.",
+  "arm_conflicts": [
+   "Samareus, | Samaræus,",
+   "Hamatheus: | Hamathæus:",
+   "Chananits. | Chana- nits."
+  ],
+  "new_text": "and Aradius, Samaræus, and Hamathæus: and afterwardes were ſpred the people of the Chana- nits.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 19,
+  "from": "p71",
+  "old_text": "And the limitts of Chanaan were from Sidon as we guſtin come to Gerara euen to Gaza, vntil thou enter to Sodoma reth &Gomorrha, and Adama, Seboim euen to Leſa.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.049,
+   0.7205,
+   0.875,
+   0.8287
+  ],
+  "crop_page": 71,
+  "r3_raw": "thæus: and afterwardes were spred the people of the Chana- 19 nits. † And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma & Gomorrha, and Adama, & Seboim euen to Lela. † These are the children of Chain in their kinreds, and tongues, and",
+  "r3_verse": "And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma & Gomorrha, and Adama, & Seboim euen to Lela.",
+  "arm_conflicts": [
+   "reth &Gomorrha, | & Gomorrha,",
+   "Leſa. | Lela."
+  ],
+  "new_text": "And the limitts of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma & &Gomorrha, and Adama, & Seboim euen to Lela.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p71",
+  "old_text": "Theſe people are the children of Cham in their kinreds, and tongues, and rael led generations lands, and nations.",
+  "old": {
+   "s_dismas": 0.853,
+   "odr_com": 0.853,
+   "sabates_a": 0.809,
+   "madueke_b": 0.809
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.049,
+   0.7626,
+   0.875,
+   0.8732
+  ],
+  "crop_page": 71,
+  "r3_raw": "come to Gerara euen to Gaza, vntil thou enter to Sodoma & Gomorrha, and Adama, & Seboim euen to Lesa. † These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations. † Of Sem also: father of al the children of Herber, the elder brother of Iapheth were",
+  "r3_verse": "These are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "arm_conflicts": [
+   "Cham | Chain"
+  ],
+  "new_text": "Theſe are the children of Chain in their kinreds, and tongues, and generations & lands, and nations.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.926,
+   "madueke_b": 0.926
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p72",
+  "old_text": "and Ophir, and Heuila, and Iobab. al theſe were the childiui. dren of Iectan.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.186,
+   0.935,
+   0.2809
+  ],
+  "crop_page": 72,
+  "r3_raw": "Elmodaq, and Saleph, and Amamoth; unto Vzal, and Decla, † and Ebal, and Abimael, Saba, 28 and Ophir, and Heuila, and Iobab. al these were the chil- dren of Iectan. † And their dwelling was from Messa as we goe on as far as Sephar a mountaine in the east. † These are",
+  "r3_verse": "and Ophir, and Heuila, and Iobab. al these were the chil- dren of Iectan.",
+  "arm_conflicts": [
+   "childiui. | chil-"
+  ],
+  "new_text": "and Ophir, and Heuila, and Iobab. al theſe were the chil- dren of Iectan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p55",
+  "old_text": "HESE are the generations of the ſonnes of Noe, Sem, Cham and Iapheth: aud children were borne to them after the fioud.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.974,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.155,
+   0.5016,
+   0.885,
+   0.5992
+  ],
+  "crop_page": 55,
+  "r3_raw": "HESE are the generations of the sonnes of Noe, Sem , Cham , and Iaphcth: and children were borne to them after the floud. 2. The children of Iaphcth: Gomer,& Ma-",
+  "r3_verse": "HESE are the generations of the sonnes of Noe, Sem , Cham , and Iaphcth: and children were borne to them after the floud.",
+  "arm_conflicts": [
+   "Iapheth: aud | Iaphcth: and",
+   "fioud. | floud."
+  ],
+  "new_text": "HESE are the generations of the ſonnes of Noe, Sem, , Cham , and Iaphcth: and children were borne to them after the floud.",
+  "s_unresolved": [
+   "floud."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.983,
+   "sabates_a": 0.962,
+   "madueke_b": 0.962
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p55",
+  "old_text": "The children of Iapheth: Gomer, & Magog, & Madai, & Iauan, & Tubal, and Moſoch, and Thiras.",
+  "old": {
+   "s_dismas": 0.815,
+   "odr_com": 0.815,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.5536,
+   0.885,
+   0.6519
+  ],
+  "crop_page": 55,
+  "r3_raw": "to Noe, Sem, Cham, and Iapheth: and children were borne to them after the flood. 2. The children of Iapheth: Gomer, & Magog, & Madai, & Iavan, & Tubal, and Mosoch, and Thiras. 3. Moreover the children of Gomer: Ascenez, and Riphath, and Tho-",
+  "r3_verse": "The children of Iapheth: Gomer, & Magog, & Madai, & Iavan, & Tubal, and Mosoch, and Thiras.",
+  "arm_conflicts": [
+   "Iauan, | Iavan,"
+  ],
+  "new_text": "The children of Iapheth: Gomer, & Magog, & Madai, & Iauan, & Tubal, and Moſoch, and Thiras.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.815,
+   "odr_com": 0.815,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p55",
+  "old_text": "Of theſo were diuided the Iles of Natious in their countries each oue according to his tong, their fainilies in their nations.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.6593,
+   0.885,
+   0.7394
+  ],
+  "crop_page": 55,
+  "r3_raw": "and Thartis, the Cetims and the Dodanims. 3. Of these were diuided the Iles of Nations in their countrics, each one according to his tong, & their familieſ in their nations. 6. And the fonnes of Cham: Chus, & Mesraim, & Phut, and Chanaan. 7. And the",
+  "r3_verse": "Of these were diuided the Iles of Nations in their countrics, each one according to his tong, & their familieſ in their nations.",
+  "arm_conflicts": [
+   "theſo | these",
+   "Natious | Nations",
+   "countries | countrics,",
+   "oue | one",
+   "fainilies | familieſ"
+  ],
+  "lexicon_readings": {
+   "1": "theſe"
+  },
+  "r2_attested": {
+   "19": "families"
+  },
+  "visual_readings": {
+   "1": "theſe",
+   "19": "families"
+  },
+  "new_text": "Of theſe were diuided the Iles of Nations in their countrics, each one according to his tong, & their families in their nations.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p55",
+  "old_text": "And the ſonnes of Cham: Chus, Meſraim, Phut, and Chanaan.7.",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.6776,
+   0.885,
+   0.7576
+  ],
+  "crop_page": 55,
+  "r3_raw": "5. Of these were divided the Iles of Nations in their countries, each one according to his tong, & their families in their nations. 6. And the sonnes of Cham: Chus, & Mesraim, & Phut, and Chanaan. 7. And the sonnes of Chus: Saba, Heuila, & Sabatha, & Regma, & Sabbathaca. The",
+  "r3_verse": "And the sonnes of Cham: Chus, & Mesraim, & Phut, and Chanaan.",
+  "arm_conflicts": [
+   "Chanaan.7. | Chanaan."
+  ],
+  "new_text": "And the ſonnes of Cham: Chus, & Meſraim, & Phut, and Chanaan.7.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p55",
+  "old_text": "And the ſonnes of Chus: Saba, Heuila, Sabatha, Regma, Sabathaca. The ſonnes of Regma: Saba, and Dadan.8.",
+  "old": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.693,
+   0.885,
+   0.792
+  ],
+  "crop_page": 55,
+  "r3_raw": "5. Of there were divided the Sires of Nations in their countries, each one according to his tong, & their families in their nations. 6. And the sonnes of Cham: Chus, & Mesraim, & Phut, and Chanaan. 7. And the sonnes of Chus: Saba, Heuila, & Sabatha, & Regma, & Sabbathaca. The sonnes of Regma: Saba, and Dadan. 8. Moreouer Chus begat \" Nemrod: he began to be mightie in the earth, 9. and he was a valiant hun-",
+  "r3_verse": "And the sonnes of Chus: Saba, Heuila, & Sabatha, & Regma, & Sabbathaca. The sonnes of Regma: Saba, and Dadan.",
+  "arm_conflicts": [
+   "Sabathaca. | & Sabbathaca.",
+   "Dadan.8. | Dadan."
+  ],
+  "new_text": "And the ſonnes of Chus: Saba, Heuila, & Sabatha, & Regma, & Sabathaca. The ſonnes of Regma: Saba, and Dadan.8.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p55",
+  "old_text": "Moreouer Chus begat NemTod: he began to be mightie in the earth,",
+  "old": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.7289,
+   0.885,
+   0.8085
+  ],
+  "crop_page": 55,
+  "r3_raw": "fonnes of Chus: Saba, Heuila, & Sabatha, & Regma, & Sabbathaca. The sonnes of Regma: Saba, and Dadan. 8. Moreouer Chus begat \"Nemrod: he began to be mightie in the earth, 9. and he was a valiant hunter (a) before our Lord. Thereof rose a prouerb: As it were Nemrod",
+  "r3_verse": "Moreouer Chus begat \"Nemrod: he began to be mightie in the earth,",
+  "arm_conflicts": [
+   "NemTod: | \"Nemrod:"
+  ],
+  "new_text": "Moreouer Chus begat \"Nemrod: he began to be mightie in the earth,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p55",
+  "old_text": "and he was a valiant hunin ter (4) betore our Lord. Thereot roſe a prouerb As it were Nemrod the valiant hunter betore our Lord.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.7461,
+   0.885,
+   0.8454
+  ],
+  "crop_page": 55,
+  "r3_raw": "fonnes of Regma: Saba, and Dadan. 8. Moreouer Chus begat \"Nemrod: he began to be mightie in the earth, 9. and he was a valiant hunter (a) before our Lord. Thereof rose a prouerb: As it were Nemrod the valiant hunter before our Lord. 10. And the beginning of his Kingdome was Babylon, and Arach, and Achad, and Chalanne in",
+  "r3_verse": "and he was a valiant hunter before our Lord. Thereof rose a prouerb: As it were Nemrod the valiant hunter before our Lord.",
+  "arm_conflicts": [
+   "hunin ter (4) betore | hunter before",
+   "Thereot | Thereof",
+   "betore | before"
+  ],
+  "lexicon_readings": {
+   "6": "before",
+   "20": "before"
+  },
+  "visual_readings": {
+   "6": "before",
+   "20": "before"
+  },
+  "new_text": "and he was a valiant hunter before our Lord. Thereof roſe a prouerb As it were Nemrod the valiant hunter before our Lord.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p55",
+  "old_text": "Out of that land came forth Aſſur, builded Niniue, the ſtreets of the eitie, and Chale.",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.8156,
+   0.885,
+   0.8981
+  ],
+  "crop_page": 55,
+  "r3_raw": "the valiant Namer before our Lord: Yet And the beginning of his Kingdome was Babylon, and Arach, and Achad, and Chalanne in the land of Sennaar. 11. Out of that land came forth\" Assur,& builded Ninuie , & the streets of the citie, and Chale. 12. Resen also between Ninuie & Chale: this is the great citie. 13. But Mefraim also begat the",
+  "r3_verse": "Out of that land came forth\" Assur,& builded Ninuie , & the streets of the citie, and Chale.",
+  "arm_conflicts": [
+   "forth Aſſur, | forth\" Assur,&",
+   "Niniue, | Ninuie , &",
+   "eitie, | citie,"
+  ],
+  "new_text": "Out of that land came forth Aſſur, builded Ninuie , & the ſtreets of the citie, and Chale.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p55",
+  "old_text": "Reſen alſo between Niniue Chale this is the great citie.",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.8339,
+   0.885,
+   0.9153
+  ],
+  "crop_page": 55,
+  "r3_raw": "Akingdom was Babylon; and Arach, and Nihad, and Chalanne in the land of Sennaar. 11. Out of that land came forth\" Assur, & builded Ninue, & the streets of the citie, and Chale. 12. Resen also between Ninue & Chale: this is the great citie. 13. But Mesraim also begat the Ludims, & the Anamiums, & the Laabims, the Nephthuims, 14. and the",
+  "r3_verse": "Resen also between Ninue & Chale: this is the great citie.",
+  "arm_conflicts": [
+   "Niniue | Ninue &"
+  ],
+  "new_text": "Reſen alſo between Ninue & Chale this is the great citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "chapter",
+  "old_text": "and the the Caſſuims: of whom eame forth the Philiſtims the",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.68,
+   "madueke_b": 0.68
+  },
+  "neighbours": [
+   14
+  ],
+  "crop": [
+   0.155,
+   0.0899,
+   0.885,
+   0.1531
+  ],
+  "crop_page": 56,
+  "r3_raw": "Sem. GENESIS. Phetruſims, & the Caſhuims: of whom came forth the Philiflims & the Caphtorims. 15. And Canaan begat Sidon his first-begotten, Hethæus,",
+  "r3_verse": "Sem. Phetruſims, & the Caſhuims: of whom came forth the Philiflims & the Caphtorims.",
+  "arm_conflicts": [
+   "and | Sem. Phetruſims, &",
+   "the Caſſuims: | Caſhuims:",
+   "eame | came",
+   "Philiſtims | Philiflims &"
+  ],
+  "new_text": "Sem. Phetruſims, & the Caſhuims: of whom came forth the Philiflims & the Caphtorims.",
+  "s_unresolved": [
+   "Phetruſims,",
+   "Caſhuims:",
+   "Philiflims"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.833,
+   "odr_com": 0.833,
+   "sabates_a": 0.88,
+   "madueke_b": 0.88
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p56",
+  "old_text": "And Canaan begat Sidon his ſirſt-begotten, Hetheus Iebuſeus,",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.804,
+   "madueke_b": 0.804
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.1114,
+   0.885,
+   0.1893
+  ],
+  "crop_page": 56,
+  "r3_raw": "Phetrusims, & the Caſluins: of whom came forth the Philistims & the Caphtorims. 15. And Canaan begat Sidon his first-begotten, Hethæus, 16. and Iebusæus, and Amorrhæus, and Gergesæus, 17. Heuæus and Aracæus, Sinæus, 18. and Aradius, Samaræus, and Hamathæus: and",
+  "r3_verse": "And Canaan begat Sidon his first-begotten, Hethæus,",
+  "arm_conflicts": [
+   "ſirſt-begotten, Hetheus Iebuſeus, | first-begotten, Hethæus,"
+  ],
+  "r2_attested": {
+   "5": "firſt-begotten,"
+  },
+  "visual_readings": {
+   "5": "firſt-begotten,"
+  },
+  "new_text": "And Canaan begat Sidon his firſt-begotten, Hethæus,",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p56",
+  "old_text": "and Amorrheus, and Gergeſeus, Heuaus and",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.1303,
+   0.885,
+   0.1893
+  ],
+  "crop_page": 56,
+  "r3_raw": "Captorims. 15. And Canaan begat Sidon his first-begotten, Hethæus, 16. and Iebusaeus, and Amorrihæus, and Gergesæus, 17. Heuæus and Aracæus, Sinæus, 18. and Aradius, Samaræus, and Hamathæus: and",
+  "r3_verse": "and Iebusaeus, and Amorrihæus, and Gergesæus,",
+  "arm_conflicts": [
+   "Amorrheus, | Iebusaeus,",
+   "Gergeſeus, Heuaus | Amorrihæus,"
+  ],
+  "new_text": "and Iebusaeus, and Amorrihæus, and Gergesæus,",
+  "s_unresolved": [
+   "Iebusaeus,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p56",
+  "old_text": "Sineus,",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.1475,
+   0.885,
+   0.2072
+  ],
+  "crop_page": 56,
+  "r3_raw": "16. and Iebusæus, and Amorrihæus, and Gergesæus, 17. Heuæus and Aracæus, Sinæus, 18. and Aradius, Samaraæus, and Hamathæus: and afterwards were spred the people of the Chananites. 19. And the ii-",
+  "r3_verse": "Heuæus and Aracæus, Sinæus,",
+  "arm_conflicts": [
+   "Sineus, | Heuæus and Aracæus, Sinæus,"
+  ],
+  "new_text": "Heuæus and Aracæus, Sinæus,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p56",
+  "old_text": "and Aradius, Samaraus, and Hamathaus: and were ſpred the peoploof the Chananites.",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.83,
+   "madueke_b": 0.83
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.155,
+   0.1475,
+   0.885,
+   0.2255
+  ],
+  "crop_page": 56,
+  "r3_raw": "16. and Iebusæus, and Amorrhæus, and Gergesæus, 17. Heuæus and Aracæus, Sinæus, 18. and Aradius, Samaraæus, and Hamathæus: and afterwards were spred the people of the Chananites. 19. And the li- mits of Chanaan were from Sidon as we come to Gerara euen to Gaza,",
+  "r3_verse": "and Aradius, Samaraæus, and Hamathæus: and afterwards were spred the people of the Chananites.",
+  "arm_conflicts": [
+   "Samaraus, | Samaraæus,",
+   "Hamathaus: | Hamathæus:",
+   "peoploof | people of"
+  ],
+  "new_text": "and Aradius, Samaraæus, and Hamathæus: and afterwards were ſpred the people of the Chananites.",
+  "s_unresolved": [
+   "afterwards"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p56",
+  "old_text": "And the iChanaan were from Sidon as we come to Gerara euen to Gara. enter to Sodoma and Gomorrha, and Adama, and Seboim to Leſa.",
+  "old": {
+   "s_dismas": 0.753,
+   "odr_com": 0.753,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.1655,
+   0.885,
+   0.2799
+  ],
+  "crop_page": 56,
+  "r3_raw": "Aracæus, Sinæus, 18. and Aradius, Samaræus, and Hamathæus: and afterwards were spread the people of the Chananites. 19. And the limits of Chanaan were from Sidon as we come to Gerara even to Gaza, vntil thou enter to Sodoma and Gomorrha, and Adama, and Seboim euen to Lesa. 20. These are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations. 21. Of Sem",
+  "r3_verse": "And the limits of Chanaan were from Sidon as we come to Gerara even to Gaza, vntil thou enter to Sodoma and Gomorrha, and Adama, and Seboim euen to Lesa.",
+  "arm_conflicts": [
+   "iChanaan | limits of Chanaan",
+   "euen | even",
+   "Gara. | Gaza, vntil thou"
+  ],
+  "new_text": "And the limits of Chanaan were from Sidon as we come to Gerara euen to Gaza, vntil thou enter to Sodoma and Gomorrha, and Adama, and Seboim euen to Leſa.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p56",
+  "old_text": "Theſe are the children of Cham in theit kindreds, and generations, and lauds, and nations.",
+  "old": {
+   "s_dismas": 0.796,
+   "odr_com": 0.796,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.2174,
+   0.885,
+   0.2964
+  ],
+  "crop_page": 56,
+  "r3_raw": "unto S. Chanaan were from Sidonas unto Gerara euen to Gaza, until thou enter to Sodoma and Gomorrha, and Adama, and Seboim euen to Lefa. 20. These are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations. 21. Of Sem also (v) father of al the children of Heber, the elder brother of Ia-",
+  "r3_verse": "These are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations.",
+  "arm_conflicts": [
+   "theit | their",
+   "lauds, | lands,"
+  ],
+  "new_text": "Theſe are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p56",
+  "old_text": "Of Sem tather of al the children of Heber, the elder brother ot Ia- Hence were borne",
+  "old": {
+   "s_dismas": 0.872,
+   "odr_com": 0.862,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.2375,
+   0.885,
+   0.3379
+  ],
+  "crop_page": 56,
+  "r3_raw": "cuen to Lesa. 20. These are the children of Cham in their kindreds, and tongues, and generations, and lands, and nations. 21. Of Sem also (v) father of al the children of Heber, the elder brother of Iapineth, were borne: 22. The children of Sem: Ælam and Assur, and Arphaxad, and Lud, and Aram. 23. The children of Aram:",
+  "r3_verse": "Of Sem also father of al the children of Heber, the elder brother of Iapineth, were borne:",
+  "arm_conflicts": [
+   "tather | also father",
+   "ot Ia- Hence | of Iapineth,"
+  ],
+  "lexicon_readings": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "Of Sem alſo father of al the children of Heber, the elder brother of Iapineth, were borne",
+  "s_unresolved": [
+   "father"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.966,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p56",
+  "old_text": "The children of Sem: Alam and Aſſur thereth Auguſtin and Lud, and Atam.",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.155,
+   0.2694,
+   0.885,
+   0.3547
+  ],
+  "crop_page": 56,
+  "r3_raw": "and tongues; and generations; and lands; and nations. 21. Of Sem also (b) father of al the children of Heber, the elder brother of Iapineth, were borne: 22. The children of Sem: Ælam and Assur, and Arphaxad, and Lud, and Aram. 23. The children of Aram: Vs, and Hul, and Gether, and Mes. 24. And Arphaxad also be-",
+  "r3_verse": "The children of Sem: Ælam and Assur, and Arphaxad, and Lud, and Aram.",
+  "arm_conflicts": [
+   "Alam | Ælam",
+   "thereth Auguſtin | and Arphaxad,",
+   "Atam. | Aram."
+  ],
+  "new_text": "The children of Sem: Ælam and Aſſur and Arphaxad, and Lud, and Aram.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p56",
+  "old_text": "The children of Aram: the people and Hul and Gether, and Mes.",
+  "old": {
+   "s_dismas": 0.828,
+   "odr_com": 0.828,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.288,
+   0.885,
+   0.3684
+  ],
+  "crop_page": 56,
+  "r3_raw": "22. The children of Sem: Elam and Assur, and Arphaxad, and Lud, and Aram. 23. The children of Aram: Vs, and Hul, and Gether, and Mes. 24. And Arphaxad also begat Sale, of whom was borne Heber. 25. And to Heber were",
+  "r3_verse": "The children of Aram: Vs, and Hul, and Gether, and Mes.",
+  "arm_conflicts": [
+   "the people | Vs,"
+  ],
+  "new_text": "The children of Aram: Vs, and Hul and Gether, and Mes.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p56",
+  "old_text": "Aud Arphaxad alſo be- IIſrael were of whom was borne Heber.",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.811,
+   "madueke_b": 0.811
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.3053,
+   0.885,
+   0.3832
+  ],
+  "crop_page": 56,
+  "r3_raw": "and Arphaxad, and Lud, and Aram. 23. The children of Aram: Vs, and Hul, and Gether, and Mes. 24. And Arphaxad also begat Sale, of whom was borne Heber. 25. And to Heber were borne two sonnes: the name of the one was Phaleg, (c) because",
+  "r3_verse": "And Arphaxad also begat Sale, of whom was borne Heber.",
+  "arm_conflicts": [
+   "Aud | And",
+   "be- IIſrael were | begat Sale,"
+  ],
+  "new_text": "And Arphaxad alſo begat Sale, of whom was borne Heber.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p56",
+  "old_text": "And to Hebet were ſled two ſonnes the name of the one was Phales becauſe of this his dayes was the earth diuided ad his brothers name Il. Heber",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.856,
+   "sabates_a": 0.83,
+   "madueke_b": 0.83
+  },
+  "neighbours": [
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.3246,
+   0.885,
+   0.4281
+  ],
+  "crop_page": 56,
+  "r3_raw": "Vs, and Hul, and Gether, and Mes. 24. And Arphaxad also begat Sale, of whom was borne Heber. 25. And to Heber were borne two sonnes: the name of the one was Phaleg, (c) because that in his dayes was the earth diuided: and his brothers name was Ieetan. 26. The which Ieetan begat Elmecdad, and Saleph, and Asarmoth, Jarac: 27. and Aduram, and Vzal, and Deca.",
+  "r3_verse": "And to Heber were borne two sonnes: the name of the one was Phaleg, because that in his dayes was the earth diuided: and his brothers name was Ieetan.",
+  "arm_conflicts": [
+   "Hebet | Heber",
+   "ſled | borne",
+   "Phales | Phaleg,",
+   "of this | that in",
+   "ad | and",
+   "Il. Heber | was Ieetan."
+  ],
+  "new_text": "And to Heber were borne two ſonnes the name of the one was Phaleg, becauſe that in his dayes was the earth diuided and his brothers name was Ieetan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.993,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p56",
+  "old_text": "The which Iectan begat Elmodad, aud valoph, and uins a Iare",
+  "old": {
+   "s_dismas": 0.814,
+   "odr_com": 0.814,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.3769,
+   0.885,
+   0.4577
+  ],
+  "crop_page": 56,
+  "r3_raw": "that in his dayes was the earth diuided: and his brothers name was Iectan. 26. The which Iectan begat Elmecdad, and Saleph, and Asarmoth, Iare; 27. and Aduram, and Vzal, and Decla, 28. and Ebal, and Abimael, Saba, 29. and Ophir, and Heuila, and Io-",
+  "r3_verse": "The which Iectan begat Elmecdad, and Saleph, and Asarmoth, Iare;",
+  "arm_conflicts": [
+   "Elmodad, aud valoph, | Elmecdad,",
+   "uins a | Saleph, and Asarmoth,"
+  ],
+  "r2_attested": {
+   "8": "Aſarmoth,"
+  },
+  "visual_readings": {
+   "8": "Aſarmoth,"
+  },
+  "new_text": "The which Iectan begat Elmecdad, and Saleph, and Aſarmoth, Iare",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p56",
+  "old_text": "and Adutam, aud Vral, and Decla, 28and borne",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.3941,
+   0.885,
+   0.4577
+  ],
+  "crop_page": 56,
+  "r3_raw": "was Iectan. 26. The which Iectan begat Elmecdad, and Saleph, and Asarmoth, Iare; 27. and Aduram, and Vzal, and Decla, 28. and Ebal, and Abimael, Saba, 29. and Ophir, and Heuila, and Io-",
+  "r3_verse": "and Aduram, and Vzal, and Decla,",
+  "arm_conflicts": [
+   "Adutam, aud Vral, | Aduram, and Vzal,"
+  ],
+  "new_text": "and Aduram, and Vzal, and Decla,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p56",
+  "old_text": "28and borne and Abimael, Saba,",
+  "old": {
+   "s_dismas": 0.808,
+   "odr_com": 0.808,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   26,
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.3941,
+   0.885,
+   0.4721
+  ],
+  "crop_page": 56,
+  "r3_raw": "was Iectan. 26. The which Iectan begat Elmecdad, and Saleph, and Asarmoth, Iare; 27. and Aduram, and Vzal, and Decla, 28. and Ebal, and Abimael, Saba, 29. and Ophir, and Heuila, and Jobab. Al these were the children of Iectan. 30. And their dwelling",
+  "r3_verse": "and Ebal, and Abimael, Saba,",
+  "arm_conflicts": [
+   "28and borne | and Ebal,"
+  ],
+  "new_text": "28and Ebal, and Abimael, Saba,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p56",
+  "old_text": "and Ophir, and Heuila and Io- the tones Al theſe were the children of Iectan.",
+  "old": {
+   "s_dismas": 0.865,
+   "odr_com": 0.865,
+   "sabates_a": 0.871,
+   "madueke_b": 0.871
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.4117,
+   0.885,
+   0.4921
+  ],
+  "crop_page": 56,
+  "r3_raw": "Asarmoth, Iare; 27. and Aduram, and Vzal, and Decla, 28. and Ebal, and Abimael, Saba, 29. and Ophir, and Heuila, and Jobab. All these were the children of Iectan. 30. And their dwelling was from Meſfa as we goe on as farre as Scaphar a mountaine in",
+  "r3_verse": "and Ophir, and Heuila, and Jobab. All these were the children of Iectan.",
+  "arm_conflicts": [
+   "Io- the tones Al | Jobab. All"
+  ],
+  "new_text": "and Ophir, and Heuila and Jobab. Al theſe were the children of Iectan.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p56",
+  "old_text": "And their dwellino diuided from Meſſa as we goe on as farre asSophar a mountaine in hi",
+  "old": {
+   "s_dismas": 0.782,
+   "odr_com": 0.782,
+   "sabates_a": 0.79,
+   "madueke_b": 0.79
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.4292,
+   0.885,
+   0.511
+  ],
+  "crop_page": 56,
+  "r3_raw": "Ebal, and Abimael, Saba, 29. and Ophir, and Heuila, and Iobab. All these were the children of Leetan. 30. And their dwelling was from Meffa as we goe on as farre as Sephar a mountaine in the east. 31. These are the children of Sem according to their kindred, and tongues, and countries, and nations.",
+  "r3_verse": "And their dwelling was from Meffa as we goe on as farre as Sephar a mountaine in the east.",
+  "arm_conflicts": [
+   "dwellino diuided | dwelling was",
+   "Meſſa | Meffa",
+   "asSophar | as Sephar",
+   "hi | the east."
+  ],
+  "r2_attested": {
+   "18": "eaſt."
+  },
+  "visual_readings": {
+   "18": "eaſt."
+  },
+  "new_text": "And their dwelling was from Meffa as we goe on as farre as Sephar a mountaine in the eaſt.",
+  "s_unresolved": [
+   "Meffa"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p56",
+  "old_text": "Theſe are the children of Sem accordin to their kind- which fetn tongs, and countries in thuir nations. Thcie",
+  "old": {
+   "s_dismas": 0.802,
+   "odr_com": 0.802,
+   "sabates_a": 0.812,
+   "madueke_b": 0.812
+  },
+  "neighbours": [
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.4602,
+   0.89,
+   0.5469
+  ],
+  "crop_page": 56,
+  "r3_raw": "At there were the children of lecan. 3c. And their dwelling was from Mecfa as we goe on as farre as Sephar a mountaine in the east. 31. These are the children of Sem according to their kindred, and tongues, and countries in their nations. 32. There are the families of Noe, according to their peoples and nation. Of these were\" the",
+  "r3_verse": "These are the children of Sem according to their kindred, and tongues, and countries in their nations. There",
+  "arm_conflicts": [
+   "accordin | according",
+   "kind- which fetn tongs, | kindred, and tongues,",
+   "thuir | their",
+   "Thcie | There"
+  ],
+  "new_text": "Theſe are the children of Sem according to their kindred, and tongues, and countries in their nations. There",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p56",
+  "old_text": "Thcie are the tamS..1. Noe, according to their peoplos and nation. Ot theſevere the 11.ct diuided on the earth atter the fioud.",
+  "old": {
+   "s_dismas": 0.787,
+   "odr_com": 0.787,
+   "sabates_a": 0.8,
+   "madueke_b": 0.8
+  },
+  "neighbours": [
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.4837,
+   0.89,
+   0.576
+  ],
+  "crop_page": 56,
+  "r3_raw": "the east. 31. These are the children of Sem according to their kindred, and tongues, and countries in their nations. 32. There are the families of Noe, according to their peoples and nation. Of these were \"the nations divided on the earth after the flood.",
+  "r3_verse": "Thcie are the families of Noe, according to their peoples and nation. Of these were \"the nations divided on the earth after the flood.",
+  "arm_conflicts": [
+   "tamS..1. | families of",
+   "peoplos | peoples",
+   "Ot theſevere the 11.ct diuided | Of these were \"the nations divided",
+   "atter | after",
+   "fioud. | flood."
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "13": "theſe",
+   "21": "after"
+  },
+  "visual_readings": {
+   "13": "theſe",
+   "21": "after"
+  },
+  "new_text": "Thcie are the families of Noe, according to their peoples and nation. Of theſe were the nations diuided on the earth after the flood.",
+  "s_unresolved": [
+   "families",
+   "flood."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

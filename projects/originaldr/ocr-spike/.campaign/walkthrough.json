@@ -1,0 +1,131 @@
+{
+ "created": "2026-08-02T23:33Z",
+ "chapters": {
+  "23": {
+   "passes": [
+    {
+     "at": "2026-08-02T23:46Z",
+     "pass_before": 56,
+     "pass_after": 71,
+     "achievable": 76,
+     "delta": 15,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag",
+      "left_strip_probe"
+     ],
+     "rule": "jp2-S06 p90/p92 left bound 0.215->0.14 (annotation column absent on those leaves); _is_running_head extended for a head with a misplaced stop",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "S6 0.25 -> ; ch23 56->71 (+15), ch24 227->235 (+8) knock-on via shared leaf p92; probe generalized off the hardcoded 1609 bound"
+    }
+   ]
+  },
+  "39": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:04Z",
+     "pass_before": 72,
+     "pass_after": 81,
+     "achievable": 92,
+     "delta": 9,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "left_strip_probe.py",
+      "s6_bounds_probe.py(new)",
+      "faithfulness_audit.py"
+     ],
+     "rule": "jp2-S06 ALTERNATES its margin by leaf parity, and every PAGE_OVERRIDE for it was half-done. Even leaves set glosses in a RIGHT column at 0.745-0.765 and run body left to 0.13-0.16; odd leaves set them LEFT at 0.10-0.21 and run body right to 0.825. Prior entries each varied the axis its hunt was looking for and left the other at the default (p74/p128/p150/p156 tuned RIGHT beside a default left; p90/p92 tuned LEFT beside a default right) - rule C, in the page model's own table. New s6_bounds_probe.py reads BOTH bounds per leaf: line-membership (left_strip_probe) decides WHETHER a left bound moves, the leaf's own token histogram decides WHERE TO, and the right bound is the trough before a dip-then-spike. 62 of 127 leaves differed, every one even.",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch39 72->81/92. Book 5349->5547/6116 = 0.9070, +198 cells over 38 chapters, ZERO regressions; the 10 chapters in R3's live queue (41,49,26,21,15,47,10,43,32,5) are NOT yet re-measured, so more knock-on is outstanding. 216 tests pass. THREE PROBE DEFECTS CAUGHT BY CROSS-CHECKING AGAINST LEAVES ALREADY READ BY HAND: (1) a histogram cannot tell a clipped body from a full-width note BLOCK - it proposed importing all 88 of ch23 p89's note tokens into scripture, and only line-membership refuses that; (2) taking the FIRST dip-then-spike caught a ripple in the taper of body line-ends (p132 at 0.73) instead of the 22-token column at 0.76 - a column is the TALLEST thing on its side of a leaf; (3) corroboration measured at a leaf's CURRENT bound is a fact about the campaign's history, not the page - p90/p92 scored 0/0 because they were fixed yesterday, and the leaves that motivated the probe read as uncorroborated. Cutting scripture is not symmetric with keeping a gloss, so an uncorroborated right bound moves only on an unmistakable spike: p35 (a real citation column) and p79 (body) BOTH spike exactly 12, so 12 discriminates nothing - the bar sits above both and p35 is carried as a hand-verified entry with its reason. p105 and p159 rejected by eye. p92's right bound confirms the prediction that yesterday's left-only fix was half a fix."
+    }
+   ]
+  },
+  "41": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:26Z",
+     "pass_before": 194,
+     "pass_after": 205,
+     "achievable": 228,
+     "delta": 11,
+     "signals": [
+      "4",
+      "6"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "bounds_probe.py(generalized from s6_bounds_probe)",
+      "right-strip census",
+      "bound sweep via chapter_campaign",
+      "faithfulness_audit.py",
+      "apparatus-vocabulary scan"
+     ],
+     "rule": "The 1609 witnesses' RIGHT bound is the axis nobody ever varied for them, and it was CLIPPING WORDS OFF THE ENDS OF BODY LINES: 'He said [ther]fore', 'a dreame [per]teining', 'shal not be [con]sumed'. S1/S3/S9 failing the SAME verses with the SAME words gone is geometry, not recognition. Parity runs OPPOSITE to jp2-S06: here the ODD leaves carry the right column and had been tuned tight, correctly (widening them costs -7 in ch41 alone), while the EVEN leaves have no column and sat on a default that clipped them. bounds_probe.py --right-only, WIDENING ONLY, 121 leaves across the three witnesses.",
+     "alert": "",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch41 194->205/228. Book 5619->5725/6116 = 0.9361, +106 cells, zero regressions, 216 tests pass. THE INSTRUMENT THAT CONFIRMED MY HYPOTHESIS WAS THE ONE KNOWN TO FAIL THAT WAY: line-membership scored the right strip as 'continuation' on five of six leaves, but reading the tokens showed annotation PROSE ('Death the crosse was most cruel', 'Iosephus ... this Putiphar was both') - full-width annotation blocks straddle the bound exactly as ch23 p89 did on the left. Geometry could not settle it; measurement did, and overturned my caution in the direction of MORE gain - widening p144/p148 added exactly two tokens, 'vp' and 'foule,', both genuine scripture (Gen 41:2-3). READING THE PAGE TELLS YOU WHAT IS THERE; ONLY MEASURING TELLS YOU WHAT THE PIPELINE DOES WITH IT. Then the bulk emit REGRESSED ch41 by 11 because it overwrote measured entries with estimates - it reset p146 to 0.705, a proposal already refused by eye AND by measurement, and reverted p144 to the clipping default. I had built that guard for the left axis and let the right-axis emitter walk through it. Restricting the emit to WIDENING ONLY restored 205. Bound value chosen off a flat plateau (0.84-0.89 all +6), taking 0.86 where ref means peak and below the verse-numeral column at 0.875. OPEN, PRE-EXISTING, NOT THIS ROUND: an apparatus-vocabulary scan over all 50 chapters found one contamination - ch3 v7 S9 reads 'made thems. Chrisclues aprons' ('made themselues aprons' with 'S. Chris' spliced in) - on p40, a leaf this round did not touch. It is a PASSING cell, so the board cannot see it; validity, not yield."
+    }
+   ]
+  },
+  "5": {
+   "passes": [
+    {
+     "at": "2026-08-03T00:50Z",
+     "pass_before": 103,
+     "pass_after": 105,
+     "achievable": 124,
+     "delta": 2,
+     "signals": [
+      "4"
+     ],
+     "diagnostics": [
+      "leaf_diag.py",
+      "x0 histogram census",
+      "bound sweep via chapter_campaign",
+      "left-column detector (built+refuted)",
+      "faithfulness_audit.py",
+      "apparatus-vocabulary scan"
+     ],
+     "rule": "A THIRD VARIANT OF THE BOUNDS DEFECT: a left bound too WIDE, admitting the note column. ch23/ch39 were bounds too narrow (clipping scripture OUT); ch41 a right bound too tight; this one lets apparatus IN. archive-holiebible-ot1 p48 sets its notes 0.08-0.20 with body from 0.21 while the band began at 0.14, so the column's right half counted as scripture: 'And Ma[God him]laleel liued', 'and be[recited life of]gat Enoch', '& begat [of bo.] Mathusala'. A verse is the concatenation of several lines, so a gloss admitted at each LINE END lands in the MIDDLE of the assembled verse - interleaving, not a tail. NEITHER EXISTING PROBE CAN SEE THIS: left_strip_probe only ever asks whether the body is CLIPPED, and bounds_probe holds the left bound unless it is. Neither has any way to say 'the bound admits too much'. Measured fix p48 (0.14,0.855)->(0.205,0.845), +2.",
+     "alert": "THE GENERALIZATION WAS BUILT AND REFUTED BY MEASUREMENT, so the APPROACH needs redesign and the sub-100% chapters stay OPEN. Detector: a note column is a tall stack inside the band with the body's own margin stack still AHEAD of it (a body margin has nothing comparable after it). First cut flagged 408 leaves - it was firing on each source's own body margin. Refined to 81. Applied to the 73 leaves of the three 1609 witnesses it cost ch5 TWENTY-FOUR CELLS (105->81): the false positives clip scripture. Reverted; only the measured per-leaf fix stands. A detector for 'admits too much' has no orthogonal corroborator the way 'clipped' has line-membership, and until one exists this class must be found per-leaf from the failing TEXT, not swept.",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch5 103->105/124. S9 0.613->0.677; the p48 interleaving is gone. Board 5725->5727/6116 = 0.9364 (the fix is local; p48 carries no other chapter). 216 tests pass. Residue on p48 ('hundred28', 'our fiue') sits INSIDE the body band - verse numerals set in the measure, not a bounds problem. S6 p34 right-bound sweep (0.775/0.785/0.80) moved ZERO cells; not adopted, a third-decimal ref-mean gain is not a reason to churn a probe-derived bound. TOOLING DEFECT FOUND INCIDENTALLY: chapter_campaign.py reported 'NO-VERSES 0/0 = 0.000' three times against a gen1_pagemodel.py that FAILED TO IMPORT (a syntax error from a zsh word-splitting slip - zsh does not word-split unquoted parameters). A config that cannot be parsed must fail loudly; reporting it as a measurement of zero is exactly the silent-degradation shape. VALIDITY, NOT YIELD - apparatus inside PASSING cells, which the board cannot see: ch3 v7 S9 'made thems. Chrisclues aprons' (= 'made themselues aprons') scores 0.918-0.928 on all four references and passes. ch21 v8 S9 'The child therfore signifieth grewe' is contaminated but already open. The tightened apparatus-vocabulary scan is worth re-running after every bound change."
+    }
+   ]
+  },
+  "10": {
+   "passes": [
+    {
+     "at": "2026-08-03T06:33Z",
+     "pass_before": 106,
+     "pass_after": 109,
+     "achievable": 128,
+     "delta": 3,
+     "signals": [
+      "4:S6 far below its own median (0.6875 vs 0.875); 6:all four witnesses fail v2/v6/v7 identically; 1:s_dismas gen 10:1 is apparatus-contaminated"
+     ],
+     "diagnostics": [
+      "triage.py --detail; bounds_probe.py --source jp2-S06 --examples 4; PAGE_OVERRIDE read as a table (parity audit); reference length-divergence scan s_dismas vs odr_com over all 50 chapters; left-bound plateau sweep 0.13-0.18; before/after verse diff on all 7 changed S6 cells"
+     ],
+     "rule": "SEVEN HOLES IN THE PARITY SWEEP. Every EVEN jp2-S06 leaf from 22 to 158 carries a right bound 0.745-0.765 and many a left bound 0.10-0.17 \u2014 except leaves 20,40,46,48,56,62,64, which sat untouched on the SOURCE default (0.215,0.825). Rule C at file scope: the sweep's own output convicts it when read as a table. p56 -> (0.16,0.755) is +3 in ch10 on a flat plateau 0.13-0.16 (0.17 = +2, 0.18 = 0); the other six leaves' chapters are in the R3 queue and are unmeasured.",
+     "alert": "THE BOARD APPLIES A STRICTER GATE THAN THE STANDARD SIR APPROVED, AND IT IS MISDIRECTING THE CAMPAIGN. char_identity.evaluate_locus documents an archaic-preeminent gate ('a faithful 1582 OCR must not fail for diverging from a modern edition'; modern_id is a recorded signal that does NOT gate). chapter_campaign passes a cell only if min over ALL FOUR references >= 0.90, so the two modern references gate too. 158 of 383 open cells fail on a clean reference-family split, and 46 of those score >=0.98 against the family they belong to \u2014 gen 10:2 is transcribed EXACTLY by all four witnesses (1.000 vs s_dismas/odr_com) and fails only because sabates_a/madueke_b print Japheth/Javan/Tubal where the scans print Iapheth/Iauan/Thubal. Under the documented governing gate the board reads 5859/6120 = 0.9574, +122. NOT ADOPTED \u2014 this changes what 100% of Genesis means and is Sir's call, not mine. It also means campaign effort is being spent on cells that are already faithful.",
+     "changed_text": true,
+     "audited": true,
+     "notes": "ch10 106->109/128. Residual: 12 cells edition-split (v2,v6,v7 x4 witnesses, all EDITION-EXACT); 4 cells blocked by a CONTAMINATED s_dismas 10:1 ('and children were q. 57. in Gen. ho. 29. Moral. c. 18. Tradit. Hebra.' \u2014 the apparatus is spliced in and the verse tail is lost); 6 genuine S6 p55/p56 defects remain (v14,15,16,32 + v1). A book-wide s_dismas-vs-odr_com length scan found only 4 divergent verses, so the contamination is NOT systemic: ch10:1 and ch48:3 are spliced apparatus, ch11:32 and ch21:31 are legitimate. The widened p56 bound admits one apparatus token 'Sem.' into v14 at the same depth as body text (not separable by the bound, same class as ch23 p90's running head); v14 does not pass, so no PASSING cell carries the fabrication."
+    }
+   ]
+  }
+ },
+ "updated": "2026-08-03T06:33Z"
+}

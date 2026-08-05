@@ -1,0 +1,4444 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p108",
+  "old_text": "whom his father Thou ſeeſt, quoth he, that I am old, know not the day of my death.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.4794,
+   0.875,
+   0.5682
+  ],
+  "crop_page": 108,
+  "r3_raw": "said to him: my sonne? Who answered Here I am. † To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. † Take thy instruments, thy ſquier, and bowe, and goe abrode: and when thou hast",
+  "r3_verse": "To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death.",
+  "arm_conflicts": [],
+  "new_text": "To whom his father Thou ſeeſt, quoth he, that I am old, and know not the day of my death.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p108",
+  "old_text": "Take thy inſtruments, quiuer, and bowe, and goe abrode and when thou taken any thing by hunting,",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5004,
+   0.875,
+   0.6077
+  ],
+  "crop_page": 108,
+  "r3_raw": "whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. Take thy instruments, thy ſuuer, and bowe, and goe abrode: and when thou hast taken any thing by hunting, make me broth therof, as thou knowest I like, and bring that I may eate: and my",
+  "r3_verse": "Take thy instruments, thy ſuuer, and bowe, and goe abrode: and when thou hast taken any thing by hunting,",
+  "arm_conflicts": [
+   "quiuer, | thy ſuuer,"
+  ],
+  "lexicon_readings": {
+   "13": "haſt"
+  },
+  "visual_readings": {
+   "13": "haſt"
+  },
+  "new_text": "Take thy inſtruments, thy ſuuer, and bowe, and goe abrode and when thou haſt taken any thing by hunting,",
+  "s_unresolved": [
+   "ſuuer,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "p108",
+  "old_text": "make me broth therof, thou knoweſt I like, and bring that I may eate: and ſoule may bleſſe thee before I dye.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5405,
+   0.875,
+   0.6482
+  ],
+  "crop_page": 108,
+  "r3_raw": "quiver, and bowe, and goe abrode: and when thou hast taken any thing by hunting, † make me broth therof, as thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye. † Which when Rebecca had heard, and he was gone into the field to fulfil his fathers",
+  "r3_verse": "make me broth therof, as thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye.",
+  "arm_conflicts": [],
+  "new_text": "make me broth therof, as thou knoweſt I like, and bring that I may eate: and my ſoule may bleſſe thee before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p108",
+  "old_text": "which when Rebecca had heard, and he was gone into the field to fulfil his commandement,",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.5797,
+   0.875,
+   0.687
+  ],
+  "crop_page": 108,
+  "r3_raw": "thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye. † Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement, † she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him:",
+  "r3_verse": "Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "15": "fathers"
+  },
+  "visual_readings": {
+   "15": "fathers"
+  },
+  "new_text": "which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p108",
+  "old_text": "Bring me of thy hunting, and make me meates that I eate, and bleſſe thee in the ſight of our Lord hefore dye.",
+  "old": {
+   "s_dismas": 0.938,
+   "odr_com": 0.938,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.6603,
+   0.8914,
+   0.7705
+  ],
+  "crop_page": 108,
+  "r3_raw": "father talking with Esau thy brother, and saying to him: † Bring me of thy hunting, and make me meates that I may 7 eate, and beſeech thee in the sight of our Lord before I dye. † Now therefore my sonne, assent to my counsel : 8 † and go thy way to the hocke, bring me two kiddes of the",
+  "r3_verse": "Bring me of thy hunting, and make me meates that I may eate, and beſeech thee in the sight of our Lord before I dye.",
+  "arm_conflicts": [
+   "bleſſe | beſeech",
+   "hefore | before I"
+  ],
+  "lexicon_readings": {
+   "22": "before"
+  },
+  "visual_readings": {
+   "22": "before"
+  },
+  "new_text": "Bring me of thy hunting, and make me meates that I may eate, and beſeech thee in the ſight of our Lord before I dye.",
+  "s_unresolved": [
+   "beſeech"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 9,
+  "from": "p108",
+  "old_text": "and go thy way to the flocke, bring me two kiddes of right beſt, chat I may make of them meat for thy father, ſuch as to gladly eateth",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.7205,
+   0.875,
+   0.832
+  ],
+  "crop_page": 108,
+  "r3_raw": "dye. † Now therefore my sonne, assent to my counsel: 8 and go thy way to the hocke, bring me two kiddes of the best, that I may make of them meat for thy father, such as he gladly eateth: † which when thou hast brought in, and he hath eaten, he may blesse thee before he dye. † To whom",
+  "r3_verse": "and go thy way to the hocke, bring me two kiddes of the best, that I may make of them meat for thy father, such as he gladly eateth:",
+  "arm_conflicts": [
+   "flocke, | hocke,",
+   "right | the",
+   "chat | that",
+   "to | he"
+  ],
+  "new_text": "and go thy way to the hocke, bring me two kiddes of the beſt, that I may make of them meat for thy father, ſuch as he gladly eateth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 11,
+  "from": "p108",
+  "old_text": "To whom of- he anſwered: Tou knoweſt that Eſau my brother his an hearie man, and I am ſmooth",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.7819,
+   0.875,
+   0.8977
+  ],
+  "crop_page": 108,
+  "r3_raw": "gladly eateth: † which when thou hast brought in, and he hath earen, he may bleffe thee before he dye. † To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father ſhall feele me, and perceiue it, :: I feare leſt he wil thinke I would",
+  "r3_verse": "To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth:",
+  "arm_conflicts": [
+   "Tou | Thou",
+   "his | is"
+  ],
+  "new_text": "To whom he anſwered: Thou knoweſt that Eſau my brother is an hearie man, and I am ſmooth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 12,
+  "from": "chapter",
+  "old_text": "if my father ſhal me, and perceaue it, I feare leſt he wil thinke I haue deluded him, and I ſhal bring vpon me a curſe fora bleſſing.",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.8211,
+   0.875,
+   0.9239
+  ],
+  "crop_page": 108,
+  "crop_leaves": [
+   108,
+   109
+  ],
+  "r3_raw": "he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father shal feele me, and perceiue it, :: I feare lest he wil thinke I would ha... haue deſcuded him, and I ſhal bring vpon me a curse for a blessing. † To whom his mother said: This curse, my ſonne, light vpon me: only heare thou my voice, and go, fetch me",
+  "r3_verse": "if my father shal feele me, and perceiue it, :: I feare lest he wil thinke I would ha... haue deſcuded him, and I ſhal bring vpon me a curse for a blessing.",
+  "arm_conflicts": [
+   "perceaue | perceiue",
+   "deluded | deſcuded",
+   "fora | for a"
+  ],
+  "lexicon_readings": {
+   "30": "for"
+  },
+  "visual_readings": {
+   "30": "for"
+  },
+  "new_text": "if my father ſhal feele me, and perceiue it, :: I feare leſt he wil thinke I would ha... haue deſcuded him, and I ſhal bring vpon me a curſe for a bleſſing.",
+  "s_unresolved": [
+   "feele",
+   "deſcuded"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p109",
+  "old_text": "he ſaid to him : Come nere me, and geue me a kiſſe, myſonne.",
+  "old": {
+   "s_dismas": 0.982,
+   "odr_com": 0.982,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.6082,
+   0.875,
+   0.6944
+  ],
+  "crop_page": 109,
+  "r3_raw": "had eaten, he offered him wine also, which after he had drunke, † he said to him: Come nere me, and geue me a kisse, my sonne. † He came nere, and kissed him. And imme- diatly as he felt the fragrant sauoure of his garments, blessing",
+  "r3_verse": "he said to him: Come nere me, and geue me a kisse, my sonne.",
+  "arm_conflicts": [
+   "myſonne. | my sonne."
+  ],
+  "r2_attested": {
+   "13": "ſonne."
+  },
+  "visual_readings": {
+   "13": "ſonne."
+  },
+  "new_text": "he ſaid to him Come nere me, and geue me a kiſſe, my ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p109",
+  "old_text": "God geue thee of the deawof heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.7088,
+   0.875,
+   0.7986
+  ],
+  "crop_page": 109,
+  "r3_raw": "uoure of a plentiful field, which our Lord hath blessed. 28 † God geue thee of the dew of heauen, and of the fatnes of the earth abundance of corne and wine. † And let peoples serue thee, and tribes adore thee: be thou lord of thy bre-",
+  "r3_verse": "God geue thee of the dew of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "arm_conflicts": [
+   "deawof | dew of"
+  ],
+  "new_text": "God geue thee of the dew of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "chapter",
+  "old_text": "and brought in to his father meates made of his hunting, ſaying: Ariſe my father, and eate of ſonnes hunting thar thy ſoule may bleſſe me.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.8509,
+   0.875,
+   0.9223
+  ],
+  "crop_page": 109,
+  "crop_leaves": [
+   109,
+   110
+  ],
+  "r3_raw": "ended his wordes, and Iacob now gone forth abroad, but Esau came, † and brought in to his father meates made of his hunting, saying: Arise my father, and eate of thy sonnes hunting: that thy soule may blesse me. † And Isaac said to him: Why! who arth thou? Who answered: I am",
+  "r3_verse": "and brought in to his father meates made of his hunting, saying: Arise my father, and eate of thy sonnes hunting: that thy soule may blesse me.",
+  "arm_conflicts": [
+   "thar | that"
+  ],
+  "new_text": "and brought in to his father meates made of his hunting, ſaying: Ariſe my father, and eate of thy ſonnes hunting that thy ſoule may bleſſe me.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p110",
+  "old_text": "And ſaid to him: why I who arth thou ? who anſwered : I thy firſt begotten ſonne Eſau.",
+  "old": {
+   "s_dismas": 0.861,
+   "odr_com": 0.874,
+   "sabates_a": 0.866,
+   "madueke_b": 0.866
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.0544,
+   0.875,
+   0.1627
+  ],
+  "crop_page": 110,
+  "r3_raw": "of his hunting, saying: Arise my father, and eate of thy sonnes hunting: that thy soule may bleſse me. † And Isaac said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau. † Isaac was amazed and asto- nied exceedingly: and marueling more, then a man can",
+  "r3_verse": "And Isaac said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau.",
+  "arm_conflicts": [
+   "why I | Why!",
+   "thou ? | thou?"
+  ],
+  "lexicon_readings": {
+   "1": "Iſaac"
+  },
+  "visual_readings": {
+   "1": "Iſaac"
+  },
+  "new_text": "And Iſaac ſaid to him: why who arth thou who anſwered I am thy firſt begotten ſonne Eſau.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 33,
+  "from": "p110",
+  "old_text": "Iſaac was amazed and nied exceadingly: and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, and he ſhal be itto ſed.",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.894,
+   "madueke_b": 0.894
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.0949,
+   0.875,
+   0.266
+  ],
+  "crop_page": 110,
+  "r3_raw": "said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau. † Isaac was amazed and astonished exceedingly: and marueling more, then a man can beleue, said: Who is he then that euen now brought me venison that he had taken, and I did eare of al thinges before thou camest? and I haue blessed him, :: and he shal be bleſsed. † Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Bleffe me also, my fa-",
+  "r3_verse": "Isaac was amazed and astonished exceedingly: and marueling more, then a man can beleue, said: Who is he then that euen now brought me venison that he had taken, and I did eare of al thinges before thou camest? and I haue blessed him, :: and he shal be bleſsed.",
+  "arm_conflicts": [
+   "nied exceadingly: | astonished exceedingly:",
+   "eate | eare",
+   "itto ſed. | bleſsed."
+  ],
+  "lexicon_readings": {
+   "36": "before",
+   "49": "bleſſed."
+  },
+  "visual_readings": {
+   "36": "before",
+   "49": "bleſſed."
+  },
+  "new_text": "Iſaac was amazed and astonished exceedingly: and marueling more then a man can beleue, ſaid Who is he then that euen now brought me veniſon that he had taken, and I did eare of al thinges before thou cameſt? and I haue bleſſed him, :: and he ſhal be bleſſed.",
+  "s_unresolved": [
+   "astonished"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "p110",
+  "old_text": "Eſau hauing heard his fathers wordes, roared out wil, a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my ther.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.1972,
+   0.875,
+   0.3077
+  ],
+  "crop_page": 110,
+  "r3_raw": "thou camest? and I haue blessed him, :: and he shal be bleſsed. † Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Bleffe me also, my fa- ther. † Who said: Thy brother came deceiptfully and tooke thy blessing. † But he said again: Rightly is his name called",
+  "r3_verse": "Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Bleffe me also, my fa- ther.",
+  "arm_conflicts": [
+   "wil, | with",
+   ": Bleſſe | Bleffe"
+  ],
+  "new_text": "Eſau hauing heard his fathers wordes, roared out with a great crye and being diſmaied, ſaid Bleffe me alſo, my fa- ther.",
+  "s_unresolved": [
+   "Bleffe",
+   "fa-"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.974,
+   "odr_com": 0.974,
+   "sabates_a": 0.964,
+   "madueke_b": 0.964
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 35,
+  "from": "p110",
+  "old_text": "Who ſaid : Thy brother came deceiptfully and thy bleſſing.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.2392,
+   0.875,
+   0.3278
+  ],
+  "crop_page": 110,
+  "r3_raw": "a great crye: and being dismaied, said: Bleffe me also, my father. † Who said: Thy brother came deceiptfully and tooke thy blessing. † But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my",
+  "r3_verse": "Who said: Thy brother came deceiptfully and tooke thy blessing.",
+  "arm_conflicts": [],
+  "new_text": "Who ſaid Thy brother came deceiptfully and tooke thy bleſſing.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 36,
+  "from": "p110",
+  "old_text": "But he ſaid again : Rightly is his name Iacob: for he hath ſupplanted me loe the ſecond time firſt. birth right he tooke before, and now the ſecond he hath ſtollen my bleſſing. And againe to his father he Haſt thou not reſerued me alſo a bleſſing",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.915,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.08,
+   0.2593,
+   0.875,
+   0.4109
+  ],
+  "crop_page": 110,
+  "r3_raw": "ther. † Who said: Thy brother came deceiptfully and tooke thy bleſsing. † But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my first-birth-right he tooke before, and now the second time he hath stollen my bleſsing. And againe to his father he said: Hast thou not refervued me also a bleſsing? † Isaac anſwered: I haue appointed him thy Lord, and al his brethren I have",
+  "r3_verse": "But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my first-birth-right he tooke before, and now the second time he hath stollen my bleſsing. And againe to his father he said: Hast thou not refervued me also a bleſsing?",
+  "arm_conflicts": [
+   "firſt. birth right | my first-birth-right",
+   "reſerued | refervued",
+   "bleſſing | bleſsing?"
+  ],
+  "lexicon_readings": {
+   "40": "ſaid:"
+  },
+  "visual_readings": {
+   "40": "ſaid:"
+  },
+  "new_text": "But he ſaid again Rightly is his name called Iacob: for he hath ſupplanted me loe the ſecond time my first-birth-right he tooke before, and now the ſecond time he hath ſtollen my bleſſing. And againe to his father he ſaid: Haſt thou not refervued me alſo a bleſſing",
+  "s_unresolved": [
+   "first-birth-right",
+   "refervued"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.992,
+   "sabates_a": 0.996,
+   "madueke_b": 0.996
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 37,
+  "from": "p110",
+  "old_text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I made ſubiect to his ſeruice : with corne and wine I haue bliſhed him, and for thee, my ſonne, what ſhal I doe after this",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.3418,
+   0.875,
+   0.4915
+  ],
+  "crop_page": 110,
+  "r3_raw": "he hath stollen my blessing. And againe to his father he said: Hast thou not reserved me also a blessing? † Isaac answered: I haue appointed him thy Lord, and al his brethren I haue made subject to his service: with corne and wine I haue established him, and for thee, my sonne, what ſhal I doe more after this? † To whom Esau said: Hast thou one only blessing, father? I beſeech thee blesse me also. And when he wept",
+  "r3_verse": "Isaac answered: I haue appointed him thy Lord, and al his brethren I haue made subject to his service: with corne and wine I haue established him, and for thee, my sonne, what ſhal I doe more after this?",
+  "arm_conflicts": [
+   "ſubiect | subject",
+   "ſeruice : | service:",
+   "bliſhed | established",
+   "this | this?"
+  ],
+  "new_text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I haue made ſubiect to his ſeruice with corne and wine I haue established him, and for thee, my ſonne, what ſhal I doe more after this",
+  "s_unresolved": [
+   "established"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 38,
+  "from": "p110",
+  "old_text": "To whom Eſau ſaid : Haſt thou one only ſing, father? I beſech thee bleſſe me alſo. And when he that he howled againe,",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.423,
+   0.875,
+   0.5339
+  ],
+  "crop_page": 110,
+  "r3_raw": "blished him, and for thee, my sonne, what ſhal I doe more after this? † To whom Esau said: Hast thou one only bleſsing, father? I beſeech thee bleſs me also. And when he wept that he howled againe, † Isaac being moued, said to him: In :: the fat of the earth, and in the dew of heaven from",
+  "r3_verse": "To whom Esau said: Hast thou one only bleſsing, father? I beſeech thee bleſs me also. And when he wept that he howled againe,",
+  "arm_conflicts": [
+   "ſing, | bleſsing,",
+   "beſech | beſeech",
+   "bleſſe | bleſs"
+  ],
+  "r2_attested": {
+   "8": "bleſſing,"
+  },
+  "visual_readings": {
+   "8": "bleſſing,"
+  },
+  "new_text": "To whom Eſau ſaid Haſt thou one only bleſſing, father? I beſech thee bleſſe me alſo. And when he wept that he howled againe,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 39,
+  "from": "p110",
+  "old_text": "Iſaac being moued, ſaid to In the fat of the earth, and in the deaw of heauen aboue",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   38,
+   39,
+   40
+  ],
+  "crop": [
+   0.08,
+   0.4645,
+   0.875,
+   0.5737
+  ],
+  "crop_page": 110,
+  "r3_raw": "sing, father? I besech thee blesse me also. And when he wept that he howled againe, † Isaac being moued, said to him: In :: the fat of the earth, and in the dew of heaven from aboue † shal thy blessing be. Thou shalt liue by the worde, and shalt serue thy brother: and :: the time shal come; when",
+  "r3_verse": "Isaac being moued, said to him: In :: the fat of the earth, and in the dew of heaven from aboue",
+  "arm_conflicts": [
+   "deaw | dew",
+   "heauen | heaven from"
+  ],
+  "lexicon_readings": {
+   "19": "from"
+  },
+  "visual_readings": {
+   "19": "from"
+  },
+  "new_text": "Iſaac being moued, ſaid to him: In :: the fat of the earth, and in the dew of heauen from aboue",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 40,
+  "from": "p110",
+  "old_text": "ſhal thy bleſſing be. Thou ſhalt liue by the and ſhalt ſerue thy brother : and : the time ſhal come, ſub- thou ſhalt shake of, and looſe his yoake ſrom thy king",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   39,
+   40,
+   41
+  ],
+  "crop": [
+   0.08,
+   0.5046,
+   0.875,
+   0.6329
+  ],
+  "crop_page": 110,
+  "r3_raw": "In :: the fat of the earth, and in the dew of heaven from aboue † shal thy blessing be. Thou shalt liue by the worde, and shalt serve thy brother: and :: the time ſhall come, when thou shalt shake of, and loose his yoake from thy necke. † Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The",
+  "r3_verse": "shal thy blessing be. Thou shalt liue by the worde, and shalt serve thy brother: and :: the time ſhall come, when thou shalt shake of, and loose his yoake from thy necke.",
+  "arm_conflicts": [
+   "ſerue | serve",
+   "ſhal | ſhall",
+   "ſub- | when",
+   "ſrom | from",
+   "king | necke."
+  ],
+  "lexicon_readings": {
+   "30": "from"
+  },
+  "visual_readings": {
+   "30": "from"
+  },
+  "new_text": "ſhal thy bleſſing be. Thou ſhalt liue by the worde, and ſhalt ſerue thy brother and :: the time ſhal come, when thou ſhalt shake of, and looſe his yoake from thy necke.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 41,
+  "from": "p110",
+  "old_text": "Eſau therfore alwaies hated Iacob for the bleſſing with his father had bleſſed him : and he ſaid in his hart : Io- daies wil come of the mourning of my father, and I wil had Iacob my brother.",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.568,
+   0.875,
+   0.6983
+  ],
+  "crop_page": 110,
+  "r3_raw": "thou shalt shake of, and loose his yoake from thy necke. † Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Jacob my brother. † These things were told to Rebecca: who sending & calling Iacob her fonne, said to him: Behold",
+  "r3_verse": "Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Jacob my brother.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "with | wherewith",
+   ": Io- | The",
+   "had Iacob | kil Jacob"
+  ],
+  "new_text": "Eſau therefore alwaies hated Iacob for the bleſſing wherewith his father had bleſſed him and he ſaid in his hart The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 42,
+  "from": "p110",
+  "old_text": "Theſe things were told to Rebecca: their who ſending & calling Iacob her ſonne, ſaid to him : Behold Reg. Eſau thy brother threatneth to kil thee.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   41,
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.6269,
+   0.875,
+   0.7375
+  ],
+  "crop_page": 110,
+  "r3_raw": "daies wil come of the mourning of my father, and I wil kil Jacob my brother. † These things were told to Rebecca: who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. † Now therfore, my sonne, heare my voice, and get thee vp and flye to Laban",
+  "r3_verse": "These things were told to Rebecca: who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee.",
+  "arm_conflicts": [],
+  "new_text": "Theſe things were told to Rebecca: who ſending & calling Iacob her ſonne, ſaid to him Behold Eſau thy brother threatneth to kil thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 43,
+  "from": "p110",
+  "old_text": "Now therfore, were my ſonne, heare my voice, and get thee vp and flye to my brother into Haran :",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   42,
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.668,
+   0.875,
+   0.7776
+  ],
+  "crop_page": 110,
+  "r3_raw": "who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. † Now therefore, my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran: † and thou shalt dwel with him a few daies, til the furie of thy brother be allwaged, † and",
+  "r3_verse": "Now therefore, my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran:",
+  "arm_conflicts": [
+   "therfore, were | therefore,"
+  ],
+  "new_text": "Now therefore, my ſonne, heare my voice, and get thee vp and flye to Laban my brother into Haran",
+  "s_unresolved": [
+   "therefore,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 44,
+  "from": "p110",
+  "old_text": "and thou ſhalt dwel with Io- few daies, til the furie of thy brother be aſſwaged,",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.7091,
+   0.875,
+   0.8003
+  ],
+  "crop_page": 110,
+  "r3_raw": "my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran: † and thou shalt dwel with him a few daies, til the furie of thy brother be allwaged, † and his indignation cease, and he forget those things, which thou",
+  "r3_verse": "and thou shalt dwel with him a few daies, til the furie of thy brother be allwaged,",
+  "arm_conflicts": [
+   "Io- | him a",
+   "aſſwaged, | allwaged,"
+  ],
+  "new_text": "and thou ſhalt dwel with him a few daies, til the furie of thy brother be allwaged,",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 45,
+  "from": "p110",
+  "old_text": "his indignation ceaſe, and he forger thoſe things, which haſt done to him: after ward I wil ſend, and bring thee thence hither. Why ſhal I be depriued of both ſonnes in in day",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.7506,
+   0.875,
+   0.8815
+  ],
+  "crop_page": 110,
+  "r3_raw": "few daies, til the furie of thy brother be allwaged, † and his indignation cease, and he forget those things, which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why ſhal I be depriued of both sonnes in one day? † And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Jacob take a wife of the stocke",
+  "r3_verse": "and his indignation cease, and he forget those things, which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why ſhal I be depriued of both sonnes in one day?",
+  "arm_conflicts": [
+   "forger | forget",
+   "after ward | afterward",
+   "in day | one day?"
+  ],
+  "lexicon_readings": {
+   "22": "from"
+  },
+  "visual_readings": {
+   "22": "from"
+  },
+  "new_text": "and his indignation ceaſe, and he forget thoſe things, which thou haſt done to him: afterward I wil ſend, and bring thee from thence hither. Why ſhal I be depriued of both ſonnes in one day",
+  "s_unresolved": [
+   "forget",
+   "afterward"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 46,
+  "from": "p110",
+  "old_text": "And Rebecca ſaid to Iſaac : I am wearie of my for the daughters of Heth : if Iacob take a wife of the of this land, I liſt not liue.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.8111,
+   0.875,
+   0.9265
+  ],
+  "crop_page": 110,
+  "r3_raw": "thence hither. Why shal I be depriued of both sonnes in one day? † And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Jacob take a wife of the stocke of this land, I list not liue.",
+  "r3_verse": "And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Jacob take a wife of the stocke of this land, I list not liue.",
+  "arm_conflicts": [
+   "Iacob | Jacob"
+  ],
+  "lexicon_readings": {
+   "10": "life"
+  },
+  "r2_attested": {
+   "23": "ſtocke"
+  },
+  "visual_readings": {
+   "10": "life",
+   "23": "ſtocke"
+  },
+  "new_text": "And Rebecca ſaid to Iſaac I am wearie of my life for the daughters of Heth if Iacob take a wife of the ſtocke of this land, I liſt not liue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p112",
+  "old_text": "and Iſaac was old, and his eyes were dimme, and Vcould not ſee and he called Efau his elder ſonne, ſaid to him: my ſonne? Who anſwered Here I am.",
+  "old": {
+   "s_dismas": 0.945,
+   "odr_com": 0.945,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.08,
+   0.0186,
+   0.875,
+   0.5289
+  ],
+  "crop_page": 112,
+  "r3_raw": "12. An hundred fold] For this increase of wealth the King and people first enuied Isaac, but afterwards perceiuing that God almightie, whom served, so blessed him, the rest of the land remaining barren, they sought make league with him (v. 28) Euen so the Kings and nations of the world, enuying and persecuting Christs Church, at leingth seing it stil prosper became with al humilitie children of the same Church, and seruants of Chri being overcome not by force of armes but by patience, & peacable endeou of those whom they most hated. VVherof excellently saith S. Leo (Ser. 1. Natali. Apost) Although Rome renownmed by manie victories, dilated h Empyre by land and by sea, yet was it leſse, that martial trauel subdued, th that which Christian peace hath obtained. The Bishops of Rome haui larger Iurisdiction spiritual, then euer the Roman Caſars had tempo Dominion. And Isaac was old, and his eyes were dimme, and he could not see: and he called Esau his elder sonne, and said to him: my sonne? Who answered Here I am. To",
+  "r3_verse": "An hundred fold] For this increase of wealth the King and people first enuied Isaac, but afterwards perceiuing that God almightie, whom served, so blessed him, the rest of the land remaining barren, they sought make league with him (v. 28) Euen so the Kings and nations of the world, enuying and persecuting Christs Church, at leingth seing it stil prosper became with al humilitie children of the same Church, and seruants of Chri being overcome not by force of armes but by patience, & peacable endeou of those whom they most hated. VVherof excellently saith Leo (Ser. Natali. Apost) Although Rome renownmed by manie victories, dilated Empyre by land and by sea, yet was it leſse, that martial trauel subdued, th that which Christian peace hath obtained. The Bishops of Rome haui larger Iurisdiction spiritual, then euer the Roman Caſars had tempo Dominion. And Isaac was old, and his eyes were dimme, and he could not see: and he called Esau his elder sonne, and said to him: my sonne? Who answered Here I am. To",
+  "arm_conflicts": [
+   "Vcould | he could",
+   "Efau | Esau"
+  ],
+  "lexicon_readings": {
+   "12": "firſt",
+   "14": "Iſaac,",
+   "16": "afterwards",
+   "24": "bleſſed",
+   "59": "ſtil",
+   "60": "proſper",
+   "68": "ſame",
+   "88": "thoſe",
+   "91": "moſt",
+   "95": "ſaith",
+   "116": "leſſe,",
+   "161": "Eſau"
+  },
+  "r2_attested": {
+   "5": "increaſe",
+   "23": "ſo",
+   "27": "reſt",
+   "34": "ſought",
+   "42": "ſo",
+   "53": "Chriſts",
+   "57": "ſeing",
+   "71": "ſeruants",
+   "99": "Apoſt)",
+   "112": "ſea,",
+   "120": "ſubdued,",
+   "124": "Chriſtian",
+   "129": "Biſhops",
+   "134": "Iuriſdiction",
+   "135": "ſpiritual,"
+  },
+  "visual_readings": {
+   "12": "firſt",
+   "14": "Iſaac,",
+   "16": "afterwards",
+   "24": "bleſſed",
+   "59": "ſtil",
+   "60": "proſper",
+   "68": "ſame",
+   "88": "thoſe",
+   "91": "moſt",
+   "95": "ſaith",
+   "116": "leſſe,",
+   "161": "Eſau",
+   "5": "increaſe",
+   "23": "ſo",
+   "27": "reſt",
+   "34": "ſought",
+   "42": "ſo",
+   "53": "Chriſts",
+   "57": "ſeing",
+   "71": "ſeruants",
+   "99": "Apoſt)",
+   "112": "ſea,",
+   "120": "ſubdued,",
+   "124": "Chriſtian",
+   "129": "Biſhops",
+   "134": "Iuriſdiction",
+   "135": "ſpiritual,"
+  },
+  "new_text": "An hundred fold] For this increaſe of wealth the King and people firſt enuied Iſaac, but afterwards perceiuing that God almightie, whom served, ſo bleſſed him, the reſt of the land remaining barren, they ſought make league with him (v. 28) Euen ſo the Kings and nations of the world, enuying and persecuting Chriſts Church, at leingth ſeing it ſtil proſper became with al humilitie children of the ſame Church, and ſeruants of Chri being overcome not by force of armes but by patience, & peacable endeou of thoſe whom they moſt hated. VVherof excellently ſaith Leo (Ser. Natali. Apoſt) Although Rome renownmed by manie victories, dilated Empyre by land and by ſea, yet was it leſſe, that martial trauel ſubdued, th that which Chriſtian peace hath obtained. The Biſhops of Rome haui larger Iuriſdiction ſpiritual, then euer the Roman Caſars had tempo Dominion. And Iſaac was old, and his eyes were dimme, and he could not ſee and he called Eſau his elder ſonne, and ſaid to him: my ſonne? Who anſwered Here I am. To",
+  "s_unresolved": [
+   "fold]",
+   "served,",
+   "persecuting",
+   "force",
+   "Caſars"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p112",
+  "old_text": "whom his father Thou ſeeſt, quoth he, that I am old, know not the day of my death.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.4817,
+   0.875,
+   0.5708
+  ],
+  "crop_page": 112,
+  "r3_raw": "said to him: my sonne? Who answered Here I am. † To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. † Take thy instruments, thy quiver, and bowe, and goe abrode: and when thou hast",
+  "r3_verse": "To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death.",
+  "arm_conflicts": [],
+  "new_text": "To whom his father Thou ſeeſt, quoth he, that I am old, and know not the day of my death.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p112",
+  "old_text": "Take thy inſtruments, quiuer, and bowe, and goe abrode and when thou taken any thing by hunting,",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.898,
+   "madueke_b": 0.898
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.5031,
+   0.875,
+   0.6137
+  ],
+  "crop_page": 112,
+  "r3_raw": "whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. † Take thy instruments, thy ſquier, and bowe, and goe abrode: and when thou hast taken any thing by hunting, † make me broth therof, as thou knowest I like, and bring that I may eate: and my",
+  "r3_verse": "Take thy instruments, thy ſquier, and bowe, and goe abrode: and when thou hast taken any thing by hunting,",
+  "arm_conflicts": [
+   "quiuer, | thy ſquier,"
+  ],
+  "lexicon_readings": {
+   "13": "haſt"
+  },
+  "visual_readings": {
+   "13": "haſt"
+  },
+  "new_text": "Take thy inſtruments, thy ſquier, and bowe, and goe abrode and when thou haſt taken any thing by hunting,",
+  "s_unresolved": [
+   "ſquier,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p112",
+  "old_text": "make me broth therof, thou knoweſt I like, and bring that I may eate and ſoule may bleſſe thee before I dye.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.08,
+   0.5447,
+   0.875,
+   0.6533
+  ],
+  "crop_page": 112,
+  "r3_raw": "quiver, and bowe, and goe abrode: and when thou hast taken any thing by hunting, † make me broth therof, as thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye. † Which when Rebecca had heard, and he was gone into the field to fulfil his fathers",
+  "r3_verse": "make me broth therof, as thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye.",
+  "arm_conflicts": [],
+  "new_text": "make me broth therof, as thou knoweſt I like, and bring that I may eate and my ſoule may bleſſe thee before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "p112",
+  "old_text": "Which when had heard, and he was gone into the field to fulfil his commandement,",
+  "old": {
+   "s_dismas": 0.83,
+   "odr_com": 0.83,
+   "sabates_a": 0.809,
+   "madueke_b": 0.809
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.5866,
+   0.875,
+   0.6966
+  ],
+  "crop_page": 112,
+  "r3_raw": "thou knowest I like, and bring that I may eate: and my soule may blesse thee before I dye. † Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement, † she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him:",
+  "r3_verse": "Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "15": "fathers"
+  },
+  "visual_readings": {
+   "15": "fathers"
+  },
+  "new_text": "Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p112",
+  "old_text": "ſhe ſaid to her ſonne Iacob I heard father talking with Eſau thy brother, and ſaying to",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.911,
+   "madueke_b": 0.911
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.08,
+   0.6272,
+   0.875,
+   0.717
+  ],
+  "crop_page": 112,
+  "r3_raw": "had heard, and he was gone into the field to fulfil his fathers commandement, † she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him: † Bring me of thy hunting, and make me meates that I may",
+  "r3_verse": "she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him:",
+  "arm_conflicts": [],
+  "new_text": "ſhe ſaid to her ſonne Iacob I heard thy father talking with Eſau thy brother, and ſaying to him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p112",
+  "old_text": "Bring me of thy hunting, and make me meates that I eate, and bleſſe thee in the ſight of our Lord before dye.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.6688,
+   0.875,
+   0.7811
+  ],
+  "crop_page": 112,
+  "r3_raw": "father talking with Esau thy brother, and saying to him: † Bring me of thy hunting, and make me meates that I may eate, and blesse thee in the sight of our Lord before I dye. † Now therefore my sonne, assent unto my counsel: † and go thy way to the flocke, bring me two kiddes of the",
+  "r3_verse": "Bring me of thy hunting, and make me meates that I may eate, and blesse thee in the sight of our Lord before I dye.",
+  "arm_conflicts": [],
+  "new_text": "Bring me of thy hunting, and make me meates that I may eate, and bleſſe thee in the ſight of our Lord before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 10,
+  "from": "p112",
+  "old_text": "which when thou haſt brought in, and fea hath caten, he may bleſſe thee before he dye.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.7721,
+   0.875,
+   0.8636
+  ],
+  "crop_page": 112,
+  "r3_raw": "best, that I may make of them meat for thy father, such as he gladly eateth: † which when thou hast brought in, and he hath eaten, he may bleſse thee before he dye. † To whom he answered; Thou knowest that Esau my brother is",
+  "r3_verse": "which when thou hast brought in, and he hath eaten, he may bleſse thee before he dye.",
+  "arm_conflicts": [
+   "fea | he",
+   "caten, | eaten,"
+  ],
+  "new_text": "which when thou haſt brought in, and he hath eaten, he may bleſſe thee before he dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p112",
+  "old_text": "To whom of- he anſwered: Thou knoweſt that Eſau my brother his an hearie man, and I am ſmooth",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.7958,
+   0.875,
+   0.9141
+  ],
+  "crop_page": 112,
+  "r3_raw": "gladly eateth: † which when thou hast brought in, and he hath eaten, he may bleffe thee before he dye. † To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father ſhall feele me, and perceave it, :: I feare leſt he wil thinke I would",
+  "r3_verse": "To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth:",
+  "arm_conflicts": [
+   "his | is"
+  ],
+  "new_text": "To whom he anſwered: Thou knoweſt that Eſau my brother is an hearie man, and I am ſmooth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "chapter",
+  "old_text": "if my father ſhal me, and perceaue it, I feare leſt he wil thinke I haue doluded him, and I ſhal bring vpon mea curſe for a bleſſing.",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.901,
+   "madueke_b": 0.901
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.8341,
+   0.875,
+   0.9388
+  ],
+  "crop_page": 112,
+  "crop_leaves": [
+   112,
+   113
+  ],
+  "r3_raw": "he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father shal feele me, and perceave it, :: I feare leſt he wil thinke I would ha... haue deluded him, and I shal bring vpon me a curse for a blessing. † To whom his mother said: This curse, my sonne, light vpon me: only heare thou my voice, and go, fetch me",
+  "r3_verse": "if my father shal feele me, and perceave it, :: I feare leſt he wil thinke I would ha... haue deluded him, and I shal bring vpon me a curse for a blessing.",
+  "arm_conflicts": [
+   "perceaue | perceave",
+   "doluded | deluded",
+   "mea | me a"
+  ],
+  "new_text": "if my father ſhal feele me, and perceaue it, :: I feare leſt he wil thinke I would ha... haue deluded him, and I ſhal bring vpon me a curſe for a bleſſing.",
+  "s_unresolved": [
+   "feele"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 26,
+  "from": "p113",
+  "old_text": "he ſaid to him: Come nere me, and geue me a kiſſe, myſonne.",
+  "old": {
+   "s_dismas": 0.982,
+   "odr_com": 0.982,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.611,
+   0.875,
+   0.6985
+  ],
+  "crop_page": 113,
+  "r3_raw": "had eaten, he offered him wine also, which after he had drunke, † he said to him: Come nere me, and geue me a kisse, my sonne. † He came nere, and kissed him. And imme- diatly as he felt the fragrant sauoure of his garments, blessing",
+  "r3_verse": "he said to him: Come nere me, and geue me a kisse, my sonne.",
+  "arm_conflicts": [
+   "myſonne. | my sonne."
+  ],
+  "r2_attested": {
+   "13": "ſonne."
+  },
+  "visual_readings": {
+   "13": "ſonne."
+  },
+  "new_text": "he ſaid to him: Come nere me, and geue me a kiſſe, my ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p113",
+  "old_text": "†God geue thee of the deawof heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.7153,
+   0.875,
+   0.8015
+  ],
+  "crop_page": 113,
+  "r3_raw": "uoure of a plentiful field, which our Lord hath blessed. 28 † God geue thee of the deaw of heauen, and of the fatnes of 29 the earth abundance of corne and wine. † And let peoples serue thee, and tribes adore thee: be thou lord of thy bre-",
+  "r3_verse": "God geue thee of the deaw of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "arm_conflicts": [
+   "deawof | deaw of"
+  ],
+  "new_text": "†God geue thee of the deaw of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p113",
+  "old_text": "And let peoples thee, and tribes adore thee: be thou lord of thy brethren, aud thy mothers children bowe they before thee. He that ſhal curſe thee, be he curſed : and he that ſhal bleſſe be he replenished with bleſſings.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.7364,
+   0.875,
+   0.887
+  ],
+  "crop_page": 113,
+  "r3_raw": "28 † God geue thee of the dewe of heauen, and of the fatnes of 29 the earth abundance of corne and wine. † And let peoples serue thee, and tribes adore thee: be thou lord of thy brethren, and thy mothers children bowe they before thee. He that ſhal curse thee, be he cursed: and he that ſhal blesſe thee, be he replenished with blessings. † Isaac had scarce ended his wordes, and Iacob now gone forth abroad, but",
+  "r3_verse": "And let peoples serue thee, and tribes adore thee: be thou lord of thy brethren, and thy mothers children bowe they before thee. He that ſhal curse thee, be he cursed: and he that ſhal blesſe thee, be he replenished with blessings.",
+  "arm_conflicts": [
+   "aud | and"
+  ],
+  "r2_attested": {
+   "3": "ſerue"
+  },
+  "visual_readings": {
+   "3": "ſerue"
+  },
+  "new_text": "And let peoples ſerue thee, and tribes adore thee: be thou lord of thy brethren, and thy mothers children bowe they before thee. He that ſhal curſe thee, be he curſed and he that ſhal bleſſe thee, be he replenished with bleſſings.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p113",
+  "old_text": "Iſaac had ſcarce ended his wordes, and Iacob now gone forth abroad, but came,",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.8186,
+   0.875,
+   0.9325
+  ],
+  "crop_page": 113,
+  "r3_raw": "He that shal curse thee, be he cursed: and he that shal blesse thee, be he replenished with blessings. † Isaac had scarce ended his wordes, and Iacob now gone forth abroad, but Esau came, † and brought in to his father meates made of his",
+  "r3_verse": "Isaac had scarce ended his wordes, and Iacob now gone forth abroad, but Esau came,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "13": "Eſau"
+  },
+  "visual_readings": {
+   "13": "Eſau"
+  },
+  "new_text": "Iſaac had ſcarce ended his wordes, and Iacob now gone forth abroad, but Eſau came,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p114",
+  "old_text": "And ſaid to him: Why who arth thou ? Who anſwered : I thy firſt begotten ſonne Eſau.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.897,
+   "sabates_a": 0.89,
+   "madueke_b": 0.89
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.0368,
+   0.875,
+   0.1477
+  ],
+  "crop_page": 114,
+  "r3_raw": "of his hunting, saying: Arise my father, and eate of thy sonnes hunting: that thy soule may blesse me. † And Isaac said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau. † Isaac was amazed and asto- nied exceedingly: and marueling more, then a man can",
+  "r3_verse": "And Isaac said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau.",
+  "arm_conflicts": [
+   "Why | Why!",
+   "thou ? | thou?"
+  ],
+  "lexicon_readings": {
+   "1": "Iſaac"
+  },
+  "visual_readings": {
+   "1": "Iſaac"
+  },
+  "new_text": "And Iſaac ſaid to him: Why who arth thou Who anſwered I am thy firſt begotten ſonne Eſau.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p114",
+  "old_text": "Iſaac was amazed and nied cxceadingly : and marueling more then a man beleue, ſaid : Who is he then that euen now brought veniſon that he had taken, and I did eate of al thinges thou cameſt? and I haue bleſſed him, : and he ſhal be it",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.0817,
+   0.875,
+   0.2622
+  ],
+  "crop_page": 114,
+  "r3_raw": "said to him: Why! who arth thou? Who answered: I am thy first begotten sonne Esau. † Isaac was amazed and astonished exceedingly: and marueling more, then a man can beleue, said: Who is he then that euen now brought me venison that he had taken, and I did eate of al thinges before thou cameſt? and I haue blessed him,: : and he ſhal be bleſsed. † Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Blesse me also, my fa-",
+  "r3_verse": "Isaac was amazed and astonished exceedingly: and marueling more, then a man can beleue, said: Who is he then that euen now brought me venison that he had taken, and I did eate of al thinges before thou cameſt? and I haue blessed him,: : and he ſhal be bleſsed.",
+  "arm_conflicts": [
+   "nied cxceadingly : | astonished exceedingly:",
+   "it | bleſsed."
+  ],
+  "lexicon_readings": {
+   "36": "before",
+   "49": "bleſſed."
+  },
+  "visual_readings": {
+   "36": "before",
+   "49": "bleſſed."
+  },
+  "new_text": "Iſaac was amazed and astonished exceedingly: and marueling more then a man can beleue, ſaid Who is he then that euen now brought me veniſon that he had taken, and I did eate of al thinges before thou cameſt? and I haue bleſſed him, : and he ſhal be bleſſed.",
+  "s_unresolved": [
+   "astonished"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 34,
+  "from": "p114",
+  "old_text": "Eſau hauing heard his fathers wordes, roared out a great crye : and being diſmaied, ſaid : Bleſſe me alſo, my ther.",
+  "old": {
+   "s_dismas": 0.939,
+   "odr_com": 0.939,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.1853,
+   0.875,
+   0.2966
+  ],
+  "crop_page": 114,
+  "r3_raw": "Isaac now thou camest? and I haue blessed him; :: and he shal be bleſsed. † Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Blesse me also, my fa- ther. † Who said: Thy brother came deceiptfully and tooke thy blessing. † But he said again: Rightly is his name called",
+  "r3_verse": "Esau hauing heard his fathers wordes, roared out with a great crye: and being dismaied, said: Blesse me also, my fa- ther.",
+  "arm_conflicts": [],
+  "new_text": "Eſau hauing heard his fathers wordes, roared out with a great crye and being diſmaied, ſaid Bleſſe me alſo, my fa- ther.",
+  "s_unresolved": [
+   "fa-"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.973,
+   "madueke_b": 0.973
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 35,
+  "from": "p114",
+  "old_text": "Who ſaid : Thy brother came deceiptfully and thy bleſſing.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.2275,
+   0.875,
+   0.3187
+  ],
+  "crop_page": 114,
+  "r3_raw": "a great crye: and being dismaied, said: Blesse me also, my father. † Who said: Thy brother came deceiptfully and tooke thy blessing. † But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my",
+  "r3_verse": "Who said: Thy brother came deceiptfully and tooke thy blessing.",
+  "arm_conflicts": [],
+  "new_text": "Who ſaid Thy brother came deceiptfully and tooke thy bleſſing.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 36,
+  "from": "p114",
+  "old_text": "But he ſaid again : Rightly is his name Iacob : for he hath ſupplanted me loe the ſecond time firſtbirthtright he tooke before, and now the ſecond he hath ſtollen my bleſſing. And againe to his father he Haſt thou not reſerued me alſo a bleſſing",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.919,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.08,
+   0.2486,
+   0.875,
+   0.4038
+  ],
+  "crop_page": 114,
+  "r3_raw": "ther. † Who said: Thy brother came deceiptfully and tooke thy blessing. † But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my first-birth-right he tooke before, and now the second time he hath stollen my blessing. And againe to his father he said: Haſt thou not reſerued me also a blessing? † Isaac anſwered: I haue appointed him thy Lord, and al his brethren I haue",
+  "r3_verse": "But he said again: Rightly is his name called Iacob: for he hath supplanted me loe the second time: my first-birth-right he tooke before, and now the second time he hath stollen my blessing. And againe to his father he said: Haſt thou not reſerued me also a blessing?",
+  "arm_conflicts": [
+   "firſtbirthtright | my first-birth-right",
+   "bleſſing | blessing?"
+  ],
+  "lexicon_readings": {
+   "40": "ſaid:"
+  },
+  "r2_attested": {
+   "20": "firſt-birth-right"
+  },
+  "visual_readings": {
+   "40": "ſaid:",
+   "20": "firſt-birth-right"
+  },
+  "new_text": "But he ſaid again Rightly is his name called Iacob for he hath ſupplanted me loe the ſecond time my firſt-birth-right he tooke before, and now the ſecond time he hath ſtollen my bleſſing. And againe to his father he ſaid: Haſt thou not reſerued me alſo a bleſſing",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 37,
+  "from": "p114",
+  "old_text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I made ſubiect to his ſeruice : with corne and wine I haue bli ſhed him, and for thee, my ſonne, what ſhal I doe after this",
+  "old": {
+   "s_dismas": 0.923,
+   "odr_com": 0.923,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.3345,
+   0.875,
+   0.4867
+  ],
+  "crop_page": 114,
+  "r3_raw": "he hath stollen my blessing. And againe to his father he said: Hast thou not reserved me also a blessing? † Isaac answered: I haue appointed him thy Lord, and al his brethren I haue made subiect to his service: with corne and wine I haue established him, and for thee, my sonne, what ſhal I doe more after this? † To whom Esau said: Hast thou one only blessing, father? I beſeech thee blesse me also. And when he wept",
+  "r3_verse": "Isaac answered: I haue appointed him thy Lord, and al his brethren I haue made subiect to his service: with corne and wine I haue established him, and for thee, my sonne, what ſhal I doe more after this?",
+  "arm_conflicts": [
+   "ſeruice : | service:",
+   "bli ſhed | established",
+   "this | this?"
+  ],
+  "new_text": "Iſaac anſwered I haue appointed him thy Lord, and al his brethren I haue made ſubiect to his ſeruice with corne and wine I haue established him, and for thee, my ſonne, what ſhal I doe more after this",
+  "s_unresolved": [
+   "established"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 38,
+  "from": "p114",
+  "old_text": "To whom Eſau ſaid : Haſt thou one only ſing, father ? I beſech thee bleſſe me alſo. And when he that he howled againe,",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.4186,
+   0.875,
+   0.5309
+  ],
+  "crop_page": 114,
+  "r3_raw": "blished him, and for thee, my sonne, what ſhal I doe more after this? † To whom Esau said: Haſt thou one only bleſsing, father? I beſeech thee blesse me also. And when he wept that he howled againe, † Isaac being moued, said to him: In :: the fat of the earth, and in the deaw of heauen from",
+  "r3_verse": "To whom Esau said: Haſt thou one only bleſsing, father? I beſeech thee blesse me also. And when he wept that he howled againe,",
+  "arm_conflicts": [
+   "ſing, father ? | bleſsing, father?",
+   "beſech | beſeech"
+  ],
+  "r2_attested": {
+   "8": "bleſſing,"
+  },
+  "visual_readings": {
+   "8": "bleſſing,"
+  },
+  "new_text": "To whom Eſau ſaid Haſt thou one only bleſſing, father I beſech thee bleſſe me alſo. And when he wept that he howled againe,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 39,
+  "from": "p114",
+  "old_text": "Iſaac being moued, ſaid to In : the fat of the earth, and in the deaw of heauen aboue",
+  "old": {
+   "s_dismas": 0.9,
+   "odr_com": 0.9,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "neighbours": [
+   38,
+   39,
+   40
+  ],
+  "crop": [
+   0.08,
+   0.4625,
+   0.875,
+   0.5705
+  ],
+  "crop_page": 114,
+  "r3_raw": "sing, father? I besech thee blesse me also. And when he wept that he howled againe, † Isaac being moued, said to him: In :: the fat of the earth, and in the deaw of heauen from aboue † shal thy blessing be. Thou shalt liue by the sworde, and shalt serue thy brother: and :: the time ſhal come, when",
+  "r3_verse": "Isaac being moued, said to him: In :: the fat of the earth, and in the deaw of heauen from aboue",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "19": "from"
+  },
+  "visual_readings": {
+   "19": "from"
+  },
+  "new_text": "Iſaac being moued, ſaid to him: In :: the fat of the earth, and in the deaw of heauen from aboue",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 40,
+  "from": "p114",
+  "old_text": "ſhal thy bleſſing be. Thou ſhalt liue by the and ſhalt ſerue thy brother : and : the time ſhal come, ſub- thou ſhalt shake of, and looſe his yoake from thy king",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.897,
+   "madueke_b": 0.897
+  },
+  "neighbours": [
+   39,
+   40,
+   41
+  ],
+  "crop": [
+   0.08,
+   0.5034,
+   0.875,
+   0.6355
+  ],
+  "crop_page": 114,
+  "r3_raw": "In :: the fat of the earth, and in the dew of heaven from aboue † shal thy blessing be. Thou shalt liue by the worde, and shalt serue thy brother: and :: the time ſhal come, when thou shalt shake of, and loose his yoake from thy necke. † Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The",
+  "r3_verse": "shal thy blessing be. Thou shalt liue by the worde, and shalt serue thy brother: and :: the time ſhal come, when thou shalt shake of, and loose his yoake from thy necke.",
+  "arm_conflicts": [
+   "ſub- | when",
+   "king | necke."
+  ],
+  "new_text": "ſhal thy bleſſing be. Thou ſhalt liue by the worde, and ſhalt ſerue thy brother and :: the time ſhal come, when thou ſhalt shake of, and looſe his yoake from thy necke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 41,
+  "from": "p114",
+  "old_text": "Eſau therfore alwaies hated Iacob for the bleſſing Reg. with his father had bleſſed him : and he ſaid in his hart : daies wil come of the mourning of my father, and I wil had Io- Iacob mybrother.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.5681,
+   0.8773,
+   0.7022
+  ],
+  "crop_page": 114,
+  "r3_raw": "thou shalt shake of, and loose his yoake from thy necke. † Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Iacob my brother. † These things were told to Rebecca: who sending & calling Iacob her sonne, said to him: Behold",
+  "r3_verse": "Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Reg. with | wherewith",
+   ": | The",
+   "had Io- | kil",
+   "mybrother. | my brother."
+  ],
+  "new_text": "Eſau therefore alwaies hated Iacob for the bleſſing wherewith his father had bleſſed him and he ſaid in his hart The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 42,
+  "from": "p114",
+  "old_text": "Theſe things were told to Rebecca: their who ſending & calling Iacob her ſonne, ſaid to him : Reg. Eſau thy brother threatneth to kil thee.",
+  "old": {
+   "s_dismas": 0.916,
+   "odr_com": 0.916,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   41,
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.6272,
+   0.8773,
+   0.7411
+  ],
+  "crop_page": 114,
+  "r3_raw": "daies wil come of the mourning of my father, and I wil kil Jacob my brother. † These things were told to Rebecca: who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. † Now therfore, my sonne, heare my voice, and get thee vp and flye to Laban",
+  "r3_verse": "These things were told to Rebecca: who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee.",
+  "arm_conflicts": [
+   ": Reg. | Behold"
+  ],
+  "new_text": "Theſe things were told to Rebecca: who ſending & calling Iacob her ſonne, ſaid to him Behold Eſau thy brother threatneth to kil thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.96,
+   "madueke_b": 0.96
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 43,
+  "from": "p114",
+  "old_text": "Now therfore, were my ſonne, heare my voice, and get thee vp and flye to my brother into Haran :",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   42,
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.6744,
+   0.8764,
+   0.7834
+  ],
+  "crop_page": 114,
+  "r3_raw": "who sending & calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. † Now therfore, my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran: † and thou shalt dwel with him a few daies, til the furie of thy brother be affwaged, † and",
+  "r3_verse": "Now therfore, my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran:",
+  "arm_conflicts": [],
+  "new_text": "Now therfore, my ſonne, heare my voice, and get thee vp and flye to Laban my brother into Haran",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 44,
+  "from": "p114",
+  "old_text": "and thou ſhalt dwel with Io- few daies, til the furie of thy brother be aſſwaged,",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.716,
+   0.875,
+   0.8051
+  ],
+  "crop_page": 114,
+  "r3_raw": "my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran: † and thou shalt dwel with him a few daies, til the furie of thy brother be affwaged, † and his indignation cease, and he forget those things, which thou",
+  "r3_verse": "and thou shalt dwel with him a few daies, til the furie of thy brother be affwaged,",
+  "arm_conflicts": [
+   "Io- | him a",
+   "aſſwaged, | affwaged,"
+  ],
+  "new_text": "and thou ſhalt dwel with him a few daies, til the furie of thy brother be affwaged,",
+  "s_unresolved": [
+   "affwaged,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 45,
+  "from": "p114",
+  "old_text": "his indignation ceaſe, and he forget thoſe things, which a- haſt done to him: afterward I wil ſend, and bring thee thence hither. Why ſhal I be depriued of both ſonnes in day",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.7582,
+   0.875,
+   0.8883
+  ],
+  "crop_page": 114,
+  "r3_raw": "few daies, til the furie of thy brother be affwaged, † and his indignation cease, and he forget those things, which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why ſhal I be depriued of both fonnes in one day? † And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Iacob take a wife of the stocke",
+  "r3_verse": "and his indignation cease, and he forget those things, which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why ſhal I be depriued of both fonnes in one day?",
+  "arm_conflicts": [
+   "a- | thou",
+   "ſonnes | fonnes",
+   "day | one day?"
+  ],
+  "lexicon_readings": {
+   "22": "from",
+   "32": "ſonnes"
+  },
+  "visual_readings": {
+   "22": "from",
+   "32": "ſonnes"
+  },
+  "new_text": "and his indignation ceaſe, and he forget thoſe things, which thou haſt done to him: afterward I wil ſend, and bring thee from thence hither. Why ſhal I be depriued of both ſonnes in one day",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 46,
+  "from": "p114",
+  "old_text": "And Rebecca ſaid to Iſaac : I am wearie of my for the daughters of Heth : if Iacob take a wife of the of this land, I liſt not liue.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.8209,
+   0.875,
+   0.9322
+  ],
+  "crop_page": 114,
+  "r3_raw": "thence hither. Why ſhal I be depriued of both sonnes in one day? † And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Iacob take a wife of the stocke of this land, I liſt not liue.",
+  "r3_verse": "And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Iacob take a wife of the stocke of this land, I liſt not liue.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "10": "life"
+  },
+  "r2_attested": {
+   "23": "ſtocke"
+  },
+  "visual_readings": {
+   "10": "life",
+   "23": "ſtocke"
+  },
+  "new_text": "And Rebecca ſaid to Iſaac I am wearie of my life for the daughters of Heth if Iacob take a wife of the ſtocke of this land, I liſt not liue.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 7,
+  "from": "p118",
+  "old_text": "Bring me of thy hunting, and make me meates that I may hefore eate and bleſſe thee in the ſight of our Lord dye.",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.852,
+   "madueke_b": 0.852
+  },
+  "neighbours": [
+   7,
+   8
+  ],
+  "crop": [
+   0.08,
+   0.6516,
+   0.875,
+   0.7635
+  ],
+  "crop_page": 118,
+  "r3_raw": "father talking with Esau thy brother, and saying to him: † Bring me of thy hunting, and make me meates that I may eate, and blesse thee in the sight of our Lord before I dye. † Now therefore my sonne, assent to my counsel: † and go thy way to the flocke, bring me two kiddes of the",
+  "r3_verse": "Bring me of thy hunting, and make me meates that I may eate, and blesse thee in the sight of our Lord before I dye.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "22": "before"
+  },
+  "visual_readings": {
+   "22": "before"
+  },
+  "new_text": "Bring me of thy hunting, and make me meates that I may eate and bleſſe thee in the ſight of our Lord before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p118",
+  "old_text": "and go thy way to rhe flocke, bring me two kiddes of the right beſt, that I may make of them meat for thy father, ſuch as he to gladly eateth",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.08,
+   0.7111,
+   0.875,
+   0.828
+  ],
+  "crop_page": 118,
+  "r3_raw": "dye. † Now therefore my sonne, assent to my counsel: 8 and go thy way to the hocke, bring me two kiddes of the best, that I may make of them meat for thy father, such as he gladly eateth: † which when thou hast brought in, and he hath eaten, he may blesse thee before he dye. † To whom",
+  "r3_verse": "and go thy way to the hocke, bring me two kiddes of the best, that I may make of them meat for thy father, such as he gladly eateth:",
+  "arm_conflicts": [
+   "rhe flocke, | the hocke,"
+  ],
+  "new_text": "and go thy way to the hocke, bring me two kiddes of the beſt, that I may make of them meat for thy father, ſuch as he gladly eateth",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p118",
+  "old_text": "which when thou haſt brought in, and he fea hath eaten, he may bleſſe thee before he dye.",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.7516,
+   0.875,
+   0.8464
+  ],
+  "crop_page": 118,
+  "r3_raw": "best, that I may make of them meat for thy father, such as he gladly eateth: † which when thou hast brought in, and he hath eaten, he may blesse thee before he dye. † To whom he answered: Thou knowest that Esau my brother is",
+  "r3_verse": "which when thou hast brought in, and he hath eaten, he may blesse thee before he dye.",
+  "arm_conflicts": [],
+  "new_text": "which when thou haſt brought in, and he hath eaten, he may bleſſe thee before he dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p118",
+  "old_text": "To whom is he anſwered: Thou knoweſt that Eſau my brother ſhal feele of- an hearie man, and I am ſmooth:",
+  "old": {
+   "s_dismas": 0.84,
+   "odr_com": 0.84,
+   "sabates_a": 0.832,
+   "madueke_b": 0.832
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.7723,
+   0.875,
+   0.8842
+  ],
+  "crop_page": 118,
+  "r3_raw": "gladly eateth: † which when thou hast brought in, and he hath eaten, he may blesse thee before he dye. † To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father shal seele me, and perceave it, :: I feare lest he wil thinke I would",
+  "r3_verse": "To whom he answered: Thou knowest that Esau my brother is an hearie man, and I am smooth:",
+  "arm_conflicts": [
+   "ſhal feele of- | is"
+  ],
+  "new_text": "To whom he anſwered: Thou knoweſt that Eſau my brother is an hearie man, and I am ſmooth:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "chapter",
+  "old_text": "if my father his me, perceaue it, I feare leſt he wil thinke I would and haue deluded him, and I ſhal bring vpon me a curſe for a bleſſing.",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.8111,
+   0.875,
+   0.92
+  ],
+  "crop_page": 118,
+  "crop_leaves": [
+   118,
+   119
+  ],
+  "r3_raw": "he anſwered: Thou knowest that Esau my brother is an hearie man, and I am smooth: † if my father ſhal feele me, and perceave it, :: I feare leſt he wil thinke I would haue deluded him, and I shal bring vpon me a curse for a blessing. † To whom his mother said: This curse, my sonne, light vpon me: only heare thou my voice, and go, fetch me",
+  "r3_verse": "if my father ſhal feele me, and perceave it, :: I feare leſt he wil thinke I would haue deluded him, and I shal bring vpon me a curse for a blessing.",
+  "arm_conflicts": [
+   "his | ſhal feele",
+   "perceaue | and perceave"
+  ],
+  "new_text": "if my father ſhal feele me, and perceaue it, :: I feare leſt he wil thinke I would haue deluded him, and I ſhal bring vpon me a curſe for a bleſſing.",
+  "s_unresolved": [
+   "ſhal",
+   "feele"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 21,
+  "from": "p119",
+  "old_text": "And Iſaac ſaid: Come hither, Gods that I may feele thee my ſonne, and may proue whether thou not be my ſonne Eſau, or no.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.3736,
+   0.875,
+   0.4799
+  ],
+  "crop_page": 119,
+  "r3_raw": "answered: :: It was the wil of God that which I would :: It wasti came quickly in my way: † And Isaac said: Come hither, Gods wil, that I may feele thee my sonne, and may proue whether thou not in that be my sonne Esau, or no. † He came nere to his father, and as Isaac v derstood it when he had felt him, Isaac said: The voice verely, is the",
+  "r3_verse": "And Isaac said: Come hither, Gods wil, that I may feele thee my sonne, and may proue whether thou not in that be my sonne Esau, or no.",
+  "arm_conflicts": [],
+  "new_text": "And Iſaac ſaid: Come hither, Gods wil, that I may feele thee my ſonne, and may proue whether thou not in that be my ſonne Eſau, or no.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.812,
+   "madueke_b": 0.812
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 28,
+  "from": "p119",
+  "old_text": "God geue thee of the deawof heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.6977,
+   0.875,
+   0.7815
+  ],
+  "crop_page": 119,
+  "r3_raw": "uoure of a plentiful field, which our Lord hath blessed. 28 † God geue thee of the deaw of heauen, and of the fatnes of 29 the earth abundance of corne and wine. † And let peoples serue thee, and tribes adore thee: be thou lord of thy bre-",
+  "r3_verse": "God geue thee of the deaw of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "arm_conflicts": [
+   "deawof | deaw of"
+  ],
+  "new_text": "God geue thee of the deaw of heauen, and of the fatnes of the earth abundance of corne and wine.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 41,
+  "from": "p120",
+  "old_text": "Eſau therfore alwaies hated Iacob for the bleſſing wherwith his father had bleſſed him : and he ſaid in his hart : The daies wil come of the mourning of my father, and I wil kil had Io- Iacob my brother.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.5549,
+   0.875,
+   0.6926
+  ],
+  "crop_page": 120,
+  "r3_raw": "thou shalt shake of, and loose his yoake from thy necke. † Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Jacob my brother. † These things were told to Rebecca: 42 who sending & calling Iacob her sonne, said to him: Behold",
+  "r3_verse": "Esau therefore alwaies hated Iacob for the blessing wherewith his father had blessed him: and he said in his hart: The daies wil come of the mourning of my father, and I wil kil Jacob my brother.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "wherwith | wherewith",
+   "had Io- Iacob | Jacob"
+  ],
+  "new_text": "Eſau therefore alwaies hated Iacob for the bleſſing wherewith his father had bleſſed him and he ſaid in his hart The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 44,
+  "from": "p120",
+  "old_text": "†and thou ſhalt dwel with hima Io- few daies, til the furie of thy brother be aſſwaged,",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   43,
+   44,
+   45
+  ],
+  "crop": [
+   0.08,
+   0.6981,
+   0.875,
+   0.7922
+  ],
+  "crop_page": 120,
+  "r3_raw": "my sonne, heare my voice, and get thee vp and flye to Laban my brother into Haran: † and thou shalt dwel with him a 44 few daies, til the furie of thy brother be asswaged, † and his indignation cease, and he forget those things, which thou",
+  "r3_verse": "and thou shalt dwel with him a few daies, til the furie of thy brother be asswaged,",
+  "arm_conflicts": [
+   "hima Io- | him a"
+  ],
+  "new_text": "†and thou ſhalt dwel with him a few daies, til the furie of thy brother be aſſwaged,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 45,
+  "from": "p120",
+  "old_text": "and thou his indignation ceaſe, and he forget thoſe things, which haſt done to him: afterward I wil ſend, and bring thee from thence hither. Why ſhal I be depriued of both ſonnes in one day",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   44,
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.7211,
+   0.875,
+   0.8658
+  ],
+  "crop_page": 120,
+  "r3_raw": "my brother into Haran: † and thou shalt dwell with him a few daies, til the furie of thy brother be asswaged, † and his indignation cease, and he forget those things, which thou hast done to him: afterward I will send, and bring thee from thence hither. Why shal I be depriued of both sonnes in one day? † And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Iacob take a wife of the stocke",
+  "r3_verse": "and his indignation cease, and he forget those things, which thou hast done to him: afterward I will send, and bring thee from thence hither. Why shal I be depriued of both sonnes in one day?",
+  "arm_conflicts": [
+   "wil | will",
+   "day | day?"
+  ],
+  "new_text": "and his indignation ceaſe, and he forget thoſe things, which thou haſt done to him: afterward I wil ſend, and bring thee from thence hither. Why ſhal I be depriued of both ſonnes in one day",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p100",
+  "old_text": "Iſaac was old, and his eyes were dimme, and he The Epiſtie could not ſee: and he called Eſau his elder ſonne, and Saturday ſaid to him: My ſonne? Who anſwered: Here I am.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.1936,
+   0.885,
+   0.3779
+  ],
+  "crop_page": 100,
+  "r3_raw": "Jacob by his mothers counsel getteth his fathers blessing in place of Esau. 42. And by her is aduised (for avoiding Esaus wrath, who threatened to kil him) to flie to his vncle Laban, in Haran of Mesopotamia. ND Isaac was old, and his eyes were dimme, and he could not see:and he called Esau his elder sonne, and said to him:My sonne?Who answered:Here I am.2.To whom his father:Thou seest, quoth he, that I am old,",
+  "r3_verse": "Jacob by his mothers counsel getteth his fathers blessing in place of Esau. And by her is aduised (for avoiding Esaus wrath, who threatened to kil him) to flie to his vncle Laban, in Haran of Mesopotamia. ND Isaac was old, and his eyes were dimme, and he could not see:and he called Esau his elder sonne, and said to him:My sonne?Who answered:Here I am.2.To",
+  "arm_conflicts": [
+   "ſee: and | see:and",
+   "him: My ſonne? Who anſwered: Here | him:My sonne?Who answered:Here",
+   "am. | am.2.To"
+  ],
+  "lexicon_readings": {
+   "18": "(for"
+  },
+  "r2_attested": {
+   "4": "counſel",
+   "8": "bleſſing",
+   "12": "Eſau.",
+   "20": "Eſaus",
+   "36": "Meſopotamia."
+  },
+  "visual_readings": {
+   "18": "(for",
+   "4": "counſel",
+   "8": "bleſſing",
+   "12": "Eſau.",
+   "20": "Eſaus",
+   "36": "Meſopotamia."
+  },
+  "new_text": "Jacob by his mothers counſel getteth his fathers bleſſing in place of Eſau. And by her is aduised (for avoiding Eſaus wrath, who threatened to kil him) to flie to his vncle Laban, in Haran of Meſopotamia. ND Iſaac was old, and his eyes were dimme, and he could not see:and he called Eſau his elder ſonne, and ſaid to him:My sonne?Who answered:Here I am.2.To",
+  "s_unresolved": [
+   "fathers",
+   "aduised",
+   "flie",
+   "see:and",
+   "sonne?Who",
+   "answered:Here"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p100",
+  "old_text": "To ſecod whom his father Thou ſeeſt, quoth he, that I am old, Lent. and know not the day of my death.",
+  "old": {
+   "s_dismas": 0.885,
+   "odr_com": 0.885,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.3161,
+   0.885,
+   0.4127
+  ],
+  "crop_page": 100,
+  "r3_raw": "A N D Isaac was old; and his eyes were dimme: and he could not see: and he called Esau his elder sonne, and said to him: My sonne? Who answered: Here I am. 2. To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. 3. Take thy instruments, thy quiuer, and bow, and goe abroad: and when",
+  "r3_verse": "To whom his father: Thou seest, quoth he, that I am old, and know not the day of my death.",
+  "arm_conflicts": [],
+  "new_text": "To whom his father Thou ſeeſt, quoth he, that I am old, and know not the day of my death.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p100",
+  "old_text": "Take thy inſtruments, thy quiuer, and bow, and goe abroad: and when taken any thing by huntiug,",
+  "old": {
+   "s_dismas": 0.861,
+   "odr_com": 0.861,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.3509,
+   0.885,
+   0.4482
+  ],
+  "crop_page": 100,
+  "r3_raw": "whom his father: Thou seest, quoth he, that I am old, and know not the day of my death. 2. Take thy instruments, thy quiver, and bow, and goe abroad: and when thou haſt taken any thing by hunting, 4. make me broth therof, as thou knowest I like, and bring that I may eate, and my soule may bleffe the day of thy return unto me.",
+  "r3_verse": "Take thy instruments, thy quiver, and bow, and goe abroad: and when thou haſt taken any thing by hunting,",
+  "arm_conflicts": [
+   "quiuer, | quiver,",
+   "huntiug, | hunting,"
+  ],
+  "new_text": "Take thy inſtruments, thy quiuer, and bow, and goe abroad: and when thou haſt taken any thing by hunting,",
+  "s_unresolved": [
+   "haſt"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 4,
+  "from": "p100",
+  "old_text": "make me broth therot, as I like, and bring that I may eate, and my ſoule may bleſſe I dye.",
+  "old": {
+   "s_dismas": 0.766,
+   "odr_com": 0.766,
+   "sabates_a": 0.755,
+   "madueke_b": 0.755
+  },
+  "neighbours": [
+   3,
+   4,
+   5
+  ],
+  "crop": [
+   0.155,
+   0.3871,
+   0.885,
+   0.4833
+  ],
+  "crop_page": 100,
+  "r3_raw": "ments, thy quiver, and bow, and goe abroad: and when thou haft taken any thing by hunting, 4. make me broth therof, as thou knowest I like, and bring that I may eate, and my soule may blesse thee before I dye. 5. Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement, 6. she said to her",
+  "r3_verse": "make me broth therof, as thou knowest I like, and bring that I may eate, and my soule may blesse thee before I dye.",
+  "arm_conflicts": [
+   "therot, | therof,"
+  ],
+  "lexicon_readings": {
+   "21": "before"
+  },
+  "r2_attested": {
+   "6": "knoweſt"
+  },
+  "visual_readings": {
+   "21": "before",
+   "6": "knoweſt"
+  },
+  "new_text": "make me broth therof, as thou knoweſt I like, and bring that I may eate, and my ſoule may bleſſe thee before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p100",
+  "old_text": "Which when Rebecca had heard, and he was gone field to fulfil his fathers commandement,",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.904,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   4,
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.4215,
+   0.885,
+   0.5005
+  ],
+  "crop_page": 100,
+  "r3_raw": "4. Make me broth thereof, as thou knowest I like, and bring that I may eate, and my soule may blesse thee before I dye. 5. Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement, 6. she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and",
+  "r3_verse": "Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "arm_conflicts": [],
+  "new_text": "Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p100",
+  "old_text": "she ſaid to het Iacob I heard thy father talking with Eſau thy brother, and to him:",
+  "old": {
+   "s_dismas": 0.851,
+   "odr_com": 0.851,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.4394,
+   0.885,
+   0.5381
+  ],
+  "crop_page": 100,
+  "r3_raw": "5. Which when Rebecca had heard, and he was gone into the field to fulfil his fathers commandement, 6. she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him: 7. Bring me of thy hunting, and make me meats that I may eate, and blesse thee in the sight of our Lord before I dye. 8. Now",
+  "r3_verse": "she said to her sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him:",
+  "arm_conflicts": [
+   "het | her sonne"
+  ],
+  "r2_attested": {
+   "4": "ſonne",
+   "16": "ſaying"
+  },
+  "visual_readings": {
+   "4": "ſonne",
+   "16": "ſaying"
+  },
+  "new_text": "she ſaid to her ſonne Iacob I heard thy father talking with Eſau thy brother, and ſaying to him:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p100",
+  "old_text": "Bring me of thy huntng, and makememeats that I and bleſſe thee in the ſight of our Lord before I dye.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.4767,
+   0.885,
+   0.5567
+  ],
+  "crop_page": 100,
+  "r3_raw": "sonne Iacob: I heard thy father talking with Esau thy brother, and saying to him: 7. Bring me of thy hunting, and make me meats that I may eate, and blesse thee in the sight of our Lord before I dye. 8. Now therfore, my sonne, assent to my counsel:9.and goe thy way to the flock,",
+  "r3_verse": "Bring me of thy hunting, and make me meats that I may eate, and blesse thee in the sight of our Lord before I dye.",
+  "arm_conflicts": [
+   "huntng, | hunting,",
+   "makememeats | make me meats"
+  ],
+  "new_text": "Bring me of thy hunting, and make me meats that I may eate, and bleſſe thee in the ſight of our Lord before I dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p100",
+  "old_text": "Now my ſonne, aſſent to my counſel:",
+  "old": {
+   "s_dismas": 0.786,
+   "odr_com": 0.786,
+   "sabates_a": 0.769,
+   "madueke_b": 0.769
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.4932,
+   0.885,
+   0.576
+  ],
+  "crop_page": 100,
+  "r3_raw": "saying to him: 7. Bring me of thy hunting, and make me meats that I may eate, and blesse thee in the sight of our Lord before I dye. 8. Now therfore, my sonne, assent to my counsel:9.and goe thy way to the flock, bring me two kids of the best, that I may make of them meat for thy father, such as he shall have a mind which is not bad. So he went into",
+  "r3_verse": "Now therfore, my sonne, assent to my counsel:9.and",
+  "arm_conflicts": [
+   "counſel: | counsel:9.and"
+  ],
+  "lexicon_readings": {
+   "1": "therfore,"
+  },
+  "visual_readings": {
+   "1": "therfore,"
+  },
+  "new_text": "Now therfore, my ſonne, aſſent to my counsel:9.and",
+  "s_unresolved": [
+   "counsel:9.and"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p100",
+  "old_text": "and goe thy way to the flock, two kids of the beſt, that I may make of them meat for thy ſuch as he gladly eateth:",
+  "old": {
+   "s_dismas": 0.845,
+   "odr_com": 0.845,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.5114,
+   0.885,
+   0.6119
+  ],
+  "crop_page": 100,
+  "r3_raw": "7. Bring me of thy handings, and make me meat that I may eate, and blesse thee in the sight of our Lord before I dye. 8. Now therfore, my sonne, assent to my counsel:9.and goe thy way to the flock, bring me two kids of the best, that I may make of them meat for thy father, such as he gladly eateth:10. which when thou haſt brought in, and he hath eaten, he may blesse thee before he dye. 11. To whom",
+  "r3_verse": "and goe thy way to the flock, bring me two kids of the best, that I may make of them meat for thy father, such as he gladly eateth:10.",
+  "arm_conflicts": [
+   "eateth: | eateth:10."
+  ],
+  "used_merge": true,
+  "new_text": "and goe thy way to the flock, bring me two kids of the beſt, that I may make of them meat for thy father, ſuch as he gladly eateth:",
+  "s_unresolved": [
+   "father,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.969,
+   "odr_com": 0.969,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p100",
+  "old_text": "which when thou haſt brought in, hath eaten, he may bleſſe thee before he dye.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5448,
+   0.885,
+   0.6277
+  ],
+  "crop_page": 100,
+  "r3_raw": "Before, my sonne, goe unto thy couner: 9. and goe thy way to the flock, bring me two kids of the best, that I may make of them meat for thy father, such as he gladly eateth: 10. which when thou haſt brought in, and he hath eaten, he may blesse thee before he dye. 11. To whom he answered: Thou knowest that Esau my brother is hairie man, and I am ſon of the maide, beſeech therefore",
+  "r3_verse": "which when thou haſt brought in, and he hath eaten, he may blesse thee before he dye.",
+  "arm_conflicts": [],
+  "new_text": "which when thou haſt brought in, and he hath eaten, he may bleſſe thee before he dye.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p100",
+  "old_text": "To whom Thou knoweſt that Eſau my brother is hairie man, and 12.if",
+  "old": {
+   "s_dismas": 0.686,
+   "odr_com": 0.686,
+   "sabates_a": 0.723,
+   "madueke_b": 0.723
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.5638,
+   0.885,
+   0.6642
+  ],
+  "crop_page": 100,
+  "r3_raw": "father, such as he gladly eateth: 10. which when thou hast brought in, and he hath eaten, he may blesse thee before he dye. 11. To whom he answered: Thou knowest that Esau my brother is hairie man, and I am smooth: 12. if my father ſhal feele me, and perceave it, (a) I feare leſt he wilt take I would haue deluded him, and I ſhal bring vpon me a",
+  "r3_verse": "To whom he answered: Thou knowest that Esau my brother is hairie man, and I am smooth:",
+  "arm_conflicts": [
+   "12.if | I am smooth:"
+  ],
+  "r2_attested": {
+   "3": "anſwered:",
+   "16": "ſmooth:"
+  },
+  "visual_readings": {
+   "3": "anſwered:",
+   "16": "ſmooth:"
+  },
+  "new_text": "To whom he anſwered: Thou knoweſt that Eſau my brother is hairie man, and I am ſmooth:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.964,
+   "madueke_b": 0.964
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p100",
+  "old_text": "my father ſhal feele me, and perceaue it, (4) I feare (4) Iacob wil tkiuke I would haue deluded him, and I ſhal bring vpon mea cure ſcience a bleſſing.",
+  "old": {
+   "s_dismas": 0.852,
+   "odr_com": 0.852,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.6,
+   0.885,
+   0.7042
+  ],
+  "crop_page": 100,
+  "r3_raw": "he answered: Thou knowest that Esau my brother is hairie man, and I am smooth: 12. if my father shal seele me, and perceave it, (a) I feare lest he wiltkinke I would haue deluded him, and I shal bring vpon me a curse for a blessing. 13. To whom his mother said: This curse, my sonne, light vpon me, only heare thou my voice, and goe, fetch me the things which I have said. 14. He went, and brought, and gave them to hi",
+  "r3_verse": "if my father shal seele me, and perceave it, I feare lest he wiltkinke I would haue deluded him, and I shal bring vpon me a curse for a blessing.",
+  "arm_conflicts": [
+   "feele | seele",
+   "perceaue | perceave",
+   "(4) Iacob wil tkiuke | lest he wiltkinke",
+   "mea cure ſcience | me a curse for"
+  ],
+  "lexicon_readings": {
+   "27": "for"
+  },
+  "r2_attested": {
+   "11": "leſt",
+   "26": "curſe"
+  },
+  "visual_readings": {
+   "27": "for",
+   "11": "leſt",
+   "26": "curſe"
+  },
+  "new_text": "if my father ſhal seele me, and perceaue it, I feare leſt he wiltkinke I would haue deluded him, and I ſhal bring vpon me a curſe for a bleſſing.",
+  "s_unresolved": [
+   "seele"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p100",
+  "old_text": "To whom his mother ſaid: This curſe, my ſonne, the right me, only heare thou my voice, and goe, fetch me the things firſt.birth I haue ſaid.",
+  "old": {
+   "s_dismas": 0.864,
+   "odr_com": 0.864,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.155,
+   0.6344,
+   0.885,
+   0.7337
+  ],
+  "crop_page": 100,
+  "r3_raw": "12. If my father shall see me, and perceave it, (a) I feare lest he will take I would haue deluded him, and I ſhal bring vpon me a curse for a blessing. 13. To whom his mother said: This curse, my sonne, light vpon me, only heare thou my voice, and goe, fetch me the things which I haue said. 14. He went, and brought, and gaue them to his mother. She dressed meats, euen as she knew his father liked. 15. And",
+  "r3_verse": "To whom his mother said: This curse, my sonne, light vpon me, only heare thou my voice, and goe, fetch me the things which I haue said.",
+  "arm_conflicts": [
+   "the right | light vpon",
+   "firſt.birth | which"
+  ],
+  "new_text": "To whom his mother ſaid: This curſe, my ſonne, light vpon me, only heare thou my voice, and goe, fetch me the things which I haue ſaid.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p100",
+  "old_text": "He went, and brought, and gaue them to his Ionged to She dreſſed meats, euen as ſhe knew his father liked.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.6709,
+   0.885,
+   0.7527
+  ],
+  "crop_page": 100,
+  "r3_raw": "13. To which his mother said: This eare, my sonne, light vpon me, only heare thou my voice, and goe, fetch me the things which I haue said. 14. He went, and brought, and gaue them to his mother. She dressed meats, cuen as she knew his father liked. 15. And she did on him the garments of Esau verie good, which she had at home with her.",
+  "r3_verse": "He went, and brought, and gaue them to his mother. She dressed meats, cuen as she knew his father liked.",
+  "arm_conflicts": [
+   "Ionged to | mother.",
+   "euen | cuen"
+  ],
+  "new_text": "He went, and brought, and gaue them to his mother. She dreſſed meats, cuen as ſhe knew his father liked.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p100",
+  "old_text": "And yet feared on him the garments of Eſau verie good, which ſhe had at home giue of offence",
+  "old": {
+   "s_dismas": 0.78,
+   "odr_com": 0.78,
+   "sabates_a": 0.795,
+   "madueke_b": 0.795
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.6871,
+   0.885,
+   0.7738
+  ],
+  "crop_page": 100,
+  "r3_raw": "14. He went, and brought, and gaue them to his mother. She dressed meats, euen as she knew his father liked. 15. And she did on him the garments of Esau verie good, which she had at home with her: 16. and the litle skinnes of the kids she put about his hands,",
+  "r3_verse": "And she did on him the garments of Esau verie good, which she had at home with her:",
+  "arm_conflicts": [
+   "yet feared | she did",
+   "giue of offence | with her:"
+  ],
+  "new_text": "And she did on him the garments of Eſau verie good, which ſhe had at home with her:",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p100",
+  "old_text": "and the litle skinnes of the kids ſhe put about his hands, his father. the bare of his neck.",
+  "old": {
+   "s_dismas": 0.88,
+   "odr_com": 0.88,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.7236,
+   0.885,
+   0.8047
+  ],
+  "crop_page": 100,
+  "r3_raw": "she did on him the garments of Esau verie good, which she had at home with her: 16. and the litle skinnes of the kids she put about his hands, and couered the bare of his neck. 17. And she gaue him the broth, and dcliuered him bread that she had baked. 18. Which when he had caried",
+  "r3_verse": "and the litle skinnes of the kids she put about his hands, and couered the bare of his neck.",
+  "arm_conflicts": [
+   "his father. | and couered"
+  ],
+  "new_text": "and the litle skinnes of the kids ſhe put about his hands, and couered the bare of his neck.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p100",
+  "old_text": "And ſhe gaue him the broth, and him bread that ſhe had baked.",
+  "old": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.846,
+   "madueke_b": 0.846
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.7415,
+   0.885,
+   0.8226
+  ],
+  "crop_page": 100,
+  "r3_raw": "with her: 16. and the little skinnes of the kids she put about his hands, and covered the bare of his neck. 17. And she gaue him the broth, and deliuered him bread that she had baked. 18. Which when he had caried in, he said: My father? But he answered: I heare. Who art thou my",
+  "r3_verse": "And she gaue him the broth, and deliuered him bread that she had baked.",
+  "arm_conflicts": [],
+  "new_text": "And ſhe gaue him the broth, and deliuered him bread that ſhe had baked.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p100",
+  "old_text": "Which when he had caried My father But he anſwered I heare. Who art thou my",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.7587,
+   0.885,
+   0.8416
+  ],
+  "crop_page": 100,
+  "r3_raw": "and covered the bare of his neck. 17. And she gaue him the broth, and deliuered him bread that she had baked. 18. Which when he had caried in, he said: My father? But he answered: I heare. Who art thou my sonne? 19. And Iacob said:\"I am thy first begotten Esau: I haue done",
+  "r3_verse": "Which when he had caried in, he said: My father? But he answered: I heare. Who art thou my sonne?",
+  "arm_conflicts": [
+   "father | father?"
+  ],
+  "lexicon_readings": {
+   "7": "ſaid:"
+  },
+  "r2_attested": {
+   "19": "ſonne?"
+  },
+  "visual_readings": {
+   "7": "ſaid:",
+   "19": "ſonne?"
+  },
+  "new_text": "Which when he had caried in, he ſaid: My father But he anſwered I heare. Who art thou my ſonne?",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p100",
+  "old_text": "And Iacob ſaid Iam thy firſt begotten Eſau I haue done dideſt command me ariſc, ſit, aud eate of my hunting, that thy bleſſe me.",
+  "old": {
+   "s_dismas": 0.853,
+   "odr_com": 0.853,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.7949,
+   0.885,
+   0.9002
+  ],
+  "crop_page": 100,
+  "r3_raw": "in, he said: My father? But he answered: I heare. Who art thou my sonne? 19. And Iacob said:\"I am thy first begotten Esau: I haue done as thou didest command me: arise, sit, and eate of my hunting, that thy soule may blesse me. 20. And againe Isaac to his sonne: How couldest thou, said he, find it so quickly, my sonne? Who answered: (b) It was the wil of God, that which I would come quickly in a",
+  "r3_verse": "And Iacob said:\"I am thy first begotten Esau: I haue done as thou didest command me: arise, sit, and eate of my hunting, that thy soule may blesse me.",
+  "arm_conflicts": [
+   "ſaid Iam | said:\"I am",
+   "ariſc, | arise,",
+   "aud | and"
+  ],
+  "r2_attested": {
+   "25": "ſoule"
+  },
+  "visual_readings": {
+   "25": "ſoule"
+  },
+  "new_text": "And Iacob said:\"I am thy firſt begotten Eſau I haue done as thou dideſt command me arise, ſit, and eate of my hunting, that thy ſoule may bleſſe me.",
+  "s_unresolved": [
+   "said:\"I",
+   "arise,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p100",
+  "old_text": "And againe Iſaac to his ſonne : How couldeſt b) It was he, find it ſo quickly, my ſoune: Who anſwerec: It was Gods wil, of God that that which I would came quickly in my way.",
+  "old": {
+   "s_dismas": 0.921,
+   "odr_com": 0.921,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.8346,
+   0.885,
+   0.9308
+  ],
+  "crop_page": 100,
+  "r3_raw": "as thou didest command me: arise, sit, and eate of my hunting, that thy soule may blesse me. 20. And againe Isaac to his sonne: How couldest thou, said he, find it so quickly, my sonne? Who answered: (b) It was the wil of God that which I would came quickly in my way. 21. And Isaac said: Come hither, that I may feele thee my sonne, and",
+  "r3_verse": "And againe Isaac to his sonne: : How couldest thou, said was he, find it so quickly, my sonne? Who answered: It was the wil of God that that which I would came quickly in my way.",
+  "arm_conflicts": [
+   "b) It was | thou, said",
+   "ſoune: | sonne?",
+   "anſwerec: | answered:",
+   "Gods | the"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "10": "ſaid"
+  },
+  "r2_attested": {
+   "18": "ſonne?",
+   "20": "anſwered:"
+  },
+  "visual_readings": {
+   "10": "ſaid",
+   "18": "ſonne?",
+   "20": "anſwered:"
+  },
+  "new_text": "And againe Iſaac to his ſonne : How couldeſt thou, ſaid was he, find it ſo quickly, my ſonne? Who anſwered: It was the wil, of God that that which I would came quickly in my way.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "chapter",
+  "old_text": "that Iſaac ſaid: Come hither, that I may feele thee my ſonne, and as Iſaac ſtood it. Iſaac. may proue whether thou be my ſoune Eſau, or no-",
+  "old": {
+   "s_dismas": 0.78,
+   "odr_com": 0.78,
+   "sabates_a": 0.773,
+   "madueke_b": 0.773
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.0611,
+   0.885,
+   0.1552
+  ],
+  "crop_page": 101,
+  "r3_raw": "may proue whether thou be my sonne Esau, or no. 22. He came neer to his father, and when he had felt him, Isaac said: The voice",
+  "r3_verse": "that Iſaac ſaid: Come hither, that I may feele thee my ſonne, and as Iſaac ſtood it. Iſaac. may proue whether thou be my sonne Esau, or no.",
+  "arm_conflicts": [
+   "ſoune | sonne",
+   "no- | no."
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "24": "ſonne"
+  },
+  "visual_readings": {
+   "24": "ſonne"
+  },
+  "new_text": "that Iſaac ſaid: Come hither, that I may feele thee my ſonne, and as Iſaac ſtood it. Iſaac. may proue whether thou be my ſonne Eſau, or no-",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.788,
+   "odr_com": 0.788,
+   "sabates_a": 0.78,
+   "madueke_b": 0.78
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p101",
+  "old_text": "And he knew him not, becauſe his haitie hands had made him Iike vnto the elder, Bleſſing him theretore,",
+  "old": {
+   "s_dismas": 0.94,
+   "odr_com": 0.94,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.1493,
+   0.885,
+   0.2276
+  ],
+  "crop_page": 101,
+  "r3_raw": "verily, is the voice of Iacob: but the hands are the hands of Esau. 23. And he \"knew him not, because his hairie hands had made him like vnto the elder: Blessing him therefore, 24. he said: Art thou my sonne Esau? He answered: I am. 25.. But he said: Bring me the",
+  "r3_verse": "And he \"knew him not, because his hairie hands had made him like vnto the elder: Blessing him therefore,",
+  "arm_conflicts": [
+   "knew | \"knew",
+   "haitie | hairie",
+   "Iike | like",
+   "theretore, | therefore,"
+  ],
+  "new_text": "And he knew him not, becauſe his hairie hands had made him like vnto the elder, Bleſſing him therefore,",
+  "s_unresolved": [
+   "therefore,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p101",
+  "old_text": "26.he ſaid to him: Come neer me, and giue me a kiſſe, my ſoane.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.2378,
+   0.885,
+   0.3161
+  ],
+  "crop_page": 101,
+  "r3_raw": "when they were brought and he had eaten, he offered him wine also, which after he had drunke, 26. he said to him: Come neer me, and giue me a kisse, my sonne. 27. He came neer, and kissed him. And immediately as he felt the fragrant sauour of his garments, blessing him, he",
+  "r3_verse": "he said to him: Come neer me, and giue me a kisse, my sonne.",
+  "arm_conflicts": [
+   "26.he | he",
+   "ſoane. | sonne."
+  ],
+  "r2_attested": {
+   "13": "ſonne."
+  },
+  "visual_readings": {
+   "13": "ſonne."
+  },
+  "new_text": "26.he ſaid to him: Come neer me, and giue me a kiſſe, my ſonne.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p101",
+  "old_text": "God giue thee of the deawof heauen, &of the fatnes of the earth aboundance of cotne and wine.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.951,
+   "madueke_b": 0.951
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.307,
+   0.885,
+   0.3871
+  ],
+  "crop_page": 101,
+  "r3_raw": "Immediately he felt the fragrant savour of his garments; blessing him, he said: Behold the saavour of my sonne is as the saavour of a plentiful field, which our Lord hath blessed. 28. God giue thee of the dewe of heaven, & of the fatnes of the earth abundance of corne and wine. 29. And let peoples serue thee, and tribes adore thee: be thou Lord of thy brethren,",
+  "r3_verse": "God giue thee of the dewe of heaven, & of the fatnes of the earth abundance of corne and wine.",
+  "arm_conflicts": [
+   "deawof heauen, &of | dewe of heaven, & of",
+   "aboundance | abundance",
+   "cotne | corne"
+  ],
+  "new_text": "God giue thee of the dewe &of heauen, & &of the fatnes of the earth abundance of corne and wine.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 41,
+  "from": "p101",
+  "old_text": "Eſau therfore alwaies hated Iacob for the bleſſing wherewith his father had bleſſed him: and he ſaid is his hart : The daies wil come of the mourning of my father, and I wil kil Iacob my brother.2.Theſe",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.155,
+   0.8219,
+   0.885,
+   0.9392
+  ],
+  "crop_page": 101,
+  "r3_raw": "40. charily blessinge: I will enslave thee by the word; and shall serve thy brother: and (e) the time shal come, when thou shalt shake off and loose his yoak from thy neck. 41. Esau therefore alwaies hated Jacob for the blessing wherewith his father had blessed him; and he said is his hart: The daies wil come of the mourning of my father, and I wil kil Iacob my brother. 42. These things were told to Rebecca:",
+  "r3_verse": "Esau therefore alwaies hated Jacob for the blessing wherewith his father had blessed him; and he said is his hart: The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Iacob | Jacob",
+   "brother.2.Theſe | brother."
+  ],
+  "new_text": "Eſau therefore alwaies hated Iacob for the bleſſing wherewith his father had bleſſed him: and he ſaid is his hart The daies wil come of the mourning of my father, and I wil kil Iacob my brother.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 42,
+  "from": "chapter",
+  "old_text": "things were told to Rebecca: I and calling Iacob her ſoune, ſaid to him Behold Eſau threatneth to kil thee.",
+  "old": {
+   "s_dismas": 0.789,
+   "odr_com": 0.789,
+   "sabates_a": 0.77,
+   "madueke_b": 0.77
+  },
+  "neighbours": [
+   41,
+   42
+  ],
+  "crop": [
+   0.155,
+   0.876,
+   0.885,
+   0.9392
+  ],
+  "crop_page": 101,
+  "crop_leaves": [
+   101,
+   102
+  ],
+  "r3_raw": "said is his hart: The daies wil come of the mourning of my father, and I wil kil Jacob my brother. 42. These things were told to Rebecca: who sending and calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. 43. Now therfore, my sonne, haire my voice, and get thee vp and fly to Laban my brother into Haran:",
+  "r3_verse": "These things were told to Rebecca: who sending and calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee.",
+  "arm_conflicts": [
+   "I | who sending",
+   "ſoune, | sonne,"
+  ],
+  "lexicon_readings": {
+   "0": "Theſe"
+  },
+  "r2_attested": {
+   "7": "ſending",
+   "12": "ſonne,"
+  },
+  "visual_readings": {
+   "0": "Theſe",
+   "7": "ſending",
+   "12": "ſonne,"
+  },
+  "new_text": "Theſe things were told to Rebecca: who ſending and calling Iacob her ſonne, ſaid to him Behold Eſau thy brother threatneth to kil thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 43,
+  "from": "p102",
+  "old_text": "Now therfore, my ſoune, haire and get thee vp and fly to Labau my brother into Haran:",
+  "old": {
+   "s_dismas": 0.859,
+   "odr_com": 0.859,
+   "sabates_a": 0.861,
+   "madueke_b": 0.861
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.155,
+   0.1138,
+   0.885,
+   0.1925
+  ],
+  "crop_page": 102,
+  "r3_raw": "who sending and calling Iacob her sonne, said to him: Behold Esau thy brother threatneth to kil thee. 43. Now therefore, my sonne, haire my voice, and get thee vp and fly to Laban my brother into Haran: 44. and thou shalt dwel with him a few dayes, til the furie of thy bro-",
+  "r3_verse": "Now therefore, my sonne, haire my voice, and get thee vp and fly to Laban my brother into Haran:",
+  "arm_conflicts": [
+   "therfore, | therefore,",
+   "ſoune, | sonne,",
+   "Labau | Laban"
+  ],
+  "r2_attested": {
+   "3": "ſonne,"
+  },
+  "visual_readings": {
+   "3": "ſonne,"
+  },
+  "new_text": "Now therefore, my ſonne, haire my voice, and get thee vp and fly to Laban my brother into Haran:",
+  "s_unresolved": [
+   "therefore,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 44,
+  "from": "p102",
+  "old_text": "thou shalt dwel with him a few dayes, til the furie ot thy broaſſwaged,",
+  "old": {
+   "s_dismas": 0.827,
+   "odr_com": 0.827,
+   "sabates_a": 0.816,
+   "madueke_b": 0.816
+  },
+  "neighbours": [
+   44
+  ],
+  "crop": [
+   0.155,
+   0.1493,
+   0.885,
+   0.2083
+  ],
+  "crop_page": 102,
+  "r3_raw": "my voice, and get thee vp and fly to Laban my brother into Haran: 44. and thou shalt dwel with him a few dayes , til the furie of thy brother be aswaged , 45. and his indignation cease, and he forget those",
+  "r3_verse": "and thou shalt dwel with him a few dayes , til the furie of thy brother be aswaged ,",
+  "arm_conflicts": [
+   "ot | of",
+   "broaſſwaged, | brother be aswaged ,"
+  ],
+  "new_text": "and thou shalt dwel with him a few dayes, , til the furie of thy brother be aswaged ,",
+  "s_unresolved": [
+   "aswaged"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 45,
+  "from": "p102",
+  "old_text": "and his indignation ceaſe, aud he forget thoſe which thou haſt done to him: afterward I wil ſend, and bring thence hither. Why shal I be deptiuedof both ſounes in one",
+  "old": {
+   "s_dismas": 0.864,
+   "odr_com": 0.864,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   45
+  ],
+  "crop": [
+   0.155,
+   0.1676,
+   0.885,
+   0.2599
+  ],
+  "crop_page": 102,
+  "r3_raw": "44. and thou shalt dwel with him a few dayes, til the furie of thy brother be aftwaged, 45. and his indignation cease, and he forget those things which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why shal I be depriued of both sonnes in one day? 46. And Rebecca said to Isaac: I am wearie of my life for the",
+  "r3_verse": "and his indignation cease, and he forget those things which thou haſt done to him: afterward I wil send, and bring thee from thence hither. Why shal I be depriued of both sonnes in one day?",
+  "arm_conflicts": [
+   "aud | and",
+   "deptiuedof | depriued of",
+   "ſounes | sonnes"
+  ],
+  "lexicon_readings": {
+   "22": "from"
+  },
+  "visual_readings": {
+   "22": "from"
+  },
+  "new_text": "and his indignation ceaſe, and he forget thoſe things which thou haſt done to him: afterward I wil ſend, and bring thee from thence hither. Why shal I be depriued of both sonnes in one day?",
+  "s_unresolved": [
+   "sonnes"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 46,
+  "from": "p102",
+  "old_text": "And Rebecca ſaid to Iſaac: I am wearie of my life for the of Heth: if Iacob take a wife of the ſtockof this land, I",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.812,
+   "madueke_b": 0.812
+  },
+  "neighbours": [
+   46
+  ],
+  "crop": [
+   0.155,
+   0.2192,
+   0.885,
+   0.9389
+  ],
+  "crop_page": 102,
+  "r3_raw": "46. And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Jacob take a wife of the stock of this land, I list not liue. ANNOTATIONS. CHAP. XXVII. 19. I am thy first-begotten Esau.) Jacob was not by nature the first-begotten, but by Gods ordinance, & by covenant made with Esau, had right to the preeminence and privilege belonging to him, he procured his brothers consent and confirmation (chap. 25.v.23.) That is the elder (of her twins) should serve the younger. Secondly, holic Scripture testifieth in the same chapter (v. 27.) That perceiuing at last Gods will, that Jacob should be preferred, was neither offended with him nor revoked his blessing as unlawfully surprised, but condescending thereto, ratified that he had done, saying (v. 33.) I have blessed him, and he shall be bleſſed. Sixtly, God himself from this time forwards often appeared to Jacob, and with great promises and manie temporal and spiritual benefits, declared his singular loue to him. Seuenthly, the three Patriarcharchs, Abraham, Isaac, & Jacob, are special renowned Saints of the old Testament: yea the Lord and Creator of all would peculiarly be called (Exodi 3.) the God of Abraham, Isaac, and Jacob. Moyses praying instantly for Gods mercie and clemencie towards the people (Exodi 32.) besought him to remember Abraham, Isaac, and Jacob, his servants: and so in both old and new Testament these three are often mentioned as chiefe Princes in the Kingdomome of Heaven. Al which shew the great vertues and holiness of them all.",
+  "r3_verse": "And Rebecca said to Isaac: I am wearie of my life for the daughters of Heth: if Jacob take a wife of the stock of this land, I list not liue. CHAP. XXVII. I am thy first-begotten Esau.) Jacob was not by nature the first-begotten, but by Gods ordinance, & by covenant made with Esau, had right to the preeminence and privilege belonging to him, he procured his brothers consent and confirmation (chap. 25.v.23.) That is the elder (of her twins) should serve the younger. Secondly, holic Scripture testifieth in the same chapter (v. 27.) That perceiuing at last Gods will, that Jacob should be preferred, was neither offended with him nor revoked his blessing as unlawfully surprised, but condescending thereto, ratified that he had done, saying (v. 33.) I have blessed him, and he shall be bleſſed. Sixtly, God himself from this time forwards often appeared to Jacob, and with great promises and manie temporal and spiritual benefits, declared his singular loue to him. Seuenthly, the three Patriarcharchs, Abraham, Isaac, & Jacob, are special renowned Saints of the old Testament: yea the Lord and Creator of all would peculiarly be called (Exodi 3.) the God of Abraham, Isaac, and Jacob. Moyses praying instantly for Gods mercie and clemencie towards the people (Exodi 32.) besought him to remember Abraham, Isaac, and Jacob, his servants: and so in both old and new Testament these three are often mentioned as chiefe Princes in the Kingdomome of Heaven. Al which shew the great vertues and holiness of them all.",
+  "arm_conflicts": [
+   "Iacob | Jacob",
+   "ſtockof | stock of"
+  ],
+  "lexicon_readings": {
+   "91": "ſame",
+   "141": "from",
+   "180": "Teſtament:",
+   "201": "Moyſes",
+   "204": "for",
+   "231": "Teſtament",
+   "232": "theſe"
+  },
+  "r2_attested": {
+   "23": "ſtock",
+   "28": "liſt",
+   "36": "firſt-Begotten",
+   "37": "Eſau.)",
+   "44": "firſt-Begotten,",
+   "54": "Eſau,",
+   "69": "conſent",
+   "81": "ſhould",
+   "88": "teſtifieth",
+   "98": "laſt",
+   "103": "ſhould",
+   "114": "bleſſing",
+   "117": "ſurpriſed,",
+   "126": "ſaying",
+   "152": "promiſes",
+   "161": "ſingular",
+   "170": "Iſaac,",
+   "174": "ſpecial",
+   "198": "Iſaac,",
+   "203": "inſtantly",
+   "219": "Iſaac,"
+  },
+  "refused_readings": {
+   "36": "arbitration changed content at token 36: 'sirst-begotten' -> 'sirst-Begotten'",
+   "44": "arbitration changed content at token 44: 'sirst-begotten,' -> 'sirst-Begotten,'"
+  },
+  "visual_readings": {
+   "91": "ſame",
+   "141": "from",
+   "180": "Teſtament:",
+   "201": "Moyſes",
+   "204": "for",
+   "231": "Teſtament",
+   "232": "theſe",
+   "23": "ſtock",
+   "28": "liſt",
+   "37": "Eſau.)",
+   "54": "Eſau,",
+   "69": "conſent",
+   "81": "ſhould",
+   "88": "teſtifieth",
+   "98": "laſt",
+   "103": "ſhould",
+   "114": "bleſſing",
+   "117": "ſurpriſed,",
+   "126": "ſaying",
+   "152": "promiſes",
+   "161": "ſingular",
+   "170": "Iſaac,",
+   "174": "ſpecial",
+   "198": "Iſaac,",
+   "203": "inſtantly",
+   "219": "Iſaac,"
+  },
+  "new_text": "And Rebecca ſaid to Iſaac: I am wearie of my life for the daughters of Heth: if Iacob take a wife of the ſtock of this land, I liſt not liue. CHAP. XXVII. I am thy first-begotten Eſau.) Jacob was not by nature the first-begotten, but by Gods ordinance, & by covenant made with Eſau, had right to the preeminence and privilege belonging to him, he procured his brothers conſent and confirmation (chap. 25.v.23.) That is the elder (of her twins) ſhould serve the younger. Secondly, holic Scripture teſtifieth in the ſame chapter (v. 27.) That perceiuing at laſt Gods will, that Jacob ſhould be preferred, was neither offended with him nor revoked his bleſſing as unlawfully ſurpriſed, but condescending thereto, ratified that he had done, ſaying (v. 33.) I have blessed him, and he shall be bleſſed. Sixtly, God himself from this time forwards often appeared to Jacob, and with great promiſes and manie temporal and spiritual benefits, declared his ſingular loue to him. Seuenthly, the three Patriarcharchs, Abraham, Iſaac, & Jacob, are ſpecial renowned Saints of the old Teſtament: yea the Lord and Creator of all would peculiarly be called (Exodi 3.) the God of Abraham, Iſaac, and Jacob. Moyſes praying inſtantly for Gods mercie and clemencie towards the people (Exodi 32.) besought him to remember Abraham, Iſaac, and Jacob, his servants: and so in both old and new Teſtament theſe three are often mentioned as chiefe Princes in the Kingdomome of Heaven. Al which shew the great vertues and holiness of them all.",
+  "s_unresolved": [
+   "first-begotten",
+   "first-begotten,",
+   "confirmation",
+   "serve",
+   "preferred,",
+   "offended",
+   "unlawfully",
+   "condescending",
+   "ratified",
+   "blessed",
+   "shall",
+   "bleſſed.",
+   "himself",
+   "forwards",
+   "often",
+   "spiritual",
+   "benefits,",
+   "besought",
+   "servants:",
+   "so",
+   "often",
+   "chiefe",
+   "shew",
+   "holiness"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ }
+]

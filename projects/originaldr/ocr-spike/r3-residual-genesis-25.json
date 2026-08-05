@@ -1,0 +1,2430 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "com Abraham maried an other wife named Cethura:",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.935,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.08,
+   0.0195,
+   0.875,
+   0.0951
+  ],
+  "crop_page": 103,
+  "r3_raw": "GENESIS. 1 And Abraham maried an other wife named Cethura: 2 + which bare him Zamran, and Ieclan, and Madan,",
+  "r3_verse": "And Abraham maried an other wife named Cethura: +",
+  "arm_conflicts": [
+   "com | And"
+  ],
+  "new_text": "And Abraham maried an other wife named Cethura: +",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 13,
+  "from": "p103",
+  "old_text": "theſe are the names of his children according to their callingand generations. The firſt begotten of Iſmael Nabaioth, then and Adbeel, and Mabſam,",
+  "old": {
+   "s_dismas": 0.953,
+   "odr_com": 0.953,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.4544,
+   0.875,
+   0.5821
+  ],
+  "crop_page": 103,
+  "r3_raw": "are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes seruant: and these are the names of his children according to their calling and generations. The first begotten of Ismael Nabaioth, then Cedar; and Adbeel, and Mabsam, † Masma also, and Duma, and Massa, † Hadar, and Themua, and Iethur, and Naphis,",
+  "r3_verse": "these are the names of his children according to their calling and generations. The first begotten of Ismael Nabaioth, then Cedar; and Adbeel, and Mabsam,",
+  "arm_conflicts": [
+   "callingand | calling and"
+  ],
+  "new_text": "theſe are the names of his children according to their calling and generations. The firſt begotten of Iſmael Nabaioth, then Cedar; and Adbeel, and Mabſam,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 23,
+  "from": "p104",
+  "old_text": "Who anſwering ſaid: Two nations ate in thy wombe, and two peoples ſhal be diuided bnt de- out of thy wombe, and one people ihal ouercome the other, and the clder ſhal ſerue the younger.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.0289,
+   0.875,
+   0.1598
+  ],
+  "crop_page": 104,
+  "r3_raw": "GENESIS. went to consult our Lord. † Who answering said: Two nations are in thy wombe, and two peoples shal be diuided out of thy wombe, and one people shal overcome the other; and \"the elder shal serue the younger.\" Now her time was come to be deliuered, and behold twinnes were found",
+  "r3_verse": "Who answering said: Two nations are in thy wombe, and two peoples shal be diuided out of thy wombe, and one people shal overcome the other; and \"the elder shal serue the younger.\"",
+  "arm_conflicts": [
+   "ate | are",
+   "ihal ouercome | shal overcome",
+   "the clder | \"the elder",
+   "younger. | younger.\""
+  ],
+  "r2_attested": {
+   "22": "ſhal"
+  },
+  "visual_readings": {
+   "22": "ſhal"
+  },
+  "new_text": "Who anſwering ſaid: Two nations are in thy wombe, and two peoples ſhal be diuided out of thy wombe, and one people ſhal ouercome the other, and the elder ſhal ſerue the younger.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "p104",
+  "old_text": "Now her was come to be deliuered, and behold twinnes were in her wombe.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.863,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.092,
+   0.875,
+   0.1983
+  ],
+  "crop_page": 104,
+  "r3_raw": "out of thy wombe, and one people thal overcome the other; and\" the elder thal scrue the younger. † Now her time was come to be deliuered, and behold twinnes were found in her wombe. † He that came forth first, was read, and al hearie in manner of a skinne:and his name was called Esau.",
+  "r3_verse": "Now her time was come to be deliuered, and behold twinnes were found in her wombe.",
+  "arm_conflicts": [],
+  "new_text": "Now her time was come to be deliuered, and behold twinnes were found in her wombe.",
+  "s_unresolved": [
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "p104",
+  "old_text": "He thar came forth firſt, was read, and or hearie in manner of. a skinne and his name was called whior Immediatly the other coming forth, held his brothers in his hand and therfore he called him Iacob.",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.1328,
+   0.875,
+   0.2608
+  ],
+  "crop_page": 104,
+  "r3_raw": "was come to be deliuered, and behold twinnes were found in her wombe. † He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob. † Threescore yeares old was Isaac, when the litle ones were borne vnto",
+  "r3_verse": "He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob.",
+  "arm_conflicts": [
+   "thar | that",
+   "or | al",
+   "whior | Esau."
+  ],
+  "lexicon_readings": {
+   "20": "Eſau."
+  },
+  "visual_readings": {
+   "20": "Eſau."
+  },
+  "new_text": "He that came forth firſt, was read, and al hearie in manner of. a skinne and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "p104",
+  "old_text": "Threeſcore yeares old was Iſaac, when the litle ones were borne him.",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.1929,
+   0.875,
+   0.3022
+  ],
+  "crop_page": 104,
+  "r3_raw": "Immediatly the other coming forth, held his brothers plant in his hand: and therefore he called him Iacob. † Threescore yeares old was Isaac, when the little ones were borne vnto him. † Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Jacob :: a plaine man",
+  "r3_verse": "Threescore yeares old was Isaac, when the little ones were borne vnto him.",
+  "arm_conflicts": [
+   "litle | little"
+  ],
+  "new_text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p104",
+  "old_text": "who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob a plaine dwelled in tents.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.237,
+   0.875,
+   0.342
+  ],
+  "crop_page": 104,
+  "r3_raw": "yeares old was Isaac, when the little ones were borne vnto him. † Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents. † Isaac loued Esau, because he did eate of his hunting: and Rebecca loued Iacob. † And Iacob",
+  "r3_verse": "Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents.",
+  "arm_conflicts": [],
+  "new_text": "who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob :: a plaine man dwelled in tents.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p104",
+  "old_text": "Iſaac loued Eſau, becauſe he did of his hunting: and Rebecca loued Iacob.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.2758,
+   0.875,
+   0.363
+  ],
+  "crop_page": 104,
+  "r3_raw": "in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents. † Isaac loued Esau, because he did eate 2 of his hunting: and Rebecca loued Iacob. † And Iacob left boyled broth: to whom Esau being come faynt out of the",
+  "r3_verse": "Isaac loued Esau, because he did eate of his hunting: and Rebecca loued Iacob. And",
+  "arm_conflicts": [],
+  "new_text": "Iſaac loued Eſau, becauſe he did eate of his hunting: and Rebecca loued Iacob. And",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p104",
+  "old_text": "Iacob leſt boyled broth to whom Eſau being come faynt out of field,",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.2959,
+   0.875,
+   0.4025
+  ],
+  "crop_page": 104,
+  "r3_raw": "dwelled in tents. † Isaac loued Esau, because he did eate 29 of his hunting: and Rebecca loured Iacob. † And Iacob 29 ceritie, lest boyled broth: to whom Esau being come faynt out of the field, † said: Geue me of this read broth, because I am ex-30 ceding faint. For which cause his name was called Edom.",
+  "r3_verse": "Iacob ceritie, lest boyled broth: to whom Esau being come faynt out of the field,",
+  "arm_conflicts": [],
+  "new_text": "Iacob ceritie, leſt boyled broth to whom Eſau being come faynt out of the field,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.808,
+   "odr_com": 0.808,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 30,
+  "from": "p104",
+  "old_text": "ſaid Geue me of this read broth, becauſe I am be ceding faint. For which cauſe his name was called of",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.337,
+   0.875,
+   0.4443
+  ],
+  "crop_page": 104,
+  "r3_raw": "ceritie, leſt boyled broth: to whom Esau being come faynt out of the field, † said: Geue me of this read broth, because I am ex-ceeding faint. For which cause his name was called Edom. † To whom Iacob said: \"Sel me thy first-birth-right.\" † He answered, Loe I dye, what wil the first birth right.",
+  "r3_verse": "said: Geue me of this read broth, because I am ex-ceeding faint. For which cause his name was called Edom.",
+  "arm_conflicts": [
+   "be ceding | ex-ceeding",
+   "of | Edom."
+  ],
+  "new_text": "ſaid Geue me of this read broth, becauſe I am ex-ceeding faint. For which cauſe his name was called Edom.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "p104",
+  "old_text": "To whom Iacob ſaid: Sel me thy firſt birthtrighe.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.3771,
+   0.875,
+   0.4443
+  ],
+  "crop_page": 104,
+  "r3_raw": "ceding faint. For which cause his name was called Edom. To whom Iacob said: \"Sel me thy first-birth-right.\" He answered, Loe I dye, what wil the first birth right.",
+  "r3_verse": "To whom Iacob said: \"Sel me thy first-birth-right.\"",
+  "arm_conflicts": [
+   "Sel | \"Sel",
+   "firſt birthtrighe. | first-birth-right.\""
+  ],
+  "r2_attested": {
+   "7": "firſt-birth-right.\""
+  },
+  "visual_readings": {
+   "7": "firſt-birth-right.\""
+  },
+  "new_text": "To whom Iacob ſaid: Sel me thy firſt-birth-right.\"",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p104",
+  "old_text": "He anſwered, Loe I dye, what wil the firſt birth auaile me",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.3975,
+   0.875,
+   0.4844
+  ],
+  "crop_page": 104,
+  "r3_raw": "† To whom Iacob said: \"Sel me thy first-birth-right. † He answered, Loe I dye, what wil che first birth right. † availe me? † Iacob said: Swear therefore to me. Esau sware to him, and sould his first-birth-right. † And so taking",
+  "r3_verse": "He answered, Loe I dye, what wil che first birth right. availe me?",
+  "arm_conflicts": [
+   "the | che",
+   "auaile me | right. availe me?"
+  ],
+  "new_text": "He anſwered, Loe I dye, what wil che firſt birth right. auaile me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.982,
+   "madueke_b": 0.982
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "p104",
+  "old_text": "And ſo taking bread, and the rice broth, did eate, and drinke, and his way : litrle eſteeming that he had ſold his firſt",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.863,
+   "sabates_a": 0.854,
+   "madueke_b": 0.854
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.4386,
+   0.875,
+   0.5511
+  ],
+  "crop_page": 104,
+  "r3_raw": "Aug. li. 16. availe me? † Jacob said: Swear therefore to me. Esau sware unto him, and sould his first-birth-right. † And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right..",
+  "r3_verse": "And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right..",
+  "arm_conflicts": [
+   ": litrle | little"
+  ],
+  "new_text": "And ſo taking bread, and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right..",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p107",
+  "old_text": "ND Abraham maried an other wife named Cethura:",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.978,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.08,
+   0.0028,
+   0.875,
+   0.0761
+  ],
+  "crop_page": 107,
+  "r3_raw": "GENESIS. AND Abraham maried an other wife named Cethura: which bare him Zamran, and Ieclan, and Madan,",
+  "r3_verse": "AND Abraham maried an other wife named Cethura:",
+  "arm_conflicts": [
+   "ND | AND"
+  ],
+  "new_text": "AND Abraham maried an other wife named Cethura:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p107",
+  "old_text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the gyptian bare him, Saraes ſeruant :",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.4038,
+   0.875,
+   0.5183
+  ],
+  "crop_page": 107,
+  "r3_raw": "after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing and being so named. † These are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes servant: and † these are the names of his children according to their calling and",
+  "r3_verse": "These are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes servant:",
+  "arm_conflicts": [
+   "gyptian | Ægyptian",
+   "ſeruant : | servant:"
+  ],
+  "new_text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Ægyptian bare him, Saraes ſeruant",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 23,
+  "from": "p108",
+  "old_text": "Who anſwering ſaid but nations are in thy wombe, and two peoples ſhal be diuided de- out of thy wombe, and one people ſhal ouercome the and the elder ſhal ſerue the younger.",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.0153,
+   0.875,
+   0.1454
+  ],
+  "crop_page": 108,
+  "r3_raw": "GENESIS. S. Augustin: went to consult our Lord. † Who answering said: Two nations are in thy wombe, and two peoples ſhall be diuided out of thy wombe, and one people ſhal ouercome the other; and\" the elder ſhall serue the younger. † Now her time was come to be deliuered, and behold twinnes were found",
+  "r3_verse": "Who answering said: Two nations are in thy wombe, and two peoples ſhall be diuided out of thy wombe, and one people ſhal ouercome the other; and\" the elder ſhall serue the younger.",
+  "arm_conflicts": [
+   "but | Two",
+   "ſhal | ſhall",
+   "and | other; and\"",
+   "ſhal | ſhall"
+  ],
+  "new_text": "Who anſwering ſaid Two nations are in thy wombe, and two peoples ſhal be diuided out of thy wombe, and one people ſhal ouercome the other; and the elder ſhal ſerue the younger.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "p108",
+  "old_text": "Now her went was come to be deliuered, and behold twinnes were in her wonibe.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.822,
+   "madueke_b": 0.822
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.0787,
+   0.875,
+   0.1877
+  ],
+  "crop_page": 108,
+  "r3_raw": "puteth but out of thy wombe, and one people shal ouercome the other; and\" the elder shal serue the younger. † Now her time 2. Rebecca went was come to be deliuered, and behold twinnes were found some Priest, in her wombe. † He that came forth first, was read, and al Prophet, or hearie in manner of askinne: and his name was called Esau.",
+  "r3_verse": "Now her time Rebecca went was come to be deliuered, and behold twinnes were found some Priest, in her wombe.",
+  "arm_conflicts": [
+   "wonibe. | wombe."
+  ],
+  "r2_attested": {
+   "15": "ſome",
+   "16": "Prieſt,"
+  },
+  "visual_readings": {
+   "15": "ſome",
+   "16": "Prieſt,"
+  },
+  "new_text": "Now her time Rebecca went was come to be deliuered, and behold twinnes were found ſome Prieſt, in her wombe.",
+  "s_unresolved": [
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.762,
+   "odr_com": 0.762,
+   "sabates_a": 0.753,
+   "madueke_b": 0.753
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "p108",
+  "old_text": "He that came forth firſt, was read, and whi- or hearie in manner of a skinne: and his name was called or Immediatly the other coming forth, held his brothers in his hand and therfore he called him Iacob.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.884,
+   "madueke_b": 0.884
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.1209,
+   0.875,
+   0.2494
+  ],
+  "crop_page": 108,
+  "r3_raw": "beccawent was come to be deliuered, and behold twinnes were found in her wombe. † He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob. † Threescore yeares old was Isaac, when the litle ones were borne vnto",
+  "r3_verse": "He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob.",
+  "arm_conflicts": [
+   "whi- or | al",
+   "or | Esau."
+  ],
+  "lexicon_readings": {
+   "20": "Eſau."
+  },
+  "visual_readings": {
+   "20": "Eſau."
+  },
+  "new_text": "He that came forth firſt, was read, and al hearie in manner of a skinne: and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 26,
+  "from": "p108",
+  "old_text": "Threeſcore yeares old was Iſaac, when the litle ones were borne him.",
+  "old": {
+   "s_dismas": 0.93,
+   "odr_com": 0.93,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.1833,
+   0.875,
+   0.2933
+  ],
+  "crop_page": 108,
+  "r3_raw": "Immediatly the other coming forth, held his brothers plant in his hand: and therefore he called him Iacob. † Threescore 2 yeares old was Isaac, when the litle ones were borne vnto him. † Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob :: a plaine man",
+  "r3_verse": "Threescore yeares old was Isaac, when the litle ones were borne vnto him.",
+  "arm_conflicts": [],
+  "new_text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "p108",
+  "old_text": "Who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob a plaine dwelled in tents.",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.2272,
+   0.875,
+   0.3349
+  ],
+  "crop_page": 108,
+  "r3_raw": "yeares old was Isaac, when the litle ones were borne vnto him. † Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents. † Isaac loued Esau, because he did eate of his hunting: and Rebecca loued Iacob. † And Iacob",
+  "r3_verse": "Who being growne vp, Esau became a man cunning in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents.",
+  "arm_conflicts": [],
+  "new_text": "Who being growne vp, Eſau became a man cunning in hunting, and a huſband man but Iacob :: a plaine man dwelled in tents.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p108",
+  "old_text": "Iſaac loued Eſau, becauſe he did of his hunting : and Rebecca loued Iacob.",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.2675,
+   0.875,
+   0.3553
+  ],
+  "crop_page": 108,
+  "r3_raw": "in hunting, and a husband man: but Iacob :: a plaine man dwelled in tents. † Isaac loued Esau, because he did eate 2 of his hunting: and Rebecca loued Iacob. † And Iacob 2 boyled broth: to whom Esau being come faynt out of the",
+  "r3_verse": "Isaac loued Esau, because he did eate of his hunting: and Rebecca loued Iacob. And",
+  "arm_conflicts": [],
+  "new_text": "Iſaac loued Eſau, becauſe he did eate of his hunting and Rebecca loued Iacob. And",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p108",
+  "old_text": "leſt boyled broth : to whom Eſau being come faynt out of field,",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.873,
+   "madueke_b": 0.873
+  },
+  "neighbours": [
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.3097,
+   0.875,
+   0.3976
+  ],
+  "crop_page": 108,
+  "r3_raw": "of his hunting: and Rebecca loued Iacob. † And Iacob boyled broth: to whom Esau being come faynt out of the field, † said: Geue me of this read broth, because I am exceeding faint. For which cause his name was called Edom.",
+  "r3_verse": "Iacob boyled broth: to whom Esau being come faynt out of the field,",
+  "arm_conflicts": [
+   "leſt | Iacob"
+  ],
+  "new_text": "Iacob boyled broth to whom Eſau being come faynt out of the field,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p108",
+  "old_text": "ſaid Geue me of this read broth, becauſe I am be ceding faint. For which cauſe his name was called of",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.3292,
+   0.875,
+   0.4398
+  ],
+  "crop_page": 108,
+  "r3_raw": "boyled broth: to whom Esau being come faynt out of the field, † said: Geue me of this read broth, because I am ex-ceeding faint. For which cause his name was called Edom. † To whom Iacob said: \"Sel me thy first-birth-right.\" † He answered, Loe I dye, what wil the first birth right.",
+  "r3_verse": "said: Geue me of this read broth, because I am ex-ceeding faint. For which cause his name was called Edom.",
+  "arm_conflicts": [
+   "be ceding | ex-ceeding",
+   "of | Edom."
+  ],
+  "new_text": "ſaid Geue me of this read broth, becauſe I am ex-ceeding faint. For which cauſe his name was called Edom.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p108",
+  "old_text": "He anſwered, Loe I dye, what wil the firſt birth auaile me",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.3932,
+   0.875,
+   0.4811
+  ],
+  "crop_page": 108,
+  "r3_raw": "† To whom Iacob said: \"Sel me thy first-birth-right. † He answered, Loe I dye, what wil the first birth right availe me? † Iacob said: Sweare therefore to me. Esau sware to him, and sould his first-birth-right. † And so taking",
+  "r3_verse": "He answered, Loe I dye, what wil the first birth right availe me?",
+  "arm_conflicts": [
+   "auaile me | right availe me?"
+  ],
+  "new_text": "He anſwered, Loe I dye, what wil the firſt birth right auaile me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p108",
+  "old_text": "Iacob ſaid Sweare therfore to me. Eſau to him, and ſould his firſtbirthtright.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.4147,
+   0.875,
+   0.5032
+  ],
+  "crop_page": 108,
+  "r3_raw": "† He answered, Loe I dye, what wil the first birth right availe me? † Iacob said: Sweare therefore to me. Esau sware to him, and sould his first-birth-right. † And so taking bread and the rice broth, did eate, and drinke, and went",
+  "r3_verse": "Iacob said: Sweare therefore to me. Esau sware to him, and sould his first-birth-right.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "firſtbirthtright. | first-birth-right."
+  ],
+  "r2_attested": {
+   "7": "ſware",
+   "13": "firſt-birth-right."
+  },
+  "visual_readings": {
+   "7": "ſware",
+   "13": "firſt-birth-right."
+  },
+  "new_text": "Iacob ſaid Sweare therefore to me. Eſau ſware to him, and ſould his firſt-birth-right.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 34,
+  "from": "p108",
+  "old_text": "And ſo taking bread and the rice broth, did eate, and drinke, and his way : little eſteeming that he had ſold his firſt",
+  "old": {
+   "s_dismas": 0.87,
+   "odr_com": 0.87,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.4361,
+   0.875,
+   0.5481
+  ],
+  "crop_page": 108,
+  "r3_raw": "auaile me? † Iacob said: Swear therefore to me. Esau sware 37. ciuit. to him, and sould his first-birth-right. † And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right.",
+  "r3_verse": "And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right.",
+  "arm_conflicts": [],
+  "new_text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p113",
+  "old_text": "Abraham maried an other wife named Cethura:",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.913,
+   "sabates_a": 0.861,
+   "madueke_b": 0.861
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.049,
+   0.0375,
+   0.875,
+   0.1026
+  ],
+  "crop_page": 113,
+  "r3_raw": "GENESIS. AND Abraham maried an other wife named Cethura: † which bare him Zamran, and Iecfan, and Madan,",
+  "r3_verse": "AND Abraham maried an other wife named Cethura:",
+  "arm_conflicts": [],
+  "new_text": "AND Abraham maried an other wife named Cethura:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 1.0,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p113",
+  "old_text": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Aſfurim, and Latuſim, and Loomim.",
+  "old": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.049,
+   0.0787,
+   0.875,
+   0.1825
+  ],
+  "crop_page": 113,
+  "r3_raw": "2 A† which bare him Zamran, and Ieſcan, and Madan, 3 and Madian, and Iesboc, and Sue. † Ieſcan also begat Saba and Dadan. The Children of Dadan were Assurim, 4 and Latusim, and Loomim. † But also of Madian was borne Ephah, and Opher, and Henoch, and Abida, and Eldaa: al",
+  "r3_verse": "Iecſan also begat Saba and Dadan. The Children of Dadan were Assurim, and Latusim, and Loomim.",
+  "arm_conflicts": [
+   "Aſfurim, | Assurim,"
+  ],
+  "used_merge": true,
+  "new_text": "Iecſan alſo begat Saba and Dadan. The Children of Dadan were Assurim, and Latuſim, and Loomim.",
+  "s_unresolved": [
+   "Assurim,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p113",
+  "old_text": "which he had bought of the chil daies dren of Heth: there was he buried, and Sara his wife.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   9,
+   10
+  ],
+  "crop": [
+   0.049,
+   0.3609,
+   0.875,
+   0.4461
+  ],
+  "crop_page": 113,
+  "r3_raw": "ated in the field of Ephron the sonne of Seor the Hethite, ouer against Mambre, † which he had bought of the children of Heth: there was he buried, and Sara his wife. † And after his death God blessed Isaac his sonne, who dwelled",
+  "r3_verse": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+  "arm_conflicts": [
+   "chil daies dren | children"
+  ],
+  "new_text": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 11,
+  "from": "p113",
+  "old_text": "void after his death God bleſſed Iſaac his ſonne, who dwelled be beſide the wel of the Liuing and ſeing ſo named.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   11,
+   12
+  ],
+  "crop": [
+   0.049,
+   0.3951,
+   0.875,
+   0.4892
+  ],
+  "crop_page": 113,
+  "r3_raw": "10 over against Mamre, which he had bought of the children of Heth: there was he buried, and Sara his wife. And after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing and being so named. These are the generations of Ismael the sonne of Abraham, whom",
+  "r3_verse": "And after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing and being so named.",
+  "arm_conflicts": [
+   "void | And",
+   "ſeing | being"
+  ],
+  "new_text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing and being ſo named.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.95,
+   "madueke_b": 0.95
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 12,
+  "from": "p113",
+  "old_text": "Theſe or are the generations of Iſmael the ſonne of Abraham, whom Agar the Agyptian bare him, Saraes ſeruant :",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.049,
+   0.4208,
+   0.875,
+   0.528
+  ],
+  "crop_page": 113,
+  "r3_raw": "after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing and being so named. † These are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes seruant: and † these are the names of his children according to their calling and",
+  "r3_verse": "These are the generations of Ismael the sonne of Abraham, whom Agar the Ægyptian bare him, Saraes seruant:",
+  "arm_conflicts": [
+   "Agyptian | Ægyptian"
+  ],
+  "new_text": "Theſe are the generations of Iſmael the ſonne of Abraham, whom Agar the Ægyptian bare him, Saraes ſeruant",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.963,
+   "odr_com": 0.963,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 25,
+  "from": "p114",
+  "old_text": "He that came forth firſt, was read, and al ot hearie in manner of a skinne and his name was called Eſau. whi- or Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+  "old": {
+   "s_dismas": 0.953,
+   "odr_com": 0.953,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.1335,
+   0.875,
+   0.2631
+  ],
+  "crop_page": 114,
+  "r3_raw": "beccawent was come to be deliuered, and behold twinnes were found in her wombe. † He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob. † Threescore yeares old was Isaac, when the litle ones were borne vnto",
+  "r3_verse": "He that came forth first, was read, and al hearie in manner of a skinne: and his name was called Esau. Immediatly the other coming forth, held his brothers plant in his hand: and therfore he called him Iacob.",
+  "arm_conflicts": [],
+  "new_text": "He that came forth firſt, was read, and al hearie in manner of a skinne and his name was called Eſau. Immediatly the other coming forth, held his brothers plant in his hand and therfore he called him Iacob.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p114",
+  "old_text": "Iacob leſt boyled broth to whom Eſau being come faynt out of the ſield,",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.2977,
+   0.875,
+   0.4083
+  ],
+  "crop_page": 114,
+  "r3_raw": "dwelled in tents. † Isaac loued Esau, because he did eate 28 of his hunting: and Rebecca loued Iacob. † And Iacob 19 boyled broth: to whom Esau being come faynt out of the field, † said: Geue me of this read broth, because I am ex-30 ceding faint. For which cause his name was called Edom.",
+  "r3_verse": "Iacob boyled broth: to whom Esau being come faynt out of the field,",
+  "arm_conflicts": [
+   "ſield, | field,"
+  ],
+  "new_text": "Iacob boyled broth to whom Eſau being come faynt out of the field,",
+  "s_unresolved": [
+   "field,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 34,
+  "from": "p114",
+  "old_text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way , little eſteeming that he had ſold his firſt",
+  "old": {
+   "s_dismas": 0.908,
+   "odr_com": 0.908,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.4382,
+   0.875,
+   0.5518
+  ],
+  "crop_page": 114,
+  "r3_raw": "Aug. li. 16. auaile me? † Iacob said: Swear therefore to me. Esau sware 33 to him, and sould his first-birth-right. † And so taking 34 bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right.",
+  "r3_verse": "And so taking bread and the rice broth, did eate, and drinke, and went his way; little esteeming that he had sold his first birth right.",
+  "arm_conflicts": [],
+  "new_text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way little eſteeming that he had ſold his firſt birth right.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p95",
+  "old_text": "and Abraham maried another wite named Cetura",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.935,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.155,
+   0.1922,
+   0.885,
+   0.3625
+  ],
+  "crop_page": 95,
+  "r3_raw": "Abraham having manie children by his wife Cetura, died at the age of 175 yeares: 12. Ismael also hauing twelue sonnes Dukes, died. 19. Isaac praying for his barren wife, she hath Esau and Iacob twinnes. 30. Esau selleth his first birth right to Iacob for a mifte of porage. ND Abraham maried another wife named Cetura: which bare him Zamran, and Ieclan, and Madan, and",
+  "r3_verse": "Abraham having manie children by his wife Cetura, died at the age of yeares: Ismael also hauing twelue sonnes Dukes, died. Isaac praying for his barren wife, she hath Esau and Iacob twinnes. Esau selleth his first birth right to Iacob for a mifte of porage. ND Abraham maried another wife named Cetura:",
+  "arm_conflicts": [
+   "wite | wife"
+  ],
+  "lexicon_readings": {
+   "15": "alſo",
+   "23": "for",
+   "36": "firſt",
+   "41": "for"
+  },
+  "r2_attested": {
+   "14": "Iſmael",
+   "18": "ſonnes",
+   "21": "Iſaac",
+   "29": "Eſau",
+   "33": "Eſau",
+   "34": "ſelleth"
+  },
+  "visual_readings": {
+   "15": "alſo",
+   "23": "for",
+   "36": "firſt",
+   "41": "for",
+   "14": "Iſmael",
+   "18": "ſonnes",
+   "21": "Iſaac",
+   "29": "Eſau",
+   "33": "Eſau",
+   "34": "ſelleth"
+  },
+  "new_text": "Abraham having manie children by his wife Cetura, died at the age of yeares: Iſmael alſo hauing twelue ſonnes Dukes, died. Iſaac praying for his barren wife, she hath Eſau and Iacob twinnes. Eſau ſelleth his firſt birth right to Iacob for a mifte of porage. ND Abraham maried another wife named Cetura",
+  "s_unresolved": [
+   "wife",
+   "wife,",
+   "she",
+   "mifte",
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 3,
+  "from": "p95",
+  "old_text": "Iecſan alfo begat Saba Padan. The Children of Dadan were. Aſfurtm and Latuſim, and Loomim.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.155,
+   0.3365,
+   0.885,
+   0.4345
+  ],
+  "crop_page": 95,
+  "r3_raw": "which bare him Zamran, and Iesfan, and Madan, and Madian, and Iesboc, and Sue. 3. Iesfan alfo begat Saba & Dadan. The Children of Dadan were Assurim, and Latufim, and Loomim. 4. But also of Madian was borne Ephah, and Opher, and Henoch, and Abida, and Eldaa: all these were",
+  "r3_verse": "Iecſan alfo begat Saba & Dadan. The Children of Dadan were Assurim, and Latufim, and Loomim.",
+  "arm_conflicts": [
+   "Padan. | & Dadan.",
+   "Aſfurtm | Assurim,",
+   "Latuſim, | Latufim,"
+  ],
+  "used_merge": true,
+  "new_text": "Iecſan alfo begat Saba & Dadan. The Children of Dadan were. Assurim, and Latufim, and Loomim.",
+  "s_unresolved": [
+   "Assurim,",
+   "Latufim,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p95",
+  "old_text": "And the dayes of Abrahams life were an hundred ſeuentie and fiue veares.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.939,
+   "madueke_b": 0.939
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.4616,
+   0.885,
+   0.5416
+  ],
+  "crop_page": 95,
+  "r3_raw": "separated them from Isaac his sonne, whilest himselfe yet liued, to the east countrie. 7. And the dayes of Abrahams life were an hundred seuentie and five yeares. 8. And decaying dyed in (a) a good old age, and hauing liued a great time, and being ful of dayes: and was gathered",
+  "r3_verse": "And the dayes of Abrahams life were an hundred seuentie and five yeares.",
+  "arm_conflicts": [
+   "fiue veares. | five yeares."
+  ],
+  "new_text": "And the dayes of Abrahams life were an hundred ſeuentie and fiue yeares.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.955,
+   "madueke_b": 0.955
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p95",
+  "old_text": "And decayins dyed in a good old age, and hauino liued a great time, and being tul of dayes: and was gathered to his people.",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.4791,
+   0.885,
+   0.5788
+  ],
+  "crop_page": 95,
+  "r3_raw": "7. And the dayes of Abrahams life were an hundred feuentie and five yeares. 8. And decaying dyed in (a) a good old age, and hauing liued a great time, and being ful of dayes: and was gathered to his people. 9. And there buried him Iſaac and Ismael his sonnes in the double caue, which was situated in the field of Ephron the ſonne of",
+  "r3_verse": "And decaying dyed in a good old age, and hauing liued a great time, and being ful of dayes: and was gathered to his people.",
+  "arm_conflicts": [
+   "decayins | decaying",
+   "hauino | hauing",
+   "tul | ful"
+  ],
+  "new_text": "And decaying dyed in a good old age, and hauing liued a great time, and being ful of dayes: and was gathered to his people.",
+  "s_unresolved": [
+   "ful"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p95",
+  "old_text": "which he had bought ot the childrenof Heth: there was he butied, and Sara his wite.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.5522,
+   0.885,
+   0.6305
+  ],
+  "crop_page": 95,
+  "r3_raw": "the double caue, which was situated in the field of Ephron the sonne of Seor the Hethite, over-againſt Mambre, 10. which he had bought of the children of Heth: there was he buried, and Sara his wife. 11. And after his death God blessed Isaac his sonne, who dwelled beſide the",
+  "r3_verse": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+  "arm_conflicts": [
+   "ot | of",
+   "childrenof | children of",
+   "butied, | buried,",
+   "wite. | wife."
+  ],
+  "new_text": "which he had bought of the children of Heth: there was he buried, and Sara his wife.",
+  "s_unresolved": [
+   "wife."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p95",
+  "old_text": "And after his death God bleſſed Iſaac his ſonne, who dwtlled beſide the wel of the Liuing Secing, ſo named.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.5676,
+   0.885,
+   0.6677
+  ],
+  "crop_page": 95,
+  "r3_raw": "the double ealle; which was hedged in the field of Ephron the sonne of Seor the Hethite, over-against Mambre, 10. which he had bought of the children of Heth: there was he buried, and Sara his wife. 11. And after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing & Seeing, so named. 12. These are the generations of Ismael the sonne of Abraham, who Agar the Egyptian bare him, Saraes",
+  "r3_verse": "And after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing & Seeing, so named.",
+  "arm_conflicts": [
+   "dwtlled | dwelled",
+   "Secing, | & Seeing,"
+  ],
+  "new_text": "And after his death God bleſſed Iſaac his ſonne, who dwelled beſide the wel of the Liuing & Seeing, ſo named.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.953,
+   "odr_com": 0.953,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p95",
+  "old_text": "Theſe are the generations of Iſmael the ſonneof Abrahā, who Agar the gyptian bare him, Saraes ſeruant",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.6031,
+   0.885,
+   0.7011
+  ],
+  "crop_page": 95,
+  "r3_raw": "after his death God blessed Isaac his sonne, who dwelled beside the wel of the Liuing & Seeing, so named. 12. These are the generations of Ismael the sonne of Abraham, who Agar the Egyptian bare him, Saraes servant: & 13. these are the names of his children according to their calling and generations. The first begotten of Ismael Nabaioth, then Ce-",
+  "r3_verse": "These are the generations of Ismael the sonne of Abraham, who Agar the Egyptian bare him, Saraes servant: &",
+  "arm_conflicts": [
+   "ſonneof Abrahā, | sonne of Abraham,",
+   "gyptian | Egyptian",
+   "ſeruant | servant: &"
+  ],
+  "r2_attested": {
+   "7": "ſonne"
+  },
+  "visual_readings": {
+   "7": "ſonne"
+  },
+  "new_text": "Theſe are the generations of Iſmael the ſonne of Abraham, who Agar the Egyptian bare him, Saraes ſeruant &",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "chapter",
+  "old_text": "And Iſaac beſought our Lord for his wite, becauſe ſhe was barren: who heard him, and made to conceaue.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   21
+  ],
+  "skip": "no crop geometry; leaves tried: [96]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p96",
+  "old_text": "But the litle ones ſtrugied in her womb: who it ſhould be ſo with me what need was there to conceaue went to conſult our Lord.",
+  "old": {
+   "s_dismas": 0.852,
+   "odr_com": 0.852,
+   "sabates_a": 0.871,
+   "madueke_b": 0.871
+  },
+  "neighbours": [
+   22,
+   23
+  ],
+  "crop": [
+   0.155,
+   0.0913,
+   0.885,
+   0.1946
+  ],
+  "crop_page": 96,
+  "r3_raw": "Rebecca to conceaue. 22. But the little ones strugied in her womb; who said: If it should be so with me, what need was there to conceaue? And she (b) went to consult our Lord. 23. Who answering said: Two nations are in thy womb, and two peoples that be diuided out of thy womb, and one people shall overcome the other; and \"the elder",
+  "r3_verse": "to conceaue. But the little ones strugied in her womb; who said: If it should be so with me, what need was there to conceaue? And she went to consult our Lord.",
+  "arm_conflicts": [
+   "litle | little",
+   "conceaue | conceaue? And she"
+  ],
+  "lexicon_readings": {
+   "11": "ſaid:"
+  },
+  "visual_readings": {
+   "11": "ſaid:"
+  },
+  "new_text": "to conceaue. But the litle ones ſtrugied in her womb: who ſaid: If it ſhould be ſo with me what need was there to conceaue And she went to conſult our Lord.",
+  "s_unresolved": [
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p96",
+  "old_text": "Who anſwering ſaid Two (by are in thy womb, aud two peoples thal be diuided out of thy (q. in and one people thal ouercome ther other, and the elder diſputeth, the yonger.",
+  "old": {
+   "s_dismas": 0.843,
+   "odr_com": 0.843,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.1265,
+   0.885,
+   0.2388
+  ],
+  "crop_page": 96,
+  "r3_raw": "Rebecca so conceaue: 23. So she went unto her husband Esau, who was said: If it should be so with me, what need was there to conceaue? And he (b) went to consult our Lord. 23. Who answering said: Two nations are in thy womb, and two peoples that be diuided out of thy womb, and one people shall overcome the other, and \"the elder shal serue the yonger. 24. Now her time was come to be deliuered, and behold twinnes were found in her womb. 25. He that came forth",
+  "r3_verse": "Who answering said: Two nations are in thy womb, and two peoples that be diuided out of thy womb, and one people shall overcome the other, and \"the elder shal serue the yonger.",
+  "arm_conflicts": [
+   "(by | nations",
+   "aud | and",
+   "thal | that",
+   "(q. in | womb,",
+   "thal ouercome ther | shall overcome the",
+   "the | \"the",
+   "diſputeth, | shal serue"
+  ],
+  "r2_attested": {
+   "29": "ſhal"
+  },
+  "visual_readings": {
+   "29": "ſhal"
+  },
+  "new_text": "Who anſwering ſaid Two nations are in thy womb, and two peoples that be diuided out of thy womb, and one people shall ouercome the other, and the elder ſhal serue the yonger.",
+  "s_unresolved": [
+   "shall",
+   "serue"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.981,
+   "madueke_b": 0.981
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p96",
+  "old_text": "Now her time was come to be deliuered could not twinnes were found lu her womb.",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.1792,
+   0.885,
+   0.2571
+  ],
+  "crop_page": 96,
+  "r3_raw": "womb, and one people shal overcome ther other, and \"the elder shal serue the yonger. 24. Now her time was come to be deliuered, and behold twinnes were found in her womb. 25. He that came forth first, was red, and al hairie in manner of a skinne: and his name was",
+  "r3_verse": "Now her time was come to be deliuered, and behold twinnes were found in her womb.",
+  "arm_conflicts": [
+   "could not | and behold",
+   "lu | in"
+  ],
+  "new_text": "Now her time was come to be deliuered and behold twinnes were found in her womb.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p96",
+  "old_text": "He that came forth cide, red and al hairie in manner of a skinne: and his name was Rebecca to ſome Eſau. Immediatcly the other commins torth, held his brothers or Prophet, his hand: and thertore he called him Iacob.",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.823,
+   "madueke_b": 0.823
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.1943,
+   0.885,
+   0.3105
+  ],
+  "crop_page": 96,
+  "r3_raw": "womb, and one people that ouercometh other; and the elder shal serue the yonger. 24. Now her time was come to be deliuered, and behold twinnes were found in her womb. 25. He that came forth first, was red, and al hairie in manner of a skinne: and his name was called Esau. Immediately the other comming forth, held his brothers plant in his hand: and therefore he called him Iacob. 26. Threescore yeares old was Isaac, when the litle ones were borne vnto him.",
+  "r3_verse": "He that came forth first, was red, and al hairie in manner of a skinne: and his name was called Esau. Immediately the other comming forth, held his brothers plant in his hand: and therefore he called him Iacob.",
+  "arm_conflicts": [
+   "cide, | first, was",
+   "Rebecca to ſome | called",
+   "Immediatcly | Immediately",
+   "commins torth, | comming forth,",
+   "or Prophet, | plant in",
+   "thertore | therefore"
+  ],
+  "lexicon_readings": {
+   "4": "firſt,"
+  },
+  "visual_readings": {
+   "4": "firſt,"
+  },
+  "new_text": "He that came forth firſt, was red and al hairie in manner of a skinne: and his name was called Eſau. Immediately the other comming forth, held his brothers plant in his hand: and therefore he called him Iacob.",
+  "s_unresolved": [
+   "forth,",
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p96",
+  "old_text": "Threeſcore Altar, or old was Iſaac, when the litle ones were borne vnto him.",
+  "old": {
+   "s_dismas": 0.918,
+   "odr_com": 0.918,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.2498,
+   0.885,
+   0.3287
+  ],
+  "crop_page": 96,
+  "r3_raw": "called Esau. Immediately the other comming forth, held his brothers plant in his hand: and therefore he called him Iacob. 26. Threescore yeares old was Isaac, when the little ones were borne vnto him. 27. Who being growne vp, Esau became a man cunning in hunting, & a to some Priest, or Prophet, or Altar, or whither els, or only retyred to private prayer",
+  "r3_verse": "Threescore yeares old was Isaac, when the little ones were borne vnto him.",
+  "arm_conflicts": [
+   "Altar, or | yeares",
+   "litle | little"
+  ],
+  "new_text": "Threeſcore yeares old was Iſaac, when the litle ones were borne vnto him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p96",
+  "old_text": "ther els, growne vp, Eſau became a man cunning in hunting, & a only retyred man: but Iacob()a plaine mā dwelled in tents.8.",
+  "old": {
+   "s_dismas": 0.816,
+   "odr_com": 0.816,
+   "sabates_a": 0.824,
+   "madueke_b": 0.824
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.2677,
+   0.885,
+   0.3667
+  ],
+  "crop_page": 96,
+  "r3_raw": "plant in his hand: and therefore he called him Iacob. 26. Threescore yeares old was Isaac, when the little ones were borne vnto him. 27. Who being growne vp, Esau became a man cunning in hunting, & a husband man: but Iacob (c) a plaine man dwelled intents.:8. Isaac loued Esau; because he did eare of his hunting: and Rebecca loued Iacob. 29.&",
+  "r3_verse": "Who being growne vp, Esau became a man cunning in hunting, & a husband man: but Iacob a plaine man dwelled intents.:8.",
+  "arm_conflicts": [
+   "ther els, | Who being",
+   "only retyred | husband",
+   "Iacob()a | Iacob a",
+   "mā | man",
+   "in tents.8. | intents.:8."
+  ],
+  "r2_attested": {
+   "13": "huſband"
+  },
+  "visual_readings": {
+   "13": "huſband"
+  },
+  "new_text": "Who being growne vp, Eſau became a man cunning in hunting, & a huſband man: but Iacob a plaine man dwelled intents.:8.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p96",
+  "old_text": "Iſaac loued priuate e) Holie he did eate of his hunting: and Rebecca loued Iacob.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.857,
+   "madueke_b": 0.857
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.2965,
+   0.885,
+   0.3814
+  ],
+  "crop_page": 96,
+  "r3_raw": "yeares old was Isaac, when the little ones were borne unto him. 27. Who being growne vp, Esau became a man cunning in hunting, & a husband man: but Iacob (c) a plaine man dwelled in tents.:8. Isaac loued Esau; because he did eate of his hunting: and Rebecca loued Iacob.29.& Iacob boyled broth: to whom Esau being come faynt out of the field,",
+  "r3_verse": "Isaac loued Esau; because he did eate of his hunting: and Rebecca loued Iacob.29.&",
+  "arm_conflicts": [
+   "priuate e) Holie | Esau; because",
+   "Iacob. | Iacob.29.&"
+  ],
+  "lexicon_readings": {
+   "3": "becauſe"
+  },
+  "r2_attested": {
+   "2": "Eſau;"
+  },
+  "visual_readings": {
+   "3": "becauſe",
+   "2": "Eſau;"
+  },
+  "new_text": "Iſaac loued Eſau; becauſe he did eate of his hunting: and Rebecca loued Iacob.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p96",
+  "old_text": "ture boyled broth: to whom Eſau being come faynt out ot the field,",
+  "old": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.905,
+   "madueke_b": 0.905
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.3211,
+   0.885,
+   0.3997
+  ],
+  "crop_page": 96,
+  "r3_raw": "who being growne vp, Elia loued a man cunning in hunting; & a husband man: but Iacob (c) a plaine man dwelled intents.: 8. Isaac loued Esau, because he did care of his hunting: and Rebecca loued Iacob.29.& Iacob boyled broth: to whom Esau being come faynt out of the field, 30. said: Giue me of this red broth, because I am exceeding faint. priuate prayer. c) Holie Scripture premonisheth Jacobs sinceritie, lest",
+  "r3_verse": "Iacob boyled broth: to whom Esau being come faynt out of the field,",
+  "arm_conflicts": [
+   "ture | Iacob",
+   "ot | of"
+  ],
+  "new_text": "Iacob boyled broth: to whom Eſau being come faynt out of the field,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p96",
+  "old_text": "sheth : Giue me ot this red broth, becau I am exceedng faint. ſincetitie, cauſe his name was called Edom.",
+  "old": {
+   "s_dismas": 0.8,
+   "odr_com": 0.8,
+   "sabates_a": 0.839,
+   "madueke_b": 0.839
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.3393,
+   0.885,
+   0.4338
+  ],
+  "crop_page": 96,
+  "r3_raw": "Esau; because he did eare of his hunting:and Rebecca loued Iacob.29.& Iacob boyled broth:to whom Esau being come faynt out of the field, 30. said : Giue me of this red broth , because I am exceeding faint. For which cause his name was called Edom. 31. To whom Iacob said : 't Sel me thy first-birth-right. 32. He answered , Loe I dye,",
+  "r3_verse": "said : Giue me of this red broth , because I am exceeding faint. For which cause his name was called Edom.",
+  "arm_conflicts": [
+   "sheth | said",
+   "ot | of",
+   "becau | , because",
+   "exceedng | exceeding",
+   "ſincetitie, | For which"
+  ],
+  "lexicon_readings": {
+   "0": "ſaid",
+   "9": "becauſe"
+  },
+  "visual_readings": {
+   "0": "ſaid",
+   "9": "becauſe"
+  },
+  "new_text": "ſaid : Giue me of this red broth, , becauſe I am exceeding faint. For which cauſe his name was called Edom.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p96",
+  "old_text": "To whom Iacob in the Sel me thy firſt.birtheright.",
+  "old": {
+   "s_dismas": 0.854,
+   "odr_com": 0.854,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.3692,
+   0.885,
+   0.4548
+  ],
+  "crop_page": 96,
+  "r3_raw": "Jacob boiled broth: to whom Elau being come raynt out of the field, 30. said: Giue me of this red broth, because I am exceeding faint. For which cause his name was called Edom. 31. To whom Jacob said: \"Sel me thy first-birth-right. 32. He answered, Loe I dye, what wil the first-birth-right auaile me? 33. Jacob said: Sweare ther-",
+  "r3_verse": "To whom Jacob said: \"Sel me thy first-birth-right.",
+  "arm_conflicts": [
+   "Iacob in the Sel | Jacob said: \"Sel",
+   "firſt.birtheright. | first-birth-right."
+  ],
+  "lexicon_readings": {
+   "3": "ſaid:"
+  },
+  "r2_attested": {
+   "7": "firſt-birth-right."
+  },
+  "visual_readings": {
+   "3": "ſaid:",
+   "7": "firſt-birth-right."
+  },
+  "new_text": "To whom Iacob ſaid: Sel me thy firſt-birth-right.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p96",
+  "old_text": "He anſwered, Loe I dye, rics he might following the firſt.bitth.right auaile me",
+  "old": {
+   "s_dismas": 0.72,
+   "odr_com": 0.72,
+   "sabates_a": 0.75,
+   "madueke_b": 0.75
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.155,
+   0.385,
+   0.885,
+   0.4699
+  ],
+  "crop_page": 96,
+  "r3_raw": "30. laid: Give me of this red broth, because I am exceeding faint. For which cause his name was called Edom. 31. To whom Jacob said: 'Sel me thy first-birth-right. 32. He answered, Loe I dye, what wilt the first-birth-right availe me? 33. Jacob said: Sweare therefore to me. Esau sweared to him, and sold his first-birth-right. 34. And",
+  "r3_verse": "He answered, Loe I dye, what wilt the first-birth-right availe me?",
+  "arm_conflicts": [
+   "rics he might following | what wilt",
+   "firſt.bitth.right auaile me | first-birth-right availe me?"
+  ],
+  "r2_attested": {
+   "8": "firſt-birth-right"
+  },
+  "visual_readings": {
+   "8": "firſt-birth-right"
+  },
+  "new_text": "He anſwered, Loe I dye, what wilt the firſt-birth-right auaile me",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p96",
+  "old_text": "Iacob ſaid: Sweare ther ſuſpected me. Eſau ſware to him, and ſold his firſt.birtheright.",
+  "old": {
+   "s_dismas": 0.879,
+   "odr_com": 0.879,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.411,
+   0.885,
+   0.4886
+  ],
+  "crop_page": 96,
+  "r3_raw": "said: 'Sel me thy first-birth-right. 32. He answered, Loe I dye, what wilt the first-birth-right auaile me? 33. Jacob said: Sweare therefore to me. Esau sware to him, and sold his first-birth-right. 34. And so taking bread and the rice broth, did eate, and drinke, and went his",
+  "r3_verse": "Jacob said: Sweare therefore to me. Esau sware to him, and sold his first-birth-right.",
+  "arm_conflicts": [
+   "Iacob | Jacob",
+   "ther ſuſpected | therefore to",
+   "firſt.birtheright. | first-birth-right."
+  ],
+  "r2_attested": {
+   "13": "firſt-birth-right."
+  },
+  "visual_readings": {
+   "13": "firſt-birth-right."
+  },
+  "new_text": "Iacob ſaid: Sweare therefore to me. Eſau ſware to him, and ſold his firſt-birth-right.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.975,
+   "odr_com": 0.975,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p96",
+  "old_text": "And falſe bread and the rice broth, did eate, and dtinke, and went his Aug. litle eſteemiug that he had ſold his firit.",
+  "old": {
+   "s_dismas": 0.801,
+   "odr_com": 0.801,
+   "sabates_a": 0.797,
+   "madueke_b": 0.797
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.4275,
+   0.885,
+   0.5247
+  ],
+  "crop_page": 96,
+  "r3_raw": "what will the first-birth-right availe me? 33. Jacob said: Swear therefore to me. Esau swore to him, and sold his first-birth-right. 34. And so taking bread and the rice broth, did eat, and drinke, and went his way; little esteeming that he had sold his first-birth-right.",
+  "r3_verse": "And so taking bread and the rice broth, did eat, and drinke, and went his way; little esteeming that he had sold his first-birth-right.",
+  "arm_conflicts": [
+   "falſe | so taking",
+   "eate, | eat,",
+   "dtinke, | drinke,",
+   "Aug. litle eſteemiug | way; little esteeming",
+   "firit. | first-birth-right."
+  ],
+  "r2_attested": {
+   "1": "ſo",
+   "17": "eſteeming",
+   "23": "firſt-birth-right."
+  },
+  "visual_readings": {
+   "1": "ſo",
+   "17": "eſteeming",
+   "23": "firſt-birth-right."
+  },
+  "new_text": "And ſo taking bread and the rice broth, did eate, and drinke, and went his way; litle eſteeming that he had ſold his firſt-birth-right.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

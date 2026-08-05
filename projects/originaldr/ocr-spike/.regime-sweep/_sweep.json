@@ -1,0 +1,569 @@
+[
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot1",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 48,
+    "runs": {
+      "marginal-note": 7,
+      "running-head": 1,
+      "verse-continuation": 4,
+      "verse": 15,
+      "annotation": 9,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot1",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 39,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 11,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot1",
+    "page": 700,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 41,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 1,
+      "verse": 12,
+      "marginal-note": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot2",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 0.875,
+    "n_body": 50,
+    "runs": {
+      "running-head": 1,
+      "verse": 8,
+      "annotation": 9,
+      "treatise": 2,
+      "verse-continuation": 2,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot2",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 42,
+    "runs": {
+      "marginal-note": 4,
+      "running-head": 1,
+      "verse": 18,
+      "verse-continuation": 5,
+      "heading": 1,
+      "annotation": 2,
+      "treatise": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "archive-holiebible-ot2",
+    "page": 700,
+    "regime": "no-scripture",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 51,
+    "runs": {
+      "marginal-note": 2,
+      "running-head": 1,
+      "verse-continuation": 2,
+      "annotation": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-nt-1582",
+    "page": 120,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 49,
+    "runs": {
+      "running-head": 2,
+      "marginal-note": 2,
+      "verse": 3,
+      "annotation": 2,
+      "verse-continuation": 2,
+      "heading": 1,
+      "treatise": 3,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-nt-1582",
+    "page": 400,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 61,
+    "runs": {
+      "marginal-note": 6,
+      "running-head": 1,
+      "verse-continuation": 7,
+      "annotation": 5,
+      "treatise": 4,
+      "verse": 2,
+      "heading": 1,
+      "catchword": 2
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-nt-1582",
+    "page": 700,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 51,
+    "runs": {
+      "running-head": 2,
+      "marginal-note": 10,
+      "annotation": 9,
+      "verse-continuation": 10,
+      "verse": 3,
+      "catchword": 2,
+      "treatise": 3
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot1-1609",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 38,
+    "runs": {
+      "marginal-note": 1,
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 11,
+      "treatise": 1,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot1-1609",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 40,
+    "runs": {
+      "marginal-note": 9,
+      "running-head": 1,
+      "verse": 16,
+      "annotation": 5,
+      "verse-continuation": 5,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot1-1609",
+    "page": 700,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 41,
+    "runs": {
+      "running-head": 2,
+      "annotation": 19,
+      "marginal-note": 6,
+      "verse": 19,
+      "verse-continuation": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot2-1610",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 46,
+    "runs": {
+      "running-head": 1,
+      "verse": 12,
+      "annotation": 11,
+      "marginal-note": 2,
+      "verse-continuation": 2,
+      "treatise": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot2-1610",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 45,
+    "runs": {
+      "marginal-note": 8,
+      "running-head": 1,
+      "verse": 22,
+      "annotation": 4,
+      "verse-continuation": 5,
+      "stanza-heading": 1,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S1",
+    "ocr_dir": "archive-ot2-1610",
+    "page": 700,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 43,
+    "runs": {
+      "marginal-note": 4,
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 17,
+      "annotation": 2,
+      "treatise": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S4",
+    "ocr_dir": "jp2-S04",
+    "page": 120,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 60,
+    "runs": {
+      "annotation": 4,
+      "marginal-note": 8,
+      "treatise": 2,
+      "running-head": 1,
+      "verse-continuation": 5,
+      "verse": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S4",
+    "ocr_dir": "jp2-S04",
+    "page": 400,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 53,
+    "runs": {
+      "annotation": 2,
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 3,
+      "marginal-note": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S4",
+    "ocr_dir": "jp2-S04",
+    "page": 700,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 64,
+    "runs": {
+      "running-head": 2,
+      "treatise": 2,
+      "marginal-note": 3,
+      "annotation": 1,
+      "verse": 4,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S6",
+    "ocr_dir": "jp2-S06",
+    "page": 120,
+    "regime": "unmatched",
+    "self_labelling": false,
+    "conf": 0.0,
+    "n_body": 58,
+    "runs": {
+      "running-head": 1,
+      "heading": 1,
+      "annotation": 2,
+      "verse-continuation": 7,
+      "treatise": 2,
+      "marginal-note": 3,
+      "verse": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S6",
+    "ocr_dir": "jp2-S06",
+    "page": 400,
+    "regime": "no-scripture",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 48,
+    "runs": {
+      "running-head": 1,
+      "heading": 1,
+      "verse-continuation": 8,
+      "treatise": 1,
+      "marginal-note": 6,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S6",
+    "ocr_dir": "jp2-S06",
+    "page": 700,
+    "regime": "nt-numeral",
+    "self_labelling": true,
+    "conf": 1.0,
+    "n_body": 43,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 5,
+      "marginal-note": 4,
+      "verse": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S8",
+    "ocr_dir": "jp2-S08",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 0.957,
+    "n_body": 59,
+    "runs": {
+      "running-head": 2,
+      "marginal-note": 1,
+      "treatise": 3,
+      "verse-continuation": 2,
+      "verse": 23
+    }
+  },
+  {
+    "src": "S8",
+    "ocr_dir": "jp2-S08",
+    "page": 400,
+    "regime": "unmatched",
+    "self_labelling": false,
+    "conf": 0.0,
+    "n_body": 24,
+    "runs": {
+      "running-head": 1,
+      "verse": 1
+    }
+  },
+  {
+    "src": "S8",
+    "ocr_dir": "jp2-S08",
+    "page": 700,
+    "regime": "no-scripture",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 33,
+    "runs": {
+      "running-head": 2,
+      "treatise": 2,
+      "annotation": 1,
+      "verse-continuation": 4,
+      "marginal-note": 2
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03a",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 41,
+    "runs": {
+      "running-head": 1,
+      "verse": 20,
+      "marginal-note": 5,
+      "verse-continuation": 3,
+      "annotation": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03a",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 41,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 19,
+      "marginal-note": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03a",
+    "page": 700,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 41,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 1,
+      "verse": 13,
+      "marginal-note": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03b",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 46,
+    "runs": {
+      "running-head": 1,
+      "verse": 10,
+      "annotation": 10,
+      "marginal-note": 3,
+      "heading": 1,
+      "verse-continuation": 2,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03b",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 39,
+    "runs": {
+      "marginal-note": 3,
+      "running-head": 1,
+      "verse-continuation": 3,
+      "verse": 19,
+      "annotation": 1,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S3",
+    "ocr_dir": "pdf-S03b",
+    "page": 700,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 40,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 2,
+      "verse": 13,
+      "annotation": 2,
+      "marginal-note": 2,
+      "heading": 1,
+      "catchword": 1
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "pdf-S09nt",
+    "page": 120,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 0.864,
+    "n_body": 55,
+    "runs": {
+      "annotation": 4,
+      "running-head": 1,
+      "verse": 22,
+      "verse-continuation": 6,
+      "marginal-note": 8
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "pdf-S09nt",
+    "page": 400,
+    "regime": "ot-dagger",
+    "self_labelling": false,
+    "conf": 1.0,
+    "n_body": 54,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 3,
+      "verse": 18,
+      "annotation": 8,
+      "marginal-note": 2
+    }
+  },
+  {
+    "src": "S9",
+    "ocr_dir": "pdf-S09nt",
+    "page": 700,
+    "regime": "unmatched",
+    "self_labelling": false,
+    "conf": 0.0,
+    "n_body": 68,
+    "runs": {
+      "running-head": 1,
+      "verse-continuation": 6,
+      "annotation": 5,
+      "marginal-note": 4,
+      "verse": 1,
+      "treatise": 2
+    }
+  }
+]

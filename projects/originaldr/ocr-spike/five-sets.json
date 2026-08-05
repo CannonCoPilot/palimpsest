@@ -1,0 +1,185 @@
+{
+ "S1 modern<0.2": {
+  "records": 1596,
+  "loci": 1047,
+  "by_source": {
+   "S3": 233,
+   "S1": 538,
+   "S9": 378,
+   "S6": 209,
+   "S8": 163,
+   "S4": 75
+  },
+  "by_book": {
+   "psalms": 717,
+   "genesis": 296,
+   "matthew": 220,
+   "john": 247,
+   "apocalypse": 116
+  },
+  "ref_kinds": {
+   "this verse (agrees with modern)": 920,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 117,
+   "OVERLONG (several verses merged)": 8,
+   "absent (no entry)": 2
+  },
+  "floor_modern_mean": 0.9057,
+  "archaic_withdrawn": 123,
+  "top_cells": {
+   "S1/psalms": 254,
+   "S6/psalms": 167,
+   "S9/psalms": 149,
+   "S3/psalms": 147,
+   "S1/matthew": 95,
+   "S1/genesis": 93,
+   "S3/genesis": 86,
+   "S8/john": 81,
+   "S9/genesis": 75,
+   "S1/john": 71
+  }
+ },
+ "S2 archaic<0.2": {
+  "records": 3263,
+  "loci": 1437,
+  "by_source": {
+   "S1": 938,
+   "S3": 539,
+   "S6": 539,
+   "S9": 786,
+   "S8": 272,
+   "S4": 189
+  },
+  "by_book": {
+   "psalms": 1781,
+   "genesis": 465,
+   "matthew": 380,
+   "john": 506,
+   "apocalypse": 131
+  },
+  "ref_kinds": {
+   "this verse (agrees with modern)": 903,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 481,
+   "OVERLONG (several verses merged)": 46,
+   "FRAGMENT (far shorter than the verse)": 7
+  },
+  "floor_modern_mean": 0.6714,
+  "archaic_withdrawn": 1694,
+  "top_cells": {
+   "S1/psalms": 513,
+   "S6/psalms": 448,
+   "S3/psalms": 413,
+   "S9/psalms": 407,
+   "S8/john": 145,
+   "S1/genesis": 135,
+   "S9/john": 135,
+   "S1/john": 134,
+   "S1/matthew": 127,
+   "S3/genesis": 126
+  }
+ },
+ "S3 modern<0.2 AND archaic<0.2": {
+  "records": 1497,
+  "loci": 996,
+  "by_source": {
+   "S3": 216,
+   "S1": 504,
+   "S9": 352,
+   "S6": 199,
+   "S8": 154,
+   "S4": 72
+  },
+  "by_book": {
+   "psalms": 658,
+   "genesis": 281,
+   "matthew": 213,
+   "john": 234,
+   "apocalypse": 111
+  },
+  "ref_kinds": {
+   "this verse (agrees with modern)": 883,
+   "DIFFERENT TEXT (length plausible, content disagrees)": 105,
+   "OVERLONG (several verses merged)": 8
+  },
+  "floor_modern_mean": 0.9058,
+  "archaic_withdrawn": 120,
+  "top_cells": {
+   "S1/psalms": 230,
+   "S6/psalms": 157,
+   "S9/psalms": 136,
+   "S3/psalms": 135,
+   "S1/matthew": 93,
+   "S1/genesis": 89,
+   "S3/genesis": 81,
+   "S8/john": 77,
+   "S9/genesis": 69,
+   "S1/john": 68
+  }
+ },
+ "S4 modern>0.9 AND archaic<0.8": {
+  "records": 1124,
+  "loci": 404,
+  "by_source": {
+   "S6": 238,
+   "S1": 214,
+   "S3": 203,
+   "S9": 297,
+   "S8": 81,
+   "S4": 91
+  },
+  "by_book": {
+   "psalms": 657,
+   "genesis": 144,
+   "matthew": 129,
+   "john": 184,
+   "apocalypse": 10
+  },
+  "ref_kinds": {
+   "DIFFERENT TEXT (length plausible, content disagrees)": 364,
+   "OVERLONG (several verses merged)": 35,
+   "FRAGMENT (far shorter than the verse)": 5
+  },
+  "floor_modern_mean": 0.1128,
+  "archaic_withdrawn": 988,
+  "top_cells": {
+   "S6/psalms": 193,
+   "S9/psalms": 179,
+   "S3/psalms": 168,
+   "S1/psalms": 117,
+   "S4/john": 53,
+   "S6/genesis": 45,
+   "S9/john": 45,
+   "S1/john": 43,
+   "S8/john": 43,
+   "S9/matthew": 37
+  }
+ },
+ "S5 archaic>0.9 AND modern<0.8": {
+  "records": 32,
+  "loci": 15,
+  "by_source": {
+   "S3": 8,
+   "S1": 7,
+   "S6": 7,
+   "S9": 10
+  },
+  "by_book": {
+   "psalms": 28,
+   "genesis": 3,
+   "matthew": 1
+  },
+  "ref_kinds": {
+   "DIFFERENT TEXT (length plausible, content disagrees)": 15
+  },
+  "floor_modern_mean": 0.7964,
+  "archaic_withdrawn": 0,
+  "top_cells": {
+   "S9/psalms": 9,
+   "S3/psalms": 7,
+   "S6/psalms": 7,
+   "S1/psalms": 5,
+   "S1/genesis": 2,
+   "S3/genesis": 1,
+   "S9/matthew": 1
+  }
+ }
+}

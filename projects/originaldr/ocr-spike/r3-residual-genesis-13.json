@@ -1,0 +1,1382 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "to BRAM therfore aſcended out of Egypt, he and his Awife, and al that he had, and Lot with him to the ſouth coaſt.",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.08,
+   0.7819,
+   0.875,
+   0.9139
+  ],
+  "crop_page": 72,
+  "r3_raw": "leth in Chanaan. 14. where againe God promiseth him that land, and multiplication of his seede. 18. And he erected an other Altar to God. A BRAM therefore ascended out of Ægypt, he and his wife, and al that he had, and Lot with him to the south coast,",
+  "r3_verse": "leth in Chanaan. where againe God promiseth him that land, and multiplication of his seede. And he erected an other Altar to God. A BRAM therefore ascended out of Ægypt, he and his wife, and al that he had, and Lot with him to the south coast,",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Egypt, | Ægypt,",
+   "Awife, | wife,"
+  ],
+  "r2_attested": {
+   "6": "promiſeth",
+   "14": "ſeede."
+  },
+  "visual_readings": {
+   "6": "promiſeth",
+   "14": "ſeede."
+  },
+  "new_text": "leth in Chanaan. where againe God promiſeth him that land, and multiplication of his ſeede. And he erected an other Altar to God. A BRAM therefore aſcended out of Ægypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+  "s_unresolved": [
+   "therefore",
+   "wife,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 15,
+  "from": "p73",
+  "old_text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.6868,
+   0.875,
+   0.775
+  ],
+  "crop_page": 73,
+  "r3_raw": "place, wherin thou now art, to the north and south, to the east and west. † Al the land, which thou seest, wil I geue :: Notr 15 dren of thee, &c to thy seed for euer. † And I wil make:: thy ſeede Aesh bu as the dust of the earth: if any man be able to number the children",
+  "r3_verse": "Al the land, which thou seest, wil I geue :: Notr dren of thee, &c to thy seed for euer.",
+  "arm_conflicts": [
+   "to | :: Notr dren of",
+   "& | &c"
+  ],
+  "new_text": "Al the land, which thou ſeeſt, wil I geue :: Notr dren of thee, &c to thy ſeed for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.85,
+   "odr_com": 0.85,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 11,
+  "from": "p77",
+  "old_text": "And Lot choſe vnto him the countrie about Iordaine, and he defrom the Eaſt : and they were ſeperated either brother from the other.",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.948,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.08,
+   0.481,
+   0.875,
+   0.6094
+  ],
+  "crop_page": 77,
+  "r3_raw": "our Lord subuerted Sodome and Gomorre, as the paradise of our Lord, and like as Ægypt as men come vnto Segor. † And Lot chose vnto him the countrie about Iordaine, and he departed from the East: and they were seperated either brother from the other. † Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and",
+  "r3_verse": "And Lot chose vnto him the countrie about Iordaine, and he departed from the East: and they were seperated either brother from the other.",
+  "arm_conflicts": [
+   "defrom | departed from"
+  ],
+  "lexicon_readings": {
+   "12": "from"
+  },
+  "visual_readings": {
+   "12": "from"
+  },
+  "new_text": "And Lot choſe vnto him the countrie about Iordaine, and he departed from the Eaſt and they were ſeperated either brother from the other.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.984,
+   "madueke_b": 0.984
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 12,
+  "from": "p77",
+  "old_text": "Abram dwelt in the land of Chanaan: Lot abode in the townes, that were about Iordaine, and in Sodome.",
+  "old": {
+   "s_dismas": 0.906,
+   "odr_com": 0.906,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.08,
+   0.543,
+   0.875,
+   0.6494
+  ],
+  "crop_page": 77,
+  "r3_raw": "parted from the East: and they were seperated either brother from the other. † Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome. † And the men of Sodome were verie wicked, and sinners before the face of our Lord out of mea-",
+  "r3_verse": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+  "arm_conflicts": [],
+  "new_text": "Abram dwelt in the land of Chanaan: and Lot abode in the townes, that were about Iordaine, and dwelt in Sodome.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 14,
+  "from": "p77",
+  "old_text": "And our Lord ſaid to Abram, after that Lot was ſefrom him : Lyft vp thyn eyes, and looke from the wherin thou nowart, to the north and ſouth, to the :: eaſt and weſt.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.6275,
+   0.875,
+   0.757
+  ],
+  "crop_page": 77,
+  "r3_raw": "wicked, and sinners before the face of our Lord out of measure. † And our Lord said to Abram, after that Lot was separated from him: Lyft vp thyn eyes, and looke from the place, wherin thou now art, to the north and south, to the east and west. † Al the land, which thou seest, wil I geue to thee, & to thy seed for euer. † And I will make: thy feede",
+  "r3_verse": "And our Lord said to Abram, after that Lot was separated from him: Lyft vp thyn eyes, and looke from the place, wherin thou now art, to the north and south, to the east and west.",
+  "arm_conflicts": [
+   "ſefrom | separated from",
+   "nowart, | now art,"
+  ],
+  "lexicon_readings": {
+   "11": "from"
+  },
+  "visual_readings": {
+   "11": "from"
+  },
+  "new_text": "And our Lord ſaid to Abram, after that Lot was separated from him Lyft vp thyn eyes, and looke from the place, wherin thou now art, to the north and ſouth, to the eaſt and weſt.",
+  "s_unresolved": [
+   "separated"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 15,
+  "from": "p77",
+  "old_text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+  "old": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.6899,
+   0.875,
+   0.7784
+  ],
+  "crop_page": 77,
+  "r3_raw": "place, wherin thou now art, to the north and south, to the east and west. † Al the land, which thou seest, wil I geue to thee, & to thy seed for euer. † And I will make: thy feede as the dust of the earth: if any man be able to number the",
+  "r3_verse": "Al the land, which thou seest, wil I geue to thee, & to thy seed for euer.",
+  "arm_conflicts": [],
+  "new_text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 16,
+  "from": "p77",
+  "old_text": "And I wil make :: thy ſeede the duſt of the earth: if any man be able to number the of the earth, thy ſeede alſo ſhal he be able to number,",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.937,
+   "madueke_b": 0.937
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.7107,
+   0.875,
+   0.82
+  ],
+  "crop_page": 77,
+  "r3_raw": "15 east and west. † Al the land, which thou seest, wil I geue to thee, & to thy seed for euer. † And I will make: thy feede as the dust of the earth: if any man be able to number the dust of the earth, thy feede also ſhal he be able to number. 17 † Arife and walke through the land in the length, and in",
+  "r3_verse": "And I will make: thy feede as the dust of the earth: if any man be able to number the dust of the earth, thy feede also ſhal he be able to number. Arife",
+  "arm_conflicts": [
+   "wil | will",
+   "ſeede | feede as",
+   "ſeede | feede"
+  ],
+  "r2_attested": {
+   "20": "duſt"
+  },
+  "visual_readings": {
+   "20": "duſt"
+  },
+  "new_text": "And I wil make thy feede as the duſt of the earth: if any man be able to number the duſt of the earth, thy feede alſo ſhal he be able to number, Arife",
+  "s_unresolved": [
+   "feede",
+   "feede",
+   "Arife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p77",
+  "old_text": "Ariſe and walke through the land in the length, and in breath therof : for I wil geue it to thee.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.959,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7721,
+   0.875,
+   0.8619
+  ],
+  "crop_page": 77,
+  "r3_raw": "dust of the earth, thy seede also shal he be able to number. 17 † Arise and walke through the land in the length, and in 18 the breath therof: for I wil geue it to thee. † Abram therefore remouing his tent, came, and dwelt beside the vale of",
+  "r3_verse": "Arise and walke through the land in the length, and in the breath therof: for I wil geue it to thee.",
+  "arm_conflicts": [],
+  "new_text": "Ariſe and walke through the land in the length, and in the breath therof for I wil geue it to thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 1.0,
+   "sabates_a": 0.967,
+   "madueke_b": 0.967
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p77",
+  "old_text": "Abram therremouing his tent, came, and dwelt beſide the vale of which is in Hebron : and he builded there an altar our Lord.",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7945,
+   0.875,
+   0.9382
+  ],
+  "crop_page": 77,
+  "r3_raw": "17 † Arise and walke through the land in the length, and in 18 the breath therof: for I wil geue it to thee. † Abram therefore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar unto our Lord.",
+  "r3_verse": "Abram therefore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar unto our Lord.",
+  "arm_conflicts": [
+   "therremouing | therefore remouing"
+  ],
+  "new_text": "Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron and he builded there an altar unto our Lord.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "to BRAM therfore aſcended out of gypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+  "old": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.08,
+   0.7767,
+   0.875,
+   0.9136
+  ],
+  "crop_page": 82,
+  "r3_raw": "themselves, 10, Lot choosing the southerne doon to Sodome and Gomorrah leeth in Chanaan. 14. where againe God promiseth him that land, and multiplication of his seede. 18. And he erected an other Altar to God. A BRAM therefore ascended out of Ægypt, he and his wife, and al that he had, and Lot with him to the south coast.",
+  "r3_verse": "themselves, Lot choosing the southerne doon to Sodome and Gomorrah leeth in Chanaan. where againe God promiseth him that land, and multiplication of his seede. And he erected an other Altar to God. A BRAM therefore ascended out of Ægypt, he and his wife, and al that he had, and Lot with him to the south coast.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "gypt, | Ægypt,"
+  ],
+  "r2_attested": {
+   "2": "chooſing",
+   "16": "promiſeth",
+   "24": "ſeede."
+  },
+  "visual_readings": {
+   "2": "chooſing",
+   "16": "promiſeth",
+   "24": "ſeede."
+  },
+  "new_text": "themselves, Lot chooſing the southerne doon to Sodome and Gomorrah leeth in Chanaan. where againe God promiſeth him that land, and multiplication of his ſeede. And he erected an other Altar to God. A BRAM therefore aſcended out of Ægypt, he and his wife, and al that he had, and Lot with him to the ſouth coaſt.",
+  "s_unresolved": [
+   "themselves,",
+   "southerne",
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 8,
+  "from": "p83",
+  "old_text": "Abram therfore ſaid to Lot : Let there be no brawle I beſeech thee betwen me ahd thee, and ſame betwen my heardſmen, and thy heardſmen: for we be :: bre- as thren.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.2743,
+   0.875,
+   0.4023
+  ],
+  "crop_page": 83,
+  "r3_raw": "of Lot. And that time the Chananite and the Pherisite dwelled in that countrie. † Abram therefore said to Lot: Let there be no brawle I beseech thee between me and thee, and between my heardsmen, and thy heardsmen: for we be :: brethren. † Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil",
+  "r3_verse": "Abram therefore said to Lot: Let there be no brawle I beseech thee between me and thee, and between my heardsmen, and thy heardsmen: for we be :: brethren.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "betwen | between",
+   "ahd | and",
+   "ſame betwen | between",
+   "bre- as thren. | brethren."
+  ],
+  "new_text": "Abram therefore ſaid to Lot Let there be no brawle I beſeech thee betwen me and thee, and betwen my heardſmen, and thy heardſmen: for we be :: brethren.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 9,
+  "from": "p83",
+  "old_text": "Behold the whole land is before thee : goe aparte and from me, I pray thee : if thou wilt goe to the left hand, I wil on nes: take the right : if thou chooſe the right hand, I wil paſſe to the left.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.935,
+   "madueke_b": 0.935
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.08,
+   0.3359,
+   0.875,
+   0.4605
+  ],
+  "crop_page": 83,
+  "r3_raw": "between my heardsmen, and thy heardsmen: for we be :: brethren. † Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I wil passe to the left. † Lot therfore lifting vp his eyes, sawe al the countrie a-",
+  "r3_verse": "Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I wil passe to the left.",
+  "arm_conflicts": [
+   "aparte and | apart"
+  ],
+  "new_text": "Behold the whole land is before thee goe aparte from me, I pray thee if thou wilt goe to the left hand, I wil take the right if thou chooſe the right hand, I wil paſſe to the left.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 15,
+  "from": "p83",
+  "old_text": "Al the land, which thou ſeeſt, wil I geue dren to thee, & to thy ſeed for euer.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.853,
+   "madueke_b": 0.853
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.6777,
+   0.875,
+   0.7625
+  ],
+  "crop_page": 83,
+  "r3_raw": "place, wherin thou now art, to the north and south, to the east and west. † Al the land, which thou seest, wil I geue to thee, & to thy seed for euer. † And I wil make: thy seede as the dust of the earth: if any man be able to number the children",
+  "r3_verse": "Al the land, which thou seest, wil I geue to thee, & to thy seed for euer.",
+  "arm_conflicts": [],
+  "new_text": "Al the land, which thou ſeeſt, wil I geue to thee, & to thy ſeed for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p83",
+  "old_text": "Abram ther- are fore remouing his tent, came, and dwelt beſide the vale of ble. Mambre, which is in Hebron : and he builded there an altar to our Lord",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.7793,
+   0.875,
+   0.9183
+  ],
+  "crop_page": 83,
+  "r3_raw": "17 † Arise and walke through the land in the length, and in the breadth therof: for I wil geue it to thee. † Abram therefore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord. G; CHAP",
+  "r3_verse": "Abram therefore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord. G; CHAP",
+  "arm_conflicts": [
+   "ther- are fore | therefore"
+  ],
+  "new_text": "Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron and he builded there an altar to our Lord G; CHAP",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p67",
+  "old_text": "God. BRAM therfore aſcended out of Egypt, he and his wife, and al that he had, and Lot with him to the ſouth dhewasvety",
+  "old": {
+   "s_dismas": 0.896,
+   "odr_com": 0.896,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   1
+  ],
+  "crop": [
+   0.155,
+   0.7004,
+   0.885,
+   0.8409
+  ],
+  "crop_page": 67,
+  "r3_raw": "Cham. 14. Where against God promiseth him that land, and multiplication of his seed. 18. And he erected another Altar to God. BRAM therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast. 2. And he was very rich in possession of gold and silver. 3. And he returned by the way that he came, from",
+  "r3_verse": "Cham. Where against God promiseth him that land, and multiplication of his seed. And he erected another Altar to God. BRAM therefore ascended out of Ægypt, he and his wife, and all that he had, and Lot with him to the south coast.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Egypt, | Ægypt,",
+   "al | all",
+   "dhewasvety | coast."
+  ],
+  "lexicon_readings": {
+   "2": "againſt"
+  },
+  "visual_readings": {
+   "2": "againſt"
+  },
+  "new_text": "Cham. Where againſt God promiseth him that land, and multiplication of his seed. And he erected another Altar to God. BRAM therefore aſcended out of Ægypt, he and his wife, and al that he had, and Lot with him to the ſouth coast.",
+  "s_unresolved": [
+   "promiseth",
+   "seed.",
+   "therefore",
+   "coast."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 2,
+  "from": "p67",
+  "old_text": "ſiluer..",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   2,
+   3
+  ],
+  "crop": [
+   0.155,
+   0.7977,
+   0.885,
+   0.856
+  ],
+  "crop_page": 67,
+  "r3_raw": "coast. 2. And he was very rich in possession of gold and silver. 3. And he returned by the way that he came, from the south vnto Bethel, euien to the piacc where before he beſeech'd the ſonne.",
+  "r3_verse": "And he was very rich in possession of gold and silver.",
+  "arm_conflicts": [
+   "ſiluer.. | And he was very rich in possession of gold and silver."
+  ],
+  "new_text": "And he was very rich in possession of gold and ſiluer..",
+  "s_unresolved": [
+   "possession"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 5,
+  "from": "p68",
+  "old_text": "Lot alſo that was with Abram had flocks ot ſheep, and of prethren Foure of beaſts, and tents.",
+  "old": {
+   "s_dismas": 0.767,
+   "odr_com": 0.767,
+   "sabates_a": 0.784,
+   "madueke_b": 0.784
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.0959,
+   0.885,
+   0.183
+  ],
+  "crop_page": 68,
+  "r3_raw": "5. But Lot also that was with Abram had flocks of sheep, and heards of beasts, and tents. 6. Neyther was the land able to receive them for to dwel together: for their substance was much, and they could not dwell together. 7. Whereupon also there arose strife among",
+  "r3_verse": "But Lot also that was with Abram had flocks of sheep, and heards of beasts, and tents.",
+  "arm_conflicts": [
+   "ot | of",
+   "of prethren Foure | heards"
+  ],
+  "new_text": "But Lot alſo that was with Abram had flocks of ſheep, and heards of beaſts, and tents.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p68",
+  "old_text": "Neyther was the land able to receiue iin holy for to dwel together : for their ſubſtance was much, and they german not dwel together.7.",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.1142,
+   0.885,
+   0.2121
+  ],
+  "crop_page": 68,
+  "r3_raw": "5. But Lot also that was with Abram had flocks of sheep, and heards of beasts, and tents. 6. Neyther was the land able to receive them for to dwel together: for their substance was much, and they could not dwell together. 7. Wherupon also there arose strife amongst the heardsmen of Abram and of Lot. And that time the Chananite",
+  "r3_verse": "Neyther was the land able to receive them for to dwel together: for their substance was much, and they could not dwell together. Wherupon",
+  "arm_conflicts": [
+   "receiue iin holy | receive them",
+   "german | could",
+   "dwel together.7. | dwell together. Wherupon"
+  ],
+  "new_text": "Neyther was the land able to receiue them for to dwel together for their ſubſtance was much, and they could not dwel together.7. Wherupon",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 7,
+  "from": "p68",
+  "old_text": "Wherupon alſo there aroſe ſtrite amongſt thets, as of Abram and of Lot. And that time the Chananite iand Hſau: Pheriſite dwelled in that countrie.",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.155,
+   0.1532,
+   0.885,
+   0.2476
+  ],
+  "crop_page": 68,
+  "r3_raw": "them for to dwel together: for their substance was much, and they could not dwel together. 7. Wherupon also there arose strife amongst the heardsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that countrie. 8. Abram therefore said to Lot: Let there be no brawle, I beseech thee, between me and thee,",
+  "r3_verse": "Wherupon also there arose strife amongst the heardsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that countrie.",
+  "arm_conflicts": [
+   "ſtrite | strife",
+   "thets, as | the heardsmen",
+   "iand Hſau: | and the"
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "7": "heardſmen"
+  },
+  "visual_readings": {
+   "7": "heardſmen"
+  },
+  "new_text": "Wherupon alſo there aroſe strife amongſt the heardſmen of Abram and of Lot. And that time the Chananite and the Pheriſite dwelled in that countrie.",
+  "s_unresolved": [
+   "strife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p68",
+  "old_text": "Abram therfore ſaid to kindted, Let there be no brawle, I beſeech thee, between me and thee, braham Lot: of my heardſmen, and thy heardſmen : for we be () breſame .",
+  "old": {
+   "s_dismas": 0.861,
+   "odr_com": 0.861,
+   "sabates_a": 0.827,
+   "madueke_b": 0.827
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.183,
+   0.885,
+   0.2971
+  ],
+  "crop_page": 68,
+  "r3_raw": "could not dwerte together. 7. Whereupon all there afore strife amongst the heardsmen of Abram and of Lot. And that time the Chananite and the Pherisite dwelled in that countrie. 8. Abram therefore said to Lot: Let there be no brawle, I beseech thee, between me and thee, and between my heardsmen, and thy heardsmen: for we be (4) brethren. 9. Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if",
+  "r3_verse": "Abram therefore said to Lot: Let there be no brawle, I beseech thee, between me and thee, and between my heardsmen, and thy heardsmen: for we be (4) brethren.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "kindted, | Lot:",
+   "braham Lot: of | and between",
+   "() breſame . | (4) brethren."
+  ],
+  "new_text": "Abram therefore ſaid to Lot: Let there be no brawle, I beſeech thee, between me and thee, and between my heardſmen, and thy heardſmen for we be (4) brethren.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p68",
+  "old_text": "Behold the whole land is before thee : goe apart from me, las the thee: if thou wilt goe to the left hand, I wil take the tight:aitane chooſe the right hand, I wil paſſe to the left.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.2392,
+   0.885,
+   0.3319
+  ],
+  "crop_page": 68,
+  "r3_raw": "and between my heardsmen, and thy heardsmen: for we be (4) brethren. 9. Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I will passe to the left. 10. Lot therefore lifting vp his eyes, saw al the countrie about Ior-",
+  "r3_verse": "Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I will passe to the left.",
+  "arm_conflicts": [
+   "las the | I pray",
+   "tight:aitane | right: if thou",
+   "wil | will"
+  ],
+  "new_text": "Behold the whole land is before thee goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou chooſe the right hand, I wil paſſe to the left.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 10,
+  "from": "p68",
+  "old_text": "in Religion therfore lifting vp his eyes, ſaw al the countrie about Ior- al Catholikes. which was watered throughout befote that our Lord ſubuerand Gomorre, as the Paradiſe ot our Lord, and like as as men come vnto Segor.",
+  "old": {
+   "s_dismas": 0.807,
+   "odr_com": 0.807,
+   "sabates_a": 0.795,
+   "madueke_b": 0.795
+  },
+  "neighbours": [
+   9,
+   10,
+   11
+  ],
+  "crop": [
+   0.155,
+   0.2722,
+   0.885,
+   0.4046
+  ],
+  "crop_page": 68,
+  "r3_raw": "Behold the whole land is before thee: goe apart from me, I pray thee: if thou wilt goe to the left hand, I wil take the right: if thou choose the right hand, I will passe to the left. 10. Lot therefore lifting vp his eyes, saw al the countrie about Iordane, which was watered throughout before that our Lord subuerted Sodome and Gomorre, as the Paradise of our Lord, and like as Egypt as men come vnto Segor. 11. And Lot chose vnto him the countrie about Iordane, and he departed from the East: and they were",
+  "r3_verse": "Lot therefore lifting vp his eyes, saw al the countrie about Iordane, which was watered throughout before that our Lord subuerted Sodome and Gomorre, as the Paradise of our Lord, and like as Egypt as men come vnto Segor.",
+  "arm_conflicts": [
+   "in Religion therfore | Lot therefore",
+   "Ior- al Catholikes. | Iordane,",
+   "befote | before",
+   "ſubuerand | subuerted Sodome and",
+   "ot | of"
+  ],
+  "lexicon_readings": {
+   "16": "before"
+  },
+  "visual_readings": {
+   "16": "before"
+  },
+  "new_text": "Lot therefore lifting vp his eyes, ſaw al the countrie about Iordane, which was watered throughout before that our Lord subuerted Sodome and Gomorre, as the Paradiſe of our Lord, and like as Egypt as men come vnto Segor.",
+  "s_unresolved": [
+   "therefore",
+   "subuerted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 11,
+  "from": "p68",
+  "old_text": "And Lot choſe vnto hin the about Iordane, and he departed from the Eaſt: and they wer either brother from the other.",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   10,
+   11,
+   12
+  ],
+  "crop": [
+   0.155,
+   0.3453,
+   0.885,
+   0.4376
+  ],
+  "crop_page": 68,
+  "r3_raw": "ted Sodome and Gomorre, as the Paradise of our Lord, and like as Egypt as men come vnto Segor. 11. And Lot chose vnto him the countrie about Iordane, and he departed from the East: and they were seperated either brother from the other. 12. Abram dwelt in the land of Chanaan: and Lot aboad in the townes that were about Iordane,",
+  "r3_verse": "And Lot chose vnto him the countrie about Iordane, and he departed from the East: and they were seperated either brother from the other.",
+  "arm_conflicts": [
+   "hin | him",
+   "wer | were seperated"
+  ],
+  "r2_attested": {
+   "18": "ſeperated"
+  },
+  "visual_readings": {
+   "18": "ſeperated"
+  },
+  "new_text": "And Lot choſe vnto him the countrie about Iordane, and he departed from the Eaſt: and they wer ſeperated either brother from the other.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 12,
+  "from": "p68",
+  "old_text": "Abtam dwelt in the laud and Lot aboad in the townes that were about Iordane, dwelt in Sodome.",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.816,
+   "madueke_b": 0.816
+  },
+  "neighbours": [
+   11,
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.3815,
+   0.885,
+   0.4738
+  ],
+  "crop_page": 68,
+  "r3_raw": "countrie about Iordane, and he departed from the East: and they were seperated either brother from the other. 12. Abram dwelt in the land of Chanaan: and Lot aboad in the townes that were about Iordane, and dwelt in Sodome. 13. And the men of Sodome were verie wicked, and sinners before the face of our Lord out of measure.",
+  "r3_verse": "Abram dwelt in the land of Chanaan: and Lot aboad in the townes that were about Iordane, and dwelt in Sodome.",
+  "arm_conflicts": [
+   "Abtam | Abram",
+   "laud | land of Chanaan:"
+  ],
+  "new_text": "Abram dwelt in the land of Chanaan: and Lot aboad in the townes that were about Iordane, and dwelt in Sodome.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 13,
+  "from": "p68",
+  "old_text": "And the men ot Sodome were verie and ſinners before the tace of our Lord out ot meaſure.",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   12,
+   13
+  ],
+  "crop": [
+   0.155,
+   0.4141,
+   0.885,
+   0.4914
+  ],
+  "crop_page": 68,
+  "r3_raw": "of Chanaan: and Lot aboad in the townes that were about Iordane, and dwelt in Sodome. 13. And the men of Sodome were verie wicked, and sinners before the face of our Lord out of measure. 14. And our Lord said to Abram, after that Lot was separated from him:",
+  "r3_verse": "And the men of Sodome were verie wicked, and sinners before the face of our Lord out of measure.",
+  "arm_conflicts": [
+   "ot | of",
+   "tace | face",
+   "ot | of"
+  ],
+  "new_text": "And the men of Sodome were verie wicked, and ſinners before the face of our Lord out of meaſure.",
+  "s_unresolved": [
+   "face"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 14,
+  "from": "p68",
+  "old_text": "our Lord ſaid to Abtam, after that Lot was ſeparated trom him: thyne eyes, and looke from the place wnerin thou now art, to and ſouth, to the eaſt and welt.",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   14,
+   15
+  ],
+  "crop": [
+   0.155,
+   0.4486,
+   0.885,
+   0.5448
+  ],
+  "crop_page": 68,
+  "r3_raw": "wicked, and sinners before the face of our Lord out of measure. 14. And our Lord said to Abram, after that Lot was separated from him: Lift vp thyne eyes, and looke from the place wherin thou now art, to the north and south, to the east and west. 15. Al the land which thou feest wil I giue to thee, and to thy seed for euer. 16. And I wil make",
+  "r3_verse": "And our Lord said to Abram, after that Lot was separated from him: Lift vp thyne eyes, and looke from the place wherin thou now art, to the north and south, to the east and west.",
+  "arm_conflicts": [
+   "Abtam, | Abram,",
+   "trom | from",
+   "wnerin | wherin",
+   "welt. | west."
+  ],
+  "lexicon_readings": {
+   "11": "from"
+  },
+  "visual_readings": {
+   "11": "from"
+  },
+  "new_text": "And our Lord ſaid to Abram, after that Lot was ſeparated from him: Lift vp thyne eyes, and looke from the place wherin thou now art, to the north and ſouth, to the eaſt and west.",
+  "s_unresolved": [
+   "Lift",
+   "west."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "p68",
+  "old_text": "Al the land which thou Not wil I giue to thee, and to thy ſeed tor euer.",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.155,
+   0.483,
+   0.885,
+   0.5616
+  ],
+  "crop_page": 68,
+  "r3_raw": "Lift vp thyne eyes, and looke from the place wherin thou now art, to the north and south, to the east and west. 15. Al the land which thou seeſt wil I giue to thee, and to thy seed for euer. 16. And I wil make (b) thy seed as the dust of the earth: if any man be able to number the",
+  "r3_verse": "Al the land which thou seeſt wil I giue to thee, and to thy seed for euer.",
+  "arm_conflicts": [
+   "Not | seeſt",
+   "tor | for"
+  ],
+  "lexicon_readings": {
+   "15": "for"
+  },
+  "r2_attested": {
+   "5": "ſeeſt"
+  },
+  "visual_readings": {
+   "15": "for",
+   "5": "ſeeſt"
+  },
+  "new_text": "Al the land which thou ſeeſt wil I giue to thee, and to thy ſeed for euer.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p68",
+  "old_text": "And I wil make children ſeed as the duſt of the earth: it any man be able to number the flesh, but children the earth, thy ſeed alſo ſhal he be able to numbet.",
+  "old": {
+   "s_dismas": 0.832,
+   "odr_com": 0.832,
+   "sabates_a": 0.839,
+   "madueke_b": 0.839
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.155,
+   0.4967,
+   0.885,
+   0.5985
+  ],
+  "crop_page": 68,
+  "r3_raw": "Lift vp thyne eyes, and looke from the place wherin thou now art, to the north and south, to the east and west. 15. Al the land which thou feelest wil I giue to thee, and to thy seed for ever. 16. And I wil make (b) thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also ſhal he be able to number. 17. Arife and walke through the land in the length, and in the breath therof: (b) Not the children of the flesh, but the children of promise are the seed, Rom.,",
+  "r3_verse": "And I wil make thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also ſhal he be able to number. Arife",
+  "arm_conflicts": [
+   "children | thy",
+   "it | if",
+   "flesh, but children | dust of",
+   "numbet. | number. Arife"
+  ],
+  "r2_attested": {
+   "20": "duſt"
+  },
+  "visual_readings": {
+   "20": "duſt"
+  },
+  "new_text": "And I wil make thy ſeed as the duſt of the earth: if any man be able to number the duſt of the earth, thy ſeed alſo ſhal he be able to number. Arife",
+  "s_unresolved": [
+   "Arife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.945,
+   "odr_com": 0.945,
+   "sabates_a": 0.962,
+   "madueke_b": 0.962
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p68",
+  "old_text": "Ariſe promiſe through the land in the length, and in the breath therof: ſeed, giue it to tnee.",
+  "old": {
+   "s_dismas": 0.796,
+   "odr_com": 0.804,
+   "sabates_a": 0.783,
+   "madueke_b": 0.783
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.536,
+   0.885,
+   0.6343
+  ],
+  "crop_page": 68,
+  "r3_raw": "(b) thy seed as the dust of the earth: if any man be able to number the dust of the earth, thy seed also shal he be able to number. 17. Arife and walke through the land in the length, and in the breath therof: for wil giue it to thee. 18. Abram thertore remouing his tent, came, and dwelt beside the vale of Mambre, which is in Hebron: and he",
+  "r3_verse": "and walke through the land in the length, and in the breath therof: for wil giue it to thee.",
+  "arm_conflicts": [
+   "Ariſe promiſe | and walke",
+   "ſeed, | for wil",
+   "tnee. | thee."
+  ],
+  "lexicon_readings": {
+   "13": "for"
+  },
+  "visual_readings": {
+   "13": "for"
+  },
+  "new_text": "and walke through the land in the length, and in the breath therof: for wil giue it to thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.898,
+   "odr_com": 0.907,
+   "sabates_a": 0.902,
+   "madueke_b": 0.902
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p68",
+  "old_text": "Abram thertore remouing his tent, came, and are beſide the vale ot Mambre, which is in Hebron: aud able. . there an altar to our Lord.",
+  "old": {
+   "s_dismas": 0.895,
+   "odr_com": 0.895,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.5726,
+   0.885,
+   0.6659
+  ],
+  "crop_page": 68,
+  "r3_raw": "and walke through the land in the length, and in the breath therof: for wil giue it to thee. 18. Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+  "r3_verse": "Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+  "arm_conflicts": [
+   "thertore | therefore",
+   "are | dwelt",
+   "ot | of",
+   "aud able. . | and he builded"
+  ],
+  "new_text": "Abram therefore remouing his tent, came, and dwelt beſide the vale of Mambre, which is in Hebron: and he builded there an altar to our Lord.",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ }
+]

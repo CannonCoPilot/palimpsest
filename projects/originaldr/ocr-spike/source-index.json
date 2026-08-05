@@ -1,0 +1,7413 @@
+{
+ "_doc": "Per-source ought-to-contain index \u2014 backward-gate E(v) denominator (Phase 0b, 2026-07-08). E(v) is DERIVED per-locus from source coverage, not assumed. Scripture chapters inherit their book's E(v). Supersedes flat NT=12/OT=6 assumption (which it reproduces).",
+ "framework": "locus-level QC (sparkling \u00a70\u2032)",
+ "counting_witnesses": [
+  "S1",
+  "S10",
+  "S11",
+  "S12",
+  "S13",
+  "S14",
+  "S15",
+  "S2",
+  "S3",
+  "S4",
+  "S5",
+  "S6",
+  "S8",
+  "S9",
+  "madueke_b",
+  "odr_com",
+  "s_dismas",
+  "sabates_a"
+ ],
+ "sources": {
+  "S1": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "prayer-of-manasses": {
+     "testament": "APPENDIX",
+     "chapters": 1,
+     "is_appendix": true,
+     "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    "3-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 9,
+     "is_appendix": true,
+     "argument_id": "apparatus/3-esdras/argument"
+    },
+    "4-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 16,
+     "is_appendix": true,
+     "argument_id": "apparatus/4-esdras/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura",
+    "apparatus/ot-back/historical-table-age-1",
+    "apparatus/ot-back/historical-table-age-2",
+    "apparatus/ot-back/historical-table-age-3",
+    "apparatus/ot-back/historical-table-age-3b",
+    "apparatus/ot-back/historical-table-age-4",
+    "apparatus/ot-back/historical-table-age-5",
+    "apparatus/ot-back/historical-table-age-6",
+    "apparatus/ot-back/glossary",
+    "apparatus/ot-back/epistles-table",
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure",
+    "apparatus/nt-back/explication-words",
+    "apparatus/nt-back/table-peter",
+    "apparatus/nt-back/table-paul",
+    "apparatus/nt-back/table-corruptions",
+    "apparatus/nt-back/table-catholic-truths",
+    "apparatus/nt-back/table-epistles-gospels",
+    "apparatus/nt-back/apostles-creed",
+    "apparatus/nt-back/evangelical-history",
+    "apparatus/nt-back/scripture-authority"
+   ],
+   "n_books": 76,
+   "n_chapters": 1360
+  },
+  "S2": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura"
+   ],
+   "n_books": 20,
+   "n_chapters": 514
+  },
+  "S3": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "prayer-of-manasses": {
+     "testament": "APPENDIX",
+     "chapters": 1,
+     "is_appendix": true,
+     "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    "3-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 9,
+     "is_appendix": true,
+     "argument_id": "apparatus/3-esdras/argument"
+    },
+    "4-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 16,
+     "is_appendix": true,
+     "argument_id": "apparatus/4-esdras/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura",
+    "apparatus/ot-back/historical-table-age-1",
+    "apparatus/ot-back/historical-table-age-2",
+    "apparatus/ot-back/historical-table-age-3",
+    "apparatus/ot-back/historical-table-age-3b",
+    "apparatus/ot-back/historical-table-age-4",
+    "apparatus/ot-back/historical-table-age-5",
+    "apparatus/ot-back/historical-table-age-6",
+    "apparatus/ot-back/glossary",
+    "apparatus/ot-back/epistles-table"
+   ],
+   "n_books": 49,
+   "n_chapters": 1100
+  },
+  "S4": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure",
+    "apparatus/nt-back/explication-words",
+    "apparatus/nt-back/table-peter",
+    "apparatus/nt-back/table-paul",
+    "apparatus/nt-back/table-corruptions",
+    "apparatus/nt-back/table-catholic-truths",
+    "apparatus/nt-back/table-epistles-gospels",
+    "apparatus/nt-back/apostles-creed",
+    "apparatus/nt-back/evangelical-history",
+    "apparatus/nt-back/scripture-authority"
+   ],
+   "n_books": 27,
+   "n_chapters": 260
+  },
+  "S5": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure"
+   ],
+   "n_books": 27,
+   "n_chapters": 260
+  },
+  "S6": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "prayer-of-manasses": {
+     "testament": "APPENDIX",
+     "chapters": 1,
+     "is_appendix": true,
+     "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    "3-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 9,
+     "is_appendix": true,
+     "argument_id": "apparatus/3-esdras/argument"
+    },
+    "4-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 16,
+     "is_appendix": true,
+     "argument_id": "apparatus/4-esdras/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura",
+    "apparatus/ot-back/historical-table-age-1",
+    "apparatus/ot-back/historical-table-age-2",
+    "apparatus/ot-back/historical-table-age-3",
+    "apparatus/ot-back/historical-table-age-3b",
+    "apparatus/ot-back/historical-table-age-4",
+    "apparatus/ot-back/historical-table-age-5",
+    "apparatus/ot-back/historical-table-age-6",
+    "apparatus/ot-back/glossary",
+    "apparatus/ot-back/epistles-table",
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure",
+    "apparatus/nt-back/explication-words",
+    "apparatus/nt-back/table-peter",
+    "apparatus/nt-back/table-paul",
+    "apparatus/nt-back/table-corruptions",
+    "apparatus/nt-back/table-catholic-truths",
+    "apparatus/nt-back/table-epistles-gospels",
+    "apparatus/nt-back/apostles-creed",
+    "apparatus/nt-back/evangelical-history",
+    "apparatus/nt-back/scripture-authority"
+   ],
+   "n_books": 76,
+   "n_chapters": 1360
+  },
+  "S8": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure"
+   ],
+   "n_books": 27,
+   "n_chapters": 260
+  },
+  "S9": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "prayer-of-manasses": {
+     "testament": "APPENDIX",
+     "chapters": 1,
+     "is_appendix": true,
+     "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    "3-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 9,
+     "is_appendix": true,
+     "argument_id": "apparatus/3-esdras/argument"
+    },
+    "4-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 16,
+     "is_appendix": true,
+     "argument_id": "apparatus/4-esdras/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura",
+    "apparatus/ot-back/historical-table-age-1",
+    "apparatus/ot-back/historical-table-age-2",
+    "apparatus/ot-back/historical-table-age-3",
+    "apparatus/ot-back/historical-table-age-3b",
+    "apparatus/ot-back/historical-table-age-4",
+    "apparatus/ot-back/historical-table-age-5",
+    "apparatus/ot-back/historical-table-age-6",
+    "apparatus/ot-back/glossary",
+    "apparatus/ot-back/epistles-table",
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure",
+    "apparatus/nt-back/explication-words",
+    "apparatus/nt-back/table-peter",
+    "apparatus/nt-back/table-paul",
+    "apparatus/nt-back/table-corruptions",
+    "apparatus/nt-back/table-catholic-truths",
+    "apparatus/nt-back/table-epistles-gospels",
+    "apparatus/nt-back/apostles-creed",
+    "apparatus/nt-back/evangelical-history",
+    "apparatus/nt-back/scripture-authority"
+   ],
+   "n_books": 76,
+   "n_chapters": 1360
+  },
+  "S10": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure"
+   ],
+   "n_books": 27,
+   "n_chapters": 260
+  },
+  "S11": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/nt-front/title-page",
+    "apparatus/nt-front/preface",
+    "apparatus/nt-front/censure"
+   ],
+   "n_books": 1,
+   "n_chapters": 28
+  },
+  "S12": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura"
+   ],
+   "n_books": 1,
+   "n_chapters": 50
+  },
+  "S13": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura"
+   ],
+   "n_books": 1,
+   "n_chapters": 24
+  },
+  "S14": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura"
+   ],
+   "n_books": 1,
+   "n_chapters": 150
+  },
+  "S15": {
+   "kind": "scan",
+   "seed": "manifest",
+   "books": {
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    }
+   },
+   "front_back_matter": [
+    "apparatus/ot-front/title-page",
+    "apparatus/ot-front/approbatio",
+    "apparatus/ot-front/preface",
+    "apparatus/ot-front/privilege",
+    "apparatus/ot-front/censura"
+   ],
+   "n_books": 1,
+   "n_chapters": 66
+  },
+  "sabates_a": {
+   "kind": "transcription",
+   "seed": "reads (detection-refined)",
+   "books": {
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "4-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 16,
+     "is_appendix": true,
+     "argument_id": "apparatus/4-esdras/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "3-esdras": {
+     "testament": "APPENDIX",
+     "chapters": 9,
+     "is_appendix": true,
+     "argument_id": "apparatus/3-esdras/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "prayer-of-manasses": {
+     "testament": "APPENDIX",
+     "chapters": 1,
+     "is_appendix": true,
+     "argument_id": "apparatus/prayer-of-manasses/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    }
+   },
+   "front_back_matter": [],
+   "n_books": 76,
+   "n_chapters": 1360
+  },
+  "madueke_b": {
+   "kind": "transcription",
+   "seed": "reads (detection-refined)",
+   "books": {
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "amos": {
+     "testament": "OT",
+     "chapters": 9,
+     "is_appendix": false,
+     "argument_id": "apparatus/amos/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "habacuc": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/habacuc/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "ecclesiasticus": {
+     "testament": "OT",
+     "chapters": 51,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiasticus/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "malachie": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/malachie/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "ezechiel": {
+     "testament": "OT",
+     "chapters": 48,
+     "is_appendix": false,
+     "argument_id": "apparatus/ezechiel/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "aggeus": {
+     "testament": "OT",
+     "chapters": 2,
+     "is_appendix": false,
+     "argument_id": "apparatus/aggeus/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "nahum": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/nahum/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "zacharias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/zacharias/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "jeremie": {
+     "testament": "OT",
+     "chapters": 52,
+     "is_appendix": false,
+     "argument_id": "apparatus/jeremie/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "isaie": {
+     "testament": "OT",
+     "chapters": 66,
+     "is_appendix": false,
+     "argument_id": "apparatus/isaie/argument"
+    },
+    "osee": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/osee/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "abdias": {
+     "testament": "OT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/abdias/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "micheas": {
+     "testament": "OT",
+     "chapters": 7,
+     "is_appendix": false,
+     "argument_id": "apparatus/micheas/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    },
+    "joel": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/joel/argument"
+    }
+   },
+   "front_back_matter": [],
+   "n_books": 73,
+   "n_chapters": 1334
+  },
+  "s_dismas": {
+   "kind": "transcription",
+   "seed": "reads (detection-refined)",
+   "books": {
+    "2-kings": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-kings/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "ecclesiastes": {
+     "testament": "OT",
+     "chapters": 12,
+     "is_appendix": false,
+     "argument_id": "apparatus/ecclesiastes/argument"
+    },
+    "esther": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/esther/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "job": {
+     "testament": "OT",
+     "chapters": 42,
+     "is_appendix": false,
+     "argument_id": "apparatus/job/argument"
+    },
+    "1-kings": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-kings/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "4-kings": {
+     "testament": "OT",
+     "chapters": 25,
+     "is_appendix": false,
+     "argument_id": "apparatus/4-kings/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "josue": {
+     "testament": "OT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/josue/argument"
+    },
+    "proverbs": {
+     "testament": "OT",
+     "chapters": 31,
+     "is_appendix": false,
+     "argument_id": "apparatus/proverbs/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "judith": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/judith/argument"
+    },
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "judges": {
+     "testament": "OT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/judges/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "2-esdras": {
+     "testament": "OT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-esdras/argument"
+    },
+    "1-esdras": {
+     "testament": "OT",
+     "chapters": 10,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-esdras/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "deuteronomy": {
+     "testament": "OT",
+     "chapters": 34,
+     "is_appendix": false,
+     "argument_id": "apparatus/deuteronomy/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "numbers": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/numbers/argument"
+    },
+    "canticle-of-canticles": {
+     "testament": "OT",
+     "chapters": 8,
+     "is_appendix": false,
+     "argument_id": "apparatus/canticle-of-canticles/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "3-kings": {
+     "testament": "OT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-kings/argument"
+    },
+    "leviticus": {
+     "testament": "OT",
+     "chapters": 27,
+     "is_appendix": false,
+     "argument_id": "apparatus/leviticus/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "1-paralipomenon": {
+     "testament": "OT",
+     "chapters": 29,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-paralipomenon/argument"
+    },
+    "2-paralipomenon": {
+     "testament": "OT",
+     "chapters": 36,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-paralipomenon/argument"
+    },
+    "tobias": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/tobias/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    }
+   },
+   "front_back_matter": [],
+   "n_books": 52,
+   "n_chapters": 994
+  },
+  "odr_com": {
+   "kind": "transcription",
+   "seed": "reads (detection-refined)",
+   "books": {
+    "1-john": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-john/argument"
+    },
+    "john": {
+     "testament": "NT",
+     "chapters": 21,
+     "is_appendix": false,
+     "argument_id": "apparatus/john/argument"
+    },
+    "2-machabees": {
+     "testament": "OT",
+     "chapters": 15,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-machabees/argument"
+    },
+    "matthew": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/matthew/argument"
+    },
+    "sophonias": {
+     "testament": "OT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/sophonias/argument"
+    },
+    "acts": {
+     "testament": "NT",
+     "chapters": 28,
+     "is_appendix": false,
+     "argument_id": "apparatus/acts/argument"
+    },
+    "baruch": {
+     "testament": "OT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/baruch/argument"
+    },
+    "2-corinthians": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-corinthians/argument"
+    },
+    "colossians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/colossians/argument"
+    },
+    "titus": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/titus/argument"
+    },
+    "luke": {
+     "testament": "NT",
+     "chapters": 24,
+     "is_appendix": false,
+     "argument_id": "apparatus/luke/argument"
+    },
+    "3-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/3-john/argument"
+    },
+    "psalms": {
+     "testament": "OT",
+     "chapters": 150,
+     "is_appendix": false,
+     "argument_id": "apparatus/psalms/argument"
+    },
+    "1-peter": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-peter/argument"
+    },
+    "apocalypse": {
+     "testament": "NT",
+     "chapters": 22,
+     "is_appendix": false,
+     "argument_id": "apparatus/apocalypse/argument"
+    },
+    "exodus": {
+     "testament": "OT",
+     "chapters": 40,
+     "is_appendix": false,
+     "argument_id": "apparatus/exodus/argument"
+    },
+    "jonas": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/jonas/argument"
+    },
+    "lamentations": {
+     "testament": "OT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/lamentations/argument"
+    },
+    "philippians": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/philippians/argument"
+    },
+    "jude": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/jude/argument"
+    },
+    "2-timothy": {
+     "testament": "NT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-timothy/argument"
+    },
+    "ruth": {
+     "testament": "OT",
+     "chapters": 4,
+     "is_appendix": false,
+     "argument_id": "apparatus/ruth/argument"
+    },
+    "genesis": {
+     "testament": "OT",
+     "chapters": 50,
+     "is_appendix": false,
+     "argument_id": "apparatus/genesis/argument"
+    },
+    "james": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/james/argument"
+    },
+    "1-machabees": {
+     "testament": "OT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-machabees/argument"
+    },
+    "romans": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/romans/argument"
+    },
+    "ephesians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/ephesians/argument"
+    },
+    "2-peter": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-peter/argument"
+    },
+    "hebrews": {
+     "testament": "NT",
+     "chapters": 13,
+     "is_appendix": false,
+     "argument_id": "apparatus/hebrews/argument"
+    },
+    "1-timothy": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-timothy/argument"
+    },
+    "1-corinthians": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-corinthians/argument"
+    },
+    "mark": {
+     "testament": "NT",
+     "chapters": 16,
+     "is_appendix": false,
+     "argument_id": "apparatus/mark/argument"
+    },
+    "2-thessalonians": {
+     "testament": "NT",
+     "chapters": 3,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-thessalonians/argument"
+    },
+    "wisdom": {
+     "testament": "OT",
+     "chapters": 19,
+     "is_appendix": false,
+     "argument_id": "apparatus/wisdom/argument"
+    },
+    "daniel": {
+     "testament": "OT",
+     "chapters": 14,
+     "is_appendix": false,
+     "argument_id": "apparatus/daniel/argument"
+    },
+    "1-thessalonians": {
+     "testament": "NT",
+     "chapters": 5,
+     "is_appendix": false,
+     "argument_id": "apparatus/1-thessalonians/argument"
+    },
+    "2-john": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/2-john/argument"
+    },
+    "galatians": {
+     "testament": "NT",
+     "chapters": 6,
+     "is_appendix": false,
+     "argument_id": "apparatus/galatians/argument"
+    },
+    "philemon": {
+     "testament": "NT",
+     "chapters": 1,
+     "is_appendix": false,
+     "argument_id": "apparatus/philemon/argument"
+    }
+   },
+   "front_back_matter": [],
+   "n_books": 39,
+   "n_chapters": 586
+  }
+ },
+ "loci_ev": {
+  "scripture_books": {
+   "genesis": {
+    "testament": "OT",
+    "n_chapters": 50,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 10,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S12",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "exodus": {
+    "testament": "OT",
+    "n_chapters": 40,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 9,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "leviticus": {
+    "testament": "OT",
+    "n_chapters": 27,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "numbers": {
+    "testament": "OT",
+    "n_chapters": 36,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "deuteronomy": {
+    "testament": "OT",
+    "n_chapters": 34,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "josue": {
+    "testament": "OT",
+    "n_chapters": 24,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 9,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S13",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "judges": {
+    "testament": "OT",
+    "n_chapters": 21,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "ruth": {
+    "testament": "OT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 9,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-kings": {
+    "testament": "OT",
+    "n_chapters": 31,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-kings": {
+    "testament": "OT",
+    "n_chapters": 24,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "3-kings": {
+    "testament": "OT",
+    "n_chapters": 22,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "4-kings": {
+    "testament": "OT",
+    "n_chapters": 25,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-paralipomenon": {
+    "testament": "OT",
+    "n_chapters": 29,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-paralipomenon": {
+    "testament": "OT",
+    "n_chapters": 36,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-esdras": {
+    "testament": "OT",
+    "n_chapters": 10,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-esdras": {
+    "testament": "OT",
+    "n_chapters": 13,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "tobias": {
+    "testament": "OT",
+    "n_chapters": 14,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "judith": {
+    "testament": "OT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "esther": {
+    "testament": "OT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "job": {
+    "testament": "OT",
+    "n_chapters": 42,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "psalms": {
+    "testament": "OT",
+    "n_chapters": 150,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 9,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S14",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "proverbs": {
+    "testament": "OT",
+    "n_chapters": 31,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "ecclesiastes": {
+    "testament": "OT",
+    "n_chapters": 12,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "canticle-of-canticles": {
+    "testament": "OT",
+    "n_chapters": 8,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "wisdom": {
+    "testament": "OT",
+    "n_chapters": 19,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 8,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "ecclesiasticus": {
+    "testament": "OT",
+    "n_chapters": 51,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "isaie": {
+    "testament": "OT",
+    "n_chapters": 66,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S15",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "jeremie": {
+    "testament": "OT",
+    "n_chapters": 52,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "lamentations": {
+    "testament": "OT",
+    "n_chapters": 5,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "baruch": {
+    "testament": "OT",
+    "n_chapters": 6,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "ezechiel": {
+    "testament": "OT",
+    "n_chapters": 48,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "daniel": {
+    "testament": "OT",
+    "n_chapters": 14,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "osee": {
+    "testament": "OT",
+    "n_chapters": 14,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "joel": {
+    "testament": "OT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "amos": {
+    "testament": "OT",
+    "n_chapters": 9,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "abdias": {
+    "testament": "OT",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "jonas": {
+    "testament": "OT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "micheas": {
+    "testament": "OT",
+    "n_chapters": 7,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "nahum": {
+    "testament": "OT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "habacuc": {
+    "testament": "OT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "sophonias": {
+    "testament": "OT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "aggeus": {
+    "testament": "OT",
+    "n_chapters": 2,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "zacharias": {
+    "testament": "OT",
+    "n_chapters": 14,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "malachie": {
+    "testament": "OT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 6,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "sabates_a"
+    ]
+   },
+   "1-machabees": {
+    "testament": "OT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "2-machabees": {
+    "testament": "OT",
+    "n_chapters": 15,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 7,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "sabates_a"
+    ]
+   },
+   "matthew": {
+    "testament": "NT",
+    "n_chapters": 28,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 12,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S11",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "mark": {
+    "testament": "NT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "luke": {
+    "testament": "NT",
+    "n_chapters": 24,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "john": {
+    "testament": "NT",
+    "n_chapters": 21,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "acts": {
+    "testament": "NT",
+    "n_chapters": 28,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "romans": {
+    "testament": "NT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-corinthians": {
+    "testament": "NT",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-corinthians": {
+    "testament": "NT",
+    "n_chapters": 13,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "galatians": {
+    "testament": "NT",
+    "n_chapters": 6,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "ephesians": {
+    "testament": "NT",
+    "n_chapters": 6,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "philippians": {
+    "testament": "NT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "colossians": {
+    "testament": "NT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-thessalonians": {
+    "testament": "NT",
+    "n_chapters": 5,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-thessalonians": {
+    "testament": "NT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-timothy": {
+    "testament": "NT",
+    "n_chapters": 6,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-timothy": {
+    "testament": "NT",
+    "n_chapters": 4,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "titus": {
+    "testament": "NT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "philemon": {
+    "testament": "NT",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "hebrews": {
+    "testament": "NT",
+    "n_chapters": 13,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "james": {
+    "testament": "NT",
+    "n_chapters": 5,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-peter": {
+    "testament": "NT",
+    "n_chapters": 5,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-peter": {
+    "testament": "NT",
+    "n_chapters": 3,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "1-john": {
+    "testament": "NT",
+    "n_chapters": 5,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "2-john": {
+    "testament": "NT",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "3-john": {
+    "testament": "NT",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "jude": {
+    "testament": "NT",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "apocalypse": {
+    "testament": "NT",
+    "n_chapters": 22,
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S8",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 11,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b",
+     "odr_com",
+     "s_dismas",
+     "sabates_a"
+    ]
+   },
+   "prayer-of-manasses": {
+    "testament": "APPENDIX",
+    "n_chapters": 1,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 5,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "sabates_a"
+    ]
+   },
+   "3-esdras": {
+    "testament": "APPENDIX",
+    "n_chapters": 9,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 5,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "sabates_a"
+    ]
+   },
+   "4-esdras": {
+    "testament": "APPENDIX",
+    "n_chapters": 16,
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "s_dismas",
+     "odr_com",
+     "sabates_a",
+     "madueke_b"
+    ],
+    "E_v": 5,
+    "_expected_witnesses_pre_curated": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "sabates_a"
+    ]
+   }
+  },
+  "book_arguments": {
+   "genesis": {
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 7
+   },
+   "exodus": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "leviticus": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "numbers": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "deuteronomy": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "josue": {
+    "expected_witnesses": [
+     "S1",
+     "S13",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 7
+   },
+   "judges": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "ruth": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "1-kings": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "2-kings": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "3-kings": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "4-kings": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "1-paralipomenon": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "2-paralipomenon": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "1-esdras": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "2-esdras": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "tobias": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "judith": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "esther": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "job": {
+    "expected_witnesses": [
+     "S1",
+     "S2",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "psalms": {
+    "expected_witnesses": [
+     "S1",
+     "S14",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "proverbs": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "ecclesiastes": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "canticle-of-canticles": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "wisdom": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "ecclesiasticus": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "isaie": {
+    "expected_witnesses": [
+     "S1",
+     "S15",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 6
+   },
+   "jeremie": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "lamentations": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "baruch": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "ezechiel": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "daniel": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "osee": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "joel": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "amos": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "abdias": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "jonas": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "micheas": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "nahum": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "habacuc": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "sophonias": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "aggeus": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "zacharias": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "malachie": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "1-machabees": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "2-machabees": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 5
+   },
+   "matthew": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S11",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 9
+   },
+   "mark": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "luke": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "john": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "acts": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "romans": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "1-corinthians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "2-corinthians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "galatians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "ephesians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "philippians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "colossians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "1-thessalonians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "2-thessalonians": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "1-timothy": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "2-timothy": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "titus": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "philemon": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "hebrews": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "james": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "1-peter": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "2-peter": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "1-john": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "2-john": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "3-john": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "jude": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "apocalypse": {
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9",
+     "madueke_b"
+    ],
+    "E_v": 8
+   },
+   "prayer-of-manasses": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "3-esdras": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "4-esdras": {
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   }
+  },
+  "front_back_matter": {
+   "apparatus/ot-front/title-page": {
+    "region": "ot_front",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S13",
+     "S14",
+     "S15",
+     "S2",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 9
+   },
+   "apparatus/ot-front/approbatio": {
+    "region": "ot_front",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S13",
+     "S14",
+     "S15",
+     "S2",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 9
+   },
+   "apparatus/ot-front/preface": {
+    "region": "ot_front",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S13",
+     "S14",
+     "S15",
+     "S2",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 9
+   },
+   "apparatus/ot-front/privilege": {
+    "region": "ot_front",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S13",
+     "S14",
+     "S15",
+     "S2",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 9
+   },
+   "apparatus/ot-front/censura": {
+    "region": "ot_front",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S12",
+     "S13",
+     "S14",
+     "S15",
+     "S2",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 9
+   },
+   "apparatus/ot-back/historical-table-age-1": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-2": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-3": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-3b": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-4": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-5": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/historical-table-age-6": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/glossary": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/ot-back/epistles-table": {
+    "region": "ot_back",
+    "testament": "OT",
+    "expected_witnesses": [
+     "S1",
+     "S3",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-front/title-page": {
+    "region": "nt_front",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S11",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9"
+    ],
+    "E_v": 8
+   },
+   "apparatus/nt-front/preface": {
+    "region": "nt_front",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S11",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9"
+    ],
+    "E_v": 8
+   },
+   "apparatus/nt-front/censure": {
+    "region": "nt_front",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S10",
+     "S11",
+     "S4",
+     "S5",
+     "S6",
+     "S8",
+     "S9"
+    ],
+    "E_v": 8
+   },
+   "apparatus/nt-back/explication-words": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/table-peter": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/table-paul": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/table-corruptions": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/table-catholic-truths": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/table-epistles-gospels": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/apostles-creed": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/evangelical-history": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   },
+   "apparatus/nt-back/scripture-authority": {
+    "region": "nt_back",
+    "testament": "NT",
+    "expected_witnesses": [
+     "S1",
+     "S4",
+     "S6",
+     "S9"
+    ],
+    "E_v": 4
+   }
+  }
+ },
+ "summary": {
+  "n_counting_witnesses": 18,
+  "n_books_total": 76,
+  "ev_scripture_min": 5,
+  "ev_scripture_max": 12
+ },
+ "_curated_note": "expected_witnesses restricted to curated set S1,S3,S4,S6,S8,S9 (+refs); S2,S5,S7,S10-S15 dropped (Sir 2026-07-19)"
+}

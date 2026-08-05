@@ -1,0 +1,1060 @@
+{
+ "chapter": 23,
+ "n_verses": 20,
+ "n_cells": 80,
+ "n_pass": 73,
+ "rate": 0.9125,
+ "ref_means": {
+  "s_dismas": 0.9822,
+  "odr_com": 0.9816,
+  "sabates_a": 0.9755,
+  "madueke_b": 0.9755
+ },
+ "src_rates": {
+  "S1": 0.95,
+  "S3": 1.0,
+  "S9": 0.95,
+  "S6": 0.95
+ },
+ "n_all_fail": 0,
+ "all_fail": [],
+ "n_open": 3,
+ "open": [
+  {
+   "src": "S1",
+   "verse": 2,
+   "worst": 0.83,
+   "from": "chapter",
+   "text": "And ſhe died in the cirie of Arbee which is Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her."
+  },
+  {
+   "src": "S6",
+   "verse": 4,
+   "worst": 0.844,
+   "from": "chapter",
+   "text": "I am a ſtranger and pilgrime among you giue Abraham. G.ENESI me the right ot a ſepulchre with vou, that I may burie my dead."
+  },
+  {
+   "src": "S9",
+   "verse": 9,
+   "worst": 0.823,
+   "from": "p107",
+   "text": "that he geue me the field duble for caue, which he hath in the vttermoſt part of this : money in to the worth therof ldt him deliuer it to me before you for poſſeſſion of a ſepulchre."
+  }
+ ],
+ "cellgrid": {
+  "1": {
+   "S1": {
+    "text": "and sara liued an hundred twentie ſeuen yeares.",
+    "from": "p96",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S3": {
+    "text": "and Sara liued an hundred twentie ſeuen yeares.",
+    "from": "p100",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S9": {
+    "text": "and Sara liued an hundred twentie ſeuen yeares.",
+    "from": "p106",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And Sara liued an hundred twentie ſeauen yeares.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.957,
+     "madueke_b": 0.957
+    }
+   }
+  },
+  "2": {
+   "S1": {
+    "text": "And ſhe died in the cirie of Arbee which is Hebron mamoamant com Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.842,
+     "odr_com": 0.842,
+     "sabates_a": 0.83,
+     "madueke_b": 0.83
+    }
+   },
+   "S3": {
+    "text": "And ihe died in the citie of Arb whichs Hebron Hebron, in the land of Chanaan And Abraham came to mourne, and weepe for her.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.917,
+     "odr_com": 0.917,
+     "sabates_a": 0.92,
+     "madueke_b": 0.92
+    }
+   },
+   "S9": {
+    "text": "And ſhe died in the citie of Arbee which is a Hebron in the land of Chanaan: And Abraham came to mourne, and weepe for her.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.983,
+     "odr_com": 0.983,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   },
+   "S6": {
+    "text": "And ſhe died in the citie of Arbee which is Hebron, in the and of Chanaan: Aud Abraham came to moutne and weepe for her.",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": 0.975,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   }
+  },
+  "3": {
+   "S1": {
+    "text": "And after that he was riſen vp from : the funcrel obſequics, he ſpake to the children of Heth, ſaying:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.967,
+     "madueke_b": 0.967
+    }
+   },
+   "S3": {
+    "text": "And after that he was riſen vp from : the funcral obſequies, he ſpake to the children of Heth, ſaying:",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "And after that he was riſen vp from: the funeral obſequies, he ſpake to the. children A Heth, ſaying:",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   },
+   "S6": {
+    "text": "And atter that he was riſen vp from the funeral obſequies, he ſpake to the children ot Heth, ſaying:",
+    "from": "p89",
+    "score": {
+     "s_dismas": 0.979,
+     "odr_com": 0.979,
+     "sabates_a": 0.978,
+     "madueke_b": 0.978
+    }
+   }
+  },
+  "4": {
+   "S1": {
+    "text": "I am a ſtranger and pilgrime among you: geue me the right of a ſepulchre with you, that I may burie my dead.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S3": {
+    "text": "I am a ſtranger and pilgrome among you: geue me the right of a ſepulchre with you, that I may buri My dead.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S9": {
+    "text": "I am a ſtranger and pilgrime among you: geue me the right of a ſepulchre with you, that I may burie my dead.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.99,
+     "madueke_b": 0.99
+    }
+   },
+   "S6": {
+    "text": "I am a ſtranger and pilgrime among you giue Abraham. G.ENESI me the right ot a ſepulchre with vou, that I may burie my dead.",
+    "from": "chapter",
+    "score": {
+     "s_dismas": 0.85,
+     "odr_com": 0.85,
+     "sabates_a": 0.844,
+     "madueke_b": 0.844
+    }
+   }
+  },
+  "5": {
+   "S1": {
+    "text": "The children of Hoth anſwered, ſaying:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.972,
+     "odr_com": 0.972,
+     "sabates_a": 0.971,
+     "madueke_b": 0.971
+    }
+   },
+   "S3": {
+    "text": "The children of Heth anſwered, ſaying:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "The children of Heth anſwered, ſaying",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "The children of Heth anſwered, ſaying:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "6": {
+   "S1": {
+    "text": "My lord heare vs, thou art a prince of God a mong vs : in our principal ſepulchres burie thou thy dead : and no man can ler thee but that in his owne monument thou mayeſt burie thy dead.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "My lord heare vs, thou art a prince of Cod a mong vs: in our principal ſepulchres burie thou thy dead : and no man can let thee but that in his owne monument thou mayeſt burie thy dead.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.989,
+     "odr_com": 0.989,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S9": {
+    "text": "My lord heare vs, thou art a prince of God among vs: in our principal ſepulchres burie thou thy dead and no man can let thee but that in his owne monument thou mayeſt burie thy dead.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Lord heare vs, thou art a Prince of God amons vs: in our principal ſepulchres burie thou thy dead: and no man ean let thee but that in his owne monument thou mayſt burie thy dead.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.965,
+     "madueke_b": 0.965
+    }
+   }
+  },
+  "7": {
+   "S1": {
+    "text": "Abraham roſe vp, and : adored the people of the land, towir the children of Heth:o",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.961,
+     "odr_com": 0.961,
+     "sabates_a": 0.945,
+     "madueke_b": 0.945
+    }
+   },
+   "S3": {
+    "text": "Abraham roſe vp, and :: adored the people of the land, towit the children of Heth:",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   },
+   "S9": {
+    "text": "Abraham roſe vp, and :: adored the people of the land, rowit the children of Heth:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.974,
+     "odr_com": 0.974,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S6": {
+    "text": "Abraham roſe vp and adored the people of the land, towit the children of Heth;",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.987,
+     "odr_com": 0.987,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "8": {
+   "S1": {
+    "text": "and he ſaid to them : If it pleaſe your ſoule that I burie mdead, heare me, an be interceſſors for me to Ephron the ſonne of Seor:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S3": {
+    "text": "and he ſaid to them : If it pleaſe your ſoule that I burie dead, heare me, and be interceſſors for me to Ephron the ſonne of Seor:",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.974,
+     "madueke_b": 0.974
+    }
+   },
+   "S9": {
+    "text": "and he ſaid to them If it pleaſe your ſoule that I burie my dead, heare me, and be interceſſors for me to Ephron the ſonne of Seor",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "he ſaid to them: If it pleaſe vour ſoule that I burie my dead, heare me, aud be interceſſours for me to Ephron the ſonne ot Seor :",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.938,
+     "odr_com": 0.938,
+     "sabates_a": 0.931,
+     "madueke_b": 0.931
+    }
+   }
+  },
+  "9": {
+   "S1": {
+    "text": "that he geue me the duble caue, which he hath in the vttermoſt part of his field : for money to the worth therof let him deliuer it to me before you for poſſeſſion of a ſepulchre.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S3": {
+    "text": "that he geue me the duble caue, which he hath in the vttermoſt part of his field : for money to the worth therof let him deliuer it to me before you for poſſeſſion of a ſepulchre.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.969,
+     "madueke_b": 0.969
+    }
+   },
+   "S9": {
+    "text": "that he geue me the field duble for caue, which he hath in the vttermoſt part of this : money in to the worth therof ldt him deliuer it to me before you for poſſeſſion of a ſepulchre.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.86,
+     "odr_com": 0.86,
+     "sabates_a": 0.823,
+     "madueke_b": 0.823
+    }
+   },
+   "S6": {
+    "text": ".that he giue me the double caue, which he hath in the vttermoſt part ot his field : tor money to the worth therof let kim deliuer it to me you for poſſeſſion of a ſepulchre.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.931,
+     "odr_com": 0.931,
+     "sabates_a": 0.926,
+     "madueke_b": 0.926
+    }
+   }
+  },
+  "10": {
+   "S1": {
+    "text": "And Ephron dwelt in the middeſt of the ch ldcen of Hech. And Ephron made anſwer to Abraham in the hearing of al that went in at the gate of the citie, ſaying:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.972,
+     "madueke_b": 0.972
+    }
+   },
+   "S3": {
+    "text": "And Ephron dwelt in the middeſt of the children of Heth. And Ephron made anſwer to Abraham in the hearing of al that went in at the gate of the citie, ſaying:",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "And Ephron dwelt in the middeſt of the children of Heth. And Ephron made anſwer to Abraham in the hearing of al that went in at the gate of the citie, ſaying:",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S6": {
+    "text": "And Ephron dwelt in the middeſt of the children of Heth. And Ephron made anſwer to Abraham in the hearing of ab that went in at the gate of the citie, ſaying :",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.986,
+     "madueke_b": 0.986
+    }
+   }
+  },
+  "11": {
+   "S1": {
+    "text": "No, it ſhal not be ſo, my lord, but thou rather harken to that which I doe ſay: The field I deliuer to thee, and the caue that is therin, in the preſence of the children of my people, burie thy dead.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   },
+   "S3": {
+    "text": "No, it ſhal not be ſo, my lord, but thou rather harken to that which I doe ſay : The field I deliuer to thee, and the caue that is therin, in the preſence o the children of my people, burie thy dead.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.995,
+     "odr_com": 0.995,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S9": {
+    "text": "No cit ſhal not be ſo, my lord, but thou rather harken to that which I doe ſay : The ſield I deliuer to thee, and the caue that is therin, in the preſence fthe children ofmypeople, burie thy dead.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.969,
+     "odr_com": 0.969,
+     "sabates_a": 0.956,
+     "madueke_b": 0.956
+    }
+   },
+   "S6": {
+    "text": "No, it ſhal not be ſo my. Lord, but thou tather hearken to that which I doe ſay: The field I deliuer to thee and the caue that is therin, in the preſence of the children of my people, burie thy dead.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.99,
+     "odr_com": 0.99,
+     "sabates_a": 0.989,
+     "madueke_b": 0.989
+    }
+   }
+  },
+  "12": {
+   "S1": {
+    "text": "Abraham adored before the pcople of the land.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "Abraham adored before the pcople of the land.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "Abraham adored before the people of the land.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "Abraham adored before the people of the land.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "13": {
+   "S1": {
+    "text": "And he ſpoke to Ephron, his people ſtanding round about: I beſeech thee to heare me : I wil geue money for the field : take it, and ſo I wil burie my dead in it.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S3": {
+    "text": "And he ſpoke to Ephron, his people ſtanding round about: I beſeech thee to heare me : I wil geue money for the field : take it, and ſo I wil burie my dead in it.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.993,
+     "madueke_b": 0.993
+    }
+   },
+   "S9": {
+    "text": "And he ſpoke toſ Ephron, his people ffanding round about: I beſeech thee to heare me : I wil geue moneyfor the ſield : take it, and ſo. I wil burie my dead in it.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.967,
+     "odr_com": 0.967,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S6": {
+    "text": "And he ſpoke to Ephron, his people ſtanding round about: I beſeech thee to heare me: I wil giue money for the field: take it and ſo I wil burie my dead in it.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "14": {
+   "S1": {
+    "text": "And Ephron anſwered:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And Ephron anſwered :",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And Ephron anſwered :",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And Ephron anſwered :",
+    "from": "p90",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "15": {
+   "S1": {
+    "text": "My lord, heare me. The ground which thou deſireſt, is worth foure hundred ſicles of ſiluer : this is the price betwen me and thee : but how much is this? burie thy dead.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "My lord, heare me. The ground which thou deſireſt, is worth foure hundred ſicles of ſiluer : this is the price betwen me and thee : but how much is this? burie thy dead.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "My lord, heare me. The ground which thou deſireſt, is wprth foure hundred ſicles of ſiluer :this is the price betwenme and theebut how much is this burie thy dead.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.981,
+     "odr_com": 0.981,
+     "sabates_a": 0.98,
+     "madueke_b": 0.98
+    }
+   },
+   "S6": {
+    "text": "My. Lord, heare me. The ground which thou defireſt is worth toure hundred ſicles of ſiluer: this is the price between me and thee: but how much is thisburie thy deadWhich",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.946,
+     "odr_com": 0.946,
+     "sabates_a": 0.948,
+     "madueke_b": 0.948
+    }
+   }
+  },
+  "16": {
+   "S1": {
+    "text": "Which when Abraham had heard, he weyed the money, that Ephron had asked, in the hearing of the childten of Heth, foure hundred ſicles of ſiluer of common currant money.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S3": {
+    "text": "†Which when Abraham had heard, he weyed the money, that Ephron had asked, in the hearing of the childten of Heth, foure hundred ſicles of ſiluer of common currant money.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S9": {
+    "text": "Which when Abraham had heard, he weyed the money, that Ephron had asked, in the hearing of the childten of Heth, foure hundred ſicles of ſiluer of common currant money.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.975,
+     "madueke_b": 0.975
+    }
+   },
+   "S6": {
+    "text": "Which when Abraham had heard, he weyghed the money that Ephron had asked in the hearing of the children of Heth, foure hundred ſicles of ſiluer of common currant money.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.994,
+     "madueke_b": 0.994
+    }
+   }
+  },
+  "17": {
+   "S1": {
+    "text": "And the field that before time was Ephrons, wherin was the duble caue, looking towards Mambre, aſwel it, as the caue, and al the trees therof in al the lymirs therof round about:",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.994,
+     "odr_com": 0.994,
+     "sabates_a": 0.958,
+     "madueke_b": 0.958
+    }
+   },
+   "S3": {
+    "text": "And the field that before time was Ephrons, wherin was the duble caue, looking towards Mambre, aſwel it, as the caue, and al the trees therof in al the lymits therof round about :",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.964,
+     "madueke_b": 0.964
+    }
+   },
+   "S9": {
+    "text": "And the field that before time was Ephrons, wherin was the duble taue, looking towards Mambre, aſwel it, as the caue, and al the trees therof in al the lymits therpf round about:",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.988,
+     "odr_com": 0.988,
+     "sabates_a": 0.952,
+     "madueke_b": 0.952
+    }
+   },
+   "S6": {
+    "text": "And the field that before time was Ephrons, wherin was the double caue, looking towards Mambre, as wel it, as the caue, and al the trees therof in al the limits thereof round about,",
+    "from": "r3",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.982,
+     "madueke_b": 0.982
+    }
+   }
+  },
+  "18": {
+   "S1": {
+    "text": "was made ſure to Abraham for a poſſeſſion, in the ſighe of the chillren of Heth, and of al that went in at the gate of his citie.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.984,
+     "odr_com": 0.984,
+     "sabates_a": 0.983,
+     "madueke_b": 0.983
+    }
+   },
+   "S3": {
+    "text": "was made ſure to Abraham for a poſſeſſion, in the ſight of the children of Heth, and of al that went in at the gate of his citie.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "was made ſure to Abraham for a poſſeſſion, in the, ſight, of the children of Heth, and of al that went inat the gate of his citie.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "was made ſure to Abraham for a poſſeſſion, in the ſight of the children of Heth, and of. al that went in at the gate of his, citie.",
+    "from": "r3",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   }
+  },
+  "19": {
+   "S1": {
+    "text": "And ſo Abrakam buried Sara his wife in the duble caue of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+    "from": "p97",
+    "score": {
+     "s_dismas": 0.992,
+     "odr_com": 0.992,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   },
+   "S3": {
+    "text": "†And ſo Abraham buried Sara his wife in the duble caue of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+    "from": "p101",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S9": {
+    "text": "And ſo Abraham buried Sara his wife in the duble caue of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+    "from": "p107",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": 1.0,
+     "sabates_a": 0.992,
+     "madueke_b": 0.992
+    }
+   },
+   "S6": {
+    "text": "And ſo Abraham buried Sara his wite in the double caue of the field, that looked towards Mambre, this is Hebron in the land ot Chanaan.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.977,
+     "odr_com": 0.977,
+     "sabates_a": 0.984,
+     "madueke_b": 0.984
+    }
+   }
+  },
+  "20": {
+   "S1": {
+    "text": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
+    "from": "p98",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": null,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S3": {
+    "text": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
+    "from": "p102",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": null,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S9": {
+    "text": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie, in of the Children of Heth.",
+    "from": "p108",
+    "score": {
+     "s_dismas": 1.0,
+     "odr_com": null,
+     "sabates_a": 1.0,
+     "madueke_b": 1.0
+    }
+   },
+   "S6": {
+    "text": "And the field was made fure to Abtaham, and the caue that was in it, for a pofſeſſion to burie in, of the Children of Heth.",
+    "from": "p90",
+    "score": {
+     "s_dismas": 0.975,
+     "odr_com": null,
+     "sabates_a": 0.973,
+     "madueke_b": 0.973
+    }
+   }
+  }
+ },
+ "refs_by_verse": {
+  "1": {
+   "s_dismas": "And Sara liued an hundred twentie ſeuen yeares.",
+   "odr_com": "AND Sara liued an hundred twentie seuen yeares.",
+   "sabates_a": "And Sara lived an hundred twenty seven years.",
+   "madueke_b": "And Sara lived an hundred twenty seven years."
+  },
+  "2": {
+   "s_dismas": "And ſhe died in the citie of Arbee which is Hebron, in the land of Chanaan: And Abraham came to mourne, and weepe for her.",
+   "odr_com": "And she died in the citie of Arbee which is Hebron, in the land of Chanaan: And Abraham came to mourne, and weepe for her.",
+   "sabates_a": "And she died in the city of Arbee which is Hebron, in the land of Chanaan: And Abraham came to mourn and weep for her.",
+   "madueke_b": "And she died in the city of Arbee which is Hebron, in the land of Chanaan: And Abraham came to mourn and weep for her."
+  },
+  "3": {
+   "s_dismas": "And after that he was riſen vp from the funeral obſequies, he ſpake to the children of Heth, ſaying:",
+   "odr_com": "And after that he was risen vp from the funeral obsequies, he spake to the children of Heth, saying:",
+   "sabates_a": "And after that he was risen up from the funeral obsequies, he spake to the children of Heth, saying:",
+   "madueke_b": "And after that he was risen up from the funeral obsequies, he spake to the children of Heth, saying:"
+  },
+  "4": {
+   "s_dismas": "I am a ſtranger and pilgrime among you: geue me the right of a ſepulchre with you, that I may burie my dead.",
+   "odr_com": "I am a stranger and pilgrime among you: geue me the right of a sepulchre with you, that I may burie my dead.",
+   "sabates_a": "I am a stranger and pilgrim among you: give me the right of a sepulchre with you, that I may bury my dead.",
+   "madueke_b": "I am a stranger and pilgrim among you: give me the right of a sepulchre with you, that I may bury my dead."
+  },
+  "5": {
+   "s_dismas": "The children of Heth anſwered, ſaying:",
+   "odr_com": "The children of Heth answered, saying:",
+   "sabates_a": "The children of Heth answered, saying:",
+   "madueke_b": "The children of Heth answered, saying:"
+  },
+  "6": {
+   "s_dismas": "My lord heare vs, thou art a prince of God among vs: in our principal ſepulchres burie thou thy dead: and no man can let thee but that in his owne monument thou mayeſt burie thy dead.",
+   "odr_com": "My lord heare vs, thou art a prince of God among vs: in our principal sepulchres burie thou thy dead: and no man can let thee but that in his owne monument thou mayest burie thy dead.",
+   "sabates_a": "My lord hear us, thou art a prince of God among us: in our principal sepulchres bury thou thy dead: and no man can let thee but that in his own monument thou mayest bury thy dead.",
+   "madueke_b": "My lord hear us, thou art a prince of God among us: in our principal sepulchres bury thou thy dead: and no man can let thee but that in his own monument thou mayest bury thy dead."
+  },
+  "7": {
+   "s_dismas": "Abraham roſe vp, and adored the people of the land, to wit the children of Heth:",
+   "odr_com": "Abraham rose vp, and adored the people of the land, to wit the children of Heth:",
+   "sabates_a": "Abraham rose up and adored the people of the land, to wit the children of Heth;",
+   "madueke_b": "Abraham rose up and adored the people of the land, to wit the children of Heth;"
+  },
+  "8": {
+   "s_dismas": "and he ſaid to them: If it pleaſe your ſoule that I burie my dead, heare me, and be interceſſors for me to Ephron the ſonne of Seor:",
+   "odr_com": "and he said to them: If it please your soule that I burie my dead, heare me, and be intercessors for me to Ephron the sonne of Seor:",
+   "sabates_a": "and he said to them: If it please your soul that I bury my dead, hear me, and be intercessors for me to Ephron the son of Seor:",
+   "madueke_b": "and he said to them: If it please your soul that I bury my dead, hear me, and be intercessors for me to Ephron the son of Seor:"
+  },
+  "9": {
+   "s_dismas": "that he geue me the duble caue, which he hath in the vttermoſt part of his field: for money to the worth therof let him deliuer it to me before you for poſſeſſion of a ſepulchre.",
+   "odr_com": "that he geue me the duble caue, which he hath in the vttermost part of his field: for money to the worth therof let him deliuer it to me before you for possession of a sepulchre.",
+   "sabates_a": "that he give me the double cave, which he hath in the uttermost part of his field: for money to the worth therefore let him deliver it to me before you for possession of a sepulchre.",
+   "madueke_b": "that he give me the double cave, which he hath in the uttermost part of his field: for money to the worth therefore let him deliver it to me before you for possession of a sepulchre."
+  },
+  "10": {
+   "s_dismas": "And Ephron dwelt in the middeſt of the children of Heth. And Ephron made anſwer to Abraham in the hearing of al that went in at the gate of the citie, ſaying:",
+   "odr_com": "And Ephron dwelt in the middest of the children of Heth. And Ephron made answer to Abraham in the hearing of al that went in at the gate of the citie, saying:",
+   "sabates_a": "And Ephron dwelt in the midst of the children of Heth. And Ephron made answer to Abraham in the hearing of all that went in at the gate of the city, saying:",
+   "madueke_b": "And Ephron dwelt in the midst of the children of Heth. And Ephron made answer to Abraham in the hearing of all that went in at the gate of the city, saying:"
+  },
+  "11": {
+   "s_dismas": "No, it ſhal not be ſo, my lord, but thou rather harken to that which I doe ſay: The field I deliuer to thee, and the caue that is therin, in the preſence of the children of my people, burie thy dead.",
+   "odr_com": "No, it shal not be so, my lord, but thou rather harken to that which I doe say: The field I deliuer to thee, and the caue that is therin, in the presence of the children of my people, burie thy dead.",
+   "sabates_a": "No, it shall not be so, my lord, but thou rather hearken to that which I do say: The field I deliver to thee, and the cave that is therein, in the presence of the children of my people, bury thy dead.",
+   "madueke_b": "No, it shall not be so, my lord, but thou rather hearken to that which I do say: The field I deliver to thee, and the cave that is therein, in the presence of the children of my people, bury thy dead."
+  },
+  "12": {
+   "s_dismas": "Abraham adored before the people of the land.",
+   "odr_com": "Abraham adored before the people of the land.",
+   "sabates_a": "Abraham adored before the people of the land.",
+   "madueke_b": "Abraham adored before the people of the land."
+  },
+  "13": {
+   "s_dismas": "And he ſpoke to Ephron, his people ſtanding round about: I beſeech thee to heare me: I wil geue money for the field: take it, and ſo I wil burie my dead in it.",
+   "odr_com": "And he spoke to Ephron, his people standing round about: I beseech thee to heare me: I wil geue money for the field: take it, and so I wil burie my dead in it.",
+   "sabates_a": "And he spoke to Ephron, his people standing round about: I beseech thee to hear me: I will give money for the field: take it, and so I will bury my dead in it.",
+   "madueke_b": "And he spoke to Ephron, his people standing round about: I beseech thee to hear me: I will give money for the field: take it, and so I will bury my dead in it."
+  },
+  "14": {
+   "s_dismas": "And Ephron anſwered:",
+   "odr_com": "And Ephron answered:",
+   "sabates_a": "And Ephron answered:",
+   "madueke_b": "And Ephron answered:"
+  },
+  "15": {
+   "s_dismas": "My lord, heare me. The ground which thou deſireſt, is worth foure hundred ſicles of ſiluer: this is the price betwen me and thee: but how much is this? burie thy dead.",
+   "odr_com": "My lord, heare me. The ground which thou desirest, is worth foure hundred sicles of siluer: this is the price betwen me and thee: but how much is this? burie thy dead.",
+   "sabates_a": "My lord hear me. The ground which thou desirest is worth four hundred sicles of silver: this is the price between me and thee: but how much is this? Bury thy dead.",
+   "madueke_b": "My lord hear me. The ground which thou desirest is worth four hundred sicles of silver: this is the price between me and thee: but how much is this? Bury thy dead."
+  },
+  "16": {
+   "s_dismas": "Which when Abraham had heard, he weyed the money, that Ephron had asked, in the hearing of the children of Heth, foure hundred ſicles of ſiluer of common currant money.",
+   "odr_com": "Which when Abraham had heard, he weyed the money, that Ephron had asked, in the hearing of the children of Heth, foure hundred sicles of siluer of common currant money.",
+   "sabates_a": "Which when Abraham had heard, he weighed the money that Ephron had asked, in the hearing of the children of Heth, four hundred sicles of silver of common current money.",
+   "madueke_b": "Which when Abraham had heard, he weighed the money that Ephron had asked, in the hearing of the children of Heth, four hundred sicles of silver of common current money."
+  },
+  "17": {
+   "s_dismas": "And the field that before time was Ephrons, wherin was the duble caue, looking towards Mambre, aſwel it, as the caue, and al the trees therof in al the lymits therof round about:",
+   "odr_com": "And the field that before time was Ephrons, wherin was the duble caue, looking towards Mambre, aswel it, as the caue, and al the trees therof in al the lymits therof round about:",
+   "sabates_a": "And the field that before time was Ephron's, wherein was the double cave, looking towards Mambre, as well it, as the cave, and all the trees thereof in all the limits thereof round about,",
+   "madueke_b": "And the field that before time was Ephron's, wherein was the double cave, looking towards Mambre, as well it, as the cave, and all the trees thereof in all the limits thereof round about,"
+  },
+  "18": {
+   "s_dismas": "was made ſure to Abraham for a poſſeſſion, in the ſight of the children of Heth, and of al that went in at the gate of his citie.",
+   "odr_com": "was made sure to Abraham for a possession, in the sight of the children of Heth, and of al that went in at the gate of his citie.",
+   "sabates_a": "was made sure to Abraham for a possession, in the sight of the children of Heth, and of all that went in at the gate of his city.",
+   "madueke_b": "was made sure to Abraham for a possession, in the sight of the children of Heth, and of all that went in at the gate of his city."
+  },
+  "19": {
+   "s_dismas": "And ſo Abraham buried Sara his wife in the duble caue of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+   "odr_com": "And so Abraham buried Sara his wife in the duble caue of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+   "sabates_a": "And so Abraham buried Sara his wife in the double cave of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+   "madueke_b": "And so Abraham buried Sara his wife in the double cave of the field, that looked towards Mambre, this is Hebron in the land of Chanaan."
+  },
+  "20": {
+   "s_dismas": "And the field was made ſure to Abraham, and the caue, that was in it, for a poſſeſſion to burie in, of the Children of Heth.",
+   "odr_com": "",
+   "sabates_a": "And the field was made sure to Abraham, and the cave that was in it, for a possession to bury in, of the Children of Heth.",
+   "madueke_b": "And the field was made sure to Abraham, and the cave that was in it, for a possession to bury in, of the Children of Heth."
+  }
+ },
+ "janvier_by_verse": {
+  "1": "And Sara lived an hundred twenty seven years.",
+  "2": "And she died in the city of Arbee which is Hebron, in the land of Chanaan: And Abraham came to mourn and weep for her.",
+  "3": "And after that he was risen up from the funeral obsequies, he spake to the children of Heth, saying:",
+  "4": "I am a stranger and pilgrim among you: give me the right of a sepulchre with you, that I may bury my dead.",
+  "5": "The children of Heth answered, saying:",
+  "6": "My lord hear us, thou art a prince of God among us: in our principal sepulchres bury thou thy dead: and no man can let thee but that in his own monument thou mayest bury thy dead.",
+  "7": "Abraham rose up and adored the people of the land, to wit the children of Heth;",
+  "8": "and he said to them: If it please your soul that I bury my dead, hear me, and be intercessors for me to Ephron the son of Seor:",
+  "9": "that he give me the double cave, which he hath in the uttermost part of his field: for money to the worth therefore let him deliver it to me before you for possession of a sepulchre.",
+  "10": "And Ephron dwelt in the midst of the children of Heth. And Ephron made answer to Abraham in the hearing of all that went in at the gate of the city, saying:",
+  "11": "No, it shall not be so, my lord, but thou rather hearken to that which I do say: The field I deliver to thee, and the cave that is therein, in the presence of the children of my people, bury thy dead.",
+  "12": "Abraham adored before the people of the land.",
+  "13": "And he spoke to Ephron, his people standing round about: I beseech thee to hear me: I will give money for the field: take it, and so I will bury my dead in it.",
+  "14": "And Ephron answered:",
+  "15": "My lord hear me. The ground which thou desirest is worth four hundred sicles of silver: this is the price between me and thee: but how much is this? Bury thy dead.",
+  "16": "Which when Abraham had heard, he weighed the money that Ephron had asked, in the hearing of the children of Heth, four hundred sicles of silver of common current money.",
+  "17": "And the field that before time was Ephron's, wherein was the double cave, looking towards Mambre, as well it, as the cave, and all the trees thereof in all the limits thereof round about,",
+  "18": "was made sure to Abraham for a possession, in the sight of the children of Heth, and of all that went in at the gate of his city.",
+  "19": "And so Abraham buried Sara his wife in the double cave of the field, that looked towards Mambre, this is Hebron in the land of Chanaan.",
+  "20": "And the field was made sure to Abraham, and the cave that was in it, for a possession to bury in, of the Children of Heth."
+ },
+ "ref_coverage": {
+  "janvier": 20,
+  "have": {
+   "s_dismas": 20,
+   "odr_com": 19,
+   "sabates_a": 20,
+   "madueke_b": 20
+  },
+  "n_incomplete_verses": 1,
+  "incomplete": [
+   {
+    "verse": 20,
+    "absent": [
+     "odr_com"
+    ]
+   }
+  ],
+  "blocked_cells": 4,
+  "gaps": [
+   "odr_com"
+  ]
+ },
+ "ref_gaps": [
+  "odr_com"
+ ],
+ "blocked_cells": 4,
+ "achievable": 76,
+ "triage": "R3-READY",
+ "secs": 4.8
+}

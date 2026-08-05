@@ -1,0 +1,44 @@
+{
+  "locus": "scripture/abdias/1",
+  "page_index": 840,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "page_label_printed": "840",
+  "running_header": {"left": "", "center": "THE PROPHECIE", "right": "840"},
+  "chapter_starts_here": true,
+  "page_kind": "prophet (single chapter, single-column body + drop-cap + margin apparatus)",
+  "verses_on_page": ["1:1", "1:2", "1:3", "1:4", "1:5", "1:6", "1:7", "1:8", "1:9", "1:10", "1:11", "1:12"],
+  "book_title": "THE PROPHECIE OF ABDIAS.",
+  "argument": {"text": "Abdias borne in Sichem, of the tribe of Ephraim, prophecied the ſame time with Amos; ſo briefly that his prophecie is not parted into chapters: 1. againſt the Idumeans; foreſhewing their deſtruction; 10. for their perpetual emnitie againſt the Iewes, and confederacie with the Chaldees. 17. The captiuitie and relaxation of the Iewes. 19. And redemption of the whole world by Chriſt."},
+  "body": [
+    {"line_index": 1, "verse": "1:1", "role": "body", "drop_cap": "T", "text": "The viſion of Abdias. Thus ſayth our Lord God to Edom: We haue heard a bruit from our Lord, and he hath ſent a legate to the Gentils. Riſe ye, and let vs ariſe againſt him into battel."},
+    {"line_index": 2, "verse": "1:2", "role": "body", "text": "Behold I haue geuen thee a litle one in the Gentils: thou art contẽptible exceedingly.", "has_uncertain": true},
+    {"line_index": 3, "verse": "1:3", "role": "body", "text": "The pride of thy hart hath extolled thee, dwelling in the clefts of rockes, exalting thy throne: which ſayſt in thy hart: Who ſhal plucke me downe to the earth?"},
+    {"line_index": 4, "verse": "1:4", "role": "body", "text": "If thou ſhalt be exalted as an eagle, and if thou ſhalt ſet thy neſt among the ſtarres: thence wil I plucke thee downe, ſayth our Lord."},
+    {"line_index": 5, "verse": "1:5", "role": "body", "text": "If theues had gone in to thee, if robbers by night, how hadſt thou held thy peace? would not they haue ſtolen thinges ſufficent for themſelues? if the grape gatherers had entered in to thee, would they not haue left thee at the leaſt a cluſter?"},
+    {"line_index": 6, "verse": "1:6", "role": "body", "text": "How haue they ſearched Eſau, haue they ſought out his hidden thinges?"},
+    {"line_index": 7, "verse": "1:7", "role": "body", "text": "Euen to the border haue they caſt thee out: al the men of thy league haue mocked thee: the men of thy peace haue preuailed againſt thee: they that eate with thee, ſhal lay embuſhments vnder thee: there is no wiſedom in him."},
+    {"line_index": 8, "verse": "1:8", "role": "body", "text": "Why, ſhal not I in that day, ſayth our Lord, deſtroy the wiſe out of Idumea, and prudence from the mount of Eſau,"},
+    {"line_index": 9, "verse": "1:9", "role": "body", "text": "And thy valients of the South ſhal feare, that man may perish from the mount of Eſau·"},
+    {"line_index": 10, "verse": "1:10", "role": "body", "text": "For the ſlaughter, and for the iniquitie againſt thy brother Iacob, confuſion ſhal couer thee, and thou ſhalt perish for euer."},
+    {"line_index": 11, "verse": "1:11", "role": "body", "text": "In the day when thou ſtoodeſt againſt him, when ſtrangers tooke his armie, and foreners entered his gates, and vpon Ieruſalem caſt lotte: thou alſo waſt as one of them."},
+    {"line_index": 12, "verse": "1:12", "role": "body", "text": "And thou ſhalt not diſpiſe in the day of thy brother, in the day of his peregrination: and thou ſhalt not reioyce ouer the children of Iuda, in the day of their perdition: & thou ſhalt not magnifie thy mouth in the day of diſtreſſe."}
+  ],
+  "catchword": {"text": "† Neither", "note": "foot-of-page catchword duplicating the first word(s) of p.841 (Abdias 1:13); excluded from body concat"},
+  "apparatus": [
+    {"role": "marginal_note", "side": "left", "anchor_verse": "1:1", "ref_mark": "∷", "text": "God directed the cogitations of diuers other Gentiles, to ioyne their forces againſt the Idumeans."},
+    {"role": "marginal_note", "side": "left", "anchor_verse": "1:12", "ref_mark": "∷", "text": "God admoniſheth them what they ought not to do, but withal [continues p.841]"},
+    {"role": "cross_reference", "side": "right", "anchor_verse": "1:1", "text": "Iere. 49."},
+    {"role": "cross_reference", "side": "right", "anchor_verse": "1:8", "text": "Iſa. 29."},
+    {"role": "cross_reference", "side": "right", "anchor_verse": "1:10", "text": "Gen. 27."}
+  ],
+  "uncertain": [
+    {"line_index": 2, "span": "contẽptible", "note": "a nasal-abbreviation mark over the 'e' (tilde=following m, i.e. contemptible) vs an acute accent — verify the glyph in review; scored ſ-blind either way", "printed_appears_as": "cont[é/ẽ]ptible"}
+  ],
+  "glyph_counts": {"long_s": 43},
+  "observer": "jarvis",
+  "observed_at": "2026-07-23",
+  "method": "GT-3 archaic-gap gold: direct diplomatic transcription from archive-ot2-1610 p840 (high-res body crops), rung-0 visual gate. Archaic-gap book (no s_dismas/odr_com) — the modern-fallback τx eval page (confirms the gate_calibrate 2026-07-23 simulation that modern-axis xsrc reaches recall=1 at τx=0.92).",
+  "confidence": "draft (Jarvis visual, pending Sir review) — vv1-12 of 21; vv13-21 on p.841 (owed).",
+  "notes": "Diplomatic surface preserved: long-ſ glyph-driven; archaic spelling incl. the printed typos 'ſufficent' (v5) and 'foreners' (v11); u/v and i/j as printed; † verse-dividers and ∷ apparatus-anchors excluded from body text. Archaic-gap book → gold scored vs the MODERN witness (janvier/madueke) under the content fold."
+}

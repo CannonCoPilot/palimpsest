@@ -1,0 +1,3281 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 17,
+  "from": "p90",
+  "old_text": "And they him forth, and ſet him without the citie : and there ſpake to him, ſaying : Saue thy life : Iooke not backe, ther ſtay thou in al the countrie about : but ſaue thy ſelfe the mountaine, leſt thou alſo periſh withal.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.0263,
+   0.875,
+   0.1789
+  ],
+  "crop_page": 90,
+  "r3_raw": "daughters, because our Lord spared him. † And they led him forth, and set him without the citie: and there they spake to him, saying: Saue thy life: looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also periſh withal. † And Lot ſaid to them: I beſeech thee my Lord, † because thy ſervant hath",
+  "r3_verse": "And they led him forth, and set him without the citie: and there they spake to him, saying: Saue thy life: looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also periſh withal.",
+  "arm_conflicts": [
+   ": Iooke | looke",
+   "ther | neither"
+  ],
+  "new_text": "And they led him forth, and ſet him without the citie and there they ſpake to him, ſaying Saue thy life looke not backe, neither ſtay thou in al the countrie about but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 18,
+  "from": "p90",
+  "old_text": "And Lot to them : I beſeech thee my Lord,",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.1104,
+   0.875,
+   0.1993
+  ],
+  "crop_page": 90,
+  "r3_raw": "ther stay thou in al the countrie about: but saue thy selfe in the mountaine, left thou also perish withal. † And Lot said to them: I beſeech thee my Lord, † because thy ſervant hath fonnd grace before thee, and thou hast magnified thy mercie,",
+  "r3_verse": "And Lot said to them: I beſeech thee my Lord,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "2": "ſaid"
+  },
+  "visual_readings": {
+   "2": "ſaid"
+  },
+  "new_text": "And Lot ſaid to them I beſeech thee my Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 20,
+  "from": "p90",
+  "old_text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ihalbe ſafe it : is it not a little one, and my life ſhalbe ſaued",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.971,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2133,
+   0.875,
+   0.321
+  ],
+  "crop_page": 90,
+  "r3_raw": "saue my life, and safe I can not be in the mountaine, lest per- haps the euil catch me, and I dye. † There is this citie hereby 20 at hand, wherunto I may fle, a little one, and I ſhalbe safe in it: is it not a little one, and my life ſhalbe faued? † And he 21 faid to him: Behold also in this point I haue heard thy pray-",
+  "r3_verse": "There is this citie hereby at hand, wherunto I may fle, a little one, and I ſhalbe safe in it: is it not a little one, and my life ſhalbe faued?",
+  "arm_conflicts": [
+   "flee, | fle,",
+   "ihalbe | ſhalbe",
+   "ſaued | faued?"
+  ],
+  "new_text": "There is this citie hereby at hand, wherunto I may fle, a little one, and I ſhalbe ſafe in it is it not a little one, and my life ſhalbe faued?",
+  "s_unresolved": [
+   "fle,",
+   "ſhalbe",
+   "faued?"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.986,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 22,
+  "from": "p90",
+  "old_text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called. Segor.",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.933,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.3159,
+   0.875,
+   0.4271
+  ],
+  "crop_page": 90,
+  "r3_raw": "ers, not to overthrow the citie for which thou hast spoken. † Make haſt, and be faued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called • Segor. † The ſunne was riſen vpon the earth, & Lot entered into Segor. † Therfore our Lord rained",
+  "r3_verse": "Make haſt, and be faued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "arm_conflicts": [
+   "ſaued | faued"
+  ],
+  "new_text": "Make haſt, and be faued there becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called. Segor.",
+  "s_unresolved": [
+   "faued"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.912,
+   "odr_com": 0.993,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 23,
+  "from": "p90",
+  "old_text": "The ſunne was riſen vpon earth, & Lot entred into Segor.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.86,
+   "madueke_b": 0.86
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.3573,
+   0.875,
+   0.4475
+  ],
+  "crop_page": 90,
+  "r3_raw": "thing til thou enter in thither. Therfore the name of that citie was called Segor. The sunne was risen vpon the earth, & Lot entred into Segor. Therefore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord",
+  "r3_verse": "The sunne was risen vpon the earth, & Lot entred into Segor.",
+  "arm_conflicts": [],
+  "new_text": "The ſunne was riſen vpon the earth, & Lot entred into Segor.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 24,
+  "from": "chapter",
+  "old_text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out ofheauen : andhe",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.3787,
+   0.875,
+   0.4876
+  ],
+  "crop_page": 90,
+  "r3_raw": "citie was called • Segor. † The sunne was risen vpon the earth, & Lot entered into Segor. † Therefore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen: † and he subuerted these cities, and al the countrie about; al the inhabitants of the cities, and al things",
+  "r3_verse": "Therefore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen:",
+  "arm_conflicts": [
+   "Therfore | Therefore",
+   "ofheauen : andhe | of heauen:"
+  ],
+  "new_text": "Therefore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+  "s_unresolved": [
+   "Therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 25,
+  "from": "p90",
+  "old_text": "ſubuerted theſe oities, and al ſer countrie about, al the inhabitants of the cities, and al things in that ſpring of the earth.",
+  "old": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.4185,
+   0.875,
+   0.5307
+  ],
+  "crop_page": 90,
+  "r3_raw": "upon Sodome and Gomorre brimstone & fire from our Lord out of heaven: † and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.† And his wife :: looking behind her, was turned into a statua offalt. † And Abraham getting vp",
+  "r3_verse": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.†",
+  "arm_conflicts": [
+   "oities, | cities,",
+   "ſer | the"
+  ],
+  "new_text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 33,
+  "from": "p90",
+  "old_text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her ther : but ke perceaued not, neyther when his daughter downe, nor when ſne roſe vp.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.7836,
+   0.875,
+   0.9194
+  ],
+  "crop_page": 90,
+  "r3_raw": "with wine, and let vs lie with him, that we may preferue seed of our father. † They therefore made their father to drinke 32 wine that night: and the elder went in, and lay with her fa- ther : but he perceaued not, neyther when his daughter lay downe, nor when she rose vp. † The next day also the elder 34 said to",
+  "r3_verse": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther : but he perceaued not, neyther when his daughter lay downe, nor when she rose vp.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "ke | he",
+   "ſne | she"
+  ],
+  "new_text": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther : but he perceaued not, neyther when his daughter lay downe, nor when she roſe vp.",
+  "s_unresolved": [
+   "therefore",
+   "fa-",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "chapter",
+  "old_text": "The next day alſo the elder ſaid mcm ſaid to the younger Bchold I lay yeſternight with my father, let vs make him drinke winealſo this night, and thou ialt lye with him, that we may ſaue ſeed of our ſather.",
+  "old": {
+   "s_dismas": 0.931,
+   "odr_com": 0.931,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   31,
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.0292,
+   0.875,
+   0.1404
+  ],
+  "crop_page": 91,
+  "crop_leaves": [
+   90,
+   91
+  ],
+  "r3_raw": "ther: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp. † The next day also the elder 34 said to GENESIS. said to the younger: Behold I lay yesternight with my father, let vs make him drinke wine also this night, and thou shalt lye vith him, that we may sauc seed of our fathcer. † They made their fath:r drinke wine, that night also, and the",
+  "r3_verse": "The next day also the elder said to said to the younger: Behold I lay yesternight with my father, let vs make him drinke wine also this night, and thou shalt lye vith him, that we may sauc seed of our fathcer.",
+  "arm_conflicts": [
+   "mcm | to",
+   "Bchold | Behold",
+   "winealſo | wine also",
+   "ialt | shalt",
+   "with | vith",
+   "ſaue | sauc",
+   "ſather. | fathcer."
+  ],
+  "r2_attested": {
+   "25": "alſo",
+   "30": "ſhalt"
+  },
+  "visual_readings": {
+   "25": "alſo",
+   "30": "ſhalt"
+  },
+  "new_text": "The next day alſo the elder ſaid to ſaid to the younger Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye vith him, that we may sauc ſeed of our fathcer.",
+  "s_unresolved": [
+   "sauc",
+   "fathcer."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.946,
+   "odr_com": 0.946,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 17,
+  "from": "p94",
+  "old_text": "And they him forth, and ſet him without the citie: and there ſpake to him, ſaying : Saue thy life : Iooke not backe, ther ſtay thou in al the countrie about : but ſaue thy ſelfe the mountaine, leſt thou alſo periſh withal.",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.08,
+   0.012,
+   0.875,
+   0.1649
+  ],
+  "crop_page": 94,
+  "r3_raw": "daughters, because our Lord spared him. † And they led 17 him forth, and set him without the citie: and there they spake to him, saying: Saue thy life: looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal. † And Lot said 18 to them: I beſeech thee my Lord, † because thy ſervant hath",
+  "r3_verse": "And they led him forth, and set him without the citie: and there they spake to him, saying: Saue thy life: looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal.",
+  "arm_conflicts": [
+   ": Iooke | looke",
+   "ther | neither"
+  ],
+  "new_text": "And they led him forth, and ſet him without the citie: and there they ſpake to him, ſaying Saue thy life looke not backe, neither ſtay thou in al the countrie about but ſaue thy ſelfe in the mountaine, leſt thou alſo periſh withal.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 18,
+  "from": "p94",
+  "old_text": "And Lot to them : I beſeech thee my Lord,",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.0985,
+   0.875,
+   0.1863
+  ],
+  "crop_page": 94,
+  "r3_raw": "ther stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal. † And Lot said to them: I beſeech thee my Lord, † because thy ſervant hath fonnd grace before thee, and thou haſt magnified thy mercie,",
+  "r3_verse": "And Lot said to them: I beſeech thee my Lord,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "2": "ſaid"
+  },
+  "visual_readings": {
+   "2": "ſaid"
+  },
+  "new_text": "And Lot ſaid to them I beſeech thee my Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 19,
+  "from": "p94",
+  "old_text": "becauſe thy ſeruant fonnd grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt haps the euil catch me, and I dye.",
+  "old": {
+   "s_dismas": 0.961,
+   "odr_com": 0.965,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   18,
+   19,
+   20
+  ],
+  "crop": [
+   0.08,
+   0.1199,
+   0.875,
+   0.2708
+  ],
+  "crop_page": 94,
+  "r3_raw": "the mountaine, lest thou also perish withal. † And Lot said to them: I beseech thee my Lord, † because thy servant hath found grace before thee, and thou hast magnified thy mercie, which thou hast wrought with me, in that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye. † There is this citie hereby at hand, wherunto I may flee, a little one, and I shalbe safe in",
+  "r3_verse": "because thy servant hath found grace before thee, and thou hast magnified thy mercie, which thou hast wrought with me, in that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye.",
+  "arm_conflicts": [
+   "ſeruant fonnd | servant hath found",
+   "haps | perhaps"
+  ],
+  "new_text": "becauſe thy ſeruant hath found grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and ſafe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+  "s_unresolved": [
+   "found"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 0.996,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 20,
+  "from": "p94",
+  "old_text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe it: is it not a little one, and my life ſhalbe ſaued",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.978,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2038,
+   0.875,
+   0.3127
+  ],
+  "crop_page": 94,
+  "r3_raw": "saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye. † There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe safe in it: is it not a little one, and my life ſhalbe faued? † And he said to him: Behold also in this point I haue heard thy pray-",
+  "r3_verse": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe safe in it: is it not a little one, and my life ſhalbe faued?",
+  "arm_conflicts": [
+   "ſaued | faued?"
+  ],
+  "new_text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in it: is it not a little one, and my life ſhalbe faued?",
+  "s_unresolved": [
+   "faued?"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.964,
+   "odr_com": 0.993,
+   "sabates_a": 0.954,
+   "madueke_b": 0.954
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 21,
+  "from": "p94",
+  "old_text": "And ſaid to him : Behold alſo in this point Ihaue heard thy ers, not to ouerthrow the citie for which thou haſt ſpoken.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.941,
+   "madueke_b": 0.941
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2467,
+   0.875,
+   0.352
+  ],
+  "crop_page": 94,
+  "r3_raw": "at hand, wherunto I may flee, a little one, and I shalbe safe in it: is it not a little one, and my life shalbe saued? † And he said to him: Behold also in this point I haue heard thy prayers, not to ouerthrow the citie for which thou hast spoken. † Make haste, and be saued there: because I can not doe any",
+  "r3_verse": "And he said to him: Behold also in this point I haue heard thy prayers, not to ouerthrow the citie for which thou hast spoken.",
+  "arm_conflicts": [
+   "Ihaue | I haue",
+   "ers, | prayers,"
+  ],
+  "new_text": "And he ſaid to him Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 22,
+  "from": "p94",
+  "old_text": "Make haſt, and be ſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie was called Segor.",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.933,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.3087,
+   0.875,
+   0.4197
+  ],
+  "crop_page": 94,
+  "r3_raw": "ers, not to ouerthrow the citie for which thou hast spoken. † Make haſt, and besaued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called * Segor. † The funne was risen vpon the earth, & Lot entred into Segor. † Therfore our Lord rained",
+  "r3_verse": "Make haſt, and besaued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "arm_conflicts": [
+   "be ſaued | besaued"
+  ],
+  "new_text": "Make haſt, and besaued there becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "s_unresolved": [
+   "besaued"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.912,
+   "odr_com": 0.993,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 23,
+  "from": "p94",
+  "old_text": "The funne was riſen vpon earth, & Lot entred into Segor.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.3516,
+   0.875,
+   0.4391
+  ],
+  "crop_page": 94,
+  "r3_raw": "thing til thou enter in thither. Therfore the name of that citie was called * Segor. † The sunne was risen vpon the earth, & Lot entered into Segor. † Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord",
+  "r3_verse": "The sunne was risen vpon the earth, & Lot entered into Segor.",
+  "arm_conflicts": [
+   "funne | sunne",
+   "entred | entered"
+  ],
+  "new_text": "The sunne was riſen vpon the earth, & Lot entered into Segor.",
+  "s_unresolved": [
+   "sunne"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 24,
+  "from": "chapter",
+  "old_text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our out ofheauen: andhe",
+  "old": {
+   "s_dismas": 0.868,
+   "odr_com": 0.868,
+   "sabates_a": 0.861,
+   "madueke_b": 0.861
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.3737,
+   0.875,
+   0.4804
+  ],
+  "crop_page": 94,
+  "r3_raw": "citie was called * Segor. † The funne was risen vpon the earth, & Lot entered into Segor. † Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen: † and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things",
+  "r3_verse": "Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen:",
+  "arm_conflicts": [
+   "ofheauen: andhe | of heauen:"
+  ],
+  "new_text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 25,
+  "from": "p94",
+  "old_text": "ſubuerted theſe oities, and al ſer countrie about, al the inhabitants of the oities, and al things in that ſpring of the earth.",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.882,
+   "sabates_a": 0.883,
+   "madueke_b": 0.883
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.4143,
+   0.875,
+   0.5292
+  ],
+  "crop_page": 94,
+  "r3_raw": "Upon Sodome and Gomorre brimstone & fire from our Lord out of heauen: † and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.† And his wife:: looking behind her, was turned into a ſtatua of salt. † And Abraham getting vp",
+  "r3_verse": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.†",
+  "arm_conflicts": [
+   "oities, | cities,",
+   "ſer | the",
+   "oities, | cities,"
+  ],
+  "new_text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p94",
+  "old_text": "beheld Sodome & Gomorre, and the Ii. land of that countrie : and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+  "old": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.5199,
+   0.875,
+   0.6279
+  ],
+  "crop_page": 94,
+  "r3_raw": "booke back early in the morning, there where before he had stood with our Lord, † beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace. † For when God subuerted the citties of that countrie, he: remenbring",
+  "r3_verse": "beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace.",
+  "arm_conflicts": [
+   "Ii. | whole"
+  ],
+  "new_text": "beheld Sodome & Gomorre, and the whole land of that countrie and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 30,
+  "from": "p94",
+  "old_text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with for he was afraid to abide in Segor) and he abode in a him ſelfe, and his two daughters with him.",
+  "old": {
+   "s_dismas": 0.952,
+   "odr_com": 0.952,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.6259,
+   0.875,
+   0.7553
+  ],
+  "crop_page": 94,
+  "r3_raw": "Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt. † And Lot ascended out of Segor, 30 and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and heabode in a caue him selfe, and his two daughters with him. † And the elder said to the younger: Our father is old, and there is no man",
+  "r3_verse": "And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and heabode in a caue him selfe, and his two daughters with him.",
+  "arm_conflicts": [
+   "he abode | heabode"
+  ],
+  "new_text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and heabode in a caue him ſelfe, and his two daughters with him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 31,
+  "from": "p94",
+  "old_text": "And the ſaid to the younger : Our father is old, and there is no left on the earth, that may companie with vs after the nor of the whole earth.",
+  "old": {
+   "s_dismas": 0.913,
+   "odr_com": 0.913,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.08,
+   0.6892,
+   0.875,
+   0.8177
+  ],
+  "crop_page": 94,
+  "r3_raw": "(for he was afraid to abide in Segor) and he abode in a caue him selfe, and his two daughters with him. † And the elder said to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth. † Come, let vs make him drunke with wine, and let vs lie with him, that we may preferue seed",
+  "r3_verse": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+  "arm_conflicts": [
+   "nor | manner"
+  ],
+  "new_text": "And the elder ſaid to the younger Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p94",
+  "old_text": "Come, Iet vs make him drunke with wine, and let vs lie with him, that we may preſerue of our father.",
+  "old": {
+   "s_dismas": 0.941,
+   "odr_com": 0.941,
+   "sabates_a": 0.946,
+   "madueke_b": 0.946
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.7526,
+   0.875,
+   0.8599
+  ],
+  "crop_page": 94,
+  "r3_raw": "left on the earth, that may companie with vs after the manner of the whole earth. † Come, let vs make him drunke 32 with wine, and let vs lie with him, that we may preserue seed of our father. † They therefore made their father to drinke 33 wine that night: and the elder went in, and lay with her fa-",
+  "r3_verse": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preserue seed of our father.",
+  "arm_conflicts": [
+   "Iet | let"
+  ],
+  "r2_attested": {
+   "18": "ſeed"
+  },
+  "visual_readings": {
+   "18": "ſeed"
+  },
+  "new_text": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preſerue ſeed of our father.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p94",
+  "old_text": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her ther : but he perceaued not, neyther when his daughter downe, nor whon ſheroſe vp.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.7949,
+   0.875,
+   0.9316
+  ],
+  "crop_page": 94,
+  "r3_raw": "with wine, and let vs lie with him, that we may preferue seed of our father. † They therefore made their father to drinke 33 wine that night: and the elder went in, and lay with her fa- ther: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp. † The next day also the elder 34 said to",
+  "r3_verse": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "whon ſheroſe | when she rose"
+  ],
+  "r2_attested": {
+   "34": "roſe"
+  },
+  "visual_readings": {
+   "34": "roſe"
+  },
+  "new_text": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther but he perceaued not, neyther when his daughter lay downe, nor when she roſe vp.",
+  "s_unresolved": [
+   "therefore",
+   "fa-",
+   "she"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "p99",
+  "old_text": "the two augels came to Sodome at euen, and Lot ſitting in the gates of the citie. Who when he had ſene them, roſe vp and went to meete them : and adored proſtrate vnto the ground,",
+  "old": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0382,
+   0.875,
+   0.1682
+  ],
+  "crop_page": 99,
+  "r3_raw": "GENESIS. And the two angels came to Sodome at cuen, and Lot sitting in the gates of the citie. Who when he had sene them, rose vp and went to meete them:and adored prostrate vnto the ground, † and said: I beseech you, my Lords, turne :: Abraha into the house of your servant, and lodge there: wash your Lot by ho",
+  "r3_verse": "And the two angels came to Sodome at cuen, and Lot sitting in the gates of the citie. Who when he had sene them, rose vp and went to meete them:and adored prostrate vnto the ground,",
+  "arm_conflicts": [
+   "augels | angels",
+   "euen, | cuen,",
+   "them : and | them:and"
+  ],
+  "new_text": "And the two angels came to Sodome at cuen, and Lot ſitting in the gates of the citie. Who when he had ſene them, roſe vp and went to meete them:and adored proſtrate vnto the ground,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p99",
+  "old_text": "†and ſaid : I beſoch you, my Lords, turne:: into the houſe of your ſeruant, and lodge there : wash your Lot feet, and in the morning you shal go forth on your way. talitie Who ſaid : No, but we wil abide in the ſtreat.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.0981,
+   0.875,
+   0.234
+  ],
+  "crop_page": 99,
+  "r3_raw": "them, rose vp and went to meete them:and adored prostrate vnto the ground, † and said: I beſeech you, my Lords, turne into the house of your ſervant, and lodge there: wash your feet, and in the morning you shal go forth on your way. ; Who said: No, but we wil abide in the streat. † He compelled them earnestly to turne in vnto him: and when they",
+  "r3_verse": "and said: I beſeech you, my Lords, turne into the house of your ſervant, and lodge there: wash your feet, and in the morning you shal go forth on your way. ; Who said: No, but we wil abide in the streat.",
+  "arm_conflicts": [
+   "beſoch | beſeech",
+   "ſeruant, | ſervant,",
+   "talitie | ;"
+  ],
+  "new_text": "†and ſaid I beſeech you, my Lords, turne:: into the houſe of your ſeruant, and lodge there wash your feet, and in the morning you shal go forth on your way. ; Who ſaid No, but we wil abide in the ſtreat.",
+  "s_unresolved": [
+   "beſeech"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p99",
+  "old_text": "He compel- gels to led them earneſtly to turne in vnto him: ando when they ofme. were entred into his houſe, heomade, them a banquet, and baked vnleauened. bread, and they did eate.",
+  "old": {
+   "s_dismas": 0.907,
+   "odr_com": 0.907,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.1596,
+   0.875,
+   0.2906
+  ],
+  "crop_page": 99,
+  "r3_raw": "feet, and in the morning you shal go forth on your way. 3 Who said: No, but we wil abide in the streat. † He compelled them earnestly to turne in vnto him: and when they were entered into his house, he made them a banquet, and baked vnleauened bread, and they did eate. † And before they went to bed, the men of the citie beſeech the house from",
+  "r3_verse": "He compelled them earnestly to turne in vnto him: and when they were entered into his house, he made them a banquet, and baked vnleauened bread, and they did eate.",
+  "arm_conflicts": [
+   "compel- gels to led | compelled",
+   "ando | and",
+   "entred | entered",
+   "heomade, | he made"
+  ],
+  "new_text": "He compelled them earneſtly to turne in vnto him: and when they were entered into his houſe, he made them a banquet, and baked vnleauened. bread, and they did eate.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 13,
+  "from": "p99",
+  "old_text": "for we wil this place, for that : their crye is waxen lowde before This Lord, who hath ſent vs to deſtroy them.",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.88,
+   "madueke_b": 0.88
+  },
+  "neighbours": [
+   12,
+   13,
+   14
+  ],
+  "crop": [
+   0.08,
+   0.6432,
+   0.875,
+   0.7641
+  ],
+  "crop_page": 99,
+  "r3_raw": "here anie of thine? sonne in lawe, or sonnes, or daughters, al that are thine, bring them out of this citie: † for we wil destroy this place, for that:: their crye is waxen lowde before our Lord, who hath sent vs to destroy them. † Therfore Lot went forth, and spake to his sonnes in lawe that were to take his daughters, and said: Arise: get you forth out of this venge",
+  "r3_verse": "for we wil destroy this place, for that:: their crye is waxen lowde before our Lord, who hath sent vs to destroy them.",
+  "arm_conflicts": [
+   "This | our"
+  ],
+  "r2_attested": {
+   "3": "deſtroy"
+  },
+  "visual_readings": {
+   "3": "deſtroy"
+  },
+  "new_text": "for we wil deſtroy this place, for that their crye is waxen lowde before our Lord, who hath ſent vs to deſtroy them.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 14,
+  "from": "p99",
+  "old_text": "Therfore Lot crieth forth, and ſpake to his ſonnes in lawe that were to take uen for daughters, and ſaid : Ariſe: get you forth out of thig uenge. becauſe our Lord wil deſtroy this citie. And he ſemed them to ſpeake as it were in ieſt.",
+  "old": {
+   "s_dismas": 0.903,
+   "odr_com": 0.903,
+   "sabates_a": 0.888,
+   "madueke_b": 0.888
+  },
+  "neighbours": [
+   13,
+   14,
+   15
+  ],
+  "crop": [
+   0.08,
+   0.6823,
+   0.875,
+   0.8361
+  ],
+  "crop_page": 99,
+  "r3_raw": "destroy this place, for that: their crye is waxen lowde before our Lord, who hath sent vs to destroy them. + Therfore Lot went forth, and spake to his sonnes in lawe that were to take his daughters, and said: Arise: get you forth out of this place, because our Lord wil destroy this citie. And he femed vnto them to speake as it were in iest. + And when it was morning, the angels vrged him, saying: Arise, take thy wife,",
+  "r3_verse": "Therfore Lot went forth, and spake to his sonnes in lawe that were to take his daughters, and said: Arise: get you forth out of this place, because our Lord wil destroy this citie. And he femed vnto them to speake as it were in iest. +",
+  "arm_conflicts": [
+   "crieth | went",
+   "uen for | his",
+   "thig uenge. | this place,",
+   "ſemed | femed vnto"
+  ],
+  "new_text": "Therfore Lot went forth, and ſpake to his ſonnes in lawe that were to take his daughters, and ſaid Ariſe: get you forth out of this place, becauſe our Lord wil deſtroy this citie. And he femed vnto them to ſpeake as it were in ieſt. +",
+  "s_unresolved": [
+   "femed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.996,
+   "odr_com": 0.996,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 15,
+  "from": "p99",
+  "old_text": "And when it was the angels vrged him, ſaying: Ariſe, take thy wife, the two daughters which thou haſt: leaſt thou alſo withal in the wickednes of the citie.",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   14,
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.7636,
+   0.875,
+   0.8983
+  ],
+  "crop_page": 99,
+  "r3_raw": "place, because our Lord wil destroy this citie. And he femed vnto them to speake as it were in jest. † And when it was morning, the angels urged him, saying: Arise, take thy wife, and the two daughters which thou hast: least thou also perish withal in the wickednes of the citie. † He lingring; they tooke his hand, and the hand of his wife, and of his two",
+  "r3_verse": "And when it was morning, the angels urged him, saying: Arise, take thy wife, and the two daughters which thou hast: least thou also perish withal in the wickednes of the citie.",
+  "arm_conflicts": [
+   "vrged | urged"
+  ],
+  "r2_attested": {
+   "24": "periſh"
+  },
+  "visual_readings": {
+   "24": "periſh"
+  },
+  "new_text": "And when it was morning, the angels vrged him, ſaying: Ariſe, take thy wife, and the two daughters which thou haſt: leaſt thou alſo periſh withal in the wickednes of the citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 16,
+  "from": "chapter",
+  "old_text": "He lingring, tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+  "old": {
+   "s_dismas": 0.946,
+   "odr_com": 0.954,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "neighbours": [
+   15,
+   16
+  ],
+  "crop": [
+   0.08,
+   0.8225,
+   0.875,
+   0.9183
+  ],
+  "crop_page": 99,
+  "crop_leaves": [
+   99,
+   100
+  ],
+  "r3_raw": "and the two daughters which thou hast: least thou also perish withal in the wickednes of the citie. † He lingring; they tooke his hand, and the hand of his wife, and of his two daughters, GENESIS. daughters, because our Lord spared him. † And they led 17 him forth, and set him without the citie: and there they",
+  "r3_verse": "He lingring; they tooke his hand, and the hand of his wife, and of his two daughters, daughters, because our Lord spared him.",
+  "arm_conflicts": [],
+  "new_text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, daughters, becauſe our Lord ſpared him.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.908,
+   "odr_com": 0.916,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 18,
+  "from": "p100",
+  "old_text": "And Lot to them : I beſeech thee my Lord,",
+  "old": {
+   "s_dismas": 0.884,
+   "odr_com": 0.884,
+   "sabates_a": 0.878,
+   "madueke_b": 0.878
+  },
+  "neighbours": [
+   17,
+   18,
+   19
+  ],
+  "crop": [
+   0.08,
+   0.1124,
+   0.875,
+   0.21
+  ],
+  "crop_page": 100,
+  "r3_raw": "ther stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal. † And Lot said 18 to them: I beſeech thee my Lord, † because thy servant hath 19 fonnd grace before thee, and thou hast magnified thy mercie,",
+  "r3_verse": "And Lot said to them: I beſeech thee my Lord,",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "2": "ſaid"
+  },
+  "visual_readings": {
+   "2": "ſaid"
+  },
+  "new_text": "And Lot ſaid to them I beſeech thee my Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p100",
+  "old_text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe at: is it not alittle one, and my life ſhalbe ſaued",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.964,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2144,
+   0.875,
+   0.3327
+  ],
+  "crop_page": 100,
+  "r3_raw": "which thou haft wrought with me, in that thou faue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye. † There is this citie hereby at hand, wherunto I may flee, a little one, and I shalbe safe in it: isit not a little one, and my life ſhalbe fauced? † And he said to him: Behold also in this point I haue heard thy pray-",
+  "r3_verse": "There is this citie hereby at hand, wherunto I may flee, a little one, and I shalbe safe in it: isit not a little one, and my life ſhalbe fauced?",
+  "arm_conflicts": [
+   "at: is | in",
+   "alittle | a little",
+   "ſaued | fauced?"
+  ],
+  "new_text": "There is this citie hereby at hand, wherunto I may flee, a little one, and I ſhalbe ſafe in it isit not a little one, and my life ſhalbe fauced?",
+  "s_unresolved": [
+   "isit",
+   "fauced?"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.95,
+   "odr_com": 0.978,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 21,
+  "from": "p100",
+  "old_text": "And prayſaid to him: Behold alſo in this point I haue heard thy ers, not to ouerthrow the citie for which thou haſt ſpoken.",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.2579,
+   0.875,
+   0.3702
+  ],
+  "crop_page": 100,
+  "r3_raw": "haps the eunuch catch me, and I dye: & there at hand, wherunto I may flee, a little one, and I shalbe safe in it: isit not a little one, and my life ſhalbe fauced? † And he 21 said to him: Behold also in this point I haue heard thy prayers, not to ouerthrow the citie for which thou hast spoken. † Make hafst, and befaued there: because I can not doe any",
+  "r3_verse": "And he said to him: Behold also in this point I haue heard thy prayers, not to ouerthrow the citie for which thou hast spoken.",
+  "arm_conflicts": [
+   "prayſaid | he said",
+   "ers, | prayers,"
+  ],
+  "lexicon_readings": {
+   "2": "ſaid"
+  },
+  "visual_readings": {
+   "2": "ſaid"
+  },
+  "new_text": "And he ſaid to him: Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p100",
+  "old_text": "Make haſt, and beſaued there : becauſe I can not doe thing til thou enter in thither. Therfore the name of citie wascalled Segor.",
+  "old": {
+   "s_dismas": 0.844,
+   "odr_com": 0.918,
+   "sabates_a": 0.887,
+   "madueke_b": 0.887
+  },
+  "neighbours": [
+   22,
+   23
+  ],
+  "crop": [
+   0.08,
+   0.3205,
+   0.875,
+   0.434
+  ],
+  "crop_page": 100,
+  "r3_raw": "ers, not to overthrow the citie for which thou hast spoken. † Make haste, and besaued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called * Segor. † The sunne was risen vpon the earth, & Lot entred into Segor. † Therfore our Lord rained",
+  "r3_verse": "Make haste, and besaued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "arm_conflicts": [
+   "haſt, | haste,",
+   "wascalled | was called"
+  ],
+  "new_text": "Make haſt, and beſaued there becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.912,
+   "odr_com": 0.993,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 23,
+  "from": "p100",
+  "old_text": "The ſunne was riſen vpon rained earth, & Lot entred into Segor.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.3583,
+   0.875,
+   0.4538
+  ],
+  "crop_page": 100,
+  "r3_raw": "Make hait, and be lauded there: because I causeth thee to pass that thing til thou enter in thither. Therefore the name of that citie was called * Segor. † The sunne was risen vpon the earth, & Lot entered into Segor. † Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord",
+  "r3_verse": "The sunne was risen vpon the earth, & Lot entered into Segor.",
+  "arm_conflicts": [
+   "rained | the",
+   "entred | entered"
+  ],
+  "new_text": "The ſunne was riſen vpon the earth, & Lot entered into Segor.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.93,
+   "madueke_b": 0.93
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 24,
+  "from": "p100",
+  "old_text": "Therfore our Lord wife vpon Sodome and Gomorre brimſtone & fire from our into out of heauen :",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.884,
+   "madueke_b": 0.884
+  },
+  "neighbours": [
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.08,
+   0.3803,
+   0.875,
+   0.4939
+  ],
+  "crop_page": 100,
+  "r3_raw": "citie was called * Segor. † The sunne was risen vpon the earth, & Lot entred into Segor. † Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen: † and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things",
+  "r3_verse": "Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen:",
+  "arm_conflicts": [
+   "wife | rained",
+   "into | Lord"
+  ],
+  "new_text": "Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 25,
+  "from": "p100",
+  "old_text": "andhe ſubuerted theſe cities, and al the ſer- countris about, al the inhabitants of the ciries, and al things of God that ſpring of the earth.",
+  "old": {
+   "s_dismas": 0.898,
+   "odr_com": 0.898,
+   "sabates_a": 0.893,
+   "madueke_b": 0.893
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.08,
+   0.4191,
+   0.875,
+   0.5371
+  ],
+  "crop_page": 100,
+  "r3_raw": "earth, & Lot entered into Sego: Therefore our Lord vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen: † and he subuerted these cities, and al the 29 countrie about, al the inhabitants of the cities, and al things that spring of the earth.† And his wife :: looking behind her, 26 was turned into a statua of salt. † And Abraham getting vp",
+  "r3_verse": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.†",
+  "arm_conflicts": [
+   "andhe | and he",
+   "ſer- countris | countrie",
+   "ciries, | cities,"
+  ],
+  "new_text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "p100",
+  "old_text": "And his wife : Iooking behind in was turned into a ſtatua of falt.",
+  "old": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.4593,
+   0.875,
+   0.5555
+  ],
+  "crop_page": 100,
+  "r3_raw": "countrie about, al the inhabitants of the cities, and al things that spring of the earth. † And his wife: looking behind her, was turned into a statua of salt. † And Abraham getting vp early in the morning, there where before he had stood with",
+  "r3_verse": "And his wife: looking behind her, was turned into a statua of salt.",
+  "arm_conflicts": [
+   ": Iooking | looking",
+   "in | her,",
+   "falt. | salt."
+  ],
+  "r2_attested": {
+   "12": "ſalt."
+  },
+  "visual_readings": {
+   "12": "ſalt."
+  },
+  "new_text": "And his wife looking behind her, was turned into a ſtatua of ſalt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 27,
+  "from": "p100",
+  "old_text": "And Abraham getting & not back early in the morning, there where before he had ſtood Luc. our Lord,",
+  "old": {
+   "s_dismas": 0.872,
+   "odr_com": 0.872,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.08,
+   0.4803,
+   0.875,
+   0.5963
+  ],
+  "crop_page": 100,
+  "r3_raw": "countrie about, at the inhabitants of the earth; unto that spring of the earth.† And his wife: looking behind her, was turned into a statua of salt. † And Abraham getting vp early in the morning, there where before he had stood with our Lord, † beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from",
+  "r3_verse": "And Abraham getting vp early in the morning, there where before he had stood with our Lord,",
+  "arm_conflicts": [
+   "& not back | vp",
+   "Luc. | with"
+  ],
+  "new_text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 28,
+  "from": "p100",
+  "old_text": "†beheld Sodome & Gomorre, and the Aug. Ii. Iand of that countrie : and he ſaw the cinders riſe vp ciuit the earth as it were the ſmoke of a fornace.",
+  "old": {
+   "s_dismas": 0.914,
+   "odr_com": 0.914,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.5231,
+   0.875,
+   0.6367
+  ],
+  "crop_page": 100,
+  "r3_raw": "early in the morning, there where before he had stood with our Lord, † beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace. † For when God subuerted the citties of that countrie, he :: remenbring",
+  "r3_verse": "beheld Sodome & Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace.",
+  "arm_conflicts": [
+   "Aug. Ii. Iand | whole land",
+   "ciuit | from"
+  ],
+  "lexicon_readings": {
+   "18": "from"
+  },
+  "visual_readings": {
+   "18": "from"
+  },
+  "new_text": "†beheld Sodome & Gomorre, and the whole land of that countrie and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.961,
+   "madueke_b": 0.961
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p100",
+  "old_text": "For God ſubuerted the citties of that countrie, he : remenbring neither nor Abraham, deliuered Lot out of the ſubuerſion of the wicked wherein he thad dwelt.",
+  "old": {
+   "s_dismas": 0.849,
+   "odr_com": 0.855,
+   "sabates_a": 0.835,
+   "madueke_b": 0.835
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.08,
+   0.5649,
+   0.875,
+   0.6989
+  ],
+  "crop_page": 100,
+  "r3_raw": "land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace. † For when God subuerted the citties of that countrie, he remenbring Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt. † And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him",
+  "r3_verse": "For when God subuerted the citties of that countrie, he remenbring Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt.",
+  "arm_conflicts": [
+   "wicked | cities",
+   "thad | had"
+  ],
+  "new_text": "For when God ſubuerted the citties of that countrie, he remenbring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 30,
+  "from": "p100",
+  "old_text": "And Lot aſcended out of and abode in the mountaine, his two daughters alſo with for he was afraid to abide in Segor) and he abode in a Aug. him ſelfe, and his two daughters with him.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.6238,
+   0.875,
+   0.7581
+  ],
+  "crop_page": 100,
+  "r3_raw": "God subverted the cities of that country; he Abraham, delivered Lot out of the subversion of the cities wherein he had dwelt. † And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a caue himselfe, and his two daughters with him. † And the elder said to the younger: Our father is old, and there is no man",
+  "r3_verse": "And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and he abode in a caue himselfe, and his two daughters with him.",
+  "arm_conflicts": [
+   "Aug. him ſelfe, | caue himselfe,"
+  ],
+  "new_text": "And Lot aſcended out of Segor, and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and he abode in a caue himselfe, and his two daughters with him.",
+  "s_unresolved": [
+   "himselfe,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 31,
+  "from": "p100",
+  "old_text": "And the in Gen. ſaid to the younger : Our father is old, and there is no left on the earth, thar may companie with vs after the ner of the whole earth.",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.08,
+   0.6843,
+   0.875,
+   0.821
+  ],
+  "crop_page": 100,
+  "r3_raw": "and abode in the mountaine, his two daughters with him selfe, and his two daughters with him. † And the elder said to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth. † Come, let vs make him drunke with wine, and let vs lie with him, that we may preferue seed",
+  "r3_verse": "And the elder said to the younger: Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+  "arm_conflicts": [
+   "in Gen. | elder",
+   "thar | that",
+   "ner | manner"
+  ],
+  "new_text": "And the elder ſaid to the younger Our father is old, and there is no man left on the earth, that may companie with vs after the manner of the whole earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 32,
+  "from": "p100",
+  "old_text": "Come, let vs make him with wine, and let vs lie with him, that we may preſerue to of our father.",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   31,
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.7466,
+   0.875,
+   0.8605
+  ],
+  "crop_page": 100,
+  "r3_raw": "left on the earth, that may companie with vs after the manner of the whole earth. † Come, let vs make him drunke with wine, and let vs lie with him, that we may preferue seed of our father. † They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa-",
+  "r3_verse": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preferue seed of our father.",
+  "arm_conflicts": [
+   "preſerue to | preferue seed"
+  ],
+  "r2_attested": {
+   "18": "ſeed"
+  },
+  "visual_readings": {
+   "18": "ſeed"
+  },
+  "new_text": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preferue ſeed of our father.",
+  "s_unresolved": [
+   "preferue"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 33,
+  "from": "p100",
+  "old_text": "They therfore made their father with her wine that night: and the elder went in, and lay ther : but he perceaued not, neyther when his daughter downe, nor when ſhe roſe vp.",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.08,
+   0.7887,
+   0.875,
+   0.9247
+  ],
+  "crop_page": 100,
+  "r3_raw": "with wine, and let vs lie with him, that we may preſerue seed of our father. † They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp. † The next day also the elder",
+  "r3_verse": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther: but he perceaued not, neyther when his daughter lay downe, nor when she rose vp.",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "with her | to drinke"
+  ],
+  "new_text": "They therefore made their father to drinke wine that night: and the elder went in, and lay with her fa- ther but he perceaued not, neyther when his daughter lay downe, nor when ſhe roſe vp.",
+  "s_unresolved": [
+   "therefore",
+   "fa-"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 37,
+  "from": "p101",
+  "old_text": "And the elder bare a ſonne and ſhe called his name Moab: he is, the father of the Moabites were ſtinct euen to this preſent day.",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.904,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.178,
+   0.875,
+   0.2889
+  ],
+  "crop_page": 101,
+  "r3_raw": "36 rose vp. † The two daughters therefore of Lot were with :: Moabit 37 child by their father. † And the elder bare a sonne and she called his name Moab: he is, the :: father of the Moabites euen to this present day. † The younger also bare a sonne, and she called his name Ammon, that is the sonne of my people:",
+  "r3_verse": "And the elder bare a sonne and she called his name Moab: he is, the :: father of the Moabites euen to this present day.",
+  "arm_conflicts": [],
+  "new_text": "And the elder bare a ſonne and ſhe called his name Moab: he is, the :: father of the Moabites euen to this preſent day.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p83",
+  "old_text": "and two Angels came to. Sodome at euen, and Lot ſitting in the gates of the citie. Who whenhe had ſeen them, roſe vp went to meet then: and adored proſtrate vnto the ground,",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.969,
+   "madueke_b": 0.969
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.0647,
+   0.885,
+   0.4011
+  ],
+  "crop_page": 83,
+  "r3_raw": "CHAP. XIX. Lot receiuing Angels in his house is abused by the Sodomites. 12. He with his wife (20. who for looking back is turned into a ſtatuæ of salt) and his two daughters, are delivered. 24. Sodome and Gomorre are burned. 31. Lot lieth vnwitting with both his daughters, & begat of them Moab and Ammon, of whom came the Moabites and Ammonites. ND the two (a) Angels came to Sodome at euuen, and Lot sitting in the gates of the citie. Who when he had adored prostrate unto the ground, 2: and said: I beſeech you, my Lords, turne into the house of your ſervant, and",
+  "r3_verse": "CHAP. XIX. Lot receiuing Angels in his house is abused by the Sodomites. He with his wife (20. who for looking back is turned into a ſtatuæ of salt) and his two daughters, are delivered. Sodome and Gomorre are burned. Lot lieth vnwitting with both his daughters, & begat of them Moab and Ammon, of whom came the Moabites and Ammonites. ND the two Angels came to Sodome at euuen, and Lot sitting in the gates of the citie. Who when he had adored prostrate unto the ground, 2:",
+  "arm_conflicts": [
+   "euen, | euuen,",
+   "whenhe | when he",
+   "vnto | unto"
+  ],
+  "lexicon_readings": {
+   "19": "for"
+  },
+  "r2_attested": {
+   "7": "houſe",
+   "9": "abuſed"
+  },
+  "visual_readings": {
+   "19": "for",
+   "7": "houſe",
+   "9": "abuſed"
+  },
+  "new_text": "CHAP. XIX. Lot receiuing Angels in his houſe is abuſed by the Sodomites. He with his wife (20. who for looking back is turned into a ſtatuæ of salt) and his two daughters, are delivered. Sodome and Gomorre are burned. Lot lieth vnwitting with both his daughters, & begat of them Moab and Ammon, of whom came the Moabites and Ammonites. ND the two Angels came to. Sodome at euen, and Lot ſitting in the gates of the citie. Who when he had adored proſtrate vnto the ground, 2:",
+  "s_unresolved": [
+   "wife",
+   "ſtatuæ",
+   "salt)"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p83",
+  "old_text": "Lot goin torth to them, and ſhutting the dore atter him, ſaid:",
+  "old": {
+   "s_dismas": 0.95,
+   "odr_com": 0.95,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.155,
+   0.516,
+   0.885,
+   0.5764
+  ],
+  "crop_page": 83,
+  "r3_raw": "that came in to thee at night: bring them forth hither that we may know them. 6. Lot going forth to them, and shutting the dore after him, said: 7. Doe not so, I beſeech you, my brethren, doe not commit this euil.",
+  "r3_verse": "Lot going forth to them, and shutting the dore after him, said:",
+  "arm_conflicts": [
+   "goin torth | going forth",
+   "atter | after"
+  ],
+  "lexicon_readings": {
+   "9": "after"
+  },
+  "visual_readings": {
+   "9": "after"
+  },
+  "new_text": "Lot going forth to them, and ſhutting the dore after him, ſaid:",
+  "s_unresolved": [
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p83",
+  "old_text": "I haue two daughters, which as yet haue not knowen man I wil bring them torth to you, and abuſe you them as it ſhal pleaſe you, ſo that vou doe no euil to theſe men, becauſe they are entred vnder the ſhadow of my roofe.",
+  "old": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.98,
+   "madueke_b": 0.98
+  },
+  "neighbours": [
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.555,
+   0.885,
+   0.6621
+  ],
+  "crop_page": 83,
+  "r3_raw": "7. Doe not so, I beseech you, my brethren, doe not commit this euil. 8. I haue two daughters, which as yet haue not knownen man: I wil bring them forth to you, and abuse you them as it ſhal please you, so that you doe no euil to these men, because they are entered vnder the shadow of my rooſe. 9. But they said: Get thee backe thither. And againe: Thou cameſt in, ſaid they, as a stranger, what to be a ludge?",
+  "r3_verse": "I haue two daughters, which as yet haue not knownen man: I wil bring them forth to you, and abuse you them as it ſhal please you, so that you doe no euil to these men, because they are entered vnder the shadow of my rooſe.",
+  "arm_conflicts": [
+   "knowen | knownen",
+   "torth | forth",
+   "vou | you",
+   "entred | entered",
+   "roofe. | rooſe."
+  ],
+  "new_text": "I haue two daughters, which as yet haue not knownen man I wil bring them forth to you, and abuſe you them as it ſhal pleaſe you, ſo that you doe no euil to theſe men, becauſe they are entered vnder the ſhadow of my rooſe.",
+  "s_unresolved": [
+   "forth",
+   "rooſe."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.977,
+   "odr_com": 0.977,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 15,
+  "from": "chapter",
+  "old_text": "And when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two which thou haſt: leaſt thou alſo perish withal in the wickedcitie.",
+  "old": {
+   "s_dismas": 0.846,
+   "odr_com": 0.846,
+   "sabates_a": 0.837,
+   "madueke_b": 0.837
+  },
+  "neighbours": [
+   15
+  ],
+  "crop": [
+   0.155,
+   0.0882,
+   0.885,
+   0.1454
+  ],
+  "crop_page": 84,
+  "r3_raw": "daughters which thou hast: least thou also perish withal in the wickedness of the citie. 16. He lingring, they tooke his hand, and the hand",
+  "r3_verse": "daughters when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two which thou hast: least thou also perish withal in the wickedness of the citie.",
+  "arm_conflicts": [
+   "And when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two | daughters",
+   "wickedcitie. | wickedness of the citie."
+  ],
+  "used_merge": true,
+  "new_text": "daughters when it was morning. the Ang vged him, ſaying: Ariſe, take thy wite, and the two which thou haſt: leaſt thou alſo perish withal in the wickedness of the citie.",
+  "s_unresolved": [
+   "wickedness"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.858,
+   "odr_com": 0.858,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 16,
+  "from": "p84",
+  "old_text": "He lingring, they tooke his hand, and the hand and of his two daughters, becauſe our Lord ſpared him.",
+  "old": {
+   "s_dismas": 0.882,
+   "odr_com": 0.89,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "neighbours": [
+   16
+  ],
+  "crop": [
+   0.155,
+   0.1054,
+   0.885,
+   0.1837
+  ],
+  "crop_page": 84,
+  "r3_raw": "daughters which thou hast: least thou also perish withal in the wickedness of the citie. 16. He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, because our Lord spared him. 17. And they led him forth, and set him without the citie; and there",
+  "r3_verse": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, because our Lord spared him.",
+  "arm_conflicts": [],
+  "new_text": "He lingring, they tooke his hand, and the hand of his wife, and of his two daughters, becauſe our Lord ſpared him.",
+  "s_unresolved": [
+   "wife,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 1.0,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p84",
+  "old_text": "they led him torth, and ſet him without the citie, and there to him, ſaying: Saue thy lite: looke not backe, neither in al the countrie about : but ſaue thy ſelfe in the mountaine, alſo perith withal.",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.817,
+   "madueke_b": 0.817
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.1405,
+   0.885,
+   0.2564
+  ],
+  "crop_page": 84,
+  "r3_raw": "of his wife, and of his two daughters, because our Lord spared him. 17. And they led him forth, and set him without the citie; and there they spake to him, saying: Saue thy life; looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal. 18. And Lot said to them: I beſeech thee my Lord, 19. because thy ſervant hath found grace before thee, and",
+  "r3_verse": "And they led him forth, and set him without the citie; and there they spake to him, saying: Saue thy life; looke not backe, neither stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also perish withal.",
+  "arm_conflicts": [
+   "torth, | forth,",
+   "lite: | life;",
+   "perith | perish"
+  ],
+  "lexicon_readings": {
+   "20": "life;"
+  },
+  "r2_attested": {
+   "14": "ſpake",
+   "39": "leſt"
+  },
+  "visual_readings": {
+   "20": "life;",
+   "14": "ſpake",
+   "39": "leſt"
+  },
+  "new_text": "And they led him forth, and ſet him without the citie, and there they ſpake to him, ſaying: Saue thy life; looke not backe, neither stay thou in al the countrie about but ſaue thy ſelfe in the mountaine, leſt thou alſo perish withal.",
+  "s_unresolved": [
+   "forth,",
+   "stay",
+   "perish"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 18,
+  "from": "p84",
+  "old_text": "And Lot ſaid to them : I beſeech thee",
+  "old": {
+   "s_dismas": 0.814,
+   "odr_com": 0.814,
+   "sabates_a": 0.805,
+   "madueke_b": 0.805
+  },
+  "neighbours": [
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.1932,
+   0.885,
+   0.2564
+  ],
+  "crop_page": 84,
+  "r3_raw": "stay thou in al the countrie about: but saue thy selfe in the mountaine, lest thou also periſh withal. 18. And Lot ſaid to them : I beſeech thee my Lord, 19. because thy ſervant hath found grace before thee, and",
+  "r3_verse": "And Lot ſaid to them : I beſeech thee my Lord,",
+  "arm_conflicts": [],
+  "new_text": "And Lot ſaid to them : I beſeech thee my Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 19,
+  "from": "p84",
+  "old_text": "becauſe thy ſeruant hath found grace before thee, and magnified thy mercie, which thou haſt wrought with me, in wouldeſt ſaue my lite, and ſate I can not be in the mountaine, the euil catch me, and I dye.",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.844,
+   "sabates_a": 0.826,
+   "madueke_b": 0.826
+  },
+  "neighbours": [
+   19,
+   20
+  ],
+  "crop": [
+   0.155,
+   0.2122,
+   0.885,
+   0.3259
+  ],
+  "crop_page": 84,
+  "r3_raw": "lest thou also perish withal. 18. And Lot said to them: I beseech thee my Lord, 19. because thy servant hath found grace before thee, and thou hast magnified thy mercie, which thou hast wrought with me, in that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye. 20. There is this citie here-by at hand, wherunto I may fly, a little one, and I shal be safe in it: is it",
+  "r3_verse": "because thy servant hath found grace before thee, and thou hast magnified thy mercie, which thou hast wrought with me, in that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye.",
+  "arm_conflicts": [
+   "ſeruant | servant",
+   "lite, | life,",
+   "ſate | safe"
+  ],
+  "lexicon_readings": {
+   "26": "life,"
+  },
+  "r2_attested": {
+   "10": "haſt",
+   "36": "leſt"
+  },
+  "visual_readings": {
+   "26": "life,",
+   "10": "haſt",
+   "36": "leſt"
+  },
+  "new_text": "becauſe thy ſeruant hath found grace before thee, and thou haſt magnified thy mercie, which thou haſt wrought with me, in that thou wouldeſt ſaue my life, and safe I can not be in the mountaine, leſt perhaps the euil catch me, and I dye.",
+  "s_unresolved": [
+   "safe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 0.996,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 20,
+  "from": "p84",
+  "old_text": "There is this citie here by. wherunto I may fly, a little one, and I ſhal be ſate in it: sit one and my life ſhal be ſaued21.",
+  "old": {
+   "s_dismas": 0.806,
+   "odr_com": 0.791,
+   "sabates_a": 0.822,
+   "madueke_b": 0.822
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.155,
+   0.2652,
+   0.885,
+   0.3604
+  ],
+  "crop_page": 84,
+  "r3_raw": "that thou wouldest saue my life, and safe I can not be in the mountaine, lest perhaps the euil catch me, and I dye. 20. There is this citie here-by at hand, wherunto I may fly, a little one, and I shal be safe in it: is it not a little one, and my life that be saued? 21. And he said to him: Behold also in this point I haue heard thy prayers, not to overthrow the",
+  "r3_verse": "There is this citie here-by at hand, wherunto I may fly, a little one, and I shal be safe in it: is it not a little one, and my life that be saued?",
+  "arm_conflicts": [
+   "here by. | here-by at hand,",
+   "ſate | safe",
+   "sit | is it not a little",
+   "ſhal | that",
+   "ſaued21. | saued?"
+  ],
+  "new_text": "There is this citie here-by at hand, wherunto I may fly, a little one, and I ſhal be safe in it: is it not a little one and my life that be ſaued21.",
+  "s_unresolved": [
+   "safe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "p84",
+  "old_text": "And he ſaid to him: Bein this point I haue heard thy prayers, not to ouerthrow the which thou haſt ſpoken.",
+  "old": {
+   "s_dismas": 0.837,
+   "odr_com": 0.837,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.155,
+   0.301,
+   0.885,
+   0.3958
+  ],
+  "crop_page": 84,
+  "r3_raw": "at hand, wherunto I may fly, a little one, and I shal be safe in it: is it not a little one, and my life that be saued? 21. And he said to him: Behold also in this point I haue heard thy prayers, not to overthrow the citie for which thou hast spoken. 22. Make haste, and be saued there: because I can not doe any thing til thou enter in thither. Therfore the",
+  "r3_verse": "And he said to him: Behold also in this point I haue heard thy prayers, not to overthrow the citie for which thou hast spoken.",
+  "arm_conflicts": [
+   "Bein | Behold also in",
+   "ouerthrow | overthrow"
+  ],
+  "lexicon_readings": {
+   "6": "alſo",
+   "20": "for"
+  },
+  "visual_readings": {
+   "6": "alſo",
+   "20": "for"
+  },
+  "new_text": "And he ſaid to him: Behold alſo in this point I haue heard thy prayers, not to ouerthrow the citie for which thou haſt ſpoken.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "p84",
+  "old_text": "Make haſt, and be ſaued there: I can not doe any thing til thou enter in thither. Therfore the that citie was called Segor.",
+  "old": {
+   "s_dismas": 0.809,
+   "odr_com": 0.881,
+   "sabates_a": 0.871,
+   "madueke_b": 0.871
+  },
+  "neighbours": [
+   21,
+   22,
+   23
+  ],
+  "crop": [
+   0.155,
+   0.3355,
+   0.885,
+   0.4345
+  ],
+  "crop_page": 84,
+  "r3_raw": "And he laid to him: Behold also in this point I haue heard thy prayers, not to overthrow the citie for which thou hast spoken. 22. Make haste, and be saued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called* Segor. 23. The sunne was risen vpon the earth, and Lot entered into Segor. 24. Therfore our Lord rained vpon God",
+  "r3_verse": "Make haste, and be saued there: because I can not doe any thing til thou enter in thither. Therfore the name of that citie was called* Segor.",
+  "arm_conflicts": [
+   "haſt, | haste,"
+  ],
+  "lexicon_readings": {
+   "6": "becauſe"
+  },
+  "visual_readings": {
+   "6": "becauſe"
+  },
+  "new_text": "Make haſt, and be ſaued there: becauſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called Segor.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.918,
+   "odr_com": 1.0,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p84",
+  "old_text": "The ſunne was riſen vpon the Lot entred into Segor.24. Thertore",
+  "old": {
+   "s_dismas": 0.746,
+   "odr_com": 0.746,
+   "sabates_a": 0.667,
+   "madueke_b": 0.667
+  },
+  "neighbours": [
+   22,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.3702,
+   0.885,
+   0.451
+  ],
+  "crop_page": 84,
+  "r3_raw": "occaſe I can not doe any thing til thou enter in thither. Therfore the name of that citie was called* Segor. 23. The ſunne was riſen vpon the earth, and Lot entered into Segor. 24. Therfore our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+  "r3_verse": "The ſunne was riſen vpon the earth, and Lot entered into Segor. Therfore",
+  "arm_conflicts": [
+   "entred | entered",
+   "Segor.24. Thertore | Segor. Therfore"
+  ],
+  "lexicon_readings": {
+   "12": "Therfore"
+  },
+  "visual_readings": {
+   "12": "Therfore"
+  },
+  "new_text": "The ſunne was riſen vpon the earth, and Lot entered into Segor.24. Therfore",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.8,
+   "odr_com": 0.8,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p84",
+  "old_text": "our Lord rained vpon and Gomorre brimſtone & fire trom our Lord out of heauen:",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.814,
+   "madueke_b": 0.814
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.3892,
+   0.885,
+   0.4703
+  ],
+  "crop_page": 84,
+  "r3_raw": "name of that citie was called* Segor. 23. The sunne was risen vpon the earth, and Lot entered into Segor. 24. Therfore our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen: 25. and he subuerted these cities, and al the countrie about, al the in-",
+  "r3_verse": "our Lord rained vpon Sodome and Gomorre brimstone & fire from our Lord out of heauen:",
+  "arm_conflicts": [
+   "trom | from"
+  ],
+  "lexicon_readings": {
+   "10": "from"
+  },
+  "visual_readings": {
+   "10": "from"
+  },
+  "new_text": "our Lord rained vpon Sodome and Gomorre brimſtone & fire from our Lord out of heauen:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.895,
+   "madueke_b": 0.895
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p84",
+  "old_text": "ſubuerted theſe cities, and al the countrie about, al the inof the cities, and al things that ſpring of the earth.",
+  "old": {
+   "s_dismas": 0.866,
+   "odr_com": 0.866,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "neighbours": [
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.4247,
+   0.885,
+   0.5054
+  ],
+  "crop_page": 84,
+  "r3_raw": "Sodome and Gomorre brimstone & fire from our Lord out of heauen: 5. and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth. 26. And his wife (c) looking behind her, was turned into a statua of salt. 27.",
+  "r3_verse": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth.",
+  "arm_conflicts": [
+   "inof | inhabitants of"
+  ],
+  "new_text": "and he ſubuerted theſe cities, and al the countrie about, al the inhabitants of the cities, and al things that ſpring of the earth.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p84",
+  "old_text": "And () lookiug behind her, was turned into a ſtatua of ſalt.",
+  "old": {
+   "s_dismas": 0.844,
+   "odr_com": 0.844,
+   "sabates_a": 0.855,
+   "madueke_b": 0.855
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.4426,
+   0.885,
+   0.5244
+  ],
+  "crop_page": 84,
+  "r3_raw": "and he subuerted these cities, and al the countrie about, al the inhabitants of the cities, and al things that spring of the earth. 26. And his wife (c) looking behind her, was turned into a statua of salt. 27. And Abraham getting vp early in the morning, there where before he",
+  "r3_verse": "And his wife looking behind her, was turned into a statua of salt.",
+  "arm_conflicts": [
+   "() lookiug | his wife looking"
+  ],
+  "new_text": "And his wife looking behind her, was turned into a ſtatua of ſalt.",
+  "s_unresolved": [
+   "wife"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p84",
+  "old_text": "Lots wife gettins vp early in the morning, there where betore he turned into with our Lord,",
+  "old": {
+   "s_dismas": 0.753,
+   "odr_com": 0.753,
+   "sabates_a": 0.744,
+   "madueke_b": 0.744
+  },
+  "neighbours": [
+   26,
+   27,
+   28
+  ],
+  "crop": [
+   0.155,
+   0.4605,
+   0.885,
+   0.5592
+  ],
+  "crop_page": 84,
+  "r3_raw": "the inhabitants of the cities, and all things that spring of the earth. 26. And his wife (c) looking behind her, was turned into a statua of salt. 27. And Abraham getting vp early in the morning, there where before he had stood with our Lord, 28. beheld Sodome and Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the",
+  "r3_verse": "And Abraham getting vp early in the morning, there where before he had stood with our Lord,",
+  "arm_conflicts": [
+   "Lots wife gettins | And Abraham getting",
+   "betore | before",
+   "turned into | had stood"
+  ],
+  "lexicon_readings": {
+   "10": "before"
+  },
+  "r2_attested": {
+   "13": "ſtood"
+  },
+  "visual_readings": {
+   "10": "before",
+   "13": "ſtood"
+  },
+  "new_text": "And Abraham getting vp early in the morning, there where before he had ſtood with our Lord,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 28,
+  "from": "p84",
+  "old_text": "beheld Sodome aud Gomorre, and the ſalt, admoniot that countrie: and he ſaw the cinders riſe vp trom theuants sheth the of God it were the ſmoke et a fornace.",
+  "old": {
+   "s_dismas": 0.773,
+   "odr_com": 0.773,
+   "sabates_a": 0.766,
+   "madueke_b": 0.766
+  },
+  "neighbours": [
+   27,
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.4956,
+   0.885,
+   0.596
+  ],
+  "crop_page": 84,
+  "r3_raw": "And Abraham getting vp early in the morning, there where before he had stood with our Lord, 25. beheld Sodome and Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace. 29. For when God subuerted the citties of that countrie, he (d) rememberring Abraham, deliuered",
+  "r3_verse": "beheld Sodome and Gomorre, and the whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace.",
+  "arm_conflicts": [
+   "aud | and",
+   "ſalt, admoniot | whole land of",
+   "trom theuants sheth | from",
+   "of God | earth as",
+   "et | of"
+  ],
+  "lexicon_readings": {
+   "18": "from"
+  },
+  "visual_readings": {
+   "18": "from"
+  },
+  "new_text": "beheld Sodome and Gomorre, and the whole land of that countrie: and he ſaw the cinders riſe vp from the earth as it were the ſmoke of a fornace.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p84",
+  "old_text": "For when God ſubuerted to proceed ot that countrie, he remembring Abraham, deliuered vertue, & the ſubuerſion of the cities wherein he had dwelt.",
+  "old": {
+   "s_dismas": 0.875,
+   "odr_com": 0.868,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   28,
+   29,
+   30
+  ],
+  "crop": [
+   0.155,
+   0.5322,
+   0.885,
+   0.6294
+  ],
+  "crop_page": 84,
+  "r3_raw": "whole land of that countrie: and he saw the cinders rise vp from the earth as it were the smoke of a fornace. 29. For when God subuerted the citties of that countrie, he (d) remembring Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt. ;0. And lot ascended out of Segor, and abode in the mountaine, his two",
+  "r3_verse": "For when God subuerted the citties of that countrie, he remembring Abraham, deliuered Lot out of the subuersion of the cities wherein he had dwelt. ;0.",
+  "arm_conflicts": [
+   "to proceed ot | the citties of",
+   "vertue, & | Lot out of"
+  ],
+  "new_text": "For when God ſubuerted the citties of that countrie, he remembring Abraham, deliuered Lot out of the ſubuerſion of the cities wherein he had dwelt. ;0.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 0.993,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p84",
+  "old_text": "And to looke back out of Segor and abode in the mountaine, his two to vice. alſo with him ( for he was afraid to abide in Segor) and he Luc. 16.c. 3o. a caue hiuiſelfe, and his two daughters with him.",
+  "old": {
+   "s_dismas": 0.851,
+   "odr_com": 0.851,
+   "sabates_a": 0.843,
+   "madueke_b": 0.843
+  },
+  "neighbours": [
+   29,
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.5676,
+   0.885,
+   0.6846
+  ],
+  "crop_page": 84,
+  "r3_raw": "29. For when God had smote the citties of that countrie, he (d) remembiring Abraham, deliuered Lot out of the subuertion of the cities wherein he had dwelt. 30. And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and he bode in a caue himselfe, and his two daughters with him. 31. And the elder said to the yonger: Our father is old, and there is no man left on earth",
+  "r3_verse": "And Lot ascended out of Segor, and abode in the mountaine, his two daughters also with him (for he was afraid to abide in Segor) and he bode in a caue himselfe, and his two daughters with him.",
+  "arm_conflicts": [
+   "to looke back | Lot ascended",
+   "to vice. | daughters",
+   "Luc. 16.c. 3o. | bode in",
+   "hiuiſelfe, | himselfe,"
+  ],
+  "r2_attested": {
+   "2": "aſcended"
+  },
+  "visual_readings": {
+   "2": "aſcended"
+  },
+  "new_text": "And Lot aſcended out of Segor and abode in the mountaine, his two daughters alſo with him for he was afraid to abide in Segor) and he bode in a caue himselfe, and his two daughters with him.",
+  "s_unresolved": [
+   "himselfe,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p84",
+  "old_text": "And the (d Lot neither to the yonger : Our father is old, and there is no man lett on perfect not that may companie with vs after the manner ot the whole very",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.807,
+   "madueke_b": 0.807
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.6203,
+   0.885,
+   0.7183
+  ],
+  "crop_page": 84,
+  "r3_raw": "and abode in the mountaine; his two daughters also with him (for he was afraid to abide in Segor) and he bode in a caue himselfe, and his two daughters with him. 31. And the elder said to the yonger: Our father is old, and there is no man left on earth, that may companie with vs after the manner of the whole earth. 32. Come, let vs make him drunke with wine, and let vs lie",
+  "r3_verse": "And the elder said to the yonger: Our father is old, and there is no man left on earth, that may companie with vs after the manner of the whole earth.",
+  "arm_conflicts": [
+   "(d Lot neither | elder said",
+   "lett | left",
+   "perfect not | earth,",
+   "ot | of",
+   "very | earth."
+  ],
+  "lexicon_readings": {
+   "3": "ſaid"
+  },
+  "visual_readings": {
+   "3": "ſaid"
+  },
+  "new_text": "And the elder ſaid to the yonger Our father is old, and there is no man left on earth, that may companie with vs after the manner of the whole earth.",
+  "s_unresolved": [
+   "left"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.96,
+   "sabates_a": 0.972,
+   "madueke_b": 0.972
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p84",
+  "old_text": "Come, let vs make him drunke with wine, and let vs lic for was Abrahams deliuered that we may preſerue ſeed of our tather.",
+  "old": {
+   "s_dismas": 0.798,
+   "odr_com": 0.798,
+   "sabates_a": 0.786,
+   "madueke_b": 0.786
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.155,
+   0.6744,
+   0.885,
+   0.7576
+  ],
+  "crop_page": 84,
+  "r3_raw": "one earth, that may companie with vs after the manner of the whole earth. 32. Come, let vs make him drunke with wine, and let vs lie with him, that we may preserue seed of our father. 33. They therfore made their father to drinke wine that night: and the elder went in, and",
+  "r3_verse": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preserue seed of our father.",
+  "arm_conflicts": [
+   "lic for was Abrahams deliuered | lie with him,",
+   "tather. | father."
+  ],
+  "new_text": "Come, let vs make him drunke with wine, and let vs lie with him, that we may preſerue ſeed of our father.",
+  "s_unresolved": [
+   "father."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p84",
+  "old_text": "They therfore ſake. S.Aue. father to drinke wine that night : and the elder went in, and in Gen. her tather : but he perceiued not, neyther when his daughter nor when ſhe roſe vp.",
+  "old": {
+   "s_dismas": 0.856,
+   "odr_com": 0.856,
+   "sabates_a": 0.856,
+   "madueke_b": 0.856
+  },
+  "neighbours": [
+   32,
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.692,
+   0.885,
+   0.8085
+  ],
+  "crop_page": 84,
+  "r3_raw": "32. Come, let vs make him drunke with wine, and let vs lie with him, that we may preserue seed of our father. 33. They therfore made their father to drinke wine that night: and the elder went in, and lay with her father: but he perceiued not, neyther when his daughter lay downe, nor when she rose vp. 34. The next day also the elder said to the yonger: Behold I lay yeſternight with my father, let vs make him",
+  "r3_verse": "They therfore made their father to drinke wine that night: and the elder went in, and lay with her father: but he perceiued not, neyther when his daughter lay downe, nor when she rose vp.",
+  "arm_conflicts": [
+   "ſake. S.Aue. | made their",
+   "in Gen. | lay with",
+   "tather : | father:"
+  ],
+  "new_text": "They therfore made their father to drinke wine that night and the elder went in, and lay with her father: but he perceiued not, neyther when his daughter lay downe, nor when ſhe roſe vp.",
+  "s_unresolved": [
+   "father:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p84",
+  "old_text": "The next day alſo the elder ſaid : Behold I lay veſternight with my father, let vs make him alſo this night, and thou ſhalt lye with him, that we may of our father.",
+  "old": {
+   "s_dismas": 0.805,
+   "odr_com": 0.805,
+   "sabates_a": 0.822,
+   "madueke_b": 0.822
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.7454,
+   0.885,
+   0.8605
+  ],
+  "crop_page": 84,
+  "r3_raw": "lay with her father: but he perceiued not, neyther when his daughter lay downe, nor when she rose vp. 34. The next day also the elder said to the yonger: Behold I lay yeſternight with my father, let vs make him drinke wine also this night, and thou ſhalt lye with him, that we may be seed of our father. 35. They made their father drinke wine that night also, and the yonger daughter went in, and lay with him: and",
+  "r3_verse": "The next day also the elder said to the yonger: Behold I lay yeſternight with my father, let vs make him drinke wine also this night, and thou ſhalt lye with him, that we may be seed of our father.",
+  "arm_conflicts": [
+   ": | to the yonger:",
+   "veſternight | yeſternight"
+  ],
+  "r2_attested": {
+   "36": "ſeed"
+  },
+  "visual_readings": {
+   "36": "ſeed"
+  },
+  "new_text": "The next day alſo the elder ſaid to the yonger: Behold I lay yeſternight with my father, let vs make him drinke wine alſo this night, and thou ſhalt lye with him, that we may be ſeed of our father.",
+  "s_unresolved": [
+   "yeſternight"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 35,
+  "from": "p84",
+  "old_text": "They made their tather drinke wine that and the yonger daughter went in, and lay with him: and then truly did he perceiue when ſhe lay downe, or when ſhe",
+  "old": {
+   "s_dismas": 0.832,
+   "odr_com": 0.832,
+   "sabates_a": 0.833,
+   "madueke_b": 0.833
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.7998,
+   0.885,
+   0.8981
+  ],
+  "crop_page": 84,
+  "r3_raw": "rinke wine also this night, and thou shalt lye with him, that we may have seed of our father. 35. They made their father drinke wine that night also, and the yonger daughter went in, and lay with him: and neither then truly did he perceiue when she lay downe, or when she rose vp. 36. The two daughters therefore of Lot were with child by their",
+  "r3_verse": "They made their father drinke wine that night also, and the yonger daughter went in, and lay with him: and neither then truly did he perceiue when she lay downe, or when she rose vp.",
+  "arm_conflicts": [
+   "tather | father"
+  ],
+  "lexicon_readings": {
+   "8": "alſo,"
+  },
+  "r2_attested": {
+   "33": "roſe"
+  },
+  "visual_readings": {
+   "8": "alſo,",
+   "33": "roſe"
+  },
+  "new_text": "They made their father drinke wine that night alſo, and the yonger daughter went in, and lay with him: and neither then truly did he perceiue when ſhe lay downe, or when ſhe roſe vp.",
+  "s_unresolved": [
+   "father"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 36,
+  "from": "p84",
+  "old_text": "The two daughters thertore of Lot were with chuld by theit",
+  "old": {
+   "s_dismas": 0.862,
+   "odr_com": 0.862,
+   "sabates_a": 0.841,
+   "madueke_b": 0.841
+  },
+  "neighbours": [
+   36
+  ],
+  "crop": [
+   0.155,
+   0.8543,
+   0.885,
+   0.916
+  ],
+  "crop_page": 84,
+  "r3_raw": "neither then truly did he perceiue when she lay downe, or when she bare vp. 36. The two daughters therefore of Lot were with childe by their father. 37. And the elder bare a sonne and she called his name Moab:",
+  "r3_verse": "The two daughters therefore of Lot were with childe by their father.",
+  "arm_conflicts": [
+   "thertore | therefore",
+   "chuld | childe",
+   "theit | their father."
+  ],
+  "new_text": "The two daughters therefore of Lot were with childe by their father.",
+  "s_unresolved": [
+   "therefore",
+   "father."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 37,
+  "from": "chapter",
+  "old_text": "And the elder bare a ſouue and ſhe called his name Moab. Abraham. he is the father of the Moabites euen to this preſent day.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.919,
+   "madueke_b": 0.919
+  },
+  "neighbours": [
+   37
+  ],
+  "crop": [
+   0.155,
+   0.8736,
+   0.885,
+   0.9336
+  ],
+  "crop_page": 84,
+  "crop_leaves": [
+   84,
+   85
+  ],
+  "r3_raw": "36. The two daughters therefore of Lot were with child by their father. 37. And the elder bare a sonne and she called his name Moab: he is the (e) father of the Moabites euen to this present day. 38. The yonger also bare a sonne, and she called his name Ammon, that is the",
+  "r3_verse": "And the elder bare a sonne and she called his name Moab: he is the father of the Moabites euen to this present day.",
+  "arm_conflicts": [
+   "ſouue | sonne"
+  ],
+  "r2_attested": {
+   "5": "ſonne"
+  },
+  "visual_readings": {
+   "5": "ſonne"
+  },
+  "new_text": "And the elder bare a ſonne and ſhe called his name Moab. he is the father of the Moabites euen to this preſent day.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

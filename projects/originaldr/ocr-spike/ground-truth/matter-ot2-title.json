@@ -1,0 +1,170 @@
+{
+  "locus": "matter/ot2/title",
+  "page_index": 0,
+  "ocr_dir": "archive-ot2-1610",
+  "scan": "S1",
+  "raster": ".gt-rasters/matter-ot2-title-p0000.png",
+  "raster_dpi": 400,
+  "page_label_printed": "",
+  "running_header": {
+    "left": "",
+    "center": "",
+    "right": ""
+  },
+  "layout_note": "Title page inside an ornate arabesque woodcut border on all four sides (decorative only, no lettering/motto set within it). Centered display type: six large Roman-cap title lines, then a roman/italic descriptive block, a corporate-author line, a Latin scripture motto (2 Pet. 1) with its English rendering, and the Doway imprint + Roman-numeral date. A diagonal paper crease/fold runs top-to-bottom through the center column, obscuring several mid-line glyphs (flagged in uncertain). A modern watermark 'www.fatimamovement.com' and a small red heraldic shield are overlaid at the lower-left corner — NOT part of the original print; excluded from transcription.",
+  "body": [
+    {
+      "line_index": 0,
+      "role": "title_display",
+      "text": "THE SECOND TOME OF THE"
+    },
+    {
+      "line_index": 1,
+      "role": "title_display",
+      "text": "HOLIE BIBLE"
+    },
+    {
+      "line_index": 2,
+      "role": "subtitle",
+      "text": "FAITHFVLLY TRANS-",
+      "line_end_hyphen": true
+    },
+    {
+      "line_index": 3,
+      "role": "subtitle",
+      "text": "LATED INTO ENGLISH,"
+    },
+    {
+      "line_index": 4,
+      "role": "subtitle",
+      "text": "OVT OF THE AVTHENTICAL"
+    },
+    {
+      "line_index": 5,
+      "role": "subtitle",
+      "text": "LATIN."
+    },
+    {
+      "line_index": 6,
+      "role": "prose",
+      "text": "Diligently conferred with the Hebrew, Greeke,",
+      "_pre_review": "Diligently conferred with the Hebrew, Grecke,",
+      "reviewed": true
+    },
+    {
+      "line_index": 7,
+      "role": "prose",
+      "text": "and other Editions in diuers languages."
+    },
+    {
+      "line_index": 8,
+      "role": "prose",
+      "text": "With ARGVMENTS of the Bookes, and Chapters:",
+      "_pre_review": "With, ARGVMENTS of the Bookes, and Chapters:",
+      "reviewed": true
+    },
+    {
+      "line_index": 9,
+      "role": "prose",
+      "text": "ANNOTATIONS : TABLES : and other helpes,",
+      "_pre_review": "ANNOTATIONS: TABLES: and other helpes,",
+      "reviewed": true
+    },
+    {
+      "line_index": 10,
+      "role": "prose",
+      "text": "for better vnderſtanding of the text : for diſcouerie of",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 11,
+      "role": "prose",
+      "text": "CORRVPTIONS in ſome late tranſlations : and",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 12,
+      "role": "prose",
+      "text": "for clearing CONTROVERSIES in Religion."
+    },
+    {
+      "line_index": 13,
+      "role": "prose",
+      "text": "BY THE ENGLISH COLLEGE OF DOWAY.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 14,
+      "role": "latin",
+      "text": "Spiritu Sancto inſpirati, locuti ſunt ſancti Dei homines. 2. Pet. 1.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 15,
+      "role": "prose",
+      "text": "The holie men of God ſpake, iſpired with the Holie Ghoſt.",
+      "has_uncertain": true
+    },
+    {
+      "line_index": 16,
+      "role": "imprint",
+      "text": "Printed at Doway by LAVRENCE KELLAM,"
+    },
+    {
+      "line_index": 17,
+      "role": "imprint",
+      "text": "at the ſigne of the holie Lambe."
+    },
+    {
+      "line_index": 18,
+      "role": "imprint",
+      "text": "M. DC. X."
+    }
+  ],
+  "marginalia": [],
+  "uncertain": [
+    {
+      "line_index": 10,
+      "span": "the",
+      "note": "In 'of the text', the paper crease runs directly through this word; visible remnant is a tall ascender + 'e' before 'text', consistent with a compressed italic 'the' (the expected 'for better understanding of THE text'); committed to 'the' but the th/ye region is fold-obscured."
+    },
+    {
+      "line_index": 11,
+      "span": "ſome",
+      "note": "In 'in ſome late', the crease clips the end of the word; long-ſ + 'o' + 'm' clear, final 'e' obscured by the fold. Committed 'ſome' (standard reading); could be 'ſom'. Scaffold OCR reads garbage ('fon') here."
+    },
+    {
+      "line_index": 13,
+      "span": "COLLEGE",
+      "note": "The crease passes between 'CO' and 'LEGE'; 'CO' and 'LEGE' are clear but the doubled-L region sits under the fold, so single-L 'COLEGE' vs double-L 'COLLEGE' is undetermined. Committed 'COLLEGE' (the printer's own institution, English College of Doway; letter-spacing supports one hidden sort). Scaffold OCR garbage ('Coirce')."
+    },
+    {
+      "line_index": 14,
+      "span": "ſunt ſancti ... homines",
+      "note": "The crease crosses the middle of this italic Latin line. 'ſunt ſancti' committed on Vulgate 2 Pet 1:21 constraint (ink partly folded). 'homines' faded/italic — the vowel after 'h' reads ambiguously as o/e; scaffold OCR reads 'hemines'; committed to 'homines' (Vulgate). Reference cite 'D2. Pet. 1.' set with French spacing / small numerals."
+    },
+    {
+      "line_index": 15,
+      "span": "iſpired",
+      "note": "English rendering of 'inſpirati'. Crease sits at the word-start; visible glyphs read 'i' + long-ſ + 'pired' = 'iſpired' (an apparent dropped-'n' printer's error for 'inſpired'), but a fold-obscured 'n' cannot be excluded. Committed to the visible 'iſpired'; scaffold OCR garbage."
+    }
+  ],
+  "glyph_counts": {
+    "long_s_count_transcribed": 11,
+    "note": "long-ſ (U+017F) occurrences: vnderſtanding, diſcouerie, ſome, tranſlations, inſpirati, ſunt, ſancti, ſpake, iſpired, Ghoſt, ſigne. All-caps display lines use round capital S (no long-ſ)."
+  },
+  "border_motto": null,
+  "observer": "agent:matter-ot2-title",
+  "observed_at": "2026-07-14",
+  "method": "visual-multimodal-read of 400 DPI raster with per-word high-zoom crops; OCR scaffold used only as dropped-line hint (it is heavily garbled on this display-type page). u/v period-swap, i/j, long-ſ (glyph-driven), ligatures→component letters, and preserved French spacing applied per GUIDELINES.md. Whole page is large display/roman/italic type (real 'w', no 'vv' footnote face present).",
+  "confidence": "high on the six display-title lines, the descriptive roman block, and the imprint/date; medium on the fold-crossed center-column words (the / ſome / COLLEGE / iſpired) and the faded italic Latin ('homines').",
+  "resolved_uncertain": [],
+  "review": {
+    "reviewer": "sir",
+    "reviewed_at": "2026-07-15T03:07:03.294198+00:00",
+    "n_applied": 3,
+    "n_excluded": 0,
+    "n_skipped": 0,
+    "corrections_source": "ground-truth/corrections/matter-ot2-title.corrections.json"
+  }
+}

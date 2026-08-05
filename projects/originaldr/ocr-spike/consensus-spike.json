@@ -1,0 +1,3205 @@
+{
+  "summary": {
+    "book": "genesis",
+    "chapters": [
+      1
+    ],
+    "scan_sources": [
+      "holiebible-ot1",
+      "ot1-1609"
+    ],
+    "text_witnesses": [
+      "odr_com",
+      "madueke_a"
+    ],
+    "ground_truth": "s_dismas",
+    "verses_scored": 28,
+    "mean_recall_vs_gt": {
+      "single_scan[holiebible-ot1]": 0.783,
+      "single_scan[ot1-1609]": 0.768,
+      "consensus_scans_only": 0.796,
+      "consensus_scans_plus_text": 0.845
+    }
+  },
+  "verses": [
+    {
+      "coord": "scripture/genesis/1/1",
+      "anchor": "In the beginning God created heaven and earth.",
+      "gt": "In the beginning God created heauen and earth.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "in yhat maner ARGVMENT GEN ESIS maner lacob otherwiſe called Iſrael with al his pragenie deſcended from the Land of Canaan into Egypt and were there entertayned ſo ihis booke This booke contayneth the hiſtorie oftwo thouſand tbree hundred odde ycares And diuided into it maj diuided into eight partes The firſt contayneth the Creation ef cight partes Heauen and Earth other Creatures"
+      },
+      "cleaned_layer": {
+        "reading": "in the beginning GOD created Heauen and Earth",
+        "tokens": [
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "beginning",
+            "conf": 0.667
+          },
+          {
+            "t": "GOD",
+            "conf": 0.667
+          },
+          {
+            "t": "created",
+            "conf": 0.667
+          },
+          {
+            "t": "Heauen",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "Earth",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.625,
+        "scans_only": 0.625,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/2",
+      "anchor": "And the earth was void and vacant, and darkness was upon the face of the depth: and the Spirit of God moved over the waters.",
+      "gt": "And the earth was voide & vacant, and darkenes was vpon the face of the deapth: and the the Spirite of God moued ouer the waters.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "and laſt of Man chap The ſecond part is of the trangreſſion falof man his caſting out of Paradiſe of multiplication of men and of ſinne though ſtil ſeme were iut oFthe general Noud tbat drowned al except eight per ons other liuingcreatures of the earth from the third chap to the The third part is oFthe new increaſe multiplication of the ſame From the chap to the The fourth oF the confuſion of tongues the diuiſion oF nations in the chap The ſi relateth Abrahams going forth of his countrie Gods promiſe that in his ſecde al Nations ſhould bleſſed the commandment Circumciſion from the chap to the The ſixth part recounteth the progenie and other bleſings ſpecially the great vertues oF Abraham lſaac and larob From the chap to the The ſeuenth part reporteth the ſel ling oy loſeph into Egypt and his aduancement there from the chap to the The eight and laſt part is oF lacob and his progenies going into Eppt their intertainment there and qf lacobi and finalh of loſephs death in the fiue laſt cahpters The ſignification ofthe markes here vſed for direction of the reader The numbers in the argumentes of chapters point to the verſe where the mat ter mentioned beginneth This forme ofcroſſe If in the text sheweth the beginning of euerie verſe The numbers in the inner margent ouer againſt the croſſe shew the number ofverſes in the ſame chapter This marke ſignifieth that there foloweth an Annotation after the chapter vpon the word or wordes wherto it is adioyned The number alſo of the ſame verſe is prefixed to the Annotation Theſe foure prickes shew that there is an Annotation in the margent vpon that place And when manie occurre the firſt anſwereth to the firſt marcke the ſecond to the ſecond and ſo forth In like maner the citations of places in the inner margent are applied to the authores alleaged But when there more ſuch marginal aunotations then may caſely ap plied vſe the letters of the Alphabete for direction This forme of ſtarre in the texi or annotations pointeth to the explica tion of ſome word or wordes in the margent Sometimes put the oncordance of other Scriptures in the inner mar gent of the text vy haue alſo noted in the margent when the Bookes of holie Scripture or partes thereof are read in the Churches Seruice For their ſakes that deſire to read the ſame in order ofthe Eccleſiaſtical Office Creation BO GENESIS IN IT CHAP god createth heauen and carth and al things therin diſtinguishingand The firſt part bevvt fying the ſame laſt eFal the ſixth day createth man to Ofthe ercati vvhom ſubiecteth al corporal things ofthis inferior vvorld beginning Gop created hea uen and earth And the earth was voide vacant and darkenes was Septuageſima vpon the face of the deapth and the til laſſion Sun day Spirite of God moued ouer the wa ters",
+        "ot1-1609": "and carth And the carth vas booke in her Oſfice from voide vacant and darkenes was vpon the face ofthe deapth and the til ſaſſion Sua Spirite of God moued ouer the wa day ters"
+      },
+      "cleaned_layer": {
+        "reading": "And the earth was voide in vacant and darkenes was vpon the face of the deapth and the til of God moued ouer the wa",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          },
+          {
+            "t": "was",
+            "conf": 0.75
+          },
+          {
+            "t": "voide",
+            "conf": 0.5
+          },
+          {
+            "t": "in",
+            "conf": 0.25
+          },
+          {
+            "t": "vacant",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "darkenes",
+            "conf": 0.75
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "face",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 0.75
+          },
+          {
+            "t": "the",
+            "conf": 0.75
+          },
+          {
+            "t": "deapth",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "til",
+            "conf": 0.5
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "moued",
+            "conf": 1.0
+          },
+          {
+            "t": "ouer",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "wa",
+            "conf": 0.5
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.938,
+        "scans_only": 0.875,
+        "scans_plus_text": 0.875
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/3",
+      "anchor": "And God said: Be light made. And light was made.",
+      "gt": "And God ſaid: Be light made. And light was made.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God ſaid light made chapter And light was made"
+      },
+      "cleaned_layer": {
+        "reading": "And God ſaid Be light made And light was made",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Be",
+            "conf": 0.667
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.857,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/4",
+      "anchor": "And God saw the light that it was good: and he divided the light from the darkness.",
+      "gt": "And God ſaw the light that it was good: & he diuided the light from the darkenes.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God ginningofthe ſaw the light that it was good ſecond on Ea diuided the light from the darkenes And called the",
+        "ot1-1609": "And God ſaw the light that it vas good ſecond on Ea diuided che lighe from the datkenes And called the ſter Eue"
+      },
+      "cleaned_layer": {
+        "reading": "And God ſaw the light that it was good ſecond on diuided the light from the darkenes",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaw",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 0.75
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          },
+          {
+            "t": "ſecond",
+            "conf": 0.5
+          },
+          {
+            "t": "on",
+            "conf": 0.5
+          },
+          {
+            "t": "diuided",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 0.75
+          },
+          {
+            "t": "light",
+            "conf": 0.75
+          },
+          {
+            "t": "from",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "darkenes",
+            "conf": 0.5
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.923,
+        "scans_only": 0.923,
+        "scans_plus_text": 0.923
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/5",
+      "anchor": "And he called the light, Day, and the darkness, Night: and there was evening & morning, that made one day.",
+      "gt": "And he called the light, Day, and the darkenes, Night: and there was euening & morning, that made one day.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "light Day and the darkenes Night and there was euening morning that made one day"
+      },
+      "cleaned_layer": {
+        "reading": "And he called the light Day and the darkenes Night and there was euening morning that made one day",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 0.667
+          },
+          {
+            "t": "he",
+            "conf": 0.667
+          },
+          {
+            "t": "called",
+            "conf": 0.667
+          },
+          {
+            "t": "the",
+            "conf": 0.667
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "Day",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "darkenes",
+            "conf": 0.667
+          },
+          {
+            "t": "Night",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "euening",
+            "conf": 1.0
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "one",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.867,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/6",
+      "anchor": "God also said: Be a firmament made amidst the waters: and let it divide between waters and waters.",
+      "gt": "God alſo ſaid: Be a firmament made amidſt the waters: and let it diuide betwene waters & waters.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "God alſo ſaid fir ment is al the mament made amidſt the waters and let it diuide betwene ſpace from the waters waters",
+        "ot1-1609": "God alſo ſaid fir mament made amidſt the vaters and let it diuide betwene ſpace from the vaters waters"
+      },
+      "cleaned_layer": {
+        "reading": "God alſo ſaid fir a firmament made amidſt the waters and let it diuide betwene waters and waters",
+        "tokens": [
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "alſo",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "fir",
+            "conf": 0.5
+          },
+          {
+            "t": "a",
+            "conf": 0.5
+          },
+          {
+            "t": "firmament",
+            "conf": 0.5
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "amidſt",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "waters",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "let",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "diuide",
+            "conf": 1.0
+          },
+          {
+            "t": "betwene",
+            "conf": 0.75
+          },
+          {
+            "t": "waters",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.25
+          },
+          {
+            "t": "waters",
+            "conf": 0.75
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.8,
+        "scans_only": 0.8,
+        "scans_plus_text": 0.933
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/8",
+      "anchor": "And God called the firmament, Heaven: and there was evening & morning that made the second day.",
+      "gt": "And God called the firmament, Heauen: and there was euening & morning that made the ſecond day.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And eſt part diui God called the firmament Heauen and there was euening deth betwene morning that made the ſecond day",
+        "ot1-1609": "And eſt par diui God called the firmament Heauen and there was eucning deth bervene morning that made the ſecond day"
+      },
+      "cleaned_layer": {
+        "reading": "And God called the firmament Heauen and there was euening morning that made the ſecond day",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "called",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "firmament",
+            "conf": 1.0
+          },
+          {
+            "t": "Heauen",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "euening",
+            "conf": 0.75
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "ſecond",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/9",
+      "anchor": "God also said: let the waters that are under heaven be gathered together into one place: and let the dry land appear. And it was so done.",
+      "gt": "God alſo ſaid: Let the waters that are vnder the heauen, be gathered together into one place: and let the drie land appeare. And it was ſo done.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "God alſo ſaid Let the waters that are vnder the heauen gathered together into one place and let the drie land appeare And it was ſo rhe ayer done",
+        "ot1-1609": "God alſo ſaid Let the vaters oa the vaters thar are vnder the heauen gathered together the carhand into one place and let the drie land appeare And it vas ſo the wateri in the ayer done"
+      },
+      "cleaned_layer": {
+        "reading": "God alſo ſaid Let the waters that are vnder heauen be gathered together into one place and let the drie land appeare And it was ſo done",
+        "tokens": [
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "alſo",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "waters",
+            "conf": 0.75
+          },
+          {
+            "t": "that",
+            "conf": 0.75
+          },
+          {
+            "t": "are",
+            "conf": 1.0
+          },
+          {
+            "t": "vnder",
+            "conf": 1.0
+          },
+          {
+            "t": "heauen",
+            "conf": 1.0
+          },
+          {
+            "t": "be",
+            "conf": 0.5
+          },
+          {
+            "t": "gathered",
+            "conf": 1.0
+          },
+          {
+            "t": "together",
+            "conf": 1.0
+          },
+          {
+            "t": "into",
+            "conf": 1.0
+          },
+          {
+            "t": "one",
+            "conf": 1.0
+          },
+          {
+            "t": "place",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "drie",
+            "conf": 0.75
+          },
+          {
+            "t": "land",
+            "conf": 1.0
+          },
+          {
+            "t": "appeare",
+            "conf": 0.75
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 0.75
+          },
+          {
+            "t": "ſo",
+            "conf": 1.0
+          },
+          {
+            "t": "done",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.958,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/10",
+      "anchor": "And God called the dry land, Earth, and the gathering of waters together, he called Seas. And God saw that it was good.",
+      "gt": "And God called the drie land, Earth: and the gathering of waters together, he called Seas. And God ſawe that it was good.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God called the drie land Earth and the gathe Aug li ringrof waters togethet called Seas And God ſawe that it was good"
+      },
+      "cleaned_layer": {
+        "reading": "And God called the drie land Earth and the gathering of waters together, he called Seas And God ſawe that it was good",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "called",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "drie",
+            "conf": 0.667
+          },
+          {
+            "t": "land",
+            "conf": 1.0
+          },
+          {
+            "t": "Earth",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "gathering",
+            "conf": 0.667
+          },
+          {
+            "t": "of",
+            "conf": 0.667
+          },
+          {
+            "t": "waters",
+            "conf": 1.0
+          },
+          {
+            "t": "together,",
+            "conf": 0.667
+          },
+          {
+            "t": "he",
+            "conf": 0.667
+          },
+          {
+            "t": "called",
+            "conf": 1.0
+          },
+          {
+            "t": "Seas",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſawe",
+            "conf": 0.667
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.778,
+        "scans_only": 0.833,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/11",
+      "anchor": "And said: Let the earth shoot forth green herbs, and such as may seed, & fruit-trees yielding fruit after his kind, such as may have seed in itself upon the earth. And it was so done.",
+      "gt": "And ſaid: Let the earth ſhoot forth grene herbes, and ſuch as may ſeede, & fruite trees yelding fruit after his kinde, ſuch as may haue ſeede in it ſelfe vpon the earth. And it was ſo done.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And ſaid Let the earth ſhootforth grene herbes and ſuch as may ſecde fruite trees yelding fruit ſpace aboue after his kinde ſuch as may hauc ſeede in it ſelfe vpon the the earth in earth And it was ſo done"
+      },
+      "cleaned_layer": {
+        "reading": "And ſaid Let the earth ſhootforth grene herbes herbs, and ſuch as may ſecde fruit ſpace aboue fruit after his kinde ſuch as may haue ſeede in it vpon the earth And it was ſo done",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "ſhootforth",
+            "conf": 0.667
+          },
+          {
+            "t": "grene",
+            "conf": 0.667
+          },
+          {
+            "t": "herbes",
+            "conf": 0.667
+          },
+          {
+            "t": "herbs,",
+            "conf": 0.333
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "ſuch",
+            "conf": 1.0
+          },
+          {
+            "t": "as",
+            "conf": 1.0
+          },
+          {
+            "t": "may",
+            "conf": 1.0
+          },
+          {
+            "t": "ſecde",
+            "conf": 0.333
+          },
+          {
+            "t": "fruit",
+            "conf": 0.667
+          },
+          {
+            "t": "ſpace",
+            "conf": 0.333
+          },
+          {
+            "t": "aboue",
+            "conf": 0.333
+          },
+          {
+            "t": "fruit",
+            "conf": 0.667
+          },
+          {
+            "t": "after",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "kinde",
+            "conf": 0.667
+          },
+          {
+            "t": "ſuch",
+            "conf": 1.0
+          },
+          {
+            "t": "as",
+            "conf": 1.0
+          },
+          {
+            "t": "may",
+            "conf": 1.0
+          },
+          {
+            "t": "haue",
+            "conf": 0.667
+          },
+          {
+            "t": "ſeede",
+            "conf": 0.667
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 0.667
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "ſo",
+            "conf": 1.0
+          },
+          {
+            "t": "done",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.893,
+        "scans_only": 0.75,
+        "scans_plus_text": 0.786
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/12",
+      "anchor": "And the earth brought forth green herb, such as seedeth according to his kind, and tree that beareth fruit, having seed each one according to his kind. And God saw that it was good.",
+      "gt": "And the earth brought forth grene herbe, ſuch as ſeedeth according to his kinde, & tree that beareth fruite, hauing ſeede eche one according to his kinde. And God ſaw that it was good.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And the earth brought forth vhoſe loweſt grene partare birdes grene herbe ſuch as ſeedeth according to his kinde tree and vaters in that beareth fruite hauing ſeede eche one according to his kinde And God ſaw that it was good",
+        "ot1-1609": "And the carth broughr forth vhoſe grene mii ſamnu vamant com partare birder grene herbe ſuch as ſcedeth according to his kinde trec and vaters in that beareth fruite hauing ſecde eche onc according to his kinde And God ſaw that it was good"
+      },
+      "cleaned_layer": {
+        "reading": "And the earth brought forth vhoſe loweſt ſuch as ſeedeth according to his kinde and vaters that beareth fruite hauing ſeede eche one according to his kinde And God ſaw that it was good",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          },
+          {
+            "t": "brought",
+            "conf": 0.75
+          },
+          {
+            "t": "forth",
+            "conf": 1.0
+          },
+          {
+            "t": "vhoſe",
+            "conf": 0.5
+          },
+          {
+            "t": "loweſt",
+            "conf": 0.25
+          },
+          {
+            "t": "ſuch",
+            "conf": 1.0
+          },
+          {
+            "t": "as",
+            "conf": 1.0
+          },
+          {
+            "t": "ſeedeth",
+            "conf": 0.75
+          },
+          {
+            "t": "according",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "kinde",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 0.75
+          },
+          {
+            "t": "vaters",
+            "conf": 0.5
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "beareth",
+            "conf": 1.0
+          },
+          {
+            "t": "fruite",
+            "conf": 0.75
+          },
+          {
+            "t": "hauing",
+            "conf": 1.0
+          },
+          {
+            "t": "ſeede",
+            "conf": 0.5
+          },
+          {
+            "t": "eche",
+            "conf": 0.75
+          },
+          {
+            "t": "one",
+            "conf": 0.75
+          },
+          {
+            "t": "according",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "kinde",
+            "conf": 0.75
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaw",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 0.889,
+        "scans_plus_text": 0.889
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/13",
+      "anchor": "And there was evening and morning that made the third day.",
+      "gt": "And there was euening & morning that made the third day.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And there was the hiegheſtis euening morning that made the third day Againe God the Empyrial ſaid there lightes made in the firmament of heauen to heauen Eſa diuide the day the night and let them for ſignes ſeaſons and dayes and yeares to ſhine in the firmament of made the firſt heauen to giue light vpon the earth And it was ſo done day are diſpo And God made two great lights greater light to go ſed the fourth uerne the day and leſſer light to gouerne the night and ſtarres And ſet them in the firmament of heauen to proper cour ſhine vpon the earth and to gouerne the day the night ſes for more diſtinction of and to diuide the light the darkenes And God ſawe times Di that it was good And there was euening and morning that made the fourth"
+      },
+      "cleaned_layer": {
+        "reading": "And there was euening and morning that made the third day.",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "euening",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.667
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "third",
+            "conf": 0.667
+          },
+          {
+            "t": "day.",
+            "conf": 0.667
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 0.9,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/14",
+      "anchor": "Again God said: Be there lights made in the firmament of heaven, to divide the day and the night, and let them be for signs & seasons, and days and years;",
+      "gt": "Againe God ſaid: Be there lightes made in the firmament of heauen, to diuide the day & the night, and let them be for ſignes & ſeaſons, and dayes and yeares:",
+      "diplomatic_layer": {
+        "ot1-1609": "Againe God the Empyrlal ſaid there lightes made in the firmament of heauen to diuide the day rhe night and let them for ſignes ſeaſons and dayes and ycares"
+      },
+      "cleaned_layer": {
+        "reading": "Againe God ſaid Be there lightes made in the firmament of heauen to diuide the day rhe the night and let them be for ſignes ſeaſons and dayes and ycares",
+        "tokens": [
+          {
+            "t": "Againe",
+            "conf": 0.667
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Be",
+            "conf": 0.667
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "lightes",
+            "conf": 0.667
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "firmament",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "heauen",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "diuide",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          },
+          {
+            "t": "rhe",
+            "conf": 0.333
+          },
+          {
+            "t": "the",
+            "conf": 0.667
+          },
+          {
+            "t": "night",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "let",
+            "conf": 1.0
+          },
+          {
+            "t": "them",
+            "conf": 1.0
+          },
+          {
+            "t": "be",
+            "conf": 0.667
+          },
+          {
+            "t": "for",
+            "conf": 1.0
+          },
+          {
+            "t": "ſignes",
+            "conf": 0.667
+          },
+          {
+            "t": "ſeaſons",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "dayes",
+            "conf": 0.667
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "ycares",
+            "conf": 0.333
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.0,
+        "scans_only": 0.958,
+        "scans_plus_text": 0.958
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/15",
+      "anchor": "to shine in the firmament of heaven, and to give light upon the earth. And it was so done.",
+      "gt": "to ſhine in the firmament of heauen, & to giue light vpon the earth. And it was ſo done.",
+      "diplomatic_layer": {
+        "ot1-1609": "to ſhine in the firmament of made the firſt heauen to giue light vpon the earth And it was ſo done day are diſpo"
+      },
+      "cleaned_layer": {
+        "reading": "to ſhine in the firmament of heauen and to giue light vpon the earth And it was ſo done",
+        "tokens": [
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "ſhine",
+            "conf": 1.0
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "firmament",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "heauen",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.333
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "giue",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "ſo",
+            "conf": 1.0
+          },
+          {
+            "t": "done",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.0,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/16",
+      "anchor": "And God made two great lights; a greater light to govern the day, and a lesser light to govern the night; and stars.",
+      "gt": "And God made two great lights: a greater light, to gouerne the day: and a leſſer light to gouerne the night: and ſtarres.",
+      "diplomatic_layer": {
+        "ot1-1609": "And God made two great lighis greater liglit to go ſed the fourth uerne tlc day and leſſer light to gouerne rhe night and ſtarres"
+      },
+      "cleaned_layer": {
+        "reading": "And God made two great lights: a greater light to go the day and a leſſer light to gouerne the night and ſtarres",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "two",
+            "conf": 1.0
+          },
+          {
+            "t": "great",
+            "conf": 1.0
+          },
+          {
+            "t": "lights:",
+            "conf": 0.667
+          },
+          {
+            "t": "a",
+            "conf": 0.667
+          },
+          {
+            "t": "greater",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 0.667
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "go",
+            "conf": 0.333
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "a",
+            "conf": 0.667
+          },
+          {
+            "t": "leſſer",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "gouerne",
+            "conf": 0.667
+          },
+          {
+            "t": "the",
+            "conf": 0.667
+          },
+          {
+            "t": "night",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "ſtarres",
+            "conf": 0.667
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.0,
+        "scans_only": 0.938,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/18",
+      "anchor": "and to govern the day & the night, and to divide the light and the darkness. And God saw that it was good.",
+      "gt": "and to gouerne the day & the night, and to diuide the light & the darkenes. And God ſawe that it was good.",
+      "diplomatic_layer": {
+        "ot1-1609": "and to gouerne the day the nighi diſtinction of and to diuide the lighe the darkenes And God ſawe times Di that it was good"
+      },
+      "cleaned_layer": {
+        "reading": "and to gouerne the day the night, and to diuide the light and the darkenes And God ſawe that it was good",
+        "tokens": [
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "gouerne",
+            "conf": 0.667
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "night,",
+            "conf": 0.667
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "diuide",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "light",
+            "conf": 0.667
+          },
+          {
+            "t": "and",
+            "conf": 0.333
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "darkenes",
+            "conf": 0.667
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſawe",
+            "conf": 0.667
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.0,
+        "scans_only": 0.867,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/19",
+      "anchor": "And there was evening and morning that made the fourth day.",
+      "gt": "And there was euening and morning that made the fourth day.",
+      "diplomatic_layer": {
+        "ot1-1609": "And there vas euening and morning that made the fourth day"
+      },
+      "cleaned_layer": {
+        "reading": "And there was euening and morning that made the fourth day",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 0.667
+          },
+          {
+            "t": "euening",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "fourth",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.0,
+        "scans_only": 0.9,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/20",
+      "anchor": "God also said: Let the waters bring forth creeping creature having life, and flying fowl, over the earth under the firmament of heaven.",
+      "gt": "God alſo ſaid: Let the waters bring forth creeping creature hauing life, and flying foule, ouer the earth vnder the firmament of heauen.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "God alſo ſaid Let the waters onyſ ca bring forth creeping creature hauing life and flying foule diuin nom Tho ouer the earth vnder the firmament of heauen",
+        "ot1-1609": "God alſo ſaid Let the waters bring forth crecping creature hauing life and flying foule ouer the earth vnder the firmament of heauen"
+      },
+      "cleaned_layer": {
+        "reading": "God alſo ſaid Let the waters bring forth creeping creature hauing life and flying foule ouer the earth vnder the firmament of heauen",
+        "tokens": [
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "alſo",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "waters",
+            "conf": 1.0
+          },
+          {
+            "t": "bring",
+            "conf": 1.0
+          },
+          {
+            "t": "forth",
+            "conf": 1.0
+          },
+          {
+            "t": "creeping",
+            "conf": 0.75
+          },
+          {
+            "t": "creature",
+            "conf": 1.0
+          },
+          {
+            "t": "hauing",
+            "conf": 1.0
+          },
+          {
+            "t": "life",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "flying",
+            "conf": 1.0
+          },
+          {
+            "t": "foule",
+            "conf": 0.75
+          },
+          {
+            "t": "ouer",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "vnder",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "firmament",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "heauen",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/21",
+      "anchor": "And God created huge whales, and all living and moving creature, that the waters brought forth according to each sort, and all fowl according to their kind. And God saw that it was good.",
+      "gt": "And God created huge Whales, and al liuing & mouing creature, that the waters brought forth, according to eche ſorte, & al ſoule according to their kinde. And God ſaw that it was good.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God created huge Vhales and al liuing mouing creature The that the waters brought forth accordingto eche ſorte al foule accordingto their kinde And God ſawe that it was Moone for though the moone the good",
+        "ot1-1609": "And God created huge whales and al liuing mouing ercature The that the waters brought forth according to eche ſorte al foule accordingto their kinde And God ſawe that it wa moone the good"
+      },
+      "cleaned_layer": {
+        "reading": "And God created huge whales and al liuing and mouing creature that the waters brought forth according to eche ſorte foule accordingto accordingto according to their kinde And God ſawe that it was good",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "created",
+            "conf": 1.0
+          },
+          {
+            "t": "huge",
+            "conf": 1.0
+          },
+          {
+            "t": "whales",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "al",
+            "conf": 0.75
+          },
+          {
+            "t": "liuing",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.25
+          },
+          {
+            "t": "mouing",
+            "conf": 1.0
+          },
+          {
+            "t": "creature",
+            "conf": 0.75
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "waters",
+            "conf": 1.0
+          },
+          {
+            "t": "brought",
+            "conf": 1.0
+          },
+          {
+            "t": "forth",
+            "conf": 1.0
+          },
+          {
+            "t": "according",
+            "conf": 0.75
+          },
+          {
+            "t": "to",
+            "conf": 0.75
+          },
+          {
+            "t": "eche",
+            "conf": 0.5
+          },
+          {
+            "t": "ſorte",
+            "conf": 0.5
+          },
+          {
+            "t": "foule",
+            "conf": 0.25
+          },
+          {
+            "t": "accordingto",
+            "conf": 0.25
+          },
+          {
+            "t": "accordingto",
+            "conf": 0.25
+          },
+          {
+            "t": "according",
+            "conf": 0.5
+          },
+          {
+            "t": "to",
+            "conf": 0.5
+          },
+          {
+            "t": "their",
+            "conf": 1.0
+          },
+          {
+            "t": "kinde",
+            "conf": 0.75
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſawe",
+            "conf": 0.75
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 0.75
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.8,
+        "scans_only": 0.88,
+        "scans_plus_text": 0.92
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/22",
+      "anchor": "And he blessed them saying: Increase and multiply, and replenish the waters of the sea: and let the birds be multiplied upon the earth.",
+      "gt": "And he bleſſed them ſaying: Increaſe and multiplie, and repleniſh the waters of the ſea: and let the birds be multiplied vpon the earth.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And bleſſed them ſaying Increaſe and multi plie and repleniſh the waters of the ſea and let the birds leaſt viſible multiplied vpon the earth",
+        "ot1-1609": "And bleſſed them ſaying Increaſe and multi plic and repleniſh the waters of the ſca and let the bird multiplied vpon the earth"
+      },
+      "cleaned_layer": {
+        "reading": "And he bleſſed them ſaying Increaſe and multi and repleniſh the waters of the ſea and let the birds be multiplied vpon the earth",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "he",
+            "conf": 0.5
+          },
+          {
+            "t": "bleſſed",
+            "conf": 1.0
+          },
+          {
+            "t": "them",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaying",
+            "conf": 1.0
+          },
+          {
+            "t": "Increaſe",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "multi",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "repleniſh",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "waters",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "ſea",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "birds",
+            "conf": 0.75
+          },
+          {
+            "t": "be",
+            "conf": 0.5
+          },
+          {
+            "t": "multiplied",
+            "conf": 1.0
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.833,
+        "scans_only": 0.889,
+        "scans_plus_text": 0.944
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/23",
+      "anchor": "And there was evening and morning that made the fifth day.",
+      "gt": "And there was euening & morning that made the fifth day.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And there was euening ſtarre except morning that made the fifth day"
+      },
+      "cleaned_layer": {
+        "reading": "And there was euening ſtarre morning that made the fifth day",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "euening",
+            "conf": 1.0
+          },
+          {
+            "t": "ſtarre",
+            "conf": 0.333
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "fifth",
+            "conf": 1.0
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 1.0,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/24",
+      "anchor": "God said moreover: Let the earth bring forth living creature in his kind, cattle, and such as creep, and beasts of the earth according to their kinds: and it was so done.",
+      "gt": "God ſaid moreouer: Let the earth bring forth liuing creature, in his kind, cattle, & ſuch as creepe, & beaſtes of the earth according to their kindes: and it was ſo done.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "God ſaid moreouer Let Mercurie yet more lighton the earth bring forth liuing creature in his kind cattle ſuch as creepe beaſtes ofthe earth accordingto their the earth by kindes and it was ſo done",
+        "ot1-1609": "God ſaid moreouer Let more lighton the carth bring forth liuing creature in his kind cattle ſuch as crecpe beaſtes ofthe earth according to their kindes and it was ſo done"
+      },
+      "cleaned_layer": {
+        "reading": "God ſaid moreouer Let the earth bring forth liuing creature in his kind cattle and ſuch as creepe beaſtes ofthe of the earth according to their kindes and it was ſo done",
+        "tokens": [
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "moreouer",
+            "conf": 1.0
+          },
+          {
+            "t": "Let",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          },
+          {
+            "t": "bring",
+            "conf": 1.0
+          },
+          {
+            "t": "forth",
+            "conf": 1.0
+          },
+          {
+            "t": "liuing",
+            "conf": 1.0
+          },
+          {
+            "t": "creature",
+            "conf": 1.0
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "kind",
+            "conf": 1.0
+          },
+          {
+            "t": "cattle",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.25
+          },
+          {
+            "t": "ſuch",
+            "conf": 1.0
+          },
+          {
+            "t": "as",
+            "conf": 1.0
+          },
+          {
+            "t": "creepe",
+            "conf": 0.5
+          },
+          {
+            "t": "beaſtes",
+            "conf": 0.5
+          },
+          {
+            "t": "ofthe",
+            "conf": 0.5
+          },
+          {
+            "t": "of",
+            "conf": 0.5
+          },
+          {
+            "t": "the",
+            "conf": 0.75
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "according",
+            "conf": 0.75
+          },
+          {
+            "t": "to",
+            "conf": 0.75
+          },
+          {
+            "t": "their",
+            "conf": 0.75
+          },
+          {
+            "t": "kindes",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "ſo",
+            "conf": 1.0
+          },
+          {
+            "t": "done",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.893,
+        "scans_only": 0.893,
+        "scans_plus_text": 1.0
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/25",
+      "anchor": "And God made the beasts of the earth according to their kinds, and cattle, and all that creepeth on the earth in his kind. And God saw that it was good,",
+      "gt": "And God made the beaſtes of the earth according to their kindes, and cattle, & al that crepeth on the earth in his kind.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God made the beaſtes of reaſon it is the earth according to their kindes and cattle al that nerer and ſo Moyſes ſpea crepeth on the earth in his kind keth accor And God ſaw that it was good",
+        "ot1-1609": "And God made the beaſtes of the carth accordingro their kindes and cattle al that crepeth on the earth in his kind And God ſaw that it was good"
+      },
+      "cleaned_layer": {
+        "reading": "And God made the beaſtes of the earth according to their kindes and cattle and ſo that crepeth on the earth in his kind And God ſaw that it was good",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "beaſtes",
+            "conf": 0.75
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          },
+          {
+            "t": "according",
+            "conf": 0.75
+          },
+          {
+            "t": "to",
+            "conf": 0.75
+          },
+          {
+            "t": "their",
+            "conf": 1.0
+          },
+          {
+            "t": "kindes",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "cattle",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.5
+          },
+          {
+            "t": "ſo",
+            "conf": 0.25
+          },
+          {
+            "t": "that",
+            "conf": 0.75
+          },
+          {
+            "t": "crepeth",
+            "conf": 0.5
+          },
+          {
+            "t": "on",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "kind",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaw",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "was",
+            "conf": 1.0
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 1.0,
+        "scans_only": 0.895,
+        "scans_plus_text": 0.947
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/26",
+      "anchor": "and he said Let us make Man to our image & likeness: and let him have dominion over the fishes of the sea, and the fowls of the air, and the beasts, and the whole earth, and all creeping creature that moveth upon the earth.",
+      "gt": "And God ſaw that it was good,",
+      "diplomatic_layer": {
+        "holiebible-ot1": "and ſaid Let vs make dingto the vulgar capaci Man to our image likenes and let him haue dominion ouer the fiſhes of the ſea and the foules of the ayre and the tie and vſe of beaſtes and the whole earth and al creeping creature that things Aug li Gen moueth vpon the earth",
+        "ot1-1609": "and ſaid Let vs make vulgat capaci Man to our image likenes and let him haue dominion ouer the ſi ſhes ofthe ſea and the foules ofthe ayrc and the beaſtes and the vhole earth and al crecping creature that moueth vpon the carth"
+      },
+      "cleaned_layer": {
+        "reading": "and he ſaid Let vs make Man to our image likenes and let him haue dominion ouer the fiſhes of the ſea and the foules of the ayre and the beaſtes and the whole earth and al creeping creature that moueth vpon the earth",
+        "tokens": [
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "he",
+            "conf": 0.5
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Let",
+            "conf": 1.0
+          },
+          {
+            "t": "vs",
+            "conf": 1.0
+          },
+          {
+            "t": "make",
+            "conf": 1.0
+          },
+          {
+            "t": "Man",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "our",
+            "conf": 1.0
+          },
+          {
+            "t": "image",
+            "conf": 1.0
+          },
+          {
+            "t": "likenes",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "let",
+            "conf": 1.0
+          },
+          {
+            "t": "him",
+            "conf": 1.0
+          },
+          {
+            "t": "haue",
+            "conf": 1.0
+          },
+          {
+            "t": "dominion",
+            "conf": 1.0
+          },
+          {
+            "t": "ouer",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "fiſhes",
+            "conf": 0.75
+          },
+          {
+            "t": "of",
+            "conf": 0.75
+          },
+          {
+            "t": "the",
+            "conf": 0.75
+          },
+          {
+            "t": "ſea",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "foules",
+            "conf": 0.75
+          },
+          {
+            "t": "of",
+            "conf": 0.75
+          },
+          {
+            "t": "the",
+            "conf": 0.75
+          },
+          {
+            "t": "ayre",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "beaſtes",
+            "conf": 0.5
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "whole",
+            "conf": 0.75
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "al",
+            "conf": 0.75
+          },
+          {
+            "t": "creeping",
+            "conf": 0.75
+          },
+          {
+            "t": "creature",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "moueth",
+            "conf": 1.0
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.286,
+        "scans_only": 0.286,
+        "scans_plus_text": 0.286
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/27",
+      "anchor": "And God created man to his own image: to the image of God he created him, male and female he created them.",
+      "gt": "and he ſaid Let vs make Man to our image, & likenes: and let him haue dominion ouer the fiſhes of the ſea, and the foules of the ayre, and the beaſtes, and the whole earth, and al creeping creature, that moueth vpon the earth.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God created man to his ad lit ca wne image to the image of God created him male female created them",
+        "ot1-1609": "And God created man to his vne image to the image of God created him male female created them"
+      },
+      "cleaned_layer": {
+        "reading": "And God created man to his ad image to the image of God he created him male and female he created them",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "created",
+            "conf": 1.0
+          },
+          {
+            "t": "man",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "his",
+            "conf": 1.0
+          },
+          {
+            "t": "ad",
+            "conf": 0.25
+          },
+          {
+            "t": "image",
+            "conf": 1.0
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "image",
+            "conf": 1.0
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "he",
+            "conf": 0.5
+          },
+          {
+            "t": "created",
+            "conf": 1.0
+          },
+          {
+            "t": "him",
+            "conf": 1.0
+          },
+          {
+            "t": "male",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 0.5
+          },
+          {
+            "t": "female",
+            "conf": 1.0
+          },
+          {
+            "t": "he",
+            "conf": 0.5
+          },
+          {
+            "t": "created",
+            "conf": 1.0
+          },
+          {
+            "t": "them",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.233,
+        "scans_only": 0.267,
+        "scans_plus_text": 0.267
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/28",
+      "anchor": "And God blessed them, and saith: Increase and multiply, and replenish the earth, and subdue it, and rule over the fishes and the sea, and fowls of the air & all living creatures that move upon the earth.",
+      "gt": "And God created man, to his owne image: to the image of God he created him, male & female he created them.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God bleſſed them and ſaith Increaſe and multiplie repleniſh the earth and ſubde it and rule ouer the fiſhes ofthe ſea and foules of the ayre al liuing creatures that moue vpon the earth"
+      },
+      "cleaned_layer": {
+        "reading": "And God bleſſed them and ſaith Increaſe and multiplie and repleniſh the earth and ſubde it and rule ouer the fiſhes ofthe the ſea and foules of the ayre al liuing creatures that moue vpon the earth",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "bleſſed",
+            "conf": 1.0
+          },
+          {
+            "t": "them",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaith",
+            "conf": 1.0
+          },
+          {
+            "t": "Increaſe",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "multiplie",
+            "conf": 0.667
+          },
+          {
+            "t": "and",
+            "conf": 0.333
+          },
+          {
+            "t": "repleniſh",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "ſubde",
+            "conf": 0.333
+          },
+          {
+            "t": "it",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "rule",
+            "conf": 1.0
+          },
+          {
+            "t": "ouer",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "fiſhes",
+            "conf": 1.0
+          },
+          {
+            "t": "ofthe",
+            "conf": 0.333
+          },
+          {
+            "t": "the",
+            "conf": 0.667
+          },
+          {
+            "t": "ſea",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "foules",
+            "conf": 0.667
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "ayre",
+            "conf": 0.667
+          },
+          {
+            "t": "al",
+            "conf": 0.333
+          },
+          {
+            "t": "liuing",
+            "conf": 1.0
+          },
+          {
+            "t": "creatures",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "moue",
+            "conf": 1.0
+          },
+          {
+            "t": "vpon",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.333,
+        "scans_only": 0.333,
+        "scans_plus_text": 0.333
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/29",
+      "anchor": "And God said: Behold I have given you all manner of herb that seedeth upon the earth, and all trees that have in themselves seed of their own kind, to be your meat:",
+      "gt": "And God bleſſed them, and ſaith: Increaſe and multiplie, & repleniſh the earth, and ſubdew it, and rule ouer the fiſhes of the ſea, and the foules of the ayre, & al liuing creatures, that moue vpon the earth.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And God ſaid Behold haue giuen you al maner of hearbe that ſee deth vpon the earth and al trees that haue in them ſelues ſeede ſcede of their owne kinde to your meate",
+        "ot1-1609": "And God ſaid Behold haue giuen you al maner of hearbe rhat ſec dethrpon the carth and al tree that haue in them ſclus ſcede fatimamovement com ſecde of their ovne kinde to your meate Fand to al Eueric erca beaſtes ofthe earth and ro cuerie foule ofthe ayre to al that moue vpon the carth and vherein there is life that conſidered to thcy may hauc"
+      },
+      "cleaned_layer": {
+        "reading": "And God ſaid Behold I haue giuen you al maner of hearbe that seedeth vpon the earth and al trees that haue in them ſelues of their owne kinde to be your meate",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſaid",
+            "conf": 1.0
+          },
+          {
+            "t": "Behold",
+            "conf": 1.0
+          },
+          {
+            "t": "I",
+            "conf": 0.5
+          },
+          {
+            "t": "haue",
+            "conf": 1.0
+          },
+          {
+            "t": "giuen",
+            "conf": 1.0
+          },
+          {
+            "t": "you",
+            "conf": 1.0
+          },
+          {
+            "t": "al",
+            "conf": 0.75
+          },
+          {
+            "t": "maner",
+            "conf": 0.5
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "hearbe",
+            "conf": 0.75
+          },
+          {
+            "t": "that",
+            "conf": 0.75
+          },
+          {
+            "t": "seedeth",
+            "conf": 0.5
+          },
+          {
+            "t": "vpon",
+            "conf": 0.75
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "earth",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "al",
+            "conf": 0.75
+          },
+          {
+            "t": "trees",
+            "conf": 0.75
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "haue",
+            "conf": 1.0
+          },
+          {
+            "t": "in",
+            "conf": 1.0
+          },
+          {
+            "t": "them",
+            "conf": 0.75
+          },
+          {
+            "t": "ſelues",
+            "conf": 0.5
+          },
+          {
+            "t": "of",
+            "conf": 1.0
+          },
+          {
+            "t": "their",
+            "conf": 1.0
+          },
+          {
+            "t": "owne",
+            "conf": 0.5
+          },
+          {
+            "t": "kinde",
+            "conf": 0.75
+          },
+          {
+            "t": "to",
+            "conf": 1.0
+          },
+          {
+            "t": "be",
+            "conf": 0.5
+          },
+          {
+            "t": "your",
+            "conf": 1.0
+          },
+          {
+            "t": "meate",
+            "conf": 0.75
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.36,
+        "scans_only": 0.36,
+        "scans_plus_text": 0.36
+      }
+    },
+    {
+      "coord": "scripture/genesis/1/31",
+      "anchor": "And God saw all things that he had made, and they were very good. And there was evening and morning that made the sixth day.",
+      "gt": "and to al beaſtes of the earth, and to euerie ſoule of the ayre, & to al that moue vpon the earth, and wherein there is life, that they may haue to feede vpon. And it was ſo done.",
+      "diplomatic_layer": {
+        "holiebible-ot1": "And gether make God ſawe al things that had made and they were very the vhole good And there vas euening morning that made the ſixt day AN NOT AT IO CHAP In thebeginnig Holic Moyſes telleth vhat vas done in the beginning The Church ofthe world and ſo forward euen til his owne time writing aboue two thou had only Tra ſand and foure hundreth ycares after the beginning Al which being incom ditions no prehenſible by humaine witte or diſcourſe knew partlyby Reuelations Scripture from God for had the gyftofProphecic in moſt excellent ſorte partly by aboue Traditions from his elders who lerned oftheir fathers For vntilthat time the yeares Church had only Traditions of ſuch things as vere reueled to ſpecial men vherby ſec the great authoritic of Traditions before there vere Scrip Traditions tures And ſince Scriptures were written they are alſo neceſſaric for three ſpe neceſſarie for cial reaſons Firſt for that are only aſſured by Tradition ofthe Church that three cauſes thoſe bookes are in dede holie Scriptures whichare ſo accounted and not by the Scripture it ſelfe for that were to proue the ſame by the ſame vntil aſſured of ſome part that proueth ſome other partes And this made Au guſtin to ſay plainly that could not beleuethe coſpel except the Church told him vvhich is the Goſpel Secondly holie Scriptures being once knowen to the fund vord of God and ſo of moſt eminent authoritie of al vritings in the world Scripture of as Auguſtin Ierome al other Fathers agrec yet for the true vnderſtan moſt eminent ding of the ſame both the Scripture it ſelfe and the ancient Fathers remitte authoritie vs to the Church namely to thoſe in the Church that are appointed by Gods ordinance in the high place that hath choſen VVhich were the High Prieſts in the old Teſtament as appeareth Deut Mat Ioan And in the Teſtament Peter and his Succeſſors for whom Chriſt prayed that his faith ſhould not faile and therfore commanded him to confirme his bretheren Luc Luc Thirdly for things not expreſſed in particular in holic Scripture the Scrip ture and Fathers do likewiſe remitte vs to Traditions and to the iudgement Act and teſtimonie ofthe Church Chriſt ſayingto his Apoſtles that hearethyo heareth The Apoſtles doubted not to ſay It ſemed goodto the Holie ohoſtand Theſſ And Paul willed the Theſſalonians to hold the traditions vvhich they had lerned whether it were by word or by his Epiſtle In the beginning God made hoauen and earth Al writers ancient and later ſuper ſind ſuch difficulties in theſe firſt chapters that ſome otherwiſc very lerned hard cen haue thought it not poſſible to vnderſtand the ſame according to the proper Aug li and vſual ſignification ofthe wordes as the letter may ſeme to ſound but ex pound al allegorically as that by the waters aboue the firmament ſhould cen cont vnderſtood the bleſſed Angels by the waters vnder the firmament wicked Vnich ſpirites and the like So did Origen and diuers that folow him thercin Yea Auguſtin in his bookes vpon Geneſis againſt the Manichees written ſhortly ſhortlyafter his conuerſion vlien could not findas deſireda good and",
+        "ot1-1609": "And gether make God ſawe al things that had made and thcy were very the vhole good And there vas cuening morning that made the ſixt day AN NOTATIO CHAP inthebeginnig Holic Moyſes telleth vhat vas donc inthe beginning The Church ofthe vorld and ſo forrard cuen til his ovnc time vriting aboue two thou had only Tra ſand and foure hundreth ycares aſter thc beginning Al vhich heing incom ditions no prehenſible by humaine vitte or diſcourſe hc kncv partlyby Rcuclations Scripture from God for had the gyftoſProphecic in moſt ercellentſorte partlyby aboue Traditions from his elders vholerned oftheir fathers for vntilthat time the yca Church had only Traditions of ſuch things as vere reucled io ſpccial men vherby ſec the great authoritic of Traditions beforc therc vere Scrip Tradition tures And ſince Scriptures vere vritten they are alſo neceſſaric forthrec ſpe neceſſarie ſor cial reaſons Firſt forthat are oalyaſſured by Tradition oſthe Church that threc cauſc thoſe bookes arc in dede holic Scriptures vhicharc ſo accounted and not by the Scripture it ſelſe forthat vere proue the ſame by the ſame vntil iſſured of ſome part that proneth ſome other partes And this made Au guſtin to ſay plainly that corlanot belructhe caſpel exccpt the Church tela him Secondly holic Scriptures being oncc knovento the il vord of God and ſo of moſt eminent authoritic of al vritings in the vorld Scripture of as Auguſtin Icrome al other Fathers agrec yct for the truc vnderſtan moſi emineat ding of the ſame both the ſcripture ic ſc fc and the ancient Fachers remitte authoritic vs to rhe Church namely to thoſe in the Church thatare by Gods ordinance in ibe hithplace tharhe hathcheſmn VVhich verc the High Prieſts in the old Teſtament as appcarcth Dcut Mat And in the Teſtament Peter and his Succeſſors for vhom Chriſt prayed that his faith ſhould nor faile and therfore commanded him to confirme his bretheren Luc Thirdly for things not erpreſſed in particular in holic Scripture the Scrip ture and Fathers do likewiſe remicte vs to Traditions and to the iudgement Ad and teſtimonie ofihe Church Chriſt ſaying to his Apoſtles herhat heareihye bareth The Apoſtles ubted not to ſay hI And Paul villed the Theſſalonians is held che traditioni rrhich ihy had lm vhether by vord by his Epiſtle in the begimning cad madt auta and carih Al vriters ancient and latet Scripture er find ſuch difficulties in tlicſe firſt chapters ihat ſome other iſc very lerned hard haue thought it nor poſſ blc to vnderſtand the ſame according to the proper and vſual ſignification oſche vordes as thc letter mayſeme io ſound but ex pound alallegorically as thatby tlc vaters aboue the firmament ſhould vnderſlood ihe bleſſed Angels by the vateri vnder the firmament vicked nich ſpinies and the like So did Origen and diners that folos hiri therein Yea ra Auguſtin in his boobes vpon Geneſis againſt the Manicheca ritten ſhordly am Smant CEN ſhorilyafter his conuerſion vhen could not findas deſireda good and probable ſenſe agreable to the vordes in their proper ſignification expoun ded ihem myſtically but afferward in his other bookes Geneſi ad litc lib ram gratſully ack ledgeth chat God had geuen him further ſighrther in and that nov ſuppoſed could interprete al according to the proper lib ſignification ofthe vordes yet ſo that durſt not nor would notaddict him ſelſe to onc ſenſe but that vas rcadic to imbraccan other leſtby ſticking ro his owne iudgement might faile So liker iſc Baſil Chriſoſtoni ho Ambroſe Icrome Bede and other greateſt Doctors found confeſſed in great diſficulties in theſe firſt chapters vhich thcy with much ſtudic endcuo red io explicate And therſore itis wonder to ſce ourProteſſants Puritans chriſaiſt hold this Parador that Scriptures arc caſie to vnderſtood VVhcias both"
+      },
+      "cleaned_layer": {
+        "reading": "And God ſawe al things that he had made and they were very good And there vas euening and morning that made the ſixt day",
+        "tokens": [
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "God",
+            "conf": 1.0
+          },
+          {
+            "t": "ſawe",
+            "conf": 0.75
+          },
+          {
+            "t": "al",
+            "conf": 0.75
+          },
+          {
+            "t": "things",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "he",
+            "conf": 0.5
+          },
+          {
+            "t": "had",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "and",
+            "conf": 1.0
+          },
+          {
+            "t": "they",
+            "conf": 0.75
+          },
+          {
+            "t": "were",
+            "conf": 1.0
+          },
+          {
+            "t": "very",
+            "conf": 1.0
+          },
+          {
+            "t": "good",
+            "conf": 1.0
+          },
+          {
+            "t": "And",
+            "conf": 1.0
+          },
+          {
+            "t": "there",
+            "conf": 1.0
+          },
+          {
+            "t": "vas",
+            "conf": 0.5
+          },
+          {
+            "t": "euening",
+            "conf": 0.75
+          },
+          {
+            "t": "and",
+            "conf": 0.25
+          },
+          {
+            "t": "morning",
+            "conf": 1.0
+          },
+          {
+            "t": "that",
+            "conf": 1.0
+          },
+          {
+            "t": "made",
+            "conf": 1.0
+          },
+          {
+            "t": "the",
+            "conf": 1.0
+          },
+          {
+            "t": "ſixt",
+            "conf": 0.75
+          },
+          {
+            "t": "day",
+            "conf": 1.0
+          }
+        ]
+      },
+      "scores_vs_gt": {
+        "single_scan(holiebible-ot1)": 0.64,
+        "scans_only": 0.24,
+        "scans_plus_text": 0.24
+      }
+    }
+  ]
+}

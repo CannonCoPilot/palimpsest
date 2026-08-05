@@ -1,0 +1,922 @@
+{
+ "ocr_dir": "archive-ot1-1609",
+ "page_index": 99,
+ "page_px": [
+  2200,
+  3090
+ ],
+ "n_lines": 50,
+ "dropped_apparatus": {
+  "header": 2,
+  "marginalia": 1,
+  "catchword": 2
+ },
+ "r2_body": "I beſeech thee, and doe mercifully with my maiſter Abra- ham. † Behold I ſtand nigh to the fountaine of water, and the daughters of the inhabiters of this citie, wil come forth to drawe water. † Therfore the maid, to whom I shal ſay: Bowe downe thy tankard that I may drinke : and she shal anſwere, Drinke, yea to thy camels alſo wil I geue drinke: she it is, whom thou haſt prouided for thy ſeruant Iſaac: and by this I ſhal vnderſtand, that thou haſt delt mercifully with my maiſter. † Neyther had he yet ended theſe wordes within him ſelfe, & behold Rebecca came forth, the daugh- ter of Bathuel, the ſonne of Melcha wife to Nachor the bro- ther of Abraham, hauinga tankard on her shoulder: † a paſ- ſing comely maide, & moſt beautiful virgin, & not knowen to man: and she was gone downe to the fountaine, and had filled her tankard, and came backe. † And the ſeruant ranne to mete her, and ſaid : Geue me a little water to drinke of thy tankard. † Who anſwered : Drinke my lord. And quickly she let downe the tankard vpon her arme, and gaue him drinke. † And when he had druncke, she added : but for thy camels alſo I wil drawe water, til al doe drinke. † And powring our the tankard into the troughes, she ranne backe to the wel to drawe water : and being drawen gaue it to al the camels. † But he muſing beheld her with ſilence, deſirous to know whether our Lord had made his iourney proſperous, or not. † And after that the camels had drunck, the man plucked forth golden carelettes, weying two ſicles: and as manie braceletts of tenne ſicles weight. † And he ſaid to her: whoſe daughter art thou? shew me : is there anie place in thy fathers houſe to lodge? † who anſwered: I am the daughter of Bathuel, the ſonne of Melcha, whom she bare ro Nachor. † And she added, ſaying: Of ſtrawe alſo and hay we haue good ſtore, and a large place to lodge in. † The man bowed him ſelfe, and adored our Lord, † ſaying : Bleſſed be the Lord God of my lord Abraham, rhat hath not taken away his mercie & truth from my lord, and hath brought me the ſtreight way into the houſe hauing pet- haps manie of my lords brother. † The maide therfore ranne, and re- wues and e- ported into ‖ her mothers houſe al things thatſhe had heard. uerie one a And Rebecca had a brother named Laban, who in al haiſt ſeueral houſs went forth to the man, where the fountaine was. † And ſhe went to her mother when he had ſeene the eareletts and braceletts in his ſiſters houſe.",
+ "lines": [
+  {
+   "text": "Abraham.",
+   "conf": 0.9995,
+   "role": "header",
+   "bbox": [
+    24,
+    116,
+    293,
+    236
+   ]
+  },
+  {
+   "text": "GENESIS.",
+   "conf": 0.965,
+   "role": "header",
+   "bbox": [
+    846,
+    116,
+    1190,
+    207
+   ]
+  },
+  {
+   "text": "I beſeech thee, and doe mercifully with my maiſter Abra-",
+   "conf": 0.9989,
+   "role": "body",
+   "bbox": [
+    291,
+    180,
+    1780,
+    271
+   ]
+  },
+  {
+   "text": "ham. † Behold I ſtand nigh to the fountaine of water, and",
+   "conf": 0.9993,
+   "role": "body",
+   "bbox": [
+    231,
+    250,
+    1780,
+    333
+   ]
+  },
+  {
+   "text": "the daughters of the inhabiters of this citie, wil come forth",
+   "conf": 0.9976,
+   "role": "body",
+   "bbox": [
+    297,
+    317,
+    1779,
+    399
+   ]
+  },
+  {
+   "text": "to drawe water. † Therfore the maid, to whom I shal ſay:",
+   "conf": 0.9981,
+   "role": "body",
+   "bbox": [
+    219,
+    381,
+    1775,
+    461
+   ]
+  },
+  {
+   "text": "Bowe downe thy tankard that I may drinke : and she shal",
+   "conf": 0.9917,
+   "role": "body",
+   "bbox": [
+    291,
+    444,
+    1777,
+    521
+   ]
+  },
+  {
+   "text": "anſwere, Drinke, yea to thy camels alſo wil I geue drinke:",
+   "conf": 0.999,
+   "role": "body",
+   "bbox": [
+    288,
+    508,
+    1775,
+    585
+   ]
+  },
+  {
+   "text": "she it is, whom thou haſt prouided for thy ſeruant Iſaac:",
+   "conf": 0.9955,
+   "role": "body",
+   "bbox": [
+    286,
+    571,
+    1777,
+    645
+   ]
+  },
+  {
+   "text": "and by this I ſhal vnderſtand, that thou haſt delt mercifully",
+   "conf": 0.9935,
+   "role": "body",
+   "bbox": [
+    290,
+    636,
+    1779,
+    715
+   ]
+  },
+  {
+   "text": "with my maiſter. † Neyther had he yet ended theſe wordes",
+   "conf": 0.9269,
+   "role": "body",
+   "bbox": [
+    228,
+    705,
+    1779,
+    779
+   ]
+  },
+  {
+   "text": "within him ſelfe, & behold Rebecca came forth, the daugh-",
+   "conf": 0.9989,
+   "role": "body",
+   "bbox": [
+    291,
+    762,
+    1775,
+    846
+   ]
+  },
+  {
+   "text": "ter of Bathuel, the ſonne of Melcha wife to Nachor the bro-",
+   "conf": 0.9989,
+   "role": "body",
+   "bbox": [
+    291,
+    825,
+    1775,
+    908
+   ]
+  },
+  {
+   "text": "ther of Abraham, hauinga tankard on her shoulder: † a paſ-",
+   "conf": 0.9966,
+   "role": "body",
+   "bbox": [
+    218,
+    889,
+    1777,
+    971
+   ]
+  },
+  {
+   "text": "ſing comely maide, & moſt beautiful virgin, & not knowen",
+   "conf": 0.9987,
+   "role": "body",
+   "bbox": [
+    290,
+    956,
+    1774,
+    1031
+   ]
+  },
+  {
+   "text": "to man: and she was gone downe to the fountaine, and had",
+   "conf": 0.9986,
+   "role": "body",
+   "bbox": [
+    295,
+    1021,
+    1775,
+    1090
+   ]
+  },
+  {
+   "text": "filled her tankard, and came backe. † And the ſeruant ranne",
+   "conf": 0.9995,
+   "role": "body",
+   "bbox": [
+    216,
+    1078,
+    1774,
+    1158
+   ]
+  },
+  {
+   "text": "to mete her, and ſaid : Geue me a little water to drinke of thy",
+   "conf": 0.9932,
+   "role": "body",
+   "bbox": [
+    295,
+    1146,
+    1772,
+    1222
+   ]
+  },
+  {
+   "text": "tankard. † Who anſwered : Drinke my lord. And quickly",
+   "conf": 0.9965,
+   "role": "body",
+   "bbox": [
+    219,
+    1203,
+    1772,
+    1287
+   ]
+  },
+  {
+   "text": "she let downe the tankard vpon her arme, and gaue him",
+   "conf": 0.9986,
+   "role": "body",
+   "bbox": [
+    291,
+    1273,
+    1774,
+    1351
+   ]
+  },
+  {
+   "text": "drinke. † And when he had druncke, she added : but for",
+   "conf": 0.9935,
+   "role": "body",
+   "bbox": [
+    219,
+    1333,
+    1774,
+    1411
+   ]
+  },
+  {
+   "text": "thy camels alſo I wil drawe water, til al doe drinke. † And",
+   "conf": 0.9986,
+   "role": "body",
+   "bbox": [
+    212,
+    1397,
+    1774,
+    1481
+   ]
+  },
+  {
+   "text": "powring our the tankard into the troughes, she ranne",
+   "conf": 0.9891,
+   "role": "body",
+   "bbox": [
+    300,
+    1462,
+    1770,
+    1546
+   ]
+  },
+  {
+   "text": "backe to the wel to drawe water : and being drawen gaue",
+   "conf": 0.9974,
+   "role": "body",
+   "bbox": [
+    300,
+    1526,
+    1774,
+    1608
+   ]
+  },
+  {
+   "text": "it to al the camels. † But he muſing beheld her with ſilence,",
+   "conf": 0.9977,
+   "role": "body",
+   "bbox": [
+    221,
+    1587,
+    1768,
+    1670
+   ]
+  },
+  {
+   "text": "deſirous to know whether our Lord had made his iourney",
+   "conf": 0.9996,
+   "role": "body",
+   "bbox": [
+    297,
+    1649,
+    1774,
+    1726
+   ]
+  },
+  {
+   "text": "proſperous, or not. † And after that the camels had drunck,",
+   "conf": 0.9985,
+   "role": "body",
+   "bbox": [
+    218,
+    1713,
+    1770,
+    1797
+   ]
+  },
+  {
+   "text": "the man plucked forth golden carelettes, weying two ſicles:",
+   "conf": 0.9981,
+   "role": "body",
+   "bbox": [
+    300,
+    1783,
+    1775,
+    1862
+   ]
+  },
+  {
+   "text": "and as manie braceletts of tenne ſicles weight. † And he",
+   "conf": 0.9984,
+   "role": "body",
+   "bbox": [
+    223,
+    1841,
+    1774,
+    1919
+   ]
+  },
+  {
+   "text": "ſaid to her: whoſe daughter art thou? shew me : is there",
+   "conf": 0.9821,
+   "role": "body",
+   "bbox": [
+    295,
+    1902,
+    1774,
+    1984
+   ]
+  },
+  {
+   "text": "anie place in thy fathers houſe to lodge? † who anſwered:",
+   "conf": 0.9958,
+   "role": "body",
+   "bbox": [
+    219,
+    1963,
+    1775,
+    2053
+   ]
+  },
+  {
+   "text": "I am the daughter of Bathuel, the ſonne of Melcha, whom",
+   "conf": 0.9995,
+   "role": "body",
+   "bbox": [
+    305,
+    2030,
+    1772,
+    2106
+   ]
+  },
+  {
+   "text": "she bare ro Nachor. † And she added, ſaying: Of ſtrawe alſo",
+   "conf": 0.9975,
+   "role": "body",
+   "bbox": [
+    230,
+    2094,
+    1772,
+    2180
+   ]
+  },
+  {
+   "text": "and hay we haue good ſtore, and a large place to lodge",
+   "conf": 0.9997,
+   "role": "body",
+   "bbox": [
+    307,
+    2157,
+    1772,
+    2243
+   ]
+  },
+  {
+   "text": "in. † The man bowed him ſelfe, and adored our Lord,",
+   "conf": 0.9969,
+   "role": "body",
+   "bbox": [
+    228,
+    2217,
+    1770,
+    2305
+   ]
+  },
+  {
+   "text": "† ſaying : Bleſſed be the Lord God of my lord Abraham,",
+   "conf": 0.9885,
+   "role": "body",
+   "bbox": [
+    231,
+    2283,
+    1767,
+    2367
+   ]
+  },
+  {
+   "text": "rhat hath not taken away his mercie & truth from my",
+   "conf": 0.9654,
+   "role": "body",
+   "bbox": [
+    309,
+    2343,
+    1767,
+    2432
+   ]
+  },
+  {
+   "text": "lord, and hath brought me the ſtreight way into the houſe",
+   "conf": 0.9992,
+   "role": "body",
+   "bbox": [
+    307,
+    2401,
+    1763,
+    2501
+   ]
+  },
+  {
+   "text": ":: Her father",
+   "conf": 0.9784,
+   "role": "marginalia",
+   "bbox": [
+    1777,
+    2334,
+    2041,
+    2408
+   ]
+  },
+  {
+   "text": "hauing pet-",
+   "conf": 0.9948,
+   "role": "body",
+   "bbox": [
+    1780,
+    2398,
+    2031,
+    2466
+   ]
+  },
+  {
+   "text": "haps manie",
+   "conf": 0.9966,
+   "role": "body",
+   "bbox": [
+    1775,
+    2446,
+    2029,
+    2516
+   ]
+  },
+  {
+   "text": "of my lords brother. † The maide therfore ranne, and re- wues and e-",
+   "conf": 0.9832,
+   "role": "body",
+   "bbox": [
+    230,
+    2468,
+    2048,
+    2557
+   ]
+  },
+  {
+   "text": "ported into ‖ her mothers houſe al things thatſhe had heard. uerie one a",
+   "conf": 0.9809,
+   "role": "body",
+   "bbox": [
+    312,
+    2537,
+    2028,
+    2616
+   ]
+  },
+  {
+   "text": "And Rebecca had a brother named Laban, who in al haiſt ſeueral houſs",
+   "conf": 0.9994,
+   "role": "body",
+   "bbox": [
+    228,
+    2595,
+    2048,
+    2681
+   ]
+  },
+  {
+   "text": "went forth to the man, where the fountaine was. † And",
+   "conf": 0.9991,
+   "role": "body",
+   "bbox": [
+    240,
+    2662,
+    1762,
+    2744
+   ]
+  },
+  {
+   "text": "ſhe went to",
+   "conf": 0.9972,
+   "role": "body",
+   "bbox": [
+    1777,
+    2650,
+    2028,
+    2710
+   ]
+  },
+  {
+   "text": "her mother",
+   "conf": 0.9989,
+   "role": "body",
+   "bbox": [
+    1777,
+    2698,
+    2023,
+    2796
+   ]
+  },
+  {
+   "text": "when he had ſeene the eareletts and braceletts in his ſiſters houſe.",
+   "conf": 0.9936,
+   "role": "body",
+   "bbox": [
+    316,
+    2719,
+    1916,
+    2839
+   ]
+  },
+  {
+   "text": "hands,",
+   "conf": 0.9999,
+   "role": "catchword",
+   "bbox": [
+    1593,
+    2791,
+    1768,
+    2885
+   ]
+  },
+  {
+   "text": "m",
+   "conf": 0.8513,
+   "role": "catchword",
+   "bbox": [
+    224,
+    3035,
+    652,
+    3088
+   ]
+  }
+ ],
+ "page_conf": 0.9935,
+ "escalate_r3": true,
+ "conf_gate": 0.92,
+ "cross_source": {
+  "book": "genesis",
+  "chapter": 24,
+  "taux": 0.9,
+  "n_verses": 19,
+  "n_flagged": 5,
+  "flagged_verses": [
+   12,
+   27,
+   28,
+   29,
+   30
+  ],
+  "no_locate": false,
+  "worst_xsrc": 0.0,
+  "verse_scores": {
+   "12": {
+    "xsrc_id": 0.0,
+    "xsrc_gate": "archaic",
+    "escalate": true,
+    "xsrc_below_taux": true,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "13": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "14": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "15": {
+    "xsrc_id": 0.9847,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "16": {
+    "xsrc_id": 0.9931,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "17": {
+    "xsrc_id": 0.9889,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "18": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "19": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "20": {
+    "xsrc_id": 0.9922,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "21": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "22": {
+    "xsrc_id": 0.9929,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "23": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "24": {
+    "xsrc_id": 0.9882,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "25": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "26": {
+    "xsrc_id": 1.0,
+    "xsrc_gate": "archaic",
+    "escalate": false,
+    "xsrc_below_taux": false,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "27": {
+    "xsrc_id": 0.8838,
+    "xsrc_gate": "archaic",
+    "escalate": true,
+    "xsrc_below_taux": true,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "28": {
+    "xsrc_id": 0.7768,
+    "xsrc_gate": "archaic",
+    "escalate": true,
+    "xsrc_below_taux": true,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "29": {
+    "xsrc_id": 0.8761,
+    "xsrc_gate": "archaic",
+    "escalate": true,
+    "xsrc_below_taux": true,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   },
+   "30": {
+    "xsrc_id": 0.0,
+    "xsrc_gate": "archaic",
+    "escalate": true,
+    "xsrc_below_taux": true,
+    "seg_open": false,
+    "arc_src": "s_dismas"
+   }
+  }
+ },
+ "escalate_reasons": [
+  "xsrc-alarm2(5v<0.9)"
+ ],
+ "low_conf_body_lines": [],
+ "r3_route": {
+  "page": [
+   "archive-ot1-1609",
+   99
+  ],
+  "locus": [
+   "genesis",
+   24
+  ],
+  "flagged": [
+   12,
+   27,
+   28,
+   29,
+   30
+  ],
+  "verses": {
+   "12": {
+    "state": "OPEN",
+    "reason": "xsrc<taux-after-R3",
+    "r2_xsrc": 0.0,
+    "r3_xsrc": 0.0,
+    "taux": 0.9,
+    "s_deficient": true,
+    "r2_s_count": 2,
+    "r3_s_count": 0,
+    "rung": "R3-mlx",
+    "r3_span": "GENESIS. I beseech thee, and doe mercifully with my maister Abraham. †",
+    "r3_text": "GENESIS.\n\nI beseech thee, and doe mercifully with my maister Abraham. † Behold I stand nigh to the fountaine of water, and the daughters of the inhabitants of this citie, wil come forth",
+    "crop": [
+     0.12027272727272727,
+     0.046252427184466025,
+     0.8188181818181818,
+     0.11976699029126213
+    ],
+    "lines": [
+     2,
+     3
+    ]
+   },
+   "27": {
+    "state": "RESCUED_CONTENT_S_OPEN",
+    "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+    "r2_xsrc": 0.8838,
+    "r3_xsrc": 1.0,
+    "taux": 0.9,
+    "s_deficient": true,
+    "r2_s_count": 5,
+    "r3_s_count": 0,
+    "rung": "R3-mlx",
+    "r3_span": "saying: Blessed be the Lord God of my lord Abraham, that hath not taken away his mercie & truth from my lord, and hath brought me the streight way into the house of my lords brother.",
+    "r3_text": "The man bowed him selfe, and adored our Lord,\nsaying: Blessed be the Lord God of my lord Abraham,\nthat hath not taken away his mercie & truth from my lord,\nand hath brought me the streight way into the house of my lords brother.\nThe maide therefore ranne, and reported unto her mothers house all things that she had heard.\n\nAnd Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was. When he had seene the earcletts and braceletts in his sisters hands,",
+    "crop": [
+     0.12027272727272727,
+     0.7268349514563107,
+     0.8188181818181818,
+     0.9307702265372169
+    ],
+    "lines": [
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   "28": {
+    "state": "RESCUED_CONTENT_S_OPEN",
+    "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+    "r2_xsrc": 0.7768,
+    "r3_xsrc": 0.967,
+    "taux": 0.9,
+    "s_deficient": true,
+    "r2_s_count": 2,
+    "r3_s_count": 0,
+    "rung": "R3-mlx",
+    "r3_span": "The maide therefore ranne, and reported unto her mothers house all things that she had heard.",
+    "r3_text": "The man bowed him selfe, and adored our Lord,\nsaying: Blessed be the Lord God of my lord Abraham,\nthat hath not taken away his mercie & truth from my lord,\nand hath brought me the streight way into the house of my lords brother.\nThe maide therefore ranne, and reported unto her mothers house all things that she had heard.\n\nAnd Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was. When he had seene the earcletts and braceletts in his sisters hands,",
+    "crop": [
+     0.12027272727272727,
+     0.7268349514563107,
+     0.8188181818181818,
+     0.9307702265372169
+    ],
+    "lines": [
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   "29": {
+    "state": "RESCUED_CONTENT_S_OPEN",
+    "reason": "s-surface (R3-mlx content ok; ſ-faithful surface owed -> R3-claude)",
+    "r2_xsrc": 0.8761,
+    "r3_xsrc": 0.9899,
+    "taux": 0.9,
+    "s_deficient": true,
+    "r2_s_count": 3,
+    "r3_s_count": 0,
+    "rung": "R3-mlx",
+    "r3_span": "And Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was.",
+    "r3_text": "The man bowed him selfe, and adored our Lord,\nsaying: Blessed be the Lord God of my lord Abraham,\nthat hath not taken away his mercie & truth from my lord,\nand hath brought me the streight way into the house of my lords brother.\nThe maide therefore ranne, and reported unto her mothers house all things that she had heard.\n\nAnd Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was. When he had seene the earcletts and braceletts in his sisters hands,",
+    "crop": [
+     0.12027272727272727,
+     0.7268349514563107,
+     0.8188181818181818,
+     0.9307702265372169
+    ],
+    "lines": [
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   },
+   "30": {
+    "state": "OPEN",
+    "reason": "xsrc<taux-after-R3",
+    "r2_xsrc": 0.0,
+    "r3_xsrc": 0.0,
+    "taux": 0.9,
+    "s_deficient": true,
+    "r2_s_count": 5,
+    "r3_s_count": 0,
+    "rung": "R3-mlx",
+    "r3_span": "When he had seene the earcletts and braceletts in his sisters hands,",
+    "r3_text": "The man bowed him selfe, and adored our Lord,\nsaying: Blessed be the Lord God of my lord Abraham,\nthat hath not taken away his mercie & truth from my lord,\nand hath brought me the streight way into the house of my lords brother.\nThe maide therefore ranne, and reported unto her mothers house all things that she had heard.\n\nAnd Rebecca had a brother named Laban, who in al haift went forth to the man, where the fountaine was. When he had seene the earcletts and braceletts in his sisters hands,",
+    "crop": [
+     0.12027272727272727,
+     0.7268349514563107,
+     0.8188181818181818,
+     0.9307702265372169
+    ],
+    "lines": [
+     35,
+     36,
+     37,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47
+    ]
+   }
+  },
+  "n_flagged": 5,
+  "n_rescued": 0,
+  "n_content_rescued_s_open": 3,
+  "n_open": 5
+ }
+}

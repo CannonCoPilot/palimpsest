@@ -1,0 +1,156 @@
+{
+  "method": "independent tesseract OCR of Anna's Archive EEBO scans of the original 1582/1609/1610 editions; OCR->lineage attestation with residual triage",
+  "sample": [
+    {
+      "label": "Matthew 10 (NT / gospel, vol1)",
+      "madueke_book": "Matthew",
+      "chapter": 10,
+      "recall_madueke_pct": 90.55,
+      "recall_sabates_pct": 90.55,
+      "triage": {
+        "attested": 115,
+        "ocr_noise": 9,
+        "split": 0,
+        "argument": 0,
+        "annotation": 0,
+        "edition": 0,
+        "candidate": 3
+      },
+      "candidates": [
+        "Hethachach",
+        "helpiog",
+        "conicience"
+      ]
+    },
+    {
+      "label": "Genesis 17 (Pentateuch, vol2)",
+      "madueke_book": "Genesis",
+      "chapter": 17,
+      "recall_madueke_pct": 87.68,
+      "recall_sabates_pct": 87.68,
+      "triage": {
+        "attested": 427,
+        "ocr_noise": 43,
+        "split": 0,
+        "argument": 2,
+        "annotation": 1,
+        "edition": 8,
+        "candidate": 6
+      },
+      "candidates": [
+        "nyntie",
+        "aifoto",
+        "vpomrhis",
+        "feuendayes",
+        "nyntic",
+        "eloycing"
+      ]
+    },
+    {
+      "label": "Josue 11 (historical, vol3)",
+      "madueke_book": "Josue",
+      "chapter": 11,
+      "recall_madueke_pct": 88.91,
+      "recall_sabates_pct": 88.91,
+      "triage": {
+        "attested": 465,
+        "ocr_noise": 51,
+        "split": 0,
+        "argument": 0,
+        "annotation": 0,
+        "edition": 0,
+        "candidate": 7
+      },
+      "candidates": [
+        "lenormious",
+        "repro",
+        "pedlitie",
+        "cular",
+        "tolofue",
+        "tharthcir",
+        "Jofuethertore"
+      ]
+    },
+    {
+      "label": "Psalm 109 (Psalter, vol4)",
+      "madueke_book": "Psalms",
+      "chapter": 109,
+      "recall_madueke_pct": 65.35,
+      "recall_sabates_pct": 65.35,
+      "triage": {
+        "attested": 232,
+        "ocr_noise": 76,
+        "split": 0,
+        "argument": 7,
+        "annotation": 0,
+        "edition": 14,
+        "candidate": 26
+      },
+      "candidates": [
+        "Terulalem",
+        "gk",
+        "humanitie",
+        "altime",
+        "fignitying",
+        "atterwards",
+        "eternitie",
+        "zg",
+        "principalitie",
+        "excellence",
+        "foiritual",
+        "myftertes",
+        "erernizie",
+        "commingtorth",
+        "eternitic",
+        "firmely",
+        "buralfo",
+        "arefubdued",
+        "intheland",
+        "amongitthofe",
+        "thatrefift",
+        "Heshalinthem",
+        "netime",
+        "alfohis",
+        "lice",
+        "lire"
+      ]
+    },
+    {
+      "label": "Isaie 33 (prophetic, vol5)",
+      "madueke_book": "Isaie",
+      "chapter": 33,
+      "recall_madueke_pct": 84.3,
+      "recall_sabates_pct": 84.3,
+      "triage": {
+        "attested": 408,
+        "ocr_noise": 66,
+        "split": 1,
+        "argument": 2,
+        "annotation": 0,
+        "edition": 1,
+        "candidate": 6
+      },
+      "candidates": [
+        "phecies",
+        "Hubie",
+        "Tewesthar",
+        "petu",
+        "neralludee",
+        "aniemen"
+      ]
+    }
+  ],
+  "aggregate": {
+    "strict_scripture_recall_pct": 83.35,
+    "triage_totals": {
+      "attested": 1647,
+      "ocr_noise": 245,
+      "split": 1,
+      "argument": 11,
+      "annotation": 1,
+      "edition": 23,
+      "candidate": 48
+    },
+    "genuine_candidate_rate_pct": 2.43
+  }
+}

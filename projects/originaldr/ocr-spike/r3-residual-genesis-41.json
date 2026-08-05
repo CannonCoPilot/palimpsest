@@ -1,0 +1,5993 @@
+[
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "after tWo veares Pharao ſaw a dreame. He thought iches and Ahe ſtood vpon a riuer,",
+  "old": {
+   "s_dismas": 0.85,
+   "odr_com": 0.812,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6803,
+   0.875,
+   0.8148
+  ],
+  "crop_page": 144,
+  "r3_raw": "terpreting the same. 38. it moderu'eth over al Egypte. 50. marrieth, & hath two ſonnes, Manoſße, and Ephraim. AFTER two yeares: Pharao saw a dreame. He thought he stood vpon a riuer, out of the which came vp seven kine, faire and fat exceedingly: and they fed in marrih plaine: & other ſoule, as it were, did eat up all that was there prophe-",
+  "r3_verse": "terpreting the same. it moderu'eth over al Egypte. marrieth, & hath two ſonnes, Manoſße, and Ephraim. AFTER two yeares: Pharao saw a dreame. He thought he stood vpon a riuer,",
+  "arm_conflicts": [
+   "veares | yeares:",
+   "iches and Ahe | he"
+  ],
+  "lexicon_readings": {
+   "2": "ſame.",
+   "12": "ſonnes,"
+  },
+  "visual_readings": {
+   "2": "ſame.",
+   "12": "ſonnes,"
+  },
+  "new_text": "terpreting the ſame. it moderu'eth over al Egypte. marrieth, & hath tWo ſonnes, Manoſße, and Ephraim. after tWo yeares: Pharao ſaw a dreame. He thought he ſtood vpon a riuer,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 2,
+  "from": "p144",
+  "old_text": "out of the which came ſeuen kine, faire and fat exceedingly and they fed in marith",
+  "old": {
+   "s_dismas": 0.879,
+   "odr_com": 0.879,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.7405,
+   0.875,
+   0.8304
+  ],
+  "crop_page": 144,
+  "r3_raw": "AFTER two yeares: Pharao saw a dreame. He thought he stood vpon a riuer, & out of the which came vp seven kine, faire and fat exceedingly: and they fed in marish places: Other seven also came vppout of the riuers, foule,",
+  "r3_verse": "out of the which came vp seven kine, faire and fat exceedingly: and they fed in marish places:",
+  "arm_conflicts": [
+   "ſeuen | vp seven",
+   "marith | marish places:"
+  ],
+  "new_text": "out of the which came vp ſeuen kine, faire and fat exceedingly and they fed in marish places:",
+  "s_unresolved": [
+   "marish"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 3,
+  "from": "p144",
+  "old_text": "ſeuen alſocamvou of the riuer, and van leane: audthefe on the verv banke of riuer, in grene plades:",
+  "old": {
+   "s_dismas": 0.734,
+   "odr_com": 0.734,
+   "sabates_a": 0.733,
+   "madueke_b": 0.733
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7826,
+   0.875,
+   0.8918
+  ],
+  "crop_page": 144,
+  "r3_raw": "seven kine, faire and fat exceedingly: and they fed in marshy places: † Other seven also came up out of the riuver, 'foule, and curvan leane: and they fed on the very banke of the riuer. In grene plazes: ‡ And they devoured them, that had the inſtrucious beautie and good store of bodies. Pharao",
+  "r3_verse": "Other seven also came up out of the riuver, 'foule, and curvan leane: and they fed on the very banke of the riuer. In grene plazes:",
+  "arm_conflicts": [
+   "ſeuen alſocamvou | Other seven also came up out of the riuver, 'foule, and curvan leane: and they fed on the very banke",
+   "plades: | plazes:"
+  ],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "Other ſeuen alſo came up out of the riuer, 'foule, and curvan leane: and they fed on the very banke of the riuer, in grene plazes:",
+  "s_unresolved": [
+   "'foule,",
+   "fed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 4,
+  "from": "chapter",
+  "old_text": "and they deuoured them, thare. the in: ruerlous hcautie and good ſtare of bodies. Tharao ept ag,",
+  "old": {
+   "s_dismas": 0.762,
+   "odr_com": 0.762,
+   "sabates_a": 0.758,
+   "madueke_b": 0.758
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.8217,
+   0.875,
+   1.0
+  ],
+  "crop_page": 144,
+  "r3_raw": "and curvan leane: and they fed on the very banke of the river in grene places: & and they devoured them, that had the marvellous beautie and good stare of bodies. Pharao after he walked, slept againe, and saw an other dreame:",
+  "r3_verse": "and they devoured them, that had the marvellous beautie and good stare of bodies. Pharao after he walked,",
+  "arm_conflicts": [
+   "deuoured | devoured",
+   "thare. | that had",
+   "in: ruerlous hcautie | marvellous beautie",
+   "Tharao ept ag, | Pharao after he walked,"
+  ],
+  "lexicon_readings": {
+   "15": "after"
+  },
+  "visual_readings": {
+   "15": "after"
+  },
+  "new_text": "and they deuoured them, that had the marvellous beautie and good ſtare of bodies. Pharao after he walked,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.961,
+   "odr_com": 0.961,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 5,
+  "from": "p145",
+  "old_text": "Seuon cares of corne grew forth vpon one ſtalke ful and faire: tlare",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   5,
+   6
+  ],
+  "crop": [
+   0.049,
+   0.047,
+   0.8605,
+   0.141
+  ],
+  "crop_page": 145,
+  "r3_raw": "GENESIS. Seven cares of corne grew forth vpon one stalke ful and but I 25 6 faire: † there sprang also other cares as many, thine and no gift or pictur 7 blasted with acution, † devouring at the beautie of the",
+  "r3_verse": "Seven cares of corne grew forth vpon one stalke ful and but I faire:",
+  "arm_conflicts": [
+   "Seuon | Seven"
+  ],
+  "new_text": "Seven cares of corne grew forth vpon one ſtalke ful and but I faire:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 6,
+  "from": "p145",
+  "old_text": "ſprang alto orher eates a many, the andwno blaſled vith adulon, deuou ng",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.0706,
+   0.8605,
+   0.1621
+  ],
+  "crop_page": 145,
+  "r3_raw": "Scuer eares of corne grew forth vpon one stalke ful and but I 6 faire: † there sprang also other eares as many, thine and no gift of 7 blasted with acution, † devouring at the beautie of the piety. 8 former. Pharao awaking vp after his rest, † and when",
+  "r3_verse": "there sprang also other eares as many, thine and no gift of blasted with acution,",
+  "arm_conflicts": [
+   "alto orher eates a | also other eares as",
+   "the andwno blaſled vith adulon, deuou ng | thine and no gift of blasted with acution,"
+  ],
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "2": "alſo"
+  },
+  "new_text": "there ſprang alſo other eares as many, thine and no gift of blasted with acution,",
+  "s_unresolved": [
+   "gift",
+   "blasted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.823,
+   "odr_com": 0.823,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 7,
+  "from": "p145",
+  "old_text": "ng al the beaue of the foimer. Pharao awaking vp atter his reſt,",
+  "old": {
+   "s_dismas": 0.845,
+   "odr_com": 0.845,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.092,
+   0.8595,
+   0.1818
+  ],
+  "crop_page": 145,
+  "r3_raw": "6 faire: † there sprang also other cates as many, thyme and no gift e 7 blasted with acution, † devouring at the beautie of the piety ch 8 former. Pharaon awaking vp after his rest, † and when Augu morning was come, being frighted with feare, he sent to al 9 de",
+  "r3_verse": "devouring at the beautie of the piety ch former. Pharaon awaking vp after his rest,",
+  "arm_conflicts": [
+   "ng al | devouring at",
+   "beaue | beautie",
+   "foimer. Pharao | piety ch former. Pharaon",
+   "atter | after"
+  ],
+  "lexicon_readings": {
+   "8": "former.",
+   "12": "after"
+  },
+  "visual_readings": {
+   "8": "former.",
+   "12": "after"
+  },
+  "new_text": "devouring at the beautie of the piety ch former. Pharaon awaking vp after his reſt,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.864,
+   "odr_com": 0.864,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 8,
+  "from": "p145",
+  "old_text": "and whch morning was come, being fighted with feare, he ſent to al the interpreters of Egp, and to al the wimn: and they being called tor, told. them hus dreame, neither was there anie that could interprete it.",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.945,
+   "madueke_b": 0.945
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.049,
+   0.1133,
+   0.8595,
+   0.2627
+  ],
+  "crop_page": 145,
+  "r3_raw": "7 blasted with aoulion, † devouring all the beautie of the 8 former. Pharao awaking vp after his rest, † and when morning was come, being frighted with feare, he sent to al the interpreters of Ægypt, and to al the wit men: and they being called for, told them his dreame, neither was there anie 9 that could interprete it. † Then at length the maister of the cupbearers remembiring himselfe, said: I confesse my ſonne;",
+  "r3_verse": "and when morning was come, being frighted with feare, he sent to al the interpreters of Ægypt, and to al the wit men: and they being called for, told them his dreame, neither was there anie that could interprete it.",
+  "arm_conflicts": [
+   "whch | when",
+   "fighted | frighted",
+   "Egp, | Ægypt,",
+   "wimn: | wit men:",
+   "tor, | for,",
+   "hus | his"
+  ],
+  "lexicon_readings": {
+   "27": "for,"
+  },
+  "visual_readings": {
+   "27": "for,"
+  },
+  "new_text": "and when morning was come, being frighted with feare, he ſent to al the interpreters of Ægypt, and to al the wit men: and they being called for, told. them his dreame, neither was there anie that could interprete it.",
+  "s_unresolved": [
+   "frighted"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.991,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 16,
+  "from": "p145",
+  "old_text": "Ioſeph anſwered : Withour me, God fral anſwere proſperous thinges to Pharao",
+  "old": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.943,
+   "madueke_b": 0.943
+  },
+  "neighbours": [
+   15,
+   16,
+   17
+  ],
+  "crop": [
+   0.049,
+   0.5036,
+   0.8595,
+   0.5893
+  ],
+  "crop_page": 145,
+  "r3_raw": "that can expound them: which I haue heard, thou doest most wisely interprete. † Joseph answered: Without me, God tral anſwere prosperous things to Pharao. † Pharao therfore told that he had ſcene: Me thought I ſtoode vpon",
+  "r3_verse": "Joseph answered: Without me, God tral anſwere prosperous things to Pharao.",
+  "arm_conflicts": [
+   "Ioſeph | Joseph",
+   ": Withour | Without",
+   "fral | tral",
+   "thinges | things"
+  ],
+  "new_text": "Ioſeph anſwered Without me, God tral anſwere proſperous things to Pharao",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.958,
+   "odr_com": 0.958,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 21,
+  "from": "p145",
+  "old_text": "gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe ſleepe, I",
+  "old": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.6871,
+   0.8595,
+   0.7909
+  ],
+  "crop_page": 145,
+  "r3_raw": "20 of Ægypte, † which hauing devoured and consumed the form r, † gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelic. Awaking; and fallen againe into a deepe sleepe, † I sawe a dreame: Seuen eares of corne grew forth vpon one stalke, fuland verie",
+  "r3_verse": "gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelic. Awaking; and fallen againe into a deepe sleepe, I sawe",
+  "arm_conflicts": [
+   "heauelie. | heauelic."
+  ],
+  "r2_attested": {
+   "24": "ſawe"
+  },
+  "visual_readings": {
+   "24": "ſawe"
+  },
+  "new_text": "gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelic. Awaking, and fallen againe into a deepe ſleepe, I ſawe",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.891,
+   "madueke_b": 0.891
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 26,
+  "from": "chapter",
+  "old_text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful eares: be ſeuen yeres of plentifulnes: (or contene the ſefe ſam meann of the dreame",
+  "old": {
+   "s_dismas": 0.791,
+   "odr_com": 0.791,
+   "sabates_a": 0.746,
+   "madueke_b": 0.746
+  },
+  "neighbours": [
+   26
+  ],
+  "crop": [
+   0.08,
+   0.0454,
+   0.875,
+   0.1433
+  ],
+  "crop_page": 146,
+  "r3_raw": "the seven ful cares: be seuen yeres of plentifulnes: and both conteine the selfe same meaning of the dreame. † Also the seven leane and thinne kine, that came vp after:",
+  "r3_verse": "the seven ſaire kine, and by the mamomcm the ſeuen ful cares: be seuen yeres of plentifulnes: and both conteine the selfe same meaning of the dreame.",
+  "arm_conflicts": [
+   "ſeuen ſaire kine, and by the mamomcm the ſeuen | seven",
+   "eares: | cares:",
+   "(or contene | and both conteine",
+   "ſefe ſam meann | selfe same meaning"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "21": "ſelfe"
+  },
+  "visual_readings": {
+   "21": "ſelfe"
+  },
+  "new_text": "The ſeuen ſaire kine, and by the mamomcm the ſeuen ful cares: be ſeuen yeres of plentifulnes: and both conteine the ſelfe ſam meaning of the dreame",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.875,
+   "odr_com": 0.875,
+   "sabates_a": 0.85,
+   "madueke_b": 0.85
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 27,
+  "from": "p146",
+  "old_text": "Alſo the ſeuen leaneand thinne kine, that came vp he, and the ſeuen thinne eares, and blaſted wirh burning winde: are ſeuen yeares of famine to come.",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0874,
+   0.875,
+   0.1944
+  ],
+  "crop_page": 146,
+  "r3_raw": "both conteine the selfe same meaning of the dreame. † Also the seven leane and thinne kine, that came vp after them, and the seven thinne cares, and blasted with the burning winde: are seven yeares of famine to come. † Which ſhall be fulfilled in this order. † Behold there ſhal come",
+  "r3_verse": "Also the seven leane and thinne kine, that came vp after them, and the seven thinne cares, and blasted with the burning winde: are seven yeares of famine to come.",
+  "arm_conflicts": [
+   "ſeuen leaneand | seven leane and",
+   "he, | after them,",
+   "ſeuen | seven",
+   "eares, | cares,",
+   "wirh | with the",
+   "ſeuen | seven"
+  ],
+  "lexicon_readings": {
+   "10": "after"
+  },
+  "visual_readings": {
+   "10": "after"
+  },
+  "new_text": "Alſo the ſeuen leane and thinne kine, that came vp after them, and the ſeuen thinne cares, and blaſted with the burning winde: are ſeuen yeares of famine to come.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.994,
+   "odr_com": 0.994,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 28,
+  "from": "p146",
+  "old_text": "ſhal be fulfilled in this order.",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.838,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1483,
+   0.875,
+   0.2158
+  ],
+  "crop_page": 146,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which shal be fulfilled in this order. † Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "r3_verse": "Which shal be fulfilled in this order.",
+  "arm_conflicts": [],
+  "new_text": "Which ſhal be fulfilled in this order.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 29,
+  "from": "p146",
+  "old_text": "Behold there ſbal ſeuen yeares of great fertilitie in the whole Landof",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1483,
+   0.875,
+   0.2375
+  ],
+  "crop_page": 146,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which ſhall be fulfilled in this order. † Behold there ſhall come feuen yeares of great fertilitie in the whole Land of Ægypt: † after which ſhall folowe other feuen yeares of lo great",
+  "r3_verse": "Behold there ſhall come feuen yeares of great fertilitie in the whole Land of Ægypt:",
+  "arm_conflicts": [
+   "ſbal ſeuen | ſhall come feuen",
+   "Landof | Land of Ægypt:"
+  ],
+  "lexicon_readings": {
+   "4": "ſeuen"
+  },
+  "visual_readings": {
+   "4": "ſeuen"
+  },
+  "new_text": "Behold there ſhall come ſeuen yeares of great fertilitie in the whole Land of Ægypt:",
+  "s_unresolved": [
+   "ſhall"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 31,
+  "from": "p146",
+  "old_text": "and the greatnes of the ſcarſitie, shal deſtroy the greatnes of the",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.2315,
+   0.875,
+   0.3164
+  ],
+  "crop_page": 146,
+  "r3_raw": "sterilitie, that al the abundance before ſhal be forgotten: for the famine ſhal consume al the land, † and the greatnes of the scarcitie, ſhal destroy the greatnes of the plentie. † And in that thou didest see the second time a dreame per-",
+  "r3_verse": "and the greatnes of the scarcitie, ſhal destroy the greatnes of the plentie.",
+  "arm_conflicts": [
+   "ſcarſitie, | scarcitie,"
+  ],
+  "new_text": "and the greatnes of the scarcitie, shal deſtroy the greatnes of the plentie.",
+  "s_unresolved": [
+   "scarcitie,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 32,
+  "from": "p146",
+  "old_text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.2748,
+   0.875,
+   0.4009
+  ],
+  "crop_page": 146,
+  "r3_raw": "of the scarfitie, shal destroy the greatnes of the plentie. † And in that thou didest see the second time a dreame pertaining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely. † Now therefore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "r3_verse": "And in that thou didest see the second time a dreame pertaining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely.",
+  "arm_conflicts": [
+   "teining | pertaining"
+  ],
+  "lexicon_readings": {
+   "23": "for"
+  },
+  "visual_readings": {
+   "23": "for"
+  },
+  "new_text": "And in that thou dideſt ſee the ſecond time a dreame pertaining to the ſame thing: it is a token of the certeintie, for that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
+  "s_unresolved": [
+   "fulfilled"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 33,
+  "from": "p146",
+  "old_text": "Now therfore let the king prouide a wiſe man induſtrious, and make him ruler ouer the Landof",
+  "old": {
+   "s_dismas": 0.883,
+   "odr_com": 0.883,
+   "sabates_a": 0.819,
+   "madueke_b": 0.819
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.3366,
+   0.875,
+   0.4213
+  ],
+  "crop_page": 146,
+  "r3_raw": "that the worde of God shal come topasse, and be fulfilled spedely.† Now therefore let the king prouide a wile man and industrious, and make him ruler ouer the Land of Ægypt: † that he may appointe overseers ouer al countries:",
+  "r3_verse": "Now therefore let the king prouide a wile man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "wiſe | wile",
+   "Landof | Land of Ægypt:"
+  ],
+  "new_text": "Now therefore let the king prouide a wile man and induſtrious, and make him ruler ouer the Land of Ægypt:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 34,
+  "from": "p146",
+  "old_text": "that he may appointe ouerſeers ouer al countries : gether into barnes the fifth part of the fruires, during ſeuen yeares of the fertilitie,",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.3755,
+   0.875,
+   0.4812
+  ],
+  "crop_page": 146,
+  "r3_raw": "industrious, and make him ruler over the Land of Ægypt: † that he may appointe overseers over al countries: and gather into barnes the fifth part of the fruities, during the ſeven yeares of the fertilitie, † that now presently shal ensewe: and let all the corne be laid vp, vnder Pharaoes",
+  "r3_verse": "that he may appointe overseers over al countries: and gather into barnes the fifth part of the fruities, during the ſeven yeares of the fertilitie,",
+  "arm_conflicts": [
+   "ouerſeers ouer | overseers over",
+   ": gether | and gather",
+   "fruires, | fruities,",
+   "ſeuen | the ſeven"
+  ],
+  "new_text": "that he may appointe ouerſeers ouer al countries and gather into barnes the fifth part of the fruities, during the ſeuen yeares of the fertilitie,",
+  "s_unresolved": [
+   "fruities,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 35,
+  "from": "p146",
+  "old_text": "that now preſently enſewe: and. let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "old": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.415,
+   0.8755,
+   0.5213
+  ],
+  "crop_page": 146,
+  "r3_raw": "gether into barnes the fifth part of the fruities, during the feuen yeares of the fertilitie, † that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities. † And let it be in a readines, against the famine of feuen yeares to come,",
+  "r3_verse": "that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities.",
+  "arm_conflicts": [
+   "reſerued | reserved"
+  ],
+  "new_text": "that now preſently shal enſewe: and. let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "s_unresolved": [
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 36,
+  "from": "p146",
+  "old_text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Egypt, and the land shal not be ſumed with ſcarſitier",
+  "old": {
+   "s_dismas": 0.89,
+   "odr_com": 0.89,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.08,
+   0.4577,
+   0.875,
+   0.5821
+  ],
+  "crop_page": 146,
+  "r3_raw": "ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities. † And let it be in a readines, against the famine of ſeven yeares to come, which shal oppresse Ægypt, and the land shal not be conſumed with scarfities: † The counsel pleased Pharao, and al his ſervants; † and he ſpake to them: Can we find such an",
+  "r3_verse": "And let it be in a readines, against the famine of ſeven yeares to come, which shal oppresse Ægypt, and the land shal not be conſumed with scarfities:",
+  "arm_conflicts": [
+   "ſeuen | ſeven",
+   "Egypt, | Ægypt,",
+   "ſumed | conſumed",
+   "ſcarſitier | scarfities:"
+  ],
+  "new_text": "And let it be in a readines, againſt the famine of ſeuen yeares to come, which shal oppreſſe Ægypt, and the land shal not be conſumed with scarfities:",
+  "s_unresolved": [
+   "conſumed",
+   "scarfities:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.971,
+   "madueke_b": 0.971
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 37,
+  "from": "p146",
+  "old_text": "The counſel pleaſed Pharao, his ſeruants:",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.848,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.5166,
+   0.875,
+   0.6038
+  ],
+  "crop_page": 146,
+  "r3_raw": "which shal oppresse Ægypt, and the land shal not be consumed with scarstie: † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said ther-",
+  "r3_verse": "The counsel pleased Pharao, and al his seruants:",
+  "arm_conflicts": [],
+  "new_text": "The counſel pleaſed Pharao, and al his ſeruants:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 39,
+  "from": "p146",
+  "old_text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.5577,
+   0.875,
+   0.6643
+  ],
+  "crop_page": 146,
+  "r3_raw": "his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be ouer my house, and at the commandment",
+  "r3_verse": "He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee?",
+  "arm_conflicts": [
+   "fore | therefore"
+  ],
+  "new_text": "He ſaid therefore to Ioſeph: Becauſe God hath shewed thee al things that thou haſt ſpoken, can I find a wiſer and one like vnto thee?",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 40,
+  "from": "p146",
+  "old_text": "Thou shalt beouer my houſe, and at the commandment of thy mouth al the people shal obey: only in the of the kingdome I wil goe before thee.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   40,
+   41
+  ],
+  "crop": [
+   0.08,
+   0.6214,
+   0.8795,
+   0.7252
+  ],
+  "crop_page": 146,
+  "r3_raw": "thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be over my house, and at the commandment of thy mouth all the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee over the",
+  "r3_verse": "Thou shalt be over my house, and at the commandment of thy mouth all the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "arm_conflicts": [
+   "beouer | be over",
+   "al | all"
+  ],
+  "new_text": "Thou shalt be over my houſe, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 41,
+  "from": "p146",
+  "old_text": "And againe rao ſaid to Ioſeph : Behold, I haue appointed thee oner whole land of Egypt.",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.906,
+   "madueke_b": 0.906
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.6593,
+   0.875,
+   0.7663
+  ],
+  "crop_page": 146,
+  "r3_raw": "of thy mouth all the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gave it into his hand: and he put vpon him",
+  "r3_verse": "And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "arm_conflicts": [
+   "rao | Pharaoh",
+   "Ioſeph : | Joseph:",
+   "oner | ouer the",
+   "Egypt. | Ægypt."
+  ],
+  "new_text": "And againe Pharaoh ſaid to Ioſeph Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 42,
+  "from": "p146",
+  "old_text": "And he tooke his ring from owne hand, and gaue it into his hand : and he put vpon ſilke roabe, and put a chaine of gold about his",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.6994,
+   0.875,
+   0.8054
+  ],
+  "crop_page": 146,
+  "r3_raw": "rao said to Ioleph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gave it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer",
+  "r3_verse": "And he tooke his ring from his owne hand, and gave it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke.",
+  "arm_conflicts": [
+   "gaue | gave"
+  ],
+  "new_text": "And he tooke his ring from his owne hand, and gaue it into his hand and he put vpon him a ſilke roabe, and put a chaine of gold about his necke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 43,
+  "from": "p146",
+  "old_text": "And he made him goe vp into his ſecond chariot, the proclayming that al should bowe their knee before and that they should know be was made gouernour the whole Land of Agypt.",
+  "old": {
+   "s_dismas": 0.91,
+   "odr_com": 0.91,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.7616,
+   0.875,
+   0.8883
+  ],
+  "crop_page": 146,
+  "r3_raw": "a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"i\" made governour ouer the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue",
+  "r3_verse": "And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"i\" made governour ouer the whole Land of Ægypt.",
+  "arm_conflicts": [
+   "be | he",
+   "gouernour | governour ouer",
+   "Agypt. | Ægypt."
+  ],
+  "new_text": "And he made him goe vp into his ſecond chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"i\" made gouernour ouer the whole Land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 44,
+  "from": "p146",
+  "old_text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt.",
+  "old": {
+   "s_dismas": 0.874,
+   "odr_com": 0.874,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   43,
+   44,
+   45
+  ],
+  "crop": [
+   0.08,
+   0.8205,
+   0.875,
+   0.9336
+  ],
+  "crop_page": 146,
+  "r3_raw": "and that they should know he was \"i made gouvernour ouer the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt. † And he turned his name,",
+  "r3_verse": "And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt.",
+  "arm_conflicts": [
+   ": withour | without",
+   "ſoote | foote",
+   "Egypt. | Ægypt."
+  ],
+  "lexicon_readings": {
+   "5": "Ioſeph:"
+  },
+  "visual_readings": {
+   "5": "Ioſeph:"
+  },
+  "new_text": "And the king ſaid to Ioſeph: I am Pharao without thy commandment no man shal moue hand or foote in al the land of Ægypt.",
+  "s_unresolved": [
+   "foote"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 45,
+  "from": "chapter",
+  "old_text": "And he turned aant com name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth: to the land of Egypt",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.954,
+   "sabates_a": 0.925,
+   "madueke_b": 0.925
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.049,
+   0.0431,
+   0.8632,
+   0.1747
+  ],
+  "crop_page": 147,
+  "crop_leaves": [
+   146,
+   147
+  ],
+  "r3_raw": "I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt. † And he turned his name, and called him in the Aegyptian tongue \"the Saviour of the world. And he gave him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Joseph therefore went forth ::Cohen 46 to the land of Aegypt († and he was thirtie yeares old when he stood in the light of king Pharao) and did circuite al",
+  "r3_verse": "And he turned his name, and called him in the Aegyptian tongue \"the Saviour of the world. And he gave him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Joseph therefore went forth ::Cohen to the land of Aegypt (†",
+  "arm_conflicts": [
+   "aant com | his",
+   "Agyptian togue the Sauiour | Aegyptian tongue \"the Saviour",
+   "gaue | gave",
+   "Ioſeph therfore | Joseph therefore",
+   "Egypt | Aegypt (†"
+  ],
+  "new_text": "And he turned his name, and called him in the Aegyptian tongue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar :: prieſt of Heliopolis. Ioſeph therefore went forth: ::Cohen to the land of Aegypt (†",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.964,
+   "sabates_a": 0.952,
+   "madueke_b": 0.952
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 47,
+  "from": "p147",
+  "old_text": "And the fertilitie of the ſeue yeares came: and the corne being bound vp into ſheaues was gerhered togeather into the barnes of gypt. A",
+  "old": {
+   "s_dismas": 0.955,
+   "odr_com": 0.955,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   46,
+   47,
+   48
+  ],
+  "crop": [
+   0.049,
+   0.1493,
+   0.8632,
+   0.2572
+  ],
+  "crop_page": 147,
+  "r3_raw": "he stood in the light of king Pharao) and did circuite al 47 the countries of Ægypt: † And the fertilitie of the seven yeares came: and the corne being bound vp into leaues was gethered togeather into the barnes of Ægypt. † Al 48 the abundance also of graine was laid vp in euerie citie.",
+  "r3_verse": "And the fertilitie of the seven yeares came: and the corne being bound vp into leaues was gethered togeather into the barnes of Ægypt.",
+  "arm_conflicts": [
+   "ſeue | seven",
+   "ſheaues | leaues",
+   "gerhered | gethered",
+   "gypt. A | Ægypt."
+  ],
+  "new_text": "And the fertilitie of the seven yeares came: and the corne being bound vp into leaues was gethered togeather into the barnes of Ægypt.",
+  "s_unresolved": [
+   "seven"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.881,
+   "madueke_b": 0.881
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 48,
+  "from": "p147",
+  "old_text": "A the abundance allo of graine was laid vp in cucrie citieumes",
+  "old": {
+   "s_dismas": 0.871,
+   "odr_com": 0.871,
+   "sabates_a": 0.842,
+   "madueke_b": 0.842
+  },
+  "neighbours": [
+   47,
+   48
+  ],
+  "crop": [
+   0.049,
+   0.1897,
+   0.8732,
+   0.2783
+  ],
+  "crop_page": 147,
+  "r3_raw": "yeares came: and the corne being bound vp into þesues and Ioue was gethered togeather into the barnes of Ægypt. † Al the abundance also of graine was laid vp in euerie citie. † And there was so great abundance of wheat, that it be-",
+  "r3_verse": "Al the abundance also of graine was laid vp in euerie citie.",
+  "arm_conflicts": [
+   "A | Al",
+   "allo | also",
+   "cucrie citieumes | euerie citie."
+  ],
+  "r2_attested": {
+   "3": "alſo"
+  },
+  "visual_readings": {
+   "3": "alſo"
+  },
+  "new_text": "Al the abundance alſo of graine was laid vp in euerie citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S1",
+  "ocr_dir": "archive-ot1-1609",
+  "verse": 51,
+  "from": "p147",
+  "old_text": "And he called the name of the firſt begotten. Manaſſes, ſaing God made me to forget al my labours, my ſathers houſe.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.991,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   50,
+   51,
+   52
+  ],
+  "crop": [
+   0.049,
+   0.3114,
+   0.8632,
+   0.4194
+  ],
+  "crop_page": 147,
+  "r3_raw": "before the famine came: whom Aseneth the daughter of Putiphar priest of Heliopolis bare him. † And he called the name of the first begotten • Manasses, saing: God made me to forget all my labours, & my fathers house. † The name also of the second he called • Ephraim, saing: God hath made",
+  "r3_verse": "And he called the name of the first begotten Manasses, saing: God made me to forget all my labours, & my fathers house.",
+  "arm_conflicts": [
+   "al | all",
+   "ſathers | fathers"
+  ],
+  "lexicon_readings": {
+   "21": "fathers"
+  },
+  "visual_readings": {
+   "21": "fathers"
+  },
+  "new_text": "And he called the name of the firſt begotten. Manaſſes, ſaing God made me to forget al my labours, & my fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "ALERT",
+  "new": {
+   "s_dismas": 0.926,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE ALERT — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 1,
+  "from": "p148",
+  "old_text": "Ephraim. his TERtwo yeares : Pharao ſaw a dreame. He thought and- he ſtood vpon ariuer,",
+  "old": {
+   "s_dismas": 0.79,
+   "odr_com": 0.753,
+   "sabates_a": 0.766,
+   "madueke_b": 0.766
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.6876,
+   0.875,
+   0.8177
+  ],
+  "crop_page": 148,
+  "r3_raw": "terpreting the same. 18. is made ruler over all Egypt. So marrieth, & hath two sonnes, Manases and Ephraim. After two yeares: Pharaoh saw a dreame. He thought he stood vpon a riuere, out of the which came vp seven kine, faire and fat exceedingly; and they fed in marsh",
+  "r3_verse": "terpreting the same. is made ruler over all Egypt. So marrieth, & hath two sonnes, Manases and Ephraim. After two yeares: Pharaoh saw a dreame. He thought he stood vpon a riuere,",
+  "arm_conflicts": [
+   "his TERtwo | After two",
+   ": Pharao | Pharaoh",
+   "ariuer, | a riuere,"
+  ],
+  "lexicon_readings": {
+   "2": "ſame.",
+   "14": "ſonnes,",
+   "18": "After"
+  },
+  "visual_readings": {
+   "2": "ſame.",
+   "14": "ſonnes,",
+   "18": "After"
+  },
+  "new_text": "terpreting the ſame. is made ruler over all Egypt. So marrieth, & hath two ſonnes, Manases and Ephraim. After two yeares Pharaoh ſaw a dreame. He thought he ſtood vpon a riuere,",
+  "s_unresolved": [
+   "Manases"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 2,
+  "from": "p148",
+  "old_text": "out of the which came ſeuen kine, faire and fat exccedinoly : and they fed in mari plaoes. Othor",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.848,
+   "sabates_a": 0.851,
+   "madueke_b": 0.851
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.7486,
+   0.875,
+   0.8599
+  ],
+  "crop_page": 148,
+  "r3_raw": "AFTER two yeares: Pharao saw a dreame. He thought he stood vpon a riuers, out of the which came vp seven kine, faire and fat exceedingly; and they fed in marish places. Other seven also came vput of the riuer, foule, and caryan lean: and they fed on the very banke of the",
+  "r3_verse": "out of the which came vp seven kine, faire and fat exceedingly; and they fed in marish places.",
+  "arm_conflicts": [
+   "ſeuen | vp seven",
+   "exccedinoly : | exceedingly;",
+   "mari plaoes. Othor | marish places."
+  ],
+  "new_text": "out of the which came vp ſeuen kine, faire and fat exceedingly; and they fed in marish places.",
+  "s_unresolved": [
+   "marish"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 3,
+  "from": "p148",
+  "old_text": "of the riuer, fon and cryan leane: andetheyfed on the very banke of riuer, in grene places Fand",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7916,
+   0.875,
+   0.9012
+  ],
+  "crop_page": 148,
+  "r3_raw": "feuen kine, faire and fat exceedingly: and they fed in marish places. † Other feuen also came vp out of the riuuer, soule, and curyan leane: and they fed on the very banke of the riuer, in grene places: † and they devoured them, that had the meryulous beautie and good state of bodies. Pharao",
+  "r3_verse": "Other feuen also came vp out of the riuuer, soule, and curyan leane: and they fed on the very banke of the riuer, in grene places:",
+  "arm_conflicts": [
+   "riuer, fon | riuuer, soule,",
+   "cryan | curyan",
+   "andetheyfed | and they fed"
+  ],
+  "lexicon_readings": {
+   "1": "ſeuen",
+   "9": "ſoule,"
+  },
+  "r2_attested": {
+   "2": "alſo"
+  },
+  "visual_readings": {
+   "1": "ſeuen",
+   "9": "ſoule,",
+   "2": "alſo"
+  },
+  "new_text": "Other ſeuen alſo came vp out of the riuer, ſoule, and curyan leane: and they fed on the very banke of the riuer, in grene places",
+  "s_unresolved": [
+   "fed"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.984,
+   "odr_com": 0.984,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 4,
+  "from": "p148",
+  "old_text": "Fand they deuoured them, that wee v5. the rueyous beautie and good ſtate of bodies. after bewwaked, †lepe againe,",
+  "old": {
+   "s_dismas": 0.717,
+   "odr_com": 0.726,
+   "sabates_a": 0.725,
+   "madueke_b": 0.725
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.8345,
+   0.875,
+   0.9471
+  ],
+  "crop_page": 148,
+  "r3_raw": "and curyan leane: and they fed on the very banke of the river, in grene places: † and they deuoured them, that had the m rueyous beautie and good state of bodies. Pharao after he waked, † slept againe, and saw an other dreame:",
+  "r3_verse": "and they deuoured them, that had the rueyous beautie and good state of bodies. Pharao after he waked,",
+  "arm_conflicts": [
+   "Fand | and",
+   "wee v5. | had",
+   "bewwaked, †lepe againe, | he waked,"
+  ],
+  "new_text": "and they deuoured them, that had the rueyous beautie and good ſtate of bodies. Pharao after he waked,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.96,
+   "odr_com": 0.97,
+   "sabates_a": 0.968,
+   "madueke_b": 0.968
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 5,
+  "from": "chapter",
+  "old_text": "and fawt an other dreame: Seuon eares of corne grew forth vpon one ſtalke ful and faire:",
+  "old": {
+   "s_dismas": 0.837,
+   "odr_com": 0.837,
+   "sabates_a": 0.811,
+   "madueke_b": 0.811
+  },
+  "neighbours": [
+   5
+  ],
+  "skip": "no crop geometry; leaves tried: none (localizer has no leaf for it)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 6,
+  "from": "p149",
+  "old_text": "there ſprang alto other eares as many, thimne and blaſted with adulnon,",
+  "old": {
+   "s_dismas": 0.929,
+   "odr_com": 0.929,
+   "sabates_a": 0.91,
+   "madueke_b": 0.91
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.049,
+   0.0562,
+   0.8618,
+   0.1415
+  ],
+  "crop_page": 149,
+  "r3_raw": "Seuen eares of corne grew forth vpon one ſtalke ful and faire: † there sprang alto other eares as many, thinne and blasted with aduision, † devouring al the beautie of the former. Pharao awaking vp after his rest, † and when",
+  "r3_verse": "there sprang alto other eares as many, thinne and blasted with aduision,",
+  "arm_conflicts": [
+   "thimne | thinne",
+   "adulnon, | aduision,"
+  ],
+  "new_text": "there ſprang alto other eares as many, thinne and blaſted with aduision,",
+  "s_unresolved": [
+   "aduision,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.957,
+   "odr_com": 0.957,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 7,
+  "from": "p149",
+  "old_text": "douounng al the beaute of the former. Pharao awaking vp atter his roſt,",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   6,
+   7,
+   8
+  ],
+  "crop": [
+   0.049,
+   0.077,
+   0.8618,
+   0.1659
+  ],
+  "crop_page": 149,
+  "r3_raw": "6 faire: † there sprang also other eates as many, thinne and 7 blasted with aduision, † devouring al the beautie of the 8 former. Pharao awaking vp after his rest, † and when morning was come, being frighted with feare, he sent to al",
+  "r3_verse": "devouring al the beautie of the former. Pharao awaking vp after his rest,",
+  "arm_conflicts": [
+   "douounng | devouring",
+   "beaute | beautie",
+   "atter | after",
+   "roſt, | rest,"
+  ],
+  "lexicon_readings": {
+   "10": "after"
+  },
+  "r2_attested": {
+   "12": "reſt,"
+  },
+  "visual_readings": {
+   "10": "after",
+   "12": "reſt,"
+  },
+  "new_text": "devouring al the beautie of the former. Pharao awaking vp after his reſt,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 21,
+  "from": "p149",
+  "old_text": "gaue no token of their fulnes : but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe ſleepe, I",
+  "old": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.049,
+   0.6902,
+   0.8618,
+   0.7976
+  ],
+  "crop_page": 149,
+  "r3_raw": "of Egypte, which hauing deuoured and consumed the form r, gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe sleepe, I sawe a dreame: Seuen eares of corne grew forth vpon one stalke, ful and verie",
+  "r3_verse": "gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe sleepe, I",
+  "arm_conflicts": [],
+  "new_text": "gaue no token of their fulnes but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe ſleepe, I",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 26,
+  "from": "chapter",
+  "old_text": "The ſeuen ſaire kine, and by the ſeuen ful eares: be ſeuen yeres of plentifulnes: (or both conteine the ſelfe ſame meaning of the dreame",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.909,
+   "madueke_b": 0.909
+  },
+  "neighbours": [
+   26
+  ],
+  "crop": [
+   0.08,
+   0.0292,
+   0.875,
+   0.1283
+  ],
+  "crop_page": 150,
+  "r3_raw": "the seven ful earcs: be seuen yeres of plentifulnes: and both conteine the selfe same meaning of the dreame. † Also the feuen leane and thinne kine, that came vp after them, and the (seven thynne earcs, and blasted with the",
+  "r3_verse": "the seven ſaire kine, and by the ſeuen ful earcs: be seuen yeres of plentifulnes: and both conteine the selfe same meaning of the dreame.",
+  "arm_conflicts": [
+   "ſeuen ſaire kine, and by the ſeuen | seven",
+   "eares: | earcs:",
+   "(or | and"
+  ],
+  "used_merge": true,
+  "new_text": "The ſeuen ſaire kine, and by the ſeuen ful earcs: be ſeuen yeres of plentifulnes: and both conteine the ſelfe ſame meaning of the dreame",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.962,
+   "odr_com": 0.962,
+   "sabates_a": 0.934,
+   "madueke_b": 0.934
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 27,
+  "from": "p150",
+  "old_text": "Alſo the ſeuen leane and thinne kine, that came vp them, and the ſeuen thinne eares, and blaſted with burning winde: are ſeuen yeares of famine to come.",
+  "old": {
+   "s_dismas": 0.936,
+   "odr_com": 0.936,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0731,
+   0.875,
+   0.1794
+  ],
+  "crop_page": 150,
+  "r3_raw": "both conteine the selfe same meaning of the dreame. Also the feuen leane and thinne kine, that came vp after them, and the feuen thinne eares, and blasted with the burning winde: are feuen yeares of famine to come. Which shal be fulfilled in this order. Behold there shal come",
+  "r3_verse": "Also the feuen leane and thinne kine, that came vp after them, and the feuen thinne eares, and blasted with the burning winde: are feuen yeares of famine to come.",
+  "arm_conflicts": [
+   "ſeuen | feuen",
+   "ſeuen | feuen",
+   "ſeuen | feuen"
+  ],
+  "lexicon_readings": {
+   "2": "ſeuen",
+   "10": "after",
+   "14": "ſeuen",
+   "24": "ſeuen"
+  },
+  "visual_readings": {
+   "2": "ſeuen",
+   "10": "after",
+   "14": "ſeuen",
+   "24": "ſeuen"
+  },
+  "new_text": "Alſo the ſeuen leane and thinne kine, that came vp after them, and the ſeuen thinne eares, and blaſted with the burning winde: are ſeuen yeares of famine to come.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 28,
+  "from": "p150",
+  "old_text": "ſhal be fulfilled in this order.",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.838,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1361,
+   0.875,
+   0.2009
+  ],
+  "crop_page": 150,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which shal be fulfilled in this order. † Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "r3_verse": "Which shal be fulfilled in this order.",
+  "arm_conflicts": [],
+  "new_text": "Which ſhal be fulfilled in this order.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 29,
+  "from": "p150",
+  "old_text": "Behold there ſhal ſeuen yeares of great fertilitie in the whole Land of",
+  "old": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1361,
+   0.875,
+   0.2236
+  ],
+  "crop_page": 150,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which shal be fulfilled in this order. † Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt: † after which shal folowe other seven yeares of so great",
+  "r3_verse": "Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "arm_conflicts": [
+   "ſeuen | come seven"
+  ],
+  "new_text": "Behold there ſhal come ſeuen yeares of great fertilitie in the whole Land of Ægypt:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 31,
+  "from": "p150",
+  "old_text": "†and the greatnes of the ſcarſitie, shal deſtroy the greatnes of the",
+  "old": {
+   "s_dismas": 0.892,
+   "odr_com": 0.892,
+   "sabates_a": 0.882,
+   "madueke_b": 0.882
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.2209,
+   0.875,
+   0.3071
+  ],
+  "crop_page": 150,
+  "r3_raw": "sterilitie, that al the abundance before ſhal be forgotten: for the famine ſhal consume al the land, † and the greatnes of the scarsitie, ſhal destroy the greatnes of the plentie. † And in that thou didest see the second time a dreaine per-",
+  "r3_verse": "and the greatnes of the scarsitie, ſhal destroy the greatnes of the plentie.",
+  "arm_conflicts": [],
+  "new_text": "†and the greatnes of the ſcarſitie, shal deſtroy the greatnes of the plentie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 32,
+  "from": "p150",
+  "old_text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be ſpedely.",
+  "old": {
+   "s_dismas": 0.902,
+   "odr_com": 0.902,
+   "sabates_a": 0.874,
+   "madueke_b": 0.874
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.2632,
+   0.875,
+   0.3933
+  ],
+  "crop_page": 150,
+  "r3_raw": "of the scarsitie, shal destroy the greatnes of the plentie. † And in that thou didest see the second time a dreaine per- teining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely. † Now therfore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "r3_verse": "And in that thou didest see the second time a dreaine per- teining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely.",
+  "arm_conflicts": [
+   "dreame | dreaine per-"
+  ],
+  "lexicon_readings": {
+   "24": "for"
+  },
+  "visual_readings": {
+   "24": "for"
+  },
+  "new_text": "And in that thou dideſt ſee the ſecond time a dreaine per- teining to the ſame thing: it is a token of the certeintie, for that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
+  "s_unresolved": [
+   "fulfilled"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 33,
+  "from": "p150",
+  "old_text": "Now therfore let the king prouide a wiſe man induſtrious, and make him ruler ouer the Land of",
+  "old": {
+   "s_dismas": 0.893,
+   "odr_com": 0.893,
+   "sabates_a": 0.83,
+   "madueke_b": 0.83
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.3265,
+   0.875,
+   0.4124
+  ],
+  "crop_page": 150,
+  "r3_raw": "that the worde of God shal come topasse, and be fulfilled spedely.† Now therfore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt: † that he may appointe overseers ouer al countries : and",
+  "r3_verse": "Now therfore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "arm_conflicts": [],
+  "new_text": "Now therfore let the king prouide a wiſe man and induſtrious, and make him ruler ouer the Land of Ægypt:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.949,
+   "madueke_b": 0.949
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 34,
+  "from": "p150",
+  "old_text": "†that he may appointe ouerſeers ouer al countries: gether into barnes the fifth part of the fruites, during ſeuen yeares of the fertilitie,",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.916,
+   "madueke_b": 0.916
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.3721,
+   0.875,
+   0.4758
+  ],
+  "crop_page": 150,
+  "r3_raw": "industrious, and make him ruler over the Land of Ægypt: † that he may appointe overseers over al countries: and gather into barnes the fifth part of the fruities, during the ſeven yeares of the fertilitie, † that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes",
+  "r3_verse": "that he may appointe overseers over al countries: and gather into barnes the fifth part of the fruities, during the ſeven yeares of the fertilitie,",
+  "arm_conflicts": [
+   "ouerſeers ouer | overseers over",
+   "gether | and gather",
+   "fruites, | fruities,",
+   "ſeuen | the ſeven"
+  ],
+  "new_text": "†that he may appointe ouerſeers ouer al countries: and gather into barnes the fifth part of the fruities, during the ſeuen yeares of the fertilitie,",
+  "s_unresolved": [
+   "fruities,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.986,
+   "odr_com": 0.986,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 35,
+  "from": "p150",
+  "old_text": "that now preſently enſewe : and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "old": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.4114,
+   0.8782,
+   0.5164
+  ],
+  "crop_page": 150,
+  "r3_raw": "gether into barnes the fifth part of the fruities, during the leuen yeares of the fertilitie, † that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities. † And let it be in a readines, against the famine of leuen yeares to come,",
+  "r3_verse": "that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities.",
+  "arm_conflicts": [
+   "reſerued | reserved"
+  ],
+  "new_text": "that now preſently shal enſewe and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "s_unresolved": [
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 36,
+  "from": "p150",
+  "old_text": "And let in a readines, againſt the famine of ſeuen yeares to which shal oppreſſe Agypt, and the land shal not be ſumed with ſcarſitie.",
+  "old": {
+   "s_dismas": 0.897,
+   "odr_com": 0.897,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.08,
+   0.4529,
+   0.875,
+   0.5827
+  ],
+  "crop_page": 150,
+  "r3_raw": "ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reservued in the cities. † And let it be in a readines, against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarcitie. † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an",
+  "r3_verse": "And let it be in a readines, against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarcitie.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "Agypt, | Ægypt,",
+   "ſumed | consumed",
+   "ſcarſitie. | scarcitie."
+  ],
+  "new_text": "And let it be in a readines, againſt the famine of ſeuen yeares to come, which shal oppreſſe Ægypt, and the land shal not be consumed with scarcitie.",
+  "s_unresolved": [
+   "consumed",
+   "scarcitie."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 37,
+  "from": "p150",
+  "old_text": "The counſel pleaſed Pharao, his ſeruants :",
+  "old": {
+   "s_dismas": 0.848,
+   "odr_com": 0.848,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.516,
+   0.875,
+   0.6025
+  ],
+  "crop_page": 150,
+  "r3_raw": "which shal oppresse Ægypt, and the land shal not be consumed with scarcitie: † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said ther-",
+  "r3_verse": "The counsel pleased Pharao, and al his seruants:",
+  "arm_conflicts": [],
+  "new_text": "The counſel pleaſed Pharao, and al his ſeruants",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 39,
+  "from": "p150",
+  "old_text": "He ſaid fore to Ioſeph: Becauſe God hath shewed thee al things thou haſt ſpoken, can I find a wiſer and one like vnto",
+  "old": {
+   "s_dismas": 0.891,
+   "odr_com": 0.891,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.5582,
+   0.875,
+   0.6649
+  ],
+  "crop_page": 150,
+  "r3_raw": "his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be ouer my house, and at the commandment",
+  "r3_verse": "He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee?",
+  "arm_conflicts": [
+   "fore | therefore"
+  ],
+  "new_text": "He ſaid therefore to Ioſeph: Becauſe God hath shewed thee al things that thou haſt ſpoken, can I find a wiſer and one like vnto thee?",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 40,
+  "from": "p150",
+  "old_text": "Thou shalt be ouer my houſe, and at the commandment of thy mouth al the people shal obey: only in the of the kingdome I wil goe before thee.",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.951,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "neighbours": [
+   40,
+   41
+  ],
+  "crop": [
+   0.08,
+   0.6216,
+   0.88,
+   0.7283
+  ],
+  "crop_page": 150,
+  "r3_raw": "thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be ouer my house, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the",
+  "r3_verse": "Thou shalt be ouer my house, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "arm_conflicts": [],
+  "new_text": "Thou shalt be ouer my houſe, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 41,
+  "from": "p150",
+  "old_text": "And againe rao ſaid to Ioſeph : Behold, I haue appointed thee ouer whole land of Agypt.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.6632,
+   0.875,
+   0.7708
+  ],
+  "crop_page": 150,
+  "r3_raw": "of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gaue it into his hand:and he put vpon him",
+  "r3_verse": "And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "arm_conflicts": [
+   "rao | Pharaoh",
+   "Ioſeph : | Joseph:",
+   "Agypt. | Ægypt."
+  ],
+  "new_text": "And againe Pharaoh ſaid to Ioſeph Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 42,
+  "from": "p150",
+  "old_text": "And he tooke his ring from owne hand, and gaue it into his hand : and he put vpon a ſilke roabe, and put a chaine of gold about his",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.892,
+   "madueke_b": 0.892
+  },
+  "neighbours": [
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.7054,
+   0.875,
+   0.8104
+  ],
+  "crop_page": 150,
+  "r3_raw": "rao said to Ioseph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer",
+  "r3_verse": "And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke.",
+  "arm_conflicts": [],
+  "new_text": "And he tooke his ring from his owne hand, and gaue it into his hand and he put vpon him a ſilke roabe, and put a chaine of gold about his necke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 43,
+  "from": "p150",
+  "old_text": "And he made him goe vp into his ſecond chariot, the proclayming that al should bowe their knee before and that they should know he was made gouernour the whole Land of Egypt.",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.915,
+   "madueke_b": 0.915
+  },
+  "neighbours": [
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.7688,
+   0.875,
+   0.8982
+  ],
+  "crop_page": 150,
+  "r3_raw": "a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"made governour over the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue",
+  "r3_verse": "And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"made governour over the whole Land of Ægypt.",
+  "arm_conflicts": [
+   "made gouernour | \"made governour over",
+   "Egypt. | Ægypt."
+  ],
+  "new_text": "And he made him goe vp into his ſecond chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was made gouernour over the whole Land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 44,
+  "from": "p150",
+  "old_text": "And the king ſaid to I am Pharao : withour thy commandment no man shal hand or ſoote in al the land of Egypt",
+  "old": {
+   "s_dismas": 0.874,
+   "odr_com": 0.874,
+   "sabates_a": 0.876,
+   "madueke_b": 0.876
+  },
+  "neighbours": [
+   43,
+   44,
+   45
+  ],
+  "crop": [
+   0.08,
+   0.8308,
+   0.875,
+   0.952
+  ],
+  "crop_page": 150,
+  "r3_raw": "and that they should know he was \" made governour over the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt. † And he turned his name,",
+  "r3_verse": "And the king said to Ioseph: I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt.",
+  "arm_conflicts": [
+   ": withour | without",
+   "ſoote | foote",
+   "Egypt | Ægypt."
+  ],
+  "lexicon_readings": {
+   "5": "Ioſeph:"
+  },
+  "visual_readings": {
+   "5": "Ioſeph:"
+  },
+  "new_text": "And the king ſaid to Ioſeph: I am Pharao without thy commandment no man shal moue hand or foote in al the land of Ægypt.",
+  "s_unresolved": [
+   "foote"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 45,
+  "from": "chapter",
+  "old_text": "And he turned name, and called him in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſeph therfore went forth:: to the landof Egypt",
+  "old": {
+   "s_dismas": 0.962,
+   "odr_com": 0.967,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.0265,
+   0.8641,
+   0.1563
+  ],
+  "crop_page": 151,
+  "crop_leaves": [
+   150,
+   151
+  ],
+  "r3_raw": "I am Pharao: without thy commandment no man shal moue hand or foote in al the land of Ægypt. † And he turned his name, and called him in the Ægyptian tougue\" the Saviour of the world. And he gaue him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Ioseph therefore went forth ::Cohen 46 to the land of Ægypt († and he was thirtie yeares old when he stood in the sight of king Pharao) and did circuite al",
+  "r3_verse": "And he turned his name, and called him in the Ægyptian tougue\" the Saviour of the world. And he gaue him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Ioseph therefore went forth ::Cohen to the land of Ægypt (†",
+  "arm_conflicts": [
+   "Agyptian togue | Ægyptian tougue\"",
+   "Sauiour | Saviour",
+   "therfore | therefore",
+   "landof Egypt | land of Ægypt (†"
+  ],
+  "new_text": "And he turned his name, and called him in the Ægyptian tougue\" the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar :: prieſt of Heliopolis. Ioſeph therefore went forth:: ::Cohen to the land of Ægypt (†",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.964,
+   "odr_com": 0.964,
+   "sabates_a": 0.947,
+   "madueke_b": 0.947
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 47,
+  "from": "p151",
+  "old_text": "And the fertilitie of the ſeuen yeares came: and the corne being bound vp into ſheaues was gethered togeather into the barnes of Agypt.",
+  "old": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "neighbours": [
+   46,
+   47,
+   48
+  ],
+  "crop": [
+   0.08,
+   0.1321,
+   0.8641,
+   0.2431
+  ],
+  "crop_page": 151,
+  "r3_raw": "he stood in the sight of king Pharao) and did circuite al 47 the countries of Ægypt: † And the fertilitie of the seven yeares came: and the corne being bound vp into ſeaues was gethered togeather into the barnes of Ægypt. † Al 48 the abundance also of graine was laid vp in euerie citie.",
+  "r3_verse": "And the fertilitie of the seven yeares came: and the corne being bound vp into ſeaues was gethered togeather into the barnes of Ægypt.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "ſheaues | ſeaues",
+   "Agypt. | Ægypt."
+  ],
+  "new_text": "And the fertilitie of the ſeuen yeares came: and the corne being bound vp into ſeaues was gethered togeather into the barnes of Ægypt.",
+  "s_unresolved": [
+   "ſeaues"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.889,
+   "madueke_b": 0.889
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 48,
+  "from": "p151",
+  "old_text": "Al the abundance alfo of graine was laid vpincucrie citie",
+  "old": {
+   "s_dismas": 0.915,
+   "odr_com": 0.915,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   47,
+   48
+  ],
+  "crop": [
+   0.08,
+   0.1777,
+   0.8641,
+   0.2636
+  ],
+  "crop_page": 151,
+  "r3_raw": "yeares came: and the corne being bound vp into sheaues was gethered togeather into the barnes of Aegypt. Al the abundance also of graine was laid vp in euerie citie. And there was so great abundance of wheat, that it be-",
+  "r3_verse": "Al the abundance also of graine was laid vp in euerie citie.",
+  "arm_conflicts": [
+   "alfo | also",
+   "vpincucrie | vp in euerie"
+  ],
+  "r2_attested": {
+   "3": "alſo"
+  },
+  "visual_readings": {
+   "3": "alſo"
+  },
+  "new_text": "Al the abundance alſo of graine was laid vp in euerie citie",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 51,
+  "from": "p151",
+  "old_text": "And he called the name of the firſt begotten Manaſſes, ſaing God made me to forget al my labours, my fathers houſe.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "neighbours": [
+   50,
+   51,
+   52
+  ],
+  "crop": [
+   0.08,
+   0.3028,
+   0.8641,
+   0.4098
+  ],
+  "crop_page": 151,
+  "r3_raw": "before the famine came: whom Aseneth the daughter of Putiphar priest of Heliopolis bare him. † And he called the name of the first begotten * Manasses, saing: God made me to forget all my labours, & my fathers house. † The name also of the second he called * Ephraim, saing: God hath made",
+  "r3_verse": "And he called the name of the first begotten Manasses, saing: God made me to forget all my labours, & my fathers house.",
+  "arm_conflicts": [
+   "al | all"
+  ],
+  "new_text": "And he called the name of the firſt begotten Manaſſes, ſaing God made me to forget al my labours, & my fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.926,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 53,
+  "from": "p151",
+  "old_text": "Therfore when the ſeuen veares of theplentifulnes, that had bene in Agypt were paſſed :",
+  "old": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   52,
+   53,
+   54
+  ],
+  "crop": [
+   0.08,
+   0.3859,
+   0.8641,
+   0.4949
+  ],
+  "crop_page": 151,
+  "r3_raw": "of the second he called * Ephraim, saing: God hath made me to encrease in the land of my pouertie. † Therfore when the feuen yeares of the plentifulnes, that had bene in Ægypt were passed: † the seven yeares of Icarfite beganne to come, which Joseph foretold: and in the whole world the",
+  "r3_verse": "Therfore when the feuen yeares of the plentifulnes, that had bene in Ægypt were passed:",
+  "arm_conflicts": [
+   "ſeuen veares | feuen yeares",
+   "theplentifulnes, | the plentifulnes,",
+   "Agypt | Ægypt"
+  ],
+  "lexicon_readings": {
+   "3": "ſeuen"
+  },
+  "visual_readings": {
+   "3": "ſeuen"
+  },
+  "new_text": "Therfore when the ſeuen yeares of the plentifulnes, that had bene in Ægypt were paſſed",
+  "s_unresolved": [
+   "plentifulnes,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 54,
+  "from": "p151",
+  "old_text": "the ſeuen yeares of ſcarſitie beganne to come, which Ioſeph foretold and in the whole world the famine preuailed, but in al the land of Egypt there was",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.955,
+   "sabates_a": 0.938,
+   "madueke_b": 0.938
+  },
+  "neighbours": [
+   53,
+   54
+  ],
+  "crop": [
+   0.08,
+   0.4292,
+   0.8641,
+   0.5375
+  ],
+  "crop_page": 151,
+  "r3_raw": "the seven yeares of the plentifulnes, that had bene in Ægypt were passed: † the seven yeares of scarstie beganne to come, which Ioseph foretold: and in the whole world the famine preuailed, but in al the land of Ægypt there was bread. † The which being in hunger, the people cried to",
+  "r3_verse": "the seven yeares of scarstie beganne to come, which Ioseph foretold: and in the whole world the famine preuailed, but in al the land of Ægypt there was bread.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "ſcarſitie | scarstie",
+   "Egypt | Ægypt"
+  ],
+  "new_text": "the ſeuen yeares of scarstie beganne to come, which Ioſeph foretold and in the whole world the famine preuailed, but in al the land of Ægypt there was bread.",
+  "s_unresolved": [
+   "scarstie"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.994,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S3",
+  "ocr_dir": "pdf-S03a",
+  "verse": 56,
+  "from": "p151",
+  "old_text": "And the famine dayly encreaſed in al the land and Ioſe ph opened al the barnes, and ſold to the gvptians for them the famine had opreſſed.",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.917,
+   "madueke_b": 0.917
+  },
+  "neighbours": [
+   56,
+   57
+  ],
+  "crop": [
+   0.08,
+   0.5549,
+   0.8641,
+   0.6642
+  ],
+  "crop_page": 151,
+  "r3_raw": "Ioseph: and whatsoeuer he ſhall say to you, that doe ye. 56 † And the famine dayly encreased in al the land: and Ioseph opened al the barnes, and sold to the Ægyptians: for them also the famine had opressed. † And al prouinces came into Ægypt, to buy victuales, and to moderate the miserie of the",
+  "r3_verse": "And the famine dayly encreased in al the land: and Ioseph opened al the barnes, and sold to the Ægyptians: for them also the famine had opressed.",
+  "arm_conflicts": [
+   "Ioſe ph | Ioseph",
+   "gvptians | Ægyptians:"
+  ],
+  "lexicon_readings": {
+   "10": "Ioſeph"
+  },
+  "r2_attested": {
+   "22": "alſo"
+  },
+  "visual_readings": {
+   "10": "Ioſeph",
+   "22": "alſo"
+  },
+  "new_text": "And the famine dayly encreaſed in al the land and Ioſeph opened al the barnes, and ſold to the Ægyptians: for them alſo the famine had opreſſed.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 1,
+  "from": "chapter",
+  "old_text": "after two Pharao ſaw a dreame. He thought and he ſtood vpon a riuer,",
+  "old": {
+   "s_dismas": 0.841,
+   "odr_com": 0.803,
+   "sabates_a": 0.844,
+   "madueke_b": 0.844
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.08,
+   0.0223,
+   0.8791,
+   0.7872
+  ],
+  "crop_page": 156,
+  "r3_raw": "his place, to reach him the cuppe; † the other he hanged on a gibbet, that the truth of the interpreter might be approved. † And yet notwithstanding the chiefe of the cupbearers, prosperous thinges succeeding, forgat his interpreter. ANNOTATIONS. CHAP. XL. 8. Doth not interpretation belong to God? [ ] Dreames do come of divers causes. Some of natural complexion; or disposition, whereby Philosophers of Phisitions may probably judge of the state of mans bodie. Some are rather weake minds with dangers and affictions, or to vexe and truble those in these Eunuches, Pharao, Nabuchodonosor, and others both good and evil spirits, be from God, by holie Angels, or illusions of euil spirites, is a special gift of God, as also the interpretation thereof belongeth to God, as Ioseph here testifieth. VVhosoeuer therefore will be secure must relie either vpon express interpreting the same. 38. is made ruler over all Egypt. 50. marieith, and hath two sonnes, Manasses and Ephraim. AFTER two yeares: Pharao saw a dreame. He thought he stood upon a riuuer, † out of the which came vp two seuen kine, faire and fat exceedingely: and they fed in marish",
+  "r3_verse": "his place, to reach him the cuppe; the other he hanged on a gibbet, that the truth of the interpreter might be approved. And yet notwithstanding the chiefe of the cupbearers, prosperous thinges succeeding, forgat his interpreter. CHAP. XL. Doth not interpretation belong to God? [ ] Dreames do come of divers causes. Some of natural complexion; or disposition, whereby Philosophers of Phisitions may probably judge of the state of mans bodie. Some are rather weake minds with dangers and affictions, or to vexe and truble those in these Eunuches, Pharao, Nabuchodonosor, and others both good and evil spirits, be from God, by holie Angels, or illusions of euil spirites, is a special gift of God, as also the interpretation thereof belongeth to God, as Ioseph here testifieth. VVhosoeuer therefore will be secure must relie either vpon express interpreting the same. is made ruler over all Egypt. marieith, and hath two sonnes, Manasses and Ephraim. AFTER two yeares: Pharao saw a dreame. He thought he stood upon a riuuer,",
+  "arm_conflicts": [
+   "vpon | upon",
+   "riuer, | riuuer,"
+  ],
+  "lexicon_readings": {
+   "68": "ſtate",
+   "86": "thoſe",
+   "88": "theſe",
+   "100": "from",
+   "125": "Ioſeph",
+   "140": "ſame.",
+   "151": "ſonnes,",
+   "152": "Manaſſes"
+  },
+  "r2_attested": {
+   "25": "notwithſtanding",
+   "31": "proſperous",
+   "33": "ſucceeding,",
+   "52": "cauſes.",
+   "58": "diſpoſition,",
+   "60": "Philoſophers",
+   "62": "Phiſitions",
+   "91": "Nabuchodonoſor,",
+   "106": "illuſions",
+   "109": "ſpirites,",
+   "112": "ſpecial",
+   "117": "alſo",
+   "132": "ſecure",
+   "133": "muſt"
+  },
+  "visual_readings": {
+   "68": "ſtate",
+   "86": "thoſe",
+   "88": "theſe",
+   "100": "from",
+   "125": "Ioſeph",
+   "140": "ſame.",
+   "151": "ſonnes,",
+   "152": "Manaſſes",
+   "25": "notwithſtanding",
+   "31": "proſperous",
+   "33": "ſucceeding,",
+   "52": "cauſes.",
+   "58": "diſpoſition,",
+   "60": "Philoſophers",
+   "62": "Phiſitions",
+   "91": "Nabuchodonoſor,",
+   "106": "illuſions",
+   "109": "ſpirites,",
+   "112": "ſpecial",
+   "117": "alſo",
+   "132": "ſecure",
+   "133": "muſt"
+  },
+  "new_text": "his place, to reach him the cuppe; the other he hanged on a gibbet, that the truth of the interpreter might be approved. And yet notwithſtanding the chiefe of the cupbearers, proſperous thinges ſucceeding, forgat his interpreter. CHAP. XL. Doth not interpretation belong to God? [ ] Dreames do come of divers cauſes. Some of natural complexion; or diſpoſition, whereby Philoſophers of Phiſitions may probably judge of the ſtate of mans bodie. Some are rather weake minds with dangers and affictions, or to vexe and truble thoſe in theſe Eunuches, Pharao, Nabuchodonoſor, and others both good and evil spirits, be from God, by holie Angels, or illuſions of euil ſpirites, is a ſpecial gift of God, as alſo the interpretation thereof belongeth to God, as Ioſeph here testifieth. VVhosoeuer therefore will be ſecure muſt relie either vpon express interpreting the ſame. is made ruler over all Egypt. marieith, and hath two ſonnes, Manaſſes and Ephraim. AFTER two yeares: Pharao ſaw a dreame. He thought he ſtood vpon a riuer,",
+  "s_unresolved": [
+   "chiefe",
+   "forgat",
+   "affictions,",
+   "spirits,",
+   "gift",
+   "testifieth.",
+   "VVhosoeuer",
+   "therefore",
+   "express"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 2,
+  "from": "p156",
+  "old_text": "out of the which came ſeuen Hne, faire and fat exceedingly and they fed in mari by places.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.907,
+   "madueke_b": 0.907
+  },
+  "neighbours": [
+   1,
+   2,
+   3
+  ],
+  "crop": [
+   0.08,
+   0.7214,
+   0.875,
+   0.8289
+  ],
+  "crop_page": 156,
+  "r3_raw": "AFTER two yeares: Pharao saw a dreame. He thought he stood vpon a riuier, † out of the which came vp seven kine, faire and fat exceedingly: and they fed in marish places. † Other seven also came vp out of the riuer, foule, and caryan leane: and they fed on the very banke of the",
+  "r3_verse": "out of the which came vp seven kine, faire and fat exceedingly: and they fed in marish places.",
+  "arm_conflicts": [
+   "ſeuen Hne, | vp seven kine,",
+   "mari by | marish"
+  ],
+  "new_text": "out of the which came vp ſeuen kine, faire and fat exceedingly and they fed in marish places.",
+  "s_unresolved": [
+   "marish"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 3,
+  "from": "p156",
+  "old_text": "Other ſeuen alſo came vp out of the riuer, for and caryan leane and they fed on the very banke of riuor, in grene places",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.94,
+   "madueke_b": 0.94
+  },
+  "neighbours": [
+   2,
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.7627,
+   0.875,
+   0.8689
+  ],
+  "crop_page": 156,
+  "r3_raw": "seven kine, faire and fat exceedingly: and they fed in marish places. † Other seven also came vp out of the riuver, soule, and caryan leane: and they fed on the very banke of the riuer, in grene places: † and they deuoured them, that had 4 the merueylous beautie and good state of bodies. Pharao",
+  "r3_verse": "Other seven also came vp out of the riuver, soule, and caryan leane: and they fed on the very banke of the riuer, in grene places:",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "riuer, for | riuver, soule,",
+   "riuor, | the riuer,"
+  ],
+  "lexicon_readings": {
+   "9": "ſoule,"
+  },
+  "visual_readings": {
+   "9": "ſoule,"
+  },
+  "new_text": "Other ſeuen alſo came vp out of the riuer, ſoule, and caryan leane and they fed on the very banke of the riuer, in grene places",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.983,
+   "madueke_b": 0.983
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 4,
+  "from": "p156",
+  "old_text": "and they deuoured them, that were the merueylous beautie and good ſtate of bodies. Pharao after he waked,",
+  "old": {
+   "s_dismas": 0.951,
+   "odr_com": 0.961,
+   "sabates_a": 0.948,
+   "madueke_b": 0.948
+  },
+  "neighbours": [
+   3,
+   4
+  ],
+  "crop": [
+   0.08,
+   0.8028,
+   0.875,
+   0.9155
+  ],
+  "crop_page": 156,
+  "r3_raw": "and caryan leane: and they fed on the very banke of the riuier, in grene places: † and they deuoured them, that had 4 the merueylous beautie and good state of bodies. Pharao after he waked, † slept againe, and saw an other dreame:",
+  "r3_verse": "and they deuoured them, that had the merueylous beautie and good state of bodies. Pharao after he waked, slept againe, and saw an other",
+  "arm_conflicts": [
+   "were | had"
+  ],
+  "r2_attested": {
+   "18": "ſlept",
+   "21": "ſaw"
+  },
+  "visual_readings": {
+   "18": "ſlept",
+   "21": "ſaw"
+  },
+  "new_text": "and they deuoured them, that had the merueylous beautie and good ſtate of bodies. Pharao after he waked, ſlept againe, and ſaw an other",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.763,
+   "odr_com": 0.771,
+   "sabates_a": 0.752,
+   "madueke_b": 0.752
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 10,
+  "from": "p157",
+  "old_text": "The king being angrie with his ſeruantes, commanded priſon me and the chiefe of the bakers to be caſt into the of the captaine of the ſouldiers:",
+  "old": {
+   "s_dismas": 0.901,
+   "odr_com": 0.901,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   10,
+   11
+  ],
+  "crop": [
+   0.08,
+   0.2073,
+   0.8541,
+   0.3182
+  ],
+  "crop_page": 157,
+  "r3_raw": "cupbearers remembring himselfe, said: I confesse my sinne: The king being angrie with his seruantes, commanded me and the chiefe of the bakers to be cast into the prison of the captaine of the souldiers: where in one night both of vs saw a dreame portending things to come.",
+  "r3_verse": "The king being angrie with his seruantes, commanded me and the chiefe of the bakers to be cast into the prison of the captaine of the souldiers:",
+  "arm_conflicts": [],
+  "r2_attested": {
+   "20": "priſon"
+  },
+  "visual_readings": {
+   "20": "priſon"
+  },
+  "new_text": "The king being angrie with his ſeruantes, commanded me and the chiefe of the bakers to be caſt into the priſon of the captaine of the ſouldiers:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 20,
+  "from": "p157",
+  "old_text": "which hauing deuoured and conſumed like former,",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   19,
+   20,
+   21
+  ],
+  "crop": [
+   0.08,
+   0.6294,
+   0.8541,
+   0.7185
+  ],
+  "crop_page": 157,
+  "r3_raw": "il fauored and leane, that I neuer saw the like in the land of Ægypt; † which hauing deuoured and consumed the former, † gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and",
+  "r3_verse": "which hauing deuoured and consumed the former,",
+  "arm_conflicts": [
+   "like | the"
+  ],
+  "new_text": "which hauing deuoured and conſumed the former,",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 21,
+  "from": "p157",
+  "old_text": "gaue no token of their fulnes : but with the leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe ſleepe, I",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.899,
+   "madueke_b": 0.899
+  },
+  "neighbours": [
+   20,
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.6489,
+   0.8541,
+   0.761
+  ],
+  "crop_page": 157,
+  "r3_raw": "of Ægypt; † which hauing deuoured and consumed the former, † gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe sleepe, † I sawe a dreame: Seuen eares of corne grew forth vpon one stalke, ful and verie",
+  "r3_verse": "gaue no token of their fulnes: but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe sleepe, I",
+  "arm_conflicts": [],
+  "new_text": "gaue no token of their fulnes but with the like leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe ſleepe, I",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.927,
+   "madueke_b": 0.927
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 22,
+  "from": "p157",
+  "old_text": "ſawe a dreame : Seuen eares of corne grew forth vpon one ſtalke, ful and verie with adufaire.",
+  "old": {
+   "s_dismas": 0.888,
+   "odr_com": 0.888,
+   "sabates_a": 0.878,
+   "madueke_b": 0.866
+  },
+  "neighbours": [
+   21,
+   22
+  ],
+  "crop": [
+   0.08,
+   0.6884,
+   0.8541,
+   0.7917
+  ],
+  "crop_page": 157,
+  "r3_raw": "leanenes and deformitie, looked heauelie. Awaking, and fallen againe into a deepe sleepe, I sawe a dreame: Seuen eares of corne grew forth vpon one stalke, ful and verie faire. Other seuen also thinne and blasted, with adu-",
+  "r3_verse": "sawe a dreame: Seuen eares of corne grew forth vpon one stalke, ful and verie faire.",
+  "arm_conflicts": [
+   "with adufaire. | faire."
+  ],
+  "new_text": "ſawe a dreame Seuen eares of corne grew forth vpon one ſtalke, ful and verie faire.",
+  "s_unresolved": [
+   "faire."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.973,
+   "madueke_b": 0.96
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 23,
+  "from": "p157",
+  "old_text": "Other ſeuen alſo thinne and blasted, ſtion, ſprang of the ſtalke:",
+  "old": {
+   "s_dismas": 0.886,
+   "odr_com": 0.886,
+   "sabates_a": 0.879,
+   "madueke_b": 0.879
+  },
+  "neighbours": [
+   23,
+   24
+  ],
+  "crop": [
+   0.08,
+   0.7289,
+   0.8541,
+   0.8213
+  ],
+  "crop_page": 157,
+  "r3_raw": "uen eares of corne grew forth vpon one stalke, ful and verie faire. † Other feuen also thinne and blasted, with adu- ſtition, sprang of the stalke: † which deuoured the beautie of the former: I told the dreame to the coniecturers, and",
+  "r3_verse": "Other feuen also thinne and blasted, with adu- ſtition, sprang of the stalke:",
+  "arm_conflicts": [
+   "ſeuen | feuen",
+   "ſtion, | with adu- ſtition,"
+  ],
+  "lexicon_readings": {
+   "1": "ſeuen"
+  },
+  "visual_readings": {
+   "1": "ſeuen"
+  },
+  "new_text": "Other ſeuen alſo thinne and blasted, with adu- ſtition, ſprang of the ſtalke:",
+  "s_unresolved": [
+   "ſtition,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.957,
+   "madueke_b": 0.957
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 26,
+  "from": "chapter",
+  "old_text": "The ſeuen faire kine, andby proui- the ſeuen ful eares:be ſeuen yeres of plentifulnes: borh conteine the ſelfe ſamemeaningof the dreame (or",
+  "old": {
+   "s_dismas": 0.858,
+   "odr_com": 0.858,
+   "sabates_a": 0.824,
+   "madueke_b": 0.824
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0336,
+   0.875,
+   0.1433
+  ],
+  "crop_page": 158,
+  "r3_raw": "the seven ful eares: be seven yeres of plentifulnes: and both conteine the selfe same meaning of the dreame. Also the seven leane and thinne kine, that came vp after them, and the seven thinne eares, and blasted with the",
+  "r3_verse": "the seven faire kine, andby proui- the ſeuen ful eares: be seven yeres of plentifulnes: and both conteine the selfe same meaning of the dreame. (or",
+  "arm_conflicts": [
+   "ſeuen faire kine, andby proui- the ſeuen | seven",
+   "eares:be ſeuen | eares: be seven",
+   "borh | and both",
+   "ſamemeaningof | same meaning of"
+  ],
+  "used_merge": true,
+  "lexicon_readings": {
+   "20": "ſame"
+  },
+  "visual_readings": {
+   "20": "ſame"
+  },
+  "new_text": "The ſeuen faire kine, andby proui- the ſeuen ful eares: be ſeuen yeres of plentifulnes: and both conteine the ſelfe ſame meaning of the dreame (or",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.922,
+   "odr_com": 0.922,
+   "sabates_a": 0.885,
+   "madueke_b": 0.885
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 27,
+  "from": "p158",
+  "old_text": "Alſo the ſeuen leane and thinne kine, that came vp the them, and the ſeuen thinne eares, and blaſted with burning winde: are ſeuen yeares of famine to come.",
+  "old": {
+   "s_dismas": 0.949,
+   "odr_com": 0.949,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.08,
+   0.0709,
+   0.875,
+   0.1797
+  ],
+  "crop_page": 158,
+  "r3_raw": "both conteine the selfe same meaning of the dreame. Also the seven leane and thinne kine, that came vp after them, and the seven thinne eares, and blasted with the burning winde: are seven yeares of famine to come. Which shal be fulfilled in this order. Behold there shal come",
+  "r3_verse": "Also the seven leane and thinne kine, that came vp after them, and the seven thinne eares, and blasted with the burning winde: are seven yeares of famine to come.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "the | after",
+   "ſeuen | seven",
+   "ſeuen | seven"
+  ],
+  "lexicon_readings": {
+   "10": "after"
+  },
+  "visual_readings": {
+   "10": "after"
+  },
+  "new_text": "Alſo the ſeuen leane and thinne kine, that came vp after them, and the ſeuen thinne eares, and blaſted with the burning winde: are ſeuen yeares of famine to come.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.986,
+   "madueke_b": 0.986
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 28,
+  "from": "p158",
+  "old_text": "ſhal be fulfilled in this order.",
+  "old": {
+   "s_dismas": 0.838,
+   "odr_com": 0.838,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1371,
+   0.875,
+   0.2022
+  ],
+  "crop_page": 158,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which 23 shal be fulfilled in this order. † Behold there shal come 24 seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "r3_verse": "Which shal be fulfilled in this order.",
+  "arm_conflicts": [],
+  "new_text": "Which ſhal be fulfilled in this order.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 29,
+  "from": "p158",
+  "old_text": "Behold there ſhal ſeuen yeares of great fertilitie in the whole Land of Agypt:",
+  "old": {
+   "s_dismas": 0.928,
+   "odr_com": 0.928,
+   "sabates_a": 0.922,
+   "madueke_b": 0.922
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.08,
+   0.1371,
+   0.875,
+   0.2244
+  ],
+  "crop_page": 158,
+  "r3_raw": "burning winde: are seven yeares of famine to come. † Which 27 shal be fulfilled in this order. † Behold there shal come 29 seven yeares of great fertilitie in the whole Land of Ægypt: † after which shal folowe other seven yeares of so great",
+  "r3_verse": "Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "arm_conflicts": [
+   "ſeuen | come seven",
+   "Agypt: | Ægypt:"
+  ],
+  "new_text": "Behold there ſhal come ſeuen yeares of great fertilitie in the whole Land of Ægypt:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 30,
+  "from": "p158",
+  "old_text": "after which ſhal olowe other ſcuen yeares of ſo ſterilitie, that al the abundance before ſhal be forgotten for the famine shal conſume al the land,",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.936,
+   "madueke_b": 0.936
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.08,
+   0.1771,
+   0.875,
+   0.2839
+  ],
+  "crop_page": 158,
+  "r3_raw": "seuen yeares of great fertilitie in the whole Land of Ægypt: † after which shal folowe other seuen yeares of so great sterilitie, that al the abundance before shal be forgotten: for the famine shal consume al the land, † and the greatnes 31 of the scarsitie, shal destroy the greatnes of the plentie.",
+  "r3_verse": "after which shal folowe other seuen yeares of so great sterilitie, that al the abundance before shal be forgotten: for the famine shal consume al the land,",
+  "arm_conflicts": [
+   "olowe | folowe",
+   "ſcuen | seuen"
+  ],
+  "lexicon_readings": {
+   "5": "ſeuen"
+  },
+  "visual_readings": {
+   "5": "ſeuen"
+  },
+  "new_text": "after which ſhal folowe other ſeuen yeares of ſo great ſterilitie, that al the abundance before ſhal be forgotten for the famine shal conſume al the land,",
+  "s_unresolved": [
+   "folowe"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 32,
+  "from": "p158",
+  "old_text": "And in that thou dideſt ſee the ſecond time a dreame teining to the ſame thing: it is a token of the certeintie, that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
+  "old": {
+   "s_dismas": 0.956,
+   "odr_com": 0.956,
+   "sabates_a": 0.928,
+   "madueke_b": 0.928
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.2588,
+   0.875,
+   0.3861
+  ],
+  "crop_page": 158,
+  "r3_raw": "of the scarsitie, shal destroy the greatnes of the plentie. † And in that thou didest see the second time a dreame per- teining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely. † Now therefore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "r3_verse": "And in that thou didest see the second time a dreame per- teining to the same thing: it is a token of the certeintie, for that the worde of God shal come topasse, and be fulfilled spedely.",
+  "arm_conflicts": [],
+  "lexicon_readings": {
+   "24": "for"
+  },
+  "visual_readings": {
+   "24": "for"
+  },
+  "new_text": "And in that thou dideſt ſee the ſecond time a dreame per- teining to the ſame thing: it is a token of the certeintie, for that the worde of God shal come topaſſe, and be fulfilled ſpedely.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.964,
+   "madueke_b": 0.964
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 33,
+  "from": "p158",
+  "old_text": "Now therfore let the king prouide a wiſe man induſtrious, and make him ruler ouer the Landof Agypt",
+  "old": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.883,
+   "madueke_b": 0.883
+  },
+  "neighbours": [
+   32,
+   33
+  ],
+  "crop": [
+   0.08,
+   0.3203,
+   0.875,
+   0.4036
+  ],
+  "crop_page": 158,
+  "r3_raw": "that the worde of God shal come topasse, and be fulfilled spedely.† Now therefore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt: † that he may appointe overseers ouer al countries: and",
+  "r3_verse": "Now therefore let the king prouide a wise man and industrious, and make him ruler ouer the Land of Ægypt:",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "Landof Agypt | Land of Ægypt:"
+  ],
+  "new_text": "Now therefore let the king prouide a wiſe man and induſtrious, and make him ruler ouer the Land of Ægypt:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.99,
+   "odr_com": 0.99,
+   "sabates_a": 0.959,
+   "madueke_b": 0.959
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 34,
+  "from": "p158",
+  "old_text": "that he may appointe ouorſeers ouer al countries : gether into barnes the fifth part of the fruites, during ſeuen yeares of the fertilitie,",
+  "old": {
+   "s_dismas": 0.937,
+   "odr_com": 0.937,
+   "sabates_a": 0.908,
+   "madueke_b": 0.908
+  },
+  "neighbours": [
+   34,
+   35
+  ],
+  "crop": [
+   0.08,
+   0.3603,
+   0.875,
+   0.4678
+  ],
+  "crop_page": 158,
+  "r3_raw": "industrious, and make him ruler over the Land of Ægypt: † that he may appointe overseers over al countries: and 3 gether into barnes the fifth part of the fruities, during the feuen yeares of the fertilitie, † that now presently shal 39 ensewe: and let al the corne be laid vp, vnder Pharaoes",
+  "r3_verse": "that he may appointe overseers over al countries: and gether into barnes the fifth part of the fruities, during the feuen yeares of the fertilitie,",
+  "arm_conflicts": [
+   "ouorſeers ouer | overseers over",
+   ": | and",
+   "fruites, | fruities,",
+   "ſeuen | the feuen"
+  ],
+  "lexicon_readings": {
+   "20": "ſeuen"
+  },
+  "visual_readings": {
+   "20": "ſeuen"
+  },
+  "new_text": "that he may appointe overseers ouer al countries and gether into barnes the fifth part of the fruities, during the ſeuen yeares of the fertilitie,",
+  "s_unresolved": [
+   "overseers",
+   "fruities,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 35,
+  "from": "p158",
+  "old_text": "that now preſently enſewe : and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "old": {
+   "s_dismas": 0.959,
+   "odr_com": 0.959,
+   "sabates_a": 0.92,
+   "madueke_b": 0.92
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.08,
+   0.4033,
+   0.875,
+   0.5061
+  ],
+  "crop_page": 158,
+  "r3_raw": "gether into barnes the fifth part of the fruities, during the feuen yeares of the fertilitie, † that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities. † And let it be in a readines, against the famine of feuen yeares to come,",
+  "r3_verse": "that now presently shal ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities.",
+  "arm_conflicts": [
+   "reſerued | reserved"
+  ],
+  "new_text": "that now preſently shal enſewe and let al the corne be laid vp, vnder Pharaoes handes, and let it be reſerued in the cities.",
+  "s_unresolved": [
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.965,
+   "madueke_b": 0.965
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 36,
+  "from": "p158",
+  "old_text": "And let it in a readines, againſt the faminet of ſeuen yeares to which shal oppreſſe Agypt, and the land shal not be ſumed with ſcarſitie",
+  "old": {
+   "s_dismas": 0.911,
+   "odr_com": 0.911,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.08,
+   0.4423,
+   0.875,
+   0.5676
+  ],
+  "crop_page": 158,
+  "r3_raw": "ensewe: and let al the corne be laid vp, vnder Pharaoes handes, and let it be reserved in the cities. † And let it be 30 in a readines, against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarlitie. † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an",
+  "r3_verse": "And let it be in a readines, against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarlitie.",
+  "arm_conflicts": [
+   "faminet | famine",
+   "ſeuen | seven",
+   "Agypt, | Ægypt,",
+   "ſumed | consumed",
+   "ſcarſitie | scarlitie."
+  ],
+  "new_text": "And let it be in a readines, againſt the famine of ſeuen yeares to come, which shal oppreſſe Ægypt, and the land shal not be consumed with scarlitie.",
+  "s_unresolved": [
+   "famine",
+   "consumed",
+   "scarlitie."
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 37,
+  "from": "p158",
+  "old_text": "The counſel pleaſed Pharao, and his ſeruants:",
+  "old": {
+   "s_dismas": 0.935,
+   "odr_com": 0.935,
+   "sabates_a": 0.933,
+   "madueke_b": 0.933
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.08,
+   0.5038,
+   0.875,
+   0.5858
+  ],
+  "crop_page": 158,
+  "r3_raw": "which shal oppresse Ægypt, and the land shal not be consumed with scarlitie: † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said ther-",
+  "r3_verse": "The counsel pleased Pharao, and al his seruants:",
+  "arm_conflicts": [],
+  "new_text": "The counſel pleaſed Pharao, and al his ſeruants:",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 38,
+  "from": "p158",
+  "old_text": "andhe ſpake to them : Can we find ſuch other man, thatis fuhof the ſpirite of God",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.917,
+   "sabates_a": 0.923,
+   "madueke_b": 0.923
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.523,
+   0.875,
+   0.607
+  ],
+  "crop_page": 158,
+  "r3_raw": "sumed with scarlitie: † The counsel pleased Pharao, and al his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said therefore to Ioseph: Because God hath shewed thee all things that",
+  "r3_verse": "and he spake to them: Can we find such an other man, that is ful of the spirite of God?",
+  "arm_conflicts": [
+   "andhe | and he",
+   "thatis fuhof | that is ful of",
+   "God | God?"
+  ],
+  "new_text": "and he ſpake to them Can we find ſuch an other man, that is ful of the ſpirite of God",
+  "s_unresolved": [
+   "ful"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 39,
+  "from": "p158",
+  "old_text": "He ſaid fore to Ioſeph : Becauſe God hath shewed thee al things thou haſt ſpoken, can Ifind a wifer and one like vnto",
+  "old": {
+   "s_dismas": 0.876,
+   "odr_com": 0.876,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "neighbours": [
+   38,
+   39
+  ],
+  "crop": [
+   0.08,
+   0.5432,
+   0.875,
+   0.6493
+  ],
+  "crop_page": 158,
+  "r3_raw": "his seruants: † and he spake to them: Can we find such an other man, that is ful of the spirite of God? † He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be ouer my house, and at the commandment",
+  "r3_verse": "He said therefore to Ioseph: Because God hath shewed thee al things that thou hast spoken, can I find a wiser and one like vnto thee?",
+  "arm_conflicts": [
+   "fore | therefore",
+   "Ifind | I find",
+   "wifer | wiser"
+  ],
+  "new_text": "He ſaid therefore to Ioſeph Becauſe God hath shewed thee al things that thou haſt ſpoken, can I find a wiser and one like vnto thee?",
+  "s_unresolved": [
+   "therefore",
+   "find",
+   "wiser"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 40,
+  "from": "p158",
+  "old_text": "Thou shalt beouer my houſe, and at the commandment of thy mouth al the people shal obey: only in the of the kingdome I wil goe before thee.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   40,
+   41
+  ],
+  "crop": [
+   0.08,
+   0.607,
+   0.875,
+   0.7115
+  ],
+  "crop_page": 158,
+  "r3_raw": "thou hast spoken, can I find a wiser and one like vnto thee? † Thou shalt be ouer my house, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the",
+  "r3_verse": "Thou shalt be ouer my house, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "arm_conflicts": [
+   "beouer | be ouer"
+  ],
+  "new_text": "Thou shalt be ouer my houſe, and at the commandment of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.97,
+   "madueke_b": 0.97
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 41,
+  "from": "p158",
+  "old_text": "And againe rao ſaid to Ioſeph : Behold, I haue appointed thee ouer whole land of Egypt.",
+  "old": {
+   "s_dismas": 0.912,
+   "odr_com": 0.912,
+   "sabates_a": 0.918,
+   "madueke_b": 0.918
+  },
+  "neighbours": [
+   40,
+   41,
+   42
+  ],
+  "crop": [
+   0.08,
+   0.646,
+   0.875,
+   0.7521
+  ],
+  "crop_page": 158,
+  "r3_raw": "of thy mouth al the people shal obey: only in the throne of the kingdome I wil goe before thee. † And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him",
+  "r3_verse": "And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "arm_conflicts": [
+   "rao | Pharaoh",
+   "Ioſeph : | Joseph:",
+   "Egypt. | Ægypt."
+  ],
+  "new_text": "And againe Pharaoh ſaid to Ioſeph Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 42,
+  "from": "p158",
+  "old_text": "And he tooke his ring from owne hand, and gaueit into his hand :and he put vpon ſilke roabe, and put a chaine of gold about his Andhe",
+  "old": {
+   "s_dismas": 0.894,
+   "odr_com": 0.894,
+   "sabates_a": 0.877,
+   "madueke_b": 0.877
+  },
+  "neighbours": [
+   41,
+   42,
+   43
+  ],
+  "crop": [
+   0.08,
+   0.686,
+   0.875,
+   0.812
+  ],
+  "crop_page": 158,
+  "r3_raw": "rao said to Ioseph: Behold, I haue appointed thee ouer the whole land of Ægypt. † And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him,",
+  "r3_verse": "And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke roabe, and put a chaine of gold about his necke.",
+  "arm_conflicts": [
+   "gaueit | gaue it",
+   "Andhe | necke."
+  ],
+  "new_text": "And he tooke his ring from his owne hand, and gaue it into his hand :and he put vpon him a ſilke roabe, and put a chaine of gold about his necke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 43,
+  "from": "p158",
+  "old_text": "made him goe vp into his fecond chariot, the proclayming that al should bowe their knee before and that they should know be wasmade gouernour the whole Laml of Egypt.",
+  "old": {
+   "s_dismas": 0.851,
+   "odr_com": 0.851,
+   "sabates_a": 0.852,
+   "madueke_b": 0.852
+  },
+  "neighbours": [
+   42,
+   43,
+   44
+  ],
+  "crop": [
+   0.08,
+   0.7465,
+   0.875,
+   0.8738
+  ],
+  "crop_page": 158,
+  "r3_raw": "a silke roabe, and put a chaine of gold about his necke. † And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"made governour ouer the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao: without thy commandiment no man shal move",
+  "r3_verse": "And he made him goe vp into his second chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"made governour ouer the whole Land of Ægypt.",
+  "arm_conflicts": [
+   "fecond | second",
+   "be wasmade gouernour | he was \"made governour ouer",
+   "Laml | Land",
+   "Egypt. | Ægypt."
+  ],
+  "lexicon_readings": {
+   "8": "ſecond"
+  },
+  "visual_readings": {
+   "8": "ſecond"
+  },
+  "new_text": "And he made him goe vp into his ſecond chariot, the cryer proclayming that al should bowe their knee before him, and that they should know he was \"made gouernour ouer the whole Land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 44,
+  "from": "p158",
+  "old_text": "And the king ſaid to Ioſ I am Pharao : without thy commandnent no man shal hand or foore in al the laud of Egypt.",
+  "old": {
+   "s_dismas": 0.899,
+   "odr_com": 0.899,
+   "sabates_a": 0.903,
+   "madueke_b": 0.903
+  },
+  "neighbours": [
+   43,
+   44,
+   45
+  ],
+  "crop": [
+   0.08,
+   0.8064,
+   0.875,
+   0.9175
+  ],
+  "crop_page": 158,
+  "r3_raw": "and that they should know he was \" made governour ouer the whole Land of Ægypt. † And the king said to Ioseph: I am Pharao; without thy commandiment no man shal moue hand or foote in al the land of Ægypt. † And he turned his name,",
+  "r3_verse": "And the king said to Ioseph: I am Pharao; without thy commandiment no man shal moue hand or foote in al the land of Ægypt.",
+  "arm_conflicts": [
+   "Ioſ | Ioseph:",
+   "commandnent | commandiment",
+   "foore | foote",
+   "laud | land",
+   "Egypt. | Ægypt."
+  ],
+  "lexicon_readings": {
+   "5": "Ioſeph:"
+  },
+  "visual_readings": {
+   "5": "Ioſeph:"
+  },
+  "new_text": "And the king ſaid to Ioſeph: I am Pharao without thy commandiment no man shal moue hand or foote in al the land of Ægypt.",
+  "s_unresolved": [
+   "foote"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 45,
+  "from": "chapter",
+  "old_text": "And he turned name, and called hini in the Agyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar prieſt of Heliopolis. Ioſcph therfore went forth to the landof Egypt",
+  "old": {
+   "s_dismas": 0.948,
+   "odr_com": 0.953,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.08,
+   0.0334,
+   0.875,
+   0.1653
+  ],
+  "crop_page": 159,
+  "crop_leaves": [
+   158,
+   159
+  ],
+  "r3_raw": "I am Pharao: without thy commandiment no man shal moue hand or foote in at the land of Ægypt. † And he turned his name, and called him in the Ægyptian togue \"the Sauiour of the world. And he gaue him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Ioseph therefore went forth :: to the land of Ægypt († and he was thirtie yeares old when he stood in the light of king Pharao) and did circuite al",
+  "r3_verse": "And he turned his name, and called him in the Ægyptian togue \"the Sauiour of the world. And he gaue him to wife Aseneth the daughter of Putiphar :: priest of Heliopolis. Ioseph therefore went forth :: to the land of Ægypt (†",
+  "arm_conflicts": [
+   "hini | him",
+   "Agyptian | Ægyptian",
+   "the | \"the",
+   "Ioſcph therfore | Ioseph therefore",
+   "landof Egypt | land of Ægypt (†"
+  ],
+  "lexicon_readings": {
+   "32": "Ioſeph"
+  },
+  "visual_readings": {
+   "32": "Ioſeph"
+  },
+  "new_text": "And he turned his name, and called him in the Ægyptian togue the Sauiour of the world. And he gaue him to wife Aſeneth the daughter of Putiphar :: prieſt of Heliopolis. Ioſeph therefore went forth :: to the land of Ægypt (†",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.991,
+   "odr_com": 0.995,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 46,
+  "from": "p159",
+  "old_text": "and he was thirtie yeares old when not eth he ſtood in the ſight of king Pharao) and did circuite al the countries of Egypt.",
+  "old": {
+   "s_dismas": 0.926,
+   "odr_com": 0.926,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "neighbours": [
+   45,
+   46,
+   47
+  ],
+  "crop": [
+   0.08,
+   0.093,
+   0.875,
+   0.2009
+  ],
+  "crop_page": 159,
+  "r3_raw": "Putiphar :: priest of Heliopolis. Ioseph therefore went forth :: Cohen s g eth priest not only latin, but 46 to the land of Ægypt († and he was thirtie yeares old when he stood in the sight of king Pharao) and did circuite al 47 the countries of Ægypt. † And the fertilitie of the seven the 70.& yeares came: and the corne being bound vp into sheaues and Iole",
+  "r3_verse": "and he was thirtie yeares old when he stood in the sight of king Pharao) and did circuite al the countries of Ægypt.",
+  "arm_conflicts": [
+   "Egypt. | Ægypt."
+  ],
+  "new_text": "and he was thirtie yeares old when he ſtood in the ſight of king Pharao) and did circuite al the countries of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 47,
+  "from": "p159",
+  "old_text": "And the fertilitie of the ſeuen the yeares came : and the corne being bound vp into ſheaues here and was gethered togeather into the barnes of Agypt.",
+  "old": {
+   "s_dismas": 0.904,
+   "odr_com": 0.904,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   46,
+   47,
+   48
+  ],
+  "crop": [
+   0.08,
+   0.1332,
+   0.875,
+   0.2434
+  ],
+  "crop_page": 159,
+  "r3_raw": "he stood in the light of king Pharao) and did circuite al the countries of AEgypt. † And the fertilitie of the seven yeares came: and the corne being bound vp into sheaues and was gethered togeather into the barnes of AEgypt. † Al the abundance also of graine was laid vp in euerie citie",
+  "r3_verse": "And the fertilitie of the seven yeares came: and the corne being bound vp into sheaues and was gethered togeather into the barnes of AEgypt.",
+  "arm_conflicts": [
+   "ſeuen the | seven",
+   "Agypt. | AEgypt."
+  ],
+  "new_text": "And the fertilitie of the ſeuen yeares came and the corne being bound vp into ſheaues and was gethered togeather into the barnes of AEgypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.971,
+   "odr_com": 0.971,
+   "sabates_a": 0.87,
+   "madueke_b": 0.87
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 48,
+  "from": "p159",
+  "old_text": "A the abundance alſo of graine was laid vp in cuerie citietimes",
+  "old": {
+   "s_dismas": 0.889,
+   "odr_com": 0.889,
+   "sabates_a": 0.864,
+   "madueke_b": 0.864
+  },
+  "neighbours": [
+   47,
+   48
+  ],
+  "crop": [
+   0.08,
+   0.1747,
+   0.875,
+   0.2612
+  ],
+  "crop_page": 159,
+  "r3_raw": "yeares came: and the corne being bound vp into sheaues and Iole was gethered togeather into the barnes of Ægypt. † Al here tran the abundance also of graine was laid vp in euerie citie. † And there was so great abundance of wheat, that it be-",
+  "r3_verse": "Al here tran the abundance also of graine was laid vp in euerie citie.",
+  "arm_conflicts": [
+   "A | Al here tran",
+   "cuerie citietimes | euerie citie."
+  ],
+  "new_text": "Al here tran the abundance alſo of graine was laid vp in euerie citie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.855,
+   "odr_com": 0.855,
+   "sabates_a": 0.857,
+   "madueke_b": 0.857
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S9",
+  "ocr_dir": "archive-holiebible-ot1",
+  "verse": 51,
+  "from": "p159",
+  "old_text": "And he called the name of the firſt begotten Manaſfes, ſaing God made me to forget al my labours, my fathers houſe.",
+  "old": {
+   "s_dismas": 0.917,
+   "odr_com": 0.991,
+   "sabates_a": 0.944,
+   "madueke_b": 0.944
+  },
+  "neighbours": [
+   50,
+   51,
+   52
+  ],
+  "crop": [
+   0.08,
+   0.2937,
+   0.875,
+   0.4012
+  ],
+  "crop_page": 159,
+  "r3_raw": "before the famine came: whom Aseneth the daughter of Putiphar priest of Heliopolis bare him † And he called the name of the first begotten * Manasses, saing: God made me to forget all my labours, & my fathers house. † The name also of the second he called * Ephraim, saing: God hath made",
+  "r3_verse": "And he called the name of the first begotten Manasses, saing: God made me to forget all my labours, & my fathers house.",
+  "arm_conflicts": [
+   "Manaſfes, | Manasses,",
+   "al | all"
+  ],
+  "lexicon_readings": {
+   "9": "Manaſſes,"
+  },
+  "visual_readings": {
+   "9": "Manaſſes,"
+  },
+  "new_text": "And he called the name of the firſt begotten Manaſſes, ſaing God made me to forget al my labours, & my fathers houſe.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.926,
+   "odr_com": 1.0,
+   "sabates_a": 0.953,
+   "madueke_b": 0.953
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 1,
+  "from": "p133",
+  "old_text": "two Pharao ſaw a dreame. He thought he ſtood vpon a tiuer,",
+  "old": {
+   "s_dismas": 0.797,
+   "odr_com": 0.761,
+   "sabates_a": 0.797,
+   "madueke_b": 0.797
+  },
+  "neighbours": [
+   1,
+   2
+  ],
+  "crop": [
+   0.155,
+   0.0538,
+   0.885,
+   0.3438
+  ],
+  "crop_page": 133,
+  "r3_raw": "CHAP. XLI. Pharao dreaming of fat & leane kine: 5. also of ful and thinne eares of corne, 8. no other being able to interprete, 9. Ioseph is remembered. 25. Who interpreting the same, 38. is made ruler over at Ægypt, 50. marrieth, and hath two sonnes, Manasses and Ephraim. FTER two yeares (a) Pharao saw a dreame. He thought he stood vpon a riuier, 2. out of the which came vp feuen kine, faire and fat exceedingly: and they fed in",
+  "r3_verse": "CHAP. XLI. Pharao dreaming of fat & leane kine: also of ful and thinne eares of corne, no other being able to interprete, Ioseph is remembered. Who interpreting the same, is made ruler over at Ægypt, marrieth, and hath two sonnes, Manasses and Ephraim. FTER two yeares Pharao saw a dreame. He thought he stood vpon a riuier,",
+  "arm_conflicts": [
+   "tiuer, | riuier,"
+  ],
+  "lexicon_readings": {
+   "9": "alſo",
+   "29": "ſame,"
+  },
+  "r2_attested": {
+   "23": "Ioſeph",
+   "40": "ſonnes,"
+  },
+  "visual_readings": {
+   "9": "alſo",
+   "29": "ſame,",
+   "23": "Ioſeph",
+   "40": "ſonnes,"
+  },
+  "new_text": "CHAP. XLI. Pharao dreaming of fat & leane kine: alſo of ful and thinne eares of corne, no other being able to interprete, Ioſeph is remembered. Who interpreting the ſame, is made ruler over at Ægypt, marrieth, and hath two ſonnes, Manasses and Ephraim. FTER two yeares Pharao ſaw a dreame. He thought he ſtood vpon a riuier,",
+  "s_unresolved": [
+   "fat",
+   "ful",
+   "Manasses"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 6,
+  "from": "p133",
+  "old_text": "there ſprang alſo other caresas mauy, thinne and blaſted withaduſtion,",
+  "old": {
+   "s_dismas": 0.943,
+   "odr_com": 0.943,
+   "sabates_a": 0.924,
+   "madueke_b": 0.924
+  },
+  "neighbours": [
+   5,
+   6,
+   7
+  ],
+  "crop": [
+   0.155,
+   0.4082,
+   0.885,
+   0.4847
+  ],
+  "crop_page": 133,
+  "r3_raw": "5. Slept againe, and saw another dreame: Seuen eares of corne grew forth vpon one stalke ful and faire: 6. there sprang also other eares as many, thinne and blasted with aduision, 7. deououring al the beautie of the former. Pharao awaking vp after his rest, 8. and when morning",
+  "r3_verse": "there sprang also other eares as many, thinne and blasted with aduision, deououring",
+  "arm_conflicts": [
+   "caresas mauy, | eares as many,",
+   "withaduſtion, | with aduision, deououring"
+  ],
+  "new_text": "there ſprang alſo other eares as many, thinne and blaſted with aduision, deououring",
+  "s_unresolved": [
+   "aduision,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.84,
+   "odr_com": 0.84,
+   "sabates_a": 0.821,
+   "madueke_b": 0.821
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 8,
+  "from": "p133",
+  "old_text": "aud when morning was come beins frighted with feare, he ſent to al the interpreters of gypt, and to al the wiſemen: and they being called for, told them his dreame, neither was there anie that could interprete it.",
+  "old": {
+   "s_dismas": 0.976,
+   "odr_com": 0.976,
+   "sabates_a": 0.975,
+   "madueke_b": 0.975
+  },
+  "neighbours": [
+   7,
+   8,
+   9
+  ],
+  "crop": [
+   0.155,
+   0.4436,
+   0.885,
+   0.5571
+  ],
+  "crop_page": 133,
+  "r3_raw": "many, thinne and blasted with aduision, 7. devouring all the beautie of the former. Pharao awaking vp after his rest , 8- and when morning was come being frighted with feare, he sent to al the interpreters of Egypt,and to al the wise men: and they beeing called for,told them his dreame,neither was there anie that could interprete it. 9. Then at length the Master of the cup-bearers remembiring himselfe,said: I confesse my",
+  "r3_verse": "and when morning was come being frighted with feare, he sent to al the interpreters of Egypt,and to al the wise men: and they beeing called for,told them his dreame,neither was there anie that could interprete it.",
+  "arm_conflicts": [
+   "aud | and",
+   "beins | being",
+   "gypt, and | Egypt,and",
+   "wiſemen: | wise men:",
+   "being | beeing",
+   "for, told | for,told",
+   "dreame, neither | dreame,neither"
+  ],
+  "r2_attested": {
+   "20": "wiſe"
+  },
+  "visual_readings": {
+   "20": "wiſe"
+  },
+  "new_text": "and when morning was come being frighted with feare, he ſent to al the interpreters of Egypt,and to al the wiſe men: and they being called for,told them his dreame,neither was there anie that could interprete it.",
+  "s_unresolved": [
+   "for,told"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.981,
+   "odr_com": 0.981,
+   "sabates_a": 0.995,
+   "madueke_b": 0.995
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 9,
+  "from": "p133",
+  "old_text": "Then at lenoth the Maſter of the cup-bearers tememabring himſelte, ſaid: I confeſſe my ſiune",
+  "old": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "neighbours": [
+   8,
+   9,
+   10
+  ],
+  "crop": [
+   0.155,
+   0.4977,
+   0.885,
+   0.5925
+  ],
+  "crop_page": 133,
+  "r3_raw": "Ægypt, and to al the wise men: and they being called for, told them his dreame, neither was there anie that could interprete it. 9. Then at length the Master of the cup-bearers remembring himselfe, said: I confesse my ſonne: 10. The King being angrie with his seruants, commanded me and the chiefe of the bakers to be cast into the prison of the Captaine",
+  "r3_verse": "Then at length the Master of the cup-bearers remembring himselfe, said: I confesse my ſonne:",
+  "arm_conflicts": [
+   "lenoth | length",
+   "tememabring himſelte, | remembring himselfe,",
+   "ſiune | ſonne:"
+  ],
+  "new_text": "Then at length the Maſter of the cup-bearers remembring himselfe, ſaid: I confeſſe my ſonne:",
+  "s_unresolved": [
+   "himselfe,",
+   "ſonne:"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.976,
+   "madueke_b": 0.976
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 17,
+  "from": "p133",
+  "old_text": "Pharao therfore told that he had ſeen Me thought I ſtood vpon the banke ot the riuer, 18.and",
+  "old": {
+   "s_dismas": 0.92,
+   "odr_com": 0.92,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   16,
+   17,
+   18
+  ],
+  "crop": [
+   0.155,
+   0.7464,
+   0.885,
+   0.843
+  ],
+  "crop_page": 133,
+  "r3_raw": "thou doest most wisely interprete. 16. Joseph answered: Without me, God shal answer prosperous things to Pharao. 17. Pharao therefore told that he had seen: Me thought I stood vpon the banke of the riuers, 18. and seven kine came vp out of the banke of the riuer, exceeding faire, and ful of flesh: which grazed on green places in a",
+  "r3_verse": "Pharao therefore told that he had seen: Me thought I stood vpon the banke of the riuers,",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "ot | of",
+   "riuer, 18.and | riuers,"
+  ],
+  "new_text": "Pharao therefore told that he had ſeen Me thought I ſtood vpon the banke of the riuers,",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.974,
+   "madueke_b": 0.974
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 21,
+  "from": "chapter",
+  "old_text": "gaue no token of their fulnes but with the like leauenes deformitie I II heauily. Awak ing, and fallen againe into a deepſſeep, I ſaw",
+  "old": {
+   "s_dismas": 0.82,
+   "odr_com": 0.82,
+   "sabates_a": 0.867,
+   "madueke_b": 0.867
+  },
+  "neighbours": [
+   21
+  ],
+  "skip": "no crop geometry; leaves tried: [134]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 22,
+  "from": "chapter",
+  "old_text": "Seuen eares of corne grew forth vpon one ſtalke, ful and",
+  "old": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.676,
+   "madueke_b": 0.667
+  },
+  "neighbours": [
+   22
+  ],
+  "skip": "no crop geometry; leaves tried: [135]"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 23,
+  "from": "p134",
+  "old_text": "Other ſeuen alſo thinne and blaſted with aduſtion, the ſtalke",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.849,
+   "madueke_b": 0.849
+  },
+  "neighbours": [
+   5,
+   6,
+   7,
+   23,
+   24
+  ],
+  "crop": [
+   0.155,
+   0.1258,
+   0.885,
+   0.2019
+  ],
+  "crop_page": 134,
+  "r3_raw": "a dreame: Seuen earcs of corne grew forth vpon one stalke, ful and verie faire. 23. Other feuen also thinne and blasted with aduision, sprang of the stalke, 24. which deuoured the beautie of the former: I told the dreame to the coniecturers, and there is no man that can",
+  "r3_verse": "sprang of the stalke,",
+  "arm_conflicts": [
+   "Other ſeuen alſo thinne and blaſted with aduſtion, | sprang of"
+  ],
+  "new_text": "sprang of the ſtalke",
+  "s_unresolved": [
+   "sprang"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.0,
+   "odr_com": 0.0,
+   "sabates_a": 0.0,
+   "madueke_b": 0.0
+  },
+  "adopt": false,
+  "verdict": "NO-GAIN (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 24,
+  "from": "p134",
+  "old_text": "which deuoured the beautie of the former: dreame to the conecturers, and there is no man that can it.",
+  "old": {
+   "s_dismas": 0.831,
+   "odr_com": 0.831,
+   "sabates_a": 0.836,
+   "madueke_b": 0.836
+  },
+  "neighbours": [
+   7,
+   9,
+   12,
+   18,
+   23,
+   24,
+   25
+  ],
+  "crop": [
+   0.155,
+   0.1437,
+   0.885,
+   0.2381
+  ],
+  "crop_page": 134,
+  "r3_raw": "verie faire. 23. Other feuen also thinne and blasted with aduision, sprang of the stalke, 24. which deuoured the beautie of the former: I told the dreame to the coniecturers, and there is no man that can declare it. 25. Ioseph answered: The Kings dreame is one: God hath shewed to Pharao (b) the things that he wil doe. 26. The feuen faire",
+  "r3_verse": "which deuoured the beautie of the former: I told the dreame to the coniecturers, and there is no man that can declare it.",
+  "arm_conflicts": [
+   "conecturers, | coniecturers,"
+  ],
+  "new_text": "which deuoured the beautie of the former: I told the dreame to the coniecturers, and there is no man that can declare it.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 25,
+  "from": "p134",
+  "old_text": "Ioſeph anſwered: The Kings dreame is one God hath b) Theſe to Pharao the things that he wil doe.6.",
+  "old": {
+   "s_dismas": 0.925,
+   "odr_com": 0.925,
+   "sabates_a": 0.931,
+   "madueke_b": 0.931
+  },
+  "neighbours": [
+   24,
+   25,
+   26
+  ],
+  "crop": [
+   0.155,
+   0.1799,
+   0.885,
+   0.2638
+  ],
+  "crop_page": 134,
+  "r3_raw": "I told the dreame to the coniecturers, and there is no man that can declare it. 2.. Ioseph answered: The Kings dreame is one: God hath shewed to Pharao (b) the things that he wil doe. 26. The feuen faire kine, and the feuen ful eares, be feuen ycares of plentifullnes: and both",
+  "r3_verse": "Ioseph answered: The Kings dreame is one: God hath shewed to Pharao the things that he wil doe.",
+  "arm_conflicts": [
+   "b) Theſe | shewed",
+   "doe.6. | doe."
+  ],
+  "r2_attested": {
+   "9": "ſhewed"
+  },
+  "visual_readings": {
+   "9": "ſhewed"
+  },
+  "new_text": "Ioſeph anſwered: The Kings dreame is one God hath ſhewed to Pharao the things that he wil doe.6.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 26,
+  "from": "p134",
+  "old_text": "The ſeuen faire came to the ſeuen ful eares, be ſeuen veares of plentitulnes: and bothb Gods the ſelte.ſame meaning of the dreame.",
+  "old": {
+   "s_dismas": 0.854,
+   "odr_com": 0.854,
+   "sabates_a": 0.848,
+   "madueke_b": 0.848
+  },
+  "neighbours": [
+   25,
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.1978,
+   0.885,
+   0.2936
+  ],
+  "crop_page": 134,
+  "r3_raw": "declare it. 26. Ioseph answered: The Kings dreame is one: God hath shewed to Pharao (b) the things that he wil doe. 26. The feuen faire kine, and the feuen ful eares, be feuen ycares of plentifulnes: and both conteine the selfe-same meaning of the dreame. 27. Also the feuen leane and thinne kine, that came vp after them, and the feuen thinne",
+  "r3_verse": "The feuen faire kine, and the feuen ful eares, be feuen ycares of plentifulnes: and both conteine the selfe-same meaning of the dreame.",
+  "arm_conflicts": [
+   "ſeuen | feuen",
+   "came to | kine, and",
+   "ſeuen | feuen",
+   "ſeuen veares | feuen ycares",
+   "plentitulnes: | plentifulnes:",
+   "bothb Gods | both conteine",
+   "ſelte.ſame | selfe-same"
+  ],
+  "new_text": "The feuen faire kine, and the feuen ful eares, be feuen ycares of plentifulnes: and both conteine the selfe-same meaning of the dreame.",
+  "s_unresolved": [
+   "feuen",
+   "feuen",
+   "feuen",
+   "plentifulnes:",
+   "selfe-same"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.954,
+   "odr_com": 0.954,
+   "sabates_a": 0.942,
+   "madueke_b": 0.942
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 27,
+  "from": "p134",
+  "old_text": "Alſo the ſeuen ticular thinne kine, that came vp after them, and the ſeuen thinne dence. and blaſted with the burning wind, are ſeuen veares of famine God calledo",
+  "old": {
+   "s_dismas": 0.867,
+   "odr_com": 0.867,
+   "sabates_a": 0.862,
+   "madueke_b": 0.862
+  },
+  "neighbours": [
+   26,
+   27
+  ],
+  "crop": [
+   0.155,
+   0.2336,
+   0.885,
+   0.3287
+  ],
+  "crop_page": 134,
+  "r3_raw": "kine, and the seven ful eares, be seven ycares of plentifulnes: and both conteine the selfe-same meaning of the dreame. 27. Also the seven deane and thinne kine, that came vp after them, and the seven thinne eares, and blasted with the burning wind, are seven yeares of famine to come. 28. Which shal be fulfilled in this order. 29. Behold there",
+  "r3_verse": "Also the seven deane and thinne kine, that came vp after them, and the seven thinne eares, and blasted with the burning wind, are seven yeares of famine to come.",
+  "arm_conflicts": [
+   "ſeuen ticular | seven deane and",
+   "ſeuen | seven",
+   "dence. | eares,",
+   "ſeuen veares | seven yeares",
+   "God calledo | to come."
+  ],
+  "new_text": "Alſo the ſeuen deane and thinne kine, that came vp after them, and the ſeuen thinne eares, and blaſted with the burning wind, are ſeuen yeares of famine to come.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 29,
+  "from": "p134",
+  "old_text": "Behold there cauſeda mine vpan ſeuen yeares of great fertilitie in the whole Land of Egypt:",
+  "old": {
+   "s_dismas": 0.833,
+   "odr_com": 0.833,
+   "sabates_a": 0.824,
+   "madueke_b": 0.824
+  },
+  "neighbours": [
+   28,
+   29
+  ],
+  "crop": [
+   0.155,
+   0.2793,
+   0.885,
+   0.367
+  ],
+  "crop_page": 134,
+  "r3_raw": "heane and thinne Kine, that came vp after them, and the leuen thinne ycares, and blasted with the burning wind, are seven yeares of famine to come. 28. Which shal be fulfilled in this order. 29. Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt: 30. after which shal folow other seven ycares of so great sterilitie,",
+  "r3_verse": "Behold there shal come seven yeares of great fertilitie in the whole Land of Ægypt:",
+  "arm_conflicts": [
+   "cauſeda mine vpan ſeuen | shal come seven",
+   "Egypt: | Ægypt:"
+  ],
+  "new_text": "Behold there shal come ſeuen yeares of great fertilitie in the whole Land of Ægypt:",
+  "s_unresolved": [
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 1.0,
+   "odr_com": 1.0,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 30,
+  "from": "p134",
+  "old_text": "which ſhal folow other ſeuen yeares ot ſo great ſterilitie the aboundance before ſhal be forgotten for the famine shal al the land,",
+  "old": {
+   "s_dismas": 0.836,
+   "odr_com": 0.836,
+   "sabates_a": 0.829,
+   "madueke_b": 0.829
+  },
+  "neighbours": [
+   30,
+   31
+  ],
+  "crop": [
+   0.155,
+   0.3211,
+   0.885,
+   0.4183
+  ],
+  "crop_page": 134,
+  "r3_raw": "shal come feuen yeares of great fertilitie in the whole Land of Ægypt: 30. after which shal folow other feuen yecres of so great sterilitie, that al the abundance before ſhall be forgotten: for the famine ſhall consume al the land, 31. and the greatnes of the scarcitie ſhall destroy the greatnes of the plentie. 32. And in that thou didest see the second",
+  "r3_verse": "after which shal folow other feuen yecres of so great sterilitie, that al the abundance before ſhall be forgotten: for the famine ſhall consume al the land,",
+  "arm_conflicts": [
+   "ſeuen yeares ot | feuen yecres of",
+   "aboundance | abundance",
+   "ſhal | ſhall",
+   "shal | ſhall consume"
+  ],
+  "lexicon_readings": {
+   "0": "after"
+  },
+  "r2_attested": {
+   "23": "conſume"
+  },
+  "visual_readings": {
+   "0": "after",
+   "23": "conſume"
+  },
+  "new_text": "after which ſhal folow other feuen yecres of ſo great ſterilitie that al the abundance before ſhal be forgotten for the famine shal conſume al the land,",
+  "s_unresolved": [
+   "feuen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.98,
+   "odr_com": 0.98,
+   "sabates_a": 0.979,
+   "madueke_b": 0.979
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 31,
+  "from": "p134",
+  "old_text": "and the greatnes of the ſcarcitie ſhal deſtroy of the plentie.",
+  "old": {
+   "s_dismas": 0.811,
+   "odr_com": 0.811,
+   "sabates_a": 0.824,
+   "madueke_b": 0.824
+  },
+  "neighbours": [
+   30,
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.3558,
+   0.885,
+   0.4341
+  ],
+  "crop_page": 134,
+  "r3_raw": "that al the aboundsance before ſhal be forgotten: for the famine ſhall consume al the land, 31. and the greatnes of the scarcitie ſhall destroy the greatnes of the plentie. 32. And in that thou didest see the second time a dreame pertaining to the same thing, it is a token of the certeintie,",
+  "r3_verse": "and the greatnes of the scarcitie ſhall destroy the greatnes of the plentie.",
+  "arm_conflicts": [
+   "ſhal | ſhall"
+  ],
+  "new_text": "and the greatnes of the ſcarcitie ſhal deſtroy the greatnes of the plentie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.987,
+   "odr_com": 0.987,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 32,
+  "from": "p134",
+  "old_text": "And in that thou dideſt ſee the ſecond perteining to the ſame thing, it is a token of the certeintie, the word ot God ſhal come to paſſe, and be fulfilled ſpeediy.",
+  "old": {
+   "s_dismas": 0.847,
+   "odr_com": 0.847,
+   "sabates_a": 0.838,
+   "madueke_b": 0.838
+  },
+  "neighbours": [
+   31,
+   32
+  ],
+  "crop": [
+   0.155,
+   0.3752,
+   0.885,
+   0.4721
+  ],
+  "crop_page": 134,
+  "r3_raw": "consume al the land, 31. and the greatnes of the scarcitie ſhal destroy the greatnes of the plentie. 32. And in that thou didest see the second time a dreame pertaining to the same thing, it is a token of the certeintie, for that the word of God ſhal come to passe, and be fulfilled speedily. 33. Now therfore let the King prouide a wise man and industrious, &",
+  "r3_verse": "And in that thou didest see the second time a dreame pertaining to the same thing, it is a token of the certeintie, for that the word of God ſhal come to passe, and be fulfilled speedily.",
+  "arm_conflicts": [
+   "perteining | time a dreame pertaining",
+   "ot | of",
+   "ſpeediy. | speedily."
+  ],
+  "lexicon_readings": {
+   "23": "for"
+  },
+  "r2_attested": {
+   "36": "ſpeedily."
+  },
+  "visual_readings": {
+   "23": "for",
+   "36": "ſpeedily."
+  },
+  "new_text": "And in that thou dideſt ſee the ſecond time a dreame pertaining to the ſame thing, it is a token of the certeintie, for that the word of God ſhal come to paſſe, and be fulfilled ſpeedily.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.978,
+   "odr_com": 0.978,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 33,
+  "from": "p134",
+  "old_text": "let the king prouide a wife man and induſtrious, Ruler ouer the Lad ot Egypt:",
+  "old": {
+   "s_dismas": 0.709,
+   "odr_com": 0.709,
+   "sabates_a": 0.734,
+   "madueke_b": 0.734
+  },
+  "neighbours": [
+   33,
+   34
+  ],
+  "crop": [
+   0.155,
+   0.4314,
+   0.885,
+   0.5072
+  ],
+  "crop_page": 134,
+  "r3_raw": "for that the word of God shal come to passe, and be fulfilled speedily. 33. Now therefore let the King prouide a wise man and industrious, & make him Ruler ouer the Lad of Ægypt: 34. that he may appoint overseers ouer al countrics: and gather into barnes the fifth part of the fruits,",
+  "r3_verse": "Now therefore let the King prouide a wise man and industrious, & make him Ruler ouer the Lad of Ægypt:",
+  "arm_conflicts": [
+   "wife | wise",
+   "ot Egypt: | of Ægypt:"
+  ],
+  "r2_attested": {
+   "7": "wiſe"
+  },
+  "visual_readings": {
+   "7": "wiſe"
+  },
+  "new_text": "Now therefore let the king prouide a wiſe man and induſtrious, & make him Ruler ouer the Lad of Ægypt:",
+  "s_unresolved": [
+   "therefore"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.942,
+   "odr_com": 0.942,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 34,
+  "from": "p134",
+  "old_text": "that he may appoint oueral countries: and gathet into barnes the fifth part of the truits, the ſeuen yeares of the fertilitie,",
+  "old": {
+   "s_dismas": 0.839,
+   "odr_com": 0.839,
+   "sabates_a": 0.84,
+   "madueke_b": 0.84
+  },
+  "neighbours": [
+   33,
+   34,
+   35
+  ],
+  "crop": [
+   0.155,
+   0.4465,
+   0.885,
+   0.5427
+  ],
+  "crop_page": 134,
+  "r3_raw": "33. Now therefore let the King prouide a wise man and industrious, & make him Ruler ouer the Lād of Ægypt: 34. that he may appoint overseers ouer al countries: and gather into barnes the fifth part of the fruits, during the feuen yeares of the fertilitie, 35. that now presently shal ensue: and let all the corne be laid vp vnder Pharaocs hands, and let it",
+  "r3_verse": "that he may appoint overseers ouer al countries: and gather into barnes the fifth part of the fruits, during the feuen yeares of the fertilitie,",
+  "arm_conflicts": [
+   "oueral | overseers ouer al",
+   "gathet | gather",
+   "truits, | fruits, during",
+   "ſeuen | feuen"
+  ],
+  "new_text": "that he may appoint overseers ouer al countries: and gather into barnes the fifth part of the fruits, during the feuen yeares of the fertilitie,",
+  "s_unresolved": [
+   "overseers",
+   "fruits,",
+   "feuen"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.972,
+   "odr_com": 0.972,
+   "sabates_a": 0.977,
+   "madueke_b": 0.977
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 35,
+  "from": "p134",
+  "old_text": "that now preſently ſhal and let al the corne be laid vp vndet Phataoes hands, and let it in the cities.",
+  "old": {
+   "s_dismas": 0.818,
+   "odr_com": 0.818,
+   "sabates_a": 0.832,
+   "madueke_b": 0.832
+  },
+  "neighbours": [
+   34,
+   35,
+   36
+  ],
+  "crop": [
+   0.155,
+   0.4816,
+   0.885,
+   0.5764
+  ],
+  "crop_page": 134,
+  "r3_raw": "and let them set up over the land of Egypt polyphonds to help appoint overseers over all countries: and gather into barnes the fifth part of the fruits, during the seven yeares of the fertilitie, 35. that now presently shal ensue: and let al the corne be laid vp vnder Pharaocs hands, and let it be reserved in the cities. 36. And let it be in a readines against the famine of seven yeares to come, which shal oppresse Ægypt, and the",
+  "r3_verse": "that now presently shal ensue: and let al the corne be laid vp vnder Pharaocs hands, and let it be reserved in the cities.",
+  "arm_conflicts": [
+   "vndet Phataoes | vnder Pharaocs"
+  ],
+  "r2_attested": {
+   "4": "enſue:"
+  },
+  "visual_readings": {
+   "4": "enſue:"
+  },
+  "new_text": "that now preſently ſhal enſue: and let al the corne be laid vp vnder Pharaocs hands, and let it be reserved in the cities.",
+  "s_unresolved": [
+   "reserved"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 36,
+  "from": "p134",
+  "old_text": "And let it be in a readines againſt the of ſeuen yeares to come, which ſhal oppreſſe gypt, and the not be conſumed with ſcarcitie.",
+  "old": {
+   "s_dismas": 0.863,
+   "odr_com": 0.863,
+   "sabates_a": 0.859,
+   "madueke_b": 0.859
+  },
+  "neighbours": [
+   35,
+   36,
+   37
+  ],
+  "crop": [
+   0.155,
+   0.5164,
+   0.885,
+   0.6115
+  ],
+  "crop_page": 134,
+  "r3_raw": "and let al the corne be laid vp vnder Pharaocs hands, and let it be reserued in the cities. 36. And let it be in a readines against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarcitie. 37. The counsel pleased Pharaoh, and al his seruants: 38. and he spake to them: Can we find such an",
+  "r3_verse": "And let it be in a readines against the famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarcitie.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "gypt, | Ægypt,"
+  ],
+  "new_text": "And let it be in a readines againſt the famine of ſeuen yeares to come, which ſhal oppreſſe Ægypt, and the land shal not be conſumed with ſcarcitie.",
+  "s_unresolved": [
+   "famine",
+   "shal"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.993,
+   "madueke_b": 0.993
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 37,
+  "from": "p134",
+  "old_text": "The counſel pleafed Phaal his ſeruants:",
+  "old": {
+   "s_dismas": 0.804,
+   "odr_com": 0.804,
+   "sabates_a": 0.778,
+   "madueke_b": 0.778
+  },
+  "neighbours": [
+   36,
+   37,
+   38
+  ],
+  "crop": [
+   0.155,
+   0.5515,
+   0.885,
+   0.6308
+  ],
+  "crop_page": 134,
+  "r3_raw": "famine of seven yeares to come, which shal oppresse Ægypt, and the land shal not be consumed with scarcitie. 37. The counsel pleased Pharaoh, and al his seruants: 38. and he spake to them: Can we find such an other man, that is ful of the spirit of God? 39. He said therefore to Joseph",
+  "r3_verse": "The counsel pleased Pharaoh, and al his seruants:",
+  "arm_conflicts": [
+   "pleafed Phaal | pleased Pharaoh, and al"
+  ],
+  "new_text": "The counſel pleased Pharaoh, and al his ſeruants:",
+  "s_unresolved": [
+   "pleased"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.979,
+   "odr_com": 0.979,
+   "sabates_a": 0.978,
+   "madueke_b": 0.978
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 38,
+  "from": "p134",
+  "old_text": "and he ſpake to them: Can we find ſuch an that is ful of the ſpirit ot God",
+  "old": {
+   "s_dismas": 0.857,
+   "odr_com": 0.857,
+   "sabates_a": 0.872,
+   "madueke_b": 0.872
+  },
+  "neighbours": [
+   37,
+   38,
+   39
+  ],
+  "crop": [
+   0.155,
+   0.5694,
+   0.885,
+   0.6487
+  ],
+  "crop_page": 134,
+  "r3_raw": "land shal not be consumed with scarcitie. 37. The counsel pleased Pharaoo, and al his seruants: 38. and he spake to them: Can we find such an other man, that is ful of the spirit of God? 39. He said therefore to Joseph: Because God hath shewed thee al things that thou hast spoken, can",
+  "r3_verse": "and he spake to them: Can we find such an other man, that is ful of the spirit of God?",
+  "arm_conflicts": [
+   "ot God | of God?"
+  ],
+  "new_text": "and he ſpake to them: Can we find ſuch an other man, that is ful of the ſpirit of God",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.988,
+   "odr_com": 0.988,
+   "sabates_a": 0.987,
+   "madueke_b": 0.987
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 39,
+  "from": "p134",
+  "old_text": "He ſaid therfore to IoGod hath ſhewed thee al things that thou haſt ſpoken, can wiſet and one like vnto thee?40.",
+  "old": {
+   "s_dismas": 0.822,
+   "odr_com": 0.822,
+   "sabates_a": 0.813,
+   "madueke_b": 0.813
+  },
+  "neighbours": [
+   38,
+   39,
+   40
+  ],
+  "crop": [
+   0.155,
+   0.5877,
+   0.885,
+   0.6881
+  ],
+  "crop_page": 134,
+  "r3_raw": "and was not contented with reuenge: 37. Pharaoh spake to Maha- rao, and al his seruants : 38. and he spake to them: Can we find such an other man, that is ful of the spirit of God? 39. He said therefore to Joseph: Because God hath shewed thee all things that thou hast spoken, can I find a wiser and one like unto thee? 40. Thou shalt be ouer my house, & at the commandement of thy mouth al the people ſhal obey: only in theſe three things doth the King deſire me to make you an example, that",
+  "r3_verse": "He said therefore to Joseph: Because God hath shewed thee all things that thou hast spoken, can I find a wiser and one like unto thee?",
+  "arm_conflicts": [
+   "therfore | therefore",
+   "IoGod | Joseph: Because God",
+   "al | all",
+   "wiſet | I find a wiser",
+   "vnto thee?40. | unto thee?"
+  ],
+  "lexicon_readings": {
+   "5": "Becauſe"
+  },
+  "r2_attested": {
+   "20": "wiſer"
+  },
+  "visual_readings": {
+   "5": "Becauſe",
+   "20": "wiſer"
+  },
+  "new_text": "He ſaid therefore to Joseph: Becauſe God hath ſhewed thee al things that thou haſt ſpoken, can I find a wiſer and one like vnto thee?40.",
+  "s_unresolved": [
+   "therefore",
+   "Joseph:",
+   "find"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.992,
+   "odr_com": 0.992,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 40,
+  "from": "p134",
+  "old_text": "Thou ſhalt be ouer my houſe, )Cohen commandement of thy mouth al the people ſhal obey: only in fieth Prieſt of the Kingdome I wil goe before thee.",
+  "old": {
+   "s_dismas": 0.868,
+   "odr_com": 0.868,
+   "sabates_a": 0.886,
+   "madueke_b": 0.886
+  },
+  "neighbours": [
+   39,
+   40,
+   41
+  ],
+  "crop": [
+   0.155,
+   0.6231,
+   0.885,
+   0.7204
+  ],
+  "crop_page": 134,
+  "r3_raw": "39. Pharaoh therefore beseeched Joseph: Because God hath shewed thee all things that thou hast spoken, can I find a wiser and one like unto thee? 40. Thou shalt be over my house, & at the commandement of thy mouth all the people shall obey: only in the throne of the Kingdome I will goe before thee. 41. And againe Pharaoh said to Joseph: Behold, I have appointed thee over the whole land",
+  "r3_verse": "Thou shalt be over my house, & at the commandement of thy mouth all the people shall obey: only in the throne of the Kingdome I will goe before thee.",
+  "arm_conflicts": [
+   "ouer | over",
+   ")Cohen | & at the",
+   "al | all",
+   "ſhal | shall",
+   "fieth Prieſt | the throne",
+   "wil | will"
+  ],
+  "new_text": "Thou ſhalt be ouer my houſe, & at the commandement of thy mouth al the people ſhal obey: only in the throne of the Kingdome I wil goe before thee.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.992,
+   "madueke_b": 0.992
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 41,
+  "from": "p134",
+  "old_text": "And againe Pha- not only to Ioſeph Behold, Thaue appointed thee ouer the whole land Hatin, but",
+  "old": {
+   "s_dismas": 0.813,
+   "odr_com": 0.813,
+   "sabates_a": 0.8,
+   "madueke_b": 0.8
+  },
+  "neighbours": [
+   40,
+   41
+  ],
+  "crop": [
+   0.155,
+   0.6597,
+   0.885,
+   0.7387
+  ],
+  "crop_page": 134,
+  "r3_raw": "& at the commandement of thy mouth al the people shal obey: only in the throne of the Kingdome I wil goe before thee. 41. And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt. 42. And he tooke his ring from his owne hand, and gaue it",
+  "r3_verse": "And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "arm_conflicts": [
+   "Pha- not only | Pharaoh said",
+   "Ioſeph | Joseph:",
+   "Thaue | I haue",
+   "Hatin, but | of Ægypt."
+  ],
+  "lexicon_readings": {
+   "3": "ſaid"
+  },
+  "visual_readings": {
+   "3": "ſaid"
+  },
+  "new_text": "And againe Pharaoh ſaid to Ioſeph Behold, I haue appointed thee ouer the whole land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.989,
+   "odr_com": 0.989,
+   "sabates_a": 0.988,
+   "madueke_b": 0.988
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 42,
+  "from": "p134",
+  "old_text": "And he tooke his ring trom his owne hand, and gaue it the and hand: and he put vpon him a ſilke robe, and put a chaine of here his necke.",
+  "old": {
+   "s_dismas": 0.865,
+   "odr_com": 0.865,
+   "sabates_a": 0.869,
+   "madueke_b": 0.869
+  },
+  "neighbours": [
+   42,
+   43
+  ],
+  "crop": [
+   0.155,
+   0.6892,
+   0.885,
+   0.7903
+  ],
+  "crop_page": 134,
+  "r3_raw": "the throne of the Kingdome I will goe before thee. 41. And againe Pharaoh said to Joseph: Behold, I haue appointed thee ouer the whole land of Egypt. 42. And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke robe, and put a chaine of gold about his necke. 43. And he made him goe vp into his second chariot, the cryer proclayming that al should bow their knee before him,",
+  "r3_verse": "And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a silke robe, and put a chaine of gold about his necke.",
+  "arm_conflicts": [
+   "trom | from",
+   "the and | into his",
+   "here | gold about"
+  ],
+  "lexicon_readings": {
+   "5": "from"
+  },
+  "visual_readings": {
+   "5": "from"
+  },
+  "new_text": "And he tooke his ring from his owne hand, and gaue it into his hand: and he put vpon him a ſilke robe, and put a chaine of gold about his necke.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 43,
+  "from": "p134",
+  "old_text": "And he made him goe vp into his ſecond chacryer proclayming that al ſhould bow their knee betore him, times it they ſhoul I know he was made Gouernour ouer the whole fieth Prince, the Egypt.",
+  "old": {
+   "s_dismas": 0.814,
+   "odr_com": 0.814,
+   "sabates_a": 0.818,
+   "madueke_b": 0.818
+  },
+  "neighbours": [
+   42,
+   43,
+   44
+  ],
+  "crop": [
+   0.155,
+   0.731,
+   0.885,
+   0.8465
+  ],
+  "crop_page": 134,
+  "r3_raw": "into his hand: and he put vpon him a silke robe, and put a chaine of gold about his necke. 43. And he made him goe vp into his second chariot, the cryer proclayming that al should bow their knee before him, and that they should know he was \"made Gouernour over the whole Land of Ægypt. 44. And the King said to Ioseph: I am Pharao: without thy commandiment no man shal moue hand or foot in al the land of",
+  "r3_verse": "And he made him goe vp into his second chariot, the cryer proclayming that al should bow their knee before him, and that they should know he was \"made Gouernour over the whole Land of Ægypt.",
+  "arm_conflicts": [
+   "chacryer | chariot, the cryer",
+   "betore | before",
+   "times it | and that",
+   "ſhoul I | should",
+   "made | \"made",
+   "ouer | over",
+   "fieth Prince, the Egypt. | Land of Ægypt."
+  ],
+  "lexicon_readings": {
+   "19": "before"
+  },
+  "r2_attested": {
+   "24": "ſhould"
+  },
+  "visual_readings": {
+   "19": "before",
+   "24": "ſhould"
+  },
+  "new_text": "And he made him goe vp into his ſecond chariot, the cryer proclayming that al ſhould bow their knee before him, and that they ſhould know he was made Gouernour ouer the whole Land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.995,
+   "odr_com": 0.995,
+   "sabates_a": 0.994,
+   "madueke_b": 0.994
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 44,
+  "from": "p134",
+  "old_text": "And the King ſaid to Ioſeph: I am Pharao: withparaphraſis commandinent no man ſhal moue hand or foot in al theland of interpreteth,",
+  "old": {
+   "s_dismas": 0.812,
+   "odr_com": 0.812,
+   "sabates_a": 0.823,
+   "madueke_b": 0.823
+  },
+  "neighbours": [
+   43,
+   44
+  ],
+  "crop": [
+   0.155,
+   0.7854,
+   0.885,
+   0.8637
+  ],
+  "crop_page": 134,
+  "r3_raw": "and that they should know he was made Gouernour over the whole Land of Ægypt. 44. And the King said to Ioseph: I am Pharao: without thy commandiment no man shal moue hand or foot in al the land of Ægypt. 45. And he turned his name, & called him in the Ægyptian tong",
+  "r3_verse": "And the King said to Ioseph: I am Pharao: without thy commandiment no man shal moue hand or foot in al the land of Ægypt.",
+  "arm_conflicts": [
+   "withparaphraſis commandinent | without thy commandiment",
+   "theland | the land",
+   "interpreteth, | Ægypt."
+  ],
+  "new_text": "And the King ſaid to Ioſeph: I am Pharao: without thy commandiment no man ſhal moue hand or foot in al the land of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.983,
+   "odr_com": 0.983,
+   "sabates_a": 0.991,
+   "madueke_b": 0.991
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 45,
+  "from": "p134",
+  "old_text": "And he turned his name, called him in the gyptian tong wherby it ot the world. And he gaue him to wite Aſeneth the daugh- probable ()Prieſt of Heliopolis. Ioſeph thertore went torth to the this was botha Egypt (46.",
+  "old": {
+   "s_dismas": 0.789,
+   "odr_com": 0.783,
+   "sabates_a": 0.792,
+   "madueke_b": 0.792
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.155,
+   0.8212,
+   0.885,
+   0.9375
+  ],
+  "crop_page": 134,
+  "r3_raw": "out thy commandiment no man shal moue hand or foot in al the land of Ægypt. 45. And he turned his name, & called him in the Ægyptian tong 'the Sauiour of the world. And he gaue him to wifte Aseneth the daughter of Putiphar (c) Priest of Heliopolis. Ioseph therefore went forth to the land of Ægypt (46. and he was thirtie yeares old when he stood in the",
+  "r3_verse": "And he turned his name, & called him in the Ægyptian tong 'the Sauiour of the world. And he gaue him to wifte Aseneth the daughter of Putiphar Priest of Heliopolis. Ioseph therefore went forth to the land of Ægypt (46.",
+  "arm_conflicts": [
+   "gyptian | Ægyptian",
+   "wherby it ot | 'the Sauiour of",
+   "wite | wifte",
+   "daugh- probable | daughter of Putiphar",
+   "thertore | therefore",
+   "torth | forth",
+   "this was botha Egypt | land of Ægypt"
+  ],
+  "new_text": "And he turned his name, & called him in the Ægyptian tong 'the Sauiour of the world. And he gaue him to wifte Aſeneth the daughter of Putiphar ()Prieſt of Heliopolis. Ioſeph therefore went forth to the land of Ægypt (46.",
+  "s_unresolved": [
+   "wifte",
+   "therefore",
+   "forth"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.962,
+   "odr_com": 0.958,
+   "sabates_a": 0.99,
+   "madueke_b": 0.99
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 46,
+  "from": "chapter",
+  "old_text": "and he was thirtie yeares old when he ſtood in the Prieſt Prince. I18 Ioſeph. ſight of king Pharao) and did circuit al the countries of Egypt.",
+  "old": {
+   "s_dismas": 0.816,
+   "odr_com": 0.816,
+   "sabates_a": 0.814,
+   "madueke_b": 0.814
+  },
+  "neighbours": [
+   45,
+   46
+  ],
+  "crop": [
+   0.155,
+   0.8732,
+   0.885,
+   0.9526
+  ],
+  "crop_page": 134,
+  "crop_leaves": [
+   134,
+   135
+  ],
+  "r3_raw": "the Saviour of the World. And he gave him to wife his daughter, the daughter of Putiphar (c) Priest of Heliopolis. Joseph therefore went forth to the land of Ægypt (46. and he was thirtie yeares old when he stood in the light sight of King Pharaο) and did circuit al the countries of Ægypt. 47. And the fertilitie of the seven yeares came: and the corne being",
+  "r3_verse": "and he was thirtie yeares old when he stood in the light sight of King Pharaο) and did circuit al the countries of Ægypt.",
+  "arm_conflicts": [
+   "Prieſt Prince. I18 Ioſeph. | light",
+   "Pharao) | Pharaο)",
+   "Egypt. | Ægypt."
+  ],
+  "new_text": "and he was thirtie yeares old when he ſtood in the light ſight of king Pharaο) and did circuit al the countries of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.933,
+   "odr_com": 0.933,
+   "sabates_a": 0.929,
+   "madueke_b": 0.929
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 47,
+  "from": "p135",
+  "old_text": "And the fertilitie of the ſeuen yeares came and the corne being bound vp into ſheaues was gathered together into the barnes ot Egypt.",
+  "old": {
+   "s_dismas": 0.97,
+   "odr_com": 0.97,
+   "sabates_a": 0.896,
+   "madueke_b": 0.896
+  },
+  "neighbours": [
+   47
+  ],
+  "crop": [
+   0.155,
+   0.1019,
+   0.885,
+   0.1816
+  ],
+  "crop_page": 135,
+  "r3_raw": "sight of King Pharao) and did circuit al the countries of Ægypt. 47. And the fertilitie of the seven yeares came: and the corne being bound vp into sheaues was gathered together into the barnes of Ægypt. 48. Al the aboundsance also of graine was laid vp in euerie citie. 49.",
+  "r3_verse": "And the fertilitie of the seven yeares came: and the corne being bound vp into sheaues was gathered together into the barnes of Ægypt.",
+  "arm_conflicts": [
+   "ſeuen | seven",
+   "ot Egypt. | of Ægypt."
+  ],
+  "new_text": "And the fertilitie of the ſeuen yeares came and the corne being bound vp into ſheaues was gathered together into the barnes of Ægypt.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.985,
+   "odr_com": 0.985,
+   "sabates_a": 0.913,
+   "madueke_b": 0.913
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 51,
+  "from": "p135",
+  "old_text": "And he called the name ot the firſt begotten Manaſſes, ſayins God made me to forget al my labours, and my tathers houſe.",
+  "old": {
+   "s_dismas": 0.86,
+   "odr_com": 0.932,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "neighbours": [
+   50,
+   51,
+   52
+  ],
+  "crop": [
+   0.155,
+   0.2083,
+   0.885,
+   0.3028
+  ],
+  "crop_page": 135,
+  "r3_raw": "were borne vnto Ioseph two sonnes before the famine came: whom Aseneth the daughter of Putiphar Priest of Heliopolis bare him. 1. And he called the name of the firſt-begotten * Manasses, saying: God made me to forget al my labours, and my fathers house. 2. The name also of the second he called * Ephraim, saying: God hath made me to",
+  "r3_verse": "And he called the name of the firſt-begotten begotten Manasses, saying: God made me to forget al my labours, and my fathers house.",
+  "arm_conflicts": [
+   "ot | of",
+   "firſt begotten | firſt-begotten",
+   "ſayins | saying:",
+   "tathers | fathers"
+  ],
+  "used_merge": true,
+  "r2_attested": {
+   "10": "ſaying:"
+  },
+  "visual_readings": {
+   "10": "ſaying:"
+  },
+  "new_text": "And he called the name of the firſt-begotten begotten Manaſſes, ſaying: God made me to forget al my labours, and my fathers houſe.",
+  "s_unresolved": [
+   "firſt-begotten",
+   "fathers"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.88,
+   "odr_com": 0.896,
+   "sabates_a": 0.921,
+   "madueke_b": 0.921
+  },
+  "adopt": false,
+  "verdict": "BETTER-BUT-SHORT (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 53,
+  "from": "p135",
+  "old_text": "Thertore when the ſeuen veares ot the plentitulnes, that had been in Egypt were paſſed :",
+  "old": {
+   "s_dismas": 0.919,
+   "odr_com": 0.919,
+   "sabates_a": 0.912,
+   "madueke_b": 0.912
+  },
+  "neighbours": [
+   52,
+   53,
+   54
+  ],
+  "crop": [
+   0.155,
+   0.2803,
+   0.885,
+   0.3586
+  ],
+  "crop_page": 135,
+  "r3_raw": "of the second he called * Ephraim, saying: God hath made me to encrease in the land of my pouertie. 53. Thertore when the seven yeares of the plentifulnes, that had been in Ægypt were passed: 54- the seven yeares of scarcitie began to come, which Ioseph foretold: and in the",
+  "r3_verse": "Thertore when the seven yeares of the plentifulnes, that had been in Ægypt were passed: 54-",
+  "arm_conflicts": [
+   "ſeuen veares ot | seven yeares of",
+   "plentitulnes, | plentifulnes,",
+   "Egypt | Ægypt",
+   ": | 54-"
+  ],
+  "used_merge": true,
+  "new_text": "Thertore when the ſeuen yeares of the plentifulnes, that had been in Ægypt were paſſed 54-",
+  "s_unresolved": [
+   "plentifulnes,"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.965,
+   "odr_com": 0.965,
+   "sabates_a": 0.963,
+   "madueke_b": 0.963
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 55,
+  "from": "p135",
+  "old_text": "The which being in hunger, the poople cried to Phatao, deirino food. To whom he anſwered: Goe ve to Ioſeph: whatſoeuer he ſhal ſay to vou, that doe ye.",
+  "old": {
+   "s_dismas": 0.927,
+   "odr_com": 0.927,
+   "sabates_a": 0.956,
+   "madueke_b": 0.956
+  },
+  "neighbours": [
+   54,
+   55,
+   56
+  ],
+  "crop": [
+   0.155,
+   0.3509,
+   0.885,
+   0.4454
+  ],
+  "crop_page": 135,
+  "r3_raw": "whole world the famine preuailed, but in al the land of Ægypt there was bread. 55. The which being in hunger, the people cried to Pharao, desiring food. To whom he answered: Goe ye to Ioseph: & whatsoeuer he shal say to you, that doe ye. 56. And the famine dayly encreased in al the land: and Ioseph opened al the barnes, and sold to the Ægyptians:",
+  "r3_verse": "The which being in hunger, the people cried to Pharao, desiring food. To whom he answered: Goe ye to Ioseph: & whatsoeuer he shal say to you, that doe ye.",
+  "arm_conflicts": [
+   "poople | people",
+   "Phatao, deirino | Pharao, desiring",
+   "ve | ye",
+   "vou, | you,"
+  ],
+  "new_text": "The which being in hunger, the people cried to Pharao, desiring food. To whom he anſwered: Goe ye to Ioſeph: & whatſoeuer he ſhal ſay to you, that doe ye.",
+  "s_unresolved": [
+   "desiring"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.967,
+   "odr_com": 0.967,
+   "sabates_a": 1.0,
+   "madueke_b": 1.0
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 56,
+  "from": "p135",
+  "old_text": "And the tamine dayly encreaſed in al the laud: and Ioſeph opened al the barnes, and ſold tothe Egyptiaus: tor them alſo the tamine had oppreſſed.",
+  "old": {
+   "s_dismas": 0.944,
+   "odr_com": 0.944,
+   "sabates_a": 0.932,
+   "madueke_b": 0.932
+  },
+  "neighbours": [
+   55,
+   56,
+   57
+  ],
+  "crop": [
+   0.155,
+   0.3864,
+   0.885,
+   0.4798
+  ],
+  "crop_page": 135,
+  "r3_raw": "desiring food. To whom he answered: Goe ye to Ioseph : & whatsoeuer he shal say to you, that doe ye. 56.. And the famine dayly encreased in al the land : and Ioseph opened al the barnes , and sold to the Aegyptians: for them also the famine had oppressed. 57. And al Prouinces came into Egypt, to buy victuals, and to moderate the miserie of the scarcitie.",
+  "r3_verse": "And the famine dayly encreased in al the land : and Ioseph opened al the barnes , and sold to the Aegyptians: for them also the famine had oppressed.",
+  "arm_conflicts": [
+   "tamine | famine",
+   "laud: | land :",
+   "tothe Egyptiaus: tor | to the Aegyptians: for",
+   "tamine | famine"
+  ],
+  "lexicon_readings": {
+   "22": "for"
+  },
+  "visual_readings": {
+   "22": "for"
+  },
+  "new_text": "And the famine dayly encreaſed in al the land : and Ioſeph opened al the barnes, , and ſold to the Aegyptians: for them alſo the famine had oppreſſed.",
+  "s_unresolved": [
+   "famine",
+   "famine"
+  ],
+  "s_verdict": "OPEN",
+  "new": {
+   "s_dismas": 0.993,
+   "odr_com": 0.993,
+   "sabates_a": 0.985,
+   "madueke_b": 0.985
+  },
+  "adopt": false,
+  "verdict": "CONTENT OK, ſ-SURFACE OPEN — read the crop (stays OPEN)"
+ },
+ {
+  "src": "S6",
+  "ocr_dir": "jp2-S06",
+  "verse": 57,
+  "from": "p135",
+  "old_text": "And al Prouinces came iuto Egvpt, to buy victuals, and to moderate the miſerie of the ſcarcitie.",
+  "old": {
+   "s_dismas": 0.947,
+   "odr_com": 0.947,
+   "sabates_a": 0.966,
+   "madueke_b": 0.966
+  },
+  "neighbours": [
+   56,
+   57
+  ],
+  "crop": [
+   0.155,
+   0.4222,
+   0.885,
+   0.5005
+  ],
+  "crop_page": 135,
+  "r3_raw": "the land: and Ioseph opened al the barnes, and sold to the Ægyptians: for them also the famine had oppressed. 57 And all Provinces came into Egypt, to buy victuals, and to moderate the miserie of the scarcitie.",
+  "r3_verse": "And all Provinces came into Egypt, to buy victuals, and to moderate the miserie of the scarcitie.",
+  "arm_conflicts": [
+   "al Prouinces | all Provinces",
+   "iuto Egvpt, | into Egypt,"
+  ],
+  "new_text": "And al Prouinces came into Egypt, to buy victuals, and to moderate the miſerie of the ſcarcitie.",
+  "s_unresolved": [],
+  "s_verdict": "CLOSED",
+  "new": {
+   "s_dismas": 0.968,
+   "odr_com": 0.968,
+   "sabates_a": 0.989,
+   "madueke_b": 0.989
+  },
+  "adopt": true,
+  "verdict": "ADOPT"
+ }
+]

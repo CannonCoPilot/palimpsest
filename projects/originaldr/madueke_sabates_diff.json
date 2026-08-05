@@ -1,0 +1,314 @@
+{
+  "stats": {
+    "compared": 35809,
+    "identical": 33400,
+    "ligature_only": 813,
+    "punct_or_space_only": 1596
+  },
+  "structural": {
+    "book_ct_mismatch": [
+      {
+        "book": "tobias",
+        "madueke": [
+          1,
+          2,
+          3,
+          "...",
+          14
+        ],
+        "sabates": [
+          0,
+          1,
+          2,
+          "...",
+          14
+        ],
+        "mad_n": 14,
+        "sab_n": 15
+      }
+    ],
+    "missing_ch": [
+      "tobias 0"
+    ],
+    "missing_verse": [],
+    "extra_verse": []
+  },
+  "substantive_samples": [],
+  "punct_samples": [
+    [
+      "genesis 12:3",
+      "I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed. ",
+      "I will bless them that bless thee, and curse them that curse thee, and IN Thee shall all the kindreds of the earth be blessed."
+    ],
+    [
+      "genesis 18:10",
+      "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son. Which when Sara heard, she laughed behind the door of the tent. ",
+      "To whom he said: Returning I will come to thee at this time, life accompanying, and Sara thy wife shall have a son . Which when Sara heard, she laughed behind the door of the tent."
+    ],
+    [
+      "genesis 18:18",
+      "whereas he shall be into a Nation great, and very strong, and in him are TO BE BLESSED ALL THE NATIONS OF THE EARTH? ",
+      "whereas he shall be into a Nation great, and very strong, and in him are TO BE Blessed All The Nations of The Earth?"
+    ],
+    [
+      "genesis 22:18",
+      "and IN THY SEED SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, because thou hast obeyed my voice. ",
+      "and IN Thy Seed Shall be Blessed All The Nations of The Earth, because thou hast obeyed my voice."
+    ],
+    [
+      "genesis 24:54",
+      "A banquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord. ",
+      "Abanquet was made, and eating and drinking together they lodged there. And in the morning the servant arose, and said: Dismiss me, that I may go to my lord."
+    ],
+    [
+      "genesis 26:4",
+      "And I will multiply thy seed as the stars of heaven: and I will give to thy posterity all these countries: and in thy seed SHALL BE BLESSED ALL THE NATIONS OF THE EARTH, ",
+      "And I will multiply thy seed as the stars of heaven: and I will give to thy posterity all these countries: and in thy seed Shall be Blessed All The Nations of The Earth,"
+    ],
+    [
+      "genesis 28:14",
+      "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN THEE AND THY SEED ALL THE TRIBES OF THE EARTH SHALL BE BLESSED. ",
+      "And thy seed shall be as the dust of the earth: thou shalt be dilated to the West, and to the East, and to the North, and to the South: and IN Thee And Thy Seed All The Tribes of The Earth Shall be Blessed."
+    ],
+    [
+      "genesis 28:15",
+      "And I will be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said. ",
+      "And Iwill be thy keeper whither soever thou goest, and will bring thee back into this land: neither will I leave thee, till I shall have accomplished all things which I have said."
+    ],
+    [
+      "genesis 41:22",
+      "I saw a dream: Seven ears of corn grew forth upon one stalk, full and very fair. ",
+      "Isaw a dream: Seven ears of corn grew forth upon one stalk, full and very fair."
+    ],
+    [
+      "genesis 43:9",
+      "I take upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever. ",
+      "Itake upon me the boy: require him of my hand, unless I bring him again, and restore him to thee, I will be guilty of sin against thee for ever."
+    ],
+    [
+      "genesis 44:33",
+      "I therefore thy servant will tarry instead of the child in the service of my lord, and let the child go up with his brethren. ",
+      "Itherefore thy servant will tarry instead of the child in the service of my lord, and let the child go up with his brethren."
+    ],
+    [
+      "genesis 47:24",
+      "that you may have corn. The fifth part you shall give to the king: the other four I am content you shall have for seed, &amp; for food to your families &amp; your children. ",
+      "that you may have corn. The fifth part you shall give to the king: the other four Iam content you shall have for seed, & for food to your families & your children."
+    ],
+    [
+      "genesis 49:9",
+      "A lion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up? ",
+      "Alion's whelp Judas: to the prey my son thou didst ascend: taking thy rest thou didst lie as a lion, and as it were a lioness, who shall raise him up?"
+    ],
+    [
+      "genesis 49:10",
+      "THE SCEPTRE SHALL NOT BE TAKEN AWAY FROM JUDAS, AND A DUKE OUT OF HIS THIGH, TILL HE DO COME THAT IS TO BE SENT, AND THE SAME SHALL BE THE EXPECTATION OF THE GENTILES. ",
+      "The Sceptre Shall Not be Taken Away From Judas, And A duke Out of His Thigh, Till he do Come That is to be Sent, And The Same Shall be The Expectation of The Gentiles."
+    ],
+    [
+      "genesis 49:18",
+      "I will expect THY SALVATION o Lord. ",
+      "I will expect Thy Salvation o Lord."
+    ],
+    [
+      "exodus 3:14",
+      "God said to Moyses: I AM WHICH AM. He said: Thus shalt thou say to the children of Israel: HE WHICH IS, hath sent me to you. ",
+      "God said to Moyses: I am Which AM. He said: Thus shalt thou say to the children of Israel: HE Which IS, hath sent me to you."
+    ],
+    [
+      "exodus 4:23",
+      "I said to thee: dismiss my son that he may serve me, and thou wouldst not dismiss him: behold I will kill thy first-begotten son. ",
+      "Isaid to thee: dismiss my son that he may serve me, and thou wouldst not dismiss him: behold I will kill thy first-begotten son."
+    ],
+    [
+      "exodus 6:3",
+      "that appeared to Abraham, to Isaac, and to Jacob, as God Almighty: and my name ADONAI I did not shew them. ",
+      "that appeared to Abraham, to Isaac, and to Jacob, as God Almighty: and my name Adonai I did not shew them."
+    ],
+    [
+      "exodus 22:22",
+      "A widow and an orphan you shall not hurt. ",
+      "Awidow and an orphan you shall not hurt."
+    ],
+    [
+      "exodus 23:7",
+      "A lie thou shalt avoid. The innocent and just person thou shalt not put to death: because I abhor the impious man. ",
+      "Alie thou shalt avoid. The innocent and just person thou shalt not put to death: because I abhor the impious man."
+    ],
+    [
+      "exodus 33:23",
+      "and I will take away my hand, and thou shalt see my back-parts: but my face thou canst not see,",
+      "and I will take away my hand, and thou shalt see my back-parts: but my face thou canst not see."
+    ],
+    [
+      "leviticus 7:20",
+      "A soul being polluted that eateth of the flesh of the host of pacifics, which is offered to our Lord, shall perish from his people. ",
+      "Asoul being polluted that eateth of the flesh of the host of pacifics, which is offered to our Lord, shall perish from his people."
+    ],
+    [
+      "leviticus 13:47",
+      "A woollen or linen garment, that shall have the leprosy ",
+      "Awoollen or linen garment, that shall have the leprosy"
+    ],
+    [
+      "leviticus 21:7",
+      "A whore and a vile strumpet he shall not take to wife, nor her, that is put away from her husband: because they are consecrated to their God, ",
+      "Awhore and a vile strumpet he shall not take to wife, nor her, that is put away from her husband: because they are consecrated to their God,"
+    ],
+    [
+      "numbers 12:3",
+      "(For Moyses was the mildest man above all men that dwelt upon the earth) ",
+      "( For Moyses was the mildest man above all men that dwelt upon the earth)"
+    ],
+    [
+      "numbers 21:9",
+      "Moyses therefore made A BRAZEN SERPENT, and set it for a sign: whom when they that were strucken looked on, they were healed. ",
+      "Moyses therefore made A brazen Serpent, and set it for a sign: whom when they that were strucken looked on, they were healed."
+    ],
+    [
+      "numbers 21:28",
+      "<span class='allusion'>A fire went forth from Hesebon, a flame from the town of Sehon, &amp; devoured Ar of the Moabites, and the inhabitants of the high places of Arnon. ",
+      "Afire went forth from Hesebon, a flame from the town of Sehon, & devoured Ar of the Moabites, and the inhabitants of the high places of Arnon."
+    ],
+    [
+      "numbers 24:17",
+      "I shall see him, but not now: I shall behold him but not near. A STAR SHALL RISE out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth. ",
+      "I shall see him, but not now: I shall behold him but not near. A star Shall Rise out of Jacob, and a rod shall arise from Israel: and shall strike the Dukes of Moab, and shall waste all the children of Seth."
+    ],
+    [
+      "numbers 28:15",
+      "A buck goat also shall be offered to the Lord for sins an everlasting holocaust with his libaments. ",
+      "Abuck goat also shall be offered to the Lord for sins an everlasting holocaust with his libaments."
+    ],
+    [
+      "deuteronomy 1:20",
+      "I said to you: You are come to the mountain of the Amorrhite, which the Lord our God will give to us. ",
+      "Isaid to you: You are come to the mountain of the Amorrhite, which the Lord our God will give to us."
+    ],
+    [
+      "deuteronomy 1:43",
+      "I spake, and you heard not: But resisting the commandment of our Lord, and swelling with pride you went up into the mountain. ",
+      "Ispake, and you heard not: But resisting the commandment of our Lord, and swelling with pride you went up into the mountain."
+    ],
+    [
+      "deuteronomy 2:26",
+      "I sent therefore messengers from the wilderness of Cademoth to Sehon the king of Hesebon with peaceable words, saying: ",
+      "Isent therefore messengers from the wilderness of Cademoth to Sehon the king of Hesebon with peaceable words, saying:"
+    ],
+    [
+      "deuteronomy 18:15",
+      "A PROPHET of thy nation &amp; of thy brethren like unto me, will our Lord thy God raise up to thee: him thou shalt hear, ",
+      "A prophet of thy nation & of thy brethren like unto me, will our Lord thy God raise up to thee: him thou shalt hear,"
+    ],
+    [
+      "deuteronomy 22:5",
+      "A woman shall not be clothed with man's apparel, neither shall a man use woman's apparel: for he is abominable before God that doeth these things. ",
+      "Awoman shall not be clothed with man's apparel, neither shall a man use woman's apparel: for he is abominable before God that doeth these things."
+    ],
+    [
+      "deuteronomy 30:18",
+      "I foretell thee this day that thou shalt perish, &amp; abide a little time in the Land, which passing over Jordan, thou shalt enter to possess. ",
+      "Iforetell thee this day that thou shalt perish, & abide a little time in the Land, which passing over Jordan, thou shalt enter to possess."
+    ],
+    [
+      "deuteronomy 32:22",
+      "A fire is kindled in my wrath, and shall burn even to the lowest parts of hell: and shall devour the earth with her spring, and shall burn the foundations of mountains. ",
+      "Afire is kindled in my wrath, and shall burn even to the lowest parts of hell: and shall devour the earth with her spring, and shall burn the foundations of mountains."
+    ],
+    [
+      "deuteronomy 32:26",
+      "I said: Where are they? I will make their memory to cease from among man. ",
+      "Isaid: Where are they? I will make their memory to cease from among man."
+    ],
+    [
+      "deuteronomy 32:28",
+      "A nation without counsel is it, and without wisdom. ",
+      "Anation without counsel is it, and without wisdom."
+    ],
+    [
+      "josue 8:33",
+      "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim, and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he blessed the people of Israel. ",
+      "And all the people, and the ancients, and the Princes and judges stood on both sides of the ark, in the sight of the Priests that carried the ark of the covenant of our Lord, as well the stranger as also the man of the same country. The half part of them beside mount Garizim and half beside mount Hebal, as Moyses the servant of our Lord had commanded. And first indeed he blessed the people of Israel."
+    ],
+    [
+      "josue 24:3",
+      "<span class='allusion'>I took therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed, ",
+      "Itook therefore your father Abraham from the coasts of Mesopotamia, and brought him into the Land of Chanaan, and multiplied his seed,"
+    ]
+  ],
+  "book_map": {
+    "Genesis": "genesis",
+    "Exodus": "exodus",
+    "Leviticus": "leviticus",
+    "Numbers": "numbers",
+    "Deuteronomy": "deuteronomy",
+    "Josue": "josue",
+    "Judges": "judges",
+    "Ruth": "ruth",
+    "1 Kings": "1-kings",
+    "2 Kings": "2-kings",
+    "3 Kings": "3-kings",
+    "4 Kings": "4-kings",
+    "1 Paralipomenon": "1-paralipomenon",
+    "2 Paralipomenon": "2-paralipomenon",
+    "1 Esdras": "1-esdras",
+    "2 Esdras": "2-esdras",
+    "Tobias": "tobias",
+    "Judith": "judith",
+    "Esther": "esther",
+    "Job": "job",
+    "Psalms": "psalms",
+    "Proverbs": "proverbs",
+    "Ecclesiastes": "ecclesiastes",
+    "Canticle of Canticles": "canticle-of-canticles",
+    "Wisdom": "wisdom",
+    "Ecclesiasticus": "ecclesiasticus",
+    "Isaie": "isaie",
+    "Jeremie": "jeremie",
+    "Lamentations": "lamentations",
+    "Baruch": "baruch",
+    "Ezechiel": "ezechiel",
+    "Daniel": "daniel",
+    "Osee": "osee",
+    "Joel": "joel",
+    "Amos": "amos",
+    "Abdias": "abdias",
+    "Jonas": "jonas",
+    "Micheas": "micheas",
+    "Nahum": "nahum",
+    "Habacuc": "habacuc",
+    "Sophonias": "sophonias",
+    "Aggeus": "aggeus",
+    "Zacharias": "zacharias",
+    "Malachie": "malachie",
+    "1 Machabees": "1-machabees",
+    "2 Machabees": "2-machabees",
+    "Matthew": "matthew",
+    "Mark": "mark",
+    "Luke": "luke",
+    "John": "john",
+    "Acts": "acts",
+    "Romans": "romans",
+    "1 Corinthians": "1-corinthians",
+    "2 Corinthians": "2-corinthians",
+    "Galatians": "galatians",
+    "Ephesians": "ephesians",
+    "Philippians": "philippians",
+    "Colossians": "colossians",
+    "1 Thessalonians": "1-thessalonians",
+    "2 Thessalonians": "2-thessalonians",
+    "1 Timothy": "1-timothy",
+    "2 Timothy": "2-timothy",
+    "Titus": "titus",
+    "Philemon": "philemon",
+    "Hebrews": "hebrews",
+    "James": "james",
+    "1 Peter": "1-peter",
+    "2 Peter": "2-peter",
+    "1 John": "1-john",
+    "2 John": "2-john",
+    "3 John": "3-john",
+    "Jude": "jude",
+    "Apocalypse": "apocalypse"
+  }
+}
