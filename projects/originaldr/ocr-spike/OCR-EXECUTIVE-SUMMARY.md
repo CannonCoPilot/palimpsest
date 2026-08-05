@@ -1,148 +1,183 @@
-# OriginalDR OCR Masterplan — Executive Summary
+# OriginalDR — Executive Summary
 
-**Read this first. Three pages. It states what changed, what it costs, and the six things I need from you.**
+**The objective**: a faithful documentary transcript of the first-edition Douay-Rheims Bible — the **1582
+Rheims New Testament**, the **1609 Douai Old Testament volume 1**, and the **1610 Douai Old Testament
+volume 2** — in archaic typeset and archaic spelling, recovered from photographic surrogates.
 
-Companion documents: `OCR-OVERVIEW.md` (the architecture) · `OCR-WALKTHROUGH.md` (how it works, page by
-page) · `OCR-MASTERPLAN-V3.md` (the plan itself, revision 3) · critique records R1 and R2.
+Companion documents: `OCR-OVERVIEW.md` (architecture) · `OCR-WALKTHROUGH.md` (how it runs) ·
+`OCR-MASTERPLAN.md` (the plan).
 
 ---
 
-## 1. The one sentence
+## 1. What this is, and what it is not
 
-**The plan was paying for two different products, and this revision picks one:** a faithful documentary
-transcript of the 1582 New Testament and the 1609/1610 Old Testament, in archaic typeset and archaic
-spelling — **not** six publication-quality OCR transcripts feeding a six-witness collated critical edition.
+**It is a documentary edition** — we read three physical books and reproduce what they print. **It is not a
+critical edition**: there is no authorial revision to reconcile, no lost archetype to reconstruct, no
+construction of a text from witnesses of competing authority. That distinction removes machinery that would
+otherwise be mandatory — sigla, historical collation, rejected-reading registers, authority chains — none of
+which serves a transcript of a single printing.
 
-## 2. How that conclusion was reached
+The consequence that matters most: **disagreement between two photographs of the same setting of type is a
+scan-quality fact, not a textual one.** It needs no apparatus and no voting.
 
-You asked for a deep rethink, then antagonistic specialists, then revision, then a **second** round of
-subject-matter experts, then revision again. That is what happened, with one accident that turned out to be
-the most useful thing in the process.
+## 2. The corpus: three volumes, three copies each
 
-- **Round 1** — five critics against revision 1. Seven findings, all epistemic: the plan could not be
-  falsified. Rebuilt into revision 2.
-- **Round 2** — four critics against revision 2. **A context refresh mid-round caused me to re-launch them,
-  believing the results lost. They were not lost. Both panels returned.**
+Nine scans, all copies of one first-edition printing per volume. Two files are excluded deliberately — the
+**1633 Rheims NT** (a second edition, whose admission would require a full witness apparatus for no gain)
+and a **1610 whole-Bible facsimile**.
 
-**So every remit was critiqued twice, blind.** That gives a within-remit control I did not design and could
-not have justified paying for: where two specialists on the same remit converge, the finding is
-*replicated*; where they diverge, the uncertainty is *real* and belongs to you, not to me.
+**Two measured facts reshape the plan:**
 
-**Twenty-three findings replicated across both panels.** Four questions came back split. I decided all four
-and flagged each — see §5.
+**The S01 set cannot do diplomatic work.** It is uniformly 800 × 1124 px across all three volumes — about
+**168 ppi at the leaf, against 650 ppi for S09**. The long-ſ is distinguished from `f` by a nub of 3–6 px at
+650 ppi; at 168 ppi that feature spans **under 1.6 px** and is simply not present in the file. S01 is
+therefore **structure-only** — page order, addressing, gross verification — and is **disqualified as a base
+exemplar and as training data.** That is a measurement, not a preference.
 
-## 3. What the two panels found, in the order that matters
+**`NT/S08` is the only continuous-tone scan in the corpus.** Every other copy is an MRC composite whose text
+layer is a 1-bit JBIG2 mask, and binarisation destroys grey levels *upstream* of anything repairable later.
+This makes S08 the natural base for the New Testament.
 
-**The structural finding — reached independently by a program lead costing the plan and a scholarly editor
-reading its constitution.** Revision 2 adopted copy-text discipline, under which **five of the six sources
-may never alter a spelling or a glyph**. It then required all six to reach publication quality and sized
-everything accordingly. Those two commitments belong to different projects. The second one — the critical
-edition — is legitimate and is *not what you asked for*.
+**So each volume has two usable copies, not three** — one base, one same-setting surrogate for resolving
+illegibility.
 
-**Cutting to one product deletes**: six-way collation and the variant graph · calibrated ensembles ·
-witness weighting · the entire write-back drift guard · five-sixths of the diplomatic ground truth · the
-model hierarchy below fount level.
+## 3. How it works
 
-**The three findings that would have cost the most had they survived:**
+**The correction loop is both the product and the ground truth.** A page goes through the recognizer, a
+vision model proposes corrections on **line crops**, the operator accepts or retypes by keystroke, and the
+signed-off page becomes — from the same keystrokes — the transcript, the evaluation text, the training
+ground truth, the layout ground truth, and glyph instances. **There is no separate annotation project**,
+which is the only reason the annotation is affordable.
 
-1. **The ground-truth stage was unbudgeted and unstartable.** Independently costed at **155–275 h** and
-   **210–280 h** — call it ~200–280 operator-hours, stated nowhere in the plan, gating ten of twelve build
-   steps. At a realistic 12 productive hrs/week that is **17–23 weeks before any product work begins.**
-   Both red teams named the failure precisely: *this is not over-ambition, it is unstartability — the
-   original status-quo failure mode reached by a longer route.* And the plan claimed to honour your
-   instruction about human-review bottlenecks "at the production path" while **making the whole build order
-   depend on the review path, which is the same bottleneck one level up.**
+**Residue is evidence.** The fraction of a chapter's reference text matched by *no* recognised line
+localises a clipped or missed region. Ranked across leaves, that is a defect queue — needing no ground truth
+and no new model, so it is the first real improvement to ship.
 
-2. **Several gates could not fail.** Nine or ten of twelve lacked a threshold, an n, or both. **δ — used in
-   three places as *the* convergence criterion — was never given a value anywhere in the document.** One
-   gate required **≥200 instances of glyph classes the same plan says occur "tens of times corpus-wide"** —
-   unmeetable, with an escape clause that quietly converted it into automatic satisfaction at n=30. That is
-   exactly the below-threshold-accepted-as-terminal pattern the project forbids, and I had written it in
-   while removing the same pattern elsewhere.
+**Letterpress repeats the same physical sort.** Rather than classify `ſ` instance by instance, cluster the
+candidate crops per fount per volume, key ~50 cluster exemplars, and propagate. This is the strongest lever
+available, and it is unavailable to per-instance methods.
 
-3. **The ligature and long-ſ machinery would not have worked.** Both HTR engineers dismantled it
-   independently: connected components fail because **at 650 ppi a printed line is largely one connected
-   component**; advance width is **the true discriminant and unmeasurable** (you can measure ink extent, not
-   body width, and the difference is swamped by ink spread); and forced-aligning to `ﬁ` **requires `ﬁ`
-   already in the codec — the same circularity I had just removed, relocated.** They also showed my
-   Unicode-decomposition fix was backwards: **the macron sits above the bowl, not after it, so under CTC's
-   monotonic alignment a decomposed `õ` is strictly *harder* than an atomic one.**
+**And the recognizer may say it cannot tell.** Contested pairs emit `A` / `B` / *indeterminate*, abstaining
+into `<unclear>`. On clean type the pair classifiers reach 0.97–0.99; on the difficult tail — touching,
+over-inked, show-through, worn — 0.7–0.85, and that tail is 10–20% of instances.
 
-**What replaces it is better and cheaper**, and one idea is genuinely strong: **letterpress repeats the same
-physical sort**, so instead of classifying `ſ` instance by instance, cluster the candidate crops per fount,
-key ~50 cluster exemplars, and propagate. And the pair classifiers now emit **`A` / `B` / *indeterminate***,
-abstaining into `<unclear>` — *an 8% abstention rate on `ſ`/`f` is an honest edition; a 0% one is a
-fabricated one.*
+> **An 8% abstention rate on `ſ`/`f` is an honest edition; a 0% one is a fabricated one.**
 
-## 4. What this now costs, and when you see something
+## 4. Training is organised by volume
 
-**The honest total: 400–1,000 hours of human correction** (~3,000–4,500 pages at 6–15 min/page). That is the
-price of this product **under any architecture**. The simplification does not remove those hours — it means
-**they produce the deliverable directly instead of producing the instrument that produces it.**
+The three volumes are **three different printings** — Rheims 1582 under one house, Douai 1609 and 1610 under
+another, 27 years apart, different founts and compositor conventions. So:
 
-The load-bearing insight, from the second program lead: **gold-keying and production transcription are the
-same keystrokes.** One correction UI, five outputs — shippable transcript pages, evaluation text, training
-ground truth, layout ground truth, and glyph instances. That is the only way ~250 annotation hours becomes
-affordable.
+```
+CATMuS-Print [Large]  →  VOLUME  →  FOUNT
+```
 
-| when | what ships |
+**VOLUME is the letterform boundary.** **FOUNT** — roman text, italic annotation, display — is the
+letterform boundary *within* a volume, and the same axis the rendition layer already treats as semantic.
+
+**COPY is not a model level.** Three copies of a volume photograph the same setting of the same type; they
+differ in resolution, structure and skew — image statistics, not letterforms. Fitting a model per photograph
+of one book would be a category error. Instead **copies are pooled within a volume as training
+augmentation**, which is a genuine advantage of this corpus: *identical letterforms under different imaging
+conditions* is exactly the invariance a recognizer should learn, and it is normally expensive to obtain.
+
+Held-out splits are stratified **by copy and by gathering** — never by page, since adjacent leaves of one
+gathering share paper, bleed-through, skew and the same forme.
+
+> **Note on earlier naming.** Legacy identifiers (`archive-*`, `jp2-*`, `pdf-*`) describe *how a file was
+> acquired*, not which book it is — and two of them each contain **all three volumes**. Training "per
+> source" would therefore have pooled 1582 Rheims types with 1609/1610 Douai types into one model. The
+> addressing unit is now `VOLUME/COPY`.
+
+## 5. The archaic typeset census
+
+**Before the codec is fixed, the inventory is established empirically** — surveyed from the actual type in
+each volume, given a representation, then frozen. A class the model never sees cannot be output; a class
+asserted but absent invites the model to hallucinate it out of damaged type.
+
+Every requested sort is resolved **ATTESTED or NOT FOUND, per volume**, with an image exemplar and a
+frequency count: the `ct`, `æ`, `ﬁ`, `ﬂ`, `ﬀ`, `ſt`, `ſl`, `ſh`, `ſſ` ligatures, long-ſ, and the `ã õ ũ`
+suppressed-nasal vowels — plus the **note-reference marks** (`*`, `†`, `‡`, `¶`) without which the
+annotation cannot be keyed to the text, and in this edition **the annotation is roughly half the book**.
+
+Three items need the survey to settle them rather than an assumption:
+
+- **"tall-s" versus "long-s"** — early-modern founts normally carry two s-sorts, round `s` and long `ſ`. If
+  the census finds only two, these are one sort under two names and the rows merge. The same question
+  governs the `ſt`, `ſl` and `ſſ` entries listed twice.
+- **"long-f"** — there is no long-f sort as such, and two different things produce that impression. One is
+  an `f` inside a ligature. The other is real and important: **some founts cut the long ſ with a full
+  crossbar rather than a left-side nub**, making it near-indistinguishable from `f`. **If that allograph is
+  attested it needs its own class**, because it defeats nub-based discrimination entirely — which would
+  otherwise be a silent, systematic error across a whole volume.
+- **`ꝛ` and the Latin brevigraphs `ꝑ ꝓ ꝗ`** — entangled with whether these founts set any blackletter at
+  all. One inspection closes all three.
+
+## 6. On connected components — a correction
+
+An earlier draft asserted that connected-component analysis fails outright, because at 650 ppi a well-inked
+line is largely one connected component. **That over-stated the case, and the plan now reflects the
+correction.**
+
+It remains true that ink load and paper absorbency drive whether adjacent sorts touch, so **CC count alone
+decides nothing.** But **the pairs that ligature are a small closed set, and a ligature sort is a distinct
+piece of type with its own form** — not two letters that happen to collide. That yields three real
+advantages, and the method now uses them:
+
+1. **A tiny hypothesis space** — never "which of 400 classes," only "is this the `ﬁ` sort, or `f` followed
+   by `i`."
+2. **False-positive control by construction** — a ligature can only be proposed where its constituent
+   letters are expected.
+3. **Revisability** — because the set is closed, every decision for a class can be re-swept corpus-wide when
+   that class's classifier improves. Ligature decisions become **revisable data, not irreversible
+   transcription events.**
+
+Connected components are therefore used as a **candidate detector within the closed set**, with a per-pair
+CNN deciding on the crop and abstaining when it cannot.
+
+## 7. What ships, and when
+
+| when | what |
 |---|---|
-| **week 1** | drop-cap board fix (**18 cells**); page axis; source concordance; scan inspection |
-| **week 2** | **residue detector** — a ranked defect queue for the existing chapter workflow, no gold set, no new model, using the incumbent pipeline *as a detector rather than a generator* so its bias does not propagate |
-| **week 3+** | **corrected transcript pages, continuously**, starting in a zero-archaic-witness book |
-| later | frozen evaluation sets, G1 geometry and recognition, the census, the edition |
+| **week 1** | source concordance and base-exemplar declaration; drop-cap board fix (**18 cells**); page axis |
+| **week 2** | **residue detector** — ranked defect queue, no ground truth, no new model |
+| **week 2–3** | **archaic typeset census** — the frozen inventory the codec is built from |
+| **week 3+** | **correction loop on Micheas**, producing transcript and ground truth together |
+| later | frozen evaluation sets, G1 geometry and recognition, glyph census, the edition |
 
-**Nothing in the first quarter waits on the ground-truth stage.** Only metric *claims* do — never
-improvements. Conflating those two is what made the previous revision four months of unshipped
-infrastructure.
+**The pilot book is Micheas (Micah) in OT2** — 7 chapters across about 7 leaves, present in all three OT2
+copies. Chosen because it has **no archaic reference witness**, so it exercises the part of the corpus that
+is structurally invisible to every reference-based mechanism and would otherwise be discovered last; because
+at roughly one chapter-open per leaf it is an unusually dense test of the drop-cap and chapter-heading
+machinery; and because it is small enough to finish early. **Joel** (3 chapters, ~5 leaves) and **Amos**
+(9 chapters, ~11 leaves) are the smaller and larger alternatives in the same condition.
 
-## 5. Six things I need from you
+**The honest total cost**: ~3,000–4,500 pages at 6–15 min/page corrected = **400–1,000 hours**. That is the
+price of this product under any architecture. The design does not remove those hours; it makes them produce
+the deliverable directly rather than producing the instrument that produces it.
 
-**Four are decisions I already made** because the specialists split and you have told me to decide and
-proceed rather than block. Each is reversible in a paragraph, and each is flagged **[SIR'S CALL]** in the
-plan at the point of use.
+## 8. How the plan keeps itself honest
 
-| # | question | my decision | the losing argument |
-|---|---|---|---|
-| **1** | copy-text framing, or documentary? | **Documentary/diplomatic** (TEI P5 ch. 11). Copy-text survives only as the mechanism for choosing *which physical copy* we transcribe. | Keeping copy-text language preserves continuity with round 1 and a large body of practice. **I judged that the word drags the whole critical-edition apparatus in behind it — which is exactly what happened once already.** |
-| **2** | model scope above SOURCE | **FOUNT**, not TOME. Roman text vs italic annotation vs display are where letterforms *actually* differ; tome is just a proxy for scan conditions, which SOURCE already captures. | Simply cutting TOME. Both agreed TOME-as-written was wrong. |
-| **3** | what to build first | **Both, composed**: the residue detector *orders the pages*, the correction UI *transcribes them*. | Either alone. |
-| **4** | `ꝛ`, and the Latin `ꝑ ꝓ ꝗ` | **Neither in nor out — inspect the scans.** One editor called them anachronistic; the other pointed out that **removing `ꝛ` while admitting blackletter headings is self-contradictory**, and that brevigraphs do appear in the Latin of the Rheims annotations. | — **This became a task rather than a judgement, and it closes a third question at the same time: whether Fogny and Kellam set any blackletter at all.** |
+- **Three evaluation tiers with a published query ledger** — freezing a set stops contamination but not
+  repeated querying; at realistic set sizes ~57 adoption queries yield ~0.18% apparent improvement from
+  noise alone.
+- **Rare classes get a census, not a rate** — every instance on a declared page set, so the denominator is
+  page-defined rather than detector-defined. **Below n=30 a class is UNMEASURABLE: open and blocking.**
+- **Every gate carries metric, threshold, named set, n, and a pre-registered effect size**, as a
+  document-level invariant.
+- **Two terminals, never one** — *converged-at-target* closes; *stalled-below-target* is **open, blocking,
+  and raises an alert that the approach needs redesign.** No below-threshold result is ever given a terminal
+  accepted state.
+- **Escalation must name a different resource class than the one that failed** — paid hours, a better scan,
+  an outside ruling, or reduced **coverage** — **never reduced fidelity.**
 
-**Two are genuinely yours, and I have not pre-empted them:**
+## 9. Open
 
-5. **§10.4 — what is actually in the transcript.** Original line breaks, hyphenation, catchwords, running
-   heads, chapter arguments, the marginal annotations, the 1582 preface. **The scholarly review found no
-   policy on any of this anywhere in the plan and called these the largest unstated scoping decisions in
-   the project.** I have proposed defaults for all ten classes. **Every one is cheap to change now and
-   expensive to change later.** One note: **in the Douay-Rheims the apparatus is half the book, and a
-   transcript that drops the marks keying annotation to text is unusable** — so I have included them.
+**Blocking**: the bibliographic concordance — edition, STC/ESTC, repository and shelfmark are unresolved for
+all nine copies, and are deliberately **not** filled in from inference, because a misattributed shelfmark
+would poison the base-exemplar choice and everything downstream. One citation carried from earlier work is
+unverified and load-bearing for a geometry gate: resolve or delete. And the typeset census, which also
+closes the `ꝛ` / brevigraph / blackletter questions.
 
-6. **Where the planning documents live.** This plan and both critique records sit in a **gitignored scratch
-   directory**. They are the most valuable output of the last two sessions and are one `rm` from gone.
-   Moving them under version control is five minutes. **It is your call where the project keeps its
-   planning documents, so I have not moved them unilaterally.**
-
-## 6. Three things I got wrong, recorded so the pattern is visible
-
-You identified the pattern before round 1 did: **each time a measurement came back ambiguous, I converted it
-into a reason to keep the status quo.** Native resolution "no free win"; the 120 px input height "a
-training-time choice"; the coarse metric "the limit of what can be measured"; the sources "good enough to
-vote." **Status-quo preservation dressed as empiricism.** You were right on every count.
-
-Round 2 caught the over-correction: revision 2 answered a critical-edition reviewer by **adopting a critical
-edition**, and answered a measurement reviewer by **building a measurement regime that could not be
-started**. And the retracted numbers stay retracted — `s_dismas` and `odr_com` are **~0.9879 mean similarity,
-median 1.0000, 79% character-identical**; you were right that they are essentially the same text, and my
-"94% differ" figures were verse-key artefacts. **That corrected number is itself flawed** (a maximum over 11
-candidate alignments, on the easy subset, folding the very glyphs the product exists to preserve), and §2.1
-now fixes the reporting standard so the next such number cannot be produced the same way.
-
-**One measurement that stands and blocks work**: **8.0% of verses best-match at a non-zero verse offset.**
-`ref_renumber` is incomplete, and **every verse-keyed comparison of the two archaic references is invalid
-until it is finished.**
-
----
-
-**Recommended next action**: confirm or overturn the four decisions in §5, set the scope table in §10.4, and
-I start step 0 — the source concordance, the scan inspection, and the drop-cap fix — immediately.
+**Unratified**: the archaic-preeminent board gate, pending blind adjudication of n ≥ 100 newly-passing cells
+against the scans.

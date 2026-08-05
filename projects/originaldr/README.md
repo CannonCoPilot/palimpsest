@@ -25,9 +25,10 @@ Read in this order:
 1. `ocr-spike/OCR-EXECUTIVE-SUMMARY.md` — what is being built, what it costs, open decisions
 2. `ocr-spike/OCR-OVERVIEW.md` — the architecture and why it has that shape
 3. `ocr-spike/OCR-WALKTHROUGH.md` — a leaf becoming a transcript line, gate by gate
-4. `ocr-spike/OCR-MASTERPLAN-V3.md` — the plan itself
+4. `ocr-spike/OCR-MASTERPLAN.md` — the plan itself
 
 Campaign operating documents: `CAMPAIGN-STATUS.md` · `CHAPTER-WORKFLOW.md` · `WALKTHROUGH-PROTOCOL.md`.
+Superseded planning documents and their critique records are kept in `ocr-spike/archive/` for provenance.
 
 ## Source scans
 

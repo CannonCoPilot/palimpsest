@@ -1,58 +1,63 @@
-# OriginalDR OCR — Overview of the Architecture
+# OriginalDR — Overview of the Architecture
 
-**What this document is**: the shape of the thing, and *why* it has that shape. It is the middle altitude —
-above the master plan's mechanisms, below the executive summary's decisions. Read `OCR-EXECUTIVE-SUMMARY.md`
-first if you have not.
+**What this document is**: the shape of the system, and why it has that shape. Above the master plan's
+mechanisms, below the executive summary's decisions. Read `OCR-EXECUTIVE-SUMMARY.md` first.
 
 ---
 
 ## 1. The product, stated so it constrains the design
 
 **One documentary transcript of three printed books** — the 1582 Rheims New Testament, the 1609 Douai Old
-Testament volume 1, the 1610 Old Testament volume 2 — **reproducing what those documents print**: archaic
-spelling, long-ſ, ligatures as set, `u`/`v` and `i`/`j` as printed, macrons unexpanded, compositorial
+Testament volume 1, the 1610 volume 2 — **reproducing what those documents print**: archaic spelling,
+long-ſ, ligatures as set, `u`/`v` and `i`/`j` as printed, suppressed nasals unexpanded, compositorial
 accidents preserved.
 
-Three properties of that sentence do almost all the architectural work:
+Three properties of that sentence do most of the architectural work.
 
-**"Documentary."** We are not reconstructing a lost ideal text from disagreeing witnesses. We are reading
-three physical objects. Disagreement between two scans of the *same* setting of type is **a scan-quality
-fact, not a textual fact** — so it does not belong in an apparatus, does not need voting, and does not need
-witness weighting. This single observation removes about a third of the previous plan.
+**"Documentary."** We are not reconstructing a lost ideal text from disagreeing witnesses; we are reading
+three physical objects. Disagreement between two photographs of the *same* setting of type is **a
+scan-quality fact, not a textual fact** — so it needs no apparatus, no sigla, and no voting.
 
 **"Three books."** Not one. Separate printings, two towns, two houses, 27 years apart, different founts and
 compositor conventions. **Three base documents, three sets of spellings, no harmonisation across the
 joins** — concatenated into one deliverable, each labelled.
 
-**"What those documents print."** Not what the Douay-Rheims *said* — we have four modern transcriptions for
-that, and they are useful, but as **finding aids**, never authorities. The authority is the image. That
-demotion is the correction to my largest earlier error, which was letting an unprovenanced modern
-transcription (`s_dismas`) govern *glyph* decisions while our own measurements showed it splices editorial
-annotation into scripture.
+**"What those documents print."** Not what the Douay-Rheims *said* — four modern transcriptions answer that,
+and they are useful, but as **finding aids**, never authorities. The authority is the image.
 
 ---
 
-## 2. The six scans, and what each is for
+## 2. The corpus, and what each copy is for
 
-| role | which | what it may do |
+**Nine scans: three volumes × three copies**, all of one first-edition printing per volume.
+
+| volume | copies | base candidate |
 |---|---|---|
-| **base exemplar** | one named copy per bibliographic unit, **still to be declared** (§1 of the plan) | **it is the document.** Everything in the transcript comes from here |
-| **same-setting surrogate** | another photograph of the *same* forme | **resolve illegibility. This is transcription, not emendation** |
-| **other-edition witness** | the 1633/1635 printings | **supply a reading only when nothing else can**, bracketed, with its own date visible to the reader |
+| **NT 1582** | S01, S08, S09 | **S08** — the only continuous-tone scan in the corpus |
+| **OT1 1609** | S01, S03a, S09 | **S09** — 650 ppi |
+| **OT2 1610** | S01, S03b, S09 | **S09** — 650 ppi |
 
-The middle row is the distinction the previous revision had no way to express, and it matters more than it
-sounds. Without it, every routine "the base copy is blotted here, the other scan is clean" becomes an
-*emendation* — thousands of non-events flooding the apparatus until the handful of real interventions are
-unfindable. With it, they go to a lightweight surrogate register that is summarised statistically and never
-enumerated.
+**Excluded**: the 1633 Rheims NT (second edition) and a 1610 whole-Bible facsimile. Admitting a second
+edition would require a witness typology, sigla, and an apparatus of readings supplied across settings —
+cost that buys nothing for a first-edition documentary transcript.
+
+**S01 is structure-only.** At 800 × 1124 px it resolves to roughly 168 ppi at the leaf, against 650 ppi for
+S09. The feature distinguishing long-ſ from `f` — a nub of 3–6 px at 650 ppi — spans under 1.6 px there.
+It can order pages and verify addressing; it cannot carry a diplomatic reading, and it is not training data.
+
+**So each volume has two usable copies**, which maps exactly onto the two roles the constitution defines:
+
+| role | what it may do |
+|---|---|
+| **base exemplar** | **it is the document.** Everything in the transcript comes from here |
+| **same-setting surrogate** | **resolve illegibility — this is transcription, not emendation** |
+
+The second role is the distinction that keeps the apparatus usable. Without it, every routine "the base copy
+is blotted here, the other is clean" becomes an *emendation*, and thousands of non-events bury the handful
+of real interventions. With it, they go to a lightweight surrogate register, summarised statistically and
+never enumerated.
 
 **Setting identity is proved, not assumed**: same signature, same catchword, **same line-end words**.
-Identical ⇒ same setting.
-
-**Consequence to state plainly**: some of the six scans are 1633/1635 and can therefore *never* be a base
-document. And where only one scan exists for a given 1609/1610 volume, **the same-setting route is
-unavailable there and gaps will be real.** That is a property of the surviving evidence, not a defect to
-iterate against.
 
 ---
 
@@ -69,156 +74,194 @@ iterate against.
  7  PUBLISH      transcript + minimal apparatus, versioned and sha-pinned
 ```
 
-Stage 4 is where the previous plan said *"six transcripts driven to publication quality"*. Stage 6 is where
-it said *"per-verse multiple alignment of six witnesses"*. **Those two substitutions are the whole
-simplification.**
+### Generations, and their two exits
 
-### The loop, and its two exits
-
-The build order used to be a **cycle**: alignment needs a recognizer, the recognizer needs alignment ground
-truth, the region model needs alignment for its labels, and the region model's gate was the board — which
-the recognizer produces. There was no entry point, and revision 1 resolved it silently by using the
-incumbent geometry, i.e. the thing it claimed to be replacing.
-
-So it is stated as numbered generations — G0 bootstrap, G1, G2 — each gated on **frozen evaluation sets,
-never on the board**, which moves between generations. Two rules the previous revision lacked:
+Build order would otherwise be circular — alignment needs a recognizer, the recognizer needs alignment
+ground truth, the region model needs alignment for its labels. So the work is stated as numbered
+generations, each gated on **frozen evaluation sets, never on the campaign board**, which moves between
+generations.
 
 - **Two terminals, and they are not the same state.** *Converged-at-target* closes. *Stalled-below-target*
-  is **OPEN, blocking, and raises an ALERT that the approach needs redesign — the deliverable does not
-  ship.** Collapsing these was how a below-threshold result would have quietly become a terminal accepted
-  one.
+  is **open, blocking, and raises an alert that the approach needs redesign — the deliverable does not
+  ship.** Collapsing these is how a below-threshold result quietly becomes an accepted one.
 - **A regression rule.** If a generation is worse than its predecessor by more than the paired confidence
   interval, it is a **failed experiment** — revert, do not adopt, **do not re-baseline.**
 
 ---
 
-## 4. The three ideas the architecture actually rests on
+## 4. The four ideas the architecture rests on
 
 ### 4.1 The correction loop is simultaneously the product and the ground truth
 
-This is the load-bearing idea, and it is what makes the hours affordable.
-
 ```
-page → lines → incumbent recognizer → operator correction UI → sha-pinned corrected page
-                                            │
-        ┌───────────────┬───────────────┬───┴───────────┬────────────────┐
-   transcript      evaluation      training GT      layout GT      glyph instances
-     (product)        text        (next generation)  (if the UI    (click-to-tag)
-                                                    captures boxes)
+page → lines → recognizer → operator correction UI → sha-pinned corrected page
+                                      │
+      ┌───────────────┬───────────────┼───────────────┬────────────────┐
+ transcript      evaluation      training GT      layout GT      glyph instances
+   (product)        text       (next generation)  (line/region      (click-to-tag)
+                                                     boxes)
 ```
 
-**One activity, five outputs.** The previous plan treated ~200–280 hours of annotation as a prerequisite
-stage to be endured before product work could start. Here the same keystrokes produce the transcript. There
-is no separate annotation project.
+**One activity, five outputs.** Annotation is not a prerequisite stage to be endured before product work
+begins — the same keystrokes produce the transcript. There is no separate annotation project.
 
 Two supporting mechanisms:
-- **A VLM proposes corrections on line crops** — accepted or rejected by keystroke. It sees a crop, never a
-  page. That is the only place a vision model touches the product.
+- **A vision model proposes corrections on line crops** — accepted or rejected by keystroke. It sees a crop,
+  never a page. That is the only point at which a vision model touches the product.
 - **A rolling held-out set that is free and cannot be gamed**: fine-tune every N signed-off pages, and score
-  on **the last 20 signed pages *before* they entered training**. Never stale, no annotation cost, and
-  immune to the evaluation-set exhaustion described in §5.
+  on **the last 20 signed pages *before* they entered training.** Never stale, no annotation cost, and
+  immune to evaluation-set exhaustion because each slice is used exactly once.
 
 ### 4.2 Residue is evidence, not waste
 
-The old acceptance rule discarded lines whose reading was far from the reference. But **that is exactly what
-happens when a layout band clips scripture**: the clipped words were never recognised, so the leaf scored
-badly and was *censored out of training*. Labels survived only where the incumbent was already right — the
-model could only ever learn to reproduce the failure it was supposed to fix.
+An acceptance rule that discards lines reading far from the reference **censors exactly the failure it
+should detect**: when a layout band clips scripture, the clipped words were never recognised, so the leaf
+scores badly and drops out of training. Labels survive only where the incumbent was already right, and the
+model can only learn to reproduce the failure.
 
 **Inverted**: the fraction of a chapter's reference text matched by *no* line **localises a missed or
-clipped region**. Sorted across leaves, that is a ranked defect queue — which is week 2's deliverable, needs
-no ground truth and no new model, and uses the incumbent pipeline **as a detector rather than a generator**
-so its bias does not propagate.
+clipped region.** Sorted across leaves, that is a ranked defect queue — needing no ground truth and no new
+model, and using the incumbent pipeline **as a detector rather than a generator**, so its bias does not
+propagate.
 
-One correction from round 2: **that signal is null where there is no reference**, which is precisely the
-8,383 loci with no archaic witness. So a **reference-independent** residue signal runs alongside it — ink
-groups with no line assignment at all.
+Because that signal is null where there is no reference — precisely the 8,383 loci with no archaic witness
+— a **reference-independent** residue runs alongside it: ink groups with no line assignment at all.
 
 ### 4.3 Letterpress repeats the same physical sort
 
-The strongest single idea from either critique panel. Per-instance glyph classification throws away the one
-real asymmetry the medium offers: **a page was printed from a finite tray of metal sorts, and the same sort
-appears thousands of times.** So instead of deciding `ſ` versus `f` instance by instance, **cluster the
-candidate crops per fount per exemplar, key ~50 cluster exemplars by hand, and propagate.**
+A page was printed from a finite tray of metal sorts, and **the same sort appears thousands of times.** So
+rather than deciding `ſ` versus `f` instance by instance, **cluster the candidate crops per fount per
+volume, key ~50 cluster exemplars by hand, and propagate.** Per-instance classification throws away the one
+real asymmetry the medium offers.
 
-And where a decision genuinely cannot be made, the classifier says so: **`A` / `B` / *indeterminate***,
-abstaining into `<unclear>`. The realistic ceiling makes this mandatory rather than optional — clean
-instances reach 0.97–0.99, but on the tail that matters (touching type, over-inking, show-through, worn
-sorts) it is 0.7–0.85, **and that tail is 10–20% of instances.**
+Where a decision genuinely cannot be made, the classifier says so: **`A` / `B` / *indeterminate***,
+abstaining into `<unclear>`. This is mandatory rather than optional, because the ceiling makes it so — clean
+instances reach 0.97–0.99, but the difficult tail (touching type, over-inking, show-through, worn sorts)
+runs 0.7–0.85, **and that tail is 10–20% of instances.**
 
-> **An 8% abstention rate on `ſ`/`f` is an honest edition; a 0% one is a fabricated one.**
+### 4.4 The ligature set is closed, and that is the lever
+
+The ligature sorts of a fount are few, known, and **cut as distinct shapes** — a ligature is a different
+piece of type, not two letters that happen to touch. Ink load does drive whether adjacent sorts collide, so
+connected-component *count* decides nothing on its own. But working from the closed set gives three things
+open-set classification cannot:
+
+1. **A tiny hypothesis space** — the question is never "which of 400 classes," only "is this the `ﬁ` sort or
+   `f` followed by `i`."
+2. **False-positive control by construction** — a ligature is proposed only where its constituent letters
+   are expected.
+3. **Revisability** — every decision for a class can be re-swept corpus-wide when that class's classifier
+   improves, making ligature decisions **revisable data rather than irreversible transcription events.**
+
+Connected components therefore serve as a **candidate detector within the closed set**, with a per-pair CNN
+deciding on the crop.
 
 ---
 
-## 5. How the plan keeps itself honest
+## 5. Scope: volume, fount, and why copy is neither
 
-Two rounds of critique were aimed almost entirely here, so it is worth stating as its own layer.
+```
+CATMuS-Print [Large]  →  VOLUME  →  FOUNT
+```
+
+**VOLUME** is the letterform boundary — three printings, two houses, 27 years apart.
+**FOUNT** — roman text, italic annotation, display — is the letterform boundary *within* a volume, and the
+same axis the rendition layer treats as semantic.
+
+**COPY is not a model level.** Three copies photograph the same setting of the same type; they differ in
+resolution, MRC structure, colour and skew — image statistics, not letterforms. Fitting a model per
+photograph of one book would be a category error.
+
+Instead **copies are pooled within a volume as training augmentation.** This is a real advantage of the
+corpus: *identical letterforms under different imaging conditions* is precisely the invariance a recognizer
+should learn, and it is normally expensive to obtain. **Held-out splits are stratified by copy and by
+gathering** — never by page, since adjacent leaves of a gathering share paper, bleed-through, skew and the
+same forme.
+
+**BOOK is not a scope**: separating 0.60% from 0.50% CER needs ~10⁵ held-out characters per comparison, more
+than this project will hold — and the books that would most need a book model are exactly those with no
+archaic reference and therefore the least alignment ground truth.
+
+---
+
+## 6. The typeset census — the inventory comes before the codec
+
+A class the model never sees cannot be output; a class asserted but absent invites hallucination out of
+damaged type. So the inventory is **surveyed from the actual type**, per volume, then frozen: sample a
+stratified page set, enumerate what is present and at what frequency, assign each attested sort a
+representation (standard Unicode and combining marks, **no Private Use Area**), adjudicate the ambiguous
+pairs by inspection, and record every *surveyed, not found* so the question is closed rather than left open.
+
+**Ligature presence versus absence is itself recorded data** — whether the compositor set `ct` or `c`+`t` at
+a locus is a fact about the forme, not noise to normalise away.
+
+**Style is not part of the codec.** Italic, small capitals, swash, blackletter and `VV` are **rendition
+states of characters**; a turned `u` standing for `n` is a **defect in a sort**, not a glyph. Admitting them
+as classes would multiply the alphabet and destroy the rare-class budget. They live in a **stand-off
+rendition layer**: a plain grapheme channel with a stable character index, a parallel span table over that
+index, a separate word-level font classifier over the line image, and **two-channel scoring** — CER on
+characters, span F on rendition, never folded together.
+
+---
+
+## 7. How the plan keeps itself honest
 
 **Everything is measured against sets built from images, never from pipeline output.** Three tiers, because
-**freezing a set stops contamination but does nothing about repeated querying**:
+**freezing a set stops contamination but not repeated querying**:
 
 | tier | use | discipline |
 |---|---|---|
 | DEV | sweeps, iteration, escalation | unlimited |
-| VAL | generation-adoption decisions | **budgeted, noised, and the query count is published** |
+| VAL | generation-adoption decisions | **budgeted, noised, query count published** |
 | HOLDOUT | **opened once, at publication** | the only publishable numbers |
 
-The arithmetic that forced this: the previous plan would have made **~57 adoption queries against one frozen
-set**, where the expected maximum of 57 noise draws is **~0.18% apparent improvement from nothing at all** —
-larger than any threshold it would plausibly have set. Worse, its first escalation rung was *"annotate more
-pages"* — growing the evaluation set in response to failing it.
+The arithmetic forcing this: ~57 adoption queries against one frozen set, where the expected maximum of 57
+noise draws is **~0.18% apparent improvement from nothing at all** — larger than any threshold worth
+setting. And "annotate more pages" is not an escalation rung when the pages would grow the set being failed.
 
-**Rare classes get a census, not a rate.** Requiring "≥200 instances per class" of classes that occur *tens
-of times corpus-wide* is unmeetable, and its escape clause quietly converted it into automatic satisfaction
-at n=30. Instead: **key every instance on a declared page set**, so the denominator is page-defined rather
-than detector-defined, and **anything below n=30 is UNMEASURABLE — open and blocking, never passed.** A
-census is *stronger* than a recall figure on twelve instances.
+**Rare classes get a census, not a rate.** Requiring "≥200 instances" of classes occurring tens of times
+corpus-wide is unsatisfiable, and mining with the detector under evaluation makes misses invisible. Instead:
+**key every instance on a declared page set**, so the denominator is page-defined; **below n=30 a class is
+UNMEASURABLE — open and blocking.** A census is *stronger* than a recall figure on twelve instances.
 
 **Every gate carries five fields** — metric, threshold, named set, n, pre-registered effect size — as a
-document-level invariant. The previous revision had two complete rows out of twelve, and **δ, its
-convergence criterion in three places, had no value anywhere.**
+document-level invariant.
 
-**Six circularity paths are closed by name**, including the subtle one: deriving alignment costs from the
+**Circularity is closed path by path**, including the subtle one: deriving alignment costs from the
 pipeline's own confusion matrix makes `ſ`↔`f` cheap *because the model confuses them*, so confused lines are
 accepted as ground truth and **the confusion is trained in.**
 
-**And escalation now has a receiver.** "Escalate to Sir" was a no-op when Sir is the operator. Every
-escalation must now name **a different resource class than the one that failed** — paid annotation hours, a
-better scan, an outside palaeographer's ruling, or a stated reduction in **coverage** (fewer books at full
-fidelity) — **never a reduction in fidelity.** It writes a dated, numbered ALERT, and the component parks as
-OPEN with that number attached.
+**Escalation names a different resource class than the one that failed** — paid annotation hours, a better
+scan, an outside palaeographer's ruling, or a stated reduction in **coverage** (fewer books at full
+fidelity) — **never a reduction in fidelity.** It writes a dated, numbered alert, and the component parks as
+open with that number attached.
 
 ---
 
-## 6. What the reader of the finished edition gets
+## 8. What the reader of the finished edition gets
 
-- **A transcript addressed physically first**: page and signature as the primary address, verse as the
-  secondary logical one, both present on every line, **verse numbering following the base document's own
-  numerals** — never silently normalised to modern versification.
+- **A transcript addressed physically first**: page and signature as primary, verse as secondary, both on
+  every line, **verse numbering following the base document's own numerals** — never silently normalised to
+  modern versification.
 - **An uncertainty gradient that never lies**: confident readings plain; uncertain readings *present and
-  flagged*; unread positions as **gaps, never guesses**; and supplied text **bracketed in every view**.
+  flagged*; unread positions as **gaps, never guesses**; supplied text **bracketed in every view**.
 - **A bright line on synthesis.** `<supplied>` requires a source pointing at **a document**. Rule-generated
-  archaic spelling has no document source, so **it can never appear in the transcript at all** — bracketed
-  or otherwise. It survives only as a separately-named reconstruction layer, in its own file, excluded from
-  every citable export.
-- **An apparatus of interventions only** — most verses produce zero records — plus the one obligation that
-  is non-negotiable: **page and signature marks in the text stream, without which no reading can be checked
-  against the book.** They must be captured *during* transcription or never.
+  archaic spelling has no document source, so **it can never appear in the transcript at all.**
+- **An apparatus of interventions only** — most verses produce zero records — plus the one non-negotiable
+  obligation: **page and signature marks in the text stream**, without which no reading can be checked
+  against the book. They are captured *during* transcription or never.
 
 ---
 
-## 7. What is still unknown
+## 9. What is still unknown
 
-**Blocking, and honestly unknown rather than glossed**: **we have not yet established which scan is which
-edition.** The source concordance is empty — no STC numbers, no repositories, no shelfmarks. The
-constitution is unimplementable until it exists, and I have deliberately not filled it in from memory,
-because a hallucinated shelfmark would poison the copy-text choice and everything downstream of it.
+**Blocking**: which scan is which edition. The bibliographic concordance is empty — no STC numbers, no
+repositories, no shelfmarks — and it is deliberately not filled in from inference, because a misattributed
+shelfmark would poison the base-exemplar choice and everything downstream. Also: one citation carried from
+earlier work that a geometry gate depends on (**resolve or delete**), and the typeset census, which closes
+the `ꝛ` / brevigraph / blackletter questions together.
 
-Also blocking: one citation carried unverified from V2 that a gate depends on — **resolve or delete** — and
-a scan inspection that closes three inventory questions at once (blackletter headings, `ꝛ`, Latin
-brevigraphs).
-
-**Open and scheduled**: the JBIG2 substitution test *and* the separate binarisation-transfer gap; whether
-sort-clustering propagates as cleanly as the medium suggests; the input-height sweep, now honestly costed at
-**120–200 GPU-hours** rather than an incidental line item — because only H=120 warm-starts cleanly from the
-pretrained model, and raising it breaks weight transfer at the recurrent stack.
+**Open and scheduled**: JBIG2 substitution and the separate binarisation-transfer gap; whether sort
+clustering propagates as cleanly as letterpress suggests; the input-height sweep, honestly costed at
+**120–200 GPU-hours** — because only the incumbent height warm-starts cleanly from the pretrained model, and
+raising it breaks weight transfer at the recurrent stack.
