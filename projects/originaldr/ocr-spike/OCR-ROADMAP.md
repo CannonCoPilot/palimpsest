@@ -366,6 +366,12 @@ transcription.
 > a leaf-count difference between editions attributes nothing. The live successors are **R3.5b** (the OT2
 > endmatter spread, 1128/1135/1137, a real same-setting question) and **R8.4** (verify every witness's
 > setting). Retained here because a step that was open for weeks should not vanish silently.
+>
+> **R3.5c (NEW).** Grouping the reconcile deltas by setting did not merely delete the malformed −36; it
+> produced a **well-formed** replacement. Within the 1633 setting, **`F`'s block is 5 leaves short of `R`'s**
+> (765 against 770). *That* is the attributable question the old step was reaching for — two copies of **one**
+> edition, so every leaf of the difference has a nameable cause. It inherits R3.5's acceptance criterion
+> unchanged, against `R` instead of `B`.
 
 *Everything below is the step as it stood, retained unaltered for provenance. **It is not to be executed.**
 `NT-1582-F` is the siglum this step used; the witness is now `NT-1633-F`, which is the whole reason the step
