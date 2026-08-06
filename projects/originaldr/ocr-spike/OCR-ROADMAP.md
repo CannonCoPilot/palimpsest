@@ -443,6 +443,23 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.2 | Re-read the 4 `M`-based files on the CCITT | as R6.5 | one is DONE (`matter-ot2-privilege-du-roi`) |
 | R7.3 | Re-read the 39 `F`-based files on `B`/`P` | the bulk of the corpus | prioritise files whose loci `B` or `P` actually hold; report any locus neither holds rather than substituting `F` silently |
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
+| R7.5 | Retire `jp2_page.py`'s routing table | every caller reaches rasters through `witnesses.pixel_source()` | `jp2_page.py` cannot return a render-derived path for any witness whose `PRIMARY` is a PDF |
+
+**R7.5 is the mechanism, not a tidying job — and it was verified, not assumed.** `jp2_page.py`'s
+`OCR_DIR_TO_JP2` keys **are** the `ocr_dir` values the ground-truth files carry, so this table is literally
+what routed 48 transcriptions to the wrong image. It is not only the docstring that is stale:
+
+| `ocr_dir` | routes to | should be |
+|---|---|---|
+| `archive-nt-1582`, `archive-ot1-1609`, `archive-ot2-1610` | `S01` JP2 | `F` is PDF-primary **and barred** — these loci belong on `B`/`P` |
+| `jp2-S08` | `S08` JP2 | `X` is PDF-primary and **excluded**; the locus belongs on `B`-NT |
+| `jp2-S06` | `S06` **JPEG** (2550×3301, a 300 dpi render) | the CCITT inside `S06.pdf` |
+| `jp2-S04` | `S04_1633-rheims-nt/…_jp2` — the **retired MRC composite** | `newtestamentofie00engl_jp2`, the Princeton original, which is what `pixel_source()` returns |
+
+So a caller using `witnesses.pixel_source()` and a caller using `jp2_page.py` get **different rasters for
+the same witness**, and only one of them is guarded. Two routes to the pixels is the defect; the fix is one
+route. This is the same shape as the `role="structure"` leak — a retracted decision still live in code —
+except that here the code disagrees with the guard rather than merely with the plan.
 
 **R7.4 is the one that stops this recurring.** Three instances now share a single shape — the vv→w flip,
 `d. Roüen`, `Marchans` — and in all three the rule was right, the observer was careful, and only the image
