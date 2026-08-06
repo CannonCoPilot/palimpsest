@@ -67,6 +67,19 @@ def main() -> int:
     print("\nregression — no NT witness may claim 1582 unless its body is 1582:")
     check("F is not registered as 1582", W.WITNESSES[("NT", "F")]["year"] != 1582)
 
+    print("\nattests_transcribed_setting — which witnesses may carry the TEXT:")
+    check("NT B attests 1582", W.attests_transcribed_setting("NT", "B") is True)
+    check("OT1 P attests 1609", W.attests_transcribed_setting("OT1", "P") is True)
+    # The negative case is the whole point: this is the call that reclassifies the 9
+    # ground-truth files read from F's New Testament.
+    check("NT F REJECTED (1633)", W.attests_transcribed_setting("NT", "F") is False)
+    check("NT R REJECTED (1633)", W.attests_transcribed_setting("NT", "R") is False)
+    # ...and it must not fire on the volume admitted BECAUSE it is another edition.
+    # `False` and `None` are different answers and a bool test would conflate them.
+    check("OT M -> None, not False", W.attests_transcribed_setting("OT", "M") is None,
+          f"got {W.attests_transcribed_setting('OT', 'M')!r}")
+    check("OT1 F still attests 1609", W.attests_transcribed_setting("OT1", "F") is True)
+
     print()
     if FAILURES:
         print(f"FAILED: {len(FAILURES)}\n---")

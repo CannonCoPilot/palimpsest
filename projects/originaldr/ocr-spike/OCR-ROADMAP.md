@@ -522,6 +522,17 @@ archive-nt-1582` — that is `F`. They were read from a 1633 book while being re
 compounds with R7: those files are on an inadmissible raster **and** the wrong edition. They must be
 re-filed before any of them is cited.
 
+**`audit_gt_rasters.py` now detects this rather than relying on this paragraph.** The audit previously
+reported those nine under `F`'s *resolution* bar, because `BARRED` was keyed on the **siglum alone** — the
+same assumption that produced the original error, that a copy has one character across all volumes. `F` is
+low-resolution in the OT and **a different edition** in the NT, and only the second is fatal: re-reading a
+1633 leaf at 545 ppi fixes nothing. The registry now carries `TRANSCRIBED` (the edition each volume is a
+transcript *of*) and `attests_transcribed_setting()`, and the audit reports **`WRONG SETTING` first**, ahead
+of the resolution and render reasons. It returns `None`, not `False`, for the whole-Bible `OT` pseudo-volume
+behind `M`'s 1635 prelims — admitted *because* it is another edition — and the test asserts that
+distinction, since collapsing "not the text" into "not applicable" is how `NT-F` stayed admissible.
+Verified: **9 files flagged, no others.**
+
 ### Why this was missed — a method note, not an apology
 
 The test that established `F` as an independent copy was run **against `B`** and correctly returned noise at

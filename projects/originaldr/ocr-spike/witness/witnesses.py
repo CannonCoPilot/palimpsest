@@ -236,6 +236,26 @@ def assert_same_setting(vol, *sigs):
     return True
 
 
+# The edition each volume is a transcript OF.  A witness attesting anything else is
+# support, never the text.  `OT` is deliberately absent: it is the whole-Bible pseudo-
+# volume behind M's 1635 Rouen prelims, admitted precisely BECAUSE it is another
+# edition, so "wrong setting" is not a defect there and must not be reported as one.
+TRANSCRIBED = {"NT": 1582, "OT1": 1609, "OT2": 1610}
+
+
+def attests_transcribed_setting(vol, sig):
+    """True if this witness attests the edition being transcribed.
+
+    None when the volume has no transcribed target (see TRANSCRIBED), so callers
+    can distinguish "not the text" from "not applicable" rather than collapsing
+    both to False -- collapsing them is how NT-F stayed admissible.
+    """
+    target = TRANSCRIBED.get(vol)
+    if target is None:
+        return None
+    return WITNESSES[(vol, sig)]["year"] == target
+
+
 def wid(vol, sig):
     """Canonical witness id, e.g. OT1-1609-B."""
     return f"{vol}-{WITNESSES[(vol, sig)]['year']}-{sig}"

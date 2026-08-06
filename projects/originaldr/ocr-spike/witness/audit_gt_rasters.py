@@ -75,6 +75,13 @@ def audit() -> int:
         # Inadmissible if the witness is barred outright, or if its primary is a PDF and
         # the file was read from the JP2 render of it.
         reasons = []
+        # Wrong edition outranks every other defect and is listed first.  A resolution
+        # complaint about a file read from the wrong book is a true statement that
+        # buries the one that matters -- re-reading it at 545 ppi fixes nothing.
+        if W.attests_transcribed_setting(vol, sig) is False:
+            reasons.append(
+                f"WRONG SETTING -- {W.wid(vol, sig)} attests {W.setting(vol, sig)[1]}, "
+                f"but {vol} is a transcript of {W.TRANSCRIBED[vol]}")
         if sig in BARRED:
             reasons.append(BARRED[sig])
         if primary == "pdf" and render:

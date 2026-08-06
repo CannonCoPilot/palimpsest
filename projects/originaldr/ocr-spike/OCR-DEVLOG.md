@@ -510,3 +510,118 @@ ceiling is the two NT leaves `B` lacks, already recorded.
 Tracked as **R7**, with R7.4 as the item that stops the recurrence: the guard must sit on the ground-truth
 record, because `pixel_source()` guards *pipelines* and a person reading a PNG never touches it. Nothing is
 withdrawn on suspicion — each transcription stands until re-read.
+
+## Session 9 — `F`'s New Testament is the 1633 edition, and has been all along
+
+A load-bearing claim was wrong for four months. `NT/S01` was registered `NT-1582-F` and described as *"an
+independent witness to the 1582 Rhemes New Testament."* **Its body is the 1633 Rouen setting.**
+
+It surfaced sideways. R3.5 asked why `F`'s NT block runs 765 leaves against `B`'s 801, and the intended
+method was to walk the join and attribute the 36 leaves. Checking printed page numbers at the join instead
+put `F` beside `R` — the 1633 copy — and they were the same book.
+
+**The evidence, at four separated points:** `F` tracks `R` page-for-page and line-for-line at a **constant
+leaf offset of +4**. F356/R360 both print **332** *THE ACTES*; F556/R560 print **530** *FIRST EPISTLE OF S.
+PAVL*; F708/R712 print **682**; F716/R720 print **690**. They share the misprint **`Iralie`** for `Italie`.
+`B` disagrees with both everywhere: Apocalypse ch. XXII stands at printed **743** in `B` against `F`'s
+**692**, and `B` carries running-head apparatus (`CHA. XIII.`, `HOLY weeke`) that neither `F` nor `R` has.
+
+**`F` is an *independent* 1633 copy, not a second render of `R`.** The blank-margin correlation that reads
+**+0.769** for a proven shared physical leaf reads **0.099 / 0.021 / −0.022** here, against controls of
+0.077 / −0.084 / −0.030. Two 1633 copies, not one file twice.
+
+**`F`'s Old Testament volumes are unaffected** — genuinely 1609 and 1610, checked at three separated points
+each and in step with `B` and `P`. The defect is the NT file alone, which is why sigla are per volume.
+
+### Why it was missed
+
+The independence test **was run**, and it passed. It was run **against `B`**, and returned noise. That
+licensed exactly one conclusion — *`F` is not `B`* — and it was recorded as *`F` is an independent **1582**
+copy*. `R` was never contrasted with `F`, because `R` had already been filed as "the other edition" and so
+was not in the candidate set when the question was asked.
+
+⇒ **A test distinguishes exactly the hypotheses it contrasts. Filing a witness under a label removes it
+from the candidate set, and the removal is invisible afterwards.**
+
+The corroborating detail is that the finding was already written down. A contemporaneous note recorded
+*"different text, different signature series"* between `F` and `B` — which **is** this finding — and it was
+read as *different copy* rather than *different setting*. The observation was correct and the category was
+supplied by the label.
+
+### Consequence
+
+**The New Testament has one witness to its own setting.** `X` is `B` upscaled with zero real detail beyond
+it, `F` and `R` are 1633, `M` is bitonal and prelims-only. Every NT redundancy assumption in the plan is
+void. Nothing about `B`'s readings changes — but nothing corroborates them either, and no amount of
+re-reading manufactures a second witness. **The remedy is acquisition.**
+
+Still open (R8.3): `F`'s title page **is** a genuine 1582 Rhemes Fogny setting — woodcut border,
+*PRINTED AT RHEMES, by Iohn Fogny. 1582.* — and it is **duplicated at leaves 0 and 2** on a 1633 body. A
+made-up copy and a composite digitisation both explain that, and the blank-paper test against `B`'s title
+page discriminates them.
+
+### What was built, and what it caught
+
+- **`setting()` / `witnesses_to()` / `assert_same_setting()`** in the registry. The year had always been in
+  the witness dict; only `wid()` ever read it, so no code path could notice the contradiction. A collation
+  across settings now raises rather than silently conflating — and it fails silently by nature, because two
+  editions of one translation agree for pages at a time and diverge exactly where the reading matters.
+- **`test_setting_guard.py`** — positive and negative, the negative being that a cross-setting collation is
+  refused, plus a regression that no NT witness may claim 1582 unless its body is 1582.
+- **`test_counts_vs_doc.py`** — parses the §1.1 table out of the plan and diffs `wid` / leaves / primary
+  against the registry. 12/12 agree, and the negative case was *proven* by injecting a wrong leaf count and
+  watching it fail. This one exists because the prose and the code had disagreed for four months with
+  nothing able to notice.
+
+**Then the audit caught a compounding defect.** R7 found 39 ground-truth files read from `F`; **nine of them
+are NT files**, so they were read from a 1633 book while being recorded as 1582 readings. That is a worse
+class than R7's: R7's files are *unverifiable* at their raster, these are *the wrong edition*, and
+re-reading a 1633 leaf at 545 ppi fixes nothing.
+
+`audit_gt_rasters.py` had been reporting those nine under `F`'s **resolution** bar — a true statement that
+buried the one that mattered — because `BARRED` was keyed on the **siglum alone**. That is the original
+error in miniature: the assumption that a copy has one character across every volume. `F` is
+low-resolution in the OT and a different edition in the NT. The registry now carries `TRANSCRIBED` and
+`attests_transcribed_setting()`, and the audit reports `WRONG SETTING` **first**. It returns `None` rather
+than `False` for the whole-Bible `OT` pseudo-volume behind `M`'s 1635 prelims — admitted *because* it is
+another edition — and the test asserts that distinction, since collapsing "not the text" into "not
+applicable" is precisely how `NT-F` stayed admissible. **Nine files flagged, no others.**
+
+### R4.1 — the STC/ESTC deadlock broke, using something held locally all along
+
+ESTC still returns `no such index`; USTC 404, Virginia JavaScript-only, Jisc 403, LC 403. The catalogues
+that were reachable were dealer and auction listings, which the rule bars from promoting anything.
+
+The route around it was **the holding libraries' own MARC records, which the Internet Archive exposes** at
+`archive.org/metadata/<id>` under `metadata.references` — already on disk, never queried. Boston Public
+Library's record gives, for the 1582 NT: `ESTC S102491; STC (2nd ed.) 2884; Darlow & Moule 134; Herbert 177;
+Allison & Rogers II, 173`, LCCN 16019327, signatures `a-c⁴ d² A-5D⁴ 5E²`. For the 1609/10 OT:
+`STC (2nd ed.) 2207; ESTC S101944; Darlow & Moule 300`. It also gives BPL's own call numbers — NT
+**G.404.11**, OT **G.404.12** — refining §1.3, and records that OT2 repeats pp. 1001–1004 with 1003–1004
+misbound between 994 and 995.
+
+**This settles the one-digit disagreement in favour of S102491**; the sources reading S102419 are the dealer
+listings. **Nothing is promoted yet.** One institutional authority is not two, and the rule is being held
+rather than relaxed — the point of a two-authority rule is precisely the single-digit error a lone source
+cannot catch.
+
+### An acquisition target, and the discipline it must be admitted under
+
+IA `thenewtestamento00rhei` — **Princeton Theological Seminary, call no. 13737**, 1582, imagecount 732, with
+a continuous-tone `_orig_jp2.tar`. Defective: *"Lacks pages before p. 9, 205-6, 337-8, 373-4, 423-4, 461-2,
+after 742."* The *"after 742"* is consistent with the 1582's own pagination, where `B` has Apocalypse ch.
+XXII at 743 — **promising, and not proof.**
+
+**It must be setting-verified before admission**, by the method that caught this: printed page number and
+running head at three or more separated points against a known-good same-setting partner. That test is
+minutes of work, and it is the one nobody ran for four months.
+
+### Method notes
+
+- **Setting verification** = printed page number + running head at **≥3 separated points**, against a
+  known-good same-setting partner. Cheap and decisive.
+- **Blank-paper NCC discriminates same-*copy* from same-*setting*** — but the strip must be **verified
+  blank**. The 0.62–0.95 band used for the Censure leaves is *text* on ordinary leaves; the first run was
+  invalid for that reason before it was re-cropped.
+- `M` is bitonal CCITT, so **grayscale NCC against continuous-tone scans is a dead metric** — it returns
+  0.067 even for two genuine 1582 title pages. A null from it is not evidence.
