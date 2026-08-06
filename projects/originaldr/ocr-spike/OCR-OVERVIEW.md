@@ -37,7 +37,7 @@ owned and digitised by the Fatima Movement, **M** = the copies behind a 2007 Max
 
 | volume | base exemplar | surrogate | low-resolution witness | other | excluded |
 |---|---|---|---|---|---|
-| **NT 1582** | **`NT-1582-B`** | — | `NT-1582-F` | `NT-1633-R` support · `NT-1582-M` frontmatter | `NT-1582-X` |
+| **NT 1582** | **`NT-1582-B`** | — | — | `NT-1633-R` support · **`NT-1633-F` support** · `NT-1582-M` frontmatter | `NT-1582-X` |
 | **OT1 1609** | **`OT1-1609-B`** ~545 ppi | `OT1-1609-P` ~411 ppi | `OT1-1609-F` | — | — |
 | **OT2 1610** | **`OT2-1610-B`** ~545 ppi | `OT2-1610-P` ~411 ppi | `OT2-1610-F` | — | — |
 
@@ -49,6 +49,27 @@ pixels, none of the detail.
 **`NT-1633-R` is admitted for the NT alone, as witness support.** The NT base copy lacks its Censure and
 Preface leaves entirely and the third NT copy has them **borrowed from the 1633 copy** — so without R, those
 leaves have no independent reading. The OT volumes remain first-edition only.
+
+**`F`'s New Testament is the 1633 Rouen edition, not the 1582 Rheims.** Its title page is a genuine 1582
+Fogny title page; its **body is not**. `F` runs page-for-page and line-for-line with `R` at a constant leaf
+offset of +4, sharing the misprint `Iralie` for `Italie`, matched at four separated points; the 1582 base
+copy disagrees with both everywhere, standing at printed 743 where `F` reads 692 and carrying running-head
+apparatus neither `F` nor `R` has. `F` is nonetheless an **independent** 1633 copy rather than a second
+render of `R` — the blank-margin correlation that reads +0.769 for a proven shared leaf reads 0.099 / 0.021 /
+−0.022 here. **`F`'s two Old Testament volumes are unaffected and genuinely 1609 and 1610**, verified at
+three separated points each; the defect is the NT file alone. It is therefore re-sigla'd **`NT-1633-F`** and
+holds the same role as `R`: witness support from a different edition, never a witness to the 1582 setting.
+
+> **Consequence, stated plainly: the New Testament has exactly one witness to its own setting** — the base
+> exemplar `B`. `X` is `B` upscaled, `F` and `R` are 1633, `M` is bitonal and prelims-only. Every claim of
+> NT redundancy in earlier drafts is void, and the surviving remedy is acquisition, not re-reading.
+>
+> The error is instructive and is recorded rather than quietly repaired. `F`'s independence was tested
+> **against `B`**, and the test returned noise. That licensed only "`F` is not `B`" — it was read as "`F` is
+> an independent **1582** copy". `R` was never contrasted with `F` because `R` had already been filed as
+> "the other edition". **A test distinguishes exactly the hypotheses it contrasts, and filing a witness
+> under a label removes it from the candidate set.** The guard added in response refuses any collation
+> across settings outright, and refuses on the identifier, so the label can no longer do the hiding.
 
 **The `F` files are independent witnesses whose *digitisation* is low-resolution.** Their primary artefact
 is an uploaded PDF carrying one **800 × 1124** JPEG per page — about **168 ppi at the leaf**, sampled and
@@ -63,8 +84,12 @@ readings wherever no better-resolved witness has the leaf.
 > no library shelfmark is what privately held *looks* like, not a gap. And it is not less complete than the
 > library copies — for OT1 it holds **the same 1132-leaf book block** as the Princeton copy, closing on the
 > same words at the same printed page, the entire difference being binding, flyleaves and imaging targets.
-> For the NT it is **more** complete than the base exemplar, which lacks its Censure and Preface p.1
-> outright. A witness that supplies what the base is missing does not rank below it there; it governs.
+>
+> **The New Testament half of that defence is now withdrawn.** It read: *"For the NT it is more complete
+> than the base exemplar, which lacks its Censure and Preface p.1 outright. A witness that supplies what the
+> base is missing does not rank below it there; it governs."* `F` is more complete than the base copy there,
+> and that is not to the point — **it is a different edition**, so what it supplies is support, not the
+> setting's own reading. The OT claim above stands unchanged and on its original evidence.
 
 > The larger 3334 × 4684 rasters these files appear to offer are **IA renders of that PDF at 300 dpi** —
 > 4.17× interpolation. An intermediate draft measured the renders and read them as the source, then

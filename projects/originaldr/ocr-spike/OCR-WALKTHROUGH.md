@@ -13,13 +13,13 @@ Companion documents: `OCR-EXECUTIVE-SUMMARY.md` · `OCR-OVERVIEW.md` · `OCR-MAS
 ## Step 0 — Establish which books we have *(week 1, blocking)*
 
 Eleven scan files are on disk. **They are not eleven witnesses.** Measurement resolves them into **ten** —
-eight that witness their own volume's setting, one admitted from a different edition as support, one
-admitted for frontmatter only, and one file that is not a witness at all. The base exemplars are now
+**seven** that witness their own volume's setting, **two** admitted from a different edition as support,
+one admitted for frontmatter only, and one file that is not a witness at all. The base exemplars are now
 declared:
 
 | volume | base exemplar | surrogate | low-resolution witness | other | excluded |
 |---|---|---|---|---|---|
-| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(see below)* | `NT-1582-F` (Fatima) | `NT-1633-R` support · **`NT-1582-M` frontmatter** | `NT-1582-X` — `B` re-rendered |
+| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(none — see below)* | — | `NT-1633-R` support · **`NT-1633-F` support** · **`NT-1582-M` frontmatter** | `NT-1582-X` — `B` re-rendered |
 | OT1 1609 | **`OT1-1609-B`** (Boston PL, ~545 ppi) | `OT1-1609-P` (~411 ppi) | `OT1-1609-F` | — | — |
 | OT2 1610 | **`OT2-1610-B`** (Boston PL, ~545 ppi) | `OT2-1610-P` (~411 ppi) | `OT2-1610-F` | — | — |
 
@@ -47,14 +47,30 @@ p.1**, which the base exemplar lacks outright and which every other file supplie
 > artefact. The cost was a false conclusion that no genuine 1582 reading of those leaves survived anywhere.
 > **An exclusion is a claim and takes the same standard of evidence as any other.**
 
+**`F`'s New Testament is the 1633 Rouen edition, not the 1582 Rheims — so the NT has one witness to its own
+setting.** `F` carries a genuine 1582 Fogny title page over a 1633 body: it agrees with `R` page-for-page
+and line-for-line at a constant +4 leaf offset, shares the misprint `Iralie` for `Italie`, and disagrees
+with the 1582 base copy everywhere (Apocalypse ch. XXII at printed 692 against `B`'s 743). It is an
+*independent* 1633 copy, not a re-render of `R` — blank-margin correlation 0.099 / 0.021 / −0.022 against
++0.769 for a proven shared leaf. **`F`'s OT1 and OT2 are unaffected and genuinely 1609 and 1610.** It is
+re-sigla'd `NT-1633-F` and takes `R`'s role: support from another edition. `NT-1582-B` is now the only
+witness to the 1582 setting — `X` is `B` upscaled, `M` is bitonal prelims — and every NT redundancy
+assumption in earlier drafts is void.
+
+> The independence test that cleared `F` was run **against `B`** and returned noise, which licensed only
+> "`F` is not `B`". It was read as "`F` is an independent **1582** copy". `R` was never contrasted with `F`,
+> because `R` was already filed as "the other edition". **A test distinguishes exactly the hypotheses it
+> contrasts; filing a witness under a label removes it from the candidate set.** Step 0's guard now refuses
+> cross-setting collation on the identifier itself, so the label cannot hide a witness again.
+
 **The `F` files are independent copies whose *scans* are low-resolution — not "structure only."** Earlier
 drafts used that label and called them rehosts of an unidentified copy. Both subordinated the copy on
 evidence about the scan. The copy is **owned and digitised by the Fatima Movement**; for OT1 it contains
 **the same 1132-leaf book block as the Princeton copy**, closing on the same words at the same printed
-page; and in the NT it carries prelims the base exemplar is missing. What is true is narrower and
-measured: at **800 × 1124, ~168 ppi**, the nub separating long-ſ from `f` spans under 1.6 px. So `F` is
-barred from glyph-level work and from training data — and **carries readings wherever no better-resolved
-witness has the leaf**.
+page. What is true is narrower and measured: at **800 × 1124, ~168 ppi**, the nub separating long-ſ from `f`
+spans under 1.6 px. So `F` is barred from glyph-level work and from training data — and **carries readings
+wherever no better-resolved witness has the leaf**. *(The companion clause "and in the NT it carries prelims
+the base exemplar is missing" is withdrawn: it does, but from a different edition, so it is support.)*
 
 **Gates 0a–0d**: bibliographic fields resolved · **collation and leaf inventory per copy** · **cross-source
 leaf map** · derivative-contamination guard. **No leaf is transcribed before its provenance and its

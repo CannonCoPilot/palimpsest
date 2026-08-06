@@ -23,9 +23,9 @@ scan-quality fact, not a textual one.** It needs no apparatus and no voting.
 ## 2. The corpus: three volumes, three copies each — and two admitted for named leaves only
 
 Eleven scan files are held. **They are not eleven witnesses** — measurement and bibliographic verification
-resolve them into **ten**, across three volumes: eight witnessing their own volume's setting, one admitted
-from a different edition as support, one admitted for frontmatter alone, and one file that is a re-wrapping
-of another and no witness at all.
+resolve them into **ten**, across three volumes: **seven** witnessing their own volume's setting, **two**
+admitted from a different edition as support, one admitted for frontmatter alone, and one file that is a
+re-wrapping of another and no witness at all.
 
 **One of the eleven was very nearly not counted.** A file set aside in an earlier draft as "a 1610
 whole-Bible facsimile, excluded outright" is nothing of the kind: it is a 2007 reprint **of photographs of
@@ -76,6 +76,31 @@ agreement including an S. Augustine quotation the 1633 setting lacks).
 
 The 1633 Rouen copy remains admitted for the NT as witness support, for the leaves where the base has no
 reading at all.
+
+**A second file proved to be that same 1633 edition, and it had been counted as a 1582 witness for four
+months.** `F`'s New Testament carries a genuine 1582 Fogny title page over a **1633 Rouen body**: it tracks
+the 1633 copy page-for-page and line-for-line at a constant +4 leaf offset, shares its misprint `Iralie` for
+`Italie`, and departs from the 1582 base copy everywhere — Apocalypse ch. XXII at printed 692 against the
+base's 743, and running-head apparatus the base has and it does not. It is an *independent* 1633 copy rather
+than a re-render of the other, on blank-margin correlation of 0.099 / 0.021 / −0.022 where a proven shared
+leaf reads +0.769. **`F`'s two Old Testament volumes are unaffected and genuinely 1609 and 1610**, checked
+at three separated points each. It is re-sigla'd `NT-1633-F` and reclassified as support.
+
+> **The consequence is the most significant open exposure in the corpus: the New Testament has exactly one
+> witness to its own setting.** `X` is the base upscaled, `F` and `R` are 1633, `M` is bitonal and
+> prelims-only. Nothing about the base copy's readings changes, but nothing corroborates them either, and no
+> amount of re-reading manufactures a second witness. **The remedy is acquisition**, and a candidate is
+> already identified: a Princeton Theological Seminary 1582 copy with continuous-tone originals, to be
+> setting-verified *before* admission by the same printed-page-and-running-head method that caught this.
+>
+> The failure mode is worth stating because it is cheap to repeat. `F`'s independence was tested **against
+> the base copy** and returned noise — which licensed only "`F` is not `B`", and was read as "`F` is an
+> independent **1582** copy". The 1633 copy was never contrasted with `F`, because it had already been filed
+> as "the other edition". **A test distinguishes exactly the hypotheses it contrasts, and filing a witness
+> under a label removes it from the candidate set.** Two executable guards now enforce this: collation
+> across settings is refused outright, and the corpus table in the plan is parsed and diffed against the
+> registry, so a document claim and a code claim cannot drift apart silently. Both carry negative tests —
+> a guard that has never rejected anything is not known to work.
 
 **Every volume has a base exemplar; the two OT tomes also have a same-setting surrogate** for resolving
 illegibility. The NT has none — which is why it alone needs the witness-support and frontmatter roles.
@@ -218,12 +243,22 @@ read, and leaf indices do not correspond between copies of the same volume (the 
 leaves before a word is compared). Until the map exists, "the same page in another witness" is not a
 well-formed request.
 
-Also blocking, but running in parallel: **STC/ESTC for every copy** — OCLC numbers are held, the STC
-numbers in earlier notes are recorded as unverified leads, and verification is **externally blocked**, the
-ESTC index returning `no such index` for every query while `estc.bl.uk` redirects to CERL. A scheduled
-probe distinguishes an outage from an absent record, and no number is promoted until **two independent
-authorities agree** — the sources disagree on one digit of the NT identifier, which is exactly the error a
-single authority cannot catch.
+**Also blocking, and now the corpus's largest exposure: the New Testament has one witness to its own
+setting** (§2). The remedy is acquisition, not further measurement of what is held. A candidate 1582 copy
+with continuous-tone originals is identified and **must be setting-verified before admission** — the
+printed-page-and-running-head check at three or more separated points against a known-good same-setting
+partner, which is the test that was never run for four months and would have cost minutes.
+
+Also blocking, but running in parallel: **STC/ESTC for every copy.** Direct verification remains
+**externally blocked** — the ESTC index returns `no such index` for every query, `estc.bl.uk` redirects to
+CERL, and the four fallback catalogues probed are 404, JavaScript-only, or 403. A scheduled probe
+distinguishes an outage from an absent record. **The route around it was held locally all along**: Internet
+Archive exposes each holding library's own MARC record, and the Boston Public Library's supplies
+`ESTC S102491; STC (2nd ed.) 2884` for the New Testament and `STC (2nd ed.) 2207; ESTC S101944` for the Old
+Testament, with LCCN and signature collation. **This settles the one-digit disagreement in favour of
+S102491** — the sources reading S102419 are dealer and auction listings, which the rule bars from promoting
+anything. That rule is unchanged and still binding: **one institutional authority is not two**, so no number
+is written into §1.3 until a second, independent institution's record agrees.
 
 **Two items on this list are now closed rather than pending.** The `F` repository question is answered and
 was the wrong question: those volumes have no shelfmark because they are **not a library's copy** —

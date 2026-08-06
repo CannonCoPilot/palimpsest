@@ -367,6 +367,10 @@ transcription.
 > endmatter spread, 1128/1135/1137, a real same-setting question) and **R8.4** (verify every witness's
 > setting). Retained here because a step that was open for weeks should not vanish silently.
 
+*Everything below is the step as it stood, retained unaltered for provenance. **It is not to be executed.**
+`NT-1582-F` is the siglum this step used; the witness is now `NT-1633-F`, which is the whole reason the step
+dissolved.*
+
 **Discharges** §1.1b, second half. Depends on the leaf map (R3.2).
 
 | # | step | deliverable | acceptance |
