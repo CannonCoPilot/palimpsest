@@ -359,7 +359,13 @@ transcription.
 
 ---
 
-## R3.5 — Attribute the New Testament's 36-leaf difference
+## R3.5 — Attribute the New Testament's 36-leaf difference — **DISSOLVED (R8)**
+
+> **This step asked a malformed question and is closed without being completed.** It sought to attribute the
+> 765 vs 801 leaf difference between `F` and `B` leaf by leaf. They are **different editions** (§1.1c), and
+> a leaf-count difference between editions attributes nothing. The live successors are **R3.5b** (the OT2
+> endmatter spread, 1128/1135/1137, a real same-setting question) and **R8.4** (verify every witness's
+> setting). Retained here because a step that was open for weeks should not vanish silently.
 
 **Discharges** §1.1b, second half. Depends on the leaf map (R3.2).
 
@@ -468,6 +474,62 @@ ground-truth record itself.
 
 ⚠ **This re-opens ratified ground truth and is flagged, not actioned silently.** No transcription is being
 withdrawn on suspicion — each stands until re-read.
+
+---
+
+## R8 — `F`'s New Testament is the 1633 edition (NEW, 2026-08-06)
+
+**A load-bearing claim was wrong for four months.** `NT/S01` was registered as `NT-1582-F`, an independent
+witness to the 1582 Rhemes New Testament. Its body is the **1633 Rouen** setting — page for page and line
+for line with `NT-1633-R` at a constant leaf offset of **+4**, including the shared misprint `Iralie` for
+`Italie`, while the genuine 1582 (`B`) puts Apocalypse ch. XXII on printed **743** against `F`'s **692**.
+Full evidence at masterplan §1.1c.
+
+**Consequences, in order of severity:**
+
+1. **The New Testament has ONE witness to its own setting**, `B` — not two. `X` was already known to be `B`
+   upscaled; `F` is a different edition; `M` is bitonal and prelims-only. Every redundancy assumption for
+   the NT is void.
+2. **`F`'s OT1 and OT2 are unaffected** — checked at three separated points each, same setting as `B` and
+   `P`. The defect is confined to one file.
+3. **§1.4's cross-edition "contamination" becomes a same-edition supply.** The foxing result stands; the
+   inference drawn from it does not.
+4. **R3.5 is DISSOLVED, not completed.** It asked for the 36-leaf `F`/`B` difference to be attributed leaf
+   by leaf. The question was malformed: they are different editions, and a leaf-count difference between
+   editions attributes nothing.
+
+| # | step | deliverable | acceptance | status |
+|---|---|---|---|---|
+| R8.1 | Correct the registry | `year=1633`, `wid → NT-1633-F`, evidence in the record | tree rebuilds, 12/12 verified | **DONE** |
+| R8.2 | Guard the class of error | `setting()`, `witnesses_to()`, `assert_same_setting()` | `test_setting_guard.py` — cross-setting collation **refused**, both directions exercised | **DONE** |
+| R8.3 | Attribute `F`'s 1582 title page | it is the genuine 1582 Rhemes setting, **duplicated at leaves 0 and 2**, on a 1633 body | blank-paper correlation against `B`'s title page: a match ⇒ spliced from `B`'s scan; control-level ⇒ the copy is a made-up one. **State which, or state that neither is supported** | OPEN |
+| R8.4 | Re-audit **every** witness for setting, not just the suspected one | printed page + running head at ≥3 separated points per witness, against a known-good partner in its claimed setting | a table in §1.1c covering all twelve records; **any witness whose setting was never checked is named as unchecked, not assumed sound** | OPEN |
+| R8.5 | Bind the plan's counts to the registry | `test_counts_vs_doc.py` | doc/registry disagreement **fails**, proven by a negative case | **DONE** |
+| R8.6 | Re-examine every ground-truth file taken from `NT/S01` | 9 files (`matter-nt-*`, `nt-marke-*`, `scripture-2john`, `scripture-matthew-28`) | each re-filed as **1633** or re-read on `B`; **none silently left labelled 1582** | OPEN — overlaps R7.3 |
+
+**R8.4 is the one that matters most, and it is uncomfortable.** The error was not found by a test; it was
+found by chasing an unrelated leaf-count discrepancy. **No witness's setting had ever been verified against
+a same-setting partner** — the concordance verified *title pages*, and a title page is exactly what `F`
+turns out to have borrowed. Until R8.4 runs, the correct statement is that eleven records are **unchecked**,
+not that they are sound. `F` is simply the one that happened to be looked at.
+
+**R8.6 is the ground-truth blast radius.** Nine of the files audited under R7 declare `ocr_dir:
+archive-nt-1582` — that is `F`. They were read from a 1633 book while being recorded as 1582 readings. This
+compounds with R7: those files are on an inadmissible raster **and** the wrong edition. They must be
+re-filed before any of them is cited.
+
+### Why this was missed — a method note, not an apology
+
+The test that established `F` as an independent copy was run **against `B`** and correctly returned noise at
+every offset. It was read as *"`F` is an independent copy of the 1582"* when it licensed only *"`F` is not
+`B`."* The visual note recorded at the time — *"different text, different signature series"* — is this
+finding, written down and misread as evidence of a different **copy** rather than a different **setting**.
+`R` was never tested against `F`, because `R` had been filed as "the other edition" and so was not a
+candidate partner.
+
+⇒ **A test distinguishes exactly the hypotheses it contrasts, and filing a witness under a label removes it
+from the candidate set.** Both are now structural: `witnesses_to(vol, year)` enumerates candidate partners
+from the registry rather than from memory of how things were filed.
 
 ---
 

@@ -65,7 +65,26 @@ WITNESSES = {
     ("NT",  "B"): dict(legacy="NT/S09",  year=1582, leaves=812,
                        jp2=SCANS/"S09_nevv-testament-mart-3vol/nevvtestamentofi00mart_jp2",
                        role="base"),
-    ("NT",  "F"): dict(legacy="NT/S01",  year=1582, leaves=765,
+    # YEAR CORRECTED 1582 -> 1633 (2026-08-06, roadmap R8).  This witness's NEW
+    # TESTAMENT IS NOT THE 1582 RHEMES SETTING.  Its body agrees with NT-1633-R
+    # page for page and line for line -- printed 332 "THE ACTES", 530 "THE FIRST
+    # EPISTLE OF S. PAVL", 682, 686, 690 all identical including the shared
+    # misprint "Iralie" for "Italie" -- at a constant leaf offset of +4, while
+    # the genuine 1582 (NT-1582-B) puts Apocalypse ch. XXII on printed 743
+    # against F's 692 and carries running-head apparatus ("CHA. N.", "HOLY
+    # weeke") that neither F nor R has.
+    #
+    # It is an INDEPENDENT COPY of that 1633 edition, not a re-render of R: on a
+    # verified-blank bottom margin F/R matched pairs correlate 0.099/0.021/-0.022
+    # against controls 0.077/-0.084/-0.030, i.e. no shared paper.  Compare the
+    # proven same-leaf case (F's Censure vs R's) at +0.769.
+    #
+    # The folder name says "1582 New Testament" because the uploader named it so.
+    # A vendor's folder name is not a bibliographical fact; the leaves are.
+    #
+    # F's OT1 and OT2 are UNAFFECTED and remain genuine 1609/1610 -- checked the
+    # same way (LEVITICVS 280, SECOND BOOKE 680/980; PROVERBES, OF EZECHIEL).
+    ("NT",  "F"): dict(legacy="NT/S01",  year=1633, leaves=765,
                        jp2=SCANS/"S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_jp2",
                        role="lowres"),
     # Acquired 2026-08-05 (roadmap R4.4).  The file previously held here was a
@@ -178,6 +197,43 @@ PDF = {
 # The mechanism stays in place — it is what a re-upload of an MRC PDF looks like
 # from the inside, and nothing guarantees this corpus is the last to contain one.
 NO_READING = {}
+
+
+def setting(vol, sig):
+    """The SETTING a witness attests: (volume, year).
+
+    Two witnesses may be collated against each other only if this matches.  The
+    NT holds two settings -- 1582 Rhemes and 1633 Rouen -- and for four months
+    the plan treated NT-F as a witness to the first when its body is the second.
+    Nothing in the code said otherwise, because the year lived in a dict field
+    that only `wid()` ever read.
+    """
+    return (vol, WITNESSES[(vol, sig)]["year"])
+
+
+def witnesses_to(vol, year):
+    """Every siglum attesting one setting.  Use this to pick collation partners."""
+    return sorted(s for (v, s) in WITNESSES if v == vol and WITNESSES[(v, s)]["year"] == year)
+
+
+def assert_same_setting(vol, *sigs):
+    """Raise if sigla span more than one setting.
+
+    A collation across settings is not a collation, it is a conflation, and it
+    fails SILENTLY: two editions of one translation agree for pages at a time,
+    so the error surfaces only where they happen to differ -- which is exactly
+    where the reading matters.
+    """
+    seen = {}
+    for s in sigs:
+        seen.setdefault(setting(vol, s), []).append(s)
+    if len(seen) > 1:
+        parts = "; ".join(f"{y}: {','.join(ss)}" for (v, y), ss in sorted(seen.items()))
+        raise ValueError(
+            f"{vol}: sigla span {len(seen)} settings ({parts}). These attest DIFFERENT "
+            f"editions and may not be collated as witnesses to one setting. Use "
+            f"witnesses_to({vol!r}, <year>) to choose partners.")
+    return True
 
 
 def wid(vol, sig):
