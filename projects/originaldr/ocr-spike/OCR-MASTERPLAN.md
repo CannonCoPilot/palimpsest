@@ -89,22 +89,72 @@ constitutes acceptance.
 Ten scan files are held. **They are not ten witnesses.** Measurement (§1.2) and bibliographic verification
 (§1.3) reduce them to **seven independent witnesses across three volumes**.
 
-| volume | copy | file (JP2 package is primary — see §1.2) | leaves | status |
+Each file's **primary artefact** — the JP2 package or the PDF — is established per item in §1.2, not assumed
+from the file extension.
+
+| volume | copy | primary artefact | leaves | status |
 |---|---|---|---|---|
-| **NT 1582** | `NT/S01` | `S01_…/…3 of 3 1582 New Testament_jp2` | 765 | independent witness |
-| | `NT/S08` | `S08_1582-rhemes-nt-hires/…_jp2` | 800 | **NOT a witness — upscale of `NT/S09`** |
-| | `NT/S09` | `S09_…/nevvtestamentofi00mart_jp2` | 812 | independent witness — **base exemplar** |
-| | `NT/S04` | `S04_1633-rheims-nt/…_jp2` | 772 | **1633 witness support** (§1.4) |
-| **OT1 1609** | `OT1/S01` | `S01_…/…1 of 3 1609 Old Testament_jp2` | 1135 | independent witness |
-| | `OT1/S03a` | `S03_…/holiebiblefaithf01engl_jp2` | 1146 | independent witness |
-| | `OT1/S09` | `S09_…/holiebiblefaithf00mart_0_jp2` | 1160 | independent witness |
-| **OT2 1610** | `OT2/S01` | `S01_…/…2 of 3 1610 Old Testament_jp2` | 1128 | independent witness |
-| | `OT2/S03b` | `S03_…/holiebiblefaithf02engl_jp2` | 1146 | independent witness |
-| | `OT2/S09` | `S09_…/holiebiblefaithf00mart_jp2` | 1150 | independent witness — **base exemplar** |
+| **NT 1582** | `NT/S01` | PDF `S01_…/nt-1582.pdf` | 765 | independent witness |
+| | `NT/S08` | PDF `S08_…/S08.pdf` | 800 | **NOT a witness — `NT/S09` re-wrapped** |
+| | `NT/S09` | JP2 `S09_…/nevvtestamentofi00mart_jp2` | 812 | independent witness — **base exemplar** |
+| | `NT/S04` | JP2 `S04_…/newtestamentofie00engl_jp2` | **778** | **1633 witness support** (§1.4) |
+| | `NT/S06` | JP2 `S06_…/Douay-Rheims-1610-Bible_jp2` (leaves 2072–2871) | 800 | **NT frontmatter witness** — see below |
+| **OT1 1609** | `OT1/S01` | PDF `S01_…/ot1-1609.pdf` | 1135 | independent witness |
+| | `OT1/S03a` | JP2 `S03_…/holiebiblefaithf01engl_jp2` | 1146 | independent witness |
+| | `OT1/S09` | JP2 `S09_…/holiebiblefaithf00mart_0_jp2` | 1160 | independent witness |
+| **OT2 1610** | `OT2/S01` | PDF `S01_…/ot2-1610.pdf` | 1128 | independent witness |
+| | `OT2/S03b` | JP2 `S03_…/holiebiblefaithf02engl_jp2` | 1146 | independent witness |
+| | `OT2/S09` | JP2 `S09_…/holiebiblefaithf00mart_jp2` | 1150 | independent witness — **base exemplar** |
 
 Root: `palimpsest/imports/Scripture/Bibles/DouayRheims_DR/sources/scans/`.
 
-**Excluded**: `S06_1610-facsimile-whole` (a modern facsimile, not a witness to the setting).
+#### `S06` — what it actually is, and why the earlier exclusion was wrong on its facts
+
+**The plan previously excluded `S06` as "a modern facsimile, not a witness to the setting." That
+description was wrong twice, and the error cost the edition its only genuine 1582 Censure leaf.**
+
+`S06` is a **2007 print-on-demand publication** (*Maximus Scriptorius Publications*, Acrobat Distiller,
+ABBYY FineReader, letter-size 612 × 792 pt pages, 1-bit CCITT at ~380 ppi). But the *images inside it are
+photographs of original early-modern copies*, and its own title page says which: **"1635 AD Douay Old
+Testament, 1582 AD Rheims New Testament."** Being republished in 2007 does not make the leaves a facsimile
+in the sense that matters — a facsimile is a *redrawing*, and these are photographs.
+
+- **Its OT is 1635, not 1610** — *"Printed by IOHN COVSTVRIER. PERMISSV SVPERIORVM. **M.DC.XXXV**"*, i.e.
+  Rouen, the same printer as `S04`. This is the **second edition of the Douay OT**, a distinct setting.
+- **Its NT is a 1582 Rheims Fogny** — *"PRINTED AT RHEMES, by Iohn Fogny. **1582.** CVM PRIVILEGIO."*
+  (leaf 2072), **the same setting as the base exemplar**, and from a copy that is *not* `NT/S09`.
+
+**`S06` remains excluded as a witness to the biblical verse text**: it is bitonal, re-laid-out on
+letter-size pages, and its OT is the wrong edition entirely. **It is admitted for frontmatter and
+backmatter only**, where it is decisive (§1.4, §1.1b).
+
+**What `S06` settles that nothing else could.** Its NT frontmatter carries **the Censure and the Preface
+p.1 in the 1582 setting** — the two leaves for which the plan previously recorded *"no genuine 1582 reading
+survives anywhere in the corpus."* Block-registered correlation identifies them as the source of `NT/S08`'s
+two made-up leaves, and the match is diagonal while every cross-pairing collapses:
+
+| | `S06[2073]` Censure | `S06[2074]` Preface p.1 | 1633 setting (`S04`, `S01nt`) |
+|---|---|---|---|
+| **`S08[1]`** (supplied Censure) | **+0.424** | +0.000 | −0.036 … +0.012 |
+| **`S08[2]`** (supplied Preface p.1) | +0.017 | **+0.398** | +0.055 … +0.212 |
+
+Confirmed visually: `S06[2073]` and `S08[1]` agree line for line — same two-line heading with **no
+ornamental headpiece**, the same decorated initial, the same four signatories, and the same closing
+**S. Augustine quotation** (*"S. August. lib. 1. c. 3. de serm. Do. in monte"*) with its English gloss and
+catchword. The 1633 Censure (`S04`) differs plainly: it carries a foliate headpiece, adds the subtitle
+***"of the first Edition of this Translated New Testament,"*** and has **no** Augustine quotation.
+
+**The subtitle is what dates them.** A Censure headed *"of the first Edition"* is a later edition referring
+back to an earlier one; the version without that subtitle is the one printed in the edition it approves.
+**`S06`'s NT frontmatter is therefore the 1582 reading, and `S04`'s is the 1633 reprint's.** This resolves
+the open question of `NT/S08`'s fourth source (§1.4).
+
+**`S06`'s backmatter also carries the edition's legal record.** Leaf 2070 prints *Faults escaped in the
+printing* for **both** tomes, followed by the **`EXTRAICT DV PRIVILEGE DV ROY`** — a ten-year privilege
+granted at Paris on **3 August 1634** to Jean le Cousturier of Rouen to print *"La Bible en language
+anglois, **de l'edition de Laurens Kellam Imprimeur de Douay**."* The 1635 OT is thus, by its own
+statement, a reprint **of the Kellam Douai edition** — which is why its front and back matter are worth
+collating against 1609/1610 even though its verse text is not.
 
 **`S04` (1633 Rouen, Cousturier, "the fourth Edition") is admitted for the NT only**, as witness support and
 not as copy-text. The NT needs it: `NT/S09` is frontmatter-defective and `NT/S01` is contaminated (§1.4), so
@@ -122,26 +172,77 @@ Douai types. Both are retired.
 **The witness id is `VOLUME-YEAR-SIGLUM`**, and the siglum names the **physical copy**, following
 textual-criticism practice:
 
-| siglum | copy |
-|---|---|
-| **B** | **B**oston Public Library — G.404.12 v.1/v.2, BS2080 1582 |
-| **P** | **P**rinceton Theological Seminary, Lenox donation — 12904, Shelf 1844 |
-| **R** | Princeton Theological Seminary, 1633 **R**ouen — Shelf 1852 |
-| **F** | **f**atimamovement.com rehost; physical copy not yet identified |
-| **X** | derivative, **ex**cluded — not a witness |
+| siglum | copy | digitised by |
+|---|---|---|
+| **B** | **B**oston Public Library — G.404.12 v.1/v.2, BS2080 1582 | Internet Archive, Boston |
+| **P** | **P**rinceton Theological Seminary, Lenox donation — 12904, Shelf 1844 | Internet Archive, `nj` |
+| **R** | Princeton Theological Seminary, 1633 **R**ouen — call no. 13733, Shelf 1852 | Internet Archive, `nj` |
+| **F** | a copy **owned and digitised by the Fatima Movement** (`fatimamovement.com`) | the Fatima Movement, pub. 2014 |
+| **M** | the copies behind the 2007 ***M**aximus Scriptorius* reprint — 1635 Rouen OT, 1582 Rheims NT | unknown; republished 2007 |
+| **X** | not a distinct copy — `B` re-wrapped and re-rendered (§1.2) | — |
 
 | witness id | legacy | role |
 |---|---|---|
 | `NT-1582-B` | `NT/S09` | **base exemplar** |
-| `NT-1582-F` | `NT/S01` | structure only |
+| `NT-1582-F` | `NT/S01` | **independent witness, low-resolution scan** |
 | `NT-1633-R` | `NT/S04` | witness support |
-| `NT-1582-X` | `NT/S08` | excluded (upscale) |
+| `NT-1582-M` | `NT/S06` | **frontmatter witness** (leaves 2072–2871) |
+| `NT-1582-X` | `NT/S08` | excluded — not a distinct copy |
 | `OT1-1609-B` | `OT1/S09` | **base exemplar** |
 | `OT1-1609-P` | `OT1/S03a` | surrogate |
-| `OT1-1609-F` | `OT1/S01` | structure only |
+| `OT1-1609-F` | `OT1/S01` | **independent witness, low-resolution scan** |
 | `OT2-1610-B` | `OT2/S09` | **base exemplar** |
 | `OT2-1610-P` | `OT2/S03b` | surrogate |
-| `OT2-1610-F` | `OT2/S01` | structure only |
+| `OT2-1610-F` | `OT2/S01` | **independent witness, low-resolution scan** |
+
+#### What the role terms mean
+
+These are working terms, not standard bibliographical vocabulary, and they were used for several drafts
+without being defined anywhere. Each names **a permission and a limit**, and every one is a statement about
+what a *file* may be used for — never a ranking of the *copies*.
+
+| term | means | may be used for | may **not** be used for |
+|---|---|---|---|
+| **base exemplar** | the copy the transcript is taken *from*. In a documentary edition there is exactly one per volume, and it **is** the text | every reading; training crops; CER evaluation | — |
+| **surrogate** | a second scan of the **same setting**, at usable resolution | resolving a locus the base exemplar cannot answer — damage, show-through, an inked-over sort; training augmentation | supplying a reading where the base is legible and simply disagreed with |
+| **witness support** | a copy of a **different edition**, admitted for named leaves only | a reading where the base exemplar has **no** leaf at all, flagged as supplied with its source named | anything the base exemplar can answer; anywhere its own setting would be silently imported |
+| **frontmatter witness** | admitted for prelims and endmatter, excluded from the verse text | Censure, Approbation, Preface, Tables, errata, privileges | any verse of scripture |
+| **independent witness, low-resolution scan** | a genuinely distinct physical copy whose *digitisation* resolves too little for glyph-level work | collation, page order, completeness, presence/absence of leaves, and **any reading no better-resolved witness carries** | training data; CER evaluation; adjudicating long-ſ against `f`, where the distinguishing nub is under 1.6 px |
+| **excluded** | not a distinct copy or not a witness to the setting | audit and provenance only | anything evidential |
+
+**Note the last two are deliberately different.** *Excluded* is a judgement about the artefact's identity;
+*low-resolution scan* is a measured constraint on one digitisation of a real and independent copy.
+
+#### On `F` — what was subordinated, what was not, and what has been corrected
+
+An earlier draft called `F` a *"rehost; physical copy not yet identified"* and gave its role as
+**"structure only."** Both were wrong in ways worth naming, because they subordinated the **copy** on
+evidence that only ever concerned the **scan**.
+
+- **The copy is identified.** It belongs to and was digitised by the **Fatima Movement**, whose three
+  volumes were published to the Internet Archive on 2014-07-28 (§1.3). "Not yet identified" conflated *"we
+  cannot name a library shelfmark"* with *"we do not know whose copy this is."* We do know.
+- **`F` is not less complete than the library copies — for the Old Testament it is exactly as complete.**
+  Measured leaf by leaf, `OT1-1609-F` and `OT1-1609-P` contain **the same 1132-leaf book block**, opening
+  at the same title page and closing at *"THE END OF THE FIRST TOME"* on printed page 1114. The entire
+  11-leaf difference is library binding, flyleaves, a bookplate and imaging targets (§1.1b).
+- **For the New Testament `F` is *more* complete than the base exemplar at the point that matters.**
+  `NT-1582-B` **lacks its Censure and Preface p.1 outright**; `NT-1582-F` has both. A witness that supplies
+  what the base exemplar is missing is not a subordinate witness there — it governs.
+- **What does hold is a measurement about the images, not the book.** `F`'s primary artefact carries one
+  **800 × 1124** JPEG per page, about **168 ppi at the leaf** against ~545 ppi for `B` (§1.2). The nub that
+  separates long-ſ from `f` spans 3–6 px at 545 ppi and **under 1.6 px** at 168. That is a limit on
+  glyph-level work only, and it says nothing about the copy's authority, completeness or antiquity.
+
+**So the role is now stated as what the evidence supports**: `F` is an **independent witness whose
+digitisation is low-resolution**. It is not "structure only" — it carries readings wherever no
+better-resolved witness has the leaf, and in the NT prelims that is precisely the case.
+
+> **One qualification, stated rather than buried.** The OT accounting above is complete and `F` comes out
+> equal. The NT accounting is **not yet complete**: `NT-1582-F`'s block runs 765 leaves against
+> `NT-1582-B`'s 801, and those 36 leaves are not yet attributed leaf by leaf. Until they are, no claim is
+> made in either direction about NT completeness. §1.1b gives the method and the roadmap gives the step
+> (R3.5); this is an open measurement, not a verdict against the copy.
 
 Why the year is in the id: the NT admits two editions (§1.1), so `NT-1582-B` and `NT-1633-R` must be
 distinguishable at a glance, and a bare `NT-R` would hide the edition difference that governs how the
@@ -159,7 +260,62 @@ matching the registry.
 of the same volume (§1.4, §2 Gate 0c): the NT witnesses differ by up to 47 leaves before a word is compared.
 Leaves are keyed by **`(volume, printed page number, signature, side)`**.
 
-### 1.2 Measured raster properties — establish primacy per item, then measure the primary
+### 1.1b What accounts for the leaf-count differences
+
+**Leaf counts differ because the files photograph different amounts of *object*, not different amounts of
+*book*.** A library digitisation photographs the binding, the bookplate, the flyleaves and a colour target;
+a privately made scan usually starts at the title page. Comparing raw totals therefore compares
+photographic conventions, and the plan's early "the NT witnesses differ by up to 47 leaves" was a statement
+about scanning practice, not about textual completeness.
+
+The correct unit is the **book block**: the leaves of the printed book itself, from title page to final
+printed leaf. Every difference below is attributed to a named cause, read off the leaves.
+
+#### OT1 1609 — `F` and `P` are the same book, leaf for leaf
+
+| | `OT1-1609-P` (Princeton) | `OT1-1609-F` (Fatima) |
+|---|---|---|
+| binding boards | leaves 0–1 (2) | — |
+| **bookplate leaf** | leaf 2 — *"Donation of James Lenox Esq"*, arms, *"LIBRARY OF THE Theological Seminary, PRINCETON, N.J. Case SCC, Shelf 1844, Book v.1"*, ms. *"1st Edition Scarce"* | — |
+| flyleaves, ms. notes | leaves 3–4 (2) | — |
+| **title page** | leaf 5 | leaf 0 |
+| **duplicate title page** | — | leaf 1 (re-processed second capture of the same leaf) |
+| *Approbatio* (Duaci 8 Nov. 1609) | leaf 6 | leaf 2 |
+| *To the Right Welbeloved English Reader* | leaves 7– | leaves 3– |
+| **book block** (title page → *"THE END OF THE FIRST TOME"*, printed p. 1114) | leaves 5–1136 = **1132** | leaves 0–1132 less the duplicate = **1132** |
+| terminal blanks | leaves 1137–1139 (3) | leaves 1133–1134 (2) |
+| board, colour targets, greyscale charts, calibration | leaves 1140–1145 (6) | — |
+| **total** | 5 + 1132 + 3 + 6 = **1146** | 1132 + 1 + 2 = **1135** |
+
+**Both close on the same words at the same printed page.** The whole 11-leaf difference is
+**5 leaves of library apparatus at the front, 6 of binding and imaging targets at the back, less 1
+duplicate title page and 1 fewer terminal blank in `F`** — and **not one leaf of text**. On the evidence,
+the Fatima copy of OT1 is neither more nor less complete than the Princeton copy; it is the same book,
+photographed without the library's furniture.
+
+`OT1-1609-B` (Boston) totals 1160 on the same block, its surplus lying in 12 leaves of leading apparatus,
+2 trailing, and 10 interior binding/target leaves — the same kind of difference, at a scanning centre with
+a fuller target protocol.
+
+#### NT 1582 — the one real content difference, and it runs in `F`'s favour
+
+| leaf | `NT-1582-B` (Boston) | `NT-1582-F` (Fatima) | `NT-1582-M` (`S06`) |
+|---|---|---|---|
+| title page (Rhemes, Fogny, 1582) | present | present (**and duplicated**) | present |
+| **Censure and Approbation** | **ABSENT** | present — *but in the 1633 setting* (§1.4) | **present, 1582 setting** |
+| **Preface p.1** | **ABSENT** | present — *but in the 1633 setting* | **present, 1582 setting** |
+| binding / bookplate | 5 leading, 6 trailing | none | none |
+
+So for the NT the base exemplar is the *defective* copy, `F` supplies the missing openings from a later
+edition, and only `M` supplies them in the edition's own setting.
+
+**Still to be attributed**: `NT-1582-F`'s block is **765** leaves against `NT-1582-B`'s **801**. Thirty-six
+leaves are unaccounted, and they are not explained by binding, because `F` has none. The three candidate
+causes are distinguishable and none may be assumed: leaves **wanting in the Fatima copy**; back matter
+(Table of Controversies, *Hard Wordes Explicated*) **present in `B` and absent in `F`**; or leaves
+**dropped in `F`'s digitisation**. `F` closes on an errata leaf while `B` closes on *Hard Wordes* — which
+points at the second, but pointing is not attributing. **The leaf map (R3.2) resolves this by printed page
+number and signature, and until it runs the difference stays open in both directions** (roadmap R3.5). — establish primacy per item, then measure the primary
 
 **Which file is primary is a fact about each item, not a rule about formats.** Internet Archive records the
 derivation chain for every file it holds, in the `source` and `original` fields of
@@ -396,11 +552,31 @@ Boston Public Library capture at that capture's own raster (§1.2). Its reposito
 BS2080 1582 — by identity with `NT/S09`, not by its own provenance.** It contributes no independent
 witness, and only its two made-up leaves are its own (§1.4).
 
-**Still unresolved, and blocking (§2)**: the **physical copies** behind the three `S01` volumes — their
-digitisation provenance is now settled, their repositories are not, and no route to them through IA
-remains, so this needs an approach other than catalogue metadata. And **STC / ESTC numbers for every
-copy** — OCLC record numbers are held, but the STC numbers circulating in earlier notes remain
-**unverified leads**, not facts.
+**`F`'s repository question is answered, and it was the wrong question.** The three `S01` volumes have no
+library shelfmark because **they are not a library's copy**: they belong to the Fatima Movement, which
+digitised and published them (§1.1a). "Repository and shelfmark unresolved" is therefore closed as
+**not applicable — privately held**, which is a determinate answer, not a gap. What remains genuinely open
+is narrower: the copy's own history before the Fatima Movement acquired it, which no catalogue can supply
+and which does not block any transcription work.
+
+**The `ourladyisgod.com` scans are the same files, not better ones.** The site (a Fatima Movement property)
+publishes the three volumes as 3,027 page images alongside the same three PDFs, so it was worth testing
+whether it hosts a higher-quality capture than the Internet Archive copies. It does not: sampled images
+measure **800 × 1124**, identical to `F`'s primary raster, and correlate with the corresponding `OT1/S01`
+leaves at **NCC 0.996–0.998** — the same images, offset by one because the site numbers from leaf 1.
+**There is no higher-resolution capture of the Fatima copy at that source.** If one exists it would
+materially change `F`'s role (§1.1a), so the question is worth putting to the Fatima Movement directly
+rather than inferring further from what is published (roadmap R4.6).
+
+**STC / ESTC — leads held, verification externally blocked.** The candidate numbers are **STC 2884 /
+ESTC S102419** (1582 Rheims NT) and **STC 2207 / ESTC S101944** (1609–10 Douai OT), with Herbert 177 and
+Herbert 300 respectively. **These remain leads and are not written into the concordance**, for two
+reasons. First, secondary sources disagree on the NT: **S102419** and **S102491** both circulate, and a
+one-digit difference between two live-looking identifiers is exactly the error a documentary edition must
+not propagate. Second, the authority cannot currently adjudicate it — `estc.bl.uk` now redirects to
+CERL, and the ESTC beta's search returns **`no such index [estc]`** for every query, so no record
+resolves. This is an outage, not a dead end; the retry and the fallback authorities are specified at
+roadmap R4.1.
 
 ### 1.4 Leaf-level contamination in the New Testament
 
@@ -410,9 +586,10 @@ different ways, and the affected leaves are the same two in every case.
 | file | Censure & Approbation | Preface p. 1 | source of the supplied leaves |
 |---|---|---|---|
 | `NT/S09` | **absent** | **absent** | — (goes title page → Preface p.2) |
-| `NT/S08` | supplied | supplied | **unidentified fourth source** — bitonal, low-resolution, alien setting |
+| `NT/S08` | supplied | supplied | **the 1582 setting, as witnessed by `NT/S06`** — resolved, §1.1 |
 | `NT/S01` | supplied | supplied | **the 1633 Princeton copy (`NT/S04`)** — proven |
-| `NT/S04` | present | present | native |
+| `NT/S04` | present | present | native (1633 setting) |
+| `NT/S06` | **present** | **present** | **native — 1582 setting** |
 
 **Proof that `NT/S01`'s two leaves are `NT/S04`'s: blank-margin foxing.** Correlating **only blank paper**
 — a crop containing no type, so a shared forme cannot explain a match — gives **+0.769** (Censure) and
@@ -425,14 +602,27 @@ Teſtament"* — wording a 1582 first edition would not use of itself. `NT/S01`'
 1582 Fogny setting, so within that file the Censure leaf **contradicts its own title page**. The leaves are
 natively S04's.
 
-`NT/S08`'s substitutes are from neither S01 nor S04: its Censure has **no headpiece, no "first Edition"
-subtitle, and an extra S. Augustine quotation** — a different setting, correlating with every S01/S04
-frontmatter leaf at 0.01–0.15 (noise).
+**`NT/S08`'s fourth source is identified, and it is the 1582 setting.** Its substitutes are from neither
+S01 nor S04: its Censure has **no headpiece, no "first Edition" subtitle, and an extra S. Augustine
+quotation**, correlating with every S01/S04 frontmatter leaf at 0.01–0.15 (noise). Those three features are
+exactly the frontmatter of **`NT/S06`**, and block-registered correlation gives **+0.424** and **+0.398**
+on the matching pair against **0.000–0.036** on every cross-pairing (§1.1). The distinguishing subtitle
+dates them: a Censure headed *"of the first Edition of this Translated New Testament"* is a later edition
+looking back, so the setting **without** that subtitle is the edition's own.
 
-> **Consequence for the edition.** **No genuine 1582 Censure or Preface-p.1 leaf exists anywhere in this
-> corpus.** Those two leaves cannot be transcribed as 1582 witnesses. They are transcribed only with the
-> supplying copy named in the apparatus, or marked `gap`. Identifying S08's fourth source is an open item
-> (§10) precisely because it is the only candidate that is not already known to be 1633.
+> **Consequence for the edition — revised, and the earlier statement withdrawn.** This section previously
+> concluded that **"no genuine 1582 Censure or Preface-p.1 leaf exists anywhere in this corpus."** That was
+> true of the four NT files then under consideration and **false of the corpus**, because `S06` had been
+> excluded on a mistaken description (§1.1) and never examined. **Both leaves survive, in the 1582 setting,
+> in `NT-1582-M`.** They may therefore be transcribed as 1582 witnesses — from `M`, with its bitonal
+> ~380 ppi raster recorded as the limiting factor and `S08`'s copy of the same setting available as a
+> second image of the same reading.
+>
+> The lesson is procedural and belongs in the plan, not in a footnote: **an exclusion is a claim, and it
+> inherits the evidential standard of any other claim.** `S06` was excluded on a one-line description that
+> was wrong about its date, its printer and its nature, and the cost was a false "nothing survives"
+> verdict at the most consequential point in the NT. **Excluded files are now re-examined before any
+> "survives nowhere" conclusion is drawn** (roadmap R4.5).
 
 **Independence, verified.** `NT/S01` matches neither S09 nor S08 at any alignment: wide ±80-leaf searches
 peak at **0.040 / 0.068 / 0.096** with *mutually inconsistent* best offsets (+67, +82, −70), whereas the

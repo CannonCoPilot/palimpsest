@@ -136,7 +136,7 @@ Runs in parallel with R2/R3; it constrains citation, not imaging.
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R4.1 | STC/ESTC verification | STC and ESTC numbers for all copies, cross-checked against held OCLC numbers | each number resolves at ESTC; **unverified leads are recorded as leads, never promoted** |
+| R4.1 | STC/ESTC verification | STC and ESTC numbers for all copies, cross-checked against held OCLC numbers | each number resolves at an authority; **unverified leads are recorded as leads, never promoted** |
 | R4.2 | Repository for `F` and `X` files | repository + shelfmark, or an explicit NOT ESTABLISHED | no field silently blank — **DONE**, see below |
 | R4.2a | Physical copy behind the three `F` volumes | repository + shelfmark, by a route other than catalogue metadata | a named copy, or a published statement of what was tried and why it failed |
 | R4.3 | Identify `NT-1582-X`'s supplied leaves | the fourth source of the Censure and Preface p.1 | source named, or its candidate set narrowed and published |
@@ -162,8 +162,83 @@ the `F` set is settled (`fatimamovement.com`, uploaded 2014-07-28); the *physica
 catalogue route to them is exhausted. Recording that as done would convert a real gap into a false
 closure — `F` is structure-only (§1.2), so this blocks citation, not imaging, but it stays **OPEN**.
 
-**R4.3 is the interesting one.** It is the only NT frontmatter candidate not already known to be 1633, so it
-is the only possible route to a genuine 1582 reading for those two leaves (§1.4).
+**R4.3 is DISCHARGED, and not where it was expected.** The fourth source is the **1582 setting witnessed by
+`NT/S06`** — the file the plan had excluded as "a modern facsimile" (§1.1, §1.4). Block-registered
+correlation gives +0.424 / +0.398 on the matching pair against 0.000–0.036 on every cross-pairing, and the
+visual agreement is line-for-line including the S. Augustine quotation absent from the 1633 setting.
+
+**R4.1 is BLOCKED EXTERNALLY, with the route out specified.** `estc.bl.uk` redirects to CERL and the ESTC
+beta returns **`no such index [estc]`** for every query, so no ESTC number can currently be resolved
+against the authority. Leads held: **STC 2884 / ESTC S102419 *or* S102491** (1582 NT — sources disagree on
+one digit) and **STC 2207 / ESTC S101944** (1609–10 OT). None is promoted.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R4.1a | Automated ESTC retry | a scheduled probe of the CERL ESTC index that reports when it answers | the probe distinguishes "index down" from "record absent"; a passing probe re-opens R4.1 automatically |
+| R4.1b | Fallback authorities, in order | Folger *Hamnet* (the STC authority of record) → USTC → Bodleian/Oxford SOLO → Harvard HOLLIS | a number is promoted only when **two independent authorities agree**, and the S102419/S102491 split is resolved explicitly, not silently picked |
+| R4.1c | Record the disagreement, not just the answer | concordance carries the rejected variant and why | a later reader can see that a one-digit variant existed and was adjudicated |
+
+**Why two authorities and not one.** The failure mode here is not "no number found" but "a plausible number
+found and propagated." A one-digit difference between two live-looking identifiers is precisely what a
+single source cannot catch, and a misattributed ESTC number in a documentary edition is a defect that
+survives every later correction.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R4.5 | **Re-examine every excluded file before any "survives nowhere" claim** | each exclusion carries measured grounds — edition, date, printer, raster, and what its prelims contain — not a one-line description | no file is excluded on a description that has not been checked against its own leaves; `S06` is the worked example |
+| R4.6 | Ask the Fatima Movement for a higher-resolution capture | a direct enquiry, and its answer recorded either way | if a higher-resolution capture of the `F` copy exists, `F`'s role changes from low-resolution to full witness (§1.1a); if not, the negative is recorded so it is not re-asked |
+
+**R4.5 exists because an exclusion is a claim.** `S06` was set aside as "a modern facsimile, not a witness
+to the setting." Its OT is a **1635 Rouen Cousturier** printing, its NT a **1582 Rheims Fogny**, and its
+prelims hold the only genuine 1582 Censure and Preface p.1 in the corpus. The description was wrong about
+the date, the printer and the nature of the artefact, and because it was never re-tested it produced a
+false "no genuine 1582 reading survives anywhere" verdict at the single most consequential point in the NT.
+**An exclusion inherits the evidential standard of any other claim**, and the cost of a wrong one is
+silence rather than error — which is why it must be checked rather than trusted.
+
+---
+
+## R6 — `S06` and the frontmatter/backmatter collation
+
+`S06` is **excluded from the verse text and admitted for prelims and endmatter** (§1.1). Its value is that
+it holds two settings the rest of the corpus does not: a **1635 Rouen OT** and a **1582 Rheims NT** whose
+frontmatter is complete.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R6.1 | Address `S06`'s two halves separately | registry entries `NT-1582-M` (leaves 2072–2871) and, if wanted, `OT-1635-M` (leaves 0–2070) | the OT/NT boundary at the blank leaf 2071 is asserted, not assumed; each half declares its own edition |
+| R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) |
+| R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor |
+| R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** |
+| R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French |
+
+**R6.4 is the deliverable that answers "what differs between the editions."** The privilege at R6.5 is what
+makes it interesting rather than merely descriptive: the 1635 edition states on its own back matter that it
+reprints the Kellam Douai edition, so **every difference in its prelims is a deliberate editorial act by
+the Rouen house**, not an independent transmission. That makes the difference report evidence about how the
+edition was understood in 1635, and it is the only such evidence the corpus contains.
+
+**Sequencing.** R6.2 and R6.3 are on the critical path — they close a gap in the NT that the plan wrongly
+believed unclosable. R6.4 and R6.5 are not: they are scholarly yield, and they must not delay the base
+transcription.
+
+---
+
+## R3.5 — Attribute the New Testament's 36-leaf difference
+
+**Discharges** §1.1b, second half. Depends on the leaf map (R3.2).
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R3.5 | Account for `NT-1582-F` 765 vs `NT-1582-B` 801 | every one of the 36 leaves assigned to a named cause | each leaf classed **wanting in the copy** · **back matter absent from `F`** · **dropped in digitisation**, by printed page number and signature |
+
+**Do not shortcut this to "the Fatima copy is defective."** `F` closes on an errata leaf where `B` closes
+on *Hard Wordes Explicated*, which points at back matter rather than at missing text — but pointing is not
+attributing, and the same 36 leaves are equally consistent with a digitisation that stopped early. The
+distinguishing evidence is the **printed page numbers and signatures at the join**, which the leaf map
+produces as a by-product. **Until R3.5 runs, no claim is made in either direction about NT completeness**,
+and §1.1b says so explicitly rather than leaving a silence a reader would fill with the unflattering
+reading.
 
 ---
 

@@ -23,9 +23,25 @@ def build(dry=False):
         if not dry:
             d.mkdir(parents=True, exist_ok=True)
             link = d / "leaves"
-            if link.is_symlink() or link.exists():
-                if link.is_symlink(): link.unlink()
-            os.symlink(src, link)
+            # Clear whatever is there: the link may have been a directory
+            # symlink on a previous run and a link farm on this one.
+            if link.is_symlink():
+                link.unlink()
+            elif link.is_dir():
+                for f in link.iterdir():
+                    f.unlink()
+                link.rmdir()
+            if "leaf_range" in rec:
+                # A witness that is a SLICE of a package cannot be one directory
+                # symlink -- that would address the whole package, which for S06
+                # means pooling a 1635 Rouen OT with a 1582 Rheims NT.  Link the
+                # slice leaf by leaf instead, renumbered from zero so the
+                # witness's own leaf indices start where the witness does.
+                link.mkdir()
+                for k, f in enumerate(W.leaves(vol, sig)):
+                    os.symlink(f, link / f"{wid}_{k:04d}{f.suffix}")
+            else:
+                os.symlink(src, link)
         manifest[wid] = dict(volume=vol, siglum=sig, year=rec["year"],
                              role=rec["role"], legacy=rec["legacy"],
                              repository=W.COPIES[sig],

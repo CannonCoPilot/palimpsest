@@ -13,8 +13,18 @@ COPIES = {
     "B": "Boston Public Library (G.404.12 / BS180 1609 / BS2080 1582)",
     "P": "Princeton Theological Seminary, Lenox donation (12904, Shelf 1844)",
     "R": "Princeton Theological Seminary, 1633 Rouen (Shelf 1852)",
-    "F": "fatimamovement.com rehost; physical copy unidentified",
-    "X": "derivative, not a witness",
+    # F names a copy OWNED AND DIGITISED BY THE FATIMA MOVEMENT.  It has no
+    # library shelfmark because it is not a library's copy -- privately held is
+    # a determinate answer, not a missing one.  An earlier revision read "rehost;
+    # physical copy unidentified", which subordinated the COPY on evidence that
+    # only ever concerned the SCAN.  See OCR-MASTERPLAN.md 1.1a.
+    "F": "privately held; owned and digitised by the Fatima Movement (fatimamovement.com)",
+    # M names the copies behind the 2007 Maximus Scriptorius reprint: a 1635
+    # Rouen OT and a 1582 Rheims NT.  Excluded from the verse text, admitted for
+    # prelims and endmatter -- it carries the ONLY genuine 1582 Censure and
+    # Preface p.1 in the corpus (1.4).
+    "M": "unknown copies republished 2007 by Maximus Scriptorius (1635 Rouen OT, 1582 Rheims NT)",
+    "X": "not a distinct copy -- B re-wrapped and re-rendered",
 }
 
 # (volume, siglum) -> record
@@ -54,6 +64,15 @@ WITNESSES = {
     ("OT2", "F"): dict(legacy="OT2/S01", year=1610, leaves=1128,
                        jp2=SCANS/"S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_jp2",
                        role="structure"),
+    # The 2007 reprint holds BOTH testaments in one 2872-leaf package, so this
+    # witness is a SLICE of it: the NT begins at the blank leaf 2071 and its
+    # title page stands at 2072.  Addressing the whole package as one witness
+    # would pool a 1635 Rouen OT with a 1582 Rheims NT -- the same mistake the
+    # retired S01/S09 identifiers made (1.1a).
+    ("NT",  "M"): dict(legacy="NT/S06", year=1582, leaves=800,
+                       jp2=SCANS/"S06_1610-facsimile-whole/Douay-Rheims-1610-Bible_jp2_broken",
+                       leaf_range=(2072, 2872),
+                       role="frontmatter"),
 }
 
 # Which artefact is PRIMARY for each witness.  Not a guess and not a rule about
@@ -75,6 +94,11 @@ PRIMARY = {
     ("OT2", "F"): "pdf",   # 1582DouaiRheims...2Of3      <- uploaded PDF
     ("NT",  "X"): "pdf",   # 1582RhemesNewTestament      <- uploaded PDF
     ("NT",  "R"): "jp2",   # newtestamentofie00engl      <- _orig_jp2.tar (acquired R4.4)
+    # S06's JP2s are a 600-dpi render of a LETTER-SIZE page (5100x6601), and the
+    # JPGs a 300-dpi one (2550x3301), while the PDF carries the actual scan as a
+    # 2955x4206 CCITT stencil.  Both renders are therefore worse than the source
+    # -- the 600-dpi one is a plain 2x upscale of the 300-dpi one.
+    ("NT",  "M"): "pdf",   # S06.pdf (Maximus Scriptorius 2007) <- the CCITT stencils
 }
 
 # Path to the primary artefact where that is a PDF.
@@ -83,6 +107,7 @@ PDF = {
     ("OT1", "F"): SCANS/"S01_1582-first-edition-3vol/ot1-1609.pdf",
     ("OT2", "F"): SCANS/"S01_1582-first-edition-3vol/ot2-1610.pdf",
     ("NT",  "X"): SCANS/"S08_1582-rhemes-nt-hires/S08.pdf",
+    ("NT",  "M"): SCANS/"S06_1610-facsimile-whole/S06.pdf",
 }
 
 # Witnesses whose primary artefact has a BINARISED text layer, so no reading may
@@ -104,7 +129,15 @@ def leaves(vol, sig):
     the leaf inventory and the collation hold regardless of primacy.  For
     pixel-level work use `pixel_source` instead, which refuses the renders.
     """
-    return sorted(WITNESSES[(vol, sig)]["jp2"].glob("*.jp2"))
+    rec = WITNESSES[(vol, sig)]
+    fs = sorted(rec["jp2"].glob("*.jp2"))
+    lo, hi = rec.get("leaf_range", (0, len(fs)))
+    fs = fs[lo:hi]
+    if len(fs) != rec["leaves"]:
+        raise ValueError(f"{wid(vol, sig)}: {len(fs)} leaves on disk, registry says "
+                         f"{rec['leaves']} -- the registry is the source of truth, so "
+                         f"one of them is wrong and neither may be silently preferred")
+    return fs
 
 def pixel_source(vol, sig):
     """The artefact a pixel-level consumer must read: crops, training, CER.

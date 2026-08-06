@@ -15,22 +15,44 @@ Companion documents: `OCR-EXECUTIVE-SUMMARY.md` · `OCR-OVERVIEW.md` · `OCR-MAS
 Ten scan files are on disk. **They are not ten witnesses.** Measurement reduces them to **seven**, and the
 base exemplars are now declared:
 
-| volume | base exemplar | surrogate | structure only | excluded |
-|---|---|---|---|---|
-| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(see below)* | `NT-1582-F` | `NT-1582-X` — a 2× upscale, no information |
-| OT1 1609 | **`OT1-1609-B`** (Boston PL, ~545 ppi) | `OT1-1609-P` (~411 ppi) | `OT1-1609-F` | — |
-| OT2 1610 | **`OT2-1610-B`** (Boston PL, ~545 ppi) | `OT2-1610-P` (~411 ppi) | `OT2-1610-F` | — |
+| volume | base exemplar | surrogate | low-resolution witness | other | excluded |
+|---|---|---|---|---|---|
+| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(see below)* | `NT-1582-F` (Fatima) | `NT-1633-R` support · **`NT-1582-M` frontmatter** | `NT-1582-X` — `B` re-rendered |
+| OT1 1609 | **`OT1-1609-B`** (Boston PL, ~545 ppi) | `OT1-1609-P` (~411 ppi) | `OT1-1609-F` | — | — |
+| OT2 1610 | **`OT2-1610-B`** (Boston PL, ~545 ppi) | `OT2-1610-P` (~411 ppi) | `OT2-1610-F` | — | — |
+
+**These role names are defined in the plan (§1.1a), and each names a permission *and* a limit.** Briefly:
+*base exemplar* is the copy the transcript is taken from and **is** the text; *surrogate* is a second scan
+of the same setting, used to resolve what the base cannot show; *witness support* is a different edition,
+admitted only where the base has no leaf at all; *frontmatter witness* is admitted for prelims and
+endmatter and excluded from the verse text; *low-resolution witness* is a genuinely independent copy whose
+digitisation resolves too little for glyph work, but which carries readings wherever nothing better does;
+*excluded* means not a distinct copy or not a witness to the setting.
 
 **ppi here is calibrated, not inferred**: the Boston OT scans include a leaf photographed with an imperial
 and a metric ruler, which agree to 2.7%. No ppi is quoted for the NT, which has no calibration leaf.
 
 **`NT-1633-R` (the 1633 Rouen edition) is admitted for the NT only, as witness support** — the NT base copy
-is frontmatter-defective and the third NT copy is contaminated, so without it two leaves have no independent
-reading at all.
+is frontmatter-defective, so without it those leaves have no reading in any edition.
 
-**The `F` files are structure-only** — page order, addressing, gross verification — because they are
-uniformly resampled rehosts whose apparent resolution exceeds their real detail. They are **independent
-copies** and are not discarded; they simply cannot carry a diplomatic reading.
+**`NT-1582-M` supplies the two leaves nothing else has in the right setting.** It is the NT half of the
+file the plan once excluded as "a modern facsimile": in fact a 2007 reprint **of photographs of original
+copies**, whose OT is a **1635 Rouen** printing and whose NT is a **1582 Rheims Fogny**. Its verse text
+stays excluded — bitonal, letter-size, re-laid-out — but its prelims carry the **1582 Censure and Preface
+p.1**, which the base exemplar lacks outright and which every other file supplies from the 1633 edition.
+
+> The exclusion had been taken on trust, and it was wrong about the date, the printer and the nature of the
+> artefact. The cost was a false conclusion that no genuine 1582 reading of those leaves survived anywhere.
+> **An exclusion is a claim and takes the same standard of evidence as any other.**
+
+**The `F` files are independent copies whose *scans* are low-resolution — not "structure only."** Earlier
+drafts used that label and called them rehosts of an unidentified copy. Both subordinated the copy on
+evidence about the scan. The copy is **owned and digitised by the Fatima Movement**; for OT1 it contains
+**the same 1132-leaf book block as the Princeton copy**, closing on the same words at the same printed
+page; and in the NT it carries prelims the base exemplar is missing. What is true is narrower and
+measured: at **800 × 1124, ~168 ppi**, the nub separating long-ſ from `f` spans under 1.6 px. So `F` is
+barred from glyph-level work and from training data — and **carries readings wherever no better-resolved
+witness has the leaf**.
 
 **Gates 0a–0d**: bibliographic fields resolved · **collation and leaf inventory per copy** · **cross-source
 leaf map** · derivative-contamination guard. **No leaf is transcribed before its provenance and its
