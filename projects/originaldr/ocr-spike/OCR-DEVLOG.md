@@ -347,3 +347,80 @@ copy that was photographed. A facsimile in the strict sense, a redrawing, would 
 physical support for the claim on which `M`'s admission rests: these are photographs of an original. The
 foot also gives signature **`a ij`** and catchword **`popular`**, and `M` leaf 3 opens `popular` — leaf
 order confirmed by the book itself rather than assumed from file order.
+
+---
+
+## Session 7 — R6.4, and Sir's `w`/`vv` ruling turns out to have a mechanism
+
+### Sir's calls
+
+**`aliiíque` approved on the evidence.** **And on `w`/`vv`:** *mixed `w`, `vv`, `VV` and `Vv` are likely on
+a variety of leaves; do not exclude the possibility, and be cautious about global flips lest original
+variants be overwritten.*
+
+Checking what that implicated turned up something sharper than the caution itself. A global `vv`→`w` pass
+had already changed **33 lines** across three files, and `GUIDELINES.md` recorded it as *"now VISUALLY
+VERIFIED."* **All three files were read from `NT-1582-F`** — an 800 × 1124 (~168 ppi) source, at a 400-dpi
+*render*.
+
+**The call is beneath that raster's limit.** `F` is barred from glyph work because the long-ſ nub spans
+under 1.6 px there, and **the gap separating two `v` sorts from one joined `w` is a finer feature than that
+nub**. Worse, upscaling interpolates exactly that gap, so a render makes separate sorts *look* joined —
+biasing the error **toward `w`**, which is the direction the flip went. The rule was never wrong; only the
+image it was applied to. Ratification withdrawn, backups retained, roadmap R6.6.
+
+### R6.4 — the collation
+
+`OT-1635-M` registered (package pages 0–2070) so differences could be **cited to a leaf** rather than
+described. It is not a witness to either OT tome's setting and may never supply an OT verse reading.
+
+**Adds and drops, resolved for the whole Preface without reading 22 pages word by word.** The Preface's
+**marginal notes** are short, numerous and content-bearing, so a passage added or cut shows up as a note
+without a counterpart, localised to the leaf. **All ~24 correspond one to one, in the same order.** The
+1635 occupies ten leaves where Douai needed twelve because the measure is wider — not because anything was
+lost.
+
+**The Approbatio is reprinted verbatim, keeping `Duaci 8. Nouembris. 1609`.** Rouen does not re-approve
+itself twenty-six years on; it reproduces the approbation of the edition it reprints. **The approbation
+dates the text, not the book.**
+
+**What Rouen actually changed** — dominated by `-ie`→`-y`, dropped terminal `-e`, more capitalisation,
+`VV`→`W`, plus one silent correction of a first-edition error (`to large`→`too large`).
+
+**And the part worth resisting the urge to tidy.** It is *not* a modernisation programme:
+
+| 1609 | 1635 |
+|---|---|
+| `AVTHOR` | `AVTHOVR` |
+| `authors` | `authours` |
+| `Goſpel` | `Ghoſpel` |
+| `dearly` | `dearely` |
+| `S. Ierom` | `S. Hierom` |
+
+The `ai`/`ay` digraph settles it: `affayres`→`affaires` but `Painimes`→`Paynimes` — **the same digraph
+moves both ways inside one edition.** "The 1635 modernises the spelling" is a cleaner sentence than the
+leaves support, so it is not the sentence in the report.
+
+### The finding that bears back on Sir's ruling
+
+**The 1635 founts have a `W` sort. The Douai founts do not.**
+
+| | 1609 | 1635 |
+|---|---|---|
+| display | `VVELBELOVED` | **`WELBELOVED`** |
+| marginal notes | `VVhy & how` · `VVhat part` | `Why and how` · `What part` |
+| italic close | `tovvards` | `towards` |
+
+And the 1609 prose is **itself mixed on a single page**, at ~545 ppi on the base exemplar (leaf 13):
+`we`/`which`/`wil`/`know`/`whom` with a real `w`, **`vvorke` as two sorts**, `VVherin`/`VVherfore` with
+capital `VV`.
+
+So the availability of a `W` sort is **a property of the printing house**, and mixing occurs *within* a
+page. A global flip would erase a real distinction between the two editions, silently. Sir's caution was
+right, and it now has a documented mechanism and a measured counter-example on an admissible raster.
+
+### Scope, stated rather than left to be discovered
+
+Not collated: word-level rewording in the bodies beyond the sampled passages · the endmatter Tables · **the
+OT2/1610 prelims**, which sit further into `M`'s package and are not yet located. None blocks the edition —
+`M` supplies no verse reading, so this is scholarly yield, not critical path.

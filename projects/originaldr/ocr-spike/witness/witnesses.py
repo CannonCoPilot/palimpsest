@@ -106,6 +106,20 @@ WITNESSES = {
                        jp2=SCANS/"S06_1610-facsimile-whole/Douay-Rheims-1610-Bible_jp2_broken",
                        leaf_range=(2072, 2872),
                        role="frontmatter"),
+    # The OTHER half of the same package, and a DIFFERENT EDITION: a 1635 Rouen
+    # (Cousturier) printing of the Old Testament, not the 1609/1610 Douai
+    # (Kellam) one the edition transcribes.  It is therefore NOT a witness to
+    # either OT tome's setting and may never supply an OT verse reading.  It is
+    # registered because R6.4 collates its PRELIMS against 1609/1610, and a
+    # difference cannot be cited to a leaf in a witness that has no addresses.
+    #
+    # The OT/NT boundary is the blank leaf 2071, asserted from an ink-profile
+    # scan of the package, not assumed: 2070 is the backmatter (Faults escaped
+    # + the 1634 privilege), 2071 blank, 2072 the NT title page.
+    ("OT",  "M"): dict(legacy="OT/S06", year=1635, leaves=2071,
+                       jp2=SCANS/"S06_1610-facsimile-whole/Douay-Rheims-1610-Bible_jp2_broken",
+                       leaf_range=(0, 2071),
+                       role="frontmatter"),
 }
 
 # A declared vocabulary that nothing checks is decoration.  An unknown role must
@@ -145,6 +159,7 @@ PRIMARY = {
     # 2955x4206 CCITT stencil.  Both renders are therefore worse than the source
     # -- the 600-dpi one is a plain 2x upscale of the 300-dpi one.
     ("NT",  "M"): "pdf",   # S06.pdf (Maximus Scriptorius 2007) <- the CCITT stencils
+    ("OT",  "M"): "pdf",   # same package, same PDF -- the 1635 Rouen OT half
 }
 
 # Path to the primary artefact where that is a PDF.
@@ -154,6 +169,7 @@ PDF = {
     ("OT2", "F"): SCANS/"S01_1582-first-edition-3vol/ot2-1610.pdf",
     ("NT",  "X"): SCANS/"S08_1582-rhemes-nt-hires/S08.pdf",
     ("NT",  "M"): SCANS/"S06_1610-facsimile-whole/S06.pdf",
+    ("OT",  "M"): SCANS/"S06_1610-facsimile-whole/S06.pdf",
 }
 
 # Witnesses whose primary artefact has a BINARISED text layer, so no reading may

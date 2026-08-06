@@ -112,6 +112,28 @@ FOR THE OCR PASS (Sir's ask — "a rule-based approach for higher accuracy"):
 - Priors above may bias a low-confidence glyph; pixel evidence wins. Emit confidence; route low-confidence
   `w`/`vv` to human review.
 
+STATUS AMENDMENT (Sir, 2026-08-06): **mixed `w`, `vv`, `VV` and `Vv` are likely on a variety of leaves.
+Do not exclude the possibility, and be cautious about global flips lest original variants be overwritten.**
+The rule below is unchanged and correct; what follows is a scope limit on one ratification.
+
+**The matter-nt front-matter ratification is WITHDRAWN pending re-adjudication (roadmap R6.6).** It was
+made on `NT-1582-F` — an 800x1124 (~168 ppi) source, read at a 400-dpi *render*. `F` is barred from
+glyph-level work because the long-ſ nub spans under 1.6 px there, and **the gap distinguishing two `v`
+sorts from one joined `w` is a finer feature than that nub**. Worse, upscaling interpolates precisely that
+gap, so the render makes separate sorts look joined — biasing the call toward `w`, which is the direction
+the flip went. Reading "the matter-nt prose fount is uniformly connected-`w`" as settled is therefore not
+supported by the image it was settled on.
+
+Counter-evidence from a raster that CAN carry the call: the same two frontmatter leaves in the 1582 setting,
+read from `NT-1582-M` at ~380 ppi (R6.3), show the prelims prose face setting BOTH forms — `VVhich` as a
+cap-height `V` plus an x-height `v` with a clear gap, and `word` as a single joined sort, **on the same line
+as a two-sort `vve`**. Note also that `matter-nt-preface.json` is the **1633** setting, not the 1582 one, so
+any fount claim drawn from it never described the 1582 prelims at all.
+
+Practical consequence: **never decide `w`/`vv` on `F`.** Use `B` (~545 ppi) where it has the leaf, `M`
+(~380 ppi) where it does not, and flag rather than guess. Retain `*.pre-vvfix` backups — they record what
+an observer saw; the current files record what a rule produced.
+
 STATUS (2026-07-18): pages Sir hand-adjudicated (genesis-16 p081/p082; psalms 1/74/115-116/118/150) are
 AUTHORITATIVE and applied. mt28-p102 (my 2026-07-15 vv→w) was re-reviewed by Sir with 0 w/vv changes →
 RATIFIED. matter-nt front-matter (my 2026-07-15 blanket vv→w) is now VISUALLY VERIFIED (2026-07-18): the preface

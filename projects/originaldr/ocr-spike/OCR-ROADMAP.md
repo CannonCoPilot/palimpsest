@@ -213,8 +213,33 @@ frontmatter is complete.
 | R6.1 | Address `S06`'s two halves separately | registry entries `NT-1582-M` (leaves 2072–2871) and, if wanted, `OT-1635-M` (leaves 0–2070) | the OT/NT boundary at the blank leaf 2071 is asserted, not assumed; each half declares its own edition |
 | R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) — **DONE**, see below |
 | R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor — **DONE**, see below |
-| R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** |
+| R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** — **DONE**, report at `COLLATION-1635-vs-1609.md`; OT2/1610 prelims outstanding |
 | R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French |
+
+**R6.4 is DISCHARGED for the first tome; the report is `COLLATION-1635-vs-1609.md`.** Headline results:
+
+- **Section for section, note for note, the 1635 adds nothing and drops nothing.** The adds/drops question
+  was closed for the *whole* Preface by collating its **marginal note sequence** — ~24 notes corresponding
+  one to one in the same order — rather than by a word-by-word read of 22 pages.
+- **The Approbatio is reprinted verbatim, retaining `Duaci 8. Nouembris. 1609`.** The Rouen edition does
+  not re-approve itself; the approbation dates the *text*, not the book.
+- **What changed is orthography and typography** — dominated by `-ie`→`-y`, dropped terminal `-e`,
+  increased capitalisation, and `VV`→`W` — plus one silent correction of a first-edition error
+  (`to large`→`too large`).
+- **It is not a modernisation programme**, and several changes run the other way (`AVTHOR`→`AVTHOVR`,
+  `Goſpel`→`Ghoſpel`, `authors`→`authours`, `dearly`→`dearely`). The `ai`/`ay` digraph moves in **both**
+  directions within the same edition.
+- **The 1635 founts have a `W` sort and the Douai founts do not** (`VVELBELOVED` → `WELBELOVED`), and the
+  1609 prose is itself mixed on a single page at ~545 ppi. This corroborates R6.6 on an admissible raster.
+
+**Registered for this step**: `OT-1635-M` (package pages 0–2070). It is **not** a witness to either OT
+tome's setting and may never supply an OT verse reading — it exists so a difference can be **cited to a
+leaf** rather than described.
+
+**Outstanding and named**: word-level rewording in the bodies beyond the collated samples · the endmatter
+Tables · **the OT2/1610 prelims**, which sit further into `M`'s package and are not yet located. None of
+these blocks the edition — `M` supplies no verse reading, so this is scholarly yield, not critical path.
+
 
 **R6.4 is the deliverable that answers "what differs between the editions."** The privilege at R6.5 is what
 makes it interesting rather than merely descriptive: the 1635 edition states on its own back matter that it
@@ -258,6 +283,49 @@ rather than changed silently.
 the raster's limit and **cannot be improved by any acquisition**: the base exemplar lacks the leaves, `X`'s
 copy is the spliced substitute, and `M` has no continuous-tone original. This is a genuine ceiling, recorded
 as one — not a pending task.
+
+### R6.6 — the `w`/`vv` flip was adjudicated on a raster that cannot resolve it
+
+**Sir's ruling (2026-08-06): mixed `w`, `vv`, `VV` and `Vv` are likely on a variety of leaves. Do not
+exclude the possibility, and be cautious about global flips lest original variants be overwritten.**
+
+`GUIDELINES.md` §w-regime already states the right rule — **per-instance, decided by stroke connectivity,
+never by the word** — and its priors are sound. The defect is not the rule. It is **where the rule was
+applied**.
+
+A global `vv`→`w` pass changed **33 lines** across three files (backups survive as `*.pre-vvfix`), and the
+STATUS note records it as *"now VISUALLY VERIFIED (2026-07-18)"*. **Every one of those three files was read
+from `NT-1582-F`.**
+
+| file | witness | source raster | lines flipped |
+|---|---|---|---|
+| `matter-nt-title.json` | `F` | 800 × 1124 (**~168 ppi**), read at a 400-dpi *render* | 7 |
+| `matter-nt-table.json` | `F` | same | 13 |
+| `matter-nt-preface.json` | `F` | same — **and the 1633 setting** (R6.3) | 13 |
+
+**The call is beneath the raster's limit.** `F` is barred from glyph-level work because the long-ſ nub —
+3–6 px at the base exemplar's ~545 ppi — spans **under 1.6 px** at 168 (§1.2). **The gap that separates two
+`v` sorts from one joined `w` is a finer feature than that nub.** So the 2026-07-18 verification could not
+have resolved what it reports resolving: it was performed on an *upscaled render*, where interpolation
+smooths precisely the gap the test depends on and makes separate sorts *look* joined. That is a mechanism
+that biases the error **in the observed direction** — toward `w` — which is exactly the flip that was made.
+
+**Independent evidence that the flip is not safe.** R6.3 read the same two frontmatter leaves in the 1582
+setting from `M` at ~380 ppi, and found the prelims prose face setting **both** forms: `VVhich` as a
+cap-height `V` plus an x-height `v` with a clear gap, and `word` as a single joined sort — **on the same
+line as a two-sort `vve`**.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R6.6a | Re-adjudicate the 33 lines on an **admissible raster** | each `w`/`vv` decided at 2–4× on `B` (~545 ppi) where `B` has the leaf, or on `M` (~380 ppi) where it does not | **no line decided on `F`** — it is inadmissible for this call by the plan's own resolution finding |
+| R6.6b | No global pass in **either** direction | the flip is not simply reverted | wholesale reversion repeats the error with the opposite sign; the priors say roman body really is predominantly `w` |
+| R6.6c | Retain every `*.pre-vvfix` backup until adjudicated | the observer's record is preserved | the backup is **what was seen**; the current file is **what a rule produced**. Where they disagree the observation is evidence and the rule is inference |
+| R6.6d | Amend the §w-regime STATUS note | the ratification is scoped to the raster it was made on | a future observer must not read "visually verified" as covering a witness that cannot support the test |
+
+**`matter-nt-title.json` first.** Its line 6 flips `Vvith`→`With` in **display matter**, where §w-regime
+records that the large-capital fount **has no `W` sort at all**. If that holds, the pass manufactured a sort
+the page cannot contain — and it did so on the one file whose fount the guidelines already single out as
+always `VV`.
 
 **Sequencing.** R6.2 and R6.3 are on the critical path — they close a gap in the NT that the plan wrongly
 believed unclosable. R6.4 and R6.5 are not: they are scholarly yield, and they must not delay the base
