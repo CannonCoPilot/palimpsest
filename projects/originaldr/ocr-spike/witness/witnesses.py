@@ -27,6 +27,39 @@ COPIES = {
     "X": "not a distinct copy -- B re-wrapped and re-rendered",
 }
 
+# Each role names a PERMISSION and a LIMIT, and every one is a statement about
+# what a FILE may be used for -- never a ranking of the COPIES.  Definitions are
+# OCR-MASTERPLAN.md 1.1a; this table exists so a consumer of MANIFEST.json need
+# not go and read the plan to find out what it is allowed to do.
+ROLES = {
+    "base":        "the copy the transcript is taken FROM -- it IS the text. "
+                   "Every reading; training crops; CER evaluation.",
+    "surrogate":   "a second scan of the SAME setting at usable resolution. "
+                   "Resolves what the base cannot show -- damage, show-through, "
+                   "an inked-over sort.  Never supplies a reading where the base "
+                   "is legible and merely disagreed with.",
+    "lowres":      "a genuinely independent copy whose DIGITISATION resolves too "
+                   "little for glyph-level work.  Collation, page order, "
+                   "completeness, and any reading no better-resolved witness "
+                   "carries.  NOT training data, NOT CER evaluation, and it may "
+                   "not adjudicate long-s against f -- the distinguishing nub is "
+                   "under 1.6 px at 168 ppi.",
+    "support":     "a copy of a DIFFERENT edition, admitted for named leaves "
+                   "only: a reading where the base has NO leaf at all, flagged "
+                   "as supplied with its source named.",
+    "frontmatter": "admitted for prelims and endmatter, excluded from the verse "
+                   "text.  No verse of scripture, at any resolution.",
+    "excluded":    "not a distinct copy, or not a witness to the setting. "
+                   "Audit and provenance only; nothing evidential.",
+}
+
+# NOTE: "lowres" was called "structure" until 2026-08-05.  The old label stated
+# the limit as a property of the COPIES when it is a property of ONE
+# DIGITISATION of them -- F is not less complete than the library copies (for
+# OT1 it holds the same 1132-leaf book block, and for the NT it is MORE complete
+# than the base exemplar, which lacks its Censure and Preface p.1 outright).
+# "Structure only" barred it from readings it is entitled to carry.  1.1a.
+
 # (volume, siglum) -> record
 WITNESSES = {
     ("NT",  "B"): dict(legacy="NT/S09",  year=1582, leaves=812,
@@ -34,7 +67,7 @@ WITNESSES = {
                        role="base"),
     ("NT",  "F"): dict(legacy="NT/S01",  year=1582, leaves=765,
                        jp2=SCANS/"S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_jp2",
-                       role="structure"),
+                       role="lowres"),
     # Acquired 2026-08-05 (roadmap R4.4).  The file previously held here was a
     # user re-upload of IA's MRC PDF, whose text layer is a 1-bit JBIG2 mask;
     # this is the original Princeton digitisation behind it, continuous tone at
@@ -54,7 +87,7 @@ WITNESSES = {
                        role="surrogate"),
     ("OT1", "F"): dict(legacy="OT1/S01", year=1609, leaves=1135,
                        jp2=SCANS/"S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_jp2",
-                       role="structure"),
+                       role="lowres"),
     ("OT2", "B"): dict(legacy="OT2/S09", year=1610, leaves=1150,
                        jp2=SCANS/"S09_nevv-testament-mart-3vol/holiebiblefaithf00mart_jp2",
                        role="base"),
@@ -63,7 +96,7 @@ WITNESSES = {
                        role="surrogate"),
     ("OT2", "F"): dict(legacy="OT2/S01", year=1610, leaves=1128,
                        jp2=SCANS/"S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_jp2",
-                       role="structure"),
+                       role="lowres"),
     # The 2007 reprint holds BOTH testaments in one 2872-leaf package, so this
     # witness is a SLICE of it: the NT begins at the blank leaf 2071 and its
     # title page stands at 2072.  Addressing the whole package as one witness
@@ -74,6 +107,19 @@ WITNESSES = {
                        leaf_range=(2072, 2872),
                        role="frontmatter"),
 }
+
+# A declared vocabulary that nothing checks is decoration.  An unknown role must
+# fail at import, not silently reach MANIFEST.json where a downstream consumer
+# would treat it as a permission it does not have.
+_bad = {(v, s): r["role"] for (v, s), r in WITNESSES.items() if r["role"] not in ROLES}
+if _bad:
+    raise ValueError(
+        f"witness roles not in the declared vocabulary: {_bad}. "
+        f"Known roles: {sorted(ROLES)}.  A role is a permission and a limit "
+        f"(OCR-MASTERPLAN.md 1.1a) -- add it to ROLES with its definition, or "
+        f"fix the typo; do not let an undefined one through."
+    )
+del _bad
 
 # Which artefact is PRIMARY for each witness.  Not a guess and not a rule about
 # formats: taken from the `source`/`original` fields of

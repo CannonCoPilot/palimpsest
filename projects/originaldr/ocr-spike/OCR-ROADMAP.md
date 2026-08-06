@@ -65,7 +65,7 @@ the threshold's shape, not the book's.
 |---|---|---|---|
 | R1.4 | Resolvability check before classification | `label()` tests each witness's ink floor **against the cut it is about to apply** and emits `TEXT?` where blanks are indistinguishable | the four re-uploads report **UNRESOLVABLE**, the six genuine captures are unaffected |
 | R1.5 | Summaries account for every leaf | per-kind counts printed for kinds *present*, with `sum == n` asserted | a new kind cannot drop out of the summary while `n` stays correct |
-| R1.6 | Offline relabelling | `witness/relabel.py` re-applies `label()` to stored features | a threshold revision costs seconds, not a ~40-minute image pass over ten witnesses |
+| R1.6 | Offline relabelling | `witness/relabel.py` re-applies `label()` to stored features | a threshold revision costs seconds, not a ~40-minute image pass over eleven witnesses |
 
 **The criterion had to be corrected once, and how it failed is worth keeping.** The first version asked
 whether the ink floor was a small fraction of the *median*, and that split the three `F` witnesses
@@ -89,9 +89,12 @@ returning a well-formed number that reads as evidence. R1.5 exists because the s
 list of kinds, so `TEXT?` would have vanished from the totals while `n` stayed right: the unresolved leaves
 would have looked accounted for.
 
-**Consequence for `F`.** These witnesses are structure-only (§1.2), and this narrows that further: they can
-carry **page order**, but they **cannot be used to assess completeness** — whether a leaf is wanting, blank
-or supplied is not recoverable from them. Completeness rests on the `B` and `P` witnesses.
+**Consequence for `F`.** This is a **second and independent limit** on these witnesses, and it is narrower
+than the resolution one: it bars them from **completeness** questions specifically. They carry **page
+order**, but whether a leaf is wanting, blank or supplied is not recoverable from them, because their
+processing raises the whole leaf and no blank can be distinguished from a lightly-printed one.
+Completeness rests on the `B` and `P` witnesses. Note this is a limit on *these files*, not the
+withdrawn "structure only" verdict on the copies (§1.1a).
 
 ---
 
@@ -160,7 +163,8 @@ provenance of its own.
 **R4.2a is what remains, and it is deliberately not folded back into R4.2.** The digitisation provenance of
 the `F` set is settled (`fatimamovement.com`, uploaded 2014-07-28); the *physical copies* are not, and the
 catalogue route to them is exhausted. Recording that as done would convert a real gap into a false
-closure — `F` is structure-only (§1.2), so this blocks citation, not imaging, but it stays **OPEN**.
+closure. Because `F` is barred from glyph-level work by its resolution (§1.2), this blocks **citation**,
+not imaging — but it stays **OPEN**.
 
 **R4.3 is DISCHARGED, and not where it was expected.** The fourth source is the **1582 setting witnessed by
 `NT/S06`** — the file the plan had excluded as "a modern facsimile" (§1.1, §1.4). Block-registered

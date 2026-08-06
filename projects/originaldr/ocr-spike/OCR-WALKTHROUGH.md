@@ -12,8 +12,10 @@ Companion documents: `OCR-EXECUTIVE-SUMMARY.md` · `OCR-OVERVIEW.md` · `OCR-MAS
 
 ## Step 0 — Establish which books we have *(week 1, blocking)*
 
-Ten scan files are on disk. **They are not ten witnesses.** Measurement reduces them to **seven**, and the
-base exemplars are now declared:
+Eleven scan files are on disk. **They are not eleven witnesses.** Measurement resolves them into **ten** —
+eight that witness their own volume's setting, one admitted from a different edition as support, one
+admitted for frontmatter only, and one file that is not a witness at all. The base exemplars are now
+declared:
 
 | volume | base exemplar | surrogate | low-resolution witness | other | excluded |
 |---|---|---|---|---|---|
@@ -127,10 +129,15 @@ from nothing else.**
 
 **Rasters. Read each item's primary artefact — and check which one that is.** Internet Archive records the
 derivation chain for every file it holds. Read it, and the corpus splits in two: for the six institutional
-captures the JP2s are the originals and the PDF is IA's derivative, while for the four `F` and `X` files a
-user uploaded a **PDF** and IA rendered the JP2 package *from it*. Measured at each item's primary
-artefact, **all ten are continuous tone** — the institutional PDFs are MRC composites with a 1-bit JBIG2
-mask, the uploaded PDFs carry a plain 8-bit JPEG per page, and no primary artefact has a bitonal layer.
+captures the JP2s are the originals and the PDF is IA's derivative, while for the five `F`, `X` and `M`
+files a user uploaded a **PDF** and IA rendered the JP2 package *from it*. Measured at each item's primary
+artefact, **ten of the eleven are continuous tone** — the institutional PDFs are MRC composites with a
+1-bit JBIG2 mask, and the uploaded PDFs carry a plain 8-bit JPEG per page.
+
+**`M` is the one exception, and it is a real one rather than an artefact.** Its primary artefact is a 2007
+print-on-demand PDF holding **1-bit CCITT stencils at ~380 ppi**, and there is no continuous-tone original
+to acquire — the tone was discarded before the file existed. `M` is admitted for frontmatter and endmatter
+only, and its bitonal raster is recorded as the limiting factor on every reading taken from it.
 
 > This supersedes two earlier readings. The plan once treated most copies as MRC composites with binarised
 > text layers and carried a pseudo-grayscale reconstruction step to recover from it. The structure was

@@ -177,3 +177,89 @@ never be recorded as evidence.
 
 **Verified**: 11/11 witnesses resolve, `M`'s slice is exactly 800 leaves, guard tests pass in both
 directions.
+
+---
+
+## Session 5 — the companions caught up, and the role label came out of the code
+
+The previous session established `M` and restated `F`, and wrote both into the plan. **The three companion
+documents still carried the withdrawn descriptions**, which is the condition that makes a retraction
+worthless: a reader arriving at the Overview would have been told, in the present tense, that `F` is *"a
+rehost whose copy is unidentified"* with the role *"structure only"*, and that a *"1610 whole-Bible
+facsimile is excluded outright"* — the exclusion this project had just proved wrong at the most
+consequential point in the New Testament.
+
+### The witness count was wrong in both directions
+
+Every document opened with **"ten scan files … reduce them to seven witnesses."** Both numbers were stale,
+and the derivation of "seven" was no longer recoverable from the table beneath it.
+
+- The **file count omitted `S06`**, which had been excluded on a mistaken description and so was not
+  counted as *held* at all.
+- The **witness count subordinated the three `F` copies** as "structure only" — a limit belonging to their
+  scan, not to the copies.
+
+Restated as **eleven files, ten witnesses**, and — the part that matters — stated **so it can be checked
+against the table** rather than trusted: eight witnessing their own volume's setting, one different-edition
+support (`R`), one frontmatter witness (`M`), and one file that is no witness at all (`X`). A bare numeral
+is what went stale three times; an arithmetic a reader can verify does not.
+
+### Two blanket claims that `M` falsified
+
+| claim, as it stood | why it failed | now |
+|---|---|---|
+| *"All ten are continuous tone at source"* | `M` is **1-bit CCITT at ~380 ppi**, and there is no continuous-tone original to acquire — the tone was discarded before the file existed | **ten of eleven**; `M` named as the one real exception, its raster recorded as the limiting factor on every reading taken from it |
+| *"Read the JP2 leaves. Never the PDFs."* | right for the six institutional captures, **exactly backwards for the other five**, where a user uploaded the PDF and IA rendered the JP2s from it | **read each item's primary artefact**, per §1.2 — following the old rule would have put a render in place of a source in five cases out of eleven |
+
+The second is the more instructive: a per-item empirical finding had been compressed into a universal rule,
+which is the same defect as a stale numeral, wearing procedural clothing.
+
+### The withdrawn label was still in the code
+
+The plan retired *"structure only"* and the registry did not: `witnesses.py` still emitted
+`role="structure"` into `MANIFEST.json`, so **every downstream consumer would have read the retracted
+label** — and read it as a permission narrower than the evidence supports.
+
+- Renamed to **`lowres`** across the three `F` witnesses, with the reason recorded at the definition rather
+  than in a commit message.
+- Added a **`ROLES` table to the code**, so a consumer of the manifest need not read the plan to learn what
+  a role permits and forbids.
+- Added an **import-time guard**: a role outside the vocabulary now raises. A declared vocabulary nothing
+  checks is decoration, and an unknown role reaching the manifest would be read as a permission it does not
+  have.
+
+**Verified**: 11/11 witnesses rebuild, roles `base` 3 · `lowres` 3 · `surrogate` 2 · `support` 1 ·
+`frontmatter` 1 · `excluded` 1, guard tests pass both directions.
+
+### R6.2 — the 1582 prelims extracted and named
+
+`witness/extract_pdf_leaves.py` extracts leaves from a PDF-primary witness, pulling the **embedded
+XObject** rather than rasterising the page — rasterising would add one more render on top of the ones the
+primacy rule exists to avoid. The slice offset (`M`'s leaf 0 = package page 2072) is read from the registry
+and applied in **one place**, because hand-computing it per call site is exactly how a frontmatter leaf
+gets attributed to the wrong edition.
+
+| leaf | package page | identified as |
+|---|---|---|
+| 0 | 2072 | **title page** — *THE NEVV TESTAMENT OF IESVS CHRIST … IN THE ENGLISH COLLEGE OF RHEMES* |
+| 1 | 2073 | **THE CENSVRE AND APPROBATION** — two-line heading, **no ornamental headpiece**, decorated `C` initial, **no *"of the first Edition"* subtitle** ⇒ **the 1582 setting** |
+| 2 | 2074 | **Preface p. 1** — foliate headpiece, *THE PREFACE TO THE READER TREATING OF THESE THREE POINTS* |
+| 3 | 2075 | Preface, running head *THE PREFACE*, marginalia both margins |
+| 4 | 2076 | Preface, running head *TO THE READER* |
+
+Leaf 1 is the leaf the plan once recorded as surviving nowhere, and its diagnostic features are present
+exactly as §1.1 predicts from the correlation evidence.
+
+**Two silent defects caught while doing it**, both of the kind that still *look* like a page:
+
+- **A second embedded image on every page.** It is a **1×1 DeviceGray swatch, one shared xref reused
+  across the whole document** — a Distiller background fill, not a soft mask. Dropped **by rule** (only
+  when genuinely degenerate); anything larger is kept and reported, because a real second image would mean
+  the leaf is composited and must be inspected before it is cited.
+- **Polarity.** A PDF `/ImageMask` carries no polarity of its own — which value is ink is set by the page's
+  fill and `/Decode` — so the stencils extracted **white-on-black**. Fed to a recognizer that is invisible:
+  the page still looks like a page, and every stroke-width and ink-coverage statistic computed from it is
+  inverted. Now decided **from the image** by the minority-class rule (ink measured at **5.8–8.7%** of the
+  sheet across the five leaves), and where neither class is a clear minority the image is **left alone and
+  the caller told loudly** rather than a coin being flipped — the same failure mode as the absolute ink
+  threshold that made `F`'s blank leaves unresolvable.

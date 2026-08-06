@@ -20,17 +20,30 @@ which serves a transcript of a single printing.
 The consequence that matters most: **disagreement between two photographs of the same setting of type is a
 scan-quality fact, not a textual one.** It needs no apparatus and no voting.
 
-## 2. The corpus: three volumes, three copies each
+## 2. The corpus: three volumes, three copies each — and two admitted for named leaves only
 
-Ten scan files are held. **They are not ten witnesses** — measurement and bibliographic verification reduce
-them to **seven**, across three volumes. A **1610 whole-Bible facsimile** is excluded outright.
+Eleven scan files are held. **They are not eleven witnesses** — measurement and bibliographic verification
+resolve them into **ten**, across three volumes: eight witnessing their own volume's setting, one admitted
+from a different edition as support, one admitted for frontmatter alone, and one file that is a re-wrapping
+of another and no witness at all.
+
+**One of the eleven was very nearly not counted.** A file set aside in an earlier draft as "a 1610
+whole-Bible facsimile, excluded outright" is nothing of the kind: it is a 2007 reprint **of photographs of
+original copies**, whose Old Testament is a **1635 Rouen** printing and whose New Testament is a **1582
+Rheims Fogny** — and whose prelims carry the **only genuine 1582 Censure and Preface p.1 in the corpus**,
+two leaves the plan had recorded as surviving nowhere. It is admitted as `NT-1582-M`, for frontmatter and
+endmatter only. **The lesson is procedural: an exclusion is a claim, and it inherits the evidential
+standard of any other claim.** This one rested on a one-line description that was wrong about the file's
+date, its printer and its nature, and because it was never re-tested it produced a false "nothing survives"
+verdict at the most consequential point in the New Testament.
 
 **Three measured facts shaped the corpus:**
 
 **Establish which file is primary, then measure that one.** Internet Archive records the derivation chain
 for every file it holds, and reading it splits the corpus in two: for the six institutional captures the
-JP2s are the originals, while for the four `F` and `X` files a user uploaded a **PDF** and IA rendered the
-JP2s *from it*. Measured at each item's primary artefact, all ten are **continuous tone** — the MRC
+JP2s are the originals, while for the five `F`, `X` and `M` files a user uploaded a **PDF** and IA rendered
+the JP2s *from it*. Measured at each item's primary artefact, **ten of the eleven are continuous tone**
+(`M` alone is bitonal at source, and no original exists to acquire) — the MRC
 composition and 1-bit JBIG2 layers the plan once designed around live only in IA's PDF derivation of the
 institutional captures, a problem we would have *created*, not inherited. The recovery machinery built for
 it is withdrawn. **Format does not establish primacy; the derivation chain does**, and reading it also
@@ -48,13 +61,24 @@ graduations agree to 2.7%, fixing those captures at **~545 ppi** — not the 650
 implying a quarto leaf, which is correct for the edition. No ppi is claimed for the NT, which has no
 calibration leaf.
 
-**Provenance is a property of the leaf, not the file.** Three of four NT files are made up: the base copy
-**lacks** its Censure and Preface leaves, one copy supplies them **from a 1633 edition** (proven by foxing
-in blank margins, 0.77 against a 0.045 control), and another supplies them from an unidentified source. **No
-genuine 1582 Censure leaf exists anywhere in the corpus.** The 1633 Rouen copy is therefore admitted for the
-NT as witness support, since otherwise those leaves have no independent reading.
+**Provenance is a property of the leaf, not the file.** Most NT files are made up: the base copy **lacks**
+its Censure and Preface leaves, one copy supplies them **from a 1633 edition** (proven by foxing in blank
+margins, 0.77 against a 0.045 control), and the re-wrapped file supplies them from a fourth source. **That
+fourth source is now identified — it is the 1582 setting, witnessed by `M`** (block-registered correlation
++0.424 / +0.398 on the matching pair against 0.000–0.036 on every cross-pairing, and line-for-line visual
+agreement including an S. Augustine quotation the 1633 setting lacks).
 
-**Each volume has a base exemplar and a same-setting surrogate** for resolving illegibility.
+> **An earlier statement is withdrawn.** This section previously concluded that **"no genuine 1582 Censure
+> leaf exists anywhere in the corpus."** That was true of the four NT files then under consideration and
+> false of the corpus, because the fifth had been excluded on a mistaken description and never examined.
+> **Both leaves survive in the 1582 setting**, and may be transcribed as 1582 readings — from `M`, with its
+> bitonal ~380 ppi raster recorded as the limiting factor.
+
+The 1633 Rouen copy remains admitted for the NT as witness support, for the leaves where the base has no
+reading at all.
+
+**Every volume has a base exemplar; the two OT tomes also have a same-setting surrogate** for resolving
+illegibility. The NT has none — which is why it alone needs the witness-support and frontmatter roles.
 
 ## 3. How it works
 
@@ -194,10 +218,20 @@ read, and leaf indices do not correspond between copies of the same volume (the 
 leaves before a word is compared). Until the map exists, "the same page in another witness" is not a
 well-formed request.
 
-Also blocking, but running in parallel: **STC/ESTC for every copy** (OCLC numbers are held; the STC numbers
-in earlier notes are unverified leads and are recorded as leads) · repository and shelfmark for the four
-rehost files · **identification of the source supplying the excluded file's two frontmatter leaves**, which
-is the only remaining candidate for a genuine 1582 reading of them. One citation carried from earlier work
+Also blocking, but running in parallel: **STC/ESTC for every copy** — OCLC numbers are held, the STC
+numbers in earlier notes are recorded as unverified leads, and verification is **externally blocked**, the
+ESTC index returning `no such index` for every query while `estc.bl.uk` redirects to CERL. A scheduled
+probe distinguishes an outage from an absent record, and no number is promoted until **two independent
+authorities agree** — the sources disagree on one digit of the NT identifier, which is exactly the error a
+single authority cannot catch.
+
+**Two items on this list are now closed rather than pending.** The `F` repository question is answered and
+was the wrong question: those volumes have no shelfmark because they are **not a library's copy** —
+privately held is a determinate answer. And the source of the excluded file's two frontmatter leaves is
+**identified** (§2). What remains genuinely open is narrower: the physical copies behind `F` and `M` before
+their present owners, which no catalogue can supply and which blocks no transcription.
+
+One citation carried from earlier work
 is unverified and load-bearing for a geometry gate: resolve or delete. And the typeset census, which also
 closes the `ꝛ` / brevigraph / blackletter questions.
 

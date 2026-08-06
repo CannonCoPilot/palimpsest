@@ -29,16 +29,17 @@ and they are useful, but as **finding aids**, never authorities. The authority i
 
 ## 2. The corpus, and what each copy is for
 
-**Ten scan files — but not ten witnesses.** Measurement and bibliographic verification reduce them to
-**seven**. Witnesses are named `VOLUME-YEAR-SIGLUM`, the siglum naming the *physical copy*: **B** = Boston
-Public Library, **P** = Princeton (Lenox donation), **R** = Princeton 1633 Rouen, **F** = a rehost whose
-copy is unidentified, **X** = a derivative and not a witness.
+**Eleven scan files — but not eleven witnesses.** Measurement and bibliographic verification resolve them
+into **ten**. Witnesses are named `VOLUME-YEAR-SIGLUM`, the siglum naming the *physical copy*: **B** =
+Boston Public Library, **P** = Princeton (Lenox donation), **R** = Princeton 1633 Rouen, **F** = a copy
+owned and digitised by the Fatima Movement, **M** = the copies behind a 2007 Maximus Scriptorius reprint,
+**X** = not a distinct copy and not a witness.
 
-| volume | base exemplar | surrogate | structure only | excluded |
-|---|---|---|---|---|
-| **NT 1582** | **`NT-1582-B`** | — | `NT-1582-F` | `NT-1582-X` |
-| **OT1 1609** | **`OT1-1609-B`** ~545 ppi | `OT1-1609-P` ~411 ppi | `OT1-1609-F` | — |
-| **OT2 1610** | **`OT2-1610-B`** ~545 ppi | `OT2-1610-P` ~411 ppi | `OT2-1610-F` | — |
+| volume | base exemplar | surrogate | low-resolution witness | other | excluded |
+|---|---|---|---|---|---|
+| **NT 1582** | **`NT-1582-B`** | — | `NT-1582-F` | `NT-1633-R` support · `NT-1582-M` frontmatter | `NT-1582-X` |
+| **OT1 1609** | **`OT1-1609-B`** ~545 ppi | `OT1-1609-P` ~411 ppi | `OT1-1609-F` | — | — |
+| **OT2 1610** | **`OT2-1610-B`** ~545 ppi | `OT2-1610-P` ~411 ppi | `OT2-1610-F` | — | — |
 
 **`NT-1582-X` is excluded because it carries no information.** It is dimensionally an exact 2× of the NT
 base and correlates with it at 1.000; its spectral energy above the base's Nyquist is *lower* than a naive
@@ -49,11 +50,21 @@ pixels, none of the detail.
 Preface leaves entirely and the third NT copy has them **borrowed from the 1633 copy** — so without R, those
 leaves have no independent reading. The OT volumes remain first-edition only.
 
-**The `F` files are structure-only.** Their primary artefact is an uploaded PDF carrying one **800 × 1124**
-JPEG per page — about **168 ppi at the leaf**, sampled and identical across all three volumes. The nub
-distinguishing long-ſ from `f` spans 3–6 px at the base copy's ~545 ppi; at 168 ppi it spans under 1.6 px
-and is simply not in the file. They are genuine independent copies, useful for page order and addressing,
-but they cannot carry a diplomatic reading and are not training data.
+**The `F` files are independent witnesses whose *digitisation* is low-resolution.** Their primary artefact
+is an uploaded PDF carrying one **800 × 1124** JPEG per page — about **168 ppi at the leaf**, sampled and
+identical across all three volumes. The nub distinguishing long-ſ from `f` spans 3–6 px at the base copy's
+~545 ppi; at 168 ppi it spans under 1.6 px and is simply not in the file. So `F` is barred from training
+data, from CER evaluation, and from adjudicating long-ſ against `f` — **and from nothing else.** It carries
+readings wherever no better-resolved witness has the leaf.
+
+> **An earlier draft called `F` "a rehost whose copy is unidentified" and gave its role as "structure
+> only." Both are withdrawn, because they subordinated the *copy* on evidence that only ever concerned the
+> *scan*.** The copy is identified: it belongs to and was digitised by the **Fatima Movement**, and having
+> no library shelfmark is what privately held *looks* like, not a gap. And it is not less complete than the
+> library copies — for OT1 it holds **the same 1132-leaf book block** as the Princeton copy, closing on the
+> same words at the same printed page, the entire difference being binding, flyleaves and imaging targets.
+> For the NT it is **more** complete than the base exemplar, which lacks its Censure and Preface p.1
+> outright. A witness that supplies what the base is missing does not rank below it there; it governs.
 
 > The larger 3334 × 4684 rasters these files appear to offer are **IA renders of that PDF at 300 dpi** —
 > 4.17× interpolation. An intermediate draft measured the renders and read them as the source, then
@@ -64,12 +75,20 @@ but they cannot carry a diplomatic reading and are not training data.
 **ppi is calibrated, not assumed**: the Boston OT scan includes a ruler-and-target leaf; imperial and metric
 graduations agree to 2.7%, and the implied leaf size (5.6 × 8.0 in, a quarto) is correct for the edition.
 
-**Each volume has a base and a surrogate**, which maps exactly onto the two roles the constitution defines:
+**Every volume has a base exemplar; the two OT tomes also have a same-setting surrogate, and the NT does
+not.** Each role names a permission *and* a limit, and every one is a statement about what a **file** may be
+used for — never a ranking of the **copies**:
 
 | role | what it may do |
 |---|---|
 | **base exemplar** | **it is the document.** Everything in the transcript comes from here |
 | **same-setting surrogate** | **resolve illegibility — this is transcription, not emendation** |
+| **low-resolution witness** | collation, page order, completeness, and any reading nothing better-resolved carries — but never training data or glyph adjudication |
+| **witness support** (different edition) | supply a reading only where the base has **no leaf at all**, flagged with its source named |
+| **frontmatter witness** | prelims and endmatter only — **no verse of scripture** |
+
+**The NT's missing surrogate is why the last two roles exist.** Its base copy is frontmatter-defective, and
+the two leaves it lacks survive in the 1582 setting only in `M`.
 
 The second role is the distinction that keeps the apparatus usable. Without it, every routine "the base copy
 is blotted here, the other is clean" becomes an *emendation*, and thousands of non-events bury the handful
@@ -290,6 +309,9 @@ input-height sweep, honestly costed at **120–200 GPU-hours** — because only 
 cleanly from the pretrained model, and raising it breaks weight transfer at the recurrent stack.
 
 > **Withdrawn, not deferred.** The JBIG2-substitution test and the binarisation-transfer gap once stood
-> here. Measured at source, all ten JP2 packages are continuous tone; that structure exists only in the PDF
-> derivatives (§3). Both tests measured a property of a file we chose to make, so they are **withdrawn** —
-> and the way to keep them withdrawn is to work from the JP2s and never from the PDFs.
+> here. Measured at each item's **primary artefact**, ten of the eleven files are continuous tone; the MRC
+> composition and JBIG2 layers exist only in IA's PDF derivation of the six institutional captures (§3).
+> Both tests measured a property of a file we chose to make, so they are **withdrawn** — and the way to
+> keep them withdrawn is to read each item's primary artefact, which is the JP2 for those six and the
+> **uploaded PDF** for the other five. "Always the JP2" would put a render in place of a source in five
+> cases out of eleven. The single genuine exception is `M`, bitonal at source with no original to acquire.

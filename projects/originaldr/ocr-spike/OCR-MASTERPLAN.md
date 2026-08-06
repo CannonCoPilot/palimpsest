@@ -86,8 +86,22 @@ constitutes acceptance.
 
 ### 1.1 The files, and what they actually are
 
-Ten scan files are held. **They are not ten witnesses.** Measurement (§1.2) and bibliographic verification
-(§1.3) reduce them to **seven independent witnesses across three volumes**.
+**Eleven scan files are held, and they are not eleven witnesses.** Measurement (§1.2) and bibliographic
+verification (§1.3) resolve them into **ten witnesses across three volumes**, of which
+
+- **eight witness their own volume's setting** and may be read for the verse text — `NT/S09` and `NT/S01`,
+  and all three copies of each OT tome;
+- **one is witness support from a different edition**, `NT/S04` (1633 Rouen), admitted only where the base
+  exemplar has no leaf at all (§1.4);
+- **one is a frontmatter witness**, `NT/S06`, admitted for prelims and endmatter and excluded from the
+  verse text (below);
+- and **one file is not a witness at all** — `NT/S08` is `NT/S09` re-wrapped and re-rendered (§1.2).
+
+The arithmetic is stated so it can be checked against the table rather than taken on trust. An earlier
+revision said *"ten files, seven witnesses"*; both numbers were wrong. The file count omitted `S06`, which
+had been excluded on a mistaken description and so was not counted as held at all, and the witness count
+subordinated the three `F` copies as "structure only" — a limit that belongs to their **scan**, not to the
+**copies** (§1.1a).
 
 Each file's **primary artefact** — the JP2 package or the PDF — is established per item in §1.2, not assumed
 from the file extension.
@@ -380,9 +394,18 @@ the IA originals**, so the embedded JPEG is the true ceiling.
 > volumes: at ~168 ppi the nub distinguishing long-ſ from `f` — 3–6 px at 545 ppi — spans under 1.6 px and
 > is not present in the file.
 
-**All ten are continuous tone at source — but only after §1.2a**, and re-tested against each item's
-*primary* artefact rather than assumed from format. Nine were so already; the tenth, `NT/S04`, was not, and
-was made so by acquiring its original rather than by reasoning about it. The
+**Ten of the eleven are continuous tone at source — but only after §1.2a**, and re-tested against each
+item's *primary* artefact rather than assumed from format. Nine were so already; the tenth, `NT/S04`, was
+not, and was made so by acquiring its original rather than by reasoning about it.
+
+**The eleventh, `NT/S06`, is bitonal and cannot be made otherwise.** It is a 2007 print-on-demand
+reproduction whose pages are **1-bit CCITT at ~380 ppi** (§1.1); there is no continuous-tone original to
+acquire, because the tonal information was discarded before the file we hold was made. This is not a
+counter-example to the primacy rule but a result of applying it: `S06`'s primary artefact **is** the PDF,
+and the JP2 package beside it is a 600-dpi render of a letter-size page — a 2× upscale of the 300-dpi JPG
+render, and worse than the stencil it derives from. `S06` is admitted for frontmatter and backmatter only,
+and its bitonal raster is **recorded as the limiting factor wherever a reading is taken from it** rather
+than being allowed to pass unremarked (§1.4, R6.3). The
 institutional PDFs (`NT/S09`, `S03a`) are MRC composites — a 167-ppi JPX background, a 500-ppi JPX
 foreground and a **1-bit JBIG2 mask** — while their JP2 originals are continuous tone. The user-uploaded
 PDFs (`S08`, `S01` ×3) carry a **plain 8-bit RGB JPEG per page, no mask and no JBIG2 anywhere in the
@@ -456,7 +479,8 @@ derivation chain above: `S01` is a re-processed set, not a capture.
 > 800 × 1124 (above). The conclusion is unchanged and better grounded: S01 is disqualified on **measured
 > resolution**, directly, with no inference about upsampling required.
 
-**The re-uploads cannot answer completeness questions either, and this narrows "structure-only".** Their
+**The re-uploads cannot answer completeness questions either, and this is a second, independent limit on
+them.** Their
 processing raises the whole leaf, so their ink floors sit **14–20× above the threshold that defines a blank
 leaf** — 0.141 for `S08`, 0.188–0.196 for the three `S01` volumes, against 0.010 — while every genuine
 capture floors at **exactly 0.0000**. A blank leaf is therefore not distinguishable from a lightly-printed
@@ -467,7 +491,7 @@ finding *"the rehost stripped its blanks"*, which the measurement cannot support
 witnesses.**
 
 > This is a fourth line of evidence for the split in §1.2, and an unplanned one — the ink floor has nothing
-> to do with derivation chains, page boxes or spectra. It sorts the ten witnesses into the same two groups,
+> to do with derivation chains, page boxes or spectra. It sorts the eleven files into the same two groups,
 > and `NT/S04` moved from the second group to the first when its original was acquired.
 
 **`NT/S08` is empty magnification — it is not a witness.** It is dimensionally an exact **2.000×** of
@@ -493,15 +517,23 @@ the Boston Public Library scan at one remove, and adds nothing to it.**
 
 **Base exemplars** — declared on the evidence above, losing candidates and reasons recorded per §0.2.1:
 
-| volume | base exemplar | why | surrogate | rejected |
-|---|---|---|---|---|
-| NT 1582 | **`NT/S09`** | only true-resolution scan of the setting | `NT/S01` (structure only) | `NT/S08` — the same scan, rendered 2× |
-| OT1 1609 | **`OT1/S09`** | ~545 ppi calibrated, highest real detail | `OT1/S03a` (~411 ppi) | `OT1/S01` — 800 × 1124, ~168 ppi |
-| OT2 1610 | **`OT2/S09`** | ~545 ppi calibrated, highest real detail | `OT2/S03b` (~411 ppi) | `OT2/S01` — 800 × 1124, ~168 ppi |
+| volume | base exemplar | why | same-setting surrogate | admitted for named leaves | rejected |
+|---|---|---|---|---|---|
+| NT 1582 | **`NT/S09`** | only true-resolution scan of the setting | **none** — see below | `NT/S04` (1633 support) · `NT/S06` (frontmatter) | `NT/S08` — the same scan, rendered 2× |
+| OT1 1609 | **`OT1/S09`** | ~545 ppi calibrated, highest real detail | `OT1/S03a` (~411 ppi) | — | — |
+| OT2 1610 | **`OT2/S09`** | ~545 ppi calibrated, highest real detail | `OT2/S03b` (~411 ppi) | — | — |
 
-The S01 volumes are **structure-only**: page order, book/chapter addressing, collation and gross
-verification. They are independent witnesses and are **not** discarded, but they are not copy-text and not
-recognition training data.
+**`NT/S01` is not listed as the NT's surrogate, and the NT has none.** A surrogate is a second scan of the
+same setting *at usable resolution*, and at ~168 ppi `S01` does not meet the second condition — its value
+is collation and addressing, plus any reading nothing better-resolved carries. That the NT lacks a
+surrogate is precisely why it needs the two roles in the next column: the base copy is frontmatter-defective
+and cannot be repaired from within its own setting at full resolution.
+
+The `S01` volumes are **independent witnesses whose digitisations are low-resolution** — page order,
+book/chapter addressing, collation, gross verification, and readings where nothing better-resolved has the
+leaf. They are **not** discarded, and they are **not** copy-text or recognition training data. The earlier
+label *"structure-only"* is withdrawn: it stated the limit as a property of the copies when it is a
+property of one digitisation of them (§1.1a).
 
 ### 1.3 The source concordance
 
@@ -675,7 +707,7 @@ imperfections · made-up leaves · raster properties.**
 
 **Resolved** (§1.2–§1.4): raster properties and calibrated ppi · date-from-title-page for every copy ·
 repository, shelfmark and set membership for the five Princeton and BPL copies · witness independence for
-all ten files · made-up leaves and their sources for the New Testament · **base exemplars declared**, with
+all eleven files · made-up leaves and their sources for the New Testament · **base exemplars declared**, with
 losing candidates and reasons recorded.
 
 **Outstanding, and blocking:**
@@ -706,10 +738,20 @@ in parallel; it constrains citation, not imaging.
 
 ### 3.1 Acquire
 
-**Read the JP2 leaves. Never the PDFs.** The JP2 packages are the delivered scans; the PDFs are
-derivatives, and every destructive transformation in this corpus lives in the PDF wrapper — MRC
-composition, JBIG2 binarisation of the text layer, and (for `S01` and `NT/S08`) resampling. Measured at
-source, **all ten scan files are continuous tone** (§1.2).
+**Read each item's primary artefact, established per item in §1.2 — never inferred from the extension.**
+For the six institutional captures that means the **JP2 package**: the PDFs beside them are IA derivatives,
+and the destructive transformations in this corpus — MRC composition and JBIG2 binarisation of the text
+layer — live in that wrapper. For the five user-uploaded items (`S01` ×3, `S08`, `S06`) it means the
+opposite: **a user uploaded a PDF and IA rendered the JP2 package from it**, so there the JP2s are the
+derivative and carry resampling on top (`S08` 2.00×, the OT `S01` volumes 4.17×, `S06` 2×).
+
+> **An earlier revision of this section read "Read the JP2 leaves. Never the PDFs," and that rule is
+> withdrawn.** It was right about the six institutional items and exactly backwards about the other five,
+> where following it would have put a render in place of the source. Format never established primacy; the
+> derivation chain does, and it must be read per item because the corpus splits almost evenly.
+
+Measured that way, **ten of the eleven files are continuous tone; `S06` alone is bitonal at source** and
+carries the limit with it wherever it is read (§1.2).
 
 > **This supersedes an earlier reading of the corpus.** The plan previously treated most copies as MRC
 > composites with 1-bit JBIG2 text layers, and built a binarisation-recovery path around that. The
