@@ -12,25 +12,30 @@ Companion documents: `OCR-EXECUTIVE-SUMMARY.md` · `OCR-OVERVIEW.md` · `OCR-MAS
 
 ## Step 0 — Establish which books we have *(week 1, blocking)*
 
-Nine scans are on disk and their raster properties are measured. **Their bibliographic identity is not.**
-For each copy: **edition-issue · STC/ESTC · volume · repository and shelfmark · scan provenance ·
-completeness and imperfections · made-up leaves.**
+Ten scan files are on disk. **They are not ten witnesses.** Measurement reduces them to **seven**, and the
+base exemplars are now declared:
 
-Then declare, per volume, **the base exemplar** — on completeness, impression quality and absence of
-sophistication — **recording the losing candidate and why it lost.**
+| volume | base exemplar | surrogate | structure only | excluded |
+|---|---|---|---|---|
+| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(see below)* | `NT-1582-F` | `NT-1582-X` — a 2× upscale, no information |
+| OT1 1609 | **`OT1-1609-B`** (Boston PL, ~545 ppi) | `OT1-1609-P` (~411 ppi) | `OT1-1609-F` | — |
+| OT2 1610 | **`OT2-1610-B`** (Boston PL, ~545 ppi) | `OT2-1610-P` (~411 ppi) | `OT2-1610-F` | — |
 
-The measured raster column already narrows this decisively:
+**ppi here is calibrated, not inferred**: the Boston OT scans include a leaf photographed with an imperial
+and a metric ruler, which agree to 2.7%. No ppi is quoted for the NT, which has no calibration leaf.
 
-| volume | usable copies | base candidate | why |
-|---|---|---|---|
-| NT 1582 | S08, S09 | **S08** | the only continuous-tone scan in the corpus — no bitonal layer at all |
-| OT1 1609 | S09, S03a | **S09** | 650 ppi vs 500 |
-| OT2 1610 | S09, S03b | **S09** | 650 ppi vs 400 |
+**`NT-1633-R` (the 1633 Rouen edition) is admitted for the NT only, as witness support** — the NT base copy
+is frontmatter-defective and the third NT copy is contaminated, so without it two leaves have no independent
+reading at all.
 
-**S01 is excluded from all three** — 800 × 1124 px, ~168 ppi at the leaf, where the long-ſ nub spans under
-1.6 px. It remains useful for page order and addressing.
+**The `F` files are structure-only** — page order, addressing, gross verification — because they are
+uniformly resampled rehosts whose apparent resolution exceeds their real detail. They are **independent
+copies** and are not discarded; they simply cannot carry a diplomatic reading.
 
-**Gate 0a**: every field resolved, **no UNKNOWN remaining.**
+**Gates 0a–0d**: bibliographic fields resolved · **collation and leaf inventory per copy** · **cross-source
+leaf map** · derivative-contamination guard. **No leaf is transcribed before its provenance and its
+correspondence are known** — three of the four NT files are made up, and it was invisible until the leaves
+were read.
 
 > Nothing here is filled in from inference. A misattributed shelfmark would poison the base-exemplar choice
 > and every downstream claim, so candidate STC numbers from earlier notes are treated as leads to verify
@@ -98,16 +103,32 @@ from nothing else.**
 
 ## Steps 4 and 6, in parallel — rasters and finding aids
 
-**Rasters.** Extract, never render. **Grayscale is primary** — for the MRC files that means the JPX layer,
-not the JBIG2 mask. Where only a 1-bit layer exists, reconstruct pseudo-grayscale with a **~0.8 px Gaussian
-at native resolution before any downsampling**, applied identically at train and inference.
+**Rasters. Read each item's primary artefact — and check which one that is.** Internet Archive records the
+derivation chain for every file it holds. Read it, and the corpus splits in two: for the six institutional
+captures the JP2s are the originals and the PDF is IA's derivative, while for the four `F` and `X` files a
+user uploaded a **PDF** and IA rendered the JP2 package *from it*. Measured at each item's primary
+artefact, **all ten are continuous tone** — the institutional PDFs are MRC composites with a 1-bit JBIG2
+mask, the uploaded PDFs carry a plain 8-bit JPEG per page, and no primary artefact has a bitonal layer.
 
-Two tests, measuring different things:
-- **JBIG2 substitution** (**Gate 0b**, ≤0.1%) — lossy symbol matching merges visually similar glyphs, and
-  `ſ`/`f` is the canonical case. Same 20 pages as mask and as composite, compared glyph-for-glyph.
-- **Binarisation transfer gap** (**Gate 0c**) — which exists **even at a zero substitution rate**, because
-  a two-valued image is off-manifold for filters fitted to antialiased edges, and the mismatch concentrates
-  in the 2–4 px features the edition depends on.
+> This supersedes two earlier readings. The plan once treated most copies as MRC composites with binarised
+> text layers and carried a pseudo-grayscale reconstruction step to recover from it. The structure was
+> real, but it belonged to the derivative. **The binarisation problem is not inherited; it is one we would
+> create.** The reconstruction step, the JBIG2-substitution test and the binarisation-transfer-gap test are
+> all **withdrawn**: each measured a property of a file the edition will never consume.
+>
+> The correction *to that correction* is the rule above. "Always read the JP2" was right about the
+> institutional captures and wrong about the user uploads, where the JP2 is the derived file. Format does
+> not establish primacy; the derivation chain does, and it costs one API call to read rather than a guess.
+
+**Never up-sample to match another copy.** `NT-1582-X` is the cautionary case: 4× the pixels of the NT base
+and, measurably, none of its information. It is also the case that shows how quietly this happens — nobody
+chose that upscale, IA's renderer picked a DPI. Resolution differences are carried as they are.
+
+What remains is a guard, not a remedy — **Gate 0d**: every leaf is asserted at load to have come from
+**its own witness's primary artefact**, with bit depth > 1, grey levels > 64 and dimensions matching the
+manifest. Note the guard is *witness-specific and cannot be a blanket "must be a JP2"*: for the `F` and `X`
+witnesses a JP2 leaf is exactly the defect being guarded against. Either way the defect is *silent*,
+because a rendered leaf still looks like a page.
 
 **Finding aids.** Both archaic transcriptions are finding aids, never authorities — one of them splices
 editorial annotation into scripture at `ruth/1/1` and `genesis/10/1`.

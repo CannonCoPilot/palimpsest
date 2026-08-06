@@ -84,74 +84,349 @@ constitutes acceptance.
 
 ## 1. THE CORPUS
 
-### 1.1 Nine scans: three volumes × three copies
+### 1.1 The files, and what they actually are
 
-All nine are copies of **one first-edition printing per volume**. This is the corpus; nothing else is in
-scope.
+Ten scan files are held. **They are not ten witnesses.** Measurement (§1.2) and bibliographic verification
+(§1.3) reduce them to **seven independent witnesses across three volumes**.
 
-| volume | copy | file | pages |
-|---|---|---|---|
-| **NT 1582** | `NT/S01` | `S01_1582-first-edition-3vol/nt-1582.pdf` | 765 |
-| | `NT/S08` | `S08_1582-rhemes-nt-hires/S08.pdf` | 800 |
-| | `NT/S09` | `S09_nevv-testament-mart-3vol/nevvtestamentofi00mart-NT.pdf` | 810 |
-| **OT1 1609** | `OT1/S01` | `S01_1582-first-edition-3vol/ot1-1609.pdf` | 1135 |
-| | `OT1/S03a` | `S03_holie-bible-engl-ot-vol1/S03a.pdf` | 1140 |
-| | `OT1/S09` | `S09_.../holiebiblefaithf00mart_0-OT1.pdf` | 1156 |
-| **OT2 1610** | `OT2/S01` | `S01_1582-first-edition-3vol/ot2-1610.pdf` | 1128 |
-| | `OT2/S03b` | `S03_holie-bible-engl-ot-vol2/S03b.pdf` | 1134 |
-| | `OT2/S09` | `S09_.../holiebiblefaithf00mart-OT2.pdf` | 1146 |
+| volume | copy | file (JP2 package is primary — see §1.2) | leaves | status |
+|---|---|---|---|---|
+| **NT 1582** | `NT/S01` | `S01_…/…3 of 3 1582 New Testament_jp2` | 765 | independent witness |
+| | `NT/S08` | `S08_1582-rhemes-nt-hires/…_jp2` | 800 | **NOT a witness — upscale of `NT/S09`** |
+| | `NT/S09` | `S09_…/nevvtestamentofi00mart_jp2` | 812 | independent witness — **base exemplar** |
+| | `NT/S04` | `S04_1633-rheims-nt/…_jp2` | 772 | **1633 witness support** (§1.4) |
+| **OT1 1609** | `OT1/S01` | `S01_…/…1 of 3 1609 Old Testament_jp2` | 1135 | independent witness |
+| | `OT1/S03a` | `S03_…/holiebiblefaithf01engl_jp2` | 1146 | independent witness |
+| | `OT1/S09` | `S09_…/holiebiblefaithf00mart_0_jp2` | 1160 | independent witness |
+| **OT2 1610** | `OT2/S01` | `S01_…/…2 of 3 1610 Old Testament_jp2` | 1128 | independent witness |
+| | `OT2/S03b` | `S03_…/holiebiblefaithf02engl_jp2` | 1146 | independent witness |
+| | `OT2/S09` | `S09_…/holiebiblefaithf00mart_jp2` | 1150 | independent witness — **base exemplar** |
 
 Root: `palimpsest/imports/Scripture/Bibles/DouayRheims_DR/sources/scans/`.
 
-**Excluded, deliberately**: `S04_1633-rheims-nt` (a second-edition printing) and `S06_1610-facsimile-whole`.
-Admitting a second edition would require a witness typology, sigla, and an apparatus of readings supplied
-across settings — cost that buys nothing for a first-edition documentary transcript. **The three volumes
-are transcribed from first-edition copies alone.**
+**Excluded**: `S06_1610-facsimile-whole` (a modern facsimile, not a witness to the setting).
 
-> **Naming.** Legacy internal identifiers (`archive-*`, `jp2-*`, `pdf-*`) name *how a file was acquired*,
-> not which book it is — and `S01` and `S09` each contain **all three volumes**. Those identifiers are
-> retired from the plan. **The addressing unit is `VOLUME/COPY`**, e.g. `OT2/S03b`.
+**`S04` (1633 Rouen, Cousturier, "the fourth Edition") is admitted for the NT only**, as witness support and
+not as copy-text. The NT needs it: `NT/S09` is frontmatter-defective and `NT/S01` is contaminated (§1.4), so
+without S04 there is no independent reading for the leaves in question. The OT volumes remain
+**first-edition only** — admitting a second setting there would require a witness typology and an apparatus
+of readings across settings, cost that buys nothing for a documentary transcript of a single printing.
 
-### 1.2 Measured raster properties
+### 1.1a Addressing and sigla
 
-Sampled at multiple leaves per file, `pdfimages -list`:
+Two generations of identifier have already failed here. `archive-*` / `jp2-*` / `pdf-*` named *how a file
+was acquired*, not which book it was. `S01`…`S09` named an acquisition batch — and `S01` and `S09` each
+contain **all three volumes**, so "per source" would have pooled the 1582 Rheims types with the 1609/1610
+Douai types. Both are retired.
 
-| copy | native raster | encoding | effective ppi at the leaf | grayscale path |
-|---|---|---|---|---|
-| `NT/S01`, `OT1/S01`, `OT2/S01` | **800 × 1124** | RGB JPEG | **~168** | yes (but see below) |
-| `NT/S08` | ~3035 × 4336 | **RGB JPEG, continuous tone** | ~430 | **yes — no bitonal layer at all** |
-| `NT/S09` | 3035 × 4336 | JPX + JBIG2 mask (MRC) | ~500 | via the JPX layer |
-| `OT1/S03a` | 2262 × 3116 | JPX + JBIG2 mask (MRC) | ~500 | via the JPX layer |
-| `OT1/S09` | 3092 × 4367 | JPX + JBIG2 mask (MRC) | ~650 | via the JPX layer |
-| `OT2/S03b` | 2196 × 2999 | JPX + JBIG2 mask (MRC) | ~400 | via the JPX layer |
-| `OT2/S09` | 3117 × 4335 | JPX + JBIG2 mask (MRC) | ~650 | via the JPX layer |
+**The witness id is `VOLUME-YEAR-SIGLUM`**, and the siglum names the **physical copy**, following
+textual-criticism practice:
 
-**Two findings that constrain the design:**
+| siglum | copy |
+|---|---|
+| **B** | **B**oston Public Library — G.404.12 v.1/v.2, BS2080 1582 |
+| **P** | **P**rinceton Theological Seminary, Lenox donation — 12904, Shelf 1844 |
+| **R** | Princeton Theological Seminary, 1633 **R**ouen — Shelf 1852 |
+| **F** | **f**atimamovement.com rehost; physical copy not yet identified |
+| **X** | derivative, **ex**cluded — not a witness |
 
-**The S01 set cannot serve diplomatic work.** It is uniformly 800 × 1124 across all three volumes —
-roughly **168 ppi at the leaf, versus 650 ppi for S09**. The long-ſ is distinguished from `f` by a nub of
-**3–6 px at 650 ppi**; at 168 ppi that feature spans **under 1.6 px** and is not represented. S01 is
-therefore **structure-only**: useful for page order, book/chapter addressing and gross verification, and
-**disqualified as a base exemplar or as recognition training data.** This is a measurement, not a
-preference.
+| witness id | legacy | role |
+|---|---|---|
+| `NT-1582-B` | `NT/S09` | **base exemplar** |
+| `NT-1582-F` | `NT/S01` | structure only |
+| `NT-1633-R` | `NT/S04` | witness support |
+| `NT-1582-X` | `NT/S08` | excluded (upscale) |
+| `OT1-1609-B` | `OT1/S09` | **base exemplar** |
+| `OT1-1609-P` | `OT1/S03a` | surrogate |
+| `OT1-1609-F` | `OT1/S01` | structure only |
+| `OT2-1610-B` | `OT2/S09` | **base exemplar** |
+| `OT2-1610-P` | `OT2/S03b` | surrogate |
+| `OT2-1610-F` | `OT2/S01` | structure only |
 
-**`NT/S08` is the only continuous-tone scan in the corpus.** Every other copy is an MRC composite whose
-text layer is a **1-bit JBIG2 mask**. That matters because binarisation destroys the grey levels the
-recognizer's pretrained filters expect, and it destroys them *upstream* of anything we can do later
-(§3.1). `NT/S08` has no such loss, which makes it the natural base exemplar for the New Testament.
+Why the year is in the id: the NT admits two editions (§1.1), so `NT-1582-B` and `NT-1633-R` must be
+distinguishable at a glance, and a bare `NT-R` would hide the edition difference that governs how the
+witness may be used.
 
-**Consequence for base-exemplar selection**: each volume has **two** usable copies, not three.
+**Stable paths.** Witnesses are addressed at
+`sources/witnesses/<VOLUME>/<WITNESS-ID>/leaves/`, a **symlink farm** over the JP2 packages with a
+`MANIFEST.json` alongside. Symlinks rather than copies: copying duplicates ~11 GB and creates a second
+artefact that can drift from the first, whereas a broken link fails loudly where a stale duplicate fails
+silently. The registry (`witness/witnesses.py`) is the single source of truth, and
+`witness/make_witness_tree.py` rebuilds and **verifies** the tree — every path resolving, every leaf count
+matching the registry.
 
-| volume | usable copies | base candidate | second copy (surrogate) |
+**The leaf, not the file index, is the addressing unit.** Leaf indices do not correspond between witnesses
+of the same volume (§1.4, §2 Gate 0c): the NT witnesses differ by up to 47 leaves before a word is compared.
+Leaves are keyed by **`(volume, printed page number, signature, side)`**.
+
+### 1.2 Measured raster properties — establish primacy per item, then measure the primary
+
+**Which file is primary is a fact about each item, not a rule about formats.** Internet Archive records the
+derivation chain for every file it holds, in the `source` and `original` fields of
+`https://archive.org/metadata/<identifier>`. Reading it settles the question by evidence:
+
+| item | JP2 package is… | derived from | ⇒ primary artefact |
 |---|---|---|---|
-| NT 1582 | S08, S09 | **S08** — continuous tone | S09 |
-| OT1 1609 | S09 (650 ppi), S03a (500 ppi) | **S09** | S03a |
-| OT2 1610 | S09 (650 ppi), S03b (400 ppi) | **S09** | S03b |
+| `nevvtestamentofi00mart` (`NT/S09`) | derivative | `…_orig_jp2.tar` — **the capture originals** | **the JP2s** |
+| `holiebiblefaithf0*engl` / `…mart*` (`S03a/b`, `OT/S09`) | derivative | `…_orig_jp2.tar` | **the JP2s** |
+| `1582RhemesNewTestament` (`NT/S08`) | derivative | **`1582_Rhemes_New_Testament.pdf`** (`source: original`) | **the PDF** |
+| `1582DouaiRheims…1/2/3Of3` (`S01` ×3) | derivative | **the uploaded PDF** (`source: original`) | **the PDF** |
+| ~~`1582douayrheimsnt`~~ → **`newtestamentofie00engl`** (`NT/S04`) | derivative | ~~an uploaded PDF~~ → **`…_orig_jp2.tar`** | **the JP2s**, once the original was acquired — §1.2a |
 
-**These are candidates, not the decision.** §2 states what must be established before a base exemplar is
-declared.
+For the institutional captures the JP2s are the originals and the PDF is IA's derivative. **For the five
+`S01`, `S08` and `S04` files as originally held, the direction was reversed**: a user uploaded a PDF, and
+IA *rendered* the JP2 package from it. Measuring those JP2s does not measure a scan — it measures a
+rendering decision. `S04` has since been replaced by its own original digitisation and has moved back to
+the first group; the four `S01` and `S08` files have no original to move to.
 
-### 1.3 Reference texts are finding aids, not authorities
+> **Check every item; do not extrapolate from four.** `NT/S04` was the fifth, and it did not behave like
+> the other four — it was the one case where the inherited artefact was genuinely binarised (§1.2a). Had
+> the rule been generalised from the `S01`/`S08` result, the exception that matters most to §1.4 would have
+> been the one missed, and it would have been missed *quietly*: the render measures as continuous tone.
+
+> **This corrects the blanket rule this section previously carried** ("the JP2 packages are the primary
+> source; the PDFs are derivatives"). It is true of the institutional items and **false of the user
+> uploads**, and the difference is checkable in one API call rather than assumed from the file extension.
+
+**The rendering is demonstrable, not inferred.** Both user-uploaded PDFs were produced by *Adobe Acrobat
+Image Conversion Plug-in* and carry **one JPEG per page with the page box in points equal to the image in
+pixels** — so 1 px = 1 pt = 1/72 in, and the nominal page is absurdly large. IA rendered each at a fixed
+DPI of its own choosing:
+
+| item | embedded JPEG | page box | IA render | ratio |
+|---|---|---|---|---|
+| `NT/S08` | 2955 × 4343 | 2955 × 4343 pt | 5910 × 8686 | **2.00× (144 dpi)** |
+| `OT1/S01`, `OT2/S01` | 800 × 1124 | 800 × 1124 pt | 3334 × 4684 | **4.17× (300 dpi)** |
+| `NT/S01` | 800 × 1124 | 800 × 1124 pt | 800 × 1124 | 1.00× (72 dpi) |
+
+Every ratio above 1.00 is interpolation. **The JP2 pixel counts of `S01` and `S08` carry no information
+about the scan**, and the local copies of all three `S01` PDFs plus `S08.pdf` are **byte-identical (md5) to
+the IA originals**, so the embedded JPEG is the true ceiling.
+
+| copy | primary raster | distinct leaf sizes | tone | line pitch (px) | ppi |
+|---|---|---|---|---|---|
+| `NT/S01` | **800 × 1124** *(PDF)* | 1 | continuous | 22 | ~168 — **too low, see below** |
+| `NT/S04` | **2439 × 3423** *(JP2, acquired)* | — | continuous, 190–228 levels | — | 400 |
+| `NT/S08` | **2955 × 4343** *(PDF)* | — | continuous | — | **= `NT/S09`; not a witness** |
+| `NT/S09` | 2955 × 4343 | 8 | continuous | 106 | — (see below) |
+| `OT1/S01` | **800 × 1124** *(PDF)* | 1 | continuous | — | ~168 — **too low** |
+| `OT1/S03a` | 2262 × 3116 | 4 | continuous | 66 | ~411 |
+| `OT1/S09` | 3092 × 4367 | 23 | continuous | 88 | **~545 (calibrated)** |
+| `OT2/S01` | **800 × 1124** *(PDF)* | 1 | continuous | — | ~168 — **too low** |
+| `OT2/S03b` | 2196 × 2999 | 16 | continuous | 66 | ~411 |
+| `OT2/S09` | 3151 × 4352 | 28 | continuous | 88 | **~545 (calibrated)** |
+
+> **`S01` is 800 × 1124 in all three volumes — the original reading was right.** An intermediate draft
+> recorded `OT1/S01` and `OT2/S01` as 3334 × 4684 and concluded the PDFs were downsampled derivations. The
+> derivation chain shows the reverse: those PDFs are the md5-verified uploads and the large JP2s are
+> 300-dpi renders of them. Sampled at pages 50/300/700/1000, **every page of all three volumes is
+> 800 × 1124**. The disqualification of `S01` on resolution therefore stands, and stands for all three
+> volumes: at ~168 ppi the nub distinguishing long-ſ from `f` — 3–6 px at 545 ppi — spans under 1.6 px and
+> is not present in the file.
+
+**All ten are continuous tone at source — but only after §1.2a**, and re-tested against each item's
+*primary* artefact rather than assumed from format. Nine were so already; the tenth, `NT/S04`, was not, and
+was made so by acquiring its original rather than by reasoning about it. The
+institutional PDFs (`NT/S09`, `S03a`) are MRC composites — a 167-ppi JPX background, a 500-ppi JPX
+foreground and a **1-bit JBIG2 mask** — while their JP2 originals are continuous tone. The user-uploaded
+PDFs (`S08`, `S01` ×3) carry a **plain 8-bit RGB JPEG per page, no mask and no JBIG2 anywhere in the
+chain**. For those nine the MRC/JBIG2 structure exists only in IA's PDF derivation, so the binarisation
+transfer gap of §3.1 is **an artefact we would introduce**, and it is avoided by taking each item's primary
+artefact as established above.
+
+### 1.2a `NT/S04` is the exception: for this witness the binarisation is inherited
+
+**The tenth file breaks the rule, and it is the one §1.4 depends on.** `NT/S04`'s primary artefact is not a
+user's photograph set but **an IA-produced MRC PDF** — Creator *"Digitized by the Internet Archive"*,
+Producer *"Recoded by LuraDocument PDF"* — which a user then re-uploaded as a new item. Its structure at
+pages 50/300/600 is identical throughout:
+
+| layer | raster | encoding |
+|---|---|---|
+| background | 813 × 1141 @ 133 ppi | JPX, continuous |
+| foreground | 2439 × 3423 @ 400 ppi | JPX, continuous |
+| **text mask** | **2439 × 3423 @ 400 ppi** | **1-bit JBIG2** |
+
+**So the text layer we hold for `S04` is binarised, and there is no continuous-tone original among our
+files.** Its 3659 × 5134 JP2 package is IA's render *of that composite*: the renderer decodes the JBIG2
+mask and composites it, producing a leaf that measures as continuous tone — 213 grey levels, 91% midtone —
+while carrying a 1-bit text layer underneath. **That measurement was taken on the render and does not
+establish continuous tone for `S04`.** This is exactly the trap the primacy rule exists to catch, and it is
+caught only because primacy was checked per item rather than generalised.
+
+**The remedy is acquisition, not reconstruction.** `S04`'s original digitisation is on IA as
+**`newtestamentofie00engl`**, and it is the same copy: *Princeton Theological Seminary Library*, matching
+the bookplate and shelf mark read off `S04`'s own leaves (§1.3). It carries
+**`newtestamentofie00engl_orig_jp2.tar` (`source: original`, 580 MB)** — the continuous-tone capture
+originals — plus full institutional metadata: **call number 13733**, OCLC **1049890088**, scanning centre
+`nj`, sponsor MSN, imagecount **776** against our 772 pages.
+
+**ACQUIRED — 2026-08-05.** `newtestamentofie00engl_jp2` is on disk beside the file it supersedes, and
+`NT-1633-R` now resolves to it. Three acceptance checks, all met:
+
+| check | result |
+|---|---|
+| same physical copy | **NCC 0.990** against the superseded render, at a constant offset of −1 |
+| continuous tone | **190–228 grey levels**, 59–95% midtone, at leaves 5/50/300/600 |
+| raster | **2439 × 3423** — the MRC foreground's native raster, i.e. the capture's own |
+
+Two things follow. The held file's 3659 × 5134 was itself a 600-dpi render of a 452 × 638 pt page, so it
+was **1.5× interpolation on top of a binarised text layer** — the failure compounded rather than merely
+occurring. And the 1-bit mask is now out of the chain entirely: the restriction below is lifted, and
+`NT-1633-R` may carry a reading.
+
+> **This was a required acquisition, not an optimisation.** `S04` is admitted solely as witness support for
+> the Censure and Preface leaves (§1.4), and those are the two leaves for which **no genuine 1582 reading
+> survives anywhere in the corpus**. Taking a diplomatic reading of them from a 1-bit JBIG2 mask would have
+> re-imported, at the single most consequential point in the edition, precisely the loss §3.1 withdrew its
+> recovery machinery for.
+
+**ppi is calibrated, not assumed.** `OT1/S09` leaf 0 is a calibration leaf carrying an imperial ruler, a
+metric ruler and a colour target. FFT tick-pitch: metric 21.286 px/mm → **540.7 ppi**; imperial 34.706
+px per 1/16 in → **555.3 ppi**. Two independent rulers agreeing to **2.7%** fix the S09 OT captures at
+**~545 ppi**. Physical line pitch follows as **0.1606 in**, which propagates ppi to the other copies of the
+same setting. Cross-check: 3092 × 4367 px at 545 ppi = **5.64 × 7.97 in**, a **quarto** — correct for the
+1609 Douai OT. *No ppi is stated for the NT: neither NT scan carries a calibration leaf and the 1582 Rheims
+is a different setting, so its physical line pitch cannot be borrowed from the OT.*
+
+**Per-leaf size variance is a capture fingerprint.** S03a/S03b/S09 show **4–28 distinct leaf sizes** —
+variable cropping, the signature of a real capture session, where each leaf is framed and cropped
+individually. **All three S01 volumes have exactly one size on every page sampled**, which is what a batch
+resize to a fixed target produces and what a capture session does not. The fingerprint agrees with the
+derivation chain above: `S01` is a re-processed set, not a capture.
+
+> An intermediate draft argued S01 was upsampled *because its computed ppi exceeded S09's while its detail
+> did not*. That argument is now void — it rested on the 3334 × 4684 render, and S01's primary raster is
+> 800 × 1124 (above). The conclusion is unchanged and better grounded: S01 is disqualified on **measured
+> resolution**, directly, with no inference about upsampling required.
+
+**`NT/S08` is empty magnification — it is not a witness.** It is dimensionally an exact **2.000×** of
+`NT/S09` (aspect ratio identical to five decimals) and correlates with it at **NCC = 1.000** at a constant
+leaf offset. Downsampled to S09's grid it matches at **0.9847**. The decisive test is spectral:
+
+| measurement | value |
+|---|---|
+| S08 energy above S09's Nyquist (leaves 200/400/500/600/700) | 0.00008 – 0.00033 |
+| a plain **Lanczos 2× upscale of S09**, same band | 0.00012 – 0.00092 |
+| **S09 measured in its own top band** (positive control) | **0.0074 – 0.0097** |
+
+A genuine scan's top octave is **full**; S08's extra octave is **empty**, and emptier than a naive
+interpolation. **S08 carries no information beyond S09.** It is retained only because two of its leaves
+come from elsewhere (§1.4). The NT raster ceiling is **S09's 2955 × 4343**.
+
+**The mechanism is now known, and it confirms the measurement.** S08's magnification was not the
+uploader's doing: the uploaded PDF holds JPEGs at **2955 × 4343 — exactly `NT/S09`'s raster** — and IA
+rendered its JP2 package from that PDF at 144 dpi, doubling it. So the chain is *BPL capture → re-wrapped
+as a PDF → rendered 2× by IA*. This explains every observation independently: the exact 2.000× ratio, the
+NCC of 1.000, and a top octave emptier than Lanczos (a renderer's interpolation, not a lens). **`NT/S08` is
+the Boston Public Library scan at one remove, and adds nothing to it.**
+
+**Base exemplars** — declared on the evidence above, losing candidates and reasons recorded per §0.2.1:
+
+| volume | base exemplar | why | surrogate | rejected |
+|---|---|---|---|---|
+| NT 1582 | **`NT/S09`** | only true-resolution scan of the setting | `NT/S01` (structure only) | `NT/S08` — the same scan, rendered 2× |
+| OT1 1609 | **`OT1/S09`** | ~545 ppi calibrated, highest real detail | `OT1/S03a` (~411 ppi) | `OT1/S01` — 800 × 1124, ~168 ppi |
+| OT2 1610 | **`OT2/S09`** | ~545 ppi calibrated, highest real detail | `OT2/S03b` (~411 ppi) | `OT2/S01` — 800 × 1124, ~168 ppi |
+
+The S01 volumes are **structure-only**: page order, book/chapter addressing, collation and gross
+verification. They are independent witnesses and are **not** discarded, but they are not copy-text and not
+recognition training data.
+
+### 1.3 The source concordance
+
+Verified from the leaves themselves and from Internet Archive metadata. **Dates are taken from the title
+page, never from catalogue metadata** — see the 1610 correction below.
+
+| copy | IA identifier | repository | shelfmark | date **from title page** | printer |
+|---|---|---|---|---|---|
+| `OT1/S03a` | `holiebiblefaithf01engl` | **Princeton Theological Seminary** | 12904; Case SCC, Shelf 1844, v.1 | **M.DC.IX = 1609** | Doway: Laurence Kellam |
+| `OT2/S03b` | `holiebiblefaithf02engl` | **Princeton Theological Seminary** | 12904; v.2 | **M.DC.X = 1610** | Doway: Laurence Kellam |
+| `OT1/S09` | `holiebiblefaithf00mart_0` | **Boston Public Library** | BS180 1609; **G.404.12 v.1** | **M.DC.IX = 1609** | Doway: Laurence Kellam |
+| `OT2/S09` | `holiebiblefaithf00mart` | **Boston Public Library** | BS180 1609; **G.404.12 v.2** | **M.DC.X = 1610** | Doway: Laurence Kellam |
+| `NT/S09` | `nevvtestamentofi00mart` | **Boston Public Library** | BS2080 1582 | **1582** | Rhemes: Iohn Fogny |
+| `NT/S04` | `1582douayrheimsnt` — **re-upload; the original digitisation is `newtestamentofie00engl`** | **Princeton Theological Seminary Library** | **call no. 13733**; Case SCC, Shelf 1852; OCLC 1049890088 | **1633**, "the fourth Edition" | Roan: Iohn Cousturier |
+| `NT/S01` | `1582DouaiRheimsDouayRheimsFirstEdition3Of31582NewTestament` | **NOT ESTABLISHED** | — | **1582** | Rhemes: Iohn Fogny |
+| `OT1/S01` | `1582DouaiRheimsDouayRheimsFirstEdition1Of31609OldTestament` | **NOT ESTABLISHED** | — | 1609 | Doway: Laurence Kellam |
+| `OT2/S01` | `1582DouaiRheimsDouayRheimsFirstEdition2Of31610OldTestament` | **NOT ESTABLISHED** | — | 1610 | Doway: Laurence Kellam |
+| `NT/S08` | `1582RhemesNewTestament` | **NOT ESTABLISHED** — but see below | — | **1582** | Rhemes: Iohn Fogny |
+
+**Two-volume sets, confirmed physically** (not merely by shared call number): `S03a`+`S03b` are one
+Princeton set — the same *"Donation of James Lenox Esq"* bookplate and arms, marked v.1 and v.2.
+`OT1/S09`+`OT2/S09` are one BPL set — the same armorial plate (*NEC TEMERE NEC TIMIDE*) and the paired
+shelfmark G.404.12 v.1 / v.2.
+
+> **The 1610 correction.** Internet Archive dates **both** OT-vol-2 records "1609". The title page of each
+> reads **M.DC.X**. The catalogue error is inherited from the **approbation** printed on the following leaf
+> (*"Duaci 8. Nouembris. 1609"*). **OT2 is 1610.** This is why the concordance rule is title-page-first.
+
+**`NOT ESTABLISHED` is a finding here, not a gap left open.** The four remaining items were traced to their
+Internet Archive records and those records were read. All four are **user uploads to the `folkscanomy`
+collection**, not institutional digitisations, and the difference is visible in the metadata: they carry an
+uploader address and *Internet Archive HTML5 Uploader* as the "scanner", and they have **no
+`scanningcenter`, no `contributor`, no `call_number` and no `external-identifier`** — the four fields
+through which a library digitisation names its holding institution.
+
+| item | uploaded | by | states of itself |
+|---|---|---|---|
+| `S01` ×3 | 2014-07-28 | `mrnobody@fatimamovement.com` | creator *"Douay (Douai) Rheims College — scanned by www.fatimamovement.com"* |
+| `NT/S08` | 2017-12-12 | `jemlee15@gmail.com` | no creator; description only |
+
+The `S01` creator string names the **book's originating college**, dissolved in 1793, not a modern holding
+repository — it cannot be promoted to the repository field. This corroborates the `fatimamovement.com`
+watermark found on every `S01` leaf from a second, independent direction: the watermark says who processed
+the images, and the upload record says the same thing and dates it.
+
+**For `NT/S08` the physical copy is nonetheless known**, by a different route: its uploaded PDF holds the
+Boston Public Library capture at that capture's own raster (§1.2). Its repository is **BPL, G.404.12 /
+BS2080 1582 — by identity with `NT/S09`, not by its own provenance.** It contributes no independent
+witness, and only its two made-up leaves are its own (§1.4).
+
+**Still unresolved, and blocking (§2)**: the **physical copies** behind the three `S01` volumes — their
+digitisation provenance is now settled, their repositories are not, and no route to them through IA
+remains, so this needs an approach other than catalogue metadata. And **STC / ESTC numbers for every
+copy** — OCLC record numbers are held, but the STC numbers circulating in earlier notes remain
+**unverified leads**, not facts.
+
+### 1.4 Leaf-level contamination in the New Testament
+
+**Provenance is a property of the leaf, not of the file.** Three of the four NT files are made up, in
+different ways, and the affected leaves are the same two in every case.
+
+| file | Censure & Approbation | Preface p. 1 | source of the supplied leaves |
+|---|---|---|---|
+| `NT/S09` | **absent** | **absent** | — (goes title page → Preface p.2) |
+| `NT/S08` | supplied | supplied | **unidentified fourth source** — bitonal, low-resolution, alien setting |
+| `NT/S01` | supplied | supplied | **the 1633 Princeton copy (`NT/S04`)** — proven |
+| `NT/S04` | present | present | native |
+
+**Proof that `NT/S01`'s two leaves are `NT/S04`'s: blank-margin foxing.** Correlating **only blank paper**
+— a crop containing no type, so a shared forme cannot explain a match — gives **+0.769** (Censure) and
+**+0.694** (Preface 1) against controls of **+0.045 / +0.044**: 17–24× the control baseline. Corroborated
+visually by an identically broken heading (`THE CENSVRE AND A___BATION`), identical smudging of the
+subtitle, and identical stray-speck positions. Printing repeats; foxing does not.
+
+**Direction of borrowing.** The leaf's own subtitle reads *"of the **firſt** Edition of this Tranſlated New
+Teſtament"* — wording a 1582 first edition would not use of itself. `NT/S01`'s title page is the genuine
+1582 Fogny setting, so within that file the Censure leaf **contradicts its own title page**. The leaves are
+natively S04's.
+
+`NT/S08`'s substitutes are from neither S01 nor S04: its Censure has **no headpiece, no "first Edition"
+subtitle, and an extra S. Augustine quotation** — a different setting, correlating with every S01/S04
+frontmatter leaf at 0.01–0.15 (noise).
+
+> **Consequence for the edition.** **No genuine 1582 Censure or Preface-p.1 leaf exists anywhere in this
+> corpus.** Those two leaves cannot be transcribed as 1582 witnesses. They are transcribed only with the
+> supplying copy named in the apparatus, or marked `gap`. Identifying S08's fourth source is an open item
+> (§10) precisely because it is the only candidate that is not already known to be 1633.
+
+**Independence, verified.** `NT/S01` matches neither S09 nor S08 at any alignment: wide ±80-leaf searches
+peak at **0.040 / 0.068 / 0.096** with *mutually inconsistent* best offsets (+67, +82, −70), whereas the
+genuine S08/S09 duplicate returns **1.000 at one constant offset**. Different leaf counts, different
+binding, different signature series at the same opening. It is an independent digitisation of a different
+physical copy.
+
+### 1.5 Reference texts are finding aids, not authorities
 
 Four modern/modernised transcriptions exist. **None is an authority over the image.**
 
@@ -189,21 +464,37 @@ references is invalid until it is finished.**
 
 ## 2. WHAT MUST BE ESTABLISHED BEFORE STEP 0
 
-The constitution cannot be exercised until each volume's base exemplar is identified bibliographically. A
-concordance is built first, with these fields per copy:
+The concordance carries these fields per copy:
 
 **edition-issue · STC/ESTC number · volume · repository and shelfmark · scan provenance · completeness and
-imperfections · made-up leaves · raster properties (§1.2).**
+imperfections · made-up leaves · raster properties.**
 
-The raster column is measured and filled. **The bibliographic columns are currently unknown and are not
-filled from memory or inference** — a misattributed shelfmark would poison the base-exemplar choice and
-every downstream claim. Candidate STC numbers circulating in earlier notes are treated as **leads to verify
-against ESTC**, not as facts.
+**Resolved** (§1.2–§1.4): raster properties and calibrated ppi · date-from-title-page for every copy ·
+repository, shelfmark and set membership for the five Princeton and BPL copies · witness independence for
+all ten files · made-up leaves and their sources for the New Testament · **base exemplars declared**, with
+losing candidates and reasons recorded.
 
-**Gate 0a**: every field resolved for the nine copies, **no UNKNOWN remaining**.
+**Outstanding, and blocking:**
 
-Base exemplars are then declared per volume on completeness, impression quality and absence of
-sophistication, **with the losing candidate and the reason recorded**.
+**Gate 0a — bibliographic completion.** (i) Repository and shelfmark for the four `S01` files and for
+`NT/S08`. (ii) **STC / ESTC numbers for every copy**, verified against ESTC and cross-checked against the
+held OCLC record numbers — the STC numbers in earlier notes are **unverified leads and are not to be
+written into the concordance**. (iii) Identification of the fourth source supplying `NT/S08`'s two
+frontmatter leaves.
+
+**Gate 0b — completeness and collation.** Per copy: a leaf inventory against the expected signature
+collation, listing **wanting leaves, duplicated leaves, misbound leaves, and made-up leaves with the
+supplying copy named.** §1.4 establishes that this cannot be skipped: three of four NT files are made up,
+and the defect was invisible until the leaves were read. **A copy is not admitted as a witness for a given
+leaf until that leaf is known to be native to it.**
+
+**Gate 0c — cross-source leaf mapping.** A per-leaf correspondence table across the copies of each volume,
+keyed to printed page number and signature, so that any leaf can be addressed in every witness at once.
+Without it, "the same page" cannot be stated across copies — and §1.4 shows that leaf indices do **not**
+correspond between files even within one volume.
+
+**No transcription of any leaf begins before 0b and 0c are satisfied for that leaf.** Gate 0a may complete
+in parallel; it constrains citation, not imaging.
 
 ---
 
@@ -211,38 +502,39 @@ sophistication, **with the losing candidate and the reason recorded**.
 
 ### 3.1 Acquire
 
-**Extract, never render.** `pdfimages -png` writes the decoded native stream; rendering composites the
-crisp text layer with a near-empty colour layer and returns an antialiased grey image — noise created by the
-export. Composite only when a page genuinely needs it (plates, colour), at exactly native ppi.
+**Read the JP2 leaves. Never the PDFs.** The JP2 packages are the delivered scans; the PDFs are
+derivatives, and every destructive transformation in this corpus lives in the PDF wrapper — MRC
+composition, JBIG2 binarisation of the text layer, and (for `S01` and `NT/S08`) resampling. Measured at
+source, **all ten scan files are continuous tone** (§1.2).
 
-**Grayscale is primary throughout.** For the MRC files this means the **JPX layer**, not the JBIG2 mask.
-
-> **Why the mask is not the default, despite being crisper.** A 1-bit image upcast to 8-bit is two-valued
-> — `{0, 255}` — not grayscale. The pretrained recognizer's first convolutional filters were fitted to
-> antialiased stroke edges carrying 20–40 grey levels across a 2–3 px transition; binarised, that gradient
-> is a step, and the mismatch concentrates in **exactly the 2–4 px features the edition depends on: the ſ
-> nub and the macron.** Converting to uint8 before geometric operations fixes *resampling aliasing* only.
-> It does not restore grey levels, which were destroyed upstream at binarisation.
+> **This supersedes an earlier reading of the corpus.** The plan previously treated most copies as MRC
+> composites with 1-bit JBIG2 text layers, and built a binarisation-recovery path around that. The
+> structure was real but it belonged to the derivative, not the scan. **The binarisation problem is not
+> inherited; it is one we would create.** It is avoided by reading the JP2s — not mitigated afterwards.
+> The pseudo-grayscale reconstruction step this once required is **deleted**, not softened: there is no
+> 1-bit layer in the working chain to reconstruct from.
 
 Rules:
 1. **No lossy or resampling step anywhere in the working chain.** PNG or TIFF only. No page-level resize;
    scaling happens once, inside the recognizer, at the declared line height.
 2. **No autocontrast, denoise, sharpen or binarisation of our own** in the default path. Any tonal
    operation is per copy, measured, and recorded.
-3. Where only a 1-bit layer exists, **reconstruct pseudo-grayscale with a ~0.8 px Gaussian at native
-   resolution before any downsampling** — applied identically at train and inference, so it carries no risk
-   of train/test skew.
+3. **Never up-sample to match another copy.** `NT/S08` demonstrates the failure: 4× the pixels of
+   `NT/S09` and, measurably, none of its information (§1.2). Resolution differences between copies are
+   carried as they are and recorded in the manifest.
 4. **A raster manifest per copy** — path, native dimensions, bit depth, provenance, checksum — so a silent
-   substitution is impossible and every experiment can name what it consumed.
+   substitution is impossible and every experiment can name what it consumed. **The manifest records the
+   JP2 as the source and the checksum of the leaf actually consumed.**
 
-**Two tests, measuring different things:**
+**One test remains, and it is a guard rather than a remedy:**
 
-- **JBIG2 substitution** (Gate 0b). Lossy symbol matching merges visually similar glyphs, and **`ſ`/`f` is
-  the canonical case.** Extract the same 20 pages as mask and as composite; compare glyph-for-glyph on every
-  `ſ`/`f` and `c`/`e`; report substitution rate **with per-class instance counts.** Threshold ≤0.1%, upper
-  confidence bound.
-- **Binarisation transfer gap** (Gate 0c). Zero-shot CER, grayscale versus 1-bit, per copy. **This gap
-  exists even at a zero substitution rate**, which is why the two tests are separate.
+- **Derivative-contamination guard** (Gate 0d). Any leaf entering the working chain is verified to have
+  come from the JP2 package: bit depth > 1, distinct grey levels > 64, and dimensions matching the JP2
+  manifest. A PDF-derived leaf entering by accident is a **silent** defect — it looks like a page — so it
+  is caught by assertion at load, not by inspection.
+
+*The former JBIG2-substitution and binarisation-transfer-gap tests are withdrawn: both measured a property
+of the PDF derivatives, and neither describes any raster the edition will consume.*
 
 ### 3.2 Geometry — shapes from ink, labels from text
 
@@ -423,7 +715,7 @@ three advantages that per-instance open-set classification does not have:
    thousands of instances and a decisive, always-present shape cue; routing it to an external classifier
    would remove a high-support class from end-to-end training and reintroduce the segment-then-classify
    pipeline CTC exists to avoid. **The dominant cause of `ſ`/`f` error is resolution** — the nub is 3–6 px
-   at 650 ppi and 2–4 px after rescaling to a 120 px line height — **and the remedies are resolution
+   at ~545 ppi (§1.2) and 2–4 px after rescaling to a 120 px line height — **and the remedies are resolution
    (§4.5) and decode-time prior correction, not a separate subsystem.**
 2. **Connected-component shape analysis over the closed set** proposes candidates. This is used as a
    **candidate detector within the known ligature set**, not as a general glyph segmenter. The distinction
@@ -485,7 +777,7 @@ conventions. A model pooled across volumes is pooled across founts that genuinel
 on which letterforms differ *inside* a book, and it is the same axis §4.2 declares semantic.
 
 **COPY is not a model level.** The three copies of a volume photograph **the same setting of the same
-type**; they differ in resolution, MRC structure, colour and skew — image statistics, not letterforms.
+type**; they differ in resolution, capture conditions, colour and skew — image statistics, not letterforms.
 Treating copy as a model scope would fit a separate model to each photograph of one book.
 
 Instead, **copies are pooled within a volume as training augmentation**, which is a genuine advantage of
@@ -515,7 +807,7 @@ pooling would alter frames-per-character and confound the sweep.
   lines** — aggregate CER is dominated by classes 120 px already handles and cannot resolve the question.
 - **Normalise to measured x-height, not line-box height.** Line boxes include variable ascender/descender
   and marginalia at other type sizes, so a fixed line-box height presents different stroke widths across
-  copies at 400/500/650 ppi.
+  copies at ~411 and ~545 ppi (§1.2).
 
 ### 4.6 Accuracy targets
 
@@ -780,8 +1072,9 @@ set · n · pre-registered effect size.**
 | # | step | metric | threshold | set | n |
 |---|---|---|---|---|---|
 | **0a** | source concordance | fields resolved per copy | **100%, no UNKNOWN** | — | 9 copies |
-| **0b** | JBIG2 substitution | `ſ`/`f`, `c`/`e` substitution rate | **≤0.1%**, CI upper bound | mask-vs-composite pairs | 20 pages, per-class counts |
-| **0c** | binarisation gap | zero-shot CER, grayscale vs 1-bit | **reported per copy**; 1-bit copies scoped separately | DEV-GOLD | 200 lines |
+| **0b** | completeness & collation | leaves inventoried vs expected signature collation | **100% per admitted copy**; wanting / duplicated / misbound / made-up all named | all copies | 10 files |
+| **0c** | cross-source leaf mapping | leaves keyed to printed page + signature across copies of a volume | **100% of admitted leaves addressable in every witness** | all copies | per volume |
+| **0d** | derivative-contamination guard | leaves failing the JP2 assertion at load | **0** | working chain | every leaf |
 | **1** | drop-cap fix + page axis | cells moving to OPEN | **18, against a frozen board, never netted** | board | 18 |
 | **2** | residue detector | leaf-ranking precision@50 vs known defects | **≥0.6** | campaign history | 50 leaves |
 | **3** | **archaic typeset census** | every requested class resolved ATTESTED / NOT FOUND, per volume | **100% resolved; exemplar image + frequency per attested class** | census page set | stratified, per volume |
@@ -875,11 +1168,11 @@ never appear inside it.**
 
 | # | step | ships | depends on |
 |---|---|---|---|
-| **0** | Source concordance; **declare the three base exemplars** | the decision the constitution needs | — |
+| **0** | Concordance completion (0a) + **collation/inventory (0b)** + **cross-source leaf map (0c)** | the addressable, provenanced corpus | — |
 | **1** | Drop-cap board fix + page axis | 18 cells | — |
 | **2** | Residue detector → ranked leaf defect queue | a working defect queue | — |
 | **3** | **Archaic typeset census** (§4.1) | the frozen inventory the codec is built from | 0 |
-| **4** | Raster policy: grayscale primary, JBIG2 test, binarisation-gap test | raster policy settled | 0 |
+| **4** | Raster policy: JP2-only chain, derivative guard, manifest | raster policy settled | 0 |
 | **5** | **Correction loop on Micheas (OT2)** | transcript pages **and** GOLD-TEXT **and** GT **and** layout GT **and** census instances | 0, 2, 3 |
 | **6** | R1 renumber; R2 de-contaminate; provenance audit | references usable as finding aids | — |
 | **7** | Pilot gold — measures keying rate and variance | sizing evidence | 5 |
@@ -900,11 +1193,14 @@ never improvements.
 
 ## 10. OPEN
 
-**Blocking**: the source concordance (§2) — bibliographic fields unresolved for all nine copies · one
-citation carried unverified from earlier work and load-bearing for §3.2's gate — **resolve or delete** ·
-the archaic typeset census (§4.1), which also closes the `ꝛ` / brevigraph / blackletter questions.
+**Blocking**: **Gate 0b** — per-copy completeness and collation; no copy is a witness for a leaf until
+that leaf is known native to it (§1.4) · **Gate 0c** — the cross-source leaf map; leaf indices do not
+correspond between files · **Gate 0a residue** — repository/shelfmark for the four `S01` files and
+`NT/S08`; **STC/ESTC for every copy** · **the fourth source of `NT/S08`'s two frontmatter leaves**, the
+only NT frontmatter candidate not already known to be 1633 · one citation carried unverified from earlier
+work and load-bearing for §3.2's gate — **resolve or delete** · the archaic typeset census (§4.1).
 
-**Open, scheduled**: JBIG2 substitution and the separate binarisation transfer gap · pair-CNN separability
+**Open, scheduled**: pair-CNN separability
 on the difficult tail and the abstention rate it forces · whether unsupervised sort clustering propagates as
 cleanly as letterpress suggests · input height jointly with pooling · whether the style classifier is built
 in G1 or style is formally scoped out.

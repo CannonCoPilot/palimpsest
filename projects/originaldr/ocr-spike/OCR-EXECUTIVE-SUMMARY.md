@@ -22,24 +22,39 @@ scan-quality fact, not a textual one.** It needs no apparatus and no voting.
 
 ## 2. The corpus: three volumes, three copies each
 
-Nine scans, all copies of one first-edition printing per volume. Two files are excluded deliberately — the
-**1633 Rheims NT** (a second edition, whose admission would require a full witness apparatus for no gain)
-and a **1610 whole-Bible facsimile**.
+Ten scan files are held. **They are not ten witnesses** — measurement and bibliographic verification reduce
+them to **seven**, across three volumes. A **1610 whole-Bible facsimile** is excluded outright.
 
-**Two measured facts reshape the plan:**
+**Three measured facts shaped the corpus:**
 
-**The S01 set cannot do diplomatic work.** It is uniformly 800 × 1124 px across all three volumes — about
-**168 ppi at the leaf, against 650 ppi for S09**. The long-ſ is distinguished from `f` by a nub of 3–6 px at
-650 ppi; at 168 ppi that feature spans **under 1.6 px** and is simply not present in the file. S01 is
-therefore **structure-only** — page order, addressing, gross verification — and is **disqualified as a base
-exemplar and as training data.** That is a measurement, not a preference.
+**Establish which file is primary, then measure that one.** Internet Archive records the derivation chain
+for every file it holds, and reading it splits the corpus in two: for the six institutional captures the
+JP2s are the originals, while for the four `F` and `X` files a user uploaded a **PDF** and IA rendered the
+JP2s *from it*. Measured at each item's primary artefact, all ten are **continuous tone** — the MRC
+composition and 1-bit JBIG2 layers the plan once designed around live only in IA's PDF derivation of the
+institutional captures, a problem we would have *created*, not inherited. The recovery machinery built for
+it is withdrawn. **Format does not establish primacy; the derivation chain does**, and reading it also
+corrected a second error in the opposite direction — the `F` files are 800 × 1124 in all three volumes, and
+the larger rasters they appear to offer are 300-dpi renders of that.
 
-**`NT/S08` is the only continuous-tone scan in the corpus.** Every other copy is an MRC composite whose text
-layer is a 1-bit JBIG2 mask, and binarisation destroys grey levels *upstream* of anything repairable later.
-This makes S08 the natural base for the New Testament.
+**One file is empty magnification.** `NT-1582-X` is an exact 2× of the NT base copy, correlating at 1.000;
+its energy above the base's Nyquist is *lower* than a plain Lanczos upscale, while the base's own top band
+is 30–100× richer. It is excluded as a witness: four times the pixels, none of the information. The
+mechanism is now known — its uploaded PDF holds the base copy's capture **at that capture's own raster**,
+and IA's renderer doubled it. It is the Boston Public Library scan at one remove.
 
-**So each volume has two usable copies, not three** — one base, one same-setting surrogate for resolving
-illegibility.
+**Resolution is calibrated, not assumed.** The Boston OT scan photographs a ruler; imperial and metric
+graduations agree to 2.7%, fixing those captures at **~545 ppi** — not the 650 previously assumed — and
+implying a quarto leaf, which is correct for the edition. No ppi is claimed for the NT, which has no
+calibration leaf.
+
+**Provenance is a property of the leaf, not the file.** Three of four NT files are made up: the base copy
+**lacks** its Censure and Preface leaves, one copy supplies them **from a 1633 edition** (proven by foxing
+in blank margins, 0.77 against a 0.045 control), and another supplies them from an unidentified source. **No
+genuine 1582 Censure leaf exists anywhere in the corpus.** The 1633 Rouen copy is therefore admitted for the
+NT as witness support, since otherwise those leaves have no independent reading.
+
+**Each volume has a base exemplar and a same-setting surrogate** for resolving illegibility.
 
 ## 3. How it works
 
@@ -173,10 +188,17 @@ the deliverable directly rather than producing the instrument that produces it.
 
 ## 9. Open
 
-**Blocking**: the bibliographic concordance — edition, STC/ESTC, repository and shelfmark are unresolved for
-all nine copies, and are deliberately **not** filled in from inference, because a misattributed shelfmark
-would poison the base-exemplar choice and everything downstream. One citation carried from earlier work is
-unverified and load-bearing for a geometry gate: resolve or delete. And the typeset census, which also
+**Blocking**: **collation and leaf inventory per copy**, and the **cross-source leaf map**. §1.4 is why
+neither can be skipped — three of four NT files are made up, the defect was invisible until leaves were
+read, and leaf indices do not correspond between copies of the same volume (the NT files differ by up to 47
+leaves before a word is compared). Until the map exists, "the same page in another witness" is not a
+well-formed request.
+
+Also blocking, but running in parallel: **STC/ESTC for every copy** (OCLC numbers are held; the STC numbers
+in earlier notes are unverified leads and are recorded as leads) · repository and shelfmark for the four
+rehost files · **identification of the source supplying the excluded file's two frontmatter leaves**, which
+is the only remaining candidate for a genuine 1582 reading of them. One citation carried from earlier work
+is unverified and load-bearing for a geometry gate: resolve or delete. And the typeset census, which also
 closes the `ꝛ` / brevigraph / blackletter questions.
 
 **Unratified**: the archaic-preeminent board gate, pending blind adjudication of n ≥ 100 newly-passing cells

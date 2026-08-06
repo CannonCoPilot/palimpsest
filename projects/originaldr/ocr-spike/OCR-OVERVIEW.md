@@ -29,23 +29,42 @@ and they are useful, but as **finding aids**, never authorities. The authority i
 
 ## 2. The corpus, and what each copy is for
 
-**Nine scans: three volumes × three copies**, all of one first-edition printing per volume.
+**Ten scan files — but not ten witnesses.** Measurement and bibliographic verification reduce them to
+**seven**. Witnesses are named `VOLUME-YEAR-SIGLUM`, the siglum naming the *physical copy*: **B** = Boston
+Public Library, **P** = Princeton (Lenox donation), **R** = Princeton 1633 Rouen, **F** = a rehost whose
+copy is unidentified, **X** = a derivative and not a witness.
 
-| volume | copies | base candidate |
-|---|---|---|
-| **NT 1582** | S01, S08, S09 | **S08** — the only continuous-tone scan in the corpus |
-| **OT1 1609** | S01, S03a, S09 | **S09** — 650 ppi |
-| **OT2 1610** | S01, S03b, S09 | **S09** — 650 ppi |
+| volume | base exemplar | surrogate | structure only | excluded |
+|---|---|---|---|---|
+| **NT 1582** | **`NT-1582-B`** | — | `NT-1582-F` | `NT-1582-X` |
+| **OT1 1609** | **`OT1-1609-B`** ~545 ppi | `OT1-1609-P` ~411 ppi | `OT1-1609-F` | — |
+| **OT2 1610** | **`OT2-1610-B`** ~545 ppi | `OT2-1610-P` ~411 ppi | `OT2-1610-F` | — |
 
-**Excluded**: the 1633 Rheims NT (second edition) and a 1610 whole-Bible facsimile. Admitting a second
-edition would require a witness typology, sigla, and an apparatus of readings supplied across settings —
-cost that buys nothing for a first-edition documentary transcript.
+**`NT-1582-X` is excluded because it carries no information.** It is dimensionally an exact 2× of the NT
+base and correlates with it at 1.000; its spectral energy above the base's Nyquist is *lower* than a naive
+Lanczos upscale, against a positive control where the base's own top band is 30–100× richer. Four times the
+pixels, none of the detail.
 
-**S01 is structure-only.** At 800 × 1124 px it resolves to roughly 168 ppi at the leaf, against 650 ppi for
-S09. The feature distinguishing long-ſ from `f` — a nub of 3–6 px at 650 ppi — spans under 1.6 px there.
-It can order pages and verify addressing; it cannot carry a diplomatic reading, and it is not training data.
+**`NT-1633-R` is admitted for the NT alone, as witness support.** The NT base copy lacks its Censure and
+Preface leaves entirely and the third NT copy has them **borrowed from the 1633 copy** — so without R, those
+leaves have no independent reading. The OT volumes remain first-edition only.
 
-**So each volume has two usable copies**, which maps exactly onto the two roles the constitution defines:
+**The `F` files are structure-only.** Their primary artefact is an uploaded PDF carrying one **800 × 1124**
+JPEG per page — about **168 ppi at the leaf**, sampled and identical across all three volumes. The nub
+distinguishing long-ſ from `f` spans 3–6 px at the base copy's ~545 ppi; at 168 ppi it spans under 1.6 px
+and is simply not in the file. They are genuine independent copies, useful for page order and addressing,
+but they cannot carry a diplomatic reading and are not training data.
+
+> The larger 3334 × 4684 rasters these files appear to offer are **IA renders of that PDF at 300 dpi** —
+> 4.17× interpolation. An intermediate draft measured the renders and read them as the source, then
+> reasoned that `F`'s *computed ppi exceeded* the base copy's while its detail did not. The conclusion was
+> right and the evidence was not: `F` is disqualified on **measured resolution**, directly, with no
+> argument about upsampling needed.
+
+**ppi is calibrated, not assumed**: the Boston OT scan includes a ruler-and-target leaf; imperial and metric
+graduations agree to 2.7%, and the implied leaf size (5.6 × 8.0 in, a quarto) is correct for the edition.
+
+**Each volume has a base and a surrogate**, which maps exactly onto the two roles the constitution defines:
 
 | role | what it may do |
 |---|---|
@@ -255,13 +274,22 @@ open with that number attached.
 
 ## 9. What is still unknown
 
-**Blocking**: which scan is which edition. The bibliographic concordance is empty — no STC numbers, no
-repositories, no shelfmarks — and it is deliberately not filled in from inference, because a misattributed
-shelfmark would poison the base-exemplar choice and everything downstream. Also: one citation carried from
-earlier work that a geometry gate depends on (**resolve or delete**), and the typeset census, which closes
-the `ꝛ` / brevigraph / blackletter questions together.
+**Blocking**: the bibliographic concordance is **partly** resolved. Five copies are identified from
+Internet Archive metadata and **six title pages have been read directly off the JP2 leaves**, which settled
+the 1610 date and confirmed both two-volume sets by their bookplates (§2). What remains blocking is
+narrower and named: **repository and shelfmark for the four `S01` and `NT/S08` files**, and **STC / ESTC
+numbers for every copy** — OCLC record numbers are held, but the STC numbers circulating in earlier notes
+are unverified leads and are recorded as leads, never promoted. Nothing here is filled in from inference: a
+misattributed shelfmark would poison the base-exemplar choice and everything downstream. Also open: the
+identity of the fourth source supplying `NT-1582-X`'s two made-up leaves; one citation carried from earlier
+work that a geometry gate depends on (**resolve or delete**); and the typeset census, which closes the `ꝛ` /
+brevigraph / blackletter questions together.
 
-**Open and scheduled**: JBIG2 substitution and the separate binarisation-transfer gap; whether sort
-clustering propagates as cleanly as letterpress suggests; the input-height sweep, honestly costed at
-**120–200 GPU-hours** — because only the incumbent height warm-starts cleanly from the pretrained model, and
-raising it breaks weight transfer at the recurrent stack.
+**Open and scheduled**: whether sort clustering propagates as cleanly as letterpress suggests; the
+input-height sweep, honestly costed at **120–200 GPU-hours** — because only the incumbent height warm-starts
+cleanly from the pretrained model, and raising it breaks weight transfer at the recurrent stack.
+
+> **Withdrawn, not deferred.** The JBIG2-substitution test and the binarisation-transfer gap once stood
+> here. Measured at source, all ten JP2 packages are continuous tone; that structure exists only in the PDF
+> derivatives (§3). Both tests measured a property of a file we chose to make, so they are **withdrawn** —
+> and the way to keep them withdrawn is to work from the JP2s and never from the PDFs.
