@@ -214,7 +214,33 @@ frontmatter is complete.
 | R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) — **DONE**, see below |
 | R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor — **DONE**, see below |
 | R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** — **DONE**, report at `COLLATION-1635-vs-1609.md`; OT2/1610 prelims outstanding |
-| R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French |
+| R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French — **DONE**, `ground-truth/matter-ot2-privilege-du-roi.json`, re-read on the primary raster; see below |
+
+**R6.5 was already transcribed on 2026-07-20 — and the transcription was made on a derived image.** The
+existing file read leaf 2070 from the `S06` **jp2** at 5100×6601. The per-item primacy finding later
+established that `M` is **PDF-primary**: the PDF holds the real ~2955×4206 CCITT and the jp2 is a **1.73×
+render of it**. The 2026-07-20 word zooms at 5× were therefore operating at roughly **8.6× the real
+raster**. The transcription has been re-read from the embedded CCITT XObject directly.
+
+**Three readings change, and two of them are the very spans the original file flagged as unresolvable.**
+
+| line | was | now | how it was settled |
+|---|---|---|---|
+| 3 | `d. Roüen` | **`de Roüen`** | the `d`→`R` gap is **46 px**; word spaces on that line are 27/29/27 px and the line's own `e` is 22 px wide (22+27≈49). The gap holds an `e` *plus* a space. **Negative control**: a real period on this page is **10×12 px**; the mark in the gap is **3×2 px**, 1/25 the area, sitting at the baseline where an `e` bowl bottoms out. It is not a period — the `e` failed to ink |
+| 5 | `Marchans` | **`Marchands`** | between `n` and `s`: a baseline blob 8×7 px **plus a 6×42 px full-ascender stroke**. An i-height stroke cannot reach ascender height; this is a `d`'s ascender and the foot of its bowl, bowl failed. Agrees with singular `Marchand` on line 2 |
+| 9 | `Donnees` | **`Données`** | not previously flagged; the acute is solidly inked and well clear of the letter |
+
+**This is the third instance of one defect class, and the mechanism is now explicit: upscaling manufactures
+the feature the call depends on.** Interpolation rounds a 3×2 speck into a plausible point (`d.`) and smears
+a failed `d` bowl into a point-plus-stroke (`Marchans`). In R6.6 it closed the gap between two `v` sorts and
+produced a `w`. In each case **the rule was right, the observer was careful, and the image was derived**.
+The prior observer here even enumerated the correct alternative — "or the word could be `de Roüen` with a
+broken `e`" — and could not choose, because the evidence that chooses had been interpolated away.
+⇒ **Before any glyph-level call, check `PRIMARY` for the witness.** `pixel_source()` already enforces this
+for the five renders; the lesson is that a *transcription* must consult it too, not only a pipeline.
+
+Backups retained as `*.pre-primary-raster`, on the R6.6c principle: the backup records what an observer
+saw, the current file records what a measurement produced.
 
 **R6.4 is DISCHARGED for the first tome; the report is `COLLATION-1635-vs-1609.md`.** Headline results:
 
@@ -363,6 +389,68 @@ were found to be continuous tone (§1.2, §3.1). What remains is small and belon
 
 **R5.2 needs a negative test, not just a passing one.** A guard that has never rejected anything is not
 known to work; the test must feed it a PDF-derived leaf and require the exception.
+
+---
+
+## R7 — The existing ground truth was read from inadmissible rasters (NEW, 2026-08-06)
+
+Fixing one file under R6.5 raised the obvious question — how many others? **Audited all 51 ground-truth
+files by the witness and raster each declares.** The answer is not one file.
+
+| what the file was read from | files | why it is inadmissible |
+|---|---|---|
+| `F` (legacy `S1`), via its JP2 package | **39** | `F` is **~168 ppi in all three volumes** and is barred from glyph-level work by §1.2 — the long-ſ nub spans under 1.6 px. Its OT JP2 is additionally a **4.17× render** of that 800×1124 source |
+| `X` (legacy `S8`), via its JP2 package | **6** | `X` is the **excluded** witness: a 2.00× upscale of `B`-NT carrying **zero** real detail beyond it (measured: 0.0002 energy above `B`'s Nyquist, against 0.0093 in `B`'s own top band) |
+| `M` (legacy `S6`), via its JP2 package | **3** | `M` is PDF-primary; the JP2 is a **1.73× render** of the ~2955×4206 CCITT |
+| `M`, via the primary CCITT | 3 | admissible — R6.2/R6.3, plus the privilege re-read under R6.5 |
+| **`B` (~545 ppi) or `P` (~411 ppi)** | **0** | — |
+
+**48 of 51 inadmissible**, reproducible on demand: `python3 witness/audit_gt_rasters.py` (exit 1 while any
+remain). The count was 49 before the R6.5 re-read; it is the audit's own regression test that it fell by one.
+
+**Not one ground-truth file was read from the base exemplar or its surrogate.** `pixel_source()` raises for
+every witness in the top three rows; it guards *pipelines*, and a human transcription walks straight past it.
+
+### The claim, stated precisely
+
+This does **not** say 48 files are wrong. It says **their glyph-level calls are unverified**, and that
+re-reading on an admissible raster reliably moves the epistemic state. Two spot-checks, moving both ways:
+
+- **`M`, the 1634 privilege (R6.5).** Three readings **changed** — `d. Roüen`→`de Roüen`,
+  `Marchans`→`Marchands`, `Donnees`→`Données` — and two of them were spans the file had itself flagged as
+  unresolvable at the raster it had.
+- **`B`, `matter-ot1-approbatio` (read from `F`).** Both flagged uncertainties **resolved and confirmed**:
+  the worn `r` of `Vniuerſitate` is plainly present at 545 ppi, and `Duacena` is genuine, not a worn
+  `Duacenſi`. The transcription was right; it was merely **unverifiable**.
+
+Confirmation and correction are both results. What is not a result is a call left resting on an image that
+cannot carry it.
+
+### The remedy is in-corpus — no acquisition is required
+
+| files read from | re-read on | note |
+|---|---|---|
+| `F` (OT) | `B` ~545 ppi, or `P` ~411 ppi | both already held and jp2-primary |
+| `X` (NT) | `B`-NT 2955×4343 | `X` **is** `B`-NT upscaled, so `B` is simply the same scan at its true raster |
+| `M` | the embedded CCITT, via `witness/extract_pdf_leaves.py` | as done for R6.5 |
+
+The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Preface p. 1 — where `M`'s
+~380 ppi CCITT is the best that exists. That limit is already recorded and is not new.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R7.1 | Re-read the 6 `X`-based NT files on `B` | same loci, admissible raster | every changed reading carries its measurement; `*.pre-primary-raster` backups retained |
+| R7.2 | Re-read the 4 `M`-based files on the CCITT | as R6.5 | one is DONE (`matter-ot2-privilege-du-roi`) |
+| R7.3 | Re-read the 39 `F`-based files on `B`/`P` | the bulk of the corpus | prioritise files whose loci `B` or `P` actually hold; report any locus neither holds rather than substituting `F` silently |
+| R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
+
+**R7.4 is the one that stops this recurring.** Three instances now share a single shape — the vv→w flip,
+`d. Roüen`, `Marchans` — and in all three the rule was right, the observer was careful, and only the image
+was wrong. A guard that lives in `pixel_source()` cannot catch a human reading a PNG. It has to sit on the
+ground-truth record itself.
+
+⚠ **This re-opens ratified ground truth and is flagged, not actioned silently.** No transcription is being
+withdrawn on suspicion — each stands until re-read.
 
 ---
 

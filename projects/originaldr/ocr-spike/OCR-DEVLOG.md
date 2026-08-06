@@ -424,3 +424,89 @@ right, and it now has a documented mechanism and a measured counter-example on a
 Not collated: word-level rewording in the bodies beyond the sampled passages · the endmatter Tables · **the
 OT2/1610 prelims**, which sit further into `M`'s package and are not yet located. None blocks the edition —
 `M` supplies no verse reading, so this is scholarly yield, not critical path.
+
+---
+
+## Session 8 — R6.5, and the third instance of the same defect
+
+R6.5 asked for the 1634 privilege transcribed verbatim from `M` leaf 2070. It turned out to be **already
+transcribed** — `ground-truth/matter-ot2-privilege-du-roi.json`, dated 2026-07-20, careful work with its
+own uncertainties honestly flagged. The finding is not that it was wrong. It is **what it was read from**.
+
+That file records its raster as the `S06` **jp2** at 5100×6601. Everything since has established that `M`
+is **PDF-primary**: the PDF holds the real ~2955×4206 CCITT and the jp2 is a **1.73× render** of it. So the
+2026-07-20 observer's 5× word zooms were working at roughly **8.6× the true raster** — every fine call made
+against pixels that interpolation invented.
+
+Re-read from the embedded CCITT XObject (`witness/extract_pdf_leaves.py`, no rasterisation in the loop),
+**three readings change — and two are precisely the spans the original file had flagged as unresolvable.**
+
+**`d. Roüen` → `de Roüen`.** Settled by measurement, not by eye. The `d` ends at x526, the `R` begins at
+x572: a **46 px** gap. Word spaces elsewhere on that line are 27, 29, 27 px, and the line's own `e` is
+22 px wide — 22 + 27 ≈ 49. The gap holds an `e` *and* a space, not a space alone. The negative control is
+what makes it airtight: **a real period sort on this page measures 10 × 12 px**; the mark in the gap
+measures **3 × 2 px — one twenty-fifth the area** — and sits at the baseline, where an `e` bowl bottoms
+out. It is not a period. It is the last surviving trace of an `e` that failed to ink.
+
+**`Marchans` → `Marchands`.** Between the `n` and the `s` sit two fragments: a baseline blob 8 × 7 px, and
+a narrow stroke **6 px wide and 42 px tall — full ascender height**. The original read them as a foxing
+point plus an i-height stroke. An i-height stroke cannot reach ascender height. They are a `d`'s ascender
+and the foot of its bowl, with the bowl failed. Agrees with the singular `Marchand` on line 2 and with the
+standard formula *Marchands Libraires*.
+
+**`Donnees` → `Données`.** Not previously flagged at all; the acute is solidly inked.
+
+### The pattern, now with a mechanism
+
+This is the **third** instance of one defect class, and the three together name it precisely:
+**upscaling manufactures the very feature the call depends on.**
+
+| where | what interpolation did | which way it biased |
+|---|---|---|
+| the `vv`→`w` flip (R6.6) | closed the gap between two `v` sorts | toward `w` — the direction the flip went |
+| `d. Roüen` | rounded a 3 × 2 speck into a plausible point | toward an abbreviation that isn't there |
+| `Marchans` | smeared a failed `d` bowl into point-plus-stroke | toward dropping a letter |
+
+In every case **the rule was right and the observer was careful**. The defect was never judgement; it was
+*which image the judgement was exercised on*. The 2026-07-20 observer even wrote down the correct answer as
+an alternative — *"or the word could be `de Roüen` with a broken `e`"* — and could not choose between them,
+because the evidence that chooses had already been interpolated away.
+
+⇒ **The operational rule: before any glyph-level call, consult `PRIMARY` for that witness.**
+`pixel_source()` enforces this for the five renders, but it guards *pipelines*. A human transcription can
+walk straight past it, and did — twice. The guard needs to sit where the reading happens, not only where
+the code does.
+
+Backups retained as `*.pre-primary-raster`, on the R6.6c principle: the backup is what an observer saw, the
+current file is what a measurement produced. Where they disagree, both are kept.
+
+### Then the obvious question: how many others?
+
+Fixing one file is not a result if the same fault sits in fifty. `witness/audit_gt_rasters.py` reads the
+raster each ground-truth file **declares** and checks it against that witness's `PRIMARY`.
+
+**48 of 51 files are inadmissible.** 39 were read from `F` — the witness barred from glyph work at
+~168 ppi — 6 from `X`, the *excluded* witness, and 3 from `M`'s jp2 render. **Not one was read from `B`
+(~545 ppi) or `P` (~411 ppi)**, the base exemplar and its surrogate.
+
+That last number is the one that stings. The plan spent four sessions establishing which witnesses can
+carry a glyph-level call, and the entire ground truth was read from the ones that cannot.
+
+**Two spot-checks, and the epistemic state moved both ways** — which is the honest characterisation:
+
+- **`M`, the privilege.** Three readings *changed*, two of them spans the file had flagged as unresolvable.
+- **`B`, `matter-ot1-approbatio`** (originally read from `F`). Both flagged uncertainties *resolved and
+  confirmed*: the worn `r` of `Vniuerſitate` is plainly present at 545 ppi, and `Duacena` is genuine rather
+  than a worn `Duacenſi`. The transcription was right — it was **unverifiable**, which is a different fault
+  from being wrong, and the only one being alleged here.
+
+So the claim is not "48 files are wrong." It is that their glyph-level calls rest on images that cannot
+carry them, and re-reading reliably resolves the question one way or the other. Confirmation is a result.
+
+**The remedy needs no acquisition**: `F`-based files re-read on `B`/`P`; `X`-based files on `B`-NT (`X`
+*is* `B`-NT upscaled, so `B` is the same scan at its true raster); `M`-based on the CCITT. The only real
+ceiling is the two NT leaves `B` lacks, already recorded.
+
+Tracked as **R7**, with R7.4 as the item that stops the recurrence: the guard must sit on the ground-truth
+record, because `pixel_source()` guards *pipelines* and a person reading a PNG never touches it. Nothing is
+withdrawn on suspicion — each transcription stands until re-read.

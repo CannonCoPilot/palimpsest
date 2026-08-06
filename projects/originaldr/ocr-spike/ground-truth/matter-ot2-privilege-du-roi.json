@@ -1,188 +1,236 @@
 {
-  "locus": "matter/ot2/privilege-du-roi",
-  "page_kind": "prose",
-  "page_index": 2070,
-  "ocr_dir": "jp2-S06",
-  "scan": "S6",
-  "raster": "ocr-spike/.gt-rasters/privilege-scan/p2070.png",
-  "raster_dpi": null,
-  "raster_note": "Native jp2 is 5100x6601 (grayscale). The standard render path (ocr-spike/jp2_page.py, PIL JPEG2000 decoder) FAILS on S6 in this environment with 'OSError: broken data stream when reading image file' for EVERY S6 page tested (100, 1018, 2000, 2068-2075, 2100) — a systematic PIL/OpenJPEG decode failure, NOT page corruption. Decoded instead with /opt/local/bin/opj_decompress (OpenJPEG reference decoder) -> PNG at full raster; then zoom-cropped for reading. See decode_note.",
-  "decode_note": "S6 CAVEAT / No-Silent-Degradation report: (1) jp2_page.py/PIL cannot decode ANY S6 page here ('broken data stream'); used opj_decompress as the working decoder — all needed full-size pages decoded successfully. (2) Page 2071 (Douay-Rheims-1610-Bible_2071.jp2) is a genuinely TRUNCATED file (1198 bytes vs ~200-380 KB for neighbors); it decodes only to a blank/near-empty raster and its true content is unrecoverable from this jp2. Reported here, NOT silently skipped. Page 2071 falls AFTER this privilege section (which is entirely on 2070) and BEFORE the NT title page (2072), so the 2071 corruption does NOT affect the completeness of this section.",
-  "page_label_printed": "",
-  "running_header": {
-    "left": "",
-    "center": "",
-    "right": ""
+ "locus": "matter/ot2/privilege-du-roi",
+ "page_kind": "prose",
+ "page_index": 2070,
+ "ocr_dir": "witness/prelims-OT-M",
+ "scan": "M",
+ "raster": "witness/prelims-OT-M/OT-1635-M_2070.png",
+ "raster_dpi": 380,
+ "raster_note": "Native jp2 is 5100x6601 (grayscale). The standard render path (ocr-spike/jp2_page.py, PIL JPEG2000 decoder) FAILS on S6 in this environment with 'OSError: broken data stream when reading image file' for EVERY S6 page tested (100, 1018, 2000, 2068-2075, 2100) — a systematic PIL/OpenJPEG decode failure, NOT page corruption. Decoded instead with /opt/local/bin/opj_decompress (OpenJPEG reference decoder) -> PNG at full raster; then zoom-cropped for reading. See decode_note.",
+ "decode_note": "S6 CAVEAT / No-Silent-Degradation report: (1) jp2_page.py/PIL cannot decode ANY S6 page here ('broken data stream'); used opj_decompress as the working decoder — all needed full-size pages decoded successfully. (2) Page 2071 (Douay-Rheims-1610-Bible_2071.jp2) is a genuinely TRUNCATED file (1198 bytes vs ~200-380 KB for neighbors); it decodes only to a blank/near-empty raster and its true content is unrecoverable from this jp2. Reported here, NOT silently skipped. Page 2071 falls AFTER this privilege section (which is entirely on 2070) and BEFORE the NT title page (2072), so the 2071 corruption does NOT affect the completeness of this section.",
+ "page_label_printed": "",
+ "running_header": {
+  "left": "",
+  "center": "",
+  "right": ""
+ },
+ "layout_note": "Single column, French. The 'Extraict du Privilege du Roy' is a small, self-contained BOXED sub-section occupying the FOOT (lower ~third) of physical page 2070. The upper ~two-thirds of the same page is the ENGLISH errata section 'FAVLTS ESCAPED IN THE PRINTING' (In the first Tome / In the second Tome) — a DIFFERENT section, not transcribed here. The privilege is set off by a horizontal rule above the heading and a horizontal rule below the signature line, inside the page's double-ruled frame. STRUCTURE of the privilege: (0) heading in spaced ITALIC display capitals 'EXTRAICT DV PRIVILEGE DV ROY.'; (1) one long single-sentence French paragraph opening with a 2-line ROMAN drop-cap 'P' (PAR Grace...); (2) a final subscription line 'Signé ,        Par le ROY en ſon Conſeil.' with a wide gap between the two halves. The licensed work title 'la Bible en language Anglois' inside the paragraph is set in ITALIC. Below the box (outside the privilege) sits a faint quire/gathering signature (binder's mark, illegible ~'Vvv 2'); there is NO catchword at the foot. The page carries NO printed folio number (unpaginated back matter) and no running header. This is the FINAL item of the OT second-tome back matter: it is immediately preceded (p2069) by the Latin 'Censura trium Theologorum Anglorum' (dated 1609) and the tail of 'A PART. TABLE OF PRINC. THINGS ... LAVS DEO.' (p2068), and immediately followed by a blank/corrupt leaf (p2071) and then the New Testament title page 'THE NEVV TESTAMENT ... PRINTED AT RHEMES, by Iohn Fogny. 1582. CVM PRIVILEGIO.' (p2072). GLYPH REGIME: French roman body + italic heading/title-phrase. long-ſ is glyph-driven (medial/initial where the compositor set it; word-final s is round; capital S round). NO 'w' occurs anywhere in the French text, so the w/vv question does not arise for this section (the VV-fount only appears on the unrelated NT title page at 2072). u/v and i/j archaic swaps preserved. Some clause commas carry the edition's French space-before-punctuation; spacing is inconsistent and thin-space calls are approximate.",
+ "body": [
+  {
+   "line_index": 0,
+   "role": "heading",
+   "text": "EXTRAICT DV PRIVILEGE DV ROY.",
+   "face": "italic",
+   "layout": "spaced display capitals, centered, directly under a horizontal rule",
+   "note": "'EXTRAICT' with medial c+t (extraict=extrait); 'DV'=DU (V-for-U); 'PRIVILEGE' caps; 'DV ROY.' — final italic capital Y confirmed by zoom (not I/T)."
   },
-  "layout_note": "Single column, French. The 'Extraict du Privilege du Roy' is a small, self-contained BOXED sub-section occupying the FOOT (lower ~third) of physical page 2070. The upper ~two-thirds of the same page is the ENGLISH errata section 'FAVLTS ESCAPED IN THE PRINTING' (In the first Tome / In the second Tome) — a DIFFERENT section, not transcribed here. The privilege is set off by a horizontal rule above the heading and a horizontal rule below the signature line, inside the page's double-ruled frame. STRUCTURE of the privilege: (0) heading in spaced ITALIC display capitals 'EXTRAICT DV PRIVILEGE DV ROY.'; (1) one long single-sentence French paragraph opening with a 2-line ROMAN drop-cap 'P' (PAR Grace...); (2) a final subscription line 'Signé ,        Par le ROY en ſon Conſeil.' with a wide gap between the two halves. The licensed work title 'la Bible en language Anglois' inside the paragraph is set in ITALIC. Below the box (outside the privilege) sits a faint quire/gathering signature (binder's mark, illegible ~'Vvv 2'); there is NO catchword at the foot. The page carries NO printed folio number (unpaginated back matter) and no running header. This is the FINAL item of the OT second-tome back matter: it is immediately preceded (p2069) by the Latin 'Censura trium Theologorum Anglorum' (dated 1609) and the tail of 'A PART. TABLE OF PRINC. THINGS ... LAVS DEO.' (p2068), and immediately followed by a blank/corrupt leaf (p2071) and then the New Testament title page 'THE NEVV TESTAMENT ... PRINTED AT RHEMES, by Iohn Fogny. 1582. CVM PRIVILEGIO.' (p2072). GLYPH REGIME: French roman body + italic heading/title-phrase. long-ſ is glyph-driven (medial/initial where the compositor set it; word-final s is round; capital S round). NO 'w' occurs anywhere in the French text, so the w/vv question does not arise for this section (the VV-fount only appears on the unrelated NT title page at 2072). u/v and i/j archaic swaps preserved. Some clause commas carry the edition's French space-before-punctuation; spacing is inconsistent and thin-space calls are approximate.",
-  "body": [
-    {
-      "line_index": 0,
-      "role": "heading",
-      "text": "EXTRAICT DV PRIVILEGE DV ROY.",
-      "face": "italic",
-      "layout": "spaced display capitals, centered, directly under a horizontal rule",
-      "note": "'EXTRAICT' with medial c+t (extraict=extrait); 'DV'=DU (V-for-U); 'PRIVILEGE' caps; 'DV ROY.' — final italic capital Y confirmed by zoom (not I/T)."
-    },
-    {
-      "line_index": 1,
-      "role": "paragraph",
-      "drop_cap": "P",
-      "text": "PAR Grace & Priuilege du Roy , Il eſt permis à IEAN LE",
-      "note": "Opens with 2-line ROMAN drop-cap P. 'Priuilege' u-for-v. 'eſt' long-ſ. 'à' grave. 'IEAN' = Iean/Jean (I-for-J), spaced capitals continuing to 'LE' at line end. French space before the comma after 'Roy'."
-    },
-    {
-      "line_index": 2,
-      "role": "paragraph",
-      "text": "COVSTVRIER , Marchand Libraire & Imprimeur en ceſte ville",
-      "note": "'COVSTVRIER' = Cousturier, spaced capitals, V-for-U (twice). 'Marchand' singular WITH final d (establishes house form; cf. line 5). 'ceſte' = cette, long-ſ. French space before comma."
-    },
-    {
-      "line_index": 3,
-      "role": "paragraph",
-      "text": "d. Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace",
-      "line_end_hyphen": false,
-      "has_uncertain": true,
-      "note": "'d. Roüen' = (de) Rouen: a small mid-height point sits between 'd' and 'Roüen' — read as an abbreviation period for 'de' (foxing is possible; see uncertain). 'Roüen' has a ü trema (two dots). 'diſtribuer' long-ſ+t; 'eſpace' long-ſ. 'temps' round final s. French space before comma after Imprimer."
-    },
-    {
-      "line_index": 4,
-      "role": "paragraph",
-      "text": "de dix ans, la Bible en language Anglois , de l'edition de Laurens Kellam",
-      "has_uncertain": true,
-      "note": "'la Bible en language Anglois' is set in ITALIC (the title of the licensed work). 'language' shows a clear medial u (langu-age), not 'langage'. 'Anglois' = Anglais (old spelling). 'l'edition' no accent (edition). 'Laurens Kellam' = Lawrence Kellam, printer of Douai. 'ans','Anglois','Laurens' round final s."
-    },
-    {
-      "line_index": 5,
-      "role": "paragraph",
-      "text": "Imprimeur de Douay , Et deffences ſont faictes à tous Marchans Li-",
-      "line_end_hyphen": true,
-      "has_uncertain": true,
-      "note": "Word split Li-|braires = Libraires (line 6). 'deffences' = defenses (as printed, ff+c). 'ſont' long-ſ. 'faictes' = faites, with c+t. 'Marchans' plural: the cluster after 'Marchan' is worn/foxed and reads 'Marchan.is'; resolved to plural 'Marchans' (clean sorts M-a-r-c-h-a-n...s); a worn 'Marchands' (cf. singular 'Marchand', line 2) is also possible — see uncertain."
-    },
-    {
-      "line_index": 6,
-      "role": "paragraph",
-      "text": "braires & Imprimeurs de ce Royaume, d'en vendre , ny diſtribuer pen-",
-      "line_end_hyphen": true,
-      "note": "Continues 'Libraires'. Word split pen-|dant = pendant (line 7). 'diſtribuer' long-ſ+t. 'ny' = ni (old spelling). 'Royaume,' comma set tight (no French space here). French space before comma after 'vendre'."
-    },
-    {
-      "line_index": 7,
-      "role": "paragraph",
-      "text": "dant ledit temps , d'autre Impreſſion que de celle dudit COVSTVRIER ,",
-      "note": "Continues 'pendant'. 'Impreſſion' double long-ſ (ſſ). 'COVSTVRIER' spaced caps, V-for-U. 'temps' round final s. French space before both commas."
-    },
-    {
-      "line_index": 8,
-      "role": "paragraph",
-      "text": "ſur peine de 500. liures d'amende , & de confiſcation des Exemplaires ,",
-      "note": "'ſur' long-ſ. '500.' = five hundred. 'liures' = livres, u-for-v, round final s. 'confiſcation' long-ſ (tall ascending s-sort, no crossbar). 'des','Exemplaires' round final s. French space before commas."
-    },
-    {
-      "line_index": 9,
-      "role": "paragraph",
-      "text": "ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Donnees",
-      "note": "'ainſi','eſt','eſdites' long-ſ. 'eſdites' = esdites (les dites). 'Priuilege' u-for-v. 'Donnees' = Données, printed WITHOUT accents. 'plus','Lettres','Donnees' round final s. French space before comma."
-    },
-    {
-      "line_index": 10,
-      "role": "paragraph",
-      "text": "à Paris le 3. iour d'Aouſt, l'an de grace 1634. Et de noſtre regne le 25.",
-      "note": "'iour' = jour (i-for-j). 'Aouſt' = Août, long-ſ+t. 'grace' printed without circumflex/cedilla. 'noſtre' long-ſ+t. 'regne' without grave. Date: given at Paris, 3rd of August, year of grace 1634, regnal year 25 (Louis XIII, acceded 1610 -> year 25 = 1634)."
-    },
-    {
-      "line_index": 11,
-      "role": "colophon_line",
-      "text": "Signé ,        Par le ROY en ſon Conſeil.",
-      "note": "Subscription/signature line with a WIDE gap between 'Signé ,' (left) and 'Par le ROY en ſon Conſeil.' (right). 'Signé' acute é. 'ROY' spaced caps. 'ſon','Conſeil' long-ſ. Capital S in 'Signé' is round S."
-    }
-  ],
-  "intervals": [
-    {
-      "idx": 0,
-      "kind": "heading",
-      "text": "EXTRAICT DV PRIVILEGE DV ROY.",
-      "lines": [0]
-    },
-    {
-      "idx": 1,
-      "kind": "paragraph",
-      "text": "PAR Grace & Priuilege du Roy , Il eſt permis à IEAN LE COVSTVRIER , Marchand Libraire & Imprimeur en ceſte ville d. Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace de dix ans, la Bible en language Anglois , de l'edition de Laurens Kellam Imprimeur de Douay , Et deffences ſont faictes à tous Marchans Libraires & Imprimeurs de ce Royaume, d'en vendre , ny diſtribuer pendant ledit temps , d'autre Impreſſion que de celle dudit COVSTVRIER , ſur peine de 500. liures d'amende , & de confiſcation des Exemplaires , ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Donnees à Paris le 3. iour d'Aouſt, l'an de grace 1634. Et de noſtre regne le 25.",
-      "lines": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      "note": "One continuous privilege sentence; line-end splits de-hyphenated (Li-braires->Libraires, pen-dant->pendant)."
-    },
-    {
-      "idx": 2,
-      "kind": "colophon_line",
-      "text": "Signé , Par le ROY en ſon Conſeil.",
-      "lines": [11]
-    }
-  ],
-  "apparatus": [
-    {
-      "kind": "rule",
-      "position": "above heading",
-      "text": null,
-      "note": "Horizontal rule separating the errata block above from the privilege heading."
-    },
-    {
-      "kind": "border",
-      "position": "full-page",
-      "text": null,
-      "note": "Page-level double-ruled rectangular frame enclosing both the errata block and the privilege box."
-    },
-    {
-      "kind": "rule",
-      "position": "below signature",
-      "text": null,
-      "note": "Horizontal rule under the 'Signé ... Conſeil.' line, closing the privilege box."
-    },
-    {
-      "kind": "signature",
-      "position": "foot-right (outside box)",
-      "text": "Vvv 2",
-      "note": "Faint quire/gathering signature at the very foot of the page, below the privilege box and the frame's foot rule; binder's mark, illegible/approximate (~'Vvv 2'). NOT a catchword and NOT scripture; excluded from intervals."
-    }
-  ],
-  "uncertain": [
-    {
-      "line_index": 3,
-      "span": "d. Roüen",
-      "note": "A small mid-height point sits between 'd' and 'Roüen' (zoomed 5x). Read as an abbreviation period for 'de' -> 'd. Roüen' (= 'de Rouen', in this city of Rouen). Because the page is foxed, the point could alternatively be a stray foxing speck ('d Roüen'), or the word could be 'de Roüen' with a broken 'e'. The two letters 'd' and 'Roüen' (with ü trema) are certain; only the intervening point's status is uncertain. Medium confidence."
-    },
-    {
-      "line_index": 5,
-      "span": "Marchans",
-      "note": "At 5x the cluster after 'Marchan' reads 'Marchan.is L' (a point + a short i-height stroke + s), which is not a word. Best diplomatic reading of the clean sorts is plural 'Marchans' (M-a-r-c-h-a-n...s), treating the point+stroke as foxing/broken type; 'Marchans' is a standard 17th-c. French plural. Alternative: 'Marchands' with a worn 'd' (matches the singular 'Marchand' on line 2 and the standard privilege formula 'Marchands Libraires'). Cannot be resolved cleanly at 400-dpi-equivalent raster. Medium confidence."
-    },
-    {
-      "line_index": 4,
-      "span": "language",
-      "note": "The italic word after 'en' shows a clear medial u (l-a-n-g-u-a-g-e) at 2.4x, so transcribed 'language' (an attested early-modern spelling) rather than 'langage'. High-medium confidence."
-    },
-    {
-      "line_index": null,
-      "span": "French space before punctuation",
-      "note": "This edition inconsistently sets a thin space before commas (French spacing), matching sibling GT matter-ot2-table-epistles ('feaſtes ,'). Preserved where observed (most clause commas: 'Roy ,', 'COVSTVRIER ,', 'Imprimer ,', 'Anglois ,', 'Douay ,', 'vendre ,', 'temps ,', 'amende ,', 'Exemplaires ,', 'Priuilege ,', 'Signé ,') and omitted where the comma hugs the letter ('Roüen,', 'ans,', 'Royaume,', 'd'Aouſt,'). Thin-space calls are approximate."
-    },
-    {
-      "line_index": null,
-      "span": "S6 decode / page 2071",
-      "note": "jp2_page.py/PIL cannot decode any S6 page here ('broken data stream'); decoded via opj_decompress instead (see decode_note). Page 2071's jp2 is truncated (1198 bytes) and its content is unrecoverable — reported, not skipped; it lies AFTER this section so does not affect completeness."
-    }
-  ],
-  "glyph_counts": {
-    "long_s_count_transcribed": 17,
-    "w_count": 0,
-    "vv_count": 0,
-    "u_for_v_lowercase_count": 3,
-    "i_for_j_count": 2,
-    "note": "long-ſ (U+017F) hand-count over body: eſt(1)+ceſte(1)+diſtribuer+eſpace(2)+ſont(1)+diſtribuer(1)+Impreſſion(2)+ſur+confiſcation(2)+ainſi+eſt+eſdites(3)+Aouſt+noſtre(2)+ſon+Conſeil(2)=17. w/vv: the French text has NO 'w' sort at all (0 w, 0 vv). u-for-v lowercase: Priuilege x2 + liures x1 = 3 (plus caps V-for-U in DV x2, PRIVILEGE, COVSTVRIER x2, not counted here). i-for-j: IEAN + iour = 2."
+  {
+   "line_index": 1,
+   "role": "paragraph",
+   "drop_cap": "P",
+   "text": "PAR Grace & Priuilege du Roy , Il eſt permis à IEAN LE",
+   "note": "Opens with 2-line ROMAN drop-cap P. 'Priuilege' u-for-v. 'eſt' long-ſ. 'à' grave. 'IEAN' = Iean/Jean (I-for-J), spaced capitals continuing to 'LE' at line end. French space before the comma after 'Roy'."
   },
-  "observer": "agent:matter-ot2-privilege-du-roi",
-  "observed_at": "2026-07-20",
-  "method": "Visual multimodal read of the full-resolution S6 jp2 page 2070 (5100x6601), decoded with opj_decompress (PIL/jp2_page.py fails on all S6 pages — 'broken data stream'), then read via progressive LANCZOS zoom crops (overview -> 4-line strips -> 2.2-5x word-level zooms on heading 'ROY', 'd. Roüen', 'la Bible en language Anglois', 'Marchan[.]is', 'confiſcation'). FOUR VALIDATIONS: (1) LOCALIZATION — correct section: heading 'EXTRAICT DV PRIVILEGE DV ROY.' read directly; content is the French royal book-privilege (grant to Iean le Cousturier of Rouen to print 'la Bible en language Anglois' from Laurens Kellam's Douai edition), distinct from the English errata 'FAVLTS ESCAPED IN THE PRINTING' above it on the same page. (2) IDENTITY — S6 (ocr_dir jp2-S06, Douay-Rheims-1610-Bible jp2 set); privilege dated 3 August 1634, regnal year 25 of Louis XIII (acceded 1610 => yr 25 = 1634), consistent with the requested 1635 OT2 imprint; the bound-in 1582 Rhemes NT title page follows at 2072. Matches the requested source. (3) PLACEMENT — page_index 2070 (matches _2070 jp2 label); unpaginated (no printed folio in the top margin); no running header; boxed sub-section at the FOOT of the errata page; quire signature (~'Vvv 2') below the box; preceded by the Latin Censura (2069) and 'A PART. TABLE OF PRINC. THINGS ... LAVS DEO.' (2068). (4) COMPLETENESS — the ENTIRE section is transcribed: it is a self-contained box that ends with the subscription 'Signé , Par le ROY en ſon Conſeil.' and closing rule; it does NOT continue. The next leaf (2071) is a corrupt/truncated jp2 (blank render) and the NT title page begins at 2072 — so nothing of the privilege is lost. Reference (janvier/DR) not applicable (French front/back matter, not scripture); no external text used as a spelling oracle.",
-  "confidence": "High on the heading, the overall French body text, and the long-ſ / u-v / i-j decisions (word-level zoom on every line; zero 'w' in the section). Medium on: the 'd. Roüen' intervening point (abbreviation period vs foxing), the worn/foxed plural 'Marchans' (vs 'Marchands'), and the thin-space-before-comma calls. All flagged in uncertain[]. Decode caveat: opj_decompress used because PIL/jp2_page.py fails on S6; page 2071 truncated (reported).",
-  "glyph_regime_resolved": "French roman body + italic display heading and italic licensed-work title ('la Bible en language Anglois'). long-ſ GLYPH-DRIVEN: 17 long-ſ where the compositor set them (medial/initial), word-final s round, capital S round. w/vv: NOT APPLICABLE — the French text contains no 'w' sort (0 w, 0 vv); the gapped-VV titling fount appears only on the adjacent, unrelated NT title page (2072). Archaic swaps preserved: u-for-v (Priuilege, liures; caps DV, PRIVILEGE, COVSTVRIER), i-for-j (IEAN, iour). Accents preserved as printed: à (grave), é (Signé), ü (Roüen); and ABSENT where the plate omits them (grace, regne, edition, Donnees). c+t transcribed as components (EXTRAICT, faictes)."
+  {
+   "line_index": 2,
+   "role": "paragraph",
+   "text": "COVSTVRIER , Marchand Libraire & Imprimeur en ceſte ville",
+   "note": "'COVSTVRIER' = Cousturier, spaced capitals, V-for-U (twice). 'Marchand' singular WITH final d (establishes house form; cf. line 5). 'ceſte' = cette, long-ſ. French space before comma."
+  },
+  {
+   "line_index": 3,
+   "role": "paragraph",
+   "text": "de Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace",
+   "line_end_hyphen": false,
+   "has_uncertain": true,
+   "note": "'d. Roüen' = (de) Rouen: a small mid-height point sits between 'd' and 'Roüen' — read as an abbreviation period for 'de' (foxing is possible; see uncertain). 'Roüen' has a ü trema (two dots). 'diſtribuer' long-ſ+t; 'eſpace' long-ſ. 'temps' round final s. French space before comma after Imprimer.",
+   "_pre_primary_raster": "d. Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace",
+   "reread_on_primary": true
+  },
+  {
+   "line_index": 4,
+   "role": "paragraph",
+   "text": "de dix ans, la Bible en language Anglois , de l'edition de Laurens Kellam",
+   "has_uncertain": true,
+   "note": "'la Bible en language Anglois' is set in ITALIC (the title of the licensed work). 'language' shows a clear medial u (langu-age), not 'langage'. 'Anglois' = Anglais (old spelling). 'l'edition' no accent (edition). 'Laurens Kellam' = Lawrence Kellam, printer of Douai. 'ans','Anglois','Laurens' round final s."
+  },
+  {
+   "line_index": 5,
+   "role": "paragraph",
+   "text": "Imprimeur de Douay , Et deffences ſont faictes à tous Marchands Li-",
+   "line_end_hyphen": true,
+   "has_uncertain": true,
+   "note": "Word split Li-|braires = Libraires (line 6). 'deffences' = defenses (as printed, ff+c). 'ſont' long-ſ. 'faictes' = faites, with c+t. 'Marchans' plural: the cluster after 'Marchan' is worn/foxed and reads 'Marchan.is'; resolved to plural 'Marchans' (clean sorts M-a-r-c-h-a-n...s); a worn 'Marchands' (cf. singular 'Marchand', line 2) is also possible — see uncertain.",
+   "_pre_primary_raster": "Imprimeur de Douay , Et deffences ſont faictes à tous Marchans Li-",
+   "reread_on_primary": true
+  },
+  {
+   "line_index": 6,
+   "role": "paragraph",
+   "text": "braires & Imprimeurs de ce Royaume, d'en vendre , ny diſtribuer pen-",
+   "line_end_hyphen": true,
+   "note": "Continues 'Libraires'. Word split pen-|dant = pendant (line 7). 'diſtribuer' long-ſ+t. 'ny' = ni (old spelling). 'Royaume,' comma set tight (no French space here). French space before comma after 'vendre'."
+  },
+  {
+   "line_index": 7,
+   "role": "paragraph",
+   "text": "dant ledit temps , d'autre Impreſſion que de celle dudit COVSTVRIER ,",
+   "note": "Continues 'pendant'. 'Impreſſion' double long-ſ (ſſ). 'COVSTVRIER' spaced caps, V-for-U. 'temps' round final s. French space before both commas."
+  },
+  {
+   "line_index": 8,
+   "role": "paragraph",
+   "text": "ſur peine de 500. liures d'amende , & de confiſcation des Exemplaires ,",
+   "note": "'ſur' long-ſ. '500.' = five hundred. 'liures' = livres, u-for-v, round final s. 'confiſcation' long-ſ (tall ascending s-sort, no crossbar). 'des','Exemplaires' round final s. French space before commas."
+  },
+  {
+   "line_index": 9,
+   "role": "paragraph",
+   "text": "ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Données",
+   "note": "'ainſi','eſt','eſdites' long-ſ. 'eſdites' = esdites (les dites). 'Priuilege' u-for-v. 'Donnees' = Données, printed WITHOUT accents. 'plus','Lettres','Donnees' round final s. French space before comma.",
+   "_pre_primary_raster": "ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Donnees",
+   "reread_on_primary": true
+  },
+  {
+   "line_index": 10,
+   "role": "paragraph",
+   "text": "à Paris le 3. iour d'Aouſt, l'an de grace 1634. Et de noſtre regne le 25.",
+   "note": "'iour' = jour (i-for-j). 'Aouſt' = Août, long-ſ+t. 'grace' printed without circumflex/cedilla. 'noſtre' long-ſ+t. 'regne' without grave. Date: given at Paris, 3rd of August, year of grace 1634, regnal year 25 (Louis XIII, acceded 1610 -> year 25 = 1634)."
+  },
+  {
+   "line_index": 11,
+   "role": "colophon_line",
+   "text": "Signé ,        Par le ROY en ſon Conſeil.",
+   "note": "Subscription/signature line with a WIDE gap between 'Signé ,' (left) and 'Par le ROY en ſon Conſeil.' (right). 'Signé' acute é. 'ROY' spaced caps. 'ſon','Conſeil' long-ſ. Capital S in 'Signé' is round S."
+  }
+ ],
+ "intervals": [
+  {
+   "idx": 0,
+   "kind": "heading",
+   "text": "EXTRAICT DV PRIVILEGE DV ROY.",
+   "lines": [
+    0
+   ]
+  },
+  {
+   "idx": 1,
+   "kind": "paragraph",
+   "text": "PAR Grace & Priuilege du Roy , Il eſt permis à IEAN LE COVSTVRIER , Marchand Libraire & Imprimeur en ceſte ville de Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace de dix ans, la Bible en language Anglois , de l'edition de Laurens Kellam Imprimeur de Douay , Et deffences ſont faictes à tous Marchands Libraires & Imprimeurs de ce Royaume, d'en vendre , ny diſtribuer pendant ledit temps , d'autre Impreſſion que de celle dudit COVSTVRIER , ſur peine de 500. liures d'amende , & de confiſcation des Exemplaires , ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Données à Paris le 3. iour d'Aouſt, l'an de grace 1634. Et de noſtre regne le 25.",
+   "lines": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "note": "One continuous privilege sentence; line-end splits de-hyphenated (Li-braires->Libraires, pen-dant->pendant).",
+   "_pre_primary_raster": "PAR Grace & Priuilege du Roy , Il eſt permis à IEAN LE COVSTVRIER , Marchand Libraire & Imprimeur en ceſte ville d. Roüen, d'Imprimer , vendre & diſtribuer pendant le temps & eſpace de dix ans, la Bible en language Anglois , de l'edition de Laurens Kellam Imprimeur de Douay , Et deffences ſont faictes à tous Marchans Libraires & Imprimeurs de ce Royaume, d'en vendre , ny diſtribuer pendant ledit temps , d'autre Impreſſion que de celle dudit COVSTVRIER , ſur peine de 500. liures d'amende , & de confiſcation des Exemplaires , ainſi que plus au long eſt contenu eſdites Lettres de Priuilege , Donnees à Paris le 3. iour d'Aouſt, l'an de grace 1634. Et de noſtre regne le 25."
+  },
+  {
+   "idx": 2,
+   "kind": "colophon_line",
+   "text": "Signé , Par le ROY en ſon Conſeil.",
+   "lines": [
+    11
+   ]
+  }
+ ],
+ "apparatus": [
+  {
+   "kind": "rule",
+   "position": "above heading",
+   "text": null,
+   "note": "Horizontal rule separating the errata block above from the privilege heading."
+  },
+  {
+   "kind": "border",
+   "position": "full-page",
+   "text": null,
+   "note": "Page-level double-ruled rectangular frame enclosing both the errata block and the privilege box."
+  },
+  {
+   "kind": "rule",
+   "position": "below signature",
+   "text": null,
+   "note": "Horizontal rule under the 'Signé ... Conſeil.' line, closing the privilege box."
+  },
+  {
+   "kind": "signature",
+   "position": "foot-right (outside box)",
+   "text": "Vvv 2",
+   "note": "Faint quire/gathering signature at the very foot of the page, below the privilege box and the frame's foot rule; binder's mark, illegible/approximate (~'Vvv 2'). NOT a catchword and NOT scripture; excluded from intervals."
+  }
+ ],
+ "uncertain": [
+  {
+   "line_index": 4,
+   "span": "language",
+   "note": "The italic word after 'en' shows a clear medial u (l-a-n-g-u-a-g-e) at 2.4x, so transcribed 'language' (an attested early-modern spelling) rather than 'langage'. High-medium confidence."
+  },
+  {
+   "line_index": null,
+   "span": "French space before punctuation",
+   "note": "This edition inconsistently sets a thin space before commas (French spacing), matching sibling GT matter-ot2-table-epistles ('feaſtes ,'). Preserved where observed (most clause commas: 'Roy ,', 'COVSTVRIER ,', 'Imprimer ,', 'Anglois ,', 'Douay ,', 'vendre ,', 'temps ,', 'amende ,', 'Exemplaires ,', 'Priuilege ,', 'Signé ,') and omitted where the comma hugs the letter ('Roüen,', 'ans,', 'Royaume,', 'd'Aouſt,'). Thin-space calls are approximate."
+  },
+  {
+   "line_index": null,
+   "span": "S6 decode / page 2071",
+   "note": "jp2_page.py/PIL cannot decode any S6 page here ('broken data stream'); decoded via opj_decompress instead (see decode_note). Page 2071's jp2 is truncated (1198 bytes) and its content is unrecoverable — reported, not skipped; it lies AFTER this section so does not affect completeness."
+  }
+ ],
+ "glyph_counts": {
+  "long_s_count_transcribed": 17,
+  "w_count": 0,
+  "vv_count": 0,
+  "u_for_v_lowercase_count": 3,
+  "i_for_j_count": 2,
+  "note": "long-ſ (U+017F) hand-count over body: eſt(1)+ceſte(1)+diſtribuer+eſpace(2)+ſont(1)+diſtribuer(1)+Impreſſion(2)+ſur+confiſcation(2)+ainſi+eſt+eſdites(3)+Aouſt+noſtre(2)+ſon+Conſeil(2)=17. w/vv: the French text has NO 'w' sort at all (0 w, 0 vv). u-for-v lowercase: Priuilege x2 + liures x1 = 3 (plus caps V-for-U in DV x2, PRIVILEGE, COVSTVRIER x2, not counted here). i-for-j: IEAN + iour = 2."
+ },
+ "observer": "agent:matter-ot2-privilege-du-roi",
+ "observed_at": "2026-07-20",
+ "method": "Visual multimodal read of the full-resolution S6 jp2 page 2070 (5100x6601), decoded with opj_decompress (PIL/jp2_page.py fails on all S6 pages — 'broken data stream'), then read via progressive LANCZOS zoom crops (overview -> 4-line strips -> 2.2-5x word-level zooms on heading 'ROY', 'd. Roüen', 'la Bible en language Anglois', 'Marchan[.]is', 'confiſcation'). FOUR VALIDATIONS: (1) LOCALIZATION — correct section: heading 'EXTRAICT DV PRIVILEGE DV ROY.' read directly; content is the French royal book-privilege (grant to Iean le Cousturier of Rouen to print 'la Bible en language Anglois' from Laurens Kellam's Douai edition), distinct from the English errata 'FAVLTS ESCAPED IN THE PRINTING' above it on the same page. (2) IDENTITY — S6 (ocr_dir jp2-S06, Douay-Rheims-1610-Bible jp2 set); privilege dated 3 August 1634, regnal year 25 of Louis XIII (acceded 1610 => yr 25 = 1634), consistent with the requested 1635 OT2 imprint; the bound-in 1582 Rhemes NT title page follows at 2072. Matches the requested source. (3) PLACEMENT — page_index 2070 (matches _2070 jp2 label); unpaginated (no printed folio in the top margin); no running header; boxed sub-section at the FOOT of the errata page; quire signature (~'Vvv 2') below the box; preceded by the Latin Censura (2069) and 'A PART. TABLE OF PRINC. THINGS ... LAVS DEO.' (2068). (4) COMPLETENESS — the ENTIRE section is transcribed: it is a self-contained box that ends with the subscription 'Signé , Par le ROY en ſon Conſeil.' and closing rule; it does NOT continue. The next leaf (2071) is a corrupt/truncated jp2 (blank render) and the NT title page begins at 2072 — so nothing of the privilege is lost. Reference (janvier/DR) not applicable (French front/back matter, not scripture); no external text used as a spelling oracle.",
+ "confidence": "High on the heading, the overall French body text, and the long-ſ / u-v / i-j decisions (word-level zoom on every line; zero 'w' in the section). Medium on: the 'd. Roüen' intervening point (abbreviation period vs foxing), the worn/foxed plural 'Marchans' (vs 'Marchands'), and the thin-space-before-comma calls. All flagged in uncertain[]. Decode caveat: opj_decompress used because PIL/jp2_page.py fails on S6; page 2071 truncated (reported).",
+ "glyph_regime_resolved": "French roman body + italic display heading and italic licensed-work title ('la Bible en language Anglois'). long-ſ GLYPH-DRIVEN: 17 long-ſ where the compositor set them (medial/initial), word-final s round, capital S round. w/vv: NOT APPLICABLE — the French text contains no 'w' sort (0 w, 0 vv); the gapped-VV titling fount appears only on the adjacent, unrelated NT title page (2072). Archaic swaps preserved: u-for-v (Priuilege, liures; caps DV, PRIVILEGE, COVSTVRIER), i-for-j (IEAN, iour). Accents preserved as printed: à (grave), é (Signé), ü (Roüen); and ABSENT where the plate omits them (grace, regne, edition, Donnees). c+t transcribed as components (EXTRAICT, faictes).",
+ "resolved_on_primary_raster": [
+  {
+   "line_index": 3,
+   "was": "d. Roüen",
+   "now": "de Roüen",
+   "evidence": "Column-ink measurement on the PRIMARY CCITT raster, not judged by eye. The 'd' ends at x526 and the 'R' begins at x572 -- a 46 px gap. Word spaces elsewhere on the same line measure 27, 29 and 27 px, and the 'e' of 'Roüen' on that same line is 22 px wide: 22 + 27 = 49 ~= 46. The gap is therefore one 'e' plus a word space, not a word space alone. NEGATIVE CONTROL: a real period sort on this page (the point after '3.' in the date line) measures 10 x 12 px; the mark in this gap measures 3 x 2 px -- 1/25 the area -- and sits at the baseline where an 'e' bowl bottoms out. It is not a period.",
+   "reading": "'de Roüen' with the 'e' failed to ink. The prior file's own third alternative, now measured rather than left open."
+  },
+  {
+   "line_index": 5,
+   "was": "Marchans",
+   "now": "Marchands",
+   "evidence": "Connected-run measurement between the 'n' and the 's': a baseline blob 8 px wide x 7 px tall (rows 33-39) followed by a narrow full-ascender stroke 6 px wide x 42 px tall (rows 0-41). That is the ascender of a 'd' plus the foot of its bowl, with the bowl itself failed -- not a foxing point plus an i-height stroke, which would not reach ascender height. The two fragments span x2225-2247 (23 px), inside a normal 'd' footprint.",
+   "reading": "'Marchands', agreeing with the singular 'Marchand' on line 2 and the standard privilege formula 'Marchands Libraires'."
+  },
+  {
+   "line_index": 9,
+   "was": "Donnees",
+   "now": "Données",
+   "evidence": "Not previously flagged. At 3x on the primary raster the second 'e' carries a clear inked acute -- a substantial slanted stroke well clear of the letter, not a speck.",
+   "reading": "'Données'."
+  }
+ ],
+ "reread": {
+  "at": "2026-08-06",
+  "by": "Jarvis",
+  "roadmap": "R6.5",
+  "raster": "ocr-spike/witness/prelims-OT-M/OT-1635-M_2070.png",
+  "raster_note": "The ORIGINAL observation (2026-07-20, retained above) was made on the S6 jp2 at 5100x6601. The later per-item primacy finding established that M is PDF-primary: the PDF holds the real ~2955x4206 CCITT and the jp2 is a 1.73x RENDER of it. The original read was therefore taken on an interpolated image, and its 5x word zooms were effectively ~8.6x the real raster. This re-read extracts the embedded CCITT XObject directly (witness/extract_pdf_leaves.py) -- no rasterisation in the loop.",
+  "why_it_matters": "Upscaling is what created both open questions. Interpolation rounds a 3x2 speck into a plausible point ('d.') and smears a failed 'd' bowl into a point-plus-stroke ('Marchans'). Same defect class as R6.6: the rule and the observer were sound, the IMAGE was derived. Third instance now on record.",
+  "unchanged": "Every other line, the heading, the colophon line, the long-s regime (17), and the w/vv finding (0 w, 0 vv -- not applicable, French text) are confirmed on the primary raster."
+ },
+ "_ocr_dir_original": "jp2-S06",
+ "_raster_original": "ocr-spike/.gt-rasters/privilege-scan/p2070.png",
+ "_scan_original": "S6",
+ "raster_provenance": "PRIMARY: the CCITT XObject embedded in S06.pdf, extracted by witness/extract_pdf_leaves.py -- no rasterisation in the loop. The original 2026-07-20 read used the S06 jp2, a 1.73x render of this; see `reread`. Original fields retained as _*_original."
 }
