@@ -37,10 +37,22 @@ def main():
                 print(f"  {wid:14s}  (inventory not yet built)"); continue
             i, j, n = split(rec)
             block = j - i + 1
-            interior_blank = sum(1 for r in rec[i:j+1] if r["kind"] in ("BLANK", "PLATE", "BINDING"))
+            # A witness whose ink floor left BLANK/SPARSE unresolvable carries
+            # TEXT? leaves.  Printing 0 interior blanks for it would report a
+            # measurement that was never taken, and a reader would take the
+            # zero for the finding "this copy has no interior blanks".
+            unresolved = any(r["kind"] == "TEXT?" for r in rec)
+            ib = ("n/a" if unresolved else
+                  str(sum(1 for r in rec[i:j+1] if r["kind"] in ("BLANK", "PLATE", "BINDING"))))
+            # Leading and trailing runs are bounded by NONBOOK kinds, two of
+            # which (BLANK, SPARSE) cannot fire on an unresolvable witness.  So
+            # its lead/trail are LOWER BOUNDS -- a blank flyleaf would read as
+            # book block.  Marked '+' rather than printed as if counted.
+            b = "+" if unresolved else " "
             blocks[wid] = block
-            print(f"  {wid:14s} {n:6d} {i:5d} {block:6d} {n-1-j:6d} {interior_blank:9d} "
-                  f"{W.WITNESSES[(vol,s)]['role']}")
+            print(f"  {wid:14s} {n:6d} {i:4d}{b} {block:5d}{b} {n-1-j:5d}{b} {ib:>9s} "
+                  f"{W.WITNESSES[(vol,s)]['role']}"
+                  f"{'  [BLANK/SPARSE unresolvable; lead/trail are lower bounds]' if unresolved else ''}")
         if blocks:
             ref = max(blocks.values())
             print(f"  -- book-block deltas against the largest ({ref}):")

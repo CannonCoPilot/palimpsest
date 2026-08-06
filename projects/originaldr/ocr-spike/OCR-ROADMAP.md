@@ -54,6 +54,45 @@ the guard exists to make that error loud rather than plausible.
 from a warm-toned scan: a sepia rehost saturates as strongly as a colour plate. What marks a plate is
 standing out *against its own book*, so the cut is taken from each witness's own distribution.
 
+**R1.4 — the same argument applies to ink, and applying it to saturation alone was a bug.** The first
+reconciliation reported **zero** lead, trail and interior blanks for all three `F` witnesses, which reads
+as the finding *"the rehost stripped its blanks"*. It is not a finding. A contrast-boosted rehost raises
+its background everywhere, and the `F` ink floor is **0.196** against a BLANK cut of 0.010 — above the `B`
+witnesses' **median** of 0.25. `BLANK` and `SPARSE` could never fire on those witnesses, so the zero was
+the threshold's shape, not the book's.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R1.4 | Resolvability check before classification | `label()` tests each witness's ink floor **against the cut it is about to apply** and emits `TEXT?` where blanks are indistinguishable | the four re-uploads report **UNRESOLVABLE**, the six genuine captures are unaffected |
+| R1.5 | Summaries account for every leaf | per-kind counts printed for kinds *present*, with `sum == n` asserted | a new kind cannot drop out of the summary while `n` stays correct |
+| R1.6 | Offline relabelling | `witness/relabel.py` re-applies `label()` to stored features | a threshold revision costs seconds, not a ~40-minute image pass over ten witnesses |
+
+**The criterion had to be corrected once, and how it failed is worth keeping.** The first version asked
+whether the ink floor was a small fraction of the *median*, and that split the three `F` witnesses
+inconsistently — `OT1` tripped at 0.196/0.350 while `NT` passed at 0.193/0.409 — although not one of them
+has a single leaf below ink 0.06. The median is a property of the *text*, so a ratio against it measures
+contrast rather than detectability. The question is only ever **"could a blank leaf be caught by the cut
+about to be applied?"**, so the floor is compared to `BLANK_CUT`. That separates the corpus exactly:
+
+| class | ink floor | witnesses |
+|---|---|---|
+| genuine capture | **0.0000** | `B` ×3, `P` ×2, `R` |
+| re-upload | **14–20× the cut** (0.141–0.196) | `F` ×3, **`X`** |
+
+**`NT-1582-X` was the fourth, and it was not predicted** — the check found it. And `NT-1633-R` sits in the
+genuine class *because* its original was acquired (R4.4), so this is a fourth corroboration of the primacy
+split of §1.2, arrived at from an unrelated measurement.
+
+**Why this is R1.4 and not a footnote.** Zero is a measurement; *unmeasurable* is not, and the two must not
+print the same. The failure mode is the one this project keeps meeting — a derived or degraded artefact
+returning a well-formed number that reads as evidence. R1.5 exists because the summary enumerated a fixed
+list of kinds, so `TEXT?` would have vanished from the totals while `n` stayed right: the unresolved leaves
+would have looked accounted for.
+
+**Consequence for `F`.** These witnesses are structure-only (§1.2), and this narrows that further: they can
+carry **page order**, but they **cannot be used to assess completeness** — whether a leaf is wanting, blank
+or supplied is not recoverable from them. Completeness rests on the `B` and `P` witnesses.
+
 ---
 
 ## R2 — Structural inventory (Gate 0b, stage 2)

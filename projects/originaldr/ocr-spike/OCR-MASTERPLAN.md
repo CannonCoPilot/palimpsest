@@ -300,6 +300,20 @@ derivation chain above: `S01` is a re-processed set, not a capture.
 > 800 × 1124 (above). The conclusion is unchanged and better grounded: S01 is disqualified on **measured
 > resolution**, directly, with no inference about upsampling required.
 
+**The re-uploads cannot answer completeness questions either, and this narrows "structure-only".** Their
+processing raises the whole leaf, so their ink floors sit **14–20× above the threshold that defines a blank
+leaf** — 0.141 for `S08`, 0.188–0.196 for the three `S01` volumes, against 0.010 — while every genuine
+capture floors at **exactly 0.0000**. A blank leaf is therefore not distinguishable from a lightly-printed
+one anywhere in those four files. The leaf inventory reports `BLANK`/`SPARSE` as **UNRESOLVABLE** for them
+rather than as zero, and their leading and trailing runs as **lower bounds**: a zero would have read as the
+finding *"the rehost stripped its blanks"*, which the measurement cannot support (roadmap R1.4).
+**They carry page order; whether a leaf is wanting, blank or supplied rests on the `B` and `P`
+witnesses.**
+
+> This is a fourth line of evidence for the split in §1.2, and an unplanned one — the ink floor has nothing
+> to do with derivation chains, page boxes or spectra. It sorts the ten witnesses into the same two groups,
+> and `NT/S04` moved from the second group to the first when its original was acquired.
+
 **`NT/S08` is empty magnification — it is not a witness.** It is dimensionally an exact **2.000×** of
 `NT/S09` (aspect ratio identical to five decimals) and correlates with it at **NCC = 1.000** at a constant
 leaf offset. Downsampled to S09's grid it matches at **0.9847**. The decisive test is spectral:
