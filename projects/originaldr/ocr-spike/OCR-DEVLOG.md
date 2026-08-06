@@ -263,3 +263,87 @@ exactly as §1.1 predicts from the correlation evidence.
   sheet across the five leaves), and where neither class is a clear minority the image is **left alone and
   the caller told loudly** rather than a coin being flipped — the same failure mode as the absolute ink
   threshold that made `F`'s blank leaves unresolvable.
+
+---
+
+## Session 6 — R6.3, and a contaminated leaf found sitting in ground truth
+
+### The Censure, re-grounded
+
+The Censure had already been transcribed and Sir-reviewed — from **`NT-1582-X`'s 138 ppi spliced
+substitute**, which is the same setting at the worst raster in the corpus for that leaf. `M` carries it at
+2617 × 4149 against roughly 771 × 1103: about **3.4× linear**. Not a new witness to a new text; the same
+reading at a raster that can be read. Three flagged uncertainties settled:
+
+| flagged | resolved on `M` |
+|---|---|
+| `vitæque` / `vitǽque` | **`vitǽque`** — the acute over the æ is unambiguous at 4× |
+| `lib. 1.` numeral | **`lib. 1. c. 3.`** — the 3 is the old-style descending form |
+| `aliíque` minim count | **`aliiíque`** — three i-strokes, the third carrying the acute |
+
+The minim call was **measured, not judged**. In the band above x-height the word carries four marks: the
+`l` ascender, two round dots (both rows 5–12, w = 8), and a larger slanted mark (rows 1–19, w = 13) — an
+acute, standing one full letter-pitch beyond the second dot, so over a *third* minim. The x-height stroke
+groups agree. Standard Latin is `aliíque`; the extra minim is the compositor's, and preserved.
+
+**This revises a correction Sir applied on 2026-07-23, and is flagged rather than changed silently.** He
+read `aliique` on the substitute, where two minims and an acute are not separable. It is not being
+overruled on judgement — it is being re-taken on a materially better image. Corroboration: `aliiíque` and
+`vitǽque` resolve in the *same* direction, both marking the enclitic `-que` with an acute. Two independent
+instances of one convention on one leaf is a stronger warrant than either reading alone.
+
+### The defect this exposed
+
+`matter-nt-preface.json` was filed as the NT Preface. **It transcribes the 1633 setting.** It was read from
+`NT-1582-F` page 4 — and F's Preface p. 1 is one of the two leaves F does not natively own, proven by
+blank-margin foxing to be the 1633 Princeton copy's. The text settles it independently of the foxing:
+
+| `M` (1582) | the filed GT |
+|---|---|
+| `auncient` | `ancient` |
+| `maner` | `manner` |
+| `text:& of the` | `text ; and of the` |
+| `THE PREFACE TO / THE READER TREATING OF` | `THE / PREFACE TO / THE READER TREATING` |
+| foliate **strapwork** headpiece | figured **grotesque** headpiece |
+
+Letter-count differences cannot be produced by two impressions of one forme. Reclassified, and **kept** —
+it is the only 1633 Preface p. 1 we hold, and the 1633 setting is an admitted witness — but barred from
+citation as a 1582 reading.
+
+**The instructive part is why it went unnoticed.** It was made when the plan believed no 1582 Preface p. 1
+survived anywhere, so there was **nothing to compare it against**. A false "survives nowhere" verdict does
+not merely leave a gap where evidence should be; it **removes the control that would have caught a
+misfiling**. That is a second and sharper cost of the `S06` exclusion, beyond the one already recorded at
+R4.5.
+
+### `w`/`vv` — the prelims face mixes them
+
+The standing per-face table gives *"NT 1582 roman body = real `w`."* On this leaf, in the smaller **prelims
+prose face**, both forms occur:
+
+- **`VVhich`** (4×) — a cap-height `V` then an x-height `v`: two sorts, clear gap, different heights.
+- **`word`** (4×) — a single sort whose medial strokes join at a shared apex serif, no gap. **On the same
+  line as `vve`, which is two sorts.**
+
+So the `w`/`vv` call on this face must be **glyph-driven, exactly as long-ſ already is**, and no blanket
+pass in either direction is safe. This does *not* trigger the global flip the guidelines contemplate: the
+scripture body face is a different fount and no existing scripture transcription is affected.
+
+Confidence is held at **medium and deliberately not raised** — at 380 ppi bitonal a `w` cut vv-style and a
+true `vv` pair sit near the discrimination limit, and all zooms were held at or below 4× because past ~5×
+the sort pixelates and proves nothing.
+
+### The ceiling, recorded as a ceiling
+
+`M`'s raster is 1-bit CCITT at ~380 ppi and **cannot be improved by any acquisition**: the base exemplar
+lacks these leaves, `X`'s copies are the spliced substitutes, and `M` has no continuous-tone original — the
+tone was discarded before the file existed. The `w`/`vv` uncertainty is therefore a **genuine ceiling, not
+a pending task**, and is recorded as one in both transcriptions.
+
+### Incidental corroboration
+
+`M`'s Preface leaf carries **manuscript underlinings and marginal pen strokes** — a reader's marks in the
+copy that was photographed. A facsimile in the strict sense, a redrawing, would not carry them. Independent
+physical support for the claim on which `M`'s admission rests: these are photographs of an original. The
+foot also gives signature **`a ij`** and catchword **`popular`**, and `M` leaf 3 opens `popular` — leaf
+order confirmed by the book itself rather than assumed from file order.

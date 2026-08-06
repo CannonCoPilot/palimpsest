@@ -211,8 +211,8 @@ frontmatter is complete.
 | # | step | deliverable | acceptance |
 |---|---|---|---|
 | R6.1 | Address `S06`'s two halves separately | registry entries `NT-1582-M` (leaves 2072–2871) and, if wanted, `OT-1635-M` (leaves 0–2070) | the OT/NT boundary at the blank leaf 2071 is asserted, not assumed; each half declares its own edition |
-| R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) |
-| R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor |
+| R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) — **DONE**, see below |
+| R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor — **DONE**, see below |
 | R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** |
 | R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French |
 
@@ -221,6 +221,43 @@ makes it interesting rather than merely descriptive: the 1635 edition states on 
 reprints the Kellam Douai edition, so **every difference in its prelims is a deliberate editorial act by
 the Rouen house**, not an independent transmission. That makes the difference report evidence about how the
 edition was understood in 1635, and it is the only such evidence the corpus contains.
+
+
+**R6.2 and R6.3 are DISCHARGED, and doing so exposed a defect in existing ground truth.**
+
+`witness/extract_pdf_leaves.py` extracts leaves from a PDF-primary witness by pulling the **embedded
+XObject** rather than rasterising the page, with the slice offset read from the registry in one place. All
+five prelim leaves are named: title page · **Censure and Approbation** · Preface p. 1 · two Preface
+openings. The Censure carries the two-line heading, no headpiece and no *"of the first Edition"* subtitle
+— the 1582 setting, exactly as the correlation evidence predicted.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R6.3a | **Reclassify `matter-nt-preface.json`** | the file is the **1633** setting, not the 1582 Preface it was filed as | **DONE** — reclassified, kept as the only 1633 Preface p.1 we hold, and barred from citation as a 1582 reading |
+| R6.3b | Sir to adjudicate `aliiíque` | a minim call that revises a correction Sir applied on the 138 ppi substitute | **OPEN** — flagged in the file, not silently changed |
+| R6.3c | Sir to note the **mixed `w`/`vv` prelims face** | the NT prelims prose face sets BOTH a real `w` and `vv` | **OPEN** — a blanket `vv`→`w` pass over the NT prelims would be wrong in both directions |
+
+**The ground-truth defect.** `matter-nt-preface.json` was filed as the NT Preface and transcribes the
+**1633 setting**: it was read from `NT-1582-F` page 4, and F's Preface p. 1 is one of the two leaves F does
+not natively own — proven by blank-margin foxing to be the 1633 Princeton copy's. The text settles it
+independently of the foxing: **`ancient` for `auncient`, `manner` for `maner`**, a different display break
+and a different headpiece. Letter-count differences cannot come from two impressions of one forme. This is
+exactly the contamination §1.4 exists to catch, and it was sitting in ground truth **unflagged** — because
+it was made when the plan believed no 1582 Preface p. 1 survived anywhere, so there was nothing to compare
+it against. **A false "survives nowhere" verdict does not merely leave a gap; it removes the control that
+would have caught a misfiling.** That is a second, sharper cost of the `S06` exclusion (R4.5).
+
+**What `M` resolved that the substitute could not.** The Censure had been transcribed from `NT-1582-X`'s
+138 ppi spliced substitute — the same setting, at the worst raster in the corpus for that leaf. `M` carries
+it ~3.4× larger and settles three flagged uncertainties: **`vitǽque`** (acute clear), **`lib. 1. c. 3.`**,
+and the minim count in **`aliiíque`** — three i-strokes, measured by connected-component count in the
+diacritic band rather than judged by eye. The last revises a correction Sir applied, and is flagged for him
+rather than changed silently.
+
+**What `M` cannot resolve, and why it stays that way.** The `w`/`vv` discrimination on these leaves is at
+the raster's limit and **cannot be improved by any acquisition**: the base exemplar lacks the leaves, `X`'s
+copy is the spliced substitute, and `M` has no continuous-tone original. This is a genuine ceiling, recorded
+as one — not a pending task.
 
 **Sequencing.** R6.2 and R6.3 are on the critical path — they close a gap in the NT that the plan wrongly
 believed unclosable. R6.4 and R6.5 are not: they are scholarly yield, and they must not delay the base
