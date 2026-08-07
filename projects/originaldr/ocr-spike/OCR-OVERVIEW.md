@@ -97,6 +97,17 @@ readings wherever no better-resolved witness has the leaf.
 > right and the evidence was not: `F` is disqualified on **measured resolution**, directly, with no
 > argument about upsampling needed.
 
+**Setting is now verified per witness, not attributed.** After the `F` correction the honest position was
+that *no* witness had ever been collated against a partner in its claimed setting — the concordance checked
+title pages, and a title page is what `F` borrowed — so eleven records were **unchecked, not sound**. They
+have since been checked: the printed page number, running head, sidehead, text and line breaks are compared
+at separated points against a same-setting partner. **Eleven of twelve agree at three or more matched
+printed pages, marginal apparatus included; no second mis-filing exists.** The twelfth, `OT-1635-M`, is the
+sole record of its setting and so cannot be collated at all — its date rests on its own colophon and the
+1634 privilege it prints, which is stated as the weaker evidence it is rather than counted as verification.
+Full report at plan §1.1b; enforced by `witness/test_setting_verified.py`, which fails when a registered
+witness has no readings, so a future addition cannot be assumed sound by silence.
+
 **ppi is calibrated, not assumed**: the Boston OT scan includes a ruler-and-target leaf; imperial and metric
 graduations agree to 2.7%, and the implied leaf size (5.6 × 8.0 in, a quarto) is correct for the edition.
 

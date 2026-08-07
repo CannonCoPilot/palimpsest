@@ -72,6 +72,26 @@ spans under 1.6 px. So `F` is barred from glyph-level work and from training dat
 wherever no better-resolved witness has the leaf**. *(The companion clause "and in the NT it carries prelims
 the base exemplar is missing" is withdrawn: it does, but from a different edition, so it is support.)*
 
+**Every witness's setting has now been checked, not assumed.** The `F` error was found by accident, and the
+uncomfortable follow-up question was how many others were wrong: the concordance had verified *title pages*,
+and a title page is what `F` borrowed, so eleven records were **unchecked rather than sound**. The audit
+(R8.4, reported at plan §1.1b) crops the head of leaves spread through each witness and compares the
+**printed page number, running head, sidehead, text and line breaks** against a partner in the same claimed
+setting. **Eleven of twelve are verified at three or more separated printed pages** — NT 1582 at pp. 149,
+309, 469, 629; NT 1633 at p. 147 and four more; OT1 at pp. 223, 457, 919; OT2 at pp. 243, 473, 931 —
+marginal apparatus agreeing line for line. **No second mis-filing exists.**
+
+The audit carries its own negative control, which is what makes the passes meaningful: at printed page 147
+under the *identical* running head *ACCORDING TO S. LVKE*, the 1582 base prints Luke 4:31 and the two 1633
+witnesses print Luke 7:44. The method visibly separates settings.
+
+> **The twelfth is not verified, and is named rather than counted.** `OT-1635-M` is the only record of the
+> 1635 Rouen setting held, so there is no partner to collate it against. Its date rests on internal evidence
+> — its own colophon and the 1634 privilege it prints. `witness/test_setting_verified.py` keeps it on an
+> explicit exemption list that **fails if a same-setting partner ever arrives** and is not then collated,
+> and the same test fails for any registered witness with no readings at all: absence must present as
+> absence, not pass by silence.
+
 **Gates 0a–0d**: bibliographic fields resolved · **collation and leaf inventory per copy** · **cross-source
 leaf map** · derivative-contamination guard. **No leaf is transcribed before its provenance and its
 correspondence are known** — three of the four NT files are made up, and it was invisible until the leaves

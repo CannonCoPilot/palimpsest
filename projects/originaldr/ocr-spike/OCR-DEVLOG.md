@@ -625,3 +625,99 @@ minutes of work, and it is the one nobody ran for four months.
   invalid for that reason before it was re-cropped.
 - `M` is bitonal CCITT, so **grayscale NCC against continuous-tone scans is a dead metric** — it returns
   0.067 even for two genuine 1582 title pages. A null from it is not evidence.
+
+## Session 10 — R8.4: every witness audited for setting, and the audit audited itself
+
+Session 9 ended with an uncomfortable statement: eleven of the twelve witness records were **unchecked, not
+sound**. `F`'s mis-filing had been found by accident, and the concordance that was supposed to catch such
+things had verified **title pages** — which is exactly what `F` borrowed. This session ran the check.
+
+### Method
+
+`witness/verify_setting.py` crops the head of a leaf, where the running head and the printed page number
+sit, at probes spread through each witness (22/42/62/82%, so no two are adjacent), and assembles one contact
+sheet per witness. Where two witnesses claiming a setting did not land on the same printed page, a second
+targeted pass put them there. **The criterion is agreement at the same *printed page*** — page number,
+running head, sidehead, text and line breaks together.
+
+Two things were deliberately not accepted as proof. **A constant leaf offset**, because that is a property
+of the binding and the digitisation while the page number is a property of the printing — and because it is
+not even reliably constant: `OT2-1610-B`'s drifts 10 → 12 across the volume, which is just its nine interior
+plate and blank leaves. And **a title page**, for the obvious reason.
+
+Leaf access goes through `leaves()`, which is admissible for all twelve: a render preserves page order and
+page content, and a page number survives interpolation. `M`'s JP2 package is the broken one, so its probes
+come from its PDF — its primary artefact anyway — via the existing extractor, which owns the `leaf_range`
+offset that puts M's leaf 0 at package page 2072. The fallback refuses to fire for a JP2-primary witness:
+an unreadable JP2 there is a defect, not a routing question.
+
+### Result — eleven verified, one unverifiable, no second mis-filing
+
+| setting | witnesses | matched printed pages |
+|---|---|---|
+| NT 1582 Rhemes | `B` · `M` · `X` | 149, 309, 469, 629 |
+| NT 1633 Rouen | `F` · `R` | 147 (this session), 332, 530, 682, 690 |
+| OT1 1609 Douai | `B` · `P` · `F` | 223, 457, 919 (`B`/`P` also 687; `P`/`F` also 222, 224, 918, 920) |
+| OT2 1610 Douai | `B` · `P` · `F` | 243, 473, 931 (`P`/`F` also 242, 244, 930, 932) |
+| OT 1635 Rouen | `M` alone | **none possible** |
+
+Agreement at each matched page is line-for-line **including the marginal apparatus**, which is what makes it
+setting identity rather than textual resemblance — OT1 p.223 carries the same sidehead `lawes.` and the same
+marginal *":: VVhere great faults are cōmitted, punishment is inflicted ac-"* in all three copies; OT2 p.473
+the same *"moueth a charitable hart to compassion. So the Prophet lamen-"*.
+
+**The negative control is the part worth keeping.** At printed page **147**, under the *identical* running
+head *ACCORDING TO S. LVKE*, `B` prints Luke 4:31 — *"And he vvent dovvne into Capharnaum a citie of
+Galilee"* — and `F` and `R` print Luke 7:44, *"vnto Simon : Doest thou see this woman?"*. Same page number,
+same running head, different text. §1.1c's whole finding, visible in one crop. A test that only ever passes
+tells you nothing about the corpus; this one demonstrably separates settings, which is what makes the eleven
+passes worth stating.
+
+A smaller thing worth recording: `OT1-1609-B`[719]'s page number is genuinely ambiguous by eye — 657 or 687
+— and was settled by the leaf offset, then confirmed when `P`[711] turned out to print **687** at the same
+section opening with the same ornamental band. That is a call resolved by corroboration rather than by the
+glyph, and it is flagged in §1.1b rather than passed over.
+
+### `OT-1635-M` is not verified — it is unverifiable, and that is a different sentence
+
+It is the sole record of the 1635 Rouen setting, so no partner exists to collate it against. Its date rests
+on **internal evidence**: its own colophon *M.DC.XXXV* and the ten-year privilege of 3 August 1634 that it
+prints, which must precede the printing it licenses. Respectable, and not this test.
+`witness/test_setting_verified.py` holds it in an explicit `SOLE_WITNESS` entry that records what the
+setting *does* rest on, and **fails if a same-setting partner ever arrives** and is not then collated —
+so the exemption cannot quietly outlive its reason.
+
+### What stops recurrence
+
+The guard fails when a registered witness has **no readings at all**. Absence presents as absence rather
+than passing by silence, which is the R1.4 rule — an unmeasurable quantity must not be emitted as a
+measurement — applied to provenance instead of to ink. Both branches proven by injection: a dropped witness
+and a verification standing on a single matched page each fail, and exit code 1 was checked rather than
+assumed.
+
+### The audit overstated its own result, and the guard caught it
+
+The first draft of the §1.1b table credited `OT1-1609-B` with matching at pp. 222, 224, 918 and 920. Those
+pages were read on the `P` and `F` crops; `B` was never probed at any of them. The `verified_pairs` list was
+hand-authored, and nothing checked that a page a pair *claims* is actually present in **both** witnesses'
+readings — so the guard would have passed a fabricated pair.
+
+That is the four-month defect at small scale: **a claim asserted in one file and unsupported in the file
+holding the evidence.** The check now exists, it failed on the real data, and the corrected figure is three
+shared points for `B` rather than seven. The conclusion did not change and the number was wrong, and those
+are different things.
+
+### New question the audit raised and cannot settle — R8.7
+
+`NT-1582-M` and `NT-1582-X` have the **same leaf count (800) and the same leaf-to-printed-page map at every
+probe** (176 → 149, 336 → 309, 496 → 469, 656 → 629), while `B` runs five leaves later throughout.
+Same-setting does not require that: page numbers must agree, leaf indices need not.
+
+Two readings are open and neither is asserted. Either both were reduced to the same book block by the same
+obvious convention — strip the library apparatus, begin at the title page — which for one edition yields one
+answer; or they share a source. **The existing record already argues against the second**: `B` lacks the
+Censure and Preface p.1 outright, `M` carries both, and §1.4 identifies `M` as the source of `X`'s two
+supplied leaves — a file cannot supply what it was derived from. R8.7 should test whether that argument
+holds before reaching for a new measurement, and ⚠ **`M` is bitonal CCITT, so grayscale NCC against a
+continuous-tone scan is a dead metric here** (0.067 for two genuine 1582 title pages); a null from it is not
+evidence.

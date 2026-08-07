@@ -102,6 +102,24 @@ at three separated points each. It is re-sigla'd `NT-1633-F` and reclassified as
 > registry, so a document claim and a code claim cannot drift apart silently. Both carry negative tests —
 > a guard that has never rejected anything is not known to work.
 
+**Every witness has now been audited for its edition, and no second mis-filing exists.** The `F` correction
+raised the question the plan could not answer that day: how many of the others were wrong? The concordance
+had verified title pages — and a title page is precisely what `F` borrowed — so eleven records stood
+**unchecked rather than sound**. Each has since been collated against a partner in its claimed setting on
+the printed page number, running head, sidehead, text and line breaks together. **Eleven of twelve agree at
+three or more separated printed pages**, marginal notes breaking at the same words. The audit also
+demonstrates that it *can* fail: at printed page 147 under the identical running head *ACCORDING TO S.
+LVKE*, the 1582 copy prints Luke 4:31 while the two 1633 copies print Luke 7:44 — the 1582/1633 boundary
+visible in a single crop, which is what makes the eleven passes worth stating.
+
+> **The twelfth is named, not counted.** `OT-1635-M` is the only record of the 1635 Rouen setting in the
+> corpus, so it has no partner and cannot be collated. Its date rests on internal evidence — its own
+> colophon and the ten-year privilege of 1634 that it prints, which must precede the printing it licenses.
+> That is respectable evidence and it is not this test, and the plan says so rather than rounding it up. The
+> guard holds it on an explicit exemption that **fails if a same-setting partner ever arrives**, and fails
+> for any registered witness with no readings at all — absence of evidence presents as absence, which is the
+> same rule the corpus adopted after a classifier once reported an unmeasurable quantity as zero.
+
 **Every volume has a base exemplar; the two OT tomes also have a same-setting surrogate** for resolving
 illegibility. The NT has none — which is why it alone needs the witness-support and frontmatter roles.
 

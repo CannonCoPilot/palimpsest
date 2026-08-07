@@ -118,6 +118,13 @@ assumed from the file extension**, and the `S06` row below was wrong on exactly 
 Root: `palimpsest/imports/Scripture/Bibles/DouayRheims_DR/sources/scans/`.
 `NT/S06` and `OT/S06` are two halves of **one** file, which is why eleven files carry twelve records.
 
+> **The `setting` column is now evidence, not attribution.** Until 2026-08-06 it recorded what each witness
+> was *believed* to attest, and for `NT/S01` that belief was wrong for four months. Every record has since
+> been collated against a partner in its claimed setting at three or more separated printed pages — the
+> **R8.4 audit, reported in full at §1.1b** — and `witness/test_setting_verified.py` fails if any registered
+> witness lacks that evidence. **Eleven of the twelve are verified; the twelfth, `OT-1635-M`, is the sole
+> record of its setting and therefore cannot be**, which the test states rather than passes over.
+
 **What the corpus actually contains, per setting**, is the number that governs the work:
 
 | setting | witnesses at usable resolution | note |
@@ -381,6 +388,114 @@ different editions attributes nothing. See **§1.1c**: `F`'s New Testament is th
 
 The comparison that section 1.1b was reaching for is `F` against `R`, its own edition — and there the
 constant leaf offset is **+4**, not 36.
+
+---
+
+#### The R8.4 setting audit — comparing every source against the others sharing its setting
+
+**Why this exists.** §1.1c records a witness that was mis-filed by edition for four months. It was found by
+accident. The obvious question is how many others are wrong, and the honest answer on 2026-08-06 was *we do
+not know, because no witness's setting had ever been collated against a partner* — the concordance had
+verified **title pages**, and a title page is precisely what `F` borrowed. Eleven records were **unchecked,
+not sound**. This is the audit that closes that gap.
+
+**Method.** For each witness, crop the head of the leaf — where the running head and the printed page number
+sit — at probe leaves spread through the book (`witness/verify_setting.py`, probes at 22/42/62/82% so that
+no two are adjacent), then read them. Where two witnesses claiming one setting did not land on the same
+printed page, a second targeted pass put them there. **The criterion is agreement at the same *printed
+page*: same page number, same running head and sidehead, same text, same line breaks.**
+
+Two things are deliberately *not* accepted as proof:
+
+- **A constant leaf offset.** It is cheap corroboration and it is not evidence of setting: the offset is a
+  property of the binding and the digitisation, while the page number is a property of the printing. It also
+  need not be constant — `OT2-1610-B`'s drifts 10 → 12 across the volume, which is simply its nine interior
+  plate and blank leaves doing what interior leaves do.
+- **A title page.** See §1.1c.
+
+Structural work only, so leaf access goes through `leaves()`, which is admissible for every witness: a
+render preserves page order and page content, and a page number survives interpolation intact. `M`'s JP2
+package is the known-broken one, so its probes are pulled from its PDF — which is its primary artefact
+anyway, and the extractor owns the `leaf_range` offset that puts M's leaf 0 at package page 2072.
+
+**Result — 11 of 12 verified, 1 structurally unverifiable.**
+
+| setting | witnesses | matched printed pages | verdict |
+|---|---|---|---|
+| **NT 1582 Rhemes** | `B` · `M` · `X` | **149, 309, 469, 629** | **verified** — all three agree at four points |
+| **NT 1633 Rouen** | `F` · `R` | **147**, 332, 530, 682, 690 | **verified** — p.147 read this session, the rest at §1.1c |
+| **OT1 1609 Douai** | `B` · `P` · `F` | all three at **223, 457, 919**; `B`/`P` also 687; `P`/`F` also 222, 224, 918, 920 | **verified** — all three agree |
+| **OT2 1610 Douai** | `B` · `P` · `F` | all three at **243, 473, 931**; `P`/`F` also 242, 244, 930, 932 | **verified** — all three agree |
+| **OT 1635 Rouen** | `M` alone | — none possible — | **NOT verified; sole witness to its setting** |
+
+**The evidence, stated so it can be checked rather than trusted.** At each matched page the agreement is
+line-for-line and includes the marginal apparatus, which is what makes it a setting identity rather than a
+textual resemblance:
+
+- **NT 1582 · p.309** — `B`[341], `X`[336], `M`[336] all print *OF THE APOSTLES*, `CHA. VII`, opening
+  *"cute? And they slevve them that foretold of the comming"*. Also matched at p.149 (`CHA. V`, *ACCORDING
+  TO S. LVKE*), p.469 (the same ornamental band above *THE SECOND*), p.629 (`CHA. X`, *TO THE HEBREVVES*).
+- **NT 1633 · p.147** — `F`[168] and `R`[171] both print *ACCORDING TO S. LVKE* over *"vnto Simon : Doest
+  thou see this woman ? I entred″ into thy house,"*, with the same marginal note *"Not only faith (as you
+  may perceiue) but loue or…"* breaking at the same words.
+- **OT1 1609 · p.223** — `B`[255], `P`[247], `F`[243] all print *EXODVS*, sidehead **`lawes.`**, opening
+  *"IF any man steale an oxe or a sheepe, and kil or sel it: he"*, with the marginal *":: VVhere great
+  faults are cōmitted, punishment is inflicted ac-"*. Matched again at p.457 (*DEVTERONOMIE*, sidehead
+  **`God and his people.`**) and p.919 (*PARALIPOMENON*, sidehead **`Ezechias.`**).
+- **OT2 1610 · p.473** — `B`[483], `P`[481], `F`[473] all print *OF ISAIE* over *"they shal lead them to the
+  torrent of willowes."*, with the marginal *"moueth a charitable hart to compassion. So the Prophet
+  lamen-"*. Matched again at p.243 (*OF PSALMES*, `PSALME CXXXI`) and p.931 (*OF MACHABEES*).
+
+**And the negative control, which is what gives the positives their force.** The method is only worth
+anything if it can separate settings, so: at **printed page 147 with the identical running head *ACCORDING
+TO S. LVKE***, `B` prints Luke 4:31 — *"And he vvent dovvne into Capharnaum a citie of Galilee"* — while
+`F` and `R` print Luke 7:44, *"vnto Simon : Doest thou see this woman?"*. **Same page number, same running
+head, different text.** That is the 1582/1633 boundary showing up in one crop, and it is the shape §1.1c's
+finding takes when you look for it directly instead of stumbling into it.
+
+**`OT-1635-M` is not verified and must not be recorded as though it were.** It is the only record of the
+1635 Rouen setting in the corpus, so there is no partner to collate it against. Its date rests on **internal
+evidence** — its own colophon *M.DC.XXXV* and the ten-year privilege of 3 August 1634 that it prints, which
+must precede the printing it licenses. That is good evidence and it is **not this test**, and the difference
+is the whole point of R8.4. `witness/test_setting_verified.py` carries it in an explicit `SOLE_WITNESS` list
+that states what the setting does rest on, and **fails if a same-setting partner ever appears** and is not
+then collated for real.
+
+**Was this thorough enough, and could it be wrong?** Four honest limits, one of them already realised:
+
+1. **Three to eight points is a sample, not a collation.** The probes are spread and non-adjacent, which
+   defeats the obvious failure (two editions running parallel for a stretch), and a made-up copy would have
+   to agree at every sampled point to escape. But a witness whose *middle* is supplied from another edition
+   while its sampled leaves are genuine would still pass. The full defence is the cross-source leaf map
+   (R3.2), not this test, and this test does not claim to replace it.
+2. **The first draft of this table overstated the OT1 result, and the guard caught it.** It credited `B`
+   with matching at pp. 222, 224, 918 and 920 — pages read on the `P` and `F` crops, which `B` was never
+   probed at. `test_setting_verified.py` now requires every page a pair claims to be present in **both**
+   witnesses' readings, and the corrected figure is three shared points for `B` rather than seven. The
+   conclusion is unchanged and the number was wrong, which is the distinction the guard exists to enforce:
+   a claim asserted in one file and unsupported in the file holding the evidence is the same defect class as
+   the four-month one, at a smaller scale.
+3. **The readings are mine, read by eye, not machine OCR.** They are recorded per witness in
+   `witness/setting-readings.json` with the leaf index that produced each one, so every claim here is
+   re-checkable against a named crop. One digit was genuinely ambiguous — `OT1-1609-B`[719], 657 or 687 —
+   and was resolved by the offset, i.e. by corroboration rather than by the glyph; it is flagged here
+   because that is exactly the kind of call that should not pass unremarked.
+4. **This test answers *setting*, and cannot answer *copy*.** Two digitisations of one edition agree at
+   every point it measures, whether or not they are the same physical book. That limit produced a live
+   question — see immediately below.
+
+**A new question this audit raised, which it cannot settle (roadmap R8.7).** `NT-1582-M` and `NT-1582-X`
+have the **same leaf count (800) and the same leaf-to-printed-page map at all four probes** — leaf 176 →
+p.149, 336 → 309, 496 → 469, 656 → 629 — while `B` runs five leaves later throughout. Same-setting alone
+does not require that: the page numbers must agree, the *leaf indices* need not. Two readings are open, and
+the plan asserts neither. Either both were reduced to the same book block by the same obvious convention —
+strip the library apparatus, start at the title page — which for one edition yields one answer; or they
+share a source. **What already argues against the second, and is not new evidence but old evidence read
+correctly:** `B` lacks the Censure and Preface p.1 outright, `M` carries both, and §1.4 identifies `M` as
+the source of `X`'s two supplied leaves. A file cannot supply what it was derived from. The discriminator is
+physical accident rather than structure, and the standing warning applies — `M` is bitonal CCITT, so
+grayscale NCC against a continuous-tone scan is a **dead metric** here (0.067 even for two genuine 1582
+title pages) and a null from it means nothing.
 
 ### 1.1c `F`'s New Testament is the 1633 Rouen edition, not the 1582 Rhemes
 

@@ -513,15 +513,46 @@ Full evidence at masterplan §1.1c.
 | R8.1 | Correct the registry | `year=1633`, `wid → NT-1633-F`, evidence in the record | tree rebuilds, 12/12 verified | **DONE** |
 | R8.2 | Guard the class of error | `setting()`, `witnesses_to()`, `assert_same_setting()` | `test_setting_guard.py` — cross-setting collation **refused**, both directions exercised | **DONE** |
 | R8.3 | Attribute `F`'s 1582 title page | it is the genuine 1582 Rhemes setting, **duplicated at leaves 0 and 2**, on a 1633 body | blank-paper correlation against `B`'s title page: a match ⇒ spliced from `B`'s scan; control-level ⇒ the copy is a made-up one. **State which, or state that neither is supported** | OPEN |
-| R8.4 | Re-audit **every** witness for setting, not just the suspected one | printed page + running head at ≥3 separated points per witness, against a known-good partner in its claimed setting | a table in §1.1c covering all twelve records; **any witness whose setting was never checked is named as unchecked, not assumed sound** | OPEN |
+| R8.4 | Re-audit **every** witness for setting, not just the suspected one | printed page + running head at ≥3 separated points per witness, against a known-good partner in its claimed setting | a table covering all twelve records; **any witness whose setting was never checked is named as unchecked, not assumed sound** | **DONE** — 11/12 verified, `OT-1635-M` named unverifiable; §1.1b |
 | R8.5 | Bind the plan's counts to the registry | `test_counts_vs_doc.py` | doc/registry disagreement **fails**, proven by a negative case | **DONE** |
 | R8.6 | Re-examine every ground-truth file taken from `NT/S01` | 9 files (`matter-nt-*`, `nt-marke-*`, `scripture-2john`, `scripture-matthew-28`) | each re-filed as **1633** or re-read on `B`; **none silently left labelled 1582** | OPEN — overlaps R7.3 |
 
-**R8.4 is the one that matters most, and it is uncomfortable.** The error was not found by a test; it was
-found by chasing an unrelated leaf-count discrepancy. **No witness's setting had ever been verified against
-a same-setting partner** — the concordance verified *title pages*, and a title page is exactly what `F`
-turns out to have borrowed. Until R8.4 runs, the correct statement is that eleven records are **unchecked**,
-not that they are sound. `F` is simply the one that happened to be looked at.
+**R8.4 was the one that mattered most, and it is now run.** The error was not found by a test; it was found
+by chasing an unrelated leaf-count discrepancy. **No witness's setting had ever been verified against a
+same-setting partner** — the concordance verified *title pages*, and a title page is exactly what `F` turns
+out to have borrowed. Eleven records were **unchecked**, not sound. `F` was simply the one that happened to
+be looked at.
+
+**Outcome (2026-08-06): eleven of twelve verified; no second mis-filing.** Every witness now agrees with a
+partner in its claimed setting at three or more separated printed pages — page number, running head,
+sidehead, text and line breaks together, marginal apparatus included. Full report and evidence at **§1.1b**
+(the acceptance criterion said §1.1c; the report went to §1.1b because that section already owns
+cross-witness comparison, and §1.1c stays the narrative of the `F` finding itself). The audit also supplies
+its own **negative control**: at printed p.147 under the identical running head *ACCORDING TO S. LVKE*, `B`
+prints Luke 4:31 and `F`/`R` print Luke 7:44 — the method visibly separates settings, so its positives are
+worth something.
+
+**The twelfth is `OT-1635-M`, and it is not verified — it is unverifiable by this method.** It is the sole
+record of the 1635 Rouen setting, so no partner exists. Its date rests on internal evidence: its own
+colophon *M.DC.XXXV* and the 1634 privilege it prints. That is stated, not glossed, and
+`witness/test_setting_verified.py` holds it in an explicit `SOLE_WITNESS` list which **fails if a partner
+ever appears** and is not then collated.
+
+**What now stops recurrence.** `test_setting_verified.py` fails when a registered witness has **no readings
+at all** — absence presents as absence rather than passing silently, which is the R1.4 rule applied to
+provenance. Both branches are proven by injection: a dropped witness and a verification standing on one
+matched page each fail the run, and exit code 1 is checked, not assumed.
+
+| # | step | deliverable | acceptance | status |
+|---|---|---|---|---|
+| R8.7 | Settle whether `NT-1582-M` and `NT-1582-X` share a source | they have the **same leaf count (800) and the same leaf→printed-page map at every probe**, while `B` runs 5 leaves later; same-setting does not require that | a stated verdict — **same source · independent copies · not resolvable on available evidence** — with the discriminator named. ⚠ **`M` is bitonal CCITT: grayscale NCC against a continuous-tone scan is a DEAD METRIC (0.067 for two genuine 1582 title pages) and a null from it is not evidence.** Use physical accident that survives binarisation, or argue from structure | OPEN |
+
+**R8.7 matters for a specific reason, not as tidiness.** §1.4 credits `M` with the corpus's only genuine
+1582 Censure and Preface p.1, and identifies it as the source of `X`'s two supplied leaves. If `M` and `X`
+shared a source that claim needs restating. **The existing evidence already argues against it and should be
+weighed first**: `B` lacks both leaves, `M` carries them, and a file cannot supply what it was derived from.
+That is an argument from the record, not a new measurement, and R8.7 should start by testing whether it
+holds rather than by reaching for a correlation.
 
 **R8.6 is the ground-truth blast radius.** Nine of the files audited under R7 declare `ocr_dir:
 archive-nt-1582` — that is `F`. They were read from a 1633 book while being recorded as 1582 readings. This
