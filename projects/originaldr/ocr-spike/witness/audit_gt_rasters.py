@@ -39,12 +39,11 @@ GT_LEGACY = {
     # Three identifiers appear in ground truth that the registry cannot address, and
     # each is resolved from the RECORD, not from the id.
     #
-    # `jp2-S06`: all three files are `matter-ot2-*` at leaves 2049-2070, and M's OT
-    # half is leaves 0-2070 (the NT half begins at 2071).  So the volume is read off
-    # the leaf index, which is evidence; the identifier itself remains ambiguous and
-    # the registry is right to refuse it.  R7.5a re-keys these to `jp2-S06ot`, after
-    # which this entry goes away rather than being maintained.
-    "jp2-S06":              ("OT", "M"),
+    # `jp2-S06` IS GONE FROM HERE (R7.5a, 2026-08-08).  All three files that carried it
+    # are re-keyed to `jp2-S06ot`, which the registry resolves, so the entry that used to
+    # guess where the registry refused has nothing left to guess about.  It was removed
+    # rather than kept "in case" -- an entry that resolves an ambiguous id is a standing
+    # guess, and a standing guess with no callers is one that fires on the next caller.
     # These two are not acquisitions at all -- they name the extraction directories
     # the prelims were read from, and they already carry the witness id in the path.
     "witness/prelims-M":    ("NT", "M"),

@@ -1,0 +1,15 @@
+{
+ "ocr_dir": "jp2-S06nt",
+ "books": [
+  "psalms",
+  "genesis",
+  "matthew",
+  "john",
+  "apocalypse"
+ ],
+ "n_pages": 800,
+ "verses": {},
+ "witness": "NT-1582-M",
+ "_rekeyed": "R7.5a: split from .corpus-localize-jp2-S06.json; `page` was the 1-based OCR file number and is now the 0-based witness-relative leaf.",
+ "_empty_because": "ZERO verses, and that is a property of the corpus rather than of this re-key. All 4,045 localized verses of the old `jp2-S06` set fell in the 1635 Rouen OT half. `NT-1582-M` is admitted for its PRELIMS and ENDMATTER -- it holds the only genuine 1582 Censure and Preface leaves in the corpus -- and its verse text was never localized. Recorded explicitly so the emptiness reads as a known absence rather than as a failed split (R1.4: an unmeasured thing must not present as a measurement)."
+}

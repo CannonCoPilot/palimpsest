@@ -960,3 +960,84 @@ gone too.**
 Negatives proven by injection, exit 1 each: a revived second `ocr_dir` map; a curated map drifted from the
 registry; the GT audit shadowing a registry entry; an artefact re-acquiring a `jp2_dir`; the dropped S09ot2
 offset. Restored to exit 0 after each.
+
+---
+
+## Session 12b — R7.5a: the boundary between two settings, read rather than calculated
+
+`jp2-S06` named a FILE: one 2,872-leaf package holding the **1635 Rouen Old Testament** and the **1582
+Rheims New Testament**, 53 years and two towns apart. Every record keyed to it named a setting only by
+accident of which half it happened to fall in. Splitting it is R7.5a.
+
+### The counts cannot answer the question, and that is the whole difficulty
+
+The registry gives the OT half 2,071 leaves and the NT half 800. The package holds 2,872. **One leaf is
+unaccounted for.** Arithmetic tells you a leaf is missing; it cannot tell you which testament it belongs to,
+and a plausible-looking answer was available in both directions.
+
+So all three candidates were rendered from `S06.pdf` and read:
+
+| package leaf | printed on it | verdict |
+|---|---|---|
+| 2070 | `FAVLTS ESCAPED IN THE PRINTING`, and beneath it `EXTRAICT DV PRIVILEGE DV ROY` — to Iean le Cousturier at Rouen, **1634** | last OT leaf |
+| 2071 | nothing at all: **0.00% ink** against 4–9% either side | **blank divider, in neither** |
+| 2072 | `THE NEVV TESTAMENT OF IESVS CHRIST` … `PRINTED AT RHEMES, by Iohn Fogny. 1582.`, woodcut border | first NT leaf |
+
+2,071 + 1 + 800 = 2,872, exactly. The registry was right all along, and the orphan is a blank sheet between
+the testaments. `witnesses.s06_volume()` **raises** for it. Assigning it to whichever side is convenient
+would invent a leaf for a setting, and **a leaf in neither setting is a third answer — collapsing a third
+answer into a binary is how a boundary moves without anyone deciding to move it.**
+
+The 1634 Rouen privilege on leaf 2070 is a bonus: it independently corroborates that M's OT half is the
+1635 Rouen edition, which the registry asserts from the colophon.
+
+### I got it wrong first, and the check is what caught it
+
+My first pass read the OCR file `S06_2071`, found `FAVLTS ESCAPED`, and concluded **the registry drops an OT
+leaf**. It does not. The OCR corpus is **1-based** (`S06_0001`…`S06_2872`) and every raster rendering of it
+is **0-based**, so OCR page N is package leaf N−1. Had I re-keyed on that reading I would have shifted the
+OT/NT boundary by one leaf — mis-assigning the testament of precisely the leaves the split exists to
+disambiguate. **The error was in the direction of the thing I was trying to prevent.**
+
+### The off-by-one was real, unrecorded, and older than this session
+
+`JP2_INDEX_OFFSET` had **no entry for `jp2-S06`**, which asserts alignment. It was not aligned. Text and
+image disagreed by one leaf on all 2,872 pages, silently — the identical defect `jp2-S09ot2` carries a
+verified −1 to prevent. Confirmed at two points ~1,000 leaves apart on content that cannot be mistaken: OCR
+`S06_2071` = `FAVLTS ESCAPED` = package 2070; OCR `S06_1029` = `THE SECOND TOME OF THE HOLIE BIBLE` =
+package 1028; and OCR `S06_1028` is empty where package 1027 is blank.
+
+The fix does not add two offset entries. The files are **renumbered 0-based and witness-relative**, like
+every other volume, so the offset ceases to exist rather than being written down. **An offset that does not
+need to exist is one that cannot be dropped in a later refactor.** After the split,
+`pixel_path("jp2-S06ot", 2070)` extracts package page 2070 and the OCR text for that index reads `FAVLTS
+ESCAPED`; `pixel_path("jp2-S06nt", 0)` extracts package 2072, the NT title page. Text and image agree for
+the first time.
+
+### ⚠ A dead metric was tried first and pointed the wrong way
+
+Before rendering anything I correlated per-leaf ink fraction against per-page OCR character count over 400
+leaves, expecting the true offset to stand out. It returns **r ≤ 0.13 at every offset from −3 to +3**, and
+its argmax is **+1** — the opposite of the truth. On bitonal CCITT with OCR this noisy the metric measures
+nothing, and a metric that measures nothing still produces a ranking. It is recorded because the ranking was
+there to be believed. *A null from a dead metric is not evidence, and neither is its maximum.*
+
+### Scope, stated rather than blurred
+
+Re-keyed: the OCR corpus (2,071 + 1 held aside + 800), the three ground-truth files, both addressing
+artefacts. The divider is **moved aside, not deleted** — it is a real leaf of a real book, and "we dropped
+one because it was blank" is a note nobody writes.
+
+**347 derived artefacts (95,548 occurrences) still carry the old id.** They are **R7.5a-2, open and
+blocking**, and they will be **regenerated, not edited** — patching a derived file is how a stale artefact
+acquires the appearance of a current one, which is R7.5d exactly. `audit_s06_keys.py` exits **2** for a
+regression in the authoritative sets and **1** while the backlog stands, so a defect and a backlog can never
+be mistaken for each other.
+
+One record was assigned on weaker evidence and says so in its own file: `matter-ot2-table-epistles.json`
+carries `page_index: null`, so the leaf-range test that placed the other two could not be run. It is
+assigned from its declared raster name and from a Table of Epistles being OT endmatter here — recorded as
+weaker, not quietly levelled up.
+
+Negatives proven by injection: the divider given a setting; a ground-truth file reverting to `jp2-S06`
+(exit 2, not 1); a half losing a leaf (exit 2).

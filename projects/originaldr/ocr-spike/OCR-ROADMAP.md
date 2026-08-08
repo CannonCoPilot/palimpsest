@@ -27,7 +27,7 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
 | R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4, R7.5a open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (347 derived artefacts to regenerate) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
 
 ### Open-items register
@@ -39,10 +39,10 @@ right and the paragraph is a bug to be fixed.
 **OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
 R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
 Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5a** · R8.3 · **R8.4b** · R8.6 · R8.7
+**R7.5a-2** · R8.3 · **R8.4b** · R8.6 · R8.7
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
-R6.5 · **R7.5** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
+R6.5 · **R7.5** · **R7.5a** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
 
@@ -532,10 +532,56 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.3 | Re-read the 39 `F`-based files on `B`/`P` | the bulk of the corpus | prioritise files whose loci `B` or `P` actually hold; report any locus neither holds rather than substituting `F` silently |
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
-| R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | **113,514 records carry `jp2-S06`**, which names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids. Also `archive-nt-1582` names 1582 for a 1633 witness | every record names a witness and a setting; `jp2-S06` raises until they do | OPEN — overlaps R8.6 |
+| R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | `jp2-S06` names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids | every record names a witness and a setting; `jp2-S06` raises until they do | **DONE 2026-08-08** — corpus, ground truth and addressing split; boundary READ, not inferred; an unrecorded off-by-one removed |
+| R7.5a-2 | Regenerate the derived artefacts that predate the split | 347 files / 95,548 occurrences still carry `jp2-S06` — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
 | R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
 | R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
 | R7.5d | Retire the routing table's **surviving OUTPUT** | `tome-map-v2.json` (2026-07-28, 4.7 MB, tracked) embedded all four wrong routes as literal `jp2_dir` / `jp2_file` strings. Deleting the table left its output routing, one indirection further out and with no guard on it | no tracked artefact carries an `ocr_dir` → raster path; addresses are witness + leaf index | **DONE 2026-08-08** — deleted (unbuildable until R7.5a); `master-source-list.json`'s one vestigial `jp2_dir` stripped; guarded |
+
+> **R7.5a DISCHARGED 2026-08-08 — and the boundary was READ, not inferred.**
+>
+> The arithmetic does not settle this question and it is worth seeing why. The registry gives `OT-1635-M`
+> 2,071 leaves and `NT-1582-M` 800; the package holds 2,872. **One leaf is unaccounted for**, and no count
+> can say which testament it belongs to — only which side of the ledger is short. All three candidate leaves
+> were rendered from `S06.pdf`, M's primary artefact, and read:
+>
+> | package leaf | what is printed on it | verdict |
+> |---|---|---|
+> | 2070 | `FAVLTS ESCAPED IN THE PRINTING`, and below it `EXTRAICT DV PRIVILEGE DV ROY` — granted to Iean le Cousturier at Rouen, dated **1634** | **last OT leaf** |
+> | 2071 | nothing. **0.00% ink** against 4–9% on its neighbours | **blank divider — in NEITHER witness** |
+> | 2072 | `THE NEVV TESTAMENT OF IESVS CHRIST` … `PRINTED AT RHEMES, by Iohn Fogny. 1582.`, in its woodcut border | **first NT leaf** |
+>
+> 2,071 + 1 + 800 = 2,872, with nothing left over. The registry's ranges were right; the missing leaf is a
+> blank sheet between two testaments, and `witnesses.s06_volume()` **raises** for it rather than folding it
+> into whichever side is convenient. A leaf in neither setting is a third answer, and collapsing a third
+> answer into a binary is exactly how a boundary quietly moves.
+>
+> **An unrecorded off-by-one was sitting underneath the re-key.** The OCR corpus for S06 was **1-based**
+> (`S06_0001`…`S06_2872`) while every rendering of it — JP2 package, JPEG re-acquisition, PDF — is
+> **0-based**. So OCR page N was package leaf N−1, and `JP2_INDEX_OFFSET` had **no entry for `jp2-S06`**,
+> which asserts alignment. Text and image disagreed by one leaf on all 2,872 pages, silently — the same
+> defect `jp2-S09ot2` carries an offset to prevent. Verified at two points ~1,000 leaves apart on
+> unmistakable content: OCR `S06_2071` is `FAVLTS ESCAPED`, which is package **2070**; OCR `S06_1029` is
+> `THE SECOND TOME OF THE HOLIE BIBLE`, which is package **1028**.
+>
+> The fix does **not** add two offset entries. The files are **renumbered 0-based and witness-relative**,
+> like every other volume, so the offset no longer exists rather than being recorded. *An offset that does
+> not need to exist is one that cannot be dropped in a later refactor.*
+>
+> ⚠ **A dead metric was tried first and would have given the wrong answer.** Correlating per-leaf ink
+> fraction against per-page OCR character count returns r ≤ 0.13 at **every** offset from −3 to +3 — no
+> signal at all — and its argmax is **+1**, the opposite of the truth. On bitonal CCITT with noisy OCR that
+> metric measures nothing. It is recorded because a null from a dead metric is not evidence, and this one
+> was ready to be read as evidence.
+>
+> Scope stated plainly: the **authoritative** record sets are re-keyed — the OCR corpus (2,071 + 1 + 800),
+> the three ground-truth files, and both addressing artefacts. **347 derived artefacts still carry the old
+> id and are R7.5a-2, OPEN and blocking.** They are regenerated, not edited. `audit_s06_keys.py` exits **2**
+> for a regression in the authoritative sets and **1** while the backlog stands, so the two are never
+> confused for one another.
+>
+> Negatives proven by injection: the divider being given a setting; a ground-truth file reverting to the
+> ambiguous id (exit 2, not 1); a half losing a leaf (exit 2).
 
 **The six call sites R7.5 breaks, named rather than left to be discovered.** These read
 `jp2_page.OCR_DIR_TO_JP2` at runtime and now raise:
@@ -794,6 +840,7 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_counts_vs_doc.py       # R8.2  §1.1 table agrees with the registry (12/12)
 ../ocr-venv/bin/python witness/test_setting_verified.py    # R8.4  no witness may lack setting readings
 ../ocr-venv/bin/python witness/test_raster_routing.py      # R7.5  ONE route to the pixels, and the guard is on it
+../ocr-venv/bin/python witness/audit_s06_keys.py          # R7.5a nothing is still keyed `jp2-S06` (exit 1 = derived artefacts pending)
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ```
 

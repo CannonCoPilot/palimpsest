@@ -266,6 +266,48 @@ S06_SPLIT = {
 }
 OCR_DIR_TO_WITNESS.update(S06_SPLIT)
 
+# WHERE the two settings meet, VERIFIED BY READING THE LEAVES (R7.5a, 2026-08-08).
+#
+# Not inferred from the leaf counts, which is what makes this trustworthy: the counts
+# alone leave one leaf of 2,872 unaccounted for, and an arithmetic argument cannot say
+# which testament that leaf belongs to.  All three were rendered from `S06.pdf` (M's
+# primary artefact) and read:
+#
+#   package 2070  `FAVLTS ESCAPED IN THE PRINTING` + `EXTRAICT DV PRIVILEGE DV ROY`,
+#                 the latter granted to Iean le Cousturier at Rouen and dated 1634 --
+#                 Old Testament errata and the OT's own privilege.  LAST OT LEAF.
+#   package 2071  BLANK.  0.00% ink at 40 dpi against 4-9% on its neighbours.  A
+#                 divider between the testaments; it belongs to NEITHER witness, and
+#                 assigning it to either would be inventing a leaf for a setting.
+#   package 2072  the New Testament title page: `THE NEVV TESTAMENT OF IESVS CHRIST`
+#                 ... `PRINTED AT RHEMES, by Iohn Fogny. 1582.`, in its woodcut
+#                 border.  FIRST NT LEAF, and 53 years from the leaf two before it.
+#
+# 2071 OT + 1 blank + 800 NT = 2872, which is the whole package with nothing left over.
+S06_LAST_OT_LEAF = 2070          # package index, inclusive
+S06_BLANK_DIVIDER = 2071         # package index; in neither witness
+S06_FIRST_NT_LEAF = 2072         # package index, inclusive
+
+
+def s06_volume(package_leaf):
+    """"OT" or "NT" for a leaf of the S06 package, or a loud error for the divider.
+
+    Takes a PACKAGE index (0-based, 0..2871).  The blank divider raises rather than
+    being folded into whichever side is convenient: a leaf that is in neither setting
+    is a third answer, and collapsing it to a binary is how a boundary quietly moves.
+    """
+    if not 0 <= package_leaf < 2872:
+        raise IndexError(f"S06 package leaf {package_leaf} outside 0..2871")
+    if package_leaf <= S06_LAST_OT_LEAF:
+        return "OT"
+    if package_leaf >= S06_FIRST_NT_LEAF:
+        return "NT"
+    raise ValueError(
+        f"S06 package leaf {package_leaf} is the BLANK DIVIDER between the 1635 Rouen "
+        f"Old Testament and the 1582 Rheims New Testament. It is in neither witness "
+        f"(verified: 0.00% ink). It has no setting, and giving it one would invent a "
+        f"leaf for whichever setting it was assigned to.")
+
 
 def witness_of(ocr_dir):
     """(vol, sig) for a legacy `ocr_dir`, or a loud error naming the alternative."""

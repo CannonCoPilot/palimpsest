@@ -1,315 +1,317 @@
 {
-  "locus": "matter/ot2-back/table-of-epistles-ot",
-  "page_kind": "table",
-  "page_index": null,
-  "ocr_dir": "jp2-S06",
-  "scan": "S6",
-  "raster": ".gt-rasters/matter-table-of-epistles-ot.png",
-  "raster_dpi": 180,
-  "page_label_printed": "1018",
-  "running_header": {
-    "left": "1018",
-    "center": "",
-    "right": ""
+ "locus": "matter/ot2-back/table-of-epistles-ot",
+ "page_kind": "table",
+ "page_index": null,
+ "ocr_dir": "jp2-S06ot",
+ "scan": "S6",
+ "raster": ".gt-rasters/matter-table-of-epistles-ot.png",
+ "raster_dpi": 180,
+ "page_label_printed": "1018",
+ "running_header": {
+  "left": "1018",
+  "center": "",
+  "right": ""
+ },
+ "catchword": null,
+ "layout_note": "Opening page of a lectionary INDEX table: 'A TABLE OF THE EPISTLES TAKEN FORTH OF THE OLD TESTAMENT, vpon certayne feſtitual dayes.' The whole page sits inside a double-ruled rectangular frame with a band of printer's-flower ornaments below the top-left page number (1018) and above the display title. STRUCTURE: this is a SINGLE full-width column of entries read straight top-to-bottom (NOT two side-by-side columns of entries). The 'columnar' character is WITHIN each row: every row is a two-field record pairing a FEAST / OCCASION label (left, roman upright type) with its SCRIPTURE REFERENCE (right, italic) — e.g. 'S. Iohn Euangeliſt. | Eccli. 15. v. 1. to v. 7.'. Reference syntax = book-abbreviation + chapter + verse range ('v. X. to v. Y.', or 'to Y', or 'to the end', or '& ca. Z' for a second chapter, '& v.' for an extra verse). Two exceptions: line_index 15 ('S. Iohn ante portam Latinam, the ſame.') gives a cross-reference 'the ſame.' instead of a citation; line_index 28 (the Anniversary of the dead) is set ENTIRELY in italic. The reference range-connector is set in an italic sort that renders almost identically to the numeral '10'; it is the WORD 'to' (proved by the fully spelled-out 'to the end' / 'to the v.' forms) and is transcribed 'to' throughout. GLYPH REGIMES: roman occasions/rubric and italic references BOTH use a real single 'w' sort (e.g. 'new', 'Mathew') — there is NO 'vv' anywhere on this page. long-ſ is glyph-driven. The page is heavily FOXED (many raised ink dots); several dots read like stray points, so exact period placement inside references is approximate. Foot-of-page right-justified quire signature 'NA' (binder's mark). No true catchword.",
+ "body": [
+  {
+   "line_index": 0,
+   "role": "title_display",
+   "text": "A",
+   "layout": "centered display capital"
   },
-  "catchword": null,
-  "layout_note": "Opening page of a lectionary INDEX table: 'A TABLE OF THE EPISTLES TAKEN FORTH OF THE OLD TESTAMENT, vpon certayne feſtitual dayes.' The whole page sits inside a double-ruled rectangular frame with a band of printer's-flower ornaments below the top-left page number (1018) and above the display title. STRUCTURE: this is a SINGLE full-width column of entries read straight top-to-bottom (NOT two side-by-side columns of entries). The 'columnar' character is WITHIN each row: every row is a two-field record pairing a FEAST / OCCASION label (left, roman upright type) with its SCRIPTURE REFERENCE (right, italic) — e.g. 'S. Iohn Euangeliſt. | Eccli. 15. v. 1. to v. 7.'. Reference syntax = book-abbreviation + chapter + verse range ('v. X. to v. Y.', or 'to Y', or 'to the end', or '& ca. Z' for a second chapter, '& v.' for an extra verse). Two exceptions: line_index 15 ('S. Iohn ante portam Latinam, the ſame.') gives a cross-reference 'the ſame.' instead of a citation; line_index 28 (the Anniversary of the dead) is set ENTIRELY in italic. The reference range-connector is set in an italic sort that renders almost identically to the numeral '10'; it is the WORD 'to' (proved by the fully spelled-out 'to the end' / 'to the v.' forms) and is transcribed 'to' throughout. GLYPH REGIMES: roman occasions/rubric and italic references BOTH use a real single 'w' sort (e.g. 'new', 'Mathew') — there is NO 'vv' anywhere on this page. long-ſ is glyph-driven. The page is heavily FOXED (many raised ink dots); several dots read like stray points, so exact period placement inside references is approximate. Foot-of-page right-justified quire signature 'NA' (binder's mark). No true catchword.",
-  "body": [
-    {
-      "line_index": 0,
-      "role": "title_display",
-      "text": "A",
-      "layout": "centered display capital"
-    },
-    {
-      "line_index": 1,
-      "role": "title_display",
-      "text": "TABLE OF THE",
-      "layout": "large centered display capitals (main title line 1)"
-    },
-    {
-      "line_index": 2,
-      "role": "title_display",
-      "text": "EPISTLES TAKEN FORTH",
-      "layout": "centered display capitals (main title line 2)"
-    },
-    {
-      "line_index": 3,
-      "role": "title_display",
-      "text": "OF THE OLD TESTAMENT,",
-      "layout": "centered display capitals (main title line 3); trailing comma as printed"
-    },
-    {
-      "line_index": 4,
-      "role": "subtitle",
-      "text": "vpon certayne feſtitual dayes.",
-      "face": "italic",
-      "has_uncertain": true,
-      "note": "'feſtitual' is a compositor typo for 'feſtiual' (festival) with an intrusive 't'; preserved as printed. 'vpon' = initial v for u."
-    },
-    {
-      "line_index": 5,
-      "role": "rubric_note",
-      "text": "The other feaſtes , and al the ſundayes haue their Epiſtles in the",
-      "face": "roman",
-      "line_end_hyphen": false,
-      "note": "explanatory rubric, physical line 1 of 2; French spacing (space before comma) preserved; continues on next line"
-    },
-    {
-      "line_index": 6,
-      "role": "rubric_note",
-      "text": "new Teſtament. As is there noted.",
-      "face": "roman",
-      "note": "explanatory rubric, physical line 2 of 2; 'new' uses a real roman w"
-    },
-    {
-      "line_index": 7,
-      "role": "table_row",
-      "text": "In the feaſt of our Bleſſed Ladies Conception. Prou. 8. v. 22. to the v. 36.",
-      "occasion": "In the feaſt of our Bleſſed Ladies Conception.",
-      "reference": "Prou. 8. v. 22. to the v. 36."
-    },
-    {
-      "line_index": 8,
-      "role": "table_row",
-      "text": "S. Iohn Euangeliſt. Eccli. 15. v. 1. to v. 7.",
-      "occasion": "S. Iohn Euangeliſt.",
-      "reference": "Eccli. 15. v. 1. to v. 7."
-    },
-    {
-      "line_index": 9,
-      "role": "table_row",
-      "text": "The Epiphanie. Iſaie 60. v. 1. to v. 7.",
-      "occasion": "The Epiphanie.",
-      "reference": "Iſaie 60. v. 1. to v. 7."
-    },
-    {
-      "line_index": 10,
-      "role": "table_row",
-      "text": "Candlemaſſe day. Malach. 3. v. 1. to v. 5.",
-      "occasion": "Candlemaſſe day.",
-      "reference": "Malach. 3. v. 1. to v. 5."
-    },
-    {
-      "line_index": 11,
-      "role": "table_row",
-      "text": "S. Thomas Aquinas. Sap. 7. v. 7. to v. 15.",
-      "occasion": "S. Thomas Aquinas.",
-      "reference": "Sap. 7. v. 7. to v. 15."
-    },
-    {
-      "line_index": 12,
-      "role": "table_row",
-      "text": "The Annunciation of our B. Ladie. Iſaie. 7. v. 11. to v. 16.",
-      "occasion": "The Annunciation of our B. Ladie.",
-      "reference": "Iſaie. 7. v. 11. to v. 16."
-    },
-    {
-      "line_index": 13,
-      "role": "table_row",
-      "text": "S. Marke. Ezechiel. 1. v. 5. to v. 14.",
-      "occasion": "S. Marke.",
-      "reference": "Ezechiel. 1. v. 5. to v. 14."
-    },
-    {
-      "line_index": 14,
-      "role": "table_row",
-      "text": "S. Philippe and S. Iames. Sap. 5. v. 1. to v. 6.",
-      "occasion": "S. Philippe and S. Iames.",
-      "reference": "Sap. 5. v. 1. to v. 6."
-    },
-    {
-      "line_index": 15,
-      "role": "table_row",
-      "text": "S. Iohn ante portam Latinam, the ſame.",
-      "occasion": "S. Iohn ante portam Latinam,",
-      "reference": "the ſame.",
-      "note": "whole reference field is the italic cross-reference 'the ſame.' (no scripture citation); Latin phrase 'ante portam Latinam' set roman"
-    },
-    {
-      "line_index": 16,
-      "role": "table_row",
-      "text": "The Natiuitie of S. Iohn Boptiſt. Iſa. 49. v. 1. to v. 6. & v. 23.",
-      "occasion": "The Natiuitie of S. Iohn Boptiſt.",
-      "reference": "Iſa. 49. v. 1. to v. 6. & v. 23.",
-      "has_uncertain": true,
-      "note": "'Boptiſt' is a compositor typo for 'Baptiſt' (o for a); the correct form 'Baptiſt' appears at line_index 22. Preserved as printed. 'Natiuitie' = u for v."
-    },
-    {
-      "line_index": 17,
-      "role": "table_row",
-      "text": "Viſitation of our B. Ladie. Cant. 2. v. 8. to v. 15.",
-      "occasion": "Viſitation of our B. Ladie.",
-      "reference": "Cant. 2. v. 8. to v. 15."
-    },
-    {
-      "line_index": 18,
-      "role": "table_row",
-      "text": "The octaue of S. Peter and S. Paul. Eccli. 44. v. 10. to v. 16.",
-      "occasion": "The octaue of S. Peter and S. Paul.",
-      "reference": "Eccli. 44. v. 10. to v. 16.",
-      "note": "'octaue' = u for v (octave)"
-    },
-    {
-      "line_index": 19,
-      "role": "table_row",
-      "text": "S. Marie Magdelen. Cant. 3. v. 2. to 6. & ca. 8. v. 6. to 8.",
-      "occasion": "S. Marie Magdelen.",
-      "reference": "Cant. 3. v. 2. to 6. & ca. 8. v. 6. to 8.",
-      "note": "'Magdelen' as printed (not 'Magdalen'); 'ca.' = caput (chapter) abbreviation; '&' ampersand as printed"
-    },
-    {
-      "line_index": 20,
-      "role": "table_row",
-      "text": "S. Anne. Prouerb. 31. v. 10. to the end of the chap.",
-      "occasion": "S. Anne.",
-      "reference": "Prouerb. 31. v. 10. to the end of the chap.",
-      "note": "'Prouerb' = u for v"
-    },
-    {
-      "line_index": 21,
-      "role": "table_row",
-      "text": "The Aſſumption of our B. Ladie. Eccli. 24. v. 11. to 21.",
-      "occasion": "The Aſſumption of our B. Ladie.",
-      "reference": "Eccli. 24. v. 11. to 21."
-    },
-    {
-      "line_index": 22,
-      "role": "table_row",
-      "text": "Decollation of S. Iohn Baptiſt. Iere. 1. v. 17. to the end.",
-      "occasion": "Decollation of S. Iohn Baptiſt.",
-      "reference": "Iere. 1. v. 17. to the end.",
-      "note": "correct 'Baptiſt' here vs typo 'Boptiſt' at line_index 16; 'Iere.' = Ieremie (Jeremiah)"
-    },
-    {
-      "line_index": 23,
-      "role": "table_row",
-      "text": "The Natiuitie of our B. Ladie. Prouerb. 8. v. 22. to 36.",
-      "occasion": "The Natiuitie of our B. Ladie.",
-      "reference": "Prouerb. 8. v. 22. to 36."
-    },
-    {
-      "line_index": 24,
-      "role": "table_row",
-      "text": "S. Mathew. Ezech. 1. v. 10. to 15.",
-      "occasion": "S. Mathew.",
-      "reference": "Ezech. 1. v. 10. to 15.",
-      "has_uncertain": true,
-      "note": "'Mathew' as printed (single t, real roman w); range-connector renders almost like the numeral '10' but is the word 'to' (see uncertain[])"
-    },
-    {
-      "line_index": 25,
-      "role": "table_row",
-      "text": "S. Martin. Eccli. 44. v. 25. & ca. 45. v. 1. to v. 9.",
-      "occasion": "S. Martin.",
-      "reference": "Eccli. 44. v. 25. & ca. 45. v. 1. to v. 9."
-    },
-    {
-      "line_index": 26,
-      "role": "table_row",
-      "text": "S. Cecilie. Eccli. 51. v. 13. to 18.",
-      "occasion": "S. Cecilie.",
-      "reference": "Eccli. 51. v. 13. to 18.",
-      "has_uncertain": true,
-      "note": "'Cecilie' ascender read as 'l' (standard St Cecilia); very slightly ambiguous l vs long-ſ at ~180 DPI"
-    },
-    {
-      "line_index": 27,
-      "role": "table_row",
-      "text": "S. Catherin. Eccli. 51. v. 1. to 13.",
-      "occasion": "S. Catherin.",
-      "reference": "Eccli. 51. v. 1. to 13.",
-      "has_uncertain": true,
-      "note": "'Catherin' as printed (no final e); abbreviation worn, read 'Eccli.' consistent with line_index 26 (could read 'Eccl:')"
-    },
-    {
-      "line_index": 28,
-      "role": "table_row",
-      "text": "In the Anniuerſarie of the dead. 2. Mach. 12. v. 42. to the end of the chapter.",
-      "occasion": "In the Anniuerſarie of the dead.",
-      "reference": "2. Mach. 12. v. 42. to the end of the chapter.",
-      "note": "ENTIRE row is italic (occasion + reference), unlike the roman-occasion / italic-reference rows above; 'Anniuerſarie' = u for v; '2. Mach.' = 2 Maccabees"
-    },
-    {
-      "line_index": 29,
-      "role": "signature",
-      "text": "NA",
-      "layout": "right-justified quire/gathering signature at foot of page, inside the frame, below the foot rule",
-      "note": "binder's gathering signature (two roman capitals), not scripture; excluded from any text concatenation"
-    }
-  ],
-  "apparatus": [
-    {
-      "kind": "ornament",
-      "position": "top",
-      "text": null,
-      "note": "Horizontal band of repeated printer's flowers / fleurons (arabesque type ornaments) spanning the text width, between the rule under the page number and the display title. Decorative; no text."
-    },
-    {
-      "kind": "border",
-      "position": "full-page",
-      "text": null,
-      "note": "Double-ruled rectangular frame (heavier outer rule + lighter inner rule) enclosing the whole page; worn / hand-inked appearance."
-    },
-    {
-      "kind": "rule",
-      "position": "top (under page number)",
-      "text": null,
-      "note": "Short horizontal rule under the top-left page number '1018', above the ornament band."
-    },
-    {
-      "kind": "rule",
-      "position": "foot",
-      "text": null,
-      "note": "Horizontal rule near the foot of the frame separating the table body from the signature line."
-    },
-    {
-      "kind": "signature",
-      "position": "foot-right",
-      "text": "NA",
-      "note": "Quire/gathering signature, two roman capitals, right-justified at the foot inside the frame; binder's mark, also recorded as body line_index 29."
-    }
-  ],
-  "uncertain": [
-    {
-      "line_index": 4,
-      "span": "feſtitual",
-      "note": "High-zoom (7x) reading is f-e-ſt(ligature)-i-t-u-a-l = 'feſtitual', a compositor typo for 'feſtiual' (festival) with an intrusive 't'. Preserved as printed per diplomatic rule."
-    },
-    {
-      "line_index": 16,
-      "span": "Boptiſt",
-      "note": "Clear at 5x: B-o-p-t-i-ſ-t = 'Boptiſt', a typo for 'Baptiſt' (o set for a). The correct 'Baptiſt' is printed at line_index 22 on this same page. Preserved as printed."
-    },
-    {
-      "line_index": 24,
-      "span": "to (Ezech. 1. v. 10. to 15.)",
-      "note": "The italic range-connector between '10' and '15' renders almost identically to the numeral '10'. Read as the word 'to' by table-wide consistency and by the spelled-out 'to the end' forms elsewhere. Applies to every 'to' in the reference column."
-    },
-    {
-      "line_index": 26,
-      "span": "Cecilie",
-      "note": "The ascender after 'Ceci' read as 'l' (St Cecilia = 'Cecilie'); at ~180 DPI the l is faintly separable from a long-ſ, but 'l' fits the name and the stroke shows no long-ſ nub."
-    },
-    {
-      "line_index": 27,
-      "span": "Eccli.",
-      "note": "Abbreviation worn on this line; transcribed 'Eccli.' to match the clearly-set 'Eccli.' at line_index 26. A colon-like terminal ('Eccl:') is possible but judged worn 'i.'."
-    },
-    {
-      "line_index": null,
-      "span": "reference points / foxing",
-      "note": "Page-wide: heavy foxing produces many raised dots; the exact number and placement of periods inside the italic references (e.g. 'v. 1. to v. 7.') is approximate. Numerals themselves were zoom-verified; interstitial points were not all individually adjudicated."
-    }
-  ],
-  "glyph_counts": {
-    "long_s_count_transcribed": 21,
-    "w_count": 2,
-    "vv_count": 0,
-    "note": "recompute long_s by counting U+017F in body[].text. w/vv: page has real 'w' only (roman + italic), zero 'vv'."
+  {
+   "line_index": 1,
+   "role": "title_display",
+   "text": "TABLE OF THE",
+   "layout": "large centered display capitals (main title line 1)"
   },
-  "observer": "agent:lectionary",
-  "observed_at": "2026-07-19",
-  "method": "visual-multimodal read of the ~180 DPI raster (diag-reocr/newmode-jp2/lectionary-table.png, source S6), read region-by-region with 3-7x LANCZOS word-level zoom on every line and targeted zooms on the title word 'feſtitual', 'Boptiſt', 'Magdelen', 'Mathew', 'Cecilie'/'Catherin', the final italic line and the foot signature; structural model = ground-truth/matter-nt-table.json (two-field tabular GT). No external text used as a spelling oracle; janvier/DR consulted only as a content sanity-check on which feast maps to which reference.",
-  "confidence": "Medium-high overall. HIGH on the roman occasion labels and on long-ſ/u-v/i-j decisions (word-level zoom on every line; page has real 'w' only, zero 'vv'). MEDIUM on the italic reference column: the range-connector renders like the numeral '10' and is transcribed 'to' by consistency + sense, and heavy foxing makes exact period placement approximate (numerals were zoom-verified). Preserved typos: 'feſtitual' (subtitle, for feſtiual) and 'Boptiſt' (line 16, for Baptiſt). 'Magdelen', 'Cecilie', 'Catherin', 'Mathew' verified as printed. Lower certainty on the smallest worn italic marks (e.g. line 27 'Eccli.') at ~180 DPI."
+  {
+   "line_index": 2,
+   "role": "title_display",
+   "text": "EPISTLES TAKEN FORTH",
+   "layout": "centered display capitals (main title line 2)"
+  },
+  {
+   "line_index": 3,
+   "role": "title_display",
+   "text": "OF THE OLD TESTAMENT,",
+   "layout": "centered display capitals (main title line 3); trailing comma as printed"
+  },
+  {
+   "line_index": 4,
+   "role": "subtitle",
+   "text": "vpon certayne feſtitual dayes.",
+   "face": "italic",
+   "has_uncertain": true,
+   "note": "'feſtitual' is a compositor typo for 'feſtiual' (festival) with an intrusive 't'; preserved as printed. 'vpon' = initial v for u."
+  },
+  {
+   "line_index": 5,
+   "role": "rubric_note",
+   "text": "The other feaſtes , and al the ſundayes haue their Epiſtles in the",
+   "face": "roman",
+   "line_end_hyphen": false,
+   "note": "explanatory rubric, physical line 1 of 2; French spacing (space before comma) preserved; continues on next line"
+  },
+  {
+   "line_index": 6,
+   "role": "rubric_note",
+   "text": "new Teſtament. As is there noted.",
+   "face": "roman",
+   "note": "explanatory rubric, physical line 2 of 2; 'new' uses a real roman w"
+  },
+  {
+   "line_index": 7,
+   "role": "table_row",
+   "text": "In the feaſt of our Bleſſed Ladies Conception. Prou. 8. v. 22. to the v. 36.",
+   "occasion": "In the feaſt of our Bleſſed Ladies Conception.",
+   "reference": "Prou. 8. v. 22. to the v. 36."
+  },
+  {
+   "line_index": 8,
+   "role": "table_row",
+   "text": "S. Iohn Euangeliſt. Eccli. 15. v. 1. to v. 7.",
+   "occasion": "S. Iohn Euangeliſt.",
+   "reference": "Eccli. 15. v. 1. to v. 7."
+  },
+  {
+   "line_index": 9,
+   "role": "table_row",
+   "text": "The Epiphanie. Iſaie 60. v. 1. to v. 7.",
+   "occasion": "The Epiphanie.",
+   "reference": "Iſaie 60. v. 1. to v. 7."
+  },
+  {
+   "line_index": 10,
+   "role": "table_row",
+   "text": "Candlemaſſe day. Malach. 3. v. 1. to v. 5.",
+   "occasion": "Candlemaſſe day.",
+   "reference": "Malach. 3. v. 1. to v. 5."
+  },
+  {
+   "line_index": 11,
+   "role": "table_row",
+   "text": "S. Thomas Aquinas. Sap. 7. v. 7. to v. 15.",
+   "occasion": "S. Thomas Aquinas.",
+   "reference": "Sap. 7. v. 7. to v. 15."
+  },
+  {
+   "line_index": 12,
+   "role": "table_row",
+   "text": "The Annunciation of our B. Ladie. Iſaie. 7. v. 11. to v. 16.",
+   "occasion": "The Annunciation of our B. Ladie.",
+   "reference": "Iſaie. 7. v. 11. to v. 16."
+  },
+  {
+   "line_index": 13,
+   "role": "table_row",
+   "text": "S. Marke. Ezechiel. 1. v. 5. to v. 14.",
+   "occasion": "S. Marke.",
+   "reference": "Ezechiel. 1. v. 5. to v. 14."
+  },
+  {
+   "line_index": 14,
+   "role": "table_row",
+   "text": "S. Philippe and S. Iames. Sap. 5. v. 1. to v. 6.",
+   "occasion": "S. Philippe and S. Iames.",
+   "reference": "Sap. 5. v. 1. to v. 6."
+  },
+  {
+   "line_index": 15,
+   "role": "table_row",
+   "text": "S. Iohn ante portam Latinam, the ſame.",
+   "occasion": "S. Iohn ante portam Latinam,",
+   "reference": "the ſame.",
+   "note": "whole reference field is the italic cross-reference 'the ſame.' (no scripture citation); Latin phrase 'ante portam Latinam' set roman"
+  },
+  {
+   "line_index": 16,
+   "role": "table_row",
+   "text": "The Natiuitie of S. Iohn Boptiſt. Iſa. 49. v. 1. to v. 6. & v. 23.",
+   "occasion": "The Natiuitie of S. Iohn Boptiſt.",
+   "reference": "Iſa. 49. v. 1. to v. 6. & v. 23.",
+   "has_uncertain": true,
+   "note": "'Boptiſt' is a compositor typo for 'Baptiſt' (o for a); the correct form 'Baptiſt' appears at line_index 22. Preserved as printed. 'Natiuitie' = u for v."
+  },
+  {
+   "line_index": 17,
+   "role": "table_row",
+   "text": "Viſitation of our B. Ladie. Cant. 2. v. 8. to v. 15.",
+   "occasion": "Viſitation of our B. Ladie.",
+   "reference": "Cant. 2. v. 8. to v. 15."
+  },
+  {
+   "line_index": 18,
+   "role": "table_row",
+   "text": "The octaue of S. Peter and S. Paul. Eccli. 44. v. 10. to v. 16.",
+   "occasion": "The octaue of S. Peter and S. Paul.",
+   "reference": "Eccli. 44. v. 10. to v. 16.",
+   "note": "'octaue' = u for v (octave)"
+  },
+  {
+   "line_index": 19,
+   "role": "table_row",
+   "text": "S. Marie Magdelen. Cant. 3. v. 2. to 6. & ca. 8. v. 6. to 8.",
+   "occasion": "S. Marie Magdelen.",
+   "reference": "Cant. 3. v. 2. to 6. & ca. 8. v. 6. to 8.",
+   "note": "'Magdelen' as printed (not 'Magdalen'); 'ca.' = caput (chapter) abbreviation; '&' ampersand as printed"
+  },
+  {
+   "line_index": 20,
+   "role": "table_row",
+   "text": "S. Anne. Prouerb. 31. v. 10. to the end of the chap.",
+   "occasion": "S. Anne.",
+   "reference": "Prouerb. 31. v. 10. to the end of the chap.",
+   "note": "'Prouerb' = u for v"
+  },
+  {
+   "line_index": 21,
+   "role": "table_row",
+   "text": "The Aſſumption of our B. Ladie. Eccli. 24. v. 11. to 21.",
+   "occasion": "The Aſſumption of our B. Ladie.",
+   "reference": "Eccli. 24. v. 11. to 21."
+  },
+  {
+   "line_index": 22,
+   "role": "table_row",
+   "text": "Decollation of S. Iohn Baptiſt. Iere. 1. v. 17. to the end.",
+   "occasion": "Decollation of S. Iohn Baptiſt.",
+   "reference": "Iere. 1. v. 17. to the end.",
+   "note": "correct 'Baptiſt' here vs typo 'Boptiſt' at line_index 16; 'Iere.' = Ieremie (Jeremiah)"
+  },
+  {
+   "line_index": 23,
+   "role": "table_row",
+   "text": "The Natiuitie of our B. Ladie. Prouerb. 8. v. 22. to 36.",
+   "occasion": "The Natiuitie of our B. Ladie.",
+   "reference": "Prouerb. 8. v. 22. to 36."
+  },
+  {
+   "line_index": 24,
+   "role": "table_row",
+   "text": "S. Mathew. Ezech. 1. v. 10. to 15.",
+   "occasion": "S. Mathew.",
+   "reference": "Ezech. 1. v. 10. to 15.",
+   "has_uncertain": true,
+   "note": "'Mathew' as printed (single t, real roman w); range-connector renders almost like the numeral '10' but is the word 'to' (see uncertain[])"
+  },
+  {
+   "line_index": 25,
+   "role": "table_row",
+   "text": "S. Martin. Eccli. 44. v. 25. & ca. 45. v. 1. to v. 9.",
+   "occasion": "S. Martin.",
+   "reference": "Eccli. 44. v. 25. & ca. 45. v. 1. to v. 9."
+  },
+  {
+   "line_index": 26,
+   "role": "table_row",
+   "text": "S. Cecilie. Eccli. 51. v. 13. to 18.",
+   "occasion": "S. Cecilie.",
+   "reference": "Eccli. 51. v. 13. to 18.",
+   "has_uncertain": true,
+   "note": "'Cecilie' ascender read as 'l' (standard St Cecilia); very slightly ambiguous l vs long-ſ at ~180 DPI"
+  },
+  {
+   "line_index": 27,
+   "role": "table_row",
+   "text": "S. Catherin. Eccli. 51. v. 1. to 13.",
+   "occasion": "S. Catherin.",
+   "reference": "Eccli. 51. v. 1. to 13.",
+   "has_uncertain": true,
+   "note": "'Catherin' as printed (no final e); abbreviation worn, read 'Eccli.' consistent with line_index 26 (could read 'Eccl:')"
+  },
+  {
+   "line_index": 28,
+   "role": "table_row",
+   "text": "In the Anniuerſarie of the dead. 2. Mach. 12. v. 42. to the end of the chapter.",
+   "occasion": "In the Anniuerſarie of the dead.",
+   "reference": "2. Mach. 12. v. 42. to the end of the chapter.",
+   "note": "ENTIRE row is italic (occasion + reference), unlike the roman-occasion / italic-reference rows above; 'Anniuerſarie' = u for v; '2. Mach.' = 2 Maccabees"
+  },
+  {
+   "line_index": 29,
+   "role": "signature",
+   "text": "NA",
+   "layout": "right-justified quire/gathering signature at foot of page, inside the frame, below the foot rule",
+   "note": "binder's gathering signature (two roman capitals), not scripture; excluded from any text concatenation"
+  }
+ ],
+ "apparatus": [
+  {
+   "kind": "ornament",
+   "position": "top",
+   "text": null,
+   "note": "Horizontal band of repeated printer's flowers / fleurons (arabesque type ornaments) spanning the text width, between the rule under the page number and the display title. Decorative; no text."
+  },
+  {
+   "kind": "border",
+   "position": "full-page",
+   "text": null,
+   "note": "Double-ruled rectangular frame (heavier outer rule + lighter inner rule) enclosing the whole page; worn / hand-inked appearance."
+  },
+  {
+   "kind": "rule",
+   "position": "top (under page number)",
+   "text": null,
+   "note": "Short horizontal rule under the top-left page number '1018', above the ornament band."
+  },
+  {
+   "kind": "rule",
+   "position": "foot",
+   "text": null,
+   "note": "Horizontal rule near the foot of the frame separating the table body from the signature line."
+  },
+  {
+   "kind": "signature",
+   "position": "foot-right",
+   "text": "NA",
+   "note": "Quire/gathering signature, two roman capitals, right-justified at the foot inside the frame; binder's mark, also recorded as body line_index 29."
+  }
+ ],
+ "uncertain": [
+  {
+   "line_index": 4,
+   "span": "feſtitual",
+   "note": "High-zoom (7x) reading is f-e-ſt(ligature)-i-t-u-a-l = 'feſtitual', a compositor typo for 'feſtiual' (festival) with an intrusive 't'. Preserved as printed per diplomatic rule."
+  },
+  {
+   "line_index": 16,
+   "span": "Boptiſt",
+   "note": "Clear at 5x: B-o-p-t-i-ſ-t = 'Boptiſt', a typo for 'Baptiſt' (o set for a). The correct 'Baptiſt' is printed at line_index 22 on this same page. Preserved as printed."
+  },
+  {
+   "line_index": 24,
+   "span": "to (Ezech. 1. v. 10. to 15.)",
+   "note": "The italic range-connector between '10' and '15' renders almost identically to the numeral '10'. Read as the word 'to' by table-wide consistency and by the spelled-out 'to the end' forms elsewhere. Applies to every 'to' in the reference column."
+  },
+  {
+   "line_index": 26,
+   "span": "Cecilie",
+   "note": "The ascender after 'Ceci' read as 'l' (St Cecilia = 'Cecilie'); at ~180 DPI the l is faintly separable from a long-ſ, but 'l' fits the name and the stroke shows no long-ſ nub."
+  },
+  {
+   "line_index": 27,
+   "span": "Eccli.",
+   "note": "Abbreviation worn on this line; transcribed 'Eccli.' to match the clearly-set 'Eccli.' at line_index 26. A colon-like terminal ('Eccl:') is possible but judged worn 'i.'."
+  },
+  {
+   "line_index": null,
+   "span": "reference points / foxing",
+   "note": "Page-wide: heavy foxing produces many raised dots; the exact number and placement of periods inside the italic references (e.g. 'v. 1. to v. 7.') is approximate. Numerals themselves were zoom-verified; interstitial points were not all individually adjudicated."
+  }
+ ],
+ "glyph_counts": {
+  "long_s_count_transcribed": 21,
+  "w_count": 2,
+  "vv_count": 0,
+  "note": "recompute long_s by counting U+017F in body[].text. w/vv: page has real 'w' only (roman + italic), zero 'vv'."
+ },
+ "observer": "agent:lectionary",
+ "observed_at": "2026-07-19",
+ "method": "visual-multimodal read of the ~180 DPI raster (diag-reocr/newmode-jp2/lectionary-table.png, source S6), read region-by-region with 3-7x LANCZOS word-level zoom on every line and targeted zooms on the title word 'feſtitual', 'Boptiſt', 'Magdelen', 'Mathew', 'Cecilie'/'Catherin', the final italic line and the foot signature; structural model = ground-truth/matter-nt-table.json (two-field tabular GT). No external text used as a spelling oracle; janvier/DR consulted only as a content sanity-check on which feast maps to which reference.",
+ "confidence": "Medium-high overall. HIGH on the roman occasion labels and on long-ſ/u-v/i-j decisions (word-level zoom on every line; page has real 'w' only, zero 'vv'). MEDIUM on the italic reference column: the range-connector renders like the numeral '10' and is transcribed 'to' by consistency + sense, and heavy foxing makes exact period placement approximate (numerals were zoom-verified). Preserved typos: 'feſtitual' (subtitle, for feſtiual) and 'Boptiſt' (line 16, for Baptiſt). 'Magdelen', 'Cecilie', 'Catherin', 'Mathew' verified as printed. Lower certainty on the smallest worn italic marks (e.g. line 27 'Eccli.') at ~180 DPI.",
+ "witness": "OT-1635-M",
+ "_rekeyed": "R7.5a: assigned to `jp2-S06ot` WITHOUT a leaf index, which the other two had. This record carries `page_index: null`, so the leaf-range test that placed the others could not be run. It is assigned on two other grounds, both stated because neither is the index: its declared raster is `.gt-rasters/matter-table-of-epistles-ot.png`, and a Table of Epistles is OT endmatter in this volume. If either is wrong the assignment is wrong -- it is weaker evidence than the other two records have."
 }

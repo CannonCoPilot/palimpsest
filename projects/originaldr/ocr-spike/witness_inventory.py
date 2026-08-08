@@ -90,8 +90,12 @@ WITNESSES = {
         "copy": "D", "title": "1635 facsimile, whole Bible in one file (OT1/OT2 kept; NT dropped)",
         "scan_root": "S06_1610-facsimile-whole",
         "tomes": {
-            "OT1": {"year": 1635, "ocr_dir": "jp2-S06"},
-            "OT2": {"year": 1635, "ocr_dir": "jp2-S06"},
+            # R7.5a: `jp2-S06` named the whole 2,872-leaf FILE, both testaments. The OT
+            # half is one continuous run carrying both tomes -- package leaf 1028 is
+            # `THE SECOND TOME OF THE HOLIE BIBLE` -- so both point at the same re-keyed
+            # directory, which is now the OT witness and only the OT witness.
+            "OT1": {"year": 1635, "ocr_dir": "jp2-S06ot"},
+            "OT2": {"year": 1635, "ocr_dir": "jp2-S06ot"},
         },
         # S6's NT pages repeat the 1582 edition already carried by A, B and C. They are DROPPED, not scored —
         # counting them would add a fourth copy of one edition and inflate every cross-source agreement.

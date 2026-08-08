@@ -1,150 +1,938 @@
 {
-  "locus": "matter/ot2/faults-escaped",
-  "page_index": 2070,
-  "ocr_dir": "jp2-S06",
-  "scan": "S6",
-  "raster": "/tmp/jp2-S06-2070.png (from Douay-Rheims-1610-Bible_2070.jp2, opj fallback render)",
-  "page_label_printed": null,
-  "running_header": {"left": null, "center": null, "right": null},
-  "layout_note": "Back-matter errata leaf. Single ruled box; heading 'FAVLTS ESCAPED IN THE PRINTING.' at top, italic subtitle, then a densely-set single-column running errata list (entries run continuously, many per line, NOT one-per-line) under two sub-headings 'In the firſt Tome.' and 'IN THE SECOND TOME.', closing with a note 'We haue alſo found ſome other faults...'. Below a horizontal rule sits the French 'Extraict du Privilege du Roy' box — that box is EXCLUDED here (transcribed separately in matter-ot2-privilege-du-roi.json). No printed page number or running header. Ornamental floriated drop-cap initial ('P') opens the first errata entry. Body is roman; subtitle and the head/hand pair are italic; 'Correct' (2nd-tome opener) is bold. Reader/manuscript strikethrough marks cross 'roclaime' and 'thoſe places' on the 2nd-tome opening line.",
-  "body": [
-    {"line_index": 0, "role": "heading", "text": "FAVLTS ESCAPED IN THE PRINTING.", "face": "display-caps"},
-    {"line_index": 1, "role": "subtitle", "text": "The firſt word is the fault , the ſecond the correction.", "face": "italic"},
-    {"line_index": 2, "role": "subheading", "text": "In the firſt Tome."},
-    {"line_index": 3, "role": "list_line", "text": "Pref. §. but heer l. 24 returned , turned. Page 1. l. 9 daaknes. darknes. p. 2.", "drop_cap": "P"},
-    {"line_index": 4, "role": "list_line", "text": "l. 34. multitude, multiplie. p. 18. marg. in fine , Eccl. 46, Eccl. 44. p. 30. l."},
-    {"line_index": 5, "role": "list_line", "text": "32. at, al. p. 42. l. 7. liuer, liued. p. 45. l. 33. for 24, read 12. p. 87. l. 26. in, it. p."},
-    {"line_index": 6, "role": "list_line", "text": "92. l. vlt. aboue, about. p. 94. l. 6. in, into. p. 99. n. 7. way, we. Ibid. l. vlt. hath,"},
-    {"line_index": 7, "role": "list_line", "text": "had. p. 152 l. 32. in God, as God. p. 171. chap. 2. chap. 10. p. 194. l. 38. al, and al. For"},
-    {"line_index": 8, "role": "list_line", "text": "veſſel, read veſſels in theſe places, p. 208. l. 6. p. 211. l 13. p. 235. l. 17. 18. 19. 20."},
-    {"line_index": 9, "role": "list_line", "text": "p. 247. l. 2. 3. 7. p. 250. l. 19. 33. 34. p. 253. l. vlt. p 254. l. 4. 7. p. 25. p 254. l. 31. 32."},
-    {"line_index": 10, "role": "list_line", "text": "p 269. l. 12. p. 311. l. 15. p. 313 l. 21. p. 314. l. 11. p. 322. l. 3. 4. p. 212. l. penult. ſides"},
-    {"line_index": 11, "role": "list_line", "text": "the, ſides of the. p. 252. l. penult. the former, of the former. p. 200. l. 26. or, for."},
-    {"line_index": 12, "role": "list_line", "text": "p. 273 l. 9. ſperate, ſeparate. p. 276 l. 13. thy, they. p. 279 l. 22. ſhinne , skinne."},
-    {"line_index": 13, "role": "list_line", "text": "p. 285. l. 19. prayer, prayers. p. 300. l. came, campe. p. 310. l. 6. kinred, kinreds. p."},
-    {"line_index": 14, "role": "list_line", "text": "353. l. 28. the, to p. 358. l. 11. are, are the. p. 385. l. 16. table, tables. p. 396. or,"},
-    {"line_index": 15, "role": "list_line", "text": "of p. 396 l. 30. ſoone, ſonne. p. 401. l. 10. to, doe to. p. 4, 8. bewen, between. p."},
-    {"line_index": 16, "role": "list_line", "text": "497. l. 24. hundred, three hundred. p. 502. v. 41. A, And. p. 510. v. 7. that, the p."},
-    {"line_index": 17, "role": "list_line", "text": "544. v 30. fr, from. p. 548. v. 7. herefore, therfore. p. 555. v. 12. our, our Lord. p."},
-    {"line_index": 18, "role": "list_line", "text": "564 v. 21. That, The. p. 577. v. 27. ſpake, ſpeake. p 593. v. 6. ecan, ech. p. 597. l."},
-    {"line_index": 19, "role": "list_line", "text": "18. chitophel, Achitophel. p. 602. v. 9. head, hand. Ibid. v. 11. come to, come you."},
-    {"line_index": 20, "role": "list_line", "text": "p. 619. v. 44. Pherethi, Phelethi p. 643. l. 21. thy, my. p. 696. l. vlt. adde , King"},
-    {"line_index": 21, "role": "list_line", "text": "of Siria had broken. p. 728. v. 1. Ammon, Amnon. p 730. l. 3. day, this day. p. 731. v."},
-    {"line_index": 22, "role": "list_line", "text": "56. Caled, Caleb. p. 736. v. 38 and Iephone, Iephone. p. 732. l. 11. veſſel, veſſels."},
-    {"line_index": 23, "role": "list_line", "text": "p. 784. v. 11. p. 20. v. 3. hetooke , betooke p. 798. v. 10. They, When they p. 810."},
-    {"line_index": 24, "role": "list_line", "text": "v. 5. was, was he. p. 817. v. 13. Azaries, Azarias. p. 843. v. 4. 10, ſo many. p. 913."},
-    {"line_index": 25, "role": "list_line", "text": "v. 12. into, in to. p. 940. l. 16. p. 953. v. 15. the, they."},
-    {"line_index": 26, "role": "subheading", "text": "IN THE SECOND TOME.", "face": "display-caps"},
-    {"line_index": 27, "role": "list_line", "text": "Correct the roclaime in thoſe places. p. 18. open, we. p. 73. Neither. An.", "marks": "'Correct' bold; 'roclaime' and 'thoſe places' bear a horizontal strikethrough (possibly manuscript/reader mark)"},
-    {"line_index": 28, "role": "list_line", "text": "p. 151. they , this. p. 176. lin. vlt. adde, and after him Caſſiodorus and others :"},
-    {"line_index": 29, "role": "list_line", "text": "wherby it is probable that it was ſometimes in the Hebrew text , and blotted out"},
-    {"line_index": 30, "role": "list_line", "text": "by the Iewes. p. 228. the, vs p. 452. which, returne. Pag. 161. l. pen. adde: In al"},
-    {"line_index": 31, "role": "list_line", "text": "generations. p. 300. l. antepen. ſweere thy , ſweet to thy. p. 324. l. 7. wearre, warre."},
-    {"line_index": 32, "role": "list_line", "text": "p. 342. l. 22. this, his. p. 564. l. 29. hewhi chis, he which is. p. 399. l. 20. is a wiſe,"},
-    {"line_index": 33, "role": "list_line", "text": "is wiſe. p. 420. l. 32. be, he. p. 426. l. 19. in, is."},
-    {"line_index": 34, "role": "paragraph", "text": "We haue alſo found ſome other faults of leſſe importance, & feare there be more."},
-    {"line_index": 35, "role": "paragraph", "text": "But we truſt the Reader may eaſily correct them as they occurre, and beſeech thoſe"},
-    {"line_index": 36, "role": "paragraph", "text": "that ſhal ſet out the next Edition carefully to compare the text with the Latine."}
-  ],
-  "intervals": [
-    {"idx": 0, "kind": "heading", "text": "FAVLTS ESCAPED IN THE PRINTING.", "lines": [0]},
-    {"idx": 1, "kind": "subtitle", "text": "The firſt word is the fault , the ſecond the correction.", "lines": [1]},
-    {"idx": 2, "kind": "heading", "text": "In the firſt Tome.", "lines": [2]},
-    {"idx": 3, "kind": "list_item", "text": "Pref. §. but heer l. 24 returned , turned.", "lines": [3]},
-    {"idx": 4, "kind": "list_item", "text": "Page 1. l. 9 daaknes. darknes.", "lines": [3]},
-    {"idx": 5, "kind": "list_item", "text": "p. 2. l. 34. multitude, multiplie.", "lines": [3, 4]},
-    {"idx": 6, "kind": "list_item", "text": "p. 18. marg. in fine , Eccl. 46, Eccl. 44.", "lines": [4]},
-    {"idx": 7, "kind": "list_item", "text": "p. 30. l. 32. at, al.", "lines": [4, 5]},
-    {"idx": 8, "kind": "list_item", "text": "p. 42. l. 7. liuer, liued.", "lines": [5]},
-    {"idx": 9, "kind": "list_item", "text": "p. 45. l. 33. for 24, read 12.", "lines": [5]},
-    {"idx": 10, "kind": "list_item", "text": "p. 87. l. 26. in, it.", "lines": [5]},
-    {"idx": 11, "kind": "list_item", "text": "p. 92. l. vlt. aboue, about.", "lines": [5, 6]},
-    {"idx": 12, "kind": "list_item", "text": "p. 94. l. 6. in, into.", "lines": [6]},
-    {"idx": 13, "kind": "list_item", "text": "p. 99. n. 7. way, we.", "lines": [6]},
-    {"idx": 14, "kind": "list_item", "text": "Ibid. l. vlt. hath, had.", "lines": [6, 7]},
-    {"idx": 15, "kind": "list_item", "text": "p. 152 l. 32. in God, as God.", "lines": [7]},
-    {"idx": 16, "kind": "list_item", "text": "p. 171. chap. 2. chap. 10.", "lines": [7]},
-    {"idx": 17, "kind": "list_item", "text": "p. 194. l. 38. al, and al.", "lines": [7]},
-    {"idx": 18, "kind": "list_item", "text": "For veſſel, read veſſels in theſe places, p. 208. l. 6. p. 211. l 13. p. 235. l. 17. 18. 19. 20. p. 247. l. 2. 3. 7. p. 250. l. 19. 33. 34. p. 253. l. vlt. p 254. l. 4. 7. p. 25. p 254. l. 31. 32. p 269. l. 12. p. 311. l. 15. p. 313 l. 21. p. 314. l. 11. p. 322. l. 3. 4.", "lines": [7, 8, 9, 10]},
-    {"idx": 19, "kind": "list_item", "text": "p. 212. l. penult. ſides the, ſides of the.", "lines": [10, 11]},
-    {"idx": 20, "kind": "list_item", "text": "p. 252. l. penult. the former, of the former.", "lines": [11]},
-    {"idx": 21, "kind": "list_item", "text": "p. 200. l. 26. or, for.", "lines": [11]},
-    {"idx": 22, "kind": "list_item", "text": "p. 273 l. 9. ſperate, ſeparate.", "lines": [12]},
-    {"idx": 23, "kind": "list_item", "text": "p. 276 l. 13. thy, they.", "lines": [12]},
-    {"idx": 24, "kind": "list_item", "text": "p. 279 l. 22. ſhinne , skinne.", "lines": [12]},
-    {"idx": 25, "kind": "list_item", "text": "p. 285. l. 19. prayer, prayers.", "lines": [13]},
-    {"idx": 26, "kind": "list_item", "text": "p. 300. l. came, campe.", "lines": [13]},
-    {"idx": 27, "kind": "list_item", "text": "p. 310. l. 6. kinred, kinreds.", "lines": [13]},
-    {"idx": 28, "kind": "list_item", "text": "p. 353. l. 28. the, to.", "lines": [13, 14]},
-    {"idx": 29, "kind": "list_item", "text": "p. 358. l. 11. are, are the.", "lines": [14]},
-    {"idx": 30, "kind": "list_item", "text": "p. 385. l. 16. table, tables.", "lines": [14]},
-    {"idx": 31, "kind": "list_item", "text": "p. 396. or, of.", "lines": [14, 15]},
-    {"idx": 32, "kind": "list_item", "text": "p. 396 l. 30. ſoone, ſonne.", "lines": [15]},
-    {"idx": 33, "kind": "list_item", "text": "p. 401. l. 10. to, doe to.", "lines": [15]},
-    {"idx": 34, "kind": "list_item", "text": "p. 4, 8. bewen, between.", "lines": [15]},
-    {"idx": 35, "kind": "list_item", "text": "p. 497. l. 24. hundred, three hundred.", "lines": [15, 16]},
-    {"idx": 36, "kind": "list_item", "text": "p. 502. v. 41. A, And.", "lines": [16]},
-    {"idx": 37, "kind": "list_item", "text": "p. 510. v. 7. that, the.", "lines": [16]},
-    {"idx": 38, "kind": "list_item", "text": "p. 544. v 30. fr, from.", "lines": [16, 17]},
-    {"idx": 39, "kind": "list_item", "text": "p. 548. v. 7. herefore, therfore.", "lines": [17]},
-    {"idx": 40, "kind": "list_item", "text": "p. 555. v. 12. our, our Lord.", "lines": [17, 18]},
-    {"idx": 41, "kind": "list_item", "text": "p. 564. v. 21. That, The.", "lines": [18]},
-    {"idx": 42, "kind": "list_item", "text": "p. 577. v. 27. ſpake, ſpeake.", "lines": [18]},
-    {"idx": 43, "kind": "list_item", "text": "p 593. v. 6. ecan, ech.", "lines": [18]},
-    {"idx": 44, "kind": "list_item", "text": "p. 597. l. 18. chitophel, Achitophel.", "lines": [18, 19]},
-    {"idx": 45, "kind": "list_item", "text": "p. 602. v. 9. head, hand.", "lines": [19]},
-    {"idx": 46, "kind": "list_item", "text": "Ibid. v. 11. come to, come you.", "lines": [19]},
-    {"idx": 47, "kind": "list_item", "text": "p. 619. v. 44. Pherethi, Phelethi.", "lines": [20]},
-    {"idx": 48, "kind": "list_item", "text": "p. 643. l. 21. thy, my.", "lines": [20]},
-    {"idx": 49, "kind": "list_item", "text": "p. 696. l. vlt. adde , King of Siria had broken.", "lines": [20, 21]},
-    {"idx": 50, "kind": "list_item", "text": "p. 728. v. 1. Ammon, Amnon.", "lines": [21]},
-    {"idx": 51, "kind": "list_item", "text": "p 730. l. 3. day, this day.", "lines": [21]},
-    {"idx": 52, "kind": "list_item", "text": "p. 731. v. 56. Caled, Caleb.", "lines": [21, 22]},
-    {"idx": 53, "kind": "list_item", "text": "p. 736. v. 38 and Iephone, Iephone.", "lines": [22]},
-    {"idx": 54, "kind": "list_item", "text": "p. 732. l. 11. veſſel, veſſels.", "lines": [22]},
-    {"idx": 55, "kind": "list_item", "text": "p. 784. v. 11. p. 20. v. 3. hetooke , betooke.", "lines": [23]},
-    {"idx": 56, "kind": "list_item", "text": "p. 798. v. 10. They, When they.", "lines": [23]},
-    {"idx": 57, "kind": "list_item", "text": "p. 810. v. 5. was, was he.", "lines": [23, 24]},
-    {"idx": 58, "kind": "list_item", "text": "p. 817. v. 13. Azaries, Azarias.", "lines": [24]},
-    {"idx": 59, "kind": "list_item", "text": "p. 843. v. 4. 10, ſo many.", "lines": [24]},
-    {"idx": 60, "kind": "list_item", "text": "p. 913. v. 12. into, in to. p. 940. l. 16.", "lines": [24, 25]},
-    {"idx": 61, "kind": "list_item", "text": "p. 953. v. 15. the, they.", "lines": [25]},
-    {"idx": 62, "kind": "heading", "text": "IN THE SECOND TOME.", "lines": [26]},
-    {"idx": 63, "kind": "list_item", "text": "Correct the roclaime in thoſe places.", "lines": [27]},
-    {"idx": 64, "kind": "list_item", "text": "p. 18. open, we.", "lines": [27]},
-    {"idx": 65, "kind": "list_item", "text": "p. 73. Neither. An.", "lines": [27]},
-    {"idx": 66, "kind": "list_item", "text": "p. 151. they , this.", "lines": [28]},
-    {"idx": 67, "kind": "list_item", "text": "p. 176. lin. vlt. adde, and after him Caſſiodorus and others : wherby it is probable that it was ſometimes in the Hebrew text , and blotted out by the Iewes.", "lines": [28, 29, 30]},
-    {"idx": 68, "kind": "list_item", "text": "p. 228. the, vs.", "lines": [30]},
-    {"idx": 69, "kind": "list_item", "text": "p. 452. which, returne.", "lines": [30]},
-    {"idx": 70, "kind": "list_item", "text": "Pag. 161. l. pen. adde: In al generations.", "lines": [30, 31]},
-    {"idx": 71, "kind": "list_item", "text": "p. 300. l. antepen. ſweere thy , ſweet to thy.", "lines": [31]},
-    {"idx": 72, "kind": "list_item", "text": "p. 324. l. 7. wearre, warre.", "lines": [31]},
-    {"idx": 73, "kind": "list_item", "text": "p. 342. l. 22. this, his.", "lines": [32]},
-    {"idx": 74, "kind": "list_item", "text": "p. 564. l. 29. hewhi chis, he which is.", "lines": [32]},
-    {"idx": 75, "kind": "list_item", "text": "p. 399. l. 20. is a wiſe, is wiſe.", "lines": [32, 33]},
-    {"idx": 76, "kind": "list_item", "text": "p. 420. l. 32. be, he.", "lines": [33]},
-    {"idx": 77, "kind": "list_item", "text": "p. 426. l. 19. in, is.", "lines": [33]},
-    {"idx": 78, "kind": "paragraph", "text": "We haue alſo found ſome other faults of leſſe importance, & feare there be more. But we truſt the Reader may eaſily correct them as they occurre, and beſeech thoſe that ſhal ſet out the next Edition carefully to compare the text with the Latine.", "lines": [34, 35, 36]}
-  ],
-  "uncertain": [
-    {"line_index": 3, "span": "Pref. §.", "note": "First entry opens with an ornamental floriated drop-cap initial read as 'P'; the small-caps letters after it read 'REF.' Combined = 'Pref.' (Preface), which fits the errata location grammar ('Pref. §. but heer l. 24 ...'). A strictly literal reading is decorative-initial + 'Ref.' The symbol after is read '§' (section sign) but could be a numeral (e.g. preface page); degraded."},
-    {"line_index": 3, "span": "daaknes", "note": "Printed typo preserved: 'daaknes' (compositor set 'a' for 'r') as the FAULT word for the correction 'darknes'. Both kept as printed (the correction itself is spelled 'darknes')."},
-    {"line_index": 9, "span": "p 254. l. 4. 7. p. 25. p 254. l. 31. 32.", "note": "Within the 'veſſel/veſſels' place-list: an isolated 'p. 25.' sits between two 'p 254' references — anomalous. Possibly 'l. 25.' or a compositor misprint; glyph reads 'p. 25.'"},
-    {"line_index": 10, "span": "p. 322. l. 3. 4. p. 212. l. penult.", "note": "'212' hundreds digit ambiguous (2 vs 4; could be '412'); appears out of ascending sequence after 322. Neighbouring 'p. 252' / 'p. 200' (line 11) are also low-order after 322, so the list is genuinely non-monotonic here — page numerals in this dense block are medium/low confidence."},
-    {"line_index": 13, "span": "p. 300. l. came, campe.", "note": "A line number appears to be missing/illegible after 'l.' (reads 'p. 300. l. came, campe.'); fault 'came' -> correction 'campe'."},
-    {"line_index": 15, "span": "p. 4, 8. bewen, between.", "note": "Page numeral degraded — printed as '4 , 8' / '4 8'; most likely 'p. 408.' Fault 'bewen' -> 'between'."},
-    {"line_index": 18, "span": "ecan, ech", "note": "Fault word 'ecan' degraded/low-confidence (correction 'ech' = archaic 'each'); could be 'ecā'/'eaeh'."},
-    {"line_index": 21, "span": "p 730. l. 3. day, this day.", "note": "Line number uncertain: marks between '730' and '3' read as 'l.' but could be '43' (i.e. 'l. 43')."},
-    {"line_index": 23, "span": "p. 784. v. 11. p. 20. v. 3.", "note": "The second locus 'p. 20.' is anomalous after 'p. 784.' — possibly 'l. 20.' or a misprint. Fault 'hetooke' (printed with initial that reads 'h') -> correction 'betooke'."},
-    {"line_index": 24, "span": "p. 843. v. 4. 10, ſo many.", "note": "The token '10,' before the correction 'ſo many' is unclear — the fault may be a numeral/word rendered '10'. Page '843' also low-confidence."},
-    {"line_index": 27, "span": "Correct the roclaime in thoſe places.", "note": "'roclaime' low-confidence — likely 'reclaime' (printer's term for catchword/running-title) or 'proclaime'. Both 'roclaime' and 'thoſe places' bear a horizontal strikethrough that looks like a manuscript/reader deletion rather than printed type."},
-    {"line_index": 27, "span": "open, we. p. 73. Neither. An.", "note": "Two 2nd-tome corrections read anomalously: 'open, we' (fault 'open' -> 'we'?) and 'Neither. An.' (fault 'Neither' -> 'An'/'And'?). Punctuation and sense unclear; transcribed as seen."},
-    {"line_index": 24, "span": "p. 810. v. 5.", "note": "'p. 810.' at end of line 23 pairs with 'v. 5. was, was he.' opening line 24 — locus read 'p. 810. v. 5.', numerals medium confidence."}
-  ],
-  "glyph_regime_resolved": "Single roman body fount across the whole errata. w vs vv: the body sets a REAL connected 'w' throughout (way, we, warre, which, with, was, When, wherby, bewen/between) — NO genuine gapped 'vv' present on this leaf; all transcribed 'w'. long-ſ is GLYPH-DRIVEN and mixed: long-ſ in ſides, ſperate/ſeparate, ſoone/ſonne, ſpake/ſpeake, ſhinne, ſo, ſweere/ſweet, wiſe, veſſel/veſſels (ſſ), Caſſiodorus, ſometimes, and closing alſo/ſome/leſſe/truſt/eaſily/beſeech/thoſe/ſhal/ſet; ROUND final s in darknes, tables, prayers, kinreds, veſſels(final), skinne, Iewes, faults. ct ligatures rendered as component 'ct' (correction, Correct). u/v and i/j preserved as printed (vlt, liuer/liued, aboue, geue-type; Iephone, Iewes). French spacing (space before comma/high punctuation) preserved where set: 'returned , turned', 'in fine ,', 'ſhinne , skinne', 'adde , King', 'they , this', 'others :', 'text ,', 'ſweere thy ,'. Italic: subtitle line and the emphasised fault/correction pair 'head, hand' (line 19). Bold: 'Correct' (line 27, 2nd-tome opener).",
-  "observer": "agent:matter-ot2-faults-escaped",
-  "observed_at": "2026-07-20",
-  "method": "Visual-multimodal read of jp2-S06 p.2070 (opj-fallback render of Douay-Rheims-1610-Bible_2070.jp2), efficiency-band method: 1 full-page render + 5 full-width horizontal bands (~1.9x) + targeted micro-zooms (drop-cap, subtitle/heading, 2nd-tome opener, degraded page numerals). VALIDATIONS: (1) LOCALIZATION PASS — heading 'FAVLTS ESCAPED IN THE PRINTING.' + italic subtitle 'The firſt word is the fault, the ſecond the correction.' + the 'In the firſt Tome.'/'IN THE SECOND TOME.' structure + page/line->correction entry content confirm this is the printer's errata list, not a lookalike. (2) IDENTITY PASS — 1635 OT (second-tome back matter): the French 'Extraict du Privilege du Roy' at the foot names Iean le Cousturier, Marchand Libraire & Imprimeur at Rouen, printing 'la Bible en language Anglois, de l'edition de Laurens Kellam Imprimeur de Douay', dated 'à Paris le 3. iour d'Aoust, l'an de grace 1634. Et de nostre regne le 25' — i.e. the 1635 Rouen Cousturier reprint of the Douay OT; the jp2 filename says '1610' but the privilege dates the edition to 1634/35. (3) PLACEMENT PASS — back-matter leaf, page_index 2070, no printed page label or running header; errata sits in a ruled box above two horizontal rules; the French Privilege box below is EXCLUDED (separate GT matter-ot2-privilege-du-roi.json). (4) COMPLETENESS PASS — entire section transcribed (heading, subtitle, both tome sub-lists, closing note); page 2069 foot verified BLANK, so the section starts fresh at the top of 2070 and ends at the closing note above the Privilege box — it does NOT span additional pages. Modern DR not needed as content anchor (self-contained errata).",
-  "confidence": "high for the fault/correction WORD pairs, heading, subtitle, sub-headings, closing note, and glyph regime (w=body-w throughout; long-ſ glyph-driven); MEDIUM/LOW for several degraded page/line NUMERALS in the dense first-tome block (see uncertain) and for the anomalous 2nd-tome entries 'open, we' / 'Neither. An.' and 'roclaime' (struck)."
+ "locus": "matter/ot2/faults-escaped",
+ "page_index": 2070,
+ "ocr_dir": "jp2-S06ot",
+ "scan": "S6",
+ "raster": "/tmp/jp2-S06-2070.png (from Douay-Rheims-1610-Bible_2070.jp2, opj fallback render)",
+ "page_label_printed": null,
+ "running_header": {
+  "left": null,
+  "center": null,
+  "right": null
+ },
+ "layout_note": "Back-matter errata leaf. Single ruled box; heading 'FAVLTS ESCAPED IN THE PRINTING.' at top, italic subtitle, then a densely-set single-column running errata list (entries run continuously, many per line, NOT one-per-line) under two sub-headings 'In the firſt Tome.' and 'IN THE SECOND TOME.', closing with a note 'We haue alſo found ſome other faults...'. Below a horizontal rule sits the French 'Extraict du Privilege du Roy' box — that box is EXCLUDED here (transcribed separately in matter-ot2-privilege-du-roi.json). No printed page number or running header. Ornamental floriated drop-cap initial ('P') opens the first errata entry. Body is roman; subtitle and the head/hand pair are italic; 'Correct' (2nd-tome opener) is bold. Reader/manuscript strikethrough marks cross 'roclaime' and 'thoſe places' on the 2nd-tome opening line.",
+ "body": [
+  {
+   "line_index": 0,
+   "role": "heading",
+   "text": "FAVLTS ESCAPED IN THE PRINTING.",
+   "face": "display-caps"
+  },
+  {
+   "line_index": 1,
+   "role": "subtitle",
+   "text": "The firſt word is the fault , the ſecond the correction.",
+   "face": "italic"
+  },
+  {
+   "line_index": 2,
+   "role": "subheading",
+   "text": "In the firſt Tome."
+  },
+  {
+   "line_index": 3,
+   "role": "list_line",
+   "text": "Pref. §. but heer l. 24 returned , turned. Page 1. l. 9 daaknes. darknes. p. 2.",
+   "drop_cap": "P"
+  },
+  {
+   "line_index": 4,
+   "role": "list_line",
+   "text": "l. 34. multitude, multiplie. p. 18. marg. in fine , Eccl. 46, Eccl. 44. p. 30. l."
+  },
+  {
+   "line_index": 5,
+   "role": "list_line",
+   "text": "32. at, al. p. 42. l. 7. liuer, liued. p. 45. l. 33. for 24, read 12. p. 87. l. 26. in, it. p."
+  },
+  {
+   "line_index": 6,
+   "role": "list_line",
+   "text": "92. l. vlt. aboue, about. p. 94. l. 6. in, into. p. 99. n. 7. way, we. Ibid. l. vlt. hath,"
+  },
+  {
+   "line_index": 7,
+   "role": "list_line",
+   "text": "had. p. 152 l. 32. in God, as God. p. 171. chap. 2. chap. 10. p. 194. l. 38. al, and al. For"
+  },
+  {
+   "line_index": 8,
+   "role": "list_line",
+   "text": "veſſel, read veſſels in theſe places, p. 208. l. 6. p. 211. l 13. p. 235. l. 17. 18. 19. 20."
+  },
+  {
+   "line_index": 9,
+   "role": "list_line",
+   "text": "p. 247. l. 2. 3. 7. p. 250. l. 19. 33. 34. p. 253. l. vlt. p 254. l. 4. 7. p. 25. p 254. l. 31. 32."
+  },
+  {
+   "line_index": 10,
+   "role": "list_line",
+   "text": "p 269. l. 12. p. 311. l. 15. p. 313 l. 21. p. 314. l. 11. p. 322. l. 3. 4. p. 212. l. penult. ſides"
+  },
+  {
+   "line_index": 11,
+   "role": "list_line",
+   "text": "the, ſides of the. p. 252. l. penult. the former, of the former. p. 200. l. 26. or, for."
+  },
+  {
+   "line_index": 12,
+   "role": "list_line",
+   "text": "p. 273 l. 9. ſperate, ſeparate. p. 276 l. 13. thy, they. p. 279 l. 22. ſhinne , skinne."
+  },
+  {
+   "line_index": 13,
+   "role": "list_line",
+   "text": "p. 285. l. 19. prayer, prayers. p. 300. l. came, campe. p. 310. l. 6. kinred, kinreds. p."
+  },
+  {
+   "line_index": 14,
+   "role": "list_line",
+   "text": "353. l. 28. the, to p. 358. l. 11. are, are the. p. 385. l. 16. table, tables. p. 396. or,"
+  },
+  {
+   "line_index": 15,
+   "role": "list_line",
+   "text": "of p. 396 l. 30. ſoone, ſonne. p. 401. l. 10. to, doe to. p. 4, 8. bewen, between. p."
+  },
+  {
+   "line_index": 16,
+   "role": "list_line",
+   "text": "497. l. 24. hundred, three hundred. p. 502. v. 41. A, And. p. 510. v. 7. that, the p."
+  },
+  {
+   "line_index": 17,
+   "role": "list_line",
+   "text": "544. v 30. fr, from. p. 548. v. 7. herefore, therfore. p. 555. v. 12. our, our Lord. p."
+  },
+  {
+   "line_index": 18,
+   "role": "list_line",
+   "text": "564 v. 21. That, The. p. 577. v. 27. ſpake, ſpeake. p 593. v. 6. ecan, ech. p. 597. l."
+  },
+  {
+   "line_index": 19,
+   "role": "list_line",
+   "text": "18. chitophel, Achitophel. p. 602. v. 9. head, hand. Ibid. v. 11. come to, come you."
+  },
+  {
+   "line_index": 20,
+   "role": "list_line",
+   "text": "p. 619. v. 44. Pherethi, Phelethi p. 643. l. 21. thy, my. p. 696. l. vlt. adde , King"
+  },
+  {
+   "line_index": 21,
+   "role": "list_line",
+   "text": "of Siria had broken. p. 728. v. 1. Ammon, Amnon. p 730. l. 3. day, this day. p. 731. v."
+  },
+  {
+   "line_index": 22,
+   "role": "list_line",
+   "text": "56. Caled, Caleb. p. 736. v. 38 and Iephone, Iephone. p. 732. l. 11. veſſel, veſſels."
+  },
+  {
+   "line_index": 23,
+   "role": "list_line",
+   "text": "p. 784. v. 11. p. 20. v. 3. hetooke , betooke p. 798. v. 10. They, When they p. 810."
+  },
+  {
+   "line_index": 24,
+   "role": "list_line",
+   "text": "v. 5. was, was he. p. 817. v. 13. Azaries, Azarias. p. 843. v. 4. 10, ſo many. p. 913."
+  },
+  {
+   "line_index": 25,
+   "role": "list_line",
+   "text": "v. 12. into, in to. p. 940. l. 16. p. 953. v. 15. the, they."
+  },
+  {
+   "line_index": 26,
+   "role": "subheading",
+   "text": "IN THE SECOND TOME.",
+   "face": "display-caps"
+  },
+  {
+   "line_index": 27,
+   "role": "list_line",
+   "text": "Correct the roclaime in thoſe places. p. 18. open, we. p. 73. Neither. An.",
+   "marks": "'Correct' bold; 'roclaime' and 'thoſe places' bear a horizontal strikethrough (possibly manuscript/reader mark)"
+  },
+  {
+   "line_index": 28,
+   "role": "list_line",
+   "text": "p. 151. they , this. p. 176. lin. vlt. adde, and after him Caſſiodorus and others :"
+  },
+  {
+   "line_index": 29,
+   "role": "list_line",
+   "text": "wherby it is probable that it was ſometimes in the Hebrew text , and blotted out"
+  },
+  {
+   "line_index": 30,
+   "role": "list_line",
+   "text": "by the Iewes. p. 228. the, vs p. 452. which, returne. Pag. 161. l. pen. adde: In al"
+  },
+  {
+   "line_index": 31,
+   "role": "list_line",
+   "text": "generations. p. 300. l. antepen. ſweere thy , ſweet to thy. p. 324. l. 7. wearre, warre."
+  },
+  {
+   "line_index": 32,
+   "role": "list_line",
+   "text": "p. 342. l. 22. this, his. p. 564. l. 29. hewhi chis, he which is. p. 399. l. 20. is a wiſe,"
+  },
+  {
+   "line_index": 33,
+   "role": "list_line",
+   "text": "is wiſe. p. 420. l. 32. be, he. p. 426. l. 19. in, is."
+  },
+  {
+   "line_index": 34,
+   "role": "paragraph",
+   "text": "We haue alſo found ſome other faults of leſſe importance, & feare there be more."
+  },
+  {
+   "line_index": 35,
+   "role": "paragraph",
+   "text": "But we truſt the Reader may eaſily correct them as they occurre, and beſeech thoſe"
+  },
+  {
+   "line_index": 36,
+   "role": "paragraph",
+   "text": "that ſhal ſet out the next Edition carefully to compare the text with the Latine."
+  }
+ ],
+ "intervals": [
+  {
+   "idx": 0,
+   "kind": "heading",
+   "text": "FAVLTS ESCAPED IN THE PRINTING.",
+   "lines": [
+    0
+   ]
+  },
+  {
+   "idx": 1,
+   "kind": "subtitle",
+   "text": "The firſt word is the fault , the ſecond the correction.",
+   "lines": [
+    1
+   ]
+  },
+  {
+   "idx": 2,
+   "kind": "heading",
+   "text": "In the firſt Tome.",
+   "lines": [
+    2
+   ]
+  },
+  {
+   "idx": 3,
+   "kind": "list_item",
+   "text": "Pref. §. but heer l. 24 returned , turned.",
+   "lines": [
+    3
+   ]
+  },
+  {
+   "idx": 4,
+   "kind": "list_item",
+   "text": "Page 1. l. 9 daaknes. darknes.",
+   "lines": [
+    3
+   ]
+  },
+  {
+   "idx": 5,
+   "kind": "list_item",
+   "text": "p. 2. l. 34. multitude, multiplie.",
+   "lines": [
+    3,
+    4
+   ]
+  },
+  {
+   "idx": 6,
+   "kind": "list_item",
+   "text": "p. 18. marg. in fine , Eccl. 46, Eccl. 44.",
+   "lines": [
+    4
+   ]
+  },
+  {
+   "idx": 7,
+   "kind": "list_item",
+   "text": "p. 30. l. 32. at, al.",
+   "lines": [
+    4,
+    5
+   ]
+  },
+  {
+   "idx": 8,
+   "kind": "list_item",
+   "text": "p. 42. l. 7. liuer, liued.",
+   "lines": [
+    5
+   ]
+  },
+  {
+   "idx": 9,
+   "kind": "list_item",
+   "text": "p. 45. l. 33. for 24, read 12.",
+   "lines": [
+    5
+   ]
+  },
+  {
+   "idx": 10,
+   "kind": "list_item",
+   "text": "p. 87. l. 26. in, it.",
+   "lines": [
+    5
+   ]
+  },
+  {
+   "idx": 11,
+   "kind": "list_item",
+   "text": "p. 92. l. vlt. aboue, about.",
+   "lines": [
+    5,
+    6
+   ]
+  },
+  {
+   "idx": 12,
+   "kind": "list_item",
+   "text": "p. 94. l. 6. in, into.",
+   "lines": [
+    6
+   ]
+  },
+  {
+   "idx": 13,
+   "kind": "list_item",
+   "text": "p. 99. n. 7. way, we.",
+   "lines": [
+    6
+   ]
+  },
+  {
+   "idx": 14,
+   "kind": "list_item",
+   "text": "Ibid. l. vlt. hath, had.",
+   "lines": [
+    6,
+    7
+   ]
+  },
+  {
+   "idx": 15,
+   "kind": "list_item",
+   "text": "p. 152 l. 32. in God, as God.",
+   "lines": [
+    7
+   ]
+  },
+  {
+   "idx": 16,
+   "kind": "list_item",
+   "text": "p. 171. chap. 2. chap. 10.",
+   "lines": [
+    7
+   ]
+  },
+  {
+   "idx": 17,
+   "kind": "list_item",
+   "text": "p. 194. l. 38. al, and al.",
+   "lines": [
+    7
+   ]
+  },
+  {
+   "idx": 18,
+   "kind": "list_item",
+   "text": "For veſſel, read veſſels in theſe places, p. 208. l. 6. p. 211. l 13. p. 235. l. 17. 18. 19. 20. p. 247. l. 2. 3. 7. p. 250. l. 19. 33. 34. p. 253. l. vlt. p 254. l. 4. 7. p. 25. p 254. l. 31. 32. p 269. l. 12. p. 311. l. 15. p. 313 l. 21. p. 314. l. 11. p. 322. l. 3. 4.",
+   "lines": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  {
+   "idx": 19,
+   "kind": "list_item",
+   "text": "p. 212. l. penult. ſides the, ſides of the.",
+   "lines": [
+    10,
+    11
+   ]
+  },
+  {
+   "idx": 20,
+   "kind": "list_item",
+   "text": "p. 252. l. penult. the former, of the former.",
+   "lines": [
+    11
+   ]
+  },
+  {
+   "idx": 21,
+   "kind": "list_item",
+   "text": "p. 200. l. 26. or, for.",
+   "lines": [
+    11
+   ]
+  },
+  {
+   "idx": 22,
+   "kind": "list_item",
+   "text": "p. 273 l. 9. ſperate, ſeparate.",
+   "lines": [
+    12
+   ]
+  },
+  {
+   "idx": 23,
+   "kind": "list_item",
+   "text": "p. 276 l. 13. thy, they.",
+   "lines": [
+    12
+   ]
+  },
+  {
+   "idx": 24,
+   "kind": "list_item",
+   "text": "p. 279 l. 22. ſhinne , skinne.",
+   "lines": [
+    12
+   ]
+  },
+  {
+   "idx": 25,
+   "kind": "list_item",
+   "text": "p. 285. l. 19. prayer, prayers.",
+   "lines": [
+    13
+   ]
+  },
+  {
+   "idx": 26,
+   "kind": "list_item",
+   "text": "p. 300. l. came, campe.",
+   "lines": [
+    13
+   ]
+  },
+  {
+   "idx": 27,
+   "kind": "list_item",
+   "text": "p. 310. l. 6. kinred, kinreds.",
+   "lines": [
+    13
+   ]
+  },
+  {
+   "idx": 28,
+   "kind": "list_item",
+   "text": "p. 353. l. 28. the, to.",
+   "lines": [
+    13,
+    14
+   ]
+  },
+  {
+   "idx": 29,
+   "kind": "list_item",
+   "text": "p. 358. l. 11. are, are the.",
+   "lines": [
+    14
+   ]
+  },
+  {
+   "idx": 30,
+   "kind": "list_item",
+   "text": "p. 385. l. 16. table, tables.",
+   "lines": [
+    14
+   ]
+  },
+  {
+   "idx": 31,
+   "kind": "list_item",
+   "text": "p. 396. or, of.",
+   "lines": [
+    14,
+    15
+   ]
+  },
+  {
+   "idx": 32,
+   "kind": "list_item",
+   "text": "p. 396 l. 30. ſoone, ſonne.",
+   "lines": [
+    15
+   ]
+  },
+  {
+   "idx": 33,
+   "kind": "list_item",
+   "text": "p. 401. l. 10. to, doe to.",
+   "lines": [
+    15
+   ]
+  },
+  {
+   "idx": 34,
+   "kind": "list_item",
+   "text": "p. 4, 8. bewen, between.",
+   "lines": [
+    15
+   ]
+  },
+  {
+   "idx": 35,
+   "kind": "list_item",
+   "text": "p. 497. l. 24. hundred, three hundred.",
+   "lines": [
+    15,
+    16
+   ]
+  },
+  {
+   "idx": 36,
+   "kind": "list_item",
+   "text": "p. 502. v. 41. A, And.",
+   "lines": [
+    16
+   ]
+  },
+  {
+   "idx": 37,
+   "kind": "list_item",
+   "text": "p. 510. v. 7. that, the.",
+   "lines": [
+    16
+   ]
+  },
+  {
+   "idx": 38,
+   "kind": "list_item",
+   "text": "p. 544. v 30. fr, from.",
+   "lines": [
+    16,
+    17
+   ]
+  },
+  {
+   "idx": 39,
+   "kind": "list_item",
+   "text": "p. 548. v. 7. herefore, therfore.",
+   "lines": [
+    17
+   ]
+  },
+  {
+   "idx": 40,
+   "kind": "list_item",
+   "text": "p. 555. v. 12. our, our Lord.",
+   "lines": [
+    17,
+    18
+   ]
+  },
+  {
+   "idx": 41,
+   "kind": "list_item",
+   "text": "p. 564. v. 21. That, The.",
+   "lines": [
+    18
+   ]
+  },
+  {
+   "idx": 42,
+   "kind": "list_item",
+   "text": "p. 577. v. 27. ſpake, ſpeake.",
+   "lines": [
+    18
+   ]
+  },
+  {
+   "idx": 43,
+   "kind": "list_item",
+   "text": "p 593. v. 6. ecan, ech.",
+   "lines": [
+    18
+   ]
+  },
+  {
+   "idx": 44,
+   "kind": "list_item",
+   "text": "p. 597. l. 18. chitophel, Achitophel.",
+   "lines": [
+    18,
+    19
+   ]
+  },
+  {
+   "idx": 45,
+   "kind": "list_item",
+   "text": "p. 602. v. 9. head, hand.",
+   "lines": [
+    19
+   ]
+  },
+  {
+   "idx": 46,
+   "kind": "list_item",
+   "text": "Ibid. v. 11. come to, come you.",
+   "lines": [
+    19
+   ]
+  },
+  {
+   "idx": 47,
+   "kind": "list_item",
+   "text": "p. 619. v. 44. Pherethi, Phelethi.",
+   "lines": [
+    20
+   ]
+  },
+  {
+   "idx": 48,
+   "kind": "list_item",
+   "text": "p. 643. l. 21. thy, my.",
+   "lines": [
+    20
+   ]
+  },
+  {
+   "idx": 49,
+   "kind": "list_item",
+   "text": "p. 696. l. vlt. adde , King of Siria had broken.",
+   "lines": [
+    20,
+    21
+   ]
+  },
+  {
+   "idx": 50,
+   "kind": "list_item",
+   "text": "p. 728. v. 1. Ammon, Amnon.",
+   "lines": [
+    21
+   ]
+  },
+  {
+   "idx": 51,
+   "kind": "list_item",
+   "text": "p 730. l. 3. day, this day.",
+   "lines": [
+    21
+   ]
+  },
+  {
+   "idx": 52,
+   "kind": "list_item",
+   "text": "p. 731. v. 56. Caled, Caleb.",
+   "lines": [
+    21,
+    22
+   ]
+  },
+  {
+   "idx": 53,
+   "kind": "list_item",
+   "text": "p. 736. v. 38 and Iephone, Iephone.",
+   "lines": [
+    22
+   ]
+  },
+  {
+   "idx": 54,
+   "kind": "list_item",
+   "text": "p. 732. l. 11. veſſel, veſſels.",
+   "lines": [
+    22
+   ]
+  },
+  {
+   "idx": 55,
+   "kind": "list_item",
+   "text": "p. 784. v. 11. p. 20. v. 3. hetooke , betooke.",
+   "lines": [
+    23
+   ]
+  },
+  {
+   "idx": 56,
+   "kind": "list_item",
+   "text": "p. 798. v. 10. They, When they.",
+   "lines": [
+    23
+   ]
+  },
+  {
+   "idx": 57,
+   "kind": "list_item",
+   "text": "p. 810. v. 5. was, was he.",
+   "lines": [
+    23,
+    24
+   ]
+  },
+  {
+   "idx": 58,
+   "kind": "list_item",
+   "text": "p. 817. v. 13. Azaries, Azarias.",
+   "lines": [
+    24
+   ]
+  },
+  {
+   "idx": 59,
+   "kind": "list_item",
+   "text": "p. 843. v. 4. 10, ſo many.",
+   "lines": [
+    24
+   ]
+  },
+  {
+   "idx": 60,
+   "kind": "list_item",
+   "text": "p. 913. v. 12. into, in to. p. 940. l. 16.",
+   "lines": [
+    24,
+    25
+   ]
+  },
+  {
+   "idx": 61,
+   "kind": "list_item",
+   "text": "p. 953. v. 15. the, they.",
+   "lines": [
+    25
+   ]
+  },
+  {
+   "idx": 62,
+   "kind": "heading",
+   "text": "IN THE SECOND TOME.",
+   "lines": [
+    26
+   ]
+  },
+  {
+   "idx": 63,
+   "kind": "list_item",
+   "text": "Correct the roclaime in thoſe places.",
+   "lines": [
+    27
+   ]
+  },
+  {
+   "idx": 64,
+   "kind": "list_item",
+   "text": "p. 18. open, we.",
+   "lines": [
+    27
+   ]
+  },
+  {
+   "idx": 65,
+   "kind": "list_item",
+   "text": "p. 73. Neither. An.",
+   "lines": [
+    27
+   ]
+  },
+  {
+   "idx": 66,
+   "kind": "list_item",
+   "text": "p. 151. they , this.",
+   "lines": [
+    28
+   ]
+  },
+  {
+   "idx": 67,
+   "kind": "list_item",
+   "text": "p. 176. lin. vlt. adde, and after him Caſſiodorus and others : wherby it is probable that it was ſometimes in the Hebrew text , and blotted out by the Iewes.",
+   "lines": [
+    28,
+    29,
+    30
+   ]
+  },
+  {
+   "idx": 68,
+   "kind": "list_item",
+   "text": "p. 228. the, vs.",
+   "lines": [
+    30
+   ]
+  },
+  {
+   "idx": 69,
+   "kind": "list_item",
+   "text": "p. 452. which, returne.",
+   "lines": [
+    30
+   ]
+  },
+  {
+   "idx": 70,
+   "kind": "list_item",
+   "text": "Pag. 161. l. pen. adde: In al generations.",
+   "lines": [
+    30,
+    31
+   ]
+  },
+  {
+   "idx": 71,
+   "kind": "list_item",
+   "text": "p. 300. l. antepen. ſweere thy , ſweet to thy.",
+   "lines": [
+    31
+   ]
+  },
+  {
+   "idx": 72,
+   "kind": "list_item",
+   "text": "p. 324. l. 7. wearre, warre.",
+   "lines": [
+    31
+   ]
+  },
+  {
+   "idx": 73,
+   "kind": "list_item",
+   "text": "p. 342. l. 22. this, his.",
+   "lines": [
+    32
+   ]
+  },
+  {
+   "idx": 74,
+   "kind": "list_item",
+   "text": "p. 564. l. 29. hewhi chis, he which is.",
+   "lines": [
+    32
+   ]
+  },
+  {
+   "idx": 75,
+   "kind": "list_item",
+   "text": "p. 399. l. 20. is a wiſe, is wiſe.",
+   "lines": [
+    32,
+    33
+   ]
+  },
+  {
+   "idx": 76,
+   "kind": "list_item",
+   "text": "p. 420. l. 32. be, he.",
+   "lines": [
+    33
+   ]
+  },
+  {
+   "idx": 77,
+   "kind": "list_item",
+   "text": "p. 426. l. 19. in, is.",
+   "lines": [
+    33
+   ]
+  },
+  {
+   "idx": 78,
+   "kind": "paragraph",
+   "text": "We haue alſo found ſome other faults of leſſe importance, & feare there be more. But we truſt the Reader may eaſily correct them as they occurre, and beſeech thoſe that ſhal ſet out the next Edition carefully to compare the text with the Latine.",
+   "lines": [
+    34,
+    35,
+    36
+   ]
+  }
+ ],
+ "uncertain": [
+  {
+   "line_index": 3,
+   "span": "Pref. §.",
+   "note": "First entry opens with an ornamental floriated drop-cap initial read as 'P'; the small-caps letters after it read 'REF.' Combined = 'Pref.' (Preface), which fits the errata location grammar ('Pref. §. but heer l. 24 ...'). A strictly literal reading is decorative-initial + 'Ref.' The symbol after is read '§' (section sign) but could be a numeral (e.g. preface page); degraded."
+  },
+  {
+   "line_index": 3,
+   "span": "daaknes",
+   "note": "Printed typo preserved: 'daaknes' (compositor set 'a' for 'r') as the FAULT word for the correction 'darknes'. Both kept as printed (the correction itself is spelled 'darknes')."
+  },
+  {
+   "line_index": 9,
+   "span": "p 254. l. 4. 7. p. 25. p 254. l. 31. 32.",
+   "note": "Within the 'veſſel/veſſels' place-list: an isolated 'p. 25.' sits between two 'p 254' references — anomalous. Possibly 'l. 25.' or a compositor misprint; glyph reads 'p. 25.'"
+  },
+  {
+   "line_index": 10,
+   "span": "p. 322. l. 3. 4. p. 212. l. penult.",
+   "note": "'212' hundreds digit ambiguous (2 vs 4; could be '412'); appears out of ascending sequence after 322. Neighbouring 'p. 252' / 'p. 200' (line 11) are also low-order after 322, so the list is genuinely non-monotonic here — page numerals in this dense block are medium/low confidence."
+  },
+  {
+   "line_index": 13,
+   "span": "p. 300. l. came, campe.",
+   "note": "A line number appears to be missing/illegible after 'l.' (reads 'p. 300. l. came, campe.'); fault 'came' -> correction 'campe'."
+  },
+  {
+   "line_index": 15,
+   "span": "p. 4, 8. bewen, between.",
+   "note": "Page numeral degraded — printed as '4 , 8' / '4 8'; most likely 'p. 408.' Fault 'bewen' -> 'between'."
+  },
+  {
+   "line_index": 18,
+   "span": "ecan, ech",
+   "note": "Fault word 'ecan' degraded/low-confidence (correction 'ech' = archaic 'each'); could be 'ecā'/'eaeh'."
+  },
+  {
+   "line_index": 21,
+   "span": "p 730. l. 3. day, this day.",
+   "note": "Line number uncertain: marks between '730' and '3' read as 'l.' but could be '43' (i.e. 'l. 43')."
+  },
+  {
+   "line_index": 23,
+   "span": "p. 784. v. 11. p. 20. v. 3.",
+   "note": "The second locus 'p. 20.' is anomalous after 'p. 784.' — possibly 'l. 20.' or a misprint. Fault 'hetooke' (printed with initial that reads 'h') -> correction 'betooke'."
+  },
+  {
+   "line_index": 24,
+   "span": "p. 843. v. 4. 10, ſo many.",
+   "note": "The token '10,' before the correction 'ſo many' is unclear — the fault may be a numeral/word rendered '10'. Page '843' also low-confidence."
+  },
+  {
+   "line_index": 27,
+   "span": "Correct the roclaime in thoſe places.",
+   "note": "'roclaime' low-confidence — likely 'reclaime' (printer's term for catchword/running-title) or 'proclaime'. Both 'roclaime' and 'thoſe places' bear a horizontal strikethrough that looks like a manuscript/reader deletion rather than printed type."
+  },
+  {
+   "line_index": 27,
+   "span": "open, we. p. 73. Neither. An.",
+   "note": "Two 2nd-tome corrections read anomalously: 'open, we' (fault 'open' -> 'we'?) and 'Neither. An.' (fault 'Neither' -> 'An'/'And'?). Punctuation and sense unclear; transcribed as seen."
+  },
+  {
+   "line_index": 24,
+   "span": "p. 810. v. 5.",
+   "note": "'p. 810.' at end of line 23 pairs with 'v. 5. was, was he.' opening line 24 — locus read 'p. 810. v. 5.', numerals medium confidence."
+  }
+ ],
+ "glyph_regime_resolved": "Single roman body fount across the whole errata. w vs vv: the body sets a REAL connected 'w' throughout (way, we, warre, which, with, was, When, wherby, bewen/between) — NO genuine gapped 'vv' present on this leaf; all transcribed 'w'. long-ſ is GLYPH-DRIVEN and mixed: long-ſ in ſides, ſperate/ſeparate, ſoone/ſonne, ſpake/ſpeake, ſhinne, ſo, ſweere/ſweet, wiſe, veſſel/veſſels (ſſ), Caſſiodorus, ſometimes, and closing alſo/ſome/leſſe/truſt/eaſily/beſeech/thoſe/ſhal/ſet; ROUND final s in darknes, tables, prayers, kinreds, veſſels(final), skinne, Iewes, faults. ct ligatures rendered as component 'ct' (correction, Correct). u/v and i/j preserved as printed (vlt, liuer/liued, aboue, geue-type; Iephone, Iewes). French spacing (space before comma/high punctuation) preserved where set: 'returned , turned', 'in fine ,', 'ſhinne , skinne', 'adde , King', 'they , this', 'others :', 'text ,', 'ſweere thy ,'. Italic: subtitle line and the emphasised fault/correction pair 'head, hand' (line 19). Bold: 'Correct' (line 27, 2nd-tome opener).",
+ "observer": "agent:matter-ot2-faults-escaped",
+ "observed_at": "2026-07-20",
+ "method": "Visual-multimodal read of jp2-S06 p.2070 (opj-fallback render of Douay-Rheims-1610-Bible_2070.jp2), efficiency-band method: 1 full-page render + 5 full-width horizontal bands (~1.9x) + targeted micro-zooms (drop-cap, subtitle/heading, 2nd-tome opener, degraded page numerals). VALIDATIONS: (1) LOCALIZATION PASS — heading 'FAVLTS ESCAPED IN THE PRINTING.' + italic subtitle 'The firſt word is the fault, the ſecond the correction.' + the 'In the firſt Tome.'/'IN THE SECOND TOME.' structure + page/line->correction entry content confirm this is the printer's errata list, not a lookalike. (2) IDENTITY PASS — 1635 OT (second-tome back matter): the French 'Extraict du Privilege du Roy' at the foot names Iean le Cousturier, Marchand Libraire & Imprimeur at Rouen, printing 'la Bible en language Anglois, de l'edition de Laurens Kellam Imprimeur de Douay', dated 'à Paris le 3. iour d'Aoust, l'an de grace 1634. Et de nostre regne le 25' — i.e. the 1635 Rouen Cousturier reprint of the Douay OT; the jp2 filename says '1610' but the privilege dates the edition to 1634/35. (3) PLACEMENT PASS — back-matter leaf, page_index 2070, no printed page label or running header; errata sits in a ruled box above two horizontal rules; the French Privilege box below is EXCLUDED (separate GT matter-ot2-privilege-du-roi.json). (4) COMPLETENESS PASS — entire section transcribed (heading, subtitle, both tome sub-lists, closing note); page 2069 foot verified BLANK, so the section starts fresh at the top of 2070 and ends at the closing note above the Privilege box — it does NOT span additional pages. Modern DR not needed as content anchor (self-contained errata).",
+ "confidence": "high for the fault/correction WORD pairs, heading, subtitle, sub-headings, closing note, and glyph regime (w=body-w throughout; long-ſ glyph-driven); MEDIUM/LOW for several degraded page/line NUMERALS in the dense first-tome block (see uncertain) and for the anomalous 2nd-tome entries 'open, we' / 'Neither. An.' and 'roclaime' (struck).",
+ "witness": "OT-1635-M",
+ "_rekeyed": "R7.5a: `jp2-S06` named a file spanning two settings; this record's leaves [2070] are in the 1635 Rouen OT half (package 0..2070). Index unchanged: it was already package-relative, and OT leaves start at 0."
 }

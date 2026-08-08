@@ -26,11 +26,16 @@ OT2 = ["psalms","proverbs","ecclesiastes","canticle-of-canticles","wisdom"]
 VOL = {**{b:"NT" for b in NT}, **{b:"OT1" for b in OT1}, **{b:"OT2" for b in OT2}}
 
 # ---- source -> ocr_dir per volume (from master-source-list) ----
-NT_SRC  = {"S1":"archive-nt-1582","S4":"jp2-S04","S5":"pdf-S05","S6":"jp2-S06","S8":"jp2-S08",
+# R7.5a: S6's entries were all `jp2-S06`, one id for a file holding two settings 53 years
+# apart -- so the NT row and the OT rows named the SAME directory while meaning different
+# books. They now name the two re-keyed witnesses.
+# NB the S2/S5/S10-S15 entries are BANNED sources (curated_sources.py) and are left here
+# only because this table predates the allowlist; nothing may sample from them.
+NT_SRC  = {"S1":"archive-nt-1582","S4":"jp2-S04","S5":"pdf-S05","S6":"jp2-S06nt","S8":"jp2-S08",
            "S9":"pdf-S09nt","S10":"eebo-nt","S11":"eebo-vol1"}
-OT1_SRC = {"S1":"archive-ot1-1609","S2":"pdf-S02","S3":"pdf-S03a","S6":"jp2-S06",
+OT1_SRC = {"S1":"archive-ot1-1609","S2":"pdf-S02","S3":"pdf-S03a","S6":"jp2-S06ot",
            "S9":"archive-holiebible-ot1","S12":"eebo-vol2","S13":"eebo-vol3"}
-OT2_SRC = {"S1":"archive-ot2-1610","S3":"pdf-S03b","S6":"jp2-S06","S9":"archive-holiebible-ot2",
+OT2_SRC = {"S1":"archive-ot2-1610","S3":"pdf-S03b","S6":"jp2-S06ot","S9":"archive-holiebible-ot2",
            "S14":"eebo-vol4","S15":"eebo-vol5"}
 VOL_SRC = {"NT":NT_SRC,"OT1":OT1_SRC,"OT2":OT2_SRC}
 # narrow sources that cover only ONE reference book -> force-assign to guarantee they appear
