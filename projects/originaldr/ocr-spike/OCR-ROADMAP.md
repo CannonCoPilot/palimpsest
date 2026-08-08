@@ -9,14 +9,60 @@ are satisfied for the leaves concerned (§2).
 
 ---
 
+## Status index
+
+**Sections appear below in the order they were written, which is not numeric order** — R6 and the dissolved
+R3.5 sit between R4 and R5, because R5 was folded down from the former step 4 after R6 was drafted. The file
+is the execution reference, so the index rather than the file order is authoritative for *what is open*.
+Renumbering was considered and rejected: step ids are cited from the Masterplan, the companions, four
+guards' comments and every devlog entry, so the ids are load-bearing and the ordering is not.
+
+| section | subject | status |
+|---|---|---|
+| R0 | Witness identity and stable addressing | **COMPLETE** (R0.1–R0.5) |
+| R1 | Physical leaf inventory — Gate 0b stage 1 | **COMPLETE** (R1.1–R1.6) |
+| R2 | Structural inventory — Gate 0b stage 2 | **OPEN — NEXT.** Nothing built (R2.1–R2.4) |
+| R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4) |
+| R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
+| R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
+| R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
+| R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5 defect is **LIVE** |
+| R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
+
+### Open-items register
+
+Maintained here so that "what is left" is answerable without reading 600 lines. **This register is
+authoritative over prose elsewhere in the file**; where a paragraph and this table disagree, the table is
+right and the paragraph is a bug to be fixed.
+
+**OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
+R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
+Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
+**R7.5 (live defect)** · R8.3 · **R8.4b** · R8.6 · R8.7
+
+**DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
+R6.5 · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
+
+**DISSOLVED** — R3.5 (body retained, marked not to be executed)
+
+⚠️ **Four "DONE" marks are narrower than they read**, and are spelled out where they occur rather than
+here: R4.2 is done as an explicit *NOT ESTABLISHED* verdict, not as a repository found; R6.4 is done for
+tome 1 only; R8.4 verified 11 of 12 witnesses and **named the twelfth unverifiable** rather than assuming it
+sound; **R8.4a verified the foot criteria at ONE matched page per setting**, where the head pass used three or
+more — R8.4b is the remainder and stays OPEN. A register that flattened these to "done" would be doing the
+laundering it exists to prevent.
+
+---
+
 ## R0 — Witness identity and stable addressing
 
 **Discharges** §1.1. **Status: COMPLETE.**
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R0.1 | Canonical witness registry | `witness/witnesses.py` — sigla, volume, year, role, repository, source path | registry leaf counts equal on-disk counts for all 10 files |
-| R0.2 | Stable witness tree | `sources/witnesses/<VOL>/<WID>/leaves` symlink farm + `MANIFEST.json` | every witness path resolves; leaf counts match registry (10/10) |
+| R0.1 | Canonical witness registry | `witness/witnesses.py` — sigla, volume, year, role, repository, source path | registry leaf counts equal on-disk counts for all **11 files** |
+| R0.2 | Stable witness tree | `sources/witnesses/<VOL>/<WID>/leaves` symlink farm + `MANIFEST.json` | every witness path resolves; leaf counts match registry (**12/12**) |
 | R0.3 | Naming convention documented | §1.1 "Addressing and sigla" | a reader can map any legacy id to a witness id and back |
 
 **Design note — symlinks, not copies.** Copying the JP2 packages would duplicate ~11 GB and create a second
@@ -171,16 +217,42 @@ not imaging — but it stays **OPEN**.
 correlation gives +0.424 / +0.398 on the matching pair against 0.000–0.036 on every cross-pairing, and the
 visual agreement is line-for-line including the S. Augustine quotation absent from the 1633 setting.
 
-**R4.1 is BLOCKED EXTERNALLY, with the route out specified.** `estc.bl.uk` redirects to CERL and the ESTC
-beta returns **`no such index [estc]`** for every query, so no ESTC number can currently be resolved
-against the authority. Leads held: **STC 2884 / ESTC S102419 *or* S102491** (1582 NT — sources disagree on
-one digit) and **STC 2207 / ESTC S101944** (1609–10 OT). None is promoted.
+**R4.1 — the ESTC authority is still down, but the route that worked was never the ESTC.** `estc.bl.uk`
+redirects to CERL and the ESTC beta returns **`no such index [estc]`** for every query; USTC 404s, Virginia
+is JS-only, Jisc 403s, LC's `search.catalog.loc.gov` 403s. Every *catalogue-interface* route is exhausted.
+**The numbers came instead from the holding library's own MARC, which we already held locally** — see R4.1d.
+**One institutional authority is in hand; the two-authority rule stands, so nothing is promoted into §1.3.**
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
 | R4.1a | Automated ESTC retry | a scheduled probe of the CERL ESTC index that reports when it answers | the probe distinguishes "index down" from "record absent"; a passing probe re-opens R4.1 automatically |
 | R4.1b | Fallback authorities, in order | Folger *Hamnet* (the STC authority of record) → USTC → Bodleian/Oxford SOLO → Harvard HOLLIS | a number is promoted only when **two independent authorities agree**, and the S102419/S102491 split is resolved explicitly, not silently picked |
 | R4.1c | Record the disagreement, not just the answer | concordance carries the rejected variant and why | a later reader can see that a one-digit variant existed and was adjudicated |
+| R4.1d | **Holding-library MARC via the IA item record** — DONE, and this is the route that worked | `curl -sL https://archive.org/metadata/<id>` → `metadata.references` carries the contributing library's own catalogue citations | numbers are read from a named institution's MARC, not from a dealer or auction listing |
+| R4.1e | **Authority #2** — a second *institution's* record | Princeton's MARC for `holiebiblefaithf01engl` / `thenewtestamento00rhei` by the R4.1d route, or OpenLibrary JSON, or a Folger/Bodleian record | two institutions, independently, before any number enters §1.3 |
+
+**R4.1d result — Boston Public Library's own MARC**, via `metadata.references` on the IA items:
+
+| witness set | IA identifier | citations, verbatim from BPL's MARC |
+|---|---|---|
+| NT 1582 | `nevvtestamentofi00mart` (BPL, call no. `BS2080 1582`) | `ESTC S102491; STC (2nd ed.), 2884; Darlow & Moule (2001 reprint ed.), 134; Herbert, A.S. Engl. Bible, 177; Allison & Rogers. Engl. Counter-Reformation, II, 173` |
+| OT 1609–10 | `holiebiblefaithf00mart_0` (BPL, call no. `BS180 1609`) | `STC (2nd ed.) 2207; ESTC S101944; Darlow & Moule 300` |
+
+Both strings re-fetched and diffed against the live IA records on 2026-08-07 before being written here. The
+first transcription of the NT row, made from working notes, had silently normalised the punctuation and
+abbreviated *Herbert, A.S. Engl. Bible* and *Allison & Rogers. Engl. Counter-Reformation* — small, but a
+row labelled **verbatim** that is not verbatim is the same defect class as a stale count. Fetch, don't recall.
+
+⇒ **The one-digit split is adjudicated: it is `S102491`, not `S102419`.** R4.1c is satisfied on this point by
+recording *why*: `S102491` comes from the holding library's catalogue record for the very copy we hold as
+`NT-1582-B`, while `S102419` traces to dealer and auction listings — secondary descriptions of other copies.
+The rejected variant is kept here deliberately so a later reader can see it existed and was decided.
+
+**Method note, and the reason R4.1 sat "BLOCKED EXTERNALLY" longer than it needed to.** The block was real
+but mis-scoped: it was a statement about *ESTC's search interface*, and it was allowed to stand for "the
+bibliographic numbers are unobtainable." The numbers were sitting in an IA field we had already downloaded
+for other purposes. **An external blocker names one route; it does not bound the space of routes** — the same
+shape of error as R4.5's exclusion-by-description.
 
 **Why two authorities and not one.** The failure mode here is not "no number found" but "a plausible number
 found and propagated." A one-digit difference between two live-looking identifiers is precisely what a
@@ -514,7 +586,10 @@ Full evidence at masterplan §1.1c.
 | R8.2 | Guard the class of error | `setting()`, `witnesses_to()`, `assert_same_setting()` | `test_setting_guard.py` — cross-setting collation **refused**, both directions exercised | **DONE** |
 | R8.3 | Attribute `F`'s 1582 title page | it is the genuine 1582 Rhemes setting, **duplicated at leaves 0 and 2**, on a 1633 body | blank-paper correlation against `B`'s title page: a match ⇒ spliced from `B`'s scan; control-level ⇒ the copy is a made-up one. **State which, or state that neither is supported** | OPEN |
 | R8.4 | Re-audit **every** witness for setting, not just the suspected one | printed page + running head at ≥3 separated points per witness, against a known-good partner in its claimed setting | a table covering all twelve records; **any witness whose setting was never checked is named as unchecked, not assumed sound** | **DONE** — 11/12 verified, `OT-1635-M` named unverifiable; §1.1b |
+| R8.4a | **Verify the FOOT criteria §0.3 names and R8.4 never read** — signature and catchword | `verify_setting.py` gains a foot band anchored on the text block; readings in `setting-readings.json` under `foot_readings`/`foot_pairs`/`foot_negative_controls`; enforced by `test_setting_verified.py` | every setting agrees on **signature, catchword and last line** at a matched page, and a **negative control across two settings differs**; negatives proven by injection | **DONE** — 11/11 partnered witnesses agree; `B` @147 `T ij`/`30. Paſſing` vs `R` @147 `CHAP.` separates 1582 from 1633; §1.1b R8.4a |
+| R8.4b | Extend the foot criteria from one matched page to **≥3 separated points**, matching the head pass | additional foot probes per setting, recorded as data | each setting agrees on signature and catchword at ≥3 separated printed pages, not one | OPEN — until then the foot criteria **corroborate the head result at one point**, they are not an independent three-point verification |
 | R8.5 | Bind the plan's counts to the registry | `test_counts_vs_doc.py` | doc/registry disagreement **fails**, proven by a negative case | **DONE** |
+| R8.8 | **Bind the roadmap's own verification standard to reality** | `test_verification_standard.py` — parses the command block, checks every command exists, every `-> N/M` claim matches what the command prints, every guard on disk is documented, guards exit 0 and open audits exit non-zero | a stale count, an undocumented guard, a named-but-missing command, or the section being renamed away each **fail**; all four proven by injection | **DONE** — this file's block claimed `10/10` while the tree verified `12/12`, and listed none of the guards |
 | R8.6 | Re-examine every ground-truth file taken from `NT/S01` | 9 files (`matter-nt-*`, `nt-marke-*`, `scripture-2john`, `scripture-matthew-28`) | each re-filed as **1633** or re-read on `B`; **none silently left labelled 1582** | OPEN — overlaps R7.3 |
 
 **R8.4 was the one that mattered most, and it is now run.** The error was not found by a test; it was found
@@ -588,11 +663,37 @@ from the registry rather than from memory of how things were filed.
 ## Verification standard for this roadmap
 
 A step is **DONE** when its acceptance test runs and passes on demand — not when the code exists.
-Every step above that is marked COMPLETE has a command that reproduces its result:
+Every step above that is marked COMPLETE has a command that reproduces its result.
+
+Run everything with the project interpreter — `../ocr-venv/bin/python` from `ocr-spike/`. The block below
+was itself found stale on 2026-08-07 (it claimed `10/10` and listed none of the guards) and is now bound to
+reality by `witness/test_verification_standard.py`, which parses this block and fails if a command named
+here does not exist or if a count asserted here disagrees with what the command prints.
+
+**Registry and structure** — all exit 0:
 
 ```
-python3 witness/witnesses.py            # registry
-python3 witness/make_witness_tree.py    # build + verify tree      -> 10/10 verified
-python3 witness/inventory_leaves.py     # full-corpus leaf inventory
-python3 witness/reconcile_counts.py     # leaf-count reconciliation table
+../ocr-venv/bin/python witness/witnesses.py             # registry: 12 records over 11 files
+../ocr-venv/bin/python witness/make_witness_tree.py     # build + verify tree  -> 12/12 witnesses verified
+../ocr-venv/bin/python witness/inventory_leaves.py      # full-corpus leaf inventory
+../ocr-venv/bin/python witness/reconcile_counts.py      # leaf-count reconciliation, grouped BY SETTING
 ```
+
+**The guards** — each carries a proven negative case; all exit 0:
+
+```
+../ocr-venv/bin/python witness/test_primacy_guard.py       # R0.5  a render-primary witness raises on pixel access
+../ocr-venv/bin/python witness/test_setting_guard.py       # R8.2  cross-setting collation is REFUSED
+../ocr-venv/bin/python witness/test_counts_vs_doc.py       # R8.2  §1.1 table agrees with the registry (12/12)
+../ocr-venv/bin/python witness/test_setting_verified.py    # R8.4  no witness may lack setting readings
+../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
+```
+
+**The audits** — these are *expected to fail while their step is open*, and that is the point:
+
+```
+../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
+```
+
+A guard exiting 0 and an audit exiting 1 are both healthy states. An audit that exits 0 before its remedy
+is done would mean the audit stopped looking, not that the corpus got better.

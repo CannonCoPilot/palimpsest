@@ -43,13 +43,94 @@ SOLE_WITNESS = {
                  "evidence only, uncorroborated by any second copy",
 }
 
+# The criteria masterplan 0.3 actually names.  Kept as data so the test states
+# the constitution rather than paraphrasing it.
+FOOT_CRITERIA = ("signature", "catchword", "last_line")
+
 FAILURES = []
+
+
+def norm(v):
+    """Compare readings without being defeated by compositor's spacing.
+
+    `OT2-1610-B` sets its signature `Gg2` and `OT2-1610-P` sets the same sort as
+    `G g 2`.  Inter-character space in a signature is a compositor's spacing
+    decision within one setting, not a difference of setting, so it is normalised
+    away.  Nothing else is: case, glyph identity (`ſ` is not `s`) and punctuation
+    all stand, because those DO distinguish settings.
+    """
+    return None if v is None else "".join(str(v).split())
 
 
 def check(label, ok, detail=""):
     print(f"  {'ok  ' if ok else 'FAIL'}  {label}" + (f"   [{detail}]" if detail and not ok else ""))
     if not ok:
         FAILURES.append(f"{label}: {detail}")
+
+
+def check_foot(d, registered):
+    """R8.4a — the FOOT criteria of masterplan 0.3: signature and catchword.
+
+    The head pass verified page number, running head, sidehead and line breaks.
+    0.3 names signature, catchword and line-end words, and the first two live at
+    the foot of the leaf where a head crop cannot see them.  This section holds
+    the method to 0.3 instead of holding 0.3 to the method.
+    """
+    foot = d.get("foot_readings")
+    if not foot:
+        check("foot readings recorded at all", False,
+              "0.3 requires signature and catchword; no foot readings exist")
+        return
+
+    print("\n0.3 FOOT criteria — every witness with a partner has foot readings:")
+    for wid in sorted(registered):
+        if wid in SOLE_WITNESS:
+            continue          # no partner exists, so no pair can be formed
+        check(f"{wid:14s} has foot readings", wid in foot,
+              "no signature/catchword reading -- 0.3's criterion is unverified for "
+              "this witness, and must be named so rather than implied by the head pass")
+
+    # Index by (wid, page) so a pair's claim can be resolved to the actual reading.
+    by = {}
+    for wid, rs in foot.items():
+        for r in rs:
+            by[(wid, r["page"])] = r
+
+    print("\nand every foot pair AGREES on signature, catchword and last line:")
+    for p in d.get("foot_pairs", []):
+        a, b = p["a"], p["b"]
+        for page in p["pages"]:
+            ra, rb = by.get((a, page)), by.get((b, page))
+            if ra is None or rb is None:
+                check(f"{a} vs {b} @{page}: both readings present", False,
+                      f"missing reading for {a if ra is None else b}")
+                continue
+            for crit in FOOT_CRITERIA:
+                va, vb = norm(ra.get(crit)), norm(rb.get(crit))
+                # Both None is agreement: a verso carries no signature, and that
+                # is a fact about the gathering, not a disagreement.
+                check(f"{a:12s} vs {b:12s} @{page} {crit:10s} {ra.get(crit)!r}",
+                      va == vb, f"{a}={va!r} but {b}={vb!r}")
+
+    # A criterion that has never DISTINGUISHED anything is not known to work --
+    # the same standard R0.5 and R5.2 are held to.  The negative control is the
+    # load-bearing half of this section.
+    print("\nnegative control — the foot criteria must SEPARATE different settings:")
+    ncs = d.get("foot_negative_controls", [])
+    check("at least one negative control is recorded", bool(ncs),
+          "without one, agreement across a setting boundary would pass unnoticed")
+    for nc in ncs:
+        differs = [c for c in ("signature", "catchword")
+                   if norm(nc.get(f"a_{c}")) != norm(nc.get(f"b_{c}"))]
+        check(f"{nc['a']} ({nc['a_setting']}) vs {nc['b']} ({nc['b_setting']}) "
+              f"@{nc['page']} differ on {differs or 'NOTHING'}",
+              bool(differs),
+              "same signature AND same catchword across two different settings -- "
+              "either the settings are not distinct or the criterion cannot see it")
+        check(f"   ...while sharing the running head {nc.get('running_head_both')!r}",
+              nc.get("running_head_both") is not None,
+              "the control is only sharp if the two agree on the head, so that the "
+              "foot is what does the separating")
 
 
 def main():
@@ -121,6 +202,8 @@ def main():
         check(f"{wid:14s} still has no same-setting partner", not same,
               f"partner(s) now exist ({same}) -- collate and remove from SOLE_WITNESS")
         print(f"        rests on: {basis}")
+
+    check_foot(d, registered)
 
     print()
     if FAILURES:

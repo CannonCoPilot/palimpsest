@@ -651,5 +651,195 @@
         932
       ]
     }
+  ],
+  "_method_foot": "R8.4a (2026-08-07). The R8.4 pass above read the HEAD band only -- printed page number, running head, sidehead, first lines. Masterplan 0.3 defines setting identity as 'same signature, same catchword, same line-end words', and the signature and catchword are both at the FOOT of the leaf, which a 16% head crop cannot contain. So R8.4 was STRONGER than 0.3 on page numbers (which 0.3 omits) and silently WEAKER on two of its three named criteria. The readings below close that gap on the constitution's own terms rather than amending the constitution to match the instrument. verify_setting.py now emits a FOOT band anchored on the text block, and these are read off it visually, not by OCR.",
+  "_foot_limits": [
+    "A signature appears only on the RECTO of the first leaves of a gathering, so a verso probe legitimately shows none. 'no signature in band' is therefore recorded as null, never as a disagreement.",
+    "F's leaves carry the fatimamovement.com watermark and papal-keys device in the lower-left margin. The band's anchor samples right of centre (ANCHOR_X) to avoid it; the device still appears on the sheet and is not type.",
+    "X is B upscaled (NCC 1.000 at +5), so X's agreement with B here is self-consistency, NOT independent corroboration -- exactly as for the head pass.",
+    "OT-1635-M has no same-setting partner, so no foot pair exists for it. Its status is unchanged: sole witness, unverifiable, not verified."
+  ],
+  "foot_readings": {
+    "NT-1582-B": [
+      {
+        "leaf": 181,
+        "page": 149,
+        "signature": "T iij",
+        "catchword": "bes",
+        "last_line": "30 fitting at the table vvith them. †And their Pharifees and Scri-"
+      },
+      {
+        "leaf": 179,
+        "page": 147,
+        "signature": "T ij",
+        "catchword": "30. Paſſing",
+        "last_line": "Aug. ep. 137.",
+        "note": "NEGATIVE CONTROL against the 1633 setting at the same printed page"
+      }
+    ],
+    "NT-1582-M": [
+      {
+        "leaf": 176,
+        "page": 149,
+        "signature": "T iij",
+        "catchword": "bes",
+        "last_line": "30 fitting at the table vvith them. †And their Pharifees and Scri-"
+      }
+    ],
+    "NT-1582-X": [
+      {
+        "leaf": 176,
+        "page": 149,
+        "signature": "T iij",
+        "catchword": "bes",
+        "last_line": "30 fitting at the table vvith them. †And their Pharifees and Scri-"
+      }
+    ],
+    "NT-1633-F": [
+      {
+        "leaf": 168,
+        "page": 147,
+        "signature": null,
+        "catchword": "CHAP.",
+        "last_line": "benefit at his hands."
+      }
+    ],
+    "NT-1633-R": [
+      {
+        "leaf": 171,
+        "page": 147,
+        "signature": null,
+        "catchword": "CHAP.",
+        "last_line": "benefit at his hands."
+      }
+    ],
+    "OT1-1609-B": [
+      {
+        "leaf": 255,
+        "page": 223,
+        "signature": null,
+        "catchword": "wil",
+        "last_line": "17 endowe her, and haue her to wife. † If the virgins father"
+      }
+    ],
+    "OT1-1609-P": [
+      {
+        "leaf": 247,
+        "page": 223,
+        "signature": null,
+        "catchword": "wil",
+        "last_line": "17 endowe her, and haue her to wife. † If the virgins father"
+      }
+    ],
+    "OT1-1609-F": [
+      {
+        "leaf": 243,
+        "page": 223,
+        "signature": null,
+        "catchword": "wil",
+        "last_line": "17 endowe her, and haue her to wife. † If the virgins father"
+      }
+    ],
+    "OT2-1610-B": [
+      {
+        "leaf": 253,
+        "page": 243,
+        "signature": "Gg2",
+        "catchword": "† Let",
+        "last_line": "prefigured by the Arke of teftimonie, vvhich vvas in the tabernacle, and after in the Temple."
+      }
+    ],
+    "OT2-1610-P": [
+      {
+        "leaf": 251,
+        "page": 243,
+        "signature": "Gg2",
+        "catchword": "† Let",
+        "last_line": "prefigured by the Arke of teftimonie, vvhich vvas in the tabernacle, and after in the Temple."
+      }
+    ],
+    "OT2-1610-F": [
+      {
+        "leaf": 243,
+        "page": 243,
+        "signature": "Gg2",
+        "catchword": "† Let",
+        "last_line": "prefigured by the Arke of teftimonie, vvhich vvas in the tabernacle, and after in the Temple."
+      }
+    ]
+  },
+  "foot_pairs": [
+    {
+      "setting": "NT 1582",
+      "a": "NT-1582-B",
+      "b": "NT-1582-M",
+      "pages": [
+        149
+      ]
+    },
+    {
+      "setting": "NT 1582",
+      "a": "NT-1582-B",
+      "b": "NT-1582-X",
+      "pages": [
+        149
+      ],
+      "note": "self-consistency: X is B upscaled, not independent"
+    },
+    {
+      "setting": "NT 1633",
+      "a": "NT-1633-F",
+      "b": "NT-1633-R",
+      "pages": [
+        147
+      ]
+    },
+    {
+      "setting": "OT1 1609",
+      "a": "OT1-1609-B",
+      "b": "OT1-1609-P",
+      "pages": [
+        223
+      ]
+    },
+    {
+      "setting": "OT1 1609",
+      "a": "OT1-1609-B",
+      "b": "OT1-1609-F",
+      "pages": [
+        223
+      ]
+    },
+    {
+      "setting": "OT2 1610",
+      "a": "OT2-1610-B",
+      "b": "OT2-1610-P",
+      "pages": [
+        243
+      ]
+    },
+    {
+      "setting": "OT2 1610",
+      "a": "OT2-1610-B",
+      "b": "OT2-1610-F",
+      "pages": [
+        243
+      ]
+    }
+  ],
+  "foot_negative_controls": [
+    {
+      "page": 147,
+      "a": "NT-1582-B",
+      "a_setting": "NT 1582",
+      "a_signature": "T ij",
+      "a_catchword": "30. Paſſing",
+      "b": "NT-1633-R",
+      "b_setting": "NT 1633",
+      "b_signature": null,
+      "b_catchword": "CHAP.",
+      "running_head_both": "ACCORDING TO S. LVKE",
+      "note": "Same printed page number and the SAME running head, different signature and different catchword. 0.3's criterion separates these two settings on its own terms, not merely on page numbers."
+    }
   ]
 }

@@ -43,8 +43,28 @@ Resolving a blot from a second photograph of the same forme is *reading the docu
 different printing is *altering* it. Merged into one apparatus, thousands of routine legibility resolutions
 bury the handful of real interventions.
 
-**The setting-identity test, applied before any cross-copy use**: same signature, same catchword, **same
-line-end words**. Identical ⇒ same setting. Setting identity is **proved, never assumed**.
+**The setting-identity test, applied before any cross-copy use**, at the **same printed page** in both
+copies: same **printed page number**, same **running head** and sidehead, same **signature**, same
+**catchword**, same **line-end words**. Identical ⇒ same setting. Setting identity is **proved, never
+assumed**, at **three or more separated points** through the volume.
+
+**Printed page number and running head are named here as of 2026-08-07, and the addition is a correction to
+this section rather than a relaxation of it.** The criterion previously read "same signature, same catchword,
+same line-end words" — and the R8.4 audit that verified eleven of twelve witnesses read the page number,
+running head, sidehead and line breaks, which is *stronger* on one axis this section had omitted and
+**silently weaker on two it named**: the signature and the catchword are both at the **foot** of the leaf, and
+the audit cropped only the head. Neither document said so. Both have been brought into line with each other
+and with the evidence — the instrument gained a foot band (R8.4a) and re-verified every setting on the foot
+criteria, and this section gained the page number it had been missing. **The method was raised to the
+constitution; the constitution was not lowered to the method.** Readings: `witness/setting-readings.json`,
+enforced by `witness/test_setting_verified.py`.
+
+*Why the page number belongs in a criterion that omitted it.* A signature is a property of the **gathering**
+and a catchword of the **forme**; both are set once and both can be shared by a later printing that reuses
+the same casting-off. The printed page number is the cheapest thing to compare and it diverges fastest
+between settings — `B` puts Apocalypse XXII at printed **743** where `F` puts it at **692**. It is not a
+better criterion than the signature; it is an *independent* one, and the case for naming all five is that
+`F`'s title page satisfied the only test anyone had run.
 
 | channel | when | recorded as | where it appears |
 |---|---|---|---|
@@ -461,7 +481,60 @@ is the whole point of R8.4. `witness/test_setting_verified.py` carries it in an 
 that states what the setting does rest on, and **fails if a same-setting partner ever appears** and is not
 then collated for real.
 
-**Was this thorough enough, and could it be wrong?** Four honest limits, one of them already realised:
+#### R8.4a — the audit was measuring four of §0.3's five criteria, and now measures all five
+
+**The gap, stated plainly.** §0.3 defines setting identity as *"same signature, same catchword, same line-end
+words."* The audit above read **printed page number, running head, sidehead and line breaks**. Line-end words
+it compared; **signature and catchword it never looked at** — both sit at the **foot** of the leaf, and
+`verify_setting.py` cropped only the top 16%. So R8.4 was *stronger* than the constitution on one axis the
+constitution had omitted, and **silently weaker on two the constitution named**, and neither document said
+so. Eleven witnesses were verified by a test that could not see two thirds of the stated criterion.
+
+The result was not wrong — nothing below overturns any verdict above — but "the method deviates from the
+constitution and nobody noticed" is the shape of the four-month error, not a lesser thing. So the instrument
+was extended rather than the criterion trimmed: `verify_setting.py` now emits a **foot band** as well as a
+head band, anchored on the text block, and every setting was re-probed at one matched page.
+
+**Result — every claimed setting holds on the signature and catchword too.**
+
+| setting | matched page | signature | catchword | last line, identical in all |
+|---|---|---|---|---|
+| **NT 1582** | **149** | **`T iij`** — `B`, `M`, `X` | **`bes`** | *30 fitting at the table vvith them. †And their Pharifees and Scri-* |
+| **NT 1633** | **147** | *verso — none* | **`CHAP.`** — `F`, `R` | *benefit at his hands.* |
+| **OT1 1609** | **223** | *verso — none* | **`wil`** — `B`, `P`, `F` | *17 endowe her, and haue her to wife. † If the virgins father* |
+| **OT2 1610** | **243** | **`Gg2`** — `B`, `P`, `F` | **`† Let`** | *prefigured by the Arke of teftimonie, vvhich vvas in the tabernacle, and after in the Temple.* |
+| **OT 1635** | — | — | — | no partner; unchanged, still **not verified** |
+
+The catchword completes the caught-up word in every case — `Scri-`/`bes`, `virgins father`/`wil` — which is
+what a catchword is for and is itself a check that the band was read correctly rather than guessed.
+
+**The negative control, on the foot criteria this time, and it is the sharpest result in the section.** At
+printed page **147**, `B` (1582) and `R` (1633) print the **same page number** under the **same running head**
+*ACCORDING TO S. LVKE* — and at the foot `B` has signature **`T ij`** and catchword **`30. Paſſing`** against
+`R`'s catchword **`CHAP.`** and no signature. **The two criteria a head crop can see agree across the setting
+boundary; the two it cannot see separate it.** That is the entire case for the foot band, and it is why the
+gap above was worth closing rather than explaining away.
+
+*Enforcement.* `test_setting_verified.py` now requires foot readings for every witness that has a partner,
+requires every claimed foot pair to agree on signature, catchword **and** last line, and requires at least one
+negative control that actually differs. **All four negatives proven by injection** — a disagreeing pair, a
+negative control doctored to agree, a witness's foot readings deleted, and the controls removed entirely each
+produce exit 1. Signature comparison normalises inter-character space only (`B` sets `Gg2` where `P` sets
+`G g 2`, a compositor's spacing within one setting); case, glyph identity and punctuation all stand.
+
+*Method note worth keeping, because four attempts failed before one worked.* The foot band cannot be a fixed
+fraction of the leaf: bottom margins differ per witness, and the fraction reaching the catchword is 0.10 on
+`P`, over 0.18 on `B` and over 0.22 on `R` — one constant shows **blank paper** for some witnesses, which
+reads as *"this leaf has no catchword."* Nor can the band be anchored on the last ink: `OT1-1609-B`'s
+dog-eared corner, `OT2-1610-F`'s 183-row black edge band and `F`'s `fatimamovement.com` watermark all present
+as the last inked thing on the leaf. The working design anchors on the last **regularly spaced** line of type
+(artefacts are not regular), samples right of centre (the watermark is lower-left, catchwords are right of
+centre), and then extends the band **five line pitches** below in units of the leaf's own measured pitch — so
+the catchword is *guaranteed in view* rather than *located*, and a person reads it. **Every failed variant
+failed the same way: it showed blank paper or the wrong glyphs, and both read as findings.** The instrument's
+job is to put the right pixels in front of a reader, not to adjudicate them — the R7.4 lesson again.
+
+**Was this thorough enough, and could it be wrong?** Five honest limits, two of them already realised:
 
 1. **Three to eight points is a sample, not a collation.** The probes are spread and non-adjacent, which
    defeats the obvious failure (two editions running parallel for a stretch), and a made-up copy would have
@@ -483,6 +556,16 @@ then collated for real.
 4. **This test answers *setting*, and cannot answer *copy*.** Two digitisations of one edition agree at
    every point it measures, whether or not they are the same physical book. That limit produced a live
    question — see immediately below.
+5. **The audit measured four of the constitution's five criteria for a day, and said it had measured
+   setting identity.** Signature and catchword went unread because the crop could not reach them, and
+   nothing in either document recorded the deviation — so the *scope* of the verification was overstated even
+   though its *verdicts* were sound. Closed by R8.4a above, and the general form is worth keeping: **a method
+   that names its criterion in one file and implements it in another will drift, and only a test that reads
+   both catches it.** This is the third instance of that class in the project (`test_counts_vs_doc` for the
+   §1.1 table, `test_verification_standard` for the roadmap's command block, and now the foot criteria).
+   The foot readings are also a **one-page sample per setting**, not the three-or-more points the head pass
+   used; extending them is R8.4b, and until it is done the foot criteria are corroboration of the head result
+   at one point, not an independent three-point verification.
 
 **A new question this audit raised, which it cannot settle (roadmap R8.7).** `NT-1582-M` and `NT-1582-X`
 have the **same leaf count (800) and the same leaf-to-printed-page map at all four probes** — leaf 176 →
@@ -937,21 +1020,53 @@ references is invalid until it is finished.**
 
 The concordance carries these fields per copy:
 
-**edition-issue · STC/ESTC number · volume · repository and shelfmark · scan provenance · completeness and
-imperfections · made-up leaves · raster properties.**
+**edition-issue · setting · STC/ESTC number · volume · repository and shelfmark · scan provenance ·
+completeness and imperfections · made-up leaves · raster properties.**
 
-**Resolved** (§1.2–§1.4): raster properties and calibrated ppi · date-from-title-page for every copy ·
-repository, shelfmark and set membership for the five Princeton and BPL copies · witness independence for
-all eleven files · made-up leaves and their sources for the New Testament · **base exemplars declared**, with
-losing candidates and reasons recorded.
+**`setting` is listed second because it is logically prior to every field after it.** A shelfmark, a
+collation and a made-up-leaf list are all statements *about a particular printing*; if the setting is
+mis-attributed, each of them is filed against the wrong book while remaining internally consistent. §1.1c is
+the worked case: `F`'s New Testament carried four months of sound-looking work under the wrong edition.
+
+**Resolved** (§1.2–§1.4, §1.1b–§1.1c): raster properties and calibrated ppi · date-from-title-page for every
+copy · repository, shelfmark and set membership for the five Princeton and BPL copies · **setting identity
+for eleven of the twelve witness records, with the twelfth named unverifiable** (§1.1b) · made-up leaves and
+their sources for the New Testament · **base exemplars declared**, with losing candidates and reasons
+recorded.
+
+> **An earlier revision of this paragraph read "witness independence for all eleven files," and that claim is
+> withdrawn.** It is the very claim §1.1c overturned: independence was tested for `NT-F` *against `B`*, which
+> licensed only "`F` is not `B`" and was read as "`F` is an independent 1582 copy." Independence now stands
+> per witness on the evidence in §1.1b and §1.1c, and it stands **within a named setting** — an independence
+> claim that does not say *independent witness to what* is not a claim at all. The count also drifted: the
+> corpus is **eleven files carrying twelve witness records** (`M`'s single package attests two settings).
 
 **Outstanding, and blocking:**
 
-**Gate 0a — bibliographic completion.** (i) Repository and shelfmark for the four `S01` files and for
-`NT/S08`. (ii) **STC / ESTC numbers for every copy**, verified against ESTC and cross-checked against the
-held OCLC record numbers — the STC numbers in earlier notes are **unverified leads and are not to be
-written into the concordance**. (iii) Identification of the fourth source supplying `NT/S08`'s two
-frontmatter leaves.
+**Gate 0a — bibliographic completion.**
+- (i) **Repository and shelfmark for the four `S01` files and for `NT/S08`** — *partly discharged, and the
+  split matters.* R4.2 is **DONE as an explicit `NOT ESTABLISHED` verdict**: all four items are
+  `folkscanomy` user uploads with no `scanningcenter`, `contributor`, `call_number` or
+  `external-identifier`, so no repository is recoverable from the catalogue, and that verdict is recorded
+  with its evidence rather than left blank. `NT-1582-X` is the exception that proves the rule — its
+  repository *is* known, **BPL G.404.12**, but by identity with `NT-1582-B`, whose capture its PDF carries at
+  that capture's own raster. **What remains is R4.2a**: the *physical copies* behind the `F` set, by a route
+  other than catalogue metadata. This blocks **citation, not imaging**.
+- (ii) **STC / ESTC numbers for every copy** — *one authority in hand, second required.* The ESTC interface
+  is down (`no such index [estc]`), but the numbers were obtained from **the holding library's own MARC via
+  the IA item record** (`metadata.references`; roadmap R4.1d): `ESTC S102491; STC (2nd ed.), 2884` for the
+  1582 NT and `STC (2nd ed.) 2207; ESTC S101944` for the 1609–10 OT, both from Boston Public Library.
+  **This adjudicates the one-digit `S102419`/`S102491` split in favour of `S102491`** — the holding
+  library's record for the copy we actually hold, against dealer listings for other copies. **Nothing is
+  written into the concordance until a second institution's record agrees** (R4.1e); the two-authority rule
+  exists precisely because a plausible-looking wrong number is the failure mode here, not a missing one.
+- (iii) **Identification of the fourth source supplying `NT/S08`'s two frontmatter leaves** —
+  **RESOLVED, and no longer blocking.** R4.3 is discharged: the source is **`M`** (the 1582 setting witnessed
+  by `NT/S06`), on block-registered correlation of **+0.424 / +0.398** for the matching pair against
+  0.000–0.036 on every cross-pairing, with line-for-line visual agreement including the S. Augustine
+  quotation absent from the 1633 setting (§1.4). It is retained in this list, struck through as resolved,
+  rather than deleted — the file it names had been excluded as "a modern facsimile," and the record of that
+  correction is worth more than a tidy list.
 
 **Gate 0b — completeness and collation.** Per copy: a leaf inventory against the expected signature
 collation, listing **wanting leaves, duplicated leaves, misbound leaves, and made-up leaves with the
@@ -964,8 +1079,55 @@ keyed to printed page number and signature, so that any leaf can be addressed in
 Without it, "the same page" cannot be stated across copies — and §1.4 shows that leaf indices do **not**
 correspond between files even within one volume.
 
-**No transcription of any leaf begins before 0b and 0c are satisfied for that leaf.** Gate 0a may complete
-in parallel; it constrains citation, not imaging.
+**Gate 0e — setting identity, proved per witness.** Every witness record declares the **setting** it attests
+— volume and year of printing — and that declaration is **collated against a second witness to the same
+setting** before the record is admitted. Where no second witness exists, the record is marked **sole witness
+to its setting** and the absence is registered as an absence, not resolved by assumption.
+
+*Criterion* — §0.3's, in full: agreement at the **same printed page**, on printed page number · running head ·
+sidehead · **signature** · **catchword** · line breaks and line-end words, including marginalia, at **three or
+more separated points** spread through the volume. The head band supplies the first three, the **foot band**
+the signature and catchword (R8.4a). Two things are explicitly **not** accepted as proof:
+
+- **A constant leaf offset.** It is corroboration, not evidence: the offset is a property of the binding and
+  the digitisation, the printed page number a property of the printing. It is not even reliably constant —
+  `OT2-1610-B`'s drifts 10 → 12 across the volume, which its nine interior plate and blank leaves fully
+  explain.
+- **A title page.** `NT-1633-F` carries a genuine 1582 Fogny title page, duplicated at leaves 0 and 2, on a
+  1633 Rouen body (§1.1c). The title page is the single most likely leaf to be borrowed, supplied or
+  made up, and is therefore the *worst* available evidence of the setting of the body behind it.
+
+*Discharged by* R8.4 (head criteria) and **R8.4a** (foot criteria: signature and catchword), and enforced
+continuously by two guards: `witness/test_setting_guard.py` (a collation across settings **raises**, proven by
+a negative case) and `witness/test_setting_verified.py` (a registered witness with no setting readings
+**fails**; every claimed pair must agree on signature, catchword *and* last line; and the sole-witness list
+fails the moment a partner appears for it). All four negative cases proven by injection.
+
+*Status:* **11 of 12 records verified on the full §0.3 criterion; `OT-1635-M` named unverifiable** — sole
+record of its setting, resting on its own colophon (Rouen, Iohn Cousturier, `M.DC.XXXV`) and the ten-year
+privilege of 3 August 1634 that it prints. Internal evidence only, uncorroborated.
+
+The **negative control is what licenses the criterion**, and it is sharp: at printed page **147**, `B` (1582)
+and `F`/`R` (1633) carry the *same page number* and the *same running head* `ACCORDING TO S. LVKE`, and differ
+completely at the foot — `B` signature `T ij`, catchword `30. Paſſing` (Luke 4:31–34) against `F`/`R`
+catchword `CHAP.` (Luke 7:44–47). The two criteria a head crop can see agree across a setting boundary; the
+two it cannot see separate them. That is the whole argument for the foot band.
+
+> **Why this gate exists, stated plainly.** The four months lost to `NT-F` were not lost to a missing test —
+> they were lost to a *missing gate*. The setting was assumed at registration, so nothing downstream ever had
+> occasion to doubt it, and the concordance built to catch exactly this class of error verified **title
+> pages** — which is precisely what `F` borrowed. Gates 0a–0d each guard a field that was known to be
+> uncertain. This one guards the field that was *not known to be uncertain*, which is the only kind that
+> costs months. **A gate is cheap; the assumption it replaces is not.**
+
+**No transcription of any leaf begins before 0b, 0c and 0e are satisfied for that leaf** — 0e first, since
+0b's collation and 0c's leaf map are both statements about a particular setting and are meaningless if the
+setting is wrong. Gate 0a may complete in parallel; it constrains citation, not imaging.
+
+**Admission of any newly acquired copy runs Gate 0e before the copy is used for anything** — including the
+Princeton 1582 NT candidate (`thenewtestamento00rhei`, call no. 13737), which is attractive precisely because
+the NT now has only one witness to its own setting, and which is for that same reason the copy we are most
+motivated to admit too quickly.
 
 ---
 
