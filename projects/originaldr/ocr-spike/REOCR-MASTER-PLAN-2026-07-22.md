@@ -446,6 +446,11 @@ almost none was a recognition improvement:
 
     wiring the validated localizer into the audit                    0.1291 -> 0.5133
     declaring the witness inventory (S6-NT dropped, tomes fixed)     53.20% pass, out-of-tome 6 vols -> 0
+        ^ RETIRED 2026-08-08 (R7.5a-3). The S6-NT drop is gone: S6's NT was never SCORED away -- no
+          scorer read `drop_tomes` -- it was suppressed by the addressing defect, which filed its 800
+          leaves under Old Testament books. `NT-1582-M` is a genuine 1582 Rheims setting and the second
+          witness to a setting the NT otherwise holds once. It now attests. Line kept as the record of
+          what was believed then; do not read it as current state.
     realigning the archaic reference + correcting its predicate      53.20% -> 56.60%
     heading-parser fixes (two duplicated copies)                     honest addressing 61.5% -> 94.4%
 

@@ -280,6 +280,20 @@ silence rather than error — which is why it must be checked rather than truste
 it holds two settings the rest of the corpus does not: a **1635 Rouen OT** and a **1582 Rheims NT** whose
 frontmatter is complete.
 
+> 🔴 **OPEN (R7.5a-3, 2026-08-08) — this sentence and the registry now disagree, and the registry moved.**
+> The `drop_tomes: ["NT"]` scoring rule is **RETIRED** (Sir): `NT-1582-M` is a genuine 1582 Rheims setting
+> and the second witness to a setting the New Testament otherwise holds once, so it is not the redundant
+> repeat the drop assumed. `jp2-S06nt` localizes **2,344 pilot-book verses** and now attests in
+> `coverage-audit-verse.json` (matthew 1,067 · john 877 · apocalypse 400).
+> Two consequences must be settled, not assumed:
+> 1. **The "frontmatter witness" role (§1.1, `OCR-MASTERPLAN.md`, `OCR-OVERVIEW.md`) says "no verse of
+>    scripture."** `M` is filed under it. For the NT half that is no longer what the corpus does.
+> 2. **The OT half already contradicted it, and had for longer.** `jp2-S06ot` attests psalms 2,515 and
+>    genesis 1,530 in the same audit, under an editorial rationale — 1635 Rouen is a different edition —
+>    that the role text does not state. That contradiction predates the retirement and was not created
+>    by it.
+> Restate the role per half, or restate the rule. Do not let the sentence above and the audit both stand.
+
 | # | step | deliverable | acceptance |
 |---|---|---|---|
 | R6.1 | Address `S06`'s two halves separately | registry entries `NT-1582-M` (leaves 2072–2871) and, if wanted, `OT-1635-M` (leaves 0–2070) | the OT/NT boundary at the blank leaf 2071 is asserted, not assumed; each half declares its own edition |
@@ -534,6 +548,7 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
 | R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | `jp2-S06` names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids | every record names a witness and a setting; `jp2-S06` raises until they do | **DONE 2026-08-08** — corpus, ground truth and addressing split; boundary READ, not inferred; an unrecorded off-by-one removed |
 | R7.5a-2 | Regenerate the derived artefacts that predate the split | 347 files / 95,548 occurrences still carry `jp2-S06` — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
+| R7.5a-3 | The addressing declaration, and the scoring rule that was hiding inside it | `witness_inventory` S6 declared no NT, so `volume_books()` gave the addressing DP an OT-only state space and force-fitted 800 NT leaves onto OT books — median fit 0.156, **zero** records above 0.5 against 44.8–76.7% everywhere else. The OT half was damaged the same way and the R7.5a split preserved it: 291 of 2,071 pages change book on regeneration, the OT tail smeared onto `daniel` | S6 declares its NT; both halves regenerated (not transformed); every volume clears the 0.5 fit floor; `test_drop_rule_enforced.py` exits 0 | **DONE 2026-08-08** — `drop_tomes` was a SCORING rule read as a CONTAINMENT claim. **Retired (Sir):** its premise (S6's NT repeats an edition A/B/C already hold) died with the 1633 finding — `NT-1582-M` is the second witness to a setting the NT holds once. No scorer ever read it; the addressing defect was the only thing enforcing it. `jp2-S06nt` localizes **2,344** pilot-book verses, was recorded as **zero** with a hand-written "known absence" note, and now attests matthew 1,067 · john 877 · apocalypse 400 |
 | R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
 | R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
 | R7.5d | Retire the routing table's **surviving OUTPUT** | `tome-map-v2.json` (2026-07-28, 4.7 MB, tracked) embedded all four wrong routes as literal `jp2_dir` / `jp2_file` strings. Deleting the table left its output routing, one indirection further out and with no guard on it | no tracked artefact carries an `ocr_dir` → raster path; addresses are witness + leaf index | **DONE 2026-08-08** — deleted (unbuildable until R7.5a); `master-source-list.json`'s one vestigial `jp2_dir` stripped; guarded |
@@ -840,6 +855,7 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_counts_vs_doc.py       # R8.2  §1.1 table agrees with the registry (12/12)
 ../ocr-venv/bin/python witness/test_setting_verified.py    # R8.4  no witness may lack setting readings
 ../ocr-venv/bin/python witness/test_raster_routing.py      # R7.5  ONE route to the pixels, and the guard is on it
+../ocr-venv/bin/python witness/test_drop_rule_enforced.py  # R7.5a-3 a declared scoring drop must have a consumer
 ../ocr-venv/bin/python witness/audit_s06_keys.py          # R7.5a nothing is still keyed `jp2-S06` (exit 1 = derived artefacts pending)
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ```

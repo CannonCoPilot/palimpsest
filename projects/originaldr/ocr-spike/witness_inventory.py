@@ -14,8 +14,11 @@ FOUR RECONSTRUCTED COMPLETE COPIES of the Douay-Rheims as originally printed:
     A   S1              OT1 1609 · OT2 1610 · NT 1582      three separate volumes
     B   S3 + S8         OT1 1609 · OT2 1610 (S3, two volumes) · NT 1582 (S8)
     C   S9              OT1 1609 · OT2 1610 · NT 1582      three separate volumes
-    D   S6 + S4         OT1/OT2 1635 (S6, one file) · NT 1633 (S4)
-        ** S6's NT pages are DROPPED: they repeat the same 1582 edition already carried by A, B and C. **
+    D   S6 + S4         OT1/OT2 1635 (S6, one file) · NT 1633 (S4) · NT 1582 (S6)
+        ** S6's NT pages were formerly DROPPED as a repeat of the 1582 edition held by A, B and C.
+           The drop is RETIRED (Sir, 2026-08-08): S6's NT is NT-1582-M, a genuine 1582 Rheims
+           setting, and the New Testament has only one other witness to that setting. See the S6
+           entry below. **
 
 REFERENCE-WITNESS POLICY (Sir, same date) — which reference is authoritative for WHICH QUESTION:
 
@@ -87,7 +90,7 @@ WITNESSES = {
         },
     },
     "S6": {
-        "copy": "D", "title": "1635 facsimile, whole Bible in one file (OT1/OT2 kept; NT dropped)",
+        "copy": "D", "title": "1635 facsimile, whole Bible in one file (OT1/OT2 1635 · NT 1582)",
         "scan_root": "S06_1610-facsimile-whole",
         "tomes": {
             # R7.5a: `jp2-S06` named the whole 2,872-leaf FILE, both testaments. The OT
@@ -113,11 +116,29 @@ WITNESSES = {
             # allowed to edit a fact.
             "NT": {"year": 1582, "ocr_dir": "jp2-S06nt"},
         },
-        # SCORING rule, not a containment claim (see the NT entry above). S6's NT pages
-        # repeat the 1582 edition already carried by A, B and C, so counting them would
-        # add a fourth copy of one edition and inflate every cross-source agreement.
-        # They are addressed and located like any other leaves; they are not SCORED.
-        "drop_tomes": ["NT"],
+        # `drop_tomes: ["NT"]` STOOD HERE AND IS RETIRED (Sir, 2026-08-08). Recorded rather
+        # than deleted, because the reason it went is a finding and not a preference.
+        #
+        # It read: "S6's NT pages repeat the 1582 edition already carried by A, B and C, so
+        # counting them would add a fourth copy of one edition and inflate every cross-source
+        # agreement." That premise does not survive Session 9. F's New Testament is the 1633
+        # edition, not 1582, and X is B upscaled -- so B is the ONLY witness to the 1582
+        # setting among A, B and C. S6's NT is `NT-1582-M`, a genuine 1582 Rheims setting.
+        # It is therefore not a fourth copy of an edition already held three times; it is the
+        # SECOND witness to a setting held once, and dropping it removed the corroboration the
+        # rule was written to protect against.
+        #
+        # The rule also never worked. Nothing scored with it. Its only consumer was
+        # `page_address_eval.volume_books()`, which read it as a containment claim -- the
+        # R7.5a-3 defect above. While that defect stood, S6's NT could not localize a verse,
+        # so the drop LOOKED enforced; correcting the addressing removed the only thing
+        # enforcing it. `witness/test_drop_rule_enforced.py` fails if a declared drop ever
+        # again has no consumer.
+        #
+        # CONSEQUENCE, stated so it is not discovered as a surprise: S6 now attests in the
+        # coverage audit. On the pilot books it contributes matthew 1,067, john 877,
+        # apocalypse 400. Cross-source agreement in the NT rises because a real second
+        # witness is present, not because one copy is being counted twice.
     },
     "S4": {
         "copy": "D", "title": "1633 Rheims New Testament",
@@ -204,4 +225,5 @@ if __name__ == "__main__":
     for od, (sid, tomes) in sorted(ocr_dir_tome().items()):
         print(f"{od:26} {sid:4} {'+'.join(sorted(tomes)):10} {'+'.join(testaments_for(od)):12}")
     print(f"\nadmitted OCR dirs: {len(admitted_ocr_dirs())}")
-    print(f"S6 drop rule: {WITNESSES['S6'].get('drop_tomes')} (repeat of the 1582 NT held by A/B/C)")
+    drops = {sid: w["drop_tomes"] for sid, w in WITNESSES.items() if w.get("drop_tomes")}
+    print(f"scoring drops: {drops or 'NONE — S6 NT drop retired 2026-08-08, see the S6 entry'}")
