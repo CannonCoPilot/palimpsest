@@ -1,11 +1,11 @@
 {
  "rule": "prefer the jp2 rendering where one exists; never admit both renderings of one source",
  "counts": {
-  "on_disk": 13,
-  "declared": 19,
-  "addressed": 11,
-  "localized": 11,
-  "admitted_witness_volumes": 11
+  "on_disk": 15,
+  "declared": 20,
+  "addressed": 24,
+  "localized": 24,
+  "admitted_witness_volumes": 12
  },
  "admitted": [
   "archive-holiebible-ot1",
@@ -13,7 +13,8 @@
   "archive-ot1-1609",
   "archive-ot2-1610",
   "jp2-S04",
-  "jp2-S06",
+  "jp2-S06nt",
+  "jp2-S06ot",
   "jp2-S08",
   "jp2-S09ot2",
   "pdf-S03a",
@@ -58,7 +59,8 @@
    "pdf-S05"
   ],
   "S6": [
-   "jp2-S06"
+   "jp2-S06nt",
+   "jp2-S06ot"
   ],
   "S8": [
    "jp2-S08"
@@ -78,11 +80,12 @@
   "pdf-S03b": true,
   "jp2-S04": true,
   "pdf-S05": false,
-  "jp2-S06": true,
+  "jp2-S06ot": true,
+  "jp2-S06nt": true,
   "jp2-S08": true,
   "pdf-S09nt": true,
   "archive-holiebible-ot1": true,
-  "jp2-S09ot2": false,
+  "jp2-S09ot2": true,
   "eebo-nt": false,
   "eebo-vol1": false,
   "eebo-vol2": false,
@@ -90,9 +93,7 @@
   "eebo-vol4": false,
   "eebo-vol5": false
  },
- "admitted_without_jp2_backing": [
-  "jp2-S09ot2"
- ],
+ "admitted_without_jp2_backing": [],
  "jp2_available_but_not_registered": [
   "archive-holiebible-ot2"
  ],
@@ -105,26 +106,32 @@
    "addressed": false,
    "localized": false,
    "rule": "prefer jp2; never admit two renderings of one source"
-  },
-  {
-   "duplicate_of": "jp2-S06",
-   "volume": "pdf-S06",
-   "source_key": "s06",
-   "declared": false,
-   "addressed": false,
-   "localized": false,
-   "rule": "prefer jp2; never admit two renderings of one source"
   }
  ],
- "unregistered_but_processed": [],
+ "unregistered_but_processed": [
+  "archive-holiebible-ot1.heldout",
+  "archive-nt-1582.heldout",
+  "archive-ot1-1609.heldout",
+  "archive-ot2-1610.heldout",
+  "jp2-S04.heldout",
+  "jp2-S06nt.heldout",
+  "jp2-S06ot.heldout",
+  "jp2-S08.heldout",
+  "jp2-S09ot2.heldout",
+  "pdf-S03a.heldout",
+  "pdf-S03b.heldout",
+  "pdf-S09nt.heldout"
+ ],
  "declared_curated_but_never_localized": [],
  "on_disk": [
+  ".jp2-S06-divider",
   "archive-holiebible-ot1",
   "archive-nt-1582",
   "archive-ot1-1609",
   "archive-ot2-1610",
   "jp2-S04",
-  "jp2-S06",
+  "jp2-S06nt",
+  "jp2-S06ot",
   "jp2-S08",
   "jp2-S09ot2",
   "pdf-S03a",
@@ -135,29 +142,55 @@
  ],
  "addressed": [
   "archive-holiebible-ot1",
+  "archive-holiebible-ot1.heldout",
   "archive-nt-1582",
+  "archive-nt-1582.heldout",
   "archive-ot1-1609",
+  "archive-ot1-1609.heldout",
   "archive-ot2-1610",
+  "archive-ot2-1610.heldout",
   "jp2-S04",
-  "jp2-S06",
+  "jp2-S04.heldout",
+  "jp2-S06nt",
+  "jp2-S06nt.heldout",
+  "jp2-S06ot",
+  "jp2-S06ot.heldout",
   "jp2-S08",
+  "jp2-S08.heldout",
   "jp2-S09ot2",
+  "jp2-S09ot2.heldout",
   "pdf-S03a",
+  "pdf-S03a.heldout",
   "pdf-S03b",
-  "pdf-S09nt"
+  "pdf-S03b.heldout",
+  "pdf-S09nt",
+  "pdf-S09nt.heldout"
  ],
  "localized": [
   "archive-holiebible-ot1",
+  "archive-holiebible-ot1.heldout",
   "archive-nt-1582",
+  "archive-nt-1582.heldout",
   "archive-ot1-1609",
+  "archive-ot1-1609.heldout",
   "archive-ot2-1610",
+  "archive-ot2-1610.heldout",
   "jp2-S04",
-  "jp2-S06",
+  "jp2-S04.heldout",
+  "jp2-S06nt",
+  "jp2-S06nt.heldout",
+  "jp2-S06ot",
+  "jp2-S06ot.heldout",
   "jp2-S08",
+  "jp2-S08.heldout",
   "jp2-S09ot2",
+  "jp2-S09ot2.heldout",
   "pdf-S03a",
+  "pdf-S03a.heldout",
   "pdf-S03b",
-  "pdf-S09nt"
+  "pdf-S03b.heldout",
+  "pdf-S09nt",
+  "pdf-S09nt.heldout"
  ],
  "curated_source_ids": [
   "S1",

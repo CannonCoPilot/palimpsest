@@ -6,7 +6,7 @@
   "S1": "archive-ot1-1609",
   "S3": "pdf-S03a",
   "S9": "archive-holiebible-ot1",
-  "S6": "jp2-S06"
+  "S6": "jp2-S06ot"
  },
  "stack": [
   {
@@ -1199,10 +1199,10 @@
    "passed": 1027,
    "pass_rate": 0.6752,
    "kinds": {
-    "C": 265,
+    "C": 263,
     "A": 24,
-    "D": 161,
-    "B": 44
+    "D": 162,
+    "B": 45
    },
    "localization_misses": [
     "8:16",
@@ -1221,10 +1221,10 @@
    "passed": 1151,
    "pass_rate": 0.7548,
    "kinds": {
-    "D": 183,
-    "C": 126,
+    "D": 181,
+    "C": 127,
     "A": 23,
-    "B": 42
+    "B": 43
    },
    "localization_misses": [
     "1:31",
@@ -1240,9 +1240,9 @@
    "pass_rate": 0.7608,
    "kinds": {
     "C": 78,
-    "D": 212,
-    "A": 29,
-    "B": 47
+    "D": 210,
+    "A": 30,
+    "B": 48
    },
    "localization_misses": []
   },
@@ -1252,9 +1252,9 @@
    "pass_rate": 0.7771,
    "kinds": {
     "A": 8,
-    "C": 202,
+    "C": 201,
     "D": 102,
-    "B": 29
+    "B": 30
    },
    "localization_misses": []
   }

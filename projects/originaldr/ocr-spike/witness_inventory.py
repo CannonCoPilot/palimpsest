@@ -96,9 +96,27 @@ WITNESSES = {
             # directory, which is now the OT witness and only the OT witness.
             "OT1": {"year": 1635, "ocr_dir": "jp2-S06ot"},
             "OT2": {"year": 1635, "ocr_dir": "jp2-S06ot"},
+            # R7.5a-3: THE NT HALF IS DECLARED, because it EXISTS.
+            #
+            # It was absent from this table, and `volume_books()` builds the addressing
+            # DP's state space from exactly this declaration. So S6's 800 New Testament
+            # leaves were addressed against an Old-Testament-only book set and every one
+            # of them was force-fitted to the nearest OT book -- 800 pages reading
+            # `ACCORDING TO S. IOHN` and `TO TIMOTHEE` filed under Machabees and Daniel,
+            # not one record clearing fit 0.5.
+            #
+            # The cause is a CATEGORY ERROR that this entry now fixes: `drop_tomes` is a
+            # SCORING rule ("do not count S6's NT as a witness"), and it was being read
+            # as a CONTAINMENT claim ("S6 contains no NT"). The volume plainly contains
+            # one. A volume's contents are a fact about the book; whether its readings
+            # are counted is a decision about the corpus, and a decision must not be
+            # allowed to edit a fact.
+            "NT": {"year": 1582, "ocr_dir": "jp2-S06nt"},
         },
-        # S6's NT pages repeat the 1582 edition already carried by A, B and C. They are DROPPED, not scored —
-        # counting them would add a fourth copy of one edition and inflate every cross-source agreement.
+        # SCORING rule, not a containment claim (see the NT entry above). S6's NT pages
+        # repeat the 1582 edition already carried by A, B and C, so counting them would
+        # add a fourth copy of one edition and inflate every cross-source agreement.
+        # They are addressed and located like any other leaves; they are not SCORED.
         "drop_tomes": ["NT"],
     },
     "S4": {

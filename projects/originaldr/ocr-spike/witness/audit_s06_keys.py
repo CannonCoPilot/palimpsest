@@ -64,12 +64,20 @@ def main() -> int:
           + (f"  {bad_gt}" if bad_gt else ""))
     fatal += [f"ground truth still keyed {AMBIG}: {b}" for b in bad_gt]
 
-    for pat in (".page-address-", ".corpus-localize-"):
-        p = SPIKE / f"{pat}{AMBIG}.json"
-        ok = not p.exists()
-        print(f"  {'ok  ' if ok else 'FAIL'}  no {p.name}")
-        if not ok:
-            fatal.append(f"{p.name} still present")
+    # Every VARIANT, not just the plain one. The first version of this audit checked
+    # `.page-address-jp2-S06.json` and passed while `.page-address-jp2-S06.heldout.json`
+    # sat beside it, un-re-keyed and still feeding page_address_eval -- a check that
+    # names one file cannot notice a sibling. It globs now.
+    # `jp2-S06` NOT followed by the volume letters -- `jp2-S06ot` / `jp2-S06nt` are the
+    # well-formed ids this step creates, and a check that flagged them would fail
+    # precisely because the remedy had been applied.
+    bare = re.compile(rf"{re.escape(AMBIG)}(?![a-z])")
+    stragglers = sorted(p for p in SPIKE.glob("*.json")
+                        if bare.search(p.name) and not p.name.startswith(".superseded"))
+    ok = not stragglers
+    print(f"  {'ok  ' if ok else 'FAIL'}  no addressing artefact is named for {AMBIG}"
+          + (f"  {[p.name for p in stragglers]}" if stragglers else ""))
+    fatal += [f"{p.name} still present and un-re-keyed" for p in stragglers]
 
     # ---- 2. derived artefacts. These are the backlog: regenerate, do not patch.
     for p in sorted(SPIKE.rglob("*.json")):

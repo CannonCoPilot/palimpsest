@@ -51,6 +51,12 @@ def tome_of(book: str) -> str:
     return "OT2" if book in OT2_BOOKS else "OT1"
 
 
+# The weakest floor that separates "addressed badly" from "not addressed at all".
+# Deliberately not tuned: every real volume clears it on 45-77% of pages, the degenerate
+# one on 0%, so nothing between 0.05 and 0.44 would change a single verdict.
+FIT_FLOOR = 0.5
+
+
 def build() -> dict:
     inv = SIA.audit()
     sources = {}
@@ -60,6 +66,31 @@ def build() -> dict:
         if not af.exists():
             continue
         recs = json.loads(af.read_text())["records"]
+        # DEGENERATE ADDRESSING (R7.5a-3, 2026-08-08). A volume every one of whose pages
+        # was force-fitted to the nearest book in a set that does not contain its books
+        # still produces a complete-looking address record: every page gets a book, a
+        # chapter and a `fit`. `jp2-S06nt` is the live case -- 800 New Testament leaves
+        # (`ACCORDING TO S. IOHN`, `TO TIMOTHEE`) addressed to Machabees and Daniel,
+        # because `witness_inventory` drops S6's NT and the addressing therefore ran
+        # against the Old Testament book set alone.
+        #
+        # The tell was in the artefact the whole time: **not one of its 800 records clears
+        # fit 0.5**, where every other admitted volume clears it on 45-77% of pages. So
+        # the floor here is the weakest statement that separates them -- not "the fit is
+        # low" but "NOTHING in this volume matched anything", which no real addressing
+        # produces. This is R1.4 again: an unaddressed page must not present as addressed.
+        fits = [r.get("fit") or 0 for r in recs]
+        if recs and not any(f > FIT_FLOOR for f in fits):
+            unaddressable[od] = {
+                "n_pages": len(recs),
+                "why": (f"DEGENERATE ADDRESSING: not one of {len(recs)} records clears fit "
+                        f"{FIT_FLOOR} (max {max(fits):.3f}). Every other admitted volume "
+                        f"clears it on 45-77% of pages. These pages were force-fitted to "
+                        f"the nearest book in a set that does not contain their books, so "
+                        f"the addressing is absent, not merely poor. Re-address this "
+                        f"volume against its own testament (R7.5a-3)."),
+            }
+            continue
         try:
             jp2_page.witness_of(od)
         except KeyError as e:
@@ -140,7 +171,8 @@ if __name__ == "__main__":
             print(f"  {od}: {u['n_pages']} addressed pages cannot be placed\n"
                   f"    {u['why']}\n")
         print(f"built {len(m['sources'])} of {len(m['sources']) + len(m['unaddressable_volumes'])} "
-              f"admitted volumes. Discharge R7.5a (re-key the records), then rebuild.")
+              f"admitted volumes. Fix the reason given above, then rebuild — the map is "
+              f"blocked, not degraded, and a partial map is not written.")
         raise SystemExit(1)
     out.write_text(json.dumps(m, ensure_ascii=False, indent=1))
     print(f"{'volume':24} {'tomes':12} {'pages':>6} {'books':>6} {'jp2':>5} {'offset':>7}")

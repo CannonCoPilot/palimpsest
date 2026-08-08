@@ -212,24 +212,91 @@
    "tome_map_accuracy": 0.0
   },
   {
-   "ocr_dir": "jp2-S06",
-   "witness": null,
-   "unaddressable": "\"'jp2-S06' names a FILE, not a witness: S06 is one 2,872-leaf volume carrying the 1635 Rouen Old Testament and the 1582 Rheims New Testament, which are two settings 53 years apart. Use jp2-S06nt or jp2-S06ot and say which. (R7.5a re-keys the existing records; do not guess a volume here.)\"",
-   "detected_offset_vs_tome_map": null,
-   "offset_profile": null,
-   "tome": null,
-   "books_addressed": [],
-   "n_jp2": 0,
-   "n_ocr": 2872,
+   "ocr_dir": "jp2-S06nt",
+   "witness": "NT-1582-M",
+   "detected_offset_vs_tome_map": -2,
+   "offset_profile": {
+    "-2": 0.0,
+    "-1": 0.0,
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "tome": "NT",
+   "books_addressed": [
+    "matthew",
+    "acts",
+    "luke",
+    "apocalypse",
+    "john",
+    "romans"
+   ],
+   "n_jp2": 800,
+   "n_ocr": 799,
    "ocr_range": [
     1,
-    2872
+    799
    ],
-   "jp2_range": null,
-   "naming_convention": "UNADDRESSABLE",
+   "jp2_range": [
+    2072,
+    2871
+   ],
+   "naming_convention": "renamed",
+   "verified_offset": null,
+   "n_missing_ocr": 800,
+   "missing_is_contiguous_tail": true,
+   "missing_first": [
+    2072,
+    2073,
+    2074,
+    2075,
+    2076
+   ],
+   "missing_last": [
+    2869,
+    2870,
+    2871
+   ],
+   "tome_map_agree": 0,
+   "tome_map_disagree": 0,
+   "tome_map_accuracy": null
+  },
+  {
+   "ocr_dir": "jp2-S06ot",
+   "witness": "OT-1635-M",
+   "detected_offset_vs_tome_map": -2,
+   "offset_profile": {
+    "-2": 0.0,
+    "-1": 0.0,
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0
+   },
+   "tome": "OT2",
+   "books_addressed": [
+    "daniel",
+    "psalms",
+    "genesis",
+    "exodus",
+    "jeremie",
+    "isaie"
+   ],
+   "n_jp2": 2070,
+   "n_ocr": 2070,
+   "ocr_range": [
+    1,
+    2070
+   ],
+   "jp2_range": [
+    1,
+    2070
+   ],
+   "naming_convention": "renamed",
    "verified_offset": null,
    "n_missing_ocr": 0,
    "missing_is_contiguous_tail": false,
+   "missing_first": [],
+   "missing_last": [],
    "tome_map_agree": 0,
    "tome_map_disagree": 0,
    "tome_map_accuracy": null
