@@ -94,7 +94,12 @@ def audit() -> dict:
     # IS EACH ADMITTED VOLUME ACTUALLY SERVED FROM jp2? The directory NAME does not answer this: `pdf-S03a`,
     # `pdf-S03b` and `pdf-S09nt` are all mapped to jp2 images despite the prefix, so a name-based audit would
     # report a problem that does not exist AND miss the one that does.
-    jp2_map = set(jp2_page.OCR_DIR_TO_JP2)
+    # R7.5b: this call site only ever wanted the SET of ocr_dirs the project can address, so it takes the
+    # registry's key set directly. What the set MEANS has narrowed, and the narrowing is the point: it used
+    # to be "this folder has a raster directory", and it is now "this folder names a witness". `jp2-S06` is
+    # deliberately absent from it — that identifier spans two settings 53 years apart, so a volume declared
+    # under it is not jp2-backed, it is UNADDRESSED, and it should report as such until R7.5a re-keys it.
+    jp2_map = set(jp2_page.OCR_DIR_TO_WITNESS)
     jp2_backing = {v: (v in jp2_map) for v in declared}
     no_jp2 = sorted(v for v, d in declared.items()
                     if d["counts_as_witness"] and d["curated"] and v not in jp2_map)

@@ -161,23 +161,94 @@ def main():
         check(f"{J.S06_AMBIGUOUS} refuses to pick a volume", False,
               f"raised {type(e).__name__}: {e}")
 
-    print("\nand the bar list must have exactly one definition in the tree:")
-    defs = []
+    # ---- ONE DEFINITION EACH (R7.5b) -------------------------------------------------
+    #
+    # Four maps in this project have now been found in duplicate, and each duplication
+    # was invisible while the copies happened to agree: the bar list (audit vs registry),
+    # the ocr_dir map (jp2_page vs the registry), the verified offset (tome_map_audit vs
+    # jp2_page), and the curated source map (curated_sources vs jp2_page, which carried
+    # the comment "must stay in sync" -- a map that must stay in sync is R7.5 written as
+    # a note-to-self). The remedy is the same every time: one definition, and a test that
+    # fails when a second appears. Checking only the bar list would have let the other
+    # three come back.
+    print("\nevery load-bearing map must have exactly ONE definition in the tree:")
+    # `\{\s*$` matches a LITERAL table being opened, and deliberately does not match a
+    # derivation (`= {**W.OCR_DIR_TO_WITNESS, ...}`). Deriving from the one definition is
+    # the remedy, so a test that flagged it too would push toward copying instead.
+    SINGLE = {
+        "the bar list":        r"^\s*(BARRED|GLYPH_BARRED)\s*(:[^=]*)?=\s*\{\s*$",
+        "the ocr_dir map":     r"^\s*(OCR_DIR_TO_WITNESS|OCR_DIR_TO_JP2|S06_SPLIT)\s*(:[^=]*)?=\s*\{\s*$",
+        "the verified offset": r"^\s*(JP2_INDEX_OFFSET|VERIFIED_OFFSET)\s*(:[^=]*)?=\s*\{\s*$",
+        "the curated map":     r"^\s*OCR_DIR_SOURCE\s*(:[^=]*)?=\s*\{\s*$",
+    }
+    files_py = []
     for root, _dirs, files in os.walk(SPIKE):
         if "/.git" in root or "__pycache__" in root or "/.scratch" in root:
             continue
-        for f in files:
-            if not f.endswith(".py"):
-                continue
-            p = Path(root) / f
+        files_py += [Path(root) / f for f in files if f.endswith(".py")]
+    for label, pat in SINGLE.items():
+        defs = []
+        for p in files_py:
             try:
-                if re.search(r"^\s*(BARRED|GLYPH_BARRED)\s*=\s*\{", p.read_text(), re.M):
+                if re.search(pat, p.read_text(), re.M):
                     defs.append(str(p.relative_to(SPIKE)))
             except OSError:
                 continue
-    check(f"one definition of the bar list, found {defs}", len(defs) == 1,
-          "two copies of 'which witnesses are barred' will drift, which is R7.5 "
-          "one level up")
+        check(f"one definition of {label}, found {defs}", len(defs) == 1,
+              f"two copies of {label} will drift, and while they agree the drift is "
+              f"invisible -- which is R7.5 one level up")
+
+    # The audit legitimately extends the map with ids the registry cannot address (the
+    # GT prelims directories, and `jp2-S06` until R7.5a re-keys it). An extension is
+    # fine; a SHADOW is not -- an entry that re-answers a question the registry already
+    # answers is how the audit came to resolve `jp2-S06` while the registry refused it.
+    print("\nthe GT audit may EXTEND the ocr_dir map but never shadow it:")
+    import audit_gt_rasters as A          # noqa: E402
+    overlap = sorted(set(A.GT_LEGACY) & set(W.OCR_DIR_TO_WITNESS))
+    check(f"GT_LEGACY shadows nothing in the registry, overlap={overlap}", not overlap,
+          "the audit is re-answering an ocr_dir the registry already resolves; if the "
+          "two ever disagree the audit silently wins and nothing says so")
+    check("GT_LEGACY only holds ids the registry refuses",
+          all(k == W.S06_AMBIGUOUS or k not in W.OCR_DIR_TO_WITNESS for k in A.GT_LEGACY),
+          f"unexpected keys: {sorted(A.GT_LEGACY)}")
+
+    print("\nthe curated allowlist must be DERIVED from the registry, not restated:")
+    sys.path.insert(0, str(SPIKE))
+    import curated_sources as C           # noqa: E402
+    expected = set(W.OCR_DIR_TO_WITNESS) | {W.S06_AMBIGUOUS}
+    check("curated map covers exactly the registry's ocr_dirs (+ the S06 file id)",
+          set(C.OCR_DIR_SOURCE) == expected,
+          f"missing {sorted(expected - set(C.OCR_DIR_SOURCE))}, "
+          f"extra {sorted(set(C.OCR_DIR_SOURCE) - expected)} -- an ocr_dir the allowlist "
+          f"knows and the registry does not is a folder nothing can address")
+    for od, (vol, sig) in sorted(W.OCR_DIR_TO_WITNESS.items()):
+        want = W.source_id(vol, sig)
+        check(f"{od:26s} -> {want}", C.OCR_DIR_SOURCE.get(od) == want,
+              f"allowlist says {C.OCR_DIR_SOURCE.get(od)}, registry's legacy field says {want}")
+    check("every derived source id is in the curated allowlist",
+          set(C.OCR_DIR_SOURCE.values()) <= set(C.CURATED),
+          f"derived {sorted(set(C.OCR_DIR_SOURCE.values()) - set(C.CURATED))}, which is not "
+          f"in CURATED -- either a banned source entered the registry or source_id() is wrong")
+
+    # ---- AND THE SAME DEFECT MUST NOT SURVIVE AS AN ARTEFACT (R7.5d) -----------------
+    #
+    # Deleting the table left its OUTPUT on disk. `tome-map-v2.json` was built by it on
+    # 2026-07-28 and embedded all four wrong routes as literal `jp2_dir` / `jp2_file`
+    # strings -- jp2-S04 -> the retired MRC composite, the three archive-* volumes -> F's
+    # renders. A checked-in JSON holding raster paths is a routing table that no guard
+    # sits on, one indirection further away, and it outlived the code that wrote it.
+    print("\nno tracked artefact may embed a raster route:")
+    offenders = []
+    for p in sorted(SPIKE.glob("*.json")):
+        try:
+            head = p.read_text()[:2_000_000]
+        except OSError:
+            continue
+        if re.search(r'"(jp2_dir|jp2_file)"\s*:\s*"', head):
+            offenders.append(p.name)
+    check(f"no *.json carries jp2_dir/jp2_file, found {offenders}", not offenders,
+          "an artefact is holding ocr_dir -> raster-path pairs; regenerate it so it "
+          "records the WITNESS and the LEAF INDEX, and let the resolver produce paths")
 
     print()
     if FAILURES:

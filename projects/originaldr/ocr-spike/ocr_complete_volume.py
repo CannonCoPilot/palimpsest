@@ -40,16 +40,21 @@ _NUM = re.compile(r"_(\d{4})$")
 
 def missing_pages(ocr_dir: str) -> tuple[list, str]:
     """Page indices present as jp2 but absent from the OCR corpus, plus the stem pattern to write."""
-    entry = jp2_page.OCR_DIR_TO_JP2.get(ocr_dir)
-    if not entry:
-        raise KeyError(f"{ocr_dir} has no jp2 mapping — cannot complete it")
-    jp2 = sorted(int(m.group(1)) for p in glob.glob(str(jp2_page.SCANS / entry[1] / "*.jp2"))
-                 if (m := _NUM.search(Path(p).stem)))
+    # R7.5b: STRUCTURE. This asks which leaves exist and which of them the OCR
+    # corpus is missing — page inventory, not pixels. The leaves it names are then
+    # OCR'd downstream, and that consumer opens them through its own route; this
+    # function must not hand it a raster directory (which is what the retired
+    # OCR_DIR_TO_JP2 did, and how the OCR ran on F's renders in the first place).
+    leaves = jp2_page.structure_leaves(ocr_dir)
+    if not leaves:
+        raise KeyError(f"{ocr_dir} resolves to no leaves — cannot complete it")
+    jp2 = sorted(int(m.group(1)) for p in leaves if (m := _NUM.search(p.stem)))
     have = {int(m.group(1)) for p in glob.glob(str(core.BASE_OCR_ROOT / ocr_dir / "*.json"))
             if (m := _NUM.search(Path(p).stem))}
     existing = sorted(glob.glob(str(core.BASE_OCR_ROOT / ocr_dir / "*.json")))
-    stem = _NUM.sub("", Path(existing[0]).stem) if existing else Path(entry[1]).name.replace("_jp2", "")
-    off = jp2_page.JP2_INDEX_OFFSET.get(ocr_dir, 0)
+    stem = (_NUM.sub("", Path(existing[0]).stem) if existing
+            else _NUM.sub("", leaves[0].stem))
+    off = jp2_page.leaf_index(ocr_dir, 0)
     return [p - off for p in jp2 if (p - off) not in have], stem
 
 

@@ -171,8 +171,19 @@ def sweep_volume(ocr_dir: str) -> list:
     # C9 page counts across the three renderings
     import reocr_core as core
     n_ocr = len(glob.glob(str(core.BASE_OCR_ROOT / ocr_dir / "*.json")))
-    entry = jp2_page.OCR_DIR_TO_JP2.get(ocr_dir)
-    n_jp2 = len(glob.glob(str(Path(jp2_page.SCANS) / entry[1] / "*.jp2"))) if entry else None
+    # R7.5b: STRUCTURE. A page COUNT, compared against the OCR corpus and the PDF.
+    # Counting leaves is admissible for every witness — a render preserves page
+    # order and page count — so this route is open where the pixel route is barred,
+    # and C9 keeps working for F and X rather than going quiet on them.
+    try:
+        n_jp2 = len(jp2_page.structure_leaves(ocr_dir)) or None
+    except (KeyError, FileNotFoundError, ValueError) as e:
+        # Named, not swallowed: a volume whose leaves cannot be resolved is a
+        # finding about the volume, and reporting it as "no comparison available"
+        # is the R1.4 fault (an unmeasurable reported as a measurement).
+        add("C9", "WARN", f"leaf inventory unavailable, so OCR page count is "
+                          f"UNCHECKED for this volume: {e}")
+        n_jp2 = None
     n_pdf = pdf_pages(ocr_dir)
     if n_jp2 is not None and n_ocr != n_jp2:
         add("C9", "WARN" if abs(n_ocr - n_jp2) <= 2 else "ERROR",

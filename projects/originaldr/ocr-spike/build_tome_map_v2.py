@@ -54,24 +54,45 @@ def tome_of(book: str) -> str:
 def build() -> dict:
     inv = SIA.audit()
     sources = {}
+    unaddressable = {}
     for od in inv["admitted"]:
         af = HERE / f".page-address-{od}.json"
         if not af.exists():
             continue
         recs = json.loads(af.read_text())["records"]
-        entry = jp2_page.OCR_DIR_TO_JP2.get(od)
-        jp2_dir = entry[1] if entry else None
-        offset = TMA.VERIFIED_OFFSET.get(od, 0)
+        try:
+            jp2_page.witness_of(od)
+        except KeyError as e:
+            # R7.5b/R7.5a. An admitted volume whose identifier does not name a witness is RECORDED AS
+            # UNBUILT, and `main` refuses to write the map. It is not skipped: skipping would produce a
+            # tome map that is short by this volume's leaves and says nothing about it, which is a
+            # below-threshold result wearing a completed one's clothes. `jp2-S06` is the live case —
+            # 2,872 leaves over two settings 53 years apart, awaiting the R7.5a re-key.
+            unaddressable[od] = {"n_pages": len(recs), "why": str(e)}
+            continue
+        # R7.5b: STRUCTURE. The tome map is an ADDRESS book — which leaf carries which book and chapter —
+        # and addressing is admissible for every witness because a render preserves page order.
+        #
+        # What it must NOT do is write a raster PATH into the map. A stored path is a route to the pixels
+        # that no guard sits on, and a consumer reading `jp2_file` out of a JSON file would be doing exactly
+        # what the retired routing table did, one indirection further away. So the map records the WITNESS
+        # and the LEAF INDEX, and a consumer that wants the image asks the resolver for it.
+        witness = jp2_page.wid_of(od)
+        n_leaves = len(jp2_page.structure_leaves(od))
+        offset = jp2_page.leaf_index(od, 0)
         books: dict = defaultdict(lambda: defaultdict(list))
         pages = {}
         for r in recs:
             pi = r["page_index"]
-            jp2_idx = pi + offset if jp2_dir else None
+            jp2_idx = pi + offset
             pages[str(pi)] = {
                 "ocr_page_index": pi,
-                "jp2_page_index": jp2_idx,
-                "jp2_file": (f"{Path(jp2_dir).name.replace('_jp2','')}_{jp2_idx:04d}.jp2"
-                             if jp2_dir and jp2_idx is not None else None),
+                "leaf_index": jp2_idx,
+                "jp2_page_index": jp2_idx,        # retained name; consumers predate `leaf_index`
+                # NO raster path here, deliberately (R7.5b). `witness` + `leaf_index` is a complete
+                # address; resolving it to an image is `jp2_page.pixel_path()`'s job, and routing it
+                # through the resolver is what puts the guard between a consumer and F's renders.
+                "witness": witness,
                 "source_page_index": pi,          # the index every OCR artifact and the audit already use
                 "book": r["book"], "chapters": r["chapters_on_page"],
                 "tome": tome_of(r["book"]), "kind": r["kind"],
@@ -80,9 +101,11 @@ def build() -> dict:
             for ch in r["chapters_on_page"] or []:
                 books[r["book"]][str(ch)].append(pi)
         sources[od] = {
-            "ocr_dir": od, "jp2_dir": jp2_dir,
+            "ocr_dir": od,
+            "witness": witness,
+            "n_leaves": n_leaves,
             "jp2_index_offset": offset,
-            "jp2_backed": bool(jp2_dir),
+            "jp2_backed": bool(n_leaves),
             "n_pages": len(recs),
             "tomes": sorted({tome_of(r["book"]) for r in recs}),
             "books": {b: {"chapter_pages": {c: sorted(set(p)) for c, p in sorted(ch.items(), key=lambda kv: int(kv[0]))},
@@ -100,12 +123,25 @@ def build() -> dict:
         "admitted_volumes": inv["admitted"],
         "n_sources": len(sources),
         "sources": sources,
+        # Present and non-empty means the map is INCOMPLETE and must not be consumed as if it were not.
+        "unaddressable_volumes": unaddressable,
     }
 
 
 if __name__ == "__main__":
     m = build()
     out = HERE / "tome-map-v2.json"
+    if m["unaddressable_volumes"]:
+        # NOT written. A tome map missing a volume looks exactly like a tome map, and every consumer
+        # downstream would read "100% of pages addressed" off a file that had silently dropped 2,872
+        # leaves. The build stays OPEN and blocks, and the fix is R7.5a, not a smaller map.
+        print("REFUSING TO WRITE tome-map-v2.json — the map would be INCOMPLETE.\n")
+        for od, u in sorted(m["unaddressable_volumes"].items()):
+            print(f"  {od}: {u['n_pages']} addressed pages cannot be placed\n"
+                  f"    {u['why']}\n")
+        print(f"built {len(m['sources'])} of {len(m['sources']) + len(m['unaddressable_volumes'])} "
+              f"admitted volumes. Discharge R7.5a (re-key the records), then rebuild.")
+        raise SystemExit(1)
     out.write_text(json.dumps(m, ensure_ascii=False, indent=1))
     print(f"{'volume':24} {'tomes':12} {'pages':>6} {'books':>6} {'jp2':>5} {'offset':>7}")
     print("-" * 66)

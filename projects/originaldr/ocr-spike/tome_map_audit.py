@@ -48,9 +48,13 @@ _NUM = re.compile(r"_(\d{4})$")
 
 # VERIFIED index offsets (OCR page index -> jp2 page index). Established by rendering the jp2 and reading it
 # against the OCR text, not by assumption. A volume absent here is asserted to be aligned and check 2 tests it.
-VERIFIED_OFFSET = {
-    "jp2-S09ot2": -1,      # OCR S09ot2_0040 is jp2 holiebiblefaithf00mart_0039 (verified 2026-07-27)
-}
+#
+# R7.5b: this was a SECOND, hand-kept copy of `jp2_page.JP2_INDEX_OFFSET` holding the same verified
+# `jp2-S09ot2 = -1`. Two copies of an offset is R7.5 in miniature: the day one of them gains an entry the
+# other does not, this audit certifies an alignment that the raster resolver does not use — and the failure
+# is silent, because both numbers are plausible. It is now the same object, and the guard fails if a second
+# definition reappears anywhere in the tree.
+VERIFIED_OFFSET = jp2_page.JP2_INDEX_OFFSET
 
 
 def _idx(stem: str):
@@ -61,17 +65,35 @@ def _idx(stem: str):
 def volume_report(ocr_dir: str) -> dict:
     ocr = sorted(filter(None, (_idx(Path(p).stem) for p in glob.glob(str(STORE / ocr_dir / "*.json")))))
     ocr_stems = {Path(p).stem for p in glob.glob(str(STORE / ocr_dir / "*.json"))}
-    jp2_entry = jp2_page.OCR_DIR_TO_JP2.get(ocr_dir)
-    jp2, jp2_stems = [], set()
-    if jp2_entry:
-        files = glob.glob(str(jp2_page.SCANS / jp2_entry[1] / "*.jp2"))
-        jp2 = sorted(filter(None, (_idx(Path(p).stem) for p in files)))
-        jp2_stems = {Path(p).stem for p in files}
+
+    # R7.5b. An identifier that names no witness cannot be aligned against anything, and this audit's whole
+    # subject is alignment. It reports as a DEFECT with its OCR count intact -- the volume stays visible and
+    # stays counted -- rather than raising (which would take the other ten volumes down with it) or being
+    # skipped (which would quietly shrink the denominator and let "0 volumes with a defect" mean nothing).
+    try:
+        witness = jp2_page.wid_of(ocr_dir)
+    except KeyError as e:
+        return {
+            "ocr_dir": ocr_dir, "witness": None, "unaddressable": str(e),
+            "detected_offset_vs_tome_map": None, "offset_profile": None,
+            "tome": None, "books_addressed": [],
+            "n_jp2": 0, "n_ocr": len(ocr),
+            "ocr_range": [min(ocr), max(ocr)] if ocr else None, "jp2_range": None,
+            "naming_convention": "UNADDRESSABLE", "verified_offset": None,
+            "n_missing_ocr": 0, "missing_is_contiguous_tail": False,
+            "tome_map_agree": 0, "tome_map_disagree": 0, "tome_map_accuracy": None,
+        }
+    # R7.5b: STRUCTURE. This audit compares leaf STEMS and leaf INDICES against the OCR corpus to establish
+    # index alignment. It never opens a leaf, so every witness is admissible — and it must stay that way,
+    # because the volumes whose alignment is least certain are exactly the ones barred from pixel work.
+    files = jp2_page.structure_leaves(ocr_dir)
+    jp2 = sorted(filter(None, (_idx(p.stem) for p in files)))
+    jp2_stems = {p.stem for p in files}
 
     # naming convention: identical stems => alignment holds by construction; a rename must be verified.
     shared_stems = len(ocr_stems & jp2_stems)
     convention = ("name-matched" if shared_stems and shared_stems >= 0.9 * len(ocr_stems)
-                  else "renamed" if jp2_entry else "no-jp2-mapping")
+                  else "renamed" if files else "no-jp2-mapping")
     offset = VERIFIED_OFFSET.get(ocr_dir, 0 if convention == "name-matched" else None)
 
     missing = sorted(set(jp2) - set(x + (offset or 0) for x in ocr)) if jp2 else []
@@ -127,7 +149,7 @@ def volume_report(ocr_dir: str) -> dict:
         detected_offset = best_off
         offset_profile = {str(o): round(cand[o][0] / max(1, sum(cand[o])), 3) for o in cand}
     return {
-        "ocr_dir": ocr_dir, "jp2_dir": jp2_entry[1] if jp2_entry else None,
+        "ocr_dir": ocr_dir, "witness": witness,
         "detected_offset_vs_tome_map": locals().get("detected_offset"),
         "offset_profile": locals().get("offset_profile"),
         "tome": tome, "books_addressed": books[:6],
@@ -156,11 +178,14 @@ def main():
         off = f"{off}/{det}" if det is not None else off
         print(f"{r['ocr_dir']:24} {str(r['tome']):5} {r['n_jp2']:6} {r['n_ocr']:6} {r['n_missing_ocr']:8} "
               f"{r['naming_convention']:>13} {off:>8} {acc:>13}")
-    bad = [r for r in rows if r["n_missing_ocr"] or r["verified_offset"] is None
+    bad = [r for r in rows if r.get("unaddressable") or r["n_missing_ocr"] or r["verified_offset"] is None
            or (r["tome_map_accuracy"] is not None and r["tome_map_accuracy"] < 0.99)]
     print(f"\nvolumes with a defect: {len(bad)} of {len(rows)}")
     for r in bad:
         why = []
+        if r.get("unaddressable"):
+            why.append(f"UNADDRESSABLE — {r['n_ocr']} OCR'd pages cannot be aligned to any leaf, because "
+                       f"{r['unaddressable'].splitlines()[0]}")
         if r["n_missing_ocr"]:
             why.append(f"{r['n_missing_ocr']} pages never OCR'd"
                        + (" (CONTIGUOUS TAIL — a run that died)" if r["missing_is_contiguous_tail"] else ""))

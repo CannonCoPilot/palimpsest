@@ -28,17 +28,29 @@ from witness import witnesses as W  # noqa: E402
 GT = pathlib.Path(__file__).resolve().parents[1] / "ground-truth"
 
 # The `ocr_dir` values the ground-truth files use predate the sigla.  They name an
-# ACQUISITION, not a book, which is exactly why they went stale -- see the plan's note
-# on legacy ids.  Mapped here in one place rather than guessed per file.
-OCR_DIR_TO_WITNESS = {
-    "archive-nt-1582": ("NT", "F"),
-    "archive-ot1-1609": ("OT1", "F"),
-    "archive-ot2-1610": ("OT2", "F"),
-    "jp2-S08": ("NT", "X"),
-    "jp2-S06": ("OT", "M"),
-    "witness/prelims-M": ("NT", "M"),
+# ACQUISITION, not a book, which is exactly why they went stale.
+#
+# R7.5b (2026-08-08): this was a SECOND, hand-written copy of the registry's ocr_dir
+# map, and it had already drifted -- it resolved `jp2-S06` to `("OT", "M")` while the
+# registry deliberately REFUSES that identifier, because `S06` spans two settings 53
+# years apart.  Two maps, one of which guesses where the other refuses, is the
+# four-month error's exact shape.  The shared entries are now DERIVED.
+GT_LEGACY = {
+    # Three identifiers appear in ground truth that the registry cannot address, and
+    # each is resolved from the RECORD, not from the id.
+    #
+    # `jp2-S06`: all three files are `matter-ot2-*` at leaves 2049-2070, and M's OT
+    # half is leaves 0-2070 (the NT half begins at 2071).  So the volume is read off
+    # the leaf index, which is evidence; the identifier itself remains ambiguous and
+    # the registry is right to refuse it.  R7.5a re-keys these to `jp2-S06ot`, after
+    # which this entry goes away rather than being maintained.
+    "jp2-S06":              ("OT", "M"),
+    # These two are not acquisitions at all -- they name the extraction directories
+    # the prelims were read from, and they already carry the witness id in the path.
+    "witness/prelims-M":    ("NT", "M"),
     "witness/prelims-OT-M": ("OT", "M"),
 }
+OCR_DIR_TO_WITNESS = {**W.OCR_DIR_TO_WITNESS, **GT_LEGACY}
 
 # Why a witness cannot carry a glyph-level call.  Resolution and derivation are separate
 # defects and a witness can have both: `F` is barred on resolution *and* renders.

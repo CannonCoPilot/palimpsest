@@ -1,20 +1,39 @@
 {
- "n": 118,
+ "n": 123,
  "by_severity": {
-  "ERROR": 99,
-  "WARN": 14,
-  "INFO": 5
+  "ERROR": 96,
+  "WARN": 21,
+  "INFO": 6
  },
  "by_check": {
-  "C5": 78,
-  "C6": 14,
-  "C9": 5,
-  "C3": 5,
-  "C4": 5,
-  "C7": 7,
-  "C10": 4
+  "C5": 84,
+  "C6": 20,
+  "C9": 8,
+  "C10": 8,
+  "C3": 1,
+  "C4": 1,
+  "C7": 1
  },
  "findings": [
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "archive-holiebible-ot1",
+   "tome": "OT1",
+   "msg": "'deuteronomy 7' is split across 2 disjoint page runs: [(445, 448), (499, 499)]",
+   "book": "deuteronomy",
+   "chapter": 7,
+   "runs": [
+    [
+     445,
+     448
+    ],
+    [
+     499,
+     499
+    ]
+   ]
+  },
   {
    "check": "C5",
    "sev": "ERROR",
@@ -49,31 +68,12 @@
    "sev": "ERROR",
    "vol": "archive-holiebible-ot1",
    "tome": "OT1",
-   "msg": "'genesis 29' is split across 2 disjoint page runs: [(106, 106), (124, 128)]",
-   "book": "genesis",
-   "chapter": 29,
-   "runs": [
-    [
-     106,
-     106
-    ],
-    [
-     124,
-     128
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "archive-holiebible-ot1",
-   "tome": "OT1",
-   "msg": "'job 42' is split across 2 disjoint page runs: [(1140, 1148), (1157, 1157)]",
+   "msg": "'job 42' is split across 2 disjoint page runs: [(1139, 1148), (1157, 1157)]",
    "book": "job",
    "chapter": 42,
    "runs": [
     [
-     1140,
+     1139,
      1148
     ],
     [
@@ -92,23 +92,12 @@
    "n_jp2": 1160
   },
   {
-   "check": "C3",
+   "check": "C10",
    "sev": "ERROR",
-   "vol": "archive-nt-1582",
-   "tome": "NT",
-   "msg": "'matthew' missing 1 chapter(s): [1]",
-   "book": "matthew",
-   "chapters": [
-    1
-   ]
-  },
-  {
-   "check": "C4",
-   "sev": "ERROR",
-   "vol": "archive-nt-1582",
-   "tome": "NT",
-   "msg": "'matthew' is present but its chapter 1 is not — the head of the book is lost",
-   "book": "matthew"
+   "vol": "archive-holiebible-ot1",
+   "tome": "OT1",
+   "msg": "1 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 1
   },
   {
    "check": "C6",
@@ -121,32 +110,12 @@
    "n": 47
   },
   {
-   "check": "C6",
-   "sev": "WARN",
-   "vol": "archive-nt-1582",
-   "tome": "NT",
-   "msg": "'matthew 2' claims 32 pages",
-   "book": "matthew",
-   "chapter": 2,
-   "n": 32
-  },
-  {
-   "check": "C7",
-   "sev": "ERROR",
-   "vol": "archive-nt-1582",
-   "tome": "NT",
-   "msg": "31 of the volume's first 40 pages are addressed to 'matthew 2' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "matthew",
-   "chapter": 2,
-   "n": 31
-  },
-  {
    "check": "C10",
    "sev": "ERROR",
    "vol": "archive-nt-1582",
    "tome": "NT",
-   "msg": "25 localized verses whose book:chapter is not what their page is addressed to",
-   "n": 25
+   "msg": "4 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 4
   },
   {
    "check": "C5",
@@ -267,55 +236,17 @@
    "sev": "ERROR",
    "vol": "archive-ot2-1610",
    "tome": "OT2",
-   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(962, 966), (1047, 1047)]",
+   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(962, 965), (1047, 1047)]",
    "book": "2-machabees",
    "chapter": 7,
    "runs": [
     [
      962,
-     966
+     965
     ],
     [
      1047,
      1047
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "archive-ot2-1610",
-   "tome": "OT2",
-   "msg": "'2-machabees 8' is split across 2 disjoint page runs: [(965, 968), (1051, 1051)]",
-   "book": "2-machabees",
-   "chapter": 8,
-   "runs": [
-    [
-     965,
-     968
-    ],
-    [
-     1051,
-     1051
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "archive-ot2-1610",
-   "tome": "OT2",
-   "msg": "'2-machabees 9' is split across 2 disjoint page runs: [(967, 970), (1029, 1029)]",
-   "book": "2-machabees",
-   "chapter": 9,
-   "runs": [
-    [
-     967,
-     970
-    ],
-    [
-     1029,
-     1029
     ]
    ]
   },
@@ -362,60 +293,32 @@
    "sev": "WARN",
    "vol": "archive-ot2-1610",
    "tome": "OT2",
-   "msg": "'2-machabees 14' claims 144 pages",
+   "msg": "'2-machabees 14' claims 89 pages",
    "book": "2-machabees",
    "chapter": 14,
-   "n": 144
+   "n": 89
   },
   {
-   "check": "C5",
-   "sev": "ERROR",
+   "check": "C6",
+   "sev": "WARN",
    "vol": "archive-ot2-1610",
    "tome": "OT2",
-   "msg": "'2-machabees 15' is split across 2 disjoint page runs: [(1069, 1069), (1123, 1127)]",
+   "msg": "'2-machabees 15' claims 60 pages",
    "book": "2-machabees",
    "chapter": 15,
-   "runs": [
-    [
-     1069,
-     1069
-    ],
-    [
-     1123,
-     1127
-    ]
-   ]
+   "n": 60
   },
   {
    "check": "C5",
    "sev": "ERROR",
    "vol": "archive-ot2-1610",
    "tome": "OT2",
-   "msg": "'psalms 1' is split across 2 disjoint page runs: [(15, 15), (235, 235)]",
-   "book": "psalms",
-   "chapter": 1,
-   "runs": [
-    [
-     15,
-     15
-    ],
-    [
-     235,
-     235
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "archive-ot2-1610",
-   "tome": "OT2",
-   "msg": "'psalms 100' is split across 2 disjoint page runs: [(182, 183), (256, 256)]",
+   "msg": "'psalms 100' is split across 2 disjoint page runs: [(181, 183), (256, 256)]",
    "book": "psalms",
    "chapter": 100,
    "runs": [
     [
-     182,
+     181,
      183
     ],
     [
@@ -425,41 +328,12 @@
    ]
   },
   {
-   "check": "C7",
-   "sev": "ERROR",
-   "vol": "archive-ot2-1610",
-   "tome": "OT2",
-   "msg": "18 of the volume's first 40 pages are addressed to 'psalms 2' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "psalms",
-   "chapter": 2,
-   "n": 18
-  },
-  {
    "check": "C10",
    "sev": "ERROR",
    "vol": "archive-ot2-1610",
    "tome": "OT2",
-   "msg": "1 localized verses whose book:chapter is not what their page is addressed to",
-   "n": 1
-  },
-  {
-   "check": "C3",
-   "sev": "ERROR",
-   "vol": "jp2-S04",
-   "tome": "NT",
-   "msg": "'matthew' missing 1 chapter(s): [1]",
-   "book": "matthew",
-   "chapters": [
-    1
-   ]
-  },
-  {
-   "check": "C4",
-   "sev": "ERROR",
-   "vol": "jp2-S04",
-   "tome": "NT",
-   "msg": "'matthew' is present but its chapter 1 is not — the head of the book is lost",
-   "book": "matthew"
+   "msg": "3 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 3
   },
   {
    "check": "C6",
@@ -472,126 +346,59 @@
    "n": 47
   },
   {
-   "check": "C6",
-   "sev": "WARN",
-   "vol": "jp2-S04",
-   "tome": "NT",
-   "msg": "'matthew 2' claims 33 pages",
-   "book": "matthew",
-   "chapter": 2,
-   "n": 33
-  },
-  {
-   "check": "C5",
+   "check": "C9",
    "sev": "ERROR",
    "vol": "jp2-S04",
    "tome": "NT",
-   "msg": "'romans 1' is split across 2 disjoint page runs: [(372, 376), (407, 407)]",
-   "book": "romans",
-   "chapter": 1,
-   "runs": [
-    [
-     372,
-     376
-    ],
-    [
-     407,
-     407
-    ]
-   ]
+   "msg": "OCR 772 pages vs jp2 778",
+   "n_ocr": 772,
+   "n_jp2": 778
   },
   {
-   "check": "C7",
+   "check": "C9",
+   "sev": "INFO",
+   "vol": "jp2-S04",
+   "tome": "NT",
+   "msg": "PDF 772 pages vs jp2 778 — the two renderings differ; any PDF cross-reference needs a verified offset",
+   "n_pdf": 772,
+   "n_jp2": 778
+  },
+  {
+   "check": "C10",
    "sev": "ERROR",
    "vol": "jp2-S04",
    "tome": "NT",
-   "msg": "32 of the volume's first 40 pages are addressed to 'matthew 2' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "matthew",
-   "chapter": 2,
-   "n": 32
+   "msg": "1 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 1
   },
   {
    "check": "C5",
    "sev": "ERROR",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'1-machabees 1' is split across 2 disjoint page runs: [(1868, 1875), (1898, 1898)]",
+   "msg": "'1-machabees 1' is split across 5 disjoint page runs: [(2611, 2615), (2637, 2638), (2647, 2647), (2686, 2687)]",
    "book": "1-machabees",
    "chapter": 1,
    "runs": [
     [
-     1868,
-     1875
+     2611,
+     2615
     ],
     [
-     1898,
-     1898
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 1' is split across 6 disjoint page runs: [(1919, 1922), (2187, 2187), (2316, 2316), (2638, 2638)]",
-   "book": "2-machabees",
-   "chapter": 1,
-   "runs": [
-    [
-     1919,
-     1922
-    ],
-    [
-     2187,
-     2187
-    ],
-    [
-     2316,
-     2316
-    ],
-    [
-     2638,
+     2637,
      2638
-    ],
-    [
-     2766,
-     2766
-    ],
-    [
-     2809,
-     2809
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 2' is split across 5 disjoint page runs: [(1921, 1923), (2392, 2392), (2628, 2628), (2647, 2647)]",
-   "book": "2-machabees",
-   "chapter": 2,
-   "runs": [
-    [
-     1921,
-     1923
-    ],
-    [
-     2392,
-     2392
-    ],
-    [
-     2628,
-     2628
     ],
     [
      2647,
      2647
     ],
     [
-     2769,
-     2769
+     2686,
+     2687
+    ],
+    [
+     2703,
+     2703
     ]
    ]
   },
@@ -600,295 +407,21 @@
    "sev": "ERROR",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'2-machabees 3' is split across 9 disjoint page runs: [(1923, 1926), (2247, 2247), (2396, 2396), (2489, 2489)]",
-   "book": "2-machabees",
-   "chapter": 3,
+   "msg": "'1-machabees 2' is split across 3 disjoint page runs: [(2614, 2660), (2688, 2689), (2697, 2697)]",
+   "book": "1-machabees",
+   "chapter": 2,
    "runs": [
     [
-     1923,
-     1926
+     2614,
+     2660
     ],
     [
-     2247,
-     2247
+     2688,
+     2689
     ],
     [
-     2396,
-     2396
-    ],
-    [
-     2489,
-     2489
-    ],
-    [
-     2617,
-     2617
-    ],
-    [
-     2661,
-     2661
-    ],
-    [
-     2699,
-     2699
-    ],
-    [
-     2761,
-     2761
-    ],
-    [
-     2782,
-     2782
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 4' is split across 6 disjoint page runs: [(1925, 1929), (2533, 2533), (2649, 2649), (2673, 2673)]",
-   "book": "2-machabees",
-   "chapter": 4,
-   "runs": [
-    [
-     1925,
-     1929
-    ],
-    [
-     2533,
-     2533
-    ],
-    [
-     2649,
-     2649
-    ],
-    [
-     2673,
-     2673
-    ],
-    [
-     2706,
-     2706
-    ],
-    [
-     2762,
-     2762
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 5' is split across 2 disjoint page runs: [(1928, 1931), (2401, 2401)]",
-   "book": "2-machabees",
-   "chapter": 5,
-   "runs": [
-    [
-     1928,
-     1931
-    ],
-    [
-     2401,
-     2401
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 6' is split across 3 disjoint page runs: [(1930, 1933), (1938, 1938), (2711, 2711)]",
-   "book": "2-machabees",
-   "chapter": 6,
-   "runs": [
-    [
-     1930,
-     1933
-    ],
-    [
-     1938,
-     1938
-    ],
-    [
-     2711,
-     2711
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 7' is split across 3 disjoint page runs: [(1932, 1936), (2714, 2714), (2812, 2812)]",
-   "book": "2-machabees",
-   "chapter": 7,
-   "runs": [
-    [
-     1932,
-     1936
-    ],
-    [
-     2714,
-     2714
-    ],
-    [
-     2812,
-     2812
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 8' is split across 3 disjoint page runs: [(1935, 1938), (2386, 2386), (2719, 2719)]",
-   "book": "2-machabees",
-   "chapter": 8,
-   "runs": [
-    [
-     1935,
-     1938
-    ],
-    [
-     2386,
-     2386
-    ],
-    [
-     2719,
-     2719
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 9' is split across 5 disjoint page runs: [(1937, 1940), (2414, 2414), (2505, 2505), (2586, 2586)]",
-   "book": "2-machabees",
-   "chapter": 9,
-   "runs": [
-    [
-     1937,
-     1940
-    ],
-    [
-     2414,
-     2414
-    ],
-    [
-     2505,
-     2505
-    ],
-    [
-     2586,
-     2586
-    ],
-    [
-     2720,
-     2720
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 10' is split across 3 disjoint page runs: [(1939, 1943), (2125, 2125), (2212, 2212)]",
-   "book": "2-machabees",
-   "chapter": 10,
-   "runs": [
-    [
-     1939,
-     1943
-    ],
-    [
-     2125,
-     2125
-    ],
-    [
-     2212,
-     2212
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 11' is split across 3 disjoint page runs: [(1942, 1945), (2128, 2128), (2269, 2269)]",
-   "book": "2-machabees",
-   "chapter": 11,
-   "runs": [
-    [
-     1942,
-     1945
-    ],
-    [
-     2128,
-     2128
-    ],
-    [
-     2269,
-     2269
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 12' is split across 3 disjoint page runs: [(1944, 1948), (2426, 2426), (2819, 2821)]",
-   "book": "2-machabees",
-   "chapter": 12,
-   "runs": [
-    [
-     1944,
-     1948
-    ],
-    [
-     2426,
-     2426
-    ],
-    [
-     2819,
-     2821
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 13' is split across 4 disjoint page runs: [(1947, 1950), (2223, 2223), (2514, 2514), (2737, 2737)]",
-   "book": "2-machabees",
-   "chapter": 13,
-   "runs": [
-    [
-     1947,
-     1950
-    ],
-    [
-     2223,
-     2223
-    ],
-    [
-     2514,
-     2514
-    ],
-    [
-     2737,
-     2737
+     2697,
+     2697
     ]
    ]
   },
@@ -897,31 +430,27 @@
    "sev": "WARN",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'2-machabees 14' claims 924 pages",
-   "book": "2-machabees",
-   "chapter": 14,
-   "n": 924
+   "msg": "'1-machabees 2' claims 50 pages",
+   "book": "1-machabees",
+   "chapter": 2,
+   "n": 50
   },
   {
    "check": "C5",
    "sev": "ERROR",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'2-machabees 15' is split across 3 disjoint page runs: [(2141, 2141), (2282, 2282), (2519, 2519)]",
-   "book": "2-machabees",
-   "chapter": 15,
+   "msg": "'1-machabees 3' is split across 2 disjoint page runs: [(2649, 2649), (2659, 2673)]",
+   "book": "1-machabees",
+   "chapter": 3,
    "runs": [
     [
-     2141,
-     2141
+     2649,
+     2649
     ],
     [
-     2282,
-     2282
-    ],
-    [
-     2519,
-     2519
+     2659,
+     2673
     ]
    ]
   },
@@ -930,25 +459,29 @@
    "sev": "ERROR",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'2-machabees 16' is split across 4 disjoint page runs: [(2143, 2143), (2365, 2365), (2439, 2439), (2522, 2522)]",
-   "book": "2-machabees",
-   "chapter": 16,
+   "msg": "'1-machabees 4' is split across 5 disjoint page runs: [(2618, 2618), (2644, 2644), (2672, 2679), (2693, 2693)]",
+   "book": "1-machabees",
+   "chapter": 4,
    "runs": [
     [
-     2143,
-     2143
+     2618,
+     2618
     ],
     [
-     2365,
-     2365
+     2644,
+     2644
     ],
     [
-     2439,
-     2439
+     2672,
+     2679
     ],
     [
-     2522,
-     2522
+     2693,
+     2693
+    ],
+    [
+     2706,
+     2706
     ]
    ]
   },
@@ -957,118 +490,1041 @@
    "sev": "ERROR",
    "vol": "jp2-S06",
    "tome": "OT1+OT2",
-   "msg": "'2-machabees 17' is split across 3 disjoint page runs: [(2148, 2148), (2287, 2287), (2367, 2367)]",
-   "book": "2-machabees",
-   "chapter": 17,
-   "runs": [
-    [
-     2148,
-     2148
-    ],
-    [
-     2287,
-     2287
-    ],
-    [
-     2367,
-     2367
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'2-machabees 22' is split across 2 disjoint page runs: [(2161, 2161), (2843, 2843)]",
-   "book": "2-machabees",
-   "chapter": 22,
-   "runs": [
-    [
-     2161,
-     2161
-    ],
-    [
-     2843,
-     2843
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S06",
-   "tome": "OT1+OT2",
-   "msg": "'psalms 30' is split across 2 disjoint page runs: [(1085, 1085), (1088, 1091)]",
-   "book": "psalms",
-   "chapter": 30,
-   "runs": [
-    [
-     1085,
-     1085
-    ],
-    [
-     1088,
-     1091
-    ]
-   ]
-  },
-  {
-   "check": "C3",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "'matthew' missing 1 chapter(s): [1]",
-   "book": "matthew",
-   "chapters": [
-    1
-   ]
-  },
-  {
-   "check": "C4",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "'matthew' is present but its chapter 1 is not — the head of the book is lost",
-   "book": "matthew"
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "'1-peter 5' is split across 2 disjoint page runs: [(680, 680), (691, 692)]",
-   "book": "1-peter",
+   "msg": "'1-machabees 5' is split across 4 disjoint page runs: [(2609, 2609), (2622, 2622), (2651, 2651), (2678, 2683)]",
+   "book": "1-machabees",
    "chapter": 5,
    "runs": [
     [
-     680,
-     680
+     2609,
+     2609
     ],
     [
-     691,
-     692
+     2622,
+     2622
+    ],
+    [
+     2651,
+     2651
+    ],
+    [
+     2678,
+     2683
     ]
    ]
   },
   {
    "check": "C5",
    "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "'apocalypse 1' is split across 2 disjoint page runs: [(725, 729), (737, 737)]",
-   "book": "apocalypse",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'1-machabees 6' is split across 3 disjoint page runs: [(2611, 2611), (2623, 2623), (2682, 2713)]",
+   "book": "1-machabees",
+   "chapter": 6,
+   "runs": [
+    [
+     2611,
+     2611
+    ],
+    [
+     2623,
+     2623
+    ],
+    [
+     2682,
+     2713
+    ]
+   ]
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'1-machabees 6' claims 34 pages",
+   "book": "1-machabees",
+   "chapter": 6,
+   "n": 34
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'1-paralipomenon 23' is split across 2 disjoint page runs: [(785, 788), (794, 794)]",
+   "book": "1-paralipomenon",
+   "chapter": 23,
+   "runs": [
+    [
+     785,
+     788
+    ],
+    [
+     794,
+     794
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 1' is split across 3 disjoint page runs: [(2742, 2744), (2766, 2767), (2799, 2799)]",
+   "book": "2-machabees",
    "chapter": 1,
    "runs": [
     [
-     725,
-     729
+     2742,
+     2744
     ],
     [
-     737,
-     737
+     2766,
+     2767
+    ],
+    [
+     2799,
+     2799
     ]
    ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 2' is split across 2 disjoint page runs: [(2743, 2778), (2801, 2803)]",
+   "book": "2-machabees",
+   "chapter": 2,
+   "runs": [
+    [
+     2743,
+     2778
+    ],
+    [
+     2801,
+     2803
+    ]
+   ]
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 2' claims 39 pages",
+   "book": "2-machabees",
+   "chapter": 2,
+   "n": 39
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 3' is split across 4 disjoint page runs: [(2761, 2761), (2772, 2772), (2777, 2783), (2806, 2806)]",
+   "book": "2-machabees",
+   "chapter": 3,
+   "runs": [
+    [
+     2761,
+     2761
+    ],
+    [
+     2772,
+     2772
+    ],
+    [
+     2777,
+     2783
+    ],
+    [
+     2806,
+     2806
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 4' is split across 3 disjoint page runs: [(2749, 2749), (2762, 2762), (2782, 2785)]",
+   "book": "2-machabees",
+   "chapter": 4,
+   "runs": [
+    [
+     2749,
+     2749
+    ],
+    [
+     2762,
+     2762
+    ],
+    [
+     2782,
+     2785
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 5' is split across 4 disjoint page runs: [(2753, 2753), (2763, 2763), (2766, 2766), (2784, 2809)]",
+   "book": "2-machabees",
+   "chapter": 5,
+   "runs": [
+    [
+     2753,
+     2753
+    ],
+    [
+     2763,
+     2763
+    ],
+    [
+     2766,
+     2766
+    ],
+    [
+     2784,
+     2809
+    ]
+   ]
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 5' claims 29 pages",
+   "book": "2-machabees",
+   "chapter": 5,
+   "n": 29
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'2-machabees 15' claims 47 pages",
+   "book": "2-machabees",
+   "chapter": 15,
+   "n": 47
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'abdias 12' is split across 2 disjoint page runs: [(2273, 2273), (2276, 2276)]",
+   "book": "abdias",
+   "chapter": 12,
+   "runs": [
+    [
+     2273,
+     2273
+    ],
+    [
+     2276,
+     2276
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'aggeus 9' is split across 2 disjoint page runs: [(2499, 2499), (2504, 2504)]",
+   "book": "aggeus",
+   "chapter": 9,
+   "runs": [
+    [
+     2499,
+     2499
+    ],
+    [
+     2504,
+     2504
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 1' is split across 14 disjoint page runs: [(1747, 1751), (1785, 1785), (1800, 1800), (1818, 1818)]",
+   "book": "daniel",
+   "chapter": 1,
+   "runs": [
+    [
+     1747,
+     1751
+    ],
+    [
+     1785,
+     1785
+    ],
+    [
+     1800,
+     1800
+    ],
+    [
+     1818,
+     1818
+    ],
+    [
+     1822,
+     1822
+    ],
+    [
+     1834,
+     1834
+    ],
+    [
+     1839,
+     1839
+    ],
+    [
+     1843,
+     1843
+    ],
+    [
+     1847,
+     1847
+    ],
+    [
+     1862,
+     1863
+    ],
+    [
+     1872,
+     1872
+    ],
+    [
+     1919,
+     1919
+    ],
+    [
+     1994,
+     1994
+    ],
+    [
+     2103,
+     2103
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 2' is split across 11 disjoint page runs: [(1750, 1754), (1786, 1786), (1801, 1801), (1823, 1823)]",
+   "book": "daniel",
+   "chapter": 2,
+   "runs": [
+    [
+     1750,
+     1754
+    ],
+    [
+     1786,
+     1786
+    ],
+    [
+     1801,
+     1801
+    ],
+    [
+     1823,
+     1823
+    ],
+    [
+     1831,
+     1831
+    ],
+    [
+     1835,
+     1835
+    ],
+    [
+     1840,
+     1840
+    ],
+    [
+     1846,
+     1846
+    ],
+    [
+     1875,
+     1875
+    ],
+    [
+     1921,
+     1921
+    ],
+    [
+     2105,
+     2105
+    ]
+   ]
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 3' claims 358 pages",
+   "book": "daniel",
+   "chapter": 3,
+   "n": 358
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 4' is split across 4 disjoint page runs: [(1825, 1825), (1881, 1881), (1926, 1926), (2109, 2111)]",
+   "book": "daniel",
+   "chapter": 4,
+   "runs": [
+    [
+     1825,
+     1825
+    ],
+    [
+     1881,
+     1881
+    ],
+    [
+     1926,
+     1926
+    ],
+    [
+     2109,
+     2111
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 5' is split across 8 disjoint page runs: [(1790, 1790), (1809, 1809), (1826, 1826), (1851, 1851)]",
+   "book": "daniel",
+   "chapter": 5,
+   "runs": [
+    [
+     1790,
+     1790
+    ],
+    [
+     1809,
+     1809
+    ],
+    [
+     1826,
+     1826
+    ],
+    [
+     1851,
+     1851
+    ],
+    [
+     1884,
+     1884
+    ],
+    [
+     1929,
+     1929
+    ],
+    [
+     2002,
+     2002
+    ],
+    [
+     2110,
+     2114
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 6' is split across 6 disjoint page runs: [(1764, 1764), (1791, 1791), (1852, 1852), (1938, 1938)]",
+   "book": "daniel",
+   "chapter": 6,
+   "runs": [
+    [
+     1764,
+     1764
+    ],
+    [
+     1791,
+     1791
+    ],
+    [
+     1852,
+     1852
+    ],
+    [
+     1938,
+     1938
+    ],
+    [
+     2005,
+     2005
+    ],
+    [
+     2113,
+     2117
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 7' is split across 7 disjoint page runs: [(1766, 1766), (1791, 1791), (1812, 1812), (1853, 1853)]",
+   "book": "daniel",
+   "chapter": 7,
+   "runs": [
+    [
+     1766,
+     1766
+    ],
+    [
+     1791,
+     1791
+    ],
+    [
+     1812,
+     1812
+    ],
+    [
+     1853,
+     1853
+    ],
+    [
+     1986,
+     1986
+    ],
+    [
+     2008,
+     2008
+    ],
+    [
+     2116,
+     2119
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 8' is split across 6 disjoint page runs: [(1768, 1768), (1792, 1792), (1813, 1813), (1854, 1854)]",
+   "book": "daniel",
+   "chapter": 8,
+   "runs": [
+    [
+     1768,
+     1768
+    ],
+    [
+     1792,
+     1792
+    ],
+    [
+     1813,
+     1813
+    ],
+    [
+     1854,
+     1854
+    ],
+    [
+     2011,
+     2011
+    ],
+    [
+     2118,
+     2122
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 9' is split across 3 disjoint page runs: [(1814, 1814), (2014, 2014), (2121, 2125)]",
+   "book": "daniel",
+   "chapter": 9,
+   "runs": [
+    [
+     1814,
+     1814
+    ],
+    [
+     2014,
+     2014
+    ],
+    [
+     2121,
+     2125
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 10' is split across 6 disjoint page runs: [(1794, 1794), (1856, 1856), (1899, 1899), (1940, 1942)]",
+   "book": "daniel",
+   "chapter": 10,
+   "runs": [
+    [
+     1794,
+     1794
+    ],
+    [
+     1856,
+     1856
+    ],
+    [
+     1899,
+     1899
+    ],
+    [
+     1940,
+     1942
+    ],
+    [
+     2016,
+     2016
+    ],
+    [
+     2124,
+     2128
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 11' is split across 3 disjoint page runs: [(1795, 1795), (1857, 1857), (2127, 2130)]",
+   "book": "daniel",
+   "chapter": 11,
+   "runs": [
+    [
+     1795,
+     1795
+    ],
+    [
+     1857,
+     1857
+    ],
+    [
+     2127,
+     2130
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 12' is split across 4 disjoint page runs: [(1796, 1796), (1907, 1907), (1944, 1944), (2129, 2132)]",
+   "book": "daniel",
+   "chapter": 12,
+   "runs": [
+    [
+     1796,
+     1796
+    ],
+    [
+     1907,
+     1907
+    ],
+    [
+     1944,
+     1944
+    ],
+    [
+     2129,
+     2132
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 13' is split across 3 disjoint page runs: [(1778, 1778), (2023, 2023), (2131, 2180)]",
+   "book": "daniel",
+   "chapter": 13,
+   "runs": [
+    [
+     1778,
+     1778
+    ],
+    [
+     2023,
+     2023
+    ],
+    [
+     2131,
+     2180
+    ]
+   ]
+  },
+  {
+   "check": "C6",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 13' claims 52 pages",
+   "book": "daniel",
+   "chapter": 13,
+   "n": 52
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 14' is split across 2 disjoint page runs: [(2026, 2026), (2179, 2183)]",
+   "book": "daniel",
+   "chapter": 14,
+   "runs": [
+    [
+     2026,
+     2026
+    ],
+    [
+     2179,
+     2183
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 15' is split across 3 disjoint page runs: [(1915, 1915), (1953, 1955), (2141, 2142)]",
+   "book": "daniel",
+   "chapter": 15,
+   "runs": [
+    [
+     1915,
+     1915
+    ],
+    [
+     1953,
+     1955
+    ],
+    [
+     2141,
+     2142
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'daniel 17' is split across 2 disjoint page runs: [(2031, 2031), (2149, 2149)]",
+   "book": "daniel",
+   "chapter": 17,
+   "runs": [
+    [
+     2031,
+     2031
+    ],
+    [
+     2149,
+     2149
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'exodus 13' is split across 2 disjoint page runs: [(191, 194), (249, 249)]",
+   "book": "exodus",
+   "chapter": 13,
+   "runs": [
+    [
+     191,
+     194
+    ],
+    [
+     249,
+     249
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'isaie 35' is split across 2 disjoint page runs: [(1481, 1481), (1503, 1505)]",
+   "book": "isaie",
+   "chapter": 35,
+   "runs": [
+    [
+     1481,
+     1481
+    ],
+    [
+     1503,
+     1505
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'jeremie 33' is split across 2 disjoint page runs: [(1578, 1578), (1603, 1605)]",
+   "book": "jeremie",
+   "chapter": 33,
+   "runs": [
+    [
+     1578,
+     1578
+    ],
+    [
+     1603,
+     1605
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'leviticus 1' is split across 2 disjoint page runs: [(254, 258), (268, 268)]",
+   "book": "leviticus",
+   "chapter": 1,
+   "runs": [
+    [
+     254,
+     258
+    ],
+    [
+     268,
+     268
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'malachie 2' is split across 2 disjoint page runs: [(2572, 2573), (2596, 2603)]",
+   "book": "malachie",
+   "chapter": 2,
+   "runs": [
+    [
+     2572,
+     2573
+    ],
+    [
+     2596,
+     2603
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'malachie 3' is split across 2 disjoint page runs: [(2575, 2575), (2602, 2604)]",
+   "book": "malachie",
+   "chapter": 3,
+   "runs": [
+    [
+     2575,
+     2575
+    ],
+    [
+     2602,
+     2604
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'malachie 4' is split across 2 disjoint page runs: [(2577, 2577), (2603, 2607)]",
+   "book": "malachie",
+   "chapter": 4,
+   "runs": [
+    [
+     2577,
+     2577
+    ],
+    [
+     2603,
+     2607
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'micheas 5' is split across 2 disjoint page runs: [(2331, 2331), (2400, 2404)]",
+   "book": "micheas",
+   "chapter": 5,
+   "runs": [
+    [
+     2331,
+     2331
+    ],
+    [
+     2400,
+     2404
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'micheas 6' is split across 2 disjoint page runs: [(2333, 2337), (2403, 2406)]",
+   "book": "micheas",
+   "chapter": 6,
+   "runs": [
+    [
+     2333,
+     2337
+    ],
+    [
+     2403,
+     2406
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'micheas 7' is split across 2 disjoint page runs: [(2340, 2340), (2405, 2410)]",
+   "book": "micheas",
+   "chapter": 7,
+   "runs": [
+    [
+     2340,
+     2340
+    ],
+    [
+     2405,
+     2410
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'nahum 10' is split across 2 disjoint page runs: [(2417, 2417), (2420, 2420)]",
+   "book": "nahum",
+   "chapter": 10,
+   "runs": [
+    [
+     2417,
+     2417
+    ],
+    [
+     2420,
+     2420
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'nahum 13' is split across 2 disjoint page runs: [(2427, 2427), (2430, 2430)]",
+   "book": "nahum",
+   "chapter": 13,
+   "runs": [
+    [
+     2427,
+     2427
+    ],
+    [
+     2430,
+     2430
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "'numbers 20' is split across 2 disjoint page runs: [(344, 347), (364, 364)]",
+   "book": "numbers",
+   "chapter": 20,
+   "runs": [
+    [
+     344,
+     347
+    ],
+    [
+     364,
+     364
+    ]
+   ]
+  },
+  {
+   "check": "C9",
+   "sev": "WARN",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "leaf inventory unavailable, so OCR page count is UNCHECKED for this volume: \"'jp2-S06' names a FILE, not a witness: S06 is one 2,872-leaf volume carrying the 1635 Rouen Old Testament and the 1582 Rheims New Testament, which are two settings 53 years apart. Use jp2-S06nt or jp2-S06ot and say which. (R7.5a re-keys the existing records; do not guess a volume here.)\""
+  },
+  {
+   "check": "C10",
+   "sev": "ERROR",
+   "vol": "jp2-S06",
+   "tome": "OT1+OT2",
+   "msg": "4 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 4
   },
   {
    "check": "C6",
@@ -1081,51 +1537,14 @@
    "n": 30
   },
   {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "'luke 2' is split across 2 disjoint page runs: [(162, 162), (166, 170)]",
-   "book": "luke",
-   "chapter": 2,
-   "runs": [
-    [
-     162,
-     162
-    ],
-    [
-     166,
-     170
-    ]
-   ]
-  },
-  {
    "check": "C6",
    "sev": "WARN",
    "vol": "jp2-S08",
    "tome": "NT",
-   "msg": "'matthew 2' claims 35 pages",
+   "msg": "'matthew 1' claims 33 pages",
    "book": "matthew",
-   "chapter": 2,
-   "n": 35
-  },
-  {
-   "check": "C7",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "34 of the volume's first 40 pages are addressed to 'matthew 2' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "matthew",
-   "chapter": 2,
-   "n": 34
-  },
-  {
-   "check": "C10",
-   "sev": "ERROR",
-   "vol": "jp2-S08",
-   "tome": "NT",
-   "msg": "29 localized verses whose book:chapter is not what their page is addressed to",
-   "n": 29
+   "chapter": 1,
+   "n": 33
   },
   {
    "check": "C3",
@@ -1151,7 +1570,7 @@
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'2-machabees 1' is split across 2 disjoint page runs: [(959, 962), (1017, 1017)]",
+   "msg": "'2-machabees 1' is split across 3 disjoint page runs: [(959, 962), (1017, 1017), (1043, 1043)]",
    "book": "2-machabees",
    "chapter": 1,
    "runs": [
@@ -1162,6 +1581,10 @@
     [
      1017,
      1017
+    ],
+    [
+     1043,
+     1043
     ]
    ]
   },
@@ -1212,12 +1635,31 @@
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(975, 978), (1056, 1056)]",
+   "msg": "'2-machabees 6' is split across 2 disjoint page runs: [(972, 975), (1053, 1053)]",
+   "book": "2-machabees",
+   "chapter": 6,
+   "runs": [
+    [
+     972,
+     975
+    ],
+    [
+     1053,
+     1053
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "jp2-S09ot2",
+   "tome": "OT2",
+   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(974, 978), (1056, 1056)]",
    "book": "2-machabees",
    "chapter": 7,
    "runs": [
     [
-     975,
+     974,
      978
     ],
     [
@@ -1254,17 +1696,17 @@
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'2-machabees 9' is split across 2 disjoint page runs: [(980, 983), (1040, 1040)]",
+   "msg": "'2-machabees 10' is split across 2 disjoint page runs: [(982, 986), (1065, 1065)]",
    "book": "2-machabees",
-   "chapter": 9,
+   "chapter": 10,
    "runs": [
     [
-     980,
-     983
+     982,
+     986
     ],
     [
-     1040,
-     1040
+     1065,
+     1065
     ]
    ]
   },
@@ -1330,26 +1772,26 @@
    "sev": "WARN",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'2-machabees 14' claims 146 pages",
+   "msg": "'2-machabees 14' claims 85 pages",
    "book": "2-machabees",
    "chapter": 14,
-   "n": 146
+   "n": 85
   },
   {
    "check": "C5",
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'2-machabees 15' is split across 3 disjoint page runs: [(1078, 1078), (1138, 1139), (1145, 1148)]",
+   "msg": "'2-machabees 15' is split across 3 disjoint page runs: [(997, 997), (1077, 1139), (1145, 1148)]",
    "book": "2-machabees",
    "chapter": 15,
    "runs": [
     [
-     1078,
-     1078
+     997,
+     997
     ],
     [
-     1138,
+     1077,
      1139
     ],
     [
@@ -1359,23 +1801,14 @@
    ]
   },
   {
-   "check": "C5",
-   "sev": "ERROR",
+   "check": "C6",
+   "sev": "WARN",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'isaie 1' is split across 2 disjoint page runs: [(460, 466), (507, 507)]",
-   "book": "isaie",
-   "chapter": 1,
-   "runs": [
-    [
-     460,
-     466
-    ],
-    [
-     507,
-     507
-    ]
-   ]
+   "msg": "'2-machabees 15' claims 68 pages",
+   "book": "2-machabees",
+   "chapter": 15,
+   "n": 68
   },
   {
    "check": "C5",
@@ -1393,25 +1826,6 @@
     [
      517,
      517
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S09ot2",
-   "tome": "OT2",
-   "msg": "'isaie 23' is split across 2 disjoint page runs: [(491, 493), (503, 503)]",
-   "book": "isaie",
-   "chapter": 23,
-   "runs": [
-    [
-     491,
-     493
-    ],
-    [
-     503,
-     503
     ]
    ]
   },
@@ -1439,25 +1853,6 @@
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'psalms 50' is split across 2 disjoint page runs: [(36, 36), (109, 113)]",
-   "book": "psalms",
-   "chapter": 50,
-   "runs": [
-    [
-     36,
-     36
-    ],
-    [
-     109,
-     113
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S09ot2",
-   "tome": "OT2",
    "msg": "'psalms 60' is split across 2 disjoint page runs: [(38, 38), (123, 125)]",
    "book": "psalms",
    "chapter": 60,
@@ -1477,36 +1872,17 @@
    "sev": "ERROR",
    "vol": "jp2-S09ot2",
    "tome": "OT2",
-   "msg": "'psalms 100' is split across 2 disjoint page runs: [(193, 195), (271, 271)]",
+   "msg": "'psalms 100' is split across 2 disjoint page runs: [(192, 195), (271, 271)]",
    "book": "psalms",
    "chapter": 100,
    "runs": [
     [
-     193,
+     192,
      195
     ],
     [
      271,
      271
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "jp2-S09ot2",
-   "tome": "OT2",
-   "msg": "'psalms 109' is split across 2 disjoint page runs: [(214, 215), (245, 245)]",
-   "book": "psalms",
-   "chapter": 109,
-   "runs": [
-    [
-     214,
-     215
-    ],
-    [
-     245,
-     245
     ]
    ]
   },
@@ -1530,6 +1906,14 @@
    "n_jp2": 1150
   },
   {
+   "check": "C10",
+   "sev": "ERROR",
+   "vol": "jp2-S09ot2",
+   "tome": "OT2",
+   "msg": "1 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 1
+  },
+  {
    "check": "C6",
    "sev": "WARN",
    "vol": "pdf-S03a",
@@ -1538,25 +1922,6 @@
    "book": "genesis",
    "chapter": 1,
    "n": 27
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03a",
-   "tome": "OT1",
-   "msg": "'genesis 45' is split across 2 disjoint page runs: [(159, 162), (167, 167)]",
-   "book": "genesis",
-   "chapter": 45,
-   "runs": [
-    [
-     159,
-     162
-    ],
-    [
-     167,
-     167
-    ]
-   ]
   },
   {
    "check": "C5",
@@ -1591,13 +1956,40 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 2' is split across 2 disjoint page runs: [(952, 955), (1038, 1038)]",
+   "msg": "'2-machabees 1' is split across 3 disjoint page runs: [(950, 953), (1010, 1010), (1036, 1036)]",
+   "book": "2-machabees",
+   "chapter": 1,
+   "runs": [
+    [
+     950,
+     953
+    ],
+    [
+     1010,
+     1010
+    ],
+    [
+     1036,
+     1036
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "pdf-S03b",
+   "tome": "OT2",
+   "msg": "'2-machabees 2' is split across 3 disjoint page runs: [(952, 955), (1013, 1013), (1038, 1038)]",
    "book": "2-machabees",
    "chapter": 2,
    "runs": [
     [
      952,
      955
+    ],
+    [
+     1013,
+     1013
     ],
     [
      1038,
@@ -1610,17 +2002,13 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 3' is split across 3 disjoint page runs: [(954, 958), (1015, 1015), (1040, 1040)]",
+   "msg": "'2-machabees 3' is split across 2 disjoint page runs: [(954, 958), (1040, 1040)]",
    "book": "2-machabees",
    "chapter": 3,
    "runs": [
     [
      954,
      958
-    ],
-    [
-     1015,
-     1015
     ],
     [
      1040,
@@ -1633,13 +2021,40 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 5' is split across 2 disjoint page runs: [(961, 964), (1045, 1045)]",
+   "msg": "'2-machabees 4' is split across 3 disjoint page runs: [(957, 962), (1017, 1017), (1042, 1042)]",
+   "book": "2-machabees",
+   "chapter": 4,
+   "runs": [
+    [
+     957,
+     962
+    ],
+    [
+     1017,
+     1017
+    ],
+    [
+     1042,
+     1042
+    ]
+   ]
+  },
+  {
+   "check": "C5",
+   "sev": "ERROR",
+   "vol": "pdf-S03b",
+   "tome": "OT2",
+   "msg": "'2-machabees 5' is split across 3 disjoint page runs: [(961, 964), (1020, 1020), (1045, 1045)]",
    "book": "2-machabees",
    "chapter": 5,
    "runs": [
     [
      961,
      964
+    ],
+    [
+     1020,
+     1020
     ],
     [
      1045,
@@ -1652,13 +2067,13 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 6' is split across 2 disjoint page runs: [(963, 967), (1048, 1048)]",
+   "msg": "'2-machabees 6' is split across 2 disjoint page runs: [(963, 966), (1048, 1048)]",
    "book": "2-machabees",
    "chapter": 6,
    "runs": [
     [
      963,
-     967
+     966
     ],
     [
      1048,
@@ -1671,12 +2086,12 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(966, 969), (1051, 1051)]",
+   "msg": "'2-machabees 7' is split across 2 disjoint page runs: [(965, 969), (1051, 1051)]",
    "book": "2-machabees",
    "chapter": 7,
    "runs": [
     [
-     966,
+     965,
      969
     ],
     [
@@ -1713,36 +2128,17 @@
    "sev": "ERROR",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 9' is split across 2 disjoint page runs: [(971, 974), (1033, 1033)]",
+   "msg": "'2-machabees 10' is split across 2 disjoint page runs: [(973, 977), (1060, 1060)]",
    "book": "2-machabees",
-   "chapter": 9,
+   "chapter": 10,
    "runs": [
     [
-     971,
-     974
+     973,
+     977
     ],
     [
-     1033,
-     1033
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "'2-machabees 11' is split across 2 disjoint page runs: [(976, 980), (1063, 1063)]",
-   "book": "2-machabees",
-   "chapter": 11,
-   "runs": [
-    [
-     976,
-     980
-    ],
-    [
-     1063,
-     1063
+     1060,
+     1060
     ]
    ]
   },
@@ -1766,71 +2162,24 @@
    ]
   },
   {
-   "check": "C5",
-   "sev": "ERROR",
+   "check": "C6",
+   "sev": "WARN",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 13' is split across 2 disjoint page runs: [(983, 986), (1068, 1068)]",
+   "msg": "'2-machabees 14' claims 89 pages",
    "book": "2-machabees",
-   "chapter": 13,
-   "runs": [
-    [
-     983,
-     986
-    ],
-    [
-     1068,
-     1068
-    ]
-   ]
+   "chapter": 14,
+   "n": 89
   },
   {
    "check": "C6",
    "sev": "WARN",
    "vol": "pdf-S03b",
    "tome": "OT2",
-   "msg": "'2-machabees 14' claims 151 pages",
+   "msg": "'2-machabees 15' claims 65 pages",
    "book": "2-machabees",
-   "chapter": 14,
-   "n": 151
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "'ezechiel 11' is split across 2 disjoint page runs: [(694, 697), (754, 754)]",
-   "book": "ezechiel",
-   "chapter": 11,
-   "runs": [
-    [
-     694,
-     697
-    ],
-    [
-     754,
-     754
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "'jeremie 1' is split across 2 disjoint page runs: [(551, 553), (578, 578)]",
-   "book": "jeremie",
-   "chapter": 1,
-   "runs": [
-    [
-     551,
-     553
-    ],
-    [
-     578,
-     578
-    ]
-   ]
+   "chapter": 15,
+   "n": 65
   },
   {
    "check": "C5",
@@ -1848,48 +2197,6 @@
     [
      629,
      632
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "'psalms 1' is split across 3 disjoint page runs: [(19, 19), (48, 48), (253, 253)]",
-   "book": "psalms",
-   "chapter": 1,
-   "runs": [
-    [
-     19,
-     19
-    ],
-    [
-     48,
-     48
-    ],
-    [
-     253,
-     253
-    ]
-   ]
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "'psalms 71' is split across 2 disjoint page runs: [(135, 137), (158, 158)]",
-   "book": "psalms",
-   "chapter": 71,
-   "runs": [
-    [
-     135,
-     137
-    ],
-    [
-     158,
-     158
     ]
    ]
   },
@@ -1917,16 +2224,6 @@
    ]
   },
   {
-   "check": "C7",
-   "sev": "ERROR",
-   "vol": "pdf-S03b",
-   "tome": "OT2",
-   "msg": "20 of the volume's first 40 pages are addressed to 'psalms 2' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "psalms",
-   "chapter": 2,
-   "n": 20
-  },
-  {
    "check": "C9",
    "sev": "INFO",
    "vol": "pdf-S03b",
@@ -1936,43 +2233,12 @@
    "n_jp2": 1146
   },
   {
-   "check": "C3",
+   "check": "C10",
    "sev": "ERROR",
-   "vol": "pdf-S09nt",
-   "tome": "NT",
-   "msg": "'matthew' missing 2 chapter(s): [1, 2]",
-   "book": "matthew",
-   "chapters": [
-    1,
-    2
-   ]
-  },
-  {
-   "check": "C4",
-   "sev": "ERROR",
-   "vol": "pdf-S09nt",
-   "tome": "NT",
-   "msg": "'matthew' is present but its chapter 1 is not — the head of the book is lost",
-   "book": "matthew"
-  },
-  {
-   "check": "C5",
-   "sev": "ERROR",
-   "vol": "pdf-S09nt",
-   "tome": "NT",
-   "msg": "'apocalypse 2' is split across 2 disjoint page runs: [(732, 737), (741, 741)]",
-   "book": "apocalypse",
-   "chapter": 2,
-   "runs": [
-    [
-     732,
-     737
-    ],
-    [
-     741,
-     741
-    ]
-   ]
+   "vol": "pdf-S03b",
+   "tome": "OT2",
+   "msg": "4 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 4
   },
   {
    "check": "C5",
@@ -2004,26 +2270,6 @@
    "n": 34
   },
   {
-   "check": "C6",
-   "sev": "WARN",
-   "vol": "pdf-S09nt",
-   "tome": "NT",
-   "msg": "'matthew 5' claims 42 pages",
-   "book": "matthew",
-   "chapter": 5,
-   "n": 42
-  },
-  {
-   "check": "C7",
-   "sev": "ERROR",
-   "vol": "pdf-S09nt",
-   "tome": "NT",
-   "msg": "36 of the volume's first 40 pages are addressed to 'matthew 5' — front matter dumped onto a mid-book chapter instead of the book's own front matter",
-   "book": "matthew",
-   "chapter": 5,
-   "n": 36
-  },
-  {
    "check": "C9",
    "sev": "INFO",
    "vol": "pdf-S09nt",
@@ -2037,8 +2283,8 @@
    "sev": "ERROR",
    "vol": "pdf-S09nt",
    "tome": "NT",
-   "msg": "69 localized verses whose book:chapter is not what their page is addressed to",
-   "n": 69
+   "msg": "1 localized verses whose book:chapter is not what their page is addressed to",
+   "n": 1
   }
  ]
 }

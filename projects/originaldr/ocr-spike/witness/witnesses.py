@@ -213,6 +213,88 @@ GLYPH_BARRED = {
 }
 
 
+# Legacy `ocr_dir` -> the witness it actually addresses.
+#
+# This lived in `jp2_page.py` until 2026-08-07 (R7.5b).  It is registry data --
+# "which witness does this legacy identifier name?" -- and it moved here for the
+# same reason `GLYPH_BARRED` did: `jp2_page` is the raster ACCESSOR, and a module
+# that reads the map should not have to import a module that opens images to get
+# it.  `curated_sources.py` in particular is a pure allowlist imported at every
+# ingest boundary, and making it depend on PIL to answer "which source is this
+# folder?" would be a reason not to call the guard.
+#
+# Every entry except the two noted was confirmed by PATH IDENTITY against the old
+# table.  The two exceptions are the two defects R7.5 retired.
+OCR_DIR_TO_WITNESS = {
+    # --- S01 / `F`: PDF-primary renders. Barred from pixel work, fine for structure.
+    "archive-ot1-1609":       ("OT1", "F"),
+    "archive-ot2-1610":       ("OT2", "F"),
+    # NB the id says 1582 and the witness is 1633 (1.1c). The id is legacy and is
+    # NOT renamed here -- it is what the existing ground-truth records contain, and
+    # silently remapping it would hide R8.6 rather than discharge it.
+    "archive-nt-1582":        ("NT", "F"),
+    # --- S03 / `P`: genuine Princeton captures, JP2-primary.
+    "pdf-S03a":               ("OT1", "P"),
+    "pdf-S03b":               ("OT2", "P"),
+    # --- S04 / `R`: DEFECT. The old table named the retired MRC composite; the
+    #     registry resolves the acquired Princeton original (R4.4).
+    "jp2-S04":                ("NT", "R"),
+    # --- S08 / `X`: excluded witness, PDF-primary. Barred.
+    "jp2-S08":                ("NT", "X"),
+    # --- S09 / `B`: the base exemplars, JP2-primary.
+    "pdf-S09nt":              ("NT", "B"),
+    "archive-holiebible-ot1": ("OT1", "B"),
+    "jp2-S09ot2":             ("OT2", "B"),
+    "archive-holiebible-ot2": ("OT2", "B"),   # alias of the same volume
+}
+
+# `jp2-S06` is NOT in the map above, and that is deliberate.
+#
+# `S06` is a whole Bible in one file: 2,872 leaves carrying the **1635 Rouen OT**
+# and the **1582 Rheims NT**, held here as two witness records over one file
+# (`OT-1635-M`, `NT-1582-M`).  A bare `jp2-S06` therefore names neither a witness
+# nor a setting -- the two halves are 53 years and two towns apart.  Resolving it
+# to either would be a guess, and guessing which setting a leaf belongs to is the
+# error that cost four months.
+#
+# So it raises, and names the two ids that are well formed.  113,514 existing
+# records carry the ambiguous value; they are re-keyed by R7.5a, not papered over.
+S06_AMBIGUOUS = "jp2-S06"
+S06_SPLIT = {
+    "jp2-S06nt": ("NT", "M"),
+    "jp2-S06ot": ("OT", "M"),
+}
+OCR_DIR_TO_WITNESS.update(S06_SPLIT)
+
+
+def witness_of(ocr_dir):
+    """(vol, sig) for a legacy `ocr_dir`, or a loud error naming the alternative."""
+    if ocr_dir == S06_AMBIGUOUS:
+        raise KeyError(
+            f"{ocr_dir!r} names a FILE, not a witness: S06 is one 2,872-leaf volume "
+            f"carrying the 1635 Rouen Old Testament and the 1582 Rheims New "
+            f"Testament, which are two settings 53 years apart. Use "
+            f"{' or '.join(sorted(S06_SPLIT))} and say which. (R7.5a re-keys the "
+            f"existing records; do not guess a volume here.)")
+    if ocr_dir not in OCR_DIR_TO_WITNESS:
+        raise KeyError(f"{ocr_dir!r} is not a known ocr_dir; known: "
+                       f"{', '.join(sorted(OCR_DIR_TO_WITNESS))}")
+    return OCR_DIR_TO_WITNESS[ocr_dir]
+
+
+def source_id(vol, sig):
+    """The ACQUISITION this witness came from, as a curated-allowlist id ('S9').
+
+    Derived from the registry's own `legacy` field rather than restated, so the
+    allowlist in `curated_sources.py` cannot drift from the registry.  `legacy`
+    carries the acquisition with its zero padding and, for the two-volume S03 set,
+    a volume suffix -- `OT1/S03a` is source `S3`.  Both are normalised away here;
+    the allowlist is per acquisition, not per volume.
+    """
+    acq = WITNESSES[(vol, sig)]["legacy"].split("/", 1)[1]     # 'S03a'
+    return "S" + acq[1:].lstrip("0").rstrip("ab")              # -> 'S3'
+
+
 def glyph_source(vol, sig):
     """The artefact a GLYPH-level consumer must read, as (kind, path).
 

@@ -27,7 +27,7 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
 | R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5 **DISCHARGED**; R7.1–R7.4, R7.5a–c open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4, R7.5a open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
 
 ### Open-items register
@@ -39,10 +39,10 @@ right and the paragraph is a bug to be fixed.
 **OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
 R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
 Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5a** · **R7.5b** · **R7.5c** · R8.3 · **R8.4b** · R8.6 · R8.7
+**R7.5a** · R8.3 · **R8.4b** · R8.6 · R8.7
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
-R6.5 · **R7.5** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
+R6.5 · **R7.5** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
 
@@ -533,8 +533,9 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
 | R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | **113,514 records carry `jp2-S06`**, which names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids. Also `archive-nt-1582` names 1582 for a 1633 witness | every record names a witness and a setting; `jp2-S06` raises until they do | OPEN — overlaps R8.6 |
-| R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | OPEN — the strict default is what surfaces them; **six sites named below** |
-| R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | OPEN — same defect class as R7.5, found while discharging it |
+| R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
+| R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
+| R7.5d | Retire the routing table's **surviving OUTPUT** | `tome-map-v2.json` (2026-07-28, 4.7 MB, tracked) embedded all four wrong routes as literal `jp2_dir` / `jp2_file` strings. Deleting the table left its output routing, one indirection further out and with no guard on it | no tracked artefact carries an `ocr_dir` → raster path; addresses are witness + leaf index | **DONE 2026-08-08** — deleted (unbuildable until R7.5a); `master-source-list.json`'s one vestigial `jp2_dir` stripped; guarded |
 
 **The six call sites R7.5 breaks, named rather than left to be discovered.** These read
 `jp2_page.OCR_DIR_TO_JP2` at runtime and now raise:
@@ -547,6 +548,47 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | `tome_map_audit.py` | `.get(ocr_dir)` | **structure** |
 | `source_inventory_audit.py` | `set(...)` — wants the *set of known ids* | `OCR_DIR_TO_WITNESS` |
 | `curated_sources.py` | comment only, but restates the map | R7.5c |
+
+> **DISCHARGED 2026-08-08 (R7.5b · R7.5c · R7.5d).** All six sites updated, and the result is the
+> finding: **every one of them was STRUCTURE.** Not a single caller of the retired table wanted pixels.
+> They were counting leaves, aligning indices, detecting un-OCR'd pages, addressing a tome map. The
+> table's whole load-bearing use was page bookkeeping — and it was handing out raster DIRECTORIES to do
+> it, which is why glyph work could reach the wrong image through a door built for counting.
+>
+> They share one new accessor, `jp2_page.structure_leaves()`, which returns the LEAVES rather than the
+> directory. Handing back a directory is what made the table a route; a caller that receives leaves can
+> count them and cannot open the wrong ones.
+>
+> **The count of duplicated maps went from one to four while discharging this step**, and each was
+> invisible because the copies happened to agree:
+>
+> | map | second copy | had it drifted? |
+> |---|---|---|
+> | which witnesses are barred | `audit_gt_rasters.py` | no — caught at R7.5 |
+> | `ocr_dir` → witness | `audit_gt_rasters.py` | **YES** — it resolved `jp2-S06` to `OT` where the registry *refuses* |
+> | the verified `jp2-S09ot2 = −1` offset | `tome_map_audit.py` | no — and the audit would have certified an alignment the resolver did not use |
+> | `ocr_dir` → curated source | `curated_sources.py` | no, and its comment said *"must stay in sync"* |
+>
+> The `jp2-S06` drift is the one that matters. The registry refuses that identifier *because* guessing which
+> of two settings 53 years apart a leaf belongs to is the four-month error; the audit's private copy guessed
+> it anyway, and nothing could see the disagreement because only one of the two was ever consulted per call.
+> **A duplicate is not dangerous when it drifts — it is dangerous from the moment it exists, because from
+> then on the agreement is a coincidence nobody is checking.** The test now fails on a second *literal*
+> definition of any of the four, and separately fails if the GT audit's legitimate extension SHADOWS a
+> registry entry rather than extending it.
+>
+> **R7.5d is the half worth keeping.** `tome-map-v2.json` was built by the table on 2026-07-28 and still
+> held all four wrong routes as literal strings — `jp2-S04` → the retired MRC composite, the three
+> `archive-*` volumes → `F`'s renders. Deleting the code left its **output** routing, one indirection
+> further away and behind no guard at all. It is deleted rather than corrected: it cannot be rebuilt until
+> R7.5a re-keys `jp2-S06`, and a tome map short by 2,872 leaves looks exactly like a tome map. The builder
+> now **refuses to write** in that state and exits 1, naming the volume and the page count it could not
+> place, instead of emitting a ten-volume map that reports "all addressed". A guard is not finished when the
+> code is fixed; it is finished when the artefacts the bad code produced are gone too.
+>
+> Negatives proven by injection, exit 1 each: a revived second `ocr_dir` map; a curated map drifted from the
+> registry; the GT audit shadowing a registry entry; an artefact re-acquiring a `jp2_dir`; the dropped
+> S09ot2 offset.
 
 **The attribute is retired with its reason attached, not merely deleted.** A bare
 `AttributeError: module 'jp2_page' has no attribute 'OCR_DIR_TO_JP2'` tells the next reader nothing about why

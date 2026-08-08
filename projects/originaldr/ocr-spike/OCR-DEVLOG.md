@@ -881,3 +881,82 @@ than reasoning about them. Every guard touched this session has its negatives pr
 R8.4a, four for R8.8, four for R7.5.
 
 **Commits**: `e2df106` (R8.4a + R8.8 + the six doc corrections + Gate 0e), `a20c533` (R7.5).
+
+---
+
+## Session 12 — every caller of the routing table wanted page numbers, and three more copies of it turned up
+
+R7.5 deleted the table. This session updated the six modules that were still reading it, and the answer to
+"which route does each of you need?" came back unanimous and unexpected: **all six wanted STRUCTURE.**
+
+`ocr_complete_volume` detects un-OCR'd pages. `integrity_sweep` compares page counts. `tome_map_audit` checks
+index alignment. `build_tome_map_v2` addresses book and chapter to leaf. `source_inventory_audit` wanted only
+the *set* of known identifiers. `curated_sources` never called it at all — it kept a copy.
+
+Not one of them wanted pixels. The table's entire real use was **page bookkeeping**, and it was answering with
+raster *directories*, which is how glyph work reached the wrong image through a door built for counting. The
+six now share `jp2_page.structure_leaves()`, which returns the leaves rather than the directory: a caller
+holding leaves can count them and cannot open the wrong ones.
+
+### The duplicate count went from one to four, and one of them had already drifted
+
+R7.5 moved `GLYPH_BARRED` because two copies of "which witnesses are barred" would drift. Discharging R7.5b
+found three more copies of the same class:
+
+| map | second copy | drifted? |
+|---|---|---|
+| which witnesses are barred | `audit_gt_rasters.py` | no — caught at R7.5 |
+| `ocr_dir` → witness | `audit_gt_rasters.py` | **YES** |
+| verified `jp2-S09ot2 = −1` offset | `tome_map_audit.py` | no |
+| `ocr_dir` → curated source | `curated_sources.py` | no |
+
+**The drift is the instructive one.** `witnesses.py` refuses `jp2-S06` outright, because S06 is one file
+carrying the 1635 Rouen OT and the 1582 Rheims NT and choosing between them is precisely the guess that cost
+four months. The GT audit's private copy mapped it to `("OT", "M")` anyway. Both behaviours were live; neither
+could see the other, because only one is consulted per call. As it happens the audit's answer is *correct* —
+all three files are `matter-ot2-*` at leaves 2049–2070, inside M's OT half — but it was correct **as a
+standing guess rather than as a reading**, and the registry's refusal is what makes the difference visible.
+It is now recorded as `GT_LEGACY` with the leaf-index evidence written down, and the guard fails if that
+extension ever *shadows* an id the registry already resolves rather than merely extending past it.
+
+The general lesson, which is sharper than "duplicates drift": **a duplicate is not dangerous when it drifts.
+It is dangerous from the moment it exists, because from then on the agreement between the copies is a
+coincidence that nothing is checking.** Three of these four had not drifted, and that fact was worth nothing.
+
+`curated_sources.OCR_DIR_SOURCE` is the tidiest case: it carried the comment *"must stay in sync with
+`jp2_page.OCR_DIR_TO_JP2`"*. A map that MUST STAY IN SYNC is R7.5 written down as a note-to-self. It is now
+derived from the registry's own `legacy` field, so there is nothing left to keep in sync. One nuance kept
+rather than flattened: `jp2-S06` remains **curated as a source** while staying **unaddressable as a volume**.
+Dropping it would have made a folder of legitimate material read as BANNED, which is a false accusation, not
+a stricter gate. Curation and addressing are two questions and collapsing them weakens one of them.
+
+### R7.5d — the table was deleted and its output kept routing
+
+`tome-map-v2.json`, 4.7 MB, tracked, built by the table on 2026-07-28, still held **all four wrong routes as
+literal strings**: `jp2-S04` → the retired MRC composite, the three `archive-*` volumes → `F`'s renders,
+`jp2-S06` → the JPEG render. A checked-in JSON full of raster paths is a routing table that no guard sits on,
+one indirection further out, and it outlived the code that wrote it by eleven days without anyone noticing —
+including me, three times through this file.
+
+It was found by the *guard*, not by reading: the new check greps every tracked JSON for `jp2_dir` / `jp2_file`
+and flagged two, the second being one vestigial field in `master-source-list.json` (correct-valued, read by
+nothing, removed). **This is the second session running in which the injection/guard found something reading
+did not.** The pattern is worth naming: reading a file tells you what the code does; a guard tells you what
+the *tree* contains, and stale artefacts are invisible to the first.
+
+The map is deleted rather than corrected, because it cannot be rebuilt until R7.5a re-keys `jp2-S06`, and
+**a tome map short by 2,872 leaves looks exactly like a tome map.** `build_tome_map_v2` now builds the ten
+volumes it can, then **refuses to write** and exits 1, naming the volume and the page count it could not
+place. Skipping the volume would have been a one-line change producing a file that reports "100% of pages
+addressed" — a below-threshold result wearing a finished one's clothes, which is the thing the project's
+standing rule exists to forbid. `tome_map_audit` takes the same shape from the other side: an unaddressable
+volume reports as a DEFECT row with its OCR count intact, so it stays visible and stays in the denominator,
+rather than raising (which takes ten good volumes down) or being skipped (which makes "0 defects" mean
+nothing).
+
+**A guard is not finished when the code is fixed. It is finished when the artefacts the bad code produced are
+gone too.**
+
+Negatives proven by injection, exit 1 each: a revived second `ocr_dir` map; a curated map drifted from the
+registry; the GT audit shadowing a registry entry; an artefact re-acquiring a `jp2_dir`; the dropped S09ot2
+offset. Restored to exit 0 after each.

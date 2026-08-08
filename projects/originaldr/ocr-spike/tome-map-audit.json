@@ -3,23 +3,23 @@
  "volumes": [
   {
    "ocr_dir": "archive-holiebible-ot1",
-   "jp2_dir": "S09_nevv-testament-mart-3vol/holiebiblefaithf00mart_0_jp2",
+   "witness": "OT1-1609-B",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.538,
-    "-1": 0.806,
-    "0": 0.969,
-    "1": 0.786,
-    "2": 0.529
+    "-2": 0.587,
+    "-1": 0.854,
+    "0": 0.935,
+    "1": 0.73,
+    "2": 0.47
    },
    "tome": "OT1",
    "books_addressed": [
     "genesis",
     "exodus",
     "numbers",
-    "deuteronomy",
-    "1-kings",
-    "3-kings"
+    "3-kings",
+    "2-paralipomenon",
+    "deuteronomy"
    ],
    "n_jp2": 1159,
    "n_ocr": 1159,
@@ -37,13 +37,13 @@
    "missing_is_contiguous_tail": false,
    "missing_first": [],
    "missing_last": [],
-   "tome_map_agree": 1084,
-   "tome_map_disagree": 35,
-   "tome_map_accuracy": 0.9687
+   "tome_map_agree": 1046,
+   "tome_map_disagree": 73,
+   "tome_map_accuracy": 0.9348
   },
   {
    "ocr_dir": "archive-nt-1582",
-   "jp2_dir": "S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  3 of 3 1582 New Testament_jp2",
+   "witness": "NT-1633-F",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
     "-2": 0.145,
@@ -83,14 +83,14 @@
   },
   {
    "ocr_dir": "archive-ot1-1609",
-   "jp2_dir": "S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  1 of 3 1609 Old Testament_jp2",
+   "witness": "OT1-1609-F",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.498,
-    "-1": 0.774,
-    "0": 0.955,
-    "1": 0.757,
-    "2": 0.491
+    "-2": 0.516,
+    "-1": 0.79,
+    "0": 0.944,
+    "1": 0.732,
+    "2": 0.462
    },
    "tome": "OT1",
    "books_addressed": [
@@ -117,20 +117,20 @@
    "missing_is_contiguous_tail": false,
    "missing_first": [],
    "missing_last": [],
-   "tome_map_agree": 1744,
-   "tome_map_disagree": 82,
-   "tome_map_accuracy": 0.9551
+   "tome_map_agree": 1723,
+   "tome_map_disagree": 103,
+   "tome_map_accuracy": 0.9436
   },
   {
    "ocr_dir": "archive-ot2-1610",
-   "jp2_dir": "S01_1582-first-edition-3vol/1582 Douai Rheims Douay Rheims First Edition  2 of 3 1610 Old Testament_jp2",
+   "witness": "OT2-1610-F",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.397,
-    "-1": 0.7,
-    "0": 0.87,
-    "1": 0.666,
-    "2": 0.372
+    "-2": 0.476,
+    "-1": 0.777,
+    "0": 0.863,
+    "1": 0.605,
+    "2": 0.315
    },
    "tome": "OT2",
    "books_addressed": [
@@ -157,13 +157,13 @@
    "missing_is_contiguous_tail": false,
    "missing_first": [],
    "missing_last": [],
-   "tome_map_agree": 1515,
-   "tome_map_disagree": 226,
-   "tome_map_accuracy": 0.8702
+   "tome_map_agree": 1503,
+   "tome_map_disagree": 238,
+   "tome_map_accuracy": 0.8633
   },
   {
    "ocr_dir": "jp2-S04",
-   "jp2_dir": "S04_1633-rheims-nt/1582 Douay Rheims NT_jp2",
+   "witness": "NT-1633-R",
    "detected_offset_vs_tome_map": -2,
    "offset_profile": {
     "-2": 0.0,
@@ -181,7 +181,7 @@
     "john",
     "1-corinthians"
    ],
-   "n_jp2": 771,
+   "n_jp2": 777,
    "n_ocr": 772,
    "ocr_range": [
     1,
@@ -189,68 +189,61 @@
    ],
    "jp2_range": [
     1,
-    771
+    777
    ],
    "naming_convention": "renamed",
    "verified_offset": null,
-   "n_missing_ocr": 0,
-   "missing_is_contiguous_tail": false,
-   "missing_first": [],
-   "missing_last": [],
+   "n_missing_ocr": 5,
+   "missing_is_contiguous_tail": true,
+   "missing_first": [
+    773,
+    774,
+    775,
+    776,
+    777
+   ],
+   "missing_last": [
+    775,
+    776,
+    777
+   ],
    "tome_map_agree": 0,
    "tome_map_disagree": 134,
    "tome_map_accuracy": 0.0
   },
   {
    "ocr_dir": "jp2-S06",
-   "jp2_dir": "S06_1610-facsimile-whole/Douay-Rheims-1610-Bible_jp2",
-   "detected_offset_vs_tome_map": 0,
-   "offset_profile": {
-    "-2": 0.37,
-    "-1": 0.63,
-    "0": 0.763,
-    "1": 0.563,
-    "2": 0.312
-   },
-   "tome": "OT2",
-   "books_addressed": [
-    "2-machabees",
-    "psalms",
-    "genesis",
-    "exodus",
-    "jeremie",
-    "isaie"
-   ],
-   "n_jp2": 2871,
+   "witness": null,
+   "unaddressable": "\"'jp2-S06' names a FILE, not a witness: S06 is one 2,872-leaf volume carrying the 1635 Rouen Old Testament and the 1582 Rheims New Testament, which are two settings 53 years apart. Use jp2-S06nt or jp2-S06ot and say which. (R7.5a re-keys the existing records; do not guess a volume here.)\"",
+   "detected_offset_vs_tome_map": null,
+   "offset_profile": null,
+   "tome": null,
+   "books_addressed": [],
+   "n_jp2": 0,
    "n_ocr": 2872,
    "ocr_range": [
     1,
     2872
    ],
-   "jp2_range": [
-    1,
-    2871
-   ],
-   "naming_convention": "renamed",
+   "jp2_range": null,
+   "naming_convention": "UNADDRESSABLE",
    "verified_offset": null,
    "n_missing_ocr": 0,
    "missing_is_contiguous_tail": false,
-   "missing_first": [],
-   "missing_last": [],
-   "tome_map_agree": 3081,
-   "tome_map_disagree": 958,
-   "tome_map_accuracy": 0.7628
+   "tome_map_agree": 0,
+   "tome_map_disagree": 0,
+   "tome_map_accuracy": null
   },
   {
    "ocr_dir": "jp2-S08",
-   "jp2_dir": "S08_1582-rhemes-nt-hires/1582_Rhemes_New_Testament_jp2",
+   "witness": "NT-1582-X",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.578,
-    "-1": 0.885,
-    "0": 0.988,
-    "1": 0.883,
-    "2": 0.602
+    "-2": 0.554,
+    "-1": 0.867,
+    "0": 0.989,
+    "1": 0.878,
+    "2": 0.61
    },
    "tome": "NT",
    "books_addressed": [
@@ -277,13 +270,13 @@
    "missing_is_contiguous_tail": false,
    "missing_first": [],
    "missing_last": [],
-   "tome_map_agree": 802,
-   "tome_map_disagree": 10,
-   "tome_map_accuracy": 0.9877
+   "tome_map_agree": 803,
+   "tome_map_disagree": 9,
+   "tome_map_accuracy": 0.9889
   },
   {
    "ocr_dir": "jp2-S09ot2",
-   "jp2_dir": "S09_nevv-testament-mart-3vol/holiebiblefaithf00mart_jp2",
+   "witness": "OT2-1610-B",
    "detected_offset_vs_tome_map": -2,
    "offset_profile": {
     "-2": 0.0,
@@ -323,14 +316,14 @@
   },
   {
    "ocr_dir": "pdf-S03a",
-   "jp2_dir": "S03_holie-bible-engl-ot-vol1/holiebiblefaithf01engl_jp2",
+   "witness": "OT1-1609-P",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.499,
-    "-1": 0.782,
-    "0": 0.959,
-    "1": 0.761,
-    "2": 0.494
+    "-2": 0.544,
+    "-1": 0.824,
+    "0": 0.939,
+    "1": 0.712,
+    "2": 0.435
    },
    "tome": "OT1",
    "books_addressed": [
@@ -342,10 +335,10 @@
     "deuteronomy"
    ],
    "n_jp2": 1145,
-   "n_ocr": 1140,
+   "n_ocr": 1145,
    "ocr_range": [
     1,
-    1140
+    1145
    ],
    "jp2_range": [
     1,
@@ -353,27 +346,17 @@
    ],
    "naming_convention": "renamed",
    "verified_offset": null,
-   "n_missing_ocr": 5,
-   "missing_is_contiguous_tail": true,
-   "missing_first": [
-    1141,
-    1142,
-    1143,
-    1144,
-    1145
-   ],
-   "missing_last": [
-    1143,
-    1144,
-    1145
-   ],
-   "tome_map_agree": 1714,
-   "tome_map_disagree": 73,
-   "tome_map_accuracy": 0.9591
+   "n_missing_ocr": 0,
+   "missing_is_contiguous_tail": false,
+   "missing_first": [],
+   "missing_last": [],
+   "tome_map_agree": 1678,
+   "tome_map_disagree": 109,
+   "tome_map_accuracy": 0.939
   },
   {
    "ocr_dir": "pdf-S03b",
-   "jp2_dir": "S03_holie-bible-engl-ot-vol2/holiebiblefaithf02engl_jp2",
+   "witness": "OT2-1610-P",
    "detected_offset_vs_tome_map": -2,
    "offset_profile": {
     "-2": 0.0,
@@ -392,10 +375,10 @@
     "ecclesiasticus"
    ],
    "n_jp2": 1145,
-   "n_ocr": 1134,
+   "n_ocr": 1145,
    "ocr_range": [
     1,
-    1134
+    1145
    ],
    "jp2_range": [
     1,
@@ -403,34 +386,24 @@
    ],
    "naming_convention": "renamed",
    "verified_offset": null,
-   "n_missing_ocr": 11,
-   "missing_is_contiguous_tail": true,
-   "missing_first": [
-    1135,
-    1136,
-    1137,
-    1138,
-    1139
-   ],
-   "missing_last": [
-    1143,
-    1144,
-    1145
-   ],
+   "n_missing_ocr": 0,
+   "missing_is_contiguous_tail": false,
+   "missing_first": [],
+   "missing_last": [],
    "tome_map_agree": 0,
    "tome_map_disagree": 15,
    "tome_map_accuracy": 0.0
   },
   {
    "ocr_dir": "pdf-S09nt",
-   "jp2_dir": "S09_nevv-testament-mart-3vol/nevvtestamentofi00mart_jp2",
+   "witness": "NT-1582-B",
    "detected_offset_vs_tome_map": 0,
    "offset_profile": {
-    "-2": 0.574,
-    "-1": 0.879,
-    "0": 0.984,
-    "1": 0.879,
-    "2": 0.599
+    "-2": 0.561,
+    "-1": 0.871,
+    "0": 0.989,
+    "1": 0.872,
+    "2": 0.604
    },
    "tome": "NT",
    "books_addressed": [
@@ -442,10 +415,10 @@
     "romans"
    ],
    "n_jp2": 811,
-   "n_ocr": 810,
+   "n_ocr": 811,
    "ocr_range": [
     1,
-    810
+    811
    ],
    "jp2_range": [
     1,
@@ -453,17 +426,13 @@
    ],
    "naming_convention": "renamed",
    "verified_offset": null,
-   "n_missing_ocr": 1,
-   "missing_is_contiguous_tail": true,
-   "missing_first": [
-    811
-   ],
-   "missing_last": [
-    811
-   ],
-   "tome_map_agree": 800,
-   "tome_map_disagree": 13,
-   "tome_map_accuracy": 0.984
+   "n_missing_ocr": 0,
+   "missing_is_contiguous_tail": false,
+   "missing_first": [],
+   "missing_last": [],
+   "tome_map_agree": 804,
+   "tome_map_disagree": 9,
+   "tome_map_accuracy": 0.9889
   }
  ]
 }

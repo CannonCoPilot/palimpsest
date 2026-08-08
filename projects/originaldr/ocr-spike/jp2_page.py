@@ -62,52 +62,13 @@ import witnesses as W  # noqa: E402
 
 SCANS = W.SCANS
 
-# Legacy `ocr_dir` -> the witness it actually addresses.
-#
-# Every entry except the two noted below was confirmed by PATH IDENTITY: the
-# directory the old table named is the same directory the registry resolves for
-# that witness. The two exceptions are the two defects, and they are the reason
-# this mapping points at witnesses rather than at directories.
-OCR_DIR_TO_WITNESS = {
-    # --- S01 / `F`: PDF-primary renders. Barred from pixel work, fine for structure.
-    "archive-ot1-1609":       ("OT1", "F"),
-    "archive-ot2-1610":       ("OT2", "F"),
-    # NB the id says 1582 and the witness is 1633 (1.1c). The id is legacy and is
-    # NOT renamed here -- it is what the existing ground-truth records contain, and
-    # silently remapping it would hide R8.6 rather than discharge it.
-    "archive-nt-1582":        ("NT", "F"),
-    # --- S03 / `P`: genuine Princeton captures, JP2-primary.
-    "pdf-S03a":               ("OT1", "P"),
-    "pdf-S03b":               ("OT2", "P"),
-    # --- S04 / `R`: DEFECT. The old table named the retired MRC composite; the
-    #     registry resolves the acquired Princeton original (R4.4).
-    "jp2-S04":                ("NT", "R"),
-    # --- S08 / `X`: excluded witness, PDF-primary. Barred.
-    "jp2-S08":                ("NT", "X"),
-    # --- S09 / `B`: the base exemplars, JP2-primary.
-    "pdf-S09nt":              ("NT", "B"),
-    "archive-holiebible-ot1": ("OT1", "B"),
-    "jp2-S09ot2":             ("OT2", "B"),
-    "archive-holiebible-ot2": ("OT2", "B"),   # alias of the same volume
-}
-
-# `jp2-S06` is NOT in the map above, and that is deliberate.
-#
-# `S06` is a whole Bible in one file: 2,872 leaves carrying the **1635 Rouen OT**
-# and the **1582 Rheims NT**, which the registry holds as two witness records over
-# one file (`OT-1635-M`, `NT-1582-M`). A bare `jp2-S06` therefore does not name a
-# witness, and it does not name a setting -- the two halves are 53 years and two
-# towns apart. Resolving it to either one would be a guess, and guessing which
-# setting a leaf belongs to is the error that cost four months.
-#
-# So it raises, and names the two ids that are well formed. 113,514 existing
-# records carry the ambiguous value; they are re-keyed by R7.5a, not papered over.
-S06_AMBIGUOUS = "jp2-S06"
-S06_SPLIT = {
-    "jp2-S06nt": ("NT", "M"),
-    "jp2-S06ot": ("OT", "M"),
-}
-OCR_DIR_TO_WITNESS.update(S06_SPLIT)
+# The legacy `ocr_dir` -> witness map lives in `witnesses.py`, beside the registry,
+# and is re-exported here because that is the name existing callers import (R7.5b).
+# It is NOT copied: one definition, and `test_raster_routing.py` fails if a second
+# one appears anywhere in the tree.
+OCR_DIR_TO_WITNESS = W.OCR_DIR_TO_WITNESS
+S06_AMBIGUOUS = W.S06_AMBIGUOUS
+S06_SPLIT = W.S06_SPLIT
 
 # OCR page index -> leaf index, where the two numberings differ. VERIFIED BY
 # RENDERING, not assumed: `jp2-S09ot2` OCR page 40 is leaf `..._0039` (read off the
@@ -159,19 +120,17 @@ def __getattr__(name):
     raise AttributeError(f"module 'jp2_page' has no attribute {name!r}")
 
 
-def witness_of(ocr_dir: str) -> tuple[str, str]:
-    """(vol, sig) for a legacy `ocr_dir`, or a loud error naming the alternative."""
-    if ocr_dir == S06_AMBIGUOUS:
-        raise KeyError(
-            f"{ocr_dir!r} names a FILE, not a witness: S06 is one 2,872-leaf volume "
-            f"carrying the 1635 Rouen Old Testament and the 1582 Rheims New "
-            f"Testament, which are two settings 53 years apart. Use "
-            f"{' or '.join(sorted(S06_SPLIT))} and say which. (R7.5a re-keys the "
-            f"existing records; do not guess a volume here.)")
-    if ocr_dir not in OCR_DIR_TO_WITNESS:
-        raise KeyError(f"{ocr_dir!r} is not a known ocr_dir; known: "
-                       f"{', '.join(sorted(OCR_DIR_TO_WITNESS))}")
-    return OCR_DIR_TO_WITNESS[ocr_dir]
+witness_of = W.witness_of        # (vol, sig) for a legacy ocr_dir, or a loud error
+
+
+def wid_of(ocr_dir: str) -> str:
+    """Canonical witness id ('OT2-1610-B') for a legacy `ocr_dir`.
+
+    Provided so a consumer can RECORD which witness a page came from without
+    importing the registry itself, and — more to the point — without recording a
+    raster path instead. An id is an address; a path is a route.
+    """
+    return W.wid(*W.witness_of(ocr_dir))
 
 
 EXTRACT_CACHE = Path(__file__).resolve().parent / ".scratch" / "pdf-leaves"
@@ -262,6 +221,35 @@ def pixel_path(ocr_dir: str, page_index: int) -> Path:
 def structure_path(ocr_dir: str, page_index: int) -> Path:
     """The leaf for a structural read — page order, counts, collation."""
     return _resolve(ocr_dir, page_index, structure=True)
+
+
+def structure_leaves(ocr_dir: str) -> list[Path]:
+    """Every leaf of a volume, in order, for STRUCTURAL work.
+
+    R7.5b. The five modules that read the retired routing table all wanted the same
+    thing from it: the raster DIRECTORY, so they could glob it and count or name the
+    leaves. Handing back a directory is what made the table a route to the pixels,
+    so it is not handed back -- this returns the leaves themselves, resolved through
+    the registry.
+
+    Structural because that is what those five do: page-count reconciliation, index
+    alignment, missing-page detection, tome addressing. A render preserves page
+    order and page content, so every witness is admissible for this and none is
+    barred. A caller that wants to READ a leaf must ask for `pixel_path()` and will
+    be refused where refusal is right; the two questions stay separate.
+    """
+    return list(_leaves_for(ocr_dir, structure=True) or ())
+
+
+def leaf_index(ocr_dir: str, page_index: int) -> int:
+    """OCR page index -> leaf index, applying the volume's verified offset.
+
+    Split out because callers reconciling OCR pages against leaves need the offset
+    without resolving a path, and the alternative -- each of them reaching into
+    `JP2_INDEX_OFFSET` -- is how the verified `jp2-S09ot2 = -1` gets dropped by one
+    of them and silently returns the next leaf for every page of that volume.
+    """
+    return page_index + JP2_INDEX_OFFSET.get(ocr_dir, 0)
 
 
 def jp2_path(ocr_dir: str, page_index: int, structure: bool = False) -> Path:
