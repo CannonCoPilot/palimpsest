@@ -45,6 +45,9 @@ import reocr_core as _core                  # noqa: E402
 import verse_locate                        # noqa: E402
 import verse_seg as VS                     # noqa: E402
 from corpus_wire_probe import stored_page  # noqa: E402
+import witness_inventory as _WI            # noqa: E402  # why a volume localizes nothing, from the registry
+sys.path.insert(0, str(HERE / "witness"))
+import witnesses as _W                     # noqa: E402  # the artefact must NAME the witness it localized
 
 PILOT_BOOKS = ["psalms", "genesis", "matthew", "john", "apocalypse"]
 
@@ -276,8 +279,40 @@ def localize_volume(ocr_dir: str, books: list[str], *, limit: int | None = None,
     if verbose:
         print(f"  {ocr_dir}: {len(recs)} pages, {n_calls} best_spans calls, {len(out)} verses, "
               f"{time.time()-t0:.0f}s", flush=True)
-    (HERE / f".corpus-localize-{ocr_dir}.json").write_text(json.dumps(
-        {"ocr_dir": ocr_dir, "books": books, "n_pages": len(recs), "verses": out}, ensure_ascii=False))
+    # The artefact names its witness, and an EMPTY result says why it is empty. `load()` returns {}
+    # both for a volume that was never localized and for one that was localized and yielded nothing,
+    # so without this the two are indistinguishable downstream -- an unmeasured thing presenting as a
+    # measurement (R1.4). The reason is read from the registry rather than written by hand: a tome in
+    # its source's `drop_tomes` is not expected to carry verse text, and that is a declaration the
+    # registry owns. Hand-written, the note would be a claim this file cannot support.
+    meta = {"ocr_dir": ocr_dir, "witness": _W.wid(*_W.witness_of(ocr_dir)),
+            "books": books, "n_pages": len(recs), "verses": out}
+    if not out:
+        sid = _WI.ocr_dir_tome()[ocr_dir][0]
+        dropped = sorted(set(_WI.WITNESSES[sid].get("drop_tomes") or []) & set(_WI.tomes_for(ocr_dir)))
+        # THREE different zeroes, and they must not be allowed to read as each other. `pages_read == 0`
+        # means no page of this volume is addressed to any sought book, so nothing was attempted -- that
+        # is a statement about SCOPE, not a measurement of the volume, and calling it a measured absence
+        # would be the same move as the `_empty_because` note this replaces (R7.5a-3: `jp2-S06nt` was
+        # recorded as carrying no verse text "as a property of the corpus"; on corrected addressing it
+        # localizes 2,344 verses. The narrative attached to the null is what stopped anyone re-running it).
+        if not recs:
+            why = ("no page of this volume is addressed to any of the books sought, so no verse was "
+                   "attempted here. This is a statement of SCOPE, not a measurement of the volume: it "
+                   "says nothing about whether the volume carries these books.")
+        elif dropped:
+            why = (f"{sid} declares drop_tomes={dropped}: this volume's verse text is not counted as a "
+                   f"witness. Note that the drop is a SCORING rule -- it does not stop localization, so "
+                   f"{len(recs)} pages were read and still yielded nothing, which is a measured null and "
+                   f"is NOT explained by the drop.")
+        else:
+            why = (f"no declared reason -- {len(recs)} pages were read and no verse of the sought books "
+                   f"was localized in them. This is a measured absence and an OPEN question, not a pass.")
+        meta["empty"] = {
+            "measured": bool(recs), "pages_read": len(recs), "books_sought": books,
+            "dropped_tomes": dropped, "why": why,
+        }
+    (HERE / f".corpus-localize-{ocr_dir}.json").write_text(json.dumps(meta, ensure_ascii=False))
     return out
 
 
