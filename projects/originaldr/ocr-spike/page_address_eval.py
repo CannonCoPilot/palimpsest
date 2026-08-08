@@ -31,6 +31,8 @@ sys.path.insert(0, str(HERE))
 
 import gt_registry as REG                 # noqa: E402
 import witness_inventory as WI            # noqa: E402
+sys.path.insert(0, str(HERE / "witness"))
+import witnesses as W                     # noqa: E402  # the artefact must NAME the witness it addressed
 import page_address as PA                 # noqa: E402
 import reocr_core as core                 # noqa: E402
 from corpus_wire_probe import stored_page  # noqa: E402
@@ -171,8 +173,14 @@ def main(argv=None):
             print(f"   {'OK ' if ok else 'BAD'} p{g.page_index:<5} want {want:<16} got {got:<16} "
                   f"src={r['source'] if r else '-':<18} fit={r['fit'] if r else '-'} kind={r['kind'] if r else '-'}")
         print(f"   -> {hit}/{len(gt)} correct")
+    # The artefact names the witness it addressed, not only the directory it read. `jp2-S06` was a
+    # directory naming two settings 53 years apart (R7.5a); an artefact that records only a path
+    # cannot be checked against the registry, and the R7.5a re-key left one file declaring an
+    # `ocr_dir` its own filename contradicted. `witness_of` RAISES on an ambiguous id, so a volume
+    # that cannot be named is a loud failure here rather than an unnamed record downstream.
     (HERE / f".page-address-{a.ocr_dir}.json").write_text(json.dumps(
-        {"ocr_dir": a.ocr_dir, "use_headings": a.use_headings, "coverage": [addressed, len(recs)],
+        {"ocr_dir": a.ocr_dir, "witness": W.wid(*W.witness_of(a.ocr_dir)),
+         "use_headings": a.use_headings, "coverage": [addressed, len(recs)],
          "heldout": ho, "records": recs}, ensure_ascii=False, indent=1))
     return 0
 

@@ -79,6 +79,46 @@ def main() -> int:
           + (f"  {[p.name for p in stragglers]}" if stragglers else ""))
     fatal += [f"{p.name} still present and un-re-keyed" for p in stragglers]
 
+    # A check that reads NAMES cannot see CONTENTS. The name check above passed while
+    # `.page-address-jp2-S06ot.json` declared `"ocr_dir": "jp2-S06"` inside itself -- the
+    # re-key renamed the file and re-indexed the records and left the field, so the artefact
+    # said one thing on its cover and another on its first page. Read the field, and make
+    # the registry adjudicate it: `witness_of` RAISES on the ambiguous id, so the volume
+    # that cannot be named is a failure here rather than an unnamed record downstream.
+    # (The invariant is general -- an addressing artefact names the volume it addressed --
+    # and is enforced here because R7.5a is what made the ambiguity nameable.)
+    mismatched = []
+    for p in sorted(SPIKE.glob(".page-address-*.json")) + sorted(SPIKE.glob(".corpus-localize-*.json")):
+        if p.name.startswith(".superseded"):
+            continue
+        stem = p.name.split("-", 2)[2].removesuffix(".json").removesuffix(".heldout")
+        try:
+            d = json.loads(p.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        # The two generators disagree on whether the held-out split belongs in the id
+        # (`corpus_localize` writes 'jp2-S08.heldout'). Normalise; the disagreement is a
+        # naming convention, not a routing claim, and is recorded rather than adjudicated here.
+        declared = str(d.get("ocr_dir", "")).removesuffix(".heldout")
+        if declared != stem:
+            mismatched.append(f"{p.name} declares ocr_dir={declared!r}, filename says {stem!r}")
+            continue
+        got = d.get("witness")
+        if got is None:
+            continue                     # only the S06 artefacts carry it yet; absence is backlog, not defect
+        try:
+            want = W.wid(*W.witness_of(declared))
+        except KeyError as e:
+            mismatched.append(f"{p.name}: {e.args[0].splitlines()[0]}")
+            continue
+        if got != want:
+            mismatched.append(f"{p.name} declares witness={got!r}, registry says {want!r}")
+    print(f"  {'ok  ' if not mismatched else 'FAIL'}  every addressing artefact's ocr_dir "
+          f"matches its filename and the registry")
+    for m in mismatched:
+        print(f"          {m}")
+    fatal += mismatched
+
     # ---- 2. derived artefacts. These are the backlog: regenerate, do not patch.
     for p in sorted(SPIKE.rglob("*.json")):
         s = str(p)
