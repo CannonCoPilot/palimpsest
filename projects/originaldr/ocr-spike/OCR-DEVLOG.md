@@ -721,3 +721,163 @@ supplied leaves — a file cannot supply what it was derived from. R8.7 should t
 holds before reaching for a new measurement, and ⚠ **`M` is bitonal CCITT, so grayscale NCC against a
 continuous-tone scan is a dead metric here** (0.067 for two genuine 1582 title pages); a null from it is not
 evidence.
+
+---
+
+## Session 11 — the audit was measuring four of five criteria, and the routing table was still routing
+
+Two defects, both of which had been *documented* and neither of which had been *closed*. That is the theme of
+the session: a finding is not a fix, and the thing that turns one into the other is a test.
+
+### The plan and the roadmap had drifted from the code, in six places
+
+An audit of §0–§2 and R0–R8 before doing any work, and it was worth the time:
+
+| what it said | what was true |
+|---|---|
+| R0.1 acceptance: "all **10 files**" | **11 files**, carrying 12 witness records |
+| R0.2 acceptance: "leaf counts match registry (**10/10**)" | **12/12** |
+| Roadmap "Verification standard": `make_witness_tree.py -> 10/10 verified`, and **none of the four guards listed** | 12/12; five guards and an audit exist |
+| §2 "Resolved": "witness independence for all **eleven files**" | the claim §1.1c **overturned** for `NT-F` |
+| §2 Gate 0a **(iii)**: listed as *outstanding and blocking* | **R4.3 discharged it** — the source is `M`, on +0.424/+0.398 |
+| Roadmap R4.1: "BLOCKED EXTERNALLY … the digit unresolved" | resolved from BPL's own MARC in Session 9, written **only into the exec summary** |
+
+The last one has a moral worth keeping: R4.1 sat blocked because the block was **mis-scoped**. It was a true
+statement about *the ESTC search interface* and it was allowed to stand for *"the bibliographic numbers are
+unobtainable"* — while the numbers sat in an Internet Archive metadata field already downloaded for other
+purposes. **An external blocker names one route; it does not bound the space of routes.**
+
+Re-fetching those citation strings to write them in caught a smaller thing that is the same shape: the row
+was labelled **verbatim** and the working-notes transcription had normalised the punctuation and abbreviated
+two of five citations. Nothing downstream depends on a comma, but *"verbatim"* is a claim that a later reader
+need not re-fetch, and that claim was false. **Fetch, don't recall.**
+
+Fixed, plus a **status index** and an **open-items register** at the head of the roadmap — the file's sections
+run R0, R1, R2, R3, R4, R6, R3.5, R5, R7, R8, and renumbering was rejected because the ids are cited from
+four guards, the masterplan, the companions and every devlog entry. The ids are load-bearing; the ordering is
+not.
+
+**And a guard so this class cannot recur: `test_verification_standard.py`** parses the roadmap's own command
+block and fails if a command named there is missing, if an `N/M` claim disagrees with what the command
+prints, if a guard on disk is undocumented, or if the section is renamed away. `test_counts_vs_doc.py` already
+bound the masterplan's §1.1 table to the registry; nothing bound the roadmap to anything, which is exactly how
+"10/10" survived the corpus growing.
+
+### R8.4a — the setting audit was reading four of the constitution's five criteria
+
+§0.3 defines setting identity as *"same signature, same catchword, same line-end words."* The R8.4 audit read
+**printed page number, running head, sidehead and line breaks**. Line-end words it compared; **signature and
+catchword it never looked at** — both sit at the **foot** of the leaf and `verify_setting.py` cropped the top
+16%. So the audit was *stronger* than the constitution on an axis the constitution omitted, and **silently
+weaker on two it named**, and neither document said so.
+
+No verdict was wrong. But "the method deviates from the constitution and nobody noticed" is the shape of the
+four-month error, not a lesser thing, so **the instrument was raised to the constitution** rather than the
+criterion trimmed to the instrument. All four settings hold on the foot criteria too:
+
+| setting | page | signature | catchword |
+|---|---|---|---|
+| NT 1582 | 149 | `T iij` — `B`, `M`, `X` | `bes` |
+| NT 1633 | 147 | *verso, none* | `CHAP.` — `F`, `R` |
+| OT1 1609 | 223 | *verso, none* | `wil` — `B`, `P`, `F` |
+| OT2 1610 | 243 | `Gg2` — `B`, `P`, `F` | `† Let` |
+
+The catchword completes the caught-up word every time — `Scri-`/`bes`, `virgins father`/`wil` — which is a
+check on the reading as well as on the setting.
+
+**The negative control is the result that matters.** At printed page **147** the two NT settings share the
+page number *and* the running head *ACCORDING TO S. LVKE*, and separate completely at the foot: `B` has
+signature `T ij` and catchword `30. Paſſing` (Luke 4:31), against `F`/`R`'s `CHAP.` (Luke 7:44). **The
+criteria a head crop can see agree across the setting boundary; the two it cannot see separate it.** That is
+the entire case for having closed the gap rather than explaining it away.
+
+**The band cost four failed designs, and every one failed the same way — it showed blank paper or the wrong
+glyphs, and both read as findings:**
+
+1. A **fixed foot fraction** — bottom margins differ per witness, and the fraction that reaches the catchword
+   is 0.10 on `P`, over 0.18 on `B`, over 0.22 on `R`. One constant shows blank paper for some witnesses, and
+   blank paper reads as *"this leaf has no catchword."* Same shape as the absolute ink thresholds that made
+   `F` report zero blank leaves (R1.4).
+2. **Anchoring on the last ink** — `OT1-1609-B`'s dog-eared corner, `OT2-1610-F`'s 183-row black edge band and
+   `F`'s `fatimamovement.com` watermark all present as the last inked thing on the leaf.
+3. A **threshold tuned on full text lines** prunes the catchword, which is a *short* line: at 20% of peak the
+   anchor found the last text line and the signature `T iij` was clipped at the crop edge.
+4. **Pitch measured as the white gap** rather than start-to-start understates it threefold, so a
+   five-pitch rule pruned the catchword along with the watermark.
+
+The working design anchors on the last **regularly spaced** line of type (artefacts are not regular), samples
+**right of centre** (the watermark is lower-left, catchwords are right of centre), then extends the band five
+of the leaf's **own** line pitches below. The catchword is *guaranteed in view* rather than *located*, and a
+person reads it. **The instrument's job is to put the right pixels in front of a reader, not to adjudicate
+them** — R7.4's lesson arriving from a different direction.
+
+Stated as a limit, because it is one: the foot criteria are verified at **one matched page per setting**, not
+the three or more the head pass used. That is **R8.4b**, and until it is done they corroborate the head result
+at one point rather than independently verifying it.
+
+**NEW Gate 0e — setting identity, proved per witness.** §2 listed gates for bibliography, completeness, the
+leaf map and derivative contamination, and **nothing for setting** — the exact failure that cost four months
+had no gate in the section that exists to prevent such failures. Gates 0a–0d each guard a field *known* to be
+uncertain. This one guards the field that was **not** known to be uncertain, which is the only kind that costs
+months.
+
+### R7.5 — the routing table that sent 48 transcriptions to the wrong image was still routing
+
+`jp2_page.py` held `OCR_DIR_TO_JP2`, a hand-written identifier → raster-directory table. `witnesses.py` held
+`pixel_source()` to refuse renders and composites. **The table never called the guard.** Both routes worked;
+one of them refused nothing. Commit `c44ba20` had *verified* that this table was the mechanism behind 48 of 51
+inadmissible ground-truth readings — and it was still the live routing when this session opened.
+**Verifying a defect is not retiring it.**
+
+The table is **deleted, not corrected**: a second mapping is the defect, because a mapping that is right today
+is unguarded tomorrow. An identifier now resolves to a *witness*, and the witness resolves its own raster.
+
+Four things a plain deletion would have got wrong:
+
+- **`M` needed re-routing, not un-routing.** Its JP2 package is genuinely corrupt and its PDF holds the real
+  CCITT stencils — the PDF *is* its primary artefact. Deleting the entry would have left `M` with no pixel
+  route, which reads as *"this witness has no rasters"*, and `M` holds the only genuine 1582 Censure and
+  Preface leaves in the corpus. New `witnesses.glyph_source()` returns `("pdf", …)` for it and extraction is
+  **per leaf, on demand**: its PDF is 2,872 pages, and a guarded route slow enough to be skipped is a guarded
+  route nobody uses.
+- **`glyph_source()` is not `pixel_source()`.** The latter answers a narrower question — *is this witness's
+  JP2 package the capture, or an IA render?* — and therefore refuses `M`, whose JP2 is neither. Both are kept
+  because they answer two different questions.
+- **The bar list had to move.** `BARRED` lived in `audit_gt_rasters.py`; it is now `witnesses.GLYPH_BARRED`
+  beside the registry, and the audit imports it. Two copies of *which witnesses are barred* is R7.5 one level
+  up, and the new test fails if a second definition appears anywhere in the tree.
+- **`jp2-S06` names a file, not a witness**, and it is on **113,514 records**. `S06` is one volume carrying
+  the 1635 Rouen OT *and* the 1582 Rheims NT — two settings 53 years apart — so resolving it to either is a
+  guess of precisely the kind that cost four months. It now **raises** and names the two well-formed ids
+  (R7.5a).
+
+`jp2-S04` now resolves to `newtestamentofie00engl_jp2`, the acquired Princeton original, where the table
+pointed at the **retired MRC composite**. Both paths existed on disk, so nothing had ever failed.
+
+The verified `jp2-S09ot2 = −1` offset is carried across and **asserted by the test**: losing it in a refactor
+silently returns the next leaf for every page of S9's entire Old Testament volume 2.
+
+**The default is strict.** `jp2_path()` takes the guarded route unless the caller passes `structure=True`.
+About twenty modules call this API and they split between legitimate structural use — page order and counts,
+admissible for every witness because a render preserves page order — and pixel use. They are deliberately
+**not** silently patched: the strict default makes each one fail loudly and declare which it is (R7.5b). The
+previous behaviour was silent success on the wrong pixels, and the only honest replacement for silent success
+is a loud failure.
+
+### The most useful thing in the session was a hole in my own guard
+
+The first `test_raster_routing.py` checked that whatever was barred refused pixels and whatever was not
+resolved cleanly. Injecting a failure to prove it worked, I deleted `F` from the bar list — and the test
+**passed**, because un-barring `F` merely moved it from one branch to the other and the test agreed with
+whatever it found. **A self-consistent check constrains nothing.**
+
+This is structurally the same error as the original: an independence test that contrasts `F` against `B` can
+only ever license *"`F` is not `B`"*, and it was read as *"`F` is an independent 1582 copy."* A test only
+constrains what it would reject. It now asserts the bar set is exactly `{F, X}`, so un-barring a witness is a
+deliberate edit to a test rather than a silent widening.
+
+**It was found by injection, not by reading the code**, which is the argument for proving negatives rather
+than reasoning about them. Every guard touched this session has its negatives proven by injection: four for
+R8.4a, four for R8.8, four for R7.5.
+
+**Commits**: `e2df106` (R8.4a + R8.8 + the six doc corrections + Gate 0e), `a20c533` (R7.5).

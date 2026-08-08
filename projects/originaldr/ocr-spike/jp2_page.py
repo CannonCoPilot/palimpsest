@@ -127,6 +127,38 @@ class InadmissibleRaster(ValueError):
     """A pixel-level read was attempted on a witness that cannot support one."""
 
 
+# Six modules read `jp2_page.OCR_DIR_TO_JP2` at runtime and now fail, which is
+# intended -- they were reading a table that routed to the wrong rasters. But a bare
+# `AttributeError: module 'jp2_page' has no attribute 'OCR_DIR_TO_JP2'` tells the
+# next reader nothing about why it went or what replaces it, and an uninformative
+# failure invites the fastest repair rather than the right one (most likely: putting
+# the table back). So the name is retired *with its reason attached*.
+_RETIRED = {
+    "OCR_DIR_TO_JP2":
+        "retired by R7.5. It mapped an ocr_dir straight to a raster directory, which "
+        "made it a SECOND route to the pixels that never called witnesses.pixel_source() "
+        "-- the mechanism behind 48 of 51 ground-truth files being read from an "
+        "inadmissible image. Four of its entries were wrong (F renders, X the excluded "
+        "upscale, S04 the retired MRC composite, S06 a JPEG render instead of the CCITT).\n"
+        "    Replace a lookup of the raster DIRECTORY with a lookup of the WITNESS:\n"
+        "      jp2_page.witness_of(ocr_dir)              -> (vol, sig)\n"
+        "      witnesses.glyph_source(vol, sig)          -> ('jp2'|'pdf', path), or raises\n"
+        "      jp2_page.pixel_path(ocr_dir, i)           -> a leaf fit for glyph work\n"
+        "      jp2_page.structure_path(ocr_dir, i)       -> a leaf for page order/counts\n"
+        "    If this call site only needed the SET of known ocr_dirs, use "
+        "jp2_page.OCR_DIR_TO_WITNESS. See roadmap R7.5b.",
+    "_pages":
+        "retired by R7.5 along with the routing table; use _leaves_for(ocr_dir, "
+        "structure=...) or, better, pixel_path()/structure_path().",
+}
+
+
+def __getattr__(name):
+    if name in _RETIRED:
+        raise AttributeError(f"jp2_page.{name} {_RETIRED[name]}")
+    raise AttributeError(f"module 'jp2_page' has no attribute {name!r}")
+
+
 def witness_of(ocr_dir: str) -> tuple[str, str]:
     """(vol, sig) for a legacy `ocr_dir`, or a loud error naming the alternative."""
     if ocr_dir == S06_AMBIGUOUS:

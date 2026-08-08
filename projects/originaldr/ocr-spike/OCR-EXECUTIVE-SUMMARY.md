@@ -263,9 +263,23 @@ well-formed request.
 
 **Also blocking, and now the corpus's largest exposure: the New Testament has one witness to its own
 setting** (§2). The remedy is acquisition, not further measurement of what is held. A candidate 1582 copy
-with continuous-tone originals is identified and **must be setting-verified before admission** — the
-printed-page-and-running-head check at three or more separated points against a known-good same-setting
-partner, which is the test that was never run for four months and would have cost minutes.
+with continuous-tone originals is identified and **must be setting-verified before admission** — printed page
+number, running head, **signature and catchword** agreeing at three or more separated points against a
+known-good same-setting partner. That is the test that was never run for four months and would have cost
+minutes, and it is now a formal gate (**Gate 0e**) rather than a practice.
+
+**Also open, and it is a defect in the ground truth rather than in the corpus: 48 of 51 ground-truth files
+were read from a raster that cannot support the calls they carry** — 39 from `F` (~168 ppi, where the long-ſ
+nub spans under 1.6 px), 6 from `X` (an excluded 2× upscale), 3 from `M`'s render. **Zero from `B` or `P`**,
+the base exemplar and its surrogate. Stated precisely: those readings are **unverified, not wrong**, and
+nothing is withdrawn on suspicion — two spot-checks moved the state in *both* directions. The remedy needs no
+acquisition, since every locus but two NT leaves exists on an admissible witness.
+
+The *mechanism* is now closed. A hand-written routing table in `jp2_page.py` sat beside the registry's guard
+and never called it, so two routes to the pixels existed and only one refused an inadmissible image — the
+table was verified as the cause in an earlier commit and was **still routing** until 2026-08-07. There is now
+one route: an identifier resolves to a witness, and the witness resolves its own raster or refuses. **A
+verified defect can stay live indefinitely; what retires it is a test, not a finding.**
 
 Also blocking, but running in parallel: **STC/ESTC for every copy.** Direct verification remains
 **externally blocked** — the ESTC index returns `no such index` for every query, `estc.bl.uk` redirects to

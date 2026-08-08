@@ -131,7 +131,11 @@ is blotted here, the other is clean" becomes an *emendation*, and thousands of n
 of real interventions. With it, they go to a lightweight surrogate register, summarised statistically and
 never enumerated.
 
-**Setting identity is proved, not assumed**: same signature, same catchword, **same line-end words**.
+**Setting identity is proved, not assumed**, at the same printed page: same **printed page number**, same
+**running head**, same **signature**, same **catchword**, **same line-end words**, at three or more separated
+points. A title page proves nothing — it is the leaf most likely to be borrowed, and `F`'s genuine 1582
+Rhemes title page sits on a 1633 Rouen body. **Eleven of twelve records verified; the twelfth named
+unverifiable**, not assumed sound.
 
 ---
 

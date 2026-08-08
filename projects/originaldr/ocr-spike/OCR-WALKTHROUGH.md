@@ -366,8 +366,16 @@ to modern versification.**
 | base illegible, **same-setting** copy resolves it | **surrogate register** — legibility provenance, summarised statistically, never enumerated as apparatus. *Transcription, not emendation.* |
 | **different-setting** supply, or a demonstrable press error | **intervention apparatus** — bracketed in every view, with the supplying document's identity and date |
 
-Setting identity is **proved before any cross-copy use**: same signature, same catchword, **same line-end
-words.**
+Setting identity is **proved before any cross-copy use**, at the same printed page: same **printed page
+number**, same **running head** and sidehead, same **signature**, same **catchword**, **same line-end
+words**, at three or more separated points. Neither a constant leaf offset nor a title page is accepted as
+proof — `F` carries a genuine 1582 Rhemes title page on a 1633 Rouen body (§1.1c).
+
+**Verified for eleven of twelve witness records; `OT-1635-M` is named unverifiable**, being the sole record of
+its setting. The signature and catchword were added to the criterion — and actually read — on 2026-08-07:
+the audit had been cropping only the head of the leaf, where neither appears (§1.1b R8.4a). The negative
+control is the sharp case: at printed page 147 the 1582 and 1633 settings share the page number *and* the
+running head, and differ at the foot (`T ij` / `30. Paſſing` against `CHAP.`).
 
 **The uncertainty gradient:**
 
