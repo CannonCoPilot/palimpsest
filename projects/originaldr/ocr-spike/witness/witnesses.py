@@ -199,6 +199,66 @@ PDF = {
 NO_READING = {}
 
 
+# Why a witness cannot carry a GLYPH-level call.  Resolution and derivation are
+# separate defects and a witness can have both: `F` is barred on resolution *and*
+# is a render.
+#
+# This lived in `audit_gt_rasters.py` until 2026-08-07 (R7.5).  It belongs beside
+# the registry, because it is a property of the witness, and because two routes to
+# the pixels each holding their own copy of "which witnesses are barred" is how the
+# routes drift apart.  The audit now imports it from here.
+GLYPH_BARRED = {
+    "F": "~168 ppi in all three volumes; the long-ſ nub spans under 1.6 px (§1.2)",
+    "X": "excluded -- a 2.00x upscale of B-NT with zero real detail beyond it",
+}
+
+
+def glyph_source(vol, sig):
+    """The artefact a GLYPH-level consumer must read, as (kind, path).
+
+    `kind` is "jp2" for a directory of capture leaves, or "pdf" for a PDF whose
+    pages must be extracted.  Raises for any witness that cannot support a glyph
+    call at all.
+
+    This is deliberately distinct from `pixel_source()`, which answers a narrower
+    question -- "is this witness's JP2 package the capture, or an IA render?" -- and
+    therefore raises for `M`, whose JP2 package is corrupt but whose PDF holds the
+    real CCITT stencils.  `pixel_source()`'s own message says to extract from the
+    PDF in that case; this function is where that instruction is executed rather
+    than left to each caller to remember.
+
+    The bars, in the order they are applied and for separate reasons:
+      * NO_READING  -- the primary's text layer is binarised (an MRC re-upload).
+      * GLYPH_BARRED -- the witness is excluded, or its resolution cannot resolve
+        the features a glyph call depends on.  A render is not the issue here; an
+        upscale of a genuine capture is still barred, because interpolation
+        manufactures the feature the call depends on rather than recording it.
+      * primary == "pdf" -- not a bar. It selects the extraction route.
+    """
+    key = (vol, sig)
+    if key in NO_READING:
+        raise ValueError(f"{wid(vol, sig)}: no reading may be taken — {NO_READING[key]}")
+    if sig in GLYPH_BARRED:
+        raise ValueError(
+            f"{wid(vol, sig)}: barred from glyph-level work — {GLYPH_BARRED[sig]}. "
+            f"Re-read the locus on an admissible witness ({', '.join(admissible(vol))}) "
+            f"or report that neither holds it. No fallback is permitted (R7).")
+    if PRIMARY[key] == "pdf":
+        return ("pdf", PDF[key])
+    return ("jp2", WITNESSES[key]["jp2"])
+
+
+def admissible(vol):
+    """Sigla in `vol` that can carry a glyph-level call, for use in error messages.
+
+    The bars are tested directly rather than by calling `glyph_source()`, which
+    would recurse: `glyph_source` builds its refusal message from this function.
+    """
+    out = [wid(v, s) for (v, s) in WITNESSES
+           if v == vol and s not in GLYPH_BARRED and (v, s) not in NO_READING]
+    return sorted(out) or ["none in this volume"]
+
+
 def setting(vol, sig):
     """The SETTING a witness attests: (volume, year).
 

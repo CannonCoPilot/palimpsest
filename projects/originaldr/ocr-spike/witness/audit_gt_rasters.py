@@ -42,10 +42,11 @@ OCR_DIR_TO_WITNESS = {
 
 # Why a witness cannot carry a glyph-level call.  Resolution and derivation are separate
 # defects and a witness can have both: `F` is barred on resolution *and* renders.
-BARRED = {
-    "F": "~168 ppi in all three volumes; the long-ſ nub spans under 1.6 px (§1.2)",
-    "X": "excluded -- a 2.00x upscale of B-NT with zero real detail beyond it",
-}
+# MOVED to `witnesses.py` as `GLYPH_BARRED` (R7.5, 2026-08-07) and imported here.  It
+# is a property of the witness, and the audit and the raster router each holding
+# their own copy of "which witnesses are barred" is how the two routes drift apart --
+# which is the R7.5 defect itself, one level up.
+BARRED = W.GLYPH_BARRED
 
 SUFFIXES = (".pre-review", ".pre-vvfix", ".pre-primary-raster")
 

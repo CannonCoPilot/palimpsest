@@ -27,7 +27,7 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
 | R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5 defect is **LIVE** |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5 **DISCHARGED**; R7.1–R7.4, R7.5a, R7.5b open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
 
 ### Open-items register
@@ -39,10 +39,10 @@ right and the paragraph is a bug to be fixed.
 **OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
 R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
 Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5 (live defect)** · R8.3 · **R8.4b** · R8.6 · R8.7
+**R7.5a** · **R7.5b** · R8.3 · **R8.4b** · R8.6 · R8.7
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
-R6.5 · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
+R6.5 · **R7.5** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
 
@@ -531,7 +531,9 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.2 | Re-read the 4 `M`-based files on the CCITT | as R6.5 | one is DONE (`matter-ot2-privilege-du-roi`) |
 | R7.3 | Re-read the 39 `F`-based files on `B`/`P` | the bulk of the corpus | prioritise files whose loci `B` or `P` actually hold; report any locus neither holds rather than substituting `F` silently |
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
-| R7.5 | Retire `jp2_page.py`'s routing table | every caller reaches rasters through `witnesses.pixel_source()` | `jp2_page.py` cannot return a render-derived path for any witness whose `PRIMARY` is a PDF |
+| R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
+| R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | **113,514 records carry `jp2-S06`**, which names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids. Also `archive-nt-1582` names 1582 for a 1633 witness | every record names a witness and a setting; `jp2-S06` raises until they do | OPEN — overlaps R8.6 |
+| R7.5b | Update the ~20 modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | OPEN — the strict default is what surfaces them |
 
 **R7.5 is the mechanism, not a tidying job — and it was verified, not assumed.** `jp2_page.py`'s
 `OCR_DIR_TO_JP2` keys **are** the `ocr_dir` values the ground-truth files carry, so this table is literally
@@ -548,6 +550,49 @@ So a caller using `witnesses.pixel_source()` and a caller using `jp2_page.py` ge
 the same witness**, and only one of them is guarded. Two routes to the pixels is the defect; the fix is one
 route. This is the same shape as the `role="structure"` leak — a retracted decision still live in code —
 except that here the code disagrees with the guard rather than merely with the plan.
+
+> **DISCHARGED 2026-08-07.** `OCR_DIR_TO_JP2` is **deleted**, not corrected: a second mapping is the defect,
+> because any second mapping can drift from the registry, and a table that is right today is a table that is
+> unguarded tomorrow. An `ocr_dir` now resolves to a *witness* and the witness resolves its own raster.
+>
+> Four things the fix had to get right, none of which a simple deletion would have:
+>
+> - **`M` had to be re-routed, not un-routed.** Its JP2 package is genuinely corrupt (`..._jp2_broken`) and
+>   its PDF holds the real CCITT stencils, so the PDF *is* its primary artefact. Deleting the `jp2-S06` entry
+>   would have left `M` with no pixel route at all, which reads as "this witness has no rasters." New
+>   `witnesses.glyph_source()` returns `("pdf", …)` for it and `jp2_page` extracts **per leaf, on demand** —
+>   `M`'s PDF is 2,872 pages and listing all of them to answer one index is how a guarded route becomes slow
+>   enough that someone routes around it.
+> - **`glyph_source()` is not `pixel_source()`.** `pixel_source()` answers a narrower question — *is this
+>   witness's JP2 package the capture, or an IA render?* — and therefore refuses `M`, whose JP2 is neither.
+>   Routing glyph work through it would have barred the one witness holding the only genuine 1582 Censure and
+>   Preface leaves. The two functions answer two questions and both are kept.
+> - **The bar list had to move.** `BARRED` lived in `audit_gt_rasters.py`; it is now `witnesses.GLYPH_BARRED`
+>   beside the registry and the audit imports it. Two copies of *which witnesses are barred* is R7.5 one level
+>   up, and `test_raster_routing.py` fails if a second definition appears anywhere in the tree.
+> - **`jp2-S06` names a file, not a witness**, and it is on **113,514 records**. `S06` is one volume carrying
+>   the 1635 Rouen OT *and* the 1582 Rheims NT — two settings 53 years apart — so resolving it to either is a
+>   guess of exactly the kind that cost four months. It now **raises** and names `jp2-S06nt` / `jp2-S06ot`.
+>   The records are re-keyed by R7.5a; the ambiguity is surfaced rather than silently resolved.
+>
+> The `jp2-S09ot2 = −1` offset is carried across unchanged and is asserted by the test: it is a verified
+> off-by-one, and losing it in a refactor silently returns the next leaf for every page of S9's entire OT
+> volume 2.
+>
+> **The default is strict.** `jp2_path()` now takes the guarded pixel route unless the caller passes
+> `structure=True`. Roughly twenty modules call this API and they split between legitimate structural use
+> (page order, counts, collation — admissible for every witness, since a render preserves page order) and
+> pixel use. They are **not** silently patched: the strict default makes each one fail loudly and say which it
+> is (R7.5b). The previous behaviour was silent success on the wrong pixels, and the only honest replacement
+> for silent success is a loud failure.
+>
+> **A gap this found in its own guard, recorded because it is the more instructive half.** The first version
+> of `test_raster_routing.py` checked that whatever was barred refused pixels and whatever was not resolved
+> cleanly — and **passed** when `F` was deleted from the bar list, because un-barring `F` simply moved it to
+> the other branch. A self-consistent check constrains nothing. It now asserts the bar set is exactly
+> `{F, X}`, so un-barring a witness is a deliberate edit to a test rather than a silent widening. This is the
+> same shape as the original error — the independence test that contrasted `F` against `B` could only ever
+> license *"`F` is not `B`"* — and **it was found by injection, not by reading the code.**
 
 **R7.4 is the one that stops this recurring.** Three instances now share a single shape — the vv→w flip,
 `d. Roüen`, `Marchans` — and in all three the rule was right, the observer was careful, and only the image
@@ -686,6 +731,7 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_setting_guard.py       # R8.2  cross-setting collation is REFUSED
 ../ocr-venv/bin/python witness/test_counts_vs_doc.py       # R8.2  §1.1 table agrees with the registry (12/12)
 ../ocr-venv/bin/python witness/test_setting_verified.py    # R8.4  no witness may lack setting readings
+../ocr-venv/bin/python witness/test_raster_routing.py      # R7.5  ONE route to the pixels, and the guard is on it
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ```
 
