@@ -121,10 +121,20 @@ used for — never a ranking of the **copies**:
 | **same-setting surrogate** | **resolve illegibility — this is transcription, not emendation** |
 | **low-resolution witness** | collation, page order, completeness, and any reading nothing better-resolved carries — but never training data or glyph adjudication |
 | **witness support** (different edition) | supply a reading only where the base has **no leaf at all**, flagged with its source named |
-| **frontmatter witness** | prelims and endmatter only — **no verse of scripture** |
+| **frontmatter witness** (different edition) | prelims and endmatter only — **no verse of scripture, at any grain** |
 
 **The NT's missing surrogate is why the last two roles exist.** Its base copy is frontmatter-defective, and
 the two leaves it lacks survive in the 1582 setting only in `M`.
+
+**One file wears two of these roles, and until 2026-08-08 it wore one.** `M` is a single package holding a
+**1635 Rouen Old Testament** and a **1582 Rheims New Testament**, and both halves were filed as
+*frontmatter witness*. Only the Old Testament half belongs there: it is a different edition, and no better
+scan could change that. The New Testament half is **the same setting as the NT base exemplar** and is
+limited by its raster alone — bitonal, ~380 ppi — which is the **low-resolution witness** role, the one
+`F` carries in both Old Testament tomes. So the New Testament does have a second copy attesting its
+setting after all; what it still lacks is a *surrogate*, because no second capture of that setting can
+resolve a glyph. See Master Plan §1.1a for the per-half table and §2 Gate 0f for how the limit is now
+enforced rather than merely written down.
 
 The second role is the distinction that keeps the apparatus usable. Without it, every routine "the base copy
 is blotted here, the other is clean" becomes an *emendation*, and thousands of non-events bury the handful

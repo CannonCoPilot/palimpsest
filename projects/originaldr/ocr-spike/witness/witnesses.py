@@ -121,10 +121,21 @@ WITNESSES = {
     # title page stands at 2072.  Addressing the whole package as one witness
     # would pool a 1635 Rouen OT with a 1582 Rheims NT -- the same mistake the
     # retired S01/S09 identifiers made (1.1a).
+    #
+    # R9.0 (2026-08-08): role `frontmatter` -> `lowres`.  This half is the SAME
+    # SETTING as the base exemplar -- 1582 Rheims Fogny -- so the bibliographic
+    # ground that limits the OT half does not touch it.  What limits it is the
+    # raster: 1-bit CCITT at ~380 ppi against B-NT's ~545 ppi continuous tone.
+    # That is a limit on GLYPH work, which is exactly `lowres`, the role F's two
+    # OT volumes carry.  Filing it as `frontmatter` stated a limit of one
+    # DIGITISATION as a property of the COPY -- the identical error the plan
+    # retired for F under the term `structure only` (1.1a) -- and withheld from
+    # the New Testament the second copy of its own setting that it has.
+    # It attests; it never adjudicates.  GLYPH_BARRED is unchanged by this.
     ("NT",  "M"): dict(legacy="NT/S06", year=1582, leaves=800,
                        jp2=SCANS/"S06_1610-facsimile-whole/Douay-Rheims-1610-Bible_jp2_broken",
                        leaf_range=(2072, 2872),
-                       role="frontmatter"),
+                       role="lowres"),
     # The OTHER half of the same package, and a DIFFERENT EDITION: a 1635 Rouen
     # (Cousturier) printing of the Old Testament, not the 1609/1610 Douai
     # (Kellam) one the edition transcribes.  It is therefore NOT a witness to
@@ -153,6 +164,85 @@ if _bad:
         f"fix the typo; do not let an undefined one through."
     )
 del _bad
+
+# ---------------------------------------------------------------------------
+# R9.1 -- EVIDENTIAL SCOPE AT VERSE GRAIN (Gate 0f, OCR-MASTERPLAN.md 2)
+#
+# What a witness may be used for at verse grain.  DERIVED from the role, never
+# assigned per witness, because a per-witness field is a second place for the
+# same fact and would drift from 1.1a exactly as three copies of the raster map
+# drifted from each other (R7.5b/c).  The role IS the permission; this table
+# only says what the permission means for a verse.
+#
+#   full       the verse text may be read, adjudicated and evaluated here
+#   collation  the verse may be ATTESTED, localized and counted -- and no glyph
+#              call, no training crop, no CER figure.  ATTESTATION IS NOT
+#              ADJUDICATION, and the whole point of a third value is that the
+#              corpus can now say so.
+#   none       the verse text is not evidence here AT ANY GRAIN -- not a
+#              reading, not an attestation, not a presence count
+#
+# Why this exists.  1.1a has stated these limits from the beginning and NO CODE
+# HAS EVER READ ONE.  `OT-1635-M` is excluded from the verse text in four
+# documents and was attesting psalms 2,515 and genesis 1,530 in
+# coverage-audit-verse.json for as long as that audit has run.  The nearest
+# thing to enforcement was `witness_inventory.drop_tomes`, which named the right
+# file for the wrong reason, had exactly one consumer, and that consumer read it
+# as a CONTAINMENT claim -- the R7.5a-3 addressing defect.  The prose was right
+# throughout; it simply had nothing downstream of it.
+VERSE_SCOPES = frozenset({"full", "collation", "none"})
+
+ROLE_VERSE_SCOPE = {
+    "base":        "full",        # it IS the text
+    "surrogate":   "full",        # same setting, usable resolution
+    "lowres":      "collation",   # a real copy of the setting, a raster that cannot answer a glyph
+    "support":     "collation",   # a real copy of ANOTHER setting; supplies only where the base has no leaf
+    "frontmatter": "none",        # different edition -- no capture of it could make it a witness here
+    "excluded":    "none",        # not a distinct copy, or not a witness to the setting
+}
+
+_unscoped = sorted(set(ROLES) - set(ROLE_VERSE_SCOPE))
+if _unscoped:
+    raise ValueError(
+        f"roles with no declared verse scope: {_unscoped}. A role added without a scope would "
+        f"default into admission, which is the failure Gate 0f exists to prevent -- give it a "
+        f"scope in ROLE_VERSE_SCOPE, or do not declare the role."
+    )
+del _unscoped
+
+
+def verse_scope(vol, sig):
+    """What this witness may be used for at VERSE grain: 'full' | 'collation' | 'none'."""
+    return ROLE_VERSE_SCOPE[WITNESSES[(vol, sig)]["role"]]
+
+
+def verse_scope_of(ocr_dir):
+    """`verse_scope` for a legacy `ocr_dir`. Raises the registry's own error on an unknown id."""
+    return verse_scope(*witness_of(ocr_dir))
+
+
+def verse_admitted(ocr_dir):
+    """May this volume's verse text count as evidence at all? (Gate 0f)"""
+    return verse_scope_of(ocr_dir) != "none"
+
+
+class VerseScopeError(PermissionError):
+    """Raised when verse text is read from a witness the corpus does not admit for verse text."""
+
+
+def assert_verse_admitted(ocr_dir):
+    """Refuse a verse-grain read of a `none`-scope witness, naming the role and the gate."""
+    if not verse_admitted(ocr_dir):
+        vol, sig = witness_of(ocr_dir)
+        raise VerseScopeError(
+            f"{ocr_dir} is {wid(vol, sig)}, role {WITNESSES[(vol, sig)]['role']!r}, "
+            f"verse_scope 'none': its verse text is not evidence at any grain -- not a reading, "
+            f"not an attestation, not a presence count (OCR-MASTERPLAN.md 2, Gate 0f). "
+            f"It is admitted for prelims and endmatter, and for structural bookkeeping, which is "
+            f"why its leaves still appear in every leaf count. If you are auditing the localization "
+            f"ARTEFACT rather than scoring the text, pass scope_check=False and say so."
+        )
+
 
 # Which artefact is PRIMARY for each witness.  Not a guess and not a rule about
 # formats: taken from the `source`/`original` fields of

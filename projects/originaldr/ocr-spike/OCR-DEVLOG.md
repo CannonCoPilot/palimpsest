@@ -1041,3 +1041,99 @@ weaker, not quietly levelled up.
 
 Negatives proven by injection: the divider given a setting; a ground-truth file reverting to `jp2-S06`
 (exit 2, not 1); a half losing a leaf (exit 2).
+
+---
+
+## Session 13 — three limits that were written down correctly and enforced nowhere
+
+**Discharges** §1.1, §1.1a, §2 Gate 0d/0f · roadmap R7.5a-3, **R9**.
+
+Sir's instruction was to restate `M`'s role per half. Doing so required asking what a role *does*, and
+the answer was: nothing. **No code has ever read a witness role.** The permissions and limits in §1.1a
+have been correct since they were written and have never been on any execution path. Three separate
+consequences had accumulated behind that, and each was invisible in a different way.
+
+### 1. One role name carrying two unrelated limits
+
+`M` is one file holding two books. Both halves were filed as *frontmatter witness*, and the two halves
+are limited for reasons that have nothing to do with each other:
+
+| | `OT-1635-M` | `NT-1582-M` |
+|---|---|---|
+| limit | **bibliographic** — 1635 Rouen, a different edition from the 1609/1610 Douai printing | **the raster** — 1-bit CCITT ~380 ppi against `B`-NT's ~545 ppi |
+| could a better scan lift it? | **no**, and no scan ever will | **yes** |
+| now | frontmatter witness (different edition), `verse_scope: none` | independent witness, low-resolution scan, `verse_scope: collation` |
+
+**This is the `structure only` error repeating** — a limit on one *digitisation* stated as a property of
+the *copy* — on a different witness, four rows below the table in §1.1a that records the first
+retirement. It cost the New Testament the second copy of its own setting that it has: `NT-1582-M`
+localizes **2,344** pilot verses and attests matthew 1,067 · john 877 · apocalypse 400.
+
+### 2. The rule that was enforced by a defect
+
+`witness_inventory` declared `S6: drop_tomes: ["NT"]` and called it a scoring rule. **No scorer read it.**
+Its only consumer was `page_address_eval.volume_books()`, which read it as a *containment* claim and built
+the addressing DP's state space from it — the R7.5a-3 defect that filed 800 leaves reading `ACCORDING TO
+S. IOHN` under Machabees and Daniel at median fit 0.156. While that defect stood, S6's NT could not
+localize a verse, so **the drop looked enforced**. Correcting the addressing removed the only thing
+enforcing it. Retired at Sir's instruction; its premise had died with Session 9's 1633 finding, which
+makes `NT-1582-M` the second witness to a setting the NT holds once rather than a fourth copy of one held
+three times.
+
+The re-run afterwards was **deep-equal to the run before it** — 6,434 verses, worklist 271, every figure
+identical, differing in bytes only where two sources tie on every value and fall out of a dict in a
+different order. That non-difference is the finding: **retiring a rule cannot move a number no scorer
+read.**
+
+### 3. `X` was attesting, and every NT agreement figure counted `B` twice
+
+Building the scope table made this visible on its first run. `NT-1582-X` — `B` re-wrapped and upscaled
+exactly 2.000×, NCC 0.9847 to `B`'s own grid, top-octave energy 0.0002 against `B`'s own 0.0074–0.0097 —
+reaches the coverage audit as `S8` and was attesting **matthew 1,067 · john 876 · apocalypse 391**, beside
+`B`'s own `S9` rows for the same books. §1.1a has said since it was written that admitting `X` *"would
+double-count `B` under a second name"*. It was being admitted. **Every New Testament cross-source
+agreement figure computed before today counted the base exemplar twice, at two scales.** R9.4b is the
+remainder: no such figure may stand unlabelled.
+
+### What was built
+
+| built | what it does |
+|---|---|
+| `witnesses.ROLE_VERSE_SCOPE` + `verse_scope()` / `verse_admitted()` / `assert_verse_admitted()` | **derives** verse-grain permission from the role — `base`/`surrogate` → full · `lowres`/`support` → collation · `frontmatter`/`excluded` → none. A role with no scope **raises at import**, so a role added later cannot default into admission |
+| `corpus_localize.load(scope_check=True)` | **raises** `VerseScopeError` for a `none` witness. Returning `{}` was rejected: `{}` is already what a never-localized volume returns, so a silent refusal would be indistinguishable from missing data |
+| `qc_audit.scan_ocr_dirs` | drops `none` volumes and **prints what it dropped, above the figures**. A witness excluded on principle must be visible as an exclusion |
+| `witness/test_verse_scope.py` | Gate 0f held four ways, including by **calling** the audit's choke point rather than reading it |
+| `witness/test_verse_scope_bypass.py` | **exit 1** — nine modules read `.corpus-localize-*.json` directly, around the gate (R9.2c) |
+| `witness/test_drop_rule_enforced.py` | a declared scoping rule with no consumer fails |
+| §2 **Gate 0d restored** | it was cited twice — *"Gates 0a–0d each guard a field…"* — and defined nowhere, while roadmap R5.2 pointed back at it. A gate that exists only as a cross-reference is not a gate |
+
+### 🔴 The guard passed all three injections, and was worthless
+
+The first `test_verse_scope.py` checked that each witness's scope matched its role. Flipping `OT-1635-M`
+from `frontmatter` to `lowres` **passed**: it moved to the other branch of a table that agreed with it
+either way, and a 1635 reprint quietly became admissible for 1609 verse text. Flipping `NT-1582-M` back
+passed too.
+
+**This is `test_raster_routing.py` from Session 11, repeated with its lesson written down in the same
+file I was editing** — that guard passed when `F` was deleted from the bar list, because un-barring merely
+moved `F` to the other branch. The remedy was the same then and now: **assert the SET, not the branch.**
+The three scope-critical assignments are pinned with their evidence and the verse-inadmissible set is
+asserted to be exactly `{OT-1635-M, NT-1582-X}`. All three injections now fail; exit 0 restored.
+
+⚠️ **Recording the near-miss because the guard would have shipped green.** A self-consistent check
+produces the *same observable* as a working one, and I had already written the sentence describing that
+failure mode twice in this repository before making it a third time.
+
+### And one more copy of a fact, found the same way
+
+`test_verification_standard.py` reported the new bypass audit as broken for exiting 1 — its healthy
+state — because it classified audits from a hand-maintained set `{"audit_gt_rasters.py"}` inside the
+checker. **The document already says which commands are audits**: they are the ones under *"The audits"*.
+The classification now derives from the block, and `audit_s06_keys.py` moved to the block it belonged in.
+
+### Result
+
+`coverage-audit-verse.json` re-run with the gate live. Removed: `psalms/S6`, `genesis/S6`
+(`OT-1635-M`); `matthew/S8`, `john/S8`, `apocalypse/S8` (`NT-1582-X`). **Added: none. Changed among
+survivors: none — not one attested or passed count moved by one.** Guards **9 exit 0**; audits
+`audit_gt_rasters`, `audit_s06_keys`, `test_verse_scope_bypass` exit 1, each with its remedy named.

@@ -23,17 +23,29 @@ scan-quality fact, not a textual one.** It needs no apparatus and no voting.
 ## 2. The corpus: three volumes, three copies each — and two admitted for named leaves only
 
 Eleven scan files are held. **They are not eleven witnesses** — measurement and bibliographic verification
-resolve them into **ten**, across three volumes: **seven** witnessing their own volume's setting, **two**
-admitted from a different edition as support, one admitted for frontmatter alone, and one file that is a
-re-wrapping of another and no witness at all.
+resolve them into **twelve registered records**, because one file (`M`) holds two books of two different
+editions. Of the twelve: **eight** witness their own volume's setting, **two** are admitted from a
+different edition as support, **one** is admitted for frontmatter alone, and **one** is a re-wrapping of
+another and no witness at all.
+
+> **Two numbers in that sentence have been corrected, and both were undercounts.** It read *"resolve them
+> into ten … seven witnessing their own volume's setting"*, which lost `M`'s Old Testament half (eleven
+> files carry **twelve** records — §1.1 derives the counts from the registry for exactly this reason) and
+> counted `NT-1582-M` as frontmatter-only when it witnesses the 1582 setting the transcript is taken from.
 
 **One of the eleven was very nearly not counted.** A file set aside in an earlier draft as "a 1610
 whole-Bible facsimile, excluded outright" is nothing of the kind: it is a 2007 reprint **of photographs of
 original copies**, whose Old Testament is a **1635 Rouen** printing and whose New Testament is a **1582
 Rheims Fogny** — and whose prelims carry the **only genuine 1582 Censure and Preface p.1 in the corpus**,
-two leaves the plan had recorded as surviving nowhere. It is admitted as `NT-1582-M`, for frontmatter and
-endmatter only. **The lesson is procedural: an exclusion is a claim, and it inherits the evidential
-standard of any other claim.** This one rested on a one-line description that was wrong about the file's
+two leaves the plan had recorded as surviving nowhere. Its two halves are admitted on different terms:
+**`OT-1635-M` for frontmatter and endmatter only**, because a 1635 reprint is not a witness to the 1609–10
+printing at any resolution, and **`NT-1582-M` as a low-resolution witness to the setting the base exemplar
+itself attests** — bitonal ~380 ppi, so it may attest and collate verses but may never decide a glyph.
+Both halves were filed under the frontmatter role until 2026-08-08; **that single term was carrying two
+unrelated limits**, one bibliographic and one photographic, and the New Testament was the loser — see the
+count of witnesses to the 1582 setting in §2. **The lesson is procedural: an exclusion is a claim, and it
+inherits the evidential standard of any other claim.** This one rested on a one-line description that was
+wrong about the file's
 date, its printer and its nature, and because it was never re-tested it produced a false "nothing survives"
 verdict at the most consequential point in the New Testament.
 
@@ -122,6 +134,10 @@ visible in a single crop, which is what makes the eleven passes worth stating.
 
 **Every volume has a base exemplar; the two OT tomes also have a same-setting surrogate** for resolving
 illegibility. The NT has none — which is why it alone needs the witness-support and frontmatter roles.
+It does, however, have a **second copy of its own setting at low resolution** (`NT-1582-M`, ~380 ppi
+bitonal), which had been withheld from it by a role name until 2026-08-08. That improves collation,
+completeness and attestation for the New Testament and changes nothing about illegibility: a surrogate is
+defined by being able to answer a glyph, and `M` cannot.
 
 ## 3. How it works
 

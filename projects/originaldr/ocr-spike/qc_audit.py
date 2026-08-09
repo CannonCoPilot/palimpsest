@@ -49,6 +49,8 @@ import long_s_rule as LS            # noqa: E402  # type: ignore[import-not-foun
 import verse_seg as VS              # noqa: E402  # janvier-cut re-segmentation (REPLACES align_coords 2026-07-22)
 import curated_sources as CS        # noqa: E402  # REP-1 allowlist guard (drop S2,S5,S7,S10-S15 leak)
 import corpus_localize as CL       # noqa: E402  # STAGE 1: the hybrid localizer's corpus vmap
+sys.path.insert(0, str(HERE / "witness"))
+import witnesses as WITS           # noqa: E402  # Gate 0f: what each witness may be used for at verse grain
 
 # WHICH LOCALIZER PRODUCES THE VERSE MAP THE AUDIT SCORES.
 #   "detect" — legacy `detect_our_ocr.detect_book`; the operating point every report before v019 measured.
@@ -226,8 +228,44 @@ def stream_for(ocr_dir: str) -> Any | None:
     return stm
 
 
+_SCOPE_DROPPED: dict[str, str] = {}
+
+
 def scan_ocr_dirs(witness: dict) -> list[str]:
-    return [v["ocr_dir"] for v in witness.get("volumes", []) if v.get("ocr_dir")]
+    """The volumes of this source whose verse text the corpus admits as evidence (Gate 0f, R9.2a).
+
+    THE ADMISSION FILTER ABOVE THIS ONE CANNOT EXPRESS THIS DISTINCTION. `curated_sources` answers "may
+    material from acquisition S6 be used?" and the answer is yes -- but S6 is ONE acquisition holding TWO
+    witnesses with two roles: a 1635 Rouen OT that is a different edition, and a 1582 Rheims NT that is the
+    base exemplar's own setting. One verdict cannot carry both, and for as long as this audit has run the
+    1635 OT has been attesting psalms 2,515 and genesis 1,530 while four documents said it must not.
+    Curation asks whether a SOURCE is admissible at all; scope asks what an admissible WITNESS may be used
+    for. Collapsing them weakens both -- the same argument `curated_sources` makes for keeping curation and
+    addressing apart.
+
+    Dropped volumes are RECORDED and printed, never merely skipped: a source that vanishes silently is
+    indistinguishable from a source that had no data, which is the whole R1.4 failure.
+    """
+    out = []
+    for v in witness.get("volumes", []):
+        od = v.get("ocr_dir")
+        if not od:
+            continue
+        try:
+            scope = WITS.verse_scope_of(od)
+        except KeyError:
+            # An ocr_dir the registry cannot name is not silently admitted. It is also not this
+            # function's business to adjudicate -- the addressing guards do that -- so it is recorded
+            # and dropped rather than raised into the middle of a book loop.
+            _SCOPE_DROPPED[od] = "unknown to the witness registry"
+            continue
+        if scope == "none":
+            vol, sig = WITS.witness_of(od)
+            _SCOPE_DROPPED[od] = (f"{WITS.wid(vol, sig)} role={WITS.WITNESSES[(vol, sig)]['role']} "
+                                  f"-> verse_scope 'none' (Gate 0f)")
+            continue
+        out.append(od)
+    return out
 
 
 def _mean(xs: list[float]) -> float | None:
@@ -635,6 +673,16 @@ def main(argv: list[str]) -> int:
 
     # ---- console report ----
     print(f"=== QC COVERAGE AUDIT (ARCHAIC-PREEMINENT, VERSE grain) — books: {', '.join(books)} ===\n")
+    # Gate 0f, printed BEFORE the figures. A witness excluded on principle must be visible as an
+    # exclusion; if it merely failed to appear, the reader could not tell it from a witness with no
+    # data, and the number would look like a measurement of the whole corpus.
+    if _SCOPE_DROPPED:
+        print(f"EXCLUDED AT VERSE GRAIN — {len(_SCOPE_DROPPED)} volume(s), Gate 0f "
+              f"(OCR-MASTERPLAN.md §2; role table §1.1a):")
+        for od, why in sorted(_SCOPE_DROPPED.items()):
+            print(f"    {od:14} {why}")
+        print("  These volumes remain in every LEAF count and every structural audit — scope governs\n"
+              "  evidence, not bookkeeping.\n")
     for book in books:
         b = books_out.get(book)
         if not b:

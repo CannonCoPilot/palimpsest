@@ -123,7 +123,7 @@ assumed from the file extension**, and the `S06` row below was wrong on exactly 
 | setting | witness id | file | primary artefact | leaves | role |
 |---|---|---|---|---|---|
 | **NT 1582 Rhemes** | `NT-1582-B` | `NT/S09` | JP2 `S09_…/nevvtestamentofi00mart_jp2` | 812 | **base exemplar** |
-| | `NT-1582-M` | `NT/S06` | **PDF** `S06_…/S06.pdf` (leaves 2072–2871) | 800 | **frontmatter witness** |
+| | `NT-1582-M` | `NT/S06` | **PDF** `S06_…/S06.pdf` (leaves 2072–2871) | 800 | **independent witness, low-resolution scan** — and the only 1582 Censure/Preface p.1 (§1.1a) |
 | | `NT-1582-X` | `NT/S08` | PDF `S08_…/S08.pdf` | 800 | **excluded — `B` re-wrapped and upscaled** |
 | **NT 1633 Rouen** | `NT-1633-R` | `NT/S04` | JP2 `S04_…/newtestamentofie00engl_jp2` | 778 | witness support (§1.4) |
 | | `NT-1633-F` | `NT/S01` | PDF `S01_…/nt-1582.pdf` | 765 | **1633 copy, low-resolution scan** — §1.1c |
@@ -133,7 +133,7 @@ assumed from the file extension**, and the `S06` row below was wrong on exactly 
 | **OT2 1610 Douai** | `OT2-1610-B` | `OT2/S09` | JP2 `S09_…/holiebiblefaithf00mart_jp2` | 1150 | **base exemplar** |
 | | `OT2-1610-P` | `OT2/S03b` | JP2 `S03_…/holiebiblefaithf02engl_jp2` | 1146 | surrogate |
 | | `OT2-1610-F` | `OT2/S01` | PDF `S01_…/ot2-1610.pdf` | 1128 | independent witness, low-resolution scan |
-| **OT 1635 Rouen** | `OT-1635-M` | `OT/S06` | **PDF** `S06_…/S06.pdf` (leaves 0–2070) | 2071 | **frontmatter witness** — not a witness to either OT tome |
+| **OT 1635 Rouen** | `OT-1635-M` | `OT/S06` | **PDF** `S06_…/S06.pdf` (leaves 0–2070) | 2071 | **frontmatter witness (different edition)** — not a witness to either OT tome |
 
 Root: `palimpsest/imports/Scripture/Bibles/DouayRheims_DR/sources/scans/`.
 `NT/S06` and `OT/S06` are two halves of **one** file, which is why eleven files carry twelve records.
@@ -149,13 +149,22 @@ Root: `palimpsest/imports/Scripture/Bibles/DouayRheims_DR/sources/scans/`.
 
 | setting | witnesses at usable resolution | note |
 |---|---|---|
-| **NT 1582 Rhemes** | **one** — `B` | `X` is `B` upscaled; `M` is bitonal and frontmatter-only |
+| **NT 1582 Rhemes** | **one** — `B` (+ `M` at low resolution) | `X` is `B` upscaled and carries no information `B` lacks; `M` is a **second copy of the setting**, bitonal ~380 ppi |
 | NT 1633 Rouen | two — `R`, and `F` at low resolution | witness support only; never copy-text |
 | OT1 1609 Douai | **two** — `B`, `P` (+ `F` at low resolution) | |
 | OT2 1610 Douai | **two** — `B`, `P` (+ `F` at low resolution) | |
 
-**The New Testament has exactly one witness to its own setting.** That is the single most consequential
-fact in the corpus, it is worse than the plan recorded until 2026-08-06, and §1.1c explains why.
+**The New Testament has exactly one witness to its own setting *at usable resolution*, and two copies
+attesting it.** The qualification is not a softening — `B` is still the only NT witness that can answer a
+glyph, which is what "usable resolution" means and why the row above reads *one*. What changed on
+2026-08-08 is the parenthesis: `M` was carried as *frontmatter-only*, which stated a limit of its
+**digitisation** as a limit of the **copy** and so withheld from the NT the low-resolution second witness
+the OT1 and OT2 rows have carried all along in `F`. The three rows now say the same kind of thing.
+
+**This remains the single most consequential fact in the corpus**, it is worse than the plan recorded until
+2026-08-06, and §1.1c explains why. The parenthesis improves collation, completeness and localization
+evidence for the New Testament; it does **not** give the New Testament a surrogate, and no glyph call may
+be decided on `M`.
 
 #### `S06` — what it actually is, and why the earlier exclusion was wrong on its facts
 
@@ -173,9 +182,23 @@ in the sense that matters — a facsimile is a *redrawing*, and these are photog
 - **Its NT is a 1582 Rheims Fogny** — *"PRINTED AT RHEMES, by Iohn Fogny. **1582.** CVM PRIVILEGIO."*
   (leaf 2072), **the same setting as the base exemplar**, and from a copy that is *not* `NT/S09`.
 
-**`S06` remains excluded as a witness to the biblical verse text**: it is bitonal, re-laid-out on
-letter-size pages, and its OT is the wrong edition entirely. **It is admitted for frontmatter and
-backmatter only**, where it is decisive (§1.4, §1.1b).
+**`S06`'s two halves are admitted on different terms, and the terms follow from the two facts above.**
+An earlier revision of this paragraph read *"`S06` remains excluded as a witness to the biblical verse
+text: it is bitonal, re-laid-out on letter-size pages, and its OT is the wrong edition entirely"* — three
+grounds run together for one file that is two books. Separated (§1.1a, and enforced at §2 Gate 0f):
+
+- **`OT-1635-M` is excluded from the verse text on the bibliographic ground alone**, and that ground is
+  sufficient by itself: a 1635 Rouen reprint is not a witness to what Douai printed in 1609 and 1610, and
+  no capture of it ever will be. Its frontmatter and backmatter *are* admitted, and are decisive, because
+  they descend from the Kellam Douai edition by the reprint's own privilege (below).
+- **`NT-1582-M` is the same setting as the base exemplar**, so the bibliographic ground does not touch it.
+  What limits it is the raster — bitonal, ~380 ppi, re-laid-out — and that is a limit on **glyph-level
+  work**, which is the *independent witness, low-resolution scan* role the corpus already applies to `F`'s
+  two Old Testament volumes. It is admitted for collation, completeness, page order and verse attestation,
+  and barred from training data, CER evaluation and any long-ſ adjudication.
+
+The "re-laid-out on letter-size pages" ground applies to both and is a reason to distrust *geometry*, not
+*presence*: it bars nothing that the raster ground does not already bar.
 
 **What `S06` settles that nothing else could.** Its NT frontmatter carries **the Censure and the Preface
 p.1 in the 1582 setting** — the two leaves for which the plan previously recorded *"no genuine 1582 reading
@@ -235,7 +258,8 @@ textual-criticism practice:
 | `NT-1582-B` | `NT/S09` | **base exemplar** |
 | **`NT-1633-F`** | `NT/S01` | **1633 Rouen copy, low-resolution scan** — *not* a 1582 witness (§1.1c) |
 | `NT-1633-R` | `NT/S04` | witness support |
-| `NT-1582-M` | `NT/S06` | **frontmatter witness** (leaves 2072–2871) |
+| `NT-1582-M` | `NT/S06` | **independent witness, low-resolution scan** (leaves 2072–2871) — same setting as `B` |
+| `OT-1635-M` | `OT/S06` | **frontmatter witness (different edition)** (leaves 0–2070) — no verse of scripture |
 | `NT-1582-X` | `NT/S08` | excluded — not a distinct copy |
 | `OT1-1609-B` | `OT1/S09` | **base exemplar** |
 | `OT1-1609-P` | `OT1/S03a` | surrogate |
@@ -255,12 +279,42 @@ what a *file* may be used for — never a ranking of the *copies*.
 | **base exemplar** | the copy the transcript is taken *from*. In a documentary edition there is exactly one per volume, and it **is** the text | every reading; training crops; CER evaluation | — |
 | **surrogate** | a second scan of the **same setting**, at usable resolution | resolving a locus the base exemplar cannot answer — damage, show-through, an inked-over sort; training augmentation | supplying a reading where the base is legible and simply disagreed with |
 | **witness support** | a copy of a **different edition**, admitted for named leaves only | a reading where the base exemplar has **no** leaf at all, flagged as supplied with its source named | anything the base exemplar can answer; anywhere its own setting would be silently imported |
-| **frontmatter witness** | admitted for prelims and endmatter, excluded from the verse text | Censure, Approbation, Preface, Tables, errata, privileges | any verse of scripture |
+| **frontmatter witness (different edition)** | a copy of a **different edition**, admitted for prelims and endmatter **because its front and back matter descend from the edition being transcribed** while its verse text does not | Censure, Approbation, Preface, Tables, errata, privileges | **any verse of scripture, at any grain — including presence, localization and attestation counts** |
 | **independent witness, low-resolution scan** | a genuinely distinct physical copy whose *digitisation* resolves too little for glyph-level work | collation, page order, completeness, presence/absence of leaves, and **any reading no better-resolved witness carries** | training data; CER evaluation; adjudicating long-ſ against `f`, where the distinguishing nub is under 1.6 px |
 | **excluded** | not a distinct copy, or not a witness to the setting | audit and provenance only | anything evidential |
 
 **Note the last two are deliberately different.** *Excluded* is a judgement about the artefact's identity;
 *low-resolution scan* is a measured constraint on one digitisation of a real and independent copy.
+
+#### The two limits are different in kind, and one term was doing both jobs
+
+**Until 2026-08-08 a single term, *frontmatter witness*, was applied to both halves of `M`.** The halves
+are two different books with two different reasons for their limits, and collapsing them cost the New
+Testament a witness it was entitled to and let the Old Testament keep one it was not.
+
+| | `OT-1635-M` (leaves 0–2070) | `NT-1582-M` (leaves 2072–2871) |
+|---|---|---|
+| relation to the text being transcribed | **a different edition** — 1635 Rouen, second edition of the Douay OT | **the same setting as the base exemplar** — 1582 Rheims Fogny |
+| what limits it | **bibliography.** §1.1's OT volumes are first-edition only; its verse text is a *different printing* | **the raster.** Bitonal CCITT at ~380 ppi, against `B`-NT's ~545 ppi continuous tone |
+| could a better scan lift the limit? | **no.** No capture of a 1635 copy makes it a witness to 1609/1610 | **yes.** A continuous-tone capture of the same copy would make it a surrogate |
+| verse text | **never admitted, at any grain** | **admitted at collation grain**; barred from glyph-level work |
+| role | **frontmatter witness (different edition)** | **independent witness, low-resolution scan** — *and* the corpus's only 1582 Censure and Preface p.1 |
+
+**This is the `structure only` error again** (retired terms, below): a limit measured on **one digitisation**
+was stated as a property of the **copy**, and so barred a genuine witness from readings it is entitled to
+carry. It is worth naming that the same mistake recurred after being retired once, on a different witness,
+inside a table that documents the retirement four rows above.
+
+**What the reclassification changes, stated as numbers rather than as an intention.** `NT-1582-M` localizes
+**2,344** verses of the pilot books and attests matthew **1,067** · john **877** · apocalypse **400** in
+`coverage-audit-verse.json`. Its identity pass rates are the weakest of the five NT sources (modern
+0.71–0.83), which is exactly what a ~380 ppi bitonal scan should look like and is why it is barred from
+glyph adjudication rather than trusted equally. **It is nonetheless the second copy attesting the 1582
+setting**, and §1.1 records that the New Testament has one — see the corrected count there.
+
+**And what it changes for the Old Testament is a removal, not an addition.** `OT-1635-M` had been
+attesting psalms **2,515** and genesis **1,530** in the same audit, under a prose exclusion that no code
+read. That is now enforced (§2 Gate 0f); the numbers it contributed were never admissible.
 
 **`excluded (upscale)` — the one witness that carries the parenthesis, and what it means.** `NT-1582-X`
 (`S08`) is excluded on a *measured* ground, not a bibliographic one, and the parenthesis records which. Its
@@ -272,6 +326,20 @@ the same measurement reads **0.0074–0.0097**, thirty to a hundred times more. 
 full; `X`'s is empty.** So `X` is not a bad witness, it is **twice the pixels and none of the information**,
 and admitting it would double-count `B` under a second name. Its two made-up leaves are its own, and those
 came from `M` (§1.4).
+
+> 🔴 **And it was being admitted.** Building Gate 0f's scope table made this visible on the first run:
+> `X` reaches the coverage audit as source `S8` and was attesting **matthew 1,067 · john 876 ·
+> apocalypse 391** beside `B`'s own `S9` rows for the same books. **Every New Testament cross-source
+> agreement figure computed before 2026-08-08 counted the base exemplar twice**, under two names, at two
+> scales — which is the precise outcome the paragraph above says admitting `X` would cause, written down
+> and then not enforced anywhere. The exclusion is now a `verse_scope: "none"` in the registry, read at the
+> audit's choke point (§2 Gate 0f, R9). It was found by *building the gate*, not by reading the code, which
+> is the same way R7.5's hole was found: the paragraph was correct and had no consumer.
+>
+> **This is why Gate 0f is drawn at witness grain.** The audit's older filter, `curated_sources`, is an
+> *acquisition* allowlist, and `S8` is a curated acquisition — correctly, since the file is real and its
+> provenance is known. What was never expressible there is that the acquisition's **only witness is not a
+> distinct copy**. A filter cannot enforce a distinction it cannot state.
 
 #### Retired terms — recorded, because they survive in archived drafts
 
@@ -708,9 +776,11 @@ reproduction whose pages are **1-bit CCITT at ~380 ppi** (§1.1); there is no co
 acquire, because the tonal information was discarded before the file we hold was made. This is not a
 counter-example to the primacy rule but a result of applying it: `S06`'s primary artefact **is** the PDF,
 and the JP2 package beside it is a 600-dpi render of a letter-size page — a 2× upscale of the 300-dpi JPG
-render, and worse than the stencil it derives from. `S06` is admitted for frontmatter and backmatter only,
-and its bitonal raster is **recorded as the limiting factor wherever a reading is taken from it** rather
-than being allowed to pass unremarked (§1.4, R6.3). The
+render, and worse than the stencil it derives from. `S06`'s **Old Testament half** is admitted for
+frontmatter and backmatter only — on the bibliographic ground, not this one — while its **New Testament
+half is admitted at collation grain** and barred from glyph work, which is what this measurement licenses
+and all it licenses (§1.1a, §2 Gate 0f). Its bitonal raster is **recorded as the limiting factor wherever a
+reading is taken from it** rather than being allowed to pass unremarked (§1.4, R6.3). The
 institutional PDFs (`NT/S09`, `S03a`) are MRC composites — a 167-ppi JPX background, a 500-ppi JPX
 foreground and a **1-bit JBIG2 mask** — while their JP2 originals are continuous tone. The user-uploaded
 PDFs (`S08`, `S01` ×3) carry a **plain 8-bit RGB JPEG per page, no mask and no JBIG2 anywhere in the
@@ -1032,7 +1102,7 @@ the worked case: `F`'s New Testament carried four months of sound-looking work u
 copy · repository, shelfmark and set membership for the five Princeton and BPL copies · **setting identity
 for eleven of the twelve witness records, with the twelfth named unverifiable** (§1.1b) · made-up leaves and
 their sources for the New Testament · **base exemplars declared**, with losing candidates and reasons
-recorded.
+recorded · **evidential scope declared per witness and read by a scorer** (Gate 0f, R9).
 
 > **An earlier revision of this paragraph read "witness independence for all eleven files," and that claim is
 > withdrawn.** It is the very claim §1.1c overturned: independence was tested for `NT-F` *against `B`*, which
@@ -1079,6 +1149,18 @@ keyed to printed page number and signature, so that any leaf can be addressed in
 Without it, "the same page" cannot be stated across copies — and §1.4 shows that leaf indices do **not**
 correspond between files even within one volume.
 
+**Gate 0d — derivative contamination.** No leaf entering the recognition chain may be a derivative of
+another leaf already in it: bit depth > 1, grey levels > 64, and dimensions matching the witness's raster
+manifest, asserted at load time. `X` is the worked case — twice `B`'s pixels and none of `B`'s information
+(§1.1a) — and `S06`'s superseded JPEG render is the second.
+
+> **This gate went missing from this section and is restored here (2026-08-08).** It was cited twice in the
+> paragraphs below — *"Gates 0a–0d each guard a field that was known to be uncertain"* — and defined
+> nowhere, while `R5.2` in the roadmap carried the parenthetical *"(Gate 0d)"* and pointed back at a gate
+> this document no longer contained. A gate that exists only as a cross-reference is not a gate. **Its
+> acceptance test is still outstanding: R5.2 has no proven negative case**, which is the same standard
+> every other gate here has met, so 0d is listed as *specified and unenforced* rather than as satisfied.
+
 **Gate 0e — setting identity, proved per witness.** Every witness record declares the **setting** it attests
 — volume and year of printing — and that declaration is **collated against a second witness to the same
 setting** before the record is admitted. Where no second witness exists, the record is marked **sole witness
@@ -1119,10 +1201,48 @@ two it cannot see separate them. That is the whole argument for the foot band.
 > pages** — which is precisely what `F` borrowed. Gates 0a–0d each guard a field that was known to be
 > uncertain. This one guards the field that was *not known to be uncertain*, which is the only kind that
 > costs months. **A gate is cheap; the assumption it replaces is not.**
+>
+> **Gate 0f guards a third thing again, and the distinction is worth holding.** 0a–0d guard *fields we knew
+> we did not know*; 0e guards *a field we did not know we did not know*; **0f guards a field we knew, wrote
+> down correctly, and never wired to anything.** All three failure modes have now occurred here, and only
+> the third leaves the documentation looking right the whole time.
+
+**Gate 0f — evidential scope declared per witness, and read by a consumer.** Every witness record declares
+what it may be used for at **verse grain**: `verse_scope: "full" | "collation" | "none"`, keyed to the role
+in §1.1a. The declaration is **in the registry**, and **at least one scorer reads it** — a scope no code
+consults is not a scope.
+
+| `verse_scope` | roles | means |
+|---|---|---|
+| `full` | base exemplar · surrogate | the verse text may be read, adjudicated and evaluated from this witness |
+| `collation` | independent witness, low-resolution scan · witness support | the verse may be **attested, localized and counted**; **no glyph call, no training crop, no CER figure** |
+| `none` | frontmatter witness (different edition) · excluded | the verse text is not evidence here **at any grain** — not a reading, not an attestation, not a presence count |
+
+*Why this gate exists, and it is a different failure from 0e.* §1.1a has always stated these limits, and
+until 2026-08-08 **no code read any of them**. `OT-1635-M` was excluded from the verse text in prose and
+attested psalms 2,515 and genesis 1,530 in `coverage-audit-verse.json`, for as long as the audit has run.
+The nearest thing to an enforcement was `witness_inventory`'s `drop_tomes`, which named the right file for
+the wrong reason and which **no scorer read either** — its only consumer read it as a containment claim and
+produced the R7.5a-3 addressing defect. The prose was correct throughout; it simply had no consumer.
+
+*The mechanism failed for a reason worth naming: the gate's grain was coarser than the distinction.*
+The audit's admission filter is `curated_sources`, which answers **"may material from acquisition S6 be
+used?"** — and the answer is yes, because acquisition S6 contains `NT-1582-M`. One acquisition, two
+witnesses, two roles, one verdict. **A filter cannot enforce a distinction it cannot express**, so scope is
+declared and filtered at **witness** grain, beside curation rather than inside it: curation asks whether a
+source is admissible at all, scope asks what an admissible witness may be used *for*, and collapsing them
+would weaken both (the same argument `curated_sources` already makes for keeping curation and addressing
+apart).
+
+*Discharged by* R9.1–R9.4, and enforced continuously by `witness/test_verse_scope.py` (a `none`-scope
+witness contributing a verse attestation **fails**) and `witness/test_drop_rule_enforced.py` (a declared
+scoping rule with no consumer **fails**). Both negatives proven by injection.
 
 **No transcription of any leaf begins before 0b, 0c and 0e are satisfied for that leaf** — 0e first, since
 0b's collation and 0c's leaf map are both statements about a particular setting and are meaningless if the
-setting is wrong. Gate 0a may complete in parallel; it constrains citation, not imaging.
+setting is wrong. **0d and 0f bind the moment a leaf is read rather than at transcription time**: 0d gates
+what enters the recognition chain, 0f gates what a reading is allowed to count as. Gate 0a may complete in
+parallel; it constrains citation, not imaging.
 
 **Admission of any newly acquired copy runs Gate 0e before the copy is used for anything** — including the
 Princeton 1582 NT candidate (`thenewtestamento00rhei`, call no. 13737), which is attractive precisely because

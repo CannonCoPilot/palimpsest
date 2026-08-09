@@ -19,17 +19,25 @@ declared:
 
 | volume | base exemplar | surrogate | low-resolution witness | other | excluded |
 |---|---|---|---|---|---|
-| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(none — see below)* | — | `NT-1633-R` support · **`NT-1633-F` support** · **`NT-1582-M` frontmatter** | `NT-1582-X` — `B` re-rendered |
+| NT 1582 | **`NT-1582-B`** (Boston PL) | — *(none — see below)* | **`NT-1582-M`** (~380 ppi bitonal) | `NT-1633-R` support · **`NT-1633-F` support** | `NT-1582-X` — `B` re-rendered |
+| OT 1635 | — *(not a volume of this edition)* | — | — | **`OT-1635-M` frontmatter (different edition)** — no verse of scripture | — |
 | OT1 1609 | **`OT1-1609-B`** (Boston PL, ~545 ppi) | `OT1-1609-P` (~411 ppi) | `OT1-1609-F` | — | — |
 | OT2 1610 | **`OT2-1610-B`** (Boston PL, ~545 ppi) | `OT2-1610-P` (~411 ppi) | `OT2-1610-F` | — | — |
 
 **These role names are defined in the plan (§1.1a), and each names a permission *and* a limit.** Briefly:
 *base exemplar* is the copy the transcript is taken from and **is** the text; *surrogate* is a second scan
 of the same setting, used to resolve what the base cannot show; *witness support* is a different edition,
-admitted only where the base has no leaf at all; *frontmatter witness* is admitted for prelims and
-endmatter and excluded from the verse text; *low-resolution witness* is a genuinely independent copy whose
-digitisation resolves too little for glyph work, but which carries readings wherever nothing better does;
-*excluded* means not a distinct copy or not a witness to the setting.
+admitted only where the base has no leaf at all; *frontmatter witness (different edition)* is admitted for
+prelims and endmatter and excluded from the verse text at every grain; *low-resolution witness* is a
+genuinely independent copy whose digitisation resolves too little for glyph work, but which carries
+readings wherever nothing better does; *excluded* means not a distinct copy or not a witness to the setting.
+
+⚠️ **`M`'s two halves moved between two of those rows on 2026-08-08, and the table above reflects the
+move.** Both halves had been filed as *frontmatter witness*. The Old Testament half stays there — it is a
+1635 Rouen reprint, a different edition, and that is a limit no scan can lift. The New Testament half is
+the **same setting as the NT base exemplar**, limited only by a bitonal ~380 ppi raster, which is the
+*low-resolution witness* row. Filing it as frontmatter-only had stated a limit of one **digitisation** as a
+property of the **copy** — the identical error the plan retired for `F` under the term *structure only*.
 
 **ppi here is calibrated, not inferred**: the Boston OT scans include a leaf photographed with an imperial
 and a metric ruler, which agree to 2.7%. No ppi is quoted for the NT, which has no calibration leaf.

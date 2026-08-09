@@ -40,7 +40,16 @@ SECTION = "## Verification standard for this roadmap"
 # Guards live here and are expected to be named in the block.  Audits are listed
 # separately because their healthy state is FAILURE while their step is open.
 GUARD_GLOB = "test_*.py"
-AUDIT_SCRIPTS = {"audit_gt_rasters.py"}
+
+# Which scripts are AUDITS is now read from the roadmap rather than restated here.
+# It was a hand-maintained set, `{"audit_gt_rasters.py"}`, and it failed the first
+# time an audit was added that did not start with `audit_` -- `test_verse_scope_bypass.py`
+# was listed under "The audits" in the document, run as a guard by this file, and
+# reported as broken for exiting 1, which is its healthy state.  A classification kept
+# in the checker rather than in the document it checks is a second copy of the fact
+# (R7.5b/c), and this is the copy that drifted.  The document says which block a
+# command is in; that IS the classification.
+AUDIT_HEADING = re.compile(r"\*\*The audits\*\*", re.I)
 # This file is the guard doing the checking; it must be named in the block like
 # any other, but it must not recurse into running itself.
 SELF = Path(__file__).name
@@ -69,6 +78,10 @@ def commands(section):
     """
     out = []
     for fence in re.findall(r"```(.*?)```", section, re.S):
+        # Everything from the "**The audits**" heading onward is the audit block, and a
+        # command's block is what says whether exit 1 is healthy for it.
+        head, _, _ = section.partition(fence)
+        is_audit = bool(AUDIT_HEADING.search(head))
         for line in fence.splitlines():
             m = re.search(r"witness/(\S+\.py)", line)
             if not m:
@@ -76,7 +89,7 @@ def commands(section):
             claim = None
             if "->" in line:
                 claim = line.split("->", 1)[1].strip()
-            out.append((m.group(1), claim))
+            out.append((m.group(1), claim, is_audit))
     return out
 
 
@@ -96,11 +109,12 @@ def main():
 
     named = commands(section)
     print(f"the block names {len(named)} command(s); each must exist:")
-    for script, _ in named:
+    for script, _, _ in named:
         check(f"witness/{script:32s} exists", (HERE / script).is_file(),
               "named in the verification standard but not on disk")
 
-    named_set = {s for s, _ in named}
+    named_set = {s for s, _, _ in named}
+    AUDIT_SCRIPTS = {s for s, _, a in named if a}
 
     print("\nand every guard and audit on disk must be named in the block:")
     on_disk = {p.name for p in HERE.glob(GUARD_GLOB)} | {
@@ -112,7 +126,7 @@ def main():
 
     print("\nevery claim of the form `-> N/M verified` must match what runs:")
     ran = {}
-    for script, claim in named:
+    for script, claim, _ in named:
         if not (HERE / script).is_file():
             continue
         if script == SELF:

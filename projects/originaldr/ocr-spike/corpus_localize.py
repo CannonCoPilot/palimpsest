@@ -317,8 +317,22 @@ def localize_volume(ocr_dir: str, books: list[str], *, limit: int | None = None,
 
 
 @__import__("functools").lru_cache(maxsize=None)
-def load(ocr_dir: str) -> dict:
-    """{(book, chapter, verse): text} for a volume, from cache. {} when the volume has not been localized."""
+def load(ocr_dir: str, scope_check: bool = True) -> dict:
+    """{(book, chapter, verse): text} for a volume, from cache. {} when the volume has not been localized.
+
+    R9.2 -- REFUSES a volume whose witness is `verse_scope: "none"` (Gate 0f). This function is the one
+    every verse consumer in the project already goes through (`qc_audit`, `book_audit`, `audit_diagnose`,
+    `selector_corpus_probe`, `genesis_tuned`), which is why the refusal sits here rather than in each of
+    them: a consumer written next month, by someone who never read R9, fails loudly instead of quietly
+    scoring an inadmissible witness. Strict by default -- the pattern R7.5b established for `jp2_page`.
+
+    `scope_check=False` is for tooling that audits the localization ARTEFACT rather than scoring the text,
+    and the caller has to say so. Returning `{}` instead of raising was considered and rejected: `{}` is
+    already what a never-localized volume returns, so a silent scope refusal would be indistinguishable
+    from missing data -- the R1.4 hole this module closed for empty results one commit ago.
+    """
+    if scope_check:
+        _W.assert_verse_admitted(ocr_dir)
     f = HERE / f".corpus-localize-{ocr_dir}.json"
     if not f.exists():
         return {}

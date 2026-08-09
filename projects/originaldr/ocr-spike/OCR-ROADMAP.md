@@ -27,8 +27,9 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
 | R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (347 derived artefacts to regenerate) open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (339 derived artefacts to regenerate) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
+| R9 | Evidential scope per witness — Gate 0f | **PART — NEW 2026-08-08.** R9.0–R9.5 done and the gate is live; **R9.2c** (9 modules bypass the read path), **R9.4a/R9.4b** (`X` was double-counting `B` in every NT figure) open |
 
 ### Open-items register
 
@@ -39,10 +40,10 @@ right and the paragraph is a bug to be fixed.
 **OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
 R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
 Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5a-2** · R8.3 · **R8.4b** · R8.6 · R8.7
+**R7.5a-2** · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.2c** · **R9.4a** · **R9.4b**
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
-R6.5 · **R7.5** · **R7.5a** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8**
+R6.5 · **R7.5** · **R7.5a** · **R7.5a-3** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8** · **R9.0** · **R9.1** · **R9.2** · **R9.2a** · **R9.2b** · **R9.3** · **R9.4** · **R9.5**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
 
@@ -547,7 +548,7 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
 | R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | `jp2-S06` names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids | every record names a witness and a setting; `jp2-S06` raises until they do | **DONE 2026-08-08** — corpus, ground truth and addressing split; boundary READ, not inferred; an unrecorded off-by-one removed |
-| R7.5a-2 | Regenerate the derived artefacts that predate the split | 347 files / 95,548 occurrences still carry `jp2-S06` — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
+| R7.5a-2 | Regenerate the derived artefacts that predate the split | **339 files / 91,490 occurrences** (was 347 / 95,548) still carry `jp2-S06` — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
 | R7.5a-3 | The addressing declaration, and the scoring rule that was hiding inside it | `witness_inventory` S6 declared no NT, so `volume_books()` gave the addressing DP an OT-only state space and force-fitted 800 NT leaves onto OT books — median fit 0.156, **zero** records above 0.5 against 44.8–76.7% everywhere else. The OT half was damaged the same way and the R7.5a split preserved it: 291 of 2,071 pages change book on regeneration, the OT tail smeared onto `daniel` | S6 declares its NT; both halves regenerated (not transformed); every volume clears the 0.5 fit floor; `test_drop_rule_enforced.py` exits 0 | **DONE 2026-08-08** — `drop_tomes` was a SCORING rule read as a CONTAINMENT claim. **Retired (Sir):** its premise (S6's NT repeats an edition A/B/C already hold) died with the 1633 finding — `NT-1582-M` is the second witness to a setting the NT holds once. No scorer ever read it; the addressing defect was the only thing enforcing it. `jp2-S06nt` localizes **2,344** pilot-book verses, was recorded as **zero** with a hand-written "known absence" note, and now attests matthew 1,067 · john 877 · apocalypse 400 |
 | R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
 | R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
@@ -828,6 +829,61 @@ from the registry rather than from memory of how things were filed.
 
 ---
 
+## R9 — Evidential scope, declared per witness and read by a scorer (NEW, 2026-08-08)
+
+**Discharges** §2 **Gate 0f**. **Status: OPEN.** Raised by Sir's instruction to restate `M`'s role per
+half, which exposed that the role limits §1.1a has always stated were **enforced nowhere**.
+
+### The finding
+
+`OT-1635-M` is excluded from the verse text in prose, in four documents, and has been attesting **psalms
+2,515 · genesis 1,530** in `coverage-audit-verse.json` for as long as the audit has run. `NT-1582-M` was
+barred from the verse text by the same prose and is a witness to the base exemplar's own setting, so the
+one term was **over-restricting one half and under-restricting the other at the same time**.
+
+Three separate defects, and they must not be conflated:
+
+1. **A role name doing two jobs.** *frontmatter witness* meant "different edition" for the OT half and was
+   read as "bad raster" for the NT half. Split in §1.1a into **frontmatter witness (different edition)**
+   and **independent witness, low-resolution scan**. This is the `structure only` error repeating — a limit
+   on one *digitisation* stated as a property of the *copy* — on a different witness, four rows below the
+   table that records the first retirement.
+2. **No consumer.** No code has ever read a role. The nearest thing was `witness_inventory.drop_tomes`,
+   which named the right file for the wrong reason, was read by exactly one consumer as a *containment*
+   claim, and produced the R7.5a-3 addressing defect. Retired at Sir's instruction; `test_drop_rule_enforced.py`
+   now fails if a scoping rule is ever again declared without one.
+3. **The gate's grain was coarser than the distinction.** The audit's admission filter is
+   `curated_sources`, which answers *"may material from acquisition S6 be used?"* — and S6 is one
+   acquisition holding two witnesses with two roles. **A filter cannot enforce a distinction it cannot
+   express.** Scope is therefore declared and filtered at **witness** grain, beside curation and not inside
+   it.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R9.0 | Move `NT-1582-M` between roles in the registry | `witnesses.py`: `("NT","M")` role `frontmatter` → `lowres`; `("OT","M")` stays `frontmatter` | the registry says what §1.1a says; `test_counts_vs_doc.py` exits 0 against the revised §1.1 table |
+| R9.1 | **Derive** `verse_scope` from the role — do not hand-assign it | `witnesses.verse_scope(vol, sig)` from a single `ROLE_VERSE_SCOPE` table: `base`/`surrogate` → **full** · `lowres`/`support` → **collation** · `frontmatter`/`excluded` → **none** | a role with no scope entry **raises** — a role added later cannot default into admission. Hand-assignment is refused precisely because that is how §1.1a and the code would drift apart again |
+| R9.2 | Make the read path refuse, not merely the sweep | `corpus_localize.load()` **raises** `VerseScopeError` for a `none` witness, naming the role and Gate 0f. Opt out only by explicit `scope_check=False`, for tooling that audits the artefact itself | a consumer reaching `load()` fails loudly rather than quietly scoring an inadmissible witness. **Strict-by-default, the pattern R7.5b established for `jp2_page`** — **DONE** |
+| R9.2c | **Close the bypass `load()` does not cover** | ⚠️ The draft of R9.2 asserted `load()` was *"the function every verse consumer already goes through"*. **It is not, and the claim was checked only against module imports rather than call sites.** Nine modules read `.corpus-localize-<dir>.json` **directly** — `book_audit`, `integrity_sweep`, `gen1_rescore`, `gen1_r3`, `gen1_rerecog_eval`, `gen1_wordboxes`, `allfail_anatomy`, `split_confusions` — so the strict default guards `qc_audit` and nothing else. Route each through `load()`, or through a new `load_admitted()` for the sweeps | `witness/test_verse_scope_bypass.py` exits 0 only when no module outside `corpus_localize` reads the artefact path directly. **Exit 1 is the healthy state until they are converted** — an audit that starts passing before its remedy lands has stopped looking |
+| R9.2a | Make the sweep skip cleanly, so the refusal is never load-bearing | `qc_audit.scan_ocr_dirs()` drops `none` volumes **before** calling `load()`, and prints what it dropped | `OT-1635-M` contributes zero attestations and the audit says so on stdout; a drop that printed nothing would be indistinguishable from a witness that had no data |
+| R9.2b | Leave the **structural** sweeps alone, deliberately | `integrity_sweep`, `tome_map_audit`, `build_tome_map_v2`, `make_witness_tree` keep counting all 12 volumes | scope governs **evidence**, not **bookkeeping**. `OT-1635-M`'s 2,071 leaves stay in every denominator — dropping them would hide an inadmissible volume instead of excluding it, which is R7.5d's lesson (`integrity_sweep` prints UNCHECKED, never 0) |
+| R9.3 | Guard it, with proven negatives | `witness/test_verse_scope.py`: (a) every one of the 12 records resolves a scope; (b) scope agrees with the §1.1a role table; (c) the audit's choke point excludes `none` — asserted by **calling** `scan_ocr_dirs`, not by reading it; (d) `load()` raises for a `none` witness | flipping `OT-1635-M` to `collation` **fails**; flipping `NT-1582-M` to `none` **fails**; deleting a `ROLE_VERSE_SCOPE` entry **fails**; all restored to exit 0 |
+| R9.4 | Regenerate what the unenforced rule contaminated | `coverage-audit-verse.json` re-run with the gate live, and the **before/after delta reported per book and per source** | **DONE 2026-08-08.** Removed: `psalms/S6`, `genesis/S6` (`OT-1635-M`) and `matthew/S8`, `john/S8`, `apocalypse/S8` (`NT-1582-X`). **Added: none. Changed among survivors: none — not one attested or passed count moved by one.** That invariant is the test; it distinguishes "the gate fired" from "something else changed too" |
+| R9.4a | ⚠️ **`X` was attesting too, and that was not in the plan for this step** | Building the scope table showed `NT-1582-X` — `B` re-wrapped and upscaled 2.000×, NCC 0.9847 — reaching the audit as `S8` with matthew 1,067 · john 876 · apocalypse 391, beside `B`'s own `S9` rows. **Every NT cross-source agreement figure computed before 2026-08-08 counted the base exemplar twice.** §1.1a said admitting `X` "would double-count `B` under a second name" and nothing enforced it | the NT figures must be **re-read** wherever a cross-source agreement or witness count was quoted from them — see R9.4b |
+| R9.4b | Re-state every NT figure that rested on `S8` | any report, devlog entry or companion claim quoting NT cross-source agreement, witness counts or consensus built before this gate | each such figure either recomputed or marked as **computed with `B` double-counted**; none left standing unlabelled |
+| R9.5 | State the consequence in the companions | §1.1/§1.1a, Overview, Walkthrough, Exec Summary carry the per-half roles and the corrected witness counts | the four documents agree with each other and with the registry |
+
+**Acceptance for R9 as a whole:** `audit_gt_rasters`-style honesty — the audit's NT figures must **rise**
+by `NT-1582-M`'s admission and its OT figures must **fall** by `OT-1635-M`'s exclusion, and both deltas
+must be reported. A change that moved only the flattering direction would be evidence the gate is not
+actually running.
+
+⚠️ **`collation` scope is not a licence to train.** `NT-1582-M` is bitonal at ~380 ppi. R7's finding stands
+in full: a glyph call made on it is unverified, and `witnesses.GLYPH_BARRED` is unchanged by R9. R9 governs
+**attestation**, which is a different question from **adjudication**, and the whole point of the three-value
+scope is that the corpus can now say so.
+
+---
+
 ## Verification standard for this roadmap
 
 A step is **DONE** when its acceptance test runs and passes on demand — not when the code exists.
@@ -856,7 +912,7 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_setting_verified.py    # R8.4  no witness may lack setting readings
 ../ocr-venv/bin/python witness/test_raster_routing.py      # R7.5  ONE route to the pixels, and the guard is on it
 ../ocr-venv/bin/python witness/test_drop_rule_enforced.py  # R7.5a-3 a declared scoring drop must have a consumer
-../ocr-venv/bin/python witness/audit_s06_keys.py          # R7.5a nothing is still keyed `jp2-S06` (exit 1 = derived artefacts pending)
+../ocr-venv/bin/python witness/test_verse_scope.py         # R9.3  Gate 0f: scope declared, and two consumers enforce it
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ```
 
@@ -864,6 +920,8 @@ here does not exist or if a count asserted here disagrees with what the command 
 
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
+../ocr-venv/bin/python witness/test_verse_scope_bypass.py  # R9.2c: exits 1 -> 9 modules read the artefact around Gate 0f
+../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 339 derived artefacts still keyed `jp2-S06`
 ```
 
 A guard exiting 0 and an audit exiting 1 are both healthy states. An audit that exits 0 before its remedy
