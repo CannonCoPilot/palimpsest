@@ -252,6 +252,27 @@ def leaf_index(ocr_dir: str, page_index: int) -> int:
     return page_index + JP2_INDEX_OFFSET.get(ocr_dir, 0)
 
 
+def _gate0d(ocr_dir: str, im, path) -> None:
+    """Gate 0d at the read (R5.2c). Imported lazily so a structure-only caller never pays for it."""
+    import raster_gate as RG
+    RG.assert_admissible(ocr_dir, im, leaf_name=Path(path).name, path=path)
+
+
+class _RasterRefused(Exception):
+    """Sentinel base so a Gate 0d refusal is never swallowed by the decoder fallback below."""
+
+
+def _install_refusal_base():
+    import raster_gate as RG
+    return RG.RasterAdmissibilityError
+
+
+try:                                   # bind the real exception if PIL/registry are importable
+    _RasterRefused = _install_refusal_base()   # type: ignore[misc,assignment]
+except Exception:                      # noqa: BLE001 — keep the sentinel; load() still works
+    pass
+
+
 def jp2_path(ocr_dir: str, page_index: int, structure: bool = False) -> Path:
     """Back-compatible entry point. Defaults to the GUARDED pixel route.
 
@@ -263,12 +284,30 @@ def jp2_path(ocr_dir: str, page_index: int, structure: bool = False) -> Path:
     return _resolve(ocr_dir, page_index, structure=structure)
 
 
-def load(ocr_dir: str, page_index: int, structure: bool = False) -> Image.Image:
+def load(ocr_dir: str, page_index: int, structure: bool = False,
+         gate: bool | None = None) -> Image.Image:
+    """Open a leaf. On the PIXEL route this is where **Gate 0d** binds (R5.2c).
+
+    `gate=None` means "gate the pixel route, not the structure route", which is the rule §2 states:
+    0d governs *what enters the recognition chain*, while `structure=True` reads are page
+    bookkeeping and must keep counting leaves the corpus will not recognise from (R9.2b — scope and
+    curation govern evidence, never denominators).
+
+    `gate=False` is for tooling that must inspect an inadmissible raster ON PURPOSE — the manifest
+    builder and this gate's own tests. It is explicit for the same reason `scope_check=False` is:
+    an opt-out you have to type is a decision; a default is an accident.
+    """
     p = jp2_path(ocr_dir, page_index, structure=structure)
+    if gate is None:
+        gate = not structure
     try:
         im = Image.open(p)
         im.load()          # force decode so PIL's lazy "broken data stream" surfaces here
+        if gate:
+            _gate0d(ocr_dir, im, p)
         return im
+    except _RasterRefused:
+        raise
     except Exception:
         # Some JP2 sets fail PIL's JPEG2000 decoder ("broken data stream"); fall
         # back to OpenJPEG's decoder. This is a DECODER fallback on the same file,
@@ -280,6 +319,11 @@ def load(ocr_dir: str, page_index: int, structure: bool = False) -> Image.Image:
                        check=True, capture_output=True, text=True)
         im = Image.open(tif)
         im.load()
+        # The fallback swapped DECODERS, not images, so the leaf must clear Gate 0d on this path
+        # too. Gating only the fast path would make the guard's coverage depend on which decoder
+        # happened to succeed — a filter whose reach varies with an unrelated accident.
+        if gate:
+            _gate0d(ocr_dir, im, p)
         return im
 
 

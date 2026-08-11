@@ -1048,6 +1048,12 @@ Negatives proven by injection: the divider given a setting; a ground-truth file 
 
 **Discharges** §1.1, §1.1a, §2 Gate 0d/0f · roadmap R7.5a-3, **R9**.
 
+> 🔴 **CORRECTION, appended 2026-08-10 — "Gate 0d" in that line is false and is left standing rather
+> than edited away.** This session was verse-scope work; it discharged **0f** and touched nothing of
+> **0d**, whose guard *had never been written at all*. The devlog is a record of what was believed at
+> a moment (Master Plan §0.6) and is not retroactively rewritten — but a false discharge claim is
+> exactly how a gate acquires the appearance of coverage, so it is marked here. See Session 14.
+
 Sir's instruction was to restate `M`'s role per half. Doing so required asking what a role *does*, and
 the answer was: nothing. **No code has ever read a witness role.** The permissions and limits in §1.1a
 have been correct since they were written and have never been on any execution path. Three separate
@@ -1137,3 +1143,234 @@ The classification now derives from the block, and `audit_s06_keys.py` moved to 
 (`OT-1635-M`); `matthew/S8`, `john/S8`, `apocalypse/S8` (`NT-1582-X`). **Added: none. Changed among
 survivors: none — not one attested or passed count moved by one.** Guards **9 exit 0**; audits
 `audit_gt_rasters`, `audit_s06_keys`, `test_verse_scope_bypass` exit 1, each with its remedy named.
+
+---
+
+## Session 14 — a gate that three documents described and nobody had written
+
+**Discharges** §0.5, §0.6, §2 Gate 0d (built, not yet complete) · roadmap **R5.1/R5.2a–c**, **R9.4a**,
+**R9.4b**, **R9.6** · opens **R9.5a**, **R10**.
+
+Sir's instruction was a review of the Master Plan's Focus Sections (§0–§2) and the roadmap R0–R9,
+reporting what remained open. The review found four things open that the documents said were closed,
+and the pattern is one this project has now catalogued three times in three different forms.
+
+### The finding: "no proven negative" and "does not exist" are different states
+
+§2's Gate 0d note, roadmap R5, and the Walkthrough all described the derivative-contamination guard
+as a guard that **ran and had merely never refused anything**. A search for any bit-depth,
+grey-level, `.mode` or dimension assertion across every module returned **nothing**. The only
+occurrence of the string `R5.2` in the entire codebase was a comment in `test_setting_verified.py`
+asserting that R5.2 is *held to the same standard* — a cross-reference to a guard that did not exist.
+Session 13's own header recorded it as **"Discharges … Gate 0d"**.
+
+Three documents, one devlog entry, and a code comment all describing the same absent thing. Nothing
+had gone wrong in the prose; the prose simply had nothing under it — **and this is the third instance
+in one review**, after Gate 0f (a rule correctly written and read by no code) and §0.5's hour
+ceilings (a rule with no step, no test and no consumer). The three failures are distinguishable and
+worth keeping apart:
+
+| | the rule | the code | how it read |
+|---|---|---|---|
+| Gate 0f | correct | absent | documentation looked right the whole time |
+| §0.5 ceilings | correct | absent | R2/R3 never started, which is the failure §0.5 names |
+| **Gate 0d** | correct | **absent, and described as present** | the *only* one where the documents asserted the code |
+
+### Built
+
+* **R5.1 `witness/build_raster_manifest.py`** → `witness/raster-manifest.json`. Per leaf: resolved
+  path, dimensions, mode, bit depth, distinct grey levels from the histogram, sha256. Built through
+  `witnesses.pixel_source()`, never a directory glob, so it cannot describe a raster the corpus
+  would refuse to serve — a manifest assembled by a second route is a second opinion about which
+  file is the witness, which is R7.5 exactly. A witness the registry refuses is **recorded as
+  refused with its reason**, so "not measured" and "not admissible" are never the same entry.
+* **R5.2a `witness/raster_gate.py`** — three clauses reported separately, because a caller that sees
+  only "inadmissible" cannot tell a bitonal scan from a mis-sized one. It lives beside `witnesses.py`
+  rather than inside it for R7.5c's reason: `curated_sources` imports the registry at every ingest
+  boundary and **a pure allowlist must not drag in PIL**.
+* 🔴 **`unknown` is returned separately from `failures` and is never folded in.** With no manifest,
+  the dimension clause cannot be evaluated — and a clause that could not be evaluated is not a clause
+  that passed. Folding them would have made the missing manifest into a silent yes, which is R1.4 and
+  is the same defect as the `_empty_because` note that made a real absence look like a known one.
+* **R5.2b/c `witness/test_raster_admissible.py`** — bitonal · 8 grey levels · dimensions off the
+  manifest each refused **on its own clause**, and a real base-exemplar leaf **admitted**. The fourth
+  case is what keeps the other three honest: without it a gate that refuses everything scores a
+  perfect three.
+
+### The review's own gap, caught in review
+
+The first version of that test called `assert_admissible` directly. That proves the gate and proves
+**nothing about whether anything reaches it** — and "a gate nothing calls guards nothing" is already
+written twice in this repository (`assert_same_setting` had no caller; `drop_tomes` had no consumer).
+Checking the wiring by *reading* `jp2_page.load` would have been the third. It now drives the real
+entry point with a synthetic leaf behind it, and asserts three things at once: the **pixel** route
+refuses a bitonal leaf, the **structure** route still serves it (scope governs evidence, never
+denominators — R9.2b), and an admissible leaf still loads, without which the refusal proves nothing.
+
+### Also this session
+
+* **R9.4b closed.** `consensus_v2` discovered its sources by **globbing a directory** — the exact
+  re-entry route `curated_sources` was written to close, whose docstring names `consensus_v2` as a
+  builder that MUST filter and which **did not import it at all**. Old set: `jp2-S06` in all 76 books,
+  `eebo-nt` and `jp2-S08` in 27 each. Its own supersession could not have caught `X`, and the reason
+  generalises: supersession is keyed on the **filename**, and `X` (`jp2-S08`) and `B` (`pdf-S09nt`)
+  are the same copy under two unrelated keys. **A filter cannot enforce a distinction it cannot
+  state** — third instance. Delta measured against a **paired run on the same tree**, because
+  comparing to the stored figures would have confounded the filter, the `2633cbb` migration and the
+  R7.5a re-key: matthew modern 0.9268 → 0.9367, archaic 0.9317 → 0.9321, conservation 0.8370 → 0.8399.
+  Corpus-wide the archaic gate flipped on four books **in both directions**. All 76 regenerated;
+  **0 now fuse an inadmissible source**; R7.5a-2 drew down **339 → 262**.
+* 🔴 **`eebo-*` are absent from the migrated tree, so the BANNED branch never fires on live data.**
+  Its correctness would otherwise rest on the *absence of the input* rather than the presence of the
+  filter, so `test_consensus_sources.py` proves it by **injection**.
+* **R9.6** — commit `2633cbb` moved the project out of gitignored scratch and
+  `detect_our_ocr.SCRATCH` was not moved with it. Both anchor reads resolved into a deleted tree,
+  `load_anchor` skipped them with `continue`, and every book returned the well-formed
+  `{"verses_scored": 0, "error": "no anchor text"}`. **The planned next step was to regenerate 77
+  consensus files**, which would have written 77 empty files over untracked reference data. It was
+  caught because the step before it printed *nothing* — the absent `[consensus] EXCLUDED` line, not
+  the zero, was the tell. Five modules still restate that root and two of them `mkdir` and **write**
+  the anchor reads into the dead tree.
+* **R9.5 re-opened as R9.5a.** It was marked DONE on the strength of prose: the Overview's witness
+  table left the low-resolution column **empty** for the NT and filed `NT-1582-M` under
+  *other · frontmatter*, the pre-R9.0 role, while the same file's prose ninety lines later described
+  it correctly and the registry said `lowres`. **A document can contradict itself in one file and
+  read as finished, because nobody compares a table to its own commentary.** Its acceptance is now a
+  machine check, not a reading.
+* **§0.6 Precedence added at Sir's instruction**: code and guards → the roadmap register → the Master
+  Plan → the companions → the devlog. The register already outranked roadmap prose; the review found
+  the drift running *downward from the Master Plan* three times in one sitting, so the ordering was
+  extended upward. **The thing that can refuse a claim outranks the thing that can only assert one.**
+* **R10 opened** for §0.5's own machinery. `witness/audit_prereq_ceilings.py` reports **10 of 40**
+  OPEN steps carrying an hour ceiling and a decision rule. It is filed as an **audit, not a guard**,
+  deliberately: as a guard it would force either bulk-inventing ceilings nobody reasoned about or
+  weakening the check until it passed. The fraction must **rise**; it is not a pass/fail.
+
+### Recorded, not fixed
+
+**The plan's own sequencing rule has already been broken.** §2: *"No transcription of any leaf begins
+before 0b, 0c and 0e are satisfied for that leaf."* R2 (Gate 0b stage 2) and R3 (Gate 0c) are
+**nothing built**, and `ground-truth/` holds **51 transcribed files**. This is a *separate* defect
+from R7: R7 asks which photograph a reading came from, R2/R3 ask whether the leaf is the leaf it was
+called — and §1.4 is the standing proof that the question is live, three of four NT files being made
+up. The files are now **PROVISIONAL** in §0.5's sense: usable, **not citable**, no gate closing on
+them, re-admitted leaf by leaf as the collation reaches them.
+
+### Result
+
+Guards **10 exit 0**; audits `audit_gt_rasters`, `audit_s06_keys`, `test_verse_scope_bypass`,
+`audit_prereq_ceilings` exit 1, each with its remedy named. `test_verification_standard` names **18**
+commands and agrees with reality. **Gate 0d is built and enforced on two of three clauses**; the
+third stays UNKNOWN and says so per leaf until the manifest completes.
+
+---
+
+## Session 14b (2026-08-10) — R9.2c: Gate 0f gets one route, and two defects fall out of routing to it
+
+### The conversion target was wrong, and taking the obvious one would have re-made the defect
+
+Nine modules read `.corpus-localize-*.json` directly, so Gate 0f guarded `qc_audit` and nothing else.
+The recorded plan was "route each through `load()`". **`load()` is not a drop-in**: it returns
+`{(book, ch, verse): text}` and throws away `page` and `fit`, which is precisely what every direct
+reader wanted — `gen1_r3` uses the localizer's `page` as *evidence about where a verse sits*, and says
+so in its own docstring. Converting to `load()` would have meant re-deriving that from somewhere else,
+i.e. **making the gate cost evidence**. A gate that costs evidence is a gate that gets routed around,
+which is R9.2c restated one turn later.
+
+So the refusal went **in front of the read the callers were already doing**: `corpus_localize.load_raw`
+(the whole artefact), `load_verses` (the `["verses"]` sub-map every bypasser reached for), and
+`iter_localizations` (the sweep route, which drops `none`-scope volumes and **prints** the drop before
+the first yield — a caveat that arrives after the number it qualifies is not a caveat). The gated route
+is now the *cheapest* one available. That, not the guard, is what keeps it the only one.
+
+**Data-neutral, verified rather than asserted**: for all ten admitted volumes `load_verses(od)` is `==`
+the raw read (21,437 spans compared). Only `jp2-S06ot` (4,045) and `jp2-S08` (2,334) are refused.
+
+### The exemption is now checked, not trusted
+
+`source_inventory_audit` globs the artefact *filenames* and never opens one, so it is exempt with
+`integrity_sweep`. But an exemption resting on *"this read is bookkeeping, not evidence"* is a claim,
+and the standing lesson here is that **a filter cannot enforce a distinction it cannot express**. This
+one is expressible: scoring a verse needs its **`text`**; reconciling one needs only its key and `page`
+(which is all `integrity_sweep`'s C10 reads). The guard now voids any exemption whose module reads a
+verse `text` field. Injection: adding `rec["text"]` to `integrity_sweep` → exit 1 naming the forfeit.
+
+⚠️ **The guard's first version was tripped by its own documentation** — a docstring recording a reader's
+conversion *away* from the path quoted the glob it had removed. A check a comment can trip is one that
+gets satisfied by rewording, and it then measures vocabulary instead of call sites. It now counts string
+constants via `ast` with docstrings excluded, and falls back to the raw regex on a file that will not
+parse, because an unreadable file must not come back clean.
+
+### 🔴 A CONTAINMENT FACT WAS BEING READ AS A SCORING PERMISSION
+
+Routing `book_audit` through the gate made it **raise**, which is the finding. `witnesses_for_book`
+derived its witness set from `witness_inventory.tomes` — a statement about which books a volume's leaves
+*carry* — and both callers used it to decide what may be *scored*. So `OT-1635-M` and `NT-1582-X` were
+still being handed to the scorers after R9.4 had removed them everywhere else.
+
+**This is R7.5a-3's category error with the arrow reversed.** There, a scoring rule (`drop_tomes`) was
+read as a containment claim and force-fitted 800 NT leaves onto Old Testament books. Containment and
+admissibility are different questions and `tomes` only answers the first, so they now have separate
+accessors (`for_scoring=`) rather than one that has to be interpreted correctly.
+
+Paired run, same tree, only the gate differing, all five pilot books: **every surviving witness
+byte-identical, `all_pass`/`split`/`all_fail` unchanged on every book.** The dropped witness contributed
+`localized 0, passed 0` and a 100% localization-miss list. It was an empty shell in the set.
+
+### 🔴🔴 THE PARITY SPREAD WAS THE BEST WITNESS'S OWN PASS RATE, ON ALL FIVE PILOT BOOKS
+
+That empty shell put a `0.0` in the floor, so `max − min` reduced to `max − 0`:
+
+| book | reported "parity spread" | best witness's pass rate | equal? |
+|---|---|---|---|
+| genesis | 0.7601 | 0.7601 (S9) | **yes** |
+| psalms | 0.6330 | 0.6330 | **yes** |
+| matthew | 0.7594 | 0.7594 | **yes** |
+| john | 0.6507 | 0.6507 | **yes** |
+| apocalypse | 0.5728 | 0.5728 | **yes** |
+
+**A metric that measures nothing still produces a ranking** — the R7.5a dead-metric lesson, except this
+one restated a real number, so nothing ever looked wrong. Gate 0f removes these two volumes but **not the
+mechanism**: an *admitted* witness not yet localized puts the `0.0` straight back. The spread is now taken
+over witnesses with `localized > 0`, the excluded are **named** in `parity_spread_basis`, and with fewer
+than two readers it is **`None` with a reason, never `0.0`** — a spread of zero and the absence of a
+comparison are different claims (R1.4). Injection: adding admitted-but-unlocalized `jp2-S04` to genesis
+gives 0.7601 under the old formula and 0.0842 + `excluded: ['S4']` under the new; one reader → `None`.
+
+**Corrected spreads: genesis 8.4 · psalms 15.4 · matthew 19.5 points.** Every parity-spread figure
+published before today is superseded and is registered under R10.2.
+
+### Result
+
+`test_verse_scope_bypass` moves from the audits block to the **guards** block. Guards **11 exit 0**;
+audits `audit_gt_rasters`, `audit_s06_keys`, `audit_prereq_ceilings`, `audit_setting_points` exit 1.
+`test_verification_standard` names **19** commands and exits 0 — it caught the ceiling audit's claim
+going stale (`10/40` → `10/39`) the moment R9.2c moved to DONE, which is the block doing its job.
+
+### R5.1 — the manifest landed, and one acceptance clause could not be executed
+
+The full build completed in **48 min** (3 h ceiling not reached, so the pre-registered deferral to a
+two-clause Gate 0d never fired): **3,122 leaves** — NT-1582-B 812 · OT1-1609-B 1,160 · OT2-1610-B 1,150 —
+`truncated: false`. Coverage checked against `witnesses.pixel_source()` rather than assumed: **0 rasters
+on disk without a manifest entry**. **3,113 leaves moved from UNKNOWN to CHECKED** on Gate 0d's dimension
+clause, which the smoke run had left unmeasured. `test_raster_admissible.py` exits 0 with the dimension
+clause live; the UNKNOWNs remaining in its output are its own synthetic `.tif` fixtures, which is the
+behaviour being asserted.
+
+⏳ **R5.1's determinism clause — "regenerating it twice is byte-identical" — could not be run at all**:
+the output path was hard-coded, so a second build would destroy the first. Added `--out`. **An acceptance
+clause that cannot be executed is not an acceptance clause**, and this one had been standing in the
+roadmap unexecutable since it was written. 🟢 **The second build landed byte-identical** — 3,122 leaves, `truncated: false`, sha256 `44290ad7…f8e0`
+for both, canonical file unclobbered — so **R5.1 is DONE on both halves**. ⚠️ That comparison is valid
+only because the writer uses `sort_keys=True`; `coverage-audit-verse.json` is the counter-case on record,
+order-nondeterministic on ties, where byte-comparing two runs proves nothing. Same test, opposite verdict,
+decided by the writer rather than by the data.
+
+Also fixed while touching the builder: the per-witness line now flushes. Without it a redirected log shows
+nothing until the first 200-leaf marker, so a run that died on witness 1 looked identical to one that had
+not started.
+
+⚠️ **The §0.5 ceiling audit moved the wrong way, 25% → 17% (`10/40` → `6/35`)**, and it is recorded rather
+than restated: closing R5.1/R5.2a–c/R9.2c removed four of the ten ceilings along with five OPEN steps,
+because ceilings had been written for exactly the sections next touched. **R10.1's "the number must RISE"
+cannot be satisfied by doing the work** — only by writing ceilings for sections nobody is about to touch.

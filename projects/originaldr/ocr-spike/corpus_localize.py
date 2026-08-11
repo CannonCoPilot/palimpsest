@@ -320,11 +320,18 @@ def localize_volume(ocr_dir: str, books: list[str], *, limit: int | None = None,
 def load(ocr_dir: str, scope_check: bool = True) -> dict:
     """{(book, chapter, verse): text} for a volume, from cache. {} when the volume has not been localized.
 
-    R9.2 -- REFUSES a volume whose witness is `verse_scope: "none"` (Gate 0f). This function is the one
-    every verse consumer in the project already goes through (`qc_audit`, `book_audit`, `audit_diagnose`,
-    `selector_corpus_probe`, `genesis_tuned`), which is why the refusal sits here rather than in each of
-    them: a consumer written next month, by someone who never read R9, fails loudly instead of quietly
-    scoring an inadmissible witness. Strict by default -- the pattern R7.5b established for `jp2_page`.
+    R9.2 -- REFUSES a volume whose witness is `verse_scope: "none"` (Gate 0f). The refusal sits here
+    rather than in each consumer so that a consumer written next month, by someone who never read R9,
+    fails loudly instead of quietly scoring an inadmissible witness. Strict by default -- the pattern
+    R7.5b established for `jp2_page`.
+
+    ⚠️ R9.2 ORIGINALLY CLAIMED, HERE, that this was "the function every verse consumer already goes
+    through" (`qc_audit`, `book_audit`, `audit_diagnose`, `selector_corpus_probe`, `genesis_tuned`).
+    IT WAS NOT, and the claim is left standing above only in this correction because how it was reached
+    is the lesson: the check was a grep for modules *mentioning* `corpus_localize`, which tests imports,
+    not call sites. Nine modules opened `.corpus-localize-*.json` and read `["verses"]` themselves --
+    the same data with none of the gate. `test_verse_scope_bypass.py` now measures the thing the grep
+    only gestured at, and R9.2c converted the readers to `load_verses`/`iter_localizations` below.
 
     `scope_check=False` is for tooling that audits the localization ARTEFACT rather than scoring the text,
     and the caller has to say so. Returning `{}` instead of raising was considered and rejected: `{}` is
@@ -342,6 +349,91 @@ def load(ocr_dir: str, scope_check: bool = True) -> dict:
         b, c, v = key.rsplit("/", 2)
         out[(b, int(c), int(v))] = rec["text"]
     return out
+
+
+def load_raw(ocr_dir: str, *, scope_check: bool = True, missing_ok: bool = False) -> dict:
+    """The localization ARTEFACT for a volume, whole, with Gate 0f applied.
+
+    R9.2c. `load()` above returns `{(book, ch, verse): text}` and throws away `page`, `fit` and the
+    `empty`/`witness` metadata, so it is NOT a drop-in for the nine modules that were opening the file
+    themselves -- every one of them wanted a field `load()` discards. Converting them to `load()` would
+    have meant re-deriving `page` from somewhere else, i.e. making the gate cost evidence; a gate that
+    costs evidence is a gate that gets routed around, which is the defect R9.2c exists to close, restated
+    one turn later. So the gate goes in FRONT of the read the callers were already doing, and the gated
+    route is the cheapest one available rather than the most expensive.
+
+    `missing_ok=True` returns `{"verses": {}, ...}` for a volume that was never localized -- the shape
+    a caller can keep indexing. It is OFF by default: several callers guarded the read with `p.exists()`
+    for no stated reason, and an absent artefact is usually a pipeline-order mistake, not a fact.
+    """
+    if scope_check:
+        _W.assert_verse_admitted(ocr_dir)
+    f = HERE / f".corpus-localize-{ocr_dir}.json"
+    if not f.exists():
+        if missing_ok:
+            return {"ocr_dir": ocr_dir, "verses": {}, "_absent": str(f.name)}
+        raise FileNotFoundError(
+            f"{f.name} missing -- run `corpus_localize.py {ocr_dir}` first. (Pass missing_ok=True only "
+            f"if a never-localized volume is a legitimate state for this caller, not a pipeline-order "
+            f"mistake: `{{}}` and 'not yet built' are the two things R1.4 exists to keep apart.)")
+    return json.loads(f.read_text())
+
+
+def load_verses(ocr_dir: str, *, scope_check: bool = True, missing_ok: bool = False) -> dict:
+    """`{"book/ch/v": {text, fit, page, ...}}` -- the sub-map every direct reader was reaching for."""
+    return load_raw(ocr_dir, scope_check=scope_check, missing_ok=missing_ok).get("verses", {})
+
+
+def localized_dirs(*, heldout: bool = False) -> list[str]:
+    """Every `ocr_dir` with a localization artefact on disk.
+
+    `.corpus-localize-<dir>.heldout.json` is EXCLUDED by default. Those files came from
+    `page_address_eval`'s held-out run mode and carry `ocr_dir` values like `archive-ot1-1610.heldout`,
+    which name no witness in the registry: a pseudo-volume cannot be scoped, `witnesses.witness_of`
+    raises on the id, and the honest answer to "what may this witness attest?" is that it is not a
+    witness. Pass `heldout=True` only to AUDIT those files, never to score with them.
+
+    ⚠️ MEASURED, so the exclusion is not overstated: all 12 held-out artefacts currently hold **zero
+    verses**, so no consumer's figures move by excluding them and nothing here fixes a live defect. The
+    exclusion is a guard against the state where that run mode is used again, not a correction of one.
+    (The pseudo-volumes DID reach the file-COUNTING audits, which is a separate open item.)
+    """
+    out = []
+    for p in sorted(HERE.glob(".corpus-localize-*.json")):
+        name = p.name[len(".corpus-localize-"):-len(".json")]
+        if name.endswith(".heldout") != heldout:
+            continue
+        out.append(name)
+    return out
+
+
+def iter_localizations(*, scope_check: bool = True, announce=print):
+    """Yield `(ocr_dir, artefact)` for every localized volume, Gate 0f applied -- the SWEEP route.
+
+    A sweep cannot simply raise on the first inadmissible witness (it would report nothing at all) and it
+    must not silently skip one (a dropped witness that leaves no trace is how an audit comes to describe a
+    corpus it did not read). So it does what `qc_audit.scan_ocr_dirs` established as the pattern in R9.2:
+    it DROPS the witness and PRINTS the drop, with the registry's own reason, ABOVE the figures the caller
+    is about to produce. The reader of the output learns the corpus was narrowed; nothing has to be
+    remembered for that to happen.
+    """
+    admitted, dropped = [], []
+    for od in localized_dirs():
+        if scope_check and not _W.verse_admitted(od):
+            vol, sig = _W.witness_of(od)
+            dropped.append((od, _W.wid(vol, sig), _W.WITNESSES[(vol, sig)]["role"]))
+        else:
+            admitted.append(od)
+    # Resolved BEFORE the first yield, deliberately: a generator that announced its drops after the loop
+    # would print them below the figures they qualify, and a caveat that arrives after the number it
+    # qualifies has already been read is not a caveat.
+    if dropped and announce:
+        announce(f"[Gate 0f] {len(dropped)} localized volume(s) DROPPED from this sweep -- verse_scope "
+                 f"'none', their text is not evidence at any grain (OCR-MASTERPLAN.md 2):")
+        for od, w, role in dropped:
+            announce(f"          {od:28} {w:12} role {role!r}")
+    for od in admitted:
+        yield od, load_raw(od, scope_check=scope_check)
 
 
 def main(argv=None):

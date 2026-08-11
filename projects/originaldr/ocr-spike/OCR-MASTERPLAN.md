@@ -100,6 +100,34 @@ interval and the label PROVISIONAL / non-citable**, and **no gate closes on it.*
 **OPEN and blocking**; a safeguard that fires raises an **ALERT that the approach needs redesign** and never
 constitutes acceptance.
 
+**Every prerequisite carries a stated hour ceiling and a pre-registered decision rule** (above). Until
+2026-08-10 that sentence had **no consumer**: not one roadmap step carried a ceiling or a rule, and the two
+sections blocking everything else — R2 and R3 — had never started, which is the precise outcome the
+requirement exists to prevent. Ceilings and rules are now carried per open prerequisite in the roadmap, and
+`witness/test_prereq_ceilings.py` fails if an OPEN step lacks either. Likewise **PROVISIONAL** was defined
+here and used nowhere; the convention is now stated in the roadmap and a figure published without it, where
+its evidence is undersized, is a defect rather than a style choice.
+
+### 0.6 Precedence between these documents
+
+Where two documents disagree about **what is open, done, or enforced**, the order of authority is:
+
+1. **The code and its guards** — what a test actually asserts, and what a guard actually refuses.
+2. **The roadmap's open-items register** — maintained as the single answer to "what is left".
+3. **This Master Plan's status lines**, then the companions (Overview, Walkthrough, Executive Summary).
+4. **The devlog**, which is a record of what was believed at a moment and is never retroactively edited.
+
+The register was already declared authoritative over prose *elsewhere in the roadmap*. It is extended here
+to this document because the 2026-08-10 review found the drift running the other way three times: §2 claimed
+Gate 0e verified "on the full §0.3 criterion" while the register recorded the foot criteria proved at **one**
+point of the required three; §2 claimed Gate 0f "discharged by R9.1–R9.4" while R9.2c recorded nine modules
+reading around it; and §2 and the roadmap both described Gate 0d as a guard lacking a negative test when
+**no such guard had ever been written**. A status line is a claim like any other, and the thing that can
+refuse a claim outranks the thing that can only assert one.
+
+**This ordering is not a licence to leave a lower document wrong.** A disagreement is a defect in the lower
+document and is fixed, not merely arbitrated; the ordering says which one to fix.
+
 ---
 
 ## 1. THE CORPUS
@@ -1157,9 +1185,47 @@ manifest, asserted at load time. `X` is the worked case — twice `B`'s pixels a
 > **This gate went missing from this section and is restored here (2026-08-08).** It was cited twice in the
 > paragraphs below — *"Gates 0a–0d each guard a field that was known to be uncertain"* — and defined
 > nowhere, while `R5.2` in the roadmap carried the parenthetical *"(Gate 0d)"* and pointed back at a gate
-> this document no longer contained. A gate that exists only as a cross-reference is not a gate. **Its
-> acceptance test is still outstanding: R5.2 has no proven negative case**, which is the same standard
-> every other gate here has met, so 0d is listed as *specified and unenforced* rather than as satisfied.
+> this document no longer contained. A gate that exists only as a cross-reference is not a gate.
+>
+> 🔴 **CORRECTED 2026-08-10 — the previous revision of this note still overstated the position, and the
+> correction is larger than the note it replaces.** It read *"its acceptance test is still outstanding:
+> R5.2 has no proven negative case"*, and the roadmap said the same. **Both described a guard that had
+> never been written.** A search of every module for a bit-depth, grey-level, `.mode` or dimension
+> assertion returns nothing; the single occurrence of `R5.2` anywhere in the code is a comment in
+> `test_setting_verified.py` asserting that R5.2 is held to a standard it is not held to. The devlog went
+> further and recorded Session 13 as *"Discharges … §2 Gate 0d/0f"*, which is false: that session was
+> verse-scope work and discharged nothing of 0d.
+>
+> **Status: 0d is SPECIFIED and NOT IMPLEMENTED.** "No proven negative" describes a guard that runs and
+> has never refused anything. Nothing runs. The distinction matters because the first phrasing invites the
+> small job of writing a test, and the true position is that the gate must be built — and it cannot be
+> built completely until **R5.1** exists, since the third of its three clauses compares against a raster
+> manifest that has never been produced. That dependency was unstated in both documents and is now
+> recorded in the roadmap (R5.1 blocks R5.2c).
+>
+> ⚠️ This is the same shape as Gate 0f, one gate over: a limit stated correctly, in more than one document,
+> with nothing downstream of it. The difference is that 0f's prose was at least *true* about the corpus;
+> 0d's prose was untrue about the code.
+>
+> 🟢 **BUILT AND ENFORCED ON ALL THREE CLAUSES, 2026-08-10.** `witness/raster_gate.py` checks the three
+> separately and reports them separately; `witness/test_raster_admissible.py` refuses a bitonal leaf, an
+> 8-grey-level render and a mis-sized leaf **each on its own clause**, admits a real base-exemplar leaf,
+> and drives `jp2_page.load()` rather than the gate directly — an earlier version called
+> `assert_admissible` itself, which proves the gate and proves nothing reaches it.
+>
+> **The third clause now has its data.** R5.1's manifest completed in 48 min (inside its 3 h ceiling):
+> **3,122 leaves over the three base exemplars, `truncated: false`, and 0 rasters on disk without an
+> entry** — so the dimension clause moved from UNKNOWN to CHECKED on **3,113** leaves that the smoke run
+> had left unmeasured. A leaf with no entry still yields **UNKNOWN, printed per leaf**, never a silent
+> pass; that is why the pre-registered deferral in R5's decision rule was never triggered.
+>
+> 🟢 **Determinism proven, so R5.1 is complete on both halves.** A second full build — 3,122 leaves,
+> `truncated: false`, a real run rather than an early exit — is **byte-identical** to the first,
+> sha256 `44290ad7…f8e0` for both. The clause could not be executed as written: the output path was
+> hard-coded, so a second build destroyed the first, and it had stood that way since it was written.
+> `--out` was added. ⚠️ The byte comparison is meaningful **only because the writer sorts keys** —
+> `coverage-audit-verse.json` is the standing counter-case, order-nondeterministic on ties, where the
+> identical test would prove nothing. The test is the same; the writer decides whether it is valid.
 
 **Gate 0e — setting identity, proved per witness.** Every witness record declares the **setting** it attests
 — volume and year of printing — and that declaration is **collated against a second witness to the same
@@ -1185,9 +1251,24 @@ a negative case) and `witness/test_setting_verified.py` (a registered witness wi
 **fails**; every claimed pair must agree on signature, catchword *and* last line; and the sole-witness list
 fails the moment a partner appears for it). All four negative cases proven by injection.
 
-*Status:* **11 of 12 records verified on the full §0.3 criterion; `OT-1635-M` named unverifiable** — sole
-record of its setting, resting on its own colophon (Rouen, Iohn Cousturier, `M.DC.XXXV`) and the ten-year
-privilege of 3 August 1634 that it prints. Internal evidence only, uncorroborated.
+*Status:* **11 of 12 records verified; `OT-1635-M` named unverifiable** — sole record of its setting,
+resting on its own colophon (Rouen, Iohn Cousturier, `M.DC.XXXV`) and the ten-year privilege of 3 August
+1634 that it prints. Internal evidence only, uncorroborated.
+
+🔴 **CORRECTED 2026-08-10: this line read "verified on the full §0.3 criterion", and that is not what was
+done.** §0.3 requires agreement at **three or more separated points** through the volume. The head criteria
+(printed page number, running head, sidehead, line breaks) were verified at three or more points — but the
+**foot criteria, signature and catchword, were verified at exactly ONE matched page per setting** (R8.4a),
+and **R8.4b, the remainder, is OPEN**. The roadmap's register has recorded this shortfall since R8.4a
+landed; this section flattened it to "full". The gate is therefore **PART-DISCHARGED**: head criteria at
+full strength, foot criteria at one third of the required separation.
+
+⚠️ **The shape of this error is worth naming, because it is the one §0.3 was rewritten to fix.** That
+rewrite exists because the R8.4 audit was *"stronger on one axis and silently weaker on two"* — and the
+sentence recording the repair was itself, four days later, silently overstating the repair. **A correction
+is not self-enforcing.** What enforces it is `test_setting_verified.py`, which checks that every claimed
+pair agrees; extending it to assert the **number of separated points per setting** is R8.4b's acceptance,
+and until that exists this status line is the only thing holding the distinction.
 
 The **negative control is what licenses the criterion**, and it is sharp: at printed page **147**, `B` (1582)
 and `F`/`R` (1633) carry the *same page number* and the *same running head* `ACCORDING TO S. LVKE`, and differ
@@ -1234,15 +1315,70 @@ source is admissible at all, scope asks what an admissible witness may be used *
 would weaken both (the same argument `curated_sources` already makes for keeping curation and addressing
 apart).
 
-*Discharged by* R9.1–R9.4, and enforced continuously by `witness/test_verse_scope.py` (a `none`-scope
-witness contributing a verse attestation **fails**) and `witness/test_drop_rule_enforced.py` (a declared
-scoping rule with no consumer **fails**). Both negatives proven by injection.
+*Enforced by* R9.1–R9.4, and continuously by `witness/test_verse_scope.py` (a `none`-scope witness
+contributing a verse attestation **fails**), `witness/test_drop_rule_enforced.py` (a declared scoping rule
+with no consumer **fails**) and `witness/test_consensus_sources.py` (a fused consensus stream that is
+non-curated or `none`-scope **fails**, with the banned branch proven by injection because the banned
+directories are no longer present to prove it by observation). All negatives proven by injection.
+
+🔴 **PART-DISCHARGED, corrected 2026-08-10.** This line read *"Discharged by R9.1–R9.4"*, which the
+roadmap's own R9.2c contradicts: the strict default on `corpus_localize.load()` guards `qc_audit` and
+nothing else, because **nine modules read `.corpus-localize-*.json` directly** and never reach the
+function that refuses. `witness/test_verse_scope_bypass.py` exits 1 to say so, and that exit is the
+healthy state until the nine are converted. **The gate is live at one choke point and open at nine.**
+
+🟢 **DISCHARGED as to the routes, 2026-08-10 (R9.2c).** All nine are converted and the guard exits 0.
+Two results are worth carrying up to this section, because both were found by *routing through the gate*
+rather than by reading:
+
+* **The obvious conversion would have re-made the defect.** `load()` returns `{(book, ch, verse): text}`
+  and discards `page`/`fit` — exactly what the direct readers wanted — so converting them to it would
+  have made the gate **cost evidence**, and a gate that costs evidence is routed around. The remedy was
+  to put the refusal in front of the read they were already doing (`load_raw` / `load_verses`, and
+  `iter_localizations` for sweeps). **The gated route has to be the cheapest one, not the most
+  expensive** — that, not the guard, is what keeps it the only route.
+* **A containment fact was being read as a scoring permission.** `book_audit.witnesses_for_book` took
+  its witness set from `witness_inventory.tomes`, which says which books a volume's leaves *carry*, and
+  both callers used it to decide what may be *scored* — so `OT-1635-M` and `NT-1582-X` were still being
+  handed to the scorers. This is **R7.5a-3's category error with the arrow reversed** (there, a scoring
+  rule was read as a containment claim and force-fitted 800 NT leaves onto Old Testament books). ⚠️ And
+  it had a measurable consequence nobody had noticed: the empty witness put a `0.0` into the parity
+  floor, so **the reported "parity spread" was exactly the best witness's own pass rate on all five
+  pilot books** (genesis 0.7601 = S9's 0.7601, psalms 0.633, matthew 0.7594, john 0.6507, apocalypse
+  0.5728). A metric that measures nothing still produces a ranking. Corrected: 8.4 · 15.4 · 19.5 points.
+
+**Still not unbypassable, and the distinction still holds.** `scope_check=False` remains available by
+design, and the guard reads call sites, not intent.
+
+A second part of R9.4 was also open when this line was written and is now closed: `NT-1582-X` was being
+fused into the consensus as an independent seventh witness, so **every NT cross-source agreement figure
+built before 2026-08-09 counted the base exemplar twice** (R9.4a). All 76 books have been regenerated with
+the gate live and none now fuses an inadmissible source (R9.4b). The gate is *enforced*; it is not yet
+*unbypassable*, and those are different claims.
 
 **No transcription of any leaf begins before 0b, 0c and 0e are satisfied for that leaf** — 0e first, since
 0b's collation and 0c's leaf map are both statements about a particular setting and are meaningless if the
 setting is wrong. **0d and 0f bind the moment a leaf is read rather than at transcription time**: 0d gates
 what enters the recognition chain, 0f gates what a reading is allowed to count as. Gate 0a may complete in
 parallel; it constrains citation, not imaging.
+
+🔴 **THIS RULE HAS ALREADY BEEN BROKEN, AND SAYING SO IS THE POINT (2026-08-10).** `ground-truth/` holds
+**51 transcribed files**. Gate 0b's second stage is **R2 — "OPEN. Nothing built."** Gate 0c is **R3 —
+"OPEN. Nothing built."** No leaf in this corpus has ever satisfied 0b or 0c, so **every one of the 51 files
+was transcribed ahead of the rule**, and until now the rule read as though it had been observed.
+
+This is a separate defect from R7, and the two must not be merged. R7 found that 48 of the 51 were read
+from **inadmissible rasters** — a question of *which photograph*. This is a question of *whether the leaf
+was known to be the leaf it was called*: without a collation (0b) a leaf may be a duplicate, a misbinding
+or a made-up supply from another copy, and without a leaf map (0c) "the same page" cannot be stated across
+witnesses at all. §1.4 is the standing proof that this is not hypothetical — three of four NT files are
+made up, and the defect was invisible until the leaves were read.
+
+**The rule is not relaxed and the files are not condemned.** They are **PROVISIONAL** in the §0.5 sense:
+usable as working material, **not citable**, and **no gate closes on them**. They are re-admitted leaf by
+leaf as 0b and 0c reach the leaves they rest on — which is R2/R3's acceptance, and is why those two
+sections, long marked "NEXT" and never started, are the corpus's real critical path rather than its
+housekeeping. Recording a broken rule as broken is what keeps the 51 files from silently becoming evidence.
 
 **Admission of any newly acquired copy runs Gate 0e before the copy is used for anything** — including the
 Princeton 1582 NT candidate (`thenewtestamento00rhei`, call no. 13737), which is attractive precisely because

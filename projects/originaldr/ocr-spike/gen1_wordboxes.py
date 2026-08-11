@@ -37,6 +37,7 @@ warnings.filterwarnings("ignore")
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import corpus_localize as CL                 # noqa: E402  # Gate 0f route to the localization artefact
 import reocr_core as core                    # noqa: E402
 
 OUT = HERE / ".gen1-wordboxes.json"          # legacy default: Genesis 1
@@ -57,10 +58,9 @@ def discover_pages(book: str, chapter: int, pad: int = 1) -> dict[str, list[int]
     import collections
     out: dict[str, list[int]] = {}
     for od in PAGES:
-        f = HERE / f".corpus-localize-{od}.json"
-        if not f.exists():
+        d = CL.load_verses(od, missing_ok=True)       # R9.2c: through Gate 0f, not around it
+        if not d:
             continue
-        d = json.loads(f.read_text()).get("verses", {})
         pgs = {v["page"] for k, v in d.items()
                if k.startswith(f"{book}/{chapter}/") and isinstance(v, dict) and v.get("page") is not None}
         if pgs:

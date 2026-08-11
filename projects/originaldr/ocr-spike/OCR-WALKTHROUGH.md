@@ -197,11 +197,19 @@ only, and its bitonal raster is recorded as the limiting factor on every reading
 and, measurably, none of its information. It is also the case that shows how quietly this happens — nobody
 chose that upscale, IA's renderer picked a DPI. Resolution differences are carried as they are.
 
-What remains is a guard, not a remedy — **Gate 0d**: every leaf is asserted at load to have come from
-**its own witness's primary artefact**, with bit depth > 1, grey levels > 64 and dimensions matching the
+What remains is a guard, not a remedy — **Gate 0d**: every leaf **is to be** asserted at load as having come
+from **its own witness's primary artefact**, with bit depth > 1, grey levels > 64 and dimensions matching the
 manifest. Note the guard is *witness-specific and cannot be a blanket "must be a JP2"*: for the `F` and `X`
 witnesses a JP2 leaf is exactly the defect being guarded against. Either way the defect is *silent*,
 because a rendered leaf still looks like a page.
+
+> ⚠️ **Tense corrected 2026-08-10.** This read *"every leaf is asserted at load"*, which describes a guard
+> that runs. **None had been written** — no bit-depth, grey-level or dimension check existed anywhere in
+> the project, and the Master Plan and roadmap independently described the same absent guard as merely
+> lacking a negative test. The build is roadmap **R5.1** (the manifest the third clause compares against,
+> which had never been produced) and **R5.2a–c**. Until those land, the only thing standing between a
+> rendered leaf and the recognition chain is `test_raster_routing.py`, which governs *which witness's
+> raster is fetched* — a different question from *what that raster turns out to be*.
 
 **Finding aids.** Both archaic transcriptions are finding aids, never authorities — one of them splices
 editorial annotation into scripture at `ruth/1/1` and `genesis/10/1`.

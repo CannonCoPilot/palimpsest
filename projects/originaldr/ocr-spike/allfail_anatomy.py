@@ -32,6 +32,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import book_audit as BA                      # noqa: E402
+import corpus_localize as CL                 # noqa: E402  # Gate 0f route to the localization artefact
 import qc_audit as QC                        # noqa: E402
 import verse_seg as VS                       # noqa: E402
 from corpus_wire_probe import stored_page    # noqa: E402
@@ -53,8 +54,7 @@ def anatomy(book: str) -> dict:
     sd, oc = QC.load_reads_verse("s_dismas"), QC.load_reads_verse("odr_com")
     archaic = dict(oc)
     archaic.update(sd)
-    loc = {s: json.loads((HERE / f".corpus-localize-{d}.json").read_text())["verses"]
-           for s, d in wits.items()}
+    loc = {s: CL.load_verses(d) for s, d in wits.items()}      # R9.2c: through Gate 0f, not around it
     addr = {s: {r["page_index"]: r
                 for r in json.loads((HERE / f".page-address-{d}.json").read_text())["records"]}
             for s, d in wits.items()}

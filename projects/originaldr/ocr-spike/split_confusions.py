@@ -34,6 +34,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import book_audit as BA                      # noqa: E402
+import corpus_localize as CL                 # noqa: E402  # Gate 0f route to the localization artefact
 import verse_seg as VS                       # noqa: E402
 
 
@@ -45,8 +46,7 @@ def analyse(book: str) -> dict:
     rep = BA.audit_book(book)
     wits = rep["witnesses"]
     aud = json.loads((HERE / "coverage-audit-verse.json").read_text())["verses"]
-    loc = {s: json.loads((HERE / f".corpus-localize-{d}.json").read_text())["verses"]
-           for s, d in wits.items()}
+    loc = {s: CL.load_verses(d) for s, d in wits.items()}      # R9.2c: through Gate 0f, not around it
 
     char_conf = collections.Counter()          # (from, to) at character grain, failing -> passing
     word_conf = collections.Counter()          # whole-token substitutions

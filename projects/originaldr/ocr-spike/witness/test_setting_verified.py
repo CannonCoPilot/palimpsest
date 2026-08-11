@@ -32,6 +32,24 @@ import witnesses as W
 READINGS = Path(__file__).resolve().parent / "setting-readings.json"
 MIN_POINTS = 3
 
+# Two printed pages closer together than this are ONE point: they sit in the same gathering and
+# often the same forme, so they cannot corroborate each other about the volume as a whole. 50 is
+# chosen as the weakest statement that separates the real clusters actually recorded
+# ([222,223,224] vs 457 vs [918,919,920]) -- it is not tuned, and widening it would only make the
+# criterion stricter. Same discipline as the 0.5 fit floor in `build_tome_map_v2` (R7.5a-3).
+MIN_SEPARATION = 50
+
+
+def separated(pages) -> list[list[int]]:
+    """Group printed pages into clusters no closer than MIN_SEPARATION. One cluster = one point."""
+    out: list[list[int]] = []
+    for p in sorted(pages):
+        if out and p - out[-1][-1] < MIN_SEPARATION:
+            out[-1].append(p)
+        else:
+            out.append([p])
+    return out
+
 # A witness that is the ONLY record of its setting cannot be collated against a
 # partner, because there is no partner.  That is a structural fact about the
 # corpus, not a verification, and it is listed here so it is stated rather than
@@ -113,7 +131,7 @@ def check_foot(d, registered):
                       va == vb, f"{a}={va!r} but {b}={vb!r}")
 
     # A criterion that has never DISTINGUISHED anything is not known to work --
-    # the same standard R0.5 and R5.2 are held to.  The negative control is the
+    # the same standard R0.5 and R5.2b are held to.  The negative control is the
     # load-bearing half of this section.
     print("\nnegative control — the foot criteria must SEPARATE different settings:")
     ncs = d.get("foot_negative_controls", [])
@@ -187,9 +205,19 @@ def main():
         verified[wid] = (pts, partners)
         if wid in SOLE_WITNESS:
             continue
-        check(f"{wid:14s} {len(pts)} matched pages, partners {sorted(partners) or '-'}",
-              len(pts) >= MIN_POINTS,
-              f"only {len(pts)} matched printed page(s); the criterion is {MIN_POINTS}")
+        # 🔴 SEPARATED points, not matched pages (R8.4b, 2026-08-10). §0.3 requires agreement at
+        # "three or more separated points **spread through the volume**", and counting page
+        # entries does not say that: `OT1-1609-P` vs `F` records seven pages, but they are
+        # [222,223,224, 457, 918,919,920] -- THREE locations read three times each. Three adjacent
+        # leaves would have satisfied the old count while testing nothing about the volume's span,
+        # which is a criterion weaker than the one the constitution states and reads identical in
+        # the output. Both numbers are printed so a future reader can see the difference.
+        sep = separated(pts)
+        check(f"{wid:14s} {len(sep)} separated point(s) over {len(pts)} matched page(s), "
+              f"partners {sorted(partners) or '-'}",
+              len(sep) >= MIN_POINTS,
+              f"only {len(sep)} separated point(s) — adjacent pages count once; "
+              f"the criterion is {MIN_POINTS} spread through the volume")
 
     print("\nsole witnesses to a setting -- NOT verified, and said so:")
     for wid, basis in sorted(SOLE_WITNESS.items()):

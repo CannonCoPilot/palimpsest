@@ -10,8 +10,7 @@
  "witnesses": {
   "S1": "archive-ot1-1609",
   "S3": "pdf-S03a",
-  "S9": "archive-holiebible-ot1",
-  "S6": "jp2-S06"
+  "S9": "archive-holiebible-ot1"
  },
  "bar": 0.9,
  "verses": [
@@ -28,31 +27,31 @@
      },
      "passed": false,
      "localized": true,
-     "tokens": 34,
-     "length_ratio": 4.25,
+     "tokens": 59,
+     "length_ratio": 7.375,
      "page": 24,
      "class": "L4-LONG"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.7872,
-      "odr_com": 0.7872,
-      "sabates_a": 0.7872,
-      "madueke_b": 0.7872
+      "s_dismas": 0.0,
+      "odr_com": 0.0,
+      "sabates_a": 0.0,
+      "madueke_b": 0.0
      },
      "passed": false,
      "localized": true,
-     "tokens": 9,
-     "length_ratio": 1.125,
+     "tokens": 6,
+     "length_ratio": 0.75,
      "page": 25,
      "class": "V5-RECOG"
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.7288,
-      "odr_com": 0.7288,
-      "sabates_a": 0.7288,
-      "madueke_b": 0.7288
+      "s_dismas": 0.7414,
+      "odr_com": 0.7414,
+      "sabates_a": 0.7414,
+      "madueke_b": 0.7414
      },
      "passed": false,
      "localized": true,
@@ -60,20 +59,6 @@
      "length_ratio": 1.25,
      "page": 31,
      "class": "V3-APPARATUS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8627,
-      "odr_com": 0.8627,
-      "sabates_a": 0.8627,
-      "madueke_b": 0.8627
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.375,
-     "page": 19,
-     "class": "V5-RECOG"
     }
    },
    "support": 0
@@ -84,59 +69,45 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.0,
-      "sabates_a": 0.0,
-      "madueke_b": 0.0
+      "s_dismas": 0.7639,
+      "odr_com": 0.75,
+      "sabates_a": 0.7153,
+      "madueke_b": 0.7153
      },
      "passed": false,
      "localized": true,
-     "tokens": 42,
-     "length_ratio": 1.68,
+     "tokens": 30,
+     "length_ratio": 1.2,
      "page": 21,
-     "class": "L4-LONG"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.8203,
-      "odr_com": 0.8516,
-      "sabates_a": 0.8125,
-      "madueke_b": 0.8125
+      "s_dismas": 0.7613,
+      "odr_com": 0.7548,
+      "sabates_a": 0.7226,
+      "madueke_b": 0.7226
      },
      "passed": false,
      "localized": true,
-     "tokens": 27,
-     "length_ratio": 1.08,
+     "tokens": 32,
+     "length_ratio": 1.28,
      "page": 25,
      "class": "V3-APPARATUS"
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.8372,
-      "odr_com": 0.8682,
-      "sabates_a": 0.814,
-      "madueke_b": 0.814
+      "s_dismas": 0.7862,
+      "odr_com": 0.7724,
+      "sabates_a": 0.7241,
+      "madueke_b": 0.7241
      },
      "passed": false,
      "localized": true,
-     "tokens": 26,
-     "length_ratio": 1.04,
+     "tokens": 29,
+     "length_ratio": 1.16,
      "page": 31,
      "class": "V3-APPARATUS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8468,
-      "odr_com": 0.875,
-      "sabates_a": 0.9091,
-      "madueke_b": 0.9091
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 23,
-     "length_ratio": 0.92,
-     "page": 19,
-     "class": "V6-REF"
     }
    },
    "support": 0
@@ -147,62 +118,48 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.7925,
-      "odr_com": 0.7925,
-      "sabates_a": 0.7925,
-      "madueke_b": 0.7925
+      "s_dismas": 0.0,
+      "odr_com": 0.0,
+      "sabates_a": 0.0,
+      "madueke_b": 0.0
      },
      "passed": false,
      "localized": true,
-     "tokens": 12,
-     "length_ratio": 1.2,
+     "tokens": 14,
+     "length_ratio": 1.4,
      "page": 21,
      "class": "V5-RECOG"
     },
     "S3": {
      "scores": {
-      "s_dismas": 1.0,
-      "odr_com": 1.0,
-      "sabates_a": 1.0,
-      "madueke_b": 1.0
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 10,
-     "length_ratio": 1.0,
-     "page": 25,
-     "class": "PASS"
-    },
-    "S9": {
-     "scores": {
-      "s_dismas": 0.9375,
-      "odr_com": 0.9375,
-      "sabates_a": 0.9375,
-      "madueke_b": 0.9375
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.1,
-     "page": 31,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8113,
-      "odr_com": 0.8113,
-      "sabates_a": 0.8113,
-      "madueke_b": 0.8113
+      "s_dismas": 0.7377,
+      "odr_com": 0.7377,
+      "sabates_a": 0.7377,
+      "madueke_b": 0.7377
      },
      "passed": false,
      "localized": true,
-     "tokens": 12,
-     "length_ratio": 1.2,
-     "page": 19,
+     "tokens": 13,
+     "length_ratio": 1.3,
+     "page": 25,
      "class": "V5-RECOG"
+    },
+    "S9": {
+     "scores": {
+      "s_dismas": 0.8036,
+      "odr_com": 0.8036,
+      "sabates_a": 0.8036,
+      "madueke_b": 0.8036
+     },
+     "passed": false,
+     "localized": true,
+     "tokens": 13,
+     "length_ratio": 1.3,
+     "page": 31,
+     "class": "V3-APPARATUS"
     }
    },
-   "support": 2
+   "support": 0
   },
   {
    "verse": 4,
@@ -249,23 +206,9 @@
      "length_ratio": 1.235,
      "page": 31,
      "class": "V3-APPARATUS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9383,
-      "odr_com": 0.9383,
-      "sabates_a": 0.963,
-      "madueke_b": 0.963
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 17,
-     "length_ratio": 1.0,
-     "page": 19,
-     "class": "PASS"
     }
    },
-   "support": 1
+   "support": 0
   },
   {
    "verse": 5,
@@ -273,31 +216,31 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.9604,
-      "odr_com": 0.9604,
-      "sabates_a": 0.9406,
-      "madueke_b": 0.9406
+      "s_dismas": 0.7886,
+      "odr_com": 0.7886,
+      "sabates_a": 0.7724,
+      "madueke_b": 0.7724
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 20,
-     "length_ratio": 1.0,
+     "tokens": 25,
+     "length_ratio": 1.25,
      "page": 21,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.9608,
-      "odr_com": 0.9608,
-      "sabates_a": 0.9412,
-      "madueke_b": 0.9412
+      "s_dismas": 0.8033,
+      "odr_com": 0.8033,
+      "sabates_a": 0.7869,
+      "madueke_b": 0.7869
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 20,
-     "length_ratio": 1.0,
+     "tokens": 25,
+     "length_ratio": 1.25,
      "page": 25,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     },
     "S9": {
      "scores": {
@@ -308,27 +251,13 @@
      },
      "passed": true,
      "localized": true,
-     "tokens": 19,
-     "length_ratio": 0.95,
+     "tokens": 20,
+     "length_ratio": 1.0,
      "page": 31,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.84,
-      "odr_com": 0.84,
-      "sabates_a": 0.82,
-      "madueke_b": 0.82
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 21,
-     "length_ratio": 1.05,
-     "page": 19,
-     "class": "V5-RECOG"
     }
    },
-   "support": 3
+   "support": 1
   },
   {
    "verse": 6,
@@ -364,30 +293,16 @@
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.7652,
-      "odr_com": 0.7652,
-      "sabates_a": 0.7391,
-      "madueke_b": 0.7391
+      "s_dismas": 0.7339,
+      "odr_com": 0.7339,
+      "sabates_a": 0.7097,
+      "madueke_b": 0.7097
      },
      "passed": false,
      "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.333,
+     "tokens": 26,
+     "length_ratio": 1.444,
      "page": 31,
-     "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.7363,
-      "odr_com": 0.7363,
-      "sabates_a": 0.8105,
-      "madueke_b": 0.8105
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 15,
-     "length_ratio": 0.833,
-     "page": 19,
      "class": "V5-RECOG"
     }
    },
@@ -399,29 +314,29 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.8951,
-      "odr_com": 0.8951,
-      "sabates_a": 0.8951,
-      "madueke_b": 0.8951
+      "s_dismas": 0.7917,
+      "odr_com": 0.7917,
+      "sabates_a": 0.7917,
+      "madueke_b": 0.7917
      },
      "passed": false,
      "localized": true,
-     "tokens": 29,
-     "length_ratio": 1.115,
+     "tokens": 33,
+     "length_ratio": 1.269,
      "page": 21,
-     "class": "V5-RECOG"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.8889,
-      "odr_com": 0.8889,
-      "sabates_a": 0.8889,
-      "madueke_b": 0.8889
+      "s_dismas": 0.8144,
+      "odr_com": 0.8144,
+      "sabates_a": 0.8144,
+      "madueke_b": 0.8144
      },
      "passed": false,
      "localized": true,
-     "tokens": 31,
-     "length_ratio": 1.192,
+     "tokens": 33,
+     "length_ratio": 1.269,
      "page": 25,
      "class": "V3-APPARATUS"
     },
@@ -438,20 +353,6 @@
      "length_ratio": 1.077,
      "page": 31,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8636,
-      "odr_com": 0.8636,
-      "sabates_a": 0.8636,
-      "madueke_b": 0.8636
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 30,
-     "length_ratio": 1.154,
-     "page": 19,
-     "class": "V5-RECOG"
     }
    },
    "support": 1
@@ -462,17 +363,17 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.9889,
-      "odr_com": 0.9368,
-      "sabates_a": 0.9889,
-      "madueke_b": 0.9889
+      "s_dismas": 0.8641,
+      "odr_com": 0.835,
+      "sabates_a": 0.8641,
+      "madueke_b": 0.8641
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 16,
-     "length_ratio": 0.889,
+     "tokens": 18,
+     "length_ratio": 1.0,
      "page": 21,
-     "class": "PASS"
+     "class": "V5-RECOG"
     },
     "S3": {
      "scores": {
@@ -490,34 +391,20 @@
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.8738,
-      "odr_com": 0.835,
-      "sabates_a": 0.8738,
-      "madueke_b": 0.8738
+      "s_dismas": 0.7692,
+      "odr_com": 0.735,
+      "sabates_a": 0.7692,
+      "madueke_b": 0.7692
      },
      "passed": false,
      "localized": true,
-     "tokens": 18,
-     "length_ratio": 1.0,
+     "tokens": 21,
+     "length_ratio": 1.167,
      "page": 31,
-     "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.7921,
-      "odr_com": 0.7426,
-      "sabates_a": 0.7921,
-      "madueke_b": 0.7921
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 20,
-     "length_ratio": 1.111,
-     "page": 19,
-     "class": "V5-RECOG"
+     "class": "V3-APPARATUS"
     }
    },
-   "support": 1
+   "support": 0
   },
   {
    "verse": 9,
@@ -553,34 +440,20 @@
     },
     "S9": {
      "scores": {
-      "s_dismas": 1.0,
-      "odr_com": 1.0,
-      "sabates_a": 0.9496,
-      "madueke_b": 0.9496
+      "s_dismas": 0.9392,
+      "odr_com": 0.9392,
+      "sabates_a": 0.8919,
+      "madueke_b": 0.8919
      },
      "passed": true,
      "localized": true,
-     "tokens": 28,
-     "length_ratio": 1.0,
+     "tokens": 30,
+     "length_ratio": 1.071,
      "page": 31,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9353,
-      "odr_com": 0.9353,
-      "sabates_a": 0.8849,
-      "madueke_b": 0.8849
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 29,
-     "length_ratio": 1.036,
-     "page": 19,
      "class": "PASS"
     }
    },
-   "support": 2
+   "support": 1
   },
   {
    "verse": 10,
@@ -588,62 +461,48 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.9496,
-      "odr_com": 0.9496,
-      "sabates_a": 0.9328,
-      "madueke_b": 0.9328
+      "s_dismas": 0.8561,
+      "odr_com": 0.8561,
+      "sabates_a": 0.8409,
+      "madueke_b": 0.8409
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 25,
-     "length_ratio": 1.087,
+     "tokens": 29,
+     "length_ratio": 1.261,
      "page": 21,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.9915,
-      "odr_com": 0.9915,
-      "sabates_a": 0.9658,
-      "madueke_b": 0.9658
+      "s_dismas": 0.8923,
+      "odr_com": 0.8923,
+      "sabates_a": 0.8692,
+      "madueke_b": 0.8692
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.043,
+     "tokens": 28,
+     "length_ratio": 1.217,
      "page": 25,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.9224,
-      "odr_com": 0.9224,
-      "sabates_a": 0.8947,
-      "madueke_b": 0.8947
+      "s_dismas": 0.8837,
+      "odr_com": 0.8837,
+      "sabates_a": 0.8605,
+      "madueke_b": 0.8605
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 23,
-     "length_ratio": 1.0,
+     "tokens": 28,
+     "length_ratio": 1.217,
      "page": 31,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9412,
-      "odr_com": 0.9412,
-      "sabates_a": 0.9328,
-      "madueke_b": 0.9328
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.043,
-     "page": 19,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     }
    },
-   "support": 4
+   "support": 0
   },
   {
    "verse": 11,
@@ -651,17 +510,17 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.901,
-      "odr_com": 0.9062,
-      "sabates_a": 0.8438,
-      "madueke_b": 0.8438
+      "s_dismas": 0.8564,
+      "odr_com": 0.8614,
+      "sabates_a": 0.8069,
+      "madueke_b": 0.8069
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 39,
-     "length_ratio": 1.054,
+     "tokens": 42,
+     "length_ratio": 1.135,
      "page": 21,
-     "class": "PASS"
+     "class": "V5-RECOG"
     },
     "S3": {
      "scores": {
@@ -690,23 +549,9 @@
      "length_ratio": 1.135,
      "page": 31,
      "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.0,
-      "sabates_a": 0.0,
-      "madueke_b": 0.0
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 20,
-     "length_ratio": 0.541,
-     "page": 20,
-     "class": "V5-RECOG"
     }
    },
-   "support": 2
+   "support": 1
   },
   {
    "verse": 12,
@@ -753,20 +598,6 @@
      "length_ratio": 0.853,
      "page": 32,
      "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8983,
-      "odr_com": 0.8983,
-      "sabates_a": 0.9659,
-      "madueke_b": 0.9659
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 32,
-     "length_ratio": 0.941,
-     "page": 20,
-     "class": "V6-REF"
     }
    },
    "support": 0
@@ -777,22 +608,22 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.8868,
-      "odr_com": 0.8868,
-      "sabates_a": 0.8246,
-      "madueke_b": 0.8246
+      "s_dismas": 0.7692,
+      "odr_com": 0.7692,
+      "sabates_a": 0.7077,
+      "madueke_b": 0.7077
      },
      "passed": false,
      "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.0,
-     "page": 23,
+     "tokens": 12,
+     "length_ratio": 1.091,
+     "page": 22,
      "class": "V5-RECOG"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.9245,
-      "odr_com": 0.9245,
+      "s_dismas": 0.9273,
+      "odr_com": 0.9273,
       "sabates_a": 0.8596,
       "madueke_b": 0.8596
      },
@@ -800,39 +631,25 @@
      "localized": true,
      "tokens": 11,
      "length_ratio": 1.0,
-     "page": 27,
+     "page": 26,
      "class": "PASS"
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.9057,
-      "odr_com": 0.9057,
-      "sabates_a": 0.8421,
-      "madueke_b": 0.8421
+      "s_dismas": 0.8281,
+      "odr_com": 0.8281,
+      "sabates_a": 0.7812,
+      "madueke_b": 0.7812
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.0,
-     "page": 33,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9123,
-      "odr_com": 0.9123,
-      "sabates_a": 0.9825,
-      "madueke_b": 0.9825
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.0,
-     "page": 20,
-     "class": "PASS"
+     "tokens": 12,
+     "length_ratio": 1.091,
+     "page": 32,
+     "class": "V5-RECOG"
     }
    },
-   "support": 3
+   "support": 1
   },
   {
    "verse": 14,
@@ -879,20 +696,6 @@
      "length_ratio": 1.065,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8243,
-      "odr_com": 0.8243,
-      "sabates_a": 0.8571,
-      "madueke_b": 0.8571
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 29,
-     "length_ratio": 0.935,
-     "page": 20,
-     "class": "V3-APPARATUS"
     }
    },
    "support": 3
@@ -924,8 +727,8 @@
      },
      "passed": true,
      "localized": true,
-     "tokens": 19,
-     "length_ratio": 1.0,
+     "tokens": 20,
+     "length_ratio": 1.053,
      "page": 26,
      "class": "PASS"
     },
@@ -938,27 +741,13 @@
      },
      "passed": true,
      "localized": true,
-     "tokens": 19,
-     "length_ratio": 1.0,
+     "tokens": 20,
+     "length_ratio": 1.053,
      "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.954,
-      "odr_com": 0.954,
-      "sabates_a": 1.0,
-      "madueke_b": 1.0
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 19,
-     "length_ratio": 1.0,
-     "page": 20,
      "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 16,
@@ -966,62 +755,48 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.9138,
-      "odr_com": 0.9138,
-      "sabates_a": 0.8929,
-      "madueke_b": 0.8929
+      "s_dismas": 0.888,
+      "odr_com": 0.888,
+      "sabates_a": 0.856,
+      "madueke_b": 0.856
      },
-     "passed": true,
+     "passed": false,
      "localized": true,
-     "tokens": 23,
-     "length_ratio": 1.0,
+     "tokens": 26,
+     "length_ratio": 1.13,
      "page": 22,
-     "class": "PASS"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.9504,
-      "odr_com": 0.9504,
-      "sabates_a": 0.9174,
-      "madueke_b": 0.9174
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.043,
-     "page": 26,
-     "class": "PASS"
-    },
-    "S9": {
-     "scores": {
-      "s_dismas": 0.9504,
-      "odr_com": 0.9504,
-      "sabates_a": 0.9174,
-      "madueke_b": 0.9174
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.043,
-     "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9829,
-      "odr_com": 0.9829,
-      "sabates_a": 0.9487,
-      "madueke_b": 0.9487
+      "s_dismas": 0.9355,
+      "odr_com": 0.9355,
+      "sabates_a": 0.9032,
+      "madueke_b": 0.9032
      },
      "passed": true,
      "localized": true,
      "tokens": 25,
      "length_ratio": 1.087,
-     "page": 20,
+     "page": 26,
+     "class": "PASS"
+    },
+    "S9": {
+     "scores": {
+      "s_dismas": 0.9355,
+      "odr_com": 0.9355,
+      "sabates_a": 0.9032,
+      "madueke_b": 0.9032
+     },
+     "passed": true,
+     "localized": true,
+     "tokens": 25,
+     "length_ratio": 1.087,
+     "page": 32,
      "class": "PASS"
     }
    },
-   "support": 4
+   "support": 2
   },
   {
    "verse": 17,
@@ -1068,23 +843,9 @@
      "length_ratio": 1.0,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9848,
-      "odr_com": 0.9848,
-      "sabates_a": 0.9848,
-      "madueke_b": 0.9848
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 14,
-     "length_ratio": 1.0,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 18,
@@ -1092,17 +853,17 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.8889,
-      "odr_com": 0.8889,
-      "sabates_a": 0.8119,
-      "madueke_b": 0.8119
+      "s_dismas": 0.951,
+      "odr_com": 0.951,
+      "sabates_a": 0.8725,
+      "madueke_b": 0.8725
      },
-     "passed": false,
+     "passed": true,
      "localized": true,
-     "tokens": 21,
-     "length_ratio": 0.913,
+     "tokens": 24,
+     "length_ratio": 1.043,
      "page": 22,
-     "class": "V5-RECOG"
+     "class": "PASS"
     },
     "S3": {
      "scores": {
@@ -1130,20 +891,6 @@
      "tokens": 25,
      "length_ratio": 1.087,
      "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.932,
-      "odr_com": 0.932,
-      "sabates_a": 0.9515,
-      "madueke_b": 0.9515
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 23,
-     "length_ratio": 1.0,
-     "page": 20,
      "class": "PASS"
     }
    },
@@ -1194,23 +941,9 @@
      "length_ratio": 1.0,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9828,
-      "odr_com": 0.9828,
-      "sabates_a": 0.9828,
-      "madueke_b": 0.9828
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 11,
-     "length_ratio": 1.0,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 20,
@@ -1257,23 +990,9 @@
      "length_ratio": 0.958,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9091,
-      "odr_com": 0.8824,
-      "sabates_a": 0.8931,
-      "madueke_b": 0.8931
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 22,
-     "length_ratio": 0.917,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 21,
@@ -1320,20 +1039,6 @@
      "length_ratio": 0.971,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8161,
-      "odr_com": 0.8114,
-      "sabates_a": 0.8508,
-      "madueke_b": 0.8508
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 31,
-     "length_ratio": 0.912,
-     "page": 20,
-     "class": "V5-RECOG"
     }
    },
    "support": 3
@@ -1344,62 +1049,48 @@
    "witnesses": {
     "S1": {
      "scores": {
-      "s_dismas": 0.9394,
-      "odr_com": 0.9394,
-      "sabates_a": 0.9389,
-      "madueke_b": 0.9389
+      "s_dismas": 0.9697,
+      "odr_com": 0.9697,
+      "sabates_a": 0.9621,
+      "madueke_b": 0.9621
      },
      "passed": true,
      "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.0,
+     "tokens": 25,
+     "length_ratio": 1.042,
      "page": 22,
      "class": "PASS"
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.9621,
-      "odr_com": 0.9621,
-      "sabates_a": 0.9542,
-      "madueke_b": 0.9542
+      "s_dismas": 0.9925,
+      "odr_com": 0.9925,
+      "sabates_a": 0.9774,
+      "madueke_b": 0.9774
      },
      "passed": true,
      "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.0,
+     "tokens": 25,
+     "length_ratio": 1.042,
      "page": 26,
      "class": "PASS"
     },
     "S9": {
      "scores": {
-      "s_dismas": 0.9621,
-      "odr_com": 0.9621,
-      "sabates_a": 0.9542,
-      "madueke_b": 0.9542
+      "s_dismas": 0.9925,
+      "odr_com": 0.9925,
+      "sabates_a": 0.9774,
+      "madueke_b": 0.9774
      },
      "passed": true,
      "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.0,
+     "tokens": 25,
+     "length_ratio": 1.042,
      "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9545,
-      "odr_com": 0.9545,
-      "sabates_a": 0.9695,
-      "madueke_b": 0.9695
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.0,
-     "page": 20,
      "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 23,
@@ -1414,8 +1105,8 @@
      },
      "passed": true,
      "localized": true,
-     "tokens": 10,
-     "length_ratio": 0.909,
+     "tokens": 11,
+     "length_ratio": 1.0,
      "page": 22,
      "class": "PASS"
     },
@@ -1442,24 +1133,10 @@
      },
      "passed": true,
      "localized": true,
-     "tokens": 10,
-     "length_ratio": 0.909,
-     "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.8947,
-      "odr_com": 0.8947,
-      "sabates_a": 0.9649,
-      "madueke_b": 0.9649
-     },
-     "passed": false,
-     "localized": true,
      "tokens": 11,
      "length_ratio": 1.0,
-     "page": 20,
-     "class": "V6-REF"
+     "page": 32,
+     "class": "PASS"
     }
    },
    "support": 3
@@ -1484,15 +1161,15 @@
     },
     "S3": {
      "scores": {
-      "s_dismas": 0.7744,
-      "odr_com": 0.7744,
-      "sabates_a": 0.7256,
-      "madueke_b": 0.7256
+      "s_dismas": 0.7987,
+      "odr_com": 0.7987,
+      "sabates_a": 0.7805,
+      "madueke_b": 0.7805
      },
      "passed": false,
      "localized": true,
-     "tokens": 30,
-     "length_ratio": 0.938,
+     "tokens": 24,
+     "length_ratio": 0.75,
      "page": 26,
      "class": "V5-RECOG"
     },
@@ -1509,23 +1186,9 @@
      "length_ratio": 0.969,
      "page": 32,
      "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.9141,
-      "odr_com": 0.9141,
-      "sabates_a": 0.9756,
-      "madueke_b": 0.9756
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 31,
-     "length_ratio": 0.969,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 2
+   "support": 1
   },
   {
    "verse": 25,
@@ -1572,20 +1235,6 @@
      "length_ratio": 1.0,
      "page": 32,
      "class": "V6-REF"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.7483,
-      "odr_com": 0.9388,
-      "sabates_a": 0.973,
-      "madueke_b": 0.973
-     },
-     "passed": false,
-     "localized": true,
-     "tokens": 31,
-     "length_ratio": 1.0,
-     "page": 20,
-     "class": "V6-REF"
     }
    },
    "support": 0
@@ -1597,28 +1246,28 @@
     "S1": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.8796,
-      "sabates_a": 0.8512,
-      "madueke_b": 0.8512
+      "odr_com": 0.9324,
+      "sabates_a": 0.9054,
+      "madueke_b": 0.9054
      },
-     "passed": false,
+     "passed": true,
      "localized": true,
-     "tokens": 42,
-     "length_ratio": 0.933,
+     "tokens": 45,
+     "length_ratio": 1.0,
      "page": 22,
-     "class": "V5-RECOG"
+     "class": "PASS"
     },
     "S3": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9491,
-      "sabates_a": 0.9163,
-      "madueke_b": 0.9163
+      "odr_com": 0.9556,
+      "sabates_a": 0.9244,
+      "madueke_b": 0.9244
      },
      "passed": true,
      "localized": true,
-     "tokens": 43,
-     "length_ratio": 0.956,
+     "tokens": 47,
+     "length_ratio": 1.044,
      "page": 26,
      "class": "PASS"
     },
@@ -1635,20 +1284,6 @@
      "length_ratio": 1.022,
      "page": 32,
      "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.9398,
-      "sabates_a": 0.9349,
-      "madueke_b": 0.9349
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 42,
-     "length_ratio": 0.933,
-     "page": 20,
-     "class": "PASS"
     }
    },
    "support": 3
@@ -1660,14 +1295,14 @@
     "S1": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9135,
-      "sabates_a": 0.9223,
-      "madueke_b": 0.9223
+      "odr_com": 0.9423,
+      "sabates_a": 0.932,
+      "madueke_b": 0.932
      },
      "passed": true,
      "localized": true,
-     "tokens": 20,
-     "length_ratio": 0.909,
+     "tokens": 22,
+     "length_ratio": 1.0,
      "page": 22,
      "class": "PASS"
     },
@@ -1688,33 +1323,19 @@
     "S9": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9135,
-      "sabates_a": 0.9223,
-      "madueke_b": 0.9223
+      "odr_com": 0.9519,
+      "sabates_a": 0.9417,
+      "madueke_b": 0.9417
      },
      "passed": true,
      "localized": true,
-     "tokens": 21,
-     "length_ratio": 0.955,
+     "tokens": 23,
+     "length_ratio": 1.045,
      "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.9541,
-      "sabates_a": 0.945,
-      "madueke_b": 0.945
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 24,
-     "length_ratio": 1.091,
-     "page": 20,
      "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 28,
@@ -1723,61 +1344,47 @@
     "S1": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9476,
-      "sabates_a": 0.8814,
-      "madueke_b": 0.8814
+      "odr_com": 0.9738,
+      "sabates_a": 0.9021,
+      "madueke_b": 0.9021
      },
      "passed": true,
      "localized": true,
-     "tokens": 34,
-     "length_ratio": 0.895,
+     "tokens": 37,
+     "length_ratio": 0.974,
      "page": 22,
      "class": "PASS"
     },
     "S3": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9634,
-      "sabates_a": 0.8969,
-      "madueke_b": 0.8969
+      "odr_com": 0.9948,
+      "sabates_a": 0.9175,
+      "madueke_b": 0.9175
      },
      "passed": true,
      "localized": true,
-     "tokens": 37,
-     "length_ratio": 0.974,
+     "tokens": 40,
+     "length_ratio": 1.053,
      "page": 26,
      "class": "PASS"
     },
     "S9": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.9581,
-      "sabates_a": 0.8918,
-      "madueke_b": 0.8918
+      "odr_com": 0.9843,
+      "sabates_a": 0.9124,
+      "madueke_b": 0.9124
      },
      "passed": true,
      "localized": true,
-     "tokens": 36,
-     "length_ratio": 0.947,
+     "tokens": 38,
+     "length_ratio": 1.0,
      "page": 32,
-     "class": "PASS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.9541,
-      "sabates_a": 0.9184,
-      "madueke_b": 0.9184
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 39,
-     "length_ratio": 1.026,
-     "page": 20,
      "class": "PASS"
     }
    },
-   "support": 4
+   "support": 3
   },
   {
    "verse": 29,
@@ -1792,10 +1399,10 @@
      },
      "passed": false,
      "localized": true,
-     "tokens": 23,
-     "length_ratio": 0.676,
+     "tokens": 25,
+     "length_ratio": 0.735,
      "page": 22,
-     "class": "V5-RECOG"
+     "class": "V3-APPARATUS"
     },
     "S3": {
      "scores": {
@@ -1824,23 +1431,9 @@
      "length_ratio": 0.765,
      "page": 32,
      "class": "V3-APPARATUS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.9515,
-      "sabates_a": 0.9383,
-      "madueke_b": 0.9383
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 32,
-     "length_ratio": 0.941,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 1
+   "support": 0
   },
   {
    "verse": 30,
@@ -1849,14 +1442,14 @@
     "S1": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.7979,
-      "sabates_a": 0.7358,
-      "madueke_b": 0.7358
+      "odr_com": 0.8214,
+      "sabates_a": 0.7602,
+      "madueke_b": 0.7602
      },
      "passed": false,
      "localized": true,
-     "tokens": 40,
-     "length_ratio": 1.026,
+     "tokens": 41,
+     "length_ratio": 1.051,
      "page": 23,
      "class": "V3-APPARATUS"
     },
@@ -1869,8 +1462,8 @@
      },
      "passed": false,
      "localized": true,
-     "tokens": 78,
-     "length_ratio": 2.0,
+     "tokens": 93,
+     "length_ratio": 2.385,
      "page": 14,
      "class": "L4-LONG"
     },
@@ -1887,23 +1480,9 @@
      "length_ratio": 1.103,
      "page": 33,
      "class": "V3-APPARATUS"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.9357,
-      "sabates_a": 0.9477,
-      "madueke_b": 0.9477
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 37,
-     "length_ratio": 0.949,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 1
+   "support": 0
   },
   {
    "verse": 31,
@@ -1912,14 +1491,14 @@
     "S1": {
      "scores": {
       "s_dismas": 0.0,
-      "odr_com": 0.8188,
-      "sabates_a": 0.7681,
-      "madueke_b": 0.7681
+      "odr_com": 0.874,
+      "sabates_a": 0.8189,
+      "madueke_b": 0.8189
      },
      "passed": false,
      "localized": true,
-     "tokens": 28,
-     "length_ratio": 1.12,
+     "tokens": 27,
+     "length_ratio": 1.08,
      "page": 23,
      "class": "V5-RECOG"
     },
@@ -1950,41 +1529,26 @@
      "length_ratio": 1.12,
      "page": 33,
      "class": "V5-RECOG"
-    },
-    "S6": {
-     "scores": {
-      "s_dismas": 0.0,
-      "odr_com": 0.906,
-      "sabates_a": 0.9339,
-      "madueke_b": 0.9339
-     },
-     "passed": true,
-     "localized": true,
-     "tokens": 25,
-     "length_ratio": 1.0,
-     "page": 20,
-     "class": "PASS"
     }
    },
-   "support": 1
+   "support": 0
   }
  ],
  "classes": {
-  "L4-LONG": 3,
-  "V5-RECOG": 28,
-  "V3-APPARATUS": 14,
-  "V6-REF": 7,
-  "PASS": 71,
+  "L4-LONG": 2,
+  "V5-RECOG": 19,
+  "V3-APPARATUS": 24,
+  "PASS": 44,
+  "V6-REF": 3,
   "L4-MISS": 1
  },
  "archaic_reference_outliers": [
   25
  ],
  "support_hist": {
-  "0": 5,
-  "2": 4,
+  "0": 12,
   "1": 6,
-  "3": 7,
-  "4": 9
+  "3": 12,
+  "2": 1
  }
 }

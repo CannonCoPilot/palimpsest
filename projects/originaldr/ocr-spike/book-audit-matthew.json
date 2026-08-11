@@ -1,0 +1,934 @@
+{
+ "book": "matthew",
+ "n_chapters": 28,
+ "n_verses": 1070,
+ "witnesses": {
+  "S1": "archive-nt-1582",
+  "S9": "pdf-S09nt",
+  "S6": "jp2-S06nt",
+  "S4": "jp2-S04"
+ },
+ "stack": [
+  {
+   "id": "V0",
+   "name": "SOURCE INVENTORY",
+   "modules": "witness_inventory.py · master-source-list.json",
+   "fault": "Which physical volumes exist and which tome each holds. FAULT: a book attested by a volume that cannot contain it (an NT-only witness claiming Genesis), or an admitted volume that is a duplicate rendering."
+  },
+  {
+   "id": "V1",
+   "name": "PAGE ADDRESSING",
+   "modules": "page_address.py (monotone DP) · page_address_eval.py → .page-address-*.json",
+   "fault": "page → (book, chapter). FAULT: a chapter with no page at all; a page addressed to the wrong chapter. The DP is MONOTONE, so a single false heading does not mis-label one page — it makes every chapter between the true and false position unreachable (defect #9)."
+  },
+  {
+   "id": "V2",
+   "name": "TOME MAP",
+   "modules": "build_tome_map_v2.py → tome-map-v2.json",
+   "fault": "The derived per-volume coverage claim. FAULT: divergence from V1. It is DERIVED from addressing, so it can never be fed back as a prior — that would be a self-fulfilling loop (see `tome_prior`)."
+  },
+  {
+   "id": "V3",
+   "name": "PINNING / BODY ISOLATION",
+   "modules": "pin_carry_chain · corpus_localize._line_range · verse_geom.build_body_tokmap",
+   "fault": "Which lines of a page are body, and which chapter owns them. FAULT: a chapter's line range truncated (defect #8) or over-offered; marginal-column apparatus concatenated INTO a body line by the line builder, so it cannot be separated downstream by role."
+  },
+  {
+   "id": "V4",
+   "name": "VERSE LOCALIZATION",
+   "modules": "verse_locate.best_spans (walk ⊕ align hybrid) · verse_seg.segment",
+   "fault": "chapter body → per-verse spans. FAULT: no span for a verse present on the page (a MISS); a span that stops short or swallows its neighbour."
+  },
+  {
+   "id": "V5",
+   "name": "RECOGNITION",
+   "modules": "reocr_core (kraken base / R1 / R2 fine-tuned) · r3_route (olmOCR)",
+   "fault": "Glyph accuracy on the span's pixels. FAULT: substituted tokens. This is the ONLY layer a better recognizer can fix, which is why everything above it must be excluded first."
+  },
+  {
+   "id": "V6",
+   "name": "REFERENCE",
+   "modules": "s_dismas (archaic, preeminent) · odr_com (archaic backfill) · janvier/sabates_a (modern grid)",
+   "fault": "What the verse is compared against, and the versification grid it is cut on. FAULT: a locus the reference does not carry; a versification offset (the Psalm superscription shift)."
+  },
+  {
+   "id": "V7",
+   "name": "GATING / SCORING",
+   "modules": "qc_audit (archaic_id, modern_id, ARCHAIC_VALID_FLOOR) · xsrc_gate",
+   "fault": "archaic-preeminent identity scoring and the ≥0.90 bar. FAULT: a metric that consults a set the label helped build (defect #7), or any rule that converts a below-bar unit into an accepted one."
+  },
+  {
+   "id": "V8",
+   "name": "REPORTING / VERSIONING",
+   "modules": "build_reocr_report.py · version_compare.py",
+   "fault": "What is published and how versions are compared. FAULT: a stale or circular figure persisted where a later reader will quote it."
+  }
+ ],
+ "kinds": {
+  "A": {
+   "label": "EXTRA tokens",
+   "layer": "V3",
+   "note": "interleaved apparatus / neighbouring-chapter bleed inside the span"
+  },
+  "B": {
+   "label": "MISSING tokens",
+   "layer": "V4",
+   "note": "the span stops short of the verse — truncation or a bad cut"
+  },
+  "C": {
+   "label": "SUBSTITUTED tokens",
+   "layer": "V5",
+   "note": "the words are there but misrecognised — recognizer territory"
+  },
+  "D": {
+   "label": "near-miss",
+   "layer": "V5",
+   "note": "below the bar with no dominant error mode; usually accumulated glyph noise"
+  },
+  "E": {
+   "label": "no archaic reference",
+   "layer": "V6",
+   "note": "nothing to compare against — the verse cannot pass at any quality"
+  }
+ },
+ "chapters": [
+  {
+   "chapter": 1,
+   "expected": 25,
+   "witnesses": {
+    "S1": {
+     "attested": 25,
+     "passed": 13
+    },
+    "S9": {
+     "attested": 25,
+     "passed": 16
+    },
+    "S6": {
+     "attested": 25,
+     "passed": 12
+    },
+    "S4": {
+     "attested": 25,
+     "passed": 16
+    }
+   }
+  },
+  {
+   "chapter": 2,
+   "expected": 23,
+   "witnesses": {
+    "S1": {
+     "attested": 23,
+     "passed": 17
+    },
+    "S9": {
+     "attested": 23,
+     "passed": 17
+    },
+    "S6": {
+     "attested": 23,
+     "passed": 8
+    },
+    "S4": {
+     "attested": 19,
+     "passed": 8
+    }
+   }
+  },
+  {
+   "chapter": 3,
+   "expected": 17,
+   "witnesses": {
+    "S1": {
+     "attested": 17,
+     "passed": 9
+    },
+    "S9": {
+     "attested": 17,
+     "passed": 11
+    },
+    "S6": {
+     "attested": 17,
+     "passed": 10
+    },
+    "S4": {
+     "attested": 17,
+     "passed": 10
+    }
+   }
+  },
+  {
+   "chapter": 4,
+   "expected": 25,
+   "witnesses": {
+    "S1": {
+     "attested": 24,
+     "passed": 12
+    },
+    "S9": {
+     "attested": 25,
+     "passed": 10
+    },
+    "S6": {
+     "attested": 25,
+     "passed": 5
+    },
+    "S4": {
+     "attested": 25,
+     "passed": 20
+    }
+   }
+  },
+  {
+   "chapter": 5,
+   "expected": 48,
+   "witnesses": {
+    "S1": {
+     "attested": 48,
+     "passed": 30
+    },
+    "S9": {
+     "attested": 48,
+     "passed": 34
+    },
+    "S6": {
+     "attested": 48,
+     "passed": 31
+    },
+    "S4": {
+     "attested": 48,
+     "passed": 36
+    }
+   }
+  },
+  {
+   "chapter": 6,
+   "expected": 34,
+   "witnesses": {
+    "S1": {
+     "attested": 32,
+     "passed": 16
+    },
+    "S9": {
+     "attested": 34,
+     "passed": 17
+    },
+    "S6": {
+     "attested": 34,
+     "passed": 12
+    },
+    "S4": {
+     "attested": 34,
+     "passed": 22
+    }
+   }
+  },
+  {
+   "chapter": 7,
+   "expected": 29,
+   "witnesses": {
+    "S1": {
+     "attested": 29,
+     "passed": 23
+    },
+    "S9": {
+     "attested": 29,
+     "passed": 23
+    },
+    "S6": {
+     "attested": 29,
+     "passed": 14
+    },
+    "S4": {
+     "attested": 29,
+     "passed": 27
+    }
+   }
+  },
+  {
+   "chapter": 8,
+   "expected": 34,
+   "witnesses": {
+    "S1": {
+     "attested": 34,
+     "passed": 24
+    },
+    "S9": {
+     "attested": 34,
+     "passed": 24
+    },
+    "S6": {
+     "attested": 34,
+     "passed": 24
+    },
+    "S4": {
+     "attested": 34,
+     "passed": 28
+    }
+   }
+  },
+  {
+   "chapter": 9,
+   "expected": 38,
+   "witnesses": {
+    "S1": {
+     "attested": 38,
+     "passed": 23
+    },
+    "S9": {
+     "attested": 38,
+     "passed": 28
+    },
+    "S6": {
+     "attested": 38,
+     "passed": 20
+    },
+    "S4": {
+     "attested": 38,
+     "passed": 30
+    }
+   }
+  },
+  {
+   "chapter": 10,
+   "expected": 42,
+   "witnesses": {
+    "S1": {
+     "attested": 42,
+     "passed": 20
+    },
+    "S9": {
+     "attested": 42,
+     "passed": 30
+    },
+    "S6": {
+     "attested": 42,
+     "passed": 17
+    },
+    "S4": {
+     "attested": 42,
+     "passed": 28
+    }
+   }
+  },
+  {
+   "chapter": 11,
+   "expected": 30,
+   "witnesses": {
+    "S1": {
+     "attested": 30,
+     "passed": 25
+    },
+    "S9": {
+     "attested": 30,
+     "passed": 25
+    },
+    "S6": {
+     "attested": 30,
+     "passed": 23
+    },
+    "S4": {
+     "attested": 30,
+     "passed": 25
+    }
+   }
+  },
+  {
+   "chapter": 12,
+   "expected": 50,
+   "witnesses": {
+    "S1": {
+     "attested": 48,
+     "passed": 37
+    },
+    "S9": {
+     "attested": 50,
+     "passed": 37
+    },
+    "S6": {
+     "attested": 50,
+     "passed": 25
+    },
+    "S4": {
+     "attested": 49,
+     "passed": 39
+    }
+   }
+  },
+  {
+   "chapter": 13,
+   "expected": 58,
+   "witnesses": {
+    "S1": {
+     "attested": 57,
+     "passed": 44
+    },
+    "S9": {
+     "attested": 58,
+     "passed": 43
+    },
+    "S6": {
+     "attested": 57,
+     "passed": 37
+    },
+    "S4": {
+     "attested": 58,
+     "passed": 48
+    }
+   }
+  },
+  {
+   "chapter": 14,
+   "expected": 36,
+   "witnesses": {
+    "S1": {
+     "attested": 36,
+     "passed": 25
+    },
+    "S9": {
+     "attested": 36,
+     "passed": 26
+    },
+    "S6": {
+     "attested": 36,
+     "passed": 19
+    },
+    "S4": {
+     "attested": 36,
+     "passed": 30
+    }
+   }
+  },
+  {
+   "chapter": 15,
+   "expected": 39,
+   "witnesses": {
+    "S1": {
+     "attested": 39,
+     "passed": 22
+    },
+    "S9": {
+     "attested": 39,
+     "passed": 24
+    },
+    "S6": {
+     "attested": 39,
+     "passed": 23
+    },
+    "S4": {
+     "attested": 39,
+     "passed": 28
+    }
+   }
+  },
+  {
+   "chapter": 16,
+   "expected": 28,
+   "witnesses": {
+    "S1": {
+     "attested": 28,
+     "passed": 10
+    },
+    "S9": {
+     "attested": 28,
+     "passed": 18
+    },
+    "S6": {
+     "attested": 28,
+     "passed": 13
+    },
+    "S4": {
+     "attested": 28,
+     "passed": 17
+    }
+   }
+  },
+  {
+   "chapter": 17,
+   "expected": 26,
+   "witnesses": {
+    "S1": {
+     "attested": 3,
+     "passed": 0
+    },
+    "S9": {
+     "attested": 26,
+     "passed": 22
+    },
+    "S6": {
+     "attested": 26,
+     "passed": 20
+    },
+    "S4": {
+     "attested": 26,
+     "passed": 20
+    }
+   }
+  },
+  {
+   "chapter": 18,
+   "expected": 35,
+   "witnesses": {
+    "S1": {
+     "attested": 35,
+     "passed": 25
+    },
+    "S9": {
+     "attested": 35,
+     "passed": 24
+    },
+    "S6": {
+     "attested": 35,
+     "passed": 17
+    },
+    "S4": {
+     "attested": 35,
+     "passed": 29
+    }
+   }
+  },
+  {
+   "chapter": 19,
+   "expected": 30,
+   "witnesses": {
+    "S1": {
+     "attested": 30,
+     "passed": 16
+    },
+    "S9": {
+     "attested": 30,
+     "passed": 16
+    },
+    "S6": {
+     "attested": 30,
+     "passed": 12
+    },
+    "S4": {
+     "attested": 29,
+     "passed": 22
+    }
+   }
+  },
+  {
+   "chapter": 20,
+   "expected": 34,
+   "witnesses": {
+    "S1": {
+     "attested": 33,
+     "passed": 23
+    },
+    "S9": {
+     "attested": 34,
+     "passed": 23
+    },
+    "S6": {
+     "attested": 34,
+     "passed": 19
+    },
+    "S4": {
+     "attested": 34,
+     "passed": 26
+    }
+   }
+  },
+  {
+   "chapter": 21,
+   "expected": 46,
+   "witnesses": {
+    "S1": {
+     "attested": 45,
+     "passed": 27
+    },
+    "S9": {
+     "attested": 46,
+     "passed": 34
+    },
+    "S6": {
+     "attested": 46,
+     "passed": 25
+    },
+    "S4": {
+     "attested": 46,
+     "passed": 34
+    }
+   }
+  },
+  {
+   "chapter": 22,
+   "expected": 46,
+   "witnesses": {
+    "S1": {
+     "attested": 46,
+     "passed": 27
+    },
+    "S9": {
+     "attested": 46,
+     "passed": 37
+    },
+    "S6": {
+     "attested": 46,
+     "passed": 32
+    },
+    "S4": {
+     "attested": 46,
+     "passed": 39
+    }
+   }
+  },
+  {
+   "chapter": 23,
+   "expected": 39,
+   "witnesses": {
+    "S1": {
+     "attested": 38,
+     "passed": 24
+    },
+    "S9": {
+     "attested": 39,
+     "passed": 26
+    },
+    "S6": {
+     "attested": 39,
+     "passed": 21
+    },
+    "S4": {
+     "attested": 39,
+     "passed": 30
+    }
+   }
+  },
+  {
+   "chapter": 24,
+   "expected": 51,
+   "witnesses": {
+    "S1": {
+     "attested": 51,
+     "passed": 32
+    },
+    "S9": {
+     "attested": 51,
+     "passed": 39
+    },
+    "S6": {
+     "attested": 51,
+     "passed": 29
+    },
+    "S4": {
+     "attested": 51,
+     "passed": 33
+    }
+   }
+  },
+  {
+   "chapter": 25,
+   "expected": 46,
+   "witnesses": {
+    "S1": {
+     "attested": 45,
+     "passed": 30
+    },
+    "S9": {
+     "attested": 46,
+     "passed": 30
+    },
+    "S6": {
+     "attested": 45,
+     "passed": 23
+    },
+    "S4": {
+     "attested": 46,
+     "passed": 37
+    }
+   }
+  },
+  {
+   "chapter": 26,
+   "expected": 75,
+   "witnesses": {
+    "S1": {
+     "attested": 74,
+     "passed": 50
+    },
+    "S9": {
+     "attested": 75,
+     "passed": 57
+    },
+    "S6": {
+     "attested": 74,
+     "passed": 51
+    },
+    "S4": {
+     "attested": 75,
+     "passed": 60
+    }
+   }
+  },
+  {
+   "chapter": 27,
+   "expected": 66,
+   "witnesses": {
+    "S1": {
+     "attested": 66,
+     "passed": 45
+    },
+    "S9": {
+     "attested": 66,
+     "passed": 52
+    },
+    "S6": {
+     "attested": 66,
+     "passed": 45
+    },
+    "S4": {
+     "attested": 66,
+     "passed": 53
+    }
+   }
+  },
+  {
+   "chapter": 28,
+   "expected": 20,
+   "witnesses": {
+    "S1": {
+     "attested": 20,
+     "passed": 12
+    },
+    "S9": {
+     "attested": 20,
+     "passed": 15
+    },
+    "S6": {
+     "attested": 20,
+     "passed": 15
+    },
+    "S4": {
+     "attested": 20,
+     "passed": 13
+    }
+   }
+  }
+ ],
+ "per_witness": {
+  "S1": {
+   "localized": 1036,
+   "passed": 661,
+   "pass_rate": 0.638,
+   "kinds": {
+    "D": 76,
+    "C": 235,
+    "B": 48,
+    "A": 15,
+    "E": 1
+   },
+   "localization_misses": [
+    "4:11",
+    "6:11",
+    "6:12",
+    "12:20",
+    "12:21",
+    "13:15",
+    "17:2",
+    "17:3",
+    "17:4",
+    "17:5",
+    "17:7",
+    "17:8",
+    "17:9",
+    "17:10",
+    "17:11",
+    "17:12",
+    "17:13",
+    "17:14",
+    "17:15",
+    "17:16",
+    "17:17",
+    "17:18",
+    "17:20",
+    "17:21",
+    "17:22",
+    "17:23",
+    "17:24",
+    "17:25",
+    "17:26",
+    "20:20",
+    "21:6",
+    "23:30",
+    "25:27",
+    "26:68"
+   ]
+  },
+  "S9": {
+   "localized": 1070,
+   "passed": 758,
+   "pass_rate": 0.7084,
+   "kinds": {
+    "C": 137,
+    "D": 127,
+    "B": 32,
+    "A": 16
+   },
+   "localization_misses": []
+  },
+  "S6": {
+   "localized": 1067,
+   "passed": 602,
+   "pass_rate": 0.5642,
+   "kinds": {
+    "B": 45,
+    "C": 303,
+    "D": 95,
+    "A": 21,
+    "E": 1
+   },
+   "localization_misses": [
+    "13:47",
+    "25:7",
+    "26:28"
+   ]
+  },
+  "S4": {
+   "localized": 1064,
+   "passed": 808,
+   "pass_rate": 0.7594,
+   "kinds": {
+    "D": 112,
+    "A": 17,
+    "C": 95,
+    "B": 32
+   },
+   "localization_misses": [
+    "2:3",
+    "2:4",
+    "2:12",
+    "2:14",
+    "12:21",
+    "19:30"
+   ]
+  }
+ },
+ "parity_spread": 0.1952,
+ "parity_spread_basis": {
+  "over": [
+   "S1",
+   "S4",
+   "S6",
+   "S9"
+  ],
+  "excluded_localized_nothing": []
+ },
+ "cross_witness": {
+  "all_pass": 417,
+  "split": 548,
+  "all_fail": 105,
+  "all_fail_loci": [
+   "1:7",
+   "1:11",
+   "1:16",
+   "2:1",
+   "2:2",
+   "3:1",
+   "3:3",
+   "3:4",
+   "3:8",
+   "3:10",
+   "4:1",
+   "4:5",
+   "4:24",
+   "5:1",
+   "5:3",
+   "5:4",
+   "5:5",
+   "5:6",
+   "5:32",
+   "5:43",
+   "5:44",
+   "5:46",
+   "5:47",
+   "6:1",
+   "6:5",
+   "6:9",
+   "6:10",
+   "6:12",
+   "6:14",
+   "6:15",
+   "6:16",
+   "6:26",
+   "8:1",
+   "8:7",
+   "10:25",
+   "10:34",
+   "10:37",
+   "11:25",
+   "11:30",
+   "12:20",
+   "12:46",
+   "12:47",
+   "13:2",
+   "13:17",
+   "13:18",
+   "13:24",
+   "13:25",
+   "14:3",
+   "14:7",
+   "15:30",
+   "15:31",
+   "15:32",
+   "15:34",
+   "15:36",
+   "15:38",
+   "16:14",
+   "16:17",
+   "16:18",
+   "16:19",
+   "16:22",
+   "16:23",
+   "17:24",
+   "18:6",
+   "18:15",
+   "18:16",
+   "18:22",
+   "19:1",
+   "19:3",
+   "19:5",
+   "19:17",
+   "19:30",
+   "20:20",
+   "20:21",
+   "20:26",
+   "20:28",
+   "21:9",
+   "21:20",
+   "21:21",
+   "22:11",
+   "23:4",
+   "23:33",
+   "24:24",
+   "24:26",
+   "24:30",
+   "24:31",
+   "24:32",
+   "25:26",
+   "25:35",
+   "25:36",
+   "25:37",
+   "26:13",
+   "26:14",
+   "26:15",
+   "26:17",
+   "26:20",
+   "26:28",
+   "26:31",
+   "26:32",
+   "27:1",
+   "27:50",
+   "27:51",
+   "27:57",
+   "27:62",
+   "28:16",
+   "28:19"
+  ]
+ },
+ "v0_alien_attestations": {},
+ "v1_chapter_gaps": {}
+}

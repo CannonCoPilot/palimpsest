@@ -35,6 +35,13 @@ RECON = Path("/Users/nathanielcannon/Claude/Projects/palimpsest/core/tests/fixtu
              "mask_engine/originaldr_reconstruction")
 sys.path.insert(0, str(RECON))
 import detect_our_ocr as D  # noqa: E402  # type: ignore[import-not-found]
+import curated_sources as CS  # noqa: E402  # REP-1 allowlist -- this module is named in it as a MUST-filter
+sys.path.insert(0, str(Path(__file__).resolve().parent / "witness"))
+import witnesses as W  # noqa: E402  # Gate 0f verse scope, keyed on the WITNESS not the directory name
+
+# Sources dropped before fusion, with the reason. Recorded and printed: a source that merely
+# failed to appear would be indistinguishable from one with no data (R1.4).
+_EXCLUDED_STREAMS: dict[str, str] = {}
 
 UPSCALE = getattr(D, "UPSCALE", 2)
 # COVER_FLOOR (book-level source gate) REMOVED per QC contract (Sir 2026-07-08, plan §Part 3).
@@ -337,9 +344,54 @@ def load_all_streams() -> dict:
     for d in dirs:
         if d.name in superseded:
             continue
+        # R9.4b — TWO gates this glob never had, and it is a GLOB, which is precisely the
+        # re-entry route `curated_sources` was written to close ("a banned folder can never
+        # re-enter by a directory glob"). This module is named in that file as a builder that
+        # MUST filter, and it did not import it at all: `consensus-full/matthew.json` records
+        # `scan_sources` including **eebo-nt** and **eebo-vol1**, which are S10-S15, BANNED.
+        #
+        # The supersession above is the same idea reached by a route that cannot see far
+        # enough: it de-duplicates a jp2 re-OCR against its pdf/eebo/archive twin OF THE SAME
+        # COPY, keyed on the FILENAME. `X` (jp2-S08) and `B` (pdf-S09nt) are the same copy under
+        # two unrelated keys, so the key test cannot express the relation and X entered as an
+        # independent seventh witness. A filter cannot enforce a distinction it cannot state --
+        # which is why the scope gate is keyed on the WITNESS, not on the directory name.
+        # The reason is graded, because a BAN and an ABSENCE FROM THE ALLOWLIST are different
+        # claims and this module was making the stronger one about both. `curated_sources` warns
+        # about exactly this in its own note on `jp2-S06`: reading a curated folder as BANNED is
+        # "a false accusation, not a stricter gate". `is_curated()` returns False for a banned
+        # source AND for a directory it simply does not know, so it cannot tell them apart --
+        # the ban must be read from `BANNED_OCR_DIRS`, which states it.
+        why = None
+        if d.name in CS.BANNED_OCR_DIRS:
+            why = "BANNED (REP-1): S2/S5/S7/S10-S15 or a derivative"
+        elif not CS.is_curated(d.name):
+            # NOT a ban. Two live cases land here and both need adjudicating, not assuming:
+            # `.jp2-S06-divider` (the blank leaf in neither setting, set aside by R7.5a -- a
+            # deliberate non-source) and `pdf-S06` (curated S6 material whose directory the
+            # registry does not know: the UNSPLIT whole-file PDF spanning both settings, the
+            # same ambiguity R7.5a resolved for the jp2 and has not yet resolved here).
+            why = ("not in the curated allowlist -- NOT a ban: either a deliberate non-source or "
+                   "curated material whose directory is unregistered (see R7.5a)")
+        else:
+            try:
+                if not W.verse_admitted(d.name):
+                    vol, sig = W.witness_of(d.name)
+                    why = (f"{W.wid(vol, sig)} role={W.WITNESSES[(vol, sig)]['role']} "
+                           f"-> verse_scope 'none' (Gate 0f)")
+            except KeyError:
+                why = ("curated acquisition but UNADDRESSABLE: the id names a file, not a witness "
+                       "(R7.5a) -- it cannot be scoped, so it cannot be admitted")
+        if why:
+            _EXCLUDED_STREAMS[d.name] = why
+            continue
         st = D.load_stream(d, _dir_key(d.name), UPSCALE)
         if getattr(st, "n_body_lines", 0) > 0:
             streams[d.name] = st
+    if _EXCLUDED_STREAMS:
+        print(f"[consensus] EXCLUDED {len(_EXCLUDED_STREAMS)} source(s) before fusion:", flush=True)
+        for k, v in sorted(_EXCLUDED_STREAMS.items()):
+            print(f"[consensus]   {k:20} {v}", flush=True)
     _STREAMS = streams
     return streams
 

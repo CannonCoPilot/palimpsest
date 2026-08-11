@@ -39,6 +39,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import book_audit as BA                      # noqa: E402
+import corpus_localize as CL                 # noqa: E402  # Gate 0f route to the localization artefact
 import qc_audit as QC                        # noqa: E402
 import verse_seg as VS                       # noqa: E402
 from char_identity import evaluate_locus     # noqa: E402
@@ -57,8 +58,7 @@ def rescore(book: str, chapter: int) -> dict:
     wits = BA.witnesses_for_book(book)
     refs = {n: QC.load_reads_verse(n) for n in REF_NAMES}
     aud = json.loads((HERE / "coverage-audit-verse.json").read_text())["verses"]
-    loc = {s: json.loads((HERE / f".corpus-localize-{d}.json").read_text())["verses"]
-           for s, d in wits.items()}
+    loc = {s: CL.load_verses(d) for s, d in wits.items()}      # R9.2c: through Gate 0f, not around it
     cv = VS.chapter_verses(book, chapter, VS.JANVIER) or {}
 
     verses, klass = [], collections.Counter()

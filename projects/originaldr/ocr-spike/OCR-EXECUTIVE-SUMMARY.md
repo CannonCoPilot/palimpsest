@@ -284,6 +284,18 @@ number, running head, **signature and catchword** agreeing at three or more sepa
 known-good same-setting partner. That is the test that was never run for four months and would have cost
 minutes, and it is now a formal gate (**Gate 0e**) rather than a practice.
 
+> ⚠️ **The held witnesses do not yet meet the standard this paragraph sets for a new one (2026-08-10).**
+> The head criteria were verified at three or more separated points, but the **signature and catchword were
+> verified at exactly one matched page per setting** (R8.4a); R8.4b, the remainder, is open. So the bar
+> quoted above is the bar for admission and is *not* the bar the existing eleven have cleared. The Master
+> Plan §2 status line said "the full §0.3 criterion" until this review and has been corrected. Reported
+> because a gate whose own corpus does not meet it is a gate under pressure to be quietly relaxed.
+>
+> ⚠️ **A second gate is weaker than the documents implied: Gate 0d — derivative contamination — had never
+> been implemented at all**, though three documents described it as a guard awaiting a negative test. It is
+> now roadmap R5.1 + R5.2a–c. This matters here because 0d is the gate that would have caught the very
+> `F`/`X` raster problem the paragraph below reports as 48 of 51 ground-truth files.
+
 **Also open, and it is a defect in the ground truth rather than in the corpus: 48 of 51 ground-truth files
 were read from a raster that cannot support the calls they carry** — 39 from `F` (~168 ppi, where the long-ſ
 nub spans under 1.6 px), 6 from `X` (an excluded 2× upscale), 3 from `M`'s render. **Zero from `B` or `P`**,

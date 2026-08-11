@@ -25,11 +25,12 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4) |
 | R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
-| R5 | Raster policy | **PART.** R5.1 not built; R5.2 has no proven negative |
+| R5 | Raster policy — **Gate 0d** | 🟢 **BUILT AND ENFORCED on all three clauses, 2026-08-10** (R5.1 · R5.2a–c). R5.1's manifest is complete — **3,122 leaves, 0 rasters unmanifested**, so the dimension clause moved UNKNOWN→CHECKED on 3,113 leaves and the pre-registered deferral never fired. Determinism proven: a second full build is byte-identical. Previously read "R5.2 has no proven negative", which described a guard that runs; **none was ever written** |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (339 derived artefacts to regenerate) open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (262 derived artefacts to regenerate, was 339) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
-| R9 | Evidential scope per witness — Gate 0f | **PART — NEW 2026-08-08.** R9.0–R9.5 done and the gate is live; **R9.2c** (9 modules bypass the read path), **R9.4a/R9.4b** (`X` was double-counting `B` in every NT figure) open |
+| R9 | Evidential scope per witness — Gate 0f | **PART.** R9.0–R9.4b done; the gate was **enforced but bypassable** until 2026-08-10 — **R9.2c DONE** (the 9 modules that read around the read path are converted; it exposed a containment fact read as a scoring permission, and a parity metric that was restating the best witness's pass rate) — **R9.5a** (companion table disagreed with the registry) · **R9.6/R9.6a** (migrated project root restated in five modules) open |
+| R10 | The constitution's own machinery — §0.5 | 🔴 **OPEN — NEW 2026-08-10. Nothing built.** Hour ceilings + pre-registered decision rules (R10.1) and the PROVISIONAL convention (R10.2) were required by §0.5 from the start and had **no roadmap coverage of any kind** |
 
 ### Open-items register
 
@@ -37,22 +38,50 @@ Maintained here so that "what is left" is answerable without reading 600 lines. 
 authoritative over prose elsewhere in the file**; where a paragraph and this table disagree, the table is
 right and the paragraph is a bug to be fixed.
 
+**Extended 2026-08-10 (Sir): the register now outranks the Master Plan's status lines and the companions
+too.** Full ordering in Master Plan **§0.6 Precedence** — code and guards, then this register, then the
+Master Plan, then the companions, then the devlog. The extension was made because the 2026-08-10 review
+found the drift running from the top down three times in one sitting: §2 claimed Gate 0e verified on "the
+full §0.3 criterion" where this register recorded the foot criteria proved at one point of three; §2 claimed
+Gate 0f "discharged by R9.1–R9.4" where R9.2c recorded nine modules reading around it; and §2, this file and
+the Walkthrough all described Gate 0d as a guard awaiting a negative test when **no such guard existed**.
+**The thing that can refuse a claim outranks the thing that can only assert one.** A lower document that
+disagrees is a defect to be fixed, not merely overruled.
+
+⚠️ **Every OPEN step must carry an hour ceiling and a pre-registered decision rule** (§0.5). That
+requirement was in the constitution from the start and **no step had ever carried either**, which is why R2
+and R3 — the two sections gating everything downstream — stood at "NEXT, nothing built" indefinitely.
+Ceilings are being added section by section as each is next touched; `witness/test_prereq_ceilings.py`
+fails for any OPEN step with neither. **A ceiling escalates and never closes a step**: reaching it raises an
+ALERT that the *approach* needs redesign, which is the opposite of accepting a lowered result.
+
 **OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
-R4.6 · R5.1 · R5.2 (negative test not proven) · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims, endmatter
-Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5a-2** · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.2c** · **R9.4a** · **R9.4b**
+R4.6 · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims,
+endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
+**R7.5a-2** (262 artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
+**R9.6a** · **R10.1** · **R10.2**
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
-R6.5 · **R7.5** · **R7.5a** · **R7.5a-3** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8** · **R9.0** · **R9.1** · **R9.2** · **R9.2a** · **R9.2b** · **R9.3** · **R9.4** · **R9.5**
+R6.5 · **R7.5** · **R7.5a** · **R7.5a-3** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8** · **R9.0** · **R9.1** · **R9.2** · **R9.2a** · **R9.2b** · **R9.3** · **R9.4** · **R9.4a** · **R9.4b** · **R9.2c** (with R9.2c-1…-4) · **R5.1** · **R5.2a** · **R5.2b** · **R5.2c**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
 
-⚠️ **Four "DONE" marks are narrower than they read**, and are spelled out where they occur rather than
+⚠️ **Six "DONE" marks are narrower than they read**, and are spelled out where they occur rather than
 here: R4.2 is done as an explicit *NOT ESTABLISHED* verdict, not as a repository found; R6.4 is done for
 tome 1 only; R8.4 verified 11 of 12 witnesses and **named the twelfth unverifiable** rather than assuming it
 sound; **R8.4a verified the foot criteria at ONE matched page per setting**, where the head pass used three or
-more — R8.4b is the remainder and stays OPEN. A register that flattened these to "done" would be doing the
+more — R8.4b is the remainder and stays OPEN; **R9.4b** recomputed all 76 consensus books but the figures it
+*replaced* remain quoted in the devlog and companions, which is R9.4b's labelling half and is folded into
+**R10.2**; **R9.5** was marked done while the Overview still carried the pre-R9.0 role — re-opened as
+**R9.5a** with a machine-checked acceptance. A register that flattened these to "done" would be doing the
 laundering it exists to prevent.
+
+🔴 **Changes in this revision (2026-08-10 review).** `R5.2` split into **R5.1 + R5.2a/b/c** because the
+guard was found never to have been written, not merely untested. **R9.4a/R9.4b closed** — `X` was fused
+into the consensus as an independent seventh witness and all 76 books are regenerated with the gate live
+(0 now fuse an inadmissible source). **R9.5 re-opened as R9.5a.** **R9.6/R9.6a** added for the migrated
+project root (and to retire an id collision: the step was briefly numbered R9.5 in two code comments).
+**R10** added for the two constitutional requirements that had no steps at all.
 
 ---
 
@@ -159,6 +188,28 @@ withdrawn "structure only" verdict on the copies (§1.1a).
 **Sequencing note.** R2.1/R2.2 are OCR tasks on a tiny, highly regular target (a short line in a fixed
 position), not the edition's recognition problem. They must not wait on the recognizer, and their failures
 must abstain: a mis-read signature would corrupt the collation that everything else is checked against.
+
+🔴 **R2 IS THE CORPUS'S CRITICAL PATH, NOT ITS HOUSEKEEPING (stated 2026-08-10).** §2 rules that *"no
+transcription of any leaf begins before 0b, 0c and 0e are satisfied for that leaf."* R2 is Gate 0b's second
+stage and R3 is Gate 0c, and **both are "nothing built"** — while `ground-truth/` already holds **51
+transcribed files**. Every one of them was transcribed ahead of the rule. This is a *separate* defect from
+R7: R7 asks which photograph a reading was taken from, R2/R3 ask whether the leaf is the leaf it was called
+— a duplicate, a misbinding or a made-up supply is invisible to R7's raster test, and §1.4 proves it is not
+hypothetical (three of four NT files are made up). The 51 files are **PROVISIONAL** until the leaves they
+rest on are collated: usable, **not citable**, and **no gate closes on them** (§0.5).
+
+**Hour ceiling: 12h to a first end-to-end R2.1→R2.4 pass on ONE volume (`OT1-1609-B`). Decision rule,
+pre-registered, written before the work starts:**
+- If the signature reader cannot reach **≥95%** parsed rectos in 6h, it does **not** get a lowered target.
+  The band is re-cut once (R8.4a proved the foot band is the hard part and cost four failed designs), and
+  if that fails the step **ALERTS that the approach needs redesign** — hand-reading a stratified sample to
+  establish the collation is the fallback *method*, not a lowered *bar*.
+- Abstention is not failure: a reader that abstains on 8% and is right on 92% passes; a reader that emits
+  92% correct and 8% confident-wrong **fails**, because the collation cannot detect the difference.
+- 🔴 **The ceiling exists to force a start, not to license a stop.** §0.5 names *unstartability* as
+  producing the same observable outcome as preserving the status quo, and R2 has been marked **NEXT** since
+  the roadmap was written without a line of code — which is that failure mode, in this file, uncaught for
+  the whole life of the project. A ceiling that expires escalates; it never closes the step.
 
 ---
 
@@ -485,13 +536,39 @@ reading.
 Formerly a full build step; the binarisation work it existed to support was withdrawn when the JP2 packages
 were found to be continuous tone (§1.2, §3.1). What remains is small and belongs with Gate 0.
 
+🔴 **CORRECTED 2026-08-10 — R5.2 was never written.** This section, the Master Plan §2 Gate 0d note and the
+Walkthrough all described a guard that *ran but had never refused anything*. A search for any bit-depth,
+grey-level, `.mode` or dimension assertion across every module returns **nothing**; the only occurrence of
+the string `R5.2` in the codebase is a comment in `test_setting_verified.py` asserting that R5.2 is held to
+a standard it is not held to. The devlog additionally recorded Session 13 as *"Discharges … Gate 0d"*,
+which is false. **"No proven negative" and "does not exist" are different states and must never again be
+written as the same one** — the first is a missing test, the second is a missing gate.
+
+**Hour ceiling: 6h across R5.1–R5.2c. Decision rule, pre-registered:** if the three base exemplars'
+manifests cannot be produced inside 3h, R5.2a/b ship on the two witness-independent clauses (bit depth,
+grey levels) with the dimension clause explicitly **DEFERRED and named in the guard's own output**, and
+R5.1 continues as its own step. The guard must not wait on the manifest, because a two-thirds guard that
+runs beats a three-thirds guard that does not exist — which is the state this section has been in.
+
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R5.1 | Raster manifest per witness | path, native dimensions, bit depth, checksum of every leaf consumed | manifest complete for the three base exemplars |
-| R5.2 | Derivative-contamination guard (Gate 0d) | load-time assertion: bit depth > 1, grey levels > 64, dimensions match manifest | a PDF-derived leaf entering the chain raises, and is proven to raise by a negative test |
+| R5.1 | Raster manifest per witness | `witness/build_raster_manifest.py` → `witness/raster-manifest.json`: per leaf, the resolved path, native dimensions, mode/bit depth, distinct grey levels, and a content checksum, keyed by witness id | manifest complete for the three base exemplars, **built through `witnesses.pixel_source()`** so it cannot describe a raster the corpus would not serve; regenerating it twice is byte-identical — 🟢 **COVERAGE DONE 2026-08-10**: 48 min (3 h ceiling not reached), **3,122 leaves** — NT-1582-B 812 · OT1-1609-B 1,160 · OT2-1610-B 1,150 — `truncated: false`, and **0 rasters on disk without an entry**, checked against `pixel_source()` rather than assumed. **3,113 leaves moved UNKNOWN→CHECKED** on the dimension clause. 🟢 **DETERMINISM PROVEN 2026-08-10**: a second full build (3,122 leaves, `truncated: false` — a real run, not an early exit) is **byte-identical**, sha256 `44290ad7…f8e0` for both, and the canonical file was not clobbered. `--out` was added to make this runnable at all: the single hard-coded output path meant the second run destroyed the first — **an acceptance clause that cannot be executed is not an acceptance clause**, and this one had stood unexecutable since it was written. ⚠️ The byte comparison is only valid because the writer uses `sort_keys=True`; `coverage-audit-verse.json` is the standing counter-case, order-nondeterministic on ties, where the same test would prove nothing |
+| R5.2a | **Build** the derivative-contamination guard (Gate 0d) | `witnesses.assert_admissible_raster(wid, path)` — bit depth > 1 · distinct grey levels > 64 · dimensions match R5.1's manifest where it exists, and say so where it does not | called at the pixel-consuming entry points; a witness with no manifest entry yields **UNKNOWN, printed**, never a silent pass (R1.4) |
+| R5.2b | Prove the negative | `witness/test_raster_admissible.py` feeds it (i) `M`'s 1-bit CCITT leaf, (ii) a PDF render of a known-good leaf, (iii) a dimension-mismatched leaf | each **raises**, each for the stated clause; the known-good base leaf passes — a guard that refuses everything passes (i)–(iii) for the wrong reason |
+| R5.2c | Wire it to the chain, and prove the wiring | the assertion is reached from the real read path, not only from the test | injecting a rendered leaf into an actual recognition call **raises**; asserted by calling the entry point, not by reading it — the R9.3 pattern |
 
-**R5.2 needs a negative test, not just a passing one.** A guard that has never rejected anything is not
+**R5.2b needs a negative test, not just a passing one.** A guard that has never rejected anything is not
 known to work; the test must feed it a PDF-derived leaf and require the exception.
+
+⚠️ **R5.1 blocks only R5.2a's third clause, and this dependency was unstated in both documents.** The
+dimension check compares against a manifest that did not exist, so Gate 0d could never have been fully
+enforced even had the guard been written. The other two clauses need no manifest and are the ones that
+would have caught `X` and `S06`'s JPEG render.
+
+⚠️ **`M` is the deliberate exception and the guard must not "fix" it.** `NT-1582-M` is genuinely 1-bit
+CCITT and is genuinely admitted — at `collation` scope, never for a glyph call (Gate 0f, `GLYPH_BARRED`).
+Gate 0d therefore refuses it **for the recognition chain** while the corpus still reads it for attestation.
+A guard that simply banned bitonal rasters would silently retire the only second witness the NT has.
 
 ---
 
@@ -548,7 +625,7 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
 | R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | `jp2-S06` names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids | every record names a witness and a setting; `jp2-S06` raises until they do | **DONE 2026-08-08** — corpus, ground truth and addressing split; boundary READ, not inferred; an unrecorded off-by-one removed |
-| R7.5a-2 | Regenerate the derived artefacts that predate the split | **339 files / 91,490 occurrences** (was 347 / 95,548) still carry `jp2-S06` — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
+| R7.5a-2 | Regenerate the derived artefacts that predate the split | **262 files** still carry `jp2-S06` (was 339 / 91,490 occurrences, and 347 / 95,548 before that) — the 77-file `consensus-full/` set was regenerated 2026-08-09 under R9.4b — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
 | R7.5a-3 | The addressing declaration, and the scoring rule that was hiding inside it | `witness_inventory` S6 declared no NT, so `volume_books()` gave the addressing DP an OT-only state space and force-fitted 800 NT leaves onto OT books — median fit 0.156, **zero** records above 0.5 against 44.8–76.7% everywhere else. The OT half was damaged the same way and the R7.5a split preserved it: 291 of 2,071 pages change book on regeneration, the OT tail smeared onto `daniel` | S6 declares its NT; both halves regenerated (not transformed); every volume clears the 0.5 fit floor; `test_drop_rule_enforced.py` exits 0 | **DONE 2026-08-08** — `drop_tomes` was a SCORING rule read as a CONTAINMENT claim. **Retired (Sir):** its premise (S6's NT repeats an edition A/B/C already hold) died with the 1633 finding — `NT-1582-M` is the second witness to a setting the NT holds once. No scorer ever read it; the addressing defect was the only thing enforcing it. `jp2-S06nt` localizes **2,344** pilot-book verses, was recorded as **zero** with a hand-written "known absence" note, and now attests matthew 1,067 · john 877 · apocalypse 400 |
 | R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
 | R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
@@ -756,7 +833,29 @@ Full evidence at masterplan §1.1c.
 | R8.3 | Attribute `F`'s 1582 title page | it is the genuine 1582 Rhemes setting, **duplicated at leaves 0 and 2**, on a 1633 body | blank-paper correlation against `B`'s title page: a match ⇒ spliced from `B`'s scan; control-level ⇒ the copy is a made-up one. **State which, or state that neither is supported** | OPEN |
 | R8.4 | Re-audit **every** witness for setting, not just the suspected one | printed page + running head at ≥3 separated points per witness, against a known-good partner in its claimed setting | a table covering all twelve records; **any witness whose setting was never checked is named as unchecked, not assumed sound** | **DONE** — 11/12 verified, `OT-1635-M` named unverifiable; §1.1b |
 | R8.4a | **Verify the FOOT criteria §0.3 names and R8.4 never read** — signature and catchword | `verify_setting.py` gains a foot band anchored on the text block; readings in `setting-readings.json` under `foot_readings`/`foot_pairs`/`foot_negative_controls`; enforced by `test_setting_verified.py` | every setting agrees on **signature, catchword and last line** at a matched page, and a **negative control across two settings differs**; negatives proven by injection | **DONE** — 11/11 partnered witnesses agree; `B` @147 `T ij`/`30. Paſſing` vs `R` @147 `CHAP.` separates 1582 from 1633; §1.1b R8.4a |
-| R8.4b | Extend the foot criteria from one matched page to **≥3 separated points**, matching the head pass | additional foot probes per setting, recorded as data | each setting agrees on signature and catchword at ≥3 separated printed pages, not one | OPEN — until then the foot criteria **corroborate the head result at one point**, they are not an independent three-point verification |
+| R8.4b | Extend the foot criteria from one matched page to **≥3 separated points**, matching the head pass | additional foot probes per setting, recorded as data | **`witness/audit_setting_points.py` exits 0.** Machine-checked, not asserted in prose (see below) — each setting agrees on signature and catchword at ≥3 **separated** printed pages, adjacent leaves counting once, **and** the foot negative controls rise with the positive side | OPEN — until then the foot criteria **corroborate the head result at one point**, they are not an independent three-point verification. Currently **8 shortfalls**: 7 pairs at 1 point of 3, plus 1 negative control of 3 |
+
+**R8.4b's acceptance is now machine-checked, at Sir's instruction (2026-08-10).** It had been held by
+a **prose status line** in Master Plan §2 — and that line had already flattened to *"the full §0.3
+criterion"* within four days of the §0.3 rewrite whose entire occasion was an audit that came out
+*"stronger on one axis and silently weaker on two."* **A correction is not self-enforcing**; prose is
+precisely what let the flattening happen the first time, so the distinction now lives in a check.
+
+🔴 **SEPARATED points, not matched pages — a hole found while writing the check.** `test_setting_verified`
+counted page *entries* against the ≥3 criterion. `OT1-1609-P` vs `F` records **seven** head pages, but
+they are `[222,223,224] · [457] · [918,919,920]` — **three locations read three times each**. Three
+*adjacent* leaves would have satisfied the old count while saying nothing about the volume's span,
+which is a criterion weaker than §0.3's *"spread through the volume"* and **reads identical in the
+output**. Both numbers are now printed (`3 separated / 7 page(s)`). `MIN_SEPARATION = 50` printed
+pages is the weakest value that separates the clusters actually recorded; it is not tuned, and
+widening it can only make the criterion stricter.
+
+⚠️ **The check is split across a guard and an audit, deliberately.** `test_setting_verified.py`
+(guard, exit 0) asserts the **head** criteria at ≥3 separated points, so the standing result cannot
+erode. `audit_setting_points.py` (audit, exit 1) carries the **foot** shortfall. Folding the foot
+requirement into the guard would turn it red, which in this project's grammar reads as a regression
+rather than an open remedy — and the pressure would then be to weaken the number rather than read
+two more pages.
 | R8.5 | Bind the plan's counts to the registry | `test_counts_vs_doc.py` | doc/registry disagreement **fails**, proven by a negative case | **DONE** |
 | R8.8 | **Bind the roadmap's own verification standard to reality** | `test_verification_standard.py` — parses the command block, checks every command exists, every `-> N/M` claim matches what the command prints, every guard on disk is documented, guards exit 0 and open audits exit non-zero | a stale count, an undocumented guard, a named-but-missing command, or the section being renamed away each **fail**; all four proven by injection | **DONE** — this file's block claimed `10/10` while the tree verified `12/12`, and listed none of the guards |
 | R8.6 | Re-examine every ground-truth file taken from `NT/S01` | 9 files (`matter-nt-*`, `nt-marke-*`, `scripture-2john`, `scripture-matthew-28`) | each re-filed as **1633** or re-read on `B`; **none silently left labelled 1582** | OPEN — overlaps R7.3 |
@@ -863,14 +962,52 @@ Three separate defects, and they must not be conflated:
 | R9.0 | Move `NT-1582-M` between roles in the registry | `witnesses.py`: `("NT","M")` role `frontmatter` → `lowres`; `("OT","M")` stays `frontmatter` | the registry says what §1.1a says; `test_counts_vs_doc.py` exits 0 against the revised §1.1 table |
 | R9.1 | **Derive** `verse_scope` from the role — do not hand-assign it | `witnesses.verse_scope(vol, sig)` from a single `ROLE_VERSE_SCOPE` table: `base`/`surrogate` → **full** · `lowres`/`support` → **collation** · `frontmatter`/`excluded` → **none** | a role with no scope entry **raises** — a role added later cannot default into admission. Hand-assignment is refused precisely because that is how §1.1a and the code would drift apart again |
 | R9.2 | Make the read path refuse, not merely the sweep | `corpus_localize.load()` **raises** `VerseScopeError` for a `none` witness, naming the role and Gate 0f. Opt out only by explicit `scope_check=False`, for tooling that audits the artefact itself | a consumer reaching `load()` fails loudly rather than quietly scoring an inadmissible witness. **Strict-by-default, the pattern R7.5b established for `jp2_page`** — **DONE** |
-| R9.2c | **Close the bypass `load()` does not cover** | ⚠️ The draft of R9.2 asserted `load()` was *"the function every verse consumer already goes through"*. **It is not, and the claim was checked only against module imports rather than call sites.** Nine modules read `.corpus-localize-<dir>.json` **directly** — `book_audit`, `integrity_sweep`, `gen1_rescore`, `gen1_r3`, `gen1_rerecog_eval`, `gen1_wordboxes`, `allfail_anatomy`, `split_confusions` — so the strict default guards `qc_audit` and nothing else. Route each through `load()`, or through a new `load_admitted()` for the sweeps | `witness/test_verse_scope_bypass.py` exits 0 only when no module outside `corpus_localize` reads the artefact path directly. **Exit 1 is the healthy state until they are converted** — an audit that starts passing before its remedy lands has stopped looking |
+| R9.2c | **Close the bypass `load()` does not cover** | ⚠️ The draft of R9.2 asserted `load()` was *"the function every verse consumer already goes through"*. **It is not, and the claim was checked only against module imports rather than call sites.** Nine modules read `.corpus-localize-<dir>.json` **directly** — `book_audit`, `integrity_sweep`, `gen1_rescore`, `gen1_r3`, `gen1_rerecog_eval`, `gen1_wordboxes`, `allfail_anatomy`, `split_confusions` — so the strict default guards `qc_audit` and nothing else. Route each through `load()`, or through a new `load_admitted()` for the sweeps | `witness/test_verse_scope_bypass.py` exits 0 only when no module outside `corpus_localize` reads the artefact path directly. **Exit 1 is the healthy state until they are converted** — an audit that starts passing before its remedy lands has stopped looking. **DONE 2026-08-10 — see R9.2c-1 … R9.2c-4 below** |
+| R9.2c-1 | ⚠️ **`load()` was the wrong conversion target, and converting to it would have re-made the defect** | `load()` returns `{(book, ch, verse): text}` and discards `page`/`fit` — which is precisely what every direct reader wanted. Converting them would have meant re-deriving `page` elsewhere, i.e. **making the gate cost evidence**, and a gate that costs evidence is routed around. NEW `corpus_localize.load_raw` / `load_verses` (whole artefact / the `["verses"]` sub-map, Gate 0f in front) and `iter_localizations` (the sweep route, which drops `none` volumes and **prints** the drop above the caller's figures) | seven evidential readers converted — `allfail_anatomy`, `gen1_rescore`, `split_confusions`, `gen1_rerecog_eval`, `book_audit`, `gen1_r3`, `gen1_wordboxes`; `audit_diagnose` to `iter_localizations`. **DATA-NEUTRAL, verified**: for all 10 admitted volumes `load_verses(od)` is `==` the raw read (21,437 spans compared); only `jp2-S06ot` (4,045) and `jp2-S08` (2,334) are refused. **The gated route is the cheapest one available, which is the property that keeps it the only one** |
+| R9.2c-2 | `source_inventory_audit` exempted, and **the exemption is machine-checked** | it globs the artefact FILENAMES to inventory which volumes are localized and never opens one. But an exemption resting on *"this read is bookkeeping, not evidence"* is a claim, and this project's standing lesson is that **a filter cannot enforce a distinction it cannot express**. Here it IS expressible: scoring a verse needs its **`text`**; reconciling or counting one does not (`integrity_sweep` reads `key` + `rec["page"]` only) | the guard now voids any exemption whose module reads a verse `text` field. **Injection-proven**: adding `rec["text"]` to `integrity_sweep` → exit 1 naming the forfeit; removed → 0. The guard also now counts string constants via `ast` with docstrings excluded, because its first version fired on a docstring quoting the glob it had removed — **a check a comment can trip measures vocabulary, not call sites** |
+| R9.2c-3 | 🔴 **A CONTAINMENT FACT WAS BEING READ AS A SCORING PERMISSION** (found by routing through the gate, not by reading) | `book_audit.witnesses_for_book` derived its witness set from `witness_inventory.tomes` — which says which books a volume's leaves **carry** — and both callers used it to decide what may be **scored**. So it was still handing `jp2-S06ot` and `jp2-S08` to the scorers, and the conversion raised `VerseScopeError` rather than passing. **This is R7.5a-3's category error with the arrow reversed**: there a scoring rule (`drop_tomes`) was read as containment and force-fitted 800 NT leaves onto OT books | `for_scoring=True` (default) filters by `witnesses.verse_admitted` and **prints** the drop; `for_scoring=False` for bookkeeping. **Paired run, same tree, only the gate differing, all 5 pilot books: every surviving witness byte-identical; `all_pass`/`split`/`all_fail` unchanged on every book.** The dropped witness contributed `localized 0, passed 0` and a 100% miss list — it was an empty shell in the set |
+| R9.2c-4 | 🔴🔴 **THE PARITY SPREAD WAS THE BEST WITNESS'S OWN PASS RATE, ON ALL FIVE PILOT BOOKS** | that empty shell put a `0.0` in the floor, so `max − min` reduced to `max − 0`. genesis **0.7601** = S9's 0.7601 · psalms **0.633** · matthew **0.7594** · john **0.6507** · apocalypse **0.5728** — each **exactly equal** to that book's best pass rate. **A metric that measures nothing still produces a ranking** (the R7.5a dead-metric lesson, restating a real number so plausibly that nothing looked wrong). Gate 0f removes these two but NOT the mechanism: an *admitted* witness not yet localized puts the `0.0` straight back | the spread is now taken over witnesses with `localized > 0`, the excluded are **named** in `parity_spread_basis`, and with fewer than two readers it is **`None` with a reason, never `0.0`** — a spread of zero and the absence of a comparison are different claims (R1.4). **Injection-proven**: adding admitted-but-unlocalized `jp2-S04` to genesis → old formula 0.7601, new 0.0842 + `excluded: ['S4']`; one reader → `None` + why. **Corrected spreads: genesis 8.4 · psalms 15.4 · matthew 19.5 points.** ⚠️ **Every published parity-spread figure is superseded and belongs in R10.2's register** |
 | R9.2a | Make the sweep skip cleanly, so the refusal is never load-bearing | `qc_audit.scan_ocr_dirs()` drops `none` volumes **before** calling `load()`, and prints what it dropped | `OT-1635-M` contributes zero attestations and the audit says so on stdout; a drop that printed nothing would be indistinguishable from a witness that had no data |
 | R9.2b | Leave the **structural** sweeps alone, deliberately | `integrity_sweep`, `tome_map_audit`, `build_tome_map_v2`, `make_witness_tree` keep counting all 12 volumes | scope governs **evidence**, not **bookkeeping**. `OT-1635-M`'s 2,071 leaves stay in every denominator — dropping them would hide an inadmissible volume instead of excluding it, which is R7.5d's lesson (`integrity_sweep` prints UNCHECKED, never 0) |
 | R9.3 | Guard it, with proven negatives | `witness/test_verse_scope.py`: (a) every one of the 12 records resolves a scope; (b) scope agrees with the §1.1a role table; (c) the audit's choke point excludes `none` — asserted by **calling** `scan_ocr_dirs`, not by reading it; (d) `load()` raises for a `none` witness | flipping `OT-1635-M` to `collation` **fails**; flipping `NT-1582-M` to `none` **fails**; deleting a `ROLE_VERSE_SCOPE` entry **fails**; all restored to exit 0 |
 | R9.4 | Regenerate what the unenforced rule contaminated | `coverage-audit-verse.json` re-run with the gate live, and the **before/after delta reported per book and per source** | **DONE 2026-08-08.** Removed: `psalms/S6`, `genesis/S6` (`OT-1635-M`) and `matthew/S8`, `john/S8`, `apocalypse/S8` (`NT-1582-X`). **Added: none. Changed among survivors: none — not one attested or passed count moved by one.** That invariant is the test; it distinguishes "the gate fired" from "something else changed too" |
-| R9.4a | ⚠️ **`X` was attesting too, and that was not in the plan for this step** | Building the scope table showed `NT-1582-X` — `B` re-wrapped and upscaled 2.000×, NCC 0.9847 — reaching the audit as `S8` with matthew 1,067 · john 876 · apocalypse 391, beside `B`'s own `S9` rows. **Every NT cross-source agreement figure computed before 2026-08-08 counted the base exemplar twice.** §1.1a said admitting `X` "would double-count `B` under a second name" and nothing enforced it | the NT figures must be **re-read** wherever a cross-source agreement or witness count was quoted from them — see R9.4b |
-| R9.4b | Re-state every NT figure that rested on `S8` | any report, devlog entry or companion claim quoting NT cross-source agreement, witness counts or consensus built before this gate | each such figure either recomputed or marked as **computed with `B` double-counted**; none left standing unlabelled |
+| R9.4a | ⚠️ **`X` was attesting too, and that was not in the plan for this step** | Building the scope table showed `NT-1582-X` — `B` re-wrapped and upscaled 2.000×, NCC 0.9847 — reaching the audit as `S8` with matthew 1,067 · john 876 · apocalypse 391, beside `B`'s own `S9` rows. **Every NT cross-source agreement figure computed before 2026-08-08 counted the base exemplar twice.** §1.1a said admitting `X` "would double-count `B` under a second name" and nothing enforced it | the NT figures must be **re-read** wherever a cross-source agreement or witness count was quoted from them — see R9.4b — **DONE 2026-08-09 as to the corpus**: `X` is refused by `coverage-audit-verse` (R9.4) and by the consensus fusion (R9.4b), and no artefact now counts `B` twice. **The already-published figures are a separate obligation and are R10.2**, not this row; closing R9.4a on the corpus while the old numbers stand quoted in the devlog would be exactly the laundering the register warns about |
+| R9.4b | Re-state every NT figure that rested on `S8` | any report, devlog entry or companion claim quoting NT cross-source agreement, witness counts or consensus built before this gate | each such figure either recomputed or marked as **computed with `B` double-counted**; none left standing unlabelled — **DONE 2026-08-09 for the recomputation; the labelling half is R10.2** |
+
+**R9.4b as executed (2026-08-09).** `consensus_v2.load_all_streams` discovered its sources by **globbing a
+directory** — the exact re-entry route `curated_sources` was written to close, whose docstring names
+`consensus_v2` as a builder that MUST filter and which **did not import it at all**. `consensus-full/matthew.json`
+recorded `scan_sources` including `eebo-nt`, `eebo-vol1` (BANNED, S10–S15), `jp2-S08` (`X` = `B` double-counted)
+and `jp2-S06` (the retired ambiguous id). Across the old 76-book set: **`jp2-S06` in all 76 · `eebo-nt` in 27 ·
+`jp2-S08` in 27 · `eebo-vol1` in 1** — the 27 being the NT books.
+
+*Why the module's own de-duplication could not have caught it, which is the reusable part:* supersession is
+keyed on the **filename** (`jp2-<key>` supersedes `pdf-/eebo-/archive-<key>`). `X` is `jp2-S08` and `B` is
+`pdf-S09nt` — **the same physical copy under two unrelated keys** — so the key test cannot express the
+relation. Third instance of *a filter cannot enforce a distinction it cannot state*; the scope gate is keyed
+on the **witness**, which can.
+
+*The delta, measured so it is attributable.* Comparing against the stored `consensus-full` would have
+confounded three simultaneous changes (the filter, the `2633cbb` migration, the R7.5a re-key), so the
+pre-filter code was run against the **same tree**: on `matthew`, modern **0.9268 → 0.9367**, archaic
+**0.9317 → 0.9321**, conservation **0.8370 → 0.8399**, verses 1070 both. Dropped `jp2-S06ot`, `jp2-S08`,
+`pdf-S06`; added none. **Both directions were reportable and this is the direction that happened** —
+removing a duplicate of `B` raised agreement slightly. Corpus-wide the archaic gate flipped on four books,
+**in both directions**: `1-esdras`, `4-kings`, `1-paralipomenon` False→True and `2-thessalonians`
+True→False (an NT book, the honest direction). All 76 regenerated; **0 books now fuse an inadmissible
+source**; R7.5a-2 drew down **339 → 262**.
+
+⚠️ **`eebo-nt`/`eebo-vol1` are absent from the migrated tree, so the BANNED branch never fires on live
+data.** Its correctness would otherwise rest on the absence of the input rather than the presence of the
+filter, so `witness/test_consensus_sources.py` proves it **by injection** against a synthetic source tree
+with a symlinked real control that must survive. The guard's own negative is injection-proven twice: the
+per-branch cases, and wholesale removal of the filter — which first died of a raw `AttributeError` deep in
+a helper, *a non-zero exit naming a missing attribute rather than a missing gate*, and now reports that the
+fusion is a bare glob again.
 | R9.5 | State the consequence in the companions | §1.1/§1.1a, Overview, Walkthrough, Exec Summary carry the per-half roles and the corrected witness counts | the four documents agree with each other and with the registry |
+| R9.5a | 🔴 **RE-OPENED 2026-08-10 — R9.5 was marked DONE and the Overview never agreed** | `OCR-OVERVIEW.md`'s witness table left the **low-resolution witness column empty for NT 1582** and filed `NT-1582-M` under *other · frontmatter* — the pre-R9.0 role — while the registry said `role=lowres` **and the Overview's own prose, ninety lines later, described it correctly**. The row is corrected | the acceptance is **machine-checked, not read**: extend `test_counts_vs_doc.py` to parse the companions' witness tables and compare role-by-role against the registry, so a table that disagrees with `witnesses.py` **fails** |
+| R9.6 | The migrated project root, restated in six modules | ⚠️ **This step was briefly numbered R9.5 in two code comments, colliding with the DONE step above; renumbered here and in `detect_our_ocr.py`.** Commit `2633cbb` moved the OCR project out of gitignored scratch into `projects/originaldr/`, and `detect_our_ocr.SCRATCH` was not moved with it. Both anchor reads resolved into a deleted tree, `load_anchor` skipped them with `continue`, and `run_book` reported the well-formed `{"verses_scored": 0, "error": "no anchor text"}` for **every book**. Fixed 2026-08-09 (`ORIGINALDR` + a raise). **Five modules still restate the root**: `detect_ocr_consensus:72` · `detect_sources:34` · `detect_s_dismas:53` · `build_modern_standard:28` · `build_consensus:41` | one derived root, imported not restated; **`witness/test_project_root.py` fails if any module names the old path**. 🔴 `detect_sources` and `detect_s_dismas` **`mkdir(parents=True)` and WRITE the anchor reads** — running either recreates the dead tree and writes the anchor where nothing reads it, silently |
+| R9.6a | `madueke-b/merged.txt` did not migrate | `ocr_sample.MADB` points into the dead tree. A same-named file exists at `imports/Scripture/…/madueke/raw-b-extract/merged.txt` | **not repointed on resemblance** — checksum or line-count agreement against what the reads were built from, or the path is declared broken and the consumer made to raise. `MADB.exists()` currently degrades to an empty set silently (R1.4) |
 
 **Acceptance for R9 as a whole:** `audit_gt_rasters`-style honesty — the audit's NT figures must **rise**
 by `NT-1582-M`'s admission and its OT figures must **fall** by `OT-1635-M`'s exclusion, and both deltas
@@ -881,6 +1018,50 @@ actually running.
 in full: a glyph call made on it is unverified, and `witnesses.GLYPH_BARRED` is unchanged by R9. R9 governs
 **attestation**, which is a different question from **adjudication**, and the whole point of the three-value
 scope is that the corpus can now say so.
+
+---
+
+## R10 — The constitution's own machinery (NEW, 2026-08-10)
+
+**Discharges** §0.5. **Status: OPEN. Nothing built.**
+
+### The finding
+
+§0.5 has required two things since it was written, and **neither had a single roadmap step, acceptance
+test, or line of code**:
+
+1. *"Every prerequisite carries a **stated hour ceiling and a pre-registered decision rule** before it
+   starts."*
+2. *"Where a number must be reported before properly-sized evidence exists, it is reported with its
+   confidence interval and the label **PROVISIONAL / non-citable**, and no gate closes on it."*
+
+The first is not a bookkeeping nicety. §0.5 names **unstartability** as a forbidden failure mode precisely
+because it *"produces the same observable outcome as preserving the status quo"* — and **R2 and R3, the two
+sections on which Gate 0b and Gate 0c depend and therefore on which all transcription depends, have been
+marked NEXT since this file was created with nothing built.** That is the named failure mode, sitting in
+this document, uncaught for the life of the project because the rule that forbids it had no consumer. It is
+the same shape as Gate 0f (a correct rule nothing read) and as Gate 0d (a rule nothing implemented), and it
+is the third instance found in one review.
+
+The second matters immediately: the **51 ground-truth files** were transcribed before Gates 0b and 0c
+existed in any form (§2), and there has been no label available to say so. They are neither sound nor
+discardable; they are *provisional*, and without the word they read as evidence.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R10.1 | Ceilings and decision rules, enforced | every **OPEN** step carries an hour ceiling and a decision rule written **before** work starts; `witness/audit_prereq_ceilings.py` parses this file's step tables and section prose and lists the OPEN steps carrying neither | ⚠️ **This is an AUDIT, not a guard, and the distinction is load-bearing.** Only R2, R5 and R10 carry ceilings today, so it exits **1 over ~30 steps** — and **exit 1 is the healthy state until each section is next touched.** Filing it as a guard would force one of the two things this project forbids: bulk-inventing ceilings nobody reasoned about, or weakening the check until it passes. Coverage is reported as a **fraction that must rise**, never as a pass. Proven by injection: strip R2's ceiling → the count rises by one and R2 is named; restore → it falls back. ⚠️ **Reaching a ceiling ALERTS that the approach needs redesign and never closes the step** (§0.5) |
+
+
+⚠️ **THE FRACTION FELL, 25% → 17%, and that is a real signal rather than a bookkeeping artefact (2026-08-10).** It read `10/40` and now reads **`6/35`**: five OPEN steps closed (R5.1, R5.2a/b/c, R9.2c) and **four of the ceilings went with them**, because §0.5 ceilings had been added precisely to the sections that were next touched. So the ceilinged pool is depleted by progress, and the OPEN remainder is *more* unceilinged than before, not less. **R10.1's rule "the number must RISE" is therefore not satisfied by doing the work — only by writing ceilings for sections nobody is about to touch**, which is the harder half and is exactly what the audit is for. Recorded rather than restated: a metric that moves the wrong way when the project progresses is worth understanding before it is corrected.
+| R10.2 | The PROVISIONAL convention, and the register that uses it | a stated form for a non-citable figure (value · CI · what is undersized · what would settle it), plus **`PROVISIONAL.md`**: every figure and artefact currently standing on undersized or pre-gate evidence, named | the 51 ground-truth files are listed with the gates they precede; **every NT cross-source figure published before 2026-08-09 is listed or recomputed** (R9.4b's labelling half); **every parity-spread figure published before 2026-08-10 is listed or restated** (R9.2c-4 — they were the best witness's own pass rate, not a spread); no listed figure is cited in a companion without the label |
+
+**Hour ceiling for R10 itself: 4h. Decision rule:** R10.1's guard ships parsing only the step tables if
+prose parsing exceeds 2h — a ceiling on a ceiling-checker is not a joke, it is the first test of whether
+the rule can be obeyed by the document that states it.
+
+⚠️ **R10.2 is not a licence to publish provisional numbers more freely.** The label exists so that a figure
+which *must* be quoted before its evidence is sized carries its own limits with it. A figure that need not
+be quoted yet should simply not be quoted.
 
 ---
 
@@ -913,6 +1094,9 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_raster_routing.py      # R7.5  ONE route to the pixels, and the guard is on it
 ../ocr-venv/bin/python witness/test_drop_rule_enforced.py  # R7.5a-3 a declared scoring drop must have a consumer
 ../ocr-venv/bin/python witness/test_verse_scope.py         # R9.3  Gate 0f: scope declared, and two consumers enforce it
+../ocr-venv/bin/python witness/test_consensus_sources.py   # R9.4b the fusion admits only curated, verse-admitted sources
+../ocr-venv/bin/python witness/test_raster_admissible.py   # R5.2b Gate 0d REFUSES a derivative leaf, and admits a real one
+../ocr-venv/bin/python witness/test_verse_scope_bypass.py  # R9.2c Gate 0f has ONE route; each exemption still earns itself
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ```
 
@@ -920,8 +1104,9 @@ here does not exist or if a count asserted here disagrees with what the command 
 
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
-../ocr-venv/bin/python witness/test_verse_scope_bypass.py  # R9.2c: exits 1 -> 9 modules read the artefact around Gate 0f
-../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 339 derived artefacts still keyed `jp2-S06`
+../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 262 derived artefacts still keyed `jp2-S06`
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 6/35 OPEN steps carry a §0.5 ceiling; the fraction must RISE
+../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
 ```
 
 A guard exiting 0 and an audit exiting 1 are both healthy states. An audit that exits 0 before its remedy

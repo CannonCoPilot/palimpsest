@@ -2089,7 +2089,18 @@ function renderBookAudit(){
     });
     const cw=A.cross_witness||{}, tot=(cw.all_pass||0)+(cw.split||0)+(cw.all_fail||0);
     notes.push(`<b>${b}</b>: ${A.n_chapters} chapters, ${A.n_verses} verses, ${Object.keys(per).length} witnesses. `
-      +`Parity spread <b>${(100*A.parity_spread).toFixed(1)} points</b>. `
+      // R9.2c. `100*null` is 0 in JavaScript, so a spread that could NOT be computed would render as
+      // "0.0 points" — the absence of a comparison printed as a perfect one, which is the R1.4 collapse
+      // `book_audit` now refuses to make in Python, re-made one layer out. Null is stated, never coerced.
+      // The basis is shown too: a spread is only as meaningful as the set it was taken over.
+      +(A.parity_spread==null
+          ? `Parity spread <b>not computed</b> (${(A.parity_spread_basis||{}).why||'fewer than two witnesses read anything'}). `
+          : `Parity spread <b>${(100*A.parity_spread).toFixed(1)} points</b>`
+            +(((A.parity_spread_basis||{}).over||[]).length
+                ? ` over ${A.parity_spread_basis.over.join('+')}` : '')
+            +((((A.parity_spread_basis||{}).excluded_localized_nothing)||[]).length
+                ? `, excluding ${A.parity_spread_basis.excluded_localized_nothing.join('+')} (localized nothing)` : '')
+            +`. `)
       +`Cross-witness &mdash; all pass <b>${cw.all_pass}</b> (${(100*cw.all_pass/tot).toFixed(1)}%), split <b>${cw.split}</b> (${(100*cw.split/tot).toFixed(1)}%), `
       +`<b>ALL FAIL ${cw.all_fail}</b> (${(100*cw.all_fail/tot).toFixed(1)}%) &mdash; that last figure is the honest size of the VERTICAL problem: no recognizer improvement reaches those verses. `
       +`V0 alien attestations: <b>${Object.keys(A.v0_alien_attestations||{}).length?JSON.stringify(A.v0_alien_attestations):'none'}</b>. `

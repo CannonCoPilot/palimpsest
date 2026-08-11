@@ -56,10 +56,24 @@ def _split(locus: str):
 
 
 def _texts() -> dict:
-    """{(ocr_dir, book, ch, v): text} for every localized span — the evidence behind a score."""
+    """{(ocr_dir, book, ch, v): text} for every localized span — the evidence behind a score.
+
+    R9.2c. This was a bare `HERE.glob(".corpus-localize-*.json")`, which is the shape the R9.2c guard
+    exists to catch: it is a SWEEP, so it cannot raise on the first inadmissible witness, but skipping
+    one silently would let this diagnosis describe a corpus it did not read. `iter_localizations` drops
+    the `none`-scope volumes and PRINTS the drop above the tables below — the pattern `qc_audit` set.
+
+    It also stops the glob swallowing the `.heldout` pseudo-volumes (`archive-ot2-1610.heldout` was
+    arriving here as if it were a witness) — though MEASURED, all 12 of those artefacts hold zero
+    verses, so that half changes no figure here. See `corpus_localize.localized_dirs`.
+
+    PAIRED MEASUREMENT, same tree, only the gate differing: 27,816 spans over 12 `ocr_dir`s -> 21,437
+    over 10. The two dropped are `jp2-S06ot` (4,045) and `jp2-S08` (2,334); every span of every
+    surviving volume is identical (21,437 compared). The gate removed evidence it was meant to remove
+    and touched nothing else.
+    """
     out = {}
-    for f in HERE.glob(".corpus-localize-*.json"):
-        d = json.loads(f.read_text())
+    for _od, d in CL.iter_localizations():
         for key, rec in d["verses"].items():
             b, c, v = key.rsplit("/", 2)
             out[(d["ocr_dir"], b, int(c), int(v))] = rec

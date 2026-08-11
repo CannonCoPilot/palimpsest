@@ -53,9 +53,14 @@ from ocr_sample import skel, raw_words, best_window  # type: ignore[import]  # n
 
 # repo root: HERE.parents = [0]mask_engine [1]gold [2]fixtures [3]tests [4]core [5]<repo>
 REPO = HERE.parents[5]
-SCRATCH = REPO / "core/.scratch/originaldr-project"
-DIPL_ROOT = SCRATCH / "sources/our-ocr-diplomatic"
-READS_DIR = SCRATCH / "reconstruction/reads"
+# The OCR project left gitignored scratch in `2633cbb` ("move OCR project out of gitignored
+# scratch into projects/originaldr"). This constant was not moved with it, so every path below
+# resolved into a directory that no longer exists -- and resolved SILENTLY, because the readers
+# below guarded on `.exists()` and skipped. See R9.6: five further modules still restate this
+# root, two of which `mkdir(parents=True)` and WRITE the anchor reads into the dead tree.
+ORIGINALDR = REPO / "projects/originaldr"
+DIPL_ROOT = ORIGINALDR / "sources/our-ocr-diplomatic"
+READS_DIR = ORIGINALDR / "reconstruction/reads"
 
 GEOM = json.loads((HERE / "marginalia-geometry.json").read_text())
 SKELETON = json.loads((HERE / "skeleton.json").read_text())
@@ -125,9 +130,21 @@ def _is_inline_annotation(text: str) -> bool:
 # ------------------------------------------------------------------ #
 def load_anchor() -> dict[str, str]:
     anchor: dict[str, str] = {}
+    missing = [p for p in (SABATES_READS, MADUEKE_READS) if not p.exists()]
+    if missing:
+        # This was `continue`, and the skip is how the `2633cbb` migration stayed invisible:
+        # with both reads gone the anchor came back EMPTY, `run_book` reported the well-formed
+        # summary `{"verses_scored": 0, "error": "no anchor text"}` for every book, and a
+        # `--all` regeneration would have written 77 empty files over `consensus-full/`.
+        # An absent anchor is not an anchor with no verses in it (R1.4).
+        raise FileNotFoundError(
+            "anchor reads missing: " + ", ".join(str(p) for p in missing) +
+            ". The anchor is the skeleton every book is scored against; without it every book "
+            "scores zero verses, which is indistinguishable from a book that genuinely has no "
+            "witness. Do not run a regeneration until this resolves. If the OCR project moved "
+            "again, fix ORIGINALDR in this module (and see R9.6 for the modules that restate it)."
+        )
     for path in (SABATES_READS, MADUEKE_READS):      # madueke last → wins on overlap
-        if not path.exists():
-            continue
         blob = json.loads(path.read_text())
         for r in blob.get("reads", []):
             sk = r.get("skeleton_id", "")

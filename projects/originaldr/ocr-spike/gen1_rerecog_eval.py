@@ -28,6 +28,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import corpus_localize as CL                 # noqa: E402  # Gate 0f route to the localization artefact
 import layout                                # noqa: E402
 import qc_audit as QC                        # noqa: E402
 import verse_locate                          # noqa: E402
@@ -72,8 +73,7 @@ def main():
     wb = json.loads(WB.read_text())
     refs = {n: QC.load_reads_verse(n) for n in REFS}
     janv = VS.chapter_verses("genesis", 1, VS.JANVIER) or {}
-    stored = {s: json.loads((HERE / f".corpus-localize-{d}.json").read_text())["verses"]
-              for s, d in WITS.items()}
+    stored = {s: CL.load_verses(d) for s, d in WITS.items()}   # R9.2c: through Gate 0f, not around it
 
     new: dict[str, dict[int, dict]] = {}
     for s, od in WITS.items():

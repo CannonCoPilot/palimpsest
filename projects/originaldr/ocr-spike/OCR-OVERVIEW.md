@@ -37,7 +37,7 @@ owned and digitised by the Fatima Movement, **M** = the copies behind a 2007 Max
 
 | volume | base exemplar | surrogate | low-resolution witness | other | excluded |
 |---|---|---|---|---|---|
-| **NT 1582** | **`NT-1582-B`** | — | — | `NT-1633-R` support · **`NT-1633-F` support** · `NT-1582-M` frontmatter | `NT-1582-X` |
+| **NT 1582** | **`NT-1582-B`** | — | **`NT-1582-M`** (~380 ppi bitonal) | `NT-1633-R` support · **`NT-1633-F` support** | `NT-1582-X` |
 | **OT1 1609** | **`OT1-1609-B`** ~545 ppi | `OT1-1609-P` ~411 ppi | `OT1-1609-F` | — | — |
 | **OT2 1610** | **`OT2-1610-B`** ~545 ppi | `OT2-1610-P` ~411 ppi | `OT2-1610-F` | — | — |
 
@@ -135,6 +135,14 @@ limited by its raster alone — bitonal, ~380 ppi — which is the **low-resolut
 setting after all; what it still lacks is a *surrogate*, because no second capture of that setting can
 resolve a glyph. See Master Plan §1.1a for the per-half table and §2 Gate 0f for how the limit is now
 enforced rather than merely written down.
+
+> **The table above disagreed with this paragraph until 2026-08-10, and with the registry.** It left the
+> low-resolution column empty for the New Testament and filed `NT-1582-M` under *other · frontmatter* —
+> the pre-R9.0 role — while these sentences described it correctly and `witnesses.py` recorded
+> `role=lowres`. R9.5 was marked DONE on the strength of the prose. **A document can contradict itself in
+> the same file and read as finished, because nobody compares a table to its own commentary.** The row is
+> corrected; R9.5's acceptance is now checked by machine rather than by reading (`test_counts_vs_doc.py`
+> extended to the companions), because that is the only version of this fix that stays fixed.
 
 The second role is the distinction that keeps the apparatus usable. Without it, every routine "the base copy
 is blotted here, the other is clean" becomes an *emendation*, and thousands of non-events bury the handful

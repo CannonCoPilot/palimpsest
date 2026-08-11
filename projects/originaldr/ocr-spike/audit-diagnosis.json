@@ -1,62 +1,62 @@
 {
  "regression": {
-  "lost": 215,
-  "lost_passing": 22,
+  "lost": 6468,
+  "lost_passing": 764,
   "causes": {
-   "chapter addressed, verse not localized within it": 22
+   "chapter outside every page's address interval": 483,
+   "chapter addressed, verse not localized within it": 281
   }
  },
  "sub02": {
-  "n": 4442,
+  "n": 2015,
   "shape": {
-   "length ok, fit ok — genuine misread": 2632,
-   "length ok but janvier_fit < 0.35 (WRONG TEXT located)": 1506,
-   "span far SHORTER than the reference (truncated / partial)": 282,
-   "span far LONGER than the reference (runaway / merged verses)": 22
+   "length ok but janvier_fit < 0.35 (WRONG TEXT located)": 1125,
+   "length ok, fit ok — genuine misread": 782,
+   "span far SHORTER than the reference (truncated / partial)": 102,
+   "span far LONGER than the reference (runaway / merged verses)": 6
   }
  },
  "split_axis": {
-  "modern>0.9 & archaic<0.8": 1660,
-  "archaic>0.9 & modern<0.8": 32
+  "modern>0.9 & archaic<0.8": 500,
+  "archaic>0.9 & modern<0.8": 26
  },
  "absent": {},
  "red_chapters": {
   "n_red": 4,
   "causes": {
-   "localized, best archaic_id < 0.2 (structural: wrong/empty text)": 1,
-   "localized, best archaic_id 0.7-0.9 (near miss)": 3
+   "localized, best archaic_id 0.7-0.9 (near miss)": 4
   },
   "detail": [
    {
     "book": "psalms",
-    "chapter": 17,
-    "n_src": 203,
-    "n_localized": 203,
-    "best_archaic": 0.0,
-    "cause": "localized, best archaic_id < 0.2 (structural: wrong/empty text)"
+    "chapter": 1,
+    "n_src": 12,
+    "n_localized": 12,
+    "best_archaic": 0.8922,
+    "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
    },
    {
     "book": "psalms",
-    "chapter": 51,
-    "n_src": 44,
-    "n_localized": 44,
-    "best_archaic": 0.8977,
+    "chapter": 3,
+    "n_src": 27,
+    "n_localized": 27,
+    "best_archaic": 0.8966,
     "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
    },
    {
     "book": "psalms",
     "chapter": 92,
-    "n_src": 20,
-    "n_localized": 20,
+    "n_src": 15,
+    "n_localized": 15,
     "best_archaic": 0.8525,
     "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
    },
    {
     "book": "psalms",
-    "chapter": 139,
-    "n_src": 54,
-    "n_localized": 54,
-    "best_archaic": 0.8932,
+    "chapter": 133,
+    "n_src": 9,
+    "n_localized": 9,
+    "best_archaic": 0.8966,
     "cause": "localized, best archaic_id 0.7-0.9 (near miss)"
    }
   ]

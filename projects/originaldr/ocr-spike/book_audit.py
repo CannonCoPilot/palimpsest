@@ -44,10 +44,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import corpus_localize as CL               # noqa: E402  # Gate 0f route to the localization artefact
 import page_address as PA                  # noqa: E402
 import qc_audit as QC                      # noqa: E402
 import verse_seg as VS                     # noqa: E402
 import witness_inventory as WI             # noqa: E402
+sys.path.insert(0, str(HERE / "witness"))
+import witnesses as _W                     # noqa: E402  # the registry adjudicates verse scope (Gate 0f)
 
 
 # --------------------------------------------------------------------------------------------------
@@ -98,17 +101,44 @@ KINDS = {
 }
 
 
-def witnesses_for_book(book: str) -> dict[str, str]:
+def witnesses_for_book(book: str, *, for_scoring: bool = True, announce=print) -> dict[str, str]:
     """{witness_id -> ocr_dir} for every witness whose declared tomes can contain `book`.
 
     From `witness_inventory`, which is the authority — NOT inferred from where pages happen to land, which
-    would make the check circular (a mis-addressed page would define its own volume as legitimate)."""
+    would make the check circular (a mis-addressed page would define its own volume as legitimate).
+
+    R9.2c — `for_scoring` EXISTS BECAUSE THIS FUNCTION ANSWERS THE WRONG QUESTION FOR ITS CALLERS. The
+    `tomes` declaration is a CONTAINMENT fact: it says which books a volume's leaves carry. Both callers
+    used it as a SCORING permission, and so both were scoring `jp2-S06ot` (OT-1635-M, a 1635 Rouen
+    edition — `frontmatter`, verse_scope 'none') and `jp2-S08` (NT-1582-X, B upscaled 2.000× —
+    `excluded`), because those volumes DO contain the books. Containment was never the question; it is
+    admissibility, and only the registry's role answers that.
+
+    This is R7.5a-3's category error with the arrow reversed. There a SCORING rule (`drop_tomes`) was
+    read as a containment claim and force-fitted 800 NT leaves onto OT books. Here a containment fact is
+    read as a scoring permission. The lesson is the same one, and it is why the two now have separate
+    accessors instead of one that has to be interpreted: `for_scoring=False` for bookkeeping — how many
+    leaves exist, which volumes hold this book — and the default for anything that produces a figure.
+
+    The drop is PRINTED, not silent: an audit whose witness set narrowed without saying so describes a
+    corpus it did not read (the `qc_audit.scan_ocr_dirs` pattern, R9.2)."""
     tome = "NT" if PA.BOOK_TESTAMENT.get(book) == "NT" else ("OT2" if book in WI.OT2_BOOKS else "OT1")
-    out = {}
+    out, dropped = {}, []
     for sid, w in WI.WITNESSES.items():
         t = (w.get("tomes") or {}).get(tome)
-        if t and t.get("ocr_dir"):
-            out[sid] = t["ocr_dir"]
+        if not (t and t.get("ocr_dir")):
+            continue
+        od = t["ocr_dir"]
+        if for_scoring and not _W.verse_admitted(od):
+            vol, sig = _W.witness_of(od)
+            dropped.append((sid, od, _W.wid(vol, sig), _W.WITNESSES[(vol, sig)]["role"]))
+            continue
+        out[sid] = od
+    if dropped and announce:
+        announce(f"[Gate 0f] {book}: {len(dropped)} witness(es) dropped from SCORING — verse_scope 'none'. "
+                 f"Their leaves still count structurally; their text is not evidence at any grain:")
+        for sid, od, w, role in dropped:
+            announce(f"          {sid:4} {od:14} {w:12} role {role!r}")
     return out
 
 
@@ -145,10 +175,10 @@ def audit_book(book: str) -> dict:
     sd, oc = QC.load_reads_verse("s_dismas"), QC.load_reads_verse("odr_com")
     archaic = dict(oc)
     archaic.update(sd)                                  # s_dismas preeminent, odr_com backfills
-    loc = {}
-    for sid, od in wits.items():
-        p = HERE / f".corpus-localize-{od}.json"
-        loc[sid] = json.loads(p.read_text())["verses"] if p.exists() else {}
+    # R9.2c: through Gate 0f, not around it. `missing_ok` keeps the pre-existing tolerance for a volume
+    # that has not been localized -- this audit is run mid-pipeline and a not-yet-built artefact is a
+    # legitimate state here -- but a witness the corpus does not admit for verse text now RAISES.
+    loc = {sid: CL.load_verses(od, missing_ok=True) for sid, od in wits.items()}
 
     addr = {}
     for sid, od in wits.items():
@@ -230,6 +260,17 @@ def audit_book(book: str) -> dict:
 
     n_verses = sum(c["expected"] for c in chapters)
     parity = {s: round(per_wit[s]["passed"] / max(1, per_wit[s]["localized"]), 4) for s in wits}
+    _read = {s: p for s, p in parity.items() if per_wit[s]["localized"] > 0}
+    _silent = sorted(set(parity) - set(_read))
+    if len(_read) >= 2:
+        _spread = {"value": round(max(_read.values()) - min(_read.values()), 4),
+                   "basis": {"over": sorted(_read), "excluded_localized_nothing": _silent}}
+    else:
+        _spread = {"value": None, "basis": {
+            "over": sorted(_read), "excluded_localized_nothing": _silent,
+            "why": f"a spread needs two witnesses that read something; {len(_read)} did. This is NOT a "
+                   f"spread of zero -- it is the absence of a comparison, and the two must not be "
+                   f"reported as the same number (R1.4)."}}
     return {
         "book": book, "n_chapters": len(chapters), "n_verses": n_verses,
         "witnesses": wits, "stack": [dict(zip(("id", "name", "modules", "fault"), s)) for s in STACK],
@@ -238,7 +279,24 @@ def audit_book(book: str) -> dict:
         "per_witness": {s: {"localized": per_wit[s]["localized"], "passed": per_wit[s]["passed"],
                             "pass_rate": parity[s], "kinds": dict(kinds[s]),
                             "localization_misses": misses[s]} for s in wits},
-        "parity_spread": round(max(parity.values()) - min(parity.values()), 4) if parity else None,
+        # PARITY SPREAD, over witnesses that actually READ something (R9.2c).
+        #
+        # 🔴 MEASURED DEFECT THIS REPLACES. `max - min` over every witness in the set reported, on all
+        # five pilot books, a spread EXACTLY EQUAL TO THE BEST WITNESS'S OWN PASS RATE -- genesis 0.7601
+        # vs S9 0.7601, psalms 0.633, matthew 0.7594, john 0.6507, apocalypse 0.5728 -- because the set
+        # contained a witness that localized ZERO verses (`jp2-S06ot` on OT, `jp2-S08` on NT: 1,530 and
+        # 1,070 localization misses out of 1,530 and 1,070). `min` was therefore always 0.0 and the
+        # "spread" was the best pass rate under another name. A metric that measures nothing still
+        # produces a ranking -- the R7.5a dead-metric lesson, here restating a real number so plausibly
+        # that nothing looked wrong.
+        #
+        # Gate 0f now removes those two, but it does NOT remove the mechanism: an ADMITTED witness that
+        # has not been localized yet (pipeline order) puts a 0.0 back into the floor. So the spread is
+        # taken over witnesses with `localized > 0`, the excluded ones are NAMED, and with fewer than
+        # two readers it is None-with-a-reason rather than 0.0 -- a spread of zero and "no spread could
+        # be computed" are different claims, and reporting the second as the first is R1.4.
+        "parity_spread": _spread["value"],
+        "parity_spread_basis": _spread["basis"],
         "cross_witness": {"all_pass": allpass, "split": splits, "all_fail": len(allfail),
                           "all_fail_loci": allfail},
         "v0_alien_attestations": alien,
@@ -263,7 +321,17 @@ def main(argv=None):
         print(f"  {s:<3} localized {d['localized']:>5}/{rep['n_verses']:<5} pass {d['passed']:>5} "
               f"= {100*d['pass_rate']:5.1f}%   A={k.get('A',0):<4} B={k.get('B',0):<4} "
               f"C={k.get('C',0):<4} D={k.get('D',0):<4} E={k.get('E',0):<3} misses={len(d['localization_misses'])}")
-    print(f"  PARITY SPREAD (best-worst): {100*rep['parity_spread']:.1f} points")
+    _b = rep["parity_spread_basis"]
+    if rep["parity_spread"] is None:
+        print(f"  PARITY SPREAD: NOT COMPUTED — {_b['why']}")
+    else:
+        print(f"  PARITY SPREAD (best-worst over {len(_b['over'])} witnesses that read something, "
+              f"{'+'.join(_b['over'])}): {100*rep['parity_spread']:.1f} points")
+    if _b["excluded_localized_nothing"]:
+        # Named, never silent: a witness that localized nothing would drag the floor to 0.0 and turn
+        # the spread back into the best witness's own pass rate (R9.2c).
+        print(f"    excluded from the spread, localized NOTHING: {_b['excluded_localized_nothing']} "
+              f"— they still appear per-witness above; this is a spread, not a coverage claim")
     cw = rep["cross_witness"]
     tot = cw["all_pass"] + cw["split"] + cw["all_fail"]
     print(f"\nCROSS-WITNESS verdict over {tot} verses")

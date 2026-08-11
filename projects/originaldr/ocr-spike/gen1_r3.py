@@ -36,6 +36,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+import corpus_localize as CL                   # noqa: E402  # Gate 0f route to the localization artefact
 import gen1_matrix as MX                       # noqa: E402
 import gen1_pagemodel as PM                    # noqa: E402
 import gen1_pagemodel_eval as EV               # noqa: E402
@@ -254,8 +255,9 @@ _LOC_CACHE: dict[str, dict] = {}
 def _localizer_leaf(ocr_dir: str, verse: int) -> int | None:
     """The leaf the corpus localizer found this verse on — evidence, not a search over candidates."""
     if ocr_dir not in _LOC_CACHE:
-        f = HERE / f".corpus-localize-{ocr_dir}.json"
-        _LOC_CACHE[ocr_dir] = json.loads(f.read_text()).get("verses", {}) if f.exists() else {}
+        # R9.2c: through Gate 0f, not around it. This leaf is EVIDENCE about where a verse sits (the
+        # docstring below says so in as many words), so an inadmissible witness must not supply it.
+        _LOC_CACHE[ocr_dir] = CL.load_verses(ocr_dir, missing_ok=True)
     rec = _LOC_CACHE[ocr_dir].get(f"{EV.BOOK}/{EV.CHAPTER}/{verse}")
     return rec.get("page") if isinstance(rec, dict) else None
 
