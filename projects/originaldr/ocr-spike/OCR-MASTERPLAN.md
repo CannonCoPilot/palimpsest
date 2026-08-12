@@ -104,7 +104,18 @@ constitutes acceptance.
 2026-08-10 that sentence had **no consumer**: not one roadmap step carried a ceiling or a rule, and the two
 sections blocking everything else — R2 and R3 — had never started, which is the precise outcome the
 requirement exists to prevent. Ceilings and rules are now carried per open prerequisite in the roadmap, and
-`witness/test_prereq_ceilings.py` fails if an OPEN step lacks either. Likewise **PROVISIONAL** was defined
+`witness/audit_prereq_ceilings.py` reports the OPEN steps carrying neither.
+
+🔴 **CORRECTED 2026-08-11. This sentence named `witness/test_prereq_ceilings.py`, a file that has never
+existed, and called it a guard that "fails".** The instrument that was built is
+`witness/audit_prereq_ceilings.py`, and R10.1 records **deliberately** that it is an **audit, not a
+guard**: as a guard it would force one of the two things this section forbids — bulk-inventing ceilings
+nobody reasoned about, or weakening the check until it passes. So the constitution was describing an
+enforcement mechanism that (a) did not exist under that name and (b) is the opposite of what the roadmap
+argues it must be. It currently reports **6 of 35 OPEN steps** carrying both a ceiling and a rule, and
+**exit 1 is the healthy state**; the fraction is a coverage number that must rise, never a pass.
+⚠️ **The error is the §0.6 shape, in §0.5's own text**: a document that can only *assert* named a file
+that could have *refused*, and no one compared the name to the filesystem. Likewise **PROVISIONAL** was defined
 here and used nowhere; the convention is now stated in the roadmap and a figure published without it, where
 its evidence is undersized, is a defect rather than a style choice.
 

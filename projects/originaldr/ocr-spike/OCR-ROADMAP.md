@@ -21,16 +21,16 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 |---|---|---|
 | R0 | Witness identity and stable addressing | **COMPLETE** (R0.1–R0.5) |
 | R1 | Physical leaf inventory — Gate 0b stage 1 | **COMPLETE** (R1.1–R1.6) |
-| R2 | Structural inventory — Gate 0b stage 2 | **OPEN — NEXT.** Nothing built (R2.1–R2.4) |
+| R2 | Structural inventory — Gate 0b stage 2 | **OPEN — IN PROGRESS 2026-08-10/11.** R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured) — **nothing in `witness/` yet**, and it has **never been scored on R2.1's actual metric** (signature-per-recto; every panel to date counted *any token, either parity*). ~3h of the 12h ceiling. Steps R2.1a–f written 2026-08-11 |
 | R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4) |
 | R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
 | R5 | Raster policy — **Gate 0d** | 🟢 **BUILT AND ENFORCED on all three clauses, 2026-08-10** (R5.1 · R5.2a–c). R5.1's manifest is complete — **3,122 leaves, 0 rasters unmanifested**, so the dimension clause moved UNKNOWN→CHECKED on 3,113 leaves and the pre-registered deferral never fired. Determinism proven: a second full build is byte-identical. Previously read "R5.2 has no proven negative", which described a guard that runs; **none was ever written** |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
-| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (262 derived artefacts to regenerate, was 339) open |
+| R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (**261** derived artefacts to regenerate, was 339) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
 | R9 | Evidential scope per witness — Gate 0f | **PART.** R9.0–R9.4b done; the gate was **enforced but bypassable** until 2026-08-10 — **R9.2c DONE** (the 9 modules that read around the read path are converted; it exposed a containment fact read as a scoring permission, and a parity metric that was restating the best witness's pass rate) — **R9.5a** (companion table disagreed with the registry) · **R9.6/R9.6a** (migrated project root restated in five modules) open |
-| R10 | The constitution's own machinery — §0.5 | 🔴 **OPEN — NEW 2026-08-10. Nothing built.** Hour ceilings + pre-registered decision rules (R10.1) and the PROVISIONAL convention (R10.2) were required by §0.5 from the start and had **no roadmap coverage of any kind** |
+| R10 | The constitution's own machinery — §0.5 | **PART.** 🟢 **R10.1 BUILT** — `witness/audit_prereq_ceilings.py` runs and reports **12/41** OPEN steps carrying a ceiling + rule (exit 1 = healthy; the fraction must RISE). 🔴 **R10.2 OPEN — nothing built**, `PROVISIONAL.md` does not exist. ⚠️ This row read "Nothing built" for both until 2026-08-11 while the audit was live and listed in the verification block below — and §0.5 named it as a *guard* called `test_prereq_ceilings.py`, which has never existed |
 
 ### Open-items register
 
@@ -51,14 +51,16 @@ disagrees is a defect to be fixed, not merely overruled.
 ⚠️ **Every OPEN step must carry an hour ceiling and a pre-registered decision rule** (§0.5). That
 requirement was in the constitution from the start and **no step had ever carried either**, which is why R2
 and R3 — the two sections gating everything downstream — stood at "NEXT, nothing built" indefinitely.
-Ceilings are being added section by section as each is next touched; `witness/test_prereq_ceilings.py`
-fails for any OPEN step with neither. **A ceiling escalates and never closes a step**: reaching it raises an
+Ceilings are being added section by section as each is next touched; `witness/audit_prereq_ceilings.py`
+**reports** (exit 1, healthy) the OPEN steps with neither — it is an **audit, not a guard**, for the
+reason spelled out in R10.1, and this paragraph named a nonexistent `test_prereq_ceilings.py` until
+2026-08-11. **A ceiling escalates and never closes a step**: reaching it raises an
 ALERT that the *approach* needs redesign, which is the opposite of accepting a lowered result.
 
-**OPEN** — R2.1 · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
+**OPEN** — R2.1 (R2.1a · R2.1b · R2.1c · R2.1d · R2.1e · R2.1f) · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
 R4.6 · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims,
 endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
-**R7.5a-2** (262 artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
+**R7.5a-2** (**261** artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
 **R9.6a** · **R10.1** · **R10.2**
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
@@ -180,7 +182,7 @@ withdrawn "structure only" verdict on the copies (§1.1a).
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R2.1 | Signature reader | OCR the signature line (`A ij`, `Aaa 4`) from the foot of each recto | ≥95% of rectos yield a parsed signature on the base exemplars; failures listed, never guessed |
+| R2.1 | Signature reader | OCR the signature line (`A ij`, `Aaa 4`) from the foot of each recto | ~~≥95% of rectos yield a parsed signature on the base exemplars~~ **WITHDRAWN — UNSATISFIABLE BY CONSTRUCTION, see R2.1-CRIT below.** Replaced by R2.1d′; failures listed, never guessed |
 | R2.2 | Printed-page-number reader | OCR the head of each leaf | ≥95% on the base exemplars; both readers abstain rather than emit a low-confidence value |
 | R2.3 | Collation model | expected gathering structure per volume, derived from observed signatures | the derived collation reproduces the observed sequence with no unexplained gaps |
 | R2.4 | Defect report per witness | wanting / duplicated / misbound / made-up leaves, each named | every leaf either fits the collation or appears in the defect report — **no leaf unaccounted** |
@@ -210,6 +212,186 @@ pre-registered, written before the work starts:**
   producing the same observable outcome as preserving the status quo, and R2 has been marked **NEXT** since
   the roadmap was written without a line of code — which is that failure mode, in this file, uncaught for
   the whole life of the project. A ceiling that expires escalates; it never closes the step.
+
+### R2.0 — Direction-line instrument: STARTED 2026-08-10/11, ~3h of the 12h ceiling
+
+**R2 is no longer "nothing built".** An instrument exists in `.scratch/r2/` (probes v1–v18, logs beside
+them). It is **not yet a deliverable** — nothing is written to `witness/` — but the design is settled and
+the dead ends are measured, so they are recorded here to stop them being re-walked.
+
+**The design of record is `.scratch/r2/probe_v18.py` + `run_v18.py`:** bound the search below the last
+full text line → find type by **connected components** (`scipy.ndimage.label`), never by a row profile →
+split the row into **tokens** → **recognise each token separately** → **then** apply one accept-test to
+the tokens that actually read.
+
+| finding | evidence | consequence |
+|---|---|---|
+| A row profile **cannot** find a direction line | leaf 400: strip ink rises monotonically 0.0071→0.0507 toward the leaf edge (page-curl shadow) while the catchword `face` sits at 0.03–0.04 — **the catchword is below the shadow in ink**; edge columns read 0.352/0.274/0.957 | 4th instance of *a filter cannot enforce a distinction it cannot express*. Components carry height, width and border-contact; a 1-D profile carries none of them |
+| A 1400px mostly-blank row is **not a line** | fed whole to `rpred` it returns one stray glyph; split into tokens the same pixels read `ſtoode`@1.00 | recognise tokens, never the row |
+| The accept-test must run **after** recognition | a token that reads `''` is not type, yet it dragged leaf 700's row extent to 1.01× the measure and caused a false refusal | one reordering fixed a false accept (901) and a false reject (700) together |
+| A guard on one route of two guards nothing | v15 guarded only the fallback; leaf 901 read its last text line `'auekabylon.'@0.80` as a direction line | **the only confident-wrong found; now refused** |
+| `VS.line_pitch` returns `None` and every call site said `p = pitch or 30.0` | leaf 600's 5 text lines collapse to 1 run; true pitch ≈40 | a magic constant standing in for a failed measurement — replaced by a measured relation, `PITCH_PER_GLYPH = 2.21 ± 0.27` |
+
+**Measured and rejected, do not re-walk:** `blla.segment` on a band (21.7s/37.5s per leaf ⇒ ~13h > the
+whole ceiling); `FOOT_BELOW_PITCHES=8.0` (a longer tail reaches the leaf edge and 3 leaves collapse to a
+0–7px strip); a global absolute ink floor (leaf 401's *blank* rows are inked 0.0443 vs leaf 400's
+text-adjacent 0.020 — no global threshold separates them on any leaf); `type_scale` = median text-run
+height as the yardstick (returns 17–40 across leaves of near-identical pitch — it tracks contrast, not
+type size); extent-alone without the bound (leaf 500 reads `'conteiming the Lam.'@0.97`).
+
+🔴 **THE INSTRUMENT HAS NEVER BEEN SCORED ON R2.1's ACTUAL METRIC.** Every panel so far counted *any
+token read, either parity*. **R2.1 asks for signatures on rectos.** Most reads to date are *catchwords*,
+which R2.1 does not ask for at all, and leaf 851 is the proof of the gap: catchword `† And`@0.99 read,
+signature `Ggggg 2` **missed** — a success under my scoring and a **failure** under R2.1's. The panel
+numbers below are therefore **PROVISIONAL and non-citable** (§0.5, R10.2): tuning 6/8 · held-out 6/12 ·
+fresh 11/16, on *token-read*, not on *signature-per-recto*.
+
+### R2.1 — execution steps (written 2026-08-11, before the work)
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.1a | **Parity, measured** | for a stratified sample of `OT1-1609-B`, the leaf-index parity that carries signatures, established from **where tokens land** (signature centre-left ~x 0.48–0.55, catchword right ~x 0.75–0.87) | parity is **reported with its evidence**, never assumed from index parity; if both parities carry signatures the sample is widened, not the claim narrowed |
+| R2.1b | **Recogniser selection, measured** | the probes run `models/reichenau_dr.mlmodel`; `models/dr_v3_armA.mlmodel` and `dr_v3_armB` exist and are later. Score all three on ONE fixed token set with hand-keyed truth | the model is chosen **on measured CER over direction-line tokens**, not on impression; the losing models and their scores are recorded (§0.2 rule 1's discipline, applied to a component) |
+| R2.1c | **`witness/collation_read.py`** | the probe promoted to a module: `read_direction_line(witness, leaf) -> {signature, catchword, x_positions, confidence, abstain_reason}`; **separate** signature and catchword fields | abstains with a **stated reason** and never guesses; a confidence floor is applied and its value is justified by R2.1b's CER curve, not chosen |
+| R2.1d′ | **The R2.1 metric run — RESTATED, see R2.1-CRIT** | **two** measurements, because the old one was unsatisfiable: **(A) catchword continuity** — `catchword(leaf N)` vs the first word of `leaf N+1`, over a consecutive run; **(B) signature-sequence monotonicity** — parsed signatures must ascend in signature order (`Y · Y2 · Y3 · Z · Aa …`) with no descent | **(A) ≥95% agreement on leaf pairs where both leaves yield a reading**, Wilson CI, lower bound above the bar — not the point estimate; **(B) zero descents** unexplained by the collation. A descent is a defect report entry (R2.4), never a discarded reading. Failures listed by leaf |
+| R2.1e | **Pair completeness** | signature and catchword scored **independently**, never "≥1 token read = success" | leaf 851's failure mode (catchword read, signature missed) is visible in the score by construction |
+| R2.1f | **Apply the pre-registered rule** | either proceed to R2.3, or fire the escalation | ≥95% (CI lower bound) ⇒ R2.3. Below ⇒ **band re-cut ONCE**, then **ALERT that the approach needs redesign**. Confident-wrong at any rate ⇒ **FAIL regardless of the parsed rate**, because the collation cannot detect the difference |
+
+**Hours: ~3.5h of 12h consumed (R2.0 + R2.1a). Remaining ceiling 8.5h.** Sub-ceilings: R2.1b 1h ·
+R2.1c 2h · R2.1d′ 2h. **If R2.1d′ cannot be run inside the remaining ceiling, R2.1f fires — the ceiling
+is not extended.**
+
+### 🔴 R2.1-CRIT — R2.1's acceptance criterion was UNSATISFIABLE BY CONSTRUCTION (found 2026-08-11)
+
+**R2.1 has read "≥95% of rectos yield a parsed signature" since this file was written. No reader can ever
+achieve it, because most rectos carry no signature at all.** Signatures are set on the rectos of the
+**first half of each gathering** only — the compositor's binding instruction, not a page label — so the
+criterion demands a reading from leaves that print nothing to read.
+
+**Measured on `OT1-1609-B`, leaves 400–431 consecutive** (`.scratch/r2/r2_1a_parity.py`, log beside it;
+consecutive rather than stratified **because the question is periodicity, which a stratified sample
+destroys**):
+
+```
+signature present on   401 'Yy' · 403 'Yy' · 405 'y' · 417 'a' · 419 'A' · 425 'Bbb' · 427 'Bb b'
+                       = 7 of the 16 rectos in the run (44%), ALL at odd leaf index
+catchword present on   essentially EVERY leaf, BOTH parities (400 'face' · 401 'ſtoode' · 404 'God' …)
+```
+
+**Three results, and each changes the plan:**
+
+1. **R2.1a is DONE: parity is measured, not assumed.** Odd leaf index = recto for this witness, evidenced
+   by every one of the seven signatures landing on an odd index, at x 0.49–0.57 (centre-left), while
+   catchwords land at x 0.70–0.84. ⚠️ This is a per-witness fact and must be re-measured per witness —
+   it is a property of where the scan starts, not of the book.
+2. **A ~44% signature incidence cannot be distinguished from a 44%-recall reader by the old criterion.**
+   That is the deeper defect: the criterion could not tell *"the leaf prints no signature"* from *"the
+   reader missed it"* — the two produce the identical observable. **A criterion that cannot separate
+   absence from failure is not a test**, and this is the same shape as R1.4 and as `_empty_because`
+   (§1.4): a null needs its cause established, not assumed.
+3. 🟢 **The catchword is the DENSE signal and it is SELF-CHECKING — this is the better instrument.**
+   A catchword prints on every leaf and its correctness is verifiable **without human ground truth**:
+   `catchword(leaf N)` must equal the first word of `leaf N+1`. That single relation simultaneously
+   (a) scores the reader, (b) proves leaf order, and (c) detects a wanting, duplicated or misbound leaf
+   **at every leaf boundary**, where signatures test only ~44% of rectos — roughly one boundary in five.
+   **Gate 0b's collation should rest primarily on catchword continuity, with signatures as the coarse
+   gathering index**, which is the reverse of the emphasis R2.1/R2.2 were written with.
+
+⚠️ **What this does NOT license.** The bar is not lowered — it is **restated onto a measurement that can
+carry it**, and the new one (R2.1d′) is *stricter*: it demands agreement against an independent fact (the
+next leaf's first word) rather than mere parse success, which is why it can be run without a hand-keyed
+gold set. Reaching it is R2.1f's decision, unchanged.
+
+### 🔴 R2.1-CRIT-2 — R2.1d′(A) AS WRITTEN VIOLATES R2's OWN SEQUENCING RULE (found in implementation, same day)
+
+**The step I wrote three hours earlier is wrong, and building it is what showed why.** R2.1d′(A) compares
+`catchword(N)` to the **first word of leaf N+1** — and the first word of a leaf is **body text**. R2's own
+sequencing note says R2.1/R2.2 *"are OCR tasks on a tiny, highly regular target … They must not wait on
+the recognizer."* A metric that requires reading body text **makes R2 wait on the recognizer**, which is
+the one thing this section is written not to do. The error is mine, in Step 4 of this review.
+
+**Measured anyway, because the number is informative even though the metric is wrong**
+(`.scratch/r2/r2_1d_continuity.py`, leaves 400–419): **agreement 4/18 = 0.222, Wilson95 [0.090, 0.452]**.
+🔴 **This figure is PROVISIONAL and it is NOT a collation finding** (§0.5, R10.2). It measures a
+*compound* — catchword read × first-line read × recogniser quality on body text — and the failures are
+dominated by the last term, not by leaf order:
+
+```
+401->402  catch 'ſtoode'   first 'hoode in the ſtreicttes…'   <- 'hoode' IS 'ſtoode' misrecognised
+409->410  catch 'wl'       first 'whom is the familie…'       <- catchword truncated, line read fine
+```
+**Not one disagreement in the run has been shown to be a real discontinuity.** Reporting 0.222 as a
+leaf-order result would be exactly the error §1.4 warns about — a null whose cause was assumed.
+
+🟢 **REMEDY — R2.1d″: compare the two as IMAGES, not as text.** The catchword of leaf N and the first
+word of leaf N+1 are *the same word set in the same fount*. Block-registered normalised correlation
+answers "is this the same word?" **without recognising either**, which keeps R2 off the recogniser's
+critical path exactly as its sequencing note requires. **The method already has precedent in this
+project**: §1.4 identified the fourth frontmatter source at **+0.424/+0.398 against 0.000–0.036** on
+every cross-pairing — a separation of an order of magnitude, on the same kind of comparison.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.1d″ | Catchword continuity **by image correlation** | for each leaf boundary, the catchword crop of N registered against the first-word crop of N+1; correlation reported per boundary with the **cross-pairing baseline** (N against N+2, N+3) as the negative control | **≥95% of scored boundaries separate from the baseline** by the §1.4 margin, Wilson CI lower bound above the bar. A boundary that does not separate is a **defect-report candidate (R2.4)**, never a discarded reading. ⚠️ The negative control is mandatory: a correlation figure without it cannot distinguish "same word" from "same fount, same size, same paper" |
+
+🔴 **R2.1d″ BUILT AND MEASURED THE SAME DAY — AND IT FAILS. The negative control is what says so.**
+`.scratch/r2/r2_1d2_correlation.py` (leaves 400–415, 15 boundaries, each catchword also correlated
+against the first word of N+2 and N+3):
+
+```
+matched pairs   n=15   mean +0.264   median +0.254
+controls        n=30   mean +0.247   max +0.631     <- a CONTROL scores higher than any but two matches
+boundaries separating from the control baseline: 4/15
+```
+
+**The match distribution is indistinguishable from the control distribution.** Two short words set in
+the same fount at the same size on the same paper correlate ~0.25 whether or not they are the same word:
+mean-subtracted stroke patterns at this scale carry almost no word identity.
+
+⚠️ **Why §1.4's precedent did not transfer, stated so it is not tried a third time.** §1.4 separated
++0.424/+0.398 from 0.000–0.036 by registering a **whole page block** — hundreds of glyphs, with layout,
+line breaks and margins all contributing. A catchword is **4–8 glyphs, ~40px tall**. The signal scales
+with the area being matched, and the discriminating power went with it. *A method's separation is a
+property of the evidence it was demonstrated on, not of the method.*
+
+🟢 **THE CONTROL IS THE RESULT.** Without it this run reports "mean correlation +0.264, continuity
+confirmed" and a false collation enters Gate 0b — the precise failure R2.4 exists to catch, arriving
+through R2.1's own instrument. The mandatory-control clause was written into R2.1d″ one edit before it
+was run, and it earned itself immediately.
+
+**Where this leaves R2.1's metric — two of three candidates are now refuted by measurement:**
+
+| candidate | verdict |
+|---|---|
+| signature parsed / recto (original) | 🔴 **UNSATISFIABLE** — ~44% of rectos print no signature (R2.1-CRIT) |
+| catchword continuity, as TEXT (R2.1d′A) | 🔴 **OUT OF SCOPE** — couples R2 to the recogniser; measured 0.222 compound, not a collation fact |
+| catchword continuity, by IMAGE (R2.1d″) | 🔴 **NO SEPARATION FROM CONTROL** — matches +0.264 vs controls +0.247 |
+| **signature-sequence monotonicity (R2.1d′B)** | 🟢 **STANDS — the only surviving candidate.** Reads only signatures (the tiny regular target R2 is scoped to), needs no gold set, and the observed run `Y · Y · y · a · A · Bbb · Bb b` over leaves 401–427 is already consistent with it |
+
+⚠️ **R2's pre-registered rule is now live and must be honoured.** ~4h of the 12h ceiling is spent and no
+metric has cleared. The rule permits **one band re-cut**, then **ALERT for approach redesign** — and it
+names the fallback *method* explicitly: **hand-reading a stratified sample to establish the collation.**
+That fallback is a change of method, not a lowered bar, and on this evidence it is now the likely route
+for the *catchword* half. **No metric may be adopted without a negative control**, on the strength of
+what this run just demonstrated.
+
+⚠️ **R2.1d′(A) is retained above, struck, rather than deleted** — the record that a plausible metric was
+written into this file and then refuted by building it is worth more than a clean table (§0.6, and the
+devlog convention). R2.1d′(B), signature-sequence monotonicity, is **unaffected** and stands: it reads
+only signatures, which are the tiny regular target R2 is scoped to.
+
+⚠️ **Consequence for R2.3/R2.4, folded in rather than deferred.** The collation model must accept
+signatures as a **sparse, periodic** index (present on the first half of each gathering) and must *not*
+treat an unsigned recto as a defect. R2.4's "no leaf unaccounted" is unaffected — every leaf still fits
+the collation or appears in the defect report — but the evidence reaching it is now catchword continuity
+at every boundary plus signatures at gathering starts.
+
+⚠️ **R2.1a–f do not require the direction-line reader to be perfect.** R2.3's collation model is where
+the **redundancy** lives: signatures run in a known sequence at a known gathering size, so a leaf the
+reader *abstains* on is recoverable by interpolation, while a leaf it reads *wrongly* corrupts the
+structure everything else is checked against. That asymmetry is the whole reason the decision rule reads
+"abstention passes, confident-wrong fails" — and it is why further recall tuning is **not** on R2's
+critical path once the metric clears.
 
 ---
 
@@ -625,7 +807,7 @@ The only genuine ceiling is the two NT leaves `B` lacks — the Censure and Pref
 | R7.4 | Move the guard to where the reading happens | a ground-truth field asserting the raster against `PRIMARY`, checked by a test | a file declaring a render-derived raster **fails the test**, proven by a negative case |
 | R7.5 | Retire `jp2_page.py`'s routing table | `OCR_DIR_TO_JP2` **deleted**; `OCR_DIR_TO_WITNESS` maps a legacy `ocr_dir` to a witness and the witness resolves its own raster via new `witnesses.glyph_source()`; `test_raster_routing.py` | no second raster mapping exists; barred witnesses **raise** on the pixel route and still serve the structure route; the verified `jp2-S09ot2` −1 offset survives | **DONE 2026-08-07** — see below |
 | R7.5a | Re-key the `ocr_dir` values the routing fix exposed as ill-formed | `jp2-S06` names a FILE spanning two settings 53 years apart, not a witness; `jp2-S06nt` / `jp2-S06ot` are the well-formed ids | every record names a witness and a setting; `jp2-S06` raises until they do | **DONE 2026-08-08** — corpus, ground truth and addressing split; boundary READ, not inferred; an unrecorded off-by-one removed |
-| R7.5a-2 | Regenerate the derived artefacts that predate the split | **262 files** still carry `jp2-S06` (was 339 / 91,490 occurrences, and 347 / 95,548 before that) — the 77-file `consensus-full/` set was regenerated 2026-08-09 under R9.4b — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
+| R7.5a-2 | Regenerate the derived artefacts that predate the split | **261 files / 70,855 occurrences** still carry `jp2-S06` (was 339 / 91,490, and 347 / 95,548 before that) — the 77-file `consensus-full/` set was regenerated 2026-08-09 under R9.4b — coverage audits, consensus, QC probes | `audit_s06_keys.py` exits 0 | **OPEN and BLOCKING.** They are REGENERATED, never edited: patching a derived file is how a stale artefact acquires the look of a current one (R7.5d) |
 | R7.5a-3 | The addressing declaration, and the scoring rule that was hiding inside it | `witness_inventory` S6 declared no NT, so `volume_books()` gave the addressing DP an OT-only state space and force-fitted 800 NT leaves onto OT books — median fit 0.156, **zero** records above 0.5 against 44.8–76.7% everywhere else. The OT half was damaged the same way and the R7.5a split preserved it: 291 of 2,071 pages change book on regeneration, the OT tail smeared onto `daniel` | S6 declares its NT; both halves regenerated (not transformed); every volume clears the 0.5 fit floor; `test_drop_rule_enforced.py` exits 0 | **DONE 2026-08-08** — `drop_tomes` was a SCORING rule read as a CONTAINMENT claim. **Retired (Sir):** its premise (S6's NT repeats an edition A/B/C already hold) died with the 1633 finding — `NT-1582-M` is the second witness to a setting the NT holds once. No scorer ever read it; the addressing defect was the only thing enforcing it. `jp2-S06nt` localizes **2,344** pilot-book verses, was recorded as **zero** with a hand-written "known absence" note, and now attests matthew 1,067 · john 877 · apocalypse 400 |
 | R7.5b | Update the modules calling `jp2_page` to declare which route they need | each call site passes `structure=True` or uses `pixel_path()` deliberately | no caller receives a render while believing it has a capture; the strict default means an un-updated caller **fails loudly** rather than silently succeeding on the wrong pixels | **DONE 2026-08-08** — all six; every one was STRUCTURE, and saying so is the point |
 | R7.5c | Retire `curated_sources.py`'s parallel map | its comment says the map *"must stay in sync with `jp2_page.OCR_DIR_TO_JP2`"* — a **third** copy of the same mapping, kept in sync by hand | the curated set is derived from the registry, not restated | **DONE 2026-08-08** — derived; the allowlist can no longer disagree with the registry |
@@ -1023,7 +1205,11 @@ scope is that the corpus can now say so.
 
 ## R10 — The constitution's own machinery (NEW, 2026-08-10)
 
-**Discharges** §0.5. **Status: OPEN. Nothing built.**
+**Discharges** §0.5. **Status: PART — R10.1 BUILT (audit live, 6/35), R10.2 OPEN (nothing built).**
+
+⚠️ **This line read "OPEN. Nothing built." until 2026-08-11**, while R10.1's own row below described a
+working audit and the verification block ran it. The section's status line contradicted its own table —
+the §0.6 failure mode, inside the section written to catch that failure mode.
 
 ### The finding
 
@@ -1052,7 +1238,9 @@ discardable; they are *provisional*, and without the word they read as evidence.
 | R10.1 | Ceilings and decision rules, enforced | every **OPEN** step carries an hour ceiling and a decision rule written **before** work starts; `witness/audit_prereq_ceilings.py` parses this file's step tables and section prose and lists the OPEN steps carrying neither | ⚠️ **This is an AUDIT, not a guard, and the distinction is load-bearing.** Only R2, R5 and R10 carry ceilings today, so it exits **1 over ~30 steps** — and **exit 1 is the healthy state until each section is next touched.** Filing it as a guard would force one of the two things this project forbids: bulk-inventing ceilings nobody reasoned about, or weakening the check until it passes. Coverage is reported as a **fraction that must rise**, never as a pass. Proven by injection: strip R2's ceiling → the count rises by one and R2 is named; restore → it falls back. ⚠️ **Reaching a ceiling ALERTS that the approach needs redesign and never closes the step** (§0.5) |
 
 
-⚠️ **THE FRACTION FELL, 25% → 17%, and that is a real signal rather than a bookkeeping artefact (2026-08-10).** It read `10/40` and now reads **`6/35`**: five OPEN steps closed (R5.1, R5.2a/b/c, R9.2c) and **four of the ceilings went with them**, because §0.5 ceilings had been added precisely to the sections that were next touched. So the ceilinged pool is depleted by progress, and the OPEN remainder is *more* unceilinged than before, not less. **R10.1's rule "the number must RISE" is therefore not satisfied by doing the work — only by writing ceilings for sections nobody is about to touch**, which is the harder half and is exactly what the audit is for. Recorded rather than restated: a metric that moves the wrong way when the project progresses is worth understanding before it is corrected.
+⚠️ **THE FRACTION FELL, 25% → 17%, and that is a real signal rather than a bookkeeping artefact (2026-08-10).** It read `10/40` and then **`6/35`**: five OPEN steps closed (R5.1, R5.2a/b/c, R9.2c) and **four of the ceilings went with them**, because §0.5 ceilings had been added precisely to the sections that were next touched. So the ceilinged pool is depleted by progress, and the OPEN remainder is *more* unceilinged than before, not less. **R10.1's rule "the number must RISE" is therefore not satisfied by doing the work — only by writing ceilings for sections nobody is about to touch**, which is the harder half and is exactly what the audit is for. Recorded rather than restated: a metric that moves the wrong way when the project progresses is worth understanding before it is corrected.
+
+🟢 **AND THEN IT ROSE, 17% → 29% (`6/35` → `12/41`), 2026-08-11 — by the harder half, exactly as predicted.** Writing R2.1a–f as six sub-steps *inside a section that already carries a ceiling and a decision rule* added six OPEN steps and six ceilinged ones at once. That is the intended mechanism and it is worth naming: **the fraction rises when work is PLANNED under a ceiling, not when work is COMPLETED.** Closing steps lowers it; planning them properly raises it. A coverage metric that rewards planning and penalises completion is behaving correctly here only because the thing being covered is *the plan*, and R10.1 should not be "fixed" to reward completion instead. ⚠️ The corollary is a real risk: the fraction could be inflated by decomposing a ceilinged section into ever-finer sub-steps. It is a coverage number, not a progress number, and must never be read as the latter.
 | R10.2 | The PROVISIONAL convention, and the register that uses it | a stated form for a non-citable figure (value · CI · what is undersized · what would settle it), plus **`PROVISIONAL.md`**: every figure and artefact currently standing on undersized or pre-gate evidence, named | the 51 ground-truth files are listed with the gates they precede; **every NT cross-source figure published before 2026-08-09 is listed or recomputed** (R9.4b's labelling half); **every parity-spread figure published before 2026-08-10 is listed or restated** (R9.2c-4 — they were the best witness's own pass rate, not a spread); no listed figure is cited in a companion without the label |
 
 **Hour ceiling for R10 itself: 4h. Decision rule:** R10.1's guard ships parsing only the step tables if
@@ -1104,8 +1292,8 @@ here does not exist or if a count asserted here disagrees with what the command 
 
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
-../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 262 derived artefacts still keyed `jp2-S06`
-../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 6/35 OPEN steps carry a §0.5 ceiling; the fraction must RISE
+../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 12/41 OPEN steps carry a §0.5 ceiling; the fraction must RISE
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
 ```
 

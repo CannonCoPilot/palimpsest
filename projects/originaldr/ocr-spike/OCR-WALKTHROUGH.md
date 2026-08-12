@@ -210,6 +210,16 @@ because a rendered leaf still looks like a page.
 > which had never been produced) and **R5.2a–c**. Until those land, the only thing standing between a
 > rendered leaf and the recognition chain is `test_raster_routing.py`, which governs *which witness's
 > raster is fetched* — a different question from *what that raster turns out to be*.
+>
+> 🟢 **BUILT AND LIVE, 2026-08-10 — and this passage is now stale in the OTHER direction (noted
+> 2026-08-11).** R5.1 and R5.2a–c are DONE: `witness/raster_gate.py` checks all three clauses separately,
+> `witness/test_raster_admissible.py` refuses a bitonal leaf, an 8-grey render and a mis-sized leaf each
+> on its own clause and drives `jp2_page.load()` rather than the gate directly, and the manifest covers
+> **3,122 leaves with 0 rasters unmanifested**. The prose above still says *"is to be asserted"* and
+> *"what remains is a guard"*. Both were true when written and are false now.
+> ⚠️ **A stale tense is a status claim.** This is the §0.6 ordering doing its job in the direction it is
+> least often applied — the companion understating what the code enforces, which is the failure mode that
+> invites someone to build a guard that already exists.
 
 **Finding aids.** Both archaic transcriptions are finding aids, never authorities — one of them splices
 editorial annotation into scripture at `ruth/1/1` and `genesis/10/1`.

@@ -10,6 +10,50 @@ kept in full, with what produced them.
 
 ---
 
+
+## Session 16 — 2026-08-11 — R2 STARTED; R2.1's acceptance criterion refuted; two metrics measured and rejected
+
+**R2 is no longer "nothing built".** Instrument in `.scratch/r2/` (probes v1–v18). Design of record
+`probe_v18.py`: bound below the last full text line -> connected components (never a row profile) ->
+tokens -> recognise each token -> **then** one accept-test on the tokens that read.
+
+**Doc defects found and fixed (Focus-Section review).**
+* MP §0.5 and the roadmap register both named `witness/test_prereq_ceilings.py` — **a file that has never
+  existed** — and called it a guard that "fails". The real instrument is `audit_prereq_ceilings.py`, which
+  R10.1 argues must be an **audit, not a guard**. Both documents corrected.
+* Roadmap R10's status line read "OPEN. Nothing built." while its own R10.1 row described a working audit
+  and the verification block ran it. Corrected to **PART** (R10.1 built, R10.2 open).
+* `audit_s06_keys` prints **261**; four places said 262. Corrected.
+* Walkthrough described Gate 0d in the future tense ("is to be asserted") after R5.1/R5.2a–c landed —
+  stale in the *understating* direction, which invites rebuilding a guard that exists.
+* §0.5 ceiling coverage **rose 6/35 -> 12/41 (17% -> 29%)** because R2.1a–f were written as ceilinged
+  sub-steps. Recorded: the fraction rises when work is **planned** under a ceiling, not when it is
+  completed — and is therefore a coverage number that must never be read as progress.
+
+**R2.1's acceptance criterion was unsatisfiable by construction.** It required ">=95% of rectos yield a
+parsed signature". Measured over leaves 400–431 consecutive: signatures print on **7 of 16 rectos (44%)**,
+all at odd leaf index; catchwords print on **every** leaf, both parities. A criterion that cannot separate
+"the leaf prints no signature" from "the reader missed it" is not a test. Parity is now **measured**
+(odd = recto for this witness) rather than assumed — R2.1a done.
+
+**Two replacement metrics built and refuted the same day.**
+1. Catchword continuity as TEXT: reading the next leaf's first word is **body text**, so it makes R2 wait
+   on the recogniser — which R2's own sequencing note forbids. Measured 4/18 = 0.222, but the failures are
+   recogniser errors (`'hoode'` for `ſtoode`), not discontinuities. **PROVISIONAL, not a collation fact.**
+2. Catchword continuity by IMAGE correlation, with a mandatory negative control: matches **+0.264** vs
+   controls **+0.247** (control max +0.631). **No separation.** §1.4's +0.424-vs-0.036 precedent did not
+   transfer because it registered a whole page block; a catchword is 4–8 glyphs. *A method's separation is
+   a property of the evidence it was demonstrated on, not of the method.* Without the control this run
+   would have reported "continuity confirmed" and pushed a false collation into Gate 0b.
+
+**Surviving candidate: signature-sequence monotonicity** (reads only signatures, no gold set needed).
+~4h of R2's 12h ceiling spent, no metric cleared; the pre-registered rule is live and its named fallback
+*method* — hand-reading a stratified sample — is now the likely route for the catchword half.
+
+**Standing rule adopted:** no R2 metric is adopted without a negative control.
+
+---
+
 ## 2026-08-05 — Session 1: witness identity, addressing, leaf inventory
 
 **Discharges** §1.1, §1.1a · roadmap R0, R1.
