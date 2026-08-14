@@ -77,9 +77,10 @@ def _require(name: str, candidates: list[Path]) -> Path:
     tried = "\n  ".join(str(p) for p in candidates)
     raise FileNotFoundError(
         f"{name}: no candidate path exists. Tried:\n  {tried}\n"
-        f"This source is machine-local and gitignored. Acquire it (see R11.3a: the "
-        f"Sabates_A clone is not yet pinned to a SHA in a tracked location), or point "
-        f"the candidate list at where it now lives. It must not resolve to a dead path."
+        f"This source is machine-local and gitignored, but it is PINNED (R11.3a). Acquire "
+        f"it with:\n  originaldr_reconstruction/acquisition/acquire_sabates_a.py --clone\n"
+        f"which clones at the recorded commit and verifies the content hashes. It must "
+        f"not resolve to a dead path."
     )
 
 

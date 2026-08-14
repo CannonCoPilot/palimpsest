@@ -1,0 +1,27 @@
+{
+  "source": "Sabates_A",
+  "role": "apparatus witness (book/chapter arguments, footnotes, marginal annotations, 26 reference documents, apocryphal appendix)",
+  "remote": "https://github.com/janvier-s/original-douay-rheims.git",
+  "commit": "0bf4218b9b46b5b00d29a703b5b74226051b97a5",
+  "commit_date": "2026-04-18T11:53:48+02:00",
+  "commit_subject": "fix: merge verse 0 into summary, remove from verses",
+  "verified_on_remote": "2026-08-14: ls-remote shows this SHA at HEAD and refs/heads/main; 0 commits behind",
+  "license": "CC0 1.0 Universal",
+  "trees": {
+    "bible/raw": {
+      "files": 77,
+      "bytes": 9447262,
+      "tree_sha256": "dd91ddda4c418a4a585855c2b1f981e5988dccc97278757588ba54dffd487fc8"
+    },
+    "reference": {
+      "files": 26,
+      "bytes": 471548,
+      "tree_sha256": "6159a78ffa23262c73382c3e08866bab5c4de3164367e9b17eaecc4a103025a3"
+    },
+    "annotations": {
+      "files": 394,
+      "bytes": 2001629,
+      "tree_sha256": "2ab792e2f3fec24e4650cff8f6938be5bb17240846de96a13d974dc2f0c94410"
+    }
+  }
+}
