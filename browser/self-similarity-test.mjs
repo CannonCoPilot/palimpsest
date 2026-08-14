@@ -6,9 +6,11 @@
 
 import { chromium } from '@playwright/test';
 import { createHash } from 'crypto';
-import { readFileSync } from 'fs';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 
-const SCREENSHOT_DIR = '/Users/nathanielcannon/Claude/Projects/palimpsest/.scratch/screenshots/self-similarity';
+const REPO = resolve(dirname(fileURLToPath(import.meta.url)), '..');  // browser/ -> repo root
+const SCREENSHOT_DIR = resolve(REPO, '.scratch/screenshots/self-similarity');
 const BASE_URL = 'http://localhost:5173/?project=dr-jekyll-and-mr-hyde';
 const METRICS = ['cosine', 'jaccard', 'word_overlap', 'edit_distance'];
 

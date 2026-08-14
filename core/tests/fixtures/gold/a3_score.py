@@ -9,7 +9,8 @@ book containers and ZERO chapters vs a gold of 1334).
 
 Inputs (both pure JSON -- no detector/harness import needed):
   * gold/work-<idx>.json   -- hand-verified ground truth (co-located, tracked)
-  * .scratch/mask-eval/diagnostics/work-<idx>.json -- harness detector output
+  * <MASK_EVAL_DATA>/diagnostics/work-<idx>.json -- harness detector output
+    (machine-local; the path comes from harness.DIAG, not restated here)
 
 The rating is a 2x2 of the cheap-rubric verdict against the ground-truth recall
 verdict:
@@ -46,7 +47,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent  # core/tests/fixtures/gold
 REPO = HERE.parents[3]
 GOLD = HERE
-DIAG = REPO / ".scratch" / "mask-eval" / "diagnostics"  # machine-local harness output
+sys.path.insert(0, str(HERE / "harness"))  # R11.1: tracked harness, beside this file
+from harness import DIAG  # noqa: E402  machine-local detector output; one definition, not a copy
 
 # Stopgap gold-type -> detector-type proxy for the mask types the detector does not emit yet
 # (Phase B): poems are mis-typed as `chapter`; letters/colophons/addenda have no detector

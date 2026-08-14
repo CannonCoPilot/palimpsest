@@ -30,7 +30,8 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 | R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (**261** derived artefacts to regenerate, was 339) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
 | R9 | Evidential scope per witness — Gate 0f | **PART.** R9.0–R9.4b done; the gate was **enforced but bypassable** until 2026-08-10 — **R9.2c DONE** (the 9 modules that read around the read path are converted; it exposed a containment fact read as a scoring permission, and a parity metric that was restating the best witness's pass rate) — **R9.5a** (companion table disagreed with the registry) · **R9.6/R9.6a** (migrated project root restated in five modules) open |
-| R10 | The constitution's own machinery — §0.5 | **PART.** 🟢 **R10.1 BUILT** — `witness/audit_prereq_ceilings.py` runs and reports **12/41** OPEN steps carrying a ceiling + rule (exit 1 = healthy; the fraction must RISE). 🔴 **R10.2 OPEN — nothing built**, `PROVISIONAL.md` does not exist. ⚠️ This row read "Nothing built" for both until 2026-08-11 while the audit was live and listed in the verification block below — and §0.5 named it as a *guard* called `test_prereq_ceilings.py`, which has never existed |
+| R10 | The constitution's own machinery — §0.5 | **PART.** 🟢 **R10.1 BUILT** — `witness/audit_prereq_ceilings.py` runs and reports **17/46** OPEN steps carrying a ceiling + rule (exit 1 = healthy; the fraction must RISE). 🟢 **29% → 36% on 2026-08-14**, again by the planning half: R11 arrived with three ceilinged OPEN steps. 🔴 **R10.2 OPEN — nothing built**, `PROVISIONAL.md` does not exist. ⚠️ This row read "Nothing built" for both until 2026-08-11 while the audit was live and listed in the verification block below — and §0.5 named it as a *guard* called `test_prereq_ceilings.py`, which has never existed |
+| R11 | Tracked code only one machine can run — §0.2 rule 6 | **PART, NEW 2026-08-14.** 🟢 **R11.1 DONE** — the gold suite's harness (33 files / 432 KB) is TRACKED at `core/tests/fixtures/gold/harness/`; the three consumers run **byte-identical with the untracked original deleted**. 🟢 **R11.2 GUARD BUILT** — `test_no_scratch_deps.py` exits 0, injection-proven. 🟢 **R11.3 DONE** — the silent candidate-fallback now raises, and it exposed `MADUEKE` **already resolving to a nonexistent path**, emitting books with no Madueke text while reporting success. 🔴 **R11.2a OPEN** — `audit_scratch_data_paths.py` exits 1 → **71 data references across 38 tracked files**, twelve times the blast radius the recommendation was written for. 🔴 **R11.3a** (pin Sabates_A to a SHA) · **R11.4** (`purge_empty_ocr` → R9.6) open. **R11.5 (reclaim ~7 GB) BLOCKED BY CONSTRUCTION** |
 
 ### Open-items register
 
@@ -61,7 +62,7 @@ ALERT that the *approach* needs redesign, which is the opposite of accepting a l
 R4.6 · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims,
 endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
 **R7.5a-2** (**261** artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
-**R9.6a** · **R10.1** · **R10.2**
+**R9.6a** · **R10.1** · **R10.2** · **R11.2a** · **R11.2b** · **R11.3a** · **R11.4** · **R11.5** (blocked)
 
 **DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
 R6.5 · **R7.5** · **R7.5a** · **R7.5a-3** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8** · **R9.0** · **R9.1** · **R9.2** · **R9.2a** · **R9.2b** · **R9.3** · **R9.4** · **R9.4a** · **R9.4b** · **R9.2c** (with R9.2c-1…-4) · **R5.1** · **R5.2a** · **R5.2b** · **R5.2c**
@@ -1188,6 +1189,7 @@ a helper, *a non-zero exit naming a missing attribute rather than a missing gate
 fusion is a bare glob again.
 | R9.5 | State the consequence in the companions | §1.1/§1.1a, Overview, Walkthrough, Exec Summary carry the per-half roles and the corrected witness counts | the four documents agree with each other and with the registry |
 | R9.5a | 🔴 **RE-OPENED 2026-08-10 — R9.5 was marked DONE and the Overview never agreed** | `OCR-OVERVIEW.md`'s witness table left the **low-resolution witness column empty for NT 1582** and filed `NT-1582-M` under *other · frontmatter* — the pre-R9.0 role — while the registry said `role=lowres` **and the Overview's own prose, ninety lines later, described it correctly**. The row is corrected | the acceptance is **machine-checked, not read**: extend `test_counts_vs_doc.py` to parse the companions' witness tables and compare role-by-role against the registry, so a table that disagrees with `witnesses.py` **fails** |
+| R11.4 | ⚠️ **A SIXTH restatement, found 2026-08-14 (R11)** — `acquisition/purge_empty_ocr.py:23` reaches the same dead tree by **relative traversal** (`../../../../../.scratch/originaldr-project/sources/our-ocr-diplomatic`) rather than by naming the root, which is why the R9.6 sweep — written against modules that *restate* the root — did not see it. **A search shaped by the fix's vocabulary finds only the instances that share it.** | folded into R9.6's module list; `witness/test_project_root.py` must cover the traversal form too | OPEN |
 | R9.6 | The migrated project root, restated in six modules | ⚠️ **This step was briefly numbered R9.5 in two code comments, colliding with the DONE step above; renumbered here and in `detect_our_ocr.py`.** Commit `2633cbb` moved the OCR project out of gitignored scratch into `projects/originaldr/`, and `detect_our_ocr.SCRATCH` was not moved with it. Both anchor reads resolved into a deleted tree, `load_anchor` skipped them with `continue`, and `run_book` reported the well-formed `{"verses_scored": 0, "error": "no anchor text"}` for **every book**. Fixed 2026-08-09 (`ORIGINALDR` + a raise). **Five modules still restate the root**: `detect_ocr_consensus:72` · `detect_sources:34` · `detect_s_dismas:53` · `build_modern_standard:28` · `build_consensus:41` | one derived root, imported not restated; **`witness/test_project_root.py` fails if any module names the old path**. 🔴 `detect_sources` and `detect_s_dismas` **`mkdir(parents=True)` and WRITE the anchor reads** — running either recreates the dead tree and writes the anchor where nothing reads it, silently |
 | R9.6a | `madueke-b/merged.txt` did not migrate | `ocr_sample.MADB` points into the dead tree. A same-named file exists at `imports/Scripture/…/madueke/raw-b-extract/merged.txt` | **not repointed on resemblance** — checksum or line-count agreement against what the reads were built from, or the path is declared broken and the consumer made to raise. `MADB.exists()` currently degrades to an empty set silently (R1.4) |
 
@@ -1253,6 +1255,99 @@ be quoted yet should simply not be quoted.
 
 ---
 
+## R11 — Tracked code that only one machine can run (NEW, 2026-08-14)
+
+**Discharges** §0.2 rule 6, *"every reading is addressable and checkable"*.
+**Status: PART — R11.1 🟢 DONE · R11.2 🟢 GUARD BUILT AND ENFORCED · R11.3 🟢 DONE ·
+R11.2a OPEN (audit live, 71/38) · R11.3a OPEN (nothing built) · R11.4 OPEN.**
+
+Raised by Sir 2026-08-14 from an assessment of `.scratch/`, approved in full the same day.
+
+### The finding
+
+**The gold verification suite — three tracked, committed scripts — imported a harness that existed on
+exactly one machine, in a gitignored directory.** `gold_verify.py`, `gold_ratify.py` and `a3_score.py`
+each did `sys.path.insert(0, REPO / ".scratch" / "mask-eval")` and then `from harness import …`. The
+harness was 15 KB of code with no copy anywhere else — not in git, not in any backup the repo knows about.
+
+**Nothing said so, and nothing could.** The import resolved locally and the suite passed, so the defect
+was invisible *precisely on the machine where the work was done* and total everywhere else. This is the
+Gate 0f shape one level up: there, a rule existed that no code read; here, a verifier exists that no
+other machine can run. **A verifier only one machine can execute is checkable by nobody**, which is what
+§0.2 rule 6 forbids — and the gold set is what every downstream mask-detection claim is scored against.
+
+⚠️ **The disk was the single point of failure for the evidence base, not for a convenience.** Losing it
+would not have lost a tool; it would have lost the ability to re-verify any gold-derived number ever
+published.
+
+### Steps
+
+**§0.5 compliance.** Every OPEN step below carries an **hour ceiling** and a **decision rule**
+pre-registered before the work: **R11.2a 6h · R11.2b 2h · R11.3a 3h · R11.4 1h**. R11.5 is blocked by construction
+and takes a ceiling when it unblocks, not before — a ceiling on work that cannot start would inflate
+R10.1's coverage fraction without anyone having reasoned about the step, which is the corollary risk
+R10.1 names. **Reaching any ceiling ALERTS that the approach needs redesign; it never closes the step
+and never accepts the shortfall.**
+
+| # | step | deliverable | acceptance | hour ceiling + decision rule (§0.5) |
+|---|---|---|---|---|
+| R11.1 | **Track the harness CODE**, not its outputs | 33 files / 432 KB moved `\.scratch/mask-eval/` → `core/tests/fixtures/gold/harness/`. The ~2 GB of `ws/`, `diagnostics/`, `text/` stay machine-local behind `MASK_EVAL_DATA`, defaulting to `.scratch/mask-eval` and **raising with the path named** when absent | the three consumers run to **byte-identical output** with the untracked original **deleted** | 🟢 **DONE 2026-08-14.** ~1.5h |
+| R11.2 | **Guard: tracked code may not IMPORT from `.scratch/`** | `core/tests/fixtures/gold/test_no_scratch_deps.py` — `sys.path` mutations found via `ast`, docstrings excluded, unparseable files fall back to regex rather than passing | exits 0; **injection-proven** | 🟢 **DONE 2026-08-14.** ~1h |
+| R11.2a | **Disposition the 71 gitignored DATA references** | `audit_scratch_data_paths.py` — each reference resolved to (a) machine-local root made env-overridable **and raising**, (b) dead tree → R9.6, or (c) should be tracked → R11.1 | audit exits 0 | **OPEN. Ceiling 6h.** Below-baseline progress at 6h ⇒ **ALERT that the approach needs redesign** — the remainder is *not* accepted, and entries are **never** added to `SANCTIONED` to make the number fall |
+| R11.3 | **`gen_dr_original`'s silent fallback → an explicit raise** | `_require()` names every path tried; resolution is **lazy** (PEP 562 module `__getattr__`) so importers wanting only slug lists are unaffected | `MADUEKE` raises; `import gen_dr_original` still succeeds | 🟢 **DONE 2026-08-14.** ~0.5h |
+| R11.3a | **Pin the Sabates_A acquisition** | clone `janvier-s/original-douay-rheims` at a **recorded SHA** into a tracked location, or a tracked acquisition script that does | the SHA is in the repo; a fresh checkout can obtain the source without asking a person | **OPEN. Ceiling 3h.** If the upstream SHA cannot be established, **ALERT** — do not substitute "whatever HEAD is today", which would make the apparatus unreproducible |
+| R11.4 | **Fold `purge_empty_ocr.py:23` into R9.6** | R9.6's module list named five restatements of the migrated root; this is a **sixth**, and it reaches the dead tree by relative traversal (`../../../../../.scratch/…`) rather than by naming it, which is why the original sweep missed it | `witness/test_project_root.py` covers it | **OPEN. Ceiling 1h** (it is one line, inside R9.6's ceiling) |
+| R11.5 | **Reclaim the ~7 GB** | delete what is provably regenerable from `.scratch/` | **BLOCKED BY R11.1–R11.3 BY CONSTRUCTION** — see below | **OPEN, blocked.** No ceiling until unblocked |
+
+### 🔴 R11.5 is ordered last, and the ordering IS the recommendation
+
+The 7 GB is what makes the directory look like cleanup-fodder, and it is also what would have destroyed
+the harness. **Until R11.1–R11.3 are done, deleting `.scratch/` is destructive in a way `git status`
+cannot show**, because the thing at risk is invisible to git by definition. R11.1 and R11.3 are now done;
+R11.2a still holds 71 references whose disposition is unknown, so **R11.5 stays blocked**.
+
+### What R11.2 found that R11.2 was not looking for
+
+Scoping the guard to `sys.path` was not the first design. The first version flagged **every** string
+constant naming a `.scratch` path and reported **71 references across 38 tracked files** — twelve times
+the blast radius the recommendation was written for. Those are not all defects: a 2 GB ingest cache and a
+regenerable sqlite basis-db are legitimately machine-local. But some are R9.6 dead trees that
+`mkdir(parents=True)` and **write** where nothing reads.
+
+**Telling them apart requires reading each one, so a single pass/fail would have forced one of the two
+things this project forbids** — a bulk rewrite nobody reasoned about, or a threshold weakened until it
+passed. Split instead, on the R10.1 precedent:
+
+* **`test_no_scratch_deps.py` — GUARD.** Executable dependency: importing code out of gitignored space.
+  Unambiguously wrong, now **zero**, exit 0, injection-proven.
+* **`audit_scratch_data_paths.py` — AUDIT.** Data references. **Exit 1 is the healthy state and the
+  count must FALL** (baseline **71 refs / 38 files**, 2026-08-14).
+
+⚠️ **The audit flagged ITSELF on first run** — its own detection regex is a `.scratch` string constant.
+That is R9.2c's docstring defect one level up (*a check a comment can trip measures vocabulary, not call
+sites*), and the two detectors are excluded by name. **Nothing else may be added to that exclusion**: a
+count that falls by exemption rather than by disposition is the metric measuring the wrong thing again.
+
+### 🔴 What R11.3 exposed: a source that was ALREADY resolving to a dead path
+
+`MADUEKE = next((p for p in _MAD_CANDIDATES if p.exists()), _MAD_CANDIDATES[0])` returns **candidate[0]
+when none of them exists**. Measured 2026-08-14: **both Madueke candidates are absent on this machine.**
+So `MADUEKE.glob("*.html")` was iterating a nonexistent directory, yielding nothing, and the caller
+emitted a book with **no Madueke scripture text while reporting success** — the authoritative verse
+witness, silently absent.
+
+**This is the same defect as R9.6's `detect_our_ocr` (`{"verses_scored": 0, "error": "no anchor text"}`
+for every book) and as R9.6a's `MADB.exists()` degrading to an empty set.** Three sites, one shape: *a
+missing source producing an empty result that is then reported as a clean one.* R1.4 and `_empty_because`
+(§1.4) say a null needs its cause established; a candidate list with a silent tail-default is a machine
+for erasing the cause.
+
+⚠️ **`SRC` still resolves**, to `.scratch/original-douay-rheims`. It is a real read, and it is exactly
+the kind of reference R11.3a must pin — the apparatus is currently reproducible only from an unpinned
+clone on one disk.
+
+---
+
 ## Verification standard for this roadmap
 
 A step is **DONE** when its acceptance test runs and passes on demand — not when the code exists.
@@ -1286,15 +1381,28 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_raster_admissible.py   # R5.2b Gate 0d REFUSES a derivative leaf, and admits a real one
 ../ocr-venv/bin/python witness/test_verse_scope_bypass.py  # R9.2c Gate 0f has ONE route; each exemption still earns itself
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
+../../../../core/tests/fixtures/gold/test_no_scratch_deps.py  # R11.2 no tracked module imports code out of gitignored .scratch/
 ```
+
+⚠️ The R11 guard and audit live under `core/tests/fixtures/gold/`, not `witness/`, because they scan
+**every** tracked `.py` in the repo — the defect they prevent is not OCR-specific. Run them with the repo
+`.venv`, not the OCR venv.
+
+🔴 **KNOWN GAP, stated rather than papered over.** `test_verification_standard.py` parses only
+`witness/`-prefixed commands, so it reports **19** and does **not** cover the two R11 entries above. They
+are listed here and run manually. That is exactly the shape this block exists to prevent — a claim in a
+document with nothing able to refuse it — so it is recorded as **R11.2b: extend the standard's parser to
+repo-root-relative commands and their venv. Hour ceiling 2h; if the parser cannot be extended without
+weakening its existing checks, ALERT rather than dropping the two entries from the block.**
 
 **The audits** — these are *expected to fail while their step is open*, and that is the point:
 
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
 ../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
-../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 12/41 OPEN steps carry a §0.5 ceiling; the fraction must RISE
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 17/46 OPEN steps carry a §0.5 ceiling; the fraction must RISE
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
+./.venv/bin/python core/tests/fixtures/gold/audit_scratch_data_paths.py  # R11.2a: exits 1 -> 71 gitignored DATA refs across 38 tracked files; the number must FALL
 ```
 
 A guard exiting 0 and an audit exiting 1 are both healthy states. An audit that exits 0 before its remedy

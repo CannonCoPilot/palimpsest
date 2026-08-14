@@ -42,19 +42,61 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[4]
-# Source clone location moved under the OriginalDR project tree; keep a fallback to the
-# legacy path so an older checkout still resolves.
+
+# ── R11.3: candidate roots resolve or RAISE; they never fall back to a dead path ──
+# These were `next((p for p in CANDIDATES if p.exists()), CANDIDATES[0])`, which
+# returns candidate[0] when NONE of them exists. MADUEKE was resolving that way on
+# this machine as of 2026-08-14 -- both candidates absent -- so `MADUEKE.glob("*.html")`
+# iterated a nonexistent directory, yielded nothing, and the caller emitted a book
+# with no Madueke text while reporting success. A missing source must be a raise, not
+# an empty result (R1.4; and the same defect R9.6 found reading a migrated-away tree).
+#
+# Resolution is LAZY, via module __getattr__ below: several modules import this one
+# only for its canonical slug lists and apparatus order, and must not be broken by a
+# corpus they never touch.
 _CANDIDATES = [REPO / ".scratch/bible-ingest/repos/original-douay-rheims",
                REPO / ".scratch/original-douay-rheims"]
-SRC = next((p for p in _CANDIDATES if p.exists()), _CANDIDATES[0])
-RAW = SRC / "bible/raw"
-REF = SRC / "reference"
-ANNOT = SRC / "annotations"
-# Madueke_A authoritative scripture text (per-chapter HTML books). The OriginalDR project tree
-# lives under core/.scratch; keep a REPO-root fallback so either checkout layout resolves.
+# Madueke_A authoritative scripture text (per-chapter HTML books). The OriginalDR
+# project tree moved under core/.scratch; the REPO-root form is the older layout.
 _MAD_CANDIDATES = [REPO / "core/.scratch/originaldr-project/sources/madueke-a/books",
                    REPO / ".scratch/originaldr-project/sources/madueke-a/books"]
-MADUEKE = next((p for p in _MAD_CANDIDATES if p.exists()), _MAD_CANDIDATES[0])
+
+
+def _require(name: str, candidates: list[Path]) -> Path:
+    """First candidate that exists, or a raise naming every path tried."""
+    for p in candidates:
+        if p.exists():
+            return p
+    tried = "\n  ".join(str(p) for p in candidates)
+    raise FileNotFoundError(
+        f"{name}: no candidate path exists. Tried:\n  {tried}\n"
+        f"This source is machine-local and gitignored. Acquire it (see R11.3a: the "
+        f"Sabates_A clone is not yet pinned to a SHA in a tracked location), or point "
+        f"the candidate list at where it now lives. It must not resolve to a dead path."
+    )
+
+
+def _src() -> Path:
+    return _require("SRC (original-douay-rheims clone)", _CANDIDATES)
+
+
+def _madueke() -> Path:
+    return _require("MADUEKE (madueke-a/books)", _MAD_CANDIDATES)
+
+
+def __getattr__(name: str) -> Path:
+    """Lazy module attributes -- resolving on ACCESS, not on import (PEP 562)."""
+    if name == "SRC":
+        return _src()
+    if name == "RAW":
+        return _src() / "bible/raw"
+    if name == "REF":
+        return _src() / "reference"
+    if name == "ANNOT":
+        return _src() / "annotations"
+    if name == "MADUEKE":
+        return _madueke()
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 MAPS = HERE.parent / "maps"
 OUT_TXT = REPO / "imports/Scripture/Bibles/OriginalDR/OriginalDR-modern-1582-1610.txt"
 IDX = 108
@@ -195,7 +237,7 @@ def parse_madueke() -> tuple[dict[str, dict[int, dict[int, str]]], list[str]]:
     left RAW here (cleaned at emit time by clean_scripture)."""
     books: dict[str, dict[int, dict[int, str]]] = {}
     order: list[str] = []
-    for p in sorted(MADUEKE.glob("*.html"), key=lambda p: int(p.stem)):
+    for p in sorted(_madueke().glob("*.html"), key=lambda p: int(p.stem)):
         h = p.read_text(encoding="utf-8")
         mt = re.search(r"<title>(.*?)</title>", h)
         if not mt:
@@ -281,7 +323,7 @@ def chapter_apparatus(slug: str, ch: dict) -> list[str]:
                 out.append(t)
     src_num = ch.get("chapter")
     if src_num not in (None, ""):
-        apath = ANNOT / slug / f"{int(src_num):03d}.json"
+        apath = _src() / "annotations" / slug / f"{int(src_num):03d}.json"
         if apath.exists():
             for a in json.loads(apath.read_text()).get("annotations") or []:
                 head = " ".join(x for x in (clean(a.get("title", "")), clean(a.get("text", ""))) if x)
@@ -372,7 +414,7 @@ def build(verse_override: dict[str, str] | None = None,
     _REF_TYPE = {"title-page": "title_page", "preface": "preface"}
 
     def emit_ref(sub: str, name: str):
-        path = REF / sub / f"{name}.json"
+        path = _src() / "reference" / sub / f"{name}.json"
         if not path.exists():
             return
         doc = json.loads(path.read_text())
@@ -397,7 +439,7 @@ def build(verse_override: dict[str, str] | None = None,
         """Emit one book. Verse bodies come from Madueke_A (mad_book) when present; mad_book is
         None only for the apocryphal appendix, which Madueke omits (Sabates is then sole witness).
         The apparatus (arguments, summaries, footnotes) always comes from Sabates."""
-        meta = json.loads((RAW / f"{slug}.json").read_text())
+        meta = json.loads((_src() / "bible/raw" / f"{slug}.json").read_text())
         bk_start = B.pos
         short = clean(meta.get("short_title") or "") or humanize(slug)
         title_line = book_title_line(meta, slug)

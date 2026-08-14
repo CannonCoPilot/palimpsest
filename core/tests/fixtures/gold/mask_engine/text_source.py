@@ -13,6 +13,7 @@ module is only needed at generation time, not at import time.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -23,8 +24,10 @@ from palimpsest.project import Project  # noqa: E402
 
 ORDER_FILE = HERE / "order.json"
 IMPORTS = REPO / "imports"
-# Local (gitignored) workspaces that hold cached ingests, in priority order.
-WORKSPACES = [REPO / ".scratch/mask-eval/ws", REPO / ".scratch/demo"]
+# Machine-local (gitignored) workspaces holding cached ingests, in priority order.
+# R11.1: the mask-eval root honours $MASK_EVAL_DATA so the two agree on one location.
+_MASK_EVAL = Path(os.environ.get("MASK_EVAL_DATA", REPO / ".scratch" / "mask-eval"))
+WORKSPACES = [_MASK_EVAL / "ws", REPO / ".scratch/demo"]
 
 
 def work_order() -> list[Path]:
@@ -35,6 +38,15 @@ def work_order() -> list[Path]:
 def project_for(idx: int):
     """Load the ingested Project for work `idx`, matched by source filename."""
     epub = work_order()[idx]
+    # R11.1: distinguish "no cache on this machine" from "this work is not ingested".
+    # Both used to return None, so a missing 2 GB cache read as 108 un-ingested works
+    # and every consumer reported a clean empty result (R1.4, `_empty_because` §1.4).
+    if not any(ws.exists() for ws in WORKSPACES):
+        raise FileNotFoundError(
+            "no ingest workspace on this machine; looked in: "
+            + ", ".join(str(w) for w in WORKSPACES)
+            + "\nThe cache is machine-local by design; set MASK_EVAL_DATA to point at it."
+        )
     for ws in WORKSPACES:
         if not ws.exists():
             continue

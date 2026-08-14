@@ -16,9 +16,10 @@ detector output can be scored against, without ever storing brittle offsets.
 
 The gold JSONs are durable, version-controlled fixtures and are self-contained
 (each carries its own ``source_file`` basename). Live anchor RESOLUTION, however,
-requires the machine-local eval harness (``.scratch/mask-eval/harness.py``) and
-its ingested-workspace cache, which provide ``project_for`` / ``work_order``.
-Run this from a machine where that harness + cache exist.
+requires the eval harness (``harness/harness.py``, co-located and TRACKED since
+R11.1) plus its ingested-workspace CACHE, which is machine-local (~2 GB, under
+``.scratch/mask-eval`` or ``$MASK_EVAL_DATA``). The code travels with the repo;
+the cache does not, so run this from a machine where the cache exists.
 
 Usage:
   gold_verify.py            # verify all gold/work-*.json, print a report
@@ -34,7 +35,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent  # core/tests/fixtures/gold
 REPO = HERE.parents[3]  # repo root
 sys.path.insert(0, str(REPO / "core"))  # palimpsest package
-sys.path.insert(0, str(REPO / ".scratch" / "mask-eval"))  # eval harness (machine-local)
+sys.path.insert(0, str(HERE / "harness"))  # eval harness (R11.1: tracked, beside this file)
 
 from harness import project_for, work_order  # noqa: E402
 

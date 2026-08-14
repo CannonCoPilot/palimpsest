@@ -33,7 +33,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent  # core/tests/fixtures/gold
 REPO = HERE.parents[3]
 sys.path.insert(0, str(REPO / "core"))
-sys.path.insert(0, str(REPO / ".scratch" / "mask-eval"))
+sys.path.insert(0, str(HERE / "harness"))  # R11.1: tracked, beside this file
 
 from harness import project_for  # noqa: E402
 
