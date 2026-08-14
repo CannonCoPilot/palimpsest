@@ -50,10 +50,12 @@ from statistics import mean, median
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+
+import project_root as pr  # noqa: E402  R9.6: one derived root
 from spelling_glyph_model import fold_tokens  # type: ignore[import]  # noqa: E402  (sibling module: the §6.1 fold)
 
 REPO = HERE.parents[5]
-BASIS_DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+BASIS_DB = pr.BASIS_DB
 REPORT = HERE / "archaic-fidelity-validation.json"
 
 # Retained diplomatic glyphs whose per-book counts evidence a genuinely archaic surface (§6.2),

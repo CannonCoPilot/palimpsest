@@ -33,15 +33,18 @@ import sqlite3
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
 OUT = HERE / "archaic-apparatus-sourcing.json"
 
-DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
-READS = REPO / "core/.scratch/originaldr-project/reconstruction/reads"
-ODR = REPO / "core/.scratch/originaldr-project/sources/odr-com/scrape"
-SDISMAS = REPO / "core/.scratch/originaldr-project/sources/s-dismas"
-AO = REPO / "core/.scratch/originaldr-project/sources/archive-org"
+DB = pr.BASIS_DB
+READS = pr.READS_DIR
+ODR = pr.ODR_SCRAPE
+SDISMAS = pr.S_DISMAS
+AO = pr.ARCHIVE_ORG
 JANVIER = next((p for p in (
     REPO / "core/.scratch/bible-ingest/repos/original-douay-rheims",
     REPO / "core/.scratch/original-douay-rheims") if p.exists()), None)

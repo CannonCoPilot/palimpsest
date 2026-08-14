@@ -29,9 +29,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
-DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+DB = pr.BASIS_DB
 SKELETON = HERE / "skeleton.json"
 LAYOUT_MAP = HERE / "layout-map.json"
 ATTEST = HERE / "apparatus-attestation.json"

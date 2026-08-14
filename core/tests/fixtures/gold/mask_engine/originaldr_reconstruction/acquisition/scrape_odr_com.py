@@ -40,6 +40,9 @@ from collections import Counter
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 # --------------------------------------------------------------------------- #
 # Paths
 # --------------------------------------------------------------------------- #
@@ -47,11 +50,11 @@ HERE = Path(__file__).resolve().parent                       # .../acquisition
 # HERE.parents: [0]originaldr_reconstruction [1]mask_engine [2]gold [3]fixtures
 #               [4]tests [5]core [6]<repo>
 REPO = HERE.parents[6]
-ODR = REPO / "core/.scratch/originaldr-project/sources/odr-com"
+ODR = pr.ODR_COM
 CACHE = ODR / "cache"
 SCRAPE_OUT = ODR / "scrape"
 MANIFEST = HERE / "odr-scrape-manifest.json"
-MADA = REPO / "core/.scratch/originaldr-project/sources/madueke-a/books"
+MADA = pr.MADUEKE_A
 
 BASE = "https://www.originaldouayrheims.com"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "

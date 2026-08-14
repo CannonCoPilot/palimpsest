@@ -17,11 +17,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
-OUT_ROOT = Path(__file__).resolve().parents[1] / (
-    "../../../../../.scratch/originaldr-project/sources/our-ocr-diplomatic"
-)
+# R11.4 -- this reached the dead pre-2633cbb tree by RELATIVE TRAVERSAL rather than by
+# naming the root, which is why R9.6's sweep (written against modules that RESTATE the
+# root) never saw it. A search shaped by the fix's vocabulary finds only what shares it.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import project_root as pr  # noqa: E402
+
+OUT_ROOT = pr.DIPL_ROOT
 
 
 def page_line_count(path: Path) -> int | None:

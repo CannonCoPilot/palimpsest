@@ -33,12 +33,16 @@ recorded offsets align (asserted via reference_sha256 at import time).
 """
 from __future__ import annotations
 
+import sys
 import hashlib
 import html as htmllib
 import json
 import re
 import unicodedata
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "originaldr_reconstruction"))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[4]
@@ -56,10 +60,13 @@ REPO = HERE.parents[4]
 # corpus they never touch.
 _CANDIDATES = [REPO / ".scratch/bible-ingest/repos/original-douay-rheims",
                REPO / ".scratch/original-douay-rheims"]
-# Madueke_A authoritative scripture text (per-chapter HTML books). The OriginalDR
-# project tree moved under core/.scratch; the REPO-root form is the older layout.
-_MAD_CANDIDATES = [REPO / "core/.scratch/originaldr-project/sources/madueke-a/books",
-                   REPO / ".scratch/originaldr-project/sources/madueke-a/books"]
+# Madueke_A authoritative scripture text (per-chapter HTML books). R9.6a: it did NOT
+# migrate with the project -- it lives under imports/, and was repointed only after
+# VERIFICATION against the reads built from it, not on the strength of a matching name:
+# all 1334 chapter titles match madueke_a.json's loci and all 35,809 recorded verses
+# appear verbatim (100.0000%, whole corpus, 2026-08-14). Single source, no fallback --
+# a candidate list whose tail-default is a dead path is what R11.3 removed.
+_MAD_CANDIDATES = [pr.MADUEKE_A]
 
 
 def _require(name: str, candidates: list[Path]) -> Path:

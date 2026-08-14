@@ -31,11 +31,14 @@ import zipfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 # repo root = .../palimpsest ; this file is 8 dirs deep under it
 REPO = HERE.parents[6]
 ARCHIVE = REPO / "imports/Scripture/Bibles/DouayRheims_DR/archive-org"
-OUT_ROOT = REPO / "core/.scratch/originaldr-project/sources/our-ocr"
+OUT_ROOT = pr.OCR_ROOT
 MANIFEST = HERE / "our-ocr-manifest.json"
 
 ALIASES = ["ot1-1609", "ot2-1610", "nt-1582",

@@ -58,9 +58,12 @@ REPO = HERE.parents[5]
 # resolved into a directory that no longer exists -- and resolved SILENTLY, because the readers
 # below guarded on `.exists()` and skipped. See R9.6: five further modules still restate this
 # root, two of which `mkdir(parents=True)` and WRITE the anchor reads into the dead tree.
-ORIGINALDR = REPO / "projects/originaldr"
-DIPL_ROOT = ORIGINALDR / "sources/our-ocr-diplomatic"
-READS_DIR = ORIGINALDR / "reconstruction/reads"
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root, imported not restated
+
+ORIGINALDR = pr.ORIGINALDR
+DIPL_ROOT = pr.DIPL_ROOT
+READS_DIR = pr.READS_DIR
 
 GEOM = json.loads((HERE / "marginalia-geometry.json").read_text())
 SKELETON = json.loads((HERE / "skeleton.json").read_text())

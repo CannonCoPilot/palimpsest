@@ -37,13 +37,16 @@ from collections import Counter
 from pathlib import Path
 from typing import Any, Optional
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
-CONS = REPO / "core/.scratch/originaldr-project/reconstruction/consensus"
+CONS = pr.CONSENSUS_DIR
 SKELETON = HERE / "skeleton.json"
 LAYOUT_MAP = HERE / "layout-map.json"
 ATTEST = HERE / "apparatus-attestation.json"
-OUT_DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+OUT_DB = pr.BASIS_DB
 OUT_JSON = HERE / "basis-db.json"
 
 SCHEMA = """

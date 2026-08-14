@@ -36,13 +36,16 @@ import sys
 from pathlib import Path
 from typing import Any, Optional
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
 RAW = REPO / ".scratch/original-douay-rheims/bible/raw"
 ANNOT = REPO / ".scratch/original-douay-rheims/annotations"
 REFERENCE = REPO / ".scratch/original-douay-rheims/reference"
-ODR = REPO / "core/.scratch/originaldr-project/sources/odr-com/scrape"
-SDISMAS = REPO / "core/.scratch/originaldr-project/sources/s-dismas"
+ODR = pr.ODR_SCRAPE
+SDISMAS = pr.S_DISMAS
 SKELETON = HERE / "skeleton.json"
 LAYOUT_MAP = HERE / "layout-map.json"
 GAPFILL = HERE.parent / "originaldr_validation" / "apparatus-gapfill.json"
@@ -187,7 +190,7 @@ def madueke_aggregate() -> dict[str, Any]:
 
 
 def madb_text() -> str:
-    p = REPO / "core/.scratch/originaldr-project/sources/madueke-b/merged.txt"
+    p = pr.MADUEKE_B_RAW_INTERLEAVED
     return p.read_text(encoding="utf-8", errors="replace") if p.exists() else ""
 
 

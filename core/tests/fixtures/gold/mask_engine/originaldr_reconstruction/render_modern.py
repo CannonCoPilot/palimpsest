@@ -47,10 +47,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MASK_ENGINE = HERE.parent
 sys.path.insert(0, str(MASK_ENGINE))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import gen_dr_original as gen  # type: ignore[import]  # noqa: E402  (sibling dynamic import: machinery)
 
 REPO = HERE.parents[5]
-BASIS_DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+BASIS_DB = pr.BASIS_DB
 REPORT = HERE / "render-modern-report.json"
 
 # The pinned reference sha of the committed idx 108 (the direct-witness build). The basis-db

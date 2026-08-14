@@ -53,11 +53,14 @@ HERE = Path(__file__).resolve().parent          # .../originaldr_validation
 REPO = HERE.parents[5]                            # [0]mask_engine..[4]core [5]<repo>
 
 sys.path.insert(0, str(HERE))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "originaldr_reconstruction"))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import collate_witnesses as C                     # parse_madueke, norm, SAB_ORDER, word_tokens
 
-AO = REPO / "core/.scratch/originaldr-project/sources/archive-org"
+AO = pr.ARCHIVE_ORG
 RAW = REPO / ".scratch/original-douay-rheims/bible/raw"   # Sabates (for apparatus-density)
-MADB = REPO / "core/.scratch/originaldr-project/sources/madueke-b/merged.txt"  # full edition (2nd-pass)
+MADB = pr.MADUEKE_B_RAW_INTERLEAVED  # full edition (2nd-pass)
 OUT = HERE / "ocr-validation.json"
 
 SEED = 1729

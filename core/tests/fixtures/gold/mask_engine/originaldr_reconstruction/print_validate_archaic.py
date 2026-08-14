@@ -45,11 +45,14 @@ import numpy as np
 HERE = Path(__file__).resolve().parent                 # originaldr_reconstruction
 VALID = HERE.parent / "originaldr_validation"
 sys.path.insert(0, str(VALID))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import ocr_sample as O  # type: ignore[import]  # noqa: E402  (reuse skel/best_window/bootstrap_ci/strata)
 
 REPO = HERE.parents[5]
-BASIS_DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
-AO = REPO / "core/.scratch/originaldr-project/sources/archive-org"
+BASIS_DB = pr.BASIS_DB
+AO = pr.ARCHIVE_ORG
 MODERN_VALIDATION = VALID / "ocr-validation.json"      # the existing idx-108 standalone run (context)
 OUT = HERE / "archaic-print-validation.json"
 

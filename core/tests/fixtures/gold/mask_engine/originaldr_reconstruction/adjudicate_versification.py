@@ -39,10 +39,12 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
 sys.path.insert(0, str(HERE))
+
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import spelling_glyph_model as sgm  # type: ignore  # noqa: E402  (sibling dynamic import)
 
-DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
-AO = REPO / "core/.scratch/originaldr-project/sources/archive-org"
+DB = pr.BASIS_DB
+AO = pr.ARCHIVE_ORG
 OUT = HERE / "versification-adjudication.json"
 
 SHIFT = 0.6                 # fold-Jaccard at/above which an archaic-only reading is a chapter duplicate

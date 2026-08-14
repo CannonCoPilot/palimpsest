@@ -64,12 +64,15 @@ MASK_ENGINE = HERE.parent                              # .../mask_engine
 sys.path.insert(0, str(MASK_ENGINE))
 sys.path.insert(0, str(MASK_ENGINE / "originaldr_validation"))
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 # shared archaic<->modern skeleton fold + windowing, reused from the validation harness.
 from ocr_sample import skel, raw_words, best_window  # type: ignore[import]  # noqa: E402
 
 # repo root: HERE.parents = [0]mask_engine [1]gold [2]fixtures [3]tests [4]core [5]<repo>
 REPO = HERE.parents[5]
-SCRATCH = REPO / "core/.scratch/originaldr-project"
+SCRATCH = pr.ORIGINALDR      # R9.6: the live root; the old literal is a DEAD tree
 OUR_OCR_ROOT = SCRATCH / "sources/our-ocr"
 DJVU_DIR = SCRATCH / "sources/archive-org"
 HOCR_ROOT = REPO / "imports/Scripture/Bibles/DouayRheims_DR/archive-org"

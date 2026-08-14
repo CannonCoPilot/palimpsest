@@ -61,10 +61,13 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MASK_ENGINE = HERE.parent
 sys.path.insert(0, str(MASK_ENGINE))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import gen_dr_original as gen  # type: ignore[import]  # noqa: E402  (sibling dynamic import: machinery)
 
 REPO = HERE.parents[5]
-BASIS_DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+BASIS_DB = pr.BASIS_DB
 REPORT = HERE / "render-archaic-report.json"
 OUT_TXT = REPO / "imports/Scripture/Bibles/OriginalDR/OriginalDR-archaic-1582-1610.txt"
 MAP_108 = gen.MAPS / "work-108.map.json"

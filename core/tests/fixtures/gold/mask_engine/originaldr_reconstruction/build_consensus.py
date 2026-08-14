@@ -35,11 +35,14 @@ HERE = Path(__file__).resolve().parent
 MASK_ENGINE = HERE.parent
 sys.path.insert(0, str(MASK_ENGINE))
 sys.path.insert(0, str(MASK_ENGINE / "originaldr_validation"))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import gen_dr_original as gen  # type: ignore[import]  # noqa: E402
 from ocr_sample import skel, raw_words  # type: ignore[import]  # noqa: E402
 
-READS_DIR = gen.REPO / "core/.scratch/originaldr-project/reconstruction/reads"
-CONSENSUS_DIR = gen.REPO / "core/.scratch/originaldr-project/reconstruction/consensus"
+READS_DIR = pr.READS_DIR     # R9.6
+CONSENSUS_DIR = pr.CONSENSUS_DIR   # R9.6
 SUMMARY = HERE / "consensus-summary.json"
 
 # Lineage independence (§4.3): sources sharing a lineage collapse to one independent axis.

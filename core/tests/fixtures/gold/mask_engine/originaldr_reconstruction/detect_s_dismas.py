@@ -43,14 +43,17 @@ MASK_ENGINE = HERE.parent                               # .../mask_engine
 sys.path.insert(0, str(MASK_ENGINE))
 sys.path.insert(0, str(MASK_ENGINE / "originaldr_validation"))
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 # skeleton fold (archaic print ↔ modern) reused from the validation harness
 from ocr_sample import skel, raw_words  # type: ignore[import]  # noqa: E402
 
 # repo root: HERE.parents = [0]mask_engine [1]gold [2]fixtures [3]tests
 #            [4]core [5]<repo>
 REPO = HERE.parents[5]
-SRC = REPO / "core/.scratch/originaldr-project/sources/s-dismas"
-READS_DIR = REPO / "core/.scratch/originaldr-project/reconstruction/reads"
+SRC = pr.S_DISMAS            # R9.6: derived once in project_root, not restated
+READS_DIR = pr.READS_DIR     # R9.6
 OUT_READS = READS_DIR / "s_dismas.json"
 OUT_VALID = HERE / "s-dismas-validation.json"
 MADUEKE_READS = READS_DIR / "madueke_a.json"

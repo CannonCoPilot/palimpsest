@@ -33,11 +33,14 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "originaldr_reconstruction"))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
 SRC = REPO / ".scratch/original-douay-rheims"
 REF = SRC / "reference"
-AO = REPO / "core/.scratch/originaldr-project/sources/archive-org"
+AO = pr.ARCHIVE_ORG
 OUT = HERE / "apparatus-order.json"
 
 # Verified emit order per region (unchanged from v2 -- confirmed faithful; this file records WHY).

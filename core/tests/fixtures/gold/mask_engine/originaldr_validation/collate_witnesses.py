@@ -44,13 +44,16 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "originaldr_reconstruction"))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent  # .../originaldr_validation
 # HERE.parents: [0]mask_engine [1]gold [2]fixtures [3]tests [4]core [5]<repo>
 REPO = HERE.parents[5]
 
-MADA = REPO / "core/.scratch/originaldr-project/sources/madueke-a/books"
+MADA = pr.MADUEKE_A
 SAB = REPO / ".scratch/original-douay-rheims/bible/raw"          # repo-root copy (generator's source)
-MADB = REPO / "core/.scratch/originaldr-project/sources/madueke-b/merged.txt"
+MADB = pr.MADUEKE_B_RAW_INTERLEAVED
 OUT = HERE / "collation-3way.json"
 
 # Sabates canonical slug order (OT+NT, 73 books), mirrored from gen_dr_original.py.

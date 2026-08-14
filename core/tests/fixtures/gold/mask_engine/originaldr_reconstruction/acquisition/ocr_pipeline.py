@@ -15,7 +15,7 @@ Keeping generation (hours of OCR) separate from alignment lets each iterate inde
 
 RUNS UNDER THE ISOLATED OCR VENV (has kraken/torch; kept out of core/.venv so the app test
 suite is untouched):
-    core/.scratch/originaldr-project/ocr-venv/bin/python <thisfile> <alias|pdf-line> [...]
+    projects/originaldr/ocr-venv/bin/python <thisfile> <alias|pdf-line> [...]
 
 Design: deterministic + RESUMABLE + DETACHABLE. Each page's line records cache to
     sources/our-ocr-diplomatic/<line>/<page-stem>.json     (gitignored scratch)
@@ -51,11 +51,14 @@ from pathlib import Path
 
 from PIL import Image
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[6]  # .../palimpsest
 DR_BASE = REPO / "imports/Scripture/Bibles/DouayRheims_DR"
 SCANS = DR_BASE / "sources/scans"    # 15 photographic scan sources S01-S15 (post-reorg layout)
-OUT_ROOT = REPO / "core/.scratch/originaldr-project/sources/our-ocr-diplomatic"
+OUT_ROOT = pr.DIPL_ROOT
 
 # Canonical scan PDFs, rendered via pdftoppm and OCR'd with our ſ-preserving diplomatic kraken.
 # Paths mirror sources/dr-sources-manifest.json v2 per-source "file" fields. The cache line-key is
@@ -115,9 +118,9 @@ JP2_SOURCES = {
     "S09ot2": ("S09_nevv-testament-mart-3vol", "holiebiblefaithf00mart_jp2.zip"),
 }
 
-OCRVENV = REPO / "core/.scratch/originaldr-project/ocr-venv/bin"
+OCRVENV = pr.OCR_VENV_BIN
 KRAKEN = str(OCRVENV / "kraken")
-MODEL = REPO / "core/.scratch/originaldr-project/ocr-spike/models/reichenau_lat.mlmodel"
+MODEL = pr.OCR_SPIKE / "models/reichenau_lat.mlmodel"
 
 UPSCALE = int(os.environ.get("OCR_UPSCALE", "1"))  # PDF pages arrive pre-sized via pdftoppm -scale-to;
 #                                                     set >1 only to upscale genuinely tiny inputs

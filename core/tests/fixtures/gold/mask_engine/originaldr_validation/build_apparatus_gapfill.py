@@ -38,12 +38,15 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "originaldr_reconstruction"))  # R9.6
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent          # .../originaldr_validation
 REPO = HERE.parents[5]
 
 RAW = REPO / ".scratch/original-douay-rheims/bible/raw"
 ANNOT = REPO / ".scratch/original-douay-rheims/annotations"
-MADB = REPO / "core/.scratch/originaldr-project/sources/madueke-b/merged.txt"
+MADB = pr.MADUEKE_B_RAW_INTERLEAVED
 OUT = HERE / "apparatus-gapfill.json"
 
 OT = ["genesis", "exodus", "leviticus", "numbers", "deuteronomy", "josue", "judges", "ruth",

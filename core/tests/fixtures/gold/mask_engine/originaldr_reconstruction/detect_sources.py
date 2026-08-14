@@ -28,11 +28,14 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MASK_ENGINE = HERE.parent
 sys.path.insert(0, str(MASK_ENGINE))
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
 import gen_dr_original as gen  # type: ignore[import]  # noqa: E402
 
 SKELETON = json.loads((HERE / "skeleton.json").read_text())
-READS_DIR = gen.REPO / "core/.scratch/originaldr-project/reconstruction/reads"
-ODR_SCRAPE = gen.REPO / "core/.scratch/originaldr-project/sources/odr-com/scrape"
+READS_DIR = pr.READS_DIR     # R9.6
+ODR_SCRAPE = pr.ODR_SCRAPE
 
 # skeleton book -> chapter count, for grid validation
 _BOOK_CH = {b["slug"]: b["chapters"] for b in SKELETON["books"]}

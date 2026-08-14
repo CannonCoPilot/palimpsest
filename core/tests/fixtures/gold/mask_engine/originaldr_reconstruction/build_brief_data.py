@@ -21,9 +21,12 @@ import sys
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # R9.6: sibling import
+import project_root as pr  # noqa: E402  R9.6: one derived root
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[5]
-DB = REPO / "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite"
+DB = pr.BASIS_DB
 OUT = HERE / "brief-data.json"
 
 # The five substantive scripture witnesses (archive_org = placement only, madueke_b ≈ empty).
@@ -149,7 +152,7 @@ def build() -> dict[str, Any]:
         "note": "Sampled, committed projection of the gitignored basis-db.sqlite for the genome-"
                 "browser figures (source-track browser, variant pileups, book×source matrix). "
                 "Deterministic: fixed selection + ORDER BY, no timestamps.",
-        "source_of_truth": "core/.scratch/originaldr-project/reconstruction/basis-db.sqlite (regenerable)",
+        "source_of_truth": str(pr.BASIS_DB.relative_to(pr.REPO)) + " (regenerable)",
         "n_scripture_verses": n_scripture,
         "book_source_matrix": book_source_matrix(cur),
         "depth_histograms": depth_histograms(cur),
