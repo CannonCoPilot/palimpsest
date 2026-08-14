@@ -21,7 +21,7 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 |---|---|---|
 | R0 | Witness identity and stable addressing | **COMPLETE** (R0.1–R0.5) |
 | R1 | Physical leaf inventory — Gate 0b stage 1 | **COMPLETE** (R1.1–R1.6) |
-| R2 | Structural inventory — Gate 0b stage 2 | **OPEN — IN PROGRESS 2026-08-10/11.** R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured) — **nothing in `witness/` yet**, and it has **never been scored on R2.1's actual metric** (signature-per-recto; every panel to date counted *any token, either parity*). ~3h of the 12h ceiling. Steps R2.1a–f written 2026-08-11 |
+| R2 | Structural inventory — Gate 0b stage 2 | 🚨 **OPEN — R2.1f FIRED 2026-08-14, ALERT: THE APPROACH NEEDS REDESIGN.** R2.1c DONE (instrument promoted to TRACKED `witness/collation_read.py`, with signature/catchword as separate fields and stated abstain reasons). R2.1d'(A) measured twice: **0.222 → 0.312** after the one pre-registered band re-cut, Wilson95 lower bound **0.142** against a 0.95 bar. **~5h of 12h — the ceiling did NOT fire, the ACCEPTANCE RULE did.** The catchword half reads at 0.87–1.00 and is correct; **every failure is on the head side**, and two of the three residual causes are defects in the head reader and the scorer, not in the metric. R2 continues to BLOCK Gate 0b/0c and all transcription. Prior state: **IN PROGRESS 2026-08-10/11.** R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured) — **nothing in `witness/` yet**, and it has **never been scored on R2.1's actual metric** (signature-per-recto; every panel to date counted *any token, either parity*). ~3h of the 12h ceiling. Steps R2.1a–f written 2026-08-11 |
 | R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4) |
 | R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
@@ -246,6 +246,70 @@ which R2.1 does not ask for at all, and leaf 851 is the proof of the gap: catchw
 signature `Ggggg 2` **missed** — a success under my scoring and a **failure** under R2.1's. The panel
 numbers below are therefore **PROVISIONAL and non-citable** (§0.5, R10.2): tuning 6/8 · held-out 6/12 ·
 fresh 11/16, on *token-read*, not on *signature-per-recto*.
+
+### 🚨 R2.1f HAS FIRED — ALERT: THE APPROACH NEEDS REDESIGN (2026-08-14)
+
+**This is an ALERT, not an acceptance.** R2 stays OPEN and continues to block Gate 0b stage 2,
+R3, and all transcription. Nothing below lowers the bar, and no result is being recorded as
+"good enough" (§0.5, and the No-Silent-Degradation rule).
+
+**The pre-registered rule ran exactly as written.** R2.1f: *"Below ⇒ band re-cut ONCE, then ALERT
+that the approach needs redesign."* The one permitted re-cut was made and measured:
+
+| run | instrument | agreement | Wilson95 lower | bar |
+|---|---|---|---|---|
+| 2026-08-11 | `.scratch/r2/r2_1d_continuity.py` (gitignored probe) | 0.222 (4/18) | 0.090 | 0.95 |
+| 2026-08-14 | `witness/collation_read.py` (tracked, word gap re-cut) | **0.312 (5/16)** | **0.142** | 0.95 |
+
+⚠️ **Hours: ~5h of the 12h ceiling. The ceiling did NOT fire — the ACCEPTANCE RULE did.** These
+are different triggers and the distinction matters: there is budget left, and spending it on a
+second re-cut is precisely what R2.1f forbids.
+
+#### What the re-cut fixed, and what it proved
+
+`_group` scaled the word-space threshold by `max(pitch, glyph_height*1.3)` — correct for the FOOT
+band, where a handful of tokens sit in white space. Applied to the dense justified HEAD band it
+exceeded every word space, so the row never split and `first_word()` returned **the whole line**.
+The threshold is now measured from the row's own gap distribution (1-D 2-means over observed
+inter-glyph gaps), and several pairs now split correctly (`'with oile in'`, `'two,'`, `'of'`).
+
+🟢 **It also confirmed the metric was never the problem.** The catchwords read at **0.87–1.00**
+and are plainly right: `face` · `ſtoode` · `Returne` · `God` · `familie` · `Cades` · `reuenge` ·
+`worke` · `abide`. **Every failure is on the head side.**
+
+#### The residual, which is THREE defects and not one
+
+1. 🔴 **The head band does not reliably yield the first line of TEXT.** `411→412` compares
+   catchword `Cades` against `'Temporal'` — a **running head**, not the first text line. `401→402`
+   reads `'ode'` for a line opening `ſtoode` (left-edge truncation). `415→416` and `416→417` take
+   the wrong line entirely. The `0.06–0.30` band plus "first full-measure line" is not an
+   instrument for finding the first line; it is a guess that usually lands near it.
+2. 🔴 **The comparison unit is wrong: a catchword can be MORE THAN ONE WORD.** `414→415` reads
+   catchword `'of flowre'` against first word `'of'` — **a true agreement scored as a
+   disagreement**, because the metric compares a catchword against one word. This is a defect in
+   the measure, not in the reader, and it depresses the rate by an unknown amount.
+3. 🟡 Genuine recogniser error, the smallest share: `'wl'` for *whom*, `'mi'` for *ni*.
+
+#### What redesign should address (for Sir's decision — not actioned)
+
+**The head-side reader needs to be a different instrument, not a re-tuned one.** The foot band
+works because a direction line is *sparse type in white space*; the head band is *dense justified
+text*, and the same component-and-gap machinery is being asked to answer a question it cannot
+express — **the fourth instance of this project's recurring shape**. Candidates, in the order I
+would measure them:
+
+* **Find the first BASELINE, not the first "full-measure line"** — the running head is separated
+  from the text block by a measurably larger leading; that gap is a property of the setting and is
+  the thing being looked for, rather than a proxy for it.
+* **Score the catchword against the first *n* characters of the next leaf's text block**, not
+  against a tokenised first word — it dissolves defect 2 entirely and removes the head-side
+  tokeniser from the measurement path.
+* **Re-measure with defect 2 corrected before any redesign is chosen**, so the redesign is aimed
+  at the real residual rather than at an artefact of the scorer.
+
+⚠️ **Do not read 0.312 as "the catchword approach scores 0.31."** It is a JOINT measure of two
+readers and a scorer, with two known defects in the non-catchword half. The catchword half is
+the part that works.
 
 ### R2.1 — execution steps (written 2026-08-11, before the work)
 
@@ -1404,6 +1468,7 @@ weakening its existing checks, ALERT rather than dropping the two entries from t
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
 ../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
 ../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 18/44 OPEN steps carry a §0.5 ceiling; the fraction must RISE
+../ocr-venv/bin/python witness/r2_1d_continuity.py          # R2.1d'(A): exits 1 -> catchword continuity 0.312, Wilson95 lower 0.142 vs bar 0.95; R2.1f has FIRED
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
 ./.venv/bin/python core/tests/fixtures/gold/audit_scratch_data_paths.py  # R11.2a: exits 1 -> 33 gitignored DATA refs across 23 tracked files (was 71/38); the number must FALL
 ```
