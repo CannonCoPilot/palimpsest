@@ -1,0 +1,154 @@
+{
+ "_doc": {
+  "what": "GOLD-FIRSTBODY -- for each leaf of OT1-1609-B 400-419, the PAGE-FRACTION extent of the leaf's FIRST LINE OF SCRIPTURE. The reference set for R2.2b's criterion A1.",
+  "why_separate_from_the_region_gold": "The region gold answers 'what REGION is this token' over the top 3 rows of a 0..0.35h crop. A1 asks where on the PAGE the first line of scripture is -- and on a chapter-opening leaf that lies BELOW the region gold's 3-row window, which is why A1 came out unevaluable on leaves 403 and 411. Widening the region gold's window would move the denominator of every number recorded against it (0.8760 and the R2.1j figures). This file leaves those untouched.",
+  "address": "y0f/y1f are fractions of PAGE HEIGHT, the R2.2c address. Band-independent by construction: A1 is a question about the page, and a band-pixel key could not ask it.",
+  "anti_circularity": "⚠️ NO ENTRY IS DERIVED FROM THE BAND UNDER TEST. 18 entries come from the hand-labelled region gold's first MainText row; 2 come from adjudicating the RENDERED leaf together with a whole-row recogniser read -- a different instrument from the region classifier A1 tests. Identifying the first body line by asking where a candidate band puts it would make A1 the band grading its own homework.",
+  "known_limitation": "🔴 The 18 region-gold entries inherit that gold's window: they are the first MainText row IT labels, which is the first scripture line only where the scripture starts within its 3 rows. That holds on a continuation leaf and is exactly what fails on a chapter opening -- the case the 2 adjudicated entries cover. A leaf added to this window later must be checked for a CHAP. head before its region-gold row is trusted.",
+  "how_to_reproduce": "The row readings the 2 adjudicated entries rest on come from `witness/build_first_body_gold.py --rows 16`, which writes candidates to .scratch/r2/first-body-candidates.json and DELIBERATELY does not write this file -- a gold written by the same pass that read it is a gold nobody adjudicated. The rendered plates used alongside them are produced by .scratch/r2/probe_render_403_411.py (scratch; the readings and this file are the tracked evidence). A1 is scored by `witness/score_band_anchor.py`."
+ },
+ "leaves": [
+  {
+   "leaf": 400,
+   "y0f": 0.051586,
+   "y1f": 0.071309,
+   "text": "deuoured Ar of the Moabites, and the inhabitantes of the",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 401,
+   "y0f": 0.0617,
+   "y1f": 0.084965,
+   "text": "face of the earth, ſit ting",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 402,
+   "y0f": 0.063218,
+   "y1f": 0.094068,
+   "text": "Aode in the Mreictes oftwo vales, herwich vineyardes",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 403,
+   "y0f": 0.165423,
+   "y1f": 0.191665,
+   "text": "AND Balaam said to Balac: :: Build me here seuen al-",
+   "basis": "adjudicated-2026-08-18",
+   "reason": "CHAPTER OPENING. Rows 4-9 are the italic ARGUMENT ('Balaam endeuoureth to curse Israel, but God forceth him to blesse them. 11. ...'). The first line of SCRIPTURE is the drop-cap line, row 10 of the page's detected rows. Adjudicated from the RENDERED leaf and from the whole-row recogniser read 'A Mb Balaam said to Balao : :: Build me here seuen', which agree. ⚠️ Its drop-cap initial 'A' is DROPPED by glyph_boxes (taller than 1.60 x pitch), so the row's detected extent begins at 'ND'."
+  },
+  {
+   "leaf": 404,
+   "y0f": 0.060183,
+   "y1f": 0.084965,
+   "text": "Returne to Balac and thus thou shalt ſpcake to him",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 405,
+   "y0f": 0.056643,
+   "y1f": 0.077884,
+   "text": "God coming vehemently vpon him, † takins his",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 406,
+   "y0f": 0.05108,
+   "y1f": 0.071309,
+   "text": "deſtroy the remaines of the citie † And when he had ſeene",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 407,
+   "y0f": 0.060183,
+   "y1f": 0.076873,
+   "text": "ht not deſtro the children of Iſrael in mine owhe el and",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 408,
+   "y0f": 0.054114,
+   "y1f": 0.076367,
+   "text": "Abiron the princes of the eople, that roſe ainſt ſes",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 409,
+   "y0f": 0.069287,
+   "y1f": 0.093562,
+   "text": "familie of the Machirites. Machir begat o.",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 410,
+   "y0f": 0.066758,
+   "y1f": 0.090022,
+   "text": "whomis the familie of the Ieſielites Guni, of whom is the",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 411,
+   "y0f": 0.24325,
+   "y1f": 0.269122,
+   "text": "And there came the daughters of Salphaad, the sonne of Hepher",
+   "basis": "adjudicated-2026-08-18",
+   "reason": "CHAPTER OPENING. Rows 3-13 are the italic ARGUMENT ('Salphaads daughters succede to their fathers inheritance. 8. ...'), eleven detected rows of it. The first line of SCRIPTURE is row 14. Adjudicated from the RENDERED leaf and from the whole-row read 'rcame the daughters of Salphaad, the sonne', which agree."
+  },
+  {
+   "leaf": 412,
+   "y0f": 0.059172,
+   "y1f": 0.08193,
+   "text": "Cades of the deſert Sin To whom Moyſes anſwered",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 413,
+   "y0f": 0.062206,
+   "y1f": 0.08193,
+   "text": "with oile in ſacrifice, and the libamentes which are ritel",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 414,
+   "y0f": 0.05816,
+   "y1f": 0.078896,
+   "text": "two, † euerie lambe the tenth part of a tenth, which to.",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 415,
+   "y0f": 0.067264,
+   "y1f": 0.08901,
+   "text": "flowre tempered with oile three tenthes euerie calfe,",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 416,
+   "y0f": 0.062712,
+   "y1f": 0.084459,
+   "text": "oudoe therin, offering holocauſte for moſt ſweete",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 417,
+   "y0f": 0.065746,
+   "y1f": 0.090528,
+   "text": "thepromide,h",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 418,
+   "y0f": 0.062206,
+   "y1f": 0.082436,
+   "text": "uent of our Lord on the Madianites. † Let thouſand",
+   "basis": "region-gold-first-MT"
+  },
+  {
+   "leaf": 419,
+   "y0f": 0.066252,
+   "y1f": 0.091539,
+   "text": "watero ex une",
+   "basis": "region-gold-first-MT"
+  }
+ ]
+}

@@ -5,6 +5,14 @@ every source (S1, S3, S6, S9) matching **each** of the four references at **>=0.
 **Stance (Sir, 2026-07-30): DEPTH-FIRST**, and after each chapter is brought up, **re-measure the others** —
 knock-on gains from generalizable fixes should reduce the work as the campaign iterates.
 
+> ⚠️ **`R2` AND `R3` IN THIS FILE MEAN RECOGNITION RUNGS, NOT ROADMAP STEPS (disambiguated 2026-08-17).**
+> Here `R2` is the **fine-tuned recognizer rung** and `R3` the **vision-LLM rung** of the re-OCR ladder.
+> In `OCR-ROADMAP.md`, `OCR-DEVLOG.md` and the Master Plan the *same tokens* name **Gate 0b stage 2
+> (collation)** and **Gate 0c (the cross-witness leaf map)** — different work, different gates, no relation.
+> `OCR-DEVLOG.md` already uses them the roadmap's way in the same directory, so the collision is live rather
+> than hypothetical. Read the file you are in. Where this file says *"moves ch3 and ch6 into the R2/R3
+> bucket"* it means **the recognizer rungs**, not the leaf gates.
+
 ## THE ONE RULE THAT GOVERNS EVERYTHING HERE (§13 Q47)
 
 > **A rule is measured by the TEXT IT CHANGES, not by the verdicts it flips.**
@@ -269,9 +277,10 @@ recognizer said. Four of this session's five wins were reference repairs, and th
    transcription failure.
 
 3. **THE NEXT ROUND — USE `CHAPTER-WORKFLOW.md` § THE ROUND TEMPLATE (rewritten 2026-08-01).** It is the
-   synthesis of how the ten chapters above 0.90 actually got there, and it changes where a round's hours go:
-   autonomous passes bought **69%** of the +265 cells, systemic defect fixes **25%**, and per-chapter hand work
-   **6%** for the largest share of the hours. Hand-work is still essential — every systemic fix was DISCOVERED
+   synthesis of how the ten chapters above 0.90 actually got there, and it changes where a round's **effort**
+   goes: autonomous passes bought **69%** of the +265 cells, systemic defect fixes **25%**, and per-chapter hand
+   work **6%** — while hand-work absorbs by far the largest share of the attention a round costs, since it is
+   the only part that cannot be left running. Hand-work is still essential — every systemic fix was DISCOVERED
    by it — but its return is **the generalizable defect it exposes, not the cells it closes.** So hand-work ONE
    chapter per round as reconnaissance, scope whatever it finds to its defect class, then let the pass run.
 
@@ -398,6 +407,31 @@ r3_text)` closes a surface only where the attesting arm OBSERVED the glyph, and 
 `models/dr_v3_armA/best_0.9739.mlmodel` scores better still — and **grep finds no reference to any of them in
 `gen1_*.py`, `s_arbiter.py` or `chapter_campaign.py`.** The trained ſ-faithful recognizer is not in the path
 that needs it.
+
+> 🔴 **RE-VERIFIED 2026-08-17, and it is still true.** `grep` over `gen1_*.py`, `s_arbiter.py` and
+> `chapter_campaign.py` returns **nothing** for `reichenau_dr` or `dr_v3_armA`. This is not a stale note that
+> a later session quietly fixed — the ſ-faithful arm has now been absent from the attesting path for over two
+> weeks while ~1,100 board cells sit at `CONTENT OK, ſ-SURFACE OPEN` waiting on exactly it. **It remains the
+> highest-value unbuilt thing on this board.**
+>
+> **And `models/` holds more trained recognizers than this file names.** Present on disk:
+>
+> | model | best checkpoint |
+> |---|---|
+> | `dr_v3_armA` | **0.9739** |
+> | `dr_v3_armB` | 0.9694 |
+> | `reichenau_dr` (the one cited above) | 0.9396 |
+> | `dr_armA` | 0.9349 |
+> | `reichenau_dr_ho` | 0.9230 |
+>
+> ⚠️ **Do NOT read that column as a ranking.** These are per-arm validation accuracies and **it is UNKNOWN
+> whether the arms share an evaluation split** — an arm trained and scored on its own split can post a higher
+> number without being a better recognizer, which is the same category error as comparing two CERs measured on
+> different sets. Nothing here licenses swapping `R2_MODEL`. **Roadmap step R2.1b exists to settle precisely
+> this**: score every candidate on ONE fixed token set with hand-keyed truth and record the losers' scores.
+> Until R2.1b runs, `reichenau_dr` stays the cited model **because it is the measured one, not because it is
+> the best one** — and the sentence "`dr_v3_armA` scores better still" above overstates what is known and is
+> superseded by this note.
 
 **THIS IS THE NEXT BUILD, and it is the one that unlocks the campaign**: recognize each leaf with the
 fine-tuned R2 model, align its output to the verse spans, and give `s_arbiter` a genuinely ſ-faithful arm to

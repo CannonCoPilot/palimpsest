@@ -13,7 +13,7 @@
 ```
 
 `--next` is **worst-first within the least-walked tier**: no chapter gets a second pass while any chapter
-still lacks a first. Pure worst-first would pour every hour into the bottom of the board and leave the 90%
+still lacks a first. Pure worst-first would pour every pass into the bottom of the board and leave the 90%
 band untouched, which is not what completeness means.
 
 ---
@@ -93,6 +93,10 @@ harder.
 Start R3/R2 passes first — they are unattended and serialized behind `.campaign/r3-runner.lock` (one 17GB
 olmOCR at a time; `r3-runner-v3.sh` takes an explicit chapter list). Then do the attention-bound walk while
 they run. Do not measure a chapter that a pass is actively writing: read the ledger, not a PID.
+
+> ⚠️ **`R2`/`R3` here are the RECOGNITION RUNGS** — the fine-tuned recognizer and the vision-LLM — **not**
+> the roadmap's `R2`/`R3`, which are Gate 0b stage 2 (collation) and Gate 0c (the leaf map). Both usages are
+> live in this directory. A background "R2 pass" in this protocol never advances the roadmap's R2.
 
 ---
 

@@ -11,6 +11,75 @@ kept in full, with what produced them.
 ---
 
 
+## Session 17 — 2026-08-17 — the sizing unit changes; three verified findings; a guard that checks the wrong field
+
+> ⚠️ **THIS FILE HAS A HOLE AT 2026-08-12 → 2026-08-15 AND THIS ENTRY DOES NOT FILL IT.** R2.1f firing,
+> R9.6/R9.6a, R11.1–R11.4 and R11.3a all landed in that window and **none of them has a session entry**, though
+> the roadmap carries them. This entry records only what was verified on 2026-08-17, because writing up
+> sessions one did not witness is how a log stops being evidence. **The gap is owed an entry from the
+> transcripts.**
+
+**SIZING IS NO LONGER DENOMINATED IN HOURS (Sir, standing instruction).** Work is described by **how complex
+it is to solve correctly** — what must be designed, what is unknown, how many parts interact, what would
+invalidate the approach — never by elapsed time, whether a person's or a script's. Nothing about escalation
+changes: a ceiling still **ALERTS that the approach needs redesign**, still never closes a step, and a
+below-bar result still stays OPEN and blocking (§0.5). Only the unit changes.
+
+> 🔴 **AND IT HAS A CODE COUPLING NOBODY WOULD SEE UNTIL IT SILENTLY BROKE.**
+> `witness/audit_prereq_ceilings.py` finds ceilings by matching the **literal string** `hour ceiling`
+> (`CEILING_RE = re.compile(r"hour ceiling", re.I)`) against `OCR-ROADMAP.md`. Rewrite the roadmap's ceilings
+> into complexity language without touching that regex and the audit finds **zero** ceilings, reports every
+> OPEN step as uncovered, and the §0.5 coverage fraction collapses to `0/44` — **a total regression in the
+> report, from a change that regressed nothing.** The parser must move with the vocabulary, in the same act.
+> *A grep is a contract between a document and a program, and nothing declares it.*
+
+**Three findings, each verified rather than read.**
+
+1. **The ſ-faithful recognizer is still absent from the attesting path.** `grep` over `gen1_*.py`,
+   `s_arbiter.py` and `chapter_campaign.py` returns nothing for `reichenau_dr` or `dr_v3_armA`. The claim was
+   first made 2026-07-31; it is unchanged more than a fortnight later, while ~1,100 board cells sit at
+   `CONTENT OK, ſ-SURFACE OPEN` waiting on precisely that arm. **Re-verifying an old claim is not redundant
+   work** — it converted "recorded once" into "still true", which is what makes it actionable.
+
+2. **`models/` holds five trained recognizers, and the campaign cites the third-best number.** `dr_v3_armA`
+   0.9739 · `dr_v3_armB` 0.9694 · `reichenau_dr` 0.9396 (the cited one) · `dr_armA` 0.9349 ·
+   `reichenau_dr_ho` 0.9230. ⚠️ **Comparability is UNKNOWN** — these are per-arm validation figures and
+   nothing establishes a shared split, so the column is *not* a ranking and licenses no swap. **R2.1b exists
+   to settle it** on one fixed hand-keyed token set. Recorded here because "a better model exists" and "a
+   better model has been measured" are different claims and only the first is currently supported.
+
+3. **R9.5a's acceptance is not met, and a second role disagreement is live.** The acceptance read *"extend
+   `test_counts_vs_doc.py` to parse the companions' witness tables and compare **role-by-role** against the
+   registry."* The guard compares **leaf counts and primary raster**, not roles, and reads the plan's §1.1
+   table rather than the companions'. It prints twelve `ok` and exits 0 — while `witnesses.py` files
+   **`NT-1633-F` as `role=lowres`** and `OCR-OVERVIEW.md` gives it **witness support**, in its table *and* its
+   prose. **On the merits the document is right and the registry is wrong**: the registry's own criterion for
+   `lowres`, stated in its `NT-M` comment, is *same setting as the base exemplar*, and `F`'s New Testament is
+   1633 — a different setting, which is `support` by definition, the role `R` holds on identical grounds. As
+   `lowres` it is entitled to *"any reading no better-resolved witness carries"* for the **1582** setting,
+   which is the cross-setting supply §1.1c forbids; the exposure is masked only because the cross-setting
+   guard refuses on the identifier. **The Overview was deliberately NOT edited to match the registry** — that
+   would have propagated the error into the document that was right. Raised for a roadmap step: correct the
+   registry, and extend the guard to roles.
+   > **This is R9.5a one turn on.** There, prose was right and the table wrong. Here, prose *and* table are
+   > right and the **registry** is wrong. The constant across both is that **no machine ever compared them**,
+   > and R9.5a was closed on a guard that does not check the field that was wrong. *A fix verified by a guard
+   > that cannot see the defect is verified by nothing.*
+
+**A term disambiguated, because it means two different things in one directory.** `R2`/`R3` name the
+**recognition rungs** in `CAMPAIGN-STATUS.md` and `WALKTHROUGH-PROTOCOL.md`, and the **roadmap steps**
+(Gate 0b stage 2, Gate 0c) in this file and the Master Plan. Both usages were live and unmarked; both files
+now say which they mean at the point of use.
+
+**Recovered from Session 16, and it matters now.** That session's surviving candidate was
+**signature-sequence monotonicity** — *"reads only signatures, no gold set needed"* — and it was set aside
+when catchword continuity was adopted. Gate 0b's collation is being rebuilt on **several independent
+signals** rather than one, so that candidate is live again rather than superseded. Session 16's standing
+rule governs every one of them: **no R2 metric is adopted without a negative control.** The 0.95 bar is
+unchanged; what was wrong was expecting a single instrument to carry the whole collation.
+
+---
+
 ## Session 16 — 2026-08-11 — R2 STARTED; R2.1's acceptance criterion refuted; two metrics measured and rejected
 
 **R2 is no longer "nothing built".** Instrument in `.scratch/r2/` (probes v1–v18). Design of record

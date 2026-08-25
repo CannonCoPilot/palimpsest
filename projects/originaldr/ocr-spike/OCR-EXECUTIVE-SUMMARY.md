@@ -99,11 +99,40 @@ leaf reads +0.769. **`F`'s two Old Testament volumes are unaffected and genuinel
 at three separated points each. It is re-sigla'd `NT-1633-F` and reclassified as support.
 
 > **The consequence is the most significant open exposure in the corpus: the New Testament has exactly one
-> witness to its own setting.** `X` is the base upscaled, `F` and `R` are 1633, `M` is bitonal and
-> prelims-only. Nothing about the base copy's readings changes, but nothing corroborates them either, and no
-> amount of re-reading manufactures a second witness. **The remedy is acquisition**, and a candidate is
-> already identified: a Princeton Theological Seminary 1582 copy with continuous-tone originals, to be
-> setting-verified *before* admission by the same printed-page-and-running-head method that caught this.
+> witness that can carry a GLYPH-level call.** `X` is the base upscaled and `F` and `R` are 1633, so at that
+> grain the base copy's readings are uncorroborated and no amount of re-reading manufactures a second
+> opinion.
+>
+> ⚠️ **TWICE CORRECTED, 2026-08-17, AND BOTH CORRECTIONS MATTER.**
+>
+> **First, `M` is not "bitonal and prelims-only" — that is the pre-R9.0 role.** Only `M`'s 1635 Rouen OLD
+> TESTAMENT half is frontmatter-only. Its NEW TESTAMENT half is **the same 1582 setting as the base
+> exemplar** and carries the `lowres` role (R9.0; the Overview's witness table was corrected in R9.5a, and
+> this sentence was missed). ⚠️ **It was missed in three separate places** — here, `OCR-OVERVIEW.md`'s
+> consequence box, and `OCR-WALKTHROUGH.md`'s raster section — all corrected 2026-08-17. R9.5a fixed the
+> *table* and left the *prose*, which is why the wrong role kept being quoted from documents whose own
+> tables contradicted it.
+>
+> **Second, and the reason the first mattered: a resolution bar is a bar on ONE GRAIN of question, never on
+> the witness.** `M` cannot adjudicate long-ſ against `f` — the nub is under 1.6 px at 168 ppi, and that bar
+> stands. It can do everything that does not turn on resolving a glyph: **page layout and geometry**
+> (region boundaries, archetype classification, reading order); **adjudicating damage, show-through and an
+> inked-over sort in `B`**, because a second physical copy settles whether a mark is in the TYPE or in that
+> COPY, and that is answered at blot grain; **confirming a training crop addresses the locus it claims**,
+> which is addressing rather than recognition; and collation, page order and completeness.
+>
+> So the honest figure is a **pair, not a number**: the New Testament stands at **depth 1 at glyph grain and
+> depth 2 at structural grain**. `witnesses.depth("NT", 1582)` returns `(1, 2)` and exists so the question
+> cannot be asked without saying at which grain. What the NT lacks is specifically a *surrogate* — a second
+> capture that can resolve a glyph — not a second witness.
+>
+> 🔴 **AND THE REMEDY IS NOT ACQUISITION.** This paragraph used to name one: a Princeton Theological Seminary
+> 1582 copy, to be setting-verified before admission. **That lever is closed** (Sir, 2026-08-17) — there will
+> be no better scans and no further copy. The reasoning is kept because it is sound and because a closed
+> option that is deleted gets re-proposed; but it is closed. **The depth we have is the depth we design
+> for**, and the consequence is a design constraint rather than a procurement item: NT work must be
+> structured so that `M` carries every check that does not require a glyph, and so that a claim which *does*
+> require one is recorded as resting on a single witness rather than silently presented as corroborated.
 >
 > The failure mode is worth stating because it is cheap to repeat. `F`'s independence was tested **against
 > the base copy** and returned noise — which licensed only "`F` is not `B`", and was read as "`F` is an
@@ -175,7 +204,9 @@ letterform boundary *within* a volume, and the same axis the rendition layer alr
 
 **COPY is not a model level.** Three copies of a volume photograph the same setting of the same type; they
 differ in resolution, structure and skew — image statistics, not letterforms. Fitting a model per photograph
-of one book would be a category error. Instead **copies are pooled within a volume as training
+of one book would be a category error. *(That governs **scope** only. Skew is still measured: the geometry
+stage emits the leaf's slant as a gated output, because a row holding two interleaved printed lines cannot
+be split until the slope is removed, and the slope cannot be fitted from that row.)* Instead **copies are pooled within a volume as training
 augmentation**, which is a genuine advantage of this corpus: *identical letterforms under different imaging
 conditions* is exactly the invariance a recognizer should learn, and it is normally expensive to obtain.
 
@@ -233,15 +264,19 @@ advantages, and the method now uses them:
 Connected components are therefore used as a **candidate detector within the closed set**, with a per-pair
 CNN deciding on the crop and abstaining when it cannot.
 
-## 7. What ships, and when
+## 7. What ships, and in what order
 
-| when | what |
-|---|---|
-| **week 1** | source concordance and base-exemplar declaration; drop-cap board fix (**18 cells**); page axis |
-| **week 2** | **residue detector** — ranked defect queue, no ground truth, no new model |
-| **week 2–3** | **archaic typeset census** — the frozen inventory the codec is built from |
-| **week 3+** | **correction loop on Micheas**, producing transcript and ground truth together |
-| later | frozen evaluation sets, G1 geometry and recognition, glyph census, the edition |
+**Ordered by dependency and complexity, not by calendar.** A schedule in weeks invites the two errors this
+project is built to avoid — treating a spent budget as permission to stop, and reading a cheap step as the
+better one. What governs order is what each step *needs* and how hard it is to get *right*.
+
+| what | needs | complexity |
+|---|---|---|
+| source concordance + base-exemplar declaration; drop-cap board fix (**18 cells**); page axis | — | **low** — bounded, verifiable against the board |
+| **residue detector** — ranked defect queue | — *(no ground truth, no new model)* | **low** — reuses the incumbent as a detector rather than a generator |
+| **archaic typeset census** — the frozen inventory the codec is built from | the corpus admitted | **medium** — the difficulty is adjudicating ambiguous sorts, not enumerating them |
+| **correction loop on Micheas**, producing transcript and ground truth together | concordance · census · residue queue | **medium** — mechanically simple, and the single largest call on skilled attention |
+| frozen evaluation sets; **G1 geometry**; **G1 recognition**; glyph census; the edition | the above, in that order | **high** — the two models are the genuinely hard work, and each gates a published gate |
 
 **The pilot book is Micheas (Micah) in OT2** — 7 chapters across about 7 leaves, present in all three OT2
 copies. Chosen because it has **no archaic reference witness**, so it exercises the part of the corpus that
@@ -250,9 +285,12 @@ at roughly one chapter-open per leaf it is an unusually dense test of the drop-c
 machinery; and because it is small enough to finish early. **Joel** (3 chapters, ~5 leaves) and **Amos**
 (9 chapters, ~11 leaves) are the smaller and larger alternatives in the same condition.
 
-**The honest total cost**: ~3,000–4,500 pages at 6–15 min/page corrected = **400–1,000 hours**. That is the
-price of this product under any architecture. The design does not remove those hours; it makes them produce
-the deliverable directly rather than producing the instrument that produces it.
+**The honest total cost, and it is a procurement figure rather than a schedule**: ~3,000–4,500 pages at
+6–15 min/page corrected = **400–1,000 keyer-hours**. This is quoted in hours because it is **labour to be
+bought** — the same unit escalation uses when it names *paid annotation* as a resource class — and not
+because any step of this project is sized in time. That price holds under any architecture. The design does
+not remove the keying; it makes the keying produce the deliverable directly rather than producing the
+instrument that produces it.
 
 ## 8. How the plan keeps itself honest
 
@@ -277,12 +315,15 @@ read, and leaf indices do not correspond between copies of the same volume (the 
 leaves before a word is compared). Until the map exists, "the same page in another witness" is not a
 well-formed request.
 
-**Also blocking, and now the corpus's largest exposure: the New Testament has one witness to its own
-setting** (§2). The remedy is acquisition, not further measurement of what is held. A candidate 1582 copy
-with continuous-tone originals is identified and **must be setting-verified before admission** — printed page
-number, running head, **signature and catchword** agreeing at three or more separated points against a
-known-good same-setting partner. That is the test that was never run for four months and would have cost
-minutes, and it is now a formal gate (**Gate 0e**) rather than a practice.
+**Also blocking, and now the corpus's largest exposure: the New Testament has one witness that can carry a
+GLYPH-level call** (§2) — depth `(1, 2)`, one at glyph grain and two at structural grain, `M` being the
+second. 🔴 **The remedy is NOT acquisition (closed 2026-08-17).** This entry named a candidate 1582 copy with
+continuous-tone originals; there will be no better scans and no further copy. **The depth we have is the
+depth we design for.** What survives is the admission test itself, which remains a formal gate for anything
+ever admitted: printed page number, running head, **signature and catchword** agreeing at three or more
+separated points against a known-good same-setting partner (**Gate 0e**). That is the test that was never
+run for four months and would have cost minutes — it is retained not as a procurement step but because it is
+the standing method by which any setting claim is proved.
 
 > ⚠️ **The held witnesses do not yet meet the standard this paragraph sets for a new one (2026-08-10).**
 > The head criteria were verified at three or more separated points, but the **signature and catchword were
@@ -327,8 +368,9 @@ privately held is a determinate answer. And the source of the excluded file's tw
 their present owners, which no catalogue can supply and which blocks no transcription.
 
 One citation carried from earlier work
-is unverified and load-bearing for a geometry gate: resolve or delete. And the typeset census, which also
-closes the `ꝛ` / brevigraph / blackletter questions.
+is unverified and load-bearing for a geometry gate: resolve or delete — **and since that gate is §3.2's, this
+item blocks the region model rather than sitting beside it, which is not how its placement here reads.** And
+the typeset census, which also closes the `ꝛ` / brevigraph / blackletter questions.
 
 **Unratified**: the archaic-preeminent board gate, pending blind adjudication of n ≥ 100 newly-passing cells
 against the scans.

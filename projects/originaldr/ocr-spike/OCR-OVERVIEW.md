@@ -60,9 +60,17 @@ render of `R` — the blank-margin correlation that reads +0.769 for a proven sh
 three separated points each; the defect is the NT file alone. It is therefore re-sigla'd **`NT-1633-F`** and
 holds the same role as `R`: witness support from a different edition, never a witness to the 1582 setting.
 
-> **Consequence, stated plainly: the New Testament has exactly one witness to its own setting** — the base
-> exemplar `B`. `X` is `B` upscaled, `F` and `R` are 1633, `M` is bitonal and prelims-only. Every claim of
-> NT redundancy in earlier drafts is void, and the surviving remedy is acquisition, not re-reading.
+> **Consequence, stated plainly: the New Testament has exactly one witness that can carry a GLYPH-level
+> call** — the base exemplar `B`. `X` is `B` upscaled and `F` and `R` are 1633. Every claim of NT redundancy
+> in earlier drafts is void.
+>
+> ⚠️ **Two corrections, 2026-08-17.** *"`M` is bitonal and prelims-only"* is the **pre-R9.0 role and is
+> wrong**: only `M`'s 1635 Rouen OT half is frontmatter-only, while its NT half is the same 1582 setting as
+> the base and carries `lowres` (see the depth table below). So the NT has **one** glyph-capable witness and
+> **two** structural ones. And *"the surviving remedy is acquisition"* is **closed** — there will be no
+> better scans and no further copy (Sir). The remedy is design: `M` carries every check that does not turn
+> on resolving a glyph, and a claim that does turn on one is recorded as single-witness rather than
+> presented as corroborated.
 >
 > The error is instructive and is recorded rather than quietly repaired. `F`'s independence was tested
 > **against `B`**, and the test returned noise. That licensed only "`F` is not `B`" — it was read as "`F` is
@@ -136,6 +144,34 @@ setting after all; what it still lacks is a *surrogate*, because no second captu
 resolve a glyph. See Master Plan §1.1a for the per-half table and §2 Gate 0f for how the limit is now
 enforced rather than merely written down.
 
+**DEPTH IS COUNTED PER GRAIN, AND THE TWO COUNTS DIFFER (2026-08-17).** The paragraph above is right and was
+still read the wrong way — in a report to Sir, "no second capture can resolve a glyph" became "the New
+Testament has no second witness". It does have one. **A resolution bar is a bar on one GRAIN of question,
+never on the witness**, so the volume's depth is a pair:
+
+| volume | setting | glyph grain | structural grain |
+|---|---|---|---|
+| OT1 | 1609 | **2** — `B`, `P` | **3** — `B`, `P`, `F` |
+| OT2 | 1610 | **2** — `B`, `P` | **3** — `B`, `P`, `F` |
+| NT | 1582 | **1** — `B` alone | **2** — `B`, `M` |
+
+`witnesses.depth(vol, year)` returns that pair, and `glyph_witnesses` / `structural_witnesses` return the
+sets, so the question cannot be asked without saying at which grain. What `M` is wanted for, positively:
+**page layout and geometry** — region boundaries, archetype classification, reading order, none of which
+depends on resolving a glyph; **adjudicating damage, show-through and an inked-over sort in `B`**, because a
+second physical copy settles whether a mark is in the TYPE or in that COPY and that is answered at blot
+grain, which is precisely the `surrogate` function the NT otherwise lacks entirely; **confirming a training
+crop addresses the locus it claims**, which is addressing rather than recognition; and collation, page order
+and completeness. The long-ſ bar is untouched and stands.
+
+> ⚠️ **A defect this surfaced, and it is not fixed here.** `GLYPH_BARRED` in the registry holds exactly `F`
+> and `X` — **not `M`** — so `admissible("NT")` names `M` and `glyph_source("NT", "M")` returns a usable PDF
+> path, although the `lowres` role bars `M` from training data, from CER evaluation and from adjudicating
+> long-ſ. **The bar is written in `ROLES` and enforced by nothing**: the same shape as Gate 0f and Gate 0d
+> before their consumers were built. `glyph_witnesses` derives the permission from the ROLE and so returns
+> the honest set, but it is a counter and not a gate. Closing the hole in `glyph_source()` is a behavioural
+> change to every consumer and needs its own step and its own injection proof.
+
 > **The table above disagreed with this paragraph until 2026-08-10, and with the registry.** It left the
 > low-resolution column empty for the New Testament and filed `NT-1582-M` under *other · frontmatter* —
 > the pre-R9.0 role — while these sentences described it correctly and `witnesses.py` recorded
@@ -143,6 +179,30 @@ enforced rather than merely written down.
 > the same file and read as finished, because nobody compares a table to its own commentary.** The row is
 > corrected; R9.5's acceptance is now checked by machine rather than by reading (`test_counts_vs_doc.py`
 > extended to the companions), because that is the only version of this fix that stays fixed.
+
+> 🔴 **THAT LAST SENTENCE IS NOT YET TRUE, AND A SECOND DISAGREEMENT IS LIVE (found 2026-08-17).**
+> `test_counts_vs_doc.py` compares **leaf counts and primary raster**. It does **not** compare roles, and it
+> reads the plan's §1.1 table rather than the companions'. Run today it prints twelve `ok` rows and exits 0 —
+> while the registry records **`NT-1633-F` as `role=lowres`** and this document, in the table above *and* in
+> the prose below it, gives that file **witness support**. R9.5a's acceptance was *"compare role-by-role
+> against the registry, so a table that disagrees with `witnesses.py` fails."* The guard written to make the
+> fix stay fixed **does not check the field that was wrong**, so the fix cannot be shown to have stayed fixed.
+>
+> **On the merits this document is right and the registry is wrong, so the table above is deliberately NOT
+> being changed to match it.** The registry's own criterion for `lowres`, stated in its `NT-M` comment, is
+> *same setting as the base exemplar, limited by raster alone*. `F`'s New Testament is **1633** — a different
+> setting — which is the definition of `support`, the role `R` carries on identical grounds. Filed as
+> `lowres`, `NT-1633-F` is permitted *"any reading no better-resolved witness carries"* **for the 1582
+> setting**, which is precisely the cross-setting supply §1.1c exists to forbid. The exposure is currently
+> masked rather than absent: the cross-setting guard refuses collation on the identifier, so the wrong role
+> has not yet been able to do damage.
+>
+> **Raised, not repaired here** — `witness/witnesses.py` is code and the change is evidential, so it belongs
+> to a roadmap step and to Sir, not to a documentation pass. Two things are owed: the role corrected at the
+> registry, and `test_counts_vs_doc.py` extended to roles so that this class of disagreement fails loudly
+> instead of printing `ok`. **This is the same shape as R9.5a one turn on** — there, prose was right and the
+> table wrong; here, both are right and the *registry* is wrong. What did not change is that no machine
+> compared them.
 
 The second role is the distinction that keeps the apparatus usable. Without it, every routine "the base copy
 is blotted here, the other is clean" becomes an *emendation*, and thousands of non-events bury the handful
@@ -161,7 +221,10 @@ unverifiable**, not assumed sound.
 
 ```
  0  ACQUIRE      volume → verified native rasters, grayscale primary
- 1  GEOMETRY     page → typed region polygons (shapes from ink, labels from text)
+ 1  GEOMETRY     page → layout archetype → typed region polygons + leaf slant
+                (archetype first, because which classes a leaf CAN carry is a
+                 property of what kind of leaf it is; shapes from ink, labels
+                 from text)
  2  RECOGNISE    region → lines → diplomatic text + a stand-off rendition layer
  3  GROUND TRUTH forced alignment → line GT;  text-side mining → glyph GT
  4  TRANSCRIBE   the base document, corrected page by page, signed off
@@ -268,6 +331,13 @@ same axis the rendition layer treats as semantic.
 resolution, MRC structure, colour and skew — image statistics, not letterforms. Fitting a model per
 photograph of one book would be a category error.
 
+> **"Skew is image statistics" governs SCOPE, and nothing else.** It is the reason not to fit a recognizer
+> per photograph; it is **not** a licence to leave skew unmeasured. The geometry stage **estimates and emits
+> the leaf's slant as a gated output**, because a row that two printed lines share cannot be split until the
+> slope is removed, and the slope cannot be fitted from that row — a row-level fit returns a slope that
+> reconciles the two interleaved lines rather than measuring either. It is measured from rows that *do* split
+> cleanly and applied leaf-wide. Nuisance for scope, quantity for geometry: both, without contradiction.
+
 Instead **copies are pooled within a volume as training augmentation.** This is a real advantage of the
 corpus: *identical letterforms under different imaging conditions* is precisely the invariance a recognizer
 should learn, and it is normally expensive to obtain. **Held-out splits are stratified by copy and by
@@ -358,13 +428,18 @@ narrower and named: **repository and shelfmark for the four `S01` and `NT/S08` f
 numbers for every copy** — OCLC record numbers are held, but the STC numbers circulating in earlier notes
 are unverified leads and are recorded as leads, never promoted. Nothing here is filled in from inference: a
 misattributed shelfmark would poison the base-exemplar choice and everything downstream. Also open: the
-identity of the fourth source supplying `NT-1582-X`'s two made-up leaves; one citation carried from earlier
-work that a geometry gate depends on (**resolve or delete**); and the typeset census, which closes the `ꝛ` /
+identity of the fourth source supplying `NT-1582-X`'s two **made-up** leaves — *made up* is the
+bibliographer's term for a copy completed with leaves taken from another copy, an ordinary and openly
+recorded act, **not a forgery**; one citation carried from earlier work that a geometry gate depends on
+(**resolve or delete** — and note that the gate it is load-bearing for is §3.2's, the geometry gate, so this
+item blocks the region model rather than sitting beside it); and the typeset census, which closes the `ꝛ` /
 brevigraph / blackletter questions together.
 
 **Open and scheduled**: whether sort clustering propagates as cleanly as letterpress suggests; the
-input-height sweep, honestly costed at **120–200 GPU-hours** — because only the incumbent height warm-starts
-cleanly from the pretrained model, and raising it breaks weight transfer at the recurrent stack.
+input-height sweep, which is **expensive in kind, not merely in duration** — only the incumbent height
+warm-starts cleanly from the pretrained model, and raising it breaks weight transfer at the recurrent stack,
+so every point on the sweep is a **fresh training run rather than a parameter scan**, and the points are not
+comparable unless each is trained to its own convergence.
 
 > **Withdrawn, not deferred.** The JBIG2-substitution test and the binarisation-transfer gap once stood
 > here. Measured at each item's **primary artefact**, ten of the eleven files are continuous tone; the MRC

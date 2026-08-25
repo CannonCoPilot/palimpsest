@@ -1,0 +1,33 @@
+{
+ "_doc": {
+  "what": "GOLD-WORDCOUNT -- hand-adjudicated word counts for rows of the head band, OT1-1609-B leaves 400-419. The reference set for R2.1h's token splitter.",
+  "why": "R2.1f found that the head reader 'fails in BOTH directions' and could not say by how much, because the only number available was the joint continuity rate. A splitter scored against word counts has its own number, so an under-split and an over-split are separately visible instead of cancelling.",
+  "basis": "⚠️ NOT taken from the splitter under test -- that would be the instrument grading itself. Each row was recognised as a SINGLE crop (.scratch/r2/dump_rowreads.py), giving a count from a different instrument (the recogniser's own segmentation), and every count was then HAND-ADJUDICATED against both that whole-row string and the per-token readings.",
+  "adjudication_is_not_a_formality": "The two instruments disagree and neither is authoritative. On 415.2 the whole-row read returned 8 words and dropped 'of flowre' outright, while the per-token readings recovered 'of' and 'flowre' cleanly -- the gold is 10. On 414.0 the whole-row read saw only 'NVMERI.' and missed the side-note 'Sactifices for' -- the gold is 3. A gold set built by trusting either instrument alone would be wrong in opposite directions.",
+  "excluded": "Rows whose whole-row reading is illegible or low-confidence are NOT in this file and are NOT scored -- 416.0 ('N'@0.52), 417.0 ('WowMw'), 417.2 ('thepromide,hhawhatſoeuet'), 419.1, 419.2, 402.1, 402.2, 405.2, 407.1, 418.2, and the empty reads 403.2/405.1/410.1/411.1/415.1/416.1. Also excluded: 401.0, 403.0, 406.0, 407.0, 408.0, 408.2, 411.0, 412.0 where the whole-row read and the per-token reads disagree in a way the images alone do not settle. ⚠️ Excluding a row is recorded, never silent: a gold set that quietly drops what it cannot label reports the accuracy of the easy cases.",
+  "counting_convention": "A word is a space-separated unit of the printed line, INCLUDING the verse dagger † and a turn-line fragment such as 'begin-' or 'Bal-'. Marginal-note words are counted -- the splitter is expected to separate them, not to ignore them.",
+  "witness": "OT1-1609-B",
+  "band": "0.0..0.35 of page height -- ⚠️ the R2.1g scoring band, NOT the frozen 0.06..0.30 reading band. Row indices are only meaningful against this band.",
+  "dated": "2026-08-17"
+ },
+ "word_counts": {
+  "400.0": 5, "400.1": 10, "400.2": 12,
+  "401.1": 1,
+  "402.0": 2,
+  "403.1": 1,
+  "404.0": 2, "404.2": 10,
+  "405.0": 2,
+  "406.1": 12, "406.2": 11,
+  "407.2": 3,
+  "408.1": 10,
+  "409.0": 1, "409.1": 9, "409.2": 4,
+  "410.0": 3, "410.2": 11,
+  "411.2": 2,
+  "412.1": 10, "412.2": 15,
+  "413.0": 4, "413.1": 11, "413.2": 9,
+  "414.0": 3, "414.1": 12, "414.2": 12,
+  "415.0": 3, "415.2": 10,
+  "416.2": 11,
+  "418.0": 2, "418.1": 10
+ }
+}

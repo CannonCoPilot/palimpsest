@@ -39,11 +39,20 @@ ROLES = {
                    "an inked-over sort.  Never supplies a reading where the base "
                    "is legible and merely disagreed with.",
     "lowres":      "a genuinely independent copy whose DIGITISATION resolves too "
-                   "little for glyph-level work.  Collation, page order, "
-                   "completeness, and any reading no better-resolved witness "
-                   "carries.  NOT training data, NOT CER evaluation, and it may "
-                   "not adjudicate long-s against f -- the distinguishing nub is "
-                   "under 1.6 px at 168 ppi.",
+                   "little for GLYPH-level work -- and for nothing else.  "
+                   "ADMITTED FOR: collation, page order, completeness; page "
+                   "LAYOUT and geometry (region boundaries, archetype "
+                   "classification, reading order), none of which depends on "
+                   "resolving a glyph; adjudicating DAMAGE, SHOW-THROUGH and an "
+                   "INKED-OVER sort in the base, because a second physical copy "
+                   "settles whether a mark is in the TYPE or in that COPY, and "
+                   "that question is answered at blot grain, not nub grain; "
+                   "verifying that a TRAINING CROP is the locus it is believed "
+                   "to be, which is addressing, not recognition; and any reading "
+                   "no better-resolved witness carries.  "
+                   "BARRED FROM: training data, CER evaluation, and adjudicating "
+                   "long-s against f -- the distinguishing nub is under 1.6 px "
+                   "at 168 ppi.",
     "support":     "a copy of a DIFFERENT edition, admitted for named leaves "
                    "only: a reading where the base has NO leaf at all, flagged "
                    "as supplied with its source named.",
@@ -59,6 +68,23 @@ ROLES = {
 # OT1 it holds the same 1132-leaf book block, and for the NT it is MORE complete
 # than the base exemplar, which lacks its Censure and Preface p.1 outright).
 # "Structure only" barred it from readings it is entitled to carry.  1.1a.
+#
+# ⚠️ AND THE SAME MISREADING RECURRED 2026-08-17, ON THE ROLE AS RENAMED.  The
+# `lowres` entry above used to state its BARS in full and its PERMISSIONS in a
+# clause, and was read -- by me, in a report to Sir -- as meaning the New
+# Testament has "no second witness".  It has no second GLYPH-CAPABLE witness.
+# `M` is a genuine independent copy of the 1582 setting and is wanted for layout
+# validation, for damage/show-through adjudication in `B`, and for confirming a
+# training crop addresses the locus it claims.  A role that lists what it forbids
+# before what it permits will be read as a demotion however carefully it is
+# worded, so the permissions are now stated FIRST and in full.  The bars are
+# unchanged and none of them is weakened: `GLYPH_BARRED` and `ROLE_VERSE_SCOPE`
+# are untouched by this edit.
+#
+# The general lesson, because this is now the second instance on the same field:
+# **a resolution bar is a bar on ONE GRAIN of question, never on the witness.**
+# Depth must therefore be counted per grain -- see `glyph_witnesses` and
+# `structural_witnesses` below, which deliberately return different sets.
 
 # (volume, siglum) -> record
 WITNESSES = {
@@ -471,6 +497,103 @@ def admissible(vol):
     out = [wid(v, s) for (v, s) in WITNESSES
            if v == vol and s not in GLYPH_BARRED and (v, s) not in NO_READING]
     return sorted(out) or ["none in this volume"]
+
+
+# DEPTH IS COUNTED PER GRAIN, AND THE TWO COUNTS DIFFER (2026-08-17).
+#
+# A witness barred at glyph grain is not thereby barred at every grain, and
+# collapsing the two is how the New Testament came to be described as having no
+# second witness at all.  It has one second witness (`M`, the 1582 setting) that
+# cannot resolve a long-s nub and can do everything else.  These two functions
+# exist so that "how deep is this volume?" cannot be asked without saying at
+# WHICH grain, because the honest answer for the NT is 1 and 2 depending.
+#
+# Neither function is a permission check.  `glyph_source()` and
+# `assert_verse_admitted()` remain the gates; these only COUNT, for planning and
+# for reporting, and a caller that uses them to decide admissibility has
+# reimplemented a gate badly.
+
+
+# Roles whose PERMISSIONS extend to a glyph-grain call.  `lowres` is absent by
+# its own definition ("NOT training data, NOT CER evaluation, and it may not
+# adjudicate long-s against f").
+GLYPH_ROLES = frozenset({"base", "surrogate", "support"})
+
+
+def glyph_witnesses(vol, year=None):
+    """Sigla in `vol` usable for a GLYPH-grain call: readings, training crops, CER.
+
+    `year` restricts to one SETTING, exactly as `structural_witnesses` does, and
+    for the same reason -- both take it or neither should, or a caller comparing
+    the two counts is comparing different populations without being told.
+
+    ⚠️ THIS DELIBERATELY RETURNS LESS THAN `admissible()`, AND THE DIFFERENCE IS A
+    DEFECT IN THE REGISTRY, NOT IN THIS FUNCTION (found 2026-08-17 while adding
+    it).  `admissible()` tests only `GLYPH_BARRED` and `NO_READING`, and
+    `GLYPH_BARRED` holds exactly `F` and `X`.  It does NOT hold `M` -- so
+    `admissible("NT")` names `M`, and `glyph_source("NT", "M")` RETURNS A USABLE
+    PDF PATH, although `M`'s role is `lowres` and the `lowres` definition bars it
+    from training data, from CER evaluation, and from adjudicating long-s against
+    f.  The bar is written in `ROLES` and enforced by nothing: the same shape as
+    Gate 0f and Gate 0d before their consumers were built, on the field that has
+    now been misread twice.
+
+    So this function derives the permission from the ROLE, which is where the
+    limit is actually stated, rather than from a hand-maintained bar list that
+    has to remember every witness.  It is a COUNTER and not a gate; the gate is
+    `glyph_source()`, and closing the hole there is a registry change with
+    behavioural consequences for every consumer, which is a separate act and
+    needs its own step and its own injection proof.  Until that lands, a caller
+    wanting the honest set should use this and not `admissible()`.
+    """
+    return sorted(s for (v, s) in WITNESSES
+                  if v == vol
+                  and WITNESSES[(v, s)]["role"] in GLYPH_ROLES
+                  and s not in GLYPH_BARRED
+                  and (v, s) not in NO_READING
+                  and (year is None or WITNESSES[(v, s)]["year"] == year))
+
+
+def structural_witnesses(vol, year=None):
+    """Sigla in `vol` usable for STRUCTURAL work: collation, page order, LAYOUT, archetypes.
+
+    Wider than `glyph_witnesses` by exactly the witnesses whose bar is one of
+    RESOLUTION rather than of setting or of distinctness -- page structure is
+    legible at resolutions that cannot separate `ſ` from `f`.  Damage and
+    show-through adjudication belongs here too: whether a mark is in the type or
+    in one copy is answered at blot grain.
+
+    `year` restricts to one SETTING, which is almost always what a caller wants:
+    a structural comparison across settings is a conflation, and `NT` holds two
+    (1582 and 1633).  Passing `year=None` returns every witness to the volume
+    regardless of setting and is correct only for whole-file bookkeeping.
+
+    Excluded regardless of grain: `excluded` (not a distinct copy -- an upscale
+    of another witness contributes no independent evidence of anything, including
+    structure) and `frontmatter` (a different edition; its structure is its own).
+    """
+    out = []
+    for (v, s) in WITNESSES:
+        if v != vol:
+            continue
+        rec = WITNESSES[(v, s)]
+        if rec["role"] in ("excluded", "frontmatter"):
+            continue
+        if year is not None and rec["year"] != year:
+            continue
+        out.append(s)
+    return sorted(out)
+
+
+def depth(vol, year=None):
+    """(glyph_depth, structural_depth) for a volume, at one setting if `year` is given.
+
+    Reported as a pair on purpose.  A single number invites the question "depth
+    of what?" to go unasked, and the answer differs: for the transcribed NT
+    setting it is (1, 2) -- `B` alone can carry a glyph call, `B` and `M`
+    together can carry the layout and collation work.
+    """
+    return (len(glyph_witnesses(vol, year)), len(structural_witnesses(vol, year)))
 
 
 def setting(vol, sig):

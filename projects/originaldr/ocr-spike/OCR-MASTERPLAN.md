@@ -90,8 +90,30 @@ Two failure modes are forbidden by name, because both are easy to reach from goo
 - **Status-quo preservation dressed as empiricism** — treating an ambiguous measurement as licence to keep
   the incumbent. An ambiguous measurement licenses **a better experiment**, never a lowered requirement.
 - **Unstartability** — a requirement so demanding that nothing can begin produces the *same observable
-  outcome* as preserving the status quo. Every prerequisite carries a **stated hour ceiling and a
+  outcome* as preserving the status quo. Every prerequisite carries a **stated complexity class and a
   pre-registered decision rule before it starts.**
+
+🔴 **THE CEILING IS DENOMINATED IN COMPLEXITY, NOT HOURS (2026-08-17, Sir's instruction).** Every ceiling
+in this project read in *hours* until today. Elapsed time is the wrong unit and it was quietly doing
+damage in two directions. It let a spent budget read as **licence to stop** — R2 recorded "~5h of the 12h
+ceiling" beside a failing metric, which invites the reader to ask how much budget is left rather than
+whether the approach is sound. And it made the **cheap path look like the better path**, which is exactly
+how a step gets closed by routing around the defect it was supposed to expose. What we actually need to
+know before starting is **how hard this is to solve correctly**: what must be designed rather than tuned,
+what is unknown, how many interacting parts must hold at once, and what would invalidate the approach
+outright.
+
+| class | meaning | decision rule shape |
+|---|---|---|
+| **C1 — mechanical** | the method is known and proven elsewhere in this corpus; only application remains | failure means a defect in application; fix and re-run |
+| **C2 — parameterised** | the method is known but its constants must be *measured* on this corpus, never guessed | failure means the constant was measured wrong or does not exist; re-measure once, then escalate |
+| **C3 — design** | no method in hand; one must be designed, and a wrong design is not detectable from its own output | pre-register the acceptance BEFORE building; one redesign permitted, then **ALERT** |
+| **C4 — open problem** | the failure mode is not yet characterised, so acceptance cannot be written honestly | the first deliverable is a *characterisation*, never an attempt |
+
+**Every ALERT and escalation semantic in this document is unchanged.** A ceiling that is reached still
+**ALERTS that the approach needs redesign**, still never closes the step, and a below-threshold unit still
+stays **OPEN and blocking**. Only the unit changed. ⚠️ A C3 or C4 step that reports progress as "percent
+complete" is making the same error in a new unit — completion of an unvalidated design is not progress.
 
 Where a number must be reported before properly-sized evidence exists, it is reported **with its confidence
 interval and the label PROVISIONAL / non-citable**, and **no gate closes on it.**
@@ -100,11 +122,14 @@ interval and the label PROVISIONAL / non-citable**, and **no gate closes on it.*
 **OPEN and blocking**; a safeguard that fires raises an **ALERT that the approach needs redesign** and never
 constitutes acceptance.
 
-**Every prerequisite carries a stated hour ceiling and a pre-registered decision rule** (above). Until
+**Every prerequisite carries a stated complexity class and a pre-registered decision rule** (above). Until
 2026-08-10 that sentence had **no consumer**: not one roadmap step carried a ceiling or a rule, and the two
 sections blocking everything else — R2 and R3 — had never started, which is the precise outcome the
 requirement exists to prevent. Ceilings and rules are now carried per open prerequisite in the roadmap, and
-`witness/audit_prereq_ceilings.py` reports the OPEN steps carrying neither.
+`witness/audit_prereq_ceilings.py` reports the OPEN steps carrying neither. ⚠️ **That audit parses for
+hour-denominated ceilings and must be converted to parse complexity classes**, or the 2026-08-17 change
+silently empties it — a checker that no longer recognises the thing it checks reports a clean result for
+the wrong reason, which is the §0.6 shape again. Raised in the roadmap as an open step.
 
 🔴 **CORRECTED 2026-08-11. This sentence named `witness/test_prereq_ceilings.py`, a file that has never
 existed, and called it a guard that "fails".** The instrument that was built is
@@ -1039,8 +1064,30 @@ roadmap R4.1.
 > deliver — *no reading of those two leaves may be taken from any file but `M`* — is unchanged, and is now
 > better founded, because `F` is not merely contaminated there but is the wrong edition throughout.
 
-**Provenance is a property of the leaf, not of the file.** Three of the four NT files are made up, in
-different ways, and the affected leaves are the same two in every case.
+**Provenance is a property of the leaf, not of the file.** The affected leaves are the same two in every
+case: the **Censure & Approbation** and **Preface p. 1**.
+
+🔴 **"MADE UP" IS THE BIBLIOGRAPHICAL TERM OF ART, AND THE COUNT WAS WRONG (corrected 2026-08-17).**
+
+**On the term.** A **made-up copy** is one whose book block is assembled from leaves of more than one
+copy — the ordinary remedy for an imperfect book, performed by binders and booksellers for as long as
+books have been sold. It does **not** mean fabricated, forged, or falsified, and nothing in this section
+alleges bad faith by anyone. The distinction matters to us for one reason only: a supplied leaf is a
+witness to *the copy it came from*, not to the copy it now sits in, so a reading taken from it is
+misattributed unless the supply is declared. This sentence is quoted in §2 and in the roadmap, where —
+stripped of its table — it has been reading as an accusation. It is not one.
+
+**On the count.** "Three of the four NT files" does not survive its own table, which lists **five**. Of
+the five, **two are made up in the strict sense** — `NT/S01` and `NT/S08`, each having the two leaves
+supplied from another copy. `NT/S09` is **imperfect, not made up**: it lacks both leaves outright and
+supplies nothing, going title page → Preface p. 2. `NT/S04` and `NT/S06` carry both leaves **natively**.
+The defensible statement is therefore: **of the five NT files, three deviate from a native complete
+sequence at these two leaves — two by supply and one by absence — and only two of those are made-up
+copies.** ⚠️ The corrected count does not weaken the argument it was recruited for; it sharpens it. The
+point was never *how many* files are irregular but that **irregularity is invisible until the leaves are
+read**, which is what Gate 0b exists to catch. An imperfect copy and a made-up copy fail a collation in
+different ways — a wanting leaf versus a leaf that is present and wrong — and a gate that could not tell
+them apart would be the R1.4 defect again.
 
 | file | Censure & Approbation | Preface p. 1 | source of the supplied leaves |
 |---|---|---|---|
@@ -1179,7 +1226,9 @@ recorded · **evidential scope declared per witness and read by a scorer** (Gate
 
 **Gate 0b — completeness and collation.** Per copy: a leaf inventory against the expected signature
 collation, listing **wanting leaves, duplicated leaves, misbound leaves, and made-up leaves with the
-supplying copy named.** §1.4 establishes that this cannot be skipped: three of four NT files are made up,
+supplying copy named.** §1.4 establishes that this cannot be skipped: **three of the five NT files deviate
+from a native complete sequence at the same two leaves — two by supply (made-up copies in the
+bibliographical sense) and one by outright absence** (count corrected 2026-08-17, §1.4),
 and the defect was invisible until the leaves were read. **A copy is not admitted as a witness for a given
 leaf until that leaf is known to be native to it.**
 
@@ -1382,8 +1431,9 @@ This is a separate defect from R7, and the two must not be merged. R7 found that
 from **inadmissible rasters** — a question of *which photograph*. This is a question of *whether the leaf
 was known to be the leaf it was called*: without a collation (0b) a leaf may be a duplicate, a misbinding
 or a made-up supply from another copy, and without a leaf map (0c) "the same page" cannot be stated across
-witnesses at all. §1.4 is the standing proof that this is not hypothetical — three of four NT files are
-made up, and the defect was invisible until the leaves were read.
+witnesses at all. §1.4 is the standing proof that this is not hypothetical — **three of the five NT files
+depart from a native complete sequence at the same two leaves, two of them by supply from another copy**
+(count corrected 2026-08-17) — and the defect was invisible until the leaves were read.
 
 **The rule is not relaxed and the files are not condemned.** They are **PROVISIONAL** in the §0.5 sense:
 usable as working material, **not citable**, and **no gate closes on them**. They are re-admitted leaf by
@@ -1448,9 +1498,109 @@ of the PDF derivatives, and neither describes any raster the edition will consum
 
 ### 3.2 Geometry — shapes from ink, labels from text
 
+🔴 **WHY THIS SECTION IS THE HIGHEST-VALUE LEVER IN THE PROJECT, RECORDED HERE 2026-08-17 BECAUSE IT HAS
+ONLY EVER BEEN WRITTEN IN A STATUS FILE.** The Rung-2 fine-tune scores **content 0.9448 and surface 0.451**
+on `genesis-24` — the same page, the same model, a 49-point spread — and
+`RUNG-PIPELINE-STATUS-2026-07-21.md` states the cause without hedging: *"the recogniser emits
+running-header/marginalia the gold body excludes; that is Rung-1's **layout-separation job (body-region
+typing)**"*. The recogniser is not misreading glyphs there. It is reading correct glyphs **out of regions
+that should never have entered the body flow**, because nothing tells it where the body ends.
+
+**So geometry is currently the binding constraint on RECOGNITION's measured score**, and step 10 would lift
+step 11's numbers without a single change to the recogniser. Read together with §3.1's raster policy this
+inverts the intuitive ordering: the recognition problem looks like the hard one and is the better-served
+one. ⚠️ **Recorded here rather than left in a July status file precisely because its absence from the plan
+made step 10 read as routine sequencing**, and a step whose motivation lives outside the governing document
+is a step that will be deprioritised by anyone reading only the governing document.
+
+**And geometry was written off once already, on evidence that did not support it.** `CAMPAIGN-STATUS.md`
+concluded *"every leaf-bound lever swept so far has been worked out; what is left is recognition"* — then
+carried its own correction: that sentence *"was true of the RIGHT bound only"*, and a sweep on 2026-08-01
+returned **+57 cells, board 0.8576 → 0.8669, no chapter down**, with ch41 163/228 → 182/228 and ch35 86 →
+97 — **both from geometry, in the two chapters that file had just reclassified as recogniser problems.**
+The lesson is not that geometry always pays; it is that *"the geometry levers are exhausted"* was asserted
+from a sweep of one bound and generalised to all of them.
+
 Region polygons are derived so that **line geometry is not a descendant of the incumbent layout bands**.
 Deriving polygons as hulls of aligned line boxes is self-defeating: those boxes were produced *under* the
 bands, so labels inherit the bands' blind spots and boundary error is bounded below by the hull's error.
+
+#### 3.2a The page archetype is classified BEFORE any region is discovered (NEW, 2026-08-17)
+
+🔴 **THE STEP THIS SECTION WAS MISSING.** Everything below describes how to find and label regions on a
+page **whose class inventory is already known**. That premise is never stated and it is false. A model
+handed an arbitrary leaf does not yet know whether it should be looking for a marginal apparatus, an
+italic argument, a drop cap, a printers'-rule table, or none of them — and *discovering* the inventory
+per page is a strictly harder problem than *bounding a known* inventory. **The archetype is therefore
+classified first, and the archetype determines which region classes are in play.** Without this, "adaptive"
+means "guesses the class list from ink", which is the version of the problem we have no evidence anyone
+can solve on this corpus.
+
+**Eight archetypes.** Each names the classes it **REQUIRES** and the classes it **FORBIDS**, and the
+forbidding half is the load-bearing half: a forbidden class emitted is a hard, checkable classifier
+failure, whereas a missing required class could always be a bounding failure one stage later. This is what
+makes the classifier's output falsifiable rather than merely plausible.
+
+| # | archetype | REQUIRES | FORBIDS | complexity |
+|---|---|---|---|---|
+| **A** | **plain text page** | MainText · RunningHead · VerseNumber · Catchword | Marginalia · Argument · ChapterHeading · DropCap | **C1** — the incumbent bands already handle it |
+| **B1** | **text + apparatus, DISJOINT** | A's set · Marginalia | Argument · DropCap | **C2** — the bound exists and must be *measured* per leaf |
+| **B2** | **text + apparatus, INTERLEAVED** | A's set · Marginalia | Argument · DropCap | **C3** — no bound can work; see below |
+| **C** | **chapter opening** | MainText · ChapterHeading · Argument · DropCap · VerseNumber | — | **C2** |
+| **D** | **book opening** | MainText · BookTitle · Argument | VerseNumber (before v. 1) | **C2** |
+| **E** | **annotation leaf** | Annotation · RunningHead · NoteRef | MainText · VerseNumber | **C3** — apparatus is *roughly half the book* |
+| **F** | **MIXED LEAF** | ≥2 archetypes on one leaf, each with its own extent | — | **C3** — currently **DROPPED WHOLE** |
+| **G** | **prelims** | Prose · DisplayType (title page) | VerseNumber · Catchword-as-scripture | **C2** |
+| **H** | **tabular matter** | Table · Brace · Rule | MainText-as-prose | **C3** — braces and rules are structure, not glyphs |
+
+**B1 versus B2 is a proven distinction, not a taxonomy convenience, and it is the single most important
+row.** `gutter_probe.py` swept all 914 credited leaves. On `jp2-S06` p74 the two columns are genuinely
+disjoint — body line-ends at `x1<=1647`, margin column starting `x0>=1673`, **a real 26 px gutter** — so a
+per-leaf bound separates them, and the adopted bound 0.746 is the *midpoint of the measured gutter*, right
+for the reason it is right rather than by tying on the scoreboard. That is B1, and it paid: **ch15 64→66**,
+with the token diff confirming the mechanism (65 tokens removed, every one traceable to the side-note or a
+patristic citation, **and one token ADDED — `exceeding`**, whose halves the intruding margin word had been
+splitting; a bound that only deleted could not have produced a word).
+
+**B2 is a different problem wearing the same appearance.** On ch3 and ch6 `gutter_probe` reports OVERLAP on
+**every one of their eight leaves**, and the rows say why — they come from **kraken's own line
+segmentation, upstream of the page model's row grouper**, and kraken merged the margin text *into the body
+line object itself*:
+
+    ch3 p26   gaueſt me to be my fellow companion, gaue me of the tree, & I did eate. the diuel that
+    ch6 p36   Noe: The eud of al fleſh is come before me, the earthis repleniſhed ratos God re-
+
+⚠️ **No x-threshold can split words that arrived inside one line object.** The information needed to
+separate them was destroyed before any bound could be applied. This is why **row-level column assignment
+is a BUILD, not a tuning** — and why B1 and B2 must be distinct archetypes routing to distinct machinery,
+rather than one class with a parameter. Treating B2 as B1-with-a-worse-bound is how four leaves' worth of
+apparatus got carried as a tuning problem.
+
+**The typology and the residue signal check each other.** §3.2 item 3 already establishes that unaligned
+residue is a labelling target rather than a discard. The archetype makes that signal *diagnostic* instead
+of merely quantitative: **a misclassified page produces residue of a characteristic shape.** An A scored as
+B leaves a phantom margin column with no ink assigned to it; a B scored as A leaves apparatus text inside
+MainText and inflates the reference-unmatched fraction on one side of the measure; an F scored as any
+single archetype leaves a contiguous block of residue with a horizontal boundary. So residue shape is
+evidence about the *classifier*, not only about the bounds — and the classifier's errors become training
+data by the same mechanism as everything else here. **Neither signal is trusted alone**: the reference-based
+residue is null exactly where there is no reference (the 8,383 loci), which is why the
+reference-independent signal — ink groups with no line assignment — runs alongside it.
+
+🔴 **ARCHETYPE F IS AN ACTIVE DATA LOSS AND MUST BE NAMED AS ONE.** `chapter_open_probe.py` finds mixed
+leaves and reports them — *"MIXED LEAF: annotations above, this chapter's opening below — **dropped WHOLE
+today**"* — and `_is_annotation_leaf` excludes the entire leaf. Every mixed leaf therefore discards the
+scripture it carries along with the apparatus it carries. This is not a defect of the probe, which
+correctly refuses to attribute a whole leaf to one matter-type; it is the absence of an archetype that can
+hold two extents at once. **The leaves being dropped are precisely the ones richest in the boundary the
+geometry model exists to learn**, so they are a labelling target of the highest value, not an awkward
+residue. Recorded as blocking for Gate 9.
+
+⚠️ **Archetype coverage is a sampling obligation, not only a modelling one.** §7.2 already requires layout
+ground truth to carry an explicit quota for books with no archaic reference. The same argument applies
+here with more force: A is the overwhelming majority of leaves, so a set sampled at random is a set that
+measures A and reports it as a page score. **GOLD-LAYOUT carries a per-archetype quota and publishes
+per-archetype n**, or Gate 9 is a plain-text-page gate wearing a corpus-wide name.
 
 1. **Shapes from ink**: connected-component and projection-profile grouping on the native raster, plus a
    generic baseline segmenter over the **untyped full page**.
@@ -1475,10 +1625,55 @@ bands, so labels inherit the bands' blind spots and boundary error is bounded be
    the model to suppress the class.
 8. **Books with no archaic reference generate no distantly-supervised labels**, so the training set would
    otherwise be a non-random book subset. **Layout ground truth carries an explicit quota for them.**
+9. **Slant is an output of this model, estimated per LEAF and never per row** (NEW, 2026-08-17 — see
+   below). It is emitted alongside the polygons, because a region boundary and the angle of the type
+   inside it are one measurement, not two.
 
-**Gate 9**, published *before* the baseline is measured and sha-pinned, with the recognizer frozen:
-**marginalia recall ≥0.85 and precision ≥0.90 at block-level n · MainText boundary error ≤8 px median,
-≤25 px p95 · per-class IoU · n ≥ 125 eval pages.**
+#### 3.2b Slant — a working capability that no rule reads (NEW, 2026-08-17)
+
+🔴 **THE WORD `slant` APPEARED NOWHERE IN THIS DOCUMENT, AND THE CAPABILITY HAS EXISTED FOR WEEKS.** `skew`
+appeared only as a **nuisance variable to stratify against** — §7.2 splits training data by gathering
+partly because adjacent leaves of one gathering share paper, bleed-through and skew — never as a quantity
+to *estimate and emit*. Meanwhile production preprocessing is on record as **"No binarization/deskew"**,
+and `line_split.py` carries a result that no gate has ever read.
+
+**The result, and why it is not obvious.** Two consecutive printed lines on a scanned-askew leaf can merge
+into a single detected row. The tempting fix — fit the slope from that row and de-skew by it — **fails, and
+fails in a way that looks like success**: the fit returns **−0.0159**, a plausible small number, because it
+is *reconciling two interleaved lines* rather than measuring one. The slope belongs to the **leaf**, not to
+the row. So it is estimated from the rows that **do** split cleanly on raw geometry, and that single
+per-leaf number is applied to every row before clustering. A leaf with no clean rows at all yields **no
+estimate and abstains**, rather than accepting a fitted number of unknown provenance.
+
+⚠️ **The failure shape is worth naming because it is this project's most repeated one, inverted.** Gate 0d
+was a **rule that no code implemented**. Gate 0f was a **rule that no code read**. This is the mirror:
+**working code that no rule governs.** A capability with no gate is not safer than a gate with no
+capability — it is less safe, because it will be used and its errors will never be measured. Slant is
+therefore promoted to a **named, gated output of the region model**, and Gate 9 now reads
+**box · label · slant**.
+
+**Gate 9**, published *before* the baseline is measured and sha-pinned, with the recognizer frozen.
+Revised 2026-08-17 to carry the archetype and slant clauses:
+
+| # | clause | metric | threshold | set | n |
+|---|---|---|---|---|---|
+| 9.1 | **archetype classification** | per-archetype accuracy · **forbidden-class emission rate** | accuracy ≥0.95 macro; **forbidden-class emission = 0**, no tolerance | GOLD-LAYOUT | **per-archetype quota published**, ≥125 pages total |
+| 9.2 | **marginalia** | recall · precision, block-level | ≥0.85 · ≥0.90 | GOLD-LAYOUT | ≥125 pages |
+| 9.3 | **MainText boundary** | boundary error | ≤8 px median · ≤25 px p95 | GOLD-LAYOUT | ≥125 pages |
+| 9.4 | **per-class shape** | IoU per class | published per class, no aggregate substituted | GOLD-LAYOUT | ≥125 pages |
+| 9.5 | **slant** | per-leaf slope error vs hand-measured baseline angle · **abstention rate** | error threshold **pre-registered from the hand-measured set's own spread, not asserted here** · abstentions **reported, never excluded** | GOLD-LAYOUT | pre-registered |
+
+⚠️ **9.5's threshold is deliberately left unwritten and is a blocking prerequisite, not an omission.** No
+hand-measured slant set exists, so any number written here would be invented — and §0.5 forbids a
+threshold that was not derived from evidence. The first deliverable for slant is therefore the
+**characterisation** (a **C4** step): measure the distribution of true leaf slopes, and only then write the
+gate. Writing 9.5's number before that set exists is how a gate gets tuned to what the incumbent already
+does.
+
+🔴 **Neither Gate 9 nor Gate 11 has EVER been evaluated. No layout score of any kind exists on this
+corpus.** Every figure in this section is a *published threshold*, not a result, and no claim about the
+geometry model's performance may cite them as though they were. The 0.9396 / 0.9448 figures that circulate
+are recogniser validation accuracy and a single-chapter content score — neither is a layout measurement.
 
 ---
 
@@ -1712,7 +1907,11 @@ pooling would alter frames-per-character and confound the sweep.
 
 - Grid: 3 heights × 2 pooling variants, minus the invalid cell = **5 configs × 3 seeds = 15 runs**, because
   single-run variance exceeds the effect on rare classes.
-- **120–200 GPU-hours.** Rank on a fixed ~5k-line subset (~40 h), confirm the top two at full data.
+- **Compute-bound, and staged so the full-data cost is paid only twice**: rank all 15 runs on a fixed
+  ~5k-line subset, then confirm **only the top two** at full data. ⚠️ The staging is a *design* decision,
+  not a budget one — ranking at full data would spend the grid's cost on configs the subset can already
+  separate, and the subset ranking is only admissible because the decision metric is per-class F1 with a
+  paired bootstrap, which the subset supports.
 - **Decision metric pre-registered as `ſ`/`f` and tilde-vowel per-class F1 with a paired bootstrap over
   lines** — aggregate CER is dominated by classes 120 px already handles and cannot resolve the question.
 - **Normalise to measured x-height, not line-box height.** Line boxes include variable ascender/descender
@@ -1880,15 +2079,21 @@ to failing it is not an escalation rung.
 Diplomatic keying care is required **for the base exemplar only** — the other copies are scored folded, for
 word identity. The correction loop (§6.1) then grows the set continuously as a by-product.
 
-| set | scope | size | hours |
+| set | scope | size | complexity |
 |---|---|---|---|
-| **GOLD-TEXT** | base exemplar, grown by the correction loop | 200 lines to start | **8–12 h**, then free |
-| **GOLD-LAYOUT** | eval half **split by gathering** | ~80 eval + ~60 seed | ~15–20 h, then free via the UI |
-| **glyph census** | §7.3 | exhaustive on a declared page set | first generation |
-| **NOISE-FLOOR** | §7.4 | 150 lines × 3 keyings | ~15 h + one paid validation |
+| **GOLD-TEXT** | base exemplar, grown by the correction loop | 200 lines to start | **C1** — keystrokes already being made; the set is a by-product, then free |
+| **GOLD-LAYOUT** | eval half **split by gathering**, **per-archetype quota** (§3.2a) | ~80 eval + ~60 seed | **C2** — the quota must be *measured* from archetype incidence, not assumed; then free via the UI |
+| **glyph census** | §7.3 | exhaustive on a declared page set | **C2** — first generation |
+| **NOISE-FLOOR** | §7.4 | 150 lines × 3 keyings | **C1** + one paid validation (a resource, not a schedule) |
 
 **Non-negotiable**: a frozen, image-derived, never-trained-on evaluation half for text and layout. Without
-it every number is circular. **It is ~15–20 hours, not 200.**
+it every number is circular. ⚠️ **The size argument this line used to make in hours is preserved, because
+it was a real argument and only its unit was wrong**: these sets are small not because the standard was
+relaxed but because **gold-keying and production transcription are the same keystrokes** (§6.1) — the set
+is a by-product of work already being done, so the objection "annotation at this fidelity is unaffordable"
+answers itself. The cost that *is* real is **C2 design cost on GOLD-LAYOUT**: its stratification and
+per-archetype quota have to be derived from measured incidence, and getting that wrong yields a set that
+looks adequate and measures the majority archetype.
 
 **Stratification**: **not by book** — 6 copies × 2 parities × 73 books is 876 cells for ~125 pages, and the
 books that matter most get single-digit page counts. Stratify **copy × parity × page-type** (~48 cells,
@@ -1925,8 +2130,10 @@ requirement.
 4. **Per-class floors on a purposive census** of `ſ`/`f` and the tilde vowels (≥300 instances each). A
    line-sampled 300 lines yields perhaps five `ſ`/`f` disagreements — a floor for the edition's central
    distinction estimated from five events. **A single aggregate floor is not usable for a per-class target.**
-5. **Buy ~8 hours of a second keyer for the 150 lines to validate the self-re-key once.** If the two
-   diverge, **ALERT: the floor estimator needs redesign.**
+5. **Buy an independent second keyer for the 150 lines to validate the self-re-key once** — the paid
+   resource is *a second person's independent pass on a named set*, which is what makes it an escalation to
+   a different resource class (§7.7); the quantity is the 150 lines, not a duration. If the two diverge,
+   **ALERT: the floor estimator needs redesign.**
 6. Resolve each disagreement against a magnified crop and record a **per-class irreducible-ambiguity rate**.
 
 ### 7.5 Circularity — every path closed
@@ -1956,19 +2163,186 @@ not a convergence criterion.
 | terminal | condition | disposition |
 |---|---|---|
 | **CONVERGED-AT-TARGET** | metric ≥ threshold ∧ Δ < δ | closed |
-| **STALLED-BELOW-TARGET** | metric < threshold ∧ Δ < δ | **OPEN, blocking, ALERT for approach redesign. The deliverable does not ship.** |
+| **STALLED-BELOW-TARGET** | metric < threshold ∧ Δ < δ | **OPEN, blocking, ALERT for approach redesign. The deliverable does not ship.** The stalled leaves enter the **stall queue** and route to a pipeline extension (§7.7a) — the alert names work, not a wait |
 
 **Regression rule**: if a generation is worse than its predecessor by more than the paired confidence
 interval, it is a **failed experiment** — revert, do not adopt, **do not re-baseline.** Keep-best
 checkpointing throughout. **δ is pre-registered per metric, and δ ≥ 2× the evaluation set's standard error
 or the gate is void.**
 
+#### 7.6a How this loop reaches target instead of spiralling (NEW, 2026-08-17)
+
+The table above says what the terminals *are*. It does not say why the loop should be expected to arrive at
+the first rather than the second, and that question deserves a direct answer rather than a restatement of
+the rules.
+
+**Four mechanisms do the work, and each blocks a specific way of failing.**
+
+1. **The loop is productive, not merely bounded — this is the whole argument.** A generation that misses is
+   not a wasted iteration returning the same information. §3.2 item 3 converts each generation's failures
+   into the *next* generation's labelled training data: the span of the chapter's reference matched by no
+   line localises the missed or clipped region, and §3.2a makes residue **shape** diagnostic of *which*
+   archetype was misjudged. So each pass narrows where the remaining error lives. A loop whose failures are
+   uninformative can only be bounded; a loop whose failures are labelled can improve. **If a generation ever
+   produces no usable residue, that — not the score — is the signal that the loop has genuinely stalled**,
+   and it is checkable independently of the metric.
+2. **Ratcheting: keep-best checkpointing plus the no-re-baseline rule.** Together these make the sequence of
+   adopted generations monotone by construction. The regression rule's real force is the **do not
+   re-baseline** clause: without it, a worse generation quietly becomes the new comparison point and the
+   next generation "improves" against a floor that was lowered to receive it. That is the mechanism by which
+   iterative systems drift downward while every individual step reports a gain.
+3. **Simultaneity closes the metric-shopping escape.** The primary scalar plus non-inferiority constraints
+   must hold **at the same time**. The failure this prevents is concrete and this project has already
+   recorded its shape elsewhere: a generation that lifts CER by suppressing the Marginalia class scores
+   better on text and worse on the corpus, and with a free choice among five metrics it would be adopted.
+4. **δ makes "converged" mean something.** δ ≥ 2× the evaluation set's standard error is what separates
+   *converged* from *the measurement stopped resolving*. Without it, a small eval set produces a Δ below any
+   δ you like, and the loop declares convergence by running out of resolution.
+
+**STALLED-BELOW-TARGET is a routing decision, not a dead end — but only since §7.7 was corrected.** This is
+the part the terminal table understates, and until 2026-08-17 the claim was **false as written**. §7.7
+required that every escalation name a different resource class, and named four — paid annotation, a better
+scan, a palaeographer, a stated reduction in coverage — **none of which this project can reach.** A routing
+decision whose every destination is unreachable is not routing; it is a stop with an alert attached. The
+paragraph that stood here asserted that "a stall therefore always has a legal next move", which was the
+conclusion the four dead options were supposed to support and did not.
+
+**The corrected mechanism is §7.7a: escalation is the construction of pipeline capability.** A stalled leaf
+is evidence that the pipeline lacks a mechanism that leaf needs, so the stall routes to **building that
+mechanism** — a new archetype, a sub-case split, a new region class, a new bounding mechanism — proposed
+from a clustered failure signature, admitted only through an adversarial gate, and constrained by the rule
+that an archetype must be nameable in the vocabulary of the book rather than of the error. This is the one
+resource class we command without limit, and the only one that reduces neither fidelity nor coverage. **A
+stall now names work we can actually do**, which is what keeps "OPEN and blocking" from being equivalent to
+"abandoned" — and it is what makes item 1 above more than a description: residue is not merely informative,
+it is the **input to the escalation loop**.
+
+⚠️ **THE HONEST RISK, STATED BECAUSE IT IS NOT COVERED BY ANY OF THE ABOVE.** Every mechanism here measures
+against GOLD-LAYOUT and GOLD-TEXT. **A defect systematically absent from the frozen sets is invisible to
+every generation, and no number of iterations will find it** — the loop will converge cleanly on a corpus
+it is not fully measuring. This is not hypothetical: it is the shape of R1.4's assumed null and of the
+dead-metric episode, both already recorded. Three provisions exist against it and they are the reason the
+set design is as awkward as it is — the eval half is **image-derived** (so it cannot inherit the incumbent's
+blind spots), **never trained on** (so convergence is not self-congratulation), and **split by gathering**
+rather than by page (so a gathering's shared paper, skew and forme cannot leak between train and eval).
+§3.2a adds the fourth: a **per-archetype quota**, because a set sampled at random measures archetype A and
+reports the result as a corpus score. **None of these four is optional, and none of them can be verified
+after the fact from the metric alone** — which is why they are frozen and sha-pinned before the baseline is
+measured.
+
 ### 7.7 Escalation
 
-- **Pre-register 3 rungs and an hour ceiling per rung** before the generation starts.
-- **Every escalation names a different resource class than the one that failed**: paid annotation hours, a
-  better scan, an outside palaeographer's ruling, or **a stated reduction in coverage — fewer books at full
-  fidelity — never a reduction in fidelity.**
+🔴 **THIS SECTION WAS A DISGUISED ACCEPTANCE, AND IT IS BEING CORRECTED BY THE CONSTITUTION'S OWN STANDARD
+(2026-08-17).** As written until today, §7.7 required that *"every escalation names a different resource
+class than the one that failed"* and offered four: **paid annotation, a better scan, an outside
+palaeographer's ruling, or a stated reduction in coverage.**
+
+**Not one of those four is reachable by this project.** There is no annotation budget and no palaeographer.
+There will be no better scan — the captures we hold are the captures that exist, and the two hypothetical
+levers on witness depth (a higher-resolution re-capture of `F`, a second 1582 New Testament) have been
+ruled out as unavailable, not merely unfunded. And "a stated reduction in coverage" is a reduction in
+scope, which the No Silent Degradation rule exists to forbid; dressing it as a resource class does not
+change what it is.
+
+**A ladder whose every rung is unreachable is not a ladder.** It makes `STALLED-BELOW-TARGET` terminal in
+practice while allowing the plan to describe it as *"OPEN, blocking, ALERT"* — a below-threshold result
+converted into a state nothing can move, which is the exact laundering §0.5 forbids, sitting inside the
+machinery written to prevent it. **Fourth instance of a correct rule that no reachable mechanism served**
+(Gate 0f, Gate 0d, `audit_prereq_ceilings`, this). The failure is not that the rule was wrong — *escalate
+by changing kind* is right — but that every named kind was outside our reach, so the rule could only ever
+be satisfied by not invoking it.
+
+#### 7.7a Escalation is the construction of pipeline capability
+
+**There is exactly one resource class this project actually commands, and it is unbounded: the pipeline
+itself.** A leaf that stalls is evidence that the pipeline lacks a mechanism that leaf needs. So escalation
+does not mean *acquire something we cannot acquire* — it means **build the missing mechanism**. This is the
+only escalation class that increases what we can read while reducing neither fidelity nor coverage.
+
+**The loop, in seven steps.** Complexity classes per §0.5.
+
+1. **The stall queue — a stalled leaf is never parked.** A leaf or cell below target after generation *N*
+   enters a queue keyed by its **failure signature**: the archetype it was assigned (§3.2a), the region
+   classes **emitted versus expected** under that archetype, the **shape and location** of its unaligned
+   residue, and whether that residue is **reference-based or reference-independent** (§3.2 item 3 requires
+   both signals precisely so the second survives where there is no reference). **C2** — the fields all
+   exist once §3.2a and §7.6a are built; the work is recording them per leaf rather than per run.
+2. **Cluster before acting.** Failure signatures cluster, and a cluster of size ≥ *k* is a candidate
+   **pipeline extension**: a new archetype, a sub-case split of an existing one — **B1/B2 already is
+   exactly this, arrived at by hand** — a new region class, or a new bounding mechanism. **A singleton is
+   not a candidate**; it returns to the queue to accumulate. ⚠️ ***k* is pre-registered**, before the
+   clustering is run, for the same reason δ is: a threshold chosen after seeing the clusters selects the
+   answer it wants. **C3** — the clustering metric over signatures is itself a design problem.
+3. **Hand off with an evidence packet.** The cluster goes to a subagent as evidence, not as a request: the
+   leaves themselves, their residue, their current classification, what the pipeline emitted, and what the
+   reference says should have been there. Its task is to **propose and build the extension that explains
+   the cluster**. **C2** — the packet is assembly; the proposing is the agent's problem.
+4. **Constraints on the subagent — this is the load-bearing part.** It must declare the extension's
+   **REQUIRED and FORBIDDEN** region classes in the form §3.2a mandates, so the extension is falsifiable
+   the moment it exists. It must **pre-register an acceptance and a negative control** before measuring.
+   And ⚠️ **it may not tune an existing threshold to pass.** That is the forbidden move and it is the first
+   move an optimiser reaches for: a threshold nudged until the cluster clears explains nothing, generalises
+   nowhere, and reports as a success. **C1 to state, and it must be stated in the agent's own instructions
+   rather than checked afterwards** — a constraint discovered at review time has already cost the work.
+5. **Admission is adversarial.** ⚠️ **The agent that proposes an extension may not be the agent that scores
+   it.** The extension is evaluated on never-trained-on GOLD-LAYOUT and adopted only if the stalled cluster
+   **improves** *and* the non-inferiority set **does not regress beyond the paired confidence interval** —
+   §7.6's regression rule, unchanged and unweakened. An extension that fixes its cluster by damaging the
+   corpus is a failed experiment, not a trade. **C2.**
+6. ⚠️ **THE ANTI-CIRCULARITY RULE — AN ARCHETYPE MUST BE NAMEABLE IN THE VOCABULARY OF THE *BOOK*, NOT OF
+   THE *ERROR*.** *"Pages carrying a two-column gloss and a printer's rule"* is an archetype: it names
+   something a compositor did. *"Pages the model gets wrong"* is not — it is the failure set under a new
+   label, and admitting it would let the pipeline manufacture categories that make its own metric pass
+   while learning nothing whatever about the edition. **The typographic justification is the falsifiable
+   part**: a real archetype **predicts features on leaves the cluster did not contain**, and that
+   prediction is testable before the extension is adopted. A category that explains only its own training
+   cluster has not been discovered, it has been drawn around the residue. **C3, and it is the rule most
+   likely to be quietly dropped**, because it is the only step that can reject an extension which
+   demonstrably improves the score.
+7. **Failure is still failure.** If the extension misses its pre-registered acceptance, **the cluster stays
+   OPEN and blocking**, and the next escalation must name a **different mechanism** — candidate exhaustion,
+   as the roadmap now frames the trigger. **C1.**
+
+**The honest difference from the old ladder.** Pipeline capabilities are unbounded in a way that scans and
+budgets are not: there is always another mechanism to design, so *exhaustion is a real event that must be
+demonstrated* rather than a condition that obtains immediately and permanently. That is the whole
+correction. It does not make stalls easy and it is not a guarantee of convergence — **it makes the alert
+actionable**, which is the property §7.7 claimed and did not have. A stall now names work we can actually
+do, and if that work fails it names the next work. The deliverable still does not ship while a cluster is
+open.
+
+#### 7.7b Two speeds: run it by hand now, automate it after
+
+**This loop is not a future feature. It is how the current stalls are to be worked, starting now, by
+hand** — the R2 head-side residue, the interleaved-apparatus leaves of B2, the mixed leaves of archetype F
+that are discarded whole today. Each of those is a cluster with a signature, and each is a pipeline
+extension waiting to be specified.
+
+**And the manual loop is the specification for the automated one.** The pipeline is meant to self-manage:
+to notice its own stalled pages, cluster them, hand them to an agent that expands the pipeline to address
+the features that defeated it, and admit the result only through the adversarial gate above. ⚠️ **The
+ordering is not incidental and it is not a staging convenience: if we cannot articulate the handoff
+precisely enough to perform it by hand, we cannot automate it** — an automated handoff whose contract we
+could not write is an agent given a failure and no definition of success, which produces motion and
+plausible reports. Every field the automated version will need — signature, cluster key, evidence packet,
+pre-registered acceptance, negative control, adversarial scorer — must first be written down because a
+human needed it.
+
+**What §7.6a and §3.2a contribute, and why this only became possible now.** The stall queue is built out of
+**residue**, which §7.6a item 1 establishes as the loop's productive output rather than its waste; and the
+residue is only *diagnostic* because §3.2a's archetypes make its **shape** interpretable — the same residue
+at the outer margin means one thing on an archetype-A page and something else entirely on a B2. Without the
+archetypes a stall reports a number; with them it reports **which class, on which page type, in what
+spatial relation to what**. That is the difference between a queue that can be clustered and a list of bad
+pages.
+
+#### 7.7c The unchanged provisions
+
+- **Pre-register 3 rungs and a complexity class per rung** (§0.5: C1 mechanical · C2 parameterised ·
+  C3 design · C4 open problem) before the generation starts. ⚠️ Changed from an *hour* ceiling
+  2026-08-17: the rung's cost was never the point, and an hour budget on a C3 rung invites the two
+  outcomes §0.5 forbids — stopping because the budget is spent, and preferring the cheap rung because it
+  is cheap. **A rung is escalated when its pre-registered acceptance fails, never when a budget expires.**
 - **Escalation writes a dated, numbered ALERT** naming the approach to be redesigned; the component parks as
   **OPEN with that number attached.** It is never terminal acceptance.
 - **Release-blocking versus campaign-open**: base-exemplar loci are release-blocking; everything else is
@@ -1984,7 +2358,7 @@ set · n · pre-registered effect size.**
 | **0a** | source concordance | fields resolved per copy | **100%, no UNKNOWN** | — | 9 copies |
 | **0b** | completeness & collation | leaves inventoried vs expected signature collation | **100% per admitted copy**; wanting / duplicated / misbound / made-up all named | all copies | 10 files |
 | **0c** | cross-source leaf mapping | leaves keyed to printed page + signature across copies of a volume | **100% of admitted leaves addressable in every witness** | all copies | per volume |
-| **0d** | derivative-contamination guard | leaves failing the JP2 assertion at load | **0** | working chain | every leaf |
+| **0d** | derivative-contamination guard | leaves failing the JP2 assertion at load | **0** | working chain | every leaf. ⚠️ **dimension clause CHECKED on 3,113 of 3,122** — the **9-leaf residue is UNKNOWN, not passing**, and must be named leaf by leaf rather than carried inside a rounded "complete" |
 | **1** | drop-cap fix + page axis | cells moving to OPEN | **18, against a frozen board, never netted** | board | 18 |
 | **2** | residue detector | leaf-ranking precision@50 vs known defects | **≥0.6** | campaign history | 50 leaves |
 | **3** | **archaic typeset census** | every requested class resolved ATTESTED / NOT FOUND, per volume | **100% resolved; exemplar image + frequency per attested class** | census page set | stratified, per volume |
@@ -1993,14 +2367,23 @@ set · n · pre-registered effect size.**
 | **6** | R2 de-contaminate | **splice detection recall on seeded splices** | **≥0.90** | seeded set | ≥100 seeded |
 | **7** | provenance audit | `ſ`/`s` accuracy, ligature policy, base edition | **published** (a characterisation, not a threshold) | scans | 200 verses |
 | **8** | tome map | page-assignment error rate | **≤1%** | held-out | 300 pages |
-| **9** | GOLD frozen | sha-pinned, **gathering-level split** | **frozen; per-class n published** | — | §7.2 |
-| **10** | G1 geometry | marginalia recall / precision · boundary error | **≥0.85 / ≥0.90 · ≤8 px median, ≤25 px p95** | GOLD-LAYOUT, recognizer frozen | ≥125 pages |
+| **9** | GOLD frozen | sha-pinned, **gathering-level split**, **per-archetype quota** (§3.2a) | **frozen; per-class AND per-archetype n published** | — | §7.2 |
+| **10a** | **G1 archetype classification** (§3.2a) | per-archetype accuracy · **forbidden-class emission rate** | **≥0.95 macro · forbidden-class emission = 0** | GOLD-LAYOUT, recognizer frozen | ≥125 pages, per-archetype n published |
+| **10b** | G1 geometry — regions | marginalia recall / precision · boundary error · per-class IoU | **≥0.85 / ≥0.90 · ≤8 px median, ≤25 px p95 · IoU published per class** | GOLD-LAYOUT, recognizer frozen | ≥125 pages |
+| **10c** | **G1 geometry — slant** (§3.2b) | per-leaf slope error vs hand-measured baseline · abstention rate | 🔴 **pre-registered from the hand-measured set's spread — NOT YET WRITABLE, no such set exists**; abstentions reported | GOLD-LAYOUT | pre-registered |
 | **11** | G1 recognition | CER-folded · CER-diplomatic · per-class · abstention | **≤1.0% · floor+δ · published per class · reported** | GOLD-TEXT | §7.2, cluster bootstrap |
 | **12** | alignment | accepted-line precision · never-accepted span fraction | **≥0.98 · reported, blocking if rising** | held-out | 500 lines |
 | **13** | G2 | primary scalar + non-inferiority set | **§7.6** | VAL-GOLD | budget 20 |
 | **14** | publish | apparatus schema validates; **HOLDOUT opened once** | **machine-checkable completeness assertion** | HOLDOUT | — |
 
----
+🔴 **STATE OF THIS TABLE, 2026-08-17 — READ BEFORE CITING ANY ROW.** Rows 10a/10b/10c and 11 have **never
+been evaluated**. There is **no layout score of any kind on this corpus**, and the recogniser figures in
+circulation (validation accuracy 0.9396; `genesis-24` content 0.9448) are neither Gate 11 measurements nor
+layout measurements. Rows 9 through 14 are **published thresholds awaiting their first measurement** —
+which is the correct state for them to be in, since §7.8's document-level invariant requires the threshold
+to be written *before* the step enters the build order, but it means **no row below 9 may be reported as
+met, partially met, or on track.** Rows 0a–0f are the only rows with any measured state at all, and their
+current dispositions are carried in the roadmap's status index, not here.
 
 ## 8. THE BOARD, AND THE APPARATUS
 
@@ -2088,7 +2471,7 @@ never appear inside it.**
 | **7** | Pilot gold — measures keying rate and variance | sizing evidence | 5 |
 | **8** | GOLD-TEXT / GOLD-LAYOUT frozen (**by gathering**); NOISE-FLOOR; **δ pre-registered** | the frozen sets | 7 |
 | **9** | Tome map + held-out audit | addressing | 6 |
-| **10** | **G1 geometry** | region model v1 | 8, 2 |
+| **10** | **G1 geometry** — **archetype classifier first (§3.2a)**, then regions, then **slant (§3.2b)** | region model v1 | 8, 2 |
 | **11** | **G1 recognition** — census inventory, atomic NFC codec, x-height, VOLUME scope | recognizer v1 | 8, 3, 4 |
 | **12** | Alignment; `unclear`/`gap` and page anchors in the data model | line GT at scale | 11 |
 | **13** | Glyph census; text-side mining; pair CNNs with abstention; H sweep | rare-class evidence | 11, 12 |
@@ -2109,6 +2492,23 @@ correspond between files · **Gate 0a residue** — repository/shelfmark for the
 `NT/S08`; **STC/ESTC for every copy** · **the fourth source of `NT/S08`'s two frontmatter leaves**, the
 only NT frontmatter candidate not already known to be 1633 · one citation carried unverified from earlier
 work and load-bearing for §3.2's gate — **resolve or delete** · the archaic typeset census (§4.1).
+
+🔴 **ADDED 2026-08-17, all blocking Gate 9 and none previously carried here:**
+
+- **The unverified §3.2 citation has no roadmap step and therefore no owner.** It sits in this list
+  load-bearing for the geometry gate and is the only entry above with no `R`-number. An item that blocks a
+  gate and belongs to no step is an item that will not be worked — assign it or delete the claim it
+  supports.
+- **Archetype F (MIXED LEAF) is discarded whole** by `_is_annotation_leaf`, taking its scripture with its
+  apparatus (§3.2a). Blocking, because the discarded leaves are disproportionately the ones carrying the
+  boundary Gate 9 measures.
+- **No hand-measured slant set exists**, so Gate 10c's threshold cannot yet be written (§3.2b). The
+  characterisation is the deliverable, not an attempt — a **C4** step.
+- **`witness/audit_prereq_ceilings.py` parses for hour-denominated ceilings** and is inert against the
+  §0.5 complexity classes adopted 2026-08-17. A checker that no longer recognises what it checks reports
+  clean for the wrong reason.
+- **GOLD-LAYOUT has no per-archetype quota**, so as specified it would measure archetype A and publish the
+  result as a corpus-wide layout score (§3.2a).
 
 **Open, scheduled**: pair-CNN separability
 on the difficult tail and the abstention rate it forces · whether unsupervised sort clustering propagates as

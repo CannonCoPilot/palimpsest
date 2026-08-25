@@ -1,0 +1,907 @@
+{
+ "_doc": {
+  "what": "GOLD-ARGUMENT -- the rows of the italic CHAPTER ARGUMENT on OT1-1609-B leaves 400-419. The reference set for R2.2d's criteria D1 (recall) and D2 (precision).",
+  "why_it_had_to_exist": "🔴 The 121-token region gold CANNOT score this at any bar. Every chapter head in the window sits at a row the region gold's 3-row window never reaches, so EVERY argument row lies outside it. Its sparseness on 403 and 411 -- 2 and 4 entries, no MainText at all -- is the FOSSIL of this missing category: the labeller had no admissible label.",
+  "scope": "ALL 10 chapter openings in the window are labelled row by row ([400, 403, 404, 406, 407, 411, 412, 414, 416, 417]). ⚠️ The previous version covered FOUR (403, 411, 414, 416), so D2 was a subset result and the rest were reported UNADJUDICATED. That caveat is now discharged: 81 argument rows and 15 adjudicated negatives, and the negatives are the rows the rule actually fires on.",
+  "address": "y0f/y1f/xlf/xrf are PAGE fractions (the R2.2c address). ⚠️ `row_at_labelling` is recorded for traceability ONLY and is NOT an address: a row index is an ordinal into a list the row-clusterer controls, which is the defect R2.1i, R2.1j and R2.2c each had to remove once. Score by page-fraction overlap, never by it.",
+  "basis": "LABELS COME FROM WHAT THE ROW IS SET IN, NOT FROM WHERE IT SITS. Each row was adjudicated from the RENDERED leaf (the italic fount is unmistakable against the roman scripture) together with its whole-row recogniser reading. ⚠️ NOT from `region_head`, which is the instrument under test, and NOT from the positional rule 'between a ChapterHead and the first verse' -- that rule presumes the boundary it is meant to find.",
+  "negatives": "`negatives` are rows adjudicated NOT-ARGUMENT. All but one are rows the rule DOES label ARGUMENT at its shipping net, so they are D2's measured content. Two kinds: (a) marginal italic side-notes and patristic citations that fall just inside `in_block`'s edge tolerance; (b) 🔴 leaf 417's ANNOTATIONS, where the fount INVERTS -- roman is commentary, italic is QUOTED SCRIPTURE. An italic-fount test alone cannot separate (b) from an argument.",
+  "coverage": "10 of the 20 leaves carry NO argument and are the precision test: a rule that paints scripture as argument destroys the reading it was built to protect.",
+  "provenance": "Built by `witness/build_argument_gold.py`, whose BLOCKS/NEGATIVES tables ARE the adjudication; this file holds only the addresses it read off the page. Enumerated by `.scratch/r2/probe_{chap_census_wholepage,slant_census,seg_census_all}.py`, rendered for the eye by `.scratch/r2/probe_render_{adjudicate,fpcands}.py`. Row readings from `witness/build_first_body_gold.py --rows 16`. Scored by `witness/score_argument_region.py`.",
+  "per_leaf": {
+   "400": "CHAP. XXII. at r24. Eight italic lines, r25-r37 detected ('Balac King of Moab fearing the Israelites, sendeth for Balaam a soothsayer to curse them. 8. ... 35. and is charged to speake nothing but that the Angel shal suggest.'). The even rows r26/r29/r31/r35/r37 are FRAGMENTS of the line above -- curvature drifts a baseline past the clusterer's tolerance and cuts one printed line into two detected rows. First verse r38, roman, slant 0.",
+   "403": "CHAP. XXIII. at r3. Argument r4-r9 ('Balaam endeuoureth to curse Israel, but God forceth him to blesse them. 11. ... 26. Yet Balac insisteth willing him to curse, or not to blesse them.'). First verse r10, drop-cap.",
+   "404": "CHAP. XXIIII. at r37. Argument r38-r47 ('Balaam forced by the euidence of truth (though not conuerted in wil to serue God, whom he confesseth to be omnipotent) prophecieth stil more good of Israel: 10. ... 20. Also of Amalacheites, Cineites, and Italians.'). r47 is the SHORT LAST LINE ('Italians.', 8 components) -- the case R3's span test cannot reach. First verse r48, drop-cap A.",
+   "406": "🔴 CHAP. XXV. MID-PAGE at r17 -- AND THE WHOLE-PAGE CHAP CENSUS MISSED IT. The head row's recogniser reading is 'ap: 4. v. CHAXXV.': the left marginal note wins the row read, so a text census looking for 'CHAP' at the head of a row finds nothing. Only the slant census saw the leaf. Argument r18-r21 ('By carnal fornication manie are drawen to spiritual. ... 10. Phinees his zele in stabbing to death two fornicators, is commended by God, and rewarded.'). First verse r22.",
+   "407": "CHAP. XXVI. at r33, whose row read also carries the ROMAN marginal column ('tie, against the'). Argument r35-r45 ('Al the men of twelue tribes being againe numbered ... 64. al being dead in the desert, which were numbered before, except Caleb and Iosue.'), ending in the short last line r45. ⚠️ r36/r38/r40/r42/r44 are fragments that run out INTO the roman marginal column: mixed rows, argument ink and margin ink on one baseline. r34 is PURE margin inside the argument's y-band and is an adjudicated NEGATIVE -- the trap a y-band alone would fall into. First verse r46.",
+   "411": "CHAP. XXVII. at r2. Argument r3-r13, eleven detected rows ('Salphaads daughters succede to their fathers inheritance. 8. ... and the people.'). First verse r14.",
+   "412": "CHAP. XXVIII. MID-PAGE at r30, whose row read carries the LEFT marginal column ('Duke, but Elea.'). Argument r31-r35 ('Special sacrifices are appointed for euerie day in the morning and euening. 9. ... for Pasch, 26. and for Pentecost.'). Every row is mixed: roman side-note at the left edge, italic argument to the measure. First verse r36.",
+   "414": "CHAP. XXIX. MID-PAGE at r6. Argument r7-r10 ('In the seuenth moneth are celebrated with particular sacrifices the feastes of Trumpets, 7. ... and Collection.'). r9 is a FRAGMENT of r8. r10 carries the argument's short last line AND the marginal verse number '6.'. First verse r11, drop-cap T with a ':: Feast of' side-note.",
+   "416": "CHAP. XXX. MID-PAGE at r12. Argument r13-r15 ('Voluntarie vowes or oathes of men; 14. of maides in their fathers houses, ... or are made frustrate.'). First verse r16.",
+   "417": "🔴 TWO 'CHAP.' ROWS, ONE CHAPTER. r33 'CHAP. XXX.' heads the ANNOTATIONS section (r32 reads 'ANNOTATIONS.') and opens NO chapter; the real head is r48 'CHAP. XXXI.'. Argument r49-r62 ('The Madianites are slaine in battle, for that they had drawen the people of Israel to sinne. 11. ... 48. The princes of the hoste geue free offerings to our Lord.'). r62 is a fragment of r61. First verse r63."
+  }
+ },
+ "rows": [
+  {
+   "leaf": 400,
+   "row_at_labelling": 25,
+   "y0f": 0.456684,
+   "y1f": 0.478937,
+   "xlf": 0.158571,
+   "xrf": 0.861429,
+   "read": "Balac xing Moab fearing the Iſaclites, ſeudeth for Balaam"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 26,
+   "y0f": 0.465282,
+   "y1f": 0.48096,
+   "xlf": 0.249286,
+   "xrf": 0.434286,
+   "read": ""
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 27,
+   "y0f": 0.47742,
+   "y1f": 0.499672,
+   "xlf": 0.187857,
+   "xrf": 0.852143,
+   "read": "tcurſe them.8. Who conſulting his falſe god,is forbid"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 28,
+   "y0f": 0.498155,
+   "y1f": 0.519902,
+   "xlf": 0.188571,
+   "xrf": 0.863571,
+   "read": "mightie to goe, andſo excuſeth him ſelf. 15. Balacſendethr"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 29,
+   "y0f": 0.506247,
+   "y1f": 0.521419,
+   "xlf": 0.211429,
+   "xrf": 0.300714,
+   "read": "htietog"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 30,
+   "y0f": 0.517879,
+   "y1f": 0.53912,
+   "xlf": 0.201429,
+   "xrf": 0.852857,
+   "read": "greater reward, 19. he againe couſulteth, and God biadeth him goe.2"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 31,
+   "y0f": 0.525971,
+   "y1f": 0.541143,
+   "xlf": 0.184286,
+   "xrf": 0.441429,
+   "read": "geater reward, 19.h"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 32,
+   "y0f": 0.537603,
+   "y1f": 0.557832,
+   "xlf": 0.188571,
+   "xrf": 0.852143,
+   "read": "but ſeudeth an Mingel to meete him in the may, whom hisaſeing,"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 33,
+   "y0f": 0.543672,
+   "y1f": 0.580591,
+   "xlf": 0.187857,
+   "xrf": 0.851429,
+   "read": ""
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 34,
+   "y0f": 0.577556,
+   "y1f": 0.599809,
+   "xlf": 0.206429,
+   "xrf": 0.862857,
+   "read": "tulating his hard Yſage. 31. he alſeſeeth the Angel. 35. andisa"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 35,
+   "y0f": 0.582108,
+   "y1f": 0.602338,
+   "xlf": 0.188571,
+   "xrf": 0.415714,
+   "read": "ſulatingh"
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 36,
+   "y0f": 0.600315,
+   "y1f": 0.62105,
+   "xlf": 0.187143,
+   "xrf": 0.612857,
+   "read": "ſpeake nothing but that the Angel ſhalſuggeſt."
+  },
+  {
+   "leaf": 400,
+   "row_at_labelling": 37,
+   "y0f": 0.605878,
+   "y1f": 0.623073,
+   "xlf": 0.195,
+   "xrf": 0.579286,
+   "read": "pknothingut"
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 4,
+   "y0f": 0.095079,
+   "y1f": 0.120872,
+   "xlf": 0.026429,
+   "xrf": 0.569286,
+   "read": "urthto eurſe Iael, but God farcel"
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 5,
+   "y0f": 0.101654,
+   "y1f": 0.126435,
+   "xlf": 0.346429,
+   "xrf": 0.795,
+   "read": "u God ſorceth him to hliſe ihem. 11."
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 6,
+   "y0f": 0.110252,
+   "y1f": 0.143125,
+   "xlf": 0.132143,
+   "xrf": 0.867143,
+   "read": ""
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 7,
+   "y0f": 0.126941,
+   "y1f": 0.150205,
+   "xlf": 0.131429,
+   "xrf": 0.8,
+   "read": "opheciet good things"
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 8,
+   "y0f": 0.121884,
+   "y1f": 0.164872,
+   "xlf": 0.135,
+   "xrf": 0.794286,
+   "read": ""
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 9,
+   "y0f": 0.149194,
+   "y1f": 0.167906,
+   "xlf": 0.472857,
+   "xrf": 0.791429,
+   "read": "him to curſe, or not to bleſſethem."
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 38,
+   "y0f": 0.659992,
+   "y1f": 0.681739,
+   "xlf": 0.193571,
+   "xrf": 0.889286,
+   "read": "Buliam forced by the euidence of truth ("
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 39,
+   "y0f": 0.671624,
+   "y1f": 0.700957,
+   "xlf": 0.230714,
+   "xrf": 0.89,
+   "read": "mr"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 40,
+   "y0f": 0.683762,
+   "y1f": 0.706015,
+   "xlf": 0.218571,
+   "xrf": 0.479286,
+   "read": "ſerue God, mhom"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 41,
+   "y0f": 0.69944,
+   "y1f": 0.721187,
+   "xlf": 0.235,
+   "xrf": 0.89,
+   "read": "good ofIſrael : 10. wherfore Balae interrupreih hit.reh"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 42,
+   "y0f": 0.706015,
+   "y1f": 0.727256,
+   "xlf": 0.219286,
+   "xrf": 0.320714,
+   "read": ""
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 43,
+   "y0f": 0.718658,
+   "y1f": 0.740911,
+   "xlf": 0.234286,
+   "xrf": 0.892143,
+   "read": "plam that God almightie wil haue it ſo. 15.dg"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 44,
+   "y0f": 0.729279,
+   "y1f": 0.745462,
+   "xlf": 0.222143,
+   "xrf": 0.978571,
+   "read": "lainly that"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 45,
+   "y0f": 0.738382,
+   "y1f": 0.761646,
+   "xlf": 0.236429,
+   "xrf": 0.891429,
+   "read": "prophecieth of CHRIST. 20. Alſo of. Amalatheites, Cintites."
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 46,
+   "y0f": 0.744957,
+   "y1f": 0.766198,
+   "xlf": 0.223571,
+   "xrf": 0.356429,
+   "read": "c"
+  },
+  {
+   "leaf": 404,
+   "row_at_labelling": 47,
+   "y0f": 0.766198,
+   "y1f": 0.780359,
+   "xlf": 0.226429,
+   "xrf": 0.297143,
+   "read": "Italians."
+  },
+  {
+   "leaf": 406,
+   "row_at_labelling": 18,
+   "y0f": 0.347444,
+   "y1f": 0.36818,
+   "xlf": 0.202857,
+   "xrf": 0.872857,
+   "read": "carnal fornication manie are dramen to ſpiritual. For"
+  },
+  {
+   "leaf": 406,
+   "row_at_labelling": 19,
+   "y0f": 0.353513,
+   "y1f": 0.369697,
+   "xlf": 0.169286,
+   "xrf": 0.607857,
+   "read": "odran"
+  },
+  {
+   "leaf": 406,
+   "row_at_labelling": 20,
+   "y0f": 0.368685,
+   "y1f": 0.389421,
+   "xlf": 0.192143,
+   "xrf": 0.871429,
+   "read": "foure thouſand are ſſaine. 10. Phinees his Tle"
+  },
+  {
+   "leaf": 406,
+   "row_at_labelling": 21,
+   "y0f": 0.388915,
+   "y1f": 0.408639,
+   "xlf": 0.193571,
+   "xrf": 0.641429,
+   "read": "fornicators, is commended hy God, and remarded."
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 35,
+   "y0f": 0.416225,
+   "y1f": 0.436455,
+   "xlf": 0.110714,
+   "xrf": 0.8,
+   "read": "Al the men of ewelue tribes being againe numbered, from the age of twentie"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 36,
+   "y0f": 0.418754,
+   "y1f": 0.446569,
+   "xlf": 0.399286,
+   "xrf": 0.927857,
+   "read": ""
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 37,
+   "y0f": 0.437972,
+   "y1f": 0.45719,
+   "xlf": 0.132857,
+   "xrf": 0.788571,
+   "read": "yeares and Vmard, are found to be ſix hundred one thouſand ſeuen hun-"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 38,
+   "y0f": 0.440501,
+   "y1f": 0.463765,
+   "xlf": 0.449286,
+   "xrf": 0.927857,
+   "read": ""
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 39,
+   "y0f": 0.457696,
+   "y1f": 0.47742,
+   "xlf": 0.138571,
+   "xrf": 0.933571,
+   "read": "dreda thirtie. 5the tribe ef Leui alſo, numbered of the maleſex.."
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 40,
+   "y0f": 0.460224,
+   "y1f": 0.480454,
+   "xlf": 0.462143,
+   "xrf": 0.858571,
+   "read": "ualnumberedothe"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 41,
+   "y0f": 0.47742,
+   "y1f": 0.497144,
+   "xlf": 0.133571,
+   "xrf": 0.798571,
+   "read": "from the ge of one moneth and vpmard, are found twentie threethou-"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 42,
+   "y0f": 0.479443,
+   "y1f": 0.498661,
+   "xlf": 0.225714,
+   "xrf": 0.568571,
+   "read": "omoetndadare fo"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 43,
+   "y0f": 0.497144,
+   "y1f": 0.515856,
+   "xlf": 0.145,
+   "xrf": 0.799286,
+   "read": "ſand. abeing dead in the deſert, which Were numbered before, exceps"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 44,
+   "y0f": 0.498155,
+   "y1f": 0.519902,
+   "xlf": 0.135,
+   "xrf": 0.789286,
+   "read": "dead in the deſert, which were numbered hefore, exrept"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 45,
+   "y0f": 0.516867,
+   "y1f": 0.535074,
+   "xlf": 0.138571,
+   "xrf": 0.275714,
+   "read": "Caleb and Ioſue."
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 3,
+   "y0f": 0.094068,
+   "y1f": 0.123401,
+   "xlf": 0.112143,
+   "xrf": 0.800714,
+   "read": "deo theinſathers iuhenitanes. 8.d he lawis"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 4,
+   "y0f": 0.114297,
+   "y1f": 0.142113,
+   "xlf": 0.14,
+   "xrf": 0.720714,
+   "read": "nes"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 5,
+   "y0f": 0.128458,
+   "y1f": 0.147171,
+   "xlf": 0.45,
+   "xrf": 0.798571,
+   "read": "aherite,and for lack alſ"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 6,
+   "y0f": 0.135033,
+   "y1f": 0.162343,
+   "xlf": 0.137143,
+   "xrf": 0.789286,
+   "read": "ta ae."
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 7,
+   "y0f": 0.147676,
+   "y1f": 0.166895,
+   "xlf": 0.639286,
+   "xrf": 0.799286,
+   "read": "oyſes to aſcend into"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 8,
+   "y0f": 0.15678,
+   "y1f": 0.182573,
+   "xlf": 0.135714,
+   "xrf": 0.798571,
+   "read": "ne viem thepromiſed Lnd"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 9,
+   "y0f": 0.168412,
+   "y1f": 0.196733,
+   "xlf": 0.135714,
+   "xrf": 0.777857,
+   "read": "thathhaldi"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 10,
+   "y0f": 0.183584,
+   "y1f": 0.203308,
+   "xlf": 0.345714,
+   "xrf": 0.797143,
+   "read": "hen prayet God to prouide"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 11,
+   "y0f": 0.193193,
+   "y1f": 0.221009,
+   "xlf": 0.135,
+   "xrf": 0.737857,
+   "read": "p"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 12,
+   "y0f": 0.203308,
+   "y1f": 0.230112,
+   "xlf": 0.132143,
+   "xrf": 0.797143,
+   "read": "uesegnea in preſence of"
+  },
+  {
+   "leaf": 411,
+   "row_at_labelling": 13,
+   "y0f": 0.219997,
+   "y1f": 0.236181,
+   "xlf": 0.2,
+   "xrf": 0.262143,
+   "read": "epeope."
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 31,
+   "y0f": 0.454661,
+   "y1f": 0.481466,
+   "xlf": 0.039286,
+   "xrf": 0.867143,
+   "read": "pecial ſacrifices are appointed ſor euerieday in the mornig"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 32,
+   "y0f": 0.463765,
+   "y1f": 0.487029,
+   "xlf": 0.04,
+   "xrf": 0.475714,
+   "read": "ſarices areta fo"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 33,
+   "y0f": 0.478937,
+   "y1f": 0.502201,
+   "xlf": 0.04,
+   "xrf": 0.955714,
+   "read": "for eaerie Sabhathda, 11. far the ſirct day of eueriemone"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 34,
+   "y0f": 0.485006,
+   "y1f": 0.503212,
+   "xlf": 0.137143,
+   "xrf": 0.305714,
+   "read": "prin"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 35,
+   "y0f": 0.502707,
+   "y1f": 0.521925,
+   "xlf": 0.042143,
+   "xrf": 0.491429,
+   "read": "cipal actions, for Paſch, 26. and for Benticaft."
+  },
+  {
+   "leaf": 414,
+   "row_at_labelling": 7,
+   "y0f": 0.199262,
+   "y1f": 0.220503,
+   "xlf": 0.172143,
+   "xrf": 0.872857,
+   "read": "In the ſeuenth moneth are celebrated with particularſacriſces"
+  },
+  {
+   "leaf": 414,
+   "row_at_labelling": 8,
+   "y0f": 0.219997,
+   "y1f": 0.240227,
+   "xlf": 0.200714,
+   "xrf": 0.87,
+   "read": "Trumpets, 7. of Expiation, 12. of Tabernacles, 35.e"
+  },
+  {
+   "leaf": 414,
+   "row_at_labelling": 9,
+   "y0f": 0.22202,
+   "y1f": 0.240733,
+   "xlf": 0.37,
+   "xrf": 0.502857,
+   "read": "vpiation, 12"
+  },
+  {
+   "leaf": 414,
+   "row_at_labelling": 10,
+   "y0f": 0.241239,
+   "y1f": 0.259951,
+   "xlf": 0.095,
+   "xrf": 0.286429,
+   "read": "Collection:"
+  },
+  {
+   "leaf": 416,
+   "row_at_labelling": 13,
+   "y0f": 0.298893,
+   "y1f": 0.320134,
+   "xlf": 0.165714,
+   "xrf": 0.855714,
+   "read": "Woluntarie vowes or oathes of mms 14.muides in their fathershuſes, 7."
+  },
+  {
+   "leaf": 416,
+   "row_at_labelling": 14,
+   "y0f": 0.319628,
+   "y1f": 0.340364,
+   "xlf": 0.193571,
+   "xrf": 0.866429,
+   "read": "or nemly manieds 10. widomes, or wiues diuorced, 11. and oſ wines in"
+  },
+  {
+   "leaf": 416,
+   "row_at_labelling": 15,
+   "y0f": 0.339858,
+   "y1f": 0.361099,
+   "xlf": 0.194286,
+   "xrf": 0.777143,
+   "read": "their huibands houſes : and how they bind, or are made fruſrate."
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 49,
+   "y0f": 0.648866,
+   "y1f": 0.675164,
+   "xlf": 0.103571,
+   "xrf": 0.687857,
+   "read": "areine in hattle, for that they had drawen ue"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 50,
+   "y0f": 0.657463,
+   "y1f": 0.68275,
+   "xlf": 0.426429,
+   "xrf": 0.779286,
+   "read": "rawentheoe"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 51,
+   "y0f": 0.66505,
+   "y1f": 0.694888,
+   "xlf": 0.131429,
+   "xrf": 0.792857,
+   "read": "ane. 1. po.."
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 52,
+   "y0f": 0.682245,
+   "y1f": 0.702474,
+   "xlf": 0.434286,
+   "xrf": 0.787857,
+   "read": "gangi"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 53,
+   "y0f": 0.688819,
+   "y1f": 0.715624,
+   "xlf": 0.13,
+   "xrf": 0.765714,
+   "read": "eme (which were theoceaſion of."
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 54,
+   "y0f": 0.697923,
+   "y1f": 0.717647,
+   "xlf": 0.461429,
+   "xrf": 0.787143,
+   "read": "onofnne) are ſaued aliue,co"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 55,
+   "y0f": 0.709049,
+   "y1f": 0.73383,
+   "xlf": 0.130714,
+   "xrf": 0.677857,
+   "read": "emdle thildten, andahw"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 56,
+   "y0f": 0.71967,
+   "y1f": 0.738888,
+   "xlf": 0.627857,
+   "xrf": 0.777143,
+   "read": "ſauing only vir-"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 57,
+   "y0f": 0.725738,
+   "y1f": 0.755071,
+   "xlf": 0.125,
+   "xrf": 0.732857,
+   "read": ""
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 58,
+   "y0f": 0.741922,
+   "y1f": 0.757094,
+   "xlf": 0.536429,
+   "xrf": 0.787143,
+   "read": "praye, 26. and then diuided"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 59,
+   "y0f": 0.749003,
+   "y1f": 0.77429,
+   "xlf": 0.12,
+   "xrf": 0.702857,
+   "read": "dother people,ing out pontion."
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 60,
+   "y0f": 0.759623,
+   "y1f": 0.776818,
+   "xlf": 0.514286,
+   "xrf": 0.777143,
+   "read": ""
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 61,
+   "y0f": 0.769232,
+   "y1f": 0.794014,
+   "xlf": 0.13,
+   "xrf": 0.64,
+   "read": ""
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 62,
+   "y0f": 0.779347,
+   "y1f": 0.796037,
+   "xlf": 0.369286,
+   "xrf": 0.527857,
+   "read": ""
+  }
+ ],
+ "negatives": [
+  {
+   "leaf": 401,
+   "row_at_labelling": 31,
+   "y0f": 0.367168,
+   "y1f": 0.391949,
+   "xlf": 0.17,
+   "xrf": 0.875714,
+   "read": "may driue them away.†",
+   "why": "right-margin italic patristic citation 'Theodoret. q.' -- inside `in_block`'s edge tolerance, so the rule reaches it"
+  },
+  {
+   "leaf": 401,
+   "row_at_labelling": 33,
+   "y0f": 0.389926,
+   "y1f": 0.412179,
+   "xlf": 0.395714,
+   "xrf": 0.915714,
+   "read": "with them, neither doe thou cutſe",
+   "why": "right-margin italic citation '40. Procopius. in Num.'"
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 28,
+   "y0f": 0.365651,
+   "y1f": 0.390938,
+   "xlf": 0.142143,
+   "xrf": 0.896429,
+   "read": "word in his mouth, and ſaid: Retutne to Balac,",
+   "why": "right-margin italic citation '( saith S. Hierom. de mans.'"
+  },
+  {
+   "leaf": 403,
+   "row_at_labelling": 62,
+   "y0f": 0.739394,
+   "y1f": 0.763163,
+   "xlf": 0.125,
+   "xrf": 0.894286,
+   "read": "",
+   "why": "right-margin italic citation 'do. S. Greg. li. 33. c. 17. Moral.'"
+  },
+  {
+   "leaf": 405,
+   "row_at_labelling": 11,
+   "y0f": 0.166389,
+   "y1f": 0.188641,
+   "xlf": 0.732143,
+   "xrf": 0.952143,
+   "read": "tent",
+   "why": "right-margin italic SIDE-NOTE 'Manie do prophecie, and cast out diuels', sharing a baseline with the roman verse '† How beautiful are thy tabernacles ô Iacob'. THE case that refuted the row-level fount test"
+  },
+  {
+   "leaf": 405,
+   "row_at_labelling": 13,
+   "y0f": 0.185607,
+   "y1f": 0.201791,
+   "xlf": 0.65,
+   "xrf": 0.948571,
+   "read": "gardensbſdd",
+   "why": "the same side-note, continued"
+  },
+  {
+   "leaf": 405,
+   "row_at_labelling": 62,
+   "y0f": 0.843576,
+   "y1f": 0.8633,
+   "xlf": 0.134286,
+   "xrf": 0.945,
+   "read": "",
+   "why": "right-margin italic citation 'Psal. 2. Act. 13. v. 8.'"
+  },
+  {
+   "leaf": 406,
+   "row_at_labelling": 39,
+   "y0f": 0.625602,
+   "y1f": 0.642291,
+   "xlf": 0.03,
+   "xrf": 0.150714,
+   "read": "ſie See Apoe.",
+   "why": "left-margin italic citation 'See Apoc. 2. v. 14.'"
+  },
+  {
+   "leaf": 407,
+   "row_at_labelling": 34,
+   "y0f": 0.415213,
+   "y1f": 0.427351,
+   "xlf": 0.810714,
+   "xrf": 0.927143,
+   "read": "killers wil. ca-",
+   "why": "⚠️ ROMAN marginal row lying INSIDE the argument's y-band ('killers wil. Ca-'). The rule does NOT fire on it -- it is recorded because a y-band or row-range definition of the argument WOULD sweep it in"
+  },
+  {
+   "leaf": 410,
+   "row_at_labelling": 46,
+   "y0f": 0.849139,
+   "y1f": 0.864312,
+   "xlf": 0.764286,
+   "xrf": 0.849286,
+   "read": "CHAP",
+   "why": "⚠️ 'CHAP' at the page FOOT is the CATCHWORD for leaf 411's `CHAP. XXVII.`, not a head. Leaf 410 opens no chapter and carries no argument. The one leaf where the CHAP census fired and the slant census did not"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 37,
+   "y0f": 0.537603,
+   "y1f": 0.559855,
+   "xlf": 0.044286,
+   "xrf": 0.827857,
+   "read": "ren of Iſracl, and thou shalt ſay to them : My oblation",
+   "why": "left-margin italic side-note 'his going out,'"
+  },
+  {
+   "leaf": 412,
+   "row_at_labelling": 38,
+   "y0f": 0.553787,
+   "y1f": 0.568959,
+   "xlf": 0.045714,
+   "xrf": 0.145714,
+   "read": "andgoingin.",
+   "why": "left-margin italic side-note 'and going in.'"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 41,
+   "y0f": 0.53558,
+   "y1f": 0.556315,
+   "xlf": 0.117857,
+   "xrf": 0.647143,
+   "read": "oobut was abſolutely ſaied:",
+   "why": "🔴 ANNOTATIONS, where the fount INVERTS: roman is commentary and the italic is QUOTED SCRIPTURE -- '( Leuit. 23. v. 29. ) Euerie soule that is not af-'"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 42,
+   "y0f": 0.54266,
+   "y1f": 0.568453,
+   "xlf": 0.056429,
+   "xrf": 0.784286,
+   "read": "",
+   "why": "the same quotation, continued: 'flicted (that is, which fasteth not) this day,'"
+  },
+  {
+   "leaf": 417,
+   "row_at_labelling": 43,
+   "y0f": 0.557327,
+   "y1f": 0.577051,
+   "xlf": 0.387143,
+   "xrf": 0.78,
+   "read": "is da, hal perih out of his peapie. And ſoi",
+   "why": "the same quotation, ending: 'shal perish out of his people.'"
+  }
+ ]
+}

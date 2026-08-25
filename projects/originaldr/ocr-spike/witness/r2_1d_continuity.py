@@ -53,6 +53,15 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z]", "", s)
 
 
+def norm_words(s: str) -> list[str]:
+    """The catchword's WORDS, after normalisation, dropping anything that normalises empty.
+
+    A catchword may be set as more than one word ('of flowre'). Word count is taken here, from
+    the foot side, and drives how many head tokens the head reader is asked for.
+    """
+    return [w for w in (norm(t) for t in (s or "").split()) if w]
+
+
 def agrees(catch: str, first: str) -> bool:
     """The catchword must be a PREFIX relation with the next leaf's first word.
 
@@ -83,6 +92,29 @@ def wilson(hits: int, n: int, z: float = 1.96) -> tuple[float, float, float]:
 def main() -> int:
     start = int(sys.argv[1]) if len(sys.argv) > 1 else 400
     n = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+    # R2.1g. `legacy` is the head reader R2.1d'(A) scored 0.312 with; `typed` is the same reader
+    # rebuilt on the region primitive. Both are kept and BOTH are runnable on the same window,
+    # because a redesign that cannot be compared against what it replaced has not been measured.
+    # `typed-anchored` is the R2.2b DIAGNOSTIC and its number is NOT comparable to 0.312: it moves
+    # the band as well as the reader, so it measures the two changes jointly. It exists to size what
+    # the frozen bound costs, and is labelled at every point it is printed or written.
+    mode = sys.argv[3] if len(sys.argv) > 3 else "typed"
+    if mode not in ("typed", "legacy", "typed-anchored"):
+        print(f"unknown mode {mode!r} -- expected 'typed', 'legacy' or 'typed-anchored'")
+        return 2
+    if mode == "legacy":
+        head_reader = C.read_first_words
+    elif mode == "typed":
+        head_reader = C.read_first_words_typed
+    else:
+        def head_reader(m, path, k=1):
+            return C.read_first_words_typed(m, path, k=k, band=(0.0, 0.35))
+    print(f"== head reader: {mode}  ({head_reader.__name__})")
+    if mode == "typed-anchored":
+        print("== ⚠️ DIAGNOSTIC ONLY (R2.2b). This run changes the BAND as well as the reader, so "
+              "the rate below\n==    is NOT comparable to 0.312 and must not be reported as the "
+              "R2.1g result.")
+    print()
     model = models.load_any(str(MODEL))
     vol, sig = [k for k in W.WITNESSES if W.wid(*k) == WITNESS][0]
     leaves = W.leaves(vol, sig)
@@ -90,8 +122,13 @@ def main() -> int:
     rows, agree, disagree, unscored = [], 0, 0, 0
     for i in range(start, start + n):
         d = C.read_direction_line(model, leaves[i])
-        fw, why = C.read_first_word(model, leaves[i + 1])
         cw = d.get("catchword")
+        # ⚠️ R2.1f defect 2. The catchword governs how many head tokens are compared: leaf 414
+        # sets 'of flowre', and reading one head token scored that TRUE agreement as DISAGREE.
+        # k comes from the FOOT side, never from the head side -- letting the head reader pick
+        # the width would let it choose the comparison that flatters it.
+        k = max(1, len(norm_words(cw))) if cw else 1
+        fw, why = head_reader(model, leaves[i + 1], k=k)
         if cw is None or fw is None:
             unscored += 1
             r = {"pair": f"{i}->{i+1}", "scored": False,
@@ -100,14 +137,18 @@ def main() -> int:
             rows.append(r)
             print(f"{i}->{i+1}: UNSCORED  catch: {r['catch_reason']}  |  first: {why}", flush=True)
             continue
-        hit = agrees(cw, fw[0])
+        head = " ".join(t for t, _ in fw)
+        head_conf = min(c for _, c in fw)
+        hit = agrees(cw, head)
         agree += hit
         disagree += not hit
         rows.append({"pair": f"{i}->{i+1}", "scored": True, "agree": hit,
-                     "catchword": cw, "first_word": fw[0],
-                     "catch_conf": d["confidence"].get("catchword"), "first_conf": round(fw[1], 3)})
+                     "catchword": cw, "catchword_words": k, "first_words": head,
+                     "catch_conf": d["confidence"].get("catchword"),
+                     "first_conf": round(head_conf, 3)})
         print(f"{i}->{i+1}: catch={cw!r}@{d['confidence'].get('catchword')}  "
-              f"first={fw[0]!r}@{fw[1]:.2f}  {'AGREE' if hit else 'DISAGREE'}", flush=True)
+              f"first={head!r}@{head_conf:.2f} (k={k})  "
+              f"{'AGREE' if hit else 'DISAGREE'}", flush=True)
 
     scored = agree + disagree
     ph, lo, hi = wilson(agree, scored)
@@ -120,10 +161,13 @@ def main() -> int:
     if scored < n:
         print(f"== ⚠️ {unscored} pair(s) unscored -- the rate above describes {scored} of {n} "
               f"boundaries, and the abstentions are part of the result, not excluded from it")
-    out = HERE.parent / ".scratch" / "r2" / "r2_1d_continuity_tracked.json"
+    # ⚠️ One file per mode. Writing both readers to one path would let the second run silently
+    # overwrite the number the first was meant to be compared against.
+    out = HERE.parent / ".scratch" / "r2" / f"r2_1d_continuity_{mode}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(
-        {"witness": WITNESS, "start": start, "n": n, "agree": agree, "disagree": disagree,
+        {"witness": WITNESS, "head_reader": mode,
+         "start": start, "n": n, "agree": agree, "disagree": disagree,
          "unscored": unscored, "agreement": ph, "wilson95": [lo, hi], "bar": 0.95,
          "verdict": verdict, "rows": rows}, indent=2))
     print(f"\nwrote {out}")

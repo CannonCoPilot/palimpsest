@@ -10,7 +10,7 @@ Companion documents: `OCR-EXECUTIVE-SUMMARY.md` · `OCR-OVERVIEW.md` · `OCR-MAS
 
 # PART I — BEFORE ANY PAGE IS TOUCHED
 
-## Step 0 — Establish which books we have *(week 1, blocking)*
+## Step 0 — Establish which books we have *(blocking — nothing downstream is admissible until it holds)*
 
 Eleven scan files are on disk. **They are not eleven witnesses.** Measurement resolves them into **ten** —
 **seven** that witness their own volume's setting, **two** admitted from a different edition as support,
@@ -29,8 +29,18 @@ declared:
 of the same setting, used to resolve what the base cannot show; *witness support* is a different edition,
 admitted only where the base has no leaf at all; *frontmatter witness (different edition)* is admitted for
 prelims and endmatter and excluded from the verse text at every grain; *low-resolution witness* is a
-genuinely independent copy whose digitisation resolves too little for glyph work, but which carries
-readings wherever nothing better does; *excluded* means not a distinct copy or not a witness to the setting.
+genuinely independent copy whose digitisation resolves too little for glyph work **and for nothing else** —
+it is admitted for collation, page order and completeness, for **page layout and geometry** (region
+boundaries, archetype classification, reading order), for **adjudicating damage, show-through and an
+inked-over sort in the base** since a second physical copy settles whether a mark is in the type or in that
+copy, for **confirming a training crop addresses the locus it claims**, and for any reading nothing better
+carries; *excluded* means not a distinct copy or not a witness to the setting.
+
+**Depth is therefore a pair, and the NT's two numbers differ.** A resolution bar is a bar on one *grain* of
+question, never on the witness — so `witnesses.depth(vol, year)` reports both: **OT1 and OT2 at `(2, 3)`**
+(glyph `B`,`P`; structural `B`,`P`,`F`) and **NT 1582 at `(1, 2)`** (glyph `B` alone; structural `B`,`M`).
+The NT lacks a *surrogate* — a second capture that can resolve a glyph — not a second witness, and the
+"— *(none — see below)*" in the surrogate column above says exactly that and no more.
 
 ⚠️ **`M`'s two halves moved between two of those rows on 2026-08-08, and the table above reflects the
 move.** Both halves had been filed as *frontmatter witness*. The Old Testament half stays there — it is a
@@ -109,7 +119,7 @@ were read.
 > and every downstream claim, so candidate STC numbers from earlier notes are treated as leads to verify
 > against ESTC.
 
-## Step 1 — Ship the drop-cap fix *(week 1)*
+## Step 1 — Ship the drop-cap fix *(needs no ground truth and no new model)*
 
 A board cell carrying an unattested all-caps token fails: the chapter opens `AFTER`, the recognizer reads
 `FTER`, because the ornamental initial is not a character to it. **18 cells.**
@@ -119,7 +129,7 @@ A board cell carrying an unattested all-caps token fails: the chapter opens `AFT
 The **page axis** ships alongside — every open cell carries its leaf, so a per-leaf view sorts geometry
 defects to the top by construction.
 
-## Step 2 — The residue detector *(week 2 — the first real improvement)*
+## Step 2 — The residue detector *(the first real improvement — still no ground truth, no new model)*
 
 No ground truth, no new model, days of work.
 
@@ -136,7 +146,7 @@ reference-based signal is null exactly where there is no reference.
 
 **Gate 2**: leaf-ranking precision@50 against known defects ≥ 0.6, on 50 leaves of campaign history.
 
-## Step 3 — The archaic typeset census *(week 2–3, blocks the codec)*
+## Step 3 — The archaic typeset census *(blocks the codec)*
 
 **The inventory is established before the codec is fixed**, by surveying the type itself.
 
@@ -180,8 +190,17 @@ artefact, **ten of the eleven are continuous tone** — the institutional PDFs a
 
 **`M` is the one exception, and it is a real one rather than an artefact.** Its primary artefact is a 2007
 print-on-demand PDF holding **1-bit CCITT stencils at ~380 ppi**, and there is no continuous-tone original
-to acquire — the tone was discarded before the file existed. `M` is admitted for frontmatter and endmatter
-only, and its bitonal raster is recorded as the limiting factor on every reading taken from it.
+to acquire — the tone was discarded before the file existed, and no acquisition can recover it. Its bitonal
+raster is recorded as the limiting factor on every reading taken from it.
+
+⚠️ **"`M` is admitted for frontmatter and endmatter only" was the pre-R9.0 role and is corrected here
+(2026-08-17) — the third place in these companions still asserting it.** It is true of `M`'s **1635 Rouen
+Old Testament** half, which is a different edition and stays frontmatter-only. It is **not** true of its
+**1582 Rheims New Testament** half, which is the same setting as the NT base exemplar and carries the
+*low-resolution witness* role: barred from glyph work, admitted for collation, layout and geometry, for
+adjudicating damage and show-through in `B`, and for confirming a training crop addresses its claimed locus.
+That half is the New Testament's **only** second witness, which is why misfiling it kept reproducing the
+claim that the volume has none.
 
 > This supersedes two earlier readings. The plan once treated most copies as MRC composites with binarised
 > text layers and carried a pseudo-grayscale reconstruction step to recover from it. The structure was
@@ -238,7 +257,7 @@ editorial annotation into scripture at `ruth/1/1` and `genesis/10/1`.
 
 # PART II — A LEAF BECOMES TRANSCRIPT
 
-From week 3 this loop runs continuously, and it is where the hours go.
+Once transcription is under way this loop runs continuously, and it is where the effort goes.
 
 ## Step 5 — The correction loop
 
@@ -306,6 +325,41 @@ chapter-opens all produce numerals that lie.
 
 ## Step 10 — Geometry
 
+**The archetype comes first.** A leaf is classified into one of the layout archetypes (§3.2) *before* regions
+are discovered, because which classes a leaf **can** carry is a property of what kind of leaf it is: a
+prelims leaf has no verse numbers to find, an annotation leaf is nearly all apparatus, and a chapter opening
+carries a drop cap and an argument that a plain text page does not. A model asked to discover every class on
+every leaf must reject most of them on most pages, and pays for that in false positives on exactly the
+classes that are rare.
+
+**The mixed leaf is split, not discarded — and most of that is already built.** Archetype F is a leaf
+carrying two matter types, typically a chapter's annotations above and the next chapter's opening below.
+Today `_is_annotation_leaf` (`gen1_pagemodel.py`) sees the printed `ANNOTATIONS` heading in the leading rows
+and returns **no rows for the whole leaf**, so the scripture below is thrown away with the apparatus above —
+on `pdf-S03a` p145 that discarded genesis 39:1–8 on two witnesses at once, and the cells scored as having no
+text at all. Three of the four pieces needed to fix it already exist:
+
+- **detection** — the `NNOTATION` head test, matching on the distinctive core because display capitals run
+  the leading `A` into the previous word (`o GENESI AbtamNNOTATIONS.`);
+- **the cut value** — `chapter_open_probe.py` locates verse 1 and emits `chapter_open_y` together with a
+  `mixed_leaf` flag, and the cut needs no judgement once verse 1 is found: everything above it is running
+  head, previous annotations, chapter heading or italic argument, all of which are matter and none of which
+  is scripture;
+- **the application** — `chapter_open_y` in `CHAPTER_MODEL` filters WORDS *before* rows are grouped, so
+  cutting the annotations away means the leaf no longer declares itself an annotation leaf and the whole-leaf
+  rule never fires. Roughly forty entries are in production use.
+
+⚠️ **What is missing is generalisation, and that is where the honest sizing sits.** Applying the split to a
+known mixed leaf is **C1 — mechanical**: the value is computed, emitted, and consumed by a mechanism already
+running. Making the pipeline do it unattended is **C3 — design, on measured evidence**, not an unattempted
+task: `chapter_model_derive.py` derives these entries mechanically for all 48 un-worked chapters and is
+**pinned OFF** because across the whole book it measures net negative — re-verified 2026-07-31 on a board
+1,100 cells better than at first measurement, still **−6, helping 4 chapters and hurting 8**. The derivation
+is sound; what it cannot do is tell a good cut from a bad one, and a cut slightly wrong deletes scripture
+further down the leaf. Present detection also covers **one sub-case** — annotations above, chapter opening
+below, on the Old Testament campaign witnesses — so other mixed combinations are undetected rather than
+mishandled.
+
 Shapes come **from ink** — connected components and projection profiles on the native raster, plus a generic
 baseline segmenter over the untyped full page, **independent of the incumbent bands.** That independence is
 the point: polygons derived from line boxes produced *under* the bands inherit the bands' blind spots.
@@ -314,9 +368,14 @@ Labels come **from text** — MainText from alignment, Marginalia from the 1,334
 RunningHead / Catchword / Signature from self-verifying positional tests, VerseNumber from
 numeral-matches-adjacent-verse.
 
+**Slant is an output, not a preprocessing step.** The leaf's slope is estimated from rows that split cleanly
+and applied leaf-wide — never fitted from the row being corrected, since a row holding two interleaved
+printed lines yields a slope that reconciles them and measures neither.
+
 **Gate 10**, published before the baseline is measured and sha-pinned, recognizer frozen: **marginalia
 recall ≥0.85 and precision ≥0.90 at block-level n · MainText boundary error ≤8 px median, ≤25 px p95 ·
-≥125 eval pages.**
+≥125 eval pages** — plus **archetype classification and leaf slant**, whose thresholds are set with the
+typology in §3.2 rather than assumed here.
 
 ## Step 11 — Recognition
 
@@ -333,11 +392,13 @@ which reads as success.
 **Scope is VOLUME, then FOUNT**, with **copies pooled within a volume as augmentation** and held-out splits
 stratified by copy and gathering.
 
-**Input height** is costed honestly: **only the incumbent height warm-starts cleanly** from the pretrained
-model; raising it multiplies the recurrent stack's input width and **breaks weight transfer at the
-reshape.** The correct joint move is a height-only pooling stage. **5 configs × 3 seeds = 15 runs ≈ 120–200
-GPU-hours**, ranked on a 5k-line subset, decided on **`ſ`/`f` and tilde-vowel per-class F1** — aggregate CER
-is dominated by classes the incumbent height already handles and cannot resolve the question.
+**Input height** is costed honestly, and the cost is **structural, not durational**: **only the incumbent
+height warm-starts cleanly** from the pretrained model; raising it multiplies the recurrent stack's input
+width and **breaks weight transfer at the reshape.** So this is not a parameter scan — **every point is a
+fresh training run**, and points are comparable only if each is trained to its own convergence. The correct
+joint move is a height-only pooling stage. **5 configs × 3 seeds = 15 independent runs**, ranked on a 5k-line
+subset, decided on **`ſ`/`f` and tilde-vowel per-class F1** — aggregate CER is dominated by classes the
+incumbent height already handles and cannot resolve the question.
 
 **Style never enters the codec** — a stand-off rendition layer with a span table, a separate word-level font
 classifier, and two-channel scoring.

@@ -21,11 +21,11 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 |---|---|---|
 | R0 | Witness identity and stable addressing | **COMPLETE** (R0.1–R0.5) |
 | R1 | Physical leaf inventory — Gate 0b stage 1 | **COMPLETE** (R1.1–R1.6) |
-| R2 | Structural inventory — Gate 0b stage 2 | 🚨 **OPEN — R2.1f FIRED 2026-08-14, ALERT: THE APPROACH NEEDS REDESIGN.** R2.1c DONE (instrument promoted to TRACKED `witness/collation_read.py`, with signature/catchword as separate fields and stated abstain reasons). R2.1d'(A) measured twice: **0.222 → 0.312** after the one pre-registered band re-cut, Wilson95 lower bound **0.142** against a 0.95 bar. **~5h of 12h — the ceiling did NOT fire, the ACCEPTANCE RULE did.** The catchword half reads at 0.87–1.00 and is correct; **every failure is on the head side**, and two of the three residual causes are defects in the head reader and the scorer, not in the metric. R2 continues to BLOCK Gate 0b/0c and all transcription. Prior state: **IN PROGRESS 2026-08-10/11.** R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured) — **nothing in `witness/` yet**, and it has **never been scored on R2.1's actual metric** (signature-per-recto; every panel to date counted *any token, either parity*). ~3h of the 12h ceiling. Steps R2.1a–f written 2026-08-11 |
-| R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4) |
+| R2 | Structural inventory — Gate 0b stage 2 | 🚨 **OPEN — R2.1f FIRED 2026-08-14, ALERT: THE APPROACH NEEDS REDESIGN.** R2.1c DONE (instrument promoted to TRACKED `witness/collation_read.py`, with signature/catchword as separate fields and stated abstain reasons). R2.1d'(A) measured **three** times: **0.222 → 0.312 → 0.312**, Wilson95 lower bound **0.142** against a 0.95 bar. **The ACCEPTANCE RULE fired, not a budget.** The catchword half reads at 0.87–1.00 and is correct; **every failure is on the head side**. 🔴 **The third run corrected the scorer defect and the rate DID NOT MOVE — which is the finding**: 3 of the 5 AGREEs are whole-line blobs passing the ≥4-char prefix rule, so the head reader fails in **both** directions and **0.312 is not a conservative floor but two opposing biases of unknown relative size** (R2.1f, 2026-08-15). 🟢 **REDESIGN DECIDED: option (1)**, first baseline via the running-head leading gap, built as a reusable region-typing primitive — see R2.1g. **R2.2 is promoted to the pivot** (R2.2a): it is the same head-band instrument and it also supplies a signature-independent component of R3.1's key, so **R2 and R3 interleave rather than sequence**. R2 continues to BLOCK Gate 0b/0c and all transcription. Prior state: R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured), never scored on R2.1's original metric. Steps R2.1a–f written 2026-08-11; **R2.1g · R2.2a · R2.5 added 2026-08-17**; **R12 (layout typology) raised** |
+| R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4). **R3.6 · R3.7 raised 2026-08-17** — `F`-vs-`B`/`P` alignment with a named-leaf supply for OT1/OT2, and the 1633 NT matter as addenda. ⚠️ **R3.6's OT1 half is expected to return empty**: §1.2 already aligned `F` against `P` leaf for leaf (book block **1132 = 1132**, *"not one leaf of text"*), so the open OT1 work is `B`, which has only ever been attributed by count; OT2's live half is **R3.5b**, not a new audit |
 | R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
-| R5 | Raster policy — **Gate 0d** | 🟢 **BUILT AND ENFORCED on all three clauses, 2026-08-10** (R5.1 · R5.2a–c). R5.1's manifest is complete — **3,122 leaves, 0 rasters unmanifested**, so the dimension clause moved UNKNOWN→CHECKED on 3,113 leaves and the pre-registered deferral never fired. Determinism proven: a second full build is byte-identical. Previously read "R5.2 has no proven negative", which described a guard that runs; **none was ever written** |
+| R5 | Raster policy — **Gate 0d** | 🟢 **BUILT AND ENFORCED on all three clauses, 2026-08-10** (R5.1 · R5.2a–c). R5.1's manifest is complete — **3,122 leaves, 0 rasters unmanifested**, so the dimension clause moved UNKNOWN→CHECKED on 3,113 leaves and the pre-registered deferral never fired. ⚠️ **3,113 of 3,122 is not 3,122, and the row said so only by arithmetic** (corrected 2026-08-17): **9 leaves carry no dimension check**. Which nine, and why, is **R5.3** — a residue named is a residue that can be closed; a residue left to subtraction is one that silently becomes "all" the next time this row is quoted. Determinism proven: a second full build is byte-identical. Previously read "R5.2 has no proven negative", which described a guard that runs; **none was ever written** |
 | R6 | `S06` frontmatter/backmatter collation | **PART.** R6.1–R6.3a, R6.5 done; R6.3b/c, R6.4-remainder, R6.6a–d open |
 | R7 | Ground truth read from inadmissible rasters | **OPEN — 48 of 51 files.** R7.5, R7.5a, R7.5a-3, R7.5b, R7.5c, R7.5d **DISCHARGED**; R7.1–R7.4 and **R7.5a-2** (**261** derived artefacts to regenerate, was 339) open |
 | R8 | `F`'s New Testament is the 1633 edition | **PART.** R8.1, R8.2, R8.4, R8.4a, R8.5, R8.8 done; R8.3, R8.4b, R8.6, R8.7 open |
@@ -49,22 +49,86 @@ the Walkthrough all described Gate 0d as a guard awaiting a negative test when *
 **The thing that can refuse a claim outranks the thing that can only assert one.** A lower document that
 disagrees is a defect to be fixed, not merely overruled.
 
-⚠️ **Every OPEN step must carry an hour ceiling and a pre-registered decision rule** (§0.5). That
-requirement was in the constitution from the start and **no step had ever carried either**, which is why R2
-and R3 — the two sections gating everything downstream — stood at "NEXT, nothing built" indefinitely.
-Ceilings are being added section by section as each is next touched; `witness/audit_prereq_ceilings.py`
-**reports** (exit 1, healthy) the OPEN steps with neither — it is an **audit, not a guard**, for the
-reason spelled out in R10.1, and this paragraph named a nonexistent `test_prereq_ceilings.py` until
-2026-08-11. **A ceiling escalates and never closes a step**: reaching it raises an
-ALERT that the *approach* needs redesign, which is the opposite of accepting a lowered result.
+⚠️ **Every OPEN step must carry a COMPLEXITY CLASS, a candidate list, and a pre-registered decision rule**
+(§0.5). That requirement was in the constitution from the start and **no step had ever carried either**,
+which is why R2 and R3 — the two sections gating everything downstream — stood at "NEXT, nothing built"
+indefinitely. Ceilings are being added section by section as each is next touched;
+`witness/audit_prereq_ceilings.py` **reports** (exit 1, healthy) the OPEN steps with neither — it is an
+**audit, not a guard**, for the reason spelled out in R10.1, and this paragraph named a nonexistent
+`test_prereq_ceilings.py` until 2026-08-11. **A ceiling escalates and never closes a step**: reaching it
+raises an ALERT that the *approach* needs redesign, which is the opposite of accepting a lowered result.
 
-**OPEN** — R2.1 (R2.1a · R2.1b · R2.1c · R2.1d · R2.1e · R2.1f) · R2.2 · R2.3 · R2.4 · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · R4.1e · R4.2a · R4.5 ·
-R4.6 · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims,
+### 🔴 HOURS ARE ABOLISHED AS A UNIT (Sir's instruction, 2026-08-17)
+
+**No step, phase or estimate in this project is denominated in hours** — not the analyst's, not mine, not a
+script's wall-clock. Every former hour ceiling is restated as a **complexity class** plus a **candidate
+list**. The escalation semantics of §0.5 are **unchanged in every respect**: a below-bar result stays
+**OPEN**, still **blocks**, and still **ALERTS that the approach needs redesign**. Only the unit changes.
+
+**Why the unit was wrong, stated so it is not reintroduced.** An hour ceiling measures the wrong quantity
+twice over. It invites a spent budget to be read as a licence to stop — the exact laundering §0.5 exists to
+prevent, and R2 has already had to write "**the ceiling did NOT fire, the ACCEPTANCE RULE did**" to hold
+the line. And it ranks a cheap path above a dear one when the cheap path carries nothing forward, which is
+how R2's option (2) nearly got taken (R2.1g). **Complexity is the decision-relevant quantity: what has to
+be designed, what is unknown, how many parts interact, and what could invalidate the approach.**
+
+| class | meaning | what "done" requires | what failure means |
+|---|---|---|---|
+| **C1 — mechanical** | the method is known and already proven **on this data**; only application remains | the application, and a guard that would catch its absence | a bug, fixed in place — not an approach question |
+| **C2 — assembly** | the parts are known, the composition is new; the unknowns live in how they interact | the composition, plus the interaction that was NOT obvious stated in the record | one named part is wrong; re-class that part, not the step |
+| **C3 — instrument design** | a new measurement must be designed, and its **negative control** established before any number it produces means anything | the instrument, the control, and the refutation the control makes possible | the instrument is refuted; the step re-opens at C3 with the refuted candidate struck |
+| **C4 — open problem** | no method in hand is known to reach the bar | first deliverable is a **candidate method plus the test that would refute it** — never an attempt | the candidate list is exhausted ⇒ ALERT, and escalation must name a **different resource class** (§7.7) |
+
+**The trigger that replaces the ceiling is CANDIDATE EXHAUSTION, and it is strictly better.** Each step
+names its candidate approaches **before work starts**; when every candidate is refuted **by measurement**,
+the step ALERTS. This is evidence-driven where an hour count was arbitrary, and it cannot be satisfied by
+waiting: an unrefuted candidate keeps the step live no matter how long it has been open, and a refuted one
+closes off no matter how quickly it fell. ⚠️ **A candidate may be struck only by a measurement with a
+negative control** (R2.1d″ is the standing precedent — it was the control that refuted image correlation,
+and without it the run reported "continuity confirmed").
+
+⚠️ **`witness/audit_prereq_ceilings.py` PARSES this file for hour ceilings and will now under-report.**
+That is a live defect the moment this section lands, not a cosmetic one — the audit is R10.1's only
+instrument and it would silently score every restated step as *carrying nothing*. Raised as **R10.3**; the
+audit is not to be deleted or its threshold relaxed in the interim, and its exit-1 count is **not citable**
+until R10.3 lands.
+
+⚠️ **Machine throughput is not exempt but it is not the same thing either.** Where a per-leaf cost is the
+*evidence* for rejecting a method (R2.0 rejected `blla.segment` on it), state the **per-unit cost and the
+ratio to the alternative** — a fact about the method — never a projected total against a budget.
+
+**OPEN** — R2.1 (R2.1a · R2.1b · R2.1c · R2.1d · R2.1e · R2.1f · **R2.1h** · **R2.1k**) · **R2.2** · **R2.2a** · **R2.2b** · **R2.2c** (BLOCKING) · **R2.2d** · **R2.2e** · **R2.2f** (NEW) · **R2.2g** (NEW) · **R2.2h** (NEW) · **R2.2i** (NEW) · **R2.2j** (NEW) · **R2.2k** (NEW) · **R2.2m** (NEW) · **R11.2d** (NEW) · R2.3 · R2.4 · **R2.5** · R3.1 · R3.2 · R3.3 · R3.4 · R3.5b · R3.5c · **R3.6** · **R3.7** · R4.1e · R4.2a · R4.5 ·
+**R4.7** · **R5.3** · R6.3b · R6.3c · R6.4-remainder (OT2/1610 prelims,
 endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
 **R7.5a-2** (**261** artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
-**R9.6b** · **R10.1** · **R10.2** · **R11.2a** · **R11.2b** · **R11.5** (blocked)
+**R9.6b** · **R9.7** · **R9.8** · **R10.1** · **R10.2** · **R10.3** · **R11.2a** · **R11.2b** · **R11.2c** (NEW) · **R11.5** (blocked) ·
+**R12.1 · R12.2 · R12.3** (layout typology, NEW) · **R13.1 · R13.2** (the recogniser is not in the path, NEW)
 
-**DONE** — R0.1–R0.5 · R1.1–R1.6 · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
+🔴 **NEW OPEN STEPS RAISED 2026-08-17, each from a finding rather than from a plan review.** **R2.1g**
+(head-side redesign, option 1) · **R2.2a** (head-band region primitive — the R2/R3 interleave pivot) ·
+**R2.5** (multi-signal collation) · **R4.7** (the §10 citation that has never had an id) · **R5.3** (the
+9-leaf dimension residue) · **R10.3** (the ceiling audit must parse complexity classes) · **R12** (layout
+typology) · **R13** (the trained recogniser is absent from the path that needs it).
+
+### 🔴 Ledger review 2026-08-17 — what the status column was rounding up
+
+**Every row below was readable as more closed than it is.** None of these is a new failure; each is a
+status line that lost a qualifier. They are recorded here because the §0.6 precedence rule makes this
+register the thing that must be right.
+
+| carried as | actually | consequence |
+|---|---|---|
+| Gate 0d **"BUILT AND ENFORCED on all three clauses"** | the dimension clause is checked on **3,113 of 3,122** leaves | **R5.3** raised. "All three clauses" is true of the *guard*, not of the *coverage* |
+| Gate 0e **enforced** (R6) | R6 is **PART** — R6.3b, R6.3c, **R6.4-remainder (the OT2/1610 prelims, which are not yet located)** and R6.6a–d are open | §2 requires 0e **before** 0b and 0c *"since 0b's collation and 0c's leaf map are both statements about a particular setting"*. **An OT2 collation rests on an OT2 setting proof that is outstanding** |
+| Gate 0f **PART** | R9.5a (companion table vs registry) and R9.6b (five consumers on an interleaved dump) open | unchanged, but the two are of different kinds: R9.5a is a disagreement, R9.6b is **five consumers reading a source of unknown fitness** |
+| R7.5a-2 **open** | **not started, deliberately** — the 261 artefacts come from many different generators (coverage audits, consensus, QC probes), not one command | the next action is a **producer-per-artefact survey**, then regenerate — **never edit** (R7.5d). Launching an unmapped bulk regeneration would be a blind write over derived evidence |
+| R11.2a **"71 references across 38 files"** | **33 references across 23 files** after R11.2a's first pass | the row understates the progress and overstates the remainder — the opposite of the usual drift, and still a stale number |
+| R11.2b | the verification standard parses only **`witness/`-prefixed** commands, so the **repo-root R11 entries sit in the block uncovered** | a verification block that silently skips entries is worse than one that omits them |
+| — (unrecorded anywhere) | 🔴 **the repo declares pre-commit hooks that are NOT installed**: `.pre-commit-config.yaml` runs ruff over `^core/`, and `.git/hooks/` holds only samples. A manual run gives **24 unfixable ruff errors + a 429-line reformat** | a declared-but-absent hook is the Gate 0d shape again — **a rule with nothing implementing it**. Raised for Sir; not silently fixed, because the reformat is a decision about the codebase, not a lint |
+| — (unrecorded anywhere) | ⚠️ the verification standard now **runs** `r2_1d_continuity.py`, so the block performs OCR and **will exceed a 120 s limit** | a standard that times out is a standard that gets skipped |
+| **R2.2c** and **R2.1k** carried as OPEN *in their own sections* | 🔴 **neither was in the OPEN register at all** (found 2026-08-18) — R2.2c is the step that BLOCKS every region number transferring to the reader, and the register is what §0.6 makes precedence-bearing | **the signature defect one level up**: a correct rule (the section) that the thing which reads the register never sees. Both added. ⚠️ `test_open_register_consistency` cannot catch this — it checks that a **closed** step is absent from the register, never that an **open** one is present, so the register can silently under-report forever. That converse check is **R11.2c**'s neighbour and is named here so it is not lost |
+
+**DONE** — R0.1–R0.5 · R1.1–R1.6 · **R2.2l** (2026-08-21, the sixth sink; guard exit 0) · R4.1d · R4.2 · R4.3 · R4.4 · R6.1 · R6.2 · R6.3 · R6.3a · R6.4 (tome 1) ·
 R6.5 · **R7.5** · **R7.5a** · **R7.5a-3** · **R7.5b** · **R7.5c** · **R7.5d** · R8.1 · R8.2 · R8.4 · **R8.4a** · R8.5 · **R8.8** · **R9.0** · **R9.1** · **R9.2** · **R9.2a** · **R9.2b** · **R9.3** · **R9.4** · **R9.4a** · **R9.4b** · **R9.2c** (with R9.2c-1…-4) · **R5.1** · **R5.2a** · **R5.2b** · **R5.2c**
 
 **DISSOLVED** — R3.5 (body retained, marked not to be executed)
@@ -201,20 +265,34 @@ R7: R7 asks which photograph a reading was taken from, R2/R3 ask whether the lea
 hypothetical (three of four NT files are made up). The 51 files are **PROVISIONAL** until the leaves they
 rest on are collated: usable, **not citable**, and **no gate closes on them** (§0.5).
 
-**Hour ceiling: 12h to a first end-to-end R2.1→R2.4 pass on ONE volume (`OT1-1609-B`). Decision rule,
-pre-registered, written before the work starts:**
-- If the signature reader cannot reach **≥95%** parsed rectos in 6h, it does **not** get a lowered target.
-  The band is re-cut once (R8.4a proved the foot band is the hard part and cost four failed designs), and
-  if that fails the step **ALERTS that the approach needs redesign** — hand-reading a stratified sample to
-  establish the collation is the fallback *method*, not a lowered *bar*.
+**Complexity: C3 — instrument design** (restated from a 12h ceiling, 2026-08-17; see *Hours are abolished*
+above). Target: a first end-to-end R2.1→R2.4 pass on ONE volume (`OT1-1609-B`). **Decision rule,
+pre-registered, written before the work starts and unchanged in force:**
+- The reader does **not** get a lowered target if it cannot reach its bar. The band is re-cut **once**
+  (R8.4a proved the foot band is the hard part and cost four failed designs), and if that fails the step
+  **ALERTS that the approach needs redesign** — hand-reading a stratified sample to establish the collation
+  is the fallback *method*, not a lowered *bar*.
 - Abstention is not failure: a reader that abstains on 8% and is right on 92% passes; a reader that emits
   92% correct and 8% confident-wrong **fails**, because the collation cannot detect the difference.
-- 🔴 **The ceiling exists to force a start, not to license a stop.** §0.5 names *unstartability* as
+- 🔴 **The escalation exists to force a start, not to license a stop.** §0.5 names *unstartability* as
   producing the same observable outcome as preserving the status quo, and R2 has been marked **NEXT** since
   the roadmap was written without a line of code — which is that failure mode, in this file, uncaught for
-  the whole life of the project. A ceiling that expires escalates; it never closes the step.
+  the whole life of the project. **An exhausted candidate list escalates; it never closes the step.**
 
-### R2.0 — Direction-line instrument: STARTED 2026-08-10/11, ~3h of the 12h ceiling
+**Candidate list for R2.1's metric, and its state.** This is the thing that fires the escalation now:
+
+| candidate | class | state |
+|---|---|---|
+| signature parsed per recto | C3 | 🔴 **REFUTED — unsatisfiable by construction** (R2.1-CRIT) |
+| catchword continuity as TEXT | C3 | 🔴 **BELOW BAR at 0.312**, and the instrument is refuted in both directions (R2.1f) |
+| catchword continuity by IMAGE | C3 | 🔴 **REFUTED by its own negative control** (R2.1d″) |
+| signature-sequence monotonicity | C2 | 🟡 **LIVE, unrefuted** — reads only signatures, needs no gold set |
+| **multi-signal collation** | C3 | 🟢 **NEW, LIVE — R2.5.** Ten signals of differing coverage and differing failure modes |
+
+⚠️ **The list is not exhausted, so R2 does not escalate past ALERT** — two candidates are live and neither
+has been measured. R2.1f fired on *the catchword instrument*, which is a candidate, not on R2.
+
+### R2.0 — Direction-line instrument: STARTED 2026-08-10/11 (C3)
 
 **R2 is no longer "nothing built".** An instrument exists in `.scratch/r2/` (probes v1–v18, logs beside
 them). It is **not yet a deliverable** — nothing is written to `witness/` — but the design is settled and
@@ -233,8 +311,11 @@ the tokens that actually read.
 | A guard on one route of two guards nothing | v15 guarded only the fallback; leaf 901 read its last text line `'auekabylon.'@0.80` as a direction line | **the only confident-wrong found; now refused** |
 | `VS.line_pitch` returns `None` and every call site said `p = pitch or 30.0` | leaf 600's 5 text lines collapse to 1 run; true pitch ≈40 | a magic constant standing in for a failed measurement — replaced by a measured relation, `PITCH_PER_GLYPH = 2.21 ± 0.27` |
 
-**Measured and rejected, do not re-walk:** `blla.segment` on a band (21.7s/37.5s per leaf ⇒ ~13h > the
-whole ceiling); `FOOT_BELOW_PITCHES=8.0` (a longer tail reaches the leaf edge and 3 leaves collapse to a
+**Measured and rejected, do not re-walk:** `blla.segment` on a band (**21.7 s and 37.5 s per leaf, measured**
+— a per-leaf cost that does not survive multiplication by a 1,160-leaf volume, let alone a 3,122-leaf corpus;
+⚠️ restated 2026-08-17 from a projected total against an hour budget. The per-leaf cost is the evidence and is
+a property of the method; the ratio to the component-and-gap route was never measured and is **not** claimed
+here); `FOOT_BELOW_PITCHES=8.0` (a longer tail reaches the leaf edge and 3 leaves collapse to a
 0–7px strip); a global absolute ink floor (leaf 401's *blank* rows are inked 0.0443 vs leaf 400's
 text-adjacent 0.020 — no global threshold separates them on any leaf); `type_scale` = median text-run
 height as the yardstick (returns 17–40 across leaves of near-identical pitch — it tracks contrast, not
@@ -260,10 +341,1937 @@ that the approach needs redesign."* The one permitted re-cut was made and measur
 |---|---|---|---|---|
 | 2026-08-11 | `.scratch/r2/r2_1d_continuity.py` (gitignored probe) | 0.222 (4/18) | 0.090 | 0.95 |
 | 2026-08-14 | `witness/collation_read.py` (tracked, word gap re-cut) | **0.312 (5/16)** | **0.142** | 0.95 |
+| 2026-08-15 | same, **scorer defect 2 corrected** (multi-word catchwords) | **0.312 (5/16)** | **0.142** | 0.95 |
 
-⚠️ **Hours: ~5h of the 12h ceiling. The ceiling did NOT fire — the ACCEPTANCE RULE did.** These
-are different triggers and the distinction matters: there is budget left, and spending it on a
-second re-cut is precisely what R2.1f forbids.
+⚠️ **The ACCEPTANCE RULE fired, and no budget was involved.** The distinction mattered when this
+read "the ceiling did NOT fire" and it matters more now that hours are abolished as a unit: what
+forbids a second re-cut is R2.1f's own text, not an exhausted allowance.
+
+#### 🔴 THE THIRD RUN IS THE IMPORTANT ONE, AND IT MOVED NOTHING (2026-08-15)
+
+Defect 2 below — a catchword can be more than one word — was corrected properly: `read_first_words(model,
+leaf, k)` now returns **k** head tokens, **k is taken from the FOOT side** (`len(norm_words(catchword))`),
+and a row offering fewer than k tokens **abstains** rather than short-reading. **The rate did not move.**
+
+The defect was real and load-bearing on **exactly one pair**, which fails anyway for an honest reason:
+`414→415` corrected reads `'of flowre'` against `'of fowre'` — `offlowre` vs `offowre`, a dropped `l`, a
+genuine recogniser error. **What the null bought is the thing worth having**: 0.312 is now the *honest*
+rate for this instrument rather than a number "depressed by an unknown amount".
+
+🔴 **AND IT EXPOSED A SECOND, OPPOSITE DEFECT NOBODY HAD RECORDED. Three of the five AGREEs are earned
+against whole-line blobs, not first words:**
+
+```
+400->401  catch 'face'     first 'faceof the earth, ſit tinga'          AGREE
+403->404  catch 'Returne'  first 'Returne to Balac and thus thou shalt' AGREE
+408->409  catch 'familie'  first 'familie of the Machitites'            AGREE
+```
+
+The `len(spans) < 2` guard **passes** — the row does split — but `spans[0]` is still multi-word, and the
+**≥4-character prefix rule in `agrees()`** then counts any line that merely *begins with* the catchword as
+agreement. The word-gap re-cut cleared the guard without yielding a word.
+
+⚠️ **CONSEQUENCE, and it is the load-bearing sentence of this whole section: 0.312 IS NOT A CONSERVATIVE
+FLOOR.** The head reader fails in **both** directions at once — it misses lines (deflating the rate) *and*
+over-matches whole lines when it hits (inflating it). The observed rate is **two opposing biases of unknown
+relative size**, and the true value is not bounded by it in either direction. Every prior sentence in this
+file that treated 0.312 as a lower bound on the catchword approach is superseded.
+
+🟢 **This is why a fix that changes no number is still worth running.** A single scalar hid two defects
+pulling opposite ways; only correcting one of them and watching the scalar *not* move made the other
+visible. Filed with the R7.5a dead-metric lesson: a metric that produces a plausible number is not thereby
+measuring the thing, and one that survives a real fix unchanged is wearing the strongest available disguise.
+
+#### 🟢 R2.1g — THE REDESIGN IS DECIDED: OPTION (1), AND THE REASON IS THE CARRY-FORWARD (2026-08-17)
+
+Both options below close the head-side defect. They differ entirely in **what survives afterwards**, and
+that — not cost — is the deciding criterion.
+
+| | option (2) — character window | option (1) — first baseline ✅ **TAKEN** |
+|---|---|---|
+| mechanism | compare the catchword against the first *n* **characters** of the next leaf's text block | find the first **baseline** via the running-head leading gap, then read the first word from it |
+| effect on the defect | **deletes** the head tokeniser from the measurement path | **fixes** the RunningHead/MainText separation the tokeniser is failing on |
+| complexity | C2 — assembly | C3 — instrument design |
+| carries into Gate 9 | 🔴 **nothing.** Routes *around* the layout defect to make a gate metric pass | 🟢 **a region primitive.** RunningHead/MainText separation is a Gate 9 region class |
+
+⚠️ **Option (2) was the earlier recommendation in this file and it was wrong.** It is cheaper, and under an
+hour ceiling that made it look correct — which is one of the two reasons hours are now abolished. It would
+have closed R2 while leaving the running-head confusion entirely untouched, and that confusion is the
+**documented cause of the recogniser's surface-score collapse** (`RUNG-PIPELINE-STATUS-2026-07-21.md`:
+*"the recogniser emits running-header/marginalia the gold body excludes; that is Rung-1's layout-separation
+job"* — genesis-24 content **0.9448** against surface **0.451**). The cheap path routed around the single
+highest-value defect in the corpus.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.1g | **Head-side redesign, option (1)** — and built as a **reusable region-typing primitive**, not a probe local to `collation_read.py` | a RunningHead/MainText separator taking the leading gap as its signal, exposed so R2.2, R12 and the Gate 9 region model consume the same one; re-measured on the SAME window (leaves 400–419) so the number is directly comparable to 0.312 | the separator is scored **on RunningHead/MainText assignment**, not only through the continuity rate it enables — a component that is only ever measured through a downstream metric cannot be debugged when that metric moves. ⚠️ **No second band re-cut**: R2.1f pre-registered exactly one and it is spent. **C3** |
+
+##### 🟢 R2.1g EXECUTED 2026-08-17 — the primitive PASSES, and it FALSIFIED ITS OWN STATED MECHANISM
+
+⚠️ **Option (1) was pre-registered as "find the first baseline via the RUNNING-HEAD LEADING GAP".
+That mechanism is falsified on the FIRST leaf of the window.** Leaf 400's running head sits at
+ext=0.95 of the measure with a lead of **40.0px to the body — exactly the body pitch**. There is no
+gap to find. Leaf 403's running head *does* carry a 52px lead. So the signal is present on some
+leaves and absent on others, and an instrument resting on it would fail **silently** on the leaves
+where it is absent — returning a body line rather than abstaining. The redesign was executed on two
+signals that are properties of the EDITION rather than of the error, per the anti-circularity rule:
+
+1. **The setting is justified.** Body lines are flush to a left AND a right edge that dozens of
+   lines share; a running head is centred and reaches neither. The measure is therefore the **MODE**
+   of line edges, and "is this a body line" becomes "does it reach the measure".
+2. **The head of the page is a HEADLINE BAND, not a line** — running head flanked by side-notes
+   (leaf 400: `NVMERI` + `Og Alaine. Bal-`; leaf 410: `NVMERE.` + `Leuites n`). A row is **not
+   homogeneous**, so region typing here is per **TOKEN**. A row-level separator cannot express it.
+
+🔴 **THE 411→412 FAILURE WAS MIS-DIAGNOSED IN THIS FILE AND IN R2.1f.** It is recorded as `Cades`
+vs `'Temporal'` = *"a RUNNING HEAD"*. It is **not**. Leaf 412's body row reads
+`aTemporal | Cades of the deſert Sin | To whom Moyſes anſwered` — `Temporal` is a **MARGINAL NOTE**
+sharing a baseline with the body line, and the true answer `Cades` is the very next token. The cause
+is measurable: `text_measure` takes rows wider than `0.75 × max(extent)`, so a row carrying a
+side-note **inflates the maximum and drags the left edge outward**. Leaves 400 and 410 measure
+L=215 and L=248; **leaf 412 measures L=40**. With the measure widened the note falls inside it,
+`in_measure` cannot exclude it, and it is read as the first word. **The head-side defect is a
+MEASURE-CONTAMINATION defect**, fixed by a statistic a side-note cannot move — a mode, not a max.
+
+**Deliverable, tracked.** `witness/region_head.py` (RunningHead · MarginNote · MainText ·
+ChapterHead, per token, rules R1–R7 pre-registered in the module before it was scored) ·
+`witness/score_head_regions.py` · `witness/gold/head_regions_OT1-1609-B_400-419.json` (121 tokens
+hand-labelled **from what each token SAYS, never from where it sits** — `NVMERI` is the book's name;
+4 genuinely ambiguous tokens are excluded **with stated reasons** rather than silently labelled).
+
+| region assignment, leaves 400–419 | value |
+|---|---|
+| **instrument** | **0.8760** |
+| ALL-MT control (majority-class floor) | 0.6612 |
+| ROW0-RH control (*the rule a reader would write unaided*) | 0.8017 |
+| **RunningHead recall** | **1.0000 (20/20)** — bar 0.90 ✅ |
+| MarginNote recall | 0.8947 (17/19) — bar 0.75 ✅ |
+| MainText recall | 0.8375 (67/80) |
+| leaves abstained | 0 |
+
+**Both controls are reported and neither is optional.** A region accuracy alone means nothing on a
+set dominated by MainText; the instrument had to beat *"row 0 is the running head"* to have earned
+its complexity, and it does.
+
+##### 🔴 BUT THE CONTINUITY RATE DID NOT RISE — AND THAT IS THE MORE USEFUL RESULT
+
+| head reader | agreement | Wilson95 lower | note |
+|---|---|---|---|
+| `legacy` (the reader that scored 0.312) | **0.312** (5/16) | 0.142 | reproduced EXACTLY after refactor — the control that makes the rest comparable |
+| `typed` (region primitive, **frozen band**) | **0.176** (3/17) | 0.062 | 🔴 **WORSE** |
+| `typed-anchored` (⚠️ **DIAGNOSTIC ONLY**, band moved too) | 0.250 (4/16) | 0.102 | not comparable to 0.312 — changes two things at once |
+
+⚠️ **A redesign that made the number WORSE is the `chapter_model_derive` shape, and it was caught by
+the consumer rather than by the region score** — the sixth-instance pattern again, a rule only
+tested once something reads it. Two causes, one mine:
+
+* **A tolerance bug.** `in_block` used `0.35p` while the flush test used `max(0.35p, 0.03·measure)`
+  — two tolerances for ONE edge. A body line starting slightly left of the modal `L` was *flush* by
+  one test and *outside the block* by the other, so its opening token was labelled MarginNote and
+  the reader fell through to an interior word (`'nes I ma'`). Fixed; region accuracy 0.8678→0.8760.
+* 🔴 **A methodological error of mine: I scored the primitive on a `0.0–0.35h` band and deployed it
+  on the frozen `0.06–0.30h` band.** Row indices and the measure differ between them, so the thing
+  validated was not the thing run. **Recorded rather than quietly re-scored.**
+
+**The frozen bound was NOT crossed to make the number better.** R2.1f pre-registered exactly one
+band re-cut and it is spent; `head_band(frac=…)` exists solely to run the R2.2b diagnostic and is
+labelled at every point it prints or writes. **Reporting both numbers is the non-laundering move;
+adopting the anchored one silently would have been the laundering one.**
+
+🟢 **What R2.1g genuinely bought is ATTRIBUTION, which is what R2.1f said was missing.** The joint
+metric now decomposes into named, separately-owned causes: the unanchored band (**R2.2b**),
+whole-line token blobs (**R2.1h**), catchword-side misreads (`'Abiton'` for *Abiron*, `'wl'` for
+*whom*), and residual region misses (leaf 412's `Temporal` is still labelled MainText). Before
+R2.1g the 0.312 was, in this file's own words, *"two opposing biases of unknown relative size"*.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.1h | 🔴 **THE HEAD TOKENISER STILL RETURNS WHOLE LINES ON SOME ROWS** (measured 2026-08-17) | `_tokens_in_row` splits leaf 415's row into 10 clean words but leaves leaf 414's as ONE 37-glyph token — `'two, † euerie lambe the tenth part of a tenth, which to.'`. ⚠️ **This is the defect R2.1f named and it is NOT fixed**: *"3 of the 5 AGREEs are whole-line blobs passing the ≥4-char prefix rule"*. The 2-means word gap fixed it on the rows it fires on and is inert on the rest | split scored **per row against hand-counted word counts**, not through the continuity rate; and the ≥4-char prefix rule re-examined, since it is what lets a blob score as an agreement. ⚠️ A blob that AGREES and a blob that DISAGREES are the two opposing biases — fixing one alone moves the rate in an uninterpretable direction. **C3** |
+
+##### 🟡 R2.1h WORKED 2026-08-17 — the BLOB is GONE, the step STAYS OPEN, and the ceiling is NOT the print
+
+**Cause, measured and exact.** `_word_gap` ran a 1-D 2-means on ONE ROW's gaps. That row's gaps have
+**three** scales, not two — intra-word (0–5px), word space (8–25px), and a single run out to a
+marginal note (60–350px). With two clusters for three populations the lone region run captures the
+high cluster and **every word space collapses into the low one**, so the threshold lands above every
+real space and the line survives as one token. Leaf 414 row 1: threshold **38px** against word
+spaces of 8–16. Leaf 400 row 1: **92px** against 10–17. The blob was a consequence of `k=2`.
+
+| leaf.row | word spaces | region run | threshold | tokens |
+|---|---|---|---|---|
+| 414.1 | 8–16 | **72** | 38 | 2 🔴 |
+| 400.1 | 10–17 | **179** | 92 | 2 🔴 |
+| 415.2 | 8–15 | *none* | 6 | 10 🟢 |
+
+**Deliverable, tracked.** `witness/gold/head_wordcounts_OT1-1609-B_400-419.json` (32 rows, counts
+**hand-adjudicated**, basis stated: each row read as ONE crop by the recogniser — a *different*
+instrument from the splitter under test — then adjudicated against the per-token readings, because
+neither is authoritative. On 415.2 the whole-row read dropped `of flowre` entirely while the tokens
+recovered it; on 414.0 the whole-row read missed the side-note. A gold built on either alone is
+wrong in opposite directions) · `witness/score_head_tokens.py` · `witness/audit_prefix_rule.py`.
+
+| splitter, 32 gold rows | exact | MAE | blob |
+|---|---|---|---|
+| ONE-TOKEN control | 0.0938 | 5.97 | 0.6250 |
+| LEGACY-GAP control (pre-R2.1f rule) | 0.2812 | 4.78 | 0.3750 |
+| PER-ROW-2M (**what R2.1f shipped**) | 0.2812 | 3.50 | 0.2500 |
+| LEAF-POOLED (gaps pooled over the band) | **0.3125** | 2.56 | **0.0000** |
+| QUANTILE (per-row, Q=0.80) | 0.2500 | **1.44** | **0.0000** |
+| ⚠️ **ORACLE** — best threshold chosen WITH the gold | **0.8750** | **0.12** | 0.0000 |
+
+🔴 **R2.1f's word-gap fix bought less than it appeared to**: PER-ROW-2M matches the rule it replaced
+on exact accuracy (0.2812 = 0.2812) and beats it only on MAE. That was never measured at the time
+because the only number available was the joint continuity rate.
+
+🟢 **THE ORACLE IS THE RESULT.** A per-row threshold **exists** that gets 28 of 32 rows exactly
+right, so **the ceiling is in the ESTIMATOR, not in the print.** My own hypothesis — that the
+setting joins words too tightly to separate (`againſtme`, `whomis`, `oftwo`) — is **refuted**.
+
+**What the oracle threshold IS, expressed without the gold:** `threshold / pitch` ranges 0.07–0.35
+and is useless; the threshold as a **QUANTILE of the row's own gaps** is tight — median **0.794**,
+p10 0.731, p90 0.936. ⚠️ Not a curve fit: in a line of N components carrying W words, ~W−1 gaps are
+word spaces and the rest fall inside words; words in this setting run ~4–5 sorts, so ~4 gaps in 5
+are intra-word and the word space sits at the ~0.8 quantile **by construction** — a property of the
+setting's average word length, which is why it holds where a multiple of the type size does not.
+Q was derived from this window, so the halves are reported apart: **0.809** (400–409) and **0.792**
+(410–419) independently.
+
+| ✅ **RECOGNISER — word boundaries from the model's decoded spaces** (R2.1h redesign, adopted) | **0.8125** | **0.25** | **0.0000** |
+
+## R2.1h REDESIGN — ADOPTED. The split comes from the recogniser's character positions
+
+**The ALERT above named a different RESOURCE CLASS and that is what closed it, not a better
+threshold.** `reichenau_dr.mlmodel` carries a 233-symbol codec that **contains the space**, and
+kraken's record returns a per-character `x` (`.cuts`) beside the prediction. The word boundary stops
+being a threshold estimated from ~30 gaps and becomes **a symbol the model decoded**, positioned by
+the same pass that read the letters. `witness/collation_read.py`: `recogniser_split`,
+`region_segments`, `make_recogniser_split`, `gap_split`, `head_tokens`.
+
+**It clears all three pre-registered bars, none of them relaxed**: exact **0.8125** ≥ 0.75 · blob
+**0.0000** ≤ 0.05 · beats both controls. Halves 0.9375 / 0.6875, and unlike Q=0.80 the splitter was
+in no way derived from this gold — the model was trained before the gold existed.
+
+⚠️ **THREE THINGS IT COST, MEASURED, NONE OF THEM GUESSED:**
+1. **A NEW FAILURE MODE.** A gap rule can never truncate a row; the recogniser can stop early and
+   can drop a space (`'OgAlaine'`, `'whomis'`). Both UNDER-count. `coverage` is returned on every
+   call and reported per row, so truncation is visible rather than inferred from a count.
+2. **TRUNCATION IS CAUSED BY CROSSING A REGION BOUNDARY** and was fixed by composition, not tuning.
+   Read as one crop, leaf 414 row 0 (running head → white → side-note) returned `'NVMERI.'` at
+   coverage 0.50, merging every trailing sort into one token spanning x 249–1347; the RunningHead
+   gold bound to it and the REGION score fell to RH **0.7895** with 29 orphans. Cutting the row on
+   the **already-justified `REGION_GAP_P` rule** before recognising — a gap wider than the line
+   pitch is a run to another region, not a word space — took word count 0.7500 → **0.8125** and
+   restored RH to **1.0000**.
+3. **IT COUPLES BOTH HALVES OF THE CONTINUITY MEASURE.** Catchword reader and head reader now share
+   a model on the split *and* the read, where the split used to be independent geometry. A
+   systematic recogniser fault can no longer disagree with itself. Paid knowingly, recorded here.
+
+🔴 **AND IT EXPOSED THAT THE REGION SCORER COULD NOT RANK SPLITTERS AT ALL — raised as R2.1j.**
+
+🔴 **STATUS: the quantile splitter is still NOT adopted.** It removes the blob outright
+(0.2500 → **0.0000**), more than halves the error (MAE 3.50 → **1.44**) and removes the bias
+(baseline 21 UNDER of 23; now 11 OVER / 13 UNDER) — but it scores **exact 0.2500 against a
+pre-registered bar of 0.75**, and below LEAF-POOLED's 0.3125. ⚠️ **A change that fails its own
+acceptance is not admitted**, the same rule that keeps `chapter_model_derive` pinned OFF at net −6.
+**The bar is not lowered and the metric is not swapped to MAE after the fact.** ALERT: the
+*approach* — a single scalar gap threshold per row — needs redesign. Named candidate, and a
+different resource class rather than more tuning: **take the split from the recogniser's own
+character positions**, so word boundaries come from the model that already reads the line correctly,
+instead of from a geometric threshold estimated on 30 numbers.
+
+## R2.2c 🔴 OPEN, BLOCKING — the reader's band does not contain the running head, on 20 of 20 leaves
+
+**Found 2026-08-17 by RENDERING leaf 414 and seeing no running head in it** — not by any score.
+`witness/render_pipeline.py` (NEW, tracked) draws each pipeline stage onto the actual scan.
+
+* Production reader: `CR.head_band` = **0.06h .. 0.30h** (frozen, R2.1f's one spent re-cut).
+* Both scorers (`score_head_regions.py`, `score_head_tokens.py`) and the **121-token region gold**:
+  **0 .. 0.35h**. A DIFFERENT CROP, with its own row indices.
+* Measured over leaves 400–419 the running head sits at **0.027h .. 0.071h** ⇒ **INSIDE the production
+  band on 0 of 20 leaves.**
+
+🔴 **So "RunningHead recall 20/20 = 1.0000" is measured in conditions the reader never meets.** The
+separator is not wrong — it is **scored where its main job exists and deployed where it does not**.
+⚠️ **EIGHTH INSTANCE OF THE SIGNATURE DEFECT: a correct rule that nothing downstream reads.** It is
+also why R2.2b (band not anchored to the type block) is now the blocking geometry step rather than a
+noted imperfection — the scorers quietly worked AROUND the frozen band instead of measuring it.
+**Acceptance: the scorers and the gold must address the SAME band the reader receives, or the band
+must be anchored so that it contains what the gold labels. C2. Until then no region number transfers
+to the reader.**
+
+### ✅ THE ADDRESS IS BUILT AND THE GUARD HAS LANDED — 2026-08-18. The STEP STAYS OPEN.
+
+**`witness/test_band_agreement.py` (NEW, tracked, exits 1)** is the guard R2.2c said must land with
+the fix. **`witness/gold_rekey_pagefrac.py` (NEW, tracked, exits 0)** is what made the question
+askable: the gold's address was `(row, l, r)` in band pixels, and **`row` is AGAIN AN ORDINAL** —
+this time into a list the BAND controls, exactly the shape R2.1i removed for the splitter and R2.1j
+removed for token coarseness. **Third time, same lesson: replace an index into something a stage
+controls with a measurement of the PAGE.** Every entry now also carries `y0f/y1f/xlf/xrf`, page
+fractions; the band-pixel fields are KEPT so 0.8760 stays reproducible. **125/125 placed, 0
+unplaced.** `CR.band_frame` / `to_page_frac` / `from_page_frac` are the one shared definition;
+`CR.head_band` is re-expressed on them and verified **pixel-identical on all 20 leaves**.
+
+⚠️ **The measured geometry that makes this cheap, and which nobody had stated**: every band this
+project cuts is FULL PAGE WIDTH resized to 1400, so two bands of one leaf share an x-scale EXACTLY
+(0.452781 on OT1-1609-B) and differ by a **constant y offset of 118.63px**. The gold's `l`/`r` were
+never band-dependent. Only the row ordinal ever was.
+
+🔴 **AND THE GUARD MEASURED MORE THAN THIS STEP WAS RAISED ON. The consolation does not hold.**
+R2.2c was written as a RunningHead finding, softened by "in deployment the job that actually runs is
+MainText-vs-MarginNote". Measured against the reader's band:
+
+| gold entries INSIDE the reader's band | | |
+|---|---|---|
+| RunningHead | **0 / 20** | as R2.2c recorded |
+| MarginNote | **2 / 19** | 🔴 NEW — the MT-vs-MN job is *also* scored outside deployment |
+| MainText | 66 / 80 | |
+| ChapterHead | 2 / 2 | |
+
+⇒ **51 of 121 entries — 42% — lie outside the band the reader receives**, and the MN recall the
+suite reports (0.8947) rests on 17 entries the reader cannot see. **The fallback position was
+itself unmeasured.**
+
+🔴 **C4 COVERAGE, the converse question, and it is NOT the same question.** C3 asks whether the
+reader's band contains what the gold labels. C4 asks whether the gold says anything about what that
+band CONTAINS. The gold's ink spans **0.0268h..0.1113h**; the reader's band is 0.06h..0.30h ⇒ **the
+gold speaks to 21.4% of the band the reader actually reads.** Even the 66 MT entries counted INSIDE
+sit in its top fifth; the rest is unlabelled territory typed on every leaf. **Reported, deliberately
+NOT pass/fail** — closing it means labelling more of the page, which must not hide inside a band
+fix. It stays OPEN and named.
+
+⚠️ **THE GUARD IS ITSELF CHECKED, because a test that does not move is not evidence until it is
+shown it COULD have moved** (two injection tests were mis-designed this session). C3 is re-run
+against the band the gold was LABELLED in, where it returns **121/121**. So the failure is a fact
+about the reader's band and not an arithmetic error in the new address.
+
+**WHAT IS DELIBERATELY NOT DONE HERE: `HEAD_BAND` IS NOT WIDENED.** R2.1f pre-registered exactly one
+band re-cut and it is spent on the word-gap fix; widening it to make a new guard pass would be that
+re-cut under another name, and would convert a below-threshold result into an accepted one. The
+guard reports the **SHORTFALL — 0.0332h at the top** — in the vocabulary a fix must satisfy.
+**Choosing the band is R2.2b, which this now blocks on rather than replaces.**
+
+## R2.1k 🔴 OPEN — a body row fails R3 by 12px because the SPLITTER improved
+
+**Also found by rendering** (leaf 414's whole first body row typed MarginNote under the new splitter).
+`region_head.SPAN_MODE` (default `"tokens"` = unchanged) exists only to measure the candidates.
+
+**CAUSE, exact.** R3's span clause measures a row's reach over tokens with `n_glyphs >= MIN_GLYPHS`.
+**`MIN_GLYPHS` is a SPECK FILTER doing duty as a SPAN ESTIMATOR** — a 2-component word like `of` is
+not a speck. Leaf 414 row 1: blob splitter ⇒ one 37-component token, span **851px** vs requirement
+**677px**, passes trivially. Recogniser splitter ⇒ **5 real in-block words drop out** (rightmost at
+r=1086), span collapses to **696px**, while finer tokens push `block_measure` R 1142→1184 so the
+requirement **RISES** to **708px**. The bar went up as the measurement came down; the row fails by
+**12px** and every word in it is relabelled with nothing about the page changed.
+
+**ALL THREE CANDIDATES REFUTED, measured on all 121 gold tokens under 5 splitters:**
+
+| R3 span from | overall | RH | MN | MT | verdict |
+|---|---|---|---|---|---|
+| `tokens` (shipped) | 0.8760 | 1.0000 | 0.8421 | 0.8500 | splitter-dependent — the defect |
+| `ink` | 0.9091 | **0.7500** | 0.8421 | 0.9625 | 🔴 REFUTED |
+| `segment` (longest region run) | 0.8430 | 1.0000 | **0.9474** | **0.7875** | 🔴 REFUTED |
+
+* 🔴 **`ink` fails because A HEADLINE BAND IS NOT A LINE.** Leaf 414 row 0 is `382 … NVMERI. …
+  Sacrifices for` — three separate elements whose COMBINED extent spans nearly the measure though none
+  approaches it. Every running head then looks like a full justified line: RH falls to 0.7500 under
+  **every** splitter. It trades R3's current failure for the one the span clause was added to prevent.
+* 🔴 **`segment` fails from the other side**: it holds RH 1.0000 and gives the best MN recall measured
+  (**0.9474** on three splitters), but a body row's own VERSE NUMBER sits beyond a pitch-wide gap, so
+  the body line is cut short of the measure and MT falls to 0.7875.
+* ➡️ **NEXT CANDIDATE, from reading the two refutations together**: the extent of the region run that
+  is **FLUSH TO L OR R**, not the longest — continuous like a justified line, anchored like one, and
+  computed on GLYPH BOXES so no splitter can move it. **C2.** Nothing adopted until it clears a
+  pre-registered bar; `SPAN_MODE` stays `"tokens"`.
+
+## R2.1j — the region scorer could not rank splitters, and one binding rule flattered a broken one
+
+**Raised and closed in the same pass, 2026-08-17. `witness/score_head_regions.py`: `contain`,
+`ink_bind`.** R2.1i re-keyed the gold by band-pixel SPAN so a splitter change would stop reading as
+a region regression. That fixed *how an entry addresses a token*. It did not fix that **an entry can
+be COARSER than a token**: 43 of the 121 entries (**35.5%**) carry more than one word, because they
+were hand-labelled while the splitter still blobbed. `match` requires the bound token to cover
+**half the gold span**, which no single word can do against a twelve-word entry — under the
+recogniser splitter **31 of 121 entries went orphan with nothing about any region having changed.**
+
+🔴 **AND THE SAME MEASUREMENT INDICTS THE NUMBERS R2.1i REPORTED.** A deliberately broken splitter
+(`fine ×0.4`) posts the **HIGHEST** max-overlap accuracy on this gold, **0.9479**, by orphaning 25
+entries — the ones it cannot bind are the hard ones, so discarding them *raises* the score. **A
+binding rule that drops entries cannot rank splitters**, and R2.1i's "0.9474 under the quantile
+splitter, 26 withheld" must be read as **part selection, not improvement alone**.
+
+🔴 **MY FIRST REPLACEMENT ALSO FAILED ITS OWN PRE-REGISTRATION, and the failure is kept.**
+CONTAINMENT (every token whose centre lies in the gold span takes its label) was pre-registered as
+"every entry binds ≥1 token under every splitter". Orphans measured: baseline 0 · quantile 6 ·
+coarse ×1.6 **33** · fine ×0.4 0 · recogniser 4. It breaks in the direction *opposite* to
+max-overlap — merge two tokens and the merged centre leaves a small span. **One rule fails as tokens
+get finer, the other as they get coarser, and both let the DENOMINATOR move with the splitter**,
+which is the whole reason splitters could not be compared.
+
+✅ **WHAT SURVIVES — bind by INK.** An entry takes the label holding the most overlapping ink, so
+every entry with ink under it binds at any token size and **the denominator is 121 for every
+splitter**. Merging still costs (a coarse token straddling two entries is wrong for one); shattering
+still costs and is separately visible as **purity**. Pre-registered accounting — 121 scored, 0
+orphans, under every splitter — **holds on all five**, including the two deliberately broken ones.
+
+| splitter | max-overlap acc | n | orph | **INK acc** | **n** | **orph** | purity | RH | MN | MT |
+|---|---|---|---|---|---|---|---|---|---|---|
+| baseline (per-row 2M) | 0.8760 | 121 | 0 | **0.8760** | 121 | 0 | 1.0000 | 1.0000 | 0.8947 | 0.8375 |
+| R2.1h quantile | 0.9474 | 95 | 21 | **0.9504** | 121 | 0 | 0.9927 | 1.0000 | 0.8421 | 0.9625 |
+| coarse ×1.6 | 0.7957 | 93 | 0 | **0.8264** | 121 | 0 | 1.0000 | 0.9500 | 0.8421 | 0.7875 |
+| ⚠️ fine ×0.4 (deliberately broken) | **0.9479** | 96 | 25 | **0.8926** | 121 | 0 | 0.9949 | 0.8500 | 0.8421 | 0.9125 |
+| RECOGNISER (adopted) | 0.8876 | 89 | 31 | **0.8760** | 121 | 0 | 0.9775 | 1.0000 | 0.8421 | 0.8500 |
+
+🟢 **Once survivorship is removed the ranking is interpretable.** `fine ×0.4` falls to 0.8926 with RH
+collapsing to 0.85 — the shattering becomes *visible* instead of hiding among the entries it could
+not bind. **The recogniser splitter is adopted at region PARITY** (0.8760, RH 1.0000 held), so R2.1h
+costs R2.1g nothing. And the quantile splitter's region gain turns out to be **real** — 0.9504 on
+all 121 at purity 0.9927 — which is a finding about *regions*, not a licence to adopt a splitter
+that fails its own word-count bar at 0.2500.
+
+⚠️ **OPEN, and it is a limit of the GOLD, not of the scorer**: 43 entries are phrase-length, so the
+gold cannot distinguish a splitter that gets every word boundary right from one that gets the
+*region* right and the words wrong. Word-grain re-labelling of those 43 entries is **R2.1j-b, C2**.
+
+🔴 **The prefix rule is a SECOND, SEPARATE cause, proven by injection** (`audit_prefix_rule.py`,
+exit 1 while it stands): `norm()` strips spaces, so a blob collapses to one string, and `agrees()`
+requires the shorter side to be ≥4 characters. The **same blob shape** therefore scores in opposite
+directions according to the catchword's letter count — `'face'` vs blob → **AGREE**, `'two,'` (three
+letters after normalisation) vs blob → **DISAGREE**. ⚠️ **The catchword's length is not a property of
+the instrument**, so the rate mixes an instrument property with the book's vocabulary. ⚠️ **Do NOT
+close this by lowering the 4-character floor** — it was raised in R2.1d′ precisely because a
+2-character misread (`'wl'`) matched almost anything. The head side must present WORDS. **The two
+halves of R2.1h must therefore close TOGETHER**: fixing the splitter alone moves the rate in an
+uninterpretable direction, because the two biases would stop cancelling at the same rate.
+
+🟡 **HALF-CLOSED, AND THE AUDIT'S EXIT CONDITION WAS REBUILT (2026-08-17).** The direction-dependence
+of `agrees()` will **never** stop reproducing — a prefix test with a minimum length *is*
+length-dependent by construction — so an exit condition asserting it had changed would have been
+asserting something that must not happen. That demonstration is now a **regression check on the
+scorer**, and what closes the audit is the other end: **the rule mis-scores BLOBS, so it stops
+mattering when the READER stops producing them**, measured on the production reader over leaves
+400–419 via the same `head_tokens` the reader itself uses.
+
+Under R2.1h's splitter: **17 words · 2 blobs · 1 abstention**, so the audit **stays OPEN at exit 1**
+— correctly. ⚠️ **My first version of this criterion was unfalsifiable in the direction that
+counts**: it tested only for an internal space, which a whole-line token passes whenever the
+recogniser decodes **no** space at all (leaf 417, `'hpromiſſe,hal'`). A blob was never defined by
+whitespace but by a token spanning the LINE, so the token's SPAN is now tested against its row
+(>50% ⇒ blob) — and that test is what catches leaf 416 (`'.'`, **100%** of its row) and 417 (54%).
+Abstentions are counted separately and are **not** successes, so a reader that closed this audit by
+refusing to read would be visible.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.1i | 🔴 **THE REGION GOLD IS KEYED BY TOKEN ORDINAL, SO ANY SPLITTER CHANGE SILENTLY RENUMBERS IT** (measured 2026-08-17) | Wiring R2.1h's splitter into `region_head` collapsed the R2.1g score — MarginNote recall **0.8947 → 0.5263**, unlabelled **80 → 212** — while **nothing about the regions changed**. ⚠️ Every future tokenisation improvement will read as a REGION REGRESSION until this is fixed, which is an instrument that punishes progress. Deliverable: re-key `head_regions_*.json` to address a token by **(row, x-centre at labelling time)** and match by containment, not by ordinal | injection-proven: perturb the splitter and the region score must be UNCHANGED. ⚠️ A gold label must be *addressed* geometrically but never *adjudicated* geometrically — addressing is not adjudication, the same distinction the registry already draws for training crops. Merge collisions (two labels landing in one token) must be REPORTED, never silently scored. **C2 — assembly.** ⚠️ This BLOCKS R2.1h: until it is done, no splitter change can be evaluated at all |
+
+##### 🟢 R2.1i DONE 2026-08-17 — and it corrected ITS OWN pre-registered acceptance TWICE, in the open
+
+**Re-key.** `head_regions_*.json` v2: a label is addressed by its **band-pixel span** within a row,
+never by a token ordinal, and scoring binds each label to the token of maximal overlap. The
+`ambiguous` list is re-keyed too — left on ordinals an exclusion would drift independently of the
+labels and silently re-admit the very token it was written to exclude. 121 labels re-keyed with
+**0 span drift** against a live re-derivation (the dump was cross-checked, not trusted — R11.3a's
+*"the commit is not the pin"*). ✅ **The re-key is faithful**: unperturbed score is **0.8760 / RH
+1.0000 / MN 0.8947 / 121 scored / 0 collisions / 0 orphans — identical to v1.**
+
+🔴 **THE PRE-REGISTERED ACCEPTANCE WAS WRONG, AND SO WAS ITS FIRST REPLACEMENT. Both are recorded.**
+
+* **As written** — *"perturb the splitter and the region score must be UNCHANGED"* — is
+  **unachievable, and not because the addressing is bad.** Rule R5 asks where a token's CENTRE sits,
+  so cutting `NVMERI.` into `NVME` + `RI.` moves both fragments' centres. Measured: under a 0.4×
+  splitter, scored count / collisions / orphans were **all unchanged (121 / 0 / 0, every label
+  bound)** while RH recall still moved. Nothing was misaddressed.
+* **First replacement** — *"same token ⇒ same label"* — **also failed**, on tokens the splitter had
+  NOT re-cut, and the flips were cases where the perturbed splitter produced the **better** label.
+  Cause: `block_measure` estimates the measure **from token edges**, so a splitter change moves the
+  measure and with it every in-block decision, including for tokens it never touched.
+* ⚠️ **The lesson, and it generalises: the region OUTPUT cannot be stable under a splitter change,
+  because the splitter is one of the region model's INPUTS.** Any acceptance demanding output
+  stability was testing the model while claiming to test the address. Two versions of this step's
+  own acceptance conflated them.
+
+**What IS well-posed, and is now the acceptance** (`witness/test_region_gold_addressing.py`,
+guard, exit 0):
+| | criterion | result |
+|---|---|---|
+| **A** | **BINDING FIDELITY** — every SCORED entry binds to a token overlapping ≥50% of the gold span. ⚠️ Checked **without reference to any region label**, which is what makes it a test of the ADDRESS rather than of the model. **v1 had no such clause at all** | ✅ 0 weak bindings under all 3 perturbations |
+| **B** | **ACCOUNTING** — any change in scored count is **fully explained** by reported collisions and orphans. A gold may lose a label to a merge; it may not lose one to bookkeeping | ✅ 26=26 · 28=28 · 25=25 |
+
+**Perturbations: the real one (R2.1h's quantile splitter) plus a deliberate over-merge (×1.6, forces
+collisions) and over-split (×0.4, forces orphans), so both clauses are actually exercised.**
+
+🟢 **THE POINT, MEASURED.** Under R2.1h's splitter the region score is now **0.9474 / RH 1.0000**,
+with 26 labels **honestly withheld** as 5 collisions + 21 orphans. **Under v1 the identical change
+read as MN recall 0.5263.** The instrument no longer converts tokenisation work into a region
+regression — which was the whole defect.
+
+⚠️ **R2.1i unblocks EVALUATION of a splitter change, not ADOPTION of one.** R2.1h remains OPEN and
+blocking: its quantile splitter still scores exact 0.2500 against a 0.75 bar, and the fact that it
+now makes the region number look better is **not** grounds to admit it — that is scoring a component
+through a downstream metric, which is the practice R2.1g exists to end.
+
+
+| R2.2b | 🔴 **THE HEAD BAND IS A FIXED FRACTION OF PAGE HEIGHT AND IS NOT ANCHORED TO THE TYPE BLOCK** (measured 2026-08-17) | `0.06h..0.30h` opens **below** leaf 400's running head and **above** leaf 403's. Where the running head falls inside the band therefore varies per leaf, which is why the head reader failed in BOTH directions. Deliverable: a band bound **anchored to the top of the type**, derived from the same region primitive rather than from a page fraction | the bound is scored on **whether the band contains the first body line**, per leaf, against the hand-labelled set — directly, not through continuity. ⚠️ **This step is what makes a second band change legitimate**: it replaces a heuristic with a measured anchor and is pre-registered as such, rather than being a re-cut of the same knob to chase a rate. **C3** |
+
+
+| R2.2d | 🔴 **THERE IS NO REGION TYPE FOR THE CHAPTER ARGUMENT, AND IT IS BEING TYPED AS SCRIPTURE** (measured 2026-08-18, R2.2b/A1) | this edition sets a multi-line **italic ARGUMENT** between `CHAP. XXVII.` and the first verse — 4 detected rows on leaf 403, **11** on leaf 411. It is justified to the full measure, so R3's body-row test passes and `region_head` labels it **MainText**: leaf 411 rows 3–7, leaf 403 rows 6–7. **The head reader therefore returns the ARGUMENT's opening as the leaf's first line of scripture on every chapter-opening leaf.** Deliverable: an `ARGUMENT` region in the R1–R6 rules, separated by a property of the SETTING (it is set in ITALIC, at the same measure, between a ChapterHead and the first verse) rather than by position | scored on the region gold **extended to label argument lines** — ⚠️ **the current gold CANNOT test this**: on leaves 403 and 411 it labels no MainText at all (2 and 4 entries), because the labeller had no admissible label. **That sparseness is the fossil of the missing category and the blind spot sits on the same leaves as the defect.** Acceptance: argument rows labelled ARGUMENT on both chapter-opening leaves, MainText recall NOT reduced elsewhere, and the head reader's opening word on those leaves becomes the verse, not the argument. **C3** |
+
+| R2.2e | 🔴 **A ROW SWALLOWED INTO ONE TOKEN IS TYPED MarginNote — 49 rows, 44 of them SCRIPTURE** (measured 2026-08-19, with `ARGUMENT_RULE` OFF, i.e. the SHIPPING pipeline) | the tokeniser sometimes emits ONE token covering a whole printed line (leaf 412 r33: 63 glyphs, 90% of the row). `in_block` tests `l < L or r > R`, so **a token spanning the measure necessarily fails it** and is labelled MarginNote — `† And Moyses referred their people` and 43 more body lines typed as marginalia. 🔴 **Two splitters disagree about one row and the COARSER one decides the label**: `region_segments` cuts r33 correctly into side-note + argument, but the label rides on the unsplit token. ⚠️ **The 121-token region gold cannot see any of it** — it lives in the 3-row head band and these rows are mid-page, so **0.8760 is not evidence against this**. Residual population after R2.1h fixed the blob's `k=2` cause; the R3-side view of the same handoff is R2.1k | Deliverable: `in_block` must not be decidable by a token the tokeniser failed to split — run the block test at `region_segments` grain, or split a row-spanning token before labelling. Acceptance: row-spanning out-of-block tokens go to **0** on the 20 leaves with the region gold's four numbers NOT falling. **C2** |
+
+| R2.2f | 🔴 **R4 ASSIGNS BY ROW MEMBERSHIP, SO A MARGINAL NOTE ON A BODY LINE'S BASELINE IS TYPED MainText** (measured 2026-08-20, R2.2e-b) | leaf 412 r2's note `pinces are` is 142px against a 1110px measure and sits INSIDE the block bounds (the marginal column and the measure are contiguous on that leaf, so modal `L=48` is left of it). It scored MarginNote **only because its ROW was broken**; repair the row and R4 sweeps it into MainText. ⚠️ This is `region_head`'s founding observation — *a row is not homogeneous, label per TOKEN* — on a THIRD axis: it holds for region and (R2.2d) for FOUNT, but not for R4's own row-to-token inheritance. 🔴 **The gold's MN 0.8947 was RESTING on the defect**: two errors cancelled, so the number looked stable until the first genuine repair exposed the second | **PREREQUISITE for R2.2e-b and R2.2g**: no repair of the swallowed rows can pass F2 until R4 labels per token, because every repair turns a broken row into a body row. Acceptance: MN recall NOT below 0.8947 with the span qualifier ON, and no MainText entry lost. **C2** 🔴 **CANDIDATE 1 REFUTED 2026-08-20** (`R4_PER_SEGMENT`, per-region-segment R4, `witness/score_r4_segment.py`, OFF): G3 exact and G5 reach **35 rows demoted at zero cost**, but **G1 fails — the rule cannot reach its own witness**. ⚠️ **AND THE PREREQUISITE DIRECTION ABOVE IS BACKWARDS: R2.2g GOES FIRST.** Leaf 412 r2's body segment is FULL (931 of an 832 bar) but overshoots the modal edge by **45px against a 33px tolerance**, so no segment qualifies, the row falls back and the note keeps MainText. Both directions hold at once and the chain has a CYCLE; see § "R2.2f RESULT" |
+| R2.2g | 🔴 **R3's FLUSH TEST INHERITS THE SAME MODAL-EDGE ASSUMPTION R2 DOES** (measured 2026-08-20, R2.2e-b) | with the span qualifier on, **20 of the 43** swallowed body rows are in-block yet still come back `CH`/`MN`: a line whose ink overshoots the modal edge is not FLUSH at that edge, and its left end sits at a marginal note, so R3 refuses it as a body row and the label falls through to R5/R6. The modal edge is a MODE over many lines — an individual justified line exceeding it is ordinary | Acceptance: those 20 rows carry MainText with the region gold's four numbers NOT falling. ⚠️ Same family as R2.1k, and the two must be resolved together rather than each patching the other's symptom. **C2** 🔴 **PROMOTED TO FIRST OF THE THREE OPEN LINKS 2026-08-20** by R2.2f's refutation: R4-per-segment cannot identify a body segment that overshoots the modal edge, so **R2.2g is R2.2f's prerequisite, not the other way round**. Independent corroboration of the count from the same run: switching the span qualifier on moves R2.2f's no-qualifying-segment fallback **160 → 180**, i.e. the same **20** rows | 🔴 **CANDIDATE 1 REFUTED 2026-08-20** (`FLUSH_MODE`, one-sided flushness, `witness/score_flush_reach.py`, stays `"both"`): H2/H3/H5 pass and **H4 RESOLVES THE CYCLE** — all three flags on returns the entry to MarginNote with MN **0.8947**, RH 1.0000, MT **0.9000**, acc **0.9174** — but **H1 is 37/43** (`"reach"`; 33/43 for `"reach_right"`), so the chain's 23+20=43 was wrong, 6 rows are a FOURTH cause (**R2.2h**), and NEITHER R2.2g NOR R2.2f is adopted. The `"reach"` vs `"reach_right"` trade is recorded, not resolved: +4 consumer rows for acc 0.9174 → 0.9091 |
+| R2.2h | 🔴 **THE MODAL EDGE IS ESTIMATED WITH A TOLERANCE HALF THE SIZE OF THE ONE IT IS TESTED WITH** (measured 2026-08-20, R2.2g) | `block_measure` takes the mode over row edges with `EDGE_TOL_P * p` (**13px** at pitch 38), and `classify` then decides in-block with `max(0.35p, 0.03 * measure)` (**27px**). The true scatter of justified line-starts in this edition is a SMEAR ~80px wide, so the mode lands in one bin of it and whole body lines fall outside the block: on leaf 403 **17 rows start left of the modal L against 17 within tolerance**; on 411 **20 rows end right of R**. Three of the 6 R2.2g survivors have NO in-block solid token at all; two more carry their scripture in a 496px segment that is out-of-block on the LEFT while a 78px tail is inside. ⚠️ **Two tolerances for one edge — the defect this module's header records having ALREADY paid for once** (continuity 0.312 → 0.176); the R2.1 fix unified them inside `classify` and never touched the estimator producing the edge. **Twelfth instance of the signature defect** | Deliverable: the edge estimator and the edge test must use ONE tolerance, which requires a fixed point (`classify`'s tolerance depends on the measure the estimator produces) — take a provisional mode at `0.35p`, derive a provisional measure, re-take the mode at `max(0.35p, 0.03 * measure)`. Acceptance: the 6 R2.2g survivors carry MainText, H1 reaches **43/43**, and the region gold's four numbers do NOT fall. ⚠️ Resolve WITH R2.2g and R2.2f — R2.2g's H4 showed these links are only scorable together. **C2** 🔴 **CANDIDATE 1 (`EDGE_FIXED_POINT`) SCORED 2026-08-20, `witness/score_edge_chain.py`, OFF**: J2–J6 PASS (out-of-block rows 403 **11 → 8** left and **3 → 0** right, 411 **14 → 10** right; zero abstentions; D1 **52 → 54** alone and **57/81** on the full chain, the highest recorded) but **J1 does not move: 37/43, the same number R2.2g reached without it**. The defect is real and is NOT the survivors' cause ⇒ **R2.2i** |
+| R2.2i | 🔴 **A PRINTED LINE WHOSE BASELINE TILTS ACROSS THE MEASURE IS CUT INTO TWO ROWS, AND NEITHER HALF CAN BE A BODY ROW** (measured 2026-08-20, R2.2h) | `CR._rows_and_lines` clusters glyphs onto baselines; on a leaf with ~1° of scan tilt the right-hand end of a line sits 13–22px below its left-hand end, and the line is emitted as TWO rows — leaf 409 r36 `x 155..808` and r37 `x 689..1103` at **Δbaseline +15**, complementary in x and together spanning the whole measure. **Neither half reaches R3's `0.75 × measure`, so neither can be a body row however the block edge is estimated**, and the halves read with stray leading glyphs (`itwo`, `isthe`, `ranhom`). Census over the 20 leaves (`.scratch/r2/probe_split_census.py`): **22 split pairs in 1242 rows (1.8%)**, concentrated — 409 **8**, 419 **5**, 403 **3**, 411 **2**, singles on 407/410/415/417 — and **every leaf carrying an R2.2g/R2.2h survivor is on that list**, with 409 supplying 4 of the 6. Tilt is signed and consistent WITHIN a leaf (409 ≈ −20, 403 ≈ +14), i.e. per-leaf scan rotation, not noise. ⚠️ **The spike has carried a `deskew.py` throughout and no part of this chain consults it.** ⚠️ Found only after a SKEW hypothesis was tested and wrongly refuted by a probe that correlated over the corrupted row list itself — the defect diluted its own signal | Deliverable: rows are clustered against a per-leaf baseline MODEL rather than a horizontal band, or the leaf is deskewed before `_rows_and_lines`. Acceptance: split pairs go to **0** over the 20 leaves, the 6 R2.2g/R2.2h survivors carry MainText (J1 **43/43**), and the region gold's four numbers do NOT fall. ⚠️ This is UPSTREAM of R2.2e–R2.2h: it corrupts the row list every later rule reads. ⚠️ **BLOCKED BY R2.2j** — the gold addresses entries by ROW ORDINAL, so a row-clustering change renumbers every key and the score would collapse for reasons that have nothing to do with regions. **C2** |
+| R2.2j | 🔴 **THE REGION GOLD ADDRESSES BY ROW ORDINAL, AND A ROW ORDINAL IS AN INDEX INTO A LIST THE CLUSTERER CONTROLS** (found 2026-08-20 while scoping R2.2i) | `gold/head_regions_*.json` carries `row` per entry and `score_head_regions.match`/`contain`/`ink_bind` all filter `t["row"] == e["row"]`. R2.2i changes how glyphs are clustered onto baselines, so it RENUMBERS ROWS — and every gold entry would then bind to the wrong row or to none, exactly as R2.1i measured when a splitter change renumbered token ordinals and MN recall fell **0.8947 → 0.5263 with nothing about any region having changed**. ⚠️ **This is R2.1i's defect ONE LEVEL UP**, and it was invisible until a candidate proposed to change the row list — the gold has been addressed this way since it was built, and every number this project has recorded against it assumed the clusterer was fixed. ⚠️ The gold ALREADY carries a band-independent address (`y0f`/`y1f` page fractions, added at R2.2c) which no scorer reads | Deliverable: bind gold entries to tokens by **y-band overlap** (`y0f`/`y1f` against the token's row band) rather than by row ordinal, with the addressing failure reported SEPARATELY from the region score — the discipline `score_argument_region.best_overlap` already follows. Acceptance: the four gold numbers are EXACTLY unmoved under the re-keyed scorer with the row clusterer unchanged (the control that proves the re-key is not itself a change), and non-zero addressing failures are reported. ⚠️ **PREREQUISITE for R2.2i**: a row-clustering change cannot be scored on a gold whose address it moves. **C1** |
+| R2.2k | 🔴 **THE ROW CLUSTERER CHAINS AGAINST A RUNNING MEDIAN AND WALKS UP THE TILT ONTO THE NEXT BASELINE** (found 2026-08-20, R2.2i candidate 1) | `CR._rows_and_lines` appends a glyph when it lies within `ROW_TOL_P * p` of the **running median of the row being built**, and appending then MOVES that median. On a tilted leaf the median creeps with each glyph, so the row walks diagonally off its own baseline and onto the one below, emitting rows that cross several printed lines. ⚠️ **This is the OPPOSITE failure to R2.2i** — R2.2i cuts one line into two, R2.2k merges parts of many into one — and the two coexist on the same leaf, which is why the row count is simultaneously too HIGH (1242 against 827 printed lines) and contains rows spanning more than one line. 🔴 **It is what corrupted four of the five slope instruments**: a least-squares fit over rows spanning ≥0.75 of the measure returned **+0.030 with IQR +0.0262..+0.0322** on leaf 409, a slope at which no whole line could have survived clustering at all — the fitted objects were diagonal chains and their apparent slope is one pitch per span, i.e. the alias. ⚠️ **A tight interval on a circular instrument**; precision is not independence. Distinct from R2.2i: a correct per-leaf slope does not remove it, because the chaining rule is unchanged by straightening the coordinate | Deliverable: cluster against a FIXED baseline estimate per row rather than a running median that the row's own members move — e.g. seed from the strip line count and assign each glyph to its nearest seeded baseline. Acceptance: no row spans more than one printed line, verified against the strip line count of `probe_r22i_linecount.py`, and the four gold numbers do NOT fall. ⚠️ Resolve WITH R2.2i — candidate 3's named risk records that a correct `s` may not be sufficient while this stands. **C2** |
+| ~~R2.2l~~ ✅ **RESOLVED 2026-08-21** (see the R2.2l RESULT §; guard exits 0, four gold numbers unmoved) | 🔴 **THE ADOPTED `ink2d` ADDRESSING LOSES A TOKEN WITHOUT REPORTING IT — A REGRESSION IN THE ONLY CHANGE ADOPTED ON 2026-08-20** (found 2026-08-20, running the suite after R2.2j) | `witness/test_region_gold_addressing.py` is a **GUARD (must exit 0)** and it now **exits 1**. It asserts the accounting invariant `lost <= collisions + orphans`: every entry that stops being scored must be reported as one or the other. Under the **R2.1h-quantile splitter** the adopted path gives **lost 27, accounted 26 (coll 5 + orph 21) — 1 token lost silently**. Run under all three settings in one process: **`ordinal` exits 0, `ink2d` exits 1**; the other two perturbations (`coarse x1.6`, `fine x0.4`) balance exactly, so it is one entry on one axis, not a broken scheme. ⚠️ **R2.2j's own criteria (L1–L4, M1–M3) perturb the ROW CLUSTERER; this guard perturbs the SPLITTER**, an axis none of them touched — and the guard is PRE-EXISTING, written for R2.1i. ⚠️ **The regression violates R2.2j's own stated deliverable**, which was to report addressing failure SEPARATELY from the region score; the adoption satisfies its criteria and breaks its principle. ⚠️ **`match` is NOT the leak** — its three outcomes are exhaustive, so `bound + coll + orph = len(entries)` identically; the drop is downstream in the `contain` / `ink_bind` path. ⚠️ **NOT to be fixed by reverting to `ordinal`**: M1 showed the ordinal address collapses under a pure renaming (acc 0.4667, 90 of 121 orphaned), so reverting would trade a correct scheme for a green suite | Deliverable: find the unreported drop in the `contain`/`ink_bind` path under `ink2d` and report it as a collision or an orphan. Acceptance: the guard exits **0** under `ink2d` with the four gold numbers unmoved, and R2.2j's L1–L4 re-run clean. ⚠️ **BLOCKS the suite** — the verification standard is RED until this closes, and that is the correct state. **C1** |
+| R2.2m | 🔴 **THE CONTAINMENT PATH DROPS OBSERVATIONS WITH THE SAME UNCOUNTED IDIOM R2.2l WAS** (found 2026-08-21, fixing R2.2l) | `score_head_regions.main` builds `cpairs` as `[(g, pr) for g, pr, _e, t in cobs if id(t) not in cexcl]` — the containment observations are filtered by the ambiguous-entry exclusion set **with no counter and no print**, exactly the idiom that made R2.2l invisible in the `pairs` path. The reported containment numbers (`c_acc`, `c_obs`, `c_orph`) can therefore understate silently. ⚠️ **No guard fails today**: nothing asserts an accounting invariant over `c_obs`, and R2.1j containment is a REFUTED binding kept only for reporting — which is precisely why it is the sort of thing that sits unnoticed. ⚠️ Note the accounting is NOT 1:1 there: `contain` may emit several observations per entry (one per hit token), so the count is over OBSERVATIONS, not entries, and a naive copy of R2.2l's fix would mis-state it | Deliverable: count and print the `cexcl` drops as R2.2l does for `ambcoll`, in observation units, and extend `test_region_gold_addressing` with an accounting clause over `c_obs` so the invariant has a consumer. Acceptance: the guard still exits 0, the containment numbers are unmoved or their change is explained by the newly-counted drops, and the four gold numbers do NOT fall. **C1** |
+| R11.2d | 🔴 **THE OPEN REGISTER'S PARSER CANNOT SEE A LETTER-SUFFIXED STEP ID, SO SUCH A STEP SILENTLY LEAVES THE REGISTER** (found 2026-08-20 while registering R2.2f/R2.2g) | `audit_prereq_ceilings.STEP_RE` is `R\d+(\.\d+)*[a-z]?(-\d+)?` — the suffix branch is **digits only**, so `R2.2e-c` matches as `R2.2e`, collides with the existing id and is DEDUPED AWAY. The register would have read 66 ids while the audit counted **64**, and §0.6 makes the register precedence-bearing. ⚠️ Same family as R11.2c: an id convention the enforcing parser cannot read. **Worked around at the call site** by naming the steps R2.2f and R2.2g — ids the parser can see — exactly as R11.2c worded a claim around the digit-only fraction regex | Deliverable: the parser accepts letter suffixes, **or refuses an id it cannot parse** rather than silently folding it into another. ⚠️ Silent folding is the worst of the three behaviours: the step does not appear as missing, it appears as ALREADY THERE. **C1** |
+##### R2.2d PRE-REGISTRATION — written 2026-08-18 BEFORE the discriminator was built or measured
+
+⚠️ **Written first and not edited afterwards**, on the same terms as R2.2b's block above — whose `N`
+the book then refuted, which is the outcome this discipline exists to make possible.
+
+**THE DISCRIMINATOR MUST BE A PROPERTY OF THE SETTING, NOT A POSITION.** "Whatever lies between the
+ChapterHead and the first verse" would be *definitionally* correct and *diagnostically worthless*:
+it presumes the boundary it is supposed to find, and it cannot fire on a leaf whose chapter head was
+missed. The book's own distinction is a **FOUNT**: the argument is set in **ITALIC**, the scripture
+in roman, at the same measure. So the named candidate is **SLANT, measured from glyph geometry per
+row, relative to the page's OWN modal slant** — a page-relative measure, so a leaf photographed
+askew does not read as all-italic. ⚠️ Anti-circularity again (Sir's ruling): *italic* is a word the
+BOOK uses about itself; *"the block that confuses the head reader"* is a word the ERROR uses.
+
+⚠️ **The candidate may be refuted, and a refutation is a result, not a failure** — R2.1k has three
+recorded. If slant does not separate, the finding is reported with the numbers and the next
+candidate named; what may NOT happen is falling back on the positional rule because it scores well.
+
+**PRE-REGISTERED ACCEPTANCE.** D1–D4 together; any one failing means ARGUMENT is not adopted and
+`region_head` keeps its four labels, with the failure reported as the finding.
+
+| | criterion | bar |
+|---|---|---|
+| **D1** | RECALL — every gold ARGUMENT row is labelled ARGUMENT | **all of them**. A partial rule leaves the head reader returning an argument on the leaves it misses, which is the defect unfixed |
+| **D2** | PRECISION — no non-argument row anywhere in the window is labelled ARGUMENT | **0 false positives over all 20 leaves**. 16 of the 20 carry no argument at all and are the real test: a rule that paints scripture as argument destroys the reading it was built to protect |
+| **D3** | NO REGRESSION on the region gold's existing numbers: accuracy **0.8760**, RH **1.0000**, MN **0.8947**, MT **0.8375** | none may FALL. ⚠️ The 121-token gold contains **no** argument rows, so it cannot reward this change — it can only detect collateral damage, which is exactly what it is for here |
+| **D4** | THE CONSUMER — on every chapter-opening leaf the head reader's first MainText token is the **VERSE**, not the argument | **all such leaves**. R2.2b/A1's lesson: a region rule nobody reads is the defect, so the acceptance runs the consumer |
+
+⚠️ **NON-CRITERION: the continuity rate**, on the same terms as R2.2b. Any number it produces here is
+a diagnostic and may not be quoted as this step's result.
+
+⚠️ **A NEW GOLD IS REQUIRED AND ITS ABSENCE IS THE POINT.** Measured: all four chapter heads in the
+window (leaves **403, 411, 414, 416**) sit at detected rows 3, 2, 6 and 12, so **every argument row
+lies OUTSIDE the region gold's 3-row window** — that gold cannot score D1 or D2 at any bar. The new
+file is scoped like GOLD-FIRSTBODY and must not disturb the 121-token gold's denominator.
+
+##### 🔴 R2.2d RESULT 2026-08-18 — the rule WORKS on the defect and is NOT ADOPTED
+
+**`witness/score_argument_region.py` · `region_head` R3b + `ARGUMENT` · `CR.row_slant` /
+`page_slant_mode` · `witness/gold/argument_rows_OT1-1609-B_400-419.json`**
+
+| | | |
+|---|---|---|
+| **D3** NO REGRESSION | ✅ **PASS, EXACTLY** | acc **0.8760**, RH **1.0000**, MN **0.8947**, MT **0.8375** — *identical to four decimals* with the rule on. A fifth region type was added and no recorded number moved |
+| **D4** CONSUMER | 🔴 **FAIL, but 46 → 2** | tokens on gold argument rows still typed MainText fall from **46/89 to 2/89**. The defect is 96% removed and the bar is 0 |
+| **D1** RECALL | 🔴 **FAIL** | **16/24** gold argument rows carry an ARGUMENT token |
+| **D2** PRECISION | 🔴 **FAIL** | **2** false positives on the 4 row-by-row adjudicated leaves |
+
+**SLANT SEPARATES, MEASURED OVER 520 ROWS**: argument rows **12–18°** (median 14), everything else
+median **0°**. The populations do not overlap. The discriminator is sound; what fails is its grain
+and the gold's coverage.
+
+🔴 **THE ROW-LEVEL FOUNT TEST WAS BUILT, MEASURED AND REFUTED — and it is `region_head`'s OWN
+FOUNDING OBSERVATION RETURNING ON A NEW AXIS.** This module opens by establishing that *"a row is
+NOT homogeneous and region typing here must be per TOKEN"*, because a headline band carries a
+running head flanked by side-notes. **I then rebuilt exactly that assumption in the fount test.**
+This edition sets its side-notes in ITALIC beside roman scripture, so a row-level slant is an
+AVERAGE: leaf 405's verse `† How beautiful are thy tabernacles ô Iacob` shares its baseline with the
+note `Manie do prophecie, and cast out diuels` and averages to 8° — firing the rule on scripture.
+Leaves 403, 406 and 412 fail identically. ⇒ **A row is not homogeneous in FOUNT either.** Moving the
+test to `region_segments` (the R2.1h primitive that cuts a row where a gap exceeds the line pitch)
+cleared 5 of those false positives; `in_block` cleared the rest.
+
+⚠️ **AND GATING THE FOUNT TEST ON `body_rows` WAS A SECOND VERSION OF THE SAME ERROR.** It reached
+only **9 of 24** gold rows: an argument's short last line (`Collection.`, `and the people.`) and its
+indented lines fail R3's span/flush test, so they never reached the fount test at all. **A fount is
+a property of the setting, not of whether a line happens to be justified** — conditioning it on
+justification imports R3's question into a rule that is not asking it. Ungated: recall **9 → 16**,
+D3 unchanged, and **2 new false positives** on in-block italic that is not an argument. Both numbers
+are reported; neither variant passes, and the bar is not moved to fit either.
+
+🔴 **THE GOLD IS THE BINDING CONSTRAINT, AND THE RULE IS WHAT PROVED IT.** Building the argument gold
+by hand found four chapter openings. **The slant census then found a fifth — leaf 406's `CHAP. XXV.`
+with a three-line argument — that the recogniser's whole-page census ALSO missed** (it misread the
+head). A whole-page sweep now puts argument blocks on **~10 of the 20 leaves**; the gold covers 4.
+⇒ **D2 is measured on a subset**, and the 46 further rows the rule labels ARGUMENT on unlabelled
+leaves are reported as **UNADJUDICATED — truth unknown, counted neither as correct nor as errors.**
+Counting them either way would misstate the rule, so they are named instead.
+
+**NEXT, in order**: (1) extend GOLD-ARGUMENT to every chapter opening in the window — the census and
+the CHAP. census corroborate each other on 9 of 12 leaves, so the enumeration is nearly complete;
+(2) recover the short argument segments D1 misses without re-admitting the side-note false positives
+— they are below `ARGUMENT_MIN_COMPONENTS`, and the fix is likely CONTIGUITY (a short segment
+between two italic segments of one block is italic) rather than a lower component floor;
+(3) only then re-run D1–D4. **`ARGUMENT_RULE` stays `False` throughout.**
+
+##### ✅ R2.2d STEP (1) DONE 2026-08-19 — GOLD-ARGUMENT covers EVERY chapter opening; D2 is no longer a subset
+
+**`witness/build_argument_gold.py` (NEW, tracked — its `BLOCKS`/`NEGATIVES` tables ARE the
+adjudication) · `witness/gold/argument_rows_OT1-1609-B_400-419.json` REWRITTEN: 24 → 81 argument
+rows over 4 → 10 chapter openings, plus 15 rows adjudicated NOT-ARGUMENT · `score_argument_region.py`
+re-keyed to overlap addressing.** `ARGUMENT_RULE` **stays `False`** — nothing here adopts the rule.
+
+| | before (4-leaf gold) | after (10-leaf gold) |
+|---|---|---|
+| **D3** no regression | ✅ PASS exactly | ✅ **PASS EXACTLY, again** — 0.8760 / RH 1.0000 / MN 0.8947 / MT 0.8375. The gold TRIPLED and no recorded number moved |
+| **D1** recall | 🔴 16/24 | 🔴 **52/81** |
+| **D2** precision | 🔴 2 FPs on 4 leaves | 🔴 **13 FPs, WHOLE WINDOW** |
+| **D4** consumer | 🔴 2/89 MainText | 🔴 **3/327** MainText (46 with the rule off) |
+| unadjudicated | **46 rows** | **0** |
+
+⚠️ **D2 got numerically WORSE and that is the step working.** 2-of-4-leaves was a subset result that
+flattered the rule; 13 false positives over the whole window is the same rule finally being seen. No
+bar moved to absorb it.
+
+**THE ENUMERATION TOOK THREE CENSUSES, AND EVERY DISAGREEMENT BETWEEN THEM WAS REAL.** A CHAP-head
+census over the whole page (the earlier one read only a leaf's first 8 rows), the row-slant census,
+and — the one that was missing — **the RULE ITSELF at a widened net** (`probe_seg_census_all.py`,
+slant ≥ 6 / ≥ 6 components against the shipping 8 / 8).
+
+* 🔴 **A ROW-LEVEL CENSUS CANNOT PROVE ABSENCE, and "this leaf carries no argument" is exactly a
+  claim of absence.** The rule fires per SEGMENT, so a row averaging upright can still hold an
+  italic run. ⚠️ The first attempt hand-rolled the segment test and returned **25 candidates, all
+  marginal notes the rule could never emit** — the copy had dropped `in_block`. Running the rule
+  itself and widening its two constants makes the enumerator's output equal to what the rule can
+  emit, by construction, rather than by a resemblance argument.
+* **406** slant-only ⇒ a TRUE chapter opening whose head row *reads as its own side-note*
+  (`ap: 4. v. CHAXXV.`), which is why a text census cannot see it.
+* **410** head-only ⇒ `CHAP` at the page FOOT is the **CATCHWORD** for leaf 411. No chapter opens.
+* **417** two heads ⇒ `CHAP. XXX.` at r33 heads the **ANNOTATIONS**; the real head is `CHAP. XXXI.`.
+
+🔴 **FOUNT IS REGION-DEPENDENT AND THE RULE DOES NOT KNOW IT — a limit no threshold can reach.** In
+the body, italic marks the ARGUMENT and roman the scripture. Inside leaf 417's ANNOTATIONS the
+relation **INVERTS**: roman is the commentary and the italic is **QUOTED SCRIPTURE** (`( Leuit. 23.
+v. 29. ) Euerie soule that is not afflicted … shal perish out of his people.`). Those 3 rows are 3 of
+the 13 false positives, and **no setting of `ARGUMENT_SLANT_MIN` can separate them** — an italic
+fount test alone cannot tell an argument from an annotation's quotation. ⇒ ANNOTATIONS is a region
+the taxonomy lacks, in the same way ARGUMENT was. The other **11 of 13** are marginal italic — the
+edition sets its patristic citations in italic (`S. Hierom. de mans.`, `S. Greg. li. 33. c. 17.
+Moral.`, `Theodoret. q. 40. Procopius.`) — falling just inside `in_block`'s edge tolerance.
+
+🔴 **THE SCORER WAS ADDRESSING THE GOLD BY EXACT FLOAT EQUALITY, AND IT FAILED ON ITS FIRST RUN WITH
+THE LARGER GOLD.** The gold stores `round(y, 6)`; the scorer compared `round(that, 4)` against
+`round(y, 4)` recomputed from the page. Leaf 417 r51 sits at **0.66504975**, which rounds *directly*
+to `0.6650` but rounds *through 6 dp* to `0.66505 → 0.6651`. **One row in 81** fell down that crack —
+and the old code would have counted it as a **RECALL MISS**, the rule blamed for an arithmetic
+defect. ⚠️ The gold's own `address` note already prescribed the fix (*"score by page-fraction
+overlap, never by an equality"*) — **the rule was right and the thing reading it was not: the
+signature defect, in the scorer this time.** Now matched by **BEST overlap** (not *any*: curvature
+makes 39/140 consecutive row-pairs overlap >50%, so *any* would let a neighbour satisfy a gold row
+and inflate D1), with **ADDRESSING FAILURE** and **ADDRESSING COLLISION** reported SEPARATELY from
+D1 — both **0** on the current gold. The re-keyed run also showed 417 r51 was a genuine **miss**, so
+the crack had been concealing a failure, not a pass.
+
+**D1's 29 MISSES SPLIT BY MEASURED CAUSE, and only one population is the fount's problem:**
+
+| population | n | cause |
+|---|---|---|
+| fragment rows below `ARGUMENT_MIN_COMPONENTS` | **20** | the contiguity case already named as step (2) |
+| full rows where the segment DOES fire | **6** | 🔴 **not a fount failure at all** — see R2.2e |
+| full rows whose largest segment is 6–8 components | **3** | the component floor again, at row scale |
+
+**NEXT**: step (2) unchanged — recover the 20 short segments by CONTIGUITY, not by lowering the
+component floor, which would re-admit the marginal-italic false positives measured above. ⚠️ **D2
+now has a floor of 3 that contiguity cannot touch**: the ANNOTATIONS quotations need a region, not a
+threshold.
+
+##### 🔴 R2.2e NEW 2026-08-19 — 49 rows are SWALLOWED WHOLE into one token and typed MarginNote, 44 of them SCRIPTURE
+
+**Found while diagnosing D1's full-row misses; measured with `ARGUMENT_RULE` OFF, i.e. this is the
+SHIPPING pipeline's behaviour today and R2.2d is not in the picture.**
+`.scratch/r2/probe_unsplit_rows.py`.
+
+The tokeniser sometimes emits **ONE token covering an entire printed line** — leaf 412 r33 is 63
+glyphs spanning `l=56..r=1215`, 90% of the row. `in_block` tests `l < L` or `r > R`, so **a token
+that spans the measure NECESSARILY fails it** and is labelled **MarginNote**. An entire line of
+scripture is typed as marginalia: `† And Moyses referred their people`, `the familie of the
+Noemanites. † The`, and 42 more.
+
+* **49 rows over the 20 leaves; 44 are ordinary body text**, 5 inside an argument block.
+* 🔴 **TWO SPLITTERS DISAGREE ABOUT ONE ROW AND THE COARSER ONE DECIDES THE LABEL.**
+  `region_segments` cuts leaf 412 r33 correctly into `n=10 @ 1°` (the roman side-note) + `n=53 @ 11°`
+  (the argument), so the fount grain is right — but the token that carries the label is the whole
+  row, already typed MarginNote before the fount test can matter. **A correct rule nothing reads:
+  the signature defect, 10th instance**, and the first found in the SPLITTER/label handoff.
+* ⚠️ **THE 121-TOKEN REGION GOLD CANNOT SEE ANY OF THIS** — it lives in the 3-row head band and
+  these rows are mid-page. Same shape as the ARGUMENT fossil: the gold's blind spot and the defect
+  sit in the same place. **So 0.8760 is not evidence against this.**
+* Relation to existing steps: R2.1h fixed the `k=2` CAUSE of the blob and is still OPEN; this is the
+  measured **residual population** after that fix, plus its consequence, which was not counted.
+  R2.1k is the same handoff seen from R3's side (`MIN_GLYPHS` as a span estimator).
+* **Deliverable**: `in_block` must not be decidable by a token the tokeniser failed to split — either
+  the block test runs at `region_segments` grain, or a row-spanning token is split before labelling.
+  **Acceptance**: the count of row-spanning out-of-block tokens goes to **0** on the 20 leaves with
+  the region gold's four numbers NOT falling. **C2.**
+
+##### R2.2e PRE-REGISTRATION — written 2026-08-20 BEFORE the candidate was built or measured
+
+⚠️ **This block is written first ON PURPOSE and is not edited afterwards.** What the run produces is
+recorded in the section BELOW it, and any criterion this block got wrong is reported as wrong rather
+than amended. Same discipline as R2.2b and R2.2d.
+
+**THE CANDIDATE, stated before it is tested: A TOKEN MAY NEVER SPAN A REGION GAP.** `region_segments`
+already defines one — a gap wider than the line pitch is *not a word space, it is a run out to
+another region* — and that rule is stated in the vocabulary of the BOOK, not of the error (Sir's
+anti-circularity ruling). Whatever `split_fn` returns is therefore cut at those gaps before any
+label is decided. ⚠️ It is a POST-CONDITION ON TOKENISATION, not a new splitter: it cannot merge
+anything, only cut, and it leaves every token that already lies inside one segment untouched.
+
+**MEASURED BASELINE, before any criterion** (`.scratch/r2/probe_region_gap_tokens.py`, rule OFF):
+**142 tokens span a region gap, over 127 rows** — `MN` 66 · `CH` 39 · `MT` 37. ⚠️ **The blast radius
+is far wider than the 49-row defect that raised this step, and it reaches every label.** The widest
+gap inside a single token is **223px** where the same token's word spaces run ~3px, so these are not
+close calls — but a change touching 127 rows may not be adopted on that ground alone.
+
+| | criterion | bar |
+|---|---|---|
+| **E1** | THE DEFECT — no token spans a gap wider than the line pitch | **0** of the 142 |
+| **E2** | NO REGRESSION on the 121-token region gold: acc **0.8760**, RH **1.0000**, MN **0.8947**, MT **0.8375** | none may FALL; orphan/unlabelled counts reported either way |
+| **E3** | THE CONSUMER — of the 49 rows swallowed whole, the **44 that are not argument rows** must carry at least one **MainText** token instead of being typed MarginNote | **all 44** |
+| **E4** | GOLD-ARGUMENT D1 recall (currently **52/81**) may not FALL; the **6** misses attributed to R2.2e are expected to clear | **>= 52**, and the number is reported |
+
+**Adoption requires E1–E4 TOGETHER.** `region_head.REGION_GAP_TOKENS` stays `False` until they all
+hold — turning it on silently would restate R2.1g's headline numbers under a rule that has not been
+accepted, the same rule that keeps `chapter_model_derive` pinned OFF at net −6.
+
+⚠️ **NON-CRITERION**: the continuity rate, on the same terms as R2.2b and R2.2d — it is a joint
+measure over two readers and a scorer, so it cannot arbitrate a change to one of them.
+
+⚠️ **NAMED RISK, so that it is not discovered as a surprise and reported as a success.** `CH` is 39 of
+the 142: this edition sets `CHAP. XXVIII.` with wide spacing, so a chapter head may itself contain a
+gap wider than the pitch and be cut in two. If that moves RunningHead or ChapterHead recall, **E2
+fails and the candidate is refuted** — a head cut into two correct pieces is still a regression
+against a gold that binds one span, and R2.1i is the step that exists because a splitter change
+silently renumbered that gold. The converse must also be watched: `block_measure` takes L and R from
+token edges, so cutting tokens can MOVE THE MEASURE and change R3 for rows this rule never touched.
+
+##### 🔴 R2.2e RESULT 2026-08-20 — the candidate is REFUTED, and it refuted MY DIAGNOSIS with it
+
+**`witness/score_region_gap_tokens.py` (NEW, exits 1) · `witness/build_region_gap_gold.py` (NEW) ·
+`witness/gold/region_gap_rows_OT1-1609-B_400-419.json` (NEW, 49 rows) · `region_head.
+REGION_GAP_TOKENS` + `_cut_at_region_gaps`, DEFAULT OFF.**
+
+| | criterion | result |
+|---|---|---|
+| **E1** | no token spans a region gap | ✅ **PASS** — **142 → 0** |
+| **E2** | no regression on the region gold | ✅ **PASS, EXACTLY** — 0.8760 / RH 1.0000 / MN 0.8947 / MT 0.8375, unmoved |
+| **E3** | the swallowed body rows carry MainText | 🔴 **FAIL, 0 of 43. Not one row moved.** |
+| **E4** | GOLD-ARGUMENT D1 may not fall | ✅ **PASS** — 52/81, unchanged |
+
+⚠️ **E3's BAR WAS WRITTEN AS 44 AND THE MEASURED SET IS 43** — one of the 49 rows I had counted as
+body is an argument row, established by page-fraction overlap against GOLD-ARGUMENT rather than by
+my eye. The pre-registration is not edited; the criterion is reported as WRONG BY ONE. It does not
+change the verdict: the result is 0.
+
+🔴 **0-of-43 IS TOO CLEAN TO BE A RULE FAILING, AND IT WAS NOT ONE — IT IS MY DIAGNOSIS FAILING.**
+Leaf 400 r46 is the counter-example: its 46-glyph token spans `l=238..r=1174` and is **byte-identical
+with the rule on and off**, because IT CONTAINS NO REGION GAP. It is out of block for an entirely
+different reason — the modal right edge is `R=1132` and the tolerance is 27px, so the line's ink ends
+**42px past the edge** and R2 types a full line of scripture as a marginal note.
+
+**THE 43 BODY ROWS, SPLIT BY MEASURED CAUSE** (`.scratch/r2/probe_e3_cause.py`):
+
+| cause | n |
+|---|---|
+| **OVERSHOOT** — one continuous token, most of the measure, poking past L or R | **41** |
+| BOTH overshoot and merge | 2 |
+| **MERGED only** — the defect the candidate was built for | **0** |
+
+**Their median share of the measure is 0.90, and many exceed 1.00** (1.03, 1.05, 1.06 — the token is
+LONGER than the block). ⇒ 🔴 **THE REAL DEFECT IS THAT R2's BLOCK TEST HAS NO SIZE QUALIFICATION AT
+ALL: it is a pure EDGE test, so a token spanning the whole measure is relabelled MarginNote by a
+26–42px overshoot against a ~27px tolerance.** A marginal note in this edition is set in a narrow
+column beside the measure — *a thing that spans the measure cannot be one.* The modal edge is a MODE
+over many lines, so an individual justified line exceeding it is ORDINARY, not anomalous. Same family
+as R2.1k: a threshold answering a question it was not built for.
+
+**WHAT THE CANDIDATE ACTUALLY DID.** It removed a real and separate defect — 142 tokens spanning a
+region gap, over 127 rows, at **zero cost on the region gold** (E2 exact). ⚠️ **It is still NOT
+ADOPTED**, on the same rule that keeps R2.1h's quantile splitter and `chapter_model_derive` off: a
+change that fails its own pre-registered bar is not adopted, however good its other numbers look.
+`REGION_GAP_TOKENS` stays `False`. Its value is now as a **PRECONDITION** for the real fix — see
+below, because the two rules interact and the interaction must be measured, not assumed.
+
+##### R2.2e-b PRE-REGISTRATION — written 2026-08-20 BEFORE the second candidate was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. This is the SECOND candidate for one step; the
+first is recorded above as refuted, and this block does not inherit its numbers.
+
+**THE CANDIDATE: A TOKEN THAT SPANS THE MEASURE IS IN THE BLOCK, whatever it does at the edges.**
+`in_block` becomes `not (l < L - tol or r > R + tol)` **OR** `(r - l) >= BODY_SPAN_M * measure` —
+reusing R3's EXISTING constant (0.75) rather than minting a second one, because it is the same idea
+("a justified line is FULL") and this project has already paid once for two tolerances on one edge.
+⚠️ Nameable in the vocabulary of the BOOK (anti-circularity): marginalia is set in a NARROW COLUMN
+BESIDE the measure, so a run of type that spans the measure is a line of the text block.
+
+⚠️ **THE TWO RULES INTERACT AND THAT IS WHY BOTH ARE MEASURED.** A token merged across a region gap
+(body + marginal note) ALSO spans the measure, so the span qualifier alone would call the merge
+in-block and MASK the merge defect that E1 measured. The region-gap cut is therefore the
+**precondition**: cut first, so that a token spanning the measure is genuinely ONE piece of setting.
+
+| | criterion | bar |
+|---|---|---|
+| **F1** | THE CONSUMER — of the 43 swallowed body rows, each must carry at least one **MainText** token | **all 43** |
+| **F2** | NO REGRESSION on the 121-token region gold: acc 0.8760, RH 1.0000, MN 0.8947, MT 0.8375 | none may FALL |
+| **F3** | GOLD-ARGUMENT D1 recall (**52/81**) may not FALL | **>= 52**, number reported |
+| **F4** | THE INTERACTION — F1/F2/F3 reported for the span qualifier ALONE and COMPOSED with the region-gap cut, and **the merge count (142 → ?) reported in both** | reported; a composition adopted only if it beats the qualifier alone on F1 **without** losing F2 |
+
+**Adoption requires F1–F3 TOGETHER**, with F4 deciding WHICH of the two configurations is adopted.
+`BLOCK_SPAN_QUALIFIES` stays `False` until then.
+
+⚠️ **NAMED RISK.** The gold's MarginNote recall is 0.8947 over 19 entries; if any gold MN token spans
+>= 0.75 of the measure it flips to in-block and **F2 fails**. That is the criterion doing its job —
+a marginal note that spans three quarters of the measure would be evidence the constant is wrong,
+not evidence the gold is.
+
+##### 🔴 R2.2e-b RESULT 2026-08-20 — REFUTED on its bar, and it uncovered a defect the gold was RESTING ON
+
+**`witness/score_block_span.py` (NEW, exits 1) · `region_head.BLOCK_SPAN_QUALIFIES`, DEFAULT OFF.**
+
+| | criterion | qualifier ALONE | COMPOSED with the region-gap cut |
+|---|---|---|---|
+| **F1** | 43 swallowed body rows carry MainText | 🔴 **23/43** | 🔴 **23/43** |
+| **F2** | region gold, none may fall | 🔴 **FAIL** — acc **0.8760 → 0.9174**, MT **0.8375 → 0.9125**, RH 1.0000, but **MN 0.8947 → 0.8421** | 🔴 same |
+| **F3** | GOLD-ARGUMENT D1 >= 52 | ✅ **55/81** | ✅ **54/81** |
+| **F4** | merges | 🔴 **142** (masked) | ✅ **0** |
+
+⚠️ **THE HEADLINE NUMBER ROSE FURTHER THAN ANY CHANGE IN THIS PROJECT HAS MOVED IT — acc 0.8760 →
+0.9174, MainText recall 0.8375 → 0.9125 — AND IT IS STILL NOT ADOPTED.** One MarginNote entry fell,
+the bar says none may fall, and a rule that trades a labelled entry for a better average is precisely
+what "no silent degradation" forbids. `BLOCK_SPAN_QUALIFIES` stays `False`.
+
+✅ **F4 DID ITS JOB.** The qualifier ALONE leaves all **142** merged tokens in place and calls them
+in-block — a merged token spans the measure too, so the qualifier MASKS the defect E1 measured.
+Composed with the region-gap cut the count is **0** at identical F1/F2. ⇒ **the cut is a genuine
+precondition, not a companion**, and had only one configuration been run this masking would have
+been invisible.
+
+🔴 **THE LOST MarginNote ENTRY EXONERATES THE CONSTANT AND CONVICTS SOMETHING ELSE.** The
+pre-registration named the deciding evidence in advance: a gold MN token spanning >= 0.75 of the
+measure would mean the constant is wrong. **It does not.** The entry is leaf 412 r2 `pinces are`, and
+it is **142px wide against a 1110px measure** — it cannot qualify and never did. What happened is
+this, measured token by token:
+
+| leaf 412 r2 | rule OFF | rule ON |
+|---|---|---|
+| `pinces are` (left note, 142px) | in_block **True**, label **MN** | in_block True, label **MT** |
+| the body line (931px) | in_block **False**, label MN | in_block **True**, label MT |
+
+The note was ALREADY inside the block bounds — on this leaf the marginal column and the measure are
+contiguous, so the modal `L=48` sits LEFT of the note. It was labelled MarginNote **only because its
+ROW was broken**: the row was not a body row, so nothing on it could be MainText. Repair the row and
+**R4 labels EVERY in-block token on a body row MainText**, sweeping the note in with it.
+
+⇒ 🔴 **R2.2f, NEW: R4 ASSIGNS BY ROW MEMBERSHIP, SO A MARGINAL NOTE SHARING A BASELINE WITH A BODY
+LINE AND SITTING INSIDE THE BLOCK BOUNDS IS TYPED MainText.** This is `region_head`'s founding
+observation — *a row is NOT homogeneous, so label per TOKEN* — returning on a THIRD axis. It already
+holds for region (that is why labels are per token) and for FOUNT (R2.2d, measured); it does not yet
+hold for the **row-to-token inheritance in R4 itself**.
+
+⚠️ **AND THE GOLD'S MN 0.8947 WAS RESTING ON THE DEFECT.** That entry scored correct only because a
+second defect was breaking its row. Two errors were cancelling, so the number looked stable — and the
+first genuine repair exposed the second. ⚠️ **No repair of the swallowed rows can pass F2 until R4
+labels per token**, because every such repair turns a broken row into a body row and sweeps in
+whatever notes lie inside the bounds. That is a PREREQUISITE relation, not a coincidence.
+
+**F1's 20 REMAINING MISSES ARE A THIRD LINK.** They now come back labelled `CH`/`MN`, not MainText:
+the rows are in-block but still fail **R3's flush test**, because a line that overshoots the modal
+edge is not flush at that edge and its left end sits at a marginal note. ⇒ **R2.2g, NEW: R3's flush
+test inherits the same modal-edge assumption R2 does.**
+
+**⇒ R2.2e IS A CHAIN OF FOUR LINKS, NOT ONE TEST**, and this run measured which link each row hangs
+on: tokenise (**0** of 43) → `in_block` edge test (**23** of 43, R2.2e-b) → R3 flush (**20** of 43,
+R2.2e-d) → R4 row inheritance (the **1** MN entry, R2.2e-c). ⚠️ **A candidate that fixes one link and
+reports the headline number is how a chain gets mistaken for a bug.** The three open links are
+registered separately and each carries its own pre-registration. ⚠️ **The two ids in the line above
+were written `R2.2e-c` / `R2.2e-d` and are the steps now registered as `R2.2f` / `R2.2g`** — renamed
+the same day because the OPEN register's parser folds a letter suffix away silently (R11.2d). The
+mapping is recorded rather than the numbers rewritten: `R2.2e-c` = R4 row inheritance = **R2.2f**;
+`R2.2e-d` = R3's flush test = **R2.2g**.
+
+##### R2.2f PRE-REGISTRATION — written 2026-08-20 BEFORE the candidate was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. R2.2f is the **PREREQUISITE** link of the
+R2.2e chain, not a peer of it: every repair of a swallowed row turns a broken row into a body row, and
+R4 then sweeps whatever lies inside the block bounds on that baseline into MainText. So no candidate
+for the other links can pass its own F2 until this one holds. It is measured **with the span
+qualifier ON**, i.e. in the configuration that failed F2, because that is the configuration whose
+failure it must explain.
+
+**THE CANDIDATE: R4 LABELS PER REGION SEGMENT, NOT PER ROW.** Today R4 reads *in a body row, every
+in-block token is MainText*. It becomes *in a body row, an in-block token is MainText iff it lies in a
+**region segment that is itself a body segment***, where a body segment is one meeting R3's own test —
+span `>= BODY_SPAN_M * measure` and flush at `L` or at `R`, the same two clauses and the same
+constants R3 already uses. A token in any other segment of that row falls through to R5 exactly as it
+would in a non-body row.
+
+⚠️ **Nameable in the vocabulary of the BOOK** (anti-circularity): this edition sets marginalia in a
+narrow column BESIDE the measure, separated from the text block by a run wider than the line pitch.
+`CR.region_segments` is that primitive and is already relied on by R2.1h, R2.2d and `band_word_gap` —
+no new threshold is minted here. Computed on GLYPH BOXES, so no splitter can move it.
+
+⚠️ **THE RULE MAY ONLY DEMOTE, AND NEVER ON A ROW IT CANNOT READ.** If NO segment of a body row
+qualifies, the row keeps today's behaviour and every in-block token stays MainText. A row can qualify
+under R3's token-union span while no single segment does, and stripping MainText from such a row would
+be this rule deciding a question it was not asked. The count of rows taking that fallback is REPORTED
+(G5) — a fallback that is not counted is how a rule's reach stops being knowable.
+
+| | criterion | bar |
+|---|---|---|
+| **G1** | THE ENTRY — leaf 412 r2's note `pinces are` (142px against a 1110px measure), the one gold entry the span qualifier flipped, must come back **MarginNote** with the qualifier ON | **MN**, and its label printed in every configuration |
+| **G2** | THE BAR R2.2e-b FAILED — with the span qualifier ON, the region gold must reach **MN >= 0.8947** while acc, RH and MT do not fall below the qualifier-ON numbers already measured (**acc 0.9174 · RH 1.0000 · MT 0.9125**) | all four |
+| **G3** | NO REGRESSION ON THE SHIPPED PIPELINE — with the span qualifier OFF (both flags off, i.e. what ships today), the four gold numbers **0.8760 / 1.0000 / 0.8947 / 0.8375** must be EXACTLY unmoved | exact |
+| **G4** | THE CONSUMER — the swallowed-body-row count must not fall below the **23/43** the qualifier alone reached; per-token R4 must not cost the rows the qualifier gained | **>= 23**, number reported |
+| **G5** | REACH — rows where the rule DEMOTED at least one token, and rows that took the no-qualifying-segment fallback, both reported | reported |
+
+**Adoption requires G1–G4 TOGETHER.** `R4_PER_SEGMENT` stays `False` until then. ⚠️ Passing G1–G4
+adopts R2.2f **only**; it does NOT adopt `BLOCK_SPAN_QUALIFIES`, whose own F1 bar (43/43) is a
+different link of the chain and is not reached by this rule.
+
+⚠️ **NAMED RISK, and it is the mirror of R2.2e-b's.** A justified line can carry a word space wider
+than the line pitch — this edition's justification is loose — and such a line would cut into two
+segments, neither spanning 0.75 of the measure. Under G5's fallback that row keeps its labels, so the
+visible cost is not a lost row but a rule with no reach: **if the demotion count is 1 (the gold entry
+alone) the rule is fitted to its own witness**, and that reads as a failure of the mechanism whatever
+G1–G4 say. The demotion count is therefore reported, not just the bars.
+
+##### 🔴 R2.2f RESULT 2026-08-20 — REFUTED, and it REVERSES the prerequisite direction the register asserts
+
+**`witness/score_r4_segment.py` (NEW, exits 1) · `region_head.R4_PER_SEGMENT`, DEFAULT OFF.**
+Log `.scratch/r2/r4seg-20260820b.log`.
+
+| | criterion | bar | result |
+|---|---|---|---|
+| **G1** | leaf 412 r2 `pinces are` → MarginNote, qualifier ON | MN | 🔴 **MT** — the rule never reached the row |
+| **G2** | MN >= 0.8947 · acc/RH/MT >= 0.9174/1.0000/0.9125 | all four | 🔴 **MN 0.8421**, exactly where R2.2e-b left it (acc 0.9174 · RH 1.0000 · MT 0.9125 all held) |
+| **G3** | shipped pipeline unmoved | exact | ✅ per-segment ALONE **0.8760 / 1.0000 / 0.8947 / 0.8375**, exact; baseline exact |
+| **G4** | consumer >= 23/43 | >= 23 | ✅ **23/43**, D1 **55/81** |
+| **G5** | reach | reported | **35 rows demoted**, 160 on the fallback (180 with the qualifier on) |
+
+**1. THE RULE WORKS AND CANNOT REACH ITS OWN WITNESS.** G5 was written to catch a rule fitted to the
+single entry that motivated it — *"if the demotion count is 1 the rule is fitted to its own witness."*
+It demotes **35 rows**, overwhelmingly left-margin side-notes at `l≈80–290` sharing a body baseline,
+and the shipped four numbers are EXACTLY unmoved (G3), so per-token R4 is doing real work at no cost.
+It fails on the one row it was built for.
+
+**2. WHY, IN ONE LINE OF THE LOG.** Leaf 412 r2 against `L=39 R=1149 measure=1110 flush_tol=33
+span_bar=832`:
+
+| segment | span | flush |
+|---|---|---|
+| `l=31 r=173` (the note `pinces are`) | 142 — **short** | dL=**8** — FLUSH |
+| `l=263 r=1194` (the body line) | 931 — **FULL** | dR=**45** — **NOT FLUSH** |
+
+The body segment is full but overshoots the modal right edge by **45px against a 33px tolerance**. So
+NO segment qualifies, the row takes G5's fallback, and the note keeps MainText. ⚠️ **That 12px is
+R2.2g.** The overshoot that makes a justified line fail the flush test is the same modal-edge
+assumption R2.2g names — and note the second row of the table: the marginal note is FLUSH TO `L`,
+which is leaf 412's measure contamination (this module's header: *leaf 412 measures L=40*) still
+visible in the geometry.
+
+**3. ⇒ THE PREREQUISITE DIRECTION IN THE REGISTER IS BACKWARDS, AND THE CHAIN HAS A CYCLE.** R2.2f is
+registered as *"PREREQUISITE for R2.2e-b and R2.2g"*. Measured: **R2.2g is the prerequisite for
+R2.2f.** A body segment that overshoots the modal edge is not identifiable as a body segment, so
+per-token R4 cannot fire on exactly the rows that need it. Both statements are true at once — every
+repair of a swallowed row does sweep notes into MainText (that is why R2.2f exists), AND R2.2f cannot
+reach those rows until the flush test stops treating an overshoot as disqualifying. **Neither link
+can be scored to its bar while the other is open**, so R2.2g goes first and R2.2f is re-scored after
+it, unchanged. The register rows for both are corrected to say so.
+
+**4. CORROBORATION NOBODY DESIGNED IN.** The fallback count moves **160 → 180** when the span
+qualifier is switched on: 20 rows become body rows and immediately land on the fallback. **20** is
+the count the chain already attributes to R3's flush test (20 of 43). Two independently-derived
+numbers naming the same rows from opposite sides.
+
+**5. 🔴 AND A DEFECT IN MY OWN SCORER, CAUGHT BY A CRITERION THAT CANNOT MOVE.** The first run
+(`.scratch/r2/r4seg-20260820.log`) reported G3 as **MOVED on the BASELINE** — both flags off, the
+identical code path, a configuration this candidate cannot reach. Cause: live floats compared to the
+**4-decimal literals transcribed from this document** at `1e-9`. That is a criterion no run can ever
+pass, and had G1 passed it would have read as a real regression against a bar that was only ever a
+rounded transcription. Fixed to compare at the precision the bars are recorded at, and the same
+latent fault was present in G2's comparisons. ⚠️ **It was only visible because one configuration in
+the table was known-immovable.** A scorer whose configurations can all legitimately move has no such
+control, which is the argument for printing the baseline row even when it is uninteresting.
+
+##### R2.2g PRE-REGISTRATION — written 2026-08-20 BEFORE the candidate was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. R2.2g is run FIRST of the three open links
+**on measurement, not on plan**: R2.2f was attempted first, as the register directed, and its
+refutation showed the dependency runs the other way. This block therefore also carries the criterion
+that tests the CHAIN (H4), because a link scored alone is how a cycle stays invisible.
+
+**THE CANDIDATE: FLUSHNESS IS ONE-SIDED. A justified line REACHES its edge; overshooting it is not a
+failure to be flush.** R3 today asks `abs(a - L) <= tol or abs(b - R) <= tol` — a SYMMETRIC WINDOW,
+which refuses a line for having too MUCH ink at the edge as readily as too little. It becomes
+`a <= L + tol` (flush left) or `b >= R - tol` (flush right): falling SHORT of the measure by more
+than the tolerance is unjustified, running PAST it is not.
+
+⚠️ **Nameable in the vocabulary of the BOOK** (anti-circularity): justification is a compositor
+setting each line OUT TO the measure. A line's ink may exceed the modal edge by a hair of bearing,
+by a hyphen, by a swash — the modal edge is a MODE OVER MANY LINES and no single line is obliged to
+sit inside it. Same family as R2.1k and R2.2e-b: a threshold answering a question it was not built
+for. The tolerance and both constants are R3's existing ones; nothing new is minted.
+
+⚠️ **THE DANGEROUS HALF IS THE LEFT EDGE, and it is why both variants are measured.** `a <= L + tol`
+is satisfied by ANY row whose leftmost ink lies in the left margin — which is every row carrying a
+marginal note. Combined with R3's span clause such a row could be promoted to a body row, and the
+running head is the region this project has already lost once to a promoted row (`SPAN_MODE = "ink"`,
+RunningHead 1.0000 → 0.7500). `FLUSH_MODE` therefore has THREE settings and all three are reported:
+`"both"` (today), `"reach"` (one-sided at both edges), `"reach_right"` (one-sided at R, unchanged
+symmetric test at L).
+
+| | criterion | bar |
+|---|---|---|
+| **H1** | THE CONSUMER, span qualifier ON — of the 43 swallowed body rows, each carries a **MainText** token. The chain predicts **23 + 20 = 43** | **all 43** |
+| **H2** | NO REGRESSION on the region gold, reported for every `FLUSH_MODE` in both qualifier states, against the shipped **0.8760 / 1.0000 / 0.8947 / 0.8375** | acc, RH, MT may not fall; **MN is exempted ONLY to the 1 entry R2.2f owns**, and H4 must then recover it |
+| **H3** | THE RUNNING HEAD — the named risk. RH recall with the flush change and the qualifier OFF | **1.0000**, no exception |
+| **H4** | THE CHAIN — with `FLUSH_MODE` + `BLOCK_SPAN_QUALIFIES` + `R4_PER_SEGMENT` ALL ON: leaf 412 r2 `pinces are` is **MarginNote** and MN recall **>= 0.8947** | both, or the cycle is not resolved |
+| **H5** | GOLD-ARGUMENT D1 recall (**52/81**, **55/81** with the qualifier on) may not FALL | **>= 52**, reported |
+
+**Adoption of `FLUSH_MODE` requires H1 + H2 + H3 + H5.** H4 additionally decides whether **R2.2f** may
+be adopted alongside it — R2.2f is re-scored by `score_r4_segment.py` UNCHANGED against its own
+G1–G5, which is the point of leaving that scorer in the standard rather than deleting a refuted one.
+
+⚠️ **NAMED RISK BEYOND H3.** If `"reach"` passes H1 by promoting rows that are not body rows at all,
+H2's MainText recall is the number that should catch it — MT can rise while ACCURACY falls, because
+mislabelled marginalia is scored somewhere. **Accuracy and MT are therefore both reported, and a
+configuration that raises MT while lowering acc is NOT adopted** whatever H1 says.
+
+##### 🔴 R2.2g RESULT 2026-08-20 — REFUTED on H1, but **H4 RESOLVES THE CYCLE** and the survivors are a FOURTH cause
+
+**`witness/score_flush_reach.py` (NEW, exits 1) · `region_head.FLUSH_MODE`, DEFAULT `"both"`.**
+Log `.scratch/r2/flushreach-20260820.log`.
+
+| | criterion | `"reach"` | `"reach_right"` |
+|---|---|---|---|
+| **H1** | consumer, bar **43/43** | 🔴 **37/43** | 🔴 **33/43** |
+| **H2** | acc/RH/MT not falling | ✅ 0.9174 / 1.0000 / 0.9125 | ✅ same |
+| **H3** | RH, qualifier OFF | ✅ **1.0000** | ✅ **1.0000** |
+| **H4** | THE CHAIN, all three flags ON | ✅ entry **MN**, MN **0.8947**, acc 0.9091, MT 0.8875 | ✅ entry **MN**, MN **0.8947**, acc **0.9174**, MT **0.9000** |
+| **H5** | D1 | ✅ 52 off / 55 on | ✅ 52 off / 55 on |
+
+**1. 🔴 THE CYCLE IS REAL AND IT RESOLVES — H4, the criterion R2.2f's refutation forced into being.**
+With `FLUSH_MODE` + `BLOCK_SPAN_QUALIFIES` + `R4_PER_SEGMENT` all on, leaf 412 r2 `pinces are` returns
+to **MarginNote** and MN recall recovers **0.8421 → 0.8947**, the shipped number, with RH holding
+1.0000 and MainText **0.8375 → 0.9000**. ⚠️ **Each link scored alone reads as a regression; the three
+together read as a repair.** No single-flag scorer in this project could have shown that, and two of
+them (E1–E4, F1–F4) reported a refutation that was partly the OTHER links' doing.
+
+**2. 🔴 BUT H1 IS 37/43, SO THE CHAIN'S OWN ARITHMETIC WAS WRONG.** The chain predicted 23 + 20 = 43.
+One-sided flushness adds **14**, not 20. **6 rows survive**, and they come back `CH`/`MN` — still not
+body rows. ⚠️ **Per §0.2 the step stays OPEN and BLOCKS**: neither `FLUSH_MODE` nor `R4_PER_SEGMENT`
+is adopted, even though the three-flag configuration beats the shipped pipeline on every one of the
+four gold numbers. A configuration that is better on every number it is scored on is exactly the
+shape that gets adopted on a headline and audited later.
+
+**3. THE NAMED LEFT-EDGE RISK MATERIALISED, AND IT IS MEASURABLE.** `"reach"` reaches 37 where
+`"reach_right"` reaches 33 — and pays for it in the chain configuration, **acc 0.9091 vs 0.9174**
+with MT 0.8875 vs 0.9000. Promoting rows on a left edge that any marginal note satisfies buys
+consumer rows and loses accuracy, precisely as the pre-registration warned. `"reach_right"` is the
+better-behaved variant on every gold number and the worse one on the consumer; **neither is adopted,
+and the trade is recorded rather than resolved by preference.**
+
+**4. ⇒ R2.2h, NEW: THE MODAL EDGE IS ESTIMATED WITH A DIFFERENT TOLERANCE THAN IT IS USED WITH.**
+The 6 survivors are not flush failures at all. Probed (`.scratch/r2/probe_reach6.py`,
+`probe_l409_measure.py`): three rows have **NO in-block solid token whatever** (leaf 403 r19, 409 r52,
+411 r34 — `† And Moyſes referred their people`), and two more (409 r36, r44) have their body segment
+**out of block on the LEFT** — row ink `155..808` against `L=200`, so the 496px segment carrying the
+scripture is outside the block and only a 78px tail is inside. Then the distribution:
+
+| leaf | modal L | rows within tol | **rows starting LEFT of L** | rows ending RIGHT of R |
+|---|---|---|---|---|
+| 403 | 192 | 17 | **17** | 9 |
+| 409 | 200 | 19 | **12** | 12 |
+| 411 | 193 | 20 | 9 | **20** |
+
+**On leaf 403 as many rows start left of the modal edge as agree with it.** The left-edge histogram is
+a SMEAR ~80px wide (bins 143/169/182/195/208/221 all populated), and the cause is exact:
+`block_measure` takes the mode with `EDGE_TOL_P * p` = **13px**, while `classify` then tests in-block
+with `max(0.35p, 0.03 * measure)` = **27px**. **The estimator's window is half the consumer's.** ⚠️
+This is *two tolerances for one edge* — **the identical defect this module's header records having
+paid for once already** (`edge_tol`/`flush_tol`, continuity 0.312 → 0.176) — surviving in the one
+place the R2.1 fix did not reach, because that fix unified the two tolerances INSIDE `classify` and
+left the estimator that produces the edge alone. **Twelfth instance of the signature defect.**
+
+##### R2.2h PRE-REGISTRATION — written 2026-08-20 BEFORE the candidate was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. ⚠️ **THIS BLOCK ABANDONS THE ONE-LINK-AT-A-TIME
+FORM, on evidence.** R2.2f and R2.2g were each scored alone, each was refuted alone, and R2.2g's H4
+then showed the three together produce a repair on every gold number. A criterion set that varies one
+flag cannot see a cycle, so the acceptance below is stated over the **FULL CHAIN** and the
+single-flag numbers are reported as diagnosis, not as bars.
+
+**THE CANDIDATE: ONE TOLERANCE FOR ONE EDGE, REACHED BY A FIXED POINT.** `block_measure` takes its
+mode with `EDGE_TOL_P * p`; `classify` tests in-block with `max(0.35p, 0.03 * measure)`, which is
+twice as wide at this edition's pitch. They become the same number by iterating: take a provisional
+mode at `0.35p`, derive a provisional measure, re-take the mode at `max(0.35p, 0.03 * measure)`, and
+repeat to a fixed point (cap the iterations and ABSTAIN rather than guess if it does not settle — R7).
+
+⚠️ **Nameable in the vocabulary of the BOOK** (anti-circularity): the block edge is where the
+compositor's lines start, and "how close is close enough to count as the same edge" is one question
+about one page. Answering it one way to FIND the edge and another way to TEST membership is not two
+facts about the book, it is one fact and one accident. ⚠️ **This is not a widened tolerance.** The
+estimator's window rises to what the test already uses; nothing loosens the test itself, and if the
+fixed point moves `L`/`R` far enough to change the measure, `MIN_EDGE_SUPPORT` still governs
+abstention.
+
+| | criterion | bar |
+|---|---|---|
+| **J1** | THE CONSUMER over the FULL CHAIN (`R2.2h` + `FLUSH_MODE` + span qualifier + per-segment R4): every one of the 43 swallowed body rows carries **MainText** | **43/43** — the bar R2.2g reached 37 of |
+| **J2** | THE REGION GOLD over the full chain, against shipped **0.8760 / 1.0000 / 0.8947 / 0.8375** | **none may fall**, and acc must EXCEED 0.8760 |
+| **J3** | THE RUNNING HEAD — RH recall with `R2.2h` alone, every other flag OFF | **1.0000**, no exception |
+| **J4** | THE ESTIMATOR ITSELF — rows starting left of the modal `L` / ending right of `R`, per leaf, before and after. Leaf 403's **17 left-of-L against 17 within** must fall | reported, and the out-of-block row count must DROP on 403, 409 and 411 |
+| **J5** | ABSTENTIONS — leaves where the fixed point fails to settle or edge support falls below `MIN_EDGE_SUPPORT` | **0**, or each is named and its leaf reported |
+| **J6** | GOLD-ARGUMENT D1 (**52/81** shipped) may not fall | **>= 52**, reported |
+| **J7** | ATTRIBUTION — J1/J2 reported for `R2.2h` ALONE and for each of the 4 flag combinations, so a repair cannot be credited to the wrong link | reported |
+
+**Adoption of the CHAIN requires J1–J6 TOGETHER**, and adopts all four flags as ONE change or none of
+them. ⚠️ `FLUSH_MODE`'s two candidate settings are BOTH carried through J1/J2/J7; the `"reach"` vs
+`"reach_right"` trade R2.2g measured (+4 consumer rows for acc 0.9174 → 0.9091) is decided HERE, on
+the full chain, by J2 first and J1 second — accuracy outranks the consumer count, because a promoted
+row raises the consumer while corrupting the label.
+
+⚠️ **NAMED RISK.** A wider estimator window can swallow the MARGINAL COLUMN into the block on leaves
+where note and measure are contiguous — leaf 412 is the known one, and its `L=39` is already left of
+a marginal note. If that happens `MN` falls and J2 fails; that would be evidence the fixed point
+needs a support-weighted mode, not evidence the bar is wrong. ⚠️ **A SECOND, worse risk: the fixed
+point may not be unique.** A wider window can move the mode, which widens the window further. J5 is
+the criterion that exposes it, and a candidate that oscillates is REFUTED, not damped.
+
+##### 🔴 R2.2h RESULT 2026-08-20 — J2–J6 PASS, **J1 does not move at all**, and that is the finding
+
+**`witness/score_edge_chain.py` (NEW, exits 1) · `region_head.EDGE_FIXED_POINT`, DEFAULT OFF.**
+Log `.scratch/r2/edgechain-20260820.log`.
+
+| combination | acc | RH | MN | MT | consumer | D1 |
+|---|---|---|---|---|---|---|
+| shipped | 0.8760 | 1.0000 | 0.8947 | 0.8375 | 0/43 | 52/81 |
+| **R2.2h ALONE** | 0.8760 | 1.0000 | 0.8947 | 0.8375 | **4/43** | **54/81** |
+| h + reach | 0.8760 | 1.0000 | 0.8947 | 0.8375 | 4/43 | 54/81 |
+| h + reach + span | 0.9174 | 1.0000 | 0.8421 | 0.9125 | 37/43 | 57/81 |
+| **FULL CHAIN `reach`** | 0.9091 | 1.0000 | **0.8947** | 0.8875 | **37/43** | **57/81** |
+| **FULL CHAIN `reach_right`** | **0.9174** | 1.0000 | **0.8947** | **0.9000** | 33/43 | **57/81** |
+
+**J1 🔴 37/43 · J2 ✅ · J3 ✅ 1.0000 · J4 ✅ · J5 ✅ none · J6 ✅ 57/81 · J7 reported above.**
+
+**1. THE FIX IS REAL AND TOO SMALL.** J4 passes: out-of-block rows drop on all three probed leaves
+(403 **11 → 8** left and **3 → 0** right; 411 **14 → 10** right), the fixed point settles everywhere
+(J5 zero abstentions), and R2.2h ALONE moves the consumer **0 → 4** and D1 **52 → 54** with the four
+gold numbers EXACTLY unmoved. The full chain reaches **D1 57/81**, the highest this project has
+recorded. **And J1 is 37/43 — the identical number R2.2g reached WITHOUT R2.2h.**
+
+**2. ⚠️ THE SURVIVORS ARE THE SAME ROWS, SO THE FOURTH CAUSE IS NOT THE ESTIMATOR.** I diagnosed the
+6 survivors as an estimator defect, built the estimator fix, and the estimator fix repaired 4
+DIFFERENT rows while leaving the 6 where they were. ⚠️ **A repair that moves a number is not evidence
+it touched the defect it was built for** — the E3 lesson, arriving from the other direction and
+against a candidate I was confident in. R2.2h stands as a real defect with its own evidence (J4), and
+it is NOT the reason those rows fail.
+
+**3. WHAT THE SURVIVORS ACTUALLY LOOK LIKE.** Leaf 409's `itwo thouſand fiue hundred.† Theſe` has row
+ink `155..808` against `L=200 R=1093`: its scripture sits in a **496px segment out-of-block on the
+LEFT** while a 78px tail is inside, and `region_segments` finds NO gap wider than the pitch inside
+that 496px run.
+
+⚠️ **RESOLVED THE SAME DAY, AND THE FIRST ANSWER WAS A FALSE NEGATIVE.** I hypothesised PAGE SKEW and
+tested it by correlating row index against row-left (`.scratch/r2/probe_skew.py`). It came back weak
+and inconsistent in sign, WEAKEST on the three leaves carrying the survivors (403 −0.155, 409 −0.280,
+411 +0.105), and I recorded skew as refuted. **It was refuted by an instrument sitting downstream of
+the defect.** `.scratch/r2/probe_rowsplit.py` shows leaf 409 r36 `x 155..808` and r37 `x 689..1103`
+at **Δbaseline +15** — under 0.6 pitch, horizontally complementary, together spanning the whole
+measure. **One printed line is cut into TWO ROWS**, and the same pattern repeats at r34/r35, r42/r43,
+r44/r45, r52/r53. Leaf 409 carries **82 rows** for a page of roughly 45 printed lines. So the row list
+I correlated over was ALTERNATING LEFT-HALVES AND RIGHT-HALVES — the defect diluted the very
+correlation that would have revealed it. ⚠️ **A negative result is only as good as the instrument's
+independence from the thing under test**, and this one had none. ⇒ **R2.2i, NEW.**
+
+**4. THE FLUSH_MODE TRADE, DECIDED BY J2 AS PRE-REGISTERED.** `reach_right` is the better
+configuration — acc **0.9174 vs 0.9091**, MT **0.9000 vs 0.8875**, same MN and RH — at 33/43 against
+37/43 on the consumer. Accuracy outranks the consumer count, so `reach_right` would be the adopted
+setting **if the chain were adopted, which it is not**: J1's bar is all 43 and the chain reaches 37.
+⚠️ **Four flags now sit OFF while a configuration exists that beats the shipped pipeline on every one
+of the four gold numbers and takes D1 from 52 to 57.** That is uncomfortable and it is correct: §0.2's
+bar is the consumer, and the consumer is what still fails.
+
+##### R2.2j PRE-REGISTRATION — written 2026-08-20 BEFORE the re-key was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. R2.2j is an INSTRUMENT change, not a rule
+change, and it carries the strictest possible bar for that reason: **a re-keyed scorer that moves any
+number has changed the measurement, and every figure this project has recorded against this gold
+would become incomparable.**
+
+**THE CANDIDATE: BIND BY Y-BAND OVERLAP, NOT BY ROW ORDINAL.** `match`, `contain` and `ink_bind` all
+begin `t["row"] == e["row"]`. The row ordinal is an index into a list `CR._rows_and_lines` controls,
+so it is not an address — R2.1i established exactly this for TOKEN ordinals, where a splitter change
+renumbered every key and MN recall fell 0.8947 → 0.5263 with no region having changed. The gold has
+carried `y0f`/`y1f` page fractions since R2.2c and **no scorer reads them**. An entry binds to the
+token row whose y-band it OVERLAPS MOST, by `score_argument_region.best_overlap` — the rule this
+project already adopted for the argument gold — and an entry that overlaps no row is reported as an
+ADDRESSING FAILURE, separately from the region score.
+
+| | criterion | bar |
+|---|---|---|
+| **K1** | THE CONTROL — with the row clusterer UNCHANGED, the four gold numbers under the re-keyed scorer | **EXACTLY 0.8760 / 1.0000 / 0.8947 / 0.8375**; any movement means the re-key is itself a change and it is REFUTED |
+| **K2** | ACCOUNTING — entries bound, and addressing failures, reported separately from accuracy | **0 addressing failures**, or each is named with its leaf and text |
+| **K3** | INVARIANCE — the four numbers under a DELIBERATELY PERTURBED row clusterer (baseline tolerance ×0.6 and ×1.6), old scorer vs new | old scorer moves, new scorer does **not**; if BOTH move the re-key has not achieved independence and is REFUTED |
+| **K4** | the token-side addressing (band-pixel `l`/`r`) is NOT touched | asserted in the diff; R2.1i's span keying stays exactly as it is |
+
+**Adoption requires K1–K4 TOGETHER.** ⚠️ **K3 IS THE CRITERION THAT MATTERS AND IT IS THE ONE I WOULD
+HAVE OMITTED.** K1 alone shows the re-key changes nothing today; it cannot show the re-key achieves
+what it is FOR, which is surviving a change to the row clusterer. A criterion that only proves "no
+harm now" would let R2.2i be scored on an instrument still keyed to the thing R2.2i moves. Two
+perturbations, opposite directions, and the OLD scorer must be shown to break — otherwise the test
+never had the power to fail (`.scratchpad` standing rule: a test that doesn't move is not evidence
+until you confirm it COULD have moved).
+
+⚠️ **NAMED RISK.** `y0f`/`y1f` were written by `gold_rekey_pagefrac.py` against the band the gold was
+built in; if that mapping is wrong for any entry, K1 exposes it as a moved number and the fault is in
+the RE-KEY DATA, not in the binding rule. That distinction must be reported, because "the gold is
+wrong" and "the scorer is wrong" call for opposite repairs.
+
+##### 🔴 R2.2j CANDIDATE 1 RESULT 2026-08-20 — K1/K2 PASS **exactly**, K3 FAILS: a ROW is not an address either
+
+**`witness/score_row_address.py` (NEW, exits 1) · `score_head_regions.ROW_ADDRESS`, DEFAULT
+`"ordinal"`.** Log `.scratch/r2/rowaddr-20260820.log`.
+
+| | criterion | result |
+|---|---|---|
+| **K1** | control, clusterer unchanged | ✅ **0.8760 / 1.0000 / 0.8947 / 0.8375**, 121 bound, 0 orphans — bit-for-bit the shipped numbers |
+| **K2** | addressing failures | ✅ **0** |
+| **K3** | invariance under `ROW_TOL_P` ×0.6 / ×1.6 | 🔴 **both scorers move** |
+
+**1. THE CRITERION HAD POWER AND IT USED IT.** The old scorer moves hard under perturbation (×0.6:
+acc 0.8760 → 0.8393, **41 orphans**; ×1.6: acc → 0.9158, 9 orphans), so K3 was not vacuous. The
+y-band scorer moves too — 0.8281 and 0.9231 — and by the pre-registered bar that REFUTES the re-key.
+`ROW_ADDRESS` stays `"ordinal"`.
+
+**2. IT IS STRICTLY MORE ROBUST, AND THAT IS NOT ENOUGH.** Entries bound / orphans, old vs new:
+**56/41 → 64/38** at ×0.6 and **95/9 → 104/3** at ×1.6. The re-key recovers real ground on both
+perturbations. ⚠️ **A partial fix scored against an invariance bar is a FAIL, and recording it as
+"improved robustness" would be exactly the laundering §0.2 forbids.**
+
+**3. WHY IT CANNOT REACH THE BAR — the diagnosis, which is the deliverable of this run.** Binding by
+y-band still makes each entry choose **ONE row**, and when the clusterer splits a printed line
+(R2.2i) the entry's ink lies across **TWO**. Whichever row it picks, the tokens in the sibling row
+are unreachable, so the denominator still moves with the clusterer. ⇒ **A ROW IS NOT AN ADDRESS
+EITHER.** R2.1i retired the token ordinal, R2.2j retired the row ordinal, and the same argument
+retires the row itself: **the address is the ink's position on the page, in BOTH axes.**
+
+**⇒ CANDIDATE 2, pre-registered below:** bind entries to TOKENS by 2-D overlap and let row membership
+out of the instrument entirely.
+
+##### R2.2j CANDIDATE 2 PRE-REGISTRATION — written 2026-08-20 BEFORE it was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. Candidate 1 is recorded above as refuted and
+this block does not inherit its numbers.
+
+**THE CANDIDATE: 2-D INK ADDRESSING.** A gold entry names a rectangle of ink. A token binds to it iff
+their **y-bands overlap** by at least half the shorter of the two AND their x-spans overlap; the row
+is never consulted. This requires tokens to carry their own y-extent, which they do not today —
+`region_head.tokens` keeps `l`/`r` and a `base` but discards the vertical extent of the glyphs it
+covered. That extent is a property of the INK and no clusterer or splitter can move it, which is the
+same invariance argument R2.1j's ink binding won on.
+
+| | criterion | bar |
+|---|---|---|
+| **L1** | CONTROL — clusterer unchanged, four gold numbers | **EXACTLY 0.8760 / 1.0000 / 0.8947 / 0.8375** |
+| **L2** | INVARIANCE — `ROW_TOL_P` ×0.6 and ×1.6, the bar candidate 1 failed | the four numbers **do not move**; the OLD scorer must be seen to move in the same run |
+| **L3** | ACCOUNTING — entries bound, orphans, addressing failures, at every perturbation | **121 bound, 0 orphans** at every setting |
+| **L4** | the y-extent added to tokens must not change any REGION rule's behaviour | region numbers under `ROW_ADDRESS="ordinal"` EXACTLY unmoved |
+
+**Adoption requires L1–L4 TOGETHER.** ⚠️ **NAMED RISK.** A 2-D rule can bind one entry to tokens on
+two ADJACENT printed lines where the setting is tight and the ink of ascenders and descenders
+interleaves — the opposite failure to candidate 1's. L3's orphan/collision accounting is where that
+would show, and a rule that binds more entries by binding them WRONGLY is refuted by L1, which is why
+L1 demands bit-equality rather than "no worse".
+
+##### 🔴 R2.2j CANDIDATE 2 RESULT 2026-08-20 — L1/L3/L4 PASS, L2 fails, and **L2 IS MIS-SPECIFIED**
+
+Log `.scratch/r2/rowaddr2-20260820.log`. `ROW_ADDRESS` stays `"ordinal"`; **neither candidate adopted.**
+
+| | `ordinal` | `yband` | `ink2d` |
+|---|---|---|---|
+| **L1** control | 0.8760 / 1.0000 / 0.8947 / 0.8375 | ✅ identical | ✅ identical |
+| **L3** accounting | 121 bound, 0 orphans | ✅ 121, 0 | ✅ 121, 0 |
+| **L2** ×0.6 | acc 0.8393, **41 orphans** | 0.8281, 38 | **0.8281, 37** |
+| **L2** ×1.6 | acc 0.9158, **9 orphans** | 0.9231, 3 | **0.9231, 2** |
+| **L4** y-extent inert | — | — | ✅ region numbers exact |
+
+**1. TWO UNRELATED ADDRESSING SCHEMES PRODUCED THE SAME NUMBERS.** `ink2d` throws the row away
+entirely and lands within one orphan of `yband` at both perturbations, with **identical accuracies**.
+⚠️ **When a change of mechanism does not change the result, the mechanism is not what moves the
+result.** The movement is not addressing.
+
+**2. WHAT IT ACTUALLY IS.** `CR._rows_and_lines` feeds `region_head.tokens`. Perturbing `ROW_TOL_P`
+changes WHICH GLYPHS ARE IN A ROW, so the TOKENS themselves change shape — a split line yields two
+half-length token sets — and the gold's x-span then over- or under-covers real ink. **No addressing
+scheme can be invariant to that, because the clusterer changes the OBJECTS BEING LABELLED, not
+merely their names.**
+
+**3. 🔴 AND THIS PROJECT HAD ALREADY WRITTEN THE RULE DOWN.** `score_head_regions`, § R2.1j, records:
+*"The region ACCURACY under different splitters is MODELLING information and is NOT a pass/fail
+criterion. R2.1i established why: the splitter is an INPUT to the region rules, so a criterion
+demanding an unchanged score is unachievable and **was twice wrongly pre-registered**."* **I have now
+pre-registered it a third time, one level up, for the row clusterer** — the same unachievable demand
+against a different input. ⚠️ **Thirteenth instance of the signature defect: a correct rule that
+nothing reads, this time inside my own acceptance criteria, in a file whose docstring states it.**
+
+**4. WHAT L2 SHOULD HAVE ASKED, and it is sharper than what it did ask.** To test an ADDRESS, change
+the row's NAME and not its CONTENT: apply a PERMUTATION to the row indices, leaving every glyph,
+token and coordinate untouched. A true address is exactly invariant under a renaming; the ordinal
+address must break completely. That criterion is decisive in both directions, unlike a perturbation
+that changes the ink's grouping. Pre-registered below as M1–M3. ⚠️ **L1–L4 are NOT amended** — a
+mis-specified criterion is reported as mis-specified, and the replacement is registered beside it.
+
+##### R2.2j CANDIDATE 3 CRITERIA — M1–M3, written 2026-08-20 BEFORE the permutation test was built
+
+⚠️ Written first ON PURPOSE and not edited afterwards. These REPLACE L2's question; L1, L3 and L4
+stand as passed and are re-asserted here unchanged.
+
+**THE TEST: PERMUTE THE ROW NAMES, CHANGE NOTHING ELSE.** After `classify` returns, the scorer applies
+a deterministic permutation to every token's `row` field and to the row-band map, together. No glyph
+moves, no token changes shape, no coordinate changes; only the LABEL of each row changes. This is a
+pure renaming, so it isolates exactly the property an address must have.
+
+| | criterion | bar |
+|---|---|---|
+| **M1** | POWER — under the permutation, the `ordinal` scorer must BREAK | its four numbers must MOVE, or the test has no power and proves nothing |
+| **M2** | INVARIANCE — under the same permutation, the candidate's four numbers | **EXACTLY unmoved**, and orphans/addressing failures unmoved too |
+| **M3** | the permutation must be shown to be a pure renaming — token count, total ink, and the multiset of token `(l, r, y0, y1)` identical before and after | asserted in the run, printed |
+
+**Adoption of `ROW_ADDRESS` requires L1 + L3 + L4 + M1 + M2 + M3.** ⚠️ M3 is not ceremony: a
+"permutation" that dropped or duplicated a row would make M2 trivially passable, and a test whose
+own fixture is unverified is how a criterion becomes decorative. ⚠️ **M1 IS THE CONTROL AND IT IS THE
+ONE THAT MAKES M2 MEAN ANYTHING** — the third time in two days that the deciding criterion has been
+the one asking whether the instrument could have failed at all.
+
+##### ✅ R2.2j RESULT 2026-08-20 — **ADOPTED**: `ROW_ADDRESS = "ink2d"`. The first adoption in this chain
+
+**`witness/score_row_address.py` (NEW, exits 0) · `score_head_regions.ROW_ADDRESS`.**
+Log `.scratch/r2/rowaddr4-20260820.log`.
+
+| | criterion | result |
+|---|---|---|
+| **L1** | control, clusterer unchanged | ✅ **0.8760 / 1.0000 / 0.8947 / 0.8375**, 121 bound, 0 orphans — bit-identical for BOTH candidates |
+| **L3** | accounting | ✅ 0 addressing failures, 0 orphans |
+| **L4** | token y-extent changes no region rule | ✅ region numbers exact |
+| **M1** | POWER — `ordinal` must break under a pure renaming | ✅ **acc 0.4667 · RH 0.0000 · MN 0.0000 · 90 orphans** |
+| **M2** | candidate invariant under the renaming | ✅ **EXACTLY unmoved**, both candidates, orphans included |
+| **M3** | the fixture is a pure renaming | ✅ token `(l, r, y0, y1)` multiset identical |
+| L2 | clusterer perturbation | 🔴 both move — **MIS-SPECIFIED, excluded from the verdict**, see the candidate-2 result above |
+
+**1. M1 IS WHY THIS RESULT MEANS ANYTHING.** Renaming rows destroys the ordinal address completely —
+RunningHead and MarginNote recall both to **0.0000**, 90 of 121 entries orphaned — while both
+candidates are bit-for-bit unmoved. ⚠️ That contrast is the whole finding: **every region number this
+project has recorded was resting on a convention that a renaming annihilates**, and nothing had ever
+tested it because the clusterer never changed. R2.2i is the change that would have.
+
+**2. THE TIE-BREAK WAS A DEFECT IN MY OWN DECISION RULE, and it is recorded rather than quietly
+fixed.** Both candidates pass every criterion identically, the pre-registration names no tie-break,
+and the first run picked `yband` **because it was declared first in a tuple**. That is not a reason.
+`ink2d` is adopted on the requirement that motivated the step: R2.2i splits a printed line across TWO
+rows, `yband` must still choose ONE and would lose the sibling's tokens, and `ink2d` never consults a
+row at all. The perturbation orphan counts agree (**37 vs 38** and **2 vs 3**, ink2d lower at both),
+but the argument is the requirement, not the margin.
+
+**3. WHAT IS NOW UNBLOCKED.** R2.2i may be scored: the instrument no longer moves when the row list
+does. ⚠️ **And the standing lesson is one level more general than R2.1i's.** R2.1i: a token ordinal is
+not an address. R2.2j candidate 1: a row ordinal is not an address. R2.2j candidate 2, adopted: **a
+ROW is not an address — the address is the ink's position on the page, in both axes.** Each was
+invisible until something proposed to change the thing the address secretly depended on.
+
+##### R2.2i PRE-REGISTRATION — written 2026-08-20 BEFORE the candidate was built or measured
+
+⚠️ Written first ON PURPOSE and not edited afterwards. R2.2i is the ROOT of the R2.2e chain and is
+upstream of R2.2f–R2.2h, all of which are refuted and OFF; this block inherits none of their numbers.
+
+**TWO PRE-EXISTING COMPONENTS LOOK LIKE THE FIX AND NEITHER IS.** Both were read before this block
+was written, and reading them is what set the candidate's shape.
+
+* 🔴 **`deskew.py` CANNOT REPAIR THIS, BY EXPLICIT DESIGN.** The register's own note for R2.2i says
+  "the spike has carried a `deskew.py` throughout and no part of this chain consults it", which reads
+  as an accusation that calling it is the remedy. It is not. `apply_theta` moves **only `x0`/`x1`**,
+  and its docstring states the reason: *"leaving y alone keeps every row-grouping and line-splitting
+  decision downstream bit-identical to the un-deskewed run."* Deskewing before `_rows_and_lines`
+  would change **nothing whatsoever** about which glyphs land in which row. ⚠️ A component whose name
+  matches the defect is not a consumer of it — the fourteenth instance would have been calling it and
+  reporting the null.
+* 🔴 **`line_split.leaf_skew` IS CIRCULAR HERE.** It takes `rows: list[list[dict]]` and medians a
+  per-row fit. It consumes the row list that R2.2i corrupts in order to produce the slope that would
+  repair it. ⚠️ **This is instrument-failure #2 of 2026-08-20 as a reusable component** — the skew
+  hypothesis was already once wrongly refuted by a probe correlating over the corrupted rows.
+* ⚠️ **AND THE CENSUS SHARES THE FLAW.** `probe_split_census.py` reports tilt as `+nan` on all 12
+  leaves with zero split pairs, because it measures tilt **from the split pairs**. It cannot separate
+  "this leaf is straight" from "this leaf tilts less than `ROW_TOL_P`". The census is a valid count of
+  the defect and is NOT a measurement of tilt.
+
+**THE CANDIDATE: A PER-LEAF BASELINE MODEL, ESTIMATED ROW-FREE (`BASELINE_MODEL`, default OFF).**
+A leaf carries one slope `s`. `_rows_and_lines` clusters on the **residual** `y_bottom − s·(x_c − x_c̄)`
+instead of on `y_bottom`, leaving `ROW_TOL_P` at 0.30 — the window is not widened, the coordinate is
+straightened. `s` is estimated by the projection-profile criterion `deskew._score` already owns,
+**transposed to the other axis**: sweep `s`, histogram the residual bottoms, score by sum of squared
+bin counts, take the argmax. Straight baselines stack into tall narrow bins; tilted ones smear. It
+consults **glyph boxes only** — no rows, no tokens, no splitter — which is the one property both
+components above lack.
+
+| | criterion | bar |
+|---|---|---|
+| **N1** | CONTROL — flag OFF | split pairs **22**, J1 **37/43**, four gold numbers **exactly** 0.8760 / 1.0000 / 0.8947 / 0.8375 |
+| **N2** | PRIMARY — flag ON, the register's bar | split pairs **0** over the 20 leaves |
+| **N3** | CONSUMER — the number the whole chain exists to move | J1 **43/43** |
+| **N4** | GOLD does not fall | each of the four **≥** its N1 value |
+| **N5** | 🔴 **INSTRUMENT-COULD-FAIL — SYNTHETIC TILT.** Rotate the glyph coordinates of the 12 leaves that show **zero** split pairs by a known ±0.5° and ±1.0° | under the **OLD** clusterer split pairs must **RISE far above 0**, and the estimator must recover the injected slope to within **±15%**; under the NEW clusterer they must return to **0** |
+| **N6** | ESTIMATOR INDEPENDENCE | `s` is **bit-identical** at `ROW_TOL_P` ×0.6 and ×1.6 — the test `leaf_skew` is built to fail |
+| **N7** | NO OVER-MERGING — the named risk | rows after clustering = **1220** (1242 − 22), not fewer; a merged pair of genuinely adjacent lines is a FAILURE, not a saving |
+
+**Adoption requires N1–N7 TOGETHER.**
+
+⚠️ **N5 IS THE DECIDING CRITERION and it can refute the step outright.** Every other row asks whether
+my mechanism does what I said. N5 asks whether **tilt is the cause at all**: it manufactures the
+defect on leaves that do not have it, from a rotation and nothing else. If injected tilt does NOT
+split rows under the old clusterer, then tilt is not the mechanism, the 22 pairs have another cause,
+and R2.2i is refuted **whatever N2 reports**. Three days running — E3, G5, M1 — the criterion that
+decided the verdict was the one asking whether the instrument could fail; N5 is that link, written in
+deliberately before the numbers exist.
+
+⚠️ **NAMED RISK.** One global slope per leaf assumes pure rotation. A leaf with page **curvature**
+near the gutter tilts by different amounts at top and bottom, and a single `s` under-corrects there
+while over-correcting elsewhere; a leaf with few glyphs gives a noisy argmax. N2's bar is **0**, not
+"fewer", precisely so a partial correction cannot be read as a success — and N7 is where an `s` large
+enough to force N2 to 0 by collapsing real lines together would show.
+
+##### 🔴 R2.2i CANDIDATE 1 RESULT 2026-08-20 — N1 PASSES, **N2 and N7 FAIL**, and the estimator is measuring a PERIOD ALIAS
+
+Logs `.scratch/r2/r22i-stage1.log`, `r22i-sweep.log`. `BASELINE_MODEL` stays **False**; **not adopted.**
+
+| | bar | result | |
+|---|---|---|---|
+| **N1** CONTROL, flag OFF | 1242 rows, 22 pairs, four gold numbers exact | **1242 rows, 22 pairs** | ✅ the residual path is bit-identical at `s=0` |
+| **N2** PRIMARY, flag ON | split pairs **0** | **2** | ❌ |
+| **N7** NO OVER-MERGING | rows **1220** | **1111** | ❌ **109 real lines destroyed** |
+| **N3–N6** | — | not reached | N2/N7 fail first |
+
+**1. THE ESTIMATOR LOCKS ONTO A PERIOD ALIAS, AND THE CURVE SHOWS IT.** `.scratch/r2/probe_r22i_curve.py`
+prints profile sharpness against slope. On leaf 409 the argmax sits at **s=+0.0325** where the profile
+occupies **134 bins**, against **358 bins at s=0**, on a leaf holding **82 rows** — the winning slope
+is folding baselines onto each other. One period is `pitch/span = 38/1070 = 0.0355`; the argmax is at
+**0.92 of a period**. 🔴 **The transposition of `deskew._score` to the y axis was wrong for a
+STRUCTURAL reason, not a tuning one.** `deskew` works on x because vertical structure is APERIODIC —
+a margin column, a numeral column, a few distinct stacks. Baselines are PERIODIC, and sum-of-squared
+bin counts rewards concentration without regard to HOW MANY baselines were concentrated, so its
+global maximum is always the shear that folds the page onto itself. ⚠️ **This is R2.2j's lesson one
+level down, inside the instrument: a shear of exactly one pitch is indistinguishable from renumbering
+the lines.** No scoring function fixes it — the ambiguity is in the data.
+
+**2. FIVE INSTRUMENTS, FOUR ANSWERS, AND ONLY LOOKING AT THE PAGE SETTLED IT.** For leaf 409:
+
+| instrument | slope | verdict |
+|---|---|---|
+| census split-pair Δbaseline (`probe_split_census.py`) | **−0.037** | magnitude right, **SIGN WRONG** |
+| profile sharpness / cluster count / strip cross-correlation | **+0.032** | sign right, **~2× too large** |
+| least-squares fit on "whole" rows (`probe_r22i_truth.py`) | **+0.030** | ditto — and circular, see below |
+| ruled onto the scan and read by eye (`probe_r22i_zoom.png`) | ~+0.014 | **sign right, magnitude ~2× too SMALL — see the correction below** |
+| 🔴 **row count against the strip line count** (`r22i-cand1-rescored.log`) | **+0.0315** | leaf 409 clusters to **44 body rows against 43 printed lines** |
+
+🔴 **CORRECTION, SAME DAY: THE EYEBALL READING WAS THE WEAKEST INSTRUMENT AND I WEIGHTED IT MOST.**
+The ladder image put five rules within a few px of each other at the right-hand edge; reading which
+one stayed glued to the baseline was a judgement about a crowded picture, and I recorded "≈ +0.014"
+as though it were a measurement. The decisive number is the ROW COUNT against an independently
+measured line count: at **s=+0.0315** leaf 409 yields **44 body rows against a strip count of 43**,
+and 419 yields **46 against 43**. ⚠️ **What I called "the collapse" — 82 rows falling to 44 — was the
+step working**, and I read it as failure only because N7's bar said 74. **The estimators' +0.03 was
+right and the census's magnitude was the artifact.** ⚠️ Occupancy said so from the start and I read it
+backwards: 134 occupied bins at the argmax is **48 baselines × ~3 bins**, i.e. SHARP, against 358
+smeared bins at s=0. **"Looking at the page" is only decisive when the thing looked at resolves the
+question; here the page was zoomed to a scale at which two candidate slopes were indistinguishable.**
+
+⚠️ **THE DIRECT FIT WAS CIRCULAR AND I NEARLY BANKED IT.** It fitted only rows spanning ≥0.75 of the
+measure, on the argument that a split half cannot reach that span. But at +0.030 a line drops 28px
+across the measure, **five times the 11.4px tolerance** — so a genuinely whole line could not have
+survived as one row at `s=0` either. What those 31 "whole rows" are is **diagonal chains**: the greedy
+`_rows_and_lines` compares each glyph to the RUNNING MEDIAN of the row it is building, so on a tilted
+leaf it walks up the tilt from one baseline onto the next. Their apparent slope is ≈ one pitch per
+span, which is the alias. **Instrument-failure #2 for the third time in one day, and it produced a
+tight IQR (+0.0262..+0.0322) while doing it** — precision is not independence.
+⚠️ **Agreement between instruments is not corroboration when they share an input.** Four of the five
+read the s=0 row list or a global profile of it; all four inherit the same alias. The fifth reads the
+scan. **The census's magnitude (~15-20px) and the estimators' sign (+) were each half right**, and
+nothing in the criterion set would have caught it — the ladder-on-the-scan was not pre-registered.
+
+**3. 🔴 N2 IS VERY NEARLY UNFALSIFIABLE, AND I MADE IT THE PRIMARY CRITERION.** The sweep prints split
+pairs against slope for five leaves. Pairs reach **0** across almost the whole range, including
+plainly absurd values — leaf 403 shows **0 pairs at s=−0.045**, having lost 2 rows, and **0 pairs at
+s=+0.045**, having lost 22. The reason is mechanical: a large shear smears the baselines, the greedy
+median chaining in `_rows_and_lines` then links everything in residual order, and rows so merged
+contain no split PAIR because they contain no pair. ⚠️ **A metric that a wrong answer satisfies as
+readily as a right one is not a bar.** N7 — the row count, written in as a guard against a named
+risk — is the criterion actually carrying the verdict. **The roles are the reverse of how they were
+pre-registered**, and that is only visible because N7 was written down before the run.
+
+**4. 🔴 N7's BAR IS MIS-SPECIFIED, AND THE "FAILURE" IT RECORDED IS LARGELY THE FIX WORKING.** N7
+demanded **1220 rows = 1242 − 22**, on the assumption that the census's 22 split pairs are the whole
+of the over-segmentation. They are not. Ink height over pitch gives the printed-line count directly,
+and it is nowhere near the row count:
+
+| leaf | pitch | ink height | lines expected | rows at s=0 | excess |
+|---|---|---|---|---|---|
+| 409 | 38 | 1773px | **~48** | **82** | +34 |
+| 419 | 39 | 1678px | ~44 | 78 | +34 |
+| 403 | 38 | 1774px | ~48 | 76 | +28 |
+| 401 | 34 | 1692px | ~51 | 83 | +32 |
+
+The census sees 8 of leaf 409's 34 extra rows because its definition requires **two complementary
+halves, each under 0.75 measure, jointly over it** — ordinary over-segmentation never matches that
+shape. ⚠️ **So 1111 rows is plausibly CLOSER to correct than 1220**, and at the visually-measured
+slope leaf 409 yields **46 rows against ~48 expected**. What N7 recorded as "109 real lines destroyed"
+was in substantial part the step doing its job. **The bar was transcribed from an instrument that
+sees a fraction of the defect it was being used to bound** — the L2/K3 failure of 2026-08-20 exactly,
+and the third bar-no-run-can-pass in two days. ⚠️ **R2.2i CANDIDATE 2 IS WITHDRAWN UNRUN**: its P2
+promotes this same bar to PRIMARY, and its "body block only" support correction is refuted in advance
+by `probe_r22i_bridge.py` (in-block-only clusters leaf 409 to the same 44 rows). Re-pre-register
+against a line count measured from the page, not from the census.
+
+**5. WHAT REMAINS TRUE.** N1 confirms the harness: 22 split pairs at s=0, and a
+per-leaf slope exists for every leaf tried that reaches 0 pairs with the row count intact (409 at
+−0.0270 → 74 rows; 403 at −0.0300 → 74 of a target 73; 419 at −0.0150 → 74 of 73). **The step's
+deliverable is reachable; candidate 1's estimator cannot find it.**
+
+##### R2.2i CANDIDATE 2 PRE-REGISTRATION — written 2026-08-20 BEFORE it was built or measured
+
+⚠️ Written first ON PURPOSE. Candidate 1 is recorded above as refuted and this block does not inherit
+its numbers or its criteria.
+
+**THE CANDIDATE: NYQUIST-BOUNDED SEARCH ON THE BODY BLOCK ALONE.** Two independent corrections, both
+diagnosed above rather than tuned:
+
+* **The bound.** The sweep is restricted to `|s| * span <= 0.5 * pitch`. Inside that range a period
+  alias **cannot exist**, because no shear can move a baseline as far as its neighbour. This is not a
+  clamp chosen to exclude a bad answer; it is the range over which the slope is IDENTIFIABLE at all.
+* **The support.** The estimate is taken over the **body block only** (`block_measure`'s L..R), not
+  the whole leaf. A leaf carrying marginal notes has TWO baseline grids at different pitches, and a
+  profile mixing them has no single period — the note column is a second signal, not noise.
+
+⚠️ **NAMED RISK, AND IT MAY REFUTE THE WHOLE APPROACH.** Leaf 409's target slope is **−0.0270** and
+its Nyquist bound is `0.5 * 38 / 1070 = 0.0178`. **The answer the consumer wants lies OUTSIDE the
+range in which it is identifiable.** The sweep shows −0.0150 also reaches 0 pairs at 77 rows against
+a target of 74, so a bounded estimate may be good enough — or may not. If it is not, then a single
+global slope per leaf is the wrong object and the deliverable is a piecewise or per-block baseline
+model. **That is a real possible outcome of this run and is written down before it.**
+
+| | criterion | bar |
+|---|---|---|
+| **P1** | CONTROL — flag OFF, unchanged from candidate 1 | 1242 rows, **22** pairs, four gold numbers **exactly** 0.8760 / 1.0000 / 0.8947 / 0.8375 |
+| **P2** | 🔴 **PRIMARY — NO OVER-MERGING.** Promoted from N7: rows, not pairs, is the criterion the data can falsify | rows **exactly 1220** (1242 − 22) |
+| **P3** | split pairs | **0** — retained, but **secondary**, and a pass here means nothing without P2 |
+| **P4** | CONSUMER | J1 **43/43** |
+| **P5** | GOLD does not fall | each of the four **≥** its P1 value |
+| **P6** | ESTIMATOR INDEPENDENCE | `s` **bit-identical** at `ROW_TOL_P` ×0.6 and ×1.6 |
+| **P7** | 🔴 **INSTRUMENT-COULD-FAIL — SIGN RECOVERY AGAINST AN INDEPENDENT MEASUREMENT.** For the 8 leaves the census measured, the estimator's SIGN must match | **8/8**, and the estimator must be seen to get **fewer than 8** when the Nyquist bound is lifted — the alias must be shown to be what the bound removes |
+
+**Adoption requires P1–P7 TOGETHER.** ⚠️ **P7 is the deciding criterion.** Candidate 1 failed on
+sign against the census and I did not find that out from any of its own criteria — I found it from a
+sweep run afterwards. P7 puts that comparison INSIDE the run, and its second clause makes the bound
+itself falsifiable: if sign recovery is 8/8 with the bound lifted, then the alias was not the cause
+and this candidate's diagnosis is wrong even if every other row passes.
+
+##### 🔴 R2.2i — AN INDEPENDENT LINE COUNT, AND THE REAL SIZE OF THE DEFECT (measured 2026-08-20)
+
+`.scratch/r2/probe_r22i_linecount.py`. Count peaks in the horizontal ink profile of a **150px vertical
+strip**: across 150px a tilt of 0.015 moves a baseline ~2px, so the profile stays sharp and its peaks
+are printed lines. Median over the strips spanning the block. Consults **no row list, no census, no
+slope estimate**. ⚠️ **Independence checked, not assumed** — the block's `L..R` comes from
+`block_measure`, which reads tokens, which read `_rows_and_lines`, so the count was re-taken over a
+FIXED central range (0.20W..0.80W) that consults nothing: **identical on 17 of 20 leaves and off by
+one on the other three.** The dependency is inert and the count can serve as a bar.
+
+**BODY-BLOCK PRINTED LINES: 827. ROWS EMITTED AT s=0: 1242. EXCESS: +415, of which the census sees 22.**
+
+Per leaf the count is tight (**39–43** everywhere) and the excess tracks tilt as the mechanism
+predicts: **401 +40 · 409 +39 · 403 +35 · 419 +35 · 411 +33 · 417 +33 · 407 +32**, against **413 +3 ·
+408 +5 · 410 +7 · 414 +7** on the leaves that lie flat. 🔴 **Leaf 401 carries +40 excess rows and
+ZERO census split pairs.** The census is not a small undercount of this defect; it detects the one
+narrow shape it was written for and is blind to the rest. ⚠️ **R2.2i is roughly 1.5× over-segmentation
+across the window, not "22 split pairs, 1.8% of rows"** — the register's own framing of the step
+understates it by an order of magnitude, and every bar derived from it (N7, and P2 after it) inherits
+that. **The census stays valid as a count of its own shape and is retired as a measure of the step.**
+
+##### R2.2i CANDIDATE 3 PRE-REGISTRATION — written 2026-08-20 BEFORE it was built or measured
+
+⚠️ Written first ON PURPOSE. Candidate 1 is refuted above; candidate 2 was withdrawn unrun. This
+block inherits neither's criteria, and in particular **does not inherit the 1220 bar**.
+
+**THE CANDIDATE: RESOLVE THE ALIAS WITH THE INDEPENDENTLY MEASURED LINE COUNT.** The whole difficulty
+is that a shear of one pitch across the page folds baseline *k* onto *k+1*, so every profile
+criterion has a second, usually larger, maximum there. That ambiguity is a property of the data and
+cannot be scored away. But it has a signature: **the alias halves the number of baselines.** The
+strip counter measures that number independently. So sweep `s`, and accept only slopes whose
+FULL-WIDTH sheared profile resolves into the strip-measured line count for that leaf; among those,
+take the sharpest. The alias is excluded because it produces about half as many peaks, not because a
+bound was placed where the wrong answer happened to be.
+
+| | criterion | bar |
+|---|---|---|
+| **Q1** | CONTROL — flag OFF | 1242 rows, 22 pairs, four gold numbers **exactly** 0.8760 / 1.0000 / 0.8947 / 0.8375 |
+| **Q2** | 🔴 **PRIMARY — the row count matches the PAGE.** Body-block rows per leaf vs the strip count | within **±2 on ≥18 of 20 leaves**, and the 20-leaf body-block total within **±10 of 827** |
+| **Q3** | split pairs | **0** — retained, SECONDARY, and worthless alone (candidate 1 showed a wrong slope reaches 0) |
+| **Q4** | CONSUMER | J1 **43/43** |
+| **Q5** | GOLD does not fall | each of the four **≥** its Q1 value |
+| **Q6** | ESTIMATOR INDEPENDENCE | `s` **bit-identical** at `ROW_TOL_P` ×0.6 and ×1.6 |
+| **Q7** | 🔴 **INSTRUMENT-COULD-FAIL — AGAINST THE SCAN, AND THE ALIAS MUST BE SEEN TO BITE.** (a) On leaves 409 and 419 the estimate must match the slope ruled onto the scan (`r22i-zoom.png`, **≈ +0.014**) to within **±0.004**. (b) With the line-count constraint DISABLED the estimator must be seen to jump to **≈ +0.03** on those same leaves | both clauses |
+
+**Adoption requires Q1–Q7 TOGETHER.**
+
+⚠️ **Q7(b) is what makes this candidate falsifiable rather than merely tuned.** The claim is not "this
+slope works" but "the alias is what was wrong, and this constraint is what removes it." If the
+estimator lands on +0.014 with the constraint disabled too, then the constraint is decorative and the
+diagnosis is wrong even if Q2–Q5 all pass. Candidate 1 had no criterion of this shape and that is why
+its sign error survived the whole run and was caught only by a probe written afterwards.
+
+⚠️ **NAMED RISK — ONE SLOPE PER LEAF MAY NOT BE THE OBJECT.** The strip counter is stable (39–43) but
+`ink height / pitch` disagreed with it by up to 15 on leaf 407 (55 vs 40), which is what a leaf with
+a **second pitch** — the marginal-note column — or with **curvature** looks like. If Q2 passes on the
+flat leaves and fails on 407/409/419, the deliverable is a per-block or piecewise baseline model and
+a single global `s` is refuted as the object, not merely as the value. **Written before the run.**
+
+⚠️ **A SECOND DEFECT IS ALREADY VISIBLE AND IS NOT THIS STEP'S.** `_rows_and_lines` chains against the
+RUNNING MEDIAN of the row being built, so on a tilted leaf it walks from one baseline onto the next
+and emits diagonal rows crossing several printed lines. That is what corrupted four of the five slope
+instruments. It is a distinct mechanism from "a tilted line is cut in two" — the opposite failure —
+and is registered separately as **R2.2k**; a correct `s` may not be sufficient while it stands.
+
+##### 🔴 R2.2i CANDIDATE 3 RESULT 2026-08-20 — **Q7 REFUTES IT, AND ITS PREMISE IS FALSE**
+
+Log/probe `.scratch/r2/probe_r22i_cand3.py`. Not adopted; the constraint is not merely unhelpful, it
+is **inert**.
+
+| | bar | result |
+|---|---|---|
+| **Q7(a)** | estimate within ±0.004 of the scan on 409/419 | **0/2** |
+| **Q7(b)** | unconstrained estimator must JUMP to the alias | **2/2** — but see below |
+| constrained vs unconstrained slope | should differ | **identical on 18 of 20 leaves** |
+
+🔴 **THE PREMISE "THE ALIAS HALVES THE BASELINES" IS SIMPLY WRONG.** At a shear of one pitch, residual
+levels are still spaced one pitch apart and there are still ~48 of them — each now holding pieces of
+two different printed lines. **The COUNT is preserved; only the MEMBERSHIP changes.** So a line-count
+constraint cannot discriminate the alias, and it did not: it changed the answer on 2 leaves of 20.
+⚠️ **Q7(b) "passed" and the pass is worthless** — I wrote it to show the constraint was load-bearing,
+but it only shows the unconstrained estimator reaches +0.03, which the constrained one also does.
+**A criterion comparing a mechanism to itself cannot fail.** The falsifier I actually needed was the
+one in the table above it: constrained vs unconstrained must DIFFER, and it is the line I did not
+pre-register as a bar.
+
+⚠️ **AND Q7(a)'s BAR WAS WRONG, NOT THE ESTIMATOR.** It demanded ±0.004 of the eyeballed +0.014. The
+row count against the strip line count says +0.0315 is right for 409. **Candidate 3 was scored
+against a number I had misread off a picture** — the same failure as N7, one instrument later.
+
+##### 🔴 R2.2i CANDIDATE 1 RESCORED AGAINST THE CORRECT BAR — a real but PARTIAL improvement
+
+`.scratch/r2/r22i-cand1-rescored.log`. Body-block rows against the strip line count, 20 leaves:
+
+| | strip lines | rows OFF | rows ON | total error |
+|---|---|---|---|---|
+| totals | **827** | 1214 | **1073** | **+387 → +246** |
+
+**Within ±2 on 3 of 20 leaves** (bar for Q2 was ≥18), within ±3 on eight — **409 +1 · 415 +0 ·
+413 +1 · 419 +3 · 410 +3 · 408 +3 · 416 +3**. So the flag removes **36% of the excess** and is
+nowhere near the bar. ⚠️ **The residual is concentrated exactly where the slope comes out ≈ 0**:
+**407 +31 at s=0.0000 · 401 +29 at s=+0.0435 · 405 +24 · 412 +23 · 402 +24**. A leaf that the
+estimator declares flat is left with all its excess, which is **R2.2k** — the running-median chaining
+over-segments whether or not the leaf is tilted. **R2.2i and R2.2k are not separable by this bar and
+must be scored together**, the same cycle H4/J7 exposed between R2.2f and R2.2g.
+
+**VERDICT UNCHANGED — `BASELINE_MODEL` stays False** — but the REASON is now correct: not "it
+destroys 109 lines" (it does not; that reading came from the census bar) but **"it fixes a third of
+the over-segmentation and cannot reach the bar while R2.2k stands."**
+
+##### ✅ R2.2l RESULT 2026-08-21 — THE SIXTH SINK. Guard exits 0, four gold numbers unmoved.
+
+**THE LEAK, AND IT WAS NOT WHERE I SAID IT WAS.** The register row and my own notes said the drop was
+"downstream in the `contain`/`ink_bind` path". **Both of those are clean** — `contain` puts every
+entry in `obs` or `orphans`, and an `ink_bind` entry whose tokens are all excluded ends with an empty
+weight map and is reported as an orphan. The leak is in `score_head_regions.main`, in the loop that
+builds `pairs`:
+
+```
+for e, t in bound:
+    if (t["row"], t["tok"]) in excl:
+        continue          # <-- an entry vanishes here, counted by nothing
+```
+
+`excl` holds the tokens bound by AMBIGUOUS gold entries. When a labelled entry binds a token an
+ambiguous entry also binds, it is dropped rather than scored — **which is the same event as a
+collision**, the splitter having merged two labelled spans into one token. 🔴 **`main` reports five
+sinks — `unlabelled`, `ambiguous`, `collisions`, `orphans`, `abstained` — and this sixth one had no
+counter and no print.** The guard asserts `lost <= collisions + orphans`, so every drop through it
+read as a token disappearing for no stated reason.
+
+**THE FIX.** `main` now counts the sink as `ambcoll`, prints it beside the other five, and returns it;
+the guard counts it in `accounted` and names it in its criterion B, its failure message and its
+success message. ⚠️ **THIS IS AN ENUMERATION FIX, NOT A RELAXED BAR.** The invariant was always
+"nothing disappears UNREPORTED", and the list of reported categories was incomplete in BOTH the
+scorer and the guard. **Measured before the change was made**, across both addresses × three
+splitters:
+
+| | quantile | coarse ×1.6 | fine ×0.4 |
+|---|---|---|---|
+| `ordinal` — gap / `ambcoll` | 0 / **0** | 0 / **0** | 0 / **0** |
+| `ink2d` — gap / `ambcoll` | **+1 / 1** | 0 / **0** | 0 / **0** |
+
+`ambcoll` is **1 in the single failing cell and 0 in the other five**, so counting it closes that gap
+and loosens nothing that already balanced. A real silent loss still fails: there is exactly one
+increment site and it prints.
+
+**VERIFIED.** Guard **exits 0**; quantile now balances **lost 27 / accounted 27**, coarse 28/28, fine
+25/25, `weak 0` everywhere. Four gold numbers **exactly unmoved — 0.8760 / 1.0000 / 0.8947 / 0.8375**,
+baseline `ambcoll` 0.
+
+⚠️ **WHY R2.2j's OWN CRITERIA COULD NOT HAVE CAUGHT IT.** L1–L4 and M1–M3 perturb the ROW CLUSTERER
+and the row NAMES. This sink only opens when the SPLITTER re-cuts a token so that a labelled and an
+ambiguous entry land on the same one, and under `ordinal` those two entries addressed different rows
+so they never collided. **The adopted change did not create the sink; it made an existing silent sink
+reachable** — the bug is as old as the exclusion filter, and `ink2d` is what walked into it.
+
+⚠️ **A LATENT SIBLING, NOT FIXED, RECORDED.** `main` line ~385 filters the CONTAINMENT observations by
+`cexcl` with the same uncounted `if ... not in cexcl` idiom. Nothing checks `c_obs`, so no guard fails
+today, and the containment binding is a REFUTED approach kept only for reporting (R2.1j). **It is the
+same defect one path over and it should be counted when that path is next touched.**
+
+##### R2.2i + R2.2k CANDIDATE 4 PRE-REGISTRATION — written 2026-08-21 BEFORE it was built or measured
+
+⚠️ Written first ON PURPOSE. Candidates 1 and 3 are refuted above, candidate 2 was withdrawn unrun,
+and this block inherits none of their bars — in particular **not the 1220 row count**, which came
+from the census and was the reason candidate 1 read as a catastrophe rather than a partial fix.
+
+**WHY THE TWO STEPS ARE ONE CANDIDATE.** Candidate 1 removed 36% of the over-segmentation and left
+the rest concentrated on the leaves where its slope estimate came out ≈ 0: **407 +31 at s=0.0000 ·
+401 +29 · 405 +24 · 412 +23 · 402 +24**. A leaf the estimator calls flat keeps ALL its excess, so the
+residue is not tilt at all — it is **R2.2k**, the running-median chaining, which over-segments a
+straight leaf as readily as a crooked one. Scoring either alone measures the other's failure. This is
+the H4/J7 cycle between R2.2f and R2.2g, one level up.
+
+**THE CANDIDATE: ALIAS-FREE SLOPE + SEEDED ASSIGNMENT.** Two changes, one per defect:
+
+* **R2.2i — the slope comes from STRIP CROSS-CORRELATION, not a global profile.** Correlate the y
+  profiles of adjacent 1/8-page strips and take the lag maximising each pair, bounded to **half a
+  pitch**; the median of the per-pair slopes is the leaf's tilt. ⚠️ **This estimator CANNOT alias, by
+  construction**: across a strip the baselines shift ~4px against a 19px bound, so the lag is unique,
+  and summing across strips unwraps a total that may exceed a pitch. Candidate 1's sum-of-squares had
+  its global maximum AT the alias and no bound could remove it.
+* **R2.2k — glyphs are assigned to FIXED SEEDS, not chained onto a running median.** Take the
+  residual `y − s·(x − x̄)`, find the baseline peaks in its profile ONCE, and assign each glyph to its
+  nearest seed within `ROW_TOL_P·p`. A glyph reaching no seed starts a singleton, which the existing
+  `len(r) >= 2` filter drops. ⚠️ **Nothing a row accumulates can move the row's own address**, which
+  is the whole of R2.2k: today the median creeps with every append, so a row walks off its baseline.
+
+| | criterion | bar |
+|---|---|---|
+| **S1** | CONTROL — flag OFF | 1242 rows, 22 pairs, four gold numbers **exactly** 0.8760 / 1.0000 / 0.8947 / 0.8375 |
+| **S2** | 🔴 **PRIMARY — the row count matches the PAGE.** Body-block rows vs the strip line count | within **±2 on ≥18 of 20 leaves**, and the 20-leaf total within **±10 of 827** |
+| **S3** | 🔴 **DO NO HARM.** The four leaves already close (413 +3 · 408 +5 · 410 +7 · 414 +7) | each leaf's \|error\| **must not increase**. A mean improvement bought by wrecking the good leaves FAILS |
+| **S4** | split pairs | **0** — kept for continuity only; candidate 1 showed a wrong slope reaches 0, so a pass here is worth nothing alone |
+| **S5** | CONSUMER | J1 **43/43** |
+| **S6** | GOLD does not fall | each of the four **≥** its S1 value |
+| **S7** | ESTIMATOR INDEPENDENCE | `s` **bit-identical** at `ROW_TOL_P` ×0.6 and ×1.6 |
+| **S8** | 🔴 **DECIDING — SYNTHETIC TILT, GROUND TRUTH BY CONSTRUCTION** (see below) | all three clauses |
+
+**S8, in full.** Take the four flattest leaves and rotate their glyph coordinates by a known
+`θ ∈ {±0.010, ±0.020}`, changing nothing else:
+  **(a)** the estimator must recover `θ` to within **±0.003** of the un-injected leaf's own estimate;
+  **(b)** the body-block row count under injection must equal the un-injected count to within **±1**;
+  **(c)** ⚠️ **with the flag OFF the injected leaves must show a LARGE row-count change.** If they do
+  not, the injection is too weak to manufacture the defect, **S8 is VOID and proves nothing** — and
+  that is written down before the run rather than discovered as a convenient null afterwards.
+
+**Adoption requires S1–S8 TOGETHER.**
+
+⚠️ **WHY S8 IS THE DECIDING LINK.** Every other row is scored against the strip line counter, which is
+an instrument I built two days ago and which the whole result now leans on. S8's ground truth is a
+rotation *I applied*, so it is known independently of the counter, of the census, of the gold, and of
+the row list. Four days running, the criterion that decided the verdict was the one that could fail
+for a reason outside the rule under test — E3, G1, M1, and the strip count. This is that link, and
+clause (c) makes the TEST ITSELF falsifiable, which is the check candidate 3's Q7(b) lacked when it
+compared a mechanism to itself and "passed" meaninglessly.
+
+⚠️ **NAMED RISKS.** (1) Seed-finding can UNDER-segment, merging two genuinely adjacent lines into one
+seed — S2's per-leaf ±2 and S3 are where that shows, which is why S2 is per-leaf and not a total.
+(2) A leaf carrying marginal notes has TWO baseline grids at different pitches and one seed set is
+wrong for both; if S2 passes on the note-free leaves and fails on 407/417/419, the deliverable is a
+per-BLOCK seed set and a single leaf-wide model is refuted as the object. (3) The strip estimator was
+measured once, on 20 leaves, agreeing with the census sign on 6 of 8 — it is **not** established, and
+S8(a) is what would expose it.
+
+##### 🔴 R2.2i + R2.2k CANDIDATE 4 RESULT 2026-08-21 — S1–S4, S7, S8 PASS. **S6 FAILS. NOT ADOPTED.**
+
+Logs `.scratch/r2/{cand4c,cand4-s8b}.log`. `BASELINE_MODEL` stays **False**. This is by a wide margin
+the best the chain has produced and it is still refused, on the criterion that protects the gold.
+
+| | criterion | bar | result | |
+|---|---|---|---|---|
+| **S1** | CONTROL, flag OFF | 1242 rows, 22 pairs | 1242 / 22 | ✅ |
+| **S2** | body rows vs strip count | ±2 on ≥18/20; total ±10 | **20/20**, total **793 vs 790 = +3** | ✅ |
+| **S3** | do no harm to the flat leaves | no \|error\| increase | none | ✅ |
+| **S4** | split pairs | 0 | **0** | ✅ |
+| **S5** | J1 | 43/43 | **not measured — S6 refutes first** | — |
+| **S6** | four gold numbers do not fall | each ≥ its S1 value | **RH 1.0000→0.9231, MN 0.8947→0.8235** | 🔴 |
+| **S7** | estimator independence | bit-identical at ×0.6/×1.6 | **20/20** | ✅ |
+| **S8** | synthetic tilt | (a) ±0.003 (b) ±1 row (c) potent | **16/16 · 16/16 · 10/16 potent** | ✅ |
+
+**1. THE STEP'S OWN NUMBER IS NOW ESSENTIALLY EXACT.** Body-block rows land within ±2 of the strip
+line count on **all twenty leaves**, thirteen of them exactly, against candidate 1's **3 of 20** and a
+total error of +246. The two mechanisms are doing what the register asked: **407, which candidate 1
+left at +31 with a slope of 0.0000, is now +2** — that residue was never tilt, it was the chaining,
+and only the seeded assignment reaches it. **R2.2i and R2.2k are confirmed inseparable and jointly
+sufficient for the row count.**
+
+**2. 🔴 THE BAR ITSELF WAS WRONG AGAIN, AND THE RULE AGAINST IT IS IN THIS MODULE.** S2 first read
+792 against 827 — a flat **−35**, near −2 on every leaf. A constant offset is a definitional
+mismatch, not a clustering failure. Diagnosed: the strip counter took every profile run, including
+**two per leaf that start at y=0 and end at y=H** — the page-edge shadow. `collation_read.text_runs`
+already states the rule (*"a run that reaches the band's BOTTOM EDGE is the leaf edge / gutter
+shadow, not type"*) and my counter reimplemented run-detection without reading it. ⚠️ **The 827 bar
+that refuted candidate 1 was inflated by ~39.** Corrected to **790**, and the rule reads the ink
+profile alone, so it is not a bar tuned to a candidate.
+
+**3. 🔴 S8(a) FAILED FIRST, AND THE FAULT WAS MY BAR AGAINST MY OWN INSTRUMENT'S RESOLUTION.** Leaf
+414 missed by 0.0037 and 0.0051 against ±0.003. The correlation peak was taken at an **integer pixel
+lag** over strip centroids ~150px apart, so the estimator's slope quantum is **1/150 = 0.0067**, more
+than twice the tolerance. I demanded sub-quantum accuracy from an instrument that cannot express it,
+without ever computing its resolution. **Fixed the INSTRUMENT, not the bar**: a parabola through the
+peak and its neighbours gives the fractional lag, and recovery errors fell to **≤0.0004**, 16/16.
+
+**4. 🔴 S6 FAILS, AND THE FIRST VERSION OF THE FAILURE WAS A GOODHART I ALMOST BANKED.** The first
+S6 run posted **acc 0.8760→0.9000 and MT 0.8375→0.9178, both UP**, while scored pairs fell **121→90
+with 27 orphans**. Three of four numbers improved by discarding a quarter of the gold — the exact
+pattern `score_head_regions`' own header records ("the broken splitter posts the HIGHEST accuracy,
+0.9479, by orphaning 25"). ⚠️ **S6 as pre-registered checks four RATES and never checks the
+DENOMINATOR**, so it could have been passed by a candidate that orphaned its way there. Any successor
+must bar on `pairs` as well.
+
+**5. WHY IT ORPHANED, AND WHAT IS LEFT.** Orphans by label at first: **RH 13/20 · MN 9/19 · CH 2/2 ·
+MT 3/80** — every SHORT line, the body untouched. Cause: seeds were kept above `0.25 × profile
+maximum`, and the maximum is set by the densest full body line, so a running head never reaches a
+quarter of it. ⚠️ **S2 scored a perfect 20/20 while this was happening, because S2 counts BODY-BLOCK
+rows — the long lines that survive.** A criterion scoped to the body cannot see a defect that only
+destroys heads and notes. Replaced with **prominence-based peak detection** (a short line is low but
+stands clear of its neighbourhood), floor tied to this module's own "a row needs ≥2 glyphs" rule.
+Orphans **27 → 10** and pairs **90 → 109**, both chapter heads recovered. **Remaining: RH 6 · MN 2 ·
+MT 2, on leaves 418(3), 406(2), 404/407/408/409/416.** Still short lines. ⚠️ **Tuning the seed finder
+further against the gold would be fitting to the score and was stopped here deliberately.**
+
+**NEXT.** The row count is solved; the short-line seeds are not. A successor should seed **per block**
+rather than leaf-wide — the head, the body and the note column are three grids — and must be scored
+against an S6 that bars on `pairs` as well as on the four rates.
+
+##### R2.2b PRE-REGISTRATION — written 2026-08-18 BEFORE the anchor was built or measured
+
+⚠️ **This block is written first ON PURPOSE and is not edited afterwards.** R2.2b is the step that makes
+a second band change legitimate; a criterion written after seeing the anchor's numbers would make it a
+re-cut of the same knob wearing a new name. What the run produced is recorded in the section BELOW this
+one, and any criterion this block got wrong is reported as wrong rather than amended.
+
+**THE MECHANISM, stated before it is tested.** The band is taken from **the rows of type themselves**:
+detect connected components over the **WHOLE PAGE** — no top fraction, no search window, no page
+fraction anywhere in the derivation — cluster them onto baselines with the existing `_rows_and_lines`,
+and cut the band from **the first `N` rows of type on the page**, padded by a fraction of the measured
+line pitch. The bound therefore MOVES with the type on each leaf, which is the entire content of
+"anchored". ⚠️ **`N` is stated in the vocabulary of the BOOK, not of the error** (Sir's anti-circularity
+ruling): the head of a page in this edition carries at most a running head, a chapter head (`CHAP.` /
+`XXVII.`) and its flanking side-notes before the first line of scripture — **three** non-body rows by
+the edition's own design. **`N = 6` doubles that**, and is fixed here before any leaf is measured.
+Choosing `N` by looking at where the first body line happened to fall would be fitting the band to the
+window it is scored on.
+
+**PRE-REGISTERED ACCEPTANCE.** Adoption requires A1–A4 together; any one failing means the anchored
+band is NOT adopted and `HEAD_BAND` stays frozen, with the failure reported as the finding.
+
+| | criterion | bar |
+|---|---|---|
+| **A1** | R2.2b's own: the band **contains the first body line**, per leaf, against the hand-labelled set — directly, never through continuity | **20/20**. A containment property, not a rate: one leaf short means a leaf whose scripture the reader cannot see at all |
+| **A2** | R2.2c's C3, inherited: the band **contains every labelled gold entry** | **121/121**, and **RunningHead 20/20** — the number that is 0/20 today |
+| **A3** | the anchor is **genuinely anchored**: no page fraction in its derivation, and the resulting bounds **differ across leaves** | bounds constant across leaves ⇒ FAIL. A "measured" anchor that lands in the same place every time is a fraction with extra steps |
+| **A4** | the reader is **not made worse**: `read_first_words_typed` abstains no more often on the anchored band than on the frozen one | abstentions **≤** the frozen band's, both reported |
+
+⚠️ **EXPLICIT NON-CRITERION: the continuity rate is NOT the acceptance and may not be quoted as one.**
+R2.1f fired precisely because 0.312 is a joint measure of two readers and a scorer. Any continuity
+number produced while testing this band is a **diagnostic**, labelled as such at every point it prints.
+**A band that raises the continuity rate while failing A1–A4 is refused**, and a band that passes A1–A4
+while the rate falls is still adopted — the rate is not what this step is about.
+
+⚠️ **A2 IS THE HARDER BAR AND IS EXPECTED TO BE THE ONE THAT BINDS.** The gold labels three rows of the
+0..0.35h crop; a band of the first 6 rows of type must contain them all. If A2 fails while A1 passes,
+that is informative and is reported as such: it would mean the band can serve the READER without
+serving the SCORER, which is the split R2.2c exists to close and would leave R2.2c open.
+
+##### 🔴 R2.2b RESULT 2026-08-18 — the anchor is NOT ADOPTED, and the mechanism is REFUTED BY THE BOOK
+
+**`witness/score_band_anchor.py` · `CR.anchored_head_band` · `witness/gold/first_body_line_OT1-1609-B_400-419.json`**
+
+| | | |
+|---|---|---|
+| **A3** ANCHORED | ✅ **PASS** | 20 distinct bounds over 20 leaves; top spread **0.0253h**, bottom spread **0.0582h**, against a frozen bound identical on every leaf |
+| **A2** GOLD CONTAINMENT | ✅ **PASS** | **121/121** — RH **20/20**, MN 19/19, MT 80/80, CH 2/2. Against the frozen band's **70/121** with RH **0/20** |
+| **A1** FIRST BODY LINE | 🔴 **FAIL** | **18/20**. Misses leaf 403 (body line 0.1654h..0.1917h vs band 0.0354h..0.1360h) and leaf 411 (0.2432h..0.2691h vs 0.0291h..0.1565h) |
+| **A4** READER | not run | moot while A1 fails; adoption needs A1–A4 together and three of four is not a pass |
+
+🔴 **THE PRE-REGISTRATION'S JUSTIFICATION FOR `N` WAS WRONG ABOUT THE BOOK, and the book is what
+refuted it.** It read: *"the head of a page carries at most a running head, a chapter head and its
+flanking side-notes before the first line of scripture — three non-body rows by the edition's own
+design."* **False.** This edition sets a multi-line **italic ARGUMENT** between the chapter head and
+the first verse — **4 detected rows on leaf 403, 11 on leaf 411**. ✅ **This is Sir's anti-circularity
+ruling paying for itself**: because `N` was justified in the vocabulary of the BOOK, the book was
+able to contradict it. An `N` sized from where the first body line happened to fall would have fitted
+the window and nothing could have refused it.
+
+🟢 **THE FAILURE DECOMPOSES THE STEP, WHICH IS WORTH MORE THAN A PASS WOULD HAVE BEEN.**
+* **The TOP is solved and measured.** Anchoring lifts gold containment from **70/121 to 121/121** and
+  RunningHead from **0/20 to 20/20**. ⇒ **An anchored top CLOSES R2.2c's C3**, demonstrated rather
+  than argued.
+* **The BOTTOM cannot come from a ROW COUNT.** The number of non-scripture rows before the first
+  verse is a property of the PAGE'S STRUCTURE — 0 on a continuation leaf, **11** on a chapter opening
+  — not a constant of the edition. ⚠️ And the frozen band, for all its faults, **contains the first
+  body line on BOTH leaves the anchored band misses**, because 0.30h reaches further down the sheet.
+  A band change that fixed the head and truncated the foot would have been a regression sold as a fix.
+* ⚠️ **A ROW IS NOT A LINE AT WHOLE-PAGE SCALE.** Measured: **39 of 140 consecutive row-pairs overlap
+  by more than half a row-height** — `_rows_and_lines` fragments single lines because across the full
+  page width a curved leaf's baseline drifts more than its `0.30 × pitch` clustering tolerance (leaf
+  409's `'egat Galaad, of whom'` is the right-hand half of the line above it). So `N = 6` rows can be
+  **3–4 real lines**. Any later rule counting rows over a whole page inherits this.
+
+🔴 **NINTH INSTANCE OF THE SIGNATURE DEFECT, AND IT IS THE REAL FINDING: THERE IS NO REGION TYPE FOR
+THE ARGUMENT.** Raised as **R2.2d**. `region_head` labels leaf 411's argument rows **3–7 MainText**
+and leaf 403's rows **6–7 MainText**, because the argument is justified to the full measure and R3's
+body-row test passes on it. ⇒ **On a chapter-opening leaf the head reader returns the ARGUMENT's
+opening words as the leaf's first line of scripture.** ⚠️ **The region gold cannot see this: on
+exactly those leaves it labels no MainText at all** — leaf 403 carries 2 entries and leaf 411 carries
+4, because the labeller had no admissible label for an argument line. **The gold's sparseness on
+those two leaves is a FOSSIL of the missing category**, and the blind spot sits on the same leaves as
+the defect. It also gives the 0.312 continuity rate another named cause: on a chapter opening the
+head reader compares the catchword against an ARGUMENT line, which cannot agree.
+
+**NEW TRACKED EVIDENCE.** `witness/gold/first_body_line_OT1-1609-B_400-419.json` — the first line of
+scripture per leaf, in page fractions, 20 leaves. 18 entries come from the region gold's first
+MainText row; **2 were adjudicated from the RENDERED leaf together with a whole-row recogniser read**,
+a different instrument from the classifier under test. ⚠️ **No entry is derived from the band being
+tested** — identifying the first body line by asking where a candidate band puts it would make A1 the
+band grading its own homework. Its `_doc` records the limitation that the 18 inherit the region
+gold's window and must be re-checked on any leaf carrying a `CHAP.` head.
+
+⚠️ **`HEAD_BAND` IS UNCHANGED AND R2.1f's SINGLE RE-CUT IS STILL UNSPENT-ON-THIS.** The anchored band
+lives beside it, default OFF, until it passes. A1 is not lowered to 18/20 to let it in.
+
+⚠️ **The constraint that must survive into every later instrument: the comparison width comes from the
+FOOT side, never the head side.** Let the head reader choose how much of itself to be scored on and it will
+pick the crop that flatters it. `k` is `len(norm_words(catchword))` for exactly this reason. **The same
+trap reappears one level up in the geometry model** — a boxer evaluated on the boxes it proposed always
+looks excellent — which is why Gate 9 measures against GOLD-LAYOUT **with the recogniser frozen**.
 
 #### What the re-cut fixed, and what it proved
 
@@ -284,13 +2292,19 @@ and are plainly right: `face` · `ſtoode` · `Returne` · `God` · `familie` ·
    reads `'ode'` for a line opening `ſtoode` (left-edge truncation). `415→416` and `416→417` take
    the wrong line entirely. The `0.06–0.30` band plus "first full-measure line" is not an
    instrument for finding the first line; it is a guess that usually lands near it.
-2. 🔴 **The comparison unit is wrong: a catchword can be MORE THAN ONE WORD.** `414→415` reads
-   catchword `'of flowre'` against first word `'of'` — **a true agreement scored as a
-   disagreement**, because the metric compares a catchword against one word. This is a defect in
-   the measure, not in the reader, and it depresses the rate by an unknown amount.
-3. 🟡 Genuine recogniser error, the smallest share: `'wl'` for *whom*, `'mi'` for *ni*.
+2. 🟢 **FIXED 2026-08-15, and the fix moved nothing — see the third run above.** *The comparison
+   unit is wrong: a catchword can be MORE THAN ONE WORD.* `414→415` read catchword `'of flowre'`
+   against first word `'of'` — a true agreement scored as a disagreement. ⚠️ The prediction
+   attached to this entry — *"it depresses the rate by an unknown amount"* — was **wrong in
+   magnitude**: the amount was **one pair**, and that pair fails on a genuine recogniser error
+   once corrected. Left standing as written, because a defect that was real and yet not
+   load-bearing is exactly the kind of thing this file exists to record honestly.
+3. 🔴 **NEW, and the opposite defect: the head reader OVER-matches.** Three of the five AGREEs are
+   whole-line blobs accepted by the `≥4-char` prefix rule (see above). This entry did not exist
+   when the residual was called "three defects"; it is why the residual is not a floor.
+4. 🟡 Genuine recogniser error, the smallest share: `'wl'` for *whom*, `'mi'` for *ni*.
 
-#### What redesign should address (for Sir's decision — not actioned)
+#### What redesign should address — ✅ **DECIDED 2026-08-17, option (1); see R2.1g above**
 
 **The head-side reader needs to be a different instrument, not a re-tuned one.** The foot band
 works because a direction line is *sparse type in white space*; the head band is *dense justified
@@ -316,15 +2330,17 @@ the part that works.
 | # | step | deliverable | acceptance |
 |---|---|---|---|
 | R2.1a | **Parity, measured** | for a stratified sample of `OT1-1609-B`, the leaf-index parity that carries signatures, established from **where tokens land** (signature centre-left ~x 0.48–0.55, catchword right ~x 0.75–0.87) | parity is **reported with its evidence**, never assumed from index parity; if both parities carry signatures the sample is widened, not the claim narrowed |
-| R2.1b | 🔴 **NOT DONE — and stated rather than quietly folded into R2.1c.** Sir's order was b→c→d′; I ran c and d′ first because d′ is the acceptance metric, then R2.1f fired on it. R2.1b's purpose was to justify R2.1c's confidence floor from a measured CER curve, and the observed failure is **not** confidence-floor-related — it is the head-side instrument — so running it first would not have changed the outcome. It remains OPEN and its 1h sub-ceiling is unspent. ⚠️ It should be run **after** the redesign decision, not before: scoring three models against a head reader that is about to be replaced would measure the wrong thing. **Recogniser selection, measured** | the probes run `models/reichenau_dr.mlmodel`; `models/dr_v3_armA.mlmodel` and `dr_v3_armB` exist and are later. Score all three on ONE fixed token set with hand-keyed truth | the model is chosen **on measured CER over direction-line tokens**, not on impression; the losing models and their scores are recorded (§0.2 rule 1's discipline, applied to a component) |
+| R2.1b | 🔴 **NOT DONE — and stated rather than quietly folded into R2.1c.** Sir's order was b→c→d′; I ran c and d′ first because d′ is the acceptance metric, then R2.1f fired on it. R2.1b's purpose was to justify R2.1c's confidence floor from a measured CER curve, and the observed failure is **not** confidence-floor-related — it is the head-side instrument — so running it first would not have changed the outcome. It remains OPEN (**C1 — mechanical**: the models exist, the method is standard; only the fixed token set has to be keyed). ⚠️ It should be run **after** the redesign decision, not before: scoring models against a head reader that is about to be replaced would measure the wrong thing. **Recogniser selection, measured** | 🔴 **The inventory is wider than this row said, verified on disk 2026-08-17**: `reichenau_dr/best_0.9396` (the one every document cites) · `dr_v3_armA/best_0.9739` · `dr_v3_armB/best_0.9694` · `dr_armA/best_0.9349` · `reichenau_dr_ho/best_0.9230`. Score **all five** on ONE fixed token set with hand-keyed truth | the model is chosen **on measured CER over direction-line tokens**, not on impression; the losing models and their scores are recorded (§0.2 rule 1's discipline, applied to a component). ⚠️ **`0.9739 > 0.9396` IS NOT A FINDING AND MUST NOT BE QUOTED AS ONE.** These are per-arm validation accuracies whose splits have **not** been shown to be the same; a number that is higher on a different held-out set is not a better model. **Comparability is UNKNOWN, and establishing it is precisely what this step is for** — which is also why the cited headline figure for this project's recogniser (0.9396) may be neither the best nor the right one to cite |
 | R2.1c | **`witness/collation_read.py`** | the probe promoted to a module: `read_direction_line(witness, leaf) -> {signature, catchword, x_positions, confidence, abstain_reason}`; **separate** signature and catchword fields | abstains with a **stated reason** and never guesses; a confidence floor is applied and its value is justified by R2.1b's CER curve, not chosen |
 | R2.1d′ | **The R2.1 metric run — RESTATED, see R2.1-CRIT** | **two** measurements, because the old one was unsatisfiable: **(A) catchword continuity** — `catchword(leaf N)` vs the first word of `leaf N+1`, over a consecutive run; **(B) signature-sequence monotonicity** — parsed signatures must ascend in signature order (`Y · Y2 · Y3 · Z · Aa …`) with no descent | **(A) ≥95% agreement on leaf pairs where both leaves yield a reading**, Wilson CI, lower bound above the bar — not the point estimate; **(B) zero descents** unexplained by the collation. A descent is a defect report entry (R2.4), never a discarded reading. Failures listed by leaf |
 | R2.1e | **Pair completeness** | signature and catchword scored **independently**, never "≥1 token read = success" | leaf 851's failure mode (catchword read, signature missed) is visible in the score by construction |
 | R2.1f | **Apply the pre-registered rule** | either proceed to R2.3, or fire the escalation | ≥95% (CI lower bound) ⇒ R2.3. Below ⇒ **band re-cut ONCE**, then **ALERT that the approach needs redesign**. Confident-wrong at any rate ⇒ **FAIL regardless of the parsed rate**, because the collation cannot detect the difference |
 
-**Hours: ~3.5h of 12h consumed (R2.0 + R2.1a). Remaining ceiling 8.5h.** Sub-ceilings: R2.1b 1h ·
-R2.1c 2h · R2.1d′ 2h. **If R2.1d′ cannot be run inside the remaining ceiling, R2.1f fires — the ceiling
-is not extended.**
+**Complexity per sub-step** (restated 2026-08-17 from sub-ceilings in hours): **R2.1b C1** — the models and
+the method exist, only the fixed token set must be keyed · **R2.1c C2** — assembly of measured parts ·
+**R2.1d′ C3** — a new measurement, and it required a negative control to be trusted · **R2.1g C3** — a new
+instrument, and the one now being built. **R2.1f fires on candidate exhaustion, not on elapsed effort**,
+and the candidate table in the section head is where that is tracked.
 
 ### 🔴 R2.1-CRIT — R2.1's acceptance criterion was UNSATISFIABLE BY CONSTRUCTION (found 2026-08-11)
 
@@ -433,8 +2449,8 @@ was run, and it earned itself immediately.
 | catchword continuity, by IMAGE (R2.1d″) | 🔴 **NO SEPARATION FROM CONTROL** — matches +0.264 vs controls +0.247 |
 | **signature-sequence monotonicity (R2.1d′B)** | 🟢 **STANDS — the only surviving candidate.** Reads only signatures (the tiny regular target R2 is scoped to), needs no gold set, and the observed run `Y · Y · y · a · A · Bbb · Bb b` over leaves 401–427 is already consistent with it |
 
-⚠️ **R2's pre-registered rule is now live and must be honoured.** ~4h of the 12h ceiling is spent and no
-metric has cleared. The rule permits **one band re-cut**, then **ALERT for approach redesign** — and it
+⚠️ **R2's pre-registered rule is now live and must be honoured.** Three metric candidates are refuted and
+none has cleared. The rule permits **one band re-cut**, then **ALERT for approach redesign** — and it
 names the fallback *method* explicitly: **hand-reading a stratified sample to establish the collation.**
 That fallback is a change of method, not a lowered bar, and on this evidence it is now the likely route
 for the *catchword* half. **No metric may be adopted without a negative control**, on the strength of
@@ -450,6 +2466,83 @@ signatures as a **sparse, periodic** index (present on the first half of each ga
 treat an unsigned recto as a defect. R2.4's "no leaf unaccounted" is unaffected — every leaf still fits
 the collation or appears in the defect report — but the evidence reaching it is now catchword continuity
 at every boundary plus signatures at gathering starts.
+
+### 🔴 R2.2 IS THE PIVOT, AND R2/R3 ARE RECIPROCALLY GATING (found 2026-08-17)
+
+**This file has sequenced R2 before R3 since it was written. That ordering is not wrong so much as
+incomplete, and the incompleteness is why both have stalled.**
+
+**The argument, in three steps.**
+
+1. **Every R2.1 failure is head-side, and the head side is a region-typing problem.** `411→412` compares
+   catchword `Cades` against `'Temporal'` — and `'Temporal'` is a **running head**. That is not an OCR
+   error; it is a **region misassignment**, and `RunningHead` is one of Gate 9's own classes.
+2. **R3.1's addressing key is `(volume, printed page, signature, side)` — and it has two independent
+   readable components, not one.** The **signature** component needs R2.1, which is stalled. The
+   **printed page number** component needs **R2.2**, which is *unstarted* — and R2.2 is a reader of the
+   **head band**: the same instrument R2.1's head side needs and R2.1g is now building.
+3. **Therefore one build discharges three obligations.** The head-band RunningHead/MainText separator
+   yields (a) R2.1's head side, (b) R2.2's page-number reader, and (c) **a signature-independent component
+   of R3.1's key** — which means R3 can begin without waiting on the collation that is stalled.
+
+🟢 **So R2 and R3 INTERLEAVE. Stated precisely, because "interleave" is otherwise an excuse:**
+
+| R3 step | needs | can start on R2.2a alone? |
+|---|---|---|
+| R3.1 leaf key | the key's *definition*; page number readable per leaf | 🟢 **YES** — the key may be defined on `(volume, printed page, side)` with signature as an **optional** component. ⚠️ It must be recorded that the signature slot is optional-by-evidence (~44% of rectos), not optional-by-convenience |
+| R3.2 correspondence table | page numbers readable across witnesses of one volume | 🟢 **YES for the volumes where the head band reads.** Coverage is reported per witness and abstentions are named (R1.4) |
+| R3.3 absence register | R3.2, plus a cause per absence | 🟡 **PARTLY** — absences are detectable from R3.2; *classing* them (not in copy · not scanned · dropped in derivation) needs R2.3's collation for the first class |
+| R3.4 verification by image | R3.2 sample + the §1.4 correlation method | 🟢 **YES** — and note it is the one R3 step whose method is already proven at page-block scale (+0.424/+0.398 vs 0.000–0.036) rather than at catchword scale, where R2.1d″ refuted it |
+| **full Gate 0c closure** | R3.2 **and** R2.3/R2.4 | 🔴 **NO.** A correspondence table over leaves whose collation is unestablished maps leaves that may be duplicates or made-up supplies |
+
+⚠️ **What this does NOT license.** Gate 0c does not close early, and no transcription is unblocked by R3.2
+alone — §2's rule is 0b **and** 0c. The reordering buys **evidence**, not permission: cross-witness
+correspondence is itself one of R2.5's collation signals, so R3.2 feeds back into the section that gates it.
+**That is the reciprocity, and it is why strict sequencing was the wrong shape.**
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.2a | **The head-band region primitive** — extracted from R2.1g rather than duplicated | one module answering *where does the running head end and the text block begin, on this leaf* — consumed by R2.1g, R2.2, R12.2 and, later, the Gate 9 region model | scored **directly** on RunningHead/MainText assignment against hand-checked leaves, and **separately** from any downstream continuity or page-number rate. ⚠️ A primitive measured only through its consumers cannot be debugged when a consumer moves. **C3** |
+
+### R2.5 — Multi-signal collation (NEW 2026-08-17)
+
+🔴 **THE DEEPER DIAGNOSIS OF R2.1f: R2 REST ON ONE SIGNAL, AND ONE SIGNAL CANNOT CARRY A COLLATION.**
+R2.1-CRIT already retired signatures as the primary signal because they print on only ~44% of rectos, and
+replaced them with catchword continuity — **a second single signal**, which then failed. The pattern is the
+error, not either signal: **a collation is a redundancy problem, and this section has been treating it as a
+recognition problem.**
+
+**Ten signals, with differing coverage and — the point — differing failure modes:**
+
+| # | signal | grain / coverage | fails when |
+|---|---|---|---|
+| a | catchword → first word of next leaf | ~every leaf boundary | the head band mis-types a region; multi-word catchwords; recogniser error |
+| b | signature | ~44% of rectos, first half of each gathering | absent by design on most leaves — **abstention, not failure** |
+| c | **printed page number, monotone** | ~every leaf that prints one | a leaf's head is damaged or the number is unset; **most universal signal available** |
+| d | verse-number continuity across the boundary | leaves carrying scripture | prelims, tables, annotation leaves carry none |
+| e | expected-next chapter / book, canonical order | every book and chapter boundary | says nothing *within* a chapter |
+| f | running-head continuity — a change must coincide with a book boundary | ~every leaf with a running head | recto/verso running heads may differ by design; must be modelled per witness |
+| g | cross-witness correspondence (R3.2) | leaves present in ≥2 witnesses | NT is depth-1 for glyph work — this signal is **thin exactly where the corpus is thinnest** |
+| h | **physical evidence — blank-margin foxing correlation** | any leaf pair worth the crop | needs blank paper in the crop; ⚠️ proven at **+0.769/+0.694 vs +0.045/+0.044 controls** (§1.4) at *page-block* scale, and **refuted at catchword scale** (R2.1d″) — coverage is a property of the AREA matched |
+| i | gathering arithmetic / conjugate leaves | structural, whole-gathering | needs the gathering size, which R2.3 derives — partly circular, so it **confirms** rather than **establishes** |
+| j | alignment to the archaic reference text | books with a reference | **null on the 8,383 loci with no reference** — the same blind spot §3.2 names for the residue signal |
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.5 | **Collation by agreement across independent signals** | per leaf boundary, each applicable signal reports **AGREE · DISAGREE · ABSTAIN with a stated reason**, into one table keyed by leaf boundary; signals are **never** collapsed into a single score before disagreements are read | every boundary is confirmed by **≥k independent signals**, k pre-registered per witness before the run; **every disagreement is named and enters the R2.4 defect report** — never averaged away. A boundary that no signal reaches is an **abstention that blocks**, not a pass. **C3** |
+| R2.5a | **Signal independence, demonstrated not assumed** | for each pair of signals, the failure modes that would take them down together — shared recogniser, shared band geometry, shared reference text | ⚠️ **k independent signals is a lie if they share an instrument.** (a), (c), (d) and (f) all read through the head or foot band and would fall together on a band defect; (j) and (e) share the reference. Independence is **stated per pair with its coupling named**, or the count k is not what it appears |
+
+⚠️ **THIS IS NOT A RELAXATION OF THE 0.95 BAR, AND THE DISTINCTION IS THE WHOLE POINT.** The bar stays
+exactly where it is. What is corrected is the **assumption that one instrument would carry the whole
+collation** — an assumption this file made twice, first with signatures and then with catchwords. R2.4 has
+required *"every leaf either fits the collation or appears in the defect report — no leaf unaccounted"*
+since it was written, and **that is already a multi-signal acceptance**; R2.5 supplies the signals it was
+always going to need.
+
+⚠️ **ABSTENTION AND FAILURE ARE DIFFERENT, AND CONFLATING THEM IS THE ORIGINAL R2 DEFECT.** A leaf that
+prints no signature is not a leaf where the signature reader failed — that confusion is exactly what made
+R2.1's first criterion unsatisfiable (R2.1-CRIT), and it is the same shape as R1.4's assumed null. Every
+signal in R2.5 reports abstention **with a cause**, and an abstention never counts toward k.
 
 ⚠️ **R2.1a–f do not require the direction-line reader to be perfect.** R2.3's collation model is where
 the **redundancy** lives: signatures run in a known sequence at a known gathering size, so a leaf the
@@ -470,11 +2563,105 @@ critical path once the metric clears.
 | R3.2 | Correspondence table | every admitted leaf → its leaf index in each witness of that volume | 100% of admitted leaves addressable in every witness that has them |
 | R3.3 | Absence register | leaves present in one witness and absent in another, with cause | each absence classed: not in copy · not scanned · dropped in derivation |
 | R3.4 | Verification by image | sampled correspondences confirmed by correlation | sampled pairs correlate far above the unrelated-page baseline |
+| R3.6 | **`F` against `B` and `P`, leaf by leaf, for OT1 and OT2 — and a named-leaf supply where `F` alone holds a leaf** (NEW 2026-08-17, Sir's instruction) | a whole-volume alignment classing every leaf **present in all three · `F` only · `B`/`P` only · absent everywhere**, with each absence carrying one of R3.3's three causes | no leaf classed by arithmetic; every `F`-only leaf either promoted to a named supply or shown to be a capture artefact. **See the prose below before executing — OT1 is already largely answered, and the answer is negative** |
+| R3.7 | **The 1633 NT witnesses' frontmatter and backmatter, transcribed as addenda** (NEW 2026-08-17, Sir's instruction) | `F` and `R`'s prelims and endmatter OCR'd and published as **1633 addenda to the 1582 transcript**, never merged into it | every addendum leaf carries its witness siglum and the year **1633** in the artefact itself, not only in a header; no addendum is addressable as 1582 text by any route |
+
+🔴 **R3 IS NO LONGER STRICTLY DOWNSTREAM OF R2 — see "R2.2 is the pivot" above (2026-08-17).** R3.1's key
+has a **signature** component (needs R2.1, stalled) and a **printed page number** component (needs R2.2, a
+head-band reader). R3.1, R3.2 and R3.4 can start on R2.2a alone; R3.3 partly; **full Gate 0c closure still
+requires R2.3/R2.4**, because a correspondence table over uncollated leaves maps leaves that may be
+duplicates or made-up supplies. The per-step breakdown is tabulated in R2, not repeated here.
 
 **Why this cannot be skipped or deferred.** §1.4 established that leaf indices do **not** correspond between
-files of the same volume — the NT witnesses differ by up to 47 leaves before any text is compared. Until
-R3.2 exists, "the same page in another witness" is not a well-formed request, and no collation of readings
-is possible.
+files of the same volume. Until R3.2 exists, "the same page in another witness" is not a well-formed
+request, and no collation of readings is possible.
+
+⚠️ **The "47 leaves" figure that stood in this paragraph is withdrawn (2026-08-17).** Master Plan §1.2
+retired it in terms: *"the plan's early 'the NT witnesses differ by up to 47 leaves' was a statement about
+scanning practice, not about textual completeness."* A library capture opens on binding boards, bookplate
+and colour targets; a privately made scan opens on the title page. Quoting the raw spread here made a
+photographic convention argue for a textual defect — **the precise reasoning error R3.6 below exists to
+prevent**, left standing in the section that raises it. The point the paragraph was making survives intact
+without it: indices do not correspond, whatever the totals.
+
+### R3.6 — `F` against `B` and `P`, and what the existing evidence already says
+
+**Complexity: C2 — assembly.** The alignment machinery is R3.2's; what this step adds is a second axis
+(three witnesses rather than two) and a disposition per unmatched leaf. **Decision rule, pre-registered:**
+if a leaf cannot be classed into one of R3.3's three causes on the leaves themselves, it is recorded
+**UNRESOLVED and named**, never assigned to the likeliest cause — an unattributed leaf is a smaller defect
+than a misattributed one, because only the first stays visible.
+
+🔴 **Read this before executing: for OT1 the audit has effectively already been run, and it came back
+negative.** Master Plan §1.2 carries a leaf-by-leaf table under the heading *"`F` and `P` are the same book,
+leaf for leaf"*. Both close on the same words at the same printed page, and the **book blocks are equal at
+1132 against 1132**. The entire 11-leaf total difference is 5 leaves of library apparatus at the front
+(binding boards, the Lenox bookplate, flyleaves), 6 of binding and imaging targets at the back, less one
+duplicate title page and one fewer terminal blank in `F` — and, in the section's own words, **"not one leaf
+of text."** The single `F`-only leaf in that table is a **duplicate title page**, explicitly *"a re-processed
+second capture of the same leaf"*: a capture artefact, not content `P` lacks.
+
+**So the OT1 expectation that `F` supplies something is contradicted by evidence already in hand, and this
+step must not be run as though the question were open there.** What remains genuinely open for OT1 is
+narrower and should be stated as the deliverable it is: **`B` has never been aligned against either of them
+leaf by leaf.** §1.2 describes `B`'s 1160 only in aggregate — *"12 leaves of leading apparatus, 2 trailing,
+and 10 interior binding/target leaves"* — which is a count-level attribution, not an alignment. That is the
+OT1 work.
+
+**OT2 is the volume where the question is live, and it already has a step.** §1.2's OT2 table is count-level
+throughout, and it puts `F` at or below the others in every category: leading apparatus **0** against `P`'s 2
+and `B`'s 11; trailing **0** against 9 and 2; book block **1128** against **1135** and **1137**. There is no
+category in which `F` exceeds. The residual block spread is attributed to **endmatter tables, which the three
+copies carry to different extents** — and attributing that spread leaf by leaf is **already R3.5b**, which is
+OPEN. ⚠️ **R3.6 does not duplicate R3.5b and must not restate its work**: R3.5b attributes the OT2 endmatter
+spread; R3.6 consumes R3.5b's output and asks the separate question of whether any leaf it attributes falls
+to `F` alone. If R3.5b closes with no `F`-only leaf, R3.6's OT2 half closes with it.
+
+**The supply mechanism is the registry's existing one, not a new one.** Where a leaf is confirmed present in
+`F` and absent from both `B` and `P`, `F` supplies it under the semantics `support` already defines — *"a
+reading where the base has NO leaf at all, flagged as supplied with its source named."* Per named leaf,
+recorded with its source, and the supplied leaf is a witness **to the copy it came from**, not to the copy it
+is filed beside.
+
+⚠️ **A supply permission does not lift a single existing bar, and the distinction decides what a supplied
+leaf is worth.** `F` is in `GLYPH_BARRED` on resolution (~168 ppi; the long-ſ nub spans under 1.6 px) and is
+PDF-primary, so its JP2 package is an IA render and `pixel_source()` refuses it. A supplied `F` leaf is
+therefore admissible for **structure, page order, presence, and the wording of the leaf at the grain the
+raster can carry** — and it may **not** ground a glyph-level call, a `ſ`/`f` adjudication, a training crop,
+or CER evaluation. In practice a supplied leaf is a leaf we can say **exists and roughly what it says**,
+which for endmatter tables is most of their value and for scripture would not be.
+
+⚠️ **`F` is a PDF-primary IA render, so "dropped in derivation" is a live third cause for it specifically**
+and may not collapse into "not in the copy". A leaf absent from `F` may be absent from the Fatima book, absent
+from the photography, or lost when IA rendered the upload. R3.3's three causes exist for this, and `F` is the
+witness most likely to exercise the third.
+
+### R3.7 — the 1633 New Testament matter, as addenda
+
+**Complexity: C2 — assembly.** Ordinary OCR of a bounded, mostly-prose body of leaves; the design content is
+in the labelling contract, not the recognition. **Decision rule, pre-registered:** if a 1633 addendum leaf
+cannot be shown to be 1633 matter on its own evidence, it is **not published** — an addendum whose setting is
+uncertain is worse than an absent one, because it invites exactly the merge this step forbids.
+
+**Why the NT is treated differently from OT1/OT2, and it is not a matter of degree.** `F`'s and `R`'s New
+Testaments are the **1633 Rouen** setting (§1.1c, R8), not the 1582 Rhemes setting being transcribed. A
+different edition cannot supply the text at any grain — that is what `assert_same_setting()` refuses, and
+what R3.5 dissolved for. **No leaf of a 1633 NT witness may be supplied into the 1582 transcript**, and the
+supply rule of R3.6 is therefore not extended here.
+
+**But their prelims and endmatter are documentary evidence in their own right, and nothing currently captures
+them.** They record what the 1633 Rouen printing said about itself — its approbations, privileges, tables and
+errata — for an edition the corpus otherwise holds only as a body of scripture it may not read. They are
+published as **1633 addenda**: a parallel artefact, sigil and year carried on every leaf, addressable only as
+1633 matter.
+
+⚠️ **Cross-references, and one that must not be contradicted.** R6 is the existing frontmatter/backmatter
+collation section and owns the method; R3.7 is its 1633 NT extension and should reuse it rather than restate
+it. **R9.7** (raised the same day) holds that `NT-1633-F` is filed as `lowres` when the registry's own
+criterion makes it `support` — and R3.7's premise is exactly R9.7's argument, that `F`'s NT is a different
+edition. The two are consistent and must stay so: **if R9.7's correction is made, R3.7's framing is
+unaffected; if R3.7 were ever read as admitting 1633 matter into the 1582 text, R9.7 is the reason it may
+not be.**
 
 ---
 
@@ -561,7 +2748,8 @@ survives every later correction.
 | # | step | deliverable | acceptance |
 |---|---|---|---|
 | R4.5 | **Re-examine every excluded file before any "survives nowhere" claim** | each exclusion carries measured grounds — edition, date, printer, raster, and what its prelims contain — not a one-line description | no file is excluded on a description that has not been checked against its own leaves; `S06` is the worked example |
-| R4.6 | Ask the Fatima Movement for a higher-resolution capture | a direct enquiry, and its answer recorded either way | if a higher-resolution capture of the `F` copy exists, `F`'s role changes from low-resolution to full witness (§1.1a); if not, the negative is recorded so it is not re-asked |
+| R4.6 | ~~Ask the Fatima Movement for a higher-resolution capture~~ — **CLOSED 2026-08-17, NOT ATTEMPTED, on Sir's ruling** | 🔴 **Struck rather than deleted, so it is not re-proposed.** Sir has ruled that no better scan is obtainable and no further copy will be found. The step is therefore not deferred, not blocked and not pending — it is **out of the realm of possibility**, and a step whose deliverable cannot be procured is not an OPEN step. ⚠️ **The consequence is architectural, not merely administrative**: `F` stays `lowres`/`GLYPH_BARRED` permanently, so OT1 and OT2 hold glyph-capable depth **2** and the NT holds **1**, for good. **The depth we have is the depth we design for**, and any plan whose viability rests on acquiring a witness is not a plan. This ruling is also what forces §7.7's escalation to route into **pipeline capability** — with acquisition closed, building the mechanism is the only escalation resource class left, which is why that redesign was not optional | **CLOSED — not a completion.** Recorded so the negative is not re-asked, per R4.6's own original acceptance (*"if not, the negative is recorded so it is not re-asked"*), which is satisfied by a ruling as much as by a reply |
+| R4.7 | 🔴 **The §10 citation that has never had an id** (NEW 2026-08-17) | §10 *Blocking* has carried *"one citation carried unverified from earlier work and **load-bearing for §3.2's gate** — resolve or delete"* with **no R-number**, so it appears in no step table, no OPEN list, and no audit. §3.2's gate is **Gate 9 — the geometry gate**, which makes this an unverified citation under the model this project is now prioritising | the citation is **resolved against its source or deleted**, and §3.2's gate is restated without it either way. ⚠️ **An unnumbered blocker is a blocker that cannot be tracked** — this one survived because "Blocking" prose is not parsed by anything, which is the §0.6 failure mode reaching the constitution's own open list. **C1** |
 
 **R4.5 exists because an exclusion is a claim.** `S06` was set aside as "a modern facsimile, not a witness
 to the setting." Its OT is a **1635 Rouen Cousturier** printing, its NT a **1582 Rheims Fogny**, and its
@@ -598,7 +2786,7 @@ frontmatter is complete.
 | R6.1 | Address `S06`'s two halves separately | registry entries `NT-1582-M` (leaves 2072–2871) and, if wanted, `OT-1635-M` (leaves 0–2070) | the OT/NT boundary at the blank leaf 2071 is asserted, not assumed; each half declares its own edition |
 | R6.2 | Extract the 1582 prelims | `NT-1582-M` leaves 2072–2076: title, Censure, Preface pp. 1–3 | each leaf named and its setting identified against `S04` (1633) and `S08` (supplied) — **DONE**, see below |
 | R6.3 | **Transcribe the Censure and Preface p.1 from `M`** | the two leaves the base exemplar lacks, as 1582 readings | transcribed with `M` named as the supplying copy and its ~380 ppi bitonal raster recorded as the limiting factor — **DONE**, see below |
-| R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** — **DONE**, report at `COLLATION-1635-vs-1609.md`; OT2/1610 prelims outstanding |
+| R6.4 | Collate 1635 prelims against 1609/1610 | a difference report: what the second edition adds, drops and rewords in Approbatio, Preface, Tables, errata | every difference cited to a leaf in each edition; **no difference asserted from memory of the text** — 🟡 **PARTIAL, NOT DONE.** The 1635-vs-1609 half is complete, report at `COLLATION-1635-vs-1609.md`; **OT2/1610 prelims are outstanding and this step stays OPEN until they are collated.** ⚠️ Relabelled 2026-08-17: the row previously carried a bare completion marker with the outstanding half in a trailing clause, so it scanned as complete while blocking work remained — and it was the FIRST thing `test_open_register_consistency.py` caught on its first run, having been written for a different conflict entirely. **A completion marker qualified by a later clause is still a completion claim; the qualifier does not travel with the word** |
 | R6.5 | Record the 1634 privilege | *Extraict du Privilege du Roy*, Paris, 3 Aug 1634, to Jean le Cousturier, ten years, to reprint *"de l'edition de Laurens Kellam Imprimeur de Douay"* | quoted verbatim from leaf 2070 with a transcription of the French — **DONE**, `ground-truth/matter-ot2-privilege-du-roi.json`, re-read on the primary raster; see below |
 
 **R6.5 was already transcribed on 2026-07-20 — and the transcription was made on a derived image.** The
@@ -791,18 +2979,21 @@ a standard it is not held to. The devlog additionally recorded Session 13 as *"D
 which is false. **"No proven negative" and "does not exist" are different states and must never again be
 written as the same one** — the first is a missing test, the second is a missing gate.
 
-**Hour ceiling: 6h across R5.1–R5.2c. Decision rule, pre-registered:** if the three base exemplars'
-manifests cannot be produced inside 3h, R5.2a/b ship on the two witness-independent clauses (bit depth,
+**Complexity: C1 across R5.1–R5.2c** (restated 2026-08-17 from a 6h ceiling) — the assertions are
+mechanical once the manifest exists, and the manifest is a traversal. **Decision rule, pre-registered and
+unchanged:** if the three base exemplars' manifests cannot be produced, R5.2a/b ship on the two
+witness-independent clauses (bit depth,
 grey levels) with the dimension clause explicitly **DEFERRED and named in the guard's own output**, and
 R5.1 continues as its own step. The guard must not wait on the manifest, because a two-thirds guard that
 runs beats a three-thirds guard that does not exist — which is the state this section has been in.
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R5.1 | Raster manifest per witness | `witness/build_raster_manifest.py` → `witness/raster-manifest.json`: per leaf, the resolved path, native dimensions, mode/bit depth, distinct grey levels, and a content checksum, keyed by witness id | manifest complete for the three base exemplars, **built through `witnesses.pixel_source()`** so it cannot describe a raster the corpus would not serve; regenerating it twice is byte-identical — 🟢 **COVERAGE DONE 2026-08-10**: 48 min (3 h ceiling not reached), **3,122 leaves** — NT-1582-B 812 · OT1-1609-B 1,160 · OT2-1610-B 1,150 — `truncated: false`, and **0 rasters on disk without an entry**, checked against `pixel_source()` rather than assumed. **3,113 leaves moved UNKNOWN→CHECKED** on the dimension clause. 🟢 **DETERMINISM PROVEN 2026-08-10**: a second full build (3,122 leaves, `truncated: false` — a real run, not an early exit) is **byte-identical**, sha256 `44290ad7…f8e0` for both, and the canonical file was not clobbered. `--out` was added to make this runnable at all: the single hard-coded output path meant the second run destroyed the first — **an acceptance clause that cannot be executed is not an acceptance clause**, and this one had stood unexecutable since it was written. ⚠️ The byte comparison is only valid because the writer uses `sort_keys=True`; `coverage-audit-verse.json` is the standing counter-case, order-nondeterministic on ties, where the same test would prove nothing |
+| R5.1 | Raster manifest per witness | `witness/build_raster_manifest.py` → `witness/raster-manifest.json`: per leaf, the resolved path, native dimensions, mode/bit depth, distinct grey levels, and a content checksum, keyed by witness id | manifest complete for the three base exemplars, **built through `witnesses.pixel_source()`** so it cannot describe a raster the corpus would not serve; regenerating it twice is byte-identical — 🟢 **COVERAGE DONE 2026-08-10**: **3,122 leaves** — NT-1582-B 812 · OT1-1609-B 1,160 · OT2-1610-B 1,150 — `truncated: false`, and **0 rasters on disk without an entry**, checked against `pixel_source()` rather than assumed. **3,113 leaves moved UNKNOWN→CHECKED** on the dimension clause. 🟢 **DETERMINISM PROVEN 2026-08-10**: a second full build (3,122 leaves, `truncated: false` — a real run, not an early exit) is **byte-identical**, sha256 `44290ad7…f8e0` for both, and the canonical file was not clobbered. `--out` was added to make this runnable at all: the single hard-coded output path meant the second run destroyed the first — **an acceptance clause that cannot be executed is not an acceptance clause**, and this one had stood unexecutable since it was written. ⚠️ The byte comparison is only valid because the writer uses `sort_keys=True`; `coverage-audit-verse.json` is the standing counter-case, order-nondeterministic on ties, where the same test would prove nothing |
 | R5.2a | **Build** the derivative-contamination guard (Gate 0d) | `witnesses.assert_admissible_raster(wid, path)` — bit depth > 1 · distinct grey levels > 64 · dimensions match R5.1's manifest where it exists, and say so where it does not | called at the pixel-consuming entry points; a witness with no manifest entry yields **UNKNOWN, printed**, never a silent pass (R1.4) |
 | R5.2b | Prove the negative | `witness/test_raster_admissible.py` feeds it (i) `M`'s 1-bit CCITT leaf, (ii) a PDF render of a known-good leaf, (iii) a dimension-mismatched leaf | each **raises**, each for the stated clause; the known-good base leaf passes — a guard that refuses everything passes (i)–(iii) for the wrong reason |
 | R5.2c | Wire it to the chain, and prove the wiring | the assertion is reached from the real read path, not only from the test | injecting a rendered leaf into an actual recognition call **raises**; asserted by calling the entry point, not by reading it — the R9.3 pattern |
+| R5.3 | 🔴 **Name the 9 leaves the dimension clause never checked** (NEW 2026-08-17) | R5.1 moved **3,113** leaves UNKNOWN→CHECKED against a manifest of **3,122**. The status row reported the manifest as complete and left the 9-leaf gap to be noticed by subtraction | the nine leaves are **listed with the reason each was not checked**, and each resolves to CHECKED or to a stated, permanent exemption. ⚠️ **A residue that only exists as the difference between two numbers is a residue that becomes zero the next time either number is quoted** — Gate 0d is currently carried as "enforced on all three clauses" on this basis. **C1** |
 
 **R5.2b needs a negative test, not just a passing one.** A guard that has never rejected anything is not
 known to work; the test must feed it a PDF-derived leaf and require the exception.
@@ -1256,7 +3447,9 @@ fusion is a bare glob again.
 | R11.4 | ⚠️ **A SIXTH restatement, found 2026-08-14 (R11)** — `acquisition/purge_empty_ocr.py:23` reaches the same dead tree by **relative traversal** (`../../../../../.scratch/originaldr-project/sources/our-ocr-diplomatic`) rather than by naming the root, which is why the R9.6 sweep — written against modules that *restate* the root — did not see it. **A search shaped by the fix's vocabulary finds only the instances that share it.** | folded into R9.6's module list; `witness/test_project_root.py` must cover the traversal form too | OPEN |
 | R9.6 | 🟢 **DONE 2026-08-14 — and the six were TWENTY.** One derived root, `originaldr_reconstruction/project_root.py`, imported by every consumer. Measured before the fix: **20 modules / 33 literals** named the dead root, and `core/.scratch/originaldr-project` was **absent in its entirety** while `projects/originaldr/reconstruction/{reads,consensus}` held 10 and 76 entries. ⚠️ **FOUR modules `mkdir(parents=True)` and WRITE** — `detect_sources`, `detect_s_dismas`, `detect_ocr_consensus`, `build_consensus` — not the two recorded; running any would have recreated the dead tree and written the anchor reads into it, leaving a directory that looks populated and current. `witness/test_project_root.py` exits 0, **injection-proven on all three checks** (restated literal · relative traversal · resurrected tree) |
 | R9.6a | 🟢 **DONE 2026-08-14 — and BOTH Madueke sources were resolved by measurement, not by name.** They did not migrate with the project; they live under `imports/.../transcriptions/madueke/`. **`madueke-a` CONFIRMED**: all 1334 chapter `<title>`s match `madueke_a.json`'s loci and **all 35,809 recorded verses appear verbatim (100.0000%, whole corpus)** once `<sup>` verse markers and the `^` annotation anchors are stripped — the same characters the reads strip. 🔴 **`madueke-b` REFUTED**: the same-named `merged.txt` matches only **2.05%**. `madueke_b.json` records `locus: madueke-b/pdf`, `method: pdf-bbox-two-column` — it was built from the PDF by de-interleaving the columns, exactly as `ingest_madueke_b.py` documents. **`merged.txt` is the RAW `pdftotext` dump taken BEFORE de-interleaving**, so its verse text is spliced across columns (*"In the beginning God created heaven and **fruit after his kind**..."*). ⚠️ **This is precisely the failure R9.6a was written to prevent**: repointing on the matching filename would have fed column-interleaved text to five consumers and every comparison would have silently degraded. Raised as **R9.6b** |
-| R9.6b | **Five consumers read `madueke-b/merged.txt`** — `ocr_sample`, `build_apparatus_gapfill`, `build_apparatus_attestation`, `collate_witnesses`, `ocr_validate` — for apparatus gap-fill and collation, not for the verse reads. Whether the interleaved dump is fit for THAT purpose is a separate question per consumer and is **not yet answered** | each consumer either re-pointed at a de-interleaved extract or documented as tolerant of interleaving, with the evidence stated | **OPEN. Hour ceiling 3h**; if a consumer's fitness cannot be established, it is made to RAISE rather than left reading a source of unknown fitness — a decision rule pre-registered before the work |
+| R9.6b | **Five consumers read `madueke-b/merged.txt`** — `ocr_sample`, `build_apparatus_gapfill`, `build_apparatus_attestation`, `collate_witnesses`, `ocr_validate` — for apparatus gap-fill and collation, not for the verse reads. Whether the interleaved dump is fit for THAT purpose is a separate question per consumer and is **not yet answered** | each consumer either re-pointed at a de-interleaved extract or documented as tolerant of interleaving, with the evidence stated | **OPEN. C2 — assembly** (five consumers, each a separate fitness question; restated from a 3h ceiling 2026-08-17); if a consumer's fitness cannot be established, it is made to RAISE rather than left reading a source of unknown fitness — a decision rule pre-registered before the work |
+| R9.7 | 🔴 **`NT-1633-F` IS FILED UNDER THE WRONG ROLE, AND THE REGISTRY IS THE SIDE THAT IS WRONG** (raised 2026-08-17, found while reconciling the companion docs) | `witnesses.py` gives `("NT","F")` `year=1633, role="lowres"`. But the registry's OWN definitions separate the two roles by *setting*, not by resolution alone: `lowres` is **"a genuinely independent copy whose DIGITISATION resolves too little"** — a poor capture **of the setting being transcribed** — while `support` is **"a copy of a DIFFERENT edition, admitted for named leaves only"**. `F`'s New Testament is the **1633 Rouen** setting throughout (§1.1c, R8); the transcribed NT setting is **1582**. By the registry's own criterion it is `support`. ⚠️ **`OCR-OVERVIEW.md` and `OCR-WALKTHROUGH.md` both describe it as support, with reasoning — the two documents were RIGHT and the registry is the outlier.** The companion-doc pass deliberately did **not** edit them to match, which would have propagated the error into the only places that had it correct | (1) the registry record is corrected to `role="support"`; (2) `test_counts_vs_doc.py` is extended to compare **role-by-role** against the registry — which is what **R9.5a already promised and does not do**: it compares leaf counts and primary raster, reads §1.1's table rather than the companions', and exits 0 today, so R9.5a's own acceptance is **unmet and R9.5a stays OPEN**; (3) a guard proves a cross-setting collation partner is refused | **OPEN. C2 — assembly.** ⚠️ **Why this is live rather than cosmetic, and why it lands on R2/R3 specifically:** `ROLE_VERSE_SCOPE` gives `lowres` the scope `"collation"`. Collation is precisely the work R2 and R3 are doing now, so the wrong role does not merely mislabel `F` — it **admits a 1633 book as a collation witness to the 1582 setting**, which is the conflation `assert_same_setting()` exists to refuse. It is masked today only because the guards refuse `F` on the *identifier* and on `GLYPH_BARRED`, i.e. for reasons unrelated to the defect: **the right answer is currently being produced by the wrong mechanism**, which is the condition under which a change elsewhere silently unmasks it. `attests_transcribed_setting()` already records the near-miss in its own docstring — *"collapsing them is how NT-F stayed admissible"* — so the failure mode was seen and the role was not corrected. Decision rule, pre-registered: if correcting the role changes any published figure, that figure is **superseded and re-derived**, never annotated |
+| R9.8 | 🔴 **`lowres`'s GLYPH BAR IS WRITTEN IN PROSE AND ENFORCED BY NOTHING** (verified 2026-08-17) | `ROLES["lowres"]` states the bar in terms — *"NOT training data, NOT CER evaluation, and it may not adjudicate long-s against f"* — but `GLYPH_BARRED` holds only `F` and `X`. Measured, not inferred: `glyph_source("NT","M")` **returns a usable PDF path with no refusal**, and `admissible("NT")` answers `['NT-1582-B', 'NT-1582-M', 'NT-1633-R']`. ⚠️ **Two distinct defects in one call.** (a) `M` is `lowres` and is named as glyph-admissible, so the ſ/f bar can be walked straight past. (b) `NT-1633-R` is a **different setting** and is named as admissible for the 1582 volume, which `assert_same_setting()` exists to refuse — `admissible()` is answering *"not barred by resolution or derivation"* while its name, and every caller, reads it as *"may carry a glyph call for this setting"* | (1) the role's glyph bar is derived from the ROLE rather than restated in a second table — `GLYPH_ROLES = {base, surrogate, support}` is the shape already proven in `glyph_witnesses()`; (2) `admissible(vol)` takes a **setting**, not a volume, or is renamed to say what it actually computes; (3) injection-proven on both defects: a `lowres` witness must be refused a training crop, and a cross-setting witness must not appear in an admissible list | **OPEN. C2 — assembly.** ⚠️ **This is the SIXTH instance of the project's signature defect** — a correct rule with nothing reading it (Gate 0f · Gate 0d · §7.7's escalation ladder · `audit_prereq_ceilings` string granularity · its section granularity · this). It was found the same way as four of the others: **by building the consumer**. `glyph_witnesses()` was written to answer depth honestly, returned the wrong answer on its first run, and the wrong answer came from the registry rather than from the new code. Decision rule, pre-registered: if closing the hole changes what any consumer may read, every figure derived through that consumer is **superseded and re-derived**, never annotated. ⚠️ Do **not** weaken `ROLES`, `GLYPH_BARRED` or `ROLE_VERSE_SCOPE` to make the call agree — the prose is right and the enforcement is missing, which is the direction the fix must run |
 
 **Acceptance for R9 as a whole:** `audit_gt_rasters`-style honesty — the audit's NT figures must **rise**
 by `NT-1582-M`'s admission and its OT figures must **fall** by `OT-1635-M`'s exclusion, and both deltas
@@ -1284,7 +3477,14 @@ the §0.6 failure mode, inside the section written to catch that failure mode.
 test, or line of code**:
 
 1. *"Every prerequisite carries a **stated hour ceiling and a pre-registered decision rule** before it
-   starts."*
+   starts."* ⚠️ **The UNIT in this clause is superseded as of 2026-08-17** — hours are abolished
+   project-wide and the requirement is now a **complexity class + candidate list + decision rule** (see
+   the Open-items register). The *force* of the clause is untouched. ⚠️ **This note said the Master Plan's
+   §0.5 "still says hour ceiling" and was already stale when written** — the two files were being revised
+   in the same sitting, and this sentence described §0.5 as it stood at the start of it. §0.5 now carries
+   the C1–C4 scale itself. Corrected 2026-08-17. **The pattern is worth keeping**: a cross-file assertion
+   about another document's *current* wording is a measurement, and it goes stale exactly as fast as the
+   other file changes. Assert the rule, cite the section, do not quote its state.
 2. *"Where a number must be reported before properly-sized evidence exists, it is reported with its
    confidence interval and the label **PROVISIONAL / non-citable**, and no gate closes on it."*
 
@@ -1302,16 +3502,23 @@ discardable; they are *provisional*, and without the word they read as evidence.
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R10.1 | Ceilings and decision rules, enforced | every **OPEN** step carries an hour ceiling and a decision rule written **before** work starts; `witness/audit_prereq_ceilings.py` parses this file's step tables and section prose and lists the OPEN steps carrying neither | ⚠️ **This is an AUDIT, not a guard, and the distinction is load-bearing.** Only R2, R5 and R10 carry ceilings today, so it exits **1 over ~30 steps** — and **exit 1 is the healthy state until each section is next touched.** Filing it as a guard would force one of the two things this project forbids: bulk-inventing ceilings nobody reasoned about, or weakening the check until it passes. Coverage is reported as a **fraction that must rise**, never as a pass. Proven by injection: strip R2's ceiling → the count rises by one and R2 is named; restore → it falls back. ⚠️ **Reaching a ceiling ALERTS that the approach needs redesign and never closes the step** (§0.5) |
+| R10.1 | Ceilings and decision rules, enforced | every **OPEN** step carries a **complexity class + candidate list** and a decision rule written **before** work starts (⚠️ **was "an hour ceiling" until 2026-08-17**); `witness/audit_prereq_ceilings.py` parses this file's step tables and section prose and lists the OPEN steps carrying neither | ⚠️ **This is an AUDIT, not a guard, and the distinction is load-bearing.** Only R2, R5 and R10 carry ceilings today, so it exits **1 over ~30 steps** — and **exit 1 is the healthy state until each section is next touched.** Filing it as a guard would force one of the two things this project forbids: bulk-inventing ceilings nobody reasoned about, or weakening the check until it passes. Coverage is reported as a **fraction that must rise**, never as a pass. Proven by injection: strip R2's ceiling → the count rises by one and R2 is named; restore → it falls back. ⚠️ **Reaching a ceiling ALERTS that the approach needs redesign and never closes the step** (§0.5) |
 
 
 ⚠️ **THE FRACTION FELL, 25% → 17%, and that is a real signal rather than a bookkeeping artefact (2026-08-10).** It read `10/40` and then **`6/35`**: five OPEN steps closed (R5.1, R5.2a/b/c, R9.2c) and **four of the ceilings went with them**, because §0.5 ceilings had been added precisely to the sections that were next touched. So the ceilinged pool is depleted by progress, and the OPEN remainder is *more* unceilinged than before, not less. **R10.1's rule "the number must RISE" is therefore not satisfied by doing the work — only by writing ceilings for sections nobody is about to touch**, which is the harder half and is exactly what the audit is for. Recorded rather than restated: a metric that moves the wrong way when the project progresses is worth understanding before it is corrected.
 
 🟢 **AND THEN IT ROSE, 17% → 29% (`6/35` → `12/41`), 2026-08-11 — by the harder half, exactly as predicted.** Writing R2.1a–f as six sub-steps *inside a section that already carries a ceiling and a decision rule* added six OPEN steps and six ceilinged ones at once. That is the intended mechanism and it is worth naming: **the fraction rises when work is PLANNED under a ceiling, not when work is COMPLETED.** Closing steps lowers it; planning them properly raises it. A coverage metric that rewards planning and penalises completion is behaving correctly here only because the thing being covered is *the plan*, and R10.1 should not be "fixed" to reward completion instead. ⚠️ The corollary is a real risk: the fraction could be inflated by decomposing a ceilinged section into ever-finer sub-steps. It is a coverage number, not a progress number, and must never be read as the latter.
-| R10.2 | The PROVISIONAL convention, and the register that uses it | a stated form for a non-citable figure (value · CI · what is undersized · what would settle it), plus **`PROVISIONAL.md`**: every figure and artefact currently standing on undersized or pre-gate evidence, named | the 51 ground-truth files are listed with the gates they precede; **every NT cross-source figure published before 2026-08-09 is listed or recomputed** (R9.4b's labelling half); **every parity-spread figure published before 2026-08-10 is listed or restated** (R9.2c-4 — they were the best witness's own pass rate, not a spread); no listed figure is cited in a companion without the label |
+⚠️ **The two paragraphs above sat BETWEEN two rows of one table** until 2026-08-17, which silently
+terminated it and left R10.2 rendering as a headerless fragment. Repaired by giving the remaining rows
+their own header. A file whose own status table does not render is the §0.6 failure mode in typography.
 
-**Hour ceiling for R10 itself: 4h. Decision rule:** R10.1's guard ships parsing only the step tables if
-prose parsing exceeds 2h — a ceiling on a ceiling-checker is not a joke, it is the first test of whether
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R10.2 | The PROVISIONAL convention, and the register that uses it | a stated form for a non-citable figure (value · CI · what is undersized · what would settle it), plus **`PROVISIONAL.md`**: every figure and artefact currently standing on undersized or pre-gate evidence, named | the 51 ground-truth files are listed with the gates they precede; **every NT cross-source figure published before 2026-08-09 is listed or recomputed** (R9.4b's labelling half); **every parity-spread figure published before 2026-08-10 is listed or restated** (R9.2c-4 — they were the best witness's own pass rate, not a spread); no listed figure is cited in a companion without the label. ⚠️ **Add to the register: 0.312 must never be cited as a lower bound** (R2.1f) and **0.9396 must never be cited as this project's best recogniser** until R2.1b establishes comparability |
+| R10.3 | 🔴 **The ceiling audit must parse complexity classes** (NEW 2026-08-17) | `witness/audit_prereq_ceilings.py` currently matches hour-ceiling phrasing. With hours abolished it will score every restated step as carrying **nothing**, and the fraction will collapse for a reason that is the opposite of the truth | the audit recognises **complexity class + candidate list + decision rule**; **injection-proven both ways** — strip a class → the step is named; restore → it is not. ⚠️ Until this lands the audit's exit-1 count is **NOT CITABLE**, and the audit is **not** to be deleted, silenced or have its threshold relaxed in the interim — that would be fixing the instrument by removing it. **C1** |
+
+**Complexity for R10 itself: C2.** **Decision rule:** R10.1's audit ships parsing only the step tables if
+prose parsing proves the harder half — a decision rule on a rule-checker is not a joke, it is the first test of whether
 the rule can be obeyed by the document that states it.
 
 ⚠️ **R10.2 is not a licence to publish provisional numbers more freely.** The label exists so that a figure
@@ -1347,21 +3554,23 @@ published.
 
 ### Steps
 
-**§0.5 compliance.** Every OPEN step below carries an **hour ceiling** and a **decision rule**
-pre-registered before the work: **R11.2a 6h · R11.2b 2h · R11.3a 3h · R11.4 1h**. R11.5 is blocked by construction
-and takes a ceiling when it unblocks, not before — a ceiling on work that cannot start would inflate
-R10.1's coverage fraction without anyone having reasoned about the step, which is the corollary risk
-R10.1 names. **Reaching any ceiling ALERTS that the approach needs redesign; it never closes the step
-and never accepts the shortfall.**
+**§0.5 compliance.** Every OPEN step below carries a **complexity class** and a **decision rule**
+pre-registered before the work (⚠️ restated 2026-08-17 from hour ceilings **6h · 2h · 3h · 1h**):
+**R11.2a C2** — 33 references across 23 files, each its own disposition question · **R11.2b C1** — extend a
+parser that already runs · **R11.3a C2** — a pin plus a content hash per tree · **R11.4 C1**. R11.5 is
+blocked by construction and takes a class when it unblocks, not before — classing work that cannot start
+would inflate R10.1's coverage fraction without anyone having reasoned about the step, which is the
+corollary risk R10.1 names. **Exhausting a candidate list ALERTS that the approach needs redesign; it never
+closes the step and never accepts the shortfall.**
 
-| # | step | deliverable | acceptance | hour ceiling + decision rule (§0.5) |
+| # | step | deliverable | acceptance | complexity + decision rule (§0.5) |
 |---|---|---|---|---|
-| R11.1 | **Track the harness CODE**, not its outputs | 33 files / 432 KB moved `\.scratch/mask-eval/` → `core/tests/fixtures/gold/harness/`. The ~2 GB of `ws/`, `diagnostics/`, `text/` stay machine-local behind `MASK_EVAL_DATA`, defaulting to `.scratch/mask-eval` and **raising with the path named** when absent | the three consumers run to **byte-identical output** with the untracked original **deleted** | 🟢 **DONE 2026-08-14.** ~1.5h |
-| R11.2 | **Guard: tracked code may not IMPORT from `.scratch/`** | `core/tests/fixtures/gold/test_no_scratch_deps.py` — `sys.path` mutations found via `ast`, docstrings excluded, unparseable files fall back to regex rather than passing | exits 0; **injection-proven** | 🟢 **DONE 2026-08-14.** ~1h |
-| R11.2a | **Disposition the 71 gitignored DATA references** | `audit_scratch_data_paths.py` — each reference resolved to (a) machine-local root made env-overridable **and raising**, (b) dead tree → R9.6, or (c) should be tracked → R11.1 | audit exits 0 | **OPEN. Ceiling 6h.** Below-baseline progress at 6h ⇒ **ALERT that the approach needs redesign** — the remainder is *not* accepted, and entries are **never** added to `SANCTIONED` to make the number fall |
-| R11.3 | **`gen_dr_original`'s silent fallback → an explicit raise** | `_require()` names every path tried; resolution is **lazy** (PEP 562 module `__getattr__`) so importers wanting only slug lists are unaffected | `MADUEKE` raises; `import gen_dr_original` still succeeds | 🟢 **DONE 2026-08-14.** ~0.5h |
-| R11.3a | 🟢 **DONE 2026-08-14.** **Pin the Sabates_A acquisition** | clone `janvier-s/original-douay-rheims` at a **recorded SHA** into a tracked location, or a tracked acquisition script that does | `acquisition/sabates-a-pin.json` + `acquire_sabates_a.py --clone/--verify/--repin`. Pin: `janvier-s/original-douay-rheims` @ **`0bf4218b`** (2026-04-18, CC0). **Verified on the live remote**: `ls-remote` shows that SHA at both `HEAD` and `refs/heads/main`, **0 commits behind**, local tree clean | 🟢 **DONE, ~1h of 3h.** ⚠️ **The commit alone is not the pin** — it proves which revision was *requested*, not which bytes *arrived*. The pin also carries a content hash per tree actually read (`bible/raw` 77 files · `reference` 26 · `annotations` 394), taken over sorted `(relpath, sha256)` so it is order-stable and content-exact. **Injection-proven on the case a SHA cannot catch**: one byte appended with the commit unchanged → FAIL on both the dirty-tree check and the `reference` hash; restore → exit 0. `--repin` is a separate explicit action, because re-pinning to today's HEAD is the very unreproducibility this step removes |
-| R11.4 | 🟢 **DONE 2026-08-14.** **Fold `purge_empty_ocr.py:23` into R9.6** | R9.6's module list named five restatements of the migrated root; this is a **sixth**, and it reaches the dead tree by relative traversal (`../../../../../.scratch/…`) rather than by naming it, which is why the original sweep missed it | `witness/test_project_root.py` covers it, and the guard's second check is the traversal form specifically | 🟢 **DONE.** ~0.5h. ⚠️ **The lesson generalises beyond the one line**: R9.6 recorded six restatements because it searched for the root's *name*; the true count was twenty, and the traversal form was invisible to that search entirely |
+| R11.1 | **Track the harness CODE**, not its outputs | 33 files / 432 KB moved `\.scratch/mask-eval/` → `core/tests/fixtures/gold/harness/`. The ~2 GB of `ws/`, `diagnostics/`, `text/` stay machine-local behind `MASK_EVAL_DATA`, defaulting to `.scratch/mask-eval` and **raising with the path named** when absent | the three consumers run to **byte-identical output** with the untracked original **deleted** | 🟢 **DONE 2026-08-14.** C2 |
+| R11.2 | **Guard: tracked code may not IMPORT from `.scratch/`** | `core/tests/fixtures/gold/test_no_scratch_deps.py` — `sys.path` mutations found via `ast`, docstrings excluded, unparseable files fall back to regex rather than passing | exits 0; **injection-proven** | 🟢 **DONE 2026-08-14.** C1 |
+| R11.2a | **Disposition the 71 gitignored DATA references** | `audit_scratch_data_paths.py` — each reference resolved to (a) machine-local root made env-overridable **and raising**, (b) dead tree → R9.6, or (c) should be tracked → R11.1 | audit exits 0 | **OPEN. C2 — assembly** (restated from a 6h ceiling 2026-08-17). Candidate list exhausted without the audit reaching 0 ⇒ **ALERT that the approach needs redesign** — the remainder is *not* accepted, and entries are **never** added to `SANCTIONED` to make the number fall |
+| R11.3 | **`gen_dr_original`'s silent fallback → an explicit raise** | `_require()` names every path tried; resolution is **lazy** (PEP 562 module `__getattr__`) so importers wanting only slug lists are unaffected | `MADUEKE` raises; `import gen_dr_original` still succeeds | 🟢 **DONE 2026-08-14.** C1 |
+| R11.3a | 🟢 **DONE 2026-08-14.** **Pin the Sabates_A acquisition** | clone `janvier-s/original-douay-rheims` at a **recorded SHA** into a tracked location, or a tracked acquisition script that does | `acquisition/sabates-a-pin.json` + `acquire_sabates_a.py --clone/--verify/--repin`. Pin: `janvier-s/original-douay-rheims` @ **`0bf4218b`** (2026-04-18, CC0). **Verified on the live remote**: `ls-remote` shows that SHA at both `HEAD` and `refs/heads/main`, **0 commits behind**, local tree clean | 🟢 **DONE. C2.** ⚠️ **The commit alone is not the pin** — it proves which revision was *requested*, not which bytes *arrived*. The pin also carries a content hash per tree actually read (`bible/raw` 77 files · `reference` 26 · `annotations` 394), taken over sorted `(relpath, sha256)` so it is order-stable and content-exact. **Injection-proven on the case a SHA cannot catch**: one byte appended with the commit unchanged → FAIL on both the dirty-tree check and the `reference` hash; restore → exit 0. `--repin` is a separate explicit action, because re-pinning to today's HEAD is the very unreproducibility this step removes |
+| R11.4 | 🟢 **DONE 2026-08-14.** **Fold `purge_empty_ocr.py:23` into R9.6** | R9.6's module list named five restatements of the migrated root; this is a **sixth**, and it reaches the dead tree by relative traversal (`../../../../../.scratch/…`) rather than by naming it, which is why the original sweep missed it | `witness/test_project_root.py` covers it, and the guard's second check is the traversal form specifically | 🟢 **DONE.** C1. ⚠️ **The lesson generalises beyond the one line**: R9.6 recorded six restatements because it searched for the root's *name*; the true count was twenty, and the traversal form was invisible to that search entirely |
 | R11.5 | **Reclaim the ~7 GB** | delete what is provably regenerable from `.scratch/` | **BLOCKED BY R11.1–R11.3 BY CONSTRUCTION** — see below | **OPEN, blocked.** No ceiling until unblocked |
 
 ### 🔴 R11.5 is ordered last, and the ordering IS the recommendation
@@ -1413,6 +3622,101 @@ clone on one disk.
 
 ---
 
+## R12 — Layout typology, the prerequisite nobody had written (NEW, 2026-08-17)
+
+**Discharges** §3.2, and it is a **prerequisite of Gate 9** rather than a part of it. **Status: OPEN,
+nothing built.**
+
+### The finding
+
+**§3.2 specifies which region classes the geometry model must emit. It does not specify how the model knows
+which classes are ON THE PAGE IN FRONT OF IT** — and those are different problems. A model asked to find
+`Marginalia` on a title page, or `VerseNumber` on the Approbatio, is being asked to find something that is
+not there; §3.2's own rule 7 already records what that costs, in the one case where it was noticed:
+
+> **Marginalia negatives are mined explicitly** — only leaves with confirmed apparatus coverage contribute
+> Marginalia-negative pixels, or every unlabelled marginal block becomes an implicit negative and teaches
+> the model to suppress the class.
+
+⚠️ **That rule is the general problem stated for one class.** Every class has the same failure: a leaf that
+does not print class `C` contributes evidence *against* `C` unless the model knows the leaf is not a leaf
+that prints `C`. **The classifier must run first, and its output must be checkable — which means each page
+type has to carry its REQUIRED and FORBIDDEN classes, hardened before the model is trained.**
+
+### The eight archetypes, each grounded in evidence already in this project
+
+⚠️ **These are proposed from the documented evidence, and the frequency of each in the corpus is
+UNMEASURED.** R12.1 exists to measure it; until it runs, this list is a hypothesis about the book's
+structure, not a census of it.
+
+| id | archetype | required classes | forbidden / absent | grounding |
+|---|---|---|---|---|
+| **A** | plain text page | MainText · RunningHead · Catchword | Marginalia · ChapterHeading · Argument | the R2 working case, leaves 400–431 |
+| **B1** | text + **disjoint** marginal apparatus | MainText · Marginalia · RunningHead · Catchword | — | `gutter_probe.py`: `jp2-S06` p74 body line-ends `x1≤1647`, margin `x0≥1673`, **a real 26px gutter**; the bound adopted at **0.746, the measured gutter midpoint**, lifted ch15 **64→66** |
+| **B2** | text + **interleaved** marginal apparatus | MainText · Marginalia | — | 🔴 `gutter_probe` reports **OVERLAP on all eight** ch3/ch6 leaves. Kraken merged margin text **into the body line object**: `ch3 p26 "gaueſt me to be my fellow companion, gaue me of the tree, & I did eate. the diuel that"`. **No x-threshold can split words that arrived inside one line object** — B2 is not a tuning of B1, it is a different problem |
+| **C** | chapter opening | ChapterHeading · Argument · DropCap · MainText | — | `chapter_open_probe.py` locates *"the printed heading, in display capitals the recognizer mangles"*, the italic argument, and verse 1 |
+| **D** | book opening | BookTitle · Argument · MainText | VerseNumber (above the opening) | `COLLATION-1635-vs-1609.md` §1: *The Argument of the Book of Genesis* is **its own leaf** (1609 leaf 29) |
+| **E** | annotation leaf | Annotation · NoteRef · RunningHead | VerseNumber | §4.2's inventory: note-reference marks `*` `†` `‡` `¶`, patristic citations (`Theod.`, `S. Aug. Pſal 52`, `Greg. ho.`), **Greek and Hebrew sorts**; *"the apparatus is roughly half the book"* |
+| **F** | 🔴 **MIXED LEAF** | two archetypes on one leaf, with a boundary | — | `chapter_open_probe.py`: *"MIXED LEAF: annotations above, this chapter's opening below — **dropped WHOLE today**"* |
+| **G** | prelims | DisplayTitle **or** ProseBlock · RunningHead | VerseNumber · Catchword (varies) | title page · APPROBATIO · Preface · Proemial Annotations (`COLLATION-1635-vs-1609.md` §1) |
+| **H** | tabular matter | TableBlock · Brace · Rule | MainText · VerseNumber | *The Summe and Partition of the Holy Bible* · endmatter Tables · errata; §4.2 lists **braces and printers' rules** as sorts the transcript must carry |
+
+### 🔴 F IS THE EXPENSIVE ONE, AND IT IS CURRENTLY DATA LOSS
+
+`_is_annotation_leaf` **excludes a whole leaf** when a leaf carries annotation matter, so a mixed leaf —
+annotations above, a chapter opening below — is **dropped entire**, discarding the scripture on it. This is
+not a bug in that function; it is the correct behaviour *for a system with no layout typology*, because
+without one there is no way to keep the bottom half. **F is therefore both the strongest argument for R12
+and the first thing R12 should pay for.** ⚠️ **How many leaves are dropped this way is UNMEASURED** —
+R12.1 must count them before anyone estimates the value of fixing it.
+
+### Steps
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R12.1 | **Census the archetypes before modelling them** | over a stratified leaf sample per volume, each leaf assigned an archetype **by hand**, with the count of mixed leaves (F) and the count currently dropped whole reported separately | every archetype either **ATTESTED with a frequency and exemplar leaves**, or **NOT FOUND in this volume** — no archetype carried on plausibility. ⚠️ Same discipline as §4.1's type census: *a class the model never sees cannot be output, and a class asserted but not present invites the model to hallucinate it*. **C2** |
+| R12.2 | **The classifier, and its REQUIRED/FORBIDDEN contract** | page-type classification emitting an archetype per leaf, and for each archetype the required and forbidden region classes as **data, not prose** — so a region model's output can be checked against its own page type | classification accuracy on a **held-out, never-trained-on** leaf set, reported **per archetype** — never as a single mean, which would hide the rare archetypes that are precisely the ones causing the losses. A forbidden class emitted on an archetype is a **hard failure**, not a scored error. **C3** |
+| R12.3 | **Mixed leaves become splittable, not droppable** | archetype F carries a boundary, and the matter on each side is routed to its own archetype | the leaves currently dropped whole by `_is_annotation_leaf` are **measured before and after**, and the scripture recovered is reported per leaf. ⚠️ A recovered leaf is only recovered if the recovered text is **evaluated**, not merely emitted. **C3** |
+
+⚠️ **R12 gates Gate 9, and Gate 9's thresholds cannot be read without it.** Gate 9 sets *marginalia recall
+≥0.85 / precision ≥0.90*. **On which pages?** Marginalia recall over a corpus that is ~half apparatus means
+something entirely different from marginalia recall over archetype-B leaves only, and the two numbers are
+not comparable. **The threshold is not well-defined until the denominator is** — which is R12.1.
+
+---
+
+## R13 — The trained recogniser is not in the path that needs it (NEW, 2026-08-17)
+
+**Discharges** §4 in the negative: it names a defect in the *plumbing* between components, not in either
+component. **Status: OPEN, verified on disk.**
+
+### The finding
+
+🔴 **`grep` over `gen1_*.py`, `s_arbiter.py` and `chapter_campaign.py` returns NOTHING for
+`reichenau_dr` or `dr_v3_armA`.** Verified 2026-08-17. The ſ-faithful fine-tune this project spent its
+Rung-2 effort producing **is not referenced by the modules that consume recognition output**; per
+`CAMPAIGN-STATUS.md`, *"the attesting arm is the base scan OCR, not the fine-tuned recognizer"* —
+`gen1_r3` passes `t["old_text"]`, the incumbent page-model text from the stored corpus OCR.
+
+**Why this is the same shape as Gate 0f and Gate 0d, one level down.** Gate 0f was a rule no code read.
+Gate 0d was a rule no code implemented. **R13 is an artefact no code loads.** In all three the component
+exists, the document says it is in force, and nothing consumes it — and in all three the defect was
+invisible precisely *because* the thing existed and could be pointed at.
+
+⚠️ **What is NOT established, and must not be asserted while it is unestablished.** That wiring the
+fine-tune into the attesting arm would improve the board is **a hypothesis, not a finding**.
+`CAMPAIGN-STATUS.md` reports **1,142 cells** that R3 has already read correctly and that are refused for
+one reason — `CONTENT OK, ſ-SURFACE OPEN` — and those cells are plausibly reachable by an attesting arm
+that can see ſ. **Plausibly is not measurably.** R13.1 is a wiring step and R13.2 is the measurement; the
+cell count is **not** claimable until R13.2 runs.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R13.1 | **Wire the selected recogniser into the attesting arm** | the model chosen by **R2.1b** (not assumed — see the comparability warning there) reachable by `s_arbiter`/`gen1_*`, with the model id **recorded in the artefact** so a reading can always name the recogniser that produced it | a reading's provenance names its model; **injection-proven** — swap the model, and the artefact says so. ⚠️ **BLOCKED BY R2.1b**: wiring an unselected model in would replace "no model" with "an arbitrary model", which is the harder defect to see. **C2** |
+| R13.2 | **Measure the ſ-surface effect, with the cells counted before and after** | the `CONTENT OK, ſ-SURFACE OPEN` population re-run through the wired arm | the change is reported **per cell class** and against the pre-registered δ; **a null result is published, not retried into significance** (§7.6's regression rule). ⚠️ **Do not report the 1,142 figure as recovered cells in advance of this step.** **C3** |
+
+---
+
 ## Verification standard for this roadmap
 
 A step is **DONE** when its acceptance test runs and passes on demand — not when the code exists.
@@ -1447,6 +3751,14 @@ here does not exist or if a count asserted here disagrees with what the command 
 ../ocr-venv/bin/python witness/test_verse_scope_bypass.py  # R9.2c Gate 0f has ONE route; each exemption still earns itself
 ../ocr-venv/bin/python witness/test_project_root.py         # R9.6/R11.4 one derived root; the legacy tree is not named, traversed to, or resurrected
 ./.venv/bin/python core/tests/fixtures/gold/mask_engine/originaldr_reconstruction/acquisition/acquire_sabates_a.py --verify  # R11.3a the apparatus clone is the pinned commit AND the pinned bytes
+../ocr-venv/bin/python witness/test_region_gold_addressing.py  # R2.1i a splitter change must not MISBIND a gold label
+../ocr-venv/bin/python witness/test_open_register_consistency.py # a step marked done must not remain in the OPEN register
+../ocr-venv/bin/python witness/score_head_regions.py       # R2.1g: exits 0 -> head-band region assignment, RunningHead recall 20/20; accuracy 0.8760 against controls of 0.6612 and 0.8017
+../ocr-venv/bin/python witness/score_head_tokens.py        # R2.1h: exits 0 -> head-band word split, RECOGNISER exact 0.8125 >= bar 0.75, blob 0.0000, beats both controls
+../ocr-venv/bin/python witness/gold_rekey_pagefrac.py      # R2.2c: exits 0 -> the region gold's page-anchored address is TOTAL, 125 / 125 entries placed and 0 unplaced (report-only; --write rebuilds it)
+../ocr-venv/bin/python witness/build_argument_gold.py --check # R2.2d: exits 0 -> 81 argument rows over 10 leaves and 15 adjudicated negatives, every address reproducible from the page
+../ocr-venv/bin/python witness/build_region_gap_gold.py --check # R2.2e: exits 0 -> 49 rows are swallowed whole into one out-of-block token, 43 of them BODY, and every address reproduces from the page
+../ocr-venv/bin/python witness/score_row_address.py       # R2.2j: exits 0 -> ADOPTED ink2d. Under a PURE RENAMING of rows, which moves no glyph, token or coordinate, the old ordinal address COLLAPSES (RunningHead and MarginNote recall both to zero, 90 of the 121 entries orphaned) while ink2d is bit-for-bit unmoved with 121 bound and 0 orphans. NB no N-slash-M fraction belongs in this claim: the checker takes the FIRST one, and a decimal pair like acc-slash-RH would parse as a fraction the scorer never prints
 ../ocr-venv/bin/python witness/test_verification_standard.py  # this block agrees with reality
 ../../../../core/tests/fixtures/gold/test_no_scratch_deps.py  # R11.2 no tracked module imports code out of gitignored .scratch/
 ```
@@ -1459,16 +3771,40 @@ here does not exist or if a count asserted here disagrees with what the command 
 `witness/`-prefixed commands, so it reports **19** and does **not** cover the two R11 entries above. They
 are listed here and run manually. That is exactly the shape this block exists to prevent — a claim in a
 document with nothing able to refuse it — so it is recorded as **R11.2b: extend the standard's parser to
-repo-root-relative commands and their venv. Hour ceiling 2h; if the parser cannot be extended without
+repo-root-relative commands and their venv. C1; if the parser cannot be extended without
 weakening its existing checks, ALERT rather than dropping the two entries from the block.**
+
+🔴 **R11.2c — TWO MORE PARSER GAPS, found 2026-08-18 while registering R2.2c's commands. C1.**
+1. **A claim is only enforced when the line contains `->`.** Both scorers — the modules carrying
+   this project's headline numbers — were listed here with no `->`, so the standard reported them
+   as `(not executed: no claim to check)` and **never ran them.** ⚠️ That is the very failure this
+   block exists to prevent: a claim in a document with nothing able to refuse it, and it was sitting
+   inside the instrument built to catch it. Their lines above now carry `->` and both are executed.
+2. **The fraction regex is digit-only, so it misparses DECIMALS.** `0.6612 / 0.8017` parses as the
+   pattern `6612/0` — so writing `score_head_regions`'s claim in its natural order would have
+   manufactured a FALSE failure rather than a check. Its claim is therefore worded so the first
+   fraction is the real one (`20/20`). ⚠️ **That is a workaround at the call site, not a fix**: the
+   next person to write a decimal pair into a claim hits it again. The parser must either understand
+   decimals or refuse a claim it cannot parse — silently matching `6612/0` is the worst of the three
+   behaviours. **Not fixed here** because changing the parser is a change to the instrument every
+   other number in this block is verified by, and it earns its own step.
 
 **The audits** — these are *expected to fail while their step is open*, and that is the point:
 
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
 ../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
-../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> 18/44 OPEN steps carry a §0.5 ceiling; the fraction must RISE
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> STRICT: 1/72 step(s) declare a complexity class in their OWN row; the fraction must RISE (denominator 59 -> 63 on 2026-08-18: R2.1k, R2.2c, R11.2c and R2.2d were added to the register; 63 -> 64 on 2026-08-19: R2.2e; 64 -> 67 on 2026-08-20: R2.2f, R2.2g and R11.2d; 67 -> 68 later the same day: R2.2h, the modal-edge estimator tolerance; 68 -> 69: R2.2i, tilted lines cut into two rows; 69 -> 70: R2.2j, the gold's row-ordinal addressing; 70 -> 71: R2.2k, the row clusterer chaining against a running median and walking up the tilt onto the next baseline; 71 -> 72: R2.2l, the adopted ink2d addressing losing a token without reporting it; R2.2l CLOSED on 2026-08-21 and R2.2m opened the same day for the same uncounted idiom in the containment path, so the denominator is unchanged at 72)
 ../ocr-venv/bin/python witness/r2_1d_continuity.py          # R2.1d'(A): exits 1 -> catchword continuity 0.312, Wilson95 lower 0.142 vs bar 0.95; R2.1f has FIRED
+../ocr-venv/bin/python witness/score_argument_region.py # R2.2d: exits 1 -> on the gold extended to ALL 10 chapter openings D1 recall is 52/81 rows and D2 has 13 false positives over the WHOLE window with 0 unadjudicated, while D3 still costs NOTHING (exact) and argument tokens still typed MainText are 3/327 against 46 with the rule off; NOT adopted
+../ocr-venv/bin/python witness/score_region_gap_tokens.py # R2.2e: exits 1 -> E3 is 0/43 -- the swallowed rows are OVERSHOOT, not merges, so the region-gap cut is REFUTED and NOT adopted, though it takes every merged token to zero at no cost on the region gold (E2 exact) and GOLD-ARGUMENT D1 holds at 52/81
+../ocr-venv/bin/python witness/score_block_span.py # R2.2e-b: exits 1 -> qualifying a token that spans the measure lifts the region gold to acc 0.9174 and MainText 0.9125 and takes the consumer 0/43 -> 23/43, but MarginNote falls 0.8947 -> 0.8421 on 1 entry whose row the repair fixed, so it is REFUTED and NOT adopted
+../ocr-venv/bin/python witness/score_r4_segment.py # R2.2f: exits 1 -> the consumer holds at 23/43 and per-segment R4 demotes 35 rows with the shipped gold EXACTLY unmoved, but G1 fails -- leaf 412 r2's body segment is FULL yet overshoots the modal edge by 45px against a 33px tolerance, so the row takes the fallback and the note keeps MainText: R2.2g is R2.2f's PREREQUISITE, not the reverse, and R4_PER_SEGMENT stays False
+../ocr-venv/bin/python witness/score_flush_reach.py # R2.2g: exits 1 -> one-sided flushness takes the consumer 23/43 -> 37/43 and H4 RESOLVES THE CYCLE (all three flags on: the entry returns to MarginNote, MN recovers 0.8421 -> 0.8947, RH holds 1.0000, MT 0.8375 -> 0.9000), but H1's bar is all 43 and 6 rows survive as a FOURTH cause, so FLUSH_MODE stays "both" and NEITHER R2.2g NOR R2.2f is adopted
+../ocr-venv/bin/python witness/score_edge_chain.py # R2.2h: exits 1 -> the full chain reaches 37/43 on the consumer with the region gold at acc 0.9174 RH 1.0000 MN 0.8947 MT 0.9000 and D1 57/81, and J2-J6 all pass, but J1's bar is all 43 and the estimator fix does NOT move it -- the 6 survivors are R2.2i (tilted lines cut into two rows), so all four flags stay OFF and the chain is NOT adopted
+../ocr-venv/bin/python witness/score_band_anchor.py     # R2.2b: exits 1 -> the anchored band passes A2 (gold containment 121/121, RH 20/20) and A3, but FAILS A1 on 18/20 leaves -- it misses the first body line on both CHAPTER-OPENING leaves; NOT adopted
+../ocr-venv/bin/python witness/test_band_agreement.py   # R2.2c: exits 1 -> the reader's band contains 0/20 RunningHead and 2/19 MarginNote gold entries, and BOTH scorers cut a different band; the guard's own control passes 121/121
+../ocr-venv/bin/python witness/audit_prefix_rule.py     # R2.1h: exits 1 -> reader still returns 2 whole-line tokens of 20 leaves (17 words, 1 abstain); the >=4-char rule's length-dependence is real and STAYS
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
 ./.venv/bin/python core/tests/fixtures/gold/audit_scratch_data_paths.py  # R11.2a: exits 1 -> 33 gitignored DATA refs across 23 tracked files (was 71/38); the number must FALL
 ```

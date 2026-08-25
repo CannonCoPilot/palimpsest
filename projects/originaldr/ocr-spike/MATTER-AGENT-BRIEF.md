@@ -45,6 +45,33 @@ Emit an `intervals` array — ordered, 0-based, reading order:
 ]
 ```
 - `kind` ∈ `title_block` | `heading` | `subtitle` | `paragraph` | `table_row` | `list_item` | `colophon_line`.
+
+## REQUIRED — `layout_archetype`, one per page you transcribe
+The geometry model classifies a leaf **before** it discovers regions, because which region classes a leaf
+*can* carry is a property of what kind of leaf it is. Your GT is where that typology gets its matter-side
+labels, so tag every page with the archetype it belongs to (Master Plan §3.2):
+
+| archetype | what it looks like | what you will mostly meet |
+|---|---|---|
+| `G-prelims-display` | title page, display type, printer's device, no running head, no verse numbers | title pages |
+| `G-prelims-prose` | continuous prose at the full measure — Approbatio, Preface, Proemial Annotations, Arguments | most of your work |
+| `H-tabular` | ruled or braced columnar matter — Summe and Partition, Tables of Epistles, errata | the table sections |
+| `E-annotation` | dense small-type apparatus, note-reference marks, patristic citations | endmatter annotation blocks |
+| `F-mixed` | **two of the above on ONE leaf** — e.g. a table ending and prose beginning below | rarer, and the one that matters most |
+
+⚠️ **`F-mixed` is the tag not to skip.** A leaf carrying two matter kinds is currently **dropped whole** by
+the body pipeline, so mixed leaves are exactly where matter is being lost. If a page changes kind partway
+down, tag it `F-mixed`, and say in `layout_note` **where** the boundary falls and what sits either side.
+If a page genuinely fits none of these, write what you see in `layout_note` and say so in your summary —
+an archetype invented to make a page fit is worse than an honest miss.
+
+## Catchwords, signatures, running heads — record them, they are collation evidence
+You already exclude catchwords from the body and record page labels and running headers. **Keep doing that,
+and never omit them as noise**: leaf collation (Gate 0b) is being rebuilt on *several* independent signals
+rather than one, and four of them are fields you are already capturing — the **catchword** at the foot, the
+**quire signature**, the **printed page label**, and the **running header**. A section whose catchword or
+signature you leave out is a leaf boundary the collation cannot check. If a catchword is **more than one
+word**, record all of it; if a page prints none, record its absence explicitly rather than silently.
 - **paragraphs**: group consecutive prose/latin lines into paragraphs by the breaks you SEE on the page
   (indentation, drop-caps, spacing, a sentence closing then a new lead). One paragraph = one interval.
 - **tables**: one interval per row (kind `table_row`).
@@ -57,6 +84,7 @@ Emit an `intervals` array — ordered, 0-based, reading order:
 Use the **Write tool** to save your complete GT JSON to the exact path given in your task prompt
 (`ocr-spike/ground-truth/matter-<vol>-<slug>.json`). GT fields: `locus` ("matter/<vol>/<slug>"),
 `page_index` (or list), `ocr_dir`, `scan`, `page_label_printed`, `running_header` {left,center,right},
+`layout_archetype` (per page — see above), `catchword`, `signature`,
 `layout_note`, `body` [{line_index, role, text, +drop_cap/marks}], `intervals` [as above], `uncertain`,
 `observer` ("agent:<slug>"), `observed_at`, `method` (state your 4 validations here), `confidence`,
 `glyph_regime_resolved`.
