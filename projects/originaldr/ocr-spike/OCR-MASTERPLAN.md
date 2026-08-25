@@ -1563,7 +1563,7 @@ is a **checkable** violation rather than a judgement call.
 | S1 | ✅ real — JP2 chain pinned, Gate 0d guards contamination at load |
 | S2 | 📋 designed in §3.2a (8 archetypes, REQUIRES/FORBIDS as data); **nothing built** (R12: *"OPEN, nothing built"*) |
 | S3 | ⚠️ geometric only, one witness, head band; one **undocumented** learned probe |
-| S4 | ❌ **no layout score of any kind has ever been computed on this corpus**; Gate 9 is thresholds, not results |
+| S4 | ⚠️ **no GATE-LEVEL layout score exists** — rows 10a/10b await GOLD-LAYOUT. ✅ **The first layout measurement of any kind was taken 2026-08-25 (R14.0)**: Surya scores RunningHead 20/20, MainText 80/80 (⚠️ CONTAINMENT — median bound box 0.5555 of the page), **MarginNote 0/19**, overall 100/121 on the head-band gold. Rung-0 only; discharges no gate |
 | S5 | ❌ named in three summary documents, owned by none |
 | S6 | ⚠️ recogniser validates at 0.9396 but is **not wired into the consuming path** (R13) |
 | S7 | ✅ exists, ⚠️ fed by the four-role typer above |
@@ -1836,7 +1836,11 @@ capability — it is less safe, because it will be used and its errors will neve
 therefore promoted to a **named, gated output of the region model**, and Gate 9 now reads
 **box · label · slant · confidence · relations** (extended 2026-08-25 by §3.0 S4 and S5).
 
-**Gate 9**, published *before* the baseline is measured and sha-pinned, with the recognizer frozen.
+**Gate 9** — ⚠️ **an ALIAS. The canonical ids are §7.8's rows 10a–10f, and a citation must carry the row
+id** (9.1≡10a · 9.2/9.3/9.4≡10b · 9.5≡10c · 9.6≡10d · 9.7≡10e · 9.8≡10f). See §7.8's crosswalk for why:
+two ids for one check had already produced a contradiction in this document's own prose.
+
+Published *before* the baseline is measured and sha-pinned, with the recognizer frozen.
 Revised 2026-08-17 to carry the archetype and slant clauses:
 
 | # | clause | metric | threshold | set | n |
@@ -2592,13 +2596,48 @@ set · n · pre-registered effect size.**
 | **10a** | **G1 archetype classification** (§3.2a) | per-archetype accuracy · **forbidden-class emission rate** | **≥0.95 macro · forbidden-class emission = 0** | GOLD-LAYOUT, recognizer frozen | ≥125 pages, per-archetype n published |
 | **10b** | G1 geometry — regions | marginalia recall / precision · boundary error · per-class IoU | **≥0.85 / ≥0.90 · ≤8 px median, ≤25 px p95 · IoU published per class** | GOLD-LAYOUT, recognizer frozen | ≥125 pages |
 | **10c** | **G1 geometry — slant** (§3.2b) | per-leaf slope error vs hand-measured baseline · abstention rate | 🔴 **pre-registered from the hand-measured set's spread — NOT YET WRITABLE, no such set exists**; abstentions reported | GOLD-LAYOUT | pre-registered |
+| **10d** | **G1 geometry — abstention** (§3.0 S4) | rate of regions the agent declines to type · **the fate of every abstained region** | 🔴 **pre-registered from R14.2's characterisation — NOT YET WRITABLE**; an abstention silently defaulted to a class is a **hard failure** | GOLD-LAYOUT | pre-registered |
+| **10e** | **G1 geometry — relations** (§3.0 S5) | reading-order accuracy · **note-to-verse attachment accuracy**, scored SEPARATELY from boxing | 🔴 **pre-registered from R14.3's characterisation — NOT YET WRITABLE** | GOLD-LAYOUT + apparatus | pre-registered |
+| **10f** | **G1 geometry — the re-examination loop** (§3.0 S8) | fraction of failed checks the loop REPAIRS · fraction it makes WORSE · fraction converted to caused abstention | 🔴 **pre-registered from R14.5 — NOT YET WRITABLE**; the "makes worse" figure is **published, never netted** | GOLD-LAYOUT | pre-registered |
 | **11** | G1 recognition | CER-folded · CER-diplomatic · per-class · abstention | **≤1.0% · floor+δ · published per class · reported** | GOLD-TEXT | §7.2, cluster bootstrap |
 | **12** | alignment | accepted-line precision · never-accepted span fraction | **≥0.98 · reported, blocking if rising** | held-out | 500 lines |
 | **13** | G2 | primary scalar + non-inferiority set | **§7.6** | VAL-GOLD | budget 20 |
 | **14** | publish | apparatus schema validates; **HOLDOUT opened once** | **machine-checkable completeness assertion** | HOLDOUT | — |
 
+🔴 **THIS TABLE IS THE CANONICAL GATE REGISTER, AND IT HAD A RIVAL — RECONCILED 2026-08-25.** §3.2
+publishes the geometry gate as **"Gate 9"** with clauses 9.1–9.8, while this table publishes the same
+checks as rows **10a–10f**. Two ids for one check is how a threshold gets met in one document and stays
+open in the other, and **the document was already confused by it**: §2 says *"Gate 10c's threshold
+cannot yet be written (§3.2b)"* while §3.2b calls that identical check 9.5. **The crosswalk, now
+binding:**
+
+| the check | §3.2's clause | **canonical row (this table)** |
+|---|---|---|
+| archetype classification | Gate 9.1 | **10a** |
+| marginalia recall/precision · MainText boundary · per-class IoU | Gate 9.2 · 9.3 · 9.4 | **10b** |
+| slant | Gate 9.5 | **10c** |
+| abstention (§3.0 S4) | Gate 9.6 | **10d** — *added here today; it had no row at all* |
+| relations (§3.0 S5) | Gate 9.7 | **10e** — *added here today* |
+| the re-examination loop (§3.0 S8) | Gate 9.8 | **10f** — *added here today* |
+| the archaic typeset census | **Gate 4.1** (§4.1) | **row 3** |
+
+⚠️ **THE RULE**: this table's row id is canonical; §3.2's and §4.1's clause numbers are *aliases* and
+must carry their row id when cited. **A gate clause with no row here has not entered the build order**,
+which is precisely what §7.8's own document-level invariant requires — and it is the state 9.6, 9.7 and
+9.8 were in for the few hours between their being written into §3.2 and this reconciliation.
+
+🔴 **AND THE ROADMAP CITED THIS TABLE ZERO TIMES** (measured 2026-08-25). The canonical gate register
+was invisible to the work plan, which is why **Gate 11 — G1 recognition, the gate for the character
+recognition model — had no Roadmap step of any kind** while the recogniser's status was an open
+question. Same shape as the stale OPEN register found the same day, and as this project's signature
+defect: a correct register that nothing reads. **R15 in the Roadmap is the remedy, and it is an
+instrument, not a promise.**
+
 🔴 **STATE OF THIS TABLE, 2026-08-17 — READ BEFORE CITING ANY ROW.** Rows 10a/10b/10c and 11 have **never
-been evaluated**. There is **no layout score of any kind on this corpus**, and the recogniser figures in
+been evaluated**. ⚠️ **Updated 2026-08-25**: the first layout measurement of any kind on this corpus now
+exists — **R14.0**, Surya against the 121-entry head-band gold, overall 100/121 with MarginNote **0/19** —
+but it is a **rung-0 admissibility** run on 20 leaves of one witness and **discharges no row here**; rows
+10a–10f remain reserved for GOLD-LAYOUT with the recogniser frozen. The recogniser figures in
 circulation (validation accuracy 0.9396; `genesis-24` content 0.9448) are neither Gate 11 measurements nor
 layout measurements. Rows 9 through 14 are **published thresholds awaiting their first measurement** —
 which is the correct state for them to be in, since §7.8's document-level invariant requires the threshold

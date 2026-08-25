@@ -1655,6 +1655,55 @@ ceiling debt.** The claim was re-measured and rewritten, never estimated.
 (38 → 39 commands), which required its coverage line to print a real `986/12592` fraction, since a claim's
 first fraction must be one the command actually prints.
 
+### 2026-08-25 (later) — R14.0 DONE: the first layout score on this corpus, and two register defects
+
+**Review of all Masterplan and Roadmap sections found three defects of one shape.** (1) **Two gate
+registers named the same checks differently** — §3.2's Gate 9.1–9.8 against §7.8's rows 10a–10f — and
+the document had **already contradicted itself**, §2 citing *"Gate 10c's threshold"* for the slant check
+§3.2b calls 9.5. (2) **Gate 9.6/9.7/9.8, written earlier the same day, had no §7.8 row at all**, so by
+§7.8's own document-level invariant they had not entered the build order. (3) **The Roadmap cited §7.8
+zero times**, and the consequence was concrete: **Gate 11 — G1 recognition, the gate for the character
+recognition model — had no Roadmap step of any kind**, while "what progress on the recogniser?" was
+being answered from validation figures §7.8 explicitly says are *"neither Gate 11 measurements nor
+layout measurements."* Fixed: §7.8 declared canonical with a binding crosswalk, rows **10d/10e/10f**
+added, **R15** (one gate register, as an *executable* audit) and **R13.3** (Gate 11's first measurement)
+written. ⚠️ **Instance 16 of the signature defect** — the OPEN register decayed because it was hand-
+maintained; §7.8 was never wrong, it was simply never read.
+
+**R14.0 IMPLEMENTED AND SCORED.** `witness/score_surya_layout.py`. Surya `FastLayoutPredictor` 0.21.1
+against GOLD-HEADBAND, leaves 400–419, page-fraction addressed, two **declared** label maps, 121 bound,
+**0 orphans**. **RunningHead 20/20 · MainText 80/80 · MarginNote 0/19 · overall 100/121 = 0.8264.**
+Surya emitted **zero `Footnote`** boxes, so the charitable map was empirically identical to the strict
+one — the marginalia ceiling is not a mapping artefact.
+
+🔴 **The result is a LABELLING failure on a WORKING DETECTOR.** MarginNote entries bind to **tight**
+boxes (median **0.0039** of page area), so Surya finds the notes as distinct objects and simply has no
+name for them — its vocabulary is modern-document and contains no marginalia class. ⇒ **R14.1 is
+redirected from "train a detector" to "class-inventory fine-tune of an existing one"**, which is
+materially cheaper. ⚠️ **`LayoutPredictor` was tried first and failed**: it needs a `llama-server`
+binary that is not installed (`brew install llama.cpp`, or set `LLAMA_CPP_BINARY`). `FastLayoutPredictor`
+needs no such backend. Recorded rather than routed around.
+
+⚠️ **THE ARCHITECT PASS FAILED MY OWN SCORER, TWICE, AND BOTH CATCHES CHANGED THE REPORT.** (a) The
+first version bound a gold entry to **any non-zero overlap** — the exact defect R2.1i had already fixed
+once in `score_head_regions` (*"a binding must be SUBSTANTIAL, not merely non-zero"*), reintroduced by
+me in a fresh reimplementation. `MIN_BIND_FRAC = 0.50` of the gold entry's own area added. (b) **MainText
+80/80 is CONTAINMENT, not boundary quality**: the bound boxes cover a median **0.5555 of the page**, and
+a half-page block containing every body entry scores 1.0000 for free. A per-class bound-box-size report
+was added so the trap is *visible* rather than arguable. **The MainText figure must never be quoted as a
+win**; Gate 10b's boundary error is the check that separates them and is not measured here.
+
+📌 **The comparison that matters, on the same gold**: Surya beats `region_head` on MainText (80/80 vs
+67/80, with the containment caveat), ties RunningHead (20/20), and loses MarginNote (0/19 vs 17/19).
+**Neither is adequate alone, and the hand-built geometric component is currently the only thing in the
+project that can NAME a marginal note** — which is the "initialisation and plausibility clamp" role
+§3.2 item 5 assigns it, now evidenced rather than asserted. ⚠️ Coverage limit: GOLD-HEADBAND labels the
+top 3 rows, so every MN entry here is a **head-band** note; outer-margin notes beside the measure are
+**not** covered, the same limit R2.2o.1 hit and R2.2o.1b would lift for both.
+
+⚠️ **THIS DISCHARGES NO GATE.** Rows 10a/10b are reserved for GOLD-LAYOUT. Bars were pre-registered in
+the file before the run: MN ≥ 0.50 **FAIL**, overall ≥ 0.70 **PASS**.
+
 ⚠️ **The three summary documents were the mechanism of the drift, not bystanders.** §8a already recorded
 that the recogniser's status *"appears in none of the three"*. The same hole hid the aim itself. Fixed:
 EXEC SUMMARY gains **§8b** with the eight-step status table; OVERVIEW's pipeline diagram now states the

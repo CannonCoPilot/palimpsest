@@ -104,7 +104,8 @@ endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 ·
 **R9.6b** · **R9.7** · **R9.8** · **R10.1** · **R10.2** · **R10.3** · **R11.2a** · **R11.2b** · **R11.2c** (NEW) · **R11.5** (blocked) ·
 **R12.1 · R12.2 · R12.3** (layout typology, NEW) · **R13.1 · R13.2** (the recogniser is not in the path, NEW) ·
 **R2.2n · R2.2o · R2.2o.1b · R2.2o.2 · R2.2o.3 · R2.2o.4** (filed 2026-08-25, see the register note below) ·
-**R14.0 · R14.1 · R14.2 · R14.3 · R14.4 · R14.5 · R14.6** (THE ADAPTIVE VISUAL AGENT, NEW — Masterplan §3.0)
+**R14.1 · R14.2 · R14.3 · R14.4 · R14.5 · R14.6** (THE ADAPTIVE VISUAL AGENT, NEW — Masterplan §3.0) ·
+**R13.3** (Gate 11 has never had a step, NEW) · **R15.1 · R15.2 · R15.3** (ONE GATE REGISTER, NEW)
 
 🔴 **NEW OPEN STEPS RAISED 2026-08-17, each from a finding rather than from a plan review.** **R2.1g**
 (head-side redesign, option 1) · **R2.2a** (head-band region primitive — the R2/R3 interleave pivot) ·
@@ -3920,6 +3921,11 @@ not comparable. **The threshold is not well-defined until the denominator is** �
 
 ## R13 — The trained recogniser is not in the path that needs it (NEW, 2026-08-17)
 
+**Complexity per sub-step**: declared in each row, C1–C4. **The pre-registered decision rule for
+this section**: *a wiring step is DONE when a reading's provenance names its model and a model swap
+changes that name (injection-proven); a measurement step is DONE when it reports against a threshold
+written BEFORE it ran, and a null result is published rather than retried into significance.*
+
 **Discharges** §4 in the negative: it names a defect in the *plumbing* between components, not in either
 component. **Status: OPEN, verified on disk.**
 
@@ -3985,13 +3991,63 @@ page, not kraken's lines.**
 
 | # | step | deliverable | acceptance |
 |---|---|---|---|
-| R14.0 | **Register, run and score the layout probe that already exists** | `surya_layout_probe.py` — a learned layout model covering S3/S4, present in the repo and named in **none** of the five governing documents — run on a stratified leaf set, with its output scored or its refusal recorded | the probe is **either** scored against hand-checked leaves **or** explicitly refused with a reason. ⚠️ **An unattempted tool produces no signal**; and per §3.0's forbidden-list item 3 this is the same defect shape as §3.2b's slant — working code that no rule governs. **C1 — probe**, and it is the cheapest step here |
-| R14.1 | **S1→S2: the archetype classifier, on the PAGE** | R12.1's census then R12.2's classifier, taking **the leaf image**, not kraken's lines | Gate 9.1 — per-archetype accuracy, **forbidden-class emission = 0**. ⚠️ **Input constraint from (c) above**: a classifier reading line objects inherits a boundary that was already destroyed. **C3 — model** |
+| R14.0 | ✅ **DONE** 2026-08-25 — see the RESULT block below. **Register, run and score the layout probe that already exists** | `surya_layout_probe.py` — a learned layout model covering S3/S4, present in the repo and named in **none** of the five governing documents — run on a stratified leaf set, with its output scored or its refusal recorded | the probe is **either** scored against hand-checked leaves **or** explicitly refused with a reason. ⚠️ **An unattempted tool produces no signal**; and per §3.0's forbidden-list item 3 this is the same defect shape as §3.2b's slant — working code that no rule governs. **C1 — probe**, and it is the cheapest step here |
+| R14.1 | **S1→S2: the archetype classifier, on the PAGE.** ⚠️ **REDIRECTED by R14.0**: Surya's detector already localises the regions and only lacks NAMES for them, so this is a **class-inventory fine-tune of an existing detector**, not a detector built from scratch | R12.1's census then R12.2's classifier, taking **the leaf image**, not kraken's lines | Gate 9.1 — per-archetype accuracy, **forbidden-class emission = 0**. ⚠️ **Input constraint from (c) above**: a classifier reading line objects inherits a boundary that was already destroyed. **C3 — model** |
 | R14.2 | **S3→S4: regions with confidence, and the right to abstain** | typed polygons with a confidence per region and an explicit abstention path; **`layout.py:type_lines`'s `fail-safe toward body` branch is retired** by this step, not before | Gate 9.3, 9.4, and **9.6 whose rate is pre-registered from R14.2's own characterisation, never asserted**. ⚠️ An abstention silently defaulted to any class is a hard failure. **C3 — model** |
 | R14.3 | **S5: relations — reading order and ATTACHMENT** | which note attaches to which verse, which numeral governs which text, which catchword predicts which leaf | Gate 9.7, scored **separately from boxing**. ⚠️ This is the edition's scholarly payload: an unattached marginal transcript is not apparatus, and §8 assumes the link exists. **C3 — model** |
 | R14.4 | **S6: recognition CONDITIONED by region class** | the region class selects model, lexicon and post-rules; **R13.1's wiring is the first instance of this**, not a separate errand | recognition reported **per region class**, never as one page figure. ⚠️ Grounded, not assumed: R2.2d measured that a row is not homogeneous in fount, and the `genesis-24` 49-point content/surface spread is what pooling costs. **C3 — assembly** |
 | R14.5 | **S8: the re-examination loop** | a failed §6–§8 check re-opens S2–S5 for that leaf; §3.2 item 3's residue signal, currently spent only as training data, is read **at run time** as the trigger | Gate 9.8 — repairs **and** regressions published separately, **never netted**. ⚠️ Permitted terminal states are *repaired* or *abstained with a cause*; **never** *accepted below threshold*. **C4 — open** |
 | R14.6 | **The label generator — what makes R14.1–R14.4 affordable** | distant supervision per §3.2 items 2, 3, 7: MainText from archaic-reference alignment, Marginalia from the **1,334** transcribed apparatus blocks, RunningHead/Catchword/Signature from self-verifying tests, VerseNumber from numeral-matches-adjacent-verse | training labels generated at corpus scale **without** a hand-labelling campaign, with §3.2 item 8's quota for books that generate none. ⚠️ **GOLD-LAYOUT is the SCORER, not the trainer** — conflating them is what makes this programme look like it needs 125 hand-labelled pages before it can start. **C3 — assembly** |
+
+### R14.0 RESULT — ✅ DONE 2026-08-25. The first layout score ever computed on this corpus
+
+**`witness/score_surya_layout.py`**, Surya `FastLayoutPredictor` 0.21.1 against the 121-entry
+GOLD-HEADBAND over leaves 400–419, addressed by **page fraction** (R2.2c), labels mapped by **two
+declared maps** so no map could be chosen after seeing the numbers. **121 bound, 0 orphans.**
+
+| gold class | recall | bound-box size, median share of PAGE area |
+|---|---|---|
+| RunningHead | **20/20 = 1.0000** | 0.0035 |
+| MainText | **80/80 = 1.0000** | **0.5555** ⚠️ |
+| MarginNote | **0/19 = 0.0000** | 0.0039 |
+| ChapterHead | 0/2 = 0.0000 | 0.0060 |
+| **overall** | **100/121 = 0.8264** | |
+
+Surya emitted `Text` 79 · `PageHeader` 61 · `SectionHeader` 11 · `PageFooter` 9 — and **zero
+`Footnote`**, so MAP_CHARITABLE was *empirically identical* to MAP_STRICT and the MN ceiling is not a
+mapping artefact. Confusion: **MN → PageHeader 15, MN → Text 4**.
+
+🔴 **THE FINDING IS A LABELLING FAILURE ON TOP OF A WORKING DETECTOR, WHICH IS FAR BETTER NEWS THAN
+`MN 0.0000` LOOKS.** The MarginNote entries bind to **tight** boxes — median **0.0039** of page area,
+not to the half-page `Text` block — so Surya **localises the notes as distinct objects**. What it lacks
+is a *name* for them: its vocabulary is modern-document (Caption · Footnote · PageHeader · PageFooter ·
+SectionHeader · Text · Table · Code · Form · ChemicalBlock · Bibliography …) and contains **no
+marginalia / side-note class**. ⇒ **The repair is a CLASS-INVENTORY fine-tune — keep the detector, teach
+it this book's classes — not a detector trained from scratch.** That is materially cheaper than R14.1
+assumed, and it is exactly what §3.2a's REQUIRES/FORBIDS contract already specifies.
+
+⚠️ **THE MainText 1.0000 IS NOT A WIN, AND MUST NEVER BE QUOTED AS ONE.** Its bound boxes cover a
+median **0.5555 of the page**. A half-page block containing every body entry scores 1.0000 by
+**containment**. Gate **10b**'s boundary error (≤8 px median, ≤25 px p95) is the check that separates
+containment from boundary quality, and this run does **not** measure it. ⚠️ **This was caught by the
+Senior Architect pass on the scorer's own first version, which bound on any non-zero overlap** — the
+defect R2.1i had already fixed once in `score_head_regions`. `MIN_BIND_FRAC = 0.50` of the gold entry's
+own area was added, and the containment check was added to make the trap visible rather than arguable.
+
+⚠️ **COVERAGE LIMIT.** GOLD-HEADBAND labels the **top 3 rows**, so every MN entry scored here is a
+**head-band** note. That Surya localises notes running down the **outer margin beside the measure** is
+**not shown** by this run — the same coverage limit R2.2o.1 hit, and R2.2o.1b would lift for both.
+
+⚠️ **THIS DISCHARGES NO GATE.** Rows 10a/10b are reserved for GOLD-LAYOUT (≥125 pages, per-archetype
+quota, recogniser frozen). This is 121 entries over 20 leaves of one witness, and it answers only the
+rung-0 question *is this model worth building on*. Bars were pre-registered **in the file before the
+run**: MN recall ≥ 0.50 (**FAIL**, 0.0000) and overall ≥ 0.70 (**PASS**, 0.8264).
+
+📌 **AND THE COMPARISON THAT MATTERS.** Against the incumbent geometric `region_head` on the same gold:
+**Surya wins MainText 80/80 vs 67/80 (with the containment caveat above), ties RunningHead 20/20, and
+loses MarginNote 0/19 vs 17/19.** Neither is adequate alone. The hand-built geometric component is
+currently **the only thing in the project that can name a marginal note**, which is precisely the
+"initialisation and plausibility clamp" role §3.2 item 5 assigns it — now evidenced rather than asserted.
 
 ⚠️ **ORDERING.** R14.0 first, because it is nearly free and may change every estimate below it. R14.6
 runs alongside R14.1 because it is the input to everything after. **R14.5 is last and is the only C4**:
@@ -4003,6 +4059,69 @@ constant as the deciding signal for a boundary; no rule perfected against one wi
 capability outside the plan; no scheduling of prior-repair ahead of agent-building. ⚠️ **And no gate
 number invented in advance** — 9.6, 9.7 and 9.8 are deliberately unwritten, exactly as 9.5 is, because
 §0.5 forbids a threshold not derived from evidence. **Each is written after its characterisation runs.**
+
+---
+
+## R15 — ONE GATE REGISTER, and it must be READ (NEW, 2026-08-25)
+
+**Complexity per sub-step**: declared in each row, C1–C4. **The pre-registered decision rule for
+this section**: *a register defect is closed only when an EXECUTABLE check would have caught it; a
+crosswalk written in prose and maintained by hand is the defect restated, not the remedy.*
+
+### The finding
+
+**Measured 2026-08-25 while reviewing all sections.** Three defects, one shape.
+
+1. 🔴 **TWO GATE REGISTERS NAMED THE SAME CHECKS DIFFERENTLY.** Masterplan §3.2 publishes the geometry
+   gate as **Gate 9** with clauses 9.1–9.8; §7.8's table publishes the same checks as rows **10a–10f**.
+   **The document had already contradicted itself**: §2 reads *"Gate 10c's threshold cannot yet be
+   written (§3.2b)"* while §3.2b calls that identical check **9.5**. Reconciled in §7.8, which is now
+   declared canonical, with §3.2's numbers demoted to aliases that must carry their row id.
+2. 🔴 **THREE CLAUSES HAD NO ROW AT ALL.** Gate 9.6 (abstention), 9.7 (relations) and 9.8 (the loop)
+   were written into §3.2 earlier today and existed nowhere in §7.8 — so by §7.8's **own** document-level
+   invariant (*"no step enters the build order until its row carries metric · threshold · named set · n
+   · pre-registered effect size"*) they had not entered the build order. Rows **10d · 10e · 10f** added.
+3. 🔴 **THE ROADMAP CITED §7.8 ZERO TIMES.** The canonical gate register was invisible to the work plan.
+   The consequence is not abstract: **Gate 11 — G1 recognition, the gate for the character recognition
+   model — had NO Roadmap step of any kind**, while "what progress on the recogniser?" was a live
+   question being answered from validation figures that §7.8 explicitly says are *"neither Gate 11
+   measurements nor layout measurements."*
+
+⚠️ **Same shape as the stale OPEN register found the same day, and as this project's signature defect
+(now 16 instances): a correct register that nothing reads.** The OPEN register decayed because it was a
+hand-maintained prose list; §7.8 was never wrong, it was simply never consulted. **Both failure modes are
+invisible to a reader and both are trivially visible to a parser.**
+
+### Steps
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R15.1 | **The crosswalk becomes an executable check, not a paragraph** | `witness/audit_gate_register.py`: parses §7.8's table and §3.2's clause table from the Masterplan and the step ids from the Roadmap, and reports (a) any §3.2 clause with no §7.8 row, (b) any §7.8 row with no Roadmap step, (c) any gate id cited in the Roadmap that §7.8 does not define | the audit **reproduces today's three findings from the documents alone**, and would have failed before this session's edits. ⚠️ **A crosswalk maintained by hand is the defect restated** — the prose table in §7.8 is for readers; this is what binds it. **C2 — instrument** |
+| R15.2 | **Every §7.8 row carries the Roadmap step that discharges it** | a `discharged by` column, or an equivalent mapping the audit reads, covering rows 0a–14 | **every row maps to a step or is explicitly marked NOT YET PLANNED** — the second is an acceptable state and a silent absence is not. ⚠️ Expect rows to be genuinely unplanned; **naming them is the deliverable**, not eliminating them. **C2 — assembly** |
+| R15.3 | **Register the audit in the verification standard** | the command added to the audit block with a claim whose first fraction the command prints | the suite runs it; exit 1 while rows remain unplanned is the **healthy** state, as with `audit_prereq_ceilings`. **C1 — wiring** |
+
+⚠️ **R15 MAY NOT "FIX" ITS FINDINGS BY DELETING THEM.** An unplanned §7.8 row is closed by *planning
+it*, never by removing the row or by marking it out of scope without a stated reason. The audit exists
+to keep that pressure visible, which is why exit 1 is healthy.
+
+---
+
+## R13.3 — Gate 11 has never had a Roadmap step (NEW, 2026-08-25, found by R15)
+
+**Complexity: C3 — measurement.** **The pre-registered decision rule**: *Gate 11's thresholds are
+already published in §7.8 (CER-folded ≤1.0%, CER-diplomatic floor+δ, per-class published, abstention
+reported); they were written before any measurement and may not be revised in light of one.*
+
+🔴 **THE PRIMARY QUESTION ASKED WHAT PROGRESS HAS BEEN MADE ON THE CHARACTER RECOGNITION MODEL, AND THE
+HONEST ANSWER IS THAT ITS GATE HAS NEVER BEEN PLANNED.** R13.1 wires the recogniser in; R13.2 measures
+the ſ-surface effect on the `CONTENT OK, ſ-SURFACE OPEN` cells. **Neither is Gate 11.** Gate 11 is
+CER-folded and CER-diplomatic against GOLD-TEXT with a cluster bootstrap, and it is the row that says
+whether the recognition model is good enough — a question the 0.9396 validation accuracy and the
+`genesis-24` 0.9448 content score **do not answer**, as §7.8 states in terms.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R13.3 | **Gate 11's first measurement, once GOLD-TEXT is frozen (§7.8 row 9)** | CER-folded and CER-diplomatic over GOLD-TEXT, per class, with abstention reported, by the §7.2 cluster bootstrap | the published thresholds are met **or the gap is reported as OPEN**. ⚠️ **BLOCKED BY row 9** (GOLD-TEXT frozen) and by **R13.1** (a gate measured on an unwired model measures the wrong model). ⚠️ **Do not substitute validation accuracy** — a model's own validation split is not GOLD-TEXT, and §7.8 already refuses that substitution by name. **C3 — measurement** |
 
 ---
 
@@ -4083,7 +4202,7 @@ weakening its existing checks, ALERT rather than dropping the two entries from t
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
 ../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
-../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> STRICT: 8/81 step(s) declare a complexity class in their OWN row; the fraction must RISE (denominator 59 -> 63 on 2026-08-18: R2.1k, R2.2c, R11.2c and R2.2d were added to the register; 63 -> 64 on 2026-08-19: R2.2e; 64 -> 67 on 2026-08-20: R2.2f, R2.2g and R11.2d; 67 -> 68 later the same day: R2.2h, the modal-edge estimator tolerance; 68 -> 69: R2.2i, tilted lines cut into two rows; 69 -> 70: R2.2j, the gold's row-ordinal addressing; 70 -> 71: R2.2k, the row clusterer chaining against a running median and walking up the tilt onto the next baseline; 71 -> 72: R2.2l, the adopted ink2d addressing losing a token without reporting it; R2.2l CLOSED on 2026-08-21 and R2.2m opened the same day for the same uncounted idiom in the containment path, so the denominator is unchanged at 72; **72 -> 81 on 2026-08-25** — the register was found STALE, having stopped at R2.2m while the project worked on steps it could not see, so R2.2n, R2.2o and its four sub-steps were filed along with the seven R14 steps of the adaptive visual agent, and the numerator rose 1 -> 8 because R14 was filed WITH a section-level pre-registered decision rule and per-row complexity classes rather than added bare; the uncovered count held at 38, so the filing added no debt)
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> STRICT: 11/84 step(s) declare a complexity class in their OWN row; the fraction must RISE (denominator 59 -> 63 on 2026-08-18: R2.1k, R2.2c, R11.2c and R2.2d were added to the register; 63 -> 64 on 2026-08-19: R2.2e; 64 -> 67 on 2026-08-20: R2.2f, R2.2g and R11.2d; 67 -> 68 later the same day: R2.2h, the modal-edge estimator tolerance; 68 -> 69: R2.2i, tilted lines cut into two rows; 69 -> 70: R2.2j, the gold's row-ordinal addressing; 70 -> 71: R2.2k, the row clusterer chaining against a running median and walking up the tilt onto the next baseline; 71 -> 72: R2.2l, the adopted ink2d addressing losing a token without reporting it; R2.2l CLOSED on 2026-08-21 and R2.2m opened the same day for the same uncounted idiom in the containment path, so the denominator is unchanged at 72; **72 -> 81 on 2026-08-25** — the register was found STALE, having stopped at R2.2m while the project worked on steps it could not see, so R2.2n, R2.2o and its four sub-steps were filed along with the seven R14 steps of the adaptive visual agent, and the numerator rose 1 -> 8 because R14 was filed WITH a section-level pre-registered decision rule and per-row complexity classes rather than added bare; the uncovered count held at 38, so the filing added no debt; **81 -> 84 later the same day** as R13.3 and R15.1-R15.3 were filed and R14.0 CLOSED, numerator 8 -> 11 -- and the filing exposed that the R13 SECTION carried neither a ceiling line nor a decision rule, so R13.1 and R13.2 had been uncovered since 2026-08-17 and are now inherited; note also that the R15 ceiling line was invisible until a literal C-token was added to it, since CEILING_RE requires the class on the same line as the Complexity heading)
 ../ocr-venv/bin/python witness/r2_1d_continuity.py          # R2.1d'(A): exits 1 -> catchword continuity 0.312, Wilson95 lower 0.142 vs bar 0.95; R2.1f has FIRED
 ../ocr-venv/bin/python witness/score_argument_region.py # R2.2d: exits 1 -> on the gold extended to ALL 10 chapter openings D1 recall is 52/81 rows and D2 has 13 false positives over the WHOLE window with 0 unadjudicated, while D3 still costs NOTHING (exact) and argument tokens still typed MainText are 3/327 against 46 with the rule off; NOT adopted
 ../ocr-venv/bin/python witness/score_region_gap_tokens.py # R2.2e: exits 1 -> E3 is 0/43 -- the swallowed rows are OVERSHOOT, not merges, so the region-gap cut is REFUTED and NOT adopted, though it takes every merged token to zero at no cost on the region gold (E2 exact) and GOLD-ARGUMENT D1 holds at 52/81
@@ -4093,6 +4212,7 @@ weakening its existing checks, ALERT rather than dropping the two entries from t
 ../ocr-venv/bin/python witness/score_edge_chain.py # R2.2h: exits 1 -> the full chain reaches 37/43 on the consumer with the region gold at acc 0.9174 RH 1.0000 MN 0.8947 MT 0.9000 and D1 57/81, and J2-J6 all pass, but J1's bar is all 43 and the estimator fix does NOT move it -- the 6 survivors are R2.2i (tilted lines cut into two rows), so all four flags stay OFF and the chain is NOT adopted
 ../ocr-venv/bin/python witness/score_band_anchor.py     # R2.2b: exits 1 -> the anchored band passes A2 (gold containment 121/121, RH 20/20) and A3, but FAILS A1 on 18/20 leaves -- it misses the first body line on both CHAPTER-OPENING leaves; NOT adopted
 ../ocr-venv/bin/python witness/test_band_agreement.py   # R2.2c: exits 1 -> the reader's band contains 0/20 RunningHead and 2/19 MarginNote gold entries, and BOTH scorers cut a different band; the guard's own control passes 121/121
+../ocr-venv/bin/python witness/score_surya_layout.py # R14.0: exits 1 -> the first layout score ever computed on this corpus. Surya FastLayoutPredictor against the 121-entry head-band gold over leaves 400-419, page-fraction addressed, 121 bound and 0 orphans: RunningHead 20/20 and MainText 80/80 both exact, MarginNote 0/19, overall 100/121. It emitted no Footnote box at all, so the charitable label map was identical to the strict one and the marginalia ceiling is not a mapping artefact. The MarginNote entries bind to TIGHT boxes (median 0.0039 of page area), so the detector LOCALISES the notes and only lacks a NAME for them -- a labelling failure on a working detector, repairable by class-inventory fine-tune. The MainText figure is CONTAINMENT in a half-page block (median bound box 0.5555 of the page), not a boundary result, and Gate 10b is not measured here. Exit 1 is the rung-0 admissibility verdict, not a crash
 ../ocr-venv/bin/python witness/score_region_gap_pops.py # R2.2o.1: exits 1 -> 986/12592 intra-row gaps are labelled from the GOLD (top 3 rows only), and the two populations OVERLAP on 0.875 to 1.525 pitches -- the narrowest true region gap is NARROWER than the widest true word space, so the best possible single threshold still misclassifies and threshold-retuning is REFUTED as the repair. Both MN-against-MT boundaries are on leaf 412, the leaf region_head already records as the one where the marginal column abuts the measure, and the narrower of them sits BELOW the cut so it is never cut at all. Exit 1 is the FINDING, not a failure: it is the measurement that fired R2.2o's approach-level ALERT and re-scoped R2.2 to a clamp
 ../ocr-venv/bin/python witness/audit_prefix_rule.py     # R2.1h: exits 1 -> reader still returns 2 whole-line tokens of 20 leaves (17 words, 1 abstain); the >=4-char rule's length-dependence is real and STAYS
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires

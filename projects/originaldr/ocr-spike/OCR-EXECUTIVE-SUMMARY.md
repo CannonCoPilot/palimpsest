@@ -365,7 +365,7 @@ own kind of thing**, with its own rules, context and gates.
 | S1 | see the page | ✅ real |
 | S2 | classify the archetype | 📋 designed (8 archetypes, REQUIRES/FORBIDS); **nothing built** |
 | S3 | see the region classes by visual cue | ⚠️ geometric only, one witness, head band |
-| S4 | bound them — box · label · slant · **confidence**, abstention permitted | ❌ **no layout score of any kind has ever been computed on this corpus** |
+| S4 | bound them — box · label · slant · **confidence**, abstention permitted | ⚠️ **no GATE-LEVEL layout score exists** — rows 10a/10b await GOLD-LAYOUT. ✅ **The first layout measurement of any kind was taken 2026-08-25 (R14.0)**: Surya scores RunningHead 20/20, MainText 80/80 (⚠️ CONTAINMENT — median bound box 0.5555 of the page), **MarginNote 0/19**, overall 100/121 on the head-band gold. Rung-0 only; discharges no gate |
 | S5 | **relate** them — reading order and note-to-verse attachment | ❌ named in three documents, owned by none |
 | S6 | recognise each region **conditioned by its class** | ⚠️ recogniser validates at 0.9396, **not wired** (R13) |
 | S7 | run that class's rules, checks and gates | ✅ exists, ⚠️ fed by a four-role geometric typer |
