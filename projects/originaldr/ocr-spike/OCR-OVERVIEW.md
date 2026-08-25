@@ -221,11 +221,22 @@ unverifiable**, not assumed sound.
 
 ```
  0  ACQUIRE      volume → verified native rasters, grayscale primary
- 1  GEOMETRY     page → layout archetype → typed region polygons + leaf slant
+ 1  GEOMETRY     THE ADAPTIVE VISUAL AGENT (Masterplan §3.0, which governs)
+                page → archetype → region classes seen BY VISUAL CUE → typed
+                polygons carrying box · label · slant · CONFIDENCE → RELATIONS
+                (reading order, and which note attaches to which verse)
                 (archetype first, because which classes a leaf CAN carry is a
                  property of what kind of leaf it is; shapes from ink, labels
-                 from text)
+                 from text — that is how it is TRAINED, not what it does)
+                ⚠️ every decision derives from THAT leaf's appearance; a fitted
+                 constant may initialise or clamp, and may never decide
+                ⚠️ the agent may ABSTAIN; unknown ink is never called scripture
  2  RECOGNISE    region → lines → diplomatic text + a stand-off rendition layer
+                ⚠️ CONDITIONED by region class — the class selects the model,
+                 lexicon and post-rules; scores reported PER CLASS, never pooled
+ 2b RE-EXAMINE   a failed check re-opens steps 1–2 for that leaf; residue is read
+                 at RUN TIME, not only as training signal. Repairs and
+                 regressions are published separately, never netted
  3  GROUND TRUTH forced alignment → line GT;  text-side mining → glyph GT
  4  TRANSCRIBE   the base document, corrected page by page, signed off
  5  LOCATE       page/signature primary address · verse secondary

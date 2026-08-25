@@ -181,6 +181,47 @@ BLOCK_SPAN_QUALIFIES = False
 # fates each token took so the rule's REACH is measurable and the fallback is counted, not silent.
 R4_PER_SEGMENT = False
 
+# R2.2n CANDIDATE, DEFAULT OFF. DEMOTE A BODY ROW NO SEGMENT QUALIFIES.
+# 🔴 THIS REVERSES THE "IT MAY ONLY DEMOTE" CLAUSE DIRECTLY ABOVE, and that clause was a reasoned
+# decision, not an oversight -- so the reversal is argued, pre-registered and default OFF, never a
+# quiet flip. What the clause says is that a row passing R3 on its token-union span while no single
+# segment passes should KEEP today's behaviour, because stripping MainText there would be "this rule
+# answering a question it was not asked".
+# ⚠️ THE QUESTION HAS NOW BEEN ASKED, BY A MEASUREMENT. 2026-08-25, leaf 410 row 0: far-chaining
+# recovered a real line of type at x=0.19 (the `far` bucket had been deleting it). Its token joins
+# the head row, the token UNION now spans 0.171-0.837, R3 finds that flush and >= BODY_SPAN_M x
+# measure, and R4 sweeps the whole row into MainText -- relabelling a RunningHead and a MarginNote
+# that were both already correct. The row is three sparse islands; NO segment reaches the measure.
+# So the promotion itself is the artefact, produced by summing extent ACROSS GAPS, and the fallback
+# preserves exactly the wrong answer in exactly the case the segment rule was built to see.
+# ⚠️ `R4_PER_SEGMENT` ALONE IS INERT ON THIS -- measured, and it is the reason this flag is separate.
+# Flipping it changes NOTHING: RH/MN/MT/pairs/sinks come out bit-identical on both arms, because
+# `_in_body_seg` returns True whenever the row is absent from `body_segs`, and an unqualified row is
+# never put there. A candidate that cannot move a number cannot be validated by not regressing one.
+# ⚠️ KEPT SEPARABLE FROM `R4_PER_SEGMENT` on purpose. R2.2i/R2.2k had to be adopted as one candidate
+# because they were inseparable, and that cost a step's worth of attribution. Two flags, two effects.
+# ⚠️ WHAT THIS DOES NOT SETTLE: the comment above records that the gold's MN 0.8947 "was resting on"
+# two cancelling errors. A bar anchored to 0.8947 may therefore be anchored to a wrong number, and
+# neither this flag nor its acceptance criteria resolve that. Tracked as R2.2o.
+#
+# 🔴 REFUTED 2026-08-25 AT ITS OWN PRE-REGISTERED BAR, AND KEPT BECAUSE THE REFUTATION IS THE
+# FINDING -- the same disposition as SPAN_MODE="ink" above. S-A control do-no-harm FAILED: MainText
+# 0.8375 (67/80) -> 0.6875 (55/80). S-D FAILED: 419.0.0 stays RH, so it does not even fix both cases
+# it was written for. It DOES lift MN to 0.9474 (18/19) on the control and 0.8947 on the candidate.
+# ⚠️ AND THE REFUTATION IS NOT THIS RULE'S. Three independent levers -- SPAN_MODE="segment",
+# R4_PER_SEGMENT and this demotion -- each buy ~1 MN for 11-12 MainText, the SAME trade. The shared
+# dependency is `CR.region_segments`, and measuring it settles the matter: of 301 rows whose token
+# union spans >= 0.75 of the measure, 102 (34%) have NO continuous segment reaching 0.75, only 49%
+# are a single segment, and 2.3% of intra-row gaps exceed the one-pitch cut. In JUSTIFIED setting
+# the word space is stretched to fill the measure, so "a gap wider than the line pitch is a run to
+# another region" mis-cuts a third of the body. EVERY rule built on this primitive inherits that.
+# ➡️ R2.2o: fix the PRIMITIVE (a cut rule that separates a stretched word space from a region gap --
+# the marginal column is a sustained gap with ink beyond it, not a single wide space), THEN re-run
+# these three candidates against it. Adding a fourth rule on top would inherit the same error.
+# 🔴 THE MN GAP THEREFORE REMAINS OPEN AND BLOCKS ADOPTION OF CANDIDATE 4. Not accepted, not
+# reduced, not worked around -- `BASELINE_MODEL` stays False and R2.2o is the next step.
+R4_DEMOTE_UNQUALIFIED = False
+
 # R2.2g CANDIDATE, DEFAULT "both" (unchanged behaviour). HOW R3 TESTS FLUSHNESS AT AN EDGE.
 # 🔴 THE DEFECT, measured 2026-08-20 by R2.2f: R3 asks `abs(a - L) <= tol or abs(b - R) <= tol`, a
 # SYMMETRIC WINDOW -- so it refuses a line for having too MUCH ink at the edge exactly as readily as
@@ -472,6 +513,29 @@ def classify(band, pitch, nrows=None, gap_fn=None, split_fn=None):
             row = t.get("_row") or []
             if row:
                 span[t["row"]] = (min(g[2] for g in row), max(g[3] for g in row))
+    elif SPAN_MODE == "flush":
+        # R2.2n-b -- THE CANDIDATE THE ROADMAP ALREADY NAMED, implemented 2026-08-25. Read the two
+        # refutations together: "ink" fails because a running head's COMBINED extent spans the
+        # measure though no element approaches it; "segment" fails because a body line's own VERSE
+        # NUMBER sits beyond a pitch-wide gap, so the longest run is cut short of the measure.
+        # ⚠️ Both failures are about the WRONG RUN being chosen, not about runs being the wrong idea.
+        # A justified body line is continuous AND ANCHORED: it reaches L or R. A headline band is
+        # sparse islands that reach NEITHER. So take the run that is FLUSH, not the longest -- then a
+        # verse number stranded beyond a gap no longer costs the row its span, because the run that
+        # is measured is the one anchored at the edge, and a head row's islands still qualify for
+        # nothing. Computed on GLYPH BOXES, so no splitter can move it (R2.1j's invariance).
+        # ⚠️ Where several runs are flush, take their UNION -- a justified line flush at BOTH edges is
+        # one line, and picking one end would halve it.
+        for t in toks:
+            if not t["in_block"]:
+                continue
+            row = t.get("_row") or []
+            if not row:
+                continue
+            ext = [(min(g[2] for g in sg), max(g[3] for g in sg)) for sg in CR.region_segments(row, p)]
+            anchored = [ab for ab in ext if _flush(ab[0], ab[1], L, R, flush_tol)]
+            if anchored:
+                span[t["row"]] = (min(a for a, _ in anchored), max(b for _, b in anchored))
     elif SPAN_MODE == "segment":
         # A justified body line is CONTINUOUS across the measure; a headline band is SPARSE ISLANDS.
         # Extent cannot tell them apart, so take the longest run that is continuous at the setting's
@@ -557,6 +621,11 @@ def classify(band, pitch, nrows=None, gap_fn=None, split_fn=None):
                 body_segs[j] = qual
             else:
                 fallback_rows.add(j)
+        # R2.2n -- the row was promoted by an extent summed ACROSS GAPS while no continuous run
+        # reaches the measure. `fallback_rows` has always counted this case; acting on it is the
+        # candidate. Demote, so R6 can then see the row as the head row it is.
+        if R4_DEMOTE_UNQUALIFIED:
+            body_rows -= fallback_rows
 
     def _in_body_seg(t):
         if not R4_PER_SEGMENT or t["row"] not in body_segs:

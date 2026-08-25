@@ -307,6 +307,75 @@ instrument that produces it.
 - **Escalation must name a different resource class than the one that failed** — paid hours, a better scan,
   an outside ruling, or reduced **coverage** — **never reduced fidelity.**
 
+## 8a. Where the two models actually stand (STATUS, added 2026-08-25)
+
+⚠️ **This section exists because the status of both models was absent from this document, from the
+Overview and from the Walkthrough**, while all three describe the recogniser's architecture at
+length. A reader of the summaries could not have learned either of the two facts below, and both are
+the kind that change what someone would work on next.
+
+**The geometric boxing model — BLOCKED AT A PRIMITIVE.** Region typing over the head band is built
+and scored against a 121-entry gold (RunningHead / MarginNote / MainText / ChapterHead), with an
+address that survives a splitter change and an accounting bar that a candidate cannot game by
+shedding entries. It is blocked below the model: `region_segments` cuts a row wherever a gap exceeds
+the line pitch, and in **justified** setting the word space is stretched to fill the measure — so of
+301 genuine body rows, **102 (34%) have no continuous run reaching the measure**. **Four** region-span
+rules have been built and refuted against pre-registered bars, each buying ~1 MarginNote for 11–12
+MainText. 🚨 **AND ON 2026-08-25 THE APPROACH-LEVEL ALERT FIRED, BY SIR'S RULING.** R2.2o.1 labelled
+every intra-row gap from the gold and found the two populations **OVERLAP**: a true region gap of
+**0.875 pitches** where the marginal column abuts the measure, against a true word space reaching
+**1.525** on the same page. **No constant exists to be found**, so a fifth span rule was not built.
+⇒ `region_head` / `region_segments` are **re-scoped from the region model to the initialisation and
+plausibility clamp** of §3.2 item 5 — characterised and willing to abstain, never maximised — and the
+four refuted rules plus the overlap measurement become **complete characterisation work** rather than a
+stalled repair. The region-typing work moves to **R14, the adaptive visual agent**. ⚠️ The MN gap
+stays **OPEN**: this is a redesign of the method, never an accepted gap.
+
+⚠️ §3.2's own thesis —
+that the recogniser's 49-point content/surface spread on `genesis-24` is a *layout-separation* failure,
+not a reading failure — makes this the binding constraint on the **recognition** score as well.
+
+**The character recognition model — BUILT, AND NOT IN THE PATH.** The ſ-faithful Rung-2 fine-tune
+exists (Kraken, val 0.9396). **R13, verified on disk: nothing loads it.** `grep` over `gen1_*.py`,
+`s_arbiter.py` and `chapter_campaign.py` returns nothing for `reichenau_dr` or `dr_v3_armA`; the
+attesting arm is the base scan OCR. ⚠️ **That wiring it in would improve the board is a hypothesis,
+not a finding** — the 1,142 `CONTENT OK, ſ-SURFACE OPEN` cells are *plausibly* reachable, and
+plausibly is not measurably. R13.1 is the wiring, R13.2 is the measurement, and the cell count is not
+claimable before R13.2 runs.
+
+**Read together: the recognition problem looks like the hard one and is the better-served one.** The
+model that exists is unwired; the model that is wired is bounded by a layout rule that mis-cuts a
+third of the body.
+
+### 8b. What the geometry stage is actually supposed to be (Masterplan §3.0, GOVERNING, 2026-08-25)
+
+🔴 **STATED HERE BECAUSE ITS ABSENCE FROM THE SUMMARIES IS WHAT LET THE WORK DRIFT.** The aim was
+present only in fragments — "archetype first" in one section, "reading order" inside a list in three
+others, "shapes from ink" as a section title. **A project whose aim lives in fragments optimises the
+nearest fragment.** This one did: four hand-built geometric span rules and five pre-registered bars
+against a 19-entry gold on one witness, while four of the eight steps below had no code at all.
+
+**The aim:** an **adaptive visual agent that reproduces what a literate human does when handed a page
+of this book** — look at the leaf, recognise what *kind* of page it is, see by **visual cue** where each
+class of text sits, bound those regions, understand how they **relate**, and read each region **as its
+own kind of thing**, with its own rules, context and gates.
+
+| | step | status |
+|---|---|---|
+| S1 | see the page | ✅ real |
+| S2 | classify the archetype | 📋 designed (8 archetypes, REQUIRES/FORBIDS); **nothing built** |
+| S3 | see the region classes by visual cue | ⚠️ geometric only, one witness, head band |
+| S4 | bound them — box · label · slant · **confidence**, abstention permitted | ❌ **no layout score of any kind has ever been computed on this corpus** |
+| S5 | **relate** them — reading order and note-to-verse attachment | ❌ named in three documents, owned by none |
+| S6 | recognise each region **conditioned by its class** | ⚠️ recogniser validates at 0.9396, **not wired** (R13) |
+| S7 | run that class's rules, checks and gates | ✅ exists, ⚠️ fed by a four-role geometric typer |
+| S8 | **re-examine on failure** | ❌ residue is spent as training signal only |
+
+⚠️ **"Adaptive" means per-page, from the page.** A constant fitted across a sample may initialise or
+clamp; it may never decide. **The whole programme is R14**, and its cheapest step (R14.0) is to run and
+score `surya_layout_probe.py` — a learned layout model **already in the repo** that appeared in none of
+these five documents until today.
+
 ## 9. Open
 
 **Blocking**: **collation and leaf inventory per copy**, and the **cross-source leaf map**. §1.4 is why

@@ -325,6 +325,26 @@ chapter-opens all produce numerals that lie.
 
 ## Step 10 — Geometry
 
+**WHAT THE GEOMETRY STAGE IS, stated once (Masterplan §3.0, which governs).** It is an **adaptive visual
+agent that reproduces what a literate human does when handed a page of this book**: look at the whole leaf,
+recognise what *kind* of page it is, see by **visual cue** where each class of text sits, bound those
+regions, work out **how they relate** — which note belongs to which verse — and then read each region **as
+its own kind of thing**, with its own rules, context and gates. Eight steps: **S1** see · **S2** archetype ·
+**S3** see the classes · **S4** bound them, with confidence and the right to **abstain** · **S5** relate
+them · **S6** recognise each *conditioned by its class* · **S7** run that class's checks · **S8**
+**re-examine on failure**.
+
+⚠️ **"Adaptive" means per-page, from the page.** Every decision must be derivable from that leaf's own
+appearance. A constant fitted across a sample of leaves may initialise the search or clamp an implausible
+answer; it may **never be the thing that decides**. Measured 2026-08-25: for the margin-versus-measure
+boundary, **no such constant exists** — a true region gap of 0.875 pitches sits inside the range of true
+word spaces, which reach 1.525 on the same page.
+
+⚠️ **The incumbent typer is not this, and should not be read as a draft of it.** `layout.py:type_lines`
+emits **four** roles from **geometry alone**, has **no** archetype, **no** confidence, **no** relations, and
+ends its no-geometry branch by returning every line as body — so a leaf it cannot read at all is emitted as
+entirely scripture. It is why there is a working pipeline; it is not a small version of the agent.
+
 **The archetype comes first.** A leaf is classified into one of the layout archetypes (§3.2) *before* regions
 are discovered, because which classes a leaf **can** carry is a property of what kind of leaf it is: a
 prelims leaf has no verse numbers to find, an annotation leaf is nearly all apparatus, and a chapter opening

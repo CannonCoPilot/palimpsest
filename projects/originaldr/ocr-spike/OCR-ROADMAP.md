@@ -21,7 +21,7 @@ guards' comments and every devlog entry, so the ids are load-bearing and the ord
 |---|---|---|
 | R0 | Witness identity and stable addressing | **COMPLETE** (R0.1–R0.5) |
 | R1 | Physical leaf inventory — Gate 0b stage 1 | **COMPLETE** (R1.1–R1.6) |
-| R2 | Structural inventory — Gate 0b stage 2 | 🚨 **OPEN — R2.1f FIRED 2026-08-14, ALERT: THE APPROACH NEEDS REDESIGN.** R2.1c DONE (instrument promoted to TRACKED `witness/collation_read.py`, with signature/catchword as separate fields and stated abstain reasons). R2.1d'(A) measured **three** times: **0.222 → 0.312 → 0.312**, Wilson95 lower bound **0.142** against a 0.95 bar. **The ACCEPTANCE RULE fired, not a budget.** The catchword half reads at 0.87–1.00 and is correct; **every failure is on the head side**. 🔴 **The third run corrected the scorer defect and the rate DID NOT MOVE — which is the finding**: 3 of the 5 AGREEs are whole-line blobs passing the ≥4-char prefix rule, so the head reader fails in **both** directions and **0.312 is not a conservative floor but two opposing biases of unknown relative size** (R2.1f, 2026-08-15). 🟢 **REDESIGN DECIDED: option (1)**, first baseline via the running-head leading gap, built as a reusable region-typing primitive — see R2.1g. **R2.2 is promoted to the pivot** (R2.2a): it is the same head-band instrument and it also supplies a signature-independent component of R3.1's key, so **R2 and R3 interleave rather than sequence**. R2 continues to BLOCK Gate 0b/0c and all transcription. Prior state: R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured), never scored on R2.1's original metric. Steps R2.1a–f written 2026-08-11; **R2.1g · R2.2a · R2.5 added 2026-08-17**; **R12 (layout typology) raised** |
+| R2 | Structural inventory — Gate 0b stage 2 | 🚨 **OPEN — R2.1f FIRED 2026-08-14, ALERT: THE APPROACH NEEDS REDESIGN.** R2.1c DONE (instrument promoted to TRACKED `witness/collation_read.py`, with signature/catchword as separate fields and stated abstain reasons). R2.1d'(A) measured **three** times: **0.222 → 0.312 → 0.312**, Wilson95 lower bound **0.142** against a 0.95 bar. **The ACCEPTANCE RULE fired, not a budget.** The catchword half reads at 0.87–1.00 and is correct; **every failure is on the head side**. 🔴 **The third run corrected the scorer defect and the rate DID NOT MOVE — which is the finding**: 3 of the 5 AGREEs are whole-line blobs passing the ≥4-char prefix rule, so the head reader fails in **both** directions and **0.312 is not a conservative floor but two opposing biases of unknown relative size** (R2.1f, 2026-08-15). 🟢 **REDESIGN DECIDED: option (1)**, first baseline via the running-head leading gap, built as a reusable region-typing primitive — see R2.1g. **R2.2 is promoted to the pivot** (R2.2a): it is the same head-band instrument and it also supplies a signature-independent component of R3.1's key, so **R2 and R3 interleave rather than sequence**. R2 continues to BLOCK Gate 0b/0c and all transcription. Prior state: R2.0 instrument built in `.scratch/r2/` (probe v18; design settled, dead ends measured), never scored on R2.1's original metric. Steps R2.1a–f written 2026-08-11; **R2.1g · R2.2a · R2.5 added 2026-08-17**; **R12 (layout typology) raised**. 🚨 **2026-08-25 — R2.2's APPROACH-LEVEL ALERT FIRED, R2.2 RE-SCOPED**: after four refuted span rules, R2.2o.1 measured that the gap populations OVERLAP (0.875 vs 1.525 pitches), so **no constant exists**, and `region_head`/`region_segments` are re-scoped from *the region model* to *the initialisation and plausibility clamp* of Masterplan §3.2 item 5 — characterised and willing to abstain, never maximised. Region typing moves to **R14, the adaptive visual agent (§3.0)**. ⚠️ The MN gap stays OPEN and R2 still BLOCKS Gate 0b/0c: a method redesign, never an accepted gap |
 | R3 | Cross-source leaf mapping — Gate 0c | **OPEN.** Nothing built (R3.1–R3.4). **R3.6 · R3.7 raised 2026-08-17** — `F`-vs-`B`/`P` alignment with a named-leaf supply for OT1/OT2, and the 1633 NT matter as addenda. ⚠️ **R3.6's OT1 half is expected to return empty**: §1.2 already aligned `F` against `P` leaf for leaf (book block **1132 = 1132**, *"not one leaf of text"*), so the open OT1 work is `B`, which has only ever been attributed by count; OT2's live half is **R3.5b**, not a new audit |
 | R3.5 | NT's 36-leaf difference | **DISSOLVED** — the number was malformed. R3.5b, R3.5c live |
 | R4 | Bibliographic completion — Gate 0a residue | **PART.** R4.1d/R4.2/R4.3/R4.4 done; R4.1e, R4.2a, R4.5, R4.6 open |
@@ -102,13 +102,34 @@ ratio to the alternative** — a fact about the method — never a projected tot
 endmatter Tables, body rewording) · R6.6a · R6.6b · R6.6c · R6.6d · R7.1 · R7.2 (1 of 4 done) · R7.3 · R7.4 ·
 **R7.5a-2** (**261** artefacts, was 339) · R8.3 · **R8.4b** · R8.6 · R8.7 · **R9.5a** · **R9.6** ·
 **R9.6b** · **R9.7** · **R9.8** · **R10.1** · **R10.2** · **R10.3** · **R11.2a** · **R11.2b** · **R11.2c** (NEW) · **R11.5** (blocked) ·
-**R12.1 · R12.2 · R12.3** (layout typology, NEW) · **R13.1 · R13.2** (the recogniser is not in the path, NEW)
+**R12.1 · R12.2 · R12.3** (layout typology, NEW) · **R13.1 · R13.2** (the recogniser is not in the path, NEW) ·
+**R2.2n · R2.2o · R2.2o.1b · R2.2o.2 · R2.2o.3 · R2.2o.4** (filed 2026-08-25, see the register note below) ·
+**R14.0 · R14.1 · R14.2 · R14.3 · R14.4 · R14.5 · R14.6** (THE ADAPTIVE VISUAL AGENT, NEW — Masterplan §3.0)
 
 🔴 **NEW OPEN STEPS RAISED 2026-08-17, each from a finding rather than from a plan review.** **R2.1g**
 (head-side redesign, option 1) · **R2.2a** (head-band region primitive — the R2/R3 interleave pivot) ·
 **R2.5** (multi-signal collation) · **R4.7** (the §10 citation that has never had an id) · **R5.3** (the
 9-leaf dimension residue) · **R10.3** (the ceiling audit must parse complexity classes) · **R12** (layout
 typology) · **R13** (the trained recogniser is absent from the path that needs it).
+
+🔴 **THE REGISTER ABOVE IS STALE, AND `audit_prereq_ceilings` IS THEREFORE AUDITING A POPULATION THAT
+EXCLUDES THIS MONTH'S WORK — found 2026-08-25.** The register is HAND-MAINTAINED and stops at
+**R2.2m**. `audit_prereq_ceilings` derives its whole denominator from it (`OPEN_BLOCK`), so
+**R2.2n · R2.2o · R2.2o.1 · R2.2o.1b · R2.2o.2 · R2.2o.3 · R2.2o.4** — every step raised since 08-22,
+i.e. the steps the project has actually been working on — return **0 hits** in the audit and are
+covered by nothing. The `1/72` claim is NOT stale, because the register never grew; that is precisely
+the failure. An audit whose denominator only moves when someone remembers to edit a prose list will
+report health for exactly the steps nobody filed.
+
+✅ **FIXED THE SAME DAY, as a DELIBERATE denominator move.** The six R2.2n/R2.2o steps and the seven
+R14 steps were filed, taking the register **72 → 81** and the claim **1/72 → 8/81**. The numerator rose
+because R14 was filed *properly* — a section-level pre-registered decision rule plus a complexity class
+in every row — rather than added bare; **the uncovered count held at 38, so filing 13 steps added no
+ceiling debt.** The audit's published claim was re-measured and rewritten, never estimated. ⚠️ **Same shape as this
+project's signature defect** — a correct rule that nothing reads — with the twist that here the rule
+reads a list, and the list is the thing that decayed. **See R10.3**, which already asks the ceiling
+audit to parse classes; this says the audit must also derive its register from the document rather
+than from a curated copy of it.
 
 ### 🔴 Ledger review 2026-08-17 — what the status column was rounding up
 
@@ -682,6 +703,218 @@ requirement **RISES** to **708px**. The bar went up as the measurement came down
   is **FLUSH TO L OR R**, not the longest — continuous like a justified line, anchored like one, and
   computed on GLYPH BOXES so no splitter can move it. **C2.** Nothing adopted until it clears a
   pre-registered bar; `SPAN_MODE` stays `"tokens"`.
+* 🔴 **BUILT AND REFUTED 2026-08-25 — `SPAN_MODE="flush"`, `region_head.classify`.** It is the best
+  span rule measured and it still fails: control MT **0.8375 → 0.7750 (62/80)** against S-A's
+  do-no-harm, and it moves the candidate arm **not at all**. Kept, DEFAULT OFF, because the
+  refutation is the finding. See **R2.2n** below for the four-candidate table and **R2.2o** for why
+  none of them could have worked.
+
+---
+
+## R2.2n 🔴 OPEN — THE MN GAP. Four span rules, four refutations, one cause upstream of all of them
+
+**Raised 2026-08-25 while closing candidate 4's last failing criterion.** `witness/region_head.py`.
+**Status: OPEN. `BASELINE_MODEL` stays False; candidate 4 (R2.2i+R2.2k) stays UNADOPTED.**
+
+### The defect
+
+Candidate 4 loses two margin notes the control gets right — **410.0.2** (gold MN → got MT) and
+**419.0.0** (gold MN → got RH). Neither token moved: 410.0.2's x-centre is `+0.929` under both arms.
+**The label changed because a different token joined its row.** Measured, leaf 410 row 0:
+
+| arm | tokens in row 0 | x-extent | labels |
+|---|---|---|---|
+| control | 2 | 0.444–0.837 | `RH@0.51` `MN@0.78` — both correct |
+| candidate | 3 | 0.171–0.837 | `MT@0.19` `MT@0.51` `MT@0.78` — **all three wrong** |
+
+The third token is a real line of type that the R2.2m far-chaining fix recovered (the `far` bucket
+had been deleting it). With `SPAN_MODE="tokens"` a row's span is the **union of its token extents**,
+so that token drags the union to the left edge; R3 finds the row flush and ≥ `BODY_SPAN_M × measure`,
+promotes it to a body row, and R4 sweeps every token in it into MainText.
+
+⚠️ **`region_head` line 444 already records this failure with a different cause** — *"leaf 406's
+headline row was promoted to a body row by a 3-glyph UNREAD speck… and the running head was then
+labelled MainText."* The span clause was added to stop **specks**, and `MIN_GLYPHS` filters specks.
+This intruder is not a speck, so nothing filters it. **The row model got better and the classifier's
+weakest assumption became load-bearing.**
+
+⚠️ **419.0.0 IS A DIFFERENT CAUSE AND WAS INITIALLY CONFLATED WITH 410.** Leaf 419 drops 24 → 21
+rows, and its row 0 holds entirely different tokens. The seeded model is **separating the margin
+column onto its own baseline** — control row `212.0 n=42 x 0.120–0.925` becomes candidate rows
+`211.0 n=9 x 0.813–0.891` **plus** `214.5 n=34 x 0.120–0.904`. That is physically *more* correct;
+the relabelling follows because **R3/R4 reason about regions using the ROW as the unit**, which is
+this module's founding observation (*"a row is not homogeneous in REGION"*) applied to the one place
+the module still assumes it is.
+
+### Pre-registered acceptance (written before the first run; unchanged across all four candidates)
+
+| id | criterion |
+|---|---|
+| **S-A** | CONTROL DO-NO-HARM at `BASELINE_MODEL=False`: RH ≥ 1.0000, MN ≥ 0.8947, MT ≥ 0.8375, CH ≥ 1.0000. A fix for the candidate may not be bought with production's numbers. |
+| **S-B** | THE TARGET: candidate MN ≥ 0.8947 — it must stop being worse than the control on the region this is meant to fix. |
+| **S-C** | DENOMINATOR (the 2026-08-22 bar): control keeps `pairs == 121` with 0 sinks; candidate sinks ≤ 5. |
+| **S-D** | THE NAMED ENTRIES: 410.0.2 **and** 419.0.0 both come out MN under the candidate. A rate that improves without fixing the two cases the change was written for is fixing something else. |
+| **S-E** | NO SILENT TRADE: RH and CH must not fall under either arm. |
+
+### The four candidates, all measured, all refuted
+
+| candidate | ctl RH | ctl MN | ctl MT | cand MN | verdict |
+|---|---|---|---|---|---|
+| `SPAN_MODE="tokens"` (incumbent) | 1.0000 | 0.8947 | **0.8375** (67/80) | 0.7895 | status quo |
+| `SPAN_MODE="segment"` | 1.0000 | 0.9474 | 0.7000 (56/80) | 0.8947 | 🔴 S-A, S-D |
+| `R4_PER_SEGMENT=True` | 1.0000 | 0.8947 | 0.8375 | 0.7895 | 🔴 **INERT** — see below |
+| `R4_DEMOTE_UNQUALIFIED=True` | 1.0000 | 0.9474 | 0.6875 (55/80) | 0.8947 | 🔴 S-A, S-D |
+| `SPAN_MODE="flush"` (R2.2n-b) | 1.0000 | 0.9474 | 0.7750 (62/80) | 0.7895 | 🔴 S-A, S-B, S-D |
+
+🔴 **`R4_PER_SEGMENT` IS INERT AND THAT IS ITS OWN FINDING.** Flipping it changes RH, MN, MT, pairs
+and sinks **not at all**, on both arms. `_in_body_seg` returns `True` whenever the row is absent from
+`body_segs`, and a row where no segment qualifies is never put there — so the rule is bypassed in
+exactly the case it was built to see. ⚠️ **A candidate that cannot move a number cannot be validated
+by failing to regress one**; anyone who had "tested" R2.2f by flipping it and observing no regression
+would have called it safe. Same shape as Gate 0f, Gate 0d and R13: the thing exists and nothing
+consumes it.
+
+⚠️ **S-B PASSED FOR TWO CANDIDATES THAT S-D FAILED**, which is exactly why S-D was pre-registered:
+MN reached the target rate while one of the two entries the change was written for stayed broken.
+
+---
+
+## R2.2o 🚨 **APPROACH-LEVEL ALERT FIRED 2026-08-25 — R2.2 IS RE-SCOPED, NOT CONTINUED**
+
+🚨 **THE ALERT R2.2o.3 PRE-AUTHORISED HAS BEEN FIRED, BY SIR'S RULING, BEFORE A FIFTH RULE WAS BUILT.**
+R2.2o.3 reads: *"if none does, R2.2n escalates as an approach-level ALERT, not an accepted gap."* Four
+candidates were refuted, and R2.2o.1 then showed **why a fifth must fail**: the gap populations overlap
+(0.875 pitches against 1.525 on one page), so **no constant exists to be found**. Building the fifth to
+watch it fail would have been ceremony.
+
+⚠️ **THIS IS A REDESIGN OF THE METHOD, NOT A LOWERED AIM, AND THE MN GAP STAYS OPEN.** Per the No
+Silent Degradation rule: *"the method can't reach it" always means "redesign the method"*. Nothing
+below accepts a sub-threshold result. `BASELINE_MODEL` stays False and every candidate flag stays off.
+
+**THE RE-SCOPE**, per Masterplan §3.0 which now governs:
+
+| | before | after |
+|---|---|---|
+| what `region_head` / `region_segments` **is** | the region-typing model, scored on MN/MT recall | the **initialisation and plausibility clamp** of §3.2 item 5 — the agent's floor, not the agent |
+| what "done" means for it | MN recall ≥ 0.8947 **and** MT ≥ 0.8375 simultaneously | **characterised, and willing to abstain**: it knows the leaves and rows where it is out of its depth, and says so |
+| the four refuted rules + R2.2o.1 | a stalled repair | ✅ **COMPLETE CHARACTERISATION WORK** — they establish precisely where geometry alone cannot decide, which is what a clamp must know |
+| the 19-entry MN bar | an adoption bar | a **characterisation** set. ⚠️ R2.2o.4 disputes its correctness, and one may not adopt against a disputed 19-entry denominator on one witness |
+
+⇒ **R2.2o.2 is DEMOTED from "build the cut rule" to "characterise the signal"** (see its row). Its
+second-signal hypothesis — *ink beyond the gap that is itself column-like* — is a good **feature
+description for a learned model** and an unsafe hand-tuned constant at n=2.
+⇒ **R2.2o.1b is retained** but is no longer a blocker on a rule nobody will now build; it becomes the
+body-block characterisation input to **R14**.
+⇒ **The work moves to R14**, the adaptive visual agent.
+
+---
+
+### R2.2o's original finding (retained — it is the evidence the re-scope rests on)
+
+🔴 **OPEN, was BLOCKING R2.2n** — `region_segments` mis-cuts a third of the body
+
+### The finding
+
+The three non-inert candidates each buy ~1 MN for **11–12 MainText**, the *same* trade from three
+different directions. That is one refutation, not three: all of them rest on `CR.region_segments`,
+which cuts a row wherever a gap exceeds the **line pitch**, on the rule *"a gap wider than the line
+pitch is a run to another region, not a word space"*.
+
+**Measured over the control's rows, leaves 400–419** (`.scratch/r2/probe_v25.py`), restricted to rows
+whose token union spans ≥ 0.75 of the measure — i.e. genuine body lines:
+
+| quantity | value |
+|---|---|
+| body-like rows examined | 301 |
+| rows with **NO** continuous segment reaching `BODY_SPAN_M` (0.75) | **102 (34%)** |
+| rows that are a single segment | 147 (49%) |
+| median segments per row | 2 |
+| intra-row gaps exceeding 1 pitch | 261 of 11,298 (**2.3%**) |
+
+⚠️ **In JUSTIFIED setting the word space is stretched to fill the measure.** 2.3% of gaps is enough
+to shred a third of the body. The roadmap already knew one instance of this — *"a body row's own
+VERSE NUMBER sits beyond a pitch-wide gap"* — and the measurement generalises it: the verse number is
+one case of a rule that cannot separate a stretched word space from a run out to the margin.
+**Every rule built on this primitive inherits the error, so a fifth span rule would inherit it too.**
+
+### Steps
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.2o.1 | **Characterise the two gap populations before choosing a rule** | over leaves 400–419, every intra-row gap labelled from the GOLD as a word space or a region gap, with the two distributions published in pitches | the populations are shown **separated or overlapping**, with the overlap quantified. ⚠️ If they overlap, no single threshold can work and the rule must use a second signal — say so rather than tuning the threshold. **C2** | ✅ **ANSWERED FOR THE HEAD BAND, 🔴 OPEN FOR THE BODY** — result block below |
+| R2.2o.2 | 🚨 **DEMOTED 2026-08-25 to CHARACTERISE THE SIGNAL, not build the rule** (see the ALERT above). Measure how separable *"the ink beyond the gap forms a column-like run"* is, and hand the measurement to **R14** as a feature. **Do NOT adopt a constant from it.** Original text follows — **A cut rule that uses what a margin actually is** | a region gap is a **sustained** gap with ink beyond it that is itself column-like — not a single wide space. Candidate: cut only where the gap exceeds the pitch **and** the ink to its right forms a run narrower than `1 − BODY_SPAN_M` of the measure | pre-registered against the R2.2n table: control MT ≥ 0.8375 **and** control MN ≥ 0.8947 simultaneously. Neither alone; the whole point is that every candidate so far traded one for the other. **C3** |
+| R2.2o.3 | **Re-run the four R2.2n candidates against the repaired primitive** | the R2.2n table regenerated | any candidate clearing all five bars is adopted; if none does, R2.2n escalates as an approach-level ALERT, not an accepted gap. **C2** |
+
+### R2.2o.1 RESULT — the populations OVERLAP, and the gold cannot see where it matters
+
+**`witness/score_region_gap_pops.py`, leaves 400–419, 2026-08-25.** Every intra-row gap labelled from
+GOLD-HEADBAND's hand-assigned region labels; geometry used only to ADDRESS which entry a glyph belongs
+to (`ink2d` vertical ink overlap + centre containment, the R2.2j / R2.1j address). ⚠️ **The labels are
+not geometric**: calling a gap a region gap BECAUSE IT IS WIDE would score the cut rule against its own
+signal, the circularity the gold's own `labelling_basis` forbids.
+
+| population | n | median | p90 | p99 | max |
+|---|---|---|---|---|---|
+| word space (both glyphs, SAME gold entry) | 970 | 0.075 | 0.275 | 0.602 | **1.525** |
+| region gap (entries of DIFFERENT labels) | 16 | 7.127 | 10.756 | 11.628 | 11.662 |
+| same-label seam (different entries, same label) | 39 | 0.400 | 1.051 | 1.529 | 1.718 |
+
+Widths in PITCHES. Denominator **986 labelled gaps of 12,592 examined**; 11,533 unlabelled, 34
+ambiguous-excluded — counted, never dropped (R1.4).
+
+🔴 **THE POPULATIONS OVERLAP on [0.875, 1.525] pitches.** The narrowest true region gap is NARROWER
+than the widest true word space. 6 of 970 word spaces and 1 of 16 region gaps fall in the overlap. The
+best achievable single threshold (gap > 1.525) still misclassifies 1 of 986; the incumbent (gap > 1.0)
+misclassifies 5 — 4 word spaces wrongly cut, 1 region gap missed.
+
+⚠️ **THE AGGREGATE IS CARRIED BY THE EASY PAIR.** 14 of the 16 region gaps are **MN|RH** — running head
+against side-note, median **7.3** pitches, separated by the whole head of the page, which no rule has
+ever got wrong. Only **2** are **MN|MT**, the boundary the MN gap is actually about:
+
+| leaf | gap | verdict under the incumbent rule |
+|---|---|---|
+| 412 | **0.875** pitches | 🔴 BELOW the cut — **NEVER CUT**. `'aTemporal'` \| `'Cades of the deſert Sin'` |
+| 412 | 2.250 pitches | cut |
+
+🔴 **INDEPENDENT CORROBORATION OF R2.2e-b, FROM A DIFFERENT INSTRUMENT.** `region_head` L164–170 records
+leaf 412 as the leaf where *"the marginal column and the measure are contiguous"* — the founding
+observation behind R2.2o.4's warning. This measurement reaches leaf 412 by a route that knows nothing
+of that note: it labels gaps from the gold's TEXT and finds the MN|MT separation there is **0.875
+pitches, below the cut**. Two instruments, different inputs, the same leaf, the same mechanism.
+
+⇒ **"RETUNE THE THRESHOLD" IS REFUTED AS THE REPAIR.** Where the marginal column abuts the measure, no
+width threshold can exist, because the region gap there is narrower than a stretched word space
+elsewhere on the same page. R2.2o.2's requirement that the rule consult **what lies beyond the gap** is
+now SUPPORTED by measurement rather than assumed. Its second signal must not be a better number.
+
+⚠️ **AND THE MEASUREMENT CANNOT SEE THE BODY.** GOLD-HEADBAND labels the **TOP 3 ROWS** of each leaf.
+R2.2o's damage figure — 102 of 301 body-like rows with no run reaching the measure — is over the WHOLE
+band. The labelled denominator is **7.8%** of gaps and holds **2** MN|MT boundaries. A low
+misclassification rate here is evidence about the HEAD BAND and nothing else. **No number from this
+scorer may be quoted as "the cut rule is 99.5% correct".** ⇒ **R2.2o.1b**.
+
+⚠️ **The seam fold was ATTEMPTED AND REFUSED, by the script, at run time.** The primitive decides "cut
+here?", not "different entries?", so a same-label seam is a must-NOT-cut gap and belongs with the word
+spaces — but only if no seam spans the text block (two MN entries either side of the body are
+same-label yet genuinely separate). **7 of 39 seams** are as wide as the narrowest region gap, so the
+check refuses the fold and the stricter entry-level accounting stands. The looser number is not
+reported. A check with no live way to say no is not a check.
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R2.2o.1b | **A gap gold for the BODY BLOCK** — R2.2o.1 is unanswerable where the defect lives | region labels for the gaps of body rows outside the top 3, adjudicated from what the row SAYS (the `build_region_gap_gold` basis), NEVER from position | the MN\|MT population reaches **n ≥ 20** and the overlap is re-measured on it. ⚠️ **R2.2o.2 CANNOT BE PRE-REGISTERED UNTIL THIS EXISTS** — its bar would rest on 2 boundaries, which is Goodhart at n=2. **C2, and it BLOCKS R2.2o.2** |
+
+⚠️ **R2.2o.4 — THE BAR MAY BE ANCHORED TO A WRONG NUMBER.** `region_head` line 169 records that the
+gold's **MN 0.8947 "was resting on" two cancelling errors** — leaf 412's note scored MarginNote only
+because its row was broken, and repairing the row exposed the second error. S-A and S-B are both
+anchored to 0.8947. **Before R2.2o.2's bar is used to adopt anything, re-audit the 19 MN gold entries
+and establish what MN recall a correct reader would score.** Adopting against a number built on
+cancelling errors is Goodhart with extra steps. **C2, and it gates R2.2o.2's acceptance.**
+
+⚠️ **R2.2o.1 has now corroborated the leaf-412 mechanism from a SECOND instrument** (result block
+above: the MN|MT separation there is 0.875 pitches, below the cut, so the row is never cut). The
+re-audit of the 19 MN gold entries is not optional bookkeeping — the cancelling-errors account now has
+two independent witnesses, and the 0.8947 bar rests on 19 entries of one witness over 20 leaves.
 
 ## R2.1j — the region scorer could not rank splitters, and one binding rule flattered a broken one
 
@@ -3717,6 +3950,62 @@ cell count is **not** claimable until R13.2 runs.
 
 ---
 
+## R14 — THE ADAPTIVE VISUAL AGENT (NEW, 2026-08-25, by Sir's ruling)
+
+**Complexity per sub-step**: declared in each row below, C1–C4. **The pre-registered decision rule for
+this section**, written before any step runs: *a step is ADOPTED only when its own Gate 9 clause passes
+on a held-out set it was not built against; a step that misses its clause is OPEN and blocks the
+deliverable; no step may be closed by lowering its clause, and no clause may be written after seeing
+the result it will judge.* ⚠️ Gate 9.6, 9.7 and 9.8 carry no numbers precisely so that this rule has
+something to bind: each number is written from its characterisation run, before the step it judges.
+
+**Discharges Masterplan §3.0, which GOVERNS.** R14 is the work R2.2's re-scope hands off to, and it is
+where R12 (archetype) and R13 (recogniser wiring) become steps of one pipeline rather than three
+separate open items. **Status: OPEN. S2, S4, S5, S8 have no code at all.**
+
+### Why this section exists
+
+The aim — *an agent that scans a page as a literate human does, sees the text classes by visual cue,
+bounds them, and reads each as its own kind of thing* — was present in this project only in fragments:
+"archetype first" in §3.2a, "reading order" inside a list in three summary documents, "shapes from ink"
+as a section title. **A project whose aim lives in fragments optimises the nearest fragment**, and this
+one did: four hand-built geometric span rules and five pre-registered bars against a 19-entry gold on
+one witness, while S2, S4, S5 and S8 had no code. §3.0 states the aim once; R14 is its work plan.
+
+⚠️ **R14 does not start from zero, and pretending otherwise would discard real evidence.** The R2.2
+line produced three things the agent needs and could not have assumed: **(a)** the proof that no gap
+constant exists (R2.2o.1 — populations overlap 0.875 vs 1.525); **(b)** the B1-vs-B2 distinction with a
+*measured* 26 px gutter on `jp2-S06` p74, which is why disjoint and interleaved apparatus must route to
+different machinery rather than to one parameter; **(c)** the finding that **kraken destroys the
+boundary upstream** by merging margin text into body line objects (ch3 p26, ch6 p36), which no
+downstream boxer of any kind can undo. **(c) is a hard constraint on R14.1: the agent must see the
+page, not kraken's lines.**
+
+### Steps
+
+| # | step | deliverable | acceptance |
+|---|---|---|---|
+| R14.0 | **Register, run and score the layout probe that already exists** | `surya_layout_probe.py` — a learned layout model covering S3/S4, present in the repo and named in **none** of the five governing documents — run on a stratified leaf set, with its output scored or its refusal recorded | the probe is **either** scored against hand-checked leaves **or** explicitly refused with a reason. ⚠️ **An unattempted tool produces no signal**; and per §3.0's forbidden-list item 3 this is the same defect shape as §3.2b's slant — working code that no rule governs. **C1 — probe**, and it is the cheapest step here |
+| R14.1 | **S1→S2: the archetype classifier, on the PAGE** | R12.1's census then R12.2's classifier, taking **the leaf image**, not kraken's lines | Gate 9.1 — per-archetype accuracy, **forbidden-class emission = 0**. ⚠️ **Input constraint from (c) above**: a classifier reading line objects inherits a boundary that was already destroyed. **C3 — model** |
+| R14.2 | **S3→S4: regions with confidence, and the right to abstain** | typed polygons with a confidence per region and an explicit abstention path; **`layout.py:type_lines`'s `fail-safe toward body` branch is retired** by this step, not before | Gate 9.3, 9.4, and **9.6 whose rate is pre-registered from R14.2's own characterisation, never asserted**. ⚠️ An abstention silently defaulted to any class is a hard failure. **C3 — model** |
+| R14.3 | **S5: relations — reading order and ATTACHMENT** | which note attaches to which verse, which numeral governs which text, which catchword predicts which leaf | Gate 9.7, scored **separately from boxing**. ⚠️ This is the edition's scholarly payload: an unattached marginal transcript is not apparatus, and §8 assumes the link exists. **C3 — model** |
+| R14.4 | **S6: recognition CONDITIONED by region class** | the region class selects model, lexicon and post-rules; **R13.1's wiring is the first instance of this**, not a separate errand | recognition reported **per region class**, never as one page figure. ⚠️ Grounded, not assumed: R2.2d measured that a row is not homogeneous in fount, and the `genesis-24` 49-point content/surface spread is what pooling costs. **C3 — assembly** |
+| R14.5 | **S8: the re-examination loop** | a failed §6–§8 check re-opens S2–S5 for that leaf; §3.2 item 3's residue signal, currently spent only as training data, is read **at run time** as the trigger | Gate 9.8 — repairs **and** regressions published separately, **never netted**. ⚠️ Permitted terminal states are *repaired* or *abstained with a cause*; **never** *accepted below threshold*. **C4 — open** |
+| R14.6 | **The label generator — what makes R14.1–R14.4 affordable** | distant supervision per §3.2 items 2, 3, 7: MainText from archaic-reference alignment, Marginalia from the **1,334** transcribed apparatus blocks, RunningHead/Catchword/Signature from self-verifying tests, VerseNumber from numeral-matches-adjacent-verse | training labels generated at corpus scale **without** a hand-labelling campaign, with §3.2 item 8's quota for books that generate none. ⚠️ **GOLD-LAYOUT is the SCORER, not the trainer** — conflating them is what makes this programme look like it needs 125 hand-labelled pages before it can start. **C3 — assembly** |
+
+⚠️ **ORDERING.** R14.0 first, because it is nearly free and may change every estimate below it. R14.6
+runs alongside R14.1 because it is the input to everything after. **R14.5 is last and is the only C4**:
+a re-examination loop built before its stages can be measured would be a loop with no way to tell a
+repair from a regression.
+
+🔴 **WHAT R14 MAY NOT DO.** §3.0's forbidden list applies in full and is checkable: no hand-tuned
+constant as the deciding signal for a boundary; no rule perfected against one witness on one window; no
+capability outside the plan; no scheduling of prior-repair ahead of agent-building. ⚠️ **And no gate
+number invented in advance** — 9.6, 9.7 and 9.8 are deliberately unwritten, exactly as 9.5 is, because
+§0.5 forbids a threshold not derived from evidence. **Each is written after its characterisation runs.**
+
+---
+
 ## Verification standard for this roadmap
 
 A step is **DONE** when its acceptance test runs and passes on demand — not when the code exists.
@@ -3794,7 +4083,7 @@ weakening its existing checks, ALERT rather than dropping the two entries from t
 ```
 ../ocr-venv/bin/python witness/audit_gt_rasters.py      # R7: exits 1 -> 48 of 51 GT files inadmissible, 9 WRONG SETTING
 ../ocr-venv/bin/python witness/audit_s06_keys.py        # R7.5a-2: exits 1 -> 261 derived artefacts still keyed `jp2-S06`
-../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> STRICT: 1/72 step(s) declare a complexity class in their OWN row; the fraction must RISE (denominator 59 -> 63 on 2026-08-18: R2.1k, R2.2c, R11.2c and R2.2d were added to the register; 63 -> 64 on 2026-08-19: R2.2e; 64 -> 67 on 2026-08-20: R2.2f, R2.2g and R11.2d; 67 -> 68 later the same day: R2.2h, the modal-edge estimator tolerance; 68 -> 69: R2.2i, tilted lines cut into two rows; 69 -> 70: R2.2j, the gold's row-ordinal addressing; 70 -> 71: R2.2k, the row clusterer chaining against a running median and walking up the tilt onto the next baseline; 71 -> 72: R2.2l, the adopted ink2d addressing losing a token without reporting it; R2.2l CLOSED on 2026-08-21 and R2.2m opened the same day for the same uncounted idiom in the containment path, so the denominator is unchanged at 72)
+../ocr-venv/bin/python witness/audit_prereq_ceilings.py # R10.1: exits 1 -> STRICT: 8/81 step(s) declare a complexity class in their OWN row; the fraction must RISE (denominator 59 -> 63 on 2026-08-18: R2.1k, R2.2c, R11.2c and R2.2d were added to the register; 63 -> 64 on 2026-08-19: R2.2e; 64 -> 67 on 2026-08-20: R2.2f, R2.2g and R11.2d; 67 -> 68 later the same day: R2.2h, the modal-edge estimator tolerance; 68 -> 69: R2.2i, tilted lines cut into two rows; 69 -> 70: R2.2j, the gold's row-ordinal addressing; 70 -> 71: R2.2k, the row clusterer chaining against a running median and walking up the tilt onto the next baseline; 71 -> 72: R2.2l, the adopted ink2d addressing losing a token without reporting it; R2.2l CLOSED on 2026-08-21 and R2.2m opened the same day for the same uncounted idiom in the containment path, so the denominator is unchanged at 72; **72 -> 81 on 2026-08-25** — the register was found STALE, having stopped at R2.2m while the project worked on steps it could not see, so R2.2n, R2.2o and its four sub-steps were filed along with the seven R14 steps of the adaptive visual agent, and the numerator rose 1 -> 8 because R14 was filed WITH a section-level pre-registered decision rule and per-row complexity classes rather than added bare; the uncovered count held at 38, so the filing added no debt)
 ../ocr-venv/bin/python witness/r2_1d_continuity.py          # R2.1d'(A): exits 1 -> catchword continuity 0.312, Wilson95 lower 0.142 vs bar 0.95; R2.1f has FIRED
 ../ocr-venv/bin/python witness/score_argument_region.py # R2.2d: exits 1 -> on the gold extended to ALL 10 chapter openings D1 recall is 52/81 rows and D2 has 13 false positives over the WHOLE window with 0 unadjudicated, while D3 still costs NOTHING (exact) and argument tokens still typed MainText are 3/327 against 46 with the rule off; NOT adopted
 ../ocr-venv/bin/python witness/score_region_gap_tokens.py # R2.2e: exits 1 -> E3 is 0/43 -- the swallowed rows are OVERSHOOT, not merges, so the region-gap cut is REFUTED and NOT adopted, though it takes every merged token to zero at no cost on the region gold (E2 exact) and GOLD-ARGUMENT D1 holds at 52/81
@@ -3804,6 +4093,7 @@ weakening its existing checks, ALERT rather than dropping the two entries from t
 ../ocr-venv/bin/python witness/score_edge_chain.py # R2.2h: exits 1 -> the full chain reaches 37/43 on the consumer with the region gold at acc 0.9174 RH 1.0000 MN 0.8947 MT 0.9000 and D1 57/81, and J2-J6 all pass, but J1's bar is all 43 and the estimator fix does NOT move it -- the 6 survivors are R2.2i (tilted lines cut into two rows), so all four flags stay OFF and the chain is NOT adopted
 ../ocr-venv/bin/python witness/score_band_anchor.py     # R2.2b: exits 1 -> the anchored band passes A2 (gold containment 121/121, RH 20/20) and A3, but FAILS A1 on 18/20 leaves -- it misses the first body line on both CHAPTER-OPENING leaves; NOT adopted
 ../ocr-venv/bin/python witness/test_band_agreement.py   # R2.2c: exits 1 -> the reader's band contains 0/20 RunningHead and 2/19 MarginNote gold entries, and BOTH scorers cut a different band; the guard's own control passes 121/121
+../ocr-venv/bin/python witness/score_region_gap_pops.py # R2.2o.1: exits 1 -> 986/12592 intra-row gaps are labelled from the GOLD (top 3 rows only), and the two populations OVERLAP on 0.875 to 1.525 pitches -- the narrowest true region gap is NARROWER than the widest true word space, so the best possible single threshold still misclassifies and threshold-retuning is REFUTED as the repair. Both MN-against-MT boundaries are on leaf 412, the leaf region_head already records as the one where the marginal column abuts the measure, and the narrower of them sits BELOW the cut so it is never cut at all. Exit 1 is the FINDING, not a failure: it is the measurement that fired R2.2o's approach-level ALERT and re-scoped R2.2 to a clamp
 ../ocr-venv/bin/python witness/audit_prefix_rule.py     # R2.1h: exits 1 -> reader still returns 2 whole-line tokens of 20 leaves (17 words, 1 abstain); the >=4-char rule's length-dependence is real and STAYS
 ../ocr-venv/bin/python witness/audit_setting_points.py  # R8.4b: exits 1 -> foot criteria proved at 1 separated point of the 3 §0.3 requires
 ./.venv/bin/python core/tests/fixtures/gold/audit_scratch_data_paths.py  # R11.2a: exits 1 -> 33 gitignored DATA refs across 23 tracked files (was 71/38); the number must FALL

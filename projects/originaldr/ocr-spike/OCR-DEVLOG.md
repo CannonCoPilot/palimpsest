@@ -1487,3 +1487,176 @@ not started.
 than restated: closing R5.1/R5.2a–c/R9.2c removed four of the ten ceilings along with five OPEN steps,
 because ceilings had been written for exactly the sections next touched. **R10.1's "the number must RISE"
 cannot be satisfied by doing the work** — only by writing ceilings for sections nobody is about to touch.
+
+---
+
+## 2026-08-22 → 08-25 — R2.2m far bucket, the S6 denominator bar, and four refuted span rules
+
+**R2.2m — a code path that could not emit a row, by construction.** `collation_read._rows_and_lines`
+keyed an unexplained glyph `("far", bs, id(bx))` — unique **per glyph** — so each became a row of
+one and the `len(r) >= 2` exit filter deleted it. Measured over leaves 400–419: **760 far glyphs
+produced 0 rows.** What it deleted was the RUNNING HEAD — `'NVMERI'` orphaned at row 0 on five
+leaves. Fixed by chaining at the same `ROW_TOL_P` the greedy branch already uses, folded forward
+from that branch rather than restated beside it.
+
+⚠️ **S2 read 20/20 throughout**, because S2 counts BODY-BLOCK rows and every shredded line was a
+short one outside the body block. That is the second time in one run a criterion scoped to one
+region was blind to damage in another; the first was 13 orphaned running heads. **Any row-clustering
+criterion needs a companion that sees the head and note grids.**
+
+**The S6 denominator bar.** Every criterion in `score_head_regions` was a RATE, and the scorer let a
+candidate change what the rates were computed over. It cost two wrong readings: a seed finder that
+discarded every short line posted accuracy 0.8760 → 0.9000 while scored pairs fell **121 → 90**; and
+candidate 4's RH recall 0.9231 was summed over **13** entries where the control sums **19** — not a
+worse number, a **different quantity**. `FULL_ACCOUNTING` now requires `pairs == len(entries)`;
+`BAR_MAX_INK_ORPHANS` is a NON-REGRESSION bar at the control's value, **not an endorsement** — the
+stated ideal is 0 and stays OPEN. Verified in both directions: control PASS/exit 0, candidate
+FAIL/exit 1. ⚠️ **NOT pre-registered**, and the module says so; both values are taken from the
+control and from lines the module already printed and never read.
+
+⚠️ **`test_region_gold_addressing`'s accounting clause did not cover this**: it requires losses to be
+REPORTED, not absent. Candidate 4 sheds 5 entries and reports all five (116 + 5 = 121), so the guard
+is silent while the rates ride a short denominator. **Enumerative vs quantitative.**
+
+**R2.2n — the MN gap. Four span rules, four refutations, NOT CLOSED.** `segment`, `R4_PER_SEGMENT`,
+`R4_DEMOTE_UNQUALIFIED` and `flush` were each built and measured against bars pre-registered before
+the first run. Every non-inert one buys ~1 MarginNote for **11–12 MainText**. `R4_PER_SEGMENT` is
+**inert** — bit-identical on both arms — because `_in_body_seg` returns True for any row absent from
+`body_segs`, which is precisely the unqualified row it was built to catch.
+
+**R2.2o is the cause, and it is upstream of all four.** `region_segments` cuts wherever a gap exceeds
+the line pitch. Measured: of **301** rows whose token union spans ≥0.75 of the measure, **102 (34%)
+have no continuous segment reaching 0.75**; only 49% are a single segment; 2.3% of intra-row gaps
+exceed one pitch. In justified setting the word space is stretched to fill the measure, so the cut
+rule cannot separate a stretched space from a run out to the margin. **A fifth span rule would
+inherit the same error.**
+
+🔴 **METHOD FAILURE, MINE, RECORDED BECAUSE IT IS THE TRANSFERABLE PART.** The roadmap **already
+contained** the refutation of `segment` (*"MT falls to 0.7875"*), already named the cause (*"a body
+row's own VERSE NUMBER sits beyond a pitch-wide gap"*), and already specified the next candidate
+(*"the extent of the region run that is FLUSH TO L OR R"*). I ran three candidates before reading
+it. **That is this project's signature defect — a correct rule nothing reads — committed against the
+governing document itself.** The measurement I added (34%, and the generalisation past verse numbers
+to stretched word spaces) was worth having; the three runs to rediscover a written refutation were
+not. ⚠️ **Read the roadmap step before building the candidate, not after refuting it.**
+
+**Committed** `ac34ebf` — 38 files, +11,895/−201, the whole `ocr-spike/witness/` working set, because
+neither fix was separable from it: `BASELINE_MODEL` and `baseline_seeds` did not exist in HEAD and
+`score_head_regions` had never been committed. 21 modules were untracked, 12 of them named by the
+roadmap's own verification standard, so **HEAD could not previously run its own suite**; it can now,
+verified by parsing the roadmap for all 44 named commands.
+
+**Status: candidate 4 (R2.2i+R2.2k) NOT ADOPTED, `BASELINE_MODEL` stays False. The MN gap is OPEN
+and blocking. R2.2o is the next step — fix the primitive, then re-run the four candidates.**
+
+**2026-08-25 (cont.) — R2.2o.1: answered for the head band, opened for the body.** Built
+`witness/score_region_gap_pops.py`, which labels the two intra-row gap populations from GOLD-HEADBAND
+and uses geometry only to address which entry a glyph belongs to. Finding: the populations **overlap**
+on [0.875, 1.525] pitches, so the best possible single threshold still misclassifies. The **MN|MT**
+boundary on **leaf 412** measures **0.875 pitches** — below the cut, therefore never cut — which
+independently corroborates R2.2e-b's leaf-412 contiguity observation from a different instrument.
+⇒ threshold retuning is **refuted** as the repair, and R2.2o.2's "second signal" requirement is now
+supported by measurement rather than assumed.
+
+⚠️ Coverage is **986 of 12,592** gaps (7.8%), top 3 rows only, holding just **2** MN|MT boundaries.
+So R2.2o.1 is answered for the head band and **open for the body block** ⇒ **R2.2o.1b raised, and it
+BLOCKS R2.2o.2** (a bar on n=2 is Goodhart). The seam fold was attempted and **refused by the
+script's own run-time guard** (7 of 39 seams reach region-gap width), so the stricter accounting
+stands and the flattering number is not reported. No production flag touched; `BASELINE_MODEL` still
+False, MN 17/19 and MT 67/80 unchanged. Suite h GREEN, byte-identical to g.
+
+⚠️ **METHOD NOTE, carried forward from this session's failure.** The four refuted rules plus this
+separability result mean **five** dead ends now rest on one primitive. `region_head` is a hand-built
+geometric rule system fitted to ONE witness over 20 leaves against a 19-entry MN bar. It is the
+scaffold, not the deliverable — the deliverable is the archetype-first learned region model of
+Masterplan §3.2a / R12 / Gate 9, of which **no layout score of any kind has ever been computed**.
+R2.2o.2 as written would hand-build a column detector inside the scaffold. **Raised for Sir's ruling
+2026-08-25: fire R2.2o.3's pre-authorised approach-level ALERT now rather than after a fifth rule,
+demote R2.2o.2 to signal characterisation, and promote GOLD-LAYOUT + R12.1 ahead of it.** Not
+recorded as decided; recorded as raised.
+
+---
+
+## 2026-08-25 — SIR'S RULING: the adaptive visual agent becomes the stated aim, and the docs are recalibrated to it
+
+**The trigger was one sentence of mine**, that today's pipeline uses fixed bands rather than anything
+adaptive. Sir named it project-killing and ruled: review every planning document, revise whatever runs
+contrary to building an adaptive visual agent, and calibrate all of them to state that **this** is what
+the workflow is for — reproducing the human act of scanning a page, identifying text-class regions by
+visual cue, and handling each region as its own section with its own rules, context and gates.
+
+**First, the sentence needed sharpening, not repeating.** `layout.py:type_lines` is not purely fixed
+bands: it derives the body column from **each page's own wide lines** (median x of lines ≥ `wide_frac`),
+which is genuinely per-page. The fixed parts are `wide_frac=0.50`, `margin_frac=0.06`, header `<0.15·h`,
+catchword `>0.88·h`. **The real indictment is larger**: it decides from **geometry alone**, emits **4
+roles** against the archetypes' full inventory, runs on **kraken's line objects** which have already
+merged margin into body on ch3/ch6, and **cannot abstain** — its no-geometry branch is
+`return ["body"] * len(lines)  # fail-safe toward body`, so a leaf it cannot read is emitted as entirely
+scripture. That is a null with no cause established, in the shipping path.
+
+**SIX STEPS → EIGHT.** Sir's six were kept in substance; two were added, each because this project has
+already measured the cost of their absence, and two were sharpened.
+* **S5 RELATE (new)** — reading order **and attachment**. This edition's scholarly value *is* a relation:
+  an annotation belongs to a verse, and the 1,334 apparatus blocks are not apparatus unattached. All
+  three summary documents already said *"region boundaries, archetype classification, reading order"* in
+  one breath — so it was always intended and never given a step, an owner or a gate. §3.2 item 6 is the
+  proof: DropCap was excluded from being a region class *because* "polygons and reading order handle
+  nesting badly" — a relation problem correctly diagnosed, then routed around.
+* **S8 RE-EXAMINE (new)** — the difference between a model and an **agent**, which is what was asked for.
+  §3.2 item 3's residue signal already "localises a missed or clipped region" but is spent only as
+  training data for the next generation. Read at **run time** it is the agent noticing it misread a page.
+* **S4 sharpened** — confidence, and **abstention as a first-class output**, which retires the
+  fail-safe-to-body branch above.
+* **S6 sharpened** — recognition **conditioned** by region class (model, lexicon, post-rules), not merely
+  cropped to it. Grounded: R2.2d measured that a row is not homogeneous in fount, and the `genesis-24`
+  49-point content/surface spread is what pooling incommensurable regions costs.
+
+**What was written.** MASTERPLAN: new **§3.0 THE ADAPTIVE VISUAL AGENT**, GOVERNING, carrying the eight
+steps, a measured live-path-versus-aim comparison table, an explicit **forbidden list** (each item
+something this project has already done, so a repeat is checkable rather than a judgement call), and an
+honest per-step status. New **§4.0** making recognition region-conditioned. §3.2 subordinated with a note
+that "shapes from ink" describes how the model is **trained**, not what it does. §3.2 items **10**
+(relations) and **11** (confidence/abstention) added as model outputs. §3.2a's archetype-A estimate
+*"the incumbent bands already handle it"* **withdrawn**. Gate 9 extended with **9.6 abstention · 9.7
+relations · 9.8 the loop**, all three deliberately **numberless** for the same reason 9.5 is. Build order
+step 10 restated as the agent.
+
+🔴 **The ordering instruction in §3.2 was WITHDRAWN and replaced by its opposite.** It read *"do not read
+§3.2a's archetype programme as the next step while this is open."* Sound while the primitive's defect
+looked like a **threshold** defect — but R2.2o.1 destroyed that premise, and the repair now needs the
+shape of ink beyond the gap, which is **perception**. The instruction had become *"do not build the
+perceiver until the perceiver is finished."*
+
+**ROADMAP.** R2.2o's **approach-level ALERT FIRED** (pre-authorised by R2.2o.3, fired before a fifth rule
+rather than after). R2.2 **re-scoped**: `region_head`/`region_segments` go from *the region model* to the
+*initialisation and plausibility clamp* of §3.2 item 5 — **characterised and willing to abstain, never
+maximised** — which converts the four refuted rules and the overlap measurement from a stalled repair
+into **complete characterisation work**. R2.2o.2 **demoted** from "build the rule" to "characterise the
+signal". New **R14, THE ADAPTIVE VISUAL AGENT**, seven steps: R14.0 register/run/score the *already
+existing, undocumented* `surya_layout_probe.py`; R14.1 archetype on the **page**; R14.2 regions with
+confidence and abstention; R14.3 relations; R14.4 region-conditioned recognition (absorbing R13.1);
+R14.5 the loop; R14.6 the distant-supervision **label generator**. ⚠️ **The MN gap stays OPEN and R2
+still blocks Gate 0b/0c.** This is a method redesign, never an accepted gap.
+
+⚠️ **R14 does not start from zero.** The R2.2 line produced three things it needs: the proof that no gap
+constant exists; the B1/B2 distinction with a *measured* 26px gutter; and the finding that **kraken
+destroys the boundary upstream**, which is a hard input constraint on R14.1 — the agent must see the
+page, not kraken's lines.
+
+**THE STALE REGISTER, FIXED THE SAME DAY.** `audit_prereq_ceilings` derives its whole denominator from a
+**hand-maintained** `**OPEN** —` prose list, and that list stopped at **R2.2m** — so every step raised
+since 08-22 returned **0 hits** and the `1/72` claim was intact *because the register never grew*. Filed
+the six R2.2n/R2.2o steps and the seven R14 steps: **72 → 81**, claim **1/72 → 8/81**. The numerator rose
+because R14 was filed **properly** — a section-level pre-registered decision rule plus a complexity class
+in every row — rather than added bare; **the uncovered count held at 38, so filing 13 steps added no
+ceiling debt.** The claim was re-measured and rewritten, never estimated.
+
+**Also registered:** `witness/score_region_gap_pops.py` in the verification standard's audit block
+(38 → 39 commands), which required its coverage line to print a real `986/12592` fraction, since a claim's
+first fraction must be one the command actually prints.
+
+⚠️ **The three summary documents were the mechanism of the drift, not bystanders.** §8a already recorded
+that the recogniser's status *"appears in none of the three"*. The same hole hid the aim itself. Fixed:
+EXEC SUMMARY gains **§8b** with the eight-step status table; OVERVIEW's pipeline diagram now states the
+agent, the abstention rule and the re-examination stage; WALKTHROUGH gains a *what the geometry stage is*
+statement plus the measured contrast against the incumbent typer.

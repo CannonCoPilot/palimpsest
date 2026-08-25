@@ -1450,6 +1450,132 @@ motivated to admit too quickly.
 
 ## 3. STAGES 0–1 — RASTERS AND GEOMETRY
 
+### 3.0 THE ADAPTIVE VISUAL AGENT — what this stage is FOR (GOVERNING, 2026-08-25)
+
+🔴 **THIS SECTION GOVERNS §3 AND EVERY GATE THAT READS IT. Where anything below, in the Roadmap, or in
+any summary document conflicts with it, THIS WINS and the other text is the defect.** It is written
+because the aim had been stated in fragments — "archetype first" here, "reading order" there, "shapes
+from ink" as a section title — and a project whose aim lives in fragments will optimise whichever
+fragment is nearest to hand. It has been doing exactly that.
+
+**THE AIM, stated once and plainly.** Build an **adaptive visual agent that reproduces what a literate
+human does when handed a page of this book**: look at the whole leaf, recognise *what kind of page* it
+is, see by **visual cue** where each class of text sits, bound those regions, understand how they
+relate to one another, and then read each region **as its own kind of thing** — with its own rules,
+its own context, its own checks — rather than as undifferentiated ink.
+
+⚠️ **"ADAPTIVE" MEANS PER-PAGE, FROM THE PAGE.** Every decision the agent makes about a leaf must be
+derivable from **that leaf's own appearance**, conditioned on the archetype it assigned to that leaf.
+A constant fitted on a sample of leaves may serve as an initialisation or a plausibility clamp
+(§3.2 item 5) and may **never** be the thing that decides.
+
+#### The workflow, in eight steps
+
+Steps 1–4, 6 and 7 are Sir's, unchanged in substance. **Steps 5 and 8 are additions**, each because
+this project has already measured what their absence costs — the grounds are given below, not asserted.
+
+| # | step | the agent emits | how it is gated |
+|---|---|---|---|
+| **S1** | **SEE the page** | the leaf as a whole image, at a resolution and provenance fit to be read | §3.1 raster policy · Gate 0d derivative guard |
+| **S2** | **CLASSIFY THE ARCHETYPE** — what *kind* of page is this | one archetype per leaf, which fixes the REQUIRED and FORBIDDEN class inventory for every step after it | Gate 9.1 — per-archetype accuracy; **forbidden-class emission = 0** |
+| **S3** | **SEE THE REGION CLASSES**, by visual cue | which classes are present, and where the eye says they are | Gate 9.2 recall/precision |
+| **S4** | **BOUND them** — box · label · slant · **confidence**, with **abstention permitted** | a typed polygon per region, or an explicit *"I cannot tell"* | Gate 9.3 boundary error · 9.4 per-class IoU · 9.5 slant · **9.6 abstention (NEW)** |
+| **S5** | **RELATE them** *(NEW)* — reading order **and attachment** | the order a human would read the leaf in, plus which note attaches to which verse, which numeral governs which text, which catchword predicts which leaf | **Gate 9.7 (NEW)** — attachment accuracy, scored separately from boxing |
+| **S6** | **RECOGNISE each region AS ITS OWN KIND OF THING** — the region class selects the model, lexicon and post-rules | diplomatic text per region, never one undifferentiated page stream | §4 recognition gates, **reported per region class** |
+| **S7** | **RUN THE WORKFLOW LAYERS per region** — the rules, context, checks and gates appropriate to that class | the checked, addressed, provenanced output | §6–§8 |
+| **S8** | **RE-EXAMINE ON FAILURE** *(NEW)* — a failed check re-opens S2–S5 for that leaf | a revised reading, or a recorded, caused abstention | **Gate 9.8 (NEW)** — the loop must be *measured*: what fraction of failures it repairs, and what it makes worse |
+
+#### Why S5 and S8 are additions and not fluff
+
+**S5 — RELATE.** Boxes without relations are a bag of rectangles, and this edition's entire scholarly
+value is in a relation: **an annotation belongs to a verse.** §8's apparatus and the 1,334 transcribed
+apparatus blocks are meaningless as unattached marginal text. The three summary documents already say
+*"region boundaries, archetype classification, **reading order**"* in one breath — so reading order was
+always intended, and it was never given a step, an owner or a gate. **A capability named only inside a
+list of other capabilities is one nobody is accountable for.** §3.2 item 6 is the proof: DropCap was
+excluded from being a region class precisely because *"region polygons and reading order handle nesting
+badly"* — a relation problem, correctly diagnosed, then routed around instead of solved.
+
+**S8 — RE-EXAMINE.** This is the difference between a **model** and an **agent**, and Sir asked for an
+agent. §3.2 item 3 already establishes that unaligned residue *"localises a missed or clipped region"*
+and is *"a labelling target, not a discard"* — but it is spent only as **training** signal for the next
+generation. The same signal, read at **run time**, is the agent noticing it has misread a page. A human
+who reaches the bottom of a column and finds it does not follow **looks again**. ⚠️ **S8 is where the
+No Silent Degradation rule binds hardest**: the loop's permitted terminal states are *repaired* or
+*abstained with a cause*, and **never** *accepted below threshold*.
+
+#### What S4's abstention clause is for, and the defect it names
+
+🔴 **THE LIVE PATH CANNOT SAY "I DON'T KNOW", AND ITS FALLBACK IS TO CALL UNKNOWN INK SCRIPTURE.**
+`layout.py:type_lines`, which is what production types lines with today, ends its no-geometry branch
+with `return ["body"] * len(lines)  # no geometry → keep everything (fail-safe toward body)`. A leaf
+the typer cannot read at all is therefore emitted as **entirely main text**. That is a null with no
+cause established (§1.4, R1.4) wearing the costume of a safe default, and it is in the shipping path.
+**S4 makes abstention a first-class output and Gate 9.6 measures the rate; a fail-safe-to-body branch
+is not permitted to survive the agent's arrival.**
+
+#### What the live path is, measured — so nobody mistakes it for the aim
+
+| property | `layout.py:type_lines` today | S1–S8 requires |
+|---|---|---|
+| decides from | **geometry alone** — line width, x-centre, y-position | the leaf's **visual appearance**, conditioned on archetype |
+| archetype | **none** — every leaf treated identically | S2, and it fixes what may be emitted |
+| classes | **4** — body · marginalia · header · catchword | the archetype's full inventory (Argument, ChapterHeading, DropCap, BookTitle, Table, Annotation, VerseNumber …) |
+| adaptivity | body column derived per page (median x of wide lines) — **genuinely adaptive**; but `wide_frac=0.50`, `margin_frac=0.06`, header `<0.15·h`, catchword `>0.88·h` are **global constants** | every decision derivable from the leaf |
+| input | **kraken's line objects**, which §3.2a documents as having already merged margin text *into* body lines on ch3 and ch6 | the page, before line segmentation destroys the boundary |
+| uncertainty | **none**; unknown ⇒ body | confidence per region; abstention permitted |
+| relations | **none** | S5 |
+| failure loop | **none** | S8 |
+
+⚠️ **This table is not an indictment of `type_lines`, which is a competent geometric typer and is the
+reason there is a working pipeline at all.** It is here because *"the incumbent handles it"* has
+appeared in this document as a complexity estimate (§3.2a archetype A) and as a reason to defer, and
+the row-by-row comparison shows what "handles it" is actually claiming.
+
+#### Forbidden, explicitly
+
+Each of these has been done, or nearly done, in this project. They are listed so that doing one again
+is a **checkable** violation rather than a judgement call.
+
+1. **A hand-tuned geometric constant may never be the deciding signal for a region boundary.** It may
+   initialise, and it may clamp (§3.2 item 5). ⚠️ **Measured 2026-08-25 (R2.2o.1): no such constant
+   exists to be found.** A true region gap measures **0.875 pitches** where the marginal column abuts
+   the measure, while a true word space elsewhere on the same page reaches **1.525**. The populations
+   overlap; the best possible single threshold still misclassifies. **The search for a better constant
+   is closed by measurement, not by preference.**
+2. **A region rule may not be perfected against a single witness on a single window.** The R2.2 line
+   was measured on **one witness, 20 leaves, a 121-entry gold, and a 19-entry MN denominator** whose
+   own correctness R2.2o.4 disputes. That is a *characterisation* set, never an adoption bar.
+3. **A capability may not exist outside the plan.** `surya_layout_probe.py` — a learned layout model
+   probe covering S3 and S4 — appears **zero times** in the Masterplan, Roadmap, Walkthrough, Overview
+   or Executive Summary. Same shape as §3.2b's slant finding: **working code that no rule governs**.
+   Registered as R14.0 in the Roadmap; it must be run, scored and recorded, or explicitly refused.
+4. **Repairing the prior may not be scheduled ahead of building the agent.** This section supersedes
+   any ordering text that says otherwise, including §3.2's own former instruction to hold the
+   archetype programme until the primitive is fixed. The primitive's repair now *requires* the shape of
+   ink beyond a gap (R2.2o.1) — which is a **perception** question, so that ordering had become
+   "do not build the perceiver until the perceiver is finished".
+
+#### Honest status of the eight steps, 2026-08-25
+
+| step | status |
+|---|---|
+| S1 | ✅ real — JP2 chain pinned, Gate 0d guards contamination at load |
+| S2 | 📋 designed in §3.2a (8 archetypes, REQUIRES/FORBIDS as data); **nothing built** (R12: *"OPEN, nothing built"*) |
+| S3 | ⚠️ geometric only, one witness, head band; one **undocumented** learned probe |
+| S4 | ❌ **no layout score of any kind has ever been computed on this corpus**; Gate 9 is thresholds, not results |
+| S5 | ❌ named in three summary documents, owned by none |
+| S6 | ⚠️ recogniser validates at 0.9396 but is **not wired into the consuming path** (R13) |
+| S7 | ✅ exists, ⚠️ fed by the four-role typer above |
+| S8 | ❌ residue is spent as training signal only; no run-time loop |
+
+🔴 **The 49-point spread is the whole argument in one number.** The Rung-2 fine-tune scores **content
+0.9448 and surface 0.451** on `genesis-24` — same page, same model. `RUNG-PIPELINE-STATUS-2026-07-21`
+gives the cause without hedging: *"the recogniser emits running-header/marginalia the gold body
+excludes; that is Rung-1's layout-separation job."* **The recogniser is not misreading glyphs. It is
+reading correct glyphs out of regions that should never have entered the body flow.** S2–S5 are what
+close that spread, and no amount of recogniser work will.
+
 ### 3.1 Acquire
 
 **Read each item's primary artefact, established per item in §1.2 — never inferred from the extension.**
@@ -1498,6 +1624,12 @@ of the PDF derivatives, and neither describes any raster the edition will consum
 
 ### 3.2 Geometry — shapes from ink, labels from text
 
+⚠️ **SUBORDINATE TO §3.0, AND THE TITLE IS NARROWER THAN THE JOB.** *"Shapes from ink"* describes how
+the **training labels** are obtained without a hand-labelling campaign, which is item 2's distant
+supervision and is correct. It does not describe what the agent does at run time, which is **S1–S8**:
+the agent sees the page, not an ink map. Read this section as *how the region model is trained and
+clamped*; read §3.0 as *what it is for*.
+
 🔴 **WHY THIS SECTION IS THE HIGHEST-VALUE LEVER IN THE PROJECT, RECORDED HERE 2026-08-17 BECAUSE IT HAS
 ONLY EVER BEEN WRITTEN IN A STATUS FILE.** The Rung-2 fine-tune scores **content 0.9448 and surface 0.451**
 on `genesis-24` — the same page, the same model, a 49-point spread — and
@@ -1543,7 +1675,7 @@ makes the classifier's output falsifiable rather than merely plausible.
 
 | # | archetype | REQUIRES | FORBIDS | complexity |
 |---|---|---|---|---|
-| **A** | **plain text page** | MainText · RunningHead · VerseNumber · Catchword | Marginalia · Argument · ChapterHeading · DropCap | **C1** — the incumbent bands already handle it |
+| **A** | **plain text page** | MainText · RunningHead · VerseNumber · Catchword | Marginalia · Argument · ChapterHeading · DropCap | **C1** — ⚠️ *"the incumbent bands already handle it"* **WITHDRAWN 2026-08-25**: the incumbent emits 4 roles from geometry alone, cannot abstain, and routes unknown ink to body (§3.0). It handles A **in the sense of not crashing on it**, which has never been scored. C1 stands as a *modelling* estimate only |
 | **B1** | **text + apparatus, DISJOINT** | A's set · Marginalia | Argument · DropCap | **C2** — the bound exists and must be *measured* per leaf |
 | **B2** | **text + apparatus, INTERLEAVED** | A's set · Marginalia | Argument · DropCap | **C3** — no bound can work; see below |
 | **C** | **chapter opening** | MainText · ChapterHeading · Argument · DropCap · VerseNumber | — | **C2** |
@@ -1602,6 +1734,49 @@ here with more force: A is the overwhelming majority of leaves, so a set sampled
 measures A and reports it as a page score. **GOLD-LAYOUT carries a per-archetype quota and publishes
 per-archetype n**, or Gate 9 is a plain-text-page gate wearing a corpus-wide name.
 
+🔴 **THE BOXING MODEL IS BLOCKED AT A PRIMITIVE, NOT AT A MODEL — MEASURED 2026-08-25, R2.2o.** Everything
+below and in §3.2a assumes ink can be grouped into regions once the archetype is known. The head-band
+implementation (`region_head`, the R2.1g/R2.2 line of work) has taken that as far as the underlying cut rule
+allows, and the rule is wrong on this corpus. `CR.region_segments` cuts a row wherever a gap exceeds the
+**line pitch**, on the rule *"a gap wider than the line pitch is a run to another region, not a word space"*.
+Over leaves 400–419: of **301 rows whose token union spans ≥0.75 of the measure** — genuine body lines —
+**102 (34%) have no continuous segment reaching 0.75**, only 49% are a single segment, and **2.3% of
+intra-row gaps exceed one pitch**. ⚠️ **In justified setting the word space is stretched to fill the
+measure**, so the primitive cannot separate a stretched space from a run out to the marginal column.
+
+**Four region-span rules have now been built and refuted against pre-registered bars** (`segment`,
+`R4_PER_SEGMENT`, `R4_DEMOTE_UNQUALIFIED`, `flush`), each buying ~1 MarginNote for 11–12 MainText — the
+same trade from four directions, because all four rest on that primitive. **This is the binding constraint
+on region typing, and §3.2's own thesis makes it the binding constraint on recognition's measured score
+too.** It is R2.2o in the roadmap.
+
+🔴 **THE ORDERING INSTRUCTION THAT STOOD HERE IS WITHDRAWN, 2026-08-25, AND ITS REPLACEMENT IS THE
+OPPOSITE.** It read: *"It is ordered before any further region-model work. Do not read §3.2a's archetype
+programme as the next step while this is open — archetype classification decides which region classes
+are in play, and it cannot repair a bounding rule that mis-cuts a third of the body."* That reasoning was
+sound while the primitive's defect looked like a **threshold** defect. **R2.2o.1 destroyed its premise**:
+the gap populations OVERLAP (0.875 pitches against 1.525 on the same page), so no constant exists, and
+the repair now requires reading **the shape of the ink beyond the gap**. That is a perception question.
+⇒ **The instruction had become "do not build the perceiver until the perceiver is finished."**
+
+**The correct ordering, per §3.0 which governs**: the archetype programme (S2) and the region model
+(S3–S5) are the work. `region_segments` and `region_head` are re-scoped to their designed role —
+**initialisation and plausibility clamp** (item 5 below) — and a clamp is required to be *characterised
+and willing to abstain*, never *maximised*. ⚠️ **A clamp does not need MN recall 0.9474. It needs to know
+when it is out of its depth.** The four refuted span rules and R2.2o.1 together are exactly that
+characterisation, and they are therefore **complete work, not a stalled repair**.
+
+🔴 **AND THE BLOCKER IS NOT A THRESHOLD CHOICE — MEASURED 2026-08-25, R2.2o.1**
+(`witness/score_region_gap_pops.py`). Labelling every intra-row gap from GOLD-HEADBAND's text-derived
+region labels shows the two populations **OVERLAP**: where the marginal column abuts the measure
+(leaf 412) a true region gap measures **0.875 pitches**, while a stretched word space elsewhere on the
+same page reaches **1.525**. The best achievable single threshold still misclassifies. ⇒ **The
+geometric boxing model cannot separate margin from measure by gap width alone at ANY setting.** The
+rule must consult the *shape of the ink beyond the gap*, which is a perception question, not a
+constant — and therefore an argument for §3.2a's learned, archetype-first region model rather than for
+a fifth hand-built span rule. ⚠️ Coverage is 7.8% of gaps and 2 MN|MT boundaries (R2.2o.1b), so this
+refutes threshold-retuning without yet licensing any replacement rule.
+
 1. **Shapes from ink**: connected-component and projection-profile grouping on the native raster, plus a
    generic baseline segmenter over the **untyped full page**.
 2. **Labels from text**, assigned to ink groups — MainText from alignment to the archaic reference;
@@ -1626,8 +1801,17 @@ per-archetype n**, or Gate 9 is a plain-text-page gate wearing a corpus-wide nam
 8. **Books with no archaic reference generate no distantly-supervised labels**, so the training set would
    otherwise be a non-random book subset. **Layout ground truth carries an explicit quota for them.**
 9. **Slant is an output of this model, estimated per LEAF and never per row** (NEW, 2026-08-17 — see
-   below). It is emitted alongside the polygons, because a region boundary and the angle of the type
+   §3.2b). It is emitted alongside the polygons, because a region boundary and the angle of the type
    inside it are one measurement, not two.
+10. **Relations are an output of this model too** (NEW, 2026-08-25 — §3.0 S5, Gate 9.7). Reading order
+    and **attachment**: which note belongs to which verse, which numeral governs which text, which
+    catchword predicts which leaf. ⚠️ **The attachment is the edition's scholarly payload**, not a
+    convenience: an unattached marginal transcript is not apparatus, and §8's whole apparatus argument
+    assumes the link exists. It is emitted alongside the polygons for the same reason slant is — a
+    boundary and what crosses it are one measurement, not two.
+11. **Confidence is an output, and abstention is a permitted one** (NEW, 2026-08-25 — §3.0 S4,
+    Gate 9.6). A region the model cannot type is emitted as an abstention **with its cause**, never
+    defaulted to a class. See §3.0 for the live path's fail-safe-to-body branch, which this replaces.
 
 #### 3.2b Slant — a working capability that no rule reads (NEW, 2026-08-17)
 
@@ -1650,7 +1834,7 @@ was a **rule that no code implemented**. Gate 0f was a **rule that no code read*
 **working code that no rule governs.** A capability with no gate is not safer than a gate with no
 capability — it is less safe, because it will be used and its errors will never be measured. Slant is
 therefore promoted to a **named, gated output of the region model**, and Gate 9 now reads
-**box · label · slant**.
+**box · label · slant · confidence · relations** (extended 2026-08-25 by §3.0 S4 and S5).
 
 **Gate 9**, published *before* the baseline is measured and sha-pinned, with the recognizer frozen.
 Revised 2026-08-17 to carry the archetype and slant clauses:
@@ -1662,6 +1846,19 @@ Revised 2026-08-17 to carry the archetype and slant clauses:
 | 9.3 | **MainText boundary** | boundary error | ≤8 px median · ≤25 px p95 | GOLD-LAYOUT | ≥125 pages |
 | 9.4 | **per-class shape** | IoU per class | published per class, no aggregate substituted | GOLD-LAYOUT | ≥125 pages |
 | 9.5 | **slant** | per-leaf slope error vs hand-measured baseline angle · **abstention rate** | error threshold **pre-registered from the hand-measured set's own spread, not asserted here** · abstentions **reported, never excluded** | GOLD-LAYOUT | pre-registered |
+
+| 9.6 | **abstention (NEW, §3.0 S4)** | rate of regions the agent declines to type · **and the fate of every abstained region** | rate **pre-registered from the characterisation set, not asserted here**; an abstention silently defaulted to any class is a **hard failure** | GOLD-LAYOUT | pre-registered |
+| 9.7 | **relations (NEW, §3.0 S5)** | reading-order accuracy · **note-to-verse attachment accuracy**, scored SEPARATELY from boxing | pre-registered against the apparatus set once it is addressable | GOLD-LAYOUT + apparatus | pre-registered |
+| 9.8 | **the re-examination loop (NEW, §3.0 S8)** | fraction of failed checks the loop REPAIRS · fraction it makes WORSE · fraction it converts to caused abstention | **the "makes worse" figure is published, never netted against the repairs** | GOLD-LAYOUT | pre-registered |
+
+⚠️ **9.6, 9.7 and 9.8 carry no numbers, for the same reason 9.5 carries none** — no characterisation
+set exists for any of them, and §0.5 forbids a threshold that was not derived from evidence. Writing
+numbers here would be inventing the bar the agent is then measured against. **Their first deliverable
+is characterisation** (R14 in the Roadmap), and the numbers are written after.
+
+🔴 **9.8's "makes worse" column is the load-bearing one and must never be netted.** A loop that repairs
+6 pages and corrupts 4 is not "net +2"; it is a loop that corrupts 4 pages, and under No Silent
+Degradation those 4 stay OPEN. A single aggregate would launder them.
 
 ⚠️ **9.5's threshold is deliberately left unwritten and is a blocking prerequisite, not an omission.** No
 hand-measured slant set exists, so any number written here would be invented — and §0.5 forbids a
@@ -1678,6 +1875,30 @@ are recogniser validation accuracy and a single-chapter content score — neithe
 ---
 
 ## 4. STAGE 2 — RECOGNITION
+
+### 4.0 Recognition is CONDITIONED by region class, not merely cropped to it (GOVERNING, 2026-08-25)
+
+**§3.0 S6.** A human does not read a marginal note the way they read scripture. The note is set in a
+different fount, at a different size, in a different language register — patristic citations,
+abbreviations, a numeral system keyed to the verse beside it. **The region class must therefore select
+the recogniser configuration**, not merely supply a rectangle to run the one recogniser inside.
+
+⚠️ **THIS IS ALREADY MEASURED, TWICE, AND IN THIS PROJECT'S OWN DATA.** R2.2d records that **a row is
+not homogeneous in FOUNT**, and §3.0's 49-point `genesis-24` spread (content 0.9448 / surface 0.451) is
+what happens when regions of different kinds enter one undifferentiated flow. A page-level recogniser
+score therefore averages over categories that should never have been pooled.
+
+**Consequences that bind the rest of §4:**
+
+1. **Per-region-class reporting is mandatory.** A single page or corpus recognition figure is an
+   aggregate over incommensurable populations, and §7's no-aggregate-substituted rule applies here
+   exactly as it does to Gate 9.4's per-class IoU.
+2. **The census (§4.1) is already per-fount and must stay so** — step 2 asks *"in which fount (roman
+   text / italic annotation / display)?"*. That question exists because the answer differs by region;
+   S6 is the same fact stated at run time.
+3. **A region class with no evaluated recogniser is an OPEN gap**, not a region handled by the default.
+   Routing an unevaluated class to the body recogniser is the recognition-side twin of §3.0's
+   fail-safe-to-body branch.
 
 ### 4.1 The archaic typeset census — establishing the inventory empirically
 
@@ -2471,7 +2692,7 @@ never appear inside it.**
 | **7** | Pilot gold — measures keying rate and variance | sizing evidence | 5 |
 | **8** | GOLD-TEXT / GOLD-LAYOUT frozen (**by gathering**); NOISE-FLOOR; **δ pre-registered** | the frozen sets | 7 |
 | **9** | Tome map + held-out audit | addressing | 6 |
-| **10** | **G1 geometry** — **archetype classifier first (§3.2a)**, then regions, then **slant (§3.2b)** | region model v1 | 8, 2 |
+| **10** | **G1 geometry — THE ADAPTIVE VISUAL AGENT (§3.0).** S2 archetype classifier first (§3.2a), then S3–S4 regions with **confidence and abstention**, then **S5 relations**, then **slant (§3.2b)**, then **S8 the re-examination loop** | region model v1 — **box · label · slant · confidence · relations** | 8, 2 |
 | **11** | **G1 recognition** — census inventory, atomic NFC codec, x-height, VOLUME scope | recognizer v1 | 8, 3, 4 |
 | **12** | Alignment; `unclear`/`gap` and page anchors in the data model | line GT at scale | 11 |
 | **13** | Glyph census; text-side mining; pair CNNs with abstention; H sweep | rare-class evidence | 11, 12 |
