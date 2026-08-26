@@ -1780,7 +1780,14 @@ refutes threshold-retuning without yet licensing any replacement rule.
 1. **Shapes from ink**: connected-component and projection-profile grouping on the native raster, plus a
    generic baseline segmenter over the **untyped full page**.
 2. **Labels from text**, assigned to ink groups — MainText from alignment to the archaic reference;
-   Marginalia from the 1,334 transcribed apparatus blocks; RunningHead / Catchword / Signature from
+   🔴 **Marginalia from — NOTHING. CORRECTED 2026-08-25 (R14.6a).** This clause read *"Marginalia
+   from the 1,334 transcribed apparatus blocks"* and it was **wrong**: measured on disk, **all 1,334
+   blocks are `kind='argument'`** — the italic prose summary before a chapter, which is a DIFFERENT
+   region class (archetype C REQUIRES Argument; MarginNote is archetype B's). **No transcribed
+   side-note corpus exists in this project.** The 1,334 blocks are a real and admissible source **for
+   the Argument class**. ⚠️ `apparatus-cross-map`'s `scan_marginal` is NOT a substitute: it is
+   `margin_by_page`, the INCUMBENT region typer's own output, so training on it would teach a model to
+   reproduce `layout.type_lines` and the agreement would then read as validation. See R14.6b; RunningHead / Catchword / Signature from
    self-verifying positional-and-text tests; VerseNumber from numeral-matches-adjacent-verse.
 3. **Unaligned residue is positive evidence.** For each leaf, the fraction of the chapter's reference span
    matched by *no* line localises a missed or clipped region. That residue is a **labelling target, not a
