@@ -1,0 +1,4 @@
+
+# R14.7 — agent_see.py renders 43MB of leaf diagrams. They are DERIVED (regenerate with
+# `../ocr-venv/bin/python witness/agent_see.py`), so the tree stays small enough to grep.
+witness/see/

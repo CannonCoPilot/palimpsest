@@ -1,0 +1,38 @@
+{
+ "_doc": "GOLD-PAGENUMBER -- the printed page number on each leaf of OT1-1609-B 400-419, read from the page by eye. R14.10b's truth set for the PN class.",
+ "witness": "OT1-1609-B",
+ "window": [400, 419],
+ "dated": "2026-08-27",
+ "labelling_basis": "EVERY ENTRY WAS ADJUDICATED FROM THE CROP BY EYE, and the basis is recorded per entry. It is NOT taken from the recogniser's output: the recogniser is the instrument under test here, and scoring it against its own readings is the circularity GOLD-HEADBAND was built to refuse (Sir's anti-circularity ruling, 2026-08-17) and the same defect as scoring against GOLD-HEADBAND's `text`, which is the incumbent OCR's output.",
+ "offset_is_not_the_source": "The printed number equals `leaf - 32` on all sixteen entries. ⚠️ THAT REGULARITY IS AN OUTPUT OF THIS SET, NEVER AN INPUT TO IT. Predicting a number from the leaf index and then 'finding' it would score the instrument against its own signal. Because every entry was adjudicated independently from the page, the offset is a CONFIRMING observation about the book -- sixteen independent readings agreeing on one arithmetic relation -- rather than the rule that produced them. It is recorded because a violation would be evidence of a mis-scanned or misordered leaf, which is a fact worth being able to detect.",
+ "coverage": "20 of 20 leaves. EVERY leaf in the window prints a page number and the detector localises EVERY ONE.",
+ "corrected_false_absence": "⚠️ THIS FILE FIRST SAID 16 OF 20, naming leaves 401, 402, 409 and 417 as a DETECTOR gap. That was WRONG, and the error was in the instrument that looked, not on the page. The probe bounded its search by `mass_y <= head_y`, and on those four leaves the page number's mass sits 0.005 of a page BELOW the head line that the body block defines -- so the search reported 'no box' where the box was plainly present, tiny and classed PageHeader by the detector. All four were silently named MainText, which is CONTAINMENT and therefore scores as CORRECT. ⚠️ A BOUNDED SEARCH RETURNS 'NOT FOUND' IN EXACTLY THE SHAPE AN EXHAUSTIVE ONE DOES -- the third recorded instance of this shape in this project, after audit_label_sources.py bounded by a directory and then by a field name. It was caught by GOLD-FOREEDGE, which is not band-limited and carries a PN entry on two of the four.",
+ "not_blind": "⚠️ ONE witness, ONE operator, and the operator is the same agent that wrote the cue. This may NEVER be promoted to GOLD-LAYOUT, and it discharges no gate.",
+ "bases": {
+  "page": "adjudicated by eye from the crop; the reading is legible",
+  "page+sequence": "adjudicated by eye, and the terminal glyph is ambiguous in the crop; settled by the flanking adjudicated numbers"
+ },
+ "labels": [
+  {"leaf": 400, "printed": 368, "basis": "page", "note": "recogniser returned EMPTY on this crop"},
+  {"leaf": 401, "printed": 369, "basis": "page", "note": "recovered leaf; recogniser read '369'"},
+  {"leaf": 402, "printed": 370, "basis": "page", "note": "recovered leaf; recogniser read '370'"},
+  {"leaf": 403, "printed": 371, "basis": "page", "note": "recogniser read '37T'"},
+  {"leaf": 404, "printed": 372, "basis": "page", "note": "recogniser read '72' -- leading sort dropped"},
+  {"leaf": 405, "printed": 373, "basis": "page", "note": "recogniser read '373'"},
+  {"leaf": 406, "printed": 374, "basis": "page", "note": "recogniser read '474' -- leading 3 misread as 4"},
+  {"leaf": 407, "printed": 375, "basis": "page+sequence", "note": "recogniser returned EMPTY; terminal sort reads as 1 or 5 in the crop, settled by 374 on leaf 406 and 376 on leaf 408"},
+  {"leaf": 408, "printed": 376, "basis": "page", "note": "recogniser read '7'"},
+  {"leaf": 409, "printed": 377, "basis": "page", "note": "recovered leaf; recogniser read '377'"},
+  {"leaf": 410, "printed": 378, "basis": "page", "note": "recogniser returned EMPTY on this crop"},
+  {"leaf": 411, "printed": 379, "basis": "page", "note": "recogniser read '379'"},
+  {"leaf": 412, "printed": 380, "basis": "page", "note": "recogniser read '380'"},
+  {"leaf": 413, "printed": 381, "basis": "page", "note": "recogniser read '38'"},
+  {"leaf": 414, "printed": 382, "basis": "page", "note": "recogniser read '8'"},
+  {"leaf": 415, "printed": 383, "basis": "page", "note": "recogniser read '383'"},
+  {"leaf": 416, "printed": 384, "basis": "page", "note": "recogniser read '484' -- leading 3 misread as 4"},
+  {"leaf": 417, "printed": 385, "basis": "page", "note": "recovered leaf; recogniser read '38' -- terminal sort dropped"},
+  {"leaf": 418, "printed": 386, "basis": "page", "note": "recogniser returned EMPTY on this crop"},
+  {"leaf": 419, "printed": 387, "basis": "page", "note": "recogniser returned EMPTY on this crop"}
+ ],
+ "no_page_number_box": []
+}

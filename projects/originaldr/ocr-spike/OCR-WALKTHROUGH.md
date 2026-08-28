@@ -298,6 +298,15 @@ the same condition if the scale proves wrong.
 are sized from observed variance rather than a guess. Diplomatic keying care is needed **for the base
 exemplar only**; the correction loop then grows the set as a by-product.
 
+🔴 **AND UNTIL 2026-08-26 THE STEP BELOW HAD NO OWNER — WHICH IS WHY NEITHER MODEL CAN BE GATED YET.**
+"When the sets freeze" is §7.8 **row 9**, and it is the prerequisite of **rows 10a–10f** (the geometry
+model) *and* **row 11** (the recognition model). It carried no Roadmap step of any kind; the gate
+register was prose, so nothing could report the gap. It is now **R16.1**, and it is blocked in turn by
+**R12.1** (the archetype census), because the per-archetype quota below cannot be filled before the
+archetypes are enumerated. **The ordering for both headline models is therefore
+`R12.1 → R16.1 → {Gate 10a–10f, Gate 11}`.** ⚠️ The 121-entry **GOLD-HEADBAND** that R14.0 scored
+against is **not** this set and may not be renamed into it — 20 leaves, one witness, top three rows.
+
 **When the sets freeze** (**Gate 9**):
 - **Split by gathering, never by page** — adjacent leaves share paper, bleed-through, skew and the same
   forme, so a page-level split puts near-duplicates on both sides.
@@ -422,6 +431,14 @@ incumbent height already handles and cannot resolve the question.
 
 **Style never enters the codec** — a stand-off rendition layer with a span table, a separate word-level font
 classifier, and two-channel scoring.
+
+🔴 **GATE 11 HAS NEVER BEEN MEASURED, AND NO FIGURE IN CIRCULATION IS ONE.** The recogniser's **0.9396**
+validation accuracy and the `genesis-24` **0.9448** content score are neither Gate 11 measurements nor
+layout measurements — §7.8 refuses that substitution **by name**, because a model's own validation split
+is not GOLD-TEXT. Gate 11's first measurement is Roadmap **R13.3**, filed 2026-08-25 after the discovery
+that this gate had no step at all, and it is blocked by **R16.1** (GOLD-TEXT frozen) and by **R13.1**
+(the fine-tune is not wired into the attesting arm — a gate measured on an unwired model measures the
+wrong model).
 
 **Gate 11**: CER-folded ≤1.0% · CER-diplomatic at the measured floor + δ · per-class precision and recall
 with support · **cluster bootstrap over pages, not Wilson intervals** · line-segmentation error · WER ·

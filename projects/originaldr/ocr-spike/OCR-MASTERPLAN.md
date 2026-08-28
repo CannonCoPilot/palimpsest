@@ -1485,6 +1485,58 @@ this project has already measured what their absence costs — the grounds are g
 | **S7** | **RUN THE WORKFLOW LAYERS per region** — the rules, context, checks and gates appropriate to that class | the checked, addressed, provenanced output | §6–§8 |
 | **S8** | **RE-EXAMINE ON FAILURE** *(NEW)* — a failed check re-opens S2–S5 for that leaf | a revised reading, or a recorded, caused abstention | **Gate 9.8 (NEW)** — the loop must be *measured*: what fraction of failures it repairs, and what it makes worse |
 
+#### S4 emits a LAMINATION, not a pile of rectangles (GOVERNING, added 2026-08-27 on Sir's direction)
+
+🔴 **MEASURED FIRST, SO THIS IS NOT A PREFERENCE.** Over the twenty-leaf gold window the detector
+emits **158 boxes and 99 PAIRS OF THEM PHYSICALLY OVERLAP**. Every leaf has at least two; leaf 417
+has twelve. The boxes are **not a partition of the page — they are a pile**, and nothing in the
+design says which box *owns* a given piece of ink.
+
+⚠️ **THE PROJECT HAS PAID FOR THIS THREE TIMES AND PATCHED IT LOCALLY EACH TIME.** (1) `visual_agent`
+computes **two rival binding rules** and reports both, because *"which box does this label belong
+to"* genuinely has two defensible answers under nesting. (2) `attach_fount` must assign each row
+segment to the **smallest containing box**, or the argument's italic pours into the body block and
+dilutes to nothing. (3) The foot-band cue needs a **second signal** because the body block physically
+contains the gathering signature, so a position test never fires. **Three symptoms, one missing
+concept.**
+
+**THE REQUIREMENT.** S4's output is a **LAMINATION**: an ordered stack of typed regions in which
+
+1. every region carries a **z-order**, so containment is expressed rather than inferred;
+2. a region **OWNS the ink inside it** that no region above it claims — slicing an upper region out
+   of a lower one may leave a ragged remainder, **and that is permitted**;
+3. **no region may contain ink that lies inside another region at the same or higher level.** This is
+   the invariant, and it is stated over **INK**, not over rectangles: two boxes may overlap in
+   *white space* with no consequence, because a page is not tiled by its type.
+4. the agent **adjusts region boundaries until the invariant holds**, and where it cannot, it
+   **abstains with a cause** (S4's existing clause) rather than emitting an ambiguous stack.
+
+⚠️ **WHY OVER INK AND NOT OVER RECTANGLES.** A body block's bounding rectangle legitimately spans
+the gutter-side white that a side-note sits in; forbidding rectangle overlap would force the agent to
+shrink true regions to satisfy a geometric tidiness the page does not have. **Ownership of ink is the
+real relation** and it is what every downstream consumer — the recogniser, the fount test, the
+attachment step S5 — actually needs.
+
+⚠️ **AND IT SUBSUMES A PROBLEM §3.2 ITEM 6 ROUTED AROUND.** DropCap was excluded from the class
+inventory because *"region polygons and reading order handle nesting badly"*. Under a lamination a
+drop cap is simply a region at a higher z-order than the body block that owns its own ink. The
+exclusion should be **re-opened** once the lamination lands.
+
+#### No fixed measure may DECIDE — and the claim must be MEASURED, not asserted
+
+The "adaptive means per-page" rule above has been restated in comments throughout the agent and was
+**never tested** until 2026-08-27. `witness/audit_fixed_measures.py` now sweeps every fixed number in
+the agent and reports the band over which the full label vector is unchanged.
+
+🔴 **FIRST RESULT: 5 OF 12 FIXED NUMBERS DECIDE**, including one — the head band's centred/outer
+split — with **ZERO slack**. The agent's own docstring claims *"nothing here is a corpus-fitted
+number"*. **That claim is false and is now measured.** ⚠️ Every constant this audit calls DECIDING
+must be **derived from the leaf** or **retired**; a comment asserting that a threshold decides
+nothing is a hypothesis, and where the sweep disagrees the sweep wins.
+
+⚠️ **SLACK IS NOT A CERTIFICATE.** A wide empty band on twenty leaves of one witness is evidence
+about this window and nothing more. The audit reports the band; it never licenses the constant.
+
 #### Why S5 and S8 are additions and not fluff
 
 **S5 — RELATE.** Boxes without relations are a bag of rectangles, and this edition's entire scholarly
@@ -1780,14 +1832,18 @@ refutes threshold-retuning without yet licensing any replacement rule.
 1. **Shapes from ink**: connected-component and projection-profile grouping on the native raster, plus a
    generic baseline segmenter over the **untyped full page**.
 2. **Labels from text**, assigned to ink groups — MainText from alignment to the archaic reference;
-   🔴 **Marginalia from — NOTHING. CORRECTED 2026-08-25 (R14.6a).** This clause read *"Marginalia
-   from the 1,334 transcribed apparatus blocks"* and it was **wrong**: measured on disk, **all 1,334
-   blocks are `kind='argument'`** — the italic prose summary before a chapter, which is a DIFFERENT
-   region class (archetype C REQUIRES Argument; MarginNote is archetype B's). **No transcribed
-   side-note corpus exists in this project.** The 1,334 blocks are a real and admissible source **for
-   the Argument class**. ⚠️ `apparatus-cross-map`'s `scan_marginal` is NOT a substitute: it is
-   `margin_by_page`, the INCUMBENT region typer's own output, so training on it would teach a model to
-   reproduce `layout.type_lines` and the agreement would then read as validation. See R14.6b; RunningHead / Catchword / Signature from
+   🔴 **Marginalia — THE NAMED SOURCE IS WRONG; THE REAL ONE IS ELSEWHERE ON DISK. CORRECTED 2026-08-26
+   (R14.6a).** This clause read *"Marginalia from the 1,334 transcribed apparatus blocks"*. Measured:
+   **all 1,334 blocks are `kind='argument'`** — the italic prose summary before a chapter, a DIFFERENT
+   region class (archetype C REQUIRES Argument; MarginNote is archetype B's). Those blocks remain a
+   real and admissible source **for the Argument class**. The actual Marginalia source is
+   **`imports/…/sources/transcriptions/janvier/original-douay-rheims-repo`** — **3,754** side-note
+   objects and **3,538** `<mn>` anchors over **53** books, OT 1609 + NT 1582, CC0, *this edition*,
+   each carrying **the verse it attaches to** — corroborated by **165** `marginal_notes` + **266**
+   `inline_notes` in the odr-com apparatus scrape. ⚠️ `scan_marginal` is NOT a substitute for either:
+   it is `margin_by_page`, the INCUMBENT region typer's own output, so training on it would teach a
+   model to reproduce `layout.type_lines` and the agreement would then read as validation;
+   RunningHead / Catchword / Signature from
    self-verifying positional-and-text tests; VerseNumber from numeral-matches-adjacent-verse.
 3. **Unaligned residue is positive evidence.** For each leaf, the fraction of the chapter's reference span
    matched by *no* line localises a missed or clipped region. That residue is a **labelling target, not a
@@ -2585,31 +2641,57 @@ pages.
 **Document-level invariant: no step enters the build order until its row carries metric · threshold · named
 set · n · pre-registered effect size.**
 
-| # | step | metric | threshold | set | n |
-|---|---|---|---|---|---|
-| **0a** | source concordance | fields resolved per copy | **100%, no UNKNOWN** | — | 9 copies |
-| **0b** | completeness & collation | leaves inventoried vs expected signature collation | **100% per admitted copy**; wanting / duplicated / misbound / made-up all named | all copies | 10 files |
-| **0c** | cross-source leaf mapping | leaves keyed to printed page + signature across copies of a volume | **100% of admitted leaves addressable in every witness** | all copies | per volume |
-| **0d** | derivative-contamination guard | leaves failing the JP2 assertion at load | **0** | working chain | every leaf. ⚠️ **dimension clause CHECKED on 3,113 of 3,122** — the **9-leaf residue is UNKNOWN, not passing**, and must be named leaf by leaf rather than carried inside a rounded "complete" |
-| **1** | drop-cap fix + page axis | cells moving to OPEN | **18, against a frozen board, never netted** | board | 18 |
-| **2** | residue detector | leaf-ranking precision@50 vs known defects | **≥0.6** | campaign history | 50 leaves |
-| **3** | **archaic typeset census** | every requested class resolved ATTESTED / NOT FOUND, per volume | **100% resolved; exemplar image + frequency per attested class** | census page set | stratified, per volume |
-| **4** | pilot gold | keying rate and variance measured | **rate published** | pilot | 60 lines, 20 pages |
-| **5** | R1 renumber | offset-0 exact-key agreement | **≥99.8%** | both archaic references | all 13,292 shared |
-| **6** | R2 de-contaminate | **splice detection recall on seeded splices** | **≥0.90** | seeded set | ≥100 seeded |
-| **7** | provenance audit | `ſ`/`s` accuracy, ligature policy, base edition | **published** (a characterisation, not a threshold) | scans | 200 verses |
-| **8** | tome map | page-assignment error rate | **≤1%** | held-out | 300 pages |
-| **9** | GOLD frozen | sha-pinned, **gathering-level split**, **per-archetype quota** (§3.2a) | **frozen; per-class AND per-archetype n published** | — | §7.2 |
-| **10a** | **G1 archetype classification** (§3.2a) | per-archetype accuracy · **forbidden-class emission rate** | **≥0.95 macro · forbidden-class emission = 0** | GOLD-LAYOUT, recognizer frozen | ≥125 pages, per-archetype n published |
-| **10b** | G1 geometry — regions | marginalia recall / precision · boundary error · per-class IoU | **≥0.85 / ≥0.90 · ≤8 px median, ≤25 px p95 · IoU published per class** | GOLD-LAYOUT, recognizer frozen | ≥125 pages |
-| **10c** | **G1 geometry — slant** (§3.2b) | per-leaf slope error vs hand-measured baseline · abstention rate | 🔴 **pre-registered from the hand-measured set's spread — NOT YET WRITABLE, no such set exists**; abstentions reported | GOLD-LAYOUT | pre-registered |
-| **10d** | **G1 geometry — abstention** (§3.0 S4) | rate of regions the agent declines to type · **the fate of every abstained region** | 🔴 **pre-registered from R14.2's characterisation — NOT YET WRITABLE**; an abstention silently defaulted to a class is a **hard failure** | GOLD-LAYOUT | pre-registered |
-| **10e** | **G1 geometry — relations** (§3.0 S5) | reading-order accuracy · **note-to-verse attachment accuracy**, scored SEPARATELY from boxing | 🔴 **pre-registered from R14.3's characterisation — NOT YET WRITABLE** | GOLD-LAYOUT + apparatus | pre-registered |
-| **10f** | **G1 geometry — the re-examination loop** (§3.0 S8) | fraction of failed checks the loop REPAIRS · fraction it makes WORSE · fraction converted to caused abstention | 🔴 **pre-registered from R14.5 — NOT YET WRITABLE**; the "makes worse" figure is **published, never netted** | GOLD-LAYOUT | pre-registered |
-| **11** | G1 recognition | CER-folded · CER-diplomatic · per-class · abstention | **≤1.0% · floor+δ · published per class · reported** | GOLD-TEXT | §7.2, cluster bootstrap |
-| **12** | alignment | accepted-line precision · never-accepted span fraction | **≥0.98 · reported, blocking if rising** | held-out | 500 lines |
-| **13** | G2 | primary scalar + non-inferiority set | **§7.6** | VAL-GOLD | budget 20 |
-| **14** | publish | apparatus schema validates; **HOLDOUT opened once** | **machine-checkable completeness assertion** | HOLDOUT | — |
+| # | step | metric | threshold | set | n | discharged by |
+|---|---|---|---|---|---|---|
+| **0a** | source concordance | fields resolved per copy | **100%, no UNKNOWN** | — | 9 copies | R4 |
+| **0b** | completeness & collation | leaves inventoried vs expected signature collation | **100% per admitted copy**; wanting / duplicated / misbound / made-up all named | all copies | 10 files | R1 · R2 |
+| **0c** | cross-source leaf mapping | leaves keyed to printed page + signature across copies of a volume | **100% of admitted leaves addressable in every witness** | all copies | per volume | R3 |
+| **0d** | derivative-contamination guard | leaves failing the JP2 assertion at load | **0** | working chain | every leaf. ⚠️ **dimension clause CHECKED on 3,113 of 3,122** — the **9-leaf residue is UNKNOWN, not passing**, and must be named leaf by leaf rather than carried inside a rounded "complete" | R5 |
+| **0e** | **setting identity, proved per witness** (§2) | §0.3's full criterion — printed page number · running head · sidehead · **signature** · **catchword** · line-end words, agreeing at **three or more separated points** | **every admitted witness passes, or is marked SOLE WITNESS TO ITS SETTING** | all registered witnesses | 12 records. ⚠️ **head criteria proved at ≥3 points; FOOT criteria at ONE (R8.4a)** — R8.4b is the remainder and is OPEN | R6 · **R8.4b** |
+| **0f** | **evidential scope declared per witness, and READ by a consumer** (§2) | `verse_scope` declared in the registry · **consumers that enforce it** · bypass routes | **100% declared · ≥1 scorer reads it · 0 bypass routes** | registry + every consumer | 12 records / 20 restated modules | R9 |
+| **1** | drop-cap fix + page axis | cells moving to OPEN | **18, against a frozen board, never netted** | board | 18 | **NOT YET PLANNED** |
+| **2** | residue detector | leaf-ranking precision@50 vs known defects | **≥0.6** | campaign history | 50 leaves | **NOT YET PLANNED** |
+| **3** | **archaic typeset census** | every requested class resolved ATTESTED / NOT FOUND, per volume | **100% resolved; exemplar image + frequency per attested class** | census page set | stratified, per volume | **NOT YET PLANNED** |
+| **4** | pilot gold | keying rate and variance measured | **rate published** | pilot | 60 lines, 20 pages | **NOT YET PLANNED** |
+| **5** | R1 renumber | offset-0 exact-key agreement | **≥99.8%** | both archaic references | all 13,292 shared | **NOT YET PLANNED** |
+| **6** | R2 de-contaminate | **splice detection recall on seeded splices** | **≥0.90** | seeded set | ≥100 seeded | **NOT YET PLANNED** |
+| **7** | provenance audit | `ſ`/`s` accuracy, ligature policy, base edition | **published** (a characterisation, not a threshold) | scans | 200 verses | **NOT YET PLANNED** |
+| **8** | tome map | page-assignment error rate | **≤1%** | held-out | 300 pages | **NOT YET PLANNED** |
+| **9** | GOLD frozen | sha-pinned, **gathering-level split**, **per-archetype quota** (§3.2a) | **frozen; per-class AND per-archetype n published** | — | §7.2 | **NOT YET PLANNED** |
+| **10a** | **G1 archetype classification** (§3.2a) | per-archetype accuracy · **forbidden-class emission rate** | **≥0.95 macro · forbidden-class emission = 0** | GOLD-LAYOUT, recognizer frozen | ≥125 pages, per-archetype n published | R12.1 · R12.2 · R14.1 |
+| **10b** | G1 geometry — regions | marginalia recall / precision · boundary error · per-class IoU | **≥0.85 / ≥0.90 · ≤8 px median, ≤25 px p95 · IoU published per class** | GOLD-LAYOUT, recognizer frozen | ≥125 pages | R14.2 |
+| **10c** | **G1 geometry — slant** (§3.2b) | per-leaf slope error vs hand-measured baseline · abstention rate | 🔴 **pre-registered from the hand-measured set's spread — NOT YET WRITABLE, no such set exists**; abstentions reported | GOLD-LAYOUT | pre-registered | **NOT YET PLANNED** |
+| **10d** | **G1 geometry — abstention** (§3.0 S4) | rate of regions the agent declines to type · **the fate of every abstained region** | 🔴 **pre-registered from R14.2's characterisation — NOT YET WRITABLE**; an abstention silently defaulted to a class is a **hard failure** | GOLD-LAYOUT | pre-registered | R14.2 |
+| **10e** | **G1 geometry — relations** (§3.0 S5) | reading-order accuracy · **note-to-verse attachment accuracy**, scored SEPARATELY from boxing | 🔴 **pre-registered from R14.3's characterisation — NOT YET WRITABLE** | GOLD-LAYOUT + apparatus | pre-registered | R14.3 |
+| **10f** | **G1 geometry — the re-examination loop** (§3.0 S8) | fraction of failed checks the loop REPAIRS · fraction it makes WORSE · fraction converted to caused abstention | 🔴 **pre-registered from R14.5 — NOT YET WRITABLE**; the "makes worse" figure is **published, never netted** | GOLD-LAYOUT | pre-registered | R14.5 |
+| **11** | G1 recognition | CER-folded · CER-diplomatic · per-class · abstention | **≤1.0% · floor+δ · published per class · reported** | GOLD-TEXT | §7.2, cluster bootstrap | R13.3 |
+| **12** | alignment | accepted-line precision · never-accepted span fraction | **≥0.98 · reported, blocking if rising** | held-out | 500 lines | **NOT YET PLANNED** |
+| **13** | G2 | primary scalar + non-inferiority set | **§7.6** | VAL-GOLD | budget 20 | **NOT YET PLANNED** |
+| **14** | publish | apparatus schema validates; **HOLDOUT opened once** | **machine-checkable completeness assertion** | HOLDOUT | — | **NOT YET PLANNED** |
+
+🔴 **THE `discharged by` COLUMN — R15.2, ADDED 2026-08-26 — AND WHAT ITS FIRST FILL-IN MEASURED.** Every
+row now names the Roadmap step that discharges it, or is explicitly marked **NOT YET PLANNED**. The
+second is an acceptable state; a **silent** absence is not, and silence is what this column replaces.
+
+**The count on the day it was added: 10 rows carry a step, 13 read NOT YET PLANNED.** That is not a
+finding about the plan's ambition — rows 12–14 *should* be unplanned this early, and rows 10c–10f are
+deliberately numberless until their characterisation runs. It is a finding about **visibility**: the
+thirteen were unplanned before this column existed too, and nothing could say so. ⚠️ **Three of the
+thirteen are cheap and near-term and were invisible precisely because they are cheap** — row **1**
+(the drop-cap board fix, 18 cells), row **2** (the residue detector), row **3** (the archaic typeset
+census) — and the Executive Summary's own build-order table (§7) ranks all three **low-to-medium
+complexity with no prerequisite but the corpus**. A register that could not report them left this
+project's three cheapest gates unowned while four hand-built span rules were being refuted against one
+witness. **Row 9 (GOLD-TEXT / GOLD-LAYOUT frozen) is the most consequential of the thirteen**: it
+blocks rows 10a–10f *and* row 11, i.e. **both** of the two models whose status §8a reports, and R13.3
+already names it as its own blocker. Naming these is R15.2's deliverable; **eliminating them by
+deleting rows is forbidden by R15's own rule.**
+
+⚠️ **The column is checked by machine, not by reading** — `witness/audit_gate_register.py` (R15.1)
+parses this table, the crosswalk below it, and the Roadmap's step ids, and refuses a `discharged by`
+entry naming a step the Roadmap does not define. That is the point of the column: the previous
+crosswalk was correct prose and **nothing read it**, which is this project's signature defect and the
+reason R15 exists at all.
 
 🔴 **THIS TABLE IS THE CANONICAL GATE REGISTER, AND IT HAD A RIVAL — RECONCILED 2026-08-25.** §3.2
 publishes the geometry gate as **"Gate 9"** with clauses 9.1–9.8, while this table publishes the same
@@ -2626,7 +2708,7 @@ binding:**
 | abstention (§3.0 S4) | Gate 9.6 | **10d** — *added here today; it had no row at all* |
 | relations (§3.0 S5) | Gate 9.7 | **10e** — *added here today* |
 | the re-examination loop (§3.0 S8) | Gate 9.8 | **10f** — *added here today* |
-| the archaic typeset census | **Gate 4.1** (§4.1) | **row 3** |
+| the archaic typeset census | **Gate 4.1** (§4.1) | **3** |
 
 ⚠️ **THE RULE**: this table's row id is canonical; §3.2's and §4.1's clause numbers are *aliases* and
 must carry their row id when cited. **A gate clause with no row here has not entered the build order**,

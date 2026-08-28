@@ -347,6 +347,28 @@ claimable before R13.2 runs.
 model that exists is unwired; the model that is wired is bounded by a layout rule that mis-cuts a
 third of the body.
 
+🔴 **AND THE THIRD FACT, ADDED 2026-08-26, WHICH GOVERNS BOTH: NEITHER MODEL'S GATE CAN BE MEASURED
+YET, BECAUSE THE SET THAT WOULD SCORE THEM DOES NOT EXIST AND HAD NO OWNER.** §7.8 row 9 —
+*GOLD frozen, sha-pinned, gathering-level split, per-archetype quota* — is the prerequisite of rows
+10a–10f (**geometry**) and of row 11 (**recognition**). Until 2026-08-26 it carried **no Roadmap step
+of any kind**, and nothing in the project could say so. It is now **R16.1**, and it is itself blocked
+by **R12.1**, the archetype census, because a per-archetype quota cannot be filled before the
+archetypes are enumerated.
+
+**So the honest ordering of this project's two headline models is: `R12.1 → R16.1 → {Gate 10a–10f,
+Gate 11}`.** Every figure currently in circulation for either model — the recogniser's **0.9396**
+validation accuracy, the `genesis-24` **0.9448** content score, R14.0's **100/121** layout overall —
+sits *below* that chain and discharges **no row**. §7.8 says so in terms, and the reason the sentence
+has to be repeated here is that all three numbers read like answers to *"how are the models doing?"*
+and none of them is one.
+
+⚠️ **How this was found is the point.** It was not found by reading the plan; it had been read many
+times. It was found by making the gate register **parseable** (R15) and asking a program which rows
+had owners. **Ten of twenty-three did.** The other thirteen included this project's three cheapest
+gates — the drop-cap board fix, the residue detector, the archaic typeset census — all ranked
+low-to-medium complexity with no prerequisite but the corpus in §7's own table above, and all unowned
+while four hand-built span rules were being refuted against one witness. They are now **R16.2–R16.4**.
+
 ### 8b. What the geometry stage is actually supposed to be (Masterplan §3.0, GOVERNING, 2026-08-25)
 
 🔴 **STATED HERE BECAUSE ITS ABSENCE FROM THE SUMMARIES IS WHAT LET THE WORK DRIFT.** The aim was
@@ -364,10 +386,10 @@ own kind of thing**, with its own rules, context and gates.
 |---|---|---|
 | S1 | see the page | ✅ real |
 | S2 | classify the archetype | 📋 designed (8 archetypes, REQUIRES/FORBIDS); **nothing built** |
-| S3 | see the region classes by visual cue | ⚠️ geometric only, one witness, head band |
-| S4 | bound them — box · label · slant · **confidence**, abstention permitted | ⚠️ **no GATE-LEVEL layout score exists** — rows 10a/10b await GOLD-LAYOUT. ✅ **The first layout measurement of any kind was taken 2026-08-25 (R14.0)**: Surya scores RunningHead 20/20, MainText 80/80 (⚠️ CONTAINMENT — median bound box 0.5555 of the page), **MarginNote 0/19**, overall 100/121 on the head-band gold. Rung-0 only; discharges no gate |
-| S5 | **relate** them — reading order and note-to-verse attachment | ❌ named in three documents, owned by none |
-| S6 | recognise each region **conditioned by its class** | ⚠️ recogniser validates at 0.9396, **not wired** (R13) |
+| S3 | see the region classes by visual cue | ✅ **BUILT 2026-08-26 (R14.1/R14.2)** — the agent frames the leaf and names by visual cue |
+| S4 | bound them — box · label · slant · **confidence**, abstention permitted | ⚠️ **no GATE-LEVEL layout score exists** — rows 10a/10b await GOLD-LAYOUT. ✅ **The first layout measurement of any kind was taken 2026-08-25 (R14.0)**: Surya scores RunningHead 20/20, MainText 80/80 (⚠️ CONTAINMENT — median bound box 0.5555 of the page), **MarginNote 0/19**, overall 100/121 on the head-band gold. Rung-0 only; discharges no gate. ✅ **2026-08-26 (R14.1/R14.2): the agent beats it — 110/121 overall, MarginNote 13/19 against Surya's 0/19, RunningHead 20/20, all three pre-registered bars passed, abstention 6/121 with a cause on every one.** Still rung-0; still discharges no gate. ✅ **2026-08-27 (R14.9): 115/121, MarginNote 16/19, ChapterHead 2/2** — the archetype classifier had reimplemented a subset of the naming cues and the agent had no FOOT BAND, so a gathering signature was being read as a chapter heading. ✅ **2026-08-27 (R14.8): the first gold BELOW the head band — fore-edge MarginNote recall is 18/18 EXACT**, so besideness generalises and every marginalia figure ever quoted on this corpus was measured on the cue's WORST case |
+| S5 | **relate** them — reading order and note-to-verse attachment | ❌ named in three documents, owned by none. ⚠️ **R14.10a makes it urgent**: the italic Argument can only be told from a chapter heading by its RELATION to one (it sits directly below it), so the first missing class needs S5 |
+| S6 | recognise each region **conditioned by its class** | ⚠️ recogniser validates at 0.9396, **not wired** (R13); ⚠️ **Gate 11 has never been measured** and its set (row 9) is **R16.1**, unowned until 2026-08-26 |
 | S7 | run that class's rules, checks and gates | ✅ exists, ⚠️ fed by a four-role geometric typer |
 | S8 | **re-examine on failure** | ❌ residue is spent as training signal only |
 
@@ -375,6 +397,25 @@ own kind of thing**, with its own rules, context and gates.
 clamp; it may never decide. **The whole programme is R14**, and its cheapest step (R14.0) is to run and
 score `surya_layout_probe.py` — a learned layout model **already in the repo** that appeared in none of
 these five documents until today.
+
+**S6's labels are affordable, and that was checked rather than assumed (R14.6a, 2026-08-26).** Every one
+of the seven region classes now has an **admissible** distant-supervision source: Marginalia from the
+`janvier` corpus — **3,754** verse-anchored side-note objects over **53** books, OT 1609 + NT 1582, CC0,
+*this edition* — MainText from **150,834** verse reads, Argument from **1,334** blocks, and
+RunningHead / Catchword / Signature / VerseNumber from self-verifying positional tests. 🎁 **The notes
+arrive carrying the verse they attach to**, which is the S5 relation Gate 10e exists to measure and had
+been scoped as separate work. ⚠️ **Two cautions travel with it.** §3.2 item 2 **named the wrong source**
+for Marginalia (all 1,334 apparatus blocks are `kind='argument'`, an archetype-C class where a
+MarginNote is archetype B's) — an error that would have surfaced only after training. And
+`scan_marginal` is **circular**: it is the incumbent typer's own output, so training on it teaches
+agreement with the instrument being replaced, and that agreement then reads as validation.
+
+⚠️ **The audit's own first run reported a FALSE ABSENCE**, having searched one directory and concluded
+*"no transcribed side-note corpus is on this disk."* **A bounded search returns "not found" in exactly
+the shape an exhaustive one does** — no error, nothing separating *it is not there* from *I stopped
+before I reached it*. This document already records the same disease costing this project a witness and
+producing a false *"nothing survives"* verdict at the most consequential point in the New Testament
+(§2). **State the bound, or do not claim the scope.**
 
 ## 9. Open
 

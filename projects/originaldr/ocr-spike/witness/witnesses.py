@@ -483,6 +483,35 @@ def glyph_source(vol, sig):
             f"{wid(vol, sig)}: barred from glyph-level work — {GLYPH_BARRED[sig]}. "
             f"Re-read the locus on an admissible witness ({', '.join(admissible(vol))}) "
             f"or report that neither holds it. No fallback is permitted (R7).")
+    # 🔴 THE ROLE BAR, ADDED 2026-08-26 (Gate 0f, the hole the Overview named and nothing closed).
+    #
+    # `GLYPH_BARRED` is keyed by SIGLUM and held exactly `F` and `X` -- NOT `M`. So `glyph_source`
+    # returned a usable PDF path for `NT-1582-M`, although its `lowres` role bars it from training
+    # data, from CER evaluation and from adjudicating long-ſ (~380 ppi bitonal). The bar was written
+    # in `ROLES` and ENFORCED BY NOTHING: the same shape as Gate 0f and Gate 0d before their
+    # consumers were built, and this project's signature defect one more time.
+    #
+    # ⚠️ A SIGLUM-LEVEL BAR IS THE WRONG SHAPE HERE AND THAT IS WHY THE HOLE EXISTED. `M` is ONE file
+    # holding TWO books: a 1635 Rouen Old Testament (`frontmatter`) and a 1582 Rheims New Testament
+    # (`lowres`). No entry keyed on the letter `M` can state a bar that is true of both halves, so
+    # the bar must be derived PER RECORD from the role -- which is exactly what `glyph_witnesses`
+    # already did, correctly, while remaining a counter rather than a gate.
+    #
+    # ⚠️ AND THE BAR IS ON ONE GRAIN, NEVER ON THE WITNESS. `M` is wanted, positively, for page
+    # LAYOUT and GEOMETRY -- region boundaries, archetype classification, reading order -- none of
+    # which resolves a glyph, and all of which the adaptive visual agent needs. This function
+    # answers the GLYPH question only; `structural_witnesses` answers the other one and is
+    # untouched. Barring `M` here does not remove it from the corpus, it removes it from one grain
+    # of question.
+    role = WITNESSES[key]["role"]
+    if role not in GLYPH_ROLES:
+        raise ValueError(
+            f"{wid(vol, sig)}: role={role!r} may not carry a GLYPH-level call — "
+            f"{ROLES[role].split('.')[0]}. "
+            f"Re-read the locus on an admissible witness ({', '.join(admissible(vol))}) "
+            f"or report that none holds it. ⚠️ This bars ONE GRAIN, not the witness: for page "
+            f"layout, geometry and collation use structural_witnesses({vol!r}). "
+            f"No fallback is permitted (R7, Gate 0f).")
     if PRIMARY[key] == "pdf":
         return ("pdf", PDF[key])
     return ("jp2", WITNESSES[key]["jp2"])
@@ -493,9 +522,15 @@ def admissible(vol):
 
     The bars are tested directly rather than by calling `glyph_source()`, which
     would recurse: `glyph_source` builds its refusal message from this function.
+
+    ⚠️ THE ROLE CLAUSE IS DUPLICATED HERE DELIBERATELY AND MUST TRACK `glyph_source`. A refusal
+    message that names a witness the accessor would itself refuse sends the caller round a loop, and
+    the previous version did exactly that for `M`. `test_glyph_role_bar.py` asserts the two agree on
+    every registered record, so the duplication cannot drift silently.
     """
     out = [wid(v, s) for (v, s) in WITNESSES
-           if v == vol and s not in GLYPH_BARRED and (v, s) not in NO_READING]
+           if v == vol and s not in GLYPH_BARRED and (v, s) not in NO_READING
+           and WITNESSES[(v, s)]["role"] in GLYPH_ROLES]
     return sorted(out) or ["none in this volume"]
 
 

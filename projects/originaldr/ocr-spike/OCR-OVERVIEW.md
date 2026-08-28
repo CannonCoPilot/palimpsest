@@ -164,7 +164,20 @@ grain, which is precisely the `surrogate` function the NT otherwise lacks entire
 crop addresses the locus it claims**, which is addressing rather than recognition; and collation, page order
 and completeness. The long-ſ bar is untouched and stands.
 
-> ⚠️ **A defect this surfaced, and it is not fixed here.** `GLYPH_BARRED` in the registry holds exactly `F`
+> ✅ **CLOSED 2026-08-26 (R9.7).** The bar is now derived **per record from the ROLE**, not from the
+> siglum, and `glyph_source()` refuses `NT-1582-M` and `OT-1635-M` — the two records the paragraph
+> below predicted would leak, and exactly the two the guard's proven negative recovers when the clause
+> is removed. Enforced by `witness/test_glyph_role_bar.py`, registered in the verification standard.
+>
+> ⚠️ **A siglum-level bar could never have closed this, and that is why it stayed open.** `M` is ONE
+> file holding TWO books with **different roles**, so no entry keyed on the letter `M` can state a bar
+> true of both halves. ⚠️ **And the guard's fourth clause exists to protect the agent**: a glyph-barred
+> `lowres` record is asserted to remain a **structural** witness, because `M`'s New Testament is
+> wanted, positively, for region boundaries, archetype classification and reading order. Closing a
+> glyph hole by deleting a witness would have cost the visual agent a witness.
+>
+> ⚠️ **The finding as originally recorded** — retained, because the reasoning is what made the fix the
+> right shape. `GLYPH_BARRED` in the registry holds exactly `F`
 > and `X` — **not `M`** — so `admissible("NT")` names `M` and `glyph_source("NT", "M")` returns a usable PDF
 > path, although the `lowres` role bars `M` from training data, from CER evaluation and from adjudicating
 > long-ſ. **The bar is written in `ROLES` and enforced by nothing**: the same shape as Gate 0f and Gate 0d
@@ -402,7 +415,19 @@ corpus-wide is unsatisfiable, and mining with the detector under evaluation make
 UNMEASURABLE — open and blocking.** A census is *stronger* than a recall figure on twelve instances.
 
 **Every gate carries five fields** — metric, threshold, named set, n, pre-registered effect size — as a
-document-level invariant.
+document-level invariant. 🔴 **And since 2026-08-26 a sixth: the Roadmap step that discharges it, or an
+explicit NOT YET PLANNED** (Master Plan §7.8, R15.2). The five fields make a gate *measurable*; they do
+not make it *owned*, and an unowned gate is indistinguishable from a met one to anyone reading the
+table. The column is bound by `witness/audit_gate_register.py`, which parses §7.8, §3.2's clause
+aliases and the Roadmap's step ids together and refuses an entry naming a step that does not exist.
+
+⚠️ **Its first run reported that 10 of 23 rows had an owner.** Among the thirteen that did not:
+**row 9 — GOLD frozen**, the set that scores *both* the geometry model and the recognition model, and
+the three cheapest gates in the project (drop-cap fix · residue detector · archaic typeset census). It
+also found that **Gate 0e and Gate 0f — cited everywhere, enforced by shipped guards, and blocking all
+transcription — had no row in the register declared canonical.** Rows added; the four unowned rows are
+Roadmap **R16**. **A register nothing parses is a register that reports health for exactly the rows
+nobody filed.**
 
 **Circularity is closed path by path**, including the subtle one: deriving alignment costs from the
 pipeline's own confusion matrix makes `ſ`↔`f` cheap *because the model confuses them*, so confused lines are

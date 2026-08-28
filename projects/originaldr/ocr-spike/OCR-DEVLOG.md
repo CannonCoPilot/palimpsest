@@ -10,6 +10,254 @@ kept in full, with what produced them.
 
 ---
 
+## 2026-08-28 — R14.14: the frame is rotated, and the reason I filed it was wrong
+
+**`witness/build_skew_record.py` · `witness/score_skew_frame.py`.** The agent now has an angle.
+**R14.14 stays OPEN**, and the most useful thing it produced is a refutation of its own premise.
+
+### What was true
+
+The tilt is real and it is per-leaf: **-0.901° to +1.636°** over leaves 400-419, median +0.131°,
+with |angle| > 0.8° on nine of twenty. **A single corpus angle could not describe this window.** It
+is fitted through the bottom edges of each row's glyph components, and it is deliberately NOT the
+fount record's `slant_mode` — that quantity is *glyph* lean, quantised to whole degrees, and reads
+**0.00 on every leaf here**. Read as skew it would report these pages as square.
+
+The frame is now expressed in rotated coordinates through a single function, `ry()`, with the head
+and foot lines taken as extremes of *rotated* y so they run parallel to the type. Nine vertical
+tests were rewired through it. **GOLD-HEADBAND is exactly unchanged** — 115/121, MN 16/19, RH 20/20,
+MT 77/80 — as are GOLD-FOREEDGE (40/42) and GOLD-PAGENUMBER (14/20). The rotation is **label-neutral**,
+which is evidence it breaks nothing and is *not* evidence it helps.
+
+### 🔴 What was false — and it was my own stated cause
+
+I filed R14.14 because *"the horizontal head line cuts through 41 boxes"* and attributed the cutting
+to the missing angle. **Tested by building it:**
+
+| | |
+|---|---|
+| head-line straddles, unrotated | 41 |
+| head-line straddles, **rotated** | **50** — the wrong way |
+| corr(\|skew\|, straddles) over 20 leaves | **+0.051** |
+| nearly-flat leaves (\|skew\|<0.3) | mean **2.50** straddles |
+| tilted leaves (\|skew\|>0.8) | mean **2.44** straddles |
+
+**Flat leaves are cut as often as tilted ones.** The head line is the extreme edge of the *body
+block*, and page furniture sits at overlapping heights, so any scalar boundary between them is
+straddled whatever its angle. **Those 41 boxes belong to R14.12, the lamination — they need
+ownership of ink, not trigonometry.**
+
+The acceptance clause `straddles 41 → 0` is **retired as unreachable by this step**, not quietly
+reinterpreted into something the step happens to satisfy. A second clause — *"the estimated angle
+correlates with the independently measured row tilt"* — was **circular**: the estimator *is* the row
+tilt, so it could only ever return 1.0.
+
+### What the tilt does cost, and why no number here shows it
+
+Surya's boxes are axis-aligned, so a rectangle around a tilted line is taller than its type by
+`width · tan θ`. Measured: **17% of a median box height on leaf 409**, 16% on 419, 0% on 406.
+
+That is a **boundary** error under Gate 9.3, and **every gold this project holds scores labels**.
+Which is exactly how S2 can be *exactly* unchanged while a real defect sits in the output — the same
+shape as MainText-is-containment, one axis over.
+
+⚠️ The full verification suite was **not** re-run after this landed. The standard's parse-and-enrol
+checks pass and both commands are registered; the end-to-end run is outstanding.
+
+---
+
+## 2026-08-27h — Sir's review: the agent has 5 deciding constants and 99 overlapping boxes
+
+Suite green at **56 commands, exit 0**. Three steps filed: **R14.11 · R14.12 · R14.13**.
+Ceilings **19/93** (denominator +3, numerator +3 — both axes moved together).
+
+### "Why exactly 20?" — because the test has no negative case
+
+The page-number candidate test admitted 20 boxes over 20 leaves: **exactly one per leaf, on every
+leaf.** That is not a pool being filtered — it is a test that selects *the* smallest extreme box in
+each head band, and on this window that box always happens to be the page number.
+
+🔴 **So the test never once had the opportunity to say "there is no page number here."** Every leaf
+in the window prints one, so the window contains **no negative case at all**, and B2's zero false
+positives is measuring an absence of opportunity rather than a discrimination. This sharpens the
+2026-08-27g retraction: the read was not asked to reject a note, and neither was the geometry.
+
+### The agent's central claim about itself is false, and it is now measured
+
+`witness/audit_fixed_measures.py` sweeps every fixed number in the agent and reports the band over
+which the **full label vector** — every box on every leaf — is unchanged.
+
+| constant | shipped | invariant band | slack | verdict |
+|---|---|---|---|---|
+| `CENTRED_LO/HI` | 0.20 | 0.2000 … 0.2000 | **0.00×** | 🔴 **DECIDING** |
+| `FOOT_CATCHWORD_REL` | 0.60 | 0.60 … 0.62 | 0.03× | 🔴 DECIDING |
+| `OUTSIDE_FRAC` | 0.55 | 0.55 … 0.57 | 0.04× | 🔴 DECIDING |
+| `THIN_MARGIN` | 0.08 | 0.080 … 0.085 | 0.06× | 🔴 DECIDING |
+| `PN_MAX_AREA` | 0.0016 | 0.0014 … 0.0018 | 0.25× | 🔴 DECIDING |
+| `AR_MEASURE_SPAN` | 0.60 | 0.05 … 0.89 | 1.40× | GUARD |
+| `PN_EDGE` · `HEADING_LO/HI` · `COLUMN_OVERLAP` · `AR_ITALIC_MAJORITY` · `AR_MIN_SEGMENTS` · `SMALL_AREA` | | | 0.70–1.48× | GUARD |
+
+**Five of twelve DECIDE.** Masterplan §3.0 permits a fitted constant to initialise or clamp and
+forbids it to decide; `visual_agent.py`'s docstring asserts *"nothing here is a corpus-fitted
+number"*. **The assertion was never tested until now and it does not hold.**
+
+⚠️ **`CENTRED_LO/HI` at ZERO slack is the sharpest.** It is the band separating a RUNNING HEAD
+(centred on the measure) from a head-band NOTE (pushed to a side) — the cue that recovered 14 of 19
+marginal notes and is quoted throughout the roadmap. Move it one sweep step either way and the label
+vector changes. **The most load-bearing cue in the head band sits exactly on a cliff edge**, and the
+derivation was available all along: judge centredness against *this leaf's own* distribution of
+head-band box centres, not a fixed fraction of the measure.
+
+⚠️ **Four literals had to be NAMED before the audit was possible at all.** `COLUMN_OVERLAP`,
+`CENTRED_LO/HI`, `HEADING_LO/HI` and `FOOT_CATCHWORD_REL` were spelled inline inside the cues that
+used them. **An unnamed literal cannot be audited** — no instrument can sweep it and no reader can
+find it. Naming them changed no score (115/121 held exactly).
+
+### 99 overlapping box pairs — the layering problem, measured
+
+Rendering all 20 gold leaves with every box produced a census: **158 boxes, 99 pairs physically
+overlapping, every leaf affected**, worst at leaf 417 with 12 pairs on 15 boxes.
+
+The codebase has paid for this three times and patched it locally each time — two rival binding
+rules computed and both reported; fount evidence assigned to the smallest containing box; the
+foot-band cue needing a second signal because the body block swallows the signature. **Three
+symptoms of one missing concept**, now filed as **R14.12, the lamination**: regions carry a z-order,
+a region owns the ink no higher region claims, and no region may contain ink lying inside another at
+the same or higher level. ⚠️ The invariant is over **ink, never rectangles** — two boxes may overlap
+in white space, because a page is not tiled by its type.
+
+**Its acceptance includes the test that would prove the concept was the missing one: under a
+lamination the two rival binding rules must COLLAPSE TO ONE and agree on every gold entry.**
+
+### And the plates found a defect no number reports
+
+Leaf 417's annotation block is boxed as `MT` (MainText). MainText is containment, so it **scores as
+correct** against every gold this project holds. That is R14.10c's data loss, visible at a glance
+and invisible to every instrument — found by looking, not by measuring.
+
+### A parser trap, recorded
+
+The three new rows were first written as `| **R14.11** |`. `audit_prereq_ceilings.own_rows` matches
+a pipe then a **bare** step id, so all three read as INHERITED and the numerator held at 16 while
+three properly classed rows sat in the document. **A declaration the instrument cannot parse is
+indistinguishable from one nobody made.**
+
+---
+
+## 2026-08-27f — R14.10b: the page number, and twenty misfilings that cost nothing
+
+**`witness/build_reading_record.py` · `witness/score_pagenumber_agent.py` · GOLD-PAGENUMBER.**
+Suite green at **55 commands, exit 0**. `PN` is **adopted**; **R14.10b stays OPEN** on one box.
+
+### The defect was 20 of 20, and every one of them was free
+
+Every page number on leaves 400-419 was misfiled — **15 as `MN`, 4 as `MT`, 1 abstention**. What
+makes it the sharpest instance of this project's signature defect is not the count but the
+**silence**: scoring here is gold-entry-driven (`visual_agent._bind` walks the gold and binds each
+entry to a box), and **no gold entry binds to any page-number box**. So `MN` **recall** — the
+agent's headline bar — *cannot fall* when the agent invents marginal notes, and `MT` is containment,
+so those four scored as **correct**. The agent was manufacturing roughly three-quarters of a note per
+leaf at zero cost, and **no instrument in this project had ever measured `MN` precision.**
+
+### 2026-08-27g — RETRACTION: I measured one statistic and called it "position"
+
+**Sir asked whether the overlap was real or an artefact of poorly configured box mechanics. Neither,
+and the question was the right one to ask.**
+
+The overlap is **real** — the boxes are tight, correctly placed, and page numbers genuinely swap
+sides with verso/recto alternation, so the box CENTRE of a page number lands where a side-note's
+centre lands. Leaves 405 and 412 show it plainly: on 405 the page number is right and the note is
+left, on 412 the reverse.
+
+🔴 **But I generalised that single statistic into "position cannot separate them", and that is
+false.** Measured over all **65** head-band boxes in the window:
+
+| statistic | page numbers | everything else | verdict |
+|---|---|---|---|
+| **width** | 0.0442-0.0546 | 0.0757-0.3028 | ✅ **SEPARATES** — empty band **2.0×** the PN spread |
+| **area** | 0.0008-0.0012 | 0.0018-0.0095 | ✅ SEPARATES — 1.5× |
+| **aspect** | 2.01-2.73 | 3.17-10.25 | ✅ SEPARATES |
+| centre (`rel_h`) | 0.000-0.995 | -0.055-1.072 | 🔴 OVERLAP — 36 inside |
+| `out_frac` | 0.000-0.497 | 0.000-1.000 | 🔴 OVERLAP — 36 inside |
+| `height` | 0.0179-0.0232 | 0.0213-0.0314 | 🔴 OVERLAP — 21 inside |
+
+🔴 **And the counterfactual is worse than the correction.** The geometric test I used merely to
+ROUTE candidates admits exactly 20 boxes and all 20 are page numbers — 0 notes. So **geometry alone
+scores 20/20 with 0 false positives, where the confirming read scores 14/20 plus 5 abstentions and
+1 `MN`. The read MEASURABLY DEGRADES the result here**, and B2's clean zero is not evidence that it
+discriminates: it was never once asked to reject a note.
+
+⚠️ **The reading of the page I walked past.** A page number is not distinguished from a side-note by
+WHERE it sits but by being a **short, squat object** — two or three sorts against a phrase. That is
+a fact about what the book *sets*, of exactly the kind R14.10a used for the ARGUMENT, and I missed it
+because I had already decided the answer was a read. **Same failure mode as the one this step
+otherwise documents well: a bounded search — here bounded to the statistic I had chosen.**
+
+➡️ **Where the read still earns a place, pre-registered.** Width runs ~0.0165 of the page per digit,
+so a **four-digit** page number measures ~0.059-0.073 against a note floor of 0.0757: the empty band
+shrinks to almost nothing later in the volume. The defensible design is therefore the **inverse** of
+the one shipped — **width is the cue, the read is the CHECK on a margin known to close**. Not
+rewired here: the failing box is now known, so the redesign must be pre-registered with its own
+out-of-sample test before it runs.
+
+---
+
+### Position cannot name this class, and that is why R13.1 exists
+
+The roadmap filed `PN` as *"a head-band box at the extreme fore-edge, beyond where a note sits"*.
+**Refuted.** Page numbers run **0.000-0.043** and **0.812-0.972** of the measure; head-band notes run
+**0.010-0.110** and **0.857-1.072**. They **overlap on both sides** — R2.2o.1's shape applied to a
+class instead of a gap. What separates them is that one says `380` and the other says
+`Sacrifices for`, so `PN` is the first class in this agent **decided by a read**, and the concrete
+argument for R13.1 that the row promised it would be.
+
+### A false absence of my own, caught by a gold built for another step
+
+The first run reported *"4 of 20 leaves carry no page-number box"* and filed it as a **detector**
+gap. **There is no detector gap.** My candidate test was bounded by `mass_y <= head_y`, and on leaves
+401, 402, 409 and 417 the number sits **~0.005 of a page below** a head line that the **body block**
+defines. All four were silently `MT`. **GOLD-FOREEDGE** — not band-limited, built for R14.8 — carries
+a `PN` entry on two of them, and that is what caught it.
+
+⚠️ **A bounded search returns "not found" in exactly the shape an exhaustive one does.** This is the
+**third** recorded instance here (`audit_label_sources.py` bounded by a directory, then by a field
+name, now a **band**) — and filing the repair turned up a **fourth**, in the checker itself:
+`test_verification_standard.py`'s guard inventory is the glob `test_*.py`, so it **cannot notice a
+new scorer**. Both new scripts were added and it reported no gap. Filed as **R11.2f**, not fixed
+inline — changing that parser changes the instrument every other number in the block is verified by.
+
+### The result, and the one criterion that fails
+
+| | criterion | result |
+|---|---|---|
+| B1 | `PN` named on ≥ 12 leaves | ✅ **14/20** |
+| B2 | zero `PN` on a non-page-number | ✅ **0** |
+| B3 | GOLD-HEADBAND exactly unchanged | ✅ 115/121 · MN 16/19 · RH 20/20 · MT 77/80 |
+| B4 | withheld-record negative | ✅ **0/20** fire |
+| B5 | spurious `MN` → 0 | 🔴 **1/20** — leaf 403 reads `37T` |
+
+Out-of-sample, unbuilt for this step: **GOLD-FOREEDGE `PN` 2/2**, that gold **38/42 → 40/42**.
+
+**B5 is not relaxed.** One misread sort turns a numeral into a "lettered reading" and the
+pre-registered rule routes it to the note logic. Widening the predicate to *predominantly digits*
+would be a rule edited after seeing which box it fails on, so the step stays open.
+
+### The read is a measured limit, and three redesigns were refuted
+
+`dr_v3_armB` returns the **exact** printed number on **4 of 16** crops and **empty on 5**. Tried and
+refuted: more padding and 3× upscaling → **0/16**; a tighter crop, predicted from kraken's
+line-height normalisation → **worse** (6/16 against 10/16 at the shipped padding); matching the
+model's declared **`bbox`** segmentation type, which kraken warns about on *every read this project
+makes* → **0/16**. That last one is worth keeping: it confirms the existing baseline path is correct
+and leaves **R2.1b's numbers intact**.
+
+⚠️ This **corroborates** R2.1b rather than contradicting it — all five candidates collapse on the
+direction line (`SG` 0.47-0.75, `CW` 0.53-0.80), and a page number is an object of that scale.
+**R14.10b is the first consumer to hit that collapse in production**, which turns a per-class caveat
+into a blocking limit. That is an **ALERT on the approach**, never a licence to move the bar.
+
+---
+
 
 ## Session 17 — 2026-08-17 — the sizing unit changes; three verified findings; a guard that checks the wrong field
 
@@ -1709,3 +1957,580 @@ that the recogniser's status *"appears in none of the three"*. The same hole hid
 EXEC SUMMARY gains **§8b** with the eight-step status table; OVERVIEW's pipeline diagram now states the
 agent, the abstention rule and the re-examination stage; WALKTHROUGH gains a *what the geometry stage is*
 statement plus the measured contrast against the incumbent typer.
+
+---
+
+## 2026-08-26 — R14.6a, and the gate register becomes an instrument (R15 COMPLETE, R16 raised)
+
+🔴 **THIS ENTRY OPENS WITH THE DEVLOG'S OWN DEFECT.** `R14.6a` was implemented, scored and **committed**
+(`09e45ac`) on 2026-08-26, and this file's last entry was **2026-08-25**. The devlog is last in §0.6's
+precedence order, which makes it the document that may be *overruled* — it does not make it optional.
+A completed step that reaches the commit log and not the record is the same shape as every other defect
+this project keeps finding: **a correct artefact that nothing reads.** Recorded here rather than
+back-dated silently.
+
+### R14.6a — every region class has an admissible label source, and the audit's own first run was wrong
+
+`witness/audit_label_sources.py`. R14.6 rests on the claim that §3.2 item 2's text sources make the
+agent's training labels affordable without a hand-labelling campaign; **that claim had never been
+checked against the disk.** Result: **Marginalia is ADMISSIBLE** — `janvier/original-douay-rheims-repo`,
+**3,754** verse-anchored side-note objects, **3,538** `<mn>` anchors, **53** books, OT 1609 + NT 1582,
+**CC0**, *this edition* — corroborated by **165** `marginal_notes` in the odr-com apparatus scrape
+already on disk. MainText **150,834** verse reads over 5 witness read-files. Argument **1,334** blocks.
+
+🔴 **THE FIRST RUN (08-25) REPORTED A FALSE ABSENCE, AND IT IS THE MORE USEFUL FINDING.** It searched
+`reconstruction/reads/` only and concluded *"no transcribed side-note corpus is on this disk"* — true
+of one directory, false of the disk. **Two sibling errors have the identical shape**: the SRC clone was
+sought under `ocr-spike/.scratch/` when it lives at `palimpsest/.scratch/`, and the Madueke source was
+sought with `find -maxdepth 7` when it sits at **depth 8**, then reported as *"searched ALL of
+`~/Claude`"*. ⚠️ **A bounded search returns "not found" in exactly the shape an exhaustive one does.**
+State the bound, or do not claim the scope. Same disease as the OPEN register that counted only what
+someone remembered to type into it.
+
+**Two run-1 findings survive the correction unchanged.** (1) **§3.2 item 2 names the wrong source** —
+it reads *"Marginalia from the 1,334 transcribed apparatus blocks"*, and all 1,334 are `kind='argument'`,
+which is archetype C's class where a MarginNote is archetype B's. The error would have surfaced only
+after training, as an unimproved marginalia score. (2) **`scan_marginal` is still poison** — it is
+`layout.type_lines`' own output, so training a replacement on it teaches agreement with the instrument
+being replaced, and that agreement then reads as validation. **A circular label is worse than a missing
+one, because a missing one is visible.**
+
+🎁 **Unplanned gain**: the notes arrive carrying the verse they attach to — the note-to-verse relation
+**S5 / Gate 10e** exists to measure, which had been scoped as separate work. ⚠️ **Open, and R14.6c must
+settle it**: janvier's notes hang off chapter *annotations*, so they may be marginalia of the annotation
+pages (archetype E) rather than of the scripture pages (archetype B) the gold window holds.
+
+⚠️ **R14.6b's ✅ IS A RE-SCOPE, NOT A DISCHARGE**, and the DONE list was one edit away from saying
+otherwise. The scrape the plan called for **had already been run** — 763 files sit in
+`originaldouayrheims-com/apparatus/` — so the row moved from *"scrape"* to *"ingest what is held"*. The
+ingest itself is not done and the step stays **OPEN**.
+
+### R15.1 · R15.2 · R15.3 — the crosswalk stops being a paragraph
+
+`witness/audit_gate_register.py`. Parses §7.8's table, the crosswalk beneath it, and this Roadmap's step
+ids, reporting four classes: a Masterplan clause with no canonical row · a row with no step · a gate
+cited in the Roadmap that §7.8 does not define · the Roadmap not reading §7.8 at all. **Live: exit 1,
+0 hard defects, `12/25` rows discharged, `13` NOT YET PLANNED.**
+
+⚠️ **THE ACCEPTANCE WAS THE HARD PART, AND IT IS THE PART THAT WOULD HAVE BEEN SKIPPED.** R15.1 asks
+that the audit *"reproduce today's three findings from the documents alone, and would have failed before
+this session's edits."* The three findings were hand-fixed on 08-25, so **against the live files the
+audit passes and that proves nothing.** The pre-fix document state is therefore reconstructed in the
+file and the same pure `audit()` is run against it under `--selftest`: **8 hard defects**, including
+`Gate 9.6 / 9.7 / 9.8` with no row and the Roadmap citing §7.8 zero times. **A guard that has never
+rejected anything is not known to work** — the standing rule, applied to an audit for the first time.
+
+🔴 **AND THE FIRST LIVE RUN FOUND TWO DEFECTS THE HAND FIX HAD MISSED.**
+1. **`Gate 0e` and `Gate 0f` had NO ROW in the register declared canonical.** Both are cited throughout
+   the Roadmap and §2; both are enforced by shipped guards; **Gate 0e blocks 0b and 0c and therefore all
+   transcription.** §7.8 published 0a–0d and stopped. This is the **fourth instance of R15's own defect,
+   inside the table R15 was written to bind**, and the 08-25 review missed it because it read the table
+   looking for the *geometry* clauses. Rows **0e** and **0f** added with metric · threshold · set · n ·
+   discharging step. ⚠️ Row 0e's `n` cell records R8.4a's limit rather than rounding it away: head
+   criteria at ≥3 separated points, **foot criteria at ONE**, R8.4b open.
+2. **One crosswalk cell read `row 3` where every other reads `10a`**, so `Gate 4.1` resolved to nothing.
+   A cosmetic inconsistency in prose is a parse failure in an instrument — which is the argument for the
+   instrument.
+
+📌 **R15.2's FILL-IN IS ITSELF THE FINDING.** Ten of twenty-three rows had a step; the column made the
+other thirteen sayable for the first time. Rows 12–14 *should* be unplanned this early and 10c–10f are
+deliberately numberless. **Three are neither**: row **1** (drop-cap fix, 18 cells), row **2** (residue
+detector), row **3** (archaic typeset census) — the Executive Summary's own three **low-to-medium
+complexity, no-prerequisite** items, this project's cheapest gates, **unowned by any step while four
+hand-built span rules were being refuted against one witness.** And **row 9 (GOLD frozen)** is the most
+consequential: it blocks rows 10a–10f *and* row 11, i.e. **both** models §8a reports on, and R13.3
+already named it as its own blocker.
+
+⇒ **R16 filed**: R16.1 freeze GOLD-LAYOUT/GOLD-TEXT (**blocked by R12.1**) · R16.2 residue detector ·
+R16.3 archaic typeset census · R16.4 drop-cap board fix. Register **86 → 87**, ceiling claim
+**13/86 → 14/87**, re-measured and rewritten rather than estimated. ⚠️ **The register's own documented
+trap fired during that edit**: the R16 entry was first worded *"the four unowned rows R15.2 made
+visible"*, which enrolled the **closed** R15.2 as OPEN and read 88. Reworded to name the audit rather
+than the step — exactly as the 08-25 caution says it must be, one day after that caution was written.
+
+**Also fixed**: the verification standard's audit block carried **two** `audit_label_sources.py` entries,
+the second holding the **superseded 08-25 claim** (*"0/2 Marginalia sources are admissible"*) beside the
+corrected one. A block whose purpose is to make a claim refutable was carrying a refuted claim. Removed.
+
+---
+
+## 2026-08-26 (later) — Sir stopped the auditing. The agent got built.
+
+🔴 **THE INSTRUCTION, RECORDED VERBATIM BECAUSE IT IS THE TURNING POINT OF THIS PROJECT.**
+*"Honestly, this sounds like a you problem. You know the aims, so why get bogged down in this way? …
+Hand-fixes are BANNED. So why do they keep cropping up? Stop hand fixing. Build the visual agent that
+can AUTOMATE the text class recognition. Agent uses a visual model, takes the page, sees the text
+blocks, consults archetypes, decides what each text block probably is, does some quick reading to
+confirm, revises if needed, and generates the image chunks for OCR. Is that really that hard? No, it's
+really not."*
+
+**It was not.** The four span rules, five pre-registered bars and one overlap measurement that preceded
+this were all searches for a **CONSTANT**. The agent needed a **FRAME**.
+
+### R14.1 · R14.2 — the adaptive visual agent, built and scored
+
+`witness/visual_agent.py`. S1 see the leaf → S2 archetype → S3/S4 name and bound, with confidence and
+the right to abstain. On the same gold, the same 20 leaves and the same binding rule as R14.0:
+
+| | overall | MarginNote | RunningHead | MainText |
+|---|---|---|---|---|
+| Surya off the shelf | 100/121 | **0/19** | 20/20 | 80/80 |
+| geometric `region_head` | — | 17/19 | 20/20 | 67/80 |
+| **THE AGENT** | **110/121 = 0.9091** | **13/19** | **20/20** | 77/80 |
+
+**All three rung-0 bars, written into the file before the first run, PASS.** MN recall ≥ 0.50 →
+0.6842. Overall ≥ **0.8264** — *Surya's own score on this gold*, so buying marginalia with body text
+is a failure by construction, which is the trade R2.2's four refuted rules each made at ~1 MN per
+11–12 MT → 0.9091. Forbidden-class emissions 0. ⚠️ **Bars applied to the WORSE of two declared
+addressing rules**, never the better.
+
+🔴 **THE IDEA: A FRAME, NOT A THRESHOLD.** R2.2o.1 proved no gap constant exists because it asked
+*how FAR is this from the body*. A marginal note is not far from the body, it is **BESIDE** it — and
+besideness is a fact about **the measure**, derived per leaf from that leaf's own boxes. MarginNote
+0/19 → 13/19 with **no fitted constant deciding anything**, which is §3.0's rule kept rather than
+argued around.
+
+### R14.7 — draw what the agent sees, and it paid for itself in one run
+
+`witness/agent_see.py`, on Sir's instruction. It renders the agent's **own** output onto the leaf: the
+measure it derived, the head floor, every box in its class colour captioned with its confidence and a
+plain-language reason, gold agreed-with in grey, **every disagreement in red**.
+
+**The first run scored 91/121 with RunningHead 9/20, and no cell of that table said why.** One picture
+of leaf 412 showed three bugs at once:
+1. **The measure was being dragged into the margin** — `frame()` took the median edge of every large
+   box, and on an apparatus leaf Surya emits the whole *marginal column* as one large box. Every
+   besideness test downstream was asked against a frame that already contained the margin.
+2. **Size was being read as the body cue** — `area >= SMALL_AREA → MainText` made that same marginal
+   column body text. ⇒ **besideness outranks size**.
+3. **A cue turned on a last pixel** — `y1 <= head_y` failed by **0.0015 of a page** on leaf 400, and
+   eleven of twenty running heads died on that margin. ⚠️ **A cue that turns on a last pixel is a
+   threshold wearing a cue's clothes.** Judge the box's mass.
+
+Then the confusion matrix gave the fourth: **the head band holds two different things.** This edition
+sets head-band notes at the *same height* as the running head, at the fore-edge, so height cannot
+separate them and besideness does not fire because such a note *straddles* the edge. The cue that works
+is the reader's: **a running head is CENTRED on the measure; a head-band note is pushed to a side.**
+
+✅ **ABSTENTION IS REAL AND ITS RESIDUE IS DIAGNOSTIC.** All 6 remaining MN misses are abstentions
+**carrying their cause**; **3 of the 6** are `cue says MN, but archetype A FORBIDS it`, which points the
+next repair at the **archetype classifier** rather than the naming cues. Filed as **R14.9**. The
+`fail-safe toward body` branch now has a replacement that says *why* instead of emitting a leaf as
+entirely scripture. ⇒ **R14.8** filed to lift the head-band coverage limit.
+
+### R9.7 — Gate 0f's last hole, closed with a proven negative
+
+`GLYPH_BARRED` was keyed by **siglum** and held only `F` and `X`, so `glyph_source()` returned a usable
+PDF path for `NT-1582-M` although its `lowres` role bars it from training data, CER and long-ſ. A bar
+written in `ROLES` and enforced by nothing — the Overview had recorded it and nothing closed it.
+⚠️ **A siglum key could never have closed it**: `M` is ONE file holding TWO books with different roles.
+The bar is now derived **per record from the role**. `witness/test_glyph_role_bar.py` refuses **6/12**
+records at glyph grain, and its proven negative removes the clause and recovers exactly
+`NT-1582-M` and `OT-1635-M` — the two the Overview predicted. ⚠️ **Clause 4 protects the agent**: a
+glyph-barred `lowres` record is asserted still to be a **structural** witness, because `M`'s NT is
+wanted for region boundaries, archetype classification and reading order. **Closing a glyph hole by
+deleting a witness would have cost the visual agent a witness.**
+
+### R11.2e — the verification standard runs again
+
+Filed this morning after two runs exceeded 15 minutes and were killed without a line of output.
+**Resolved the same day**: the commands are mutually independent, so the subprocess fan-out is
+concurrent (≤8 workers). **Full pass 8m49s, exit 0, 45 commands, every one EXECUTED** — nothing cached,
+sampled, skipped or tiered. The cache candidate is struck (a cache-invalidation bug would silently pass
+a stale claim); the `--fast`/`--full` split is struck outright, because without a CI `--full` it
+converts *"too slow to run"* into *"not required to run."* A harness exception is now a **result**,
+never a skip.
+
+⚠️ **Ceiling register: 88 steps, claim 14/88 → 16/88** on a flat denominator — R9.7 and R11.2e closed,
+R14.8 and R14.9 filed with their classes in their own rows.
+
+---
+
+## 2026-08-27 — R14.9 and R14.8. Two structural repairs, and the class inventory turns out to be too small
+
+### R14.9 — the archetype classifier was reimplementing the namer, and the page has two ends
+
+**110/121 → 115/121 = 0.9504.** MarginNote **13/19 → 16/19**, ChapterHead **0/2 → 2/2**, RunningHead
+20/20, MainText 77/80, forbidden emissions 0. **Neither repair touched a threshold.**
+
+🔴 **DEFECT 1 — TWO CODE PATHS ANSWERING ONE QUESTION.** `classify_archetype` detected apparatus with
+the **besideness** cue alone, while `name_regions` has **two** cues that can produce a MarginNote —
+besideness, and head-band-off-centre. On leaves whose notes are *all* head-band notes (**402 · 413 ·
+415**, outside fractions **0.37 / 0.48 / 0.44**, every one under the besideness boundary) it saw no
+apparatus, typed the page `A`, and `A` **FORBIDS** MarginNote — so the namer had to abstain on a note
+it had correctly identified. **This project's signature defect had got as far as making the agent
+contradict itself.** Both steps now call one `_cue()`, run unconstrained for the archetype and with
+FORBIDS applied for the commit, so §3.2a's ordering survives and the blindness does not.
+
+🔴 **DEFECT 2 — FOUR NAMES FOR A PAGE THAT PRINTS AT LEAST NINE.** Leaf 409 sets the gathering
+signature `Z z` at the foot, centred. With no foot band the centred-heading cue fired, the agent
+invented a **chapter opening**, and it propagated into the **archetype**. The frame now derives a
+**foot band**, and `SG`/`CW` are named classes. ⚠️ The foot band has the head band's **nesting**
+problem one end down — the body box runs to 0.906 and the signature sits at 0.885–0.904, *inside* it —
+so the detector's own `PageFooter` class is the second cue, clamped by position.
+
+🔴 **AND THE SCORE COULD NOT SEE DEFECT 2 AT ALL.** 115/121 before the foot-band repair and 115/121
+after, while three leaves stopped falsely claiming a chapter opening. **It was found by DRAWING the
+leaf, not by reading a number.** A repair invisible to the only scorer in play is the repair that never
+gets made — which is the whole case for R14.7.
+
+⚠️ **THE LIMIT THE SCORE HIDES, STATED.** Archetype **A never fires** on this window, so the FORBIDS
+contract does **not bind** and the zero forbidden-emission count is **trivially true**. The archetype
+call has **no gold** and is **unmeasured**. R14.9 removed a *demonstrated* error; it did not
+demonstrate accuracy.
+
+### R14.8 — besideness generalises, and every marginalia figure ever quoted was its worst case
+
+GOLD-HEADBAND labels the **top three rows**, so Surya's 0/19, `region_head`'s 17/19 and the agent's
+16/19 are *all* head-band notes. **GOLD-FOREEDGE** is the first gold below that band: **42 boxes over
+5 declared leaves**, population defined by **geometry alone** so it cannot inherit the agent's blind
+spots, adjudicated from **numbered, unlabelled** renders.
+
+| | MarginNote recall |
+|---|---|
+| head band — the cue's **straddling** case | 16/19 = 0.8421 |
+| **fore-edge — the cue's **clearing** case** | **18/18 = 1.0000** |
+
+✅ **THE PREDICTION, WRITTEN BEFORE THE RUN, HELD**: *a fore-edge note CLEARS the measure where a
+head-band note STRADDLES its edge, so besideness should do BETTER here.* It does. MainText 9/9,
+heading 6/6. **The head-band figure was the cue's worst case, not its best**, which inverts how every
+marginalia number on this corpus should be read.
+
+🔴 **EXIT 1 IS A CLASS-INVENTORY FINDING, NOT A CUE FAILURE.** All **7** residual errors are classes
+the page prints and the agent cannot name: **Argument ×4** (the italic summary under a chapter
+heading, misfiled as `CH`), **PageNumber ×2**, **Annotation ×1** — leaf 417 is an archetype **F mixed
+leaf** (body → ANNOTATIONS section → new chapter), and **R12 records F as "dropped WHOLE", i.e. active
+data loss**, sitting inside the very 20-leaf window the whole programme has been scored on. Filed as
+**R14.10a/b/c**. ⚠️ **R14.10b (PageNumber) is BLOCKED and the block is informative**: position cannot
+separate a page number from a short head-band note, and *"is this a numeral"* needs the **quick read**
+§3.0's S2 describes — which **R13.1's wiring does not exist**. It is the first class that genuinely
+needs the recogniser.
+
+🔴 **AND THE DISCIPLINE POINT, RECORDED BECAUSE THE TEMPTATION WAS IMMEDIATE.** Adding an `AR` cue now
+would fix 4 of the 8 remaining errors **and would be fitted against the 42 boxes just adjudicated**.
+`build_foreedge_gold.py` says in terms that it is *the SCORER, never the trainer*. **R14.10's cues must
+be validated on leaves outside this gold's five.** ⚠️ Coverage stated: 5 of 20 leaves, one witness,
+**one operator, NOT fully blind**. Discharges no gate; this gold may never be promoted.
+
+**Suite: 47 commands, 8m52s, exit 0.** Ceiling register **88 → 89**, claim **16/88 → 17/89** — the
+numerator **fell to 14 before rising to 17**, because closing two steps removes their declarations
+from the OPEN population. Recorded rather than smoothed: a numerator that only ever rises is not
+measuring anything.
+
+---
+
+## 2026-08-27b — R14.10a. The Argument, and a size prior that was choosing which wrong name a class got
+
+**The agent has learned the ARGUMENT** — the multi-line italic prose summary this edition sets between
+the chapter head and the first verse. `witness/build_fount_record.py` + `witness/score_argument_agent.py`.
+
+### The defect was 10 of 10, not the 4 filed yesterday
+
+Yesterday's entry above filed `AR` at **×4**, from GOLD-FOREEDGE. Scored at box grain against R2.2d's
+**GOLD-ARGUMENT** (81 rows, 10 chapter openings), **every argument block in the window was misfiled** —
+and `SMALL_AREA` **alone** decided which wrong name it got:
+
+| argument box area | agent said | leaves | did any score see it? |
+|---|---|---|---|
+| ≥ 0.05 of the page | **`MT`** | 400 · 403 · 404 · 407 · 411 · 417 | 🔴 **no — silent** |
+| < 0.05 of the page | **`CH`** | 406 · 412 · 414 · 416 | yes — yesterday's ×4 |
+
+**Not one cue was reading the class.** A constant with no opinion about arguments was partitioning them,
+and GOLD-FOREEDGE's five leaves happened to sit on the small-box side. ⚠️ **The `MT` half is the half
+that matters**: MainText is **containment**, so an argument called MainText scores as *correct* against
+every gold this project holds — and would have been handed to the recogniser as scripture and merged
+into the verse stream. Six of ten sat there, unmeasured, for the whole programme.
+
+*A class with no name is not a skipped box* has been measured three times now. This is the sharpest:
+half of it was not merely misfiled, it was **invisible**.
+
+### The Roadmap's own cue formulation was circular, and is struck
+
+R14.10a was filed as *"a block … directly below a chapter heading"* — relational. **On four of the ten
+leaves the argument box IS the agent's `CH` call**, so the misfiled box would have anchored the search
+for itself. ⚠️ And `region_head` had **already recorded and refuted** exactly this for the row-grain
+rule on 2026-08-18: *"between the ChapterHead and the first verse would be circular — it presumes the
+boundary it must find, and is silent wherever the chapter head was missed."* The reasoning sat in one
+file while the plan in another restated the refuted design.
+
+**`AR` is decided on the FOUNT.** The relation to the chapter head is an **output** of the class, never
+an input — and the archetype now reads an `AR` box as *evidence a chapter opens here*, so an argument
+the agent can see rescues a chapter opening whose heading it missed.
+
+⚠️ **AND THE INSTRUMENT ALREADY EXISTED.** `region_head` has defined `ARGUMENT = "AR"` with a validated
+per-segment fount test since R2.2d; `collation_read` has had `row_slant`, `region_segments` and
+`page_slant_mode` just as long. **No rule read any of it.** Third instance of working-code-no-rule-
+governs, after Gate 0f and R13's artefact. R14.10a **wires** it; it does not build a second one.
+
+### The five pre-registered criteria, written before the first run
+
+| # | criterion | measured |
+|---|---|---|
+| **A1** | recall on the six leaves **DISJOINT** from GOLD-FOREEDGE | **6/6** |
+| **A2** | precision over the whole 20-leaf window | **0 FP, 0 unadjudicated** |
+| **A3** | no theft on GOLD-HEADBAND | **115/121 · MN 16/19 · RH 20/20 · MT 77/80 · CH 2/2 — EXACT** |
+| **A4** | abstainable, proven by withholding the fount record | **0 `AR`, 20/20 leaves state a cause** |
+| **A5** | the pre-registered out-of-sample prediction | ✅ **4/4, 34/42 → 38/42, exactly as written** |
+
+**A3 makes it a gain, not a trade** — R2.2's four refuted span rules each bought ~1 MarginNote for
+11–12 MainText; this bought a whole class for **nothing**. **A5 makes A1 mean something** — GOLD-FOREEDGE
+carries 4 `AR` entries, nothing was fitted against it, and the direction was written down first.
+
+📌 **The guards decide nothing, and the scorer prints the slack rather than asserting it**: italic share
+**1.00** on all ten against a 0.50 majority, with the nearest non-argument box at **0.21**; segments
+**3** against a floor of 2; measure span **0.90** against 0.60. Every one sits in an empty band.
+⚠️ **Besideness still outranks the fount, and that is load-bearing** — *this edition sets its side-notes
+in italic too*. Italic **alone** cannot name an argument; italic **on the measure** can.
+
+### Two more copies of the signature defect, caught in passing
+
+`score_foreedge.py` kept its **own copy** of the agent's class inventory so *"the agent has no name for
+this"* would be a checked claim. The first run after adoption printed `AR recall 4/4` **and** `AR ⚠️ NO
+NAME IN THE AGENT` about the same four boxes. **A checking claim that can drift from what it checks is
+not a check** — `visual_agent.CLASSES` is now the single declaration. Separately, the
+frame→archetype→name sequence had two call sites and this step would have made it three; folded into
+one `settle()` **before** it cost anything, which is the only cheap time.
+
+### It was drawn, and the drawing found the next defect
+
+`agent_see.py` renders `AR` in **violet** — far in hue from `MT` green and `CH` orange, the two names
+the class was misfiled into. On **leaf 400** the eight italic lines under `CHAP. XXII.` were solid green
+before today. On **leaf 411** the eleven-line argument reads violet under an orange `CHAP. XXVII.`,
+captioned *"11 of its 11 lines of type deslant as ITALIC (100%) and it is set to 99% of the measure."*
+
+🔴 **And leaf 411 immediately showed the next one.** It sets `Z z 2` at the foot with the catchword
+`Cades` beside it, and the agent calls the **signature** a **catchword**. The foot band's `SG`/`CW`
+split is a single `rel_f >= 0.60` position test doing work it cannot support — the same shape as the
+head band before it was found to hold two things. **Not repaired here**: it is a second class boundary,
+**no gold covers either class**, and hand-fixes are banned. Filed as **R14.10d**.
+
+⚠️ **Coverage stated.** GOLD-ARGUMENT is 81 rows over 10 openings of **one witness**; the adoption
+evidence is **six** leaves. **Discharges no gate** — rows 10a/10b stay reserved for GOLD-LAYOUT (R16.1).
+What it establishes is exactly: the class inventory grew by one class the page prints, validated outside
+the gold that revealed the gap, at zero cost to every existing number.
+
+**Ceiling register: 89 steps, claim 17/89 — both flat, and that is the entry.** R14.10a closed while
+R14.10d was filed carrying its own class, so the two moves cancel on both axes. Recorded rather than
+smoothed, for the same reason as yesterday: a register that only ever grows is not being maintained.
+
+---
+
+## 2026-08-27c — R14.10c BLOCKED. Two cues refuted, a second false absence, and R13.1 turns out to be the gate
+
+**No code was adopted, and that is the result.** `AN` stays OPEN and blocks. Three independent
+blockers were measured, each sufficient on its own. ⚠️ **An ALERT that the approach needs redesign
+(§0.5), never an accepted gap** — and the redesign is written down below, because a blocker filed
+without one is a shrug.
+
+### Blocker 1 — two visual cues built and refuted
+
+The obvious reading is that this edition sets annotations in smaller, tighter type than scripture.
+Both halves were measured per box over all 20 leaves, from R14.10a's fount record:
+
+| candidate | leaf 417's annotation block | what it actually separates | verdict |
+|---|---|---|---|
+| type height, vs the largest text block | **0.89** | marginal notes, at **0.64–0.69** | 🔴 **refuted** |
+| line pitch, same normalisation | **0.84** | nothing — leaf 418's *marginal note* reads **0.84** | 🔴 **refuted** |
+
+**Small type marks apparatus in general, not annotation in particular.** The annotation block sits
+*nearer the body* than the marginalia do, so any threshold that catches it catches every side-note
+first. This is R2.2o.1's shape in a new place: the populations **overlap**, so no constant exists to
+be found — threshold-tuning is *refuted* as the repair, not merely unattempted.
+
+### Blocker 2 — the only reliable anchor is a READ, and that is R13.1
+
+The section head *is* decisive, and the census says why it cannot be used yet: **10 `SectionHeader`
+boxes in the window — 9 are `CHAP. N.`, 1 is `ANNOTATIONS.`** — and geometry does not tell them apart.
+*"Is this head the word ANNOTATIONS or the word CHAP."* is the quick confirming read §3.0's S2
+describes, and **R13.1's wiring does not exist**.
+
+⚠️ **So R14.10b and R14.10c are blocked on the same thing, and that changes what R13.1 is**: not one
+step among many but **the step gating the agent's class inventory**. Two of the three classes the page
+prints and the agent cannot name are waiting on it — a much stronger argument than R14.10b made alone.
+
+### Blocker 3 — the population is one, and it is on the wrong leaf
+
+GOLD-FOREEDGE holds exactly **one** `AN` box, on **leaf 417 — one of its own five**. R14.10's section
+rule forbids validating a cue against the gold that revealed the gap, so even a working cue could not
+be adopted here. Unlike R14.10a, which had six disjoint leaves waiting in an existing gold, **there is
+no second exemplar to move to**. A cue fitted to leaf 417 would be fitted to a single page.
+
+### And the label-source audit was blind to the field it most needed — a SECOND false absence
+
+`audit_label_sources.py` answered *"has Annotation a source?"* from `apparatus_blocks[kind]`, where the
+count is **0** — all **1,334** of those blocks are `kind='argument'`. The odr-com scrape **in the very
+same documents** carries a top-level `annotations` field: **246 chapter-anchored blocks, each with its
+printed `ANNOTATIONS. Chap. N.` head**. `_odrcom_notes` reads `marginal_notes` and `inline_notes` out
+of those files and steps straight past it.
+
+⚠️ **The audit's own footer already states the lesson** — *a bounded search returns "not found" in the
+same shape as an exhaustive one.* **The bound was a DIRECTORY the first time and a FIELD NAME this
+time.** It now carries an `Annotation` row and a fourth state:
+
+- **246** blocks on disk, with heads ⇒ `ABSENT` is **false**
+- **232** are New Testament; the OT holds **14** chapters over **2** books (Genesis, Exodus)
+- 🔴 **Numbers has none** — and Numbers is where every region figure in this project is measured
+  ⇒ `ADMISSIBLE` would be **worse than false**
+
+⇒ **`🟠 PARTIAL`, blocking on the same footing as `ABSENT`.** A source that does not reach the volume
+the class is needed in leaves the class unlabellable *there*; counting it as covered is laundering.
+`BLOCKED classes: 1 ['Annotation']`.
+
+📌 **This retracts one sentence from the R14.6a entry above** — *"every region class has an admissible
+source"*. It was true of the eight rows that audit carried and false of the class list, because the
+row for the ninth had never been written. The entry stands as recorded; this is the correction.
+
+### The redesign
+
+1. **R13.1 first** — wire the confirming read. It unblocks `AN` **and** `PN` together; nothing else does.
+2. **Move the annotation window to Genesis or Exodus** — the only OT books the label source reaches,
+   and the only place a population > 1 is buildable without hand-labelling from scratch. ⚠️ The leaf
+   set changes, so **both** the perception cache and the fount record must be rebuilt.
+3. **Pre-register the WIDTH cue and test it there, never here.** Leaf 417's `ANNOTATIONS.` head spans
+   **0.325** of the page against the nine chapter heads' **0.203–0.241**: a longer word sets wider,
+   which is a fact about the fount, not a read. ⚠️ **Derived from one exemplar** — a hypothesis to be
+   tested on the wider population, and fitting it here would be fitting to a single page.
+
+⚠️ **Why not simply widen the present window**: Numbers has no annotation label source at all, so a
+wider Numbers gold would have to be hand-labelled end to end — exactly what §3.2 item 2's distant
+supervision exists to avoid, and what R14.6a checked the disk for.
+
+**Ceiling register: 89 steps, claim 17/89 — unchanged. Nothing closed, and nothing should have.**
+
+---
+
+## 2026-08-27d — R2.1b. The highest validation accuracy on this disk is the WORST model on a common set
+
+**`dr_v3_armB` is SELECTED, on 7 class wins of 7. R13.1 is UNBLOCKED.**
+`witness/audit_recog_holdout.py` → `witness/build_recog_gold.py` → `witness/score_recognisers.py`.
+
+R13.1 could not proceed because R2.1b had never run, and the reason it blocked is worth restating:
+*wiring an unselected model replaces "no model" with "an arbitrary model", which is the harder defect
+to see.*
+
+### The finding — the ranking everyone has been reading is backwards
+
+| model | headline (NON-comparable) | pooled content, common set | ſ recall | class wins |
+|---|---|---|---|---|
+| **`dr_v3_armB`** | 0.9694 | **0.9575** | 0.9302 | 🏆 **7 / 7** |
+| `reichenau_dr` | **0.9396** — *the figure every document cites* | 0.8902 | 0.9302 | 1 |
+| `dr_v3_armA` | **0.9739** — *the highest on disk* | **0.8597** — *lowest un-vetoed* | 0.9302 | 0 |
+| `reichenau_dr_ho` | 0.9230 | 0.8693 | **0.8372** | 🔴 VETOED |
+| `dr_armA` | 0.9349 | 0.8423 | **0.6744** | 🔴 VETOED |
+
+The Roadmap has warned since 2026-08-17 that `0.9739 > 0.9396` is not a finding, because the five are
+per-arm accuracies on **different splits**. It is now measured: **the highest headline is the worst of
+the three that clear the veto**, and the cited 0.9396 wins one class of seven. ⚠️ This table does not
+make those headline figures comparable — it **replaces** them with a figure that is.
+
+### The ſ veto did real work, and it disqualified the "honest generalisation" model
+
+Applied **first and absolutely**, never as a tiebreak, at a floor of 0.90 written before the run.
+It removed **`reichenau_dr_ho`** — the model built specifically to hold pages out — because it
+**modernises the long s** (0.8372). Its pooled content beats `reichenau_dr`'s, and that is exactly the
+trade the two-metric design exists to refuse: this edition's whole ladder is about recovering ſ.
+
+### What no pooled figure could have said
+
+Every model is near-perfect on MainText (0.987–0.995) and **collapses on the direction line**: `SG`
+runs 0.4667–0.7500 and `CW` 0.5333–0.8000 across the five. A pooled mean would have been a scripture
+benchmark wearing a per-class label. It also retro-justifies R2.1b's *original* purpose — a confidence
+floor for `collation_read`'s direction-line reader is needed precisely where recognition is weakest.
+⚠️ `dr_armA` falls to **0.5543** on `AR`: italic is where a modernising model fails.
+
+### The shortcut that would have wasted the whole step
+
+GOLD-HEADBAND carries a `text` field for all 121 entries, and it is **the incumbent recogniser's
+output**, kept so a human could assign a LABEL — its own `_doc` says so. Its errors are visible on
+inspection: leaf 402's running head reads `NVMENE` for **NVMERI**; leaf 400's side-note reads
+`X. Og Alaine.` for **K. Og ſlaine.** Scoring five candidates against it would have measured
+**agreement with the instrument being replaced** and read as validation — the identical defect
+`audit_label_sources.py` records for `scan_marginal`. **So truth was keyed from the page**, diplomatic,
+long-ſ preserved and the page's own typos kept (leaf 400 prints *"to fight iu Edrai"*).
+
+### Two cutting defects found by LOOKING at the sheets, not by a number
+
+1. The first cut was **by row**, which put a page number, a running head **and** a side-note into one
+   image labelled `RH`. A row is not homogeneous in region — `region_head`'s founding observation, and
+   the reason `region_segments` exists. Re-cut per segment.
+2. The pad **clipped leading sorts** (`eople of Chamos`). A crop that cuts a character asks every model
+   to read something the page does not print.
+
+**12 of 63 crops remain EXCLUDED with a stated reason each** — two baselines in one image (R2.2k's
+row-chaining, on italic), a clipped first or last sort, two margin columns merged — counted, never
+silently dropped. ⚠️ **7 of the 12 are MarginNote**, leaving `MN` the thinnest class at 5 lines: the
+cutter fails hardest on the class this edition is built around. Stated, not hidden.
+
+⚠️ **Coverage.** 51 hand-keyed lines, 7 region classes, **one witness, one operator, not blind**.
+Held out from every training manifest on disk — proven, with the bound stated: a model trained from a
+manifest not on this disk is invisible to the check. **Discharges no gate**; whether the winner is
+good enough is Gate 11 (R13.3), which needs GOLD-LAYOUT (R16.1).
+
+**Ceiling register: 89 → 88 steps, claim 17/89 → 16/88 — BOTH FELL, and that is correct.** R2.1b
+carries its complexity class in its own row, so closing it removed that declaration from the OPEN
+population. The cleanest demonstration yet that a numerator which only ever rises is not measuring
+anything.
+
+---
+
+## 2026-08-27e — R13.1, first half. The recogniser is loadable, and its stamp is falsifiable
+
+**`witness/recogniser.py` + `witness/test_recogniser_provenance.py`.** 🟠 **PARTIAL, and the split is
+stated rather than rounded up.** The mechanism and its proof are done; the attesting-arm conversion
+is not, and it is filed as **R13.1a**.
+
+### What R13 found, still true of the shipping path
+
+`gen1_r3.py:666` sets `"old_text": sp.get("text", "")` — the attesting arm is the **stored corpus
+OCR**. The ſ-faithful fine-tune this project spent its Rung-2 effort producing is *an artefact no
+code loads*: Gate 0f's defect (a rule no code read) one level down.
+
+### One entry point, and it stamps
+
+The model is **read from R2.1b's selection file and never named in the module**. Hard-coding one
+would re-create precisely the defect R2.1b exists to prevent, and with no selection present the
+module **raises** rather than defaulting — an arbitrary model wearing the selected model's authority
+is harder to see than no model at all.
+
+The stamp carries the **digest**, not only the path: a path is a label a human chose and can point at
+a file that has since been retrained; the digest is what was actually opened. Given R13's whole
+finding was that a component can be pointed at and not loaded, the stamp records the opening.
+
+### The injection proof, and the check that carries it
+
+| # | check | result |
+|---|---|---|
+| 1 | with the selection hidden, reading **raises** rather than defaulting | ok |
+| 2 | the stamp names R2.1b's selection (`dr_v3_armB`) | ok |
+| 3 | the stamp carries the artefact's digest | ok |
+| 4 | injecting another candidate changes the **name** and the **digest** | ok |
+| 5 | injecting changes the **READING** — 5 of 12 crops differ | ok |
+
+**Check 5 is the load-bearing one.** A stamp can be correctly plumbed to a recogniser that is never
+actually consulted; checks 1–4 would all pass on that. When broken output equals healthy output, the
+**mechanism** has to be validated, not the label. A provenance field no test can move is decoration,
+and it would let a reading produced by one model be published under another's name — which is R13's
+own finding one level up.
+
+### What is NOT done, said plainly
+
+No `gen1_*` or `s_arbiter` module imports the new entry point yet, so `old_text` is still the stored
+corpus OCR. **That conversion changes campaign artefacts**, which makes it a deliberate act rather
+than a side effect of a module existing. Filed as **R13.1a**. ⚠️ And R13.2 remains untouched: the
+**1,142** `CONTENT OK, ſ-SURFACE OPEN` cells may **not** be reported as recovered before it runs.
+Plausibly is not measurably.
+
+### A defect the verification standard inflicted on this work, recorded because it will recur
+
+`build_recog_gold.py` was enrolled in the block as `build_recog_gold.py --check`. **The standard runs
+every command it names WITHOUT its arguments** — `run()` invokes `[PY, f"witness/{script}"]` — so the
+suite ran it **bare**, took the cutting path, and rewrote all 51 hand-keyed `.gt.txt` files as empty.
+The keying had to be redone. Cutting is now opt-in behind `--cut` and refuses to clobber existing
+truth even then. ⚠️ **A script whose no-argument behaviour is destructive WILL be run destructively by
+that block**, and nothing warned of it.
+
+**Ceiling register: 88 → 89, claim 16/88 → 16/89** — R13.1a filed, numerator flat. ⚠️ R13.1a counts as
+**INHERITED**, exactly as R13.1 and R13.2 already do: the R13 rows end in a bare class token that
+`CEILING_RE` does not match. A **parser** gap in that instrument, not a gap in those rows — recorded,
+not fixed here, for the reason already standing over the decimal-pair trap: changing the parser is a
+change to the instrument every other number in the block is verified by.

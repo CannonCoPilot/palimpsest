@@ -25,6 +25,8 @@ Deliberately NOT checked: prose.  This test reads the fenced command blocks and
 the arrows in them, nothing else.  A test that tried to verify the paragraphs
 would fail on rewording and be switched off, which is worse than no test.
 """
+import concurrent.futures as cf
+import os
 import re
 import subprocess
 import sys
@@ -124,6 +126,37 @@ def main():
               "exists but the verification standard does not list it -- a guard "
               "nobody is told to run is a guard nobody runs")
 
+    # ── R11.2e ────────────────────────────────────────────────────────────────────────────────
+    # 🔴 THE STANDARD COULD NOT BE RUN. The block names ~40 commands and several perform OCR, so a
+    # full pass exceeded 15 minutes on two consecutive attempts (2026-08-26) and was killed both
+    # times without producing a line. ⚠️ THAT IS WORSE THAN A SLOW TEST: every headline number in
+    # this project is held honest by this block, so a block nobody can afford to run holds nothing
+    # honest — and it fails by SILENCE, not by a red result.
+    #
+    # The fix is the one candidate that keeps the standard's meaning intact: the subprocesses are
+    # INDEPENDENT of one another (no command reads another's output, and each is a separate
+    # interpreter), so they are fanned out concurrently instead of run one after another. ⚠️ EVERY
+    # COMMAND STILL EXECUTES — nothing is cached, sampled, skipped or tiered. The two rejected
+    # candidates are recorded in the Roadmap: a content-keyed result cache (correct but a new
+    # instrument, and a cache-invalidation bug here would silently pass a stale claim), and a
+    # --fast/--full split, which is FORBIDDEN without a CI --full because it converts "too slow to
+    # run" into "not required to run" — the laundering §0.5 exists to prevent.
+    to_run = sorted({s for s, claim, _ in named
+                     if (HERE / s).is_file() and s != SELF
+                     and (s.startswith("test_") or s in AUDIT_SCRIPTS or claim)})
+    print(f"\nrunning {len(to_run)} command(s) concurrently (R11.2e — every one still EXECUTES):",
+          flush=True)
+    _RESULTS = {}
+    with cf.ThreadPoolExecutor(max_workers=min(8, (os.cpu_count() or 4))) as ex:
+        futs = {ex.submit(run, s): s for s in to_run}
+        for fut in cf.as_completed(futs):
+            s = futs[fut]
+            try:
+                _RESULTS[s] = fut.result()
+            except Exception as exc:                      # a crash is a RESULT, never a skip
+                _RESULTS[s] = (-1, f"__HARNESS_ERROR__ {exc!r}")
+            print(f"  done  witness/{s}", flush=True)
+
     print("\nevery claim of the form `-> N/M verified` must match what runs:")
     ran = {}
     for script, claim, _ in named:
@@ -142,7 +175,7 @@ def main():
             print(f"  --    witness/{script:32s} (not executed: no claim to check)")
             continue
         if script not in ran:
-            ran[script] = run(script)
+            ran[script] = _RESULTS[script]
         code, out = ran[script]
         if claim:
             m = re.search(r"(\d+)\s*/\s*(\d+)", claim)

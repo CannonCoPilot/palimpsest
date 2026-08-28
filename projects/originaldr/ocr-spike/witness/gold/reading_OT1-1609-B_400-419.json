@@ -1,0 +1,196 @@
+{
+ "_doc": "R14.10b's CONFIRMING READ. One entry per head-band candidate box: what the SELECTED recogniser makes of it. \u26a0\ufe0f This is PERCEPTION, never a label \u2014 the reading decides the CLASS, and the printed number itself is adjudicated separately from the page (see score_pagenumber_agent.py).",
+ "witness": "OT1-1609-B",
+ "window": [
+  400,
+  419
+ ],
+ "stamp": {
+  "model": "dr_v3_armB",
+  "model_path": "models/dr_v3_armB/best_0.9694.mlmodel",
+  "model_sha": "fa6e861fa94787b3",
+  "selected_by": "R2.1b 7 class wins"
+ },
+ "readings": [
+  {
+   "leaf": 400,
+   "x0": 0.1455623829040922,
+   "y0": 0.02759074706192663,
+   "x1": 0.19227635629118492,
+   "y1": 0.05081592207782624,
+   "text": "",
+   "crop": "witness/gold/reading-crops/leaf400_box0.png"
+  },
+  {
+   "leaf": 401,
+   "x0": 0.7566824415831177,
+   "y0": 0.056350812831185954,
+   "x1": 0.801713279733991,
+   "y1": 0.07643625352430158,
+   "text": "369",
+   "crop": "witness/gold/reading-crops/leaf401_box4.png"
+  },
+  {
+   "leaf": 402,
+   "x0": 0.16613945214591083,
+   "y0": 0.057970816138573036,
+   "x1": 0.22074607858990944,
+   "y1": 0.07829435963037769,
+   "text": "370",
+   "crop": "witness/gold/reading-crops/leaf402_box1.png"
+  },
+  {
+   "leaf": 403,
+   "x0": 0.7643013345933053,
+   "y0": 0.05546251161163449,
+   "x1": 0.8106409149367318,
+   "y1": 0.07622866131551265,
+   "text": "37T",
+   "crop": "witness/gold/reading-crops/leaf403_box2.png"
+  },
+  {
+   "leaf": 404,
+   "x0": 0.16114316597330308,
+   "y0": 0.046632658842910964,
+   "x1": 0.21161822359743895,
+   "y1": 0.06514089211790847,
+   "text": "72",
+   "crop": "witness/gold/reading-crops/leaf404_box3.png"
+  },
+  {
+   "leaf": 405,
+   "x0": 0.7676814820757196,
+   "y0": 0.03590883989205261,
+   "x1": 0.8142559648639635,
+   "y1": 0.055715017141836146,
+   "text": "373",
+   "crop": "witness/gold/reading-crops/leaf405_box3.png"
+  },
+  {
+   "leaf": 406,
+   "x0": 0.16911120494926424,
+   "y0": 0.02881605892124617,
+   "x1": 0.22141896552595408,
+   "y1": 0.0495439253820826,
+   "text": "474",
+   "crop": "witness/gold/reading-crops/leaf406_box0.png"
+  },
+  {
+   "leaf": 407,
+   "x0": 0.7582181903399903,
+   "y0": 0.037105894864001315,
+   "x1": 0.8051443556456177,
+   "y1": 0.05766931266950638,
+   "text": "",
+   "crop": "witness/gold/reading-crops/leaf407_box2.png"
+  },
+  {
+   "leaf": 408,
+   "x0": 0.15469799559915204,
+   "y0": 0.029131524863656937,
+   "x1": 0.20804255437419147,
+   "y1": 0.05182543405821538,
+   "text": "7",
+   "crop": "witness/gold/reading-crops/leaf408_box0.png"
+  },
+  {
+   "leaf": 409,
+   "x0": 0.7577133277409444,
+   "y0": 0.05996094728351486,
+   "x1": 0.8031026388664295,
+   "y1": 0.07782954483958167,
+   "text": "377",
+   "crop": "witness/gold/reading-crops/leaf409_box2.png"
+  },
+  {
+   "leaf": 410,
+   "x0": 0.1673694526701973,
+   "y0": 0.04997755871338841,
+   "x1": 0.21671655415563348,
+   "y1": 0.07034996387367257,
+   "text": "",
+   "crop": "witness/gold/reading-crops/leaf410_box1.png"
+  },
+  {
+   "leaf": 411,
+   "x0": 0.7539595471933619,
+   "y0": 0.05212447417800585,
+   "x1": 0.8048532345316542,
+   "y1": 0.07488707587624513,
+   "text": "379",
+   "crop": "witness/gold/reading-crops/leaf411_box3.png"
+  },
+  {
+   "leaf": 412,
+   "x0": 0.1554348589069322,
+   "y0": 0.03956357319567388,
+   "x1": 0.20456876174907018,
+   "y1": 0.06223119094111375,
+   "text": "380",
+   "crop": "witness/gold/reading-crops/leaf412_box0.png"
+  },
+  {
+   "leaf": 413,
+   "x0": 0.7690781054182164,
+   "y0": 0.04266568815678133,
+   "x1": 0.8143367397214586,
+   "y1": 0.06306238438680731,
+   "text": "38",
+   "crop": "witness/gold/reading-crops/leaf413_box2.png"
+  },
+  {
+   "leaf": 414,
+   "x0": 0.16180461375247615,
+   "y0": 0.03550139842766058,
+   "x1": 0.2121221781702276,
+   "y1": 0.05695732086999263,
+   "text": "8",
+   "crop": "witness/gold/reading-crops/leaf414_box0.png"
+  },
+  {
+   "leaf": 415,
+   "x0": 0.7620639578953752,
+   "y0": 0.04956346795300693,
+   "x1": 0.8092846395435802,
+   "y1": 0.0712264410166984,
+   "text": "383",
+   "crop": "witness/gold/reading-crops/leaf415_box3.png"
+  },
+  {
+   "leaf": 416,
+   "x0": 0.15700347426637795,
+   "y0": 0.040473848888413815,
+   "x1": 0.20843758527550937,
+   "y1": 0.06245934250754952,
+   "text": "484",
+   "crop": "witness/gold/reading-crops/leaf416_box0.png"
+  },
+  {
+   "leaf": 417,
+   "x0": 0.7722511439551666,
+   "y0": 0.0529933131912193,
+   "x1": 0.8164941311499434,
+   "y1": 0.0735391101876467,
+   "text": "38",
+   "crop": "witness/gold/reading-crops/leaf417_box3.png"
+  },
+  {
+   "leaf": 418,
+   "x0": 0.1652404370622524,
+   "y0": 0.04107242179785,
+   "x1": 0.2131634079315067,
+   "y1": 0.0633567843252662,
+   "text": "",
+   "crop": "witness/gold/reading-crops/leaf418_box0.png"
+  },
+  {
+   "leaf": 419,
+   "x0": 0.753641580085705,
+   "y0": 0.05019201335902615,
+   "x1": 0.8008362842870714,
+   "y1": 0.07282132864380582,
+   "text": "",
+   "crop": "witness/gold/reading-crops/leaf419_box2.png"
+  }
+ ]
+}
