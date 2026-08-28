@@ -1,0 +1,287 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>GOLD-LAYOUT plate review — R14.17</title>
+<!--
+  R14.17 — THE REVIEW TOOLKIT. The plates made correctable.
+
+  ⚠️ THE BOXES HERE ARE DRAWN FROM DATA, NOT BAKED INTO THE PLATE. The previous plate book burned
+  its rectangles into the JPEGs, which is why no correction surface could be built on it: you cannot
+  move ink in a photograph. `bundle.json` carries live geometry; this file draws it.
+
+  ⚠️ NO EDIT MAY WRITE A CLASS LECTOR DOES NOT DECLARE. The class list comes from `bundle.classes`,
+  which is `visual_agent.CLASSES` — the ONE declaration. A reviewer inventing a label the agent
+  cannot emit produces a gold entry nothing can ever score against.
+
+  ⚠️ A VERDICT IS NOT A CORRECTION AND THE TOOL KEEPS THEM APART. R14.13 may not be closed by
+  "the plates were produced"; it needs a recorded per-leaf verdict. CLEAN and CORRECTED are
+  different claims, and a leaf you merely looked at is neither.
+-->
+<style>
+  :root{
+    --bg:#12100e; --panel:#1c1917; --ink:#f2ede5; --dim:#a29a8e; --line:#332e29;
+    --accent:#c9a227; --ok:#5f9e6e; --warn:#c2703a; --bad:#b5483d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f7f4ee; --panel:#fffdf8; --ink:#211d18; --dim:#6b635a; --line:#ded6c8; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:14px/1.5 ui-sans-serif,-apple-system,"Segoe UI",sans-serif;
+       background:var(--bg);color:var(--ink);display:grid;grid-template-columns:1fr 340px;height:100vh}
+  #stage{position:relative;overflow:auto;padding:14px}
+  #wrap{position:relative;display:inline-block;transform-origin:top left}
+  #plate{display:block;max-width:none}
+  .bx{position:absolute;border:1.5px solid var(--accent);cursor:move}
+  .bx.sel{border-width:2.5px;box-shadow:0 0 0 1px #000 inset}
+  .bx .tag{position:absolute;top:-17px;left:-1px;font:11px/1.4 ui-monospace,monospace;
+           background:var(--accent);color:#12100e;padding:0 4px;white-space:nowrap}
+  .bx .h{position:absolute;width:9px;height:9px;background:var(--accent);right:-5px;bottom:-5px;
+         cursor:nwse-resize}
+  .fr{position:absolute;pointer-events:none;border:0}
+  .fr.h{border-top:1px dashed var(--warn);left:0;right:0}
+  .fr.v{border-left:1px dashed var(--ok);top:0;bottom:0}
+  #side{background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:14px;
+        display:flex;flex-direction:column;gap:12px}
+  h1{font:600 15px/1.3 inherit;margin:0}
+  .sub{color:var(--dim);font-size:12px}
+  .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  button,select{background:var(--bg);color:var(--ink);border:1px solid var(--line);
+                border-radius:5px;padding:4px 8px;font:inherit;font-size:12px;cursor:pointer}
+  button:hover{border-color:var(--accent)}
+  button.on{background:var(--accent);color:#12100e;border-color:var(--accent)}
+  .card{border:1px solid var(--line);border-radius:7px;padding:9px}
+  .k{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+  .cause{font:11px/1.45 ui-monospace,monospace;color:var(--dim);white-space:pre-wrap;
+         max-height:130px;overflow:auto}
+  .flag{border-left:3px solid var(--bad);padding-left:7px;margin:5px 0;font-size:12px}
+  .flag.warn{border-color:var(--warn)} .flag.note{border-color:var(--dim)}
+  textarea{width:100%;min-height:52px;background:var(--bg);color:var(--ink);
+           border:1px solid var(--line);border-radius:5px;padding:6px;font:inherit;font-size:12px}
+  .pill{font:11px ui-monospace,monospace;border:1px solid var(--line);border-radius:99px;
+        padding:1px 7px;color:var(--dim)}
+  .pill.live{color:var(--ok);border-color:var(--ok)}
+  .pill.dead{color:var(--bad);border-color:var(--bad)}
+</style>
+
+<div id="stage"><div id="wrap"><img id="plate" alt="leaf"><div id="ov"></div></div></div>
+
+<div id="side">
+  <div>
+    <h1 id="ttl">plate book</h1>
+    <div class="sub" id="sub"></div>
+  </div>
+
+  <div class="row">
+    <button id="prev">← prev</button><button id="next">next →</button>
+    <select id="jump"></select>
+  </div>
+  <div class="row">
+    <button id="zo">−</button><button id="zi">+</button>
+    <button id="tgl" class="on">boxes</button><button id="tglf" class="on">frame</button>
+  </div>
+
+  <div class="card">
+    <div class="k">channels live when this plate was made</div>
+    <div class="row" id="chan"></div>
+    <div class="sub" style="margin-top:6px">A box named without the fount is a different claim
+      from the same box named with it.</div>
+  </div>
+
+  <div class="card">
+    <div class="k">archetype</div>
+    <div id="arch"></div>
+    <div class="cause" id="archcause"></div>
+  </div>
+
+  <div class="card">
+    <div class="k">selected box</div>
+    <div id="binfo" class="sub">none — click a box</div>
+    <div class="row" id="cls"></div>
+    <div class="row"><button id="del">delete box</button><button id="add">+ new box</button></div>
+    <div class="k" style="margin-top:7px">LECTOR's cause</div>
+    <div class="cause" id="cause"></div>
+  </div>
+
+  <div class="card">
+    <div class="k">my review flags on this leaf</div>
+    <div id="flags" class="sub">none</div>
+  </div>
+
+  <div class="card">
+    <div class="k">verdict — R14.13 needs one per leaf</div>
+    <div class="row">
+      <button class="vd" data-v="clean">CLEAN</button>
+      <button class="vd" data-v="corrected">CORRECTED</button>
+      <button class="vd" data-v="defect">DEFECT FILED</button>
+    </div>
+    <textarea id="note" placeholder="what you saw, in your words"></textarea>
+    <div class="sub" id="vstate"></div>
+  </div>
+
+  <div class="row">
+    <button id="exp">export corrections</button>
+    <span class="sub" id="prog"></span>
+  </div>
+</div>
+
+<script>
+const S={i:0,z:1,sel:null,boxes:false,frame:true,data:null,edits:{},flags:{}};
+const $=q=>document.querySelector(q);
+
+async function boot(){
+  S.data=await (await fetch('bundle.json')).json();
+  try{ S.flags=await (await fetch('review-flags.json')).json(); }catch(e){ S.flags={}; }
+  try{ S.edits=JSON.parse(localStorage.getItem('gl-edits')||'{}'); }catch(e){ S.edits={}; }
+  $('#jump').innerHTML=S.data.plates.map((p,i)=>
+    `<option value="${i}">${p.id} · ${p.archetype}</option>`).join('');
+  $('#jump').onchange=e=>{S.i=+e.target.value;draw();};
+  $('#prev').onclick=()=>{S.i=(S.i-1+S.data.plates.length)%S.data.plates.length;draw();};
+  $('#next').onclick=()=>{S.i=(S.i+1)%S.data.plates.length;draw();};
+  $('#zi').onclick=()=>{S.z=Math.min(4,S.z*1.25);zoom();};
+  $('#zo').onclick=()=>{S.z=Math.max(.2,S.z/1.25);zoom();};
+  $('#tgl').onclick=e=>{S.boxes=!S.boxes;e.target.classList.toggle('on');draw();};
+  $('#tglf').onclick=e=>{S.frame=!S.frame;e.target.classList.toggle('on');draw();};
+  $('#del').onclick=delBox; $('#add').onclick=addBox; $('#exp').onclick=exportAll;
+  document.querySelectorAll('.vd').forEach(b=>b.onclick=()=>verdict(b.dataset.v));
+  $('#note').oninput=e=>{ed().note=e.target.value;save();};
+  addEventListener('keydown',k=>{
+    if(k.target.tagName==='TEXTAREA')return;
+    if(k.key==='ArrowRight')$('#next').click();
+    if(k.key==='ArrowLeft')$('#prev').click();
+  });
+  S.boxes=true; $('#tgl').classList.add('on');
+  draw();
+}
+const cur=()=>S.data.plates[S.i];
+function ed(){ const id=cur().id; return S.edits[id]??=({boxes:{},added:[],deleted:[],
+                 verdict:null,note:''}); }
+function save(){ localStorage.setItem('gl-edits',JSON.stringify(S.edits)); prog(); }
+
+// The live box list = LECTOR's claim, with this reviewer's edits applied on top. The two are kept
+// SEPARATE in storage so an export can always say which is which.
+function boxesOf(){
+  const p=cur(), e=ed();
+  const out=p.boxes.filter(b=>!e.deleted.includes(b.i))
+                   .map(b=>({...b, ...(e.boxes[b.i]||{}), orig:true}));
+  e.added.forEach((b,k)=>out.push({...b,i:'new'+k,orig:false,surya:'(added by reviewer)'}));
+  return out;
+}
+function zoom(){ $('#wrap').style.transform=`scale(${S.z})`; }
+
+function draw(){
+  const p=cur(), e=ed();
+  $('#plate').src=p.img;
+  $('#ttl').textContent=p.id;
+  $('#sub').innerHTML=`${p.witness} leaf ${p.leaf} · ${p.origin} · split
+     <b>${p.split}</b> · ${p.gold}`;
+  $('#arch').innerHTML=`<b>${p.archetype}</b> <span class="sub">conf
+     ${p.arch_conf}</span>`;
+  $('#archcause').textContent=p.arch_cause||'(none recorded)';
+  const c=p.channels;
+  $('#chan').innerHTML=['fount','skew','reading'].map(k=>
+    `<span class="pill ${c[k]?'live':'dead'}">${k} ${c[k]?'live':'ABSENT'}</span>`).join('');
+  const fl=(S.flags[p.id]||[]);
+  $('#flags').innerHTML=fl.length?fl.map(f=>
+    `<div class="flag ${f.sev}"><b>${f.kind}</b> — ${f.what}</div>`).join(''):'none';
+  $('#note').value=e.note||'';
+  $('#vstate').textContent=e.verdict?`recorded: ${e.verdict.toUpperCase()}`
+                                    :'no verdict yet — a leaf you looked at is not a verdict';
+  document.querySelectorAll('.vd').forEach(b=>
+    b.classList.toggle('on',e.verdict===b.dataset.v));
+  $('#jump').value=S.i;
+  render(); prog();
+}
+
+function render(){
+  const p=cur(), ov=$('#ov'); ov.innerHTML='';
+  const img=$('#plate');
+  const W=img.clientWidth||img.naturalWidth, H=img.clientHeight||img.naturalHeight;
+  if(!W){ img.onload=render; return; }
+  if(S.frame){
+    const mk=(cls,st)=>{const d=document.createElement('div');d.className='fr '+cls;
+      Object.assign(d.style,st);ov.appendChild(d);};
+    mk('h',{top:p.head_y*H+'px'}); mk('h',{top:p.foot_y*H+'px'});
+    mk('v',{left:p.measure[0]*W+'px'}); mk('v',{left:p.measure[1]*W+'px'});
+  }
+  if(!S.boxes)return;
+  boxesOf().forEach(b=>{
+    const d=document.createElement('div');
+    d.className='bx'+(S.sel===b.i?' sel':'');
+    Object.assign(d.style,{left:b.x0*W+'px',top:b.y0*H+'px',
+      width:(b.x1-b.x0)*W+'px',height:(b.y1-b.y0)*H+'px'});
+    d.innerHTML=`<span class="tag">${b.label||'??'}${b.orig?'':' +'}</span><div class="h"></div>`;
+    d.onmousedown=ev=>grab(ev,b,d,W,H);
+    ov.appendChild(d);
+  });
+}
+
+function grab(ev,b,el,W,H){
+  ev.preventDefault(); S.sel=b.i; info(b);
+  const resize=ev.target.classList.contains('h');
+  const sx=ev.clientX, sy=ev.clientY, o={...b};
+  const move=m=>{
+    const dx=(m.clientX-sx)/(W*S.z), dy=(m.clientY-sy)/(H*S.z);
+    const n=resize?{x0:o.x0,y0:o.y0,x1:Math.max(o.x0+.002,o.x1+dx),y1:Math.max(o.y0+.002,o.y1+dy)}
+                  :{x0:o.x0+dx,y0:o.y0+dy,x1:o.x1+dx,y1:o.y1+dy};
+    apply(b,n); render();
+  };
+  const up=()=>{removeEventListener('mousemove',move);removeEventListener('mouseup',up);save();};
+  addEventListener('mousemove',move); addEventListener('mouseup',up);
+}
+function apply(b,n){
+  const e=ed();
+  if(typeof b.i==='string'&&b.i.startsWith('new')) Object.assign(e.added[+b.i.slice(3)],n);
+  else e.boxes[b.i]={...(e.boxes[b.i]||{}),...n};
+  Object.assign(b,n);
+}
+
+function info(b){
+  $('#binfo').innerHTML=`box <b>${b.i}</b> · detector <code>${b.surya}</code> ·
+     LECTOR says <b>${b.label||'??'}</b> <span class="sub">conf ${b.conf??'—'}</span>`;
+  $('#cause').textContent=b.cause||'(no cause recorded)';
+  // ⚠️ THE CLASS LIST IS LECTOR'S OWN DECLARATION. Never a hand-typed label.
+  $('#cls').innerHTML=S.data.classes.map(c=>
+    `<button class="cl ${b.label===c?'on':''}" data-c="${c}">${c}</button>`).join('');
+  document.querySelectorAll('.cl').forEach(x=>x.onclick=()=>{
+    apply(b,{label:x.dataset.c}); save(); render(); info(b);
+  });
+}
+function delBox(){
+  if(S.sel==null)return; const e=ed();
+  if(typeof S.sel==='string') e.added.splice(+S.sel.slice(3),1);
+  else if(!e.deleted.includes(S.sel)) e.deleted.push(S.sel);
+  S.sel=null; save(); render();
+}
+function addBox(){
+  ed().added.push({x0:.4,y0:.4,x1:.6,y1:.45,label:S.data.classes[0],conf:1,
+                   cause:'added by reviewer'});
+  save(); render();
+}
+function verdict(v){ ed().verdict=v; save(); draw(); }
+function prog(){
+  const n=S.data.plates.length;
+  const done=S.data.plates.filter(p=>S.edits[p.id]?.verdict).length;
+  $('#prog').textContent=`${done}/${n} leaf verdicts recorded`;
+}
+
+// EXPORT: LECTOR's claim and the reviewer's correction stay DISTINGUISHABLE, always. A gold file
+// that cannot say which boxes a human touched cannot be audited, and would quietly launder the
+// agent's own output back in as ground truth.
+function exportAll(){
+  const out={_doc:"GOLD-LAYOUT corrections (R14.17). `agent` is LECTOR's unmodified claim; "+
+                  "`review` is what a human changed. They are NEVER merged here — a gold that "+
+                  "cannot distinguish them would launder the agent's output back in as truth.",
+             classes:S.data.classes, plates:[]};
+  S.data.plates.forEach(p=>{
+    const e=S.edits[p.id]; if(!e||(!e.verdict&&!Object.keys(e.boxes).length&&!e.added.length
+        &&!e.deleted.length))return;
+    out.plates.push({id:p.id,witness:p.witness,leaf:p.leaf,split:p.split,
+      verdict:e.verdict,note:e.note,
+      agent:{archetype:p.archetype,boxes:p.boxes},
+      review:{moved:e.boxes,added:e.added,deleted:e.deleted}});
+  });
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(out,null,1)],{type:'application/json'}));
+  a.download='gold-layout-corrections.json'; a.click();
+}
+boot();
+</script>

@@ -2,3 +2,9 @@
 # R14.7 — agent_see.py renders 43MB of leaf diagrams. They are DERIVED (regenerate with
 # `../ocr-venv/bin/python witness/agent_see.py`), so the tree stays small enough to grep.
 witness/see/
+
+# R14.17 — the plate book's rendered leaves (208 × ~1600px ≈ 60 MB). They are DERIVED from the
+# jp2 scans (regenerate with `witness/plate_book.py --build`), so the tree stays small enough to
+# grep. ⚠️ `bundle.json` and `manifest.json` are NOT ignored — the BOX GEOMETRY is the artefact,
+# and the whole reason this book exists is that the old one had none.
+witness/plates/img/

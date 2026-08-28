@@ -1,0 +1,1463 @@
+{
+ "_doc": "The GOLD-LAYOUT leaf set (R16.1), addressed as (witness, leaf) pairs because a bare ordinal names different pages in different witnesses. `split` is UNASSIGNED until R16.1's gathering-level split is applied \u2014 it is NOT defaulted to train, because a leaf silently defaulted into training is a leaf that can never honestly score the model it trained.",
+ "n": 208,
+ "unresolved": [],
+ "leaves": [
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 400,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 401,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 402,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 403,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 404,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 405,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 406,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 407,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 408,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 409,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 410,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 411,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 412,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 413,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 414,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 415,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 416,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 417,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 418,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-B",
+   "leaf": 419,
+   "origin": "adjudicated-20",
+   "split": "test",
+   "gold": "GOLD-HEADBAND+FOREEDGE"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1136,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1135,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1134,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1133,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1132,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1131,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1130,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 10,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 9,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 8,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 7,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 6,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 5,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 26,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 25,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 24,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 23,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 22,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 21,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 20,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 19,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 18,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 17,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 185,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 184,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 183,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 182,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 181,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 180,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 179,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 178,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 177,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 176,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 284,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 285,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 286,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 287,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 288,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 289,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 343,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 344,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 345,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 346,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 347,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 348,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 588,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 589,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 590,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 660,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 661,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 662,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1010,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1011,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1012,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1013,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1014,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1015,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1059,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1060,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT1-1609-P",
+   "leaf": 1061,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 5,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 6,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 7,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 8,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 18,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 19,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 20,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 21,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 22,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 23,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 24,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 25,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 26,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 34,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 35,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 274,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 275,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 276,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 277,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 278,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 279,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 280,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 455,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 456,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 457,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 458,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 459,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 460,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 461,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 666,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 667,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 668,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 669,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 670,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 671,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 715,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 716,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 717,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 718,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 745,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 746,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 747,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 748,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 749,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 750,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 793,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 794,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 795,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 796,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 819,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 820,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 821,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 865,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 866,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 898,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 899,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 900,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 901,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 902,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 903,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1084,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1085,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1086,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1087,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1088,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1089,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1110,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1111,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1112,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1113,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1114,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1135,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "OT2-1610-P",
+   "leaf": 1136,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 7,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 8,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 9,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 28,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 29,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 30,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 31,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 32,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 33,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 34,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 35,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 36,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 37,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 38,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 116,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 117,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 118,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 119,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 120,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 121,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 122,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 244,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 245,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 246,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 247,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 248,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 311,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 312,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 313,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 314,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 317,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 318,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 319,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 320,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 321,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 437,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 438,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 439,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 440,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 562,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 563,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 564,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 565,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 566,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 775,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 776,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 777,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 778,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 779,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 780,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 781,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 782,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 802,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 803,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  },
+  {
+   "witness": "NT-1582-B",
+   "leaf": 804,
+   "origin": "sir-2026-08-28",
+   "split": "unassigned",
+   "gold": "GOLD-LAYOUT (R16.1), unadjudicated"
+  }
+ ]
+}
