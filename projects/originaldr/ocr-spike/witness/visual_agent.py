@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""R14.1/R14.2 -- THE ADAPTIVE VISUAL AGENT: see the leaf, frame it, name what is on it.
+"""R14.1/R14.2 -- LECTOR, THE ADAPTIVE VISUAL AGENT: see the leaf, frame it, name what is on it.
+
+NAMED BY SIR, 2026-08-28: **LECTOR**. In a printing house the *lector* is the reader who takes in
+the whole page; this module reads the PAGE, where `recogniser.py` -- **SCRIBE** -- reads the LINE.
+⚠️ The pair is deliberate and the division of labour is the architecture: LECTOR decides WHAT a
+region is and WHERE it sits, SCRIBE decides what it SAYS. R14.10b is the first class LECTOR
+decides with help from SCRIBE, and R14.16 is the open question of whether LECTOR should be a
+model at all rather than the hand-written cascade it is today.
 
 Masterplan §3.0 GOVERNS and states the aim in one sentence: *an agent that reproduces what a literate
 human does when handed a page of this book* -- look at the leaf, recognise what KIND of page it is,

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""R13.1 -- THE ONE PLACE A READING IS PRODUCED, AND IT NAMES ITS MODEL.
+"""R13.1 -- SCRIBE: THE ONE PLACE A READING IS PRODUCED, AND IT NAMES ITS MODEL.
+
+NAMED BY SIR, 2026-08-28: **SCRIBE**. It reads the LINE, where `visual_agent.py` -- **LECTOR** --
+reads the PAGE. ⚠️ A scribe copies what is set in front of it and signs the copy: every reading
+this module returns carries the model id AND the artefact digest, and it RAISES rather than
+defaulting when no model has been selected.
 
 R13's finding, verified 2026-08-17 and still true of the shipping path: `grep` over `gen1_*.py`,
 `s_arbiter.py` and `chapter_campaign.py` returns NOTHING for any fine-tune. `gen1_r3.py:666` sets

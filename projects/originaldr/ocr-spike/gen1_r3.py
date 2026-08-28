@@ -395,6 +395,60 @@ def _straddle_leaves(ocr_dir: str, verse: int, anchor: int, lex, wb) -> list[int
     return out
 
 
+def _scribe_span(ocr_dir: str, page_index: int, page_result: dict, line_idxs) -> dict:
+    """R13.1a -- THE ATTESTING READING, PRODUCED BY SCRIBE INSTEAD OF TAKEN FROM THE STORED CORPUS OCR.
+
+    R13's finding was that the fine-tuned recogniser this project spent its Rung-2 effort producing
+    was an artefact NO CODE LOADED: `old_text` came from `sp["text"]`, which is the incumbent corpus
+    OCR -- the very output the campaign exists to improve. Scoring a candidate against it compares a
+    new reading to the old pipeline's opinion rather than to the page.
+
+    This reads the SAME lines the span occupies, one crop at a time, through `recogniser.read_stamped`
+    (SCRIBE), and returns the joined text WITH the model stamp attached. ⚠️ It RAISES rather than
+    falling back to the corpus OCR when no model is selected or a crop cannot be rendered: a silent
+    fall-through would put the stored OCR back under a field the caller now believes is attested,
+    which is the exact laundering R13 was filed against.
+    """
+    import recogniser as SCRIBE                                  # noqa: PLC0415
+    import reocr_r3                                              # noqa: PLC0415
+    import tempfile
+    import os as _os
+
+    lines = page_result["lines"]
+    W, H = page_result["page_px"]
+    idxs = sorted(int(i) for i in (line_idxs or []))
+    if not idxs:
+        raise ValueError("SCRIBE was asked to attest a span with no lines — refusing to return an "
+                         "empty attestation that would score as a total miss (No Silent Degradation)")
+    tmp = HERE / ".r3-tmp"
+    tmp.mkdir(exist_ok=True)
+    out, stamps = [], set()
+    for i in idxs:
+        bb = (lines[i] or {}).get("bbox")
+        if not bb:
+            raise ValueError(f"line {i} on {ocr_dir} p{page_index} carries no bbox — SCRIBE cannot "
+                             f"be pointed at pixels that were never located")
+        crop = (bb[0] / W, bb[1] / H, bb[2] / W, bb[3] / H)
+        fd, png = tempfile.mkstemp(suffix=".png", dir=str(tmp))
+        _os.close(fd)
+        try:
+            reocr_r3._render_page_png(ocr_dir, page_index, png, maxw=2000, crop=crop)
+            r = SCRIBE.read_stamped(png)
+        finally:
+            try:
+                _os.unlink(png)
+            except OSError:
+                pass
+        out.append((r.get("text") or "").strip())
+        stamps.add((r.get("model"), r.get("model_sha")))
+    if len(stamps) != 1:
+        raise RuntimeError(f"SCRIBE returned {len(stamps)} different model stamps across one span — "
+                           f"a span attested by two models is not one attestation")
+    model, sha = stamps.pop()
+    return {"text": " ".join(x for x in out if x), "model": model, "model_sha": sha,
+            "lines": idxs, "page_index": page_index}
+
+
 def _page_result(ocr_dir: str, page_index: int, pd: dict, lex) -> dict:
     lines = EV.page_lines(ocr_dir, page_index, pd, lex)
     return {"page_px": tuple(pd["page_px"]), "lines": lines, "page_index": page_index,
@@ -741,7 +795,19 @@ def main() -> int:
             continue
         t["crop"] = [round(x, 4) for x in box]
         t["crop_page"] = pi
-        print(f"  {t['src']} v{v}  p{pi}  crop {t['crop']}  incumbent gov {_governing(t['old']):.3f}")
+        # 🔴 R13.1a -- THE ATTESTING ARM. `old_text` above is the STORED CORPUS OCR, which is the
+        # output this campaign exists to improve; scoring a candidate against it compares a new
+        # reading to the old pipeline's opinion rather than to the page. SCRIBE re-reads the SAME
+        # lines the span occupies and the attested text is recorded beside the incumbent, with the
+        # model id and the artefact digest, so the two can never be confused for one another.
+        # ⚠️ It RAISES rather than falling back: a silent fall-through would put the corpus OCR back
+        # under a field the reader now believes was attested.
+        pr_best = _page_result(od, pi, wb[od][str(pi)], lex)
+        att = _scribe_span(od, pi, pr_best, (crops.get(v) or {}).get("lines"))
+        t["attested"] = att
+        t["attested_old"] = _score(att["text"], refs, v)
+        print(f"  {t['src']} v{v}  p{pi}  crop {t['crop']}  incumbent gov {_governing(t['old']):.3f}"
+              f"  SCRIBE-attested gov {_governing(t['attested_old']):.3f}  [{att['model']}]")
         if a.dry_run:
             results.append(t)
             continue
