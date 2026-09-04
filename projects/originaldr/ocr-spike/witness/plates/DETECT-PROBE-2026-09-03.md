@@ -142,7 +142,9 @@ Above 0.50 real body boxes leave the column and the frame degrades again, so thi
 optimum rather than a bigger-is-safer. **This is what "carry the confidence" is FOR**: it is
 not a nicety for future cues, it is the precondition without which the floor change cannot ship.
 
-**Detect wide, frame narrow, cue on everything.**
+**Detect wide, frame narrow, cue on everything.** ⚠️ **THE THIRD CLAUSE IS WRONG AND R16.20a §A3
+REFUTES IT** — handing the naming step the wider set costs 6 MarginNote entries. Left standing here
+as written because it is what this measurement concluded, and the correction belongs where it was found.
 
 ## 5. RESULT — EVERY NET MOVER, NAMED
 
@@ -185,8 +187,108 @@ move is not "9 improved".
 6. 📌 The 20 cap-recovered body blocks score 0.01-0.05 and **stay OPEN**. They are not reachable
    by any global floor and need a per-leaf mechanism.
 
-## NOT DONE HERE
+## NOT DONE IN THE MEASUREMENT
 
-No constant changed, no call site touched, no bundle rebuilt, nothing adopted. This is a
-measurement. The 5 leaves with no body proposal at any cap, the 20 cap-recovered leaves, the
-110 leaves carrying multiple body candidates, and `NT-1582-B_0804` all stay **OPEN and blocking**.
+Sections 0-5 above changed no constant, touched no call site and rebuilt nothing. Everything
+below this line is the ADOPTION, run afterwards (`7a0a55e`), and it is reported separately
+because two of its findings CONTRADICT the measurement that licensed it.
+
+---
+
+# R16.20a — THE ADOPTION. TWO THINGS THE PROBE COULD NOT SEE.
+
+**Code** `witness/detect.py` (new, owns all five constants) · `visual_agent.py` ·
+`plate_book.py`. **Rebuilt** `plates/bundle.json`, `gold/perception_OT1-1609-B_400-419.json`.
+
+## 🔴 A1. "THE FLOOR AT ALL 6 CALL SITES" IS WRONG — 3 OF THE 6 MUST NOT MOVE
+
+The sites divide by ROLE, not by which function they call. `score_surya_layout.py` (R14.0),
+`surya_layout_probe.py` and `rung1_surya.py` measure **Surya off the shelf**, and R14.0's
+**100/121 IS the bar the agent is scored against**. Re-tuning them would not improve a baseline,
+it would delete one: the number would move together with the thing it exists to be compared
+against. All three now carry a DO-NOT-CHANGE comment saying so. Only `visual_agent.see` and
+`plate_book.build` route through `detect.py`.
+
+## 🔴 A2. THE ANCHOR AND THE COLUMN MUST COME FROM THE SAME POPULATION
+
+§3 above concludes "the anchor is not the mechanism" from a corpus count of 90 → 89. That is
+true of the anchor's IDENTITY and **false of its POPULATION**, and the difference cost two leaves.
+
+`COLUMN_OVERLAP` is a fraction **of the anchor's own width**, so the anchor sets the admission
+rule for every other box. On `NT-1582-B_0439` a `Text` box scoring **0.137** spanning x
+0.106–0.899 won `max(area)`; admission then demanded 0.397 of horizontal overlap, and the real
+body text at x 0.395–0.774 is 0.379 wide, so it **could not qualify at any confidence**. Foot
+0.826 → 0.499. `OT2-1610-P_1135` failed identically on a 0.199 `ListGroup`.
+
+⚠️ **Filtering the anchor is the obvious fix and it does not survive measurement.** The body
+blocks the lowered floor recovers ARE the low-confidence ones. Swept over all 208 leaves against
+the 26 frames the old bundle had collapsed, column floor held at 0.40:
+
+| anchor floor | 0.10 | 0.15 | 0.20 | 0.25 | 0.40 |
+|---|---|---|---|---|---|
+| REPAIRED | **7** | 5 | 5 | 3 | 0 |
+| still collapsed | 19 | 21 | 21 | 23 | 26 |
+| BROKEN | 2 | 1 | 1 | 1 | 1 |
+
+**No interior optimum.** Unlike the column floor, whose U-shaped curve licensed choosing 0.40,
+this one is monotone and every cell that repairs also breaks. Choosing a value would be fitting a
+constant to 26 leaves with no gold behind it. **So no anchor constant was introduced, the variant
+repairing most was taken, and the damage is NAMED.** The real fix is a redesign of
+`COLUMN_OVERLAP`'s admission rule, which needs gold regions — step (2).
+
+## 🔴 A3. "CUE ON EVERYTHING" IS WRONG — MY OWN SLOGAN, REFUTED
+
+Handing the naming step the wider set cost **6 MarginNote entries**, confusion MN → RH. Measured
+on GOLD-HEADBAND via `visual_agent.py`, the only score that reads LECTOR's perception at all:
+
+| cue floor | 0.00 | 0.20 | 0.30 | 0.40 | 0.50 |
+|---|---|---|---|---|---|
+| boxes/leaf | 23.8 | 10.8 | 8.6 | 7.8 | 6.6 |
+| overall | **111/121** | 116/121 | **117/121** | **117/121** | 106/**110** ⚠️ |
+| MN recall | 12/19 | 17/19 | **18/19** | **18/19** | 13/14 |
+
+The cues were written against a population already filtered at 0.40 and over-fire on anything
+wider. ⚠️ At 0.50 the DENOMINATOR collapses — gold entries stop binding at all — the same U-shape.
+0.40 is taken because it introduces no new number.
+
+🔑 **THE FLOOR'S POSITION IN `settle()` IS THE WHOLE DESIGN**: after `frame`, before naming. The
+two stages want OPPOSITE things from a low-confidence box — `frame` needs them (7 repairs depend
+on a sub-0.40 anchor), every cue is harmed by them. Filtering once cannot serve both.
+
+⚠️ **WITHHELD, NOT DISCARDED** (the E2/E14 lesson again): 30.3 boxes/leaf are kept on the leaf and
+written to `bundle.json`, including **ListGroup 123 · Picture 83 · Table 16**, none read by any
+cue. This is a HOLDING POSITION, not a verdict — `surya_conf` now exists so a cue can WEIGH a
+proposal, and R16.6 can lower this floor without re-detecting 208 leaves.
+
+## RESULT (208 plates, against the pre-adoption bundle)
+
+| | |
+|---|---|
+| collapsed frames **REPAIRED** | **7** of 26 |
+| collapsed frames still collapsed | 19 |
+| previously healthy leaves **BROKEN** | **2** |
+| GOLD-HEADBAND via `visual_agent.py` | **117/121**, MN 18/19 — UNCHANGED |
+| named boxes/leaf | 10.9 → 10.8 · withheld 30.3 |
+| archetypes moved | 8 leaves |
+
+`OT1-1609-P_1011` measure width 0.141 → 0.911. `OT2-1610-P_0749` — the leaf REVIEW-STATE names
+first under E26, "the scripture column itself unclaimed" — 0.149 → 0.897.
+
+Other scorers: `score_argument_agent` A1–A5 PASS (overall 117/121 vs bar 115) · `score_skew_frame`
+PASS · `score_foreedge` MN 18/18 · `score_pagenumber_agent` **B5 still FAILS**, pre-existing
+(R14.10b), not caused here.
+
+🔴 **`score_head_regions.py` IS UNCHANGED BECAUSE IT NEVER IMPORTS `visual_agent`.** A **DEAD
+METRIC** for this change. It is not evidence of no regression, and quoting it as such would have
+been the comfortable move.
+
+## 🔴 OPEN AND BLOCKING AFTER THE ADOPTION
+
+`NT-1582-B_0439` · `OT2-1610-P_1135` · `NT-1582-B_0804` · the **19 frames still collapsed** · the
+**20 cap-recovered body blocks** scoring 0.01–0.05 that no global floor reaches · the **110 leaves
+carrying >1 body candidate** (dedup at 0.95 removes duplicates; it does not solve the pile).
+
+📌 `rung1_surya.py`'s do-not-change guard is UNCOMMITTED: the secret scanner false-positives on two
+PRE-EXISTING strings there (an absolute filesystem path, and a slash-joined run of Surya class
+names in the module docstring) under its 40-char alphanumeric AWS rule, which matches any long
+alphanumeric-and-slash run. Both are already in HEAD; the diff there is six comment lines. For Sir.
