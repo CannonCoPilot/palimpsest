@@ -103,6 +103,12 @@ def main() -> int:
 
     from PIL import Image
 
+    # 🔴 OFF THE SHELF ON PURPOSE — DO NOT ROUTE THIS THROUGH `witness/detect.py`.
+    # R14.0 scores SURYA AS SHIPPED against GOLD-HEADBAND. That 117/121 is the adoption bar
+    # other work is measured against, and it is only a bar while the settings are the vendor's.
+    # Re-tuning it would not improve this baseline, it would DELETE one: the number would
+    # move together with the thing it exists to be compared against. R16.20's constants are
+    # for LECTOR's perception path only (`visual_agent.see` / `plate_book.build`).
     from surya.fast_layout import FastLayoutPredictor
 
     pred = FastLayoutPredictor()

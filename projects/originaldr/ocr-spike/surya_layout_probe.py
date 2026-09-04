@@ -12,6 +12,11 @@ import sys
 from pathlib import Path
 
 from PIL import Image
+# 🔴 OFF THE SHELF ON PURPOSE — DO NOT ROUTE THIS THROUGH `witness/detect.py`.
+# The rung-0 gate: does surya AS SHIPPED type early-modern scripture pages at all?
+# Re-tuning it would not improve this baseline, it would DELETE one: the number would
+# move together with the thing it exists to be compared against. R16.20's constants are
+# for LECTOR's perception path only (`visual_agent.see` / `plate_book.build`).
 from surya.fast_layout import FastLayoutPredictor
 
 

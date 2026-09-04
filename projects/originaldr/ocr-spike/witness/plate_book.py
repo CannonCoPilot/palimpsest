@@ -140,24 +140,55 @@ def build_manifest() -> int:
 
 
 def _aux_state(wid: str) -> dict:
-    """Which perception channels exist for this witness. ⚠️ Reported per leaf, never assumed."""
+    """Which perception channels exist for this witness. ⚠️ Reported per leaf, never assumed.
+
+    ⚠️ ASKS `visual_agent` WHERE THE RECORD LIVES rather than globbing for a filename shape. The
+    glob this replaced was `{kind}_{wid}_*.json`, which matched the scored witness's windowed name
+    and NOT the per-witness names R16.2 introduced. It would have reported `fount: False` for a
+    witness whose record was sitting on disk and being used — a channel display contradicting the
+    channel. The reader owns the path; every other file asks it.
+    """
     def has(kind):
-        return bool(list((_HERE / "gold").glob(f"{kind}_{wid}_*.json")))
+        return VA._rec_path(kind, wid).is_file()
     return {"fount": has("fount"), "skew": has("skew"), "reading": has("reading")}
+
+
+SCOPE = BOOK / "scope.json"
+
+
+def _scope() -> dict:
+    """Per-leaf scope decisions, keyed by plate id.
+
+    A leaf goes OUT OF SCOPE only when its objects have no correct label available in
+    `CLASSES` at all — a title page, a key to the marks, a table of contents. That is a
+    statement about the class set, not about the leaf's quality, and it is NOT a
+    below-threshold result being accepted: an out-of-scope leaf contributes nothing to
+    the gold and is counted separately, so it cannot inflate a pass.
+
+    Kept in its own file, outside the manifest, because the manifest is regenerated and a
+    human decision must survive that. Absent file means every leaf is in scope.
+    """
+    if not SCOPE.is_file():
+        return {}
+    return json.loads(SCOPE.read_text()).get("leaves", {})
 
 
 def build() -> int:
     from PIL import Image
-    from surya.fast_layout import FastLayoutPredictor
 
     if not MANIFEST.is_file():
         print("🔴 no manifest — run --manifest first.")
         return 0
     man = json.loads(MANIFEST.read_text())
     IMG.mkdir(parents=True, exist_ok=True)
-    pred = FastLayoutPredictor()
+    # 🔴 R16.20 -- LECTOR's perception path, so the detection constants come from `detect.py`
+    # rather than from surya's shipped defaults. `bundle.json` is REBASELINED by this: every
+    # geometry, every frame and every label in it was taken under the old floor and the old
+    # top-k cap. See `plates/DETECT-PROBE-2026-09-03.md`.
+    pred = VA.D.predictor()
     paths: dict[str, list] = {}
     plates, failed = [], []
+    scope = _scope()
 
     for n, row in enumerate(man["leaves"], 1):
         wid, i = row["witness"], row["leaf"]
@@ -175,7 +206,11 @@ def build() -> int:
             continue
 
         boxes = VA.see(im, pred)
-        lf = VA.settle(VA.Leaf(leaf=i, boxes=boxes))
+        # ⚠️ THE WITNESS IS PASSED, NOT DEFAULTED. Without it every leaf of every witness would look
+        # up the SCORED witness's fount/skew/reading records — addressing one book's perception
+        # against another's pages. That is worse than an absent record: it would produce confident
+        # causes drawn from the wrong leaf instead of an honest abstention.
+        lf = VA.settle(VA.Leaf(leaf=i, witness=wid, boxes=boxes))
         stem = f"{wid}_{i:04d}"
         w, h = im.size
         im.resize((PLATE_MAXW, round(h * PLATE_MAXW / w))).save(IMG / f"{stem}.jpg", quality=88)
@@ -183,6 +218,9 @@ def build() -> int:
         plates.append({
             "id": stem, "witness": wid, "leaf": i,
             "origin": row["origin"], "split": row["split"], "gold": row["gold"],
+            # scope is a HUMAN decision about the class set, defaulting to in-scope.
+            "scope": scope.get(stem, {}).get("scope", "in"),
+            "scope_why": scope.get(stem, {}).get("why", ""),
             "img": f"img/{stem}.jpg", "page_px": [w, h],
             "archetype": lf.archetype, "arch_conf": round(lf.arch_conf, 4),
             "arch_cause": lf.arch_cause,
@@ -193,13 +231,30 @@ def build() -> int:
             # a different claim from the same box named with it.
             "channels": {**_aux_state(wid),
                          "fount_why": lf.fount_why, "read_why": lf.read_why,
-                         "skew_why": lf.skew_why},
+                         "skew_why": lf.skew_why,
+                         # R16.20 -- empty when the framing floor applied to every box.
+                         "frame_why": lf.frame_why},
             "boxes": [{"i": k,
                        "x0": round(b.x0, 5), "y0": round(b.y0, 5),
                        "x1": round(b.x1, 5), "y1": round(b.y1, 5),
                        "surya": b.surya, "label": b.label,
+                       # ⚠️ TWO DIFFERENT CONFIDENCES AND THE NAMES ARE NOT DECORATION.
+                       # `surya_conf` is the DETECTOR's, a perception; `conf` is the CUE's
+                       # confidence in the label this agent chose, a decision. Only the first
+                       # is read back by `leaf_from_cache`.
+                       "surya_conf": round(b.surya_conf, 4),
                        "conf": round(b.conf, 4), "cause": b.cause}
                       for k, b in enumerate(lf.boxes)],
+            # 🔴 R16.20 -- BOXES `frame` USED BUT NO CUE WAS OFFERED (below `detect.CUE_MIN_CONF`).
+            # ⚠️ WRITTEN OUT, NEVER DROPPED. They are the whole point of lowering the detection
+            # floor and no cue can read them yet, so storing them is what lets R16.6 weigh a
+            # proposal without re-detecting 208 leaves. They carry NO label by construction —
+            # naming them is exactly what was withheld.
+            "withheld": [{"x0": round(b.x0, 5), "y0": round(b.y0, 5),
+                          "x1": round(b.x1, 5), "y1": round(b.y1, 5),
+                          "surya": b.surya, "surya_conf": round(b.surya_conf, 4)}
+                         for b in lf.withheld],
+            "withheld_why": lf.withheld_why,
         })
         print(f"  {n}/{len(man['leaves'])} {stem}: {len(lf.boxes)} box(es), "
               f"archetype {lf.archetype}", flush=True)
@@ -209,7 +264,7 @@ def build() -> int:
                  "not ink burned into the plate, which is what makes a correction surface possible. "
                  "Every label is LECTOR's CLAIM about the leaf and none of it is adjudicated until a "
                  "human records a verdict in the review tool."),
-        "classes": list(VA.CLASSES), "n": len(plates), "failed": failed, "plates": plates},
+        "classes": list(VA.CLASSES_ORDERED), "n": len(plates), "failed": failed, "plates": plates},
         indent=1))
     print(f"\n{len(plates)} plate(s) -> {BUNDLE.relative_to(SPIKE)}")
     if failed:
@@ -245,11 +300,48 @@ def report() -> int:
     return 0
 
 
+def rename() -> int:
+    """Re-run NAMING over the existing plates, without touching perception.
+
+    ⚠️ THIS IS THE FILE'S OWN DOCTRINE APPLIED, NOT A SHORTCUT. `leaf_from_cache` exists because the
+    cache holds S1's output only and S2-S4 re-run on every invocation; the plate bundle holds exactly
+    the same thing. So a perception channel arriving late (R16.2's fount and reading records for the
+    other three witnesses) is a NAMING change, and re-running Surya to observe it would be answering
+    a question nobody asked while risking a different set of boxes underneath.
+
+    ⚠️ THE IMAGES AND THE BOX GEOMETRY ARE NOT REWRITTEN. Only `label`, `conf`, `cause`, the frame,
+    the archetype and the channel state can move. If a rebuild ever changed a coordinate here, the
+    human corrections recorded against those coordinates would silently be about different boxes.
+    """
+    if not BUNDLE.is_file():
+        print("🔴 NOT BUILT — no bundle. Run --manifest, then --build.")
+        return 0
+    b = json.loads(BUNDLE.read_text())
+    moved = 0
+    for p in b["plates"]:
+        before = [bx["label"] for bx in p["boxes"]]
+        lf = VA.leaf_from_cache(p, witness=p["witness"])
+        p["archetype"], p["arch_conf"], p["arch_cause"] = lf.archetype, round(lf.arch_conf, 4), lf.arch_cause
+        p["measure"] = [round(x, 5) for x in lf.measure]
+        p["head_y"], p["foot_y"] = round(lf.head_y, 5), round(lf.foot_y, 5)
+        p["skew"], p["skew_seen"] = round(lf.skew, 4), lf.skew_seen
+        p["channels"] = {**_aux_state(p["witness"]), "fount_why": lf.fount_why,
+                         "read_why": lf.read_why, "skew_why": lf.skew_why}
+        for bx, nb in zip(p["boxes"], lf.boxes):
+            bx["label"], bx["conf"], bx["cause"] = nb.label, round(nb.conf, 4), nb.cause
+        moved += sum(1 for a, bx in zip(before, p["boxes"]) if a != bx["label"])
+    BUNDLE.write_text(json.dumps(b, indent=1))
+    print(f"re-named {b['n']} plate(s); {moved} box label(s) moved -> {BUNDLE.relative_to(SPIKE)}")
+    return 0
+
+
 def main() -> int:
     if "--manifest" in sys.argv:
         return build_manifest()
     if "--build" in sys.argv:
         return build()
+    if "--rename" in sys.argv:
+        return rename()
     return report()
 
 

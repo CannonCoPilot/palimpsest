@@ -70,6 +70,7 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 
+import detect as D                                       # noqa: E402
 import witnesses as W                                    # noqa: E402
 from score_head_regions import GOLD                      # noqa: E402
 
@@ -116,21 +117,222 @@ SIG, CAT = "SG", "CW"   # gathering signature · catchword
 # 0.857-1.072, so the populations OVERLAP ON BOTH SIDES and no constant separates them.
 PN = "PN"
 
+# ---------------------------------------------------------------- R16.5: THE ONTOLOGY
+# 🔴 THE EYE REVIEW'S CENTRAL FINDING, AND IT IS NOT A CUE BUG. Over 208 leaves and 893 findings,
+# the largest defect families are genres THIS EDITION PRINTS AND `CLASSES` HAD NO WORD FOR — E12
+# ornament (51), E15 annotation (40), E10 paratext-has-no-grammar (34), E13 lost columns (15). A
+# class with no name is not skipped, it is MISFILED (R14.9's rule, restated on a corpus): the
+# annotation block came out `MT` on OT1-1609-B_0417, `SG` on NT-1582-B_0036 and BOTH `CH` and `MT`
+# within NT-1582-B_0038 — one genre, three names, one leaf.
+#
+# ⚠️ EVERY NAME BELOW IS TAKEN FROM ROADMAP R12'S EIGHT-ARCHETYPE TABLE, NOT INVENTED HERE. That
+# table already declares Annotation, DropCap, BookTitle/DisplayTitle and TableBlock as the required
+# classes of archetypes E, C, D/G and H. Minting a second vocabulary beside it is the
+# two-sources-of-truth defect this file has now paid for three times.
+#
+# ⚠️ AND THE ADMISSION RULE IS R12.1'S OWN: *"a class asserted but not present invites the model to
+# hallucinate it"*. So a class is declared here ONLY if the eye review ATTESTS it with named
+# exemplar leaves. The three that FAILED that test are recorded below the inventory, with the
+# evidence that excluded them — an ontology is a claim about the book and must be refutable.
+#
+# ANNOTATION — the commentary block. Archetype E's class. ⚠️ It is NOT the argument: an argument is
+# the italic summary BEFORE a chapter, an annotation is the smaller-type commentary AFTER the
+# scripture, and E15 shows the two are confused only because neither had a home. Attested:
+# OT1-1609-B_0417 (`MT`) · NT-1582-B_0036 (`SG`) · _0037 (`CH`) · _0038 (`CH` and `MT`, one leaf) ·
+# _0117 (`MT`, `SG`, `SG` — three names on one leaf, E15 at its worst).
+AN = "AN"
+# ORNAMENT — fleuron, headpiece, tailpiece, printer's rule, divider. NON-TEXTUAL, and that is the
+# point: it carried FIVE text classes across the corpus (E12). Roadmap R12 lists `Rule` and `Brace`
+# as separate sorts of archetype H; they are folded in here because a rule IS an ornament at region
+# grain and splitting them would declare a class the detector cannot deliver. Attested:
+# NT-1582-B_0028 (`SG`) · _0034 (`CH`) · _0117 (`SG`) · OT2-1610-P_1089 (divider rule as `CH`).
+ORN = "OR"
+# DROP CAP — the woodcut initial. Kept SEPARATE from `OR` although both are cut in wood, because
+# they differ in every respect that matters to a layout model: a drop cap sits INSIDE the measure,
+# at the head of a text block, and it is part of the reading order; an ornament is not. R12 declares
+# `DropCap` as archetype C's own class. Attested: NT-1582-B_0035 · _0116 · _0118 · _0119 · _0122 ·
+# _0246 — named `MT`, `MN` and `CH` between them.
+DROP = "DC"
+# TABLE BLOCK — tabular and index matter, including the multi-column structure E13 records as lost.
+# ⚠️ THIS IS THE CLASS THAT DISSOLVES THE SCOPE EXCLUSION: 15 of the 18 out-of-scope leaves were put
+# out because *"table and index rows have no correct answer in CLASSES"*. Attested: NT-1582-B_0030
+# (table of books) · _0313/_0314/_0317 (harmony) · _0778..._0781 (liturgical) · _0782/_0802 and
+# OT2-1610-P_1112/_1113 (topical index) · _0803/_0804 (glossary, errata).
+TBL = "TB"
+# DISPLAY TITLE — the page's or section's own title, set in display type. R12's `BookTitle`
+# (archetype D) and `DisplayTitle` (archetype G) are ONE class at region grain; which of the two a
+# given line is depends on the archetype, and the archetype is already decided before naming.
+# Attested: NT-1582-B_0030 box 0 (`MT`) · _0248 box 2 (`MT`) · _0313 (`MN`) · _0803 box 6 (`CW`).
+DISP = "DT"
+# COLOPHON — the closing formula of a text unit: `FINIS.`, `LAVS DEO`, *The end of the Prophetical
+# Bookes.*, the Doway dateline, and the approbators' SUBSCRIPTIONS. ⚠️ Those subscriptions are the
+# sharpest case for this class: they are signatures in the other sense of the word, and `SG` — the
+# QUIRE signature — swallowed them on OT1-1609-P_0006 and OT2-1610-P_0006 for want of anywhere else
+# to put them. Attested also: OT1-1609-P_0018 (dateline as `CH`) · OT2-1610-P_1085 (`FINIS.` as
+# `SG`) · _0898 (`SG`) · NT-1582-B_0804 (`LAVS DEO` as `SG`).
+COL = "CO"
+
 # THE AGENT'S CLASS INVENTORY, DECLARED ONCE. ⚠️ `score_foreedge` used to keep its own copy of this
 # so that "the agent has no name for this class" would be a CHECKED claim rather than a reading of
 # the source — a good instinct that became a second source of truth, and R14.10a caught it doing
 # exactly what a second source of truth does: the run that scored `AR` at 4/4 also printed
 # `AR ⚠️ NO NAME IN THE AGENT` in the same output. One declaration; every consumer imports it.
-CLASSES = frozenset({RH, MN, MT, CH, AR, PN, SIG, CAT, ABSTAIN})
+CLASSES = frozenset({RH, MN, MT, CH, AR, PN, SIG, CAT, ABSTAIN,
+                     AN, ORN, DROP, TBL, DISP, COL})
+
+# 🔴 DECLARED AND NOT ADOPTED, WITH THE EVIDENCE THAT EXCLUDED EACH. R12.1's rule cuts both ways: a
+# class present and unnamed is a misfiling, and a class named but absent is an invitation to
+# hallucinate. These three were considered and REFUSED, and they are written down because a
+# rejection nobody recorded is indistinguishable from a possibility nobody thought of.
+#
+#   ProseBlock (R12 archetype G) — REFUSED. The preface prose on OT1-1609-P_0008/_0009 already names
+#     correctly as `RH`/`MT`/`MN`; `plates/scope.json` records exactly that as its reason for
+#     keeping those leaves IN. Minting a class to split a class that is working buys nothing and
+#     costs a confusion pair.
+#   NoteRef (R12 archetype E) — REFUSED ON THE DETECTION FLOOR. Note-reference marks are single
+#     sorts (`*` `†` `‡` `¶`). R14.15 records that the detector may not localise objects at this
+#     grain at all, and NOT ONE of the 893 eye findings reports a misnamed note reference — because
+#     no box was ever drawn on one. A class the detector cannot deliver is unfalsifiable here.
+#   VerseNumber — REFUSED, same floor, same evidence: zero findings in 208 leaves.
+#
+# 🔑 WHICH CLASSES CAN HOLD A BLOCK OF TEXT, DECLARED RATHER THAN EMERGENT. This is the eye review's
+# deepest finding made checkable. `MT` is containment — a box named MainText scores as correct
+# whatever it actually holds — and the review found `SG`, `CH` and `MN` each acquiring that property
+# BY ACCIDENT, wherever the frame pushed matter outside itself: E10 (*"SG and CH both act as
+# containment, not only MT"*), E18 (*"MT, SG, CH and now MN have all acted as containment"*), E16.
+# Four containment classes means four ways for a wrong label to score as right. Declaring the set
+# lets a scorer ASK whether a furniture class is swallowing a block, instead of that being something
+# only an eye on a plate can see.
+CONTAINMENT = frozenset({MT, AN, TBL})               # may legitimately hold a block of running text
+PAGE_FURNITURE = frozenset({RH, PN, SIG, CAT, COL})  # fixed by position on the leaf, never a block
+STRUCTURAL = frozenset({CH, AR, DISP})               # heads and openings: they DELIMIT, not hold
+NON_TEXT = frozenset({ORN, DROP})                    # ink that carries no reading
+# ⚠️ `PAGE_FURNITURE` IS NOT `FURNITURE`. The name below, defined further down and already in use,
+# holds SURYA'S OWN vocabulary (`PageHeader`/`PageFooter`) and is a cue input; this one holds THIS
+# agent's classes and is a role declaration. They were one word apart and would have shadowed each
+# other silently — the near-collision is recorded rather than resolved by hoping nobody re-reads it.
+# ⚠️ `MN` IS DELIBERATELY IN NONE OF THESE FOUR. A marginal note is defined by BESIDENESS — a fact
+# about the frame, not about what it holds — and E18 caught it acting as containment on the harmony
+# pages. Forcing it into a role here would settle by declaration a question the corpus has not
+# answered; it is left OPEN, and named as open, which is the honest state.
+_ROLES = {"containment": CONTAINMENT, "furniture": PAGE_FURNITURE,
+          "structural": STRUCTURAL, "non-text": NON_TEXT}
+
+# THE SAME INVENTORY IN A STABLE, ROLE-GROUPED ORDER, because `CLASSES` is a frozenset and a
+# frozenset has no order. ⚠️ Anything that PRESENTS the classes to a person — the review tool's
+# button row — was indexing into an arbitrary iteration order, which is fine until the set changes
+# and then is a silently different UI. Grouped so that adjacent buttons are classes a reviewer
+# actually confuses, with the abstention LAST so it is never the accidental first choice.
+CLASSES_ORDERED = [MT, AN, TBL,              # containment
+                   CH, AR, DISP,             # structural
+                   MN,                       # role deliberately OPEN — see above
+                   RH, PN, SIG, CAT, COL,    # page furniture
+                   ORN, DROP,                # non-text
+                   ABSTAIN]
+assert set(CLASSES_ORDERED) == set(CLASSES) and len(CLASSES_ORDERED) == len(CLASSES), (
+    "CLASSES_ORDERED and CLASSES disagree — a class was added to one and not the other, which is "
+    "the second-source-of-truth defect. Checked at import so it can never ship.")
 
 # §3.2a's REQUIRES/FORBIDS contract, for the archetypes reachable in this window. The full eight
 # are Roadmap R12; this file carries the ones the window can actually exhibit, and says so.
 ARCHETYPES = {
-    "A":  {"requires": {MT, RH}, "forbids": {MN, CH, AR}, "name": "plain text page"},
-    "B1": {"requires": {MT, RH, MN}, "forbids": {CH, AR}, "name": "text + disjoint marginal apparatus"},
-    "C":  {"requires": {MT, CH}, "forbids": set(), "name": "chapter opening"},
-    "BC": {"requires": {MT, CH, MN}, "forbids": set(), "name": "chapter opening WITH apparatus"},
+    "A":  {"requires": {MT, RH}, "forbids": {MN, CH, AR, AN, TBL, DISP, DROP, COL},
+           "name": "plain text page"},
+    "B1": {"requires": {MT, RH, MN}, "forbids": {CH, AR, AN, TBL, DISP, DROP, COL},
+           "name": "text + disjoint marginal apparatus"},
+    "C":  {"requires": {MT, CH}, "forbids": {AN, TBL}, "name": "chapter opening"},
+    "BC": {"requires": {MT, CH, MN}, "forbids": {AN, TBL}, "name": "chapter opening WITH apparatus"},
+    # 🔴 R16.5 — THE FOUR BELOW ARE DECLARED AND UNREACHABLE, WHICH IS SAID HERE RATHER THAN LEFT TO
+    # BE DISCOVERED. `classify_archetype` can emit only `A`/`B1`/`C`/`BC`; it has no cue for an
+    # annotation leaf, a book opening, a prelim or a table. So these four entries are R12.2's
+    # contract ("required and forbidden classes as DATA, not prose") arriving BEFORE the classifier
+    # that will use it — which is the right order, because the contract is what makes the
+    # classifier checkable. ⚠️ Their FORBIDS sets are therefore UNTESTED, exactly as the note below
+    # says of `A`'s and `B1`'s `AR` entries. `_archetype_reachability()` prints the gap on every run
+    # so it is a measured number and not a comment nobody re-reads.
+    "D":  {"requires": {DISP, AR, MT}, "forbids": {TBL, MN}, "name": "book opening"},
+    "E":  {"requires": {AN, RH}, "forbids": {AR, TBL, DROP}, "name": "annotation leaf"},
+    # ⚠️ `G` IS THE ONE ARCHETYPE R12 STATES AS A DISJUNCTION — *"DisplayTitle **or** ProseBlock"* —
+    # and a `requires` SET cannot say "or". Rather than quietly drop half the clause, the disjunct
+    # is carried in its own key. ProseBlock was refused above, so today the branch that survives is
+    # `DISP`; when the census (R12.1) finds a prelim leaf with neither, this key is where the
+    # refutation lands.
+    "G":  {"requires": {RH}, "anyof": {DISP, MT}, "forbids": {AR, CH, DROP},
+           "name": "prelims (title page, approbatio, preface)"},
+    "H":  {"requires": {TBL}, "forbids": {MT, AR, CH, DROP}, "name": "tabular matter"},
 }
+# 🔴 AND TWO OF R12'S EIGHT ARE DELIBERATELY ABSENT. `B2` (INTERLEAVED apparatus) and `F` (MIXED
+# LEAF) are both defined by a BOUNDARY WITHIN the leaf, and this agent has no representation for
+# one: it names whole boxes against a single page-level frame. Declaring them would create two
+# archetypes that nothing can ever emit and no forbid could ever bind — the trivially-satisfied
+# failure mode below, repeated on purpose instead of by accident. They stay Roadmap R12.3's work.
+# ⚠️ `F` IS NOT HYPOTHETICAL HERE: leaf 417 of the scored witness IS a mixed leaf (body, then an
+# ANNOTATIONS section, then a new chapter), and the eye review's E22 records the key to the marks
+# sharing OT1-1609-P_0024 with the Argument of Genesis. A leaf-level scope decision cannot reach
+# either, which is precisely why R12.3 exists.
+
+
+def _emittable_classes() -> set[str]:
+    """Which declared classes a cue can actually COMMIT, read off `_cue`'s own returns.
+
+    🔴 THIS IS THE CHECK THAT KEEPS R16.5 HONEST. Widening `CLASSES` costs nothing and proves
+    nothing: six genres now have a correct answer available, and not one of them has a cue that
+    emits it. Left unstated, the wider inventory would read as six classes gained. Stated, it reads
+    as what it is — the misfiling target removed, the recognition not yet built.
+
+    ⚠️ Parsed, not listed, for the same reason as `_archetype_reachability`: a hand-kept list would
+    still claim `AN` is unreachable on the day someone writes the annotation cue.
+    """
+    import ast
+    import inspect
+    import textwrap
+    tree = ast.parse(textwrap.dedent(inspect.getsource(_cue)))
+    names = {elt.id
+             for node in ast.walk(tree) if isinstance(node, ast.Return)
+             if isinstance(node.value, ast.Tuple)
+             for elt in node.value.elts[:1] if isinstance(elt, ast.Name)}
+    got = {globals()[n] for n in names if n in globals() and globals()[n] in CLASSES}
+    if not got:
+        raise RuntimeError("emittable classes could not be parsed from `_cue` — its branches no "
+                           "longer `return (LABEL, conf, cause)` with LABEL a module constant. FIX "
+                           "THE PARSE; an empty set would read as 'the agent names nothing'.")
+    return got
+
+
+def _archetype_reachability() -> tuple[set[str], set[str]]:
+    """Which declared archetypes can `classify_archetype` actually EMIT, and which cannot.
+
+    ⚠️ READ OFF `classify_archetype`'S OWN SOURCE, not restated from a second list. A hand-kept
+    copy of "the four it can emit" is precisely the two-sources-of-truth defect R14.9 and R14.10a
+    each paid for, and it would fail in the quietest possible way: the day someone teaches the
+    classifier archetype `H`, a hardcoded set goes on reporting it unreachable and the scorer prints
+    a reassuring number about a state of affairs that ended. So the archetype literals are parsed
+    out of the function that assigns them, and adding a branch updates this automatically.
+
+    ⚠️ REACHABLE IS NOT THE SAME AS OBSERVED. This answers "can the code ever say `C`", not "did it
+    say `C` on this window" — `A` is reachable and never fires on leaves 400-419, which is the
+    standing reason the FORBIDS contract does not yet bind.
+    """
+    import ast
+    import inspect
+    import textwrap
+    tree = ast.parse(textwrap.dedent(inspect.getsource(classify_archetype)))
+    reachable = {
+        elt.value
+        for node in ast.walk(tree)
+        if isinstance(node, ast.Assign)
+        # the classifier's branches all read `a, cause = "<archetype>", "<why>"`
+        for tgt in node.targets if isinstance(tgt, ast.Tuple)
+        and any(isinstance(e, ast.Name) and e.id == "a" for e in tgt.elts)
+        if isinstance(node.value, ast.Tuple)
+        for elt in node.value.elts[:1]
+        if isinstance(elt, ast.Constant) and isinstance(elt.value, str)
+    }
+    if not reachable:                      # the parse found nothing — say so, never report a clean 0
+        raise RuntimeError("archetype reachability could not be parsed from classify_archetype — "
+                           "its branches no longer assign `a, cause = \"X\", ...`. FIX THE PARSE; "
+                           "an empty reachable set would read as 'all eight unreachable'.")
+    return reachable, set(ARCHETYPES) - reachable
 # ⚠️ AND THOSE TWO NEW `AR` FORBIDS ARE TRIVIALLY SATISFIED, WHICH IS SAID HERE RATHER THAN LEFT TO
 # BE DISCOVERED. An argument only occurs at a chapter opening, so `classify_archetype` reads an `AR`
 # cue AS evidence of one — which means a leaf carrying `AR` is typed `C` or `BC`, and `A`/`B1` can
@@ -288,6 +490,24 @@ class Box:
     label: str = ""
     conf: float = 0.0
     cause: str = ""
+    # R16.20 -- THE DETECTOR'S OWN CONFIDENCE IN THIS BOX, carried at last. `see()` received it
+    # and dropped it on the floor for the whole life of this agent, so no cue could weigh a
+    # proposal and `frame()` could only rank boxes by AREA. That is why lowering the detection
+    # floor moved the frame on 90 of 208 leaves: the column had no way to tell a confident body
+    # block from a vague one. See `detect.py` and `plates/DETECT-PROBE-2026-09-03.md`.
+    #
+    # 🔴 THIS IS NOT `conf`, AND THE TWO MUST NEVER BE MERGED. `conf` is the CUE's confidence in
+    # the LABEL IT CHOSE -- a decision this agent made. `surya_conf` is a PERCEPTION, produced
+    # before any cue ran. Writing one into the other would feed a cue its own verdict as
+    # evidence, which is the exact trap `leaf_from_cache` refuses below.
+    #
+    # ⚠️ `surya_conf_seen` is NOT `surya_conf > 0`, for the fourth time in this file and for the
+    # same reason as `fount_seen` and `read_seen`: a box the detector scored near zero and a box
+    # from a cache written before scores were carried are DIFFERENT STATES. Collapsing them
+    # would make every box of an older cache look like a proposal the detector rejected, and
+    # `frame()`'s column filter would then empty the column on every leaf.
+    surya_conf: float = 0.0
+    surya_conf_seen: bool = False
     # R14.10a -- the fount evidence standing under this box: how many row segments of type it
     # holds, and how many of them deslant as italic. ⚠️ `fount_seen` is NOT `fount_n > 0`: a box
     # genuinely holding no measurable type and a leaf with no fount record at all are different
@@ -319,6 +539,11 @@ class Box:
 @dataclass
 class Leaf:
     leaf: int
+    # R16.2 -- WHICH WITNESS this leaf belongs to. ⚠️ A bare leaf ordinal names DIFFERENT PAGES in
+    # different witnesses, so every per-witness record (fount, skew, reading) must be addressed by
+    # the PAIR. Defaults to the scored witness so every existing caller keeps its current behaviour
+    # exactly; only `plate_book` passes anything else.
+    witness: str = WITNESS
     boxes: list[Box] = field(default_factory=list)
     measure: tuple[float, float] = (0.0, 1.0)
     head_y: float = 0.0
@@ -333,6 +558,18 @@ class Leaf:
     # `_cue` can only report "unreadable" per box, and "the record was never built" is a different
     # fact about the run that a per-box cause cannot carry.
     read_why: str = "no reading record loaded"
+    # R16.20 -- empty when every box carried a detector confidence and the framing floor therefore
+    # applied to all of them; otherwise it NAMES what bypassed it. ⚠️ Same contract as `fount_why`
+    # and `read_why`, and here for the same reason: a frame taken with the floor INERT (boxes with
+    # no score, e.g. an older cache) is a DIFFERENT CLAIM from the same frame taken with it live,
+    # and a silent equality between the two is how a re-baselined number gets read as a repair.
+    frame_why: str = "frame not yet derived"
+    # R16.20 -- boxes `frame` was allowed to use but no cue was offered, because they scored below
+    # `detect.CUE_MIN_CONF`. ⚠️ KEPT, NOT DROPPED: an unoffered box and a rejected box are
+    # different states, and this file has already paid once for collapsing that distinction (see
+    # the E2/E14 standing correction — 188 leaves abstaining WITH A CAUSE read as failure).
+    withheld: list[Box] = field(default_factory=list)
+    withheld_why: str = ""
     # R14.14 -- this leaf's own baseline angle, in degrees. ⚠️ `skew_seen` is NOT `skew != 0`, for
     # the third time in this file and for the same reason: an UNMEASURED leaf and a SQUARE leaf are
     # different states, and collapsing them turns "we never looked" into "it is flat".
@@ -350,14 +587,21 @@ def see(image, predictor) -> list[Box]:
     me of the tree, & I did eate. the diuel that"` is one line object spanning body and margin. No
     downstream boxer of any kind can undo a boundary destroyed upstream, so the agent must see the
     page.
+
+    🔴 R16.20 -- THIS FUNCTION USED TO THROW THE DETECTOR'S CONFIDENCE AWAY. It built
+    `Box(x0, y0, x1, y1, b.label)` and dropped `b.confidence` one line after receiving it, so no
+    cue could weigh a proposal and `frame()` could rank boxes only by AREA. That single omission
+    is why the detection floor could not be lowered: with no score on the box there was nothing
+    to filter the framing column by, and a lower floor moved the frame on 90 of 208 leaves.
+
+    Detection settings now come from `detect.py`, which owns them and says why. ⚠️ THIS IS
+    LECTOR'S PERCEPTION PATH AND NOT EVERY CALLER SHOULD SHARE IT -- `score_surya_layout.py`,
+    `surya_layout_probe.py` and `rung1_surya.py` measure SURYA OFF THE SHELF and must keep the
+    shipped defaults, or the adoption bar moves with the thing measured against it.
     """
-    Wp, Hp = image.size
-    res = predictor([image])[0]
-    out = []
-    for b in res.bboxes:
-        x0, y0, x1, y1 = b.bbox
-        out.append(Box(x0 / Wp, y0 / Hp, x1 / Wp, y1 / Hp, b.label))
-    return out
+    out = [Box(x0, y0, x1, y1, label, surya_conf=score, surya_conf_seen=True)
+           for x0, y0, x1, y1, label, score in D.detect(image, predictor)]
+    return D.dedup(out)
 
 
 # ---------------------------------------------------------------- the frame
@@ -383,13 +627,90 @@ def frame(boxes: list[Box], lf: Leaf) -> tuple[tuple[float, float], float, float
         # The agent cannot frame the page. It returns the full page; every cue downstream then reads
         # as thin-margin and abstains, which is the correct behaviour, not a fallback.
         return (0.0, 1.0), 0.0, 1.0
+    # 🔴 R16.20a -- THE ANCHOR IS DRAWN FROM THE SAME CONFIDENT POPULATION AS THE COLUMN, AND
+    # LEAVING IT OUT WAS A REAL DEFECT THAT THE PROBE COULD NOT SEE. R16.20 §3 reports that
+    # swapping the anchor rule moves the corpus count from 90 to 89, and concludes the anchor is
+    # not the mechanism. That is true of the anchor's IDENTITY and false of its POPULATION, and
+    # the difference cost two leaves in the rebuild.
+    #
+    # The anchor does not merely get picked. `COLUMN_OVERLAP` is a fraction OF THE ANCHOR'S OWN
+    # WIDTH, so the anchor sets the admission rule for every other box. On `NT-1582-B_0439` a
+    # `Text` box scoring 0.137 spanning x 0.106-0.899 won `max(area)`; admission then demanded
+    # 0.397 of horizontal overlap, and the real body text at x 0.395-0.774 is only 0.379 wide, so
+    # it could not qualify AT ANY CONFIDENCE. The foot came from the upper half of the page and
+    # the frame lost a third of its span. `OT2-1610-P_1135` failed the same way on a 0.199
+    # `ListGroup` spanning almost the whole leaf.
+    #
+    # ⚠️ This is why one-knob-at-a-time was not enough here. Filtering the column alone looks
+    # clean in aggregate because the interaction needs a low-confidence box to win max(area) AND
+    # be wide enough to raise the bar past the real text. Two leaves in 208.
+    #
+    # 🔴 AND YET THE ANCHOR IS DELIBERATELY *NOT* FILTERED, AND THIS IS AN OPEN DEFECT RATHER THAN
+    # A SETTLED RULE. Filtering it is the obvious repair and it does not survive measurement: the
+    # body blocks the lowered floor recovers ARE the low-confidence ones, so an anchor floor
+    # excludes the very boxes the whole change exists to reach. Swept over all 208 leaves against
+    # the 26 frames the old bundle had collapsed:
+    #
+    #     anchor floor   0.10   0.15   0.20   0.25   0.40      (column floor held at 0.40)
+    #     REPAIRED          7      5      5      3      0
+    #     still collapsed  19     21     21     23     26
+    #     BROKEN            2      1      1      1      1
+    #
+    # There is NO interior optimum. Unlike the column floor -- whose curve is U-shaped, which is
+    # what licensed choosing 0.40 -- this one is monotone, and every cell that repairs also
+    # breaks. Choosing a value would be fitting a constant to 26 leaves with no gold behind it,
+    # which is the failure this function's own docstring warns about two paragraphs above.
+    #
+    # So: no new constant, the variant that repairs most, and the damage NAMED. `NT-1582-B_0439`
+    # and `OT2-1610-P_1135` are broken by this line, `NT-1582-B_0804` moves for a third reason,
+    # and 19 collapsed frames are still collapsed. All of them stay OPEN and block, and none is
+    # traded away by a threshold picked to make the total look better.
+    # 🔑 THE REAL FIX IS UPSTREAM: `COLUMN_OVERLAP` is a fraction OF THE ANCHOR'S OWN WIDTH, so a
+    # spuriously wide anchor raises the admission bar for everyone. That is a redesign of the
+    # admission rule and it needs GOLD REGIONS to adjudicate, which is step (2) of the order.
     body = max(boxes, key=lambda b: b.area)
     bw = max(1e-9, body.x1 - body.x0)
+    # 🔴 R16.20 -- THE COLUMN IS FILTERED BY THE DETECTOR'S CONFIDENCE, AND THIS IS THE LINE THAT
+    # LETS THE DETECTION FLOOR COME DOWN. The measure is the MEDIAN of these boxes' edges, so
+    # every member votes on where the frame is. At the shipped floor of 0.40 the column held 2.0
+    # boxes on the median leaf; at a detection floor of 0.10 it holds 5.0, and the median moves --
+    # on 90 of 208 leaves, 50 of them by more than a tenth of the page, against a 6-leaf raster
+    # noise floor. Filtering here takes that to 15, of which 8 are collapsed frames being REPAIRED.
+    #
+    # 🔑 IT IS NOT THE ANCHOR. I expected `max(area)` above to be the defect and it is not: three
+    # confidence-aware anchor rules moved the count from 90 to 89. The anchor picks ONE box; the
+    # column decides the EDGES, and a swollen column moves them whatever anchors it.
+    #
+    # ⚠️ `COLUMN_MIN_CONF` IS A MEASURED OPTIMUM, NOT A SAFETY MARGIN. The curve is U-shaped: 0.30
+    # gives 34, 0.40 gives 15, 0.50 gives 44, 0.60 gives 69, because above 0.50 genuine body boxes
+    # leave the column and the frame degrades from the other side. Raising it is not the safe
+    # direction. `plates/DETECT-PROBE-2026-09-03.md` §4 holds the curve.
+    scored = [b for b in boxes if b.surya_conf_seen]
     column = [b for b in boxes
               if b.area >= SMALL_AREA
+              and (not b.surya_conf_seen or b.surya_conf >= D.COLUMN_MIN_CONF)
               and max(0.0, min(b.x1, body.x1) - max(b.x0, body.x0)) >= COLUMN_OVERLAP * bw]
     if not column:
+        # ⚠️ NOT A FALLBACK THAT HIDES A GAP. Two different situations reach here and the caller is
+        # told which by `lf.frame_why`: a leaf whose boxes carry NO score at all (an older cache,
+        # or an off-the-shelf caller) in which case the filter above was INERT by construction and
+        # this is the pre-R16.20 behaviour exactly; or a leaf where every box scored below the
+        # framing floor, which is a real fact about the leaf and not a defect in the rule.
         column = [body]
+    if not scored:
+        lf.frame_why = ("no detector confidence on any box — the framing floor was INERT; "
+                        "this frame is pre-R16.20 behaviour, not a filtered one")
+    elif not any(b.surya_conf >= D.COLUMN_MIN_CONF for b in boxes):
+        # Every box on the leaf scored below the framing floor, so the column fell back to the
+        # anchor alone. REPORTED, because a leaf the detector was uncertain about everywhere is a
+        # fact worth carrying, not a case to silently treat like a confident one.
+        lf.frame_why = (f"all {len(boxes)} boxes scored below the framing floor "
+                        f"{D.COLUMN_MIN_CONF:.2f} — the column is the anchor alone")
+    elif len(scored) != len(boxes):
+        lf.frame_why = (f"{len(boxes) - len(scored)} of {len(boxes)} boxes carry no detector "
+                        f"confidence and BYPASSED the framing floor")
+    else:
+        lf.frame_why = ""
     left = st.median([b.x0 for b in column])
     right = st.median([b.x1 for b in column])
     # R14.14 -- the head and foot lines are the extreme ROTATED y of the column, so they are
@@ -408,14 +729,37 @@ def frame(boxes: list[Box], lf: Leaf) -> tuple[tuple[float, float], float, float
 _FOUNT_CACHE: dict | None = None
 
 
-def _fount_record() -> dict | None:
-    """The fount record, or None if it has not been built. Loaded once."""
+def _rec_path(kind: str, wid: str):
+    """Where a per-witness perception record lives.
+
+    ⚠️ THE SCORED WITNESS KEEPS ITS EXISTING FILENAME, and that is not tidiness — `score_argument_
+    agent.py` and `score_skew_frame.py` prove their pre-registered negatives by REBINDING `VA.FOUNT`
+    and `VA.SKEW` to a path that does not exist. Reading the module global here, at call time, is
+    what keeps those two proofs working. Resolve the path eagerly and both negatives would silently
+    start passing while testing nothing.
+
+    Every other witness is keyed by witness ALONE, with no leaf window in the name: their leaf sets
+    come from the plate manifest and are not contiguous, so a `400-419` style window would be a lie
+    about what the file covers.
+    """
+    if wid == WITNESS:
+        return {"fount": FOUNT, "skew": SKEW, "reading": READING}[kind]
+    return _HERE / "gold" / f"{kind}_{wid}.json"
+
+
+def _fount_record(wid: str = WITNESS) -> dict | None:
+    """The fount record for `wid`, or None if it has not been built. Loaded once per witness."""
     global _FOUNT_CACHE
-    if _FOUNT_CACHE is None:
-        if not FOUNT.is_file():
+    # ⚠️ `score_argument_agent.py` clears this by assigning None. Tolerating that here is what lets
+    # the withheld-record negative keep working against a per-witness cache.
+    if not isinstance(_FOUNT_CACHE, dict):
+        _FOUNT_CACHE = {}
+    if wid not in _FOUNT_CACHE:
+        p = _rec_path("fount", wid)
+        if not p.is_file():
             return None
-        _FOUNT_CACHE = json.loads(FOUNT.read_text())
-    return _FOUNT_CACHE
+        _FOUNT_CACHE[wid] = json.loads(p.read_text())
+    return _FOUNT_CACHE[wid]
 
 
 def attach_fount(lf: Leaf) -> None:
@@ -433,9 +777,10 @@ def attach_fount(lf: Leaf) -> None:
     roman slant is the reference. Where that roman is NOT upright the whole leaf abstains rather
     than reporting its scripture as italic (`region_head.ARGUMENT_UPRIGHT_TOL`).
     """
-    rec = _fount_record()
+    rec = _fount_record(lf.witness)
     if rec is None:
-        lf.fount_why = "fount record not built — run witness/build_fount_record.py"
+        lf.fount_why = (f"fount record not built for {lf.witness} — run "
+                        f"witness/build_fount_record.py --build --witness {lf.witness}")
         return
     page = next((d for d in rec["leaves"] if d["leaf"] == lf.leaf), None)
     if page is None:
@@ -468,13 +813,16 @@ def attach_fount(lf: Leaf) -> None:
 _SKEW_CACHE: dict | None = None
 
 
-def _skew_record() -> dict | None:
+def _skew_record(wid: str = WITNESS) -> dict | None:
     global _SKEW_CACHE
-    if _SKEW_CACHE is None:
-        if not SKEW.is_file():
+    if not isinstance(_SKEW_CACHE, dict):
+        _SKEW_CACHE = {}
+    if wid not in _SKEW_CACHE:
+        p = _rec_path("skew", wid)
+        if not p.is_file():
             return None
-        _SKEW_CACHE = json.loads(SKEW.read_text())
-    return _SKEW_CACHE
+        _SKEW_CACHE[wid] = json.loads(p.read_text())
+    return _SKEW_CACHE[wid]
 
 
 def attach_skew(lf: Leaf) -> None:
@@ -485,9 +833,10 @@ def attach_skew(lf: Leaf) -> None:
     and `attach_reading` run AFTER `frame` because they are expressed in the measure. Getting this
     backwards would silently frame every leaf at zero degrees and look exactly like success.
     """
-    rec = _skew_record()
+    rec = _skew_record(lf.witness)
     if rec is None:
-        lf.skew_why = "skew record not built — run witness/build_skew_record.py --build"
+        lf.skew_why = (f"skew record not built for {lf.witness} — run "
+                       f"witness/build_skew_record.py --build --witness {lf.witness}")
         return
     d = next((x for x in rec["leaves"] if x["leaf"] == lf.leaf), None)
     if d is None:
@@ -561,8 +910,8 @@ def pn_candidate(b: Box, lf: Leaf) -> bool:
 _READ_CACHE: dict | None = None
 
 
-def _reading_record() -> dict | None:
-    """The reading record, or None if it is absent or STALE. Loaded once.
+def _reading_record(wid: str = WITNESS) -> dict | None:
+    """The reading record for `wid`, or None if it is absent or STALE. Loaded once per witness.
 
     ⚠️ A RECORD BUILT BY ANOTHER MODEL IS REFUSED, NOT USED. R13.1's finding was that a component
     can be pointed at and never loaded; the mirror-image defect is a cached reading that outlives the
@@ -570,15 +919,18 @@ def _reading_record() -> dict | None:
     The stamp carries the artefact DIGEST, not just the name, because a name can be reused.
     """
     global _READ_CACHE
-    if _READ_CACHE is None:
-        if not READING.is_file():
+    if not isinstance(_READ_CACHE, dict):
+        _READ_CACHE = {}
+    if wid not in _READ_CACHE:
+        p = _rec_path("reading", wid)
+        if not p.is_file():
             return None
-        d = json.loads(READING.read_text())
+        d = json.loads(p.read_text())
         import recogniser as RG
         if d.get("stamp", {}).get("model_sha") != RG.provenance()["model_sha"]:
             return None
-        _READ_CACHE = d
-    return _READ_CACHE
+        _READ_CACHE[wid] = d
+    return _READ_CACHE[wid]
 
 
 def attach_reading(lf: Leaf) -> None:
@@ -589,10 +941,10 @@ def attach_reading(lf: Leaf) -> None:
     (`score_pagenumber_agent.py --withheld`): a cue whose evidence can be removed without changing
     the answer was never reading the evidence.
     """
-    rec = _reading_record()
+    rec = _reading_record(lf.witness)
     if rec is None:
-        lf.read_why = ("reading record absent or built by a different model — "
-                       "run witness/build_reading_record.py --build")
+        lf.read_why = (f"reading record for {lf.witness} absent or built by a different model — "
+                       f"run witness/build_reading_record.py --build --witness {lf.witness}")
         return
     lf.read_why = ""
     for r in rec["readings"]:
@@ -897,6 +1249,27 @@ def settle(lf: Leaf) -> Leaf:
     """
     attach_skew(lf)          # R14.14 -- BEFORE `frame`; the frame is expressed in rotated y
     lf.measure, lf.head_y, lf.foot_y = frame(lf.boxes, lf)
+    # 🔴 R16.20 -- THE CUE FLOOR, AND ITS POSITION IN THIS SEQUENCE IS THE WHOLE DESIGN.
+    # It runs AFTER `frame` and BEFORE everything that names, because the two steps want
+    # OPPOSITE things from a low-confidence box:
+    #   * `frame` NEEDS them. The body blocks the lowered detection floor recovers ARE the
+    #     low-confidence ones, and 7 of the 26 collapsed frames are repaired by an anchor that
+    #     scores below 0.40. Filtering before `frame` returns all 7 repairs to collapsed.
+    #   * every CUE is harmed by them, costing 6 MarginNote entries (117/121 -> 111/121).
+    # Filtering in one place at one time cannot serve both, so the split is by STAGE.
+    #
+    # ⚠️ WITHHELD, NOT DISCARDED, AND THE DIFFERENCE IS THE ONE E2/E14 ALREADY TAUGHT THIS FILE.
+    # A box that was never offered to a cue and a box a cue rejected are different states. These
+    # are kept on the leaf, written to the bundle, and counted in `withheld_why`, so "the agent
+    # did not name this" stays distinguishable from "the agent did not see this" — and so R16.6
+    # can lower this floor without re-detecting anything.
+    keep, held = [], []
+    for b in lf.boxes:
+        (held if b.surya_conf_seen and b.surya_conf < D.CUE_MIN_CONF else keep).append(b)
+    lf.boxes, lf.withheld = keep, held
+    lf.withheld_why = (f"{len(held)} of {len(held) + len(keep)} boxes scored below the cue floor "
+                       f"{D.CUE_MIN_CONF:.2f} — offered to `frame`, withheld from every cue"
+                       if held else "")
     attach_fount(lf)
     # ⚠️ AFTER `frame`, NECESSARILY — `pn_candidate` is expressed in the measure, and the measure is
     # what `frame` derives. A perception step that ran first would have to invent its own frame,
@@ -912,31 +1285,52 @@ def read_leaf(image, leaf_no: int, predictor) -> Leaf:
     return settle(Leaf(leaf=leaf_no, boxes=see(image, predictor)))
 
 
-def leaf_from_cache(d: dict) -> Leaf:
+def leaf_from_cache(d: dict, witness: str = WITNESS) -> Leaf:
     """Rebuild a Leaf from cached PERCEPTION (boxes only) and re-run the naming.
 
     ⚠️ THE CACHE HOLDS S1's OUTPUT ONLY -- the boxes Surya emitted -- and never a label. Caching a
     DECISION would mean a cue change silently scored against stale calls, which is the shape of every
     defect this project keeps finding. S2-S4 re-run on every invocation.
+
+    ⚠️ `witness` IS PART OF THE ADDRESS, NOT DECORATION (R16.2). A bare leaf ordinal names different
+    pages in different witnesses, and every perception record is looked up by the pair. Defaulting to
+    the scored witness keeps the cache path byte-identical for existing callers.
+
+    ⚠️ ONLY THE PERCEPTION KEYS ARE READ BACK. A plate record also carries `label`, `conf` and
+    `cause`; taking those would feed the agent its own previous DECISION and score a cue against
+    itself. The keys are listed explicitly here so that widening the source cannot widen the read.
+
+    🔑 R16.20 -- `surya_conf` JOINS THAT LIST, AND THE DISTINCTION IS THE WHOLE REASON IT MAY.
+    It is the DETECTOR's score, produced before any cue ran, which makes it perception in exactly
+    the sense `x0` is. `conf` beside it is the CUE's confidence in a label this agent chose, and
+    that one still stays out. Same file, adjacent fields, opposite status.
+
+    ⚠️ A RECORD WRITTEN BEFORE R16.20 HAS NO SCORE, and that is read as UNSEEN rather than as zero.
+    `frame()`'s framing floor then goes inert for that leaf and says so in `lf.frame_why`, which is
+    the honest answer: an old cache cannot be filtered by a number it never stored, and pretending
+    its boxes all scored 0.0 would empty the column on every leaf of it.
     """
-    return settle(Leaf(leaf=d["leaf"],
-                       boxes=[Box(**{k: b[k] for k in ("x0", "y0", "x1", "y1", "surya")})
+    return settle(Leaf(leaf=d["leaf"], witness=witness,
+                       boxes=[Box(**{k: b[k] for k in ("x0", "y0", "x1", "y1", "surya")},
+                                  surya_conf=b.get("surya_conf", 0.0),
+                                  surya_conf_seen="surya_conf" in b)
                               for b in d["boxes"]]))
 
 
 def build_cache() -> list[Leaf]:
     from PIL import Image
-    from surya.fast_layout import FastLayoutPredictor
 
     vol, sig = [k for k in W.WITNESSES if W.wid(*k) == WITNESS][0]
     leaves = W.leaves(vol, sig)
-    pred = FastLayoutPredictor()
+    # R16.20 -- the cap-lifted predictor, from the module that owns the detection constants.
+    pred = D.predictor()
     out = []
     for i in range(LEAF_LO, LEAF_HI):
         im = Image.open(str(leaves[i])).convert("RGB")
         boxes = see(im, pred)
         out.append({"leaf": i, "w": im.size[0], "h": im.size[1],
-                    "boxes": [{"x0": b.x0, "y0": b.y0, "x1": b.x1, "y1": b.y1, "surya": b.surya}
+                    "boxes": [{"x0": b.x0, "y0": b.y0, "x1": b.x1, "y1": b.y1,
+                               "surya": b.surya, "surya_conf": b.surya_conf}
                               for b in boxes]})
         print(f"  leaf {i}: {len(boxes)} boxes", flush=True)
     CACHE.parent.mkdir(parents=True, exist_ok=True)
@@ -1054,6 +1448,21 @@ def main() -> int:
     print("S2 — ARCHETYPES SEEN (decided before any region was named):")
     for a, n in sorted(arche.items(), key=lambda kv: -kv[1]):
         print(f"    {a:3s} {ARCHETYPES[a]['name']:38s} {n:2d} leaf/leaves")
+
+    # 🔴 R16.5 — THE ONTOLOGY'S OWN GAP, PRINTED. Three numbers that were previously only knowable
+    # by reading the source, and each of them is a limit on what any score below can mean.
+    reach, unreach = _archetype_reachability()
+    print("\nS2b — THE ONTOLOGY, AND WHAT IT CANNOT YET DO (R16.5):")
+    print(f"    classes declared      : {len(CLASSES) - 1} + abstention")
+    print(f"    classes a cue can emit: {len(_emittable_classes())}  "
+          f"— NO CUE FOR: {' '.join(sorted(CLASSES - _emittable_classes() - {ABSTAIN})) or 'none'}")
+    print(f"    archetypes declared   : {len(ARCHETYPES)}  ({' '.join(sorted(ARCHETYPES))})")
+    print(f"    archetypes reachable  : {len(reach)}  ({' '.join(sorted(reach))})"
+          f"  — UNREACHABLE: {' '.join(sorted(unreach)) or 'none'}")
+    print("    ⚠️ A DECLARED CLASS WITH NO CUE CANNOT BE SCORED AND CANNOT BE WRONG. Naming the")
+    print("    genre is the FIRST half of R16.5 — it gives the eye review's 893 findings somewhere")
+    print("    correct to point, and it removes 'no correct answer exists' as a reason to put a")
+    print("    leaf out of scope. The cues are the second half and are NOT done here.")
 
     scored = {}
     for rule in (BIND_OVERLAP, BIND_TIGHTEST):
