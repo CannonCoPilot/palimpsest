@@ -79,12 +79,14 @@ def estimate_skew(im, lo=-3.0, hi=3.0, step=0.1, margin=0.06, detail=False):
     best = max(sc)[1]
     fine = [(_profile_var(g, a), a) for a in [best - 0.3 + i*0.02 for i in range(31)]]
     peak, best = max(fine)
-    med = sorted(v for v, _ in sc)[len(sc)//2] or 1e-9
-    conf = round(peak/med, 2)
+    lo_v = min(v for v, _ in sc) or 1e-9
+    ink = sum(g.resize((1, g.height), resample=3).tobytes()) / g.height
+    conf = round(peak/lo_v, 2) if ink >= INK_MIN else 0.0     # peak over the sweep's floor; blank -> 0
     if detail: return {"skew_deg": round(best, 2), "confidence": conf}
-    return round(best, 2) if conf >= 1.5 else 0.0
+    return round(best, 2) if conf >= CONF_MIN else 0.0
 
-CONF_MIN = 1.5
+CONF_MIN = 2.0   # peak/min of the sweep: blank ~1.2, ornament ~1.8, lines of text >= 2.3
+INK_MIN = 8.0    # mean ink below paper; a blank quarter is ~3-4
 
 def warp_profile(im, margin=0.06):
     """Is one angle enough? Estimate the skew in the four quarters of the leaf (inner area, margin
@@ -102,6 +104,119 @@ def warp_profile(im, margin=0.06):
             "lr": round(abs(mean(("tl","bl")) - mean(("tr","br"))), 2), "tb": round(abs(mean(("tl","tr")) - mean(("bl","br"))), 2)}
 
 WARP_SPREAD = 0.5      # degrees between quarters beyond which one angle cannot level the leaf
+
+
+# ---------------------------------------------------------------- dewarp (column shear, "colshear-v1")
+# Gutter curl is a bend: the local line angle a(x) varies smoothly with distance from the spine and
+# may differ between the top and bottom of the leaf. Integrating tan(a) along x gives the vertical
+# displacement d(x) of a line relative to the centre column; shifting every column by -d straightens
+# the lines and keeps boxes axis-aligned. The model is resolution-free: a(x) is a quadratic in x as a
+# FRACTION of width, in degrees, for the top half (centre y=0.25) and bottom half (y=0.75), linearly
+# interpolated in y. Fit on the LEVELLED raster; applied after deskew, before boxes are read.
+import numpy as np
+
+def warp_cells(im, nx=6, margin=0.06):
+    """Local line angle in an nx×2 grid of overlapping windows (each a third of the width, so it is
+    angle-sensitive), top and bottom halves. Returns cells {"top": [(x, angle, conf)], "bot": [...]}
+    and the confidence-weighted RMS of the angles — the warp score. A rigid, levelled leaf scores ~0."""
+    w, h = im.size; x0, x1 = w*margin, w*(1-margin); y0, y1 = h*margin, h*(1-margin); ym = (y0+y1)/2
+    cells = {"top": [], "bot": []}
+    win = (x1-x0)/3
+    for i in range(nx):
+        xc_px = x0 + (x1-x0)*(i+0.5)/nx; xc = xc_px/w
+        cx0, cx1 = max(x0, xc_px-win/2), min(x1, xc_px+win/2)
+        if cx1-cx0 < win: cx0, cx1 = (x0, x0+win) if cx0 <= x0 else (x1-win, x1)
+        for half, (a0, a1) in (("top", (y0, ym)), ("bot", (ym, y1))):
+            d = estimate_skew(im.crop((int(cx0), int(a0), int(cx1), int(a1))), margin=0.0, detail=True)
+            if d["confidence"] >= CONF_MIN: cells[half].append((round(xc, 3), d["skew_deg"], d["confidence"]))
+    allc = cells["top"] + cells["bot"]
+    rms = round(float(np.sqrt(sum(c[2]*c[1]**2 for c in allc)/sum(c[2] for c in allc))), 2) if allc else 0.0
+    return cells, rms
+
+WARP_RMS = 0.35        # degrees RMS of cell angles beyond which one angle has not levelled the leaf
+
+def fit_dewarp(im, cells=None):
+    """Fit colshear-v1 to a levelled raster. Linear in x by default; quadratic only when it cuts the
+    weighted residual by more than 40 % with 5+ cells. Returns None when fewer than 3 cells carry
+    lines in both halves, or when the fitted angles are all within ±0.2° (nothing to correct)."""
+    if cells is None: cells, _ = warp_cells(im)
+    model = {"model": "colshear-v1", "y_top": 0.25, "y_bot": 0.75}
+    for half in ("top", "bot"):
+        c = cells[half]
+        if len(c) < 3: model[half] = None; continue
+        xs, ys, ws = (np.array([v[k] for v in c], dtype=float) for k in range(3)); sw = np.sqrt(ws)
+        lin = np.polyfit(xs, ys, 1, w=sw); sse1 = float(np.sum(ws*(np.polyval(lin, xs)-ys)**2))
+        coefs = lin
+        if len(c) >= 5:
+            quad = np.polyfit(xs, ys, 2, w=sw); sse2 = float(np.sum(ws*(np.polyval(quad, xs)-ys)**2))
+            if sse2 < 0.6*sse1: coefs = quad
+        model[half] = [round(float(v), 4) for v in coefs[::-1]]
+    if model["top"] is None and model["bot"] is None: return None
+    if model["top"] is None: model["top"] = model["bot"]
+    if model["bot"] is None: model["bot"] = model["top"]
+    xs = np.linspace(0.06, 0.94, 25)
+    if max(abs(_angle(model["top"], xs)).max(), abs(_angle(model["bot"], xs)).max()) < 0.2: return None
+    return model
+
+def level_angle(im):
+    """The page angle with the fallback the survey demanded: the whole-page estimate when its gate
+    passes; otherwise the confidence-weighted mean of the cell angles (a sparse italic prelim has
+    lines, just not enough ink for the page gate). Returns (deg, source) with source page|cells|none."""
+    d = estimate_skew(im, detail=True)
+    if d["confidence"] >= CONF_MIN: return d["skew_deg"], "page"
+    cells, _ = warp_cells(im); allc = cells["top"] + cells["bot"]
+    if len(allc) >= 2:
+        return round(float(sum(c[2]*c[1] for c in allc)/sum(c[2] for c in allc)), 2), "cells"
+    return 0.0, "none"
+
+def dewarp_leaf(lev):
+    """The whole decision for one levelled raster: measure, fit, apply, RE-MEASURE, keep the model only
+    if it lowered the warp score. Returns (model_or_None, report). The report always carries the
+    before/after scores and a status: rigid · dewarped · no-gain · no-fit."""
+    cells, before = warp_cells(lev)
+    rep = {"rms_before": before, "rms_after": None, "status": "rigid", "cells": cells}
+    if before <= WARP_RMS: return None, rep
+    m = fit_dewarp(lev, cells)
+    if m is None: rep["status"] = "no-fit"; return None, rep
+    _, after = warp_cells(apply_dewarp(lev, m)); rep["rms_after"] = after
+    if after < before - 0.05 and after < before*0.8: rep["status"] = "dewarped"; return m, rep
+    rep["status"] = "no-gain"; return None, rep
+
+def _angle(coefs, x):
+    return sum(c * x**k for k, c in enumerate(coefs))
+
+def dewarp_shift(model, x, y, w, h):
+    """Vertical shift (fraction of height) to apply at (x, y) fractions: d(x,y) = ∫₀.₅ˣ tan(a) dx·w/h,
+    interpolated between the top and bottom halves. The centre column is the fixed reference."""
+    def integ(coefs):
+        n = 40; xs = np.linspace(0.5, x, n+1); a = np.radians(_angle(coefs, xs))
+        return float(np.trapezoid(np.tan(a), xs)) if hasattr(np, "trapezoid") else float(np.trapz(np.tan(a), xs))
+    dt, db = integ(model["top"]) * w / h, integ(model["bot"]) * w / h
+    t = (y - model["y_top"]) / (model["y_bot"] - model["y_top"])
+    return dt + (db - dt) * t
+
+def apply_dewarp(im, model):
+    """Resample: out(x, y) = in(x, y + d(x, y)). Per column, y + d is affine in y, so np.interp does it."""
+    if not model: return im
+    arr = np.asarray(im.convert("RGB")); h, w = arr.shape[:2]
+    out = np.empty_like(arr); ys = np.arange(h); yf = ys / h
+    for xi in range(w):
+        xf = (xi + 0.5) / w
+        d = dewarp_shift(model, xf, 0.0, w, h), dewarp_shift(model, xf, 1.0, w, h)
+        src = (yf + d[0] + (d[1]-d[0]) * yf) * h
+        for c in range(3):
+            out[:, xi, c] = np.interp(src, ys, arr[:, xi, c], left=255, right=255)
+    from PIL import Image
+    return Image.fromarray(out)
+
+def transform_box_dewarp(box, model, w, h, inverse=False):
+    """Carry a box across the dewarp (levelled frame -> dewarped frame), or back with inverse=True.
+    The shift at the box centre is applied to both y edges; x is untouched by a column shear."""
+    if not model: return list(box)
+    cx, cy = (box[0]+box[2])/2, (box[1]+box[3])/2
+    d = dewarp_shift(model, cx, cy, w, h) * (1 if inverse else -1)
+    cl = lambda v: max(0.0, min(1.0, v))
+    return [box[0], round(cl(box[1]+d), 4), box[2], round(cl(box[3]+d), 4)]
 
 
 class GoldError(Exception):
@@ -156,6 +271,9 @@ def validate(rec, check_source=True):
         sk = rv.get("skew_deg", 0) or 0
         if not isinstance(sk, (int, float)) or abs(sk) > SKEW_MAX:
             raise GoldError(f"{lid}: skew_deg {sk!r} outside ±{SKEW_MAX}° — a capture defect, flag it, do not level it")
+        dw = rv.get("dewarp")
+        if dw is not None and (dw.get("model") != "colshear-v1" or not dw.get("top") or not dw.get("bot")):
+            raise GoldError(f"{lid}: dewarp model not understood: {dw!r}")
         for i, r in enumerate(rv.get("regions", [])):
             c = r.get("class")
             if c != ABSTAIN and c not in classes:
@@ -197,9 +315,10 @@ def is_gold(witness, leaf, record=RECORD):
 
 
 def gold_raster(im, lid, record=RECORD):
-    """The raster an accepted leaf's boxes are expressed on: the source image levelled by its skew."""
+    """The raster an accepted leaf's boxes are expressed on: the source image levelled by its skew,
+    then dewarped by its colshear model if it has one."""
     rv = accepted(record)[lid]
-    return deskew(im, rv.get("skew_deg", 0) or 0)
+    return apply_dewarp(deskew(im, rv.get("skew_deg", 0) or 0), rv.get("dewarp"))
 
 
 def main():

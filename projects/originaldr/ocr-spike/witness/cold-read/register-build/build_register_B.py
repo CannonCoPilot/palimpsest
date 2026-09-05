@@ -284,9 +284,19 @@ print(f"{len(leaf_b64)} leaves embedded, {sum(map(len, leaf_b64.values()))/1e6:.
 SURVEY = json.load(open(CR.parent / "plates" / "skew-survey-B.json"))
 GOLD1 = json.load(open(CR.parent / "plates" / "gold-set-1-proposed.json"))
 WARP_SPREAD = 0.5
+WARP_RMS = 0.35
 def volstats(v):
-    ks = [abs(r["skew"]) for l, r in SURVEY.items() if l.startswith(v)]
-    return len(ks), max(ks), sum(1 for k in ks if k > 0), sum(1 for l, r in SURVEY.items() if l.startswith(v) and r["spread"] > WARP_SPREAD)
+    rs = [r for l, r in SURVEY.items() if l.startswith(v)]
+    return len(rs), max(abs(r["skew"]) for r in rs), sum(1 for r in rs if r["skew"] != 0), sum(1 for r in rs if r["rms_before"] > WARP_RMS), sum(1 for r in rs if r.get("warp_status") == "dewarped")
+DWFIGS = {}
+for lid in ("NT-1582-B_0781", "OT2-1610-B_0026", "NT-1582-B_0562"):
+    f = SP / "level-figs" / f"dewarp-{lid}.jpg"
+    if f.exists(): DWFIGS[lid] = base64.b64encode(open(f, "rb").read()).decode()
+dwfigs = "\n".join(f'<figure class="lf"><img src="data:image/jpeg;base64,{b}" alt="{esc(lid)} levelled and dewarped, cell residual angles in red"><figcaption><b>{esc(lid)}</b> — levelled residual {SURVEY[lid]["rms_before"]:.2f}° → dewarped {SURVEY[lid]["rms_after"]:.2f}°</figcaption></figure>' for lid, b in DWFIGS.items())
+flagged = sorted((l for l, r in SURVEY.items() if r["rms_before"] > WARP_RMS), key=lambda l: -SURVEY[l]["rms_before"])
+STATUS = {"dewarped": "dewarped", "no-fit": "no fit — hold", "no-gain": "no gain — hold", "rigid": "rigid"}
+dwrows = "".join(f"<tr><td class=k>{esc(l)}</td><td>{SURVEY[l]['skew']:+.2f}</td><td>{SURVEY[l]['rms_before']:.2f}</td><td>{('%.2f' % SURVEY[l]['rms_after']) if SURVEY[l]['rms_after'] is not None else '—'}</td><td>{esc(STATUS.get(SURVEY[l]['warp_status'], SURVEY[l]['warp_status']))}</td><td class=q>{esc(LEAVES[l].get('kind','')[:70])}</td></tr>" for l in flagged)
+N_DW = sum(1 for r in SURVEY.values() if r.get("warp_status") == "dewarped"); N_HOLD = sum(1 for r in SURVEY.values() if r.get("warp_status") in ("no-fit", "no-gain"))
 FIGS = {}
 for lid in ("OT1-1609-B_0409", "OT2-1610-B_0026", "NT-1582-B_0562", "NT-1582-B_0781"):
     FIGS[lid] = base64.b64encode(open(SP / "level-figs" / f"{lid}.jpg", "rb").read()).decode()
@@ -295,11 +305,9 @@ def figcap(lid):
     qs = " · ".join(f"{k} {('—' if v is None else f'{v:+.2f}°')}" for k, v in q.items())
     return f"page {r['skew']:+.2f}° · quarters {qs} · spread {r['spread']:.2f}°"
 levelfigs = "\n".join(f'<figure class="lf"><img src="data:image/jpeg;base64,{b}" alt="{esc(lid)} raw and levelled with per-quarter line angles"><figcaption><b>{esc(lid)}</b> — {esc(figcap(lid))}</figcaption></figure>' for lid, b in FIGS.items())
-warped = sorted((l for l, r in SURVEY.items() if r["spread"] > WARP_SPREAD), key=lambda l: -SURVEY[l]["spread"])
-warprows = "".join(f"<tr><td class=k>{esc(l)}</td><td>{SURVEY[l]['skew']:+.2f}</td><td>{SURVEY[l]['spread']:.2f}</td><td>{SURVEY[l]['lr']:.2f}</td><td>{SURVEY[l]['tb']:.2f}</td><td class=q>{esc(LEAVES[l].get('kind','')[:80])}</td></tr>" for l in warped)
-goldrows = "".join(f"<tr><td class=k>{esc(g['id'])}</td><td>{g['skew']:+.2f}</td><td>{'warp' if g['warp'] else ''}</td><td>{esc(' '.join(g['classes']))}</td><td class=q>{esc(g['kind'][:90])}</td></tr>" for g in GOLD1["leaves"])
+goldrows = "".join(f"<tr><td class=k>{esc(g['id'])}</td><td>{SURVEY[g['id']]['skew']:+.2f}</td><td>{esc(STATUS.get(SURVEY[g['id']].get('warp_status'),'')) if SURVEY[g['id']]['rms_before'] > WARP_RMS else ''}</td><td>{esc(' '.join(g['classes']))}</td><td class=q>{esc(g['kind'][:90])}</td></tr>" for g in GOLD1["leaves"])
 vs = {v: volstats(v) for v in ("NT-1582-B", "OT1-1609-B", "OT2-1610-B")}
-volrows = "".join(f"<tr><td class=k>{v}</td><td>{n}</td><td>{mx:.2f}°</td><td>{nz}</td><td>{nw}</td></tr>" for v, (n, mx, nz, nw) in vs.items())
+volrows = "".join(f"<tr><td class=k>{v}</td><td>{n}</td><td>{mx:.2f}°</td><td>{nz}</td><td>{nw}</td><td>{nd}</td></tr>" for v, (n, mx, nz, nw, nd) in vs.items())
 MAXSKEW = max(abs(r["skew"]) for r in SURVEY.values())
 
 # ------------------------------------------------------------------ html pieces
@@ -442,17 +450,18 @@ page = '''<title>LECTOR Class Register</title>
 </ol>
 
 <hr class="rule">
-<div class="sechead" id="level"><span class="num">LEVEL</span><h2>One angle per leaf, measured on all 54</h2><p>The forme was one rigid body when it was printed, so every block on a leaf shares one skew. Boxes are stored in the levelled frame. Rotating boxes one by one would add a free parameter per region and hide the one case that matters: a leaf that is not rigid.</p></div>
+<div class="sechead" id="level"><span class="num">LEVEL</span><h2>One angle per leaf, then a dewarp where one angle is not enough</h2><p>The forme was one rigid body when it was printed, so every block on a leaf shares one skew. Boxes are stored in the levelled, dewarped frame. Rotating boxes one by one would add a free parameter per region and hide the one case that matters: a leaf that is not rigid. That case now has its own correction, verified leaf by leaf.</p></div>
 <div class="lvl">
   <div>
     <p class="what">Largest skew in the sample is <b>%%MAXSKEW%%°</b>. The record refuses anything beyond ±6°, a ceiling set so the levelled canvas never clips more than a tenth of its width; the data sits far inside it. The NT witness reads level on every leaf: the archive had already squared it. Both OT witnesses are raw captures and tilt up to two and a third degrees either way.</p>
-    <div class="tw"><table><thead><tr><th>witness</th><th>leaves</th><th>max |skew|</th><th>tilted</th><th>warp flagged</th></tr></thead><tbody>%%VOLROWS%%</tbody></table></div>
-    <p class="how"><span class="lbl">how the angle is found</span>Trim the scan border, measure ink against the paper, rotate through ±3° and take the angle at which the row-ink profile is spikiest, i.e. the lines are level. Coarse sweep, then 0.02° steps. A confidence below 1.5 means there are no lines to level, and the leaf is left at zero rather than given a number.</p>
-    <p class="how"><span class="lbl">how warped is decided</span>The same measurement in each quarter of the leaf. A rigid tilt gives four near-equal angles. If the quarters disagree by more than 0.5° after the page is levelled, one angle cannot enclose every block and the leaf is flagged. Thirteen of 54 trip that threshold; the table names them. Quarters without regular lines, an ornament, a blank foot, interleaved italic, are left out of the spread, which is the method's blind spot.</p>
-    <div class="tw"><table><thead><tr><th>leaf</th><th>page °</th><th>spread °</th><th>left–right</th><th>top–bottom</th><th>kind</th></tr></thead><tbody>%%WARPROWS%%</tbody></table></div>
-    <p class="ruling"><span class="lbl">the warped leaves: proposed approach</span>Gutter curl is a bend, not a tilt: the local angle changes smoothly with distance from the spine. The fix that keeps boxes axis-aligned is a strip-wise dewarp. Measure the angle in vertical strips across the leaf, fit a smooth curve, and resample the raster so every strip is level. The record stores the curve as the leaf's second datum beside the skew, and the reader applies both, so consumers still score against one canonical raster. Until that exists a warped leaf stays corrected, not accepted, unless its boxes enclose their blocks cleanly on the levelled page. Ruling needed: build the dewarp before the first Gold Set is locked, or lock the rigid leaves first and hold the thirteen.</p>
+    <div class="tw"><table><thead><tr><th>witness</th><th>leaves</th><th>max |skew|</th><th>tilted</th><th>warp flagged</th><th>dewarped</th></tr></thead><tbody>%%VOLROWS%%</tbody></table></div>
+    <p class="how"><span class="lbl">how the angle is found</span>Trim the scan border, measure ink against the paper, rotate through ±3° and take the angle at which the row-ink profile is spikiest, i.e. the lines are level. Coarse sweep, then 0.02° steps. Confidence is the peak over the sweep's floor: a blank quarter sits near 1.2, an ornament near 1.8, lines of text above 2.3; the gate is 2.0. When the whole page fails the gate but its cells carry lines, a sparse italic prelim, the angle is the confidence-weighted mean of the cells.</p>
+    <p class="how"><span class="lbl">how warped is decided</span>After the page is levelled, the line angle is measured again in twelve overlapping windows, six across by top and bottom halves. Each window is a third of the width, wide enough to be angle-sensitive. The warp score is the confidence-weighted RMS of those twelve residual angles. A rigid leaf scores near zero; above 0.35° one angle has not levelled every block. Eight of 54 cross it.</p>
+    <p class="how"><span class="lbl">the dewarp, built</span>Gutter curl is a bend: the residual angle is a smooth function of distance from the spine, and may differ top to bottom. The model fits that function per half, linear unless a quadratic earns a large residual drop, integrates it along x into a vertical displacement per column, and resamples each column by that displacement. Lines straighten; boxes stay axis-aligned. Every fit is verified by measuring again on the result, and a model that does not lower the score is discarded, so the leaf stays flagged rather than quietly “corrected”. The model is resolution-free and lives in the record beside the skew; the reader applies both.</p>
+    <div class="tw"><table><thead><tr><th>leaf</th><th>page °</th><th>residual °</th><th>after °</th><th>outcome</th><th>kind</th></tr></thead><tbody>%%DWROWS%%</tbody></table></div>
+    <p class="ruling"><span class="lbl">what is left for you</span>%%NDW%% leaves dewarp to a verified lower residual; %%NHOLD%% refuses a fit, a ruled table whose narrow columns give too few line cells. In the Plate Tool the curl row shows the score before and after and whether the model is on; “fit curl” re-measures, “clear” removes it and moves the boxes back. The warped flag is set for you when no model holds or the residual stays above 0.35°, and it stays yours to override. On a flagged leaf the verdict panel says so: accept only if every box encloses its block cleanly on the page as shown. The method's blind spot stands: windows without regular lines, ornament, blank foot, interleaved italic, are not measured.</p>
   </div>
-  <div>%%LEVELFIGS%%</div>
+  <div>%%LEVELFIGS%%%%DWFIGS%%</div>
 </div>
 
 <hr class="rule">
@@ -594,7 +603,7 @@ for k, v in {
     "%%VNT%%": str(vols["NT-1582-B"]), "%%VOT1%%": str(vols["OT1-1609-B"]), "%%VOT2%%": str(vols["OT2-1610-B"]),
     "%%ROWS%%": rows, "%%STATES%%": staterows, "%%SUBROWS%%": subrows,
     "%%REGIONS%%": json.dumps(regions).replace("</", "<\\/"),
-    "%%MAXSKEW%%": f"{MAXSKEW:.2f}", "%%VOLROWS%%": volrows, "%%WARPROWS%%": warprows, "%%GOLDROWS%%": goldrows, "%%LEVELFIGS%%": levelfigs,
+    "%%MAXSKEW%%": f"{MAXSKEW:.2f}", "%%VOLROWS%%": volrows, "%%DWROWS%%": dwrows, "%%DWFIGS%%": dwfigs, "%%NDW%%": str(N_DW), "%%NHOLD%%": str(N_HOLD), "%%GOLDROWS%%": goldrows, "%%LEVELFIGS%%": levelfigs,
     "%%LEAFIMG%%": json.dumps(leaf_b64),
 }.items():
     page = page.replace(k, v)

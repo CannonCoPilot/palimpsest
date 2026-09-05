@@ -56,3 +56,41 @@ def test_validate_rejects():
     with pytest.raises(PG.GoldError): PG.validate(r, check_source=False)
     r = rec(); r["leaves"]["NT-1582-B_0009"]["review"]["regions"][0]["class"] = "??"
     with pytest.raises(PG.GoldError): PG.validate(r, check_source=False)
+
+# ---- dewarp
+def curled(w=900, h=1200, k=0.06, tilt_bottom=1.0):
+    """Synthetic gutter curl: lines droop toward the left edge by k*h*(0.5-x)^2, more at the bottom."""
+    import math
+    im = Image.new("RGB", (w, h), (245, 240, 230)); d = ImageDraw.Draw(im)
+    for y0 in range(120, 1100, 24):
+        pts = []
+        for x in range(100, 800, 4):
+            xf = x / w; yf = y0 / h
+            droop = k * h * max(0, 0.5 - xf)**2 * (1 + tilt_bottom * (yf - 0.5))
+            pts.append((x, y0 + droop))
+        d.line(pts, fill=(20, 15, 10), width=8)
+    return im
+
+def test_dewarp_reduces_spread_and_is_reversible():
+    im = curled(); m, rep = PG.dewarp_leaf(im)
+    assert rep["status"] == "dewarped" and m["model"] == "colshear-v1", rep
+    before, after = rep["rms_before"], rep["rms_after"]
+    assert before > PG.WARP_RMS and after < before * 0.5, (before, after)
+    out = PG.apply_dewarp(im, m)
+    # a box on a drooped line follows the ink after dewarp
+    w, h = im.size; g = im.convert("L")
+    # take ink bbox of a small window near the left edge, before and after
+    def ink_centre(img, x0, x1, y0, y1):
+        c = img.convert("L").crop((x0, y0, x1, y1)).point(lambda v: 255 - v); bb = c.getbbox()
+        return (y0 + (bb[1]+bb[3])/2) / h
+    yc_before = ink_centre(im, 110, 150, 700, 760)
+    box = [110/w, yc_before-0.01, 150/w, yc_before+0.01]
+    nb = PG.transform_box_dewarp(box, m, w, h)
+    yc_after = ink_centre(out, 110, 150, int((nb[1]-0.03)*h), int((nb[3]+0.03)*h))
+    assert nb[1] <= yc_after <= nb[3], (nb, yc_after)
+    back = PG.transform_box_dewarp(nb, m, w, h, inverse=True)
+    assert all(abs(a-b) < 0.002 for a, b in zip(box, back))
+
+def test_dewarp_identity_on_rigid_page():
+    im = page(tilt=0.0); m, rep = PG.dewarp_leaf(im)
+    assert m is None and rep["status"] == "rigid", rep

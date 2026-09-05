@@ -394,6 +394,636 @@
    },
    "touched": "2026-09-05T18:29:53+00:00",
    "updated": "2026-09-05T18:29:53+00:00"
+  },
+  "NT-1582-B_0011": {
+   "witness": "NT-1582-B",
+   "leaf": 11,
+   "agent": {
+    "side": "verso",
+    "kind": "PRELIM prose 'TO THE READER' continued; LEFT citation column, RIGHT summaries; no page number",
+    "measure": [
+     0.14,
+     0.82
+    ],
+    "regions": [
+     {
+      "box": [
+       0.3,
+       0.03,
+       0.68,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'TO THE READER.'"
+     },
+     {
+      "box": [
+       0.14,
+       0.06,
+       0.82,
+       0.875
+      ],
+      "class": "MT",
+      "why": "prose, four paragraphs, roman with italic Latin quotations inline"
+     },
+     {
+      "box": [
+       0.02,
+       0.13,
+       0.13,
+       0.27
+      ],
+      "class": "MN",
+      "why": "left italic citations 'De agone Christ. c. 33. De bono perseuer.c. 16. 1 Cor.3. Io.16.'"
+     },
+     {
+      "box": [
+       0.02,
+       0.36,
+       0.13,
+       0.48
+      ],
+      "class": "MN",
+      "why": "'In orat.de moderat.… Hiero. in proem. cõmentar. in Ezechi.'"
+     },
+     {
+      "box": [
+       0.02,
+       0.55,
+       0.13,
+       0.62
+      ],
+      "class": "MN",
+      "why": "'Eph. 4.' 'Ro.10,17.'"
+     },
+     {
+      "box": [
+       0.02,
+       0.75,
+       0.13,
+       0.83
+      ],
+      "class": "MN",
+      "why": "'Gen.3.' '1 Tim.6, 20.' 'Ro.12,3.'"
+     },
+     {
+      "box": [
+       0.83,
+       0.06,
+       0.97,
+       0.16
+      ],
+      "class": "MN",
+      "why": "'The Scriptures must be deliuered in measure and discretion…'"
+     },
+     {
+      "box": [
+       0.83,
+       0.4,
+       0.97,
+       0.48
+      ],
+      "class": "MN",
+      "why": "'The Iewes law for not reading certaine bookes…'"
+     },
+     {
+      "box": [
+       0.83,
+       0.67,
+       0.97,
+       0.74
+      ],
+      "class": "MN",
+      "why": "'The popular obiections of withholding the Scriptures…'"
+     },
+     {
+      "box": [
+       0.83,
+       0.76,
+       0.97,
+       0.86
+      ],
+      "class": "MN",
+      "why": "'Why the Church permitteth not euery one at their pleasure to reade the Scripture.'"
+     },
+     {
+      "box": [
+       0.76,
+       0.875,
+       0.82,
+       0.895
+      ],
+      "class": "CW",
+      "why": "'vvhich'"
+     },
+     {
+      "box": [
+       0.05,
+       0.9,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": null,
+    "note": "",
+    "side": "verso",
+    "kind": "PRELIM prose 'TO THE READER' continued; LEFT citation column, RIGHT summaries; no page number",
+    "measure": [
+     0.14,
+     0.82
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.19,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.3,
+       0.03,
+       0.68,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'TO THE READER.'",
+      "origin": "agent",
+      "agent_index": 0
+     },
+     {
+      "box": [
+       0.14,
+       0.06,
+       0.82,
+       0.875
+      ],
+      "class": "MT",
+      "why": "prose, four paragraphs, roman with italic Latin quotations inline",
+      "origin": "agent",
+      "agent_index": 1
+     },
+     {
+      "box": [
+       0.02,
+       0.13,
+       0.13,
+       0.27
+      ],
+      "class": "MN",
+      "why": "left italic citations 'De agone Christ. c. 33. De bono perseuer.c. 16. 1 Cor.3. Io.16.'",
+      "origin": "agent",
+      "agent_index": 2
+     },
+     {
+      "box": [
+       0.02,
+       0.36,
+       0.13,
+       0.48
+      ],
+      "class": "MN",
+      "why": "'In orat.de moderat.… Hiero. in proem. cõmentar. in Ezechi.'",
+      "origin": "agent",
+      "agent_index": 3
+     },
+     {
+      "box": [
+       0.02,
+       0.55,
+       0.13,
+       0.62
+      ],
+      "class": "MN",
+      "why": "'Eph. 4.' 'Ro.10,17.'",
+      "origin": "agent",
+      "agent_index": 4
+     },
+     {
+      "box": [
+       0.02,
+       0.75,
+       0.13,
+       0.83
+      ],
+      "class": "MN",
+      "why": "'Gen.3.' '1 Tim.6, 20.' 'Ro.12,3.'",
+      "origin": "agent",
+      "agent_index": 5
+     },
+     {
+      "box": [
+       0.83,
+       0.06,
+       0.97,
+       0.16
+      ],
+      "class": "MN",
+      "why": "'The Scriptures must be deliuered in measure and discretion…'",
+      "origin": "agent",
+      "agent_index": 6
+     },
+     {
+      "box": [
+       0.83,
+       0.4,
+       0.97,
+       0.48
+      ],
+      "class": "MN",
+      "why": "'The Iewes law for not reading certaine bookes…'",
+      "origin": "agent",
+      "agent_index": 7
+     },
+     {
+      "box": [
+       0.83,
+       0.67,
+       0.97,
+       0.74
+      ],
+      "class": "MN",
+      "why": "'The popular obiections of withholding the Scriptures…'",
+      "origin": "agent",
+      "agent_index": 8
+     },
+     {
+      "box": [
+       0.83,
+       0.76,
+       0.97,
+       0.86
+      ],
+      "class": "MN",
+      "why": "'Why the Church permitteth not euery one at their pleasure to reade the Scripture.'",
+      "origin": "agent",
+      "agent_index": 9
+     },
+     {
+      "box": [
+       0.76,
+       0.875,
+       0.82,
+       0.895
+      ],
+      "class": "CW",
+      "why": "'vvhich'",
+      "origin": "agent",
+      "agent_index": 10
+     },
+     {
+      "box": [
+       0.05,
+       0.9,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page",
+      "origin": "agent",
+      "agent_index": 11
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-05T23:34:04+00:00",
+   "updated": "2026-09-05T23:34:04+00:00"
+  },
+  "NT-1582-B_0781": {
+   "witness": "NT-1582-B",
+   "leaf": 781,
+   "agent": {
+    "side": "recto",
+    "kind": "PRELIM/END-MATTER BOUNDARY: two-column lectionary table ('EPIST. AND GOSPELS'), rule, four-line display title 'AN AMPLE AND PARTICVLAR TABLE…', then two-column index begins with letter head 'A' and a woodcut initial; signature 'Bbbbb iij'",
+    "measure": [
+     0.15,
+     0.9
+    ],
+    "regions": [
+     {
+      "box": [
+       0.36,
+       0.04,
+       0.66,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'EPIST. AND GOSPELS.'"
+     },
+     {
+      "box": [
+       0.15,
+       0.065,
+       0.52,
+       0.5
+      ],
+      "class": "TB",
+      "why": "LEFT column of the lectionary table: feast → 'Ep. 608. Gosp.70.' entries; includes italic sub-heading 'IN votiue Masses…'"
+     },
+     {
+      "box": [
+       0.53,
+       0.065,
+       0.9,
+       0.5
+      ],
+      "class": "TB",
+      "why": "RIGHT column of the lectionary table; italic sub-heading 'In Masses of Requiem.'"
+     },
+     {
+      "box": [
+       0.15,
+       0.52,
+       0.9,
+       0.525
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.15,
+       0.545,
+       0.9,
+       0.71
+      ],
+      "class": "BT",
+      "why": "'AN AMPLE AND / PARTICVLAR TABLE DIREC- / TING THE READER TO AL CATHOLIKE / truthes, deduced out of…' four lines, caps then lower-case"
+     },
+     {
+      "box": [
+       0.3,
+       0.735,
+       0.34,
+       0.75
+      ],
+      "class": "BT",
+      "why": "letter section head 'A' over the left index column"
+     },
+     {
+      "box": [
+       0.15,
+       0.765,
+       0.27,
+       0.84
+      ],
+      "class": "DC",
+      "why": "woodcut initial A opening the index"
+     },
+     {
+      "box": [
+       0.27,
+       0.765,
+       0.52,
+       0.86
+      ],
+      "class": "IX",
+      "why": "left index column 'BSOLVTION of a Priest…' 'Abstinence. See Fasting.'"
+     },
+     {
+      "box": [
+       0.53,
+       0.735,
+       0.9,
+       0.86
+      ],
+      "class": "IX",
+      "why": "right index column '…doration of God, Latria… S. Iohns adoring of the Angel…'"
+     },
+     {
+      "box": [
+       0.62,
+       0.865,
+       0.75,
+       0.885
+      ],
+      "class": "SG",
+      "why": "'Bbbbb iij'"
+     },
+     {
+      "box": [
+       0.83,
+       0.865,
+       0.9,
+       0.885
+      ],
+      "class": "CW",
+      "why": "'spirit'"
+     },
+     {
+      "box": [
+       0.05,
+       0.89,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": null,
+    "note": "",
+    "side": "recto",
+    "kind": "PRELIM/END-MATTER BOUNDARY: two-column lectionary table ('EPIST. AND GOSPELS'), rule, four-line display title 'AN AMPLE AND PARTICVLAR TABLE…', then two-column index begins with letter head 'A' and a woodcut initial; signature 'Bbbbb iij'",
+    "measure": [
+     0.15,
+     0.9
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": {
+     "model": "colshear-v1",
+     "y_top": 0.25,
+     "y_bot": 0.75,
+     "top": [
+      -0.7758,
+      1.9017
+     ],
+     "bot": [
+      -0.7758,
+      1.9017
+     ]
+    },
+    "warp": {
+     "rms_before": 0.63,
+     "rms_after": 0.18,
+     "status": "dewarped",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.36,
+       0.04,
+       0.66,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'EPIST. AND GOSPELS.'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.15,
+       0.065,
+       0.52,
+       0.5
+      ],
+      "class": "TB",
+      "why": "LEFT column of the lectionary table: feast → 'Ep. 608. Gosp.70.' entries; includes italic sub-heading 'IN votiue Masses…'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.53,
+       0.064,
+       0.9,
+       0.499
+      ],
+      "class": "TB",
+      "why": "RIGHT column of the lectionary table; italic sub-heading 'In Masses of Requiem.'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.15,
+       0.5199,
+       0.9,
+       0.5249
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.15,
+       0.5449,
+       0.9,
+       0.7099
+      ],
+      "class": "BT",
+      "why": "'AN AMPLE AND / PARTICVLAR TABLE DIREC- / TING THE READER TO AL CATHOLIKE / truthes, deduced out of…' four lines, caps then lower-case",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3,
+       0.735,
+       0.34,
+       0.75
+      ],
+      "class": "BT",
+      "why": "letter section head 'A' over the left index column",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.15,
+       0.7647,
+       0.27,
+       0.8397
+      ],
+      "class": "DC",
+      "why": "woodcut initial A opening the index",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.27,
+       0.7651,
+       0.52,
+       0.8601
+      ],
+      "class": "IX",
+      "why": "left index column 'BSOLVTION of a Priest…' 'Abstinence. See Fasting.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.53,
+       0.734,
+       0.9,
+       0.859
+      ],
+      "class": "IX",
+      "why": "right index column '…doration of God, Latria… S. Iohns adoring of the Angel…'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.62,
+       0.8642,
+       0.75,
+       0.8842
+      ],
+      "class": "SG",
+      "why": "'Bbbbb iij'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.83,
+       0.8627,
+       0.9,
+       0.8827
+      ],
+      "class": "CW",
+      "why": "'spirit'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.05,
+       0.89,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-05T23:34:15+00:00",
+   "updated": "2026-09-05T23:34:15+00:00"
   }
  }
 }

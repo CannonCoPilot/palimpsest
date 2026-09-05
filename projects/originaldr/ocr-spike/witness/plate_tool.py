@@ -69,6 +69,7 @@ def append_log(logp, entry):
 def fresh_review(agent):
     return {"verdict": None, "note": "", "side": agent.get("side"), "kind": agent.get("kind"),
             "measure": agent.get("measure"), "skew_deg": 0.0, "skew_source": None, "warped": False,
+            "dewarp": None, "warp": None,
             "regions": [{"box": list(r["box"]), "class": r["class"], "why": r.get("why", ""),
                          "origin": "agent", "agent_index": i} for i, r in enumerate(agent.get("regions", []))],
             "proposed_classes": []}
@@ -87,6 +88,9 @@ def check_review(rv):
     sk = rv.get("skew_deg", 0) or 0
     if not isinstance(sk, (int, float)) or abs(sk) > PG.SKEW_MAX:
         raise ValueError(f"skew {sk!r} outside ±{PG.SKEW_MAX}° — that is a capture defect: tick 'warped' and leave the leaf as defect")
+    dw = rv.get("dewarp")
+    if dw is not None and (not isinstance(dw, dict) or dw.get("model") != "colshear-v1" or not dw.get("top") or not dw.get("bot")):
+        raise ValueError("dewarp must be a colshear-v1 model or null")
     classes = PG.all_classes(CFG["rec"])
     for i, r in enumerate(rv.get("regions", [])):
         if not PG._box_ok(r.get("box")): raise ValueError(f"region {i}: bad box")
@@ -126,13 +130,14 @@ def hires_jpeg(lid):
     out.write_bytes(b.getvalue()); return b.getvalue()
 
 _rot_cache = {}
-def rotated(raw, key, deg):
-    """JPEG bytes levelled by deg through plate_gold.deskew — the same call every consumer makes."""
-    if not deg: return raw
-    k = (key, round(deg, 2))
+def rotated(raw, key, deg, model=None):
+    """JPEG bytes levelled by deg through plate_gold.deskew, then dewarped by the leaf's model when
+    asked — the same two calls every consumer makes through gold_raster."""
+    if not deg and not model: return raw
+    k = (key, round(deg, 2), json.dumps(model, sort_keys=True) if model else None)
     if k in _rot_cache: return _rot_cache[k]
     from PIL import Image
-    im = PG.deskew(Image.open(io.BytesIO(raw)).convert("RGB"), deg)
+    im = PG.apply_dewarp(PG.deskew(Image.open(io.BytesIO(raw)).convert("RGB"), deg), model)
     b = io.BytesIO(); im.save(b, "JPEG", quality=85); out = b.getvalue()
     if len(_rot_cache) > 6: _rot_cache.pop(next(iter(_rot_cache)))
     _rot_cache[k] = out; return out
@@ -141,6 +146,12 @@ def rot_param(path):
     q = parse_qs(urlparse(path).query).get("rot", ["0"])[0]
     try: return max(-PG.SKEW_MAX, min(PG.SKEW_MAX, float(q)))
     except ValueError: return 0.0
+
+def dw_model(path, lid):
+    """The leaf's stored dewarp model when the request asks for it (dw=1); the record is the source."""
+    if parse_qs(urlparse(path).query).get("dw", ["0"])[0] != "1": return None
+    L = CFG["rec"]["leaves"].get(lid)
+    return (L or {}).get("review", {}).get("dewarp") if L else None
 
 
 # ---------------------------------------------------------------- http
@@ -164,6 +175,7 @@ class H(BaseHTTPRequestHandler):
             for lid in src:
                 L = rec["leaves"].get(lid); rv = (L or {}).get("review") or {}
                 rows.append({"id": lid, "verdict": rv.get("verdict"), "n_agent": len(src[lid].get("regions", [])),
+                             "curl": bool(rv.get("dewarp")), "warped": bool(rv.get("warped")),
                              "n_review": len(rv.get("regions", [])) if L else None,
                              "open": sum(1 for r in rv.get("regions", []) if r["class"] == PG.ABSTAIN) if L else
                                      sum(1 for r in src[lid].get("regions", []) if r["class"] == PG.ABSTAIN),
@@ -186,16 +198,25 @@ class H(BaseHTTPRequestHandler):
             f = CFG["img"] / (p[10:] + ".jpg")
             if not f.exists(): return self.send(404, {"error": "no image"})
             from PIL import Image
-            return self.send(200, {"skew_deg": PG.estimate_skew(Image.open(f))})
+            k, srcn = PG.level_angle(Image.open(f))
+            return self.send(200, {"skew_deg": k, "from": srcn})
+        if p.startswith("/api/warp/"):
+            lid = p[10:]; f = CFG["img"] / (lid + ".jpg")
+            if not f.exists(): return self.send(404, {"error": "no image"})
+            from PIL import Image
+            lev = PG.deskew(Image.open(f).convert("RGB"), rot_param(self.path))
+            m, rep = PG.dewarp_leaf(lev)
+            return self.send(200, {"dewarp": m, "warp": {"rms_before": rep["rms_before"], "rms_after": rep["rms_after"],
+                                                         "status": rep["status"], "threshold": PG.WARP_RMS}})
         if p.startswith("/img/"):
             f = CFG["img"] / (p[5:] + ".jpg")
             if not f.exists(): return self.send(404, {"error": "no image"})
-            return self.send(200, rotated(f.read_bytes(), "img:" + p[5:], rot_param(self.path)), "image/jpeg")
+            return self.send(200, rotated(f.read_bytes(), "img:" + p[5:], rot_param(self.path), dw_model(self.path, p[5:])), "image/jpeg")
         if p.startswith("/hires/"):
             try: b = hires_jpeg(p[7:])
             except Exception as e: return self.send(500, {"error": f"hires decode failed: {e}"})
             if b is None: return self.send(404, {"error": "no full-resolution raster for this leaf in raster-manifest.json"})
-            return self.send(200, rotated(b, "hires:" + p[7:], rot_param(self.path)), "image/jpeg")
+            return self.send(200, rotated(b, "hires:" + p[7:], rot_param(self.path), dw_model(self.path, p[7:])), "image/jpeg")
         self.send(404, {"error": "not found"})
 
     def do_POST(self):
@@ -302,6 +323,9 @@ footer b{color:var(--ink)}
 .skew input[type=number]{font:inherit;font-size:.78rem;font-family:var(--mono);padding:.25rem .3rem;border:1px solid var(--rule);background:#fff;border-radius:2px;width:100%}
 .chk{font-family:var(--mono);font-size:.68rem;color:var(--ink-2);display:flex;gap:.3rem;align-items:center;margin-top:.3rem}
 .ksrc{font-family:var(--mono);font-size:.62rem;color:var(--grey)}
+.curl{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.4rem}
+.curl b{color:var(--ink)} .curl .bad{color:var(--rubric);font-weight:500} .curl .ok{color:var(--olive)}
+.pill.curl{background:var(--olive);color:#fff}.pill.warped{background:var(--rubric);color:#fff}
 </style></head><body>
 <header><h1>Plate Tool</h1><span class="src" id="src"></span><span class="sp"></span><span id="status">…</span></header>
 <aside>
@@ -327,7 +351,8 @@ footer b{color:var(--ink)}
       <div class="full"><label>page kind</label><input type="text" id="kind"></div>
       <div class="full"><label>level the page · skew ° <span class="ksrc" id="ksrc"></span></label>
         <div class="skew"><input type="range" id="skewr" min="-4" max="4" step="0.02" value="0"><input type="number" id="skewn" step="0.02" min="-6" max="6" value="0"><button class="b" id="skewa" title="estimate from the text lines">auto</button></div>
-        <label class="chk"><input type="checkbox" id="warped"> warped — cannot be levelled by one angle (gutter curl, cockle)</label>
+        <div class="curl"><span id="curlst">curl: —</span><button class="b" id="curlfit" title="measure the residual line angle across the page and fit a column-shear dewarp">fit curl</button><button class="b" id="curlclr">clear</button></div>
+        <label class="chk"><input type="checkbox" id="warped"> warped — one angle (and the dewarp, if any) does not level every block; boxes must be checked block by block</label>
       </div>
     </div>
   </div>
@@ -366,6 +391,41 @@ const COL=c=>S.classes.text.includes(c)?'#3A5A6B':S.classes.nontext.includes(c)?
 function tbox(b,w,h,d){ if(!d)return b.slice(); const t=d*Math.PI/180,c=Math.cos(t),s=Math.sin(t);
   const cx=(b[0]+b[2])/2*w-w/2, cy=(b[1]+b[3])/2*h-h/2, nx=cx*c+cy*s+w/2, ny=-cx*s+cy*c+h/2, bw=(b[2]-b[0])*w, bh=(b[3]-b[1])*h;
   const cl=(v,m)=>Math.max(0,Math.min(1,v/m)); return [cl(nx-bw/2,w),cl(ny-bh/2,h),cl(nx+bw/2,w),cl(ny+bh/2,h)].map(v=>+v.toFixed(4)); }
+// ports of plate_gold.dewarp_shift / transform_box_dewarp — must match the reader exactly
+function angAt(co,x){let v=0;for(let k=0;k<co.length;k++)v+=co[k]*Math.pow(x,k);return v;}
+function integ(co,x){const n=40;let acc=0;for(let i=0;i<n;i++){const a=0.5+(x-0.5)*i/n,b=0.5+(x-0.5)*(i+1)/n;acc+=(Math.tan(angAt(co,a)*Math.PI/180)+Math.tan(angAt(co,b)*Math.PI/180))/2*(b-a);}return acc;}
+function dwShift(m,x,y,w,h){const dt=integ(m.top,x)*w/h,db=integ(m.bot,x)*w/h,t=(y-m.y_top)/(m.y_bot-m.y_top);return dt+(db-dt)*t;}
+function tboxDw(b,m,w,h,inv){if(!m)return b.slice();const cx=(b[0]+b[2])/2,cy=(b[1]+b[3])/2,d=dwShift(m,cx,cy,w,h)*(inv?1:-1),cl=v=>Math.max(0,Math.min(1,v));return [b[0],+cl(b[1]+d).toFixed(4),b[2],+cl(b[3]+d).toFixed(4)];}
+function pxdims(){const img=$('#img'),px=S.leaf.px||[img.naturalWidth||1100,img.naturalHeight||1500];return [px[0],px[1]];}
+function curlUI(){
+  const w=S.rv.warp, st=$('#curlst');
+  if(!w){st.innerHTML='curl: not measured';return;}
+  const thr=w.threshold||0.35, b=w.rms_before.toFixed(2), a=w.rms_after==null?null:w.rms_after.toFixed(2);
+  const txt={rigid:`curl: <span class=ok>rigid</span> · residual ${b}°`,
+    dewarped:`curl: <b>dewarped</b> · ${b}° → <span class="${w.rms_after<=thr?'ok':'bad'}">${a}°</span>${w.rms_after>thr?' still above '+thr+'°':''}`,
+    'no-fit':`curl: <span class=bad>no fit</span> · residual ${b}° — too few lines to model; check every block`,
+    'no-gain':`curl: <span class=bad>no gain</span> · ${b}° → ${a}° — model discarded; check every block`}[w.status]||('curl: '+w.status);
+  st.innerHTML=txt+(S.rv.dewarp?' · <b>on</b>':'');
+  $('#curlclr').disabled=!S.rv.dewarp;
+}
+async function fitCurl(){
+  $('#curlfit').disabled=true; $('#curlst').textContent='curl: measuring…';
+  try{
+    const j=await (await fetch('/api/warp/'+S.leaf.id+'?rot='+(S.rv.skew_deg||0))).json(); if(!j.warp)throw new Error(j.error||'no answer');
+    push(); const [w,h]=pxdims();
+    if(S.rv.dewarp) S.rv.regions.forEach(r=>{r.box=tboxDw(r.box,S.rv.dewarp,w,h,true);});   // back to the levelled frame
+    S.rv.warp=j.warp; S.rv.dewarp=j.dewarp;
+    if(S.rv.dewarp) S.rv.regions.forEach(r=>{r.box=tboxDw(r.box,S.rv.dewarp,w,h,false); if(r.origin==='agent')r.moved=true;});
+    const thr=j.warp.threshold||0.35;
+    S.rv.warped=(j.warp.status==='no-fit'||j.warp.status==='no-gain'||(j.warp.status==='dewarped'&&j.warp.rms_after>thr));
+    $('#warped').checked=S.rv.warped; curlUI(); draw(); save(); await flush(); loadImg();
+  }catch(e){ status('curl fit failed: '+e.message,true); curlUI(); }
+  $('#curlfit').disabled=false;
+}
+function clearCurl(){
+  if(!S.rv.dewarp)return; push(); const [w,h]=pxdims();
+  S.rv.regions.forEach(r=>{r.box=tboxDw(r.box,S.rv.dewarp,w,h,true);}); S.rv.dewarp=null; curlUI(); draw(); save(); flush().then(loadImg);
+}
 function classSelect(){
   const sel=$('#rclass'); const keep=sel.value; sel.innerHTML='';
   const og=(n,arr)=>{if(!arr.length)return;const g=document.createElement('optgroup');g.label=n;arr.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;g.appendChild(o)});sel.appendChild(g)};
@@ -384,7 +444,8 @@ async function boot(){
   $('#skewr').oninput=e=>setSkew(+e.target.value,'human',false); $('#skewr').onchange=e=>setSkew(+e.target.value,'human',true);
   $('#skewn').onchange=e=>setSkew(+e.target.value,'human',true);
   $('#skewa').onclick=autoSkew;
-  $('#warped').onchange=e=>{S.rv.warped=e.target.checked;save();};
+  $('#warped').onchange=e=>{S.rv.warped=e.target.checked;save();renderList();};
+  $('#curlfit').onclick=fitCurl; $('#curlclr').onclick=clearCurl;
   $('#nadd').onclick=addClass;
   document.querySelectorAll('.filt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');S.filter=b.dataset.f;renderList();});
   $('#prev').onclick=()=>go(S.i-1); $('#next').onclick=()=>go(S.i+1); $('#nextu').onclick=nextUnreviewed;
@@ -415,7 +476,7 @@ async function boot(){
 function visible(){return S.list.filter(l=>S.filter==='all'||(S.filter==='unreviewed'&&!l.verdict)||(S.filter==='open'&&l.open>0)||l.verdict===S.filter);}
 function renderList(){
   const v=visible();
-  $('#list').innerHTML=v.map(l=>`<div class="row${S.list[S.i]&&S.list[S.i].id===l.id?' cur':''}" data-id="${l.id}"><span>${l.id}${l.changed?' <span style="color:var(--rubric)">•</span>':''}</span><span class="m">${l.verdict?`<span class="pill ${l.verdict}">${l.verdict}</span>`:''}${l.open?` <span class="pill open">${l.open} ??</span>`:''} ${l.n_review??l.n_agent}</span></div>`).join('');
+  $('#list').innerHTML=v.map(l=>`<div class="row${S.list[S.i]&&S.list[S.i].id===l.id?' cur':''}" data-id="${l.id}"><span>${l.id}${l.changed?' <span style="color:var(--rubric)">•</span>':''}</span><span class="m">${l.verdict?`<span class="pill ${l.verdict}">${l.verdict}</span>`:''}${l.warped?' <span class="pill warped">warp</span>':(l.curl?' <span class="pill curl">curl</span>':'')}${l.open?` <span class="pill open">${l.open} ??</span>`:''} ${l.n_review??l.n_agent}</span></div>`).join('');
   document.querySelectorAll('#list .row').forEach(r=>r.onclick=()=>go(S.list.findIndex(l=>l.id===r.dataset.id)));
   const c=$('#list .row.cur'); if(c)c.scrollIntoView({block:'nearest'});
 }
@@ -428,9 +489,9 @@ async function go(i){
   S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; $('#wrap').classList.remove('adding');
   $('#lid').textContent=d.id; $('#note').value=S.rv.note||''; $('#side').value=S.rv.side||'unknown'; $('#kind').value=S.rv.kind||'';
   $('#measure').value=S.rv.measure?S.rv.measure.join(', '):'';
-  $('#warped').checked=!!S.rv.warped; skewUI();
+  $('#warped').checked=!!S.rv.warped; skewUI(); curlUI();
   renderList(); loadImg(); draw(); verdictUI();
-  if(!d.touched && !S.rv.skew_source) autoSkew();
+  if(!d.touched && !S.rv.skew_source){ await autoSkew(); await fitCurl(); }
 }
 function skewUI(){const k=S.rv.skew_deg||0;$('#skewr').value=k;$('#skewn').value=k.toFixed(2);$('#ksrc').textContent=S.rv.skew_source?('· '+S.rv.skew_source):'';}
 // rotating the canvas moves every box: carry them across by the delta, exactly as the reader would
@@ -439,14 +500,15 @@ function setSkew(k,source,commit){
   if(!d&&commit){ if(source==='auto'&&!S.rv.skew_source){S.rv.skew_source='auto';} skewUI(); return; }
   const img=$('#img'), px=S.leaf.px||[img.naturalWidth||1100,img.naturalHeight||1500], w=px[0], h=px[1];
   if(commit)push();
-  S.rv.regions.forEach(r=>{r.box=tbox(r.box,w,h,d); if(r.origin==='agent'&&d)r.moved=true;});
+  const m=S.rv.dewarp;
+  S.rv.regions.forEach(r=>{let b=m?tboxDw(r.box,m,w,h,true):r.box; b=tbox(b,w,h,d); r.box=m?tboxDw(b,m,w,h,false):b; if(r.origin==='agent'&&d)r.moved=true;});
   S.rv.skew_deg=+k.toFixed(2); S.rv.skew_source=source; skewUI(); draw();
   if(commit){save(); loadImg();}
 }
 async function autoSkew(){
   $('#skewa').disabled=true; $('#ksrc').textContent='· estimating…';
   try{ const j=await (await fetch('/api/skew/'+S.leaf.id)).json(); if(j.skew_deg===undefined)throw new Error(j.error);
-       setSkew(j.skew_deg,'auto',true); }
+       setSkew(j.skew_deg,'auto:'+(j.from||'page'),true); }
   catch(e){ status('skew estimate failed: '+e.message,true); }
   $('#skewa').disabled=false;
 }
@@ -458,7 +520,7 @@ async function addClass(){
   if(S.sel>=0){push();S.rv.regions[S.sel].class=code;save();draw();}
 }
 function loadImg(){
-  const img=$('#img'); const url=(S.hires?'/hires/':'/img/')+S.leaf.id+'?rot='+(S.rv.skew_deg||0);
+  const img=$('#img'); const url=(S.hires?'/hires/':'/img/')+S.leaf.id+'?rot='+(S.rv.skew_deg||0)+(S.rv.dewarp?'&dw=1':'');
   img.onload=()=>{fit();}; img.onerror=()=>{if(S.hires){status('no full-resolution raster for this leaf',true);S.hires=false;$('#hires').classList.remove('on');loadImg();}};
   img.src=url;
 }
@@ -467,7 +529,7 @@ function fit(){const img=$('#img'),st=$('#stage');if(!img.naturalWidth)return;S.
 function verdictUI(){
   document.querySelectorAll('[data-v]').forEach(b=>b.classList.toggle('on',(b.dataset.v||null)===S.rv.verdict));
   const open=S.rv.regions.filter(r=>r.class==='??').length;
-  $('#vwarn').textContent=open?`${open} region${open>1?'s':''} still ?? — accept is blocked until each is named or made a state`:'';
+  $('#vwarn').textContent=(open?`${open} region${open>1?'s':''} still ?? — accept is blocked until each is named or made a state. `:'')+(S.rv.warped?'Leaf is flagged WARPED: accept only if every box encloses its block cleanly on this page.':'');
   document.querySelector('[data-v=accept]').disabled=open>0||!S.rv.regions.length;
 }
 function draw(){
@@ -521,7 +583,7 @@ function propose(){const t=$('#rprop').value.trim();if(!t)return;S.rv.proposed_c
 function setVerdict(v){if(v==='accept'&&document.querySelector('[data-v=accept]').disabled){status('accept blocked: resolve every ?? first',true);return;}S.rv.verdict=v;save();verdictUI();}
 // ---- undo
 function push(){S.undo.push(JSON.stringify(S.rv));if(S.undo.length>100)S.undo.shift();}
-function undo(){if(!S.undo.length)return;const k0=S.rv.skew_deg||0;S.rv=JSON.parse(S.undo.pop());S.sel=-1;$('#note').value=S.rv.note||'';$('#warped').checked=!!S.rv.warped;skewUI();save();draw();if((S.rv.skew_deg||0)!==k0)loadImg();}
+function undo(){if(!S.undo.length)return;const k0=S.rv.skew_deg||0,d0=JSON.stringify(S.rv.dewarp);S.rv=JSON.parse(S.undo.pop());S.sel=-1;$('#note').value=S.rv.note||'';$('#warped').checked=!!S.rv.warped;skewUI();curlUI();save();draw();if((S.rv.skew_deg||0)!==k0||d0!==JSON.stringify(S.rv.dewarp))flush().then(loadImg);}
 // ---- persistence: every change is POSTed; the server writes the record before answering
 let timer=null;
 function save(){clearTimeout(timer);S.dirty=S.leaf.id;status('unsaved…');timer=setTimeout(flush,250);}
@@ -532,7 +594,7 @@ async function flush(){
     const j=await r.json();
     if(!r.ok){status('NOT SAVED: '+j.error,true);return;}
     status('written '+j.written.slice(11,19)+'Z → '+j.record);
-    const row=S.list.find(l=>l.id===id); if(row){row.verdict=rv.verdict;row.n_review=rv.regions.length;row.open=rv.regions.filter(x=>x.class==='??').length;row.changed=rv.regions.some(x=>x.origin==='human'||x.moved)||rv.regions.length!==row.n_agent;}
+    const row=S.list.find(l=>l.id===id); if(row){row.verdict=rv.verdict;row.curl=!!rv.dewarp;row.warped=!!rv.warped;row.n_review=rv.regions.length;row.open=rv.regions.filter(x=>x.class==='??').length;row.changed=rv.regions.some(x=>x.origin==='human'||x.moved)||rv.regions.length!==row.n_agent;}
     renderList(); counts();
   }catch(e){status('NOT SAVED: server unreachable',true);S.dirty=id;}
 }
