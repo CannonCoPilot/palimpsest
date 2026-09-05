@@ -27,6 +27,50 @@ STATES = ["BL","BP","EC"]          # blank leaf · blank lower page · empty tab
 ABSTAIN = "??"
 CLASSES = TEXT + NONTEXT + STATES
 VERDICTS = ("accept", "corrected", "defect")
+SKEW_MAX = 6.0          # degrees; a leaf needing more than this is a capture defect, not a skew
+CODE_RE = r"^[A-Z][A-Z0-9]{1,2}$"
+
+
+# ---------------------------------------------------------------- geometry (the ONE implementation)
+# `skew_deg` is the rotation applied to the raster, COUNTER-CLOCKWISE positive as PIL's Image.rotate,
+# about the image centre, canvas size unchanged. Boxes in `review.regions` are fractions of THAT
+# levelled canvas. `agent` boxes stay in the unrotated frame (skew 0), verbatim.
+import math
+
+def deskew(im, skew_deg):
+    """Return the levelled raster a consumer must score against. Identity at 0."""
+    if not skew_deg: return im
+    return im.rotate(skew_deg, resample=3, expand=False, fillcolor=(255, 255, 255) if im.mode == "RGB" else 255)
+
+def transform_box(box, w, h, d_deg):
+    """Carry an axis-aligned box (fractions of a w×h canvas) across a rotation of the canvas by
+    d_deg (CCW, about the centre). The centre is rotated exactly; the size is kept, which is the
+    right first approximation for the small angles a bound book shows. Clamped to the canvas."""
+    if not d_deg: return list(box)
+    t = math.radians(d_deg); c, s = math.cos(t), math.sin(t)
+    cx, cy = (box[0]+box[2])/2*w - w/2, (box[1]+box[3])/2*h - h/2
+    # y is down: a visual CCW turn by t maps (x,y) -> (x cos t + y sin t, -x sin t + y cos t)
+    nx, ny = cx*c + cy*s + w/2, -cx*s + cy*c + h/2
+    bw, bh = (box[2]-box[0])*w, (box[3]-box[1])*h
+    x0, y0, x1, y1 = nx-bw/2, ny-bh/2, nx+bw/2, ny+bh/2
+    cl = lambda v, m: max(0.0, min(1.0, v/m))
+    return [round(cl(x0, w), 4), round(cl(y0, h), 4), round(cl(x1, w), 4), round(cl(y1, h), 4)]
+
+def estimate_skew(im, lo=-3.0, hi=3.0, step=0.1):
+    """Projection-profile skew estimate: the angle at which row-ink variance peaks, i.e. the text
+    lines are level. Coarse sweep then a fine sweep at 0.02°. Works on a grey thumbnail; PIL only."""
+    g = im.convert("L")
+    if g.width > 900: g = g.resize((900, round(g.height*900/g.width)))
+    g = g.point(lambda v: 255 - v)              # ink bright
+    def score(a):
+        r = g.rotate(a, resample=2, expand=False, fillcolor=0)
+        prof = list(r.resize((1, r.height), resample=3).tobytes())   # row means by box filter (mode L)
+        m = sum(prof)/len(prof)
+        return sum((p-m)**2 for p in prof)/len(prof)
+    best = max((score(a), a) for a in [lo + i*step for i in range(int(round((hi-lo)/step))+1)])[1]
+    fine = [best - 0.3 + i*0.02 for i in range(31)]
+    best = max((score(a), a) for a in fine)[1]
+    return round(best, 2)
 
 
 class GoldError(Exception):
@@ -46,10 +90,24 @@ def _box_ok(b):
             and 0 <= b[0] < b[2] <= 1 and 0 <= b[1] < b[3] <= 1)
 
 
+def all_classes(rec):
+    """Register classes plus the record's own provisional additions (Sir's authority)."""
+    return CLASSES + [c["code"] for c in rec.get("classes_added", [])]
+
+
 def validate(rec, check_source=True):
     """Raise GoldError on the first violation. Returns the record unchanged."""
+    import re
     if rec.get("format") != "plate-gold/1":
         raise GoldError(f"unknown record format {rec.get('format')!r}")
+    seen = set(CLASSES)
+    for c in rec.get("classes_added", []):
+        if not re.match(CODE_RE, c.get("code", "")) or not c.get("meaning", "").strip():
+            raise GoldError(f"classes_added: bad entry {c!r} (code 2-3 caps, meaning required)")
+        if c["code"] in seen or c["code"] == ABSTAIN:
+            raise GoldError(f"classes_added: {c['code']} already exists")
+        seen.add(c["code"])
+    classes = all_classes(rec)
     src = rec.get("source", {})
     if check_source:
         p = Path(src.get("path", ""))
@@ -64,10 +122,13 @@ def validate(rec, check_source=True):
         v = rv.get("verdict")
         if v is not None and v not in VERDICTS:
             raise GoldError(f"{lid}: verdict {v!r} not in {VERDICTS}")
+        sk = rv.get("skew_deg", 0) or 0
+        if not isinstance(sk, (int, float)) or abs(sk) > SKEW_MAX:
+            raise GoldError(f"{lid}: skew_deg {sk!r} outside ±{SKEW_MAX}° — a capture defect, flag it, do not level it")
         for i, r in enumerate(rv.get("regions", [])):
             c = r.get("class")
-            if c != ABSTAIN and c not in CLASSES:
-                raise GoldError(f"{lid} region {i}: class {c!r} not in the register")
+            if c != ABSTAIN and c not in classes:
+                raise GoldError(f"{lid} region {i}: class {c!r} not in the register or the record's additions")
             if not _box_ok(r.get("box")):
                 raise GoldError(f"{lid} region {i}: bad box {r.get('box')!r}")
             if r.get("origin") not in ("agent", "human"):
@@ -102,6 +163,12 @@ def accepted(record=RECORD):
 def is_gold(witness, leaf, record=RECORD):
     lid = f"{witness}_{int(leaf):04d}"
     return lid in accepted(record)
+
+
+def gold_raster(im, lid, record=RECORD):
+    """The raster an accepted leaf's boxes are expressed on: the source image levelled by its skew."""
+    rv = accepted(record)[lid]
+    return deskew(im, rv.get("skew_deg", 0) or 0)
 
 
 def main():

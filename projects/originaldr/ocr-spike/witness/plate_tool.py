@@ -20,7 +20,7 @@ import argparse, io, json, os, sys, threading, webbrowser
 from datetime import datetime, timezone
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlparse, parse_qs
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -68,7 +68,7 @@ def append_log(logp, entry):
 
 def fresh_review(agent):
     return {"verdict": None, "note": "", "side": agent.get("side"), "kind": agent.get("kind"),
-            "measure": agent.get("measure"),
+            "measure": agent.get("measure"), "skew_deg": 0.0, "skew_source": None, "warped": False,
             "regions": [{"box": list(r["box"]), "class": r["class"], "why": r.get("why", ""),
                          "origin": "agent", "agent_index": i} for i, r in enumerate(agent.get("regions", []))],
             "proposed_classes": []}
@@ -84,9 +84,13 @@ def leaf_entry(rec, lid):
 def check_review(rv):
     if rv.get("verdict") not in (None,) + PG.VERDICTS:
         raise ValueError(f"bad verdict {rv.get('verdict')!r}")
+    sk = rv.get("skew_deg", 0) or 0
+    if not isinstance(sk, (int, float)) or abs(sk) > PG.SKEW_MAX:
+        raise ValueError(f"skew {sk!r} outside ±{PG.SKEW_MAX}° — that is a capture defect: tick 'warped' and leave the leaf as defect")
+    classes = PG.all_classes(CFG["rec"])
     for i, r in enumerate(rv.get("regions", [])):
         if not PG._box_ok(r.get("box")): raise ValueError(f"region {i}: bad box")
-        if r.get("class") != PG.ABSTAIN and r.get("class") not in PG.CLASSES:
+        if r.get("class") != PG.ABSTAIN and r.get("class") not in classes:
             raise ValueError(f"region {i}: class {r.get('class')!r} not in the register")
         if r.get("origin") not in ("agent", "human"): raise ValueError(f"region {i}: bad origin")
     if rv.get("verdict") == "accept":
@@ -121,6 +125,23 @@ def hires_jpeg(lid):
     b = io.BytesIO(); im.save(b, "JPEG", quality=88, optimize=True)
     out.write_bytes(b.getvalue()); return b.getvalue()
 
+_rot_cache = {}
+def rotated(raw, key, deg):
+    """JPEG bytes levelled by deg through plate_gold.deskew — the same call every consumer makes."""
+    if not deg: return raw
+    k = (key, round(deg, 2))
+    if k in _rot_cache: return _rot_cache[k]
+    from PIL import Image
+    im = PG.deskew(Image.open(io.BytesIO(raw)).convert("RGB"), deg)
+    b = io.BytesIO(); im.save(b, "JPEG", quality=85); out = b.getvalue()
+    if len(_rot_cache) > 6: _rot_cache.pop(next(iter(_rot_cache)))
+    _rot_cache[k] = out; return out
+
+def rot_param(path):
+    q = parse_qs(urlparse(path).query).get("rot", ["0"])[0]
+    try: return max(-PG.SKEW_MAX, min(PG.SKEW_MAX, float(q)))
+    except ValueError: return 0.0
+
 
 # ---------------------------------------------------------------- http
 class H(BaseHTTPRequestHandler):
@@ -149,7 +170,8 @@ class H(BaseHTTPRequestHandler):
                              "changed": bool(L and (any(r["origin"] == "human" or r.get("moved") for r in rv["regions"])
                                                     or len(rv["regions"]) != len(src[lid].get("regions", []))))})
             return self.send(200, {"record": os.path.relpath(CFG["out"], HERE), "source": rec["source"],
-                                   "classes": {"text": PG.TEXT, "nontext": PG.NONTEXT, "states": PG.STATES},
+                                   "classes": {"text": PG.TEXT, "nontext": PG.NONTEXT, "states": PG.STATES,
+                                               "added": rec.get("classes_added", [])}, "skew_max": PG.SKEW_MAX,
                                    "hires": CFG["manifest"] is not None, "leaves": rows})
         if p.startswith("/api/leaf/"):
             lid = p[10:]
@@ -160,19 +182,39 @@ class H(BaseHTTPRequestHandler):
                 rv = L["review"] if L else fresh_review(agent)
                 return self.send(200, {"id": lid, "agent": agent, "review": rv, "touched": bool(L),
                                        "px": CFG["px"].get(lid)})
+        if p.startswith("/api/skew/"):
+            f = CFG["img"] / (p[10:] + ".jpg")
+            if not f.exists(): return self.send(404, {"error": "no image"})
+            from PIL import Image
+            return self.send(200, {"skew_deg": PG.estimate_skew(Image.open(f))})
         if p.startswith("/img/"):
             f = CFG["img"] / (p[5:] + ".jpg")
             if not f.exists(): return self.send(404, {"error": "no image"})
-            return self.send(200, f.read_bytes(), "image/jpeg")
+            return self.send(200, rotated(f.read_bytes(), "img:" + p[5:], rot_param(self.path)), "image/jpeg")
         if p.startswith("/hires/"):
             try: b = hires_jpeg(p[7:])
             except Exception as e: return self.send(500, {"error": f"hires decode failed: {e}"})
             if b is None: return self.send(404, {"error": "no full-resolution raster for this leaf in raster-manifest.json"})
-            return self.send(200, b, "image/jpeg")
+            return self.send(200, rotated(b, "hires:" + p[7:], rot_param(self.path)), "image/jpeg")
         self.send(404, {"error": "not found"})
 
     def do_POST(self):
         p = unquote(self.path.split("?")[0])
+        if p == "/api/class":
+            import re
+            n = int(self.headers.get("Content-Length", 0))
+            try: body = json.loads(self.rfile.read(n))
+            except Exception: return self.send(400, {"error": "bad json"})
+            code, meaning = (body.get("code") or "").strip().upper(), (body.get("meaning") or "").strip()
+            if not re.match(PG.CODE_RE, code): return self.send(422, {"error": "code must be 2-3 capitals, e.g. AC"})
+            if not meaning: return self.send(422, {"error": "a meaning is required — one line, what a reader sees"})
+            with LOCK:
+                rec = CFG["rec"]
+                if code in PG.all_classes(rec) or code == PG.ABSTAIN: return self.send(422, {"error": f"{code} already exists"})
+                rec.setdefault("classes_added", []).append({"code": code, "meaning": meaning, "when": now()})
+                write_record(CFG["out"], rec)
+                append_log(CFG["log"], {"t": now(), "class_added": code, "meaning": meaning})
+            return self.send(200, {"ok": True, "added": rec["classes_added"]})
         if not p.startswith("/api/leaf/"): return self.send(404, {"error": "not found"})
         lid = p[10:]
         if lid not in CFG["source"]: return self.send(404, {"error": "no such leaf"})
@@ -180,6 +222,7 @@ class H(BaseHTTPRequestHandler):
         try: body = json.loads(self.rfile.read(n))
         except Exception: return self.send(400, {"error": "bad json"})
         rv = body.get("review")
+        if not isinstance(rv, dict): return self.send(422, {"error": "body must be {review: {...}}"})
         try: check_review(rv)
         except ValueError as e: return self.send(422, {"error": str(e)})
         with LOCK:
@@ -254,6 +297,11 @@ footer b{color:var(--ink)}
 .meta{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
 .meta .full{grid-column:1/3}
 .warn{color:var(--rubric);font-family:var(--mono);font-size:.7rem}
+.skew{display:grid;grid-template-columns:1fr 4.2rem auto;gap:.4rem;align-items:center}
+.skew input[type=range]{width:100%;accent-color:var(--slate)}
+.skew input[type=number]{font:inherit;font-size:.78rem;font-family:var(--mono);padding:.25rem .3rem;border:1px solid var(--rule);background:#fff;border-radius:2px;width:100%}
+.chk{font-family:var(--mono);font-size:.68rem;color:var(--ink-2);display:flex;gap:.3rem;align-items:center;margin-top:.3rem}
+.ksrc{font-family:var(--mono);font-size:.62rem;color:var(--grey)}
 </style></head><body>
 <header><h1>Plate Tool</h1><span class="src" id="src"></span><span class="sp"></span><span id="status">…</span></header>
 <aside>
@@ -277,6 +325,10 @@ footer b{color:var(--ink)}
       <div><label>side</label><select id="side"><option>recto</option><option>verso</option><option>unknown</option></select></div>
       <div><label>measure (x0, x1)</label><input type="text" id="measure" placeholder="0.16, 0.82"></div>
       <div class="full"><label>page kind</label><input type="text" id="kind"></div>
+      <div class="full"><label>level the page · skew ° <span class="ksrc" id="ksrc"></span></label>
+        <div class="skew"><input type="range" id="skewr" min="-4" max="4" step="0.02" value="0"><input type="number" id="skewn" step="0.02" min="-6" max="6" value="0"><button class="b" id="skewa" title="estimate from the text lines">auto</button></div>
+        <label class="chk"><input type="checkbox" id="warped"> warped — cannot be levelled by one angle (gutter curl, cockle)</label>
+      </div>
     </div>
   </div>
   <div class="grp">
@@ -299,12 +351,28 @@ footer b{color:var(--ink)}
       <div class="agent" id="rprops"></div>
     </div>
   </div>
+  <div class="grp">
+    <h2>New class</h2>
+    <div style="display:grid;grid-template-columns:4rem 1fr auto;gap:.3rem"><input type="text" id="ncode" placeholder="AC" maxlength="3" style="font-family:var(--mono);text-transform:uppercase"><input type="text" id="nmean" placeholder="meaning — what a reader sees"><button class="b" id="nadd">add</button></div>
+    <div class="agent" id="nlist"></div>
+  </div>
 </div>
 <footer><span><b id="cnt"></b> leaves in the read</span><span><b id="done"></b> verdicts on disk</span><span><b id="acc"></b> accepted</span><span>record <b id="recp"></b></span><span id="hint"></span></footer>
 <script>
 const $=q=>document.querySelector(q);
 const S={list:[],i:-1,leaf:null,rv:null,sel:-1,z:1,hires:false,undo:[],filter:'all',classes:null,dirty:null,adding:false};
-const COL=c=>S.classes.text.includes(c)?'#3A5A6B':S.classes.nontext.includes(c)?'#8A6A20':S.classes.states.includes(c)?'#5A6B3A':'#A32B22';
+const COL=c=>S.classes.text.includes(c)?'#3A5A6B':S.classes.nontext.includes(c)?'#8A6A20':S.classes.states.includes(c)?'#5A6B3A':S.classes.added.some(a=>a.code===c)?'#6B3A5A':'#A32B22';
+// the same transform as plate_gold.transform_box: rotate the centre about the canvas centre, keep the size
+function tbox(b,w,h,d){ if(!d)return b.slice(); const t=d*Math.PI/180,c=Math.cos(t),s=Math.sin(t);
+  const cx=(b[0]+b[2])/2*w-w/2, cy=(b[1]+b[3])/2*h-h/2, nx=cx*c+cy*s+w/2, ny=-cx*s+cy*c+h/2, bw=(b[2]-b[0])*w, bh=(b[3]-b[1])*h;
+  const cl=(v,m)=>Math.max(0,Math.min(1,v/m)); return [cl(nx-bw/2,w),cl(ny-bh/2,h),cl(nx+bw/2,w),cl(ny+bh/2,h)].map(v=>+v.toFixed(4)); }
+function classSelect(){
+  const sel=$('#rclass'); const keep=sel.value; sel.innerHTML='';
+  const og=(n,arr)=>{if(!arr.length)return;const g=document.createElement('optgroup');g.label=n;arr.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;g.appendChild(o)});sel.appendChild(g)};
+  og('text',S.classes.text);og('not text',S.classes.nontext);og('states',S.classes.states);og('provisional (this record)',S.classes.added.map(a=>a.code));og('abstain',['??']);
+  if(keep)sel.value=keep;
+  $('#nlist').innerHTML=S.classes.added.map(a=>`<b>${a.code}</b> ${a.meaning}`).join('<br>');
+}
 function status(t,err){const s=$('#status');s.textContent=t;s.classList.toggle('err',!!err);}
 
 async function boot(){
@@ -312,10 +380,12 @@ async function boot(){
   S.classes=st.classes; S.list=st.leaves; S.hiresOK=st.hires;
   $('#src').textContent=st.source.path+' · '+st.source.sha256.slice(0,12); $('#recp').textContent=st.record;
   $('#hires').disabled=!st.hires;
-  const sel=$('#rclass'); sel.innerHTML='';
-  const og=(n,arr)=>{const g=document.createElement('optgroup');g.label=n;arr.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;g.appendChild(o)});sel.appendChild(g)};
-  og('text',S.classes.text);og('not text',S.classes.nontext);og('states',S.classes.states);og('abstain',['??']);
-  renderList(); counts();
+  classSelect(); renderList(); counts();
+  $('#skewr').oninput=e=>setSkew(+e.target.value,'human',false); $('#skewr').onchange=e=>setSkew(+e.target.value,'human',true);
+  $('#skewn').onchange=e=>setSkew(+e.target.value,'human',true);
+  $('#skewa').onclick=autoSkew;
+  $('#warped').onchange=e=>{S.rv.warped=e.target.checked;save();};
+  $('#nadd').onclick=addClass;
   document.querySelectorAll('.filt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');S.filter=b.dataset.f;renderList();});
   $('#prev').onclick=()=>go(S.i-1); $('#next').onclick=()=>go(S.i+1); $('#nextu').onclick=nextUnreviewed;
   $('#zi').onclick=()=>zoom(S.z*1.25); $('#zo').onclick=()=>zoom(S.z/1.25); $('#fit').onclick=()=>fit();
@@ -358,10 +428,37 @@ async function go(i){
   S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; $('#wrap').classList.remove('adding');
   $('#lid').textContent=d.id; $('#note').value=S.rv.note||''; $('#side').value=S.rv.side||'unknown'; $('#kind').value=S.rv.kind||'';
   $('#measure').value=S.rv.measure?S.rv.measure.join(', '):'';
+  $('#warped').checked=!!S.rv.warped; skewUI();
   renderList(); loadImg(); draw(); verdictUI();
+  if(!d.touched && !S.rv.skew_source) autoSkew();
+}
+function skewUI(){const k=S.rv.skew_deg||0;$('#skewr').value=k;$('#skewn').value=k.toFixed(2);$('#ksrc').textContent=S.rv.skew_source?('· '+S.rv.skew_source):'';}
+// rotating the canvas moves every box: carry them across by the delta, exactly as the reader would
+function setSkew(k,source,commit){
+  k=Math.max(-6,Math.min(6,+k||0)); const old=S.rv.skew_deg||0, d=k-old;
+  if(!d&&commit){ if(source==='auto'&&!S.rv.skew_source){S.rv.skew_source='auto';} skewUI(); return; }
+  const img=$('#img'), px=S.leaf.px||[img.naturalWidth||1100,img.naturalHeight||1500], w=px[0], h=px[1];
+  if(commit)push();
+  S.rv.regions.forEach(r=>{r.box=tbox(r.box,w,h,d); if(r.origin==='agent'&&d)r.moved=true;});
+  S.rv.skew_deg=+k.toFixed(2); S.rv.skew_source=source; skewUI(); draw();
+  if(commit){save(); loadImg();}
+}
+async function autoSkew(){
+  $('#skewa').disabled=true; $('#ksrc').textContent='· estimating…';
+  try{ const j=await (await fetch('/api/skew/'+S.leaf.id)).json(); if(j.skew_deg===undefined)throw new Error(j.error);
+       setSkew(j.skew_deg,'auto',true); }
+  catch(e){ status('skew estimate failed: '+e.message,true); }
+  $('#skewa').disabled=false;
+}
+async function addClass(){
+  const code=$('#ncode').value.trim().toUpperCase(), meaning=$('#nmean').value.trim();
+  const r=await fetch('/api/class',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code,meaning})});
+  const j=await r.json(); if(!r.ok){status('class not added: '+j.error,true);return;}
+  S.classes.added=j.added; classSelect(); $('#ncode').value='';$('#nmean').value=''; status('class '+code+' added to the record');
+  if(S.sel>=0){push();S.rv.regions[S.sel].class=code;save();draw();}
 }
 function loadImg(){
-  const img=$('#img'); const url=(S.hires?'/hires/':'/img/')+S.leaf.id;
+  const img=$('#img'); const url=(S.hires?'/hires/':'/img/')+S.leaf.id+'?rot='+(S.rv.skew_deg||0);
   img.onload=()=>{fit();}; img.onerror=()=>{if(S.hires){status('no full-resolution raster for this leaf',true);S.hires=false;$('#hires').classList.remove('on');loadImg();}};
   img.src=url;
 }
@@ -424,7 +521,7 @@ function propose(){const t=$('#rprop').value.trim();if(!t)return;S.rv.proposed_c
 function setVerdict(v){if(v==='accept'&&document.querySelector('[data-v=accept]').disabled){status('accept blocked: resolve every ?? first',true);return;}S.rv.verdict=v;save();verdictUI();}
 // ---- undo
 function push(){S.undo.push(JSON.stringify(S.rv));if(S.undo.length>100)S.undo.shift();}
-function undo(){if(!S.undo.length)return;S.rv=JSON.parse(S.undo.pop());S.sel=-1;$('#note').value=S.rv.note||'';save();draw();}
+function undo(){if(!S.undo.length)return;const k0=S.rv.skew_deg||0;S.rv=JSON.parse(S.undo.pop());S.sel=-1;$('#note').value=S.rv.note||'';$('#warped').checked=!!S.rv.warped;skewUI();save();draw();if((S.rv.skew_deg||0)!==k0)loadImg();}
 // ---- persistence: every change is POSTed; the server writes the record before answering
 let timer=null;
 function save(){clearTimeout(timer);S.dirty=S.leaf.id;status('unsaved…');timer=setTimeout(flush,250);}
