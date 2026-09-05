@@ -56,21 +56,52 @@ def transform_box(box, w, h, d_deg):
     cl = lambda v, m: max(0.0, min(1.0, v/m))
     return [round(cl(x0, w), 4), round(cl(y0, h), 4), round(cl(x1, w), 4), round(cl(y1, h), 4)]
 
-def estimate_skew(im, lo=-3.0, hi=3.0, step=0.1):
-    """Projection-profile skew estimate: the angle at which row-ink variance peaks, i.e. the text
-    lines are level. Coarse sweep then a fine sweep at 0.02°. Works on a grey thumbnail; PIL only."""
+def _profile_var(g, a):
+    r = g.rotate(a, resample=2, expand=False, fillcolor=0)
+    prof = r.resize((1, r.height), resample=3).tobytes()      # row means by box filter (mode L)
+    m = sum(prof)/len(prof)
+    return sum((p-m)**2 for p in prof)/len(prof)
+
+def estimate_skew(im, lo=-3.0, hi=3.0, step=0.1, margin=0.06, detail=False):
+    """Projection-profile skew: the angle at which row-ink variance peaks, i.e. the text lines are
+    level. The outer `margin` is trimmed first — the scan border is a straight edge on the image
+    axes and would otherwise pin the answer to 0. Ink is measured relative to the paper (median),
+    so the fill outside the rotated canvas is paper, not a second edge. Coarse sweep, fine sweep at
+    0.02°. `confidence` = peak variance over the sweep median; below ~1.5 there are no lines to
+    level (blank quarter, ornament) and the angle is not to be trusted."""
     g = im.convert("L")
+    w, h = g.size; g = g.crop((int(w*margin), int(h*margin), int(w*(1-margin)), int(h*(1-margin))))
     if g.width > 900: g = g.resize((900, round(g.height*900/g.width)))
-    g = g.point(lambda v: 255 - v)              # ink bright
-    def score(a):
-        r = g.rotate(a, resample=2, expand=False, fillcolor=0)
-        prof = list(r.resize((1, r.height), resample=3).tobytes())   # row means by box filter (mode L)
-        m = sum(prof)/len(prof)
-        return sum((p-m)**2 for p in prof)/len(prof)
-    best = max((score(a), a) for a in [lo + i*step for i in range(int(round((hi-lo)/step))+1)])[1]
-    fine = [best - 0.3 + i*0.02 for i in range(31)]
-    best = max((score(a), a) for a in fine)[1]
-    return round(best, 2)
+    hist = g.histogram(); paper = max(range(256), key=lambda v: hist[v])
+    g = g.point(lambda v: max(0, paper - v))          # ink = darkness below paper; paper -> 0
+    angles = [lo + i*step for i in range(int(round((hi-lo)/step))+1)]
+    sc = [(_profile_var(g, a), a) for a in angles]
+    best = max(sc)[1]
+    fine = [(_profile_var(g, a), a) for a in [best - 0.3 + i*0.02 for i in range(31)]]
+    peak, best = max(fine)
+    med = sorted(v for v, _ in sc)[len(sc)//2] or 1e-9
+    conf = round(peak/med, 2)
+    if detail: return {"skew_deg": round(best, 2), "confidence": conf}
+    return round(best, 2) if conf >= 1.5 else 0.0
+
+CONF_MIN = 1.5
+
+def warp_profile(im, margin=0.06):
+    """Is one angle enough? Estimate the skew in the four quarters of the leaf (inner area, margin
+    trimmed). A rigid tilt gives four near-equal angles; gutter curl or cockling makes them disagree.
+    Returns {"quarters": {tl,tr,bl,br}, "spread": max-min, "lr": |left-right| mean diff, "tb": |top-bottom|}."""
+    w, h = im.size; x0, y0, x1, y1 = int(w*margin), int(h*margin), int(w*(1-margin)), int(h*(1-margin))
+    xm, ym = (x0+x1)//2, (y0+y1)//2
+    q = {"tl": (x0, y0, xm, ym), "tr": (xm, y0, x1, ym), "bl": (x0, ym, xm, y1), "br": (xm, ym, x1, y1)}
+    d = {k: estimate_skew(im.crop(b), margin=0.0, detail=True) for k, b in q.items()}
+    a = {k: v["skew_deg"] for k, v in d.items() if v["confidence"] >= CONF_MIN}
+    v = list(a.values())
+    mean = lambda ks: sum(a[k] for k in ks if k in a)/max(1, sum(1 for k in ks if k in a))
+    return {"quarters": {k: (a[k] if k in a else None) for k in d}, "confidence": {k: v["confidence"] for k, v in d.items()},
+            "spread": round(max(v)-min(v), 2) if len(v) >= 2 else 0.0,
+            "lr": round(abs(mean(("tl","bl")) - mean(("tr","br"))), 2), "tb": round(abs(mean(("tl","tr")) - mean(("bl","br"))), 2)}
+
+WARP_SPREAD = 0.5      # degrees between quarters beyond which one angle cannot level the leaf
 
 
 class GoldError(Exception):

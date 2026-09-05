@@ -280,6 +280,28 @@ for lid in LEAVES:
     leaf_b64[lid] = b64(im, LEAF_Q)
 print(f"{len(leaf_b64)} leaves embedded, {sum(map(len, leaf_b64.values()))/1e6:.1f} MB")
 
+# ------------------------------------------------------------------ levelling survey + gold set
+SURVEY = json.load(open(CR.parent / "plates" / "skew-survey-B.json"))
+GOLD1 = json.load(open(CR.parent / "plates" / "gold-set-1-proposed.json"))
+WARP_SPREAD = 0.5
+def volstats(v):
+    ks = [abs(r["skew"]) for l, r in SURVEY.items() if l.startswith(v)]
+    return len(ks), max(ks), sum(1 for k in ks if k > 0), sum(1 for l, r in SURVEY.items() if l.startswith(v) and r["spread"] > WARP_SPREAD)
+FIGS = {}
+for lid in ("OT1-1609-B_0409", "OT2-1610-B_0026", "NT-1582-B_0562", "NT-1582-B_0781"):
+    FIGS[lid] = base64.b64encode(open(SP / "level-figs" / f"{lid}.jpg", "rb").read()).decode()
+def figcap(lid):
+    r = SURVEY[lid]; q = r["quarters"]
+    qs = " · ".join(f"{k} {('—' if v is None else f'{v:+.2f}°')}" for k, v in q.items())
+    return f"page {r['skew']:+.2f}° · quarters {qs} · spread {r['spread']:.2f}°"
+levelfigs = "\n".join(f'<figure class="lf"><img src="data:image/jpeg;base64,{b}" alt="{esc(lid)} raw and levelled with per-quarter line angles"><figcaption><b>{esc(lid)}</b> — {esc(figcap(lid))}</figcaption></figure>' for lid, b in FIGS.items())
+warped = sorted((l for l, r in SURVEY.items() if r["spread"] > WARP_SPREAD), key=lambda l: -SURVEY[l]["spread"])
+warprows = "".join(f"<tr><td class=k>{esc(l)}</td><td>{SURVEY[l]['skew']:+.2f}</td><td>{SURVEY[l]['spread']:.2f}</td><td>{SURVEY[l]['lr']:.2f}</td><td>{SURVEY[l]['tb']:.2f}</td><td class=q>{esc(LEAVES[l].get('kind','')[:80])}</td></tr>" for l in warped)
+goldrows = "".join(f"<tr><td class=k>{esc(g['id'])}</td><td>{g['skew']:+.2f}</td><td>{'warp' if g['warp'] else ''}</td><td>{esc(' '.join(g['classes']))}</td><td class=q>{esc(g['kind'][:90])}</td></tr>" for g in GOLD1["leaves"])
+vs = {v: volstats(v) for v in ("NT-1582-B", "OT1-1609-B", "OT2-1610-B")}
+volrows = "".join(f"<tr><td class=k>{v}</td><td>{n}</td><td>{mx:.2f}°</td><td>{nz}</td><td>{nw}</td></tr>" for v, (n, mx, nz, nw) in vs.items())
+MAXSKEW = max(abs(r["skew"]) for r in SURVEY.values())
+
 # ------------------------------------------------------------------ html pieces
 def plate(cls):
     out = []
@@ -349,6 +371,11 @@ css += '''
 .cls.state .code{color:var(--olive)}
 .jump a.st{border-style:dashed}
 .legend i.st{background:var(--olive)}
+.lf{margin:0 0 1.2rem;background:var(--plate-bg);padding:.6rem;border-radius:2px}
+.lf img{width:100%;display:block}
+.lf figcaption{font-family:var(--mono);font-size:.68rem;color:var(--ink-2);margin-top:.4rem;line-height:1.5}
+.lvl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem 2rem;align-items:start}
+@media (max-width:820px){.lvl{grid-template-columns:1fr}}
 .notb{font-family:var(--mono);font-size:.74rem;color:var(--ink-2);line-height:1.6;margin:1rem 0 0}
 .notb b{color:var(--grey)}
 .changed{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:.9rem 2rem;margin:1rem 0 0;padding:0;list-style:none;font-size:.95rem}
@@ -375,13 +402,13 @@ page = '''<title>LECTOR Class Register</title>
 %%CSS%%
 </style>
 <div class="sheet">
-<p class="eyebrow">OriginalDR · LECTOR · rebuilt from the B witness · 5 September 2026 · for Sir's ruling</p>
+<p class="eyebrow">OriginalDR · LECTOR · rebuilt from the B witness · levelled · 5 September 2026 · for Sir's ruling</p>
 <div class="top">
   <div>
     <h1>LECTOR Class Register</h1>
     <p class="lede">Every kind of thing a reader found on <b>54 leaves of the base setting</b> (S09, ~545 ppi, real capture), 18 per volume, drawn from the image alone. <b>%%NREG%% regions, %%NCLS%% classes, 3 reportable states.</b> This replaces the 35-leaf register built on the P surrogate: every class from those rounds recurred here, so the inventory is a property of the printing, not the scan.</p>
     <div class="legend"><span><i style="background:var(--slate)"></i>in the inventory today (%%NEX%%)</span><span><i style="background:var(--rubric)"></i>proposed text class (%%NPROP%%)</span><span><i style="background:var(--amber)"></i>proposed non-text (%%NNON%%)</span><span><i class="st"></i>reportable state (3)</span></div>
-    <nav class="jump" aria-label="jump to class">%%JUMP%%</nav>
+    <nav class="jump" aria-label="jump to class"><a href="#level">level</a><a href="#gold1">gold set 1</a>%%JUMP%%</nav>
     <p class="notb">In the P register, not met on B: %%NOTB%%</p>
   </div>
   <div>
@@ -407,12 +434,30 @@ page = '''<title>LECTOR Class Register</title>
 <p class="lede" style="font-size:1rem">No box is drawn until move 4. This is what LECTOR-as-director has to reproduce; the classes below are what move 5 has to be able to say. On the blank leaf, move 1 is the only move.</p>
 <ol class="moves">
   <li><b>What part of the image is the leaf?</b> Discount scanner surround, the facing page's bleed, show-through, a cropped edge. On B the leaf fills the image; show-through and cropping remain.</li>
-  <li><b>Orient.</b> Recto or verso, from the page-number corner and whether a signature exists. Decides which side notes, verse numbers, the topical headline and the gloss-key sit on.</li>
+  <li><b>Orient, then level.</b> Recto or verso, from the page-number corner and whether a signature exists. Then one angle for the whole leaf, from the text lines, so every box that follows is plumb by construction. The angle is a datum in the record; a leaf one angle cannot level is flagged warped.</li>
   <li><b>Name the page kind.</b> Verse numbers at the measure edge → scripture. One prose measure, no numbers → prelim or annotations. Centred CHAP. → break page. Rules, ornaments, two columns → table, index, book opening, title page.</li>
   <li><b>Find the measure from the type, then bound the body.</b> The hard left edge of aligned line-starts. Then place every other class by relation to it.</li>
   <li><b>Read a few words before classifying.</b> "CHAP." is a head because it says so. "Zz" is a signature because it is a letter formula. "The Gospel vpõ" is a rubric because it names a feast.</li>
   <li><b>Check the page against itself; abstain where there is no word.</b> Verse numbers monotone. Blank reported as blank. Empty cells reported as empty. Acrostic markers left unnamed rather than misfiled.</li>
 </ol>
+
+<hr class="rule">
+<div class="sechead" id="level"><span class="num">LEVEL</span><h2>One angle per leaf, measured on all 54</h2><p>The forme was one rigid body when it was printed, so every block on a leaf shares one skew. Boxes are stored in the levelled frame. Rotating boxes one by one would add a free parameter per region and hide the one case that matters: a leaf that is not rigid.</p></div>
+<div class="lvl">
+  <div>
+    <p class="what">Largest skew in the sample is <b>%%MAXSKEW%%°</b>. The record refuses anything beyond ±6°, a ceiling set so the levelled canvas never clips more than a tenth of its width; the data sits far inside it. The NT witness reads level on every leaf: the archive had already squared it. Both OT witnesses are raw captures and tilt up to two and a third degrees either way.</p>
+    <div class="tw"><table><thead><tr><th>witness</th><th>leaves</th><th>max |skew|</th><th>tilted</th><th>warp flagged</th></tr></thead><tbody>%%VOLROWS%%</tbody></table></div>
+    <p class="how"><span class="lbl">how the angle is found</span>Trim the scan border, measure ink against the paper, rotate through ±3° and take the angle at which the row-ink profile is spikiest, i.e. the lines are level. Coarse sweep, then 0.02° steps. A confidence below 1.5 means there are no lines to level, and the leaf is left at zero rather than given a number.</p>
+    <p class="how"><span class="lbl">how warped is decided</span>The same measurement in each quarter of the leaf. A rigid tilt gives four near-equal angles. If the quarters disagree by more than 0.5° after the page is levelled, one angle cannot enclose every block and the leaf is flagged. Thirteen of 54 trip that threshold; the table names them. Quarters without regular lines, an ornament, a blank foot, interleaved italic, are left out of the spread, which is the method's blind spot.</p>
+    <div class="tw"><table><thead><tr><th>leaf</th><th>page °</th><th>spread °</th><th>left–right</th><th>top–bottom</th><th>kind</th></tr></thead><tbody>%%WARPROWS%%</tbody></table></div>
+    <p class="ruling"><span class="lbl">the warped leaves: proposed approach</span>Gutter curl is a bend, not a tilt: the local angle changes smoothly with distance from the spine. The fix that keeps boxes axis-aligned is a strip-wise dewarp. Measure the angle in vertical strips across the leaf, fit a smooth curve, and resample the raster so every strip is level. The record stores the curve as the leaf's second datum beside the skew, and the reader applies both, so consumers still score against one canonical raster. Until that exists a warped leaf stays corrected, not accepted, unless its boxes enclose their blocks cleanly on the levelled page. Ruling needed: build the dewarp before the first Gold Set is locked, or lock the rigid leaves first and hold the thirteen.</p>
+  </div>
+  <div>%%LEVELFIGS%%</div>
+</div>
+
+<hr class="rule">
+<div class="sechead" id="gold1"><span class="num">GOLD SET 1</span><h2>Nineteen leaves proposed for the first locked set</h2><p>Chosen by class cover: every one of the 27 classes appears at least once, at 6/6/7 per volume. The structural leaves are forced in, the blank leaf, the title page, the Approbatio, the Psalter, the table, the index, the rubric leaf, and the rest are the most tilted rigid leaves so the levelling is exercised. I read them, you correct and accept in the Plate Tool, the reader locks them.</p></div>
+<div class="tw"><table><thead><tr><th>leaf</th><th>skew °</th><th></th><th>classes on it</th><th>kind</th></tr></thead><tbody>%%GOLDROWS%%</tbody></table></div>
 
 <hr class="rule">
 <div class="sechead"><span class="num">A · B · C</span><h2>The register</h2><p>A: classes already in the inventory, with the rulings they still need. B: text classes that had to be invented on the leaves. C: things in the image that are not text. Every exemplar is a B leaf.</p></div>
@@ -549,6 +594,7 @@ for k, v in {
     "%%VNT%%": str(vols["NT-1582-B"]), "%%VOT1%%": str(vols["OT1-1609-B"]), "%%VOT2%%": str(vols["OT2-1610-B"]),
     "%%ROWS%%": rows, "%%STATES%%": staterows, "%%SUBROWS%%": subrows,
     "%%REGIONS%%": json.dumps(regions).replace("</", "<\\/"),
+    "%%MAXSKEW%%": f"{MAXSKEW:.2f}", "%%VOLROWS%%": volrows, "%%WARPROWS%%": warprows, "%%GOLDROWS%%": goldrows, "%%LEVELFIGS%%": levelfigs,
     "%%LEAFIMG%%": json.dumps(leaf_b64),
 }.items():
     page = page.replace(k, v)
