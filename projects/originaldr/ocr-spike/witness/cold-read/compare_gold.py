@@ -7,11 +7,13 @@ a disagreement can be looked at rather than averaged away.
   ../ocr-venv/bin/python witness/cold-read/compare_gold.py
 """
 import json
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 W = HERE.parent
-cold = json.loads((HERE / "cold-read.json").read_text())["leaves"]
+SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "cold-read.json"
+cold = json.loads(SRC.read_text())["leaves"]
 gold = json.loads((W / "gold" / "head_regions_OT1-1609-B_400-419.json").read_text())
 bundle = {p["id"]: p for p in json.loads((W / "plates" / "bundle.json").read_text())["plates"]}
 
@@ -35,6 +37,8 @@ for e in gold["labels"]:
     if "xlf" not in e or e["leaf"] not in (409, 412):
         continue
     lid = f"OT1-1609-B_{e['leaf']:04d}"
+    if lid not in cold:
+        continue
     gb = [e["xlf"], e["y0f"], e["xrf"], e["y1f"]]
     best, bo = None, 0.0
     for r in cold[lid]["regions"]:
@@ -46,7 +50,7 @@ for e in gold["labels"]:
     tot += 1; hit += ok
     flag = "  " if ok else "🔴"
     print(f"{flag} {lid} row{e['row']} gold {e['label']:<3} cold {got:<3} cover {bo:.2f}  '{e['text'][:40]}'")
-print(f"\nagreement {hit}/{tot}")
+print(f"\nagreement {hit}/{tot}" if tot else "\n(no gold leaves in this set)")
 
 print("\n=== live bundle (Surya+cascade, post-R16.20) vs cold read, frame only ===")
 for lid, c in cold.items():
@@ -72,3 +76,27 @@ for lid, c in cold.items():
         surya = best["surya"] if best else "—"
         mark = "  " if got == r["class"] else ("⚠️" if bo < 0.3 else "🔴")
         print(f"  {mark} cold {r['class']:<3} live {got:<3} (surya {surya:<13} cover {bo:.2f})  {r['why'][:50]}")
+
+
+print("\n=== SUMMARY per leaf: agree / disagree / no live box (cover<0.30) ===")
+print(f"{'leaf':<20} {'regions':>7} {'agree':>6} {'disagree':>9} {'no box':>7}   classes the live pipeline never produced")
+tot = {"n": 0, "a": 0, "d": 0, "m": 0}
+missing_classes = {}
+for lid, c in cold.items():
+    p = bundle[lid]; a = d = m = 0
+    for r in c["regions"]:
+        best, bo = None, 0.0
+        for b in p["boxes"]:
+            bb = [b["x0"], b["y0"], b["x1"], b["y1"]]
+            o = ov(r["box"], bb) / max(1e-9, area(r["box"]))
+            if o > bo: best, bo = b, o
+        if bo < 0.30: m += 1
+        elif best["label"] == r["class"]: a += 1
+        else:
+            d += 1
+            missing_classes.setdefault(r["class"], 0); missing_classes[r["class"]] += 1
+    n = len(c["regions"]); tot["n"] += n; tot["a"] += a; tot["d"] += d; tot["m"] += m
+    print(f"{lid:<20} {n:>7} {a:>6} {d:>9} {m:>7}")
+print(f"{'TOTAL':<20} {tot['n']:>7} {tot['a']:>6} {tot['d']:>9} {tot['m']:>7}")
+print("\nmy classes the live pipeline mislabelled (count):",
+      ", ".join(f"{k}:{v}" for k, v in sorted(missing_classes.items(), key=lambda kv: -kv[1])))
