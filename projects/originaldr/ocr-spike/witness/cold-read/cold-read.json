@@ -1,0 +1,88 @@
+{
+  "_doc": "Fable cold read 2026-09-04. Page-fraction boxes [x0,y0,x1,y1], eyeballed to ~0.01. Labels are one reader's judgement, NOT gold. Procedure in FABLE-COLD-READ-2026-09-04.md.",
+  "leaves": {
+    "OT1-1609-B_0412": {
+      "side": "verso", "archetype": "scripture, chapter break, left-margin apparatus",
+      "measure": [0.16, 0.82], "verse_gutter": "right",
+      "regions": [
+        {"box": [0.15, 0.040, 0.21, 0.062], "class": "PN", "why": "top-left numeral 380; verso"},
+        {"box": [0.43, 0.040, 0.58, 0.062], "class": "RH", "why": "centred NVMERI. in spaced caps"},
+        {"box": [0.78, 0.035, 0.95, 0.062], "class": "RH", "why": "topical running title 'Sacrifices for', continues onto facing page"},
+        {"box": [0.02, 0.070, 0.16, 0.125], "class": "MN", "why": "smaller fount, fore-edge margin, 'Temporal Princes are also pastors...'"},
+        {"box": [0.02, 0.125, 0.16, 0.395], "class": "MN", "why": "continuation of same commentary note through 'his going out, and going in.'"},
+        {"box": [0.16, 0.065, 0.82, 0.420], "class": "MT", "why": "body, Numbers 27:15-23, hard left edge of aligned line starts"},
+        {"box": [0.82, 0.065, 0.87, 0.420], "class": "VN", "why": "thin numeral column hugging right edge of measure, monotone 15..23"},
+        {"box": [0.40, 0.445, 0.64, 0.465], "class": "CH", "why": "centred 'CHAP. XXVIII.', reads as chapter head"},
+        {"box": [0.17, 0.470, 0.82, 0.520], "class": "AR", "why": "italic summary lines under the chapter head, chapter argument"},
+        {"box": [0.17, 0.522, 0.24, 0.560], "class": "DC", "why": "two-line initial O opening 28:1"},
+        {"box": [0.24, 0.520, 0.82, 0.870], "class": "MT", "why": "body, Numbers 28:1-9"},
+        {"box": [0.82, 0.520, 0.87, 0.870], "class": "VN", "why": "numeral column restarts 1 2 3.. after the break"},
+        {"box": [0.02, 0.585, 0.16, 0.635], "class": "MN", "why": "'Varietie of Sacrifices for diuers times.'"},
+        {"box": [0.02, 0.635, 0.16, 0.670], "class": "MN", "why": "'1. Euerie day, twise.'"},
+        {"box": [0.02, 0.828, 0.16, 0.868], "class": "MN", "why": "'On the Sabbath day.'"},
+        {"box": [0.78, 0.872, 0.84, 0.892], "class": "CW", "why": "single word 'with' below last body line, right; catchword (next-page match unverified)"}
+      ]
+    },
+    "OT1-1609-B_0409": {
+      "side": "recto", "archetype": "scripture, plain, no apparatus",
+      "measure": [0.15, 0.81], "verse_gutter": "left",
+      "regions": [
+        {"box": [0.03, 0.048, 0.17, 0.070], "class": "RH", "why": "'numbered.' top-left, topical running title continued from facing page"},
+        {"box": [0.38, 0.055, 0.53, 0.077], "class": "RH", "why": "centred NVMERI."},
+        {"box": [0.75, 0.065, 0.81, 0.088], "class": "PN", "why": "top-right numeral 377; recto"},
+        {"box": [0.11, 0.070, 0.15, 0.870], "class": "VN", "why": "numeral column left of measure, 30..48 monotone"},
+        {"box": [0.15, 0.068, 0.81, 0.870], "class": "MT", "why": "single body block Numbers 26:29-48"},
+        {"box": [0.50, 0.875, 0.56, 0.895], "class": "SG", "why": "'Zz' letter formula centred at foot; recto; gathering signature"},
+        {"box": [0.68, 0.875, 0.77, 0.895], "class": "CW", "why": "'whom' right of signature, catchword"}
+      ]
+    },
+    "OT2-1610-P_0749": {
+      "side": "recto", "archetype": "scripture, right-margin apparatus",
+      "measure": [0.15, 0.83], "verse_gutter": "left",
+      "regions": [
+        {"box": [0.37, 0.020, 0.57, 0.045], "class": "RH", "why": "centred 'OF EZECHIEL.'"},
+        {"box": [0.78, 0.020, 0.84, 0.045], "class": "PN", "why": "top-right 741; recto"},
+        {"box": [0.11, 0.045, 0.15, 0.905], "class": "VN", "why": "numeral column left, 12..26"},
+        {"box": [0.15, 0.045, 0.83, 0.905], "class": "MT", "why": "body Ezechiel 36:11-26; the largest object on the page"},
+        {"box": [0.84, 0.370, 0.98, 0.650], "class": "MN", "why": "smaller fount right margin, 'Iewes by their sinnes prouoking God...'"},
+        {"box": [0.84, 0.665, 0.98, 0.925], "class": "MN", "why": "'Rabbi Dauid & the Chaldee Paraphrasis...' ends in italic citation Ephes. 5"},
+        {"box": [0.43, 0.905, 0.56, 0.928], "class": "SG", "why": "'Wwww 3' letter+numeral formula at foot"},
+        {"box": [0.71, 0.905, 0.79, 0.928], "class": "CW", "why": "'your'"}
+      ]
+    },
+    "NT-1582-B_0009": {
+      "side": "recto", "archetype": "prelim prose, no verses, no page number",
+      "measure": [0.10, 0.80], "verse_gutter": "none",
+      "regions": [
+        {"box": [0.27, 0.035, 0.56, 0.058], "class": "RH", "why": "centred spaced caps 'TO THE READER.'"},
+        {"box": [0.10, 0.058, 0.80, 0.858], "class": "MT", "why": "ONE prose measure, four paragraphs (tops at y .058 .113 .440 .765); bound as one text, paragraphs as sub-structure"},
+        {"box": [0.03, 0.245, 0.10, 0.290], "class": "MN", "why": "italic left-margin citation 'Ind. lib. prohibit. regula 4.' — a source citation, sub-kind of note"},
+        {"box": [0.80, 0.125, 0.96, 0.230], "class": "MN", "why": "right-margin summary 'The Churches order & determination concerning...'"},
+        {"box": [0.80, 0.525, 0.96, 0.585], "class": "MN", "why": "'The holy Scriptures neuer read of al persons indifferently...'"},
+        {"box": [0.80, 0.785, 0.96, 0.850], "class": "MN", "why": "'VVhere and in vvhose handes the Scriptures vvere in the primitiue Church.'"},
+        {"box": [0.61, 0.862, 0.68, 0.882], "class": "SG", "why": "'a iij' signature formula at foot"},
+        {"box": [0.76, 0.862, 0.81, 0.882], "class": "CW", "why": "'and'"}
+      ]
+    },
+    "OT2-1610-P_0666": {
+      "side": "verso", "archetype": "scripture, chapter break, left apparatus, verse-per-paragraph, ACROSTIC apparatus",
+      "measure": [0.17, 0.85], "verse_gutter": "right",
+      "regions": [
+        {"box": [0.17, 0.015, 0.23, 0.035], "class": "PN", "why": "top-left 658; verso"},
+        {"box": [0.36, 0.012, 0.74, 0.038], "class": "RH", "why": "centred 'THE LAMENTATIONS'"},
+        {"box": [0.17, 0.040, 0.85, 0.430], "class": "MT", "why": "body Lam 3:58-66, one column, each verse its own hanging-indent paragraph"},
+        {"box": [0.85, 0.040, 0.90, 0.430], "class": "VN", "why": "numeral column right, 58..66"},
+        {"box": [0.91, 0.040, 0.99, 0.430], "class": "??", "why": "italic Hebrew letter names Res/Sin/Thau one per verse — ACROSTIC MARKERS; no declared class"},
+        {"box": [0.02, 0.085, 0.16, 0.150], "class": "MN", "why": "'Iudge: thou that which they haue iudged vniustly.'"},
+        {"box": [0.02, 0.300, 0.16, 0.400], "class": "MN", "why": "'Geue them the paine of hartie sorow...'"},
+        {"box": [0.43, 0.445, 0.63, 0.465], "class": "CH", "why": "centred 'CHAP. IIII.'"},
+        {"box": [0.17, 0.470, 0.24, 0.510], "class": "DC", "why": "two-line initial H opening 4:1"},
+        {"box": [0.24, 0.470, 0.85, 0.920], "class": "MT", "why": "body Lam 4:1-8, verse-per-paragraph"},
+        {"box": [0.85, 0.470, 0.90, 0.920], "class": "VN", "why": "1..8"},
+        {"box": [0.91, 0.470, 0.99, 0.920], "class": "??", "why": "Aleph Beth Ghimel Daleth He Vau Zain Heth — acrostic markers; no declared class"},
+        {"box": [0.02, 0.440, 0.16, 0.970], "class": "MN", "why": "long left-margin commentary from 'VVheras the Temple...' to 'quainted before.'"},
+        {"box": [0.65, 0.928, 0.73, 0.948], "class": "CW", "why": "'It was'"}
+      ]
+    }
+  }
+}
