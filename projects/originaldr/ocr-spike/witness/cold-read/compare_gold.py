@@ -16,6 +16,9 @@ SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "cold-read.json"
 cold = json.loads(SRC.read_text())["leaves"]
 gold = json.loads((W / "gold" / "head_regions_OT1-1609-B_400-419.json").read_text())
 bundle = {p["id"]: p for p in json.loads((W / "plates" / "bundle.json").read_text())["plates"]}
+ALL_COLD = dict(cold)
+SKIPPED = [l for l in cold if l not in bundle]
+cold = {k: v for k, v in cold.items() if k in bundle}
 
 # gold labels → cold-read classes
 MAP = {"RH": "RH", "MN": "MN", "MT": "MT", "CH": "CH", "PN": "PN", "AR": "AR"}
@@ -62,6 +65,8 @@ for lid, c in cold.items():
 
 print("\n=== live labels vs cold read on the same leaves: what the cascade called each of MY regions ===")
 for lid, c in cold.items():
+    if lid not in bundle:
+        continue
     p = bundle[lid]
     print(f"\n{lid}")
     for r in c["regions"]:
@@ -82,7 +87,10 @@ print("\n=== SUMMARY per leaf: agree / disagree / no live box (cover<0.30) ===")
 print(f"{'leaf':<20} {'regions':>7} {'agree':>6} {'disagree':>9} {'no box':>7}   classes the live pipeline never produced")
 tot = {"n": 0, "a": 0, "d": 0, "m": 0}
 missing_classes = {}
+skipped = [l for l in cold if l not in bundle]
 for lid, c in cold.items():
+    if lid not in bundle:
+        continue
     p = bundle[lid]; a = d = m = 0
     for r in c["regions"]:
         best, bo = None, 0.0
@@ -98,5 +106,6 @@ for lid, c in cold.items():
     n = len(c["regions"]); tot["n"] += n; tot["a"] += a; tot["d"] += d; tot["m"] += m
     print(f"{lid:<20} {n:>7} {a:>6} {d:>9} {m:>7}")
 print(f"{'TOTAL':<20} {tot['n']:>7} {tot['a']:>6} {tot['d']:>9} {tot['m']:>7}")
+print(f"\n(no live plate for {len(SKIPPED)} of {len(ALL_COLD)} leaves — not in the 208 set)")
 print("\nmy classes the live pipeline mislabelled (count):",
       ", ".join(f"{k}:{v}" for k, v in sorted(missing_classes.items(), key=lambda kv: -kv[1])))
