@@ -322,7 +322,7 @@ footer b{color:var(--ink)}
 .skew input[type=range]{width:100%;accent-color:var(--slate)}
 .skew input[type=number]{font:inherit;font-size:.78rem;font-family:var(--mono);padding:.25rem .3rem;border:1px solid var(--rule);background:#fff;border-radius:2px;width:100%}
 .chk{font-family:var(--mono);font-size:.68rem;color:var(--ink-2);display:flex;gap:.3rem;align-items:center;margin-top:.3rem}
-.ksrc{font-family:var(--mono);font-size:.62rem;color:var(--grey)}
+.ksrc{font-family:var(--mono);font-size:.62rem;color:var(--grey)} .ksrc .bad{color:var(--rubric)}
 .curl{font-family:var(--mono);font-size:.7rem;color:var(--ink-2);display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.4rem}
 .curl b{color:var(--ink)} .curl .bad{color:var(--rubric);font-weight:500} .curl .ok{color:var(--olive)}
 .pill.curl{background:var(--olive);color:#fff}.pill.warped{background:var(--rubric);color:#fff}
@@ -486,14 +486,17 @@ async function go(i){
   if(!S.list.length)return; i=(i+S.list.length)%S.list.length;
   await flush();
   S.i=i; const d=await (await fetch('/api/leaf/'+S.list[i].id)).json();
-  S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; $('#wrap').classList.remove('adding');
+  S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; S.autoSkew=null; $('#wrap').classList.remove('adding');
   $('#lid').textContent=d.id; $('#note').value=S.rv.note||''; $('#side').value=S.rv.side||'unknown'; $('#kind').value=S.rv.kind||'';
   $('#measure').value=S.rv.measure?S.rv.measure.join(', '):'';
   $('#warped').checked=!!S.rv.warped; skewUI(); curlUI();
   renderList(); loadImg(); draw(); verdictUI();
   if(!d.touched && !S.rv.skew_source){ await autoSkew(); await fitCurl(); }
 }
-function skewUI(){const k=S.rv.skew_deg||0;$('#skewr').value=k;$('#skewn').value=k.toFixed(2);$('#ksrc').textContent=S.rv.skew_source?('· '+S.rv.skew_source):'';}
+function skewUI(){const k=S.rv.skew_deg||0;$('#skewr').value=k;$('#skewn').value=k.toFixed(2);
+  const a=S.autoSkew; let t=S.rv.skew_source?('· '+S.rv.skew_source):'';
+  if(a!==undefined&&a!==null){ t+=` · auto read ${a.toFixed(2)}°`; if(Math.abs(k-a)>0.1) t+=` · <span class=bad>${Math.abs(k-a).toFixed(2)}° off the reading</span>`; }
+  $('#ksrc').innerHTML=t; }
 // rotating the canvas moves every box: carry them across by the delta, exactly as the reader would
 function setSkew(k,source,commit){
   k=Math.max(-6,Math.min(6,+k||0)); const old=S.rv.skew_deg||0, d=k-old;
@@ -504,11 +507,12 @@ function setSkew(k,source,commit){
   S.rv.regions.forEach(r=>{let b=m?tboxDw(r.box,m,w,h,true):r.box; b=tbox(b,w,h,d); r.box=m?tboxDw(b,m,w,h,false):b; if(r.origin==='agent'&&d)r.moved=true;});
   S.rv.skew_deg=+k.toFixed(2); S.rv.skew_source=source; skewUI(); draw();
   if(commit){save(); loadImg();}
+  else { const img=$('#img'); img.style.transformOrigin='50% 50%'; img.style.transform='rotate('+(-(k-(S.loadedRot||0)))+'deg)'; }
 }
 async function autoSkew(){
   $('#skewa').disabled=true; $('#ksrc').textContent='· estimating…';
   try{ const j=await (await fetch('/api/skew/'+S.leaf.id)).json(); if(j.skew_deg===undefined)throw new Error(j.error);
-       setSkew(j.skew_deg,'auto:'+(j.from||'page'),true); }
+       S.autoSkew=j.skew_deg; setSkew(j.skew_deg,'auto:'+(j.from||'page'),true); skewUI(); }
   catch(e){ status('skew estimate failed: '+e.message,true); }
   $('#skewa').disabled=false;
 }
@@ -521,7 +525,7 @@ async function addClass(){
 }
 function loadImg(){
   const img=$('#img'); const url=(S.hires?'/hires/':'/img/')+S.leaf.id+'?rot='+(S.rv.skew_deg||0)+(S.rv.dewarp?'&dw=1':'');
-  img.onload=()=>{fit();}; img.onerror=()=>{if(S.hires){status('no full-resolution raster for this leaf',true);S.hires=false;$('#hires').classList.remove('on');loadImg();}};
+  img.onload=()=>{img.style.transform='';S.loadedRot=S.rv.skew_deg||0;fit();}; img.onerror=()=>{if(S.hires){status('no full-resolution raster for this leaf',true);S.hires=false;$('#hires').classList.remove('on');loadImg();}};
   img.src=url;
 }
 function zoom(z){S.z=Math.max(.1,Math.min(8,z));const img=$('#img');img.style.width=(img.naturalWidth*S.z)+'px';}
