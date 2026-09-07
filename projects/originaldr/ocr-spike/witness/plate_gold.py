@@ -314,6 +314,77 @@ def is_gold(witness, leaf, record=RECORD):
     return lid in accepted(record)
 
 
+# ---------------------------------------------------------------- rows (line grain)
+def ink_rows(im, box, min_h=0.004, gap=0.0015, thr=0.35):
+    """Rows of ink inside a box: the horizontal ink profile of the crop, thresholded at `thr` of its
+    peak, runs merged across gaps shorter than `gap` (fractions of image height), runs shorter than
+    `min_h` dropped. Returns [[x0, y0, x1, y1], ...] in image fractions, top to bottom — one row per
+    line of type inside the box. This is the segmentation the verse-number column and the body share."""
+    w, h = im.size; x0, y0, x1, y1 = int(box[0]*w), int(box[1]*h), int(box[2]*w), int(box[3]*h)
+    if x1-x0 < 2 or y1-y0 < 2: return []
+    g = np.asarray(im.convert("L").crop((x0, y0, x1, y1)), dtype=float)
+    paper = np.percentile(g, 90); ink = np.clip(paper - g, 0, None)
+    prof = ink.mean(axis=1); prof = np.convolve(prof, np.ones(3)/3, mode="same")
+    if prof.max() <= 0: return []
+    on = prof > thr*prof.max()
+    rows, start = [], None
+    for i, v in enumerate(list(on) + [False]):
+        if v and start is None: start = i
+        elif not v and start is not None: rows.append([start, i]); start = None
+    merged = []
+    for r in rows:
+        if merged and (r[0]-merged[-1][1]) <= gap*h: merged[-1][1] = r[1]
+        else: merged.append(r)
+    merged = [r for r in merged if (r[1]-r[0]) >= min_h*h]
+    if len(merged) >= 3:                       # a run taller than 1.5 pitches is several rows the ink bridged
+        hs = sorted(b-a for a, b in merged); med = hs[len(hs)//2]
+        split = []
+        for a, b in merged:
+            k = int(round((b-a)/med)) if med else 1
+            if k >= 2 and (b-a) > 1.5*med:
+                split += [[a + (b-a)*i//k, a + (b-a)*(i+1)//k] for i in range(k)]
+            else: split.append([a, b])
+        merged = split
+    out = []
+    for a, b in merged:
+        cols = np.where(ink[a:b].mean(axis=0) > thr*ink[a:b].mean(axis=0).max())[0]
+        cx0, cx1 = (x0 + cols.min(), x0 + cols.max() + 1) if len(cols) else (x0, x1)
+        out.append([round(cx0/w, 4), round((y0+a)/h, 4), round(cx1/w, 4), round((y0+b)/h, 4)])
+    return out
+
+BODY_CLASSES = ("MT", "AN", "IG", "AR")
+
+def link_verse_numbers(im, regions):
+    """For every VN region: its numeral rows, the body region it serves (largest vertical overlap,
+    nearest horizontally), that body's line rows, and each numeral paired with the body line whose
+    centre is nearest in y. The link runs from the numeral to the measure edge on the column's side,
+    which is where the verse's first word sits. Returns a list, one entry per VN region."""
+    out = []
+    bodies = [(i, r) for i, r in enumerate(regions) if r["class"] in BODY_CLASSES]
+    for vi, r in enumerate(regions):
+        if r["class"] != "VN": continue
+        vb = r["box"]; vrows = ink_rows(im, vb)
+        best, bscore = None, None
+        for bi, b in bodies:
+            bb = b["box"]; ov = max(0.0, min(vb[3], bb[3]) - max(vb[1], bb[1]))
+            if ov <= 0: continue
+            dx = min(abs(vb[2]-bb[0]), abs(bb[2]-vb[0]))
+            sc = ov - dx
+            if bscore is None or sc > bscore: best, bscore = bi, sc
+        entry = {"vn_index": vi, "body_index": best, "side": None, "rows": [], "lines": []}
+        if best is not None:
+            bb = regions[best]["box"]; lines = ink_rows(im, bb); entry["lines"] = lines
+            entry["side"] = "left" if (vb[0]+vb[2])/2 < (bb[0]+bb[2])/2 else "right"
+            for rw in vrows:
+                yc = (rw[1]+rw[3])/2
+                li = min(range(len(lines)), key=lambda k: abs((lines[k][1]+lines[k][3])/2 - yc)) if lines else None
+                entry["rows"].append({"box": rw, "line": li, "origin": "auto"})
+        else:
+            entry["rows"] = [{"box": rw, "line": None, "origin": "auto"} for rw in vrows]
+        out.append(entry)
+    return out
+
+
 def gold_raster(im, lid, record=RECORD):
     """The raster an accepted leaf's boxes are expressed on: the source image levelled by its skew,
     then dewarped by its colshear model if it has one."""

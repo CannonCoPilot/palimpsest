@@ -91,6 +91,9 @@ def check_review(rv):
     dw = rv.get("dewarp")
     if dw is not None and (not isinstance(dw, dict) or dw.get("model") != "colshear-v1" or not dw.get("top") or not dw.get("bot")):
         raise ValueError("dewarp must be a colshear-v1 model or null")
+    for e in rv.get("vn_links") or []:
+        for rw in e.get("rows", []):
+            if not PG._box_ok(rw.get("box")): raise ValueError("vn row: bad box")
     classes = PG.all_classes(CFG["rec"])
     for i, r in enumerate(rv.get("regions", [])):
         if not PG._box_ok(r.get("box")): raise ValueError(f"region {i}: bad box")
@@ -236,6 +239,18 @@ class H(BaseHTTPRequestHandler):
                 write_record(CFG["out"], rec)
                 append_log(CFG["log"], {"t": now(), "class_added": code, "meaning": meaning})
             return self.send(200, {"ok": True, "added": rec["classes_added"]})
+        if p.startswith("/api/rows/"):
+            lid = p[10:]
+            if lid not in CFG["source"]: return self.send(404, {"error": "no such leaf"})
+            n = int(self.headers.get("Content-Length", 0))
+            try: body = json.loads(self.rfile.read(n))
+            except Exception: return self.send(400, {"error": "bad json"})
+            from PIL import Image
+            f = CFG["img"] / (lid + ".jpg")
+            im = PG.apply_dewarp(PG.deskew(Image.open(f).convert("RGB"), float(body.get("rot") or 0)), body.get("dewarp"))
+            try: links = PG.link_verse_numbers(im, body.get("regions", []))
+            except Exception as e: return self.send(500, {"error": f"row detection failed: {e}"})
+            return self.send(200, {"vn_links": links})
         if not p.startswith("/api/leaf/"): return self.send(404, {"error": "not found"})
         lid = p[10:]
         if lid not in CFG["source"]: return self.send(404, {"error": "no such leaf"})
@@ -298,6 +313,20 @@ aside .row .m{color:var(--grey)} aside .row.cur .m{color:var(--rule)}
 .h.e{right:-6px;top:calc(50% - 5px);cursor:ew-resize}.h.se{right:-6px;bottom:-6px;cursor:nwse-resize}.h.s{left:calc(50% - 5px);bottom:-6px;cursor:ns-resize}
 .h.sw{left:-6px;bottom:-6px;cursor:nesw-resize}.h.w{left:-6px;top:calc(50% - 5px);cursor:ew-resize}
 #rubber{position:absolute;border:1.5px dashed #fff;display:none;pointer-events:none}
+#links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+#links line{stroke:#3E8A4A;stroke-width:1.6;vector-effect:non-scaling-stroke}
+#links line.sel{stroke:#A32B22;stroke-width:3}
+#links line.unpaired{stroke:#A32B22;stroke-dasharray:4 3}
+#links rect.ln{fill:none;stroke:#3E8A4A;stroke-width:1;vector-effect:non-scaling-stroke;opacity:.35}
+#links rect.ln.paired{fill:rgba(62,138,74,.14);opacity:1}
+#links rect.ln.sel{stroke:#A32B22;stroke-width:2;fill:rgba(163,43,34,.14);opacity:1}
+#links circle{fill:#3E8A4A} #links circle.sel{fill:#A32B22}
+.vrow{position:absolute;border:1.5px solid #3E8A4A;background:rgba(62,138,74,.10);cursor:pointer;z-index:6}
+.vrow.sel{border-color:#A32B22;border-width:2.5px;background:rgba(163,43,34,.15)}
+.vrow.human{border-style:dashed}
+.vrow .n{position:absolute;font:600 .58rem var(--mono);color:#fff;background:#3E8A4A;padding:0 .2rem;line-height:.9rem;top:-.95rem;left:-1.5px}
+.vrow.sel .n{background:#A32B22}
+.rowsinfo{font-family:var(--mono);font-size:.66rem;color:var(--ink-2);line-height:1.5;margin-top:.3rem}
 .pane{overflow:auto;border-left:1px solid var(--rule);padding:.8rem;display:flex;flex-direction:column;gap:.8rem;font-size:.9rem}
 .pane h2{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin:0 0 .3rem}
 .pane label{display:block;font-family:var(--mono);font-size:.64rem;color:var(--grey);margin:.35rem 0 .1rem}
@@ -335,7 +364,7 @@ footer b{color:var(--ink)}
   </div>
   <div id="list"></div>
 </aside>
-<div id="stage"><div id="wrap"><img id="img" alt=""><div id="rubber"></div></div></div>
+<div id="stage"><div id="wrap"><img id="img" alt=""><svg id="links" viewBox="0 0 1000 1000" preserveAspectRatio="none"></svg><div id="rubber"></div></div></div>
 <div class="pane">
   <div class="grp">
     <h2>Leaf <span id="lid" style="color:var(--ink)"></span></h2>
@@ -344,7 +373,9 @@ footer b{color:var(--ink)}
       <button class="b" id="nextu" title="N">next unreviewed</button>
       <button class="b" id="zo" title="-">−</button><button class="b" id="zi" title="+">+</button><button class="b" id="fit">fit</button>
       <button class="b" id="hires" title="H">full res</button>
+      <button class="b" id="rowsb" title="R · detect verse-number rows and link each to its verse's first line">rows</button>
     </div>
+    <div class="rowsinfo" id="rowsinfo" hidden></div>
     <div class="meta">
       <div><label>side</label><select id="side"><option>recto</option><option>verso</option><option>unknown</option></select></div>
       <div><label>measure (x0, x1)</label><input type="text" id="measure" placeholder="0.16, 0.82"></div>
@@ -385,7 +416,7 @@ footer b{color:var(--ink)}
 <footer><span><b id="cnt"></b> leaves in the read</span><span><b id="done"></b> verdicts on disk</span><span><b id="acc"></b> accepted</span><span>record <b id="recp"></b></span><span id="hint"></span></footer>
 <script>
 const $=q=>document.querySelector(q);
-const S={list:[],i:-1,leaf:null,rv:null,sel:-1,z:1,hires:false,undo:[],filter:'all',classes:null,dirty:null,adding:false};
+const S={list:[],i:-1,leaf:null,rv:null,sel:-1,z:1,hires:false,undo:[],filter:'all',classes:null,dirty:null,adding:false,rows:false,rsel:null};
 const COL=c=>S.classes.text.includes(c)?'#3A5A6B':S.classes.nontext.includes(c)?'#8A6A20':S.classes.states.includes(c)?'#5A6B3A':S.classes.added.some(a=>a.code===c)?'#6B3A5A':'#A32B22';
 // the same transform as plate_gold.transform_box: rotate the centre about the canvas centre, keep the size
 function tbox(b,w,h,d){ if(!d)return b.slice(); const t=d*Math.PI/180,c=Math.cos(t),s=Math.sin(t);
@@ -446,7 +477,7 @@ async function boot(){
   $('#skewa').onclick=autoSkew;
   $('#warped').onchange=e=>{S.rv.warped=e.target.checked;save();renderList();};
   $('#curlfit').onclick=fitCurl; $('#curlclr').onclick=clearCurl;
-  $('#nadd').onclick=addClass;
+  $('#nadd').onclick=addClass; $('#rowsb').onclick=toggleRows;
   document.querySelectorAll('.filt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');S.filter=b.dataset.f;renderList();});
   $('#prev').onclick=()=>go(S.i-1); $('#next').onclick=()=>go(S.i+1); $('#nextu').onclick=nextUnreviewed;
   $('#zi').onclick=()=>zoom(S.z*1.25); $('#zo').onclick=()=>zoom(S.z/1.25); $('#fit').onclick=()=>fit();
@@ -465,7 +496,8 @@ async function boot(){
     if(k.key==='n'||k.key==='N')nextUnreviewed();
     if(k.key==='a'||k.key==='A'){S.adding=true;$('#wrap').classList.add('adding');$('#hint').textContent='drag on the leaf to add a region · Esc cancels';}
     if(k.key==='Escape'){S.adding=false;$('#wrap').classList.remove('adding');$('#hint').textContent='';select(-1);}
-    if(k.key==='Delete'||k.key==='Backspace'){if(S.sel>=0){k.preventDefault();delRegion();}}
+    if(k.key==='Delete'||k.key==='Backspace'){k.preventDefault(); if(!rowsDelete()&&S.sel>=0)delRegion();}
+    if(k.key==='r'||k.key==='R')toggleRows();
     if((k.metaKey||k.ctrlKey)&&k.key==='z'){k.preventDefault();undo();}
     if(k.key==='+'||k.key==='=')zoom(S.z*1.25); if(k.key==='-')zoom(S.z/1.25); if(k.key==='0')fit();
     if(k.key==='h'||k.key==='H')$('#hires').click();
@@ -486,7 +518,7 @@ async function go(i){
   if(!S.list.length)return; i=(i+S.list.length)%S.list.length;
   await flush();
   S.i=i; const d=await (await fetch('/api/leaf/'+S.list[i].id)).json();
-  S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; S.autoSkew=null; $('#wrap').classList.remove('adding');
+  S.leaf=d; S.rv=d.review; S.sel=-1; S.undo=[]; S.adding=false; S.autoSkew=null; S.rsel=null; S.rows=!!(d.review.vn_links&&d.review.vn_links.length); $('#rowsb').classList.toggle('on',S.rows); $('#wrap').classList.remove('adding');
   $('#lid').textContent=d.id; $('#note').value=S.rv.note||''; $('#side').value=S.rv.side||'unknown'; $('#kind').value=S.rv.kind||'';
   $('#measure').value=S.rv.measure?S.rv.measure.join(', '):'';
   $('#warped').checked=!!S.rv.warped; skewUI(); curlUI();
@@ -505,6 +537,7 @@ function setSkew(k,source,commit){
   if(commit)push();
   const m=S.rv.dewarp;
   S.rv.regions.forEach(r=>{let b=m?tboxDw(r.box,m,w,h,true):r.box; b=tbox(b,w,h,d); r.box=m?tboxDw(b,m,w,h,false):b; if(r.origin==='agent'&&d)r.moved=true;});
+  if(d&&S.rv.vn_links){S.rv.vn_links=null;S.rows=false;$('#rowsb').classList.remove('on');}
   S.rv.skew_deg=+k.toFixed(2); S.rv.skew_source=source; skewUI(); draw();
   if(commit){save(); loadImg();}
   else { const img=$('#img'); img.style.transformOrigin='50% 50%'; img.style.transform='rotate('+(-(k-(S.loadedRot||0)))+'deg)'; }
@@ -536,6 +569,57 @@ function verdictUI(){
   $('#vwarn').textContent=(open?`${open} region${open>1?'s':''} still ?? — accept is blocked until each is named or made a state. `:'')+(S.rv.warped?'Leaf is flagged WARPED: accept only if every box encloses its block cleanly on this page.':'');
   document.querySelector('[data-v=accept]').disabled=open>0||!S.rv.regions.length;
 }
+// ---- verse-number rows: green ticks on the VN column, a green line to the verse's first line
+async function fetchRows(){
+  await flush(); $('#rowsb').disabled=true;
+  try{
+    const r=await fetch('/api/rows/'+S.leaf.id,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rot:S.rv.skew_deg||0,dewarp:S.rv.dewarp,regions:S.rv.regions})});
+    const j=await r.json(); if(!r.ok)throw new Error(j.error);
+    push(); S.rv.vn_links=j.vn_links; S.rows=true; S.rsel=null; $('#rowsb').classList.add('on'); save(); draw();
+    const n=j.vn_links.reduce((a,e)=>a+e.rows.length,0); status(j.vn_links.length?`${n} numeral rows on ${j.vn_links.length} VN column${j.vn_links.length>1?'s':''} — click a row, then click its first line to re-pair; Delete removes; shift-click in the column adds`:'no VN region on this leaf', !j.vn_links.length);
+  }catch(e){ status('rows failed: '+e.message,true); }
+  $('#rowsb').disabled=false;
+}
+function toggleRows(){ if(!S.rv.vn_links||!S.rv.vn_links.length){fetchRows();return;} S.rows=!S.rows; $('#rowsb').classList.toggle('on',S.rows); S.rsel=null; draw(); }
+function drawRows(){
+  const w=$('#wrap'), svg=$('#links'); w.querySelectorAll('.vrow').forEach(b=>b.remove()); svg.innerHTML=''; const info=$('#rowsinfo');
+  if(!S.rows||!S.rv.vn_links){info.hidden=true;return;}
+  let sv='', txt=[];
+  S.rv.vn_links.forEach((e,ei)=>{
+    const vn=S.rv.regions[e.vn_index], body=e.body_index!=null?S.rv.regions[e.body_index]:null;
+    const paired=new Set(e.rows.map(r=>r.line));
+    e.lines.forEach((l,li)=>{ const sel=S.rsel&&S.rsel[0]===ei&&e.rows[S.rsel[1]]&&e.rows[S.rsel[1]].line===li; sv+=`<rect class="ln${sel?' sel':(paired.has(li)?' paired':'')}" x="${l[0]*1000}" y="${l[1]*1000}" width="${(l[2]-l[0])*1000}" height="${(l[3]-l[1])*1000}"/>`; });
+    e.rows.forEach((rw,ri)=>{
+      const b=rw.box, sel=S.rsel&&S.rsel[0]===ei&&S.rsel[1]===ri, d=document.createElement('div');
+      d.className='vrow'+(sel?' sel':'')+(rw.origin==='human'?' human':''); d.innerHTML=`<span class="n">${ri+1}</span>`;
+      d.style.cssText=`left:${b[0]*100}%;top:${b[1]*100}%;width:${(b[2]-b[0])*100}%;height:${(b[3]-b[1])*100}%`;
+      d.onpointerdown=ev=>{ev.stopPropagation(); S.rsel=sel?null:[ei,ri]; drawRows();};
+      w.appendChild(d);
+      const yc=(b[1]+b[3])/2*1000;
+      if(rw.line!=null&&e.lines[rw.line]){ const l=e.lines[rw.line], lx=(e.side==='left'?l[0]:l[2])*1000, ly=(l[1]+l[3])/2*1000, x0=(e.side==='left'?b[2]:b[0])*1000;
+        sv+=`<line class="${sel?'sel':''}" x1="${x0}" y1="${yc}" x2="${lx}" y2="${ly}"/><circle class="${sel?'sel':''}" cx="${lx}" cy="${ly}" r="3.5"/>`; }
+      else { const x0=(e.side==='left'?b[2]:b[0])*1000; sv+=`<line class="unpaired" x1="${x0}" y1="${yc}" x2="${x0+(e.side==='left'?30:-30)}" y2="${yc}"/>`; }
+    });
+    const unp=e.rows.filter(r=>r.line==null).length, dup=e.rows.length-new Set(e.rows.map(r=>r.line)).size;
+    txt.push(`VN #${e.vn_index} → ${body?body.class+' #'+e.body_index:'no body'} · ${e.rows.length} numerals / ${e.lines.length} lines${unp?` · <b style="color:var(--rubric)">${unp} unpaired</b>`:''}${dup?` · <b style="color:var(--rubric)">${dup} share a line</b>`:''}`);
+  });
+  svg.innerHTML=sv; info.hidden=false; info.innerHTML=txt.join('<br>')+'<br><span style="color:var(--grey)">row → click first line to re-pair · Delete · shift-click column to add · dashed = added by hand</span>';
+}
+function rowsClick(e){   // with a row selected: re-pair to the nearest body line at the click; shift-click inside a VN box: add a row
+  if(!S.rows||!S.rv.vn_links)return false;
+  const p=frac(e);
+  if(e.shiftKey){
+    const ei=S.rv.vn_links.findIndex(x=>{const b=S.rv.regions[x.vn_index].box;return p[0]>=b[0]&&p[0]<=b[2]&&p[1]>=b[1]&&p[1]<=b[3];});
+    if(ei<0)return false; const en=S.rv.vn_links[ei], hs=en.rows.map(r=>r.box[3]-r.box[1]); const hh=hs.length?hs.sort()[hs.length>>1]:0.008; const vb=S.rv.regions[en.vn_index].box;
+    const li=en.lines.length?en.lines.reduce((bi,l,i)=>Math.abs((l[1]+l[3])/2-p[1])<Math.abs((en.lines[bi][1]+en.lines[bi][3])/2-p[1])?i:bi,0):null;
+    push(); en.rows.push({box:[vb[0],+(p[1]-hh/2).toFixed(4),vb[2],+(p[1]+hh/2).toFixed(4)],line:li,origin:'human'}); en.rows.sort((a,b)=>a.box[1]-b.box[1]); S.rsel=null; save(); drawRows(); return true;
+  }
+  if(!S.rsel)return false;
+  const en=S.rv.vn_links[S.rsel[0]]; if(!en.lines.length)return true;
+  const li=en.lines.reduce((bi,l,i)=>Math.abs((l[1]+l[3])/2-p[1])<Math.abs((en.lines[bi][1]+en.lines[bi][3])/2-p[1])?i:bi,0);
+  push(); en.rows[S.rsel[1]].line=li; en.rows[S.rsel[1]].origin='human'; save(); drawRows(); return true;
+}
+function rowsDelete(){ if(!S.rsel)return false; push(); S.rv.vn_links[S.rsel[0]].rows.splice(S.rsel[1],1); S.rsel=null; save(); drawRows(); return true; }
 function draw(){
   const w=$('#wrap'); w.querySelectorAll('.box').forEach(b=>b.remove());
   S.rv.regions.forEach((r,i)=>{
@@ -545,7 +629,7 @@ function draw(){
     d.onpointerdown=e=>{if(S.adding)return;e.stopPropagation();select(i);startDrag(e,i,e.target.dataset.h||'move');};
     w.appendChild(d);
   });
-  regionUI(); verdictUI();
+  regionUI(); verdictUI(); drawRows();
 }
 function select(i){S.sel=i;document.querySelectorAll('.box').forEach(b=>b.classList.toggle('sel',+b.dataset.i===i));regionUI();}
 function regionUI(){
@@ -573,7 +657,7 @@ function startDrag(e,i,mode){
 }
 function place(i){const d=document.querySelector(`.box[data-i="${i}"]`),b=S.rv.regions[i].box;d.style.left=b[0]*100+'%';d.style.top=b[1]*100+'%';d.style.width=(b[2]-b[0])*100+'%';d.style.height=(b[3]-b[1])*100+'%';}
 $('#wrap').onpointerdown=e=>{
-  if(!S.adding){select(-1);return;}
+  if(!S.adding){ if(rowsClick(e))return; select(-1); S.rsel=null; drawRows(); return; }
   const p0=frac(e),rb=$('#rubber'); rb.style.display='block';
   const mv=ev=>{const p=frac(ev);const x0=Math.min(p0[0],p[0]),y0=Math.min(p0[1],p[1]),x1=Math.max(p0[0],p[0]),y1=Math.max(p0[1],p[1]);rb.style.cssText=`display:block;left:${x0*100}%;top:${y0*100}%;width:${(x1-x0)*100}%;height:${(y1-y0)*100}%`;rb.b=[x0,y0,x1,y1];};
   const up=()=>{removeEventListener('pointermove',mv);removeEventListener('pointerup',up);rb.style.display='none';S.adding=false;$('#wrap').classList.remove('adding');$('#hint').textContent='';
