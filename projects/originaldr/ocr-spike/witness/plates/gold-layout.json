@@ -714,10 +714,11 @@
       "origin": "human"
      }
     ],
-    "proposed_classes": []
+    "proposed_classes": [],
+    "vn_links": []
    },
    "touched": "2026-09-05T23:34:04+00:00",
-   "updated": "2026-09-07T01:03:04+00:00"
+   "updated": "2026-09-07T03:34:00+00:00"
   },
   "NT-1582-B_0781": {
    "witness": "NT-1582-B",
@@ -853,7 +854,7 @@
     ]
    },
    "review": {
-    "verdict": null,
+    "verdict": "corrected",
     "note": "",
     "side": "recto",
     "kind": "PRELIM/END-MATTER BOUNDARY: two-column lectionary table ('EPIST. AND GOSPELS'), rule, four-line display title 'AN AMPLE AND PARTICVLAR TABLE…', then two-column index begins with letter head 'A' and a woodcut initial; signature 'Bbbbb iij'",
@@ -869,27 +870,28 @@
      "y_top": 0.25,
      "y_bot": 0.75,
      "top": [
-      -0.7758,
-      1.9017
+      -0.7791,
+      1.3072
      ],
      "bot": [
-      -0.7758,
-      1.9017
+      -2.8215,
+      8.7248,
+      -6.4346
      ]
     },
     "warp": {
-     "rms_before": 0.63,
-     "rms_after": 0.18,
+     "rms_before": 0.43,
+     "rms_after": 0.13,
      "status": "dewarped",
      "threshold": 0.35
     },
     "regions": [
      {
       "box": [
-       0.36,
-       0.04,
-       0.66,
-       0.06
+       0.3574,
+       0.0335,
+       0.6574,
+       0.0535
       ],
       "class": "RH",
       "why": "'EPIST. AND GOSPELS.'",
@@ -899,10 +901,10 @@
      },
      {
       "box": [
-       0.15,
-       0.065,
-       0.52,
-       0.5
+       0.1448,
+       0.055,
+       0.5174,
+       0.4698
       ],
       "class": "TB",
       "why": "LEFT column of the lectionary table: feast → 'Ep. 608. Gosp.70.' entries; includes italic sub-heading 'IN votiue Masses…'",
@@ -912,10 +914,10 @@
      },
      {
       "box": [
-       0.53,
-       0.064,
-       0.9,
-       0.499
+       0.5186,
+       0.0554,
+       0.8886,
+       0.472
       ],
       "class": "TB",
       "why": "RIGHT column of the lectionary table; italic sub-heading 'In Masses of Requiem.'",
@@ -925,10 +927,10 @@
      },
      {
       "box": [
-       0.15,
-       0.5199,
-       0.9,
-       0.5249
+       0.1378,
+       0.4883,
+       0.8878,
+       0.5005
       ],
       "class": "RL",
       "why": "printed rule",
@@ -938,10 +940,10 @@
      },
      {
       "box": [
-       0.15,
-       0.5449,
-       0.9,
-       0.7099
+       0.1439,
+       0.5241,
+       0.8939,
+       0.6778
       ],
       "class": "BT",
       "why": "'AN AMPLE AND / PARTICVLAR TABLE DIREC- / TING THE READER TO AL CATHOLIKE / truthes, deduced out of…' four lines, caps then lower-case",
@@ -951,10 +953,10 @@
      },
      {
       "box": [
-       0.3,
-       0.735,
-       0.34,
-       0.75
+       0.2983,
+       0.6915,
+       0.3383,
+       0.7089
       ],
       "class": "BT",
       "why": "letter section head 'A' over the left index column",
@@ -964,10 +966,10 @@
      },
      {
       "box": [
-       0.15,
-       0.7647,
-       0.27,
-       0.8397
+       0.1369,
+       0.7195,
+       0.2569,
+       0.7945
       ],
       "class": "DC",
       "why": "woodcut initial A opening the index",
@@ -977,10 +979,10 @@
      },
      {
       "box": [
-       0.27,
-       0.7651,
-       0.52,
-       0.8601
+       0.2534,
+       0.7189,
+       0.5034,
+       0.7984
       ],
       "class": "IX",
       "why": "left index column 'BSOLVTION of a Priest…' 'Abstinence. See Fasting.'",
@@ -990,10 +992,10 @@
      },
      {
       "box": [
-       0.53,
-       0.734,
-       0.9,
-       0.859
+       0.5213,
+       0.6889,
+       0.8913,
+       0.8299
       ],
       "class": "IX",
       "why": "right index column '…doration of God, Latria… S. Iohns adoring of the Angel…'",
@@ -1003,10 +1005,10 @@
      },
      {
       "box": [
-       0.62,
-       0.8642,
-       0.75,
-       0.8842
+       0.6305,
+       0.8297,
+       0.7605,
+       0.8497
       ],
       "class": "SG",
       "why": "'Bbbbb iij'",
@@ -1016,10 +1018,10 @@
      },
      {
       "box": [
-       0.83,
-       0.8627,
-       0.9,
-       0.8827
+       0.8204,
+       0.8313,
+       0.8904,
+       0.8513
       ],
       "class": "CW",
       "why": "'spirit'",
@@ -1029,22 +1031,31 @@
      },
      {
       "box": [
-       0.05,
-       0.89,
-       0.95,
-       0.99
+       0.1678,
+       0.7971,
+       0.3103,
+       0.8126
       ],
-      "class": "??",
-      "why": "BLANK lower page",
-      "origin": "agent",
-      "agent_index": 11,
-      "moved": true
+      "class": "IX",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.2177,
+       0.8134,
+       0.4397,
+       0.8306
+      ],
+      "class": "IX",
+      "why": "",
+      "origin": "human"
      }
     ],
     "proposed_classes": []
    },
    "touched": "2026-09-05T23:34:15+00:00",
-   "updated": "2026-09-05T23:34:15+00:00"
+   "updated": "2026-09-07T22:39:50+00:00"
   },
   "NT-1582-B_0254": {
    "witness": "NT-1582-B",
@@ -1450,9 +1461,9 @@
      {
       "box": [
        0.2268,
-       0.555,
+       0.5544,
        0.8427,
-       0.8412
+       0.8406
       ],
       "class": "MT",
       "why": "John 3:3-10",
@@ -1526,10 +1537,171 @@
       "moved": true
      }
     ],
-    "proposed_classes": []
+    "proposed_classes": [],
+    "vn_links": [
+     {
+      "vn_index": 14,
+      "body_index": 13,
+      "side": "right",
+      "rows": [
+       {
+        "box": [
+         0.8491,
+         0.6209,
+         0.86,
+         0.6272
+        ],
+        "line": 3,
+        "origin": "auto"
+       },
+       {
+        "box": [
+         0.8482,
+         0.6959,
+         0.8582,
+         0.701
+        ],
+        "line": 7,
+        "origin": "auto"
+       },
+       {
+        "box": [
+         0.8473,
+         0.7481,
+         0.8564,
+         0.7532
+        ],
+        "line": 10,
+        "origin": "auto"
+       },
+       {
+        "box": [
+         0.8473,
+         0.7532,
+         0.8564,
+         0.7589
+        ],
+        "line": 10,
+        "origin": "auto"
+       },
+       {
+        "box": [
+         0.8464,
+         0.8079,
+         0.8564,
+         0.8142
+        ],
+        "line": 13,
+        "origin": "auto"
+       },
+       {
+        "box": [
+         0.8473,
+         0.8263,
+         0.8664,
+         0.8359
+        ],
+        "line": 14,
+        "origin": "auto"
+       }
+      ],
+      "lines": [
+       [
+        0.2327,
+        0.5598,
+        0.8382,
+        0.5687
+       ],
+       [
+        0.23,
+        0.5782,
+        0.8382,
+        0.5884
+       ],
+       [
+        0.23,
+        0.598,
+        0.8364,
+        0.6075
+       ],
+       [
+        0.2318,
+        0.617,
+        0.8364,
+        0.6266
+       ],
+       [
+        0.2318,
+        0.6361,
+        0.8373,
+        0.6457
+       ],
+       [
+        0.2318,
+        0.6552,
+        0.8382,
+        0.6654
+       ],
+       [
+        0.2318,
+        0.6743,
+        0.8373,
+        0.6845
+       ],
+       [
+        0.2327,
+        0.6934,
+        0.8364,
+        0.7029
+       ],
+       [
+        0.2327,
+        0.7118,
+        0.8364,
+        0.722
+       ],
+       [
+        0.2373,
+        0.7316,
+        0.8309,
+        0.7417
+       ],
+       [
+        0.2364,
+        0.75,
+        0.8373,
+        0.7602
+       ],
+       [
+        0.2345,
+        0.7697,
+        0.8364,
+        0.7799
+       ],
+       [
+        0.2336,
+        0.7894,
+        0.8355,
+        0.799
+       ],
+       [
+        0.2318,
+        0.8079,
+        0.8355,
+        0.8187
+       ],
+       [
+        0.2309,
+        0.8276,
+        0.8345,
+        0.8384
+       ]
+      ]
+     }
+    ]
    },
    "touched": "2026-09-06T00:45:38+00:00",
-   "updated": "2026-09-07T01:12:20+00:00"
+   "updated": "2026-09-07T03:33:22+00:00"
   },
   "NT-1582-B_0307": {
    "witness": "NT-1582-B",
@@ -1755,7 +1927,7 @@
     ]
    },
    "review": {
-    "verdict": null,
+    "verdict": "corrected",
     "note": "",
     "side": "recto",
     "kind": "NT John 20: CR at gutter (left), head carries RH + PN + 'HOLY weeke' liturgical marker; SPACED-CAPS emphasis in verses; VN LEFT with a rule; liturgical rubrics right; two-line annotation header; signature 'Mm ij'",
@@ -1763,8 +1935,8 @@
      0.12,
      0.73
     ],
-    "skew_deg": 0,
-    "skew_source": null,
+    "skew_deg": 0.4,
+    "skew_source": "human",
     "warped": false,
     "dewarp": null,
     "warp": {
@@ -1776,261 +1948,270 @@
     "regions": [
      {
       "box": [
-       0.01,
-       0.04,
-       0.12,
-       0.06
+       0.006,
+       0.0396,
+       0.1389,
+       0.0578
       ],
       "class": "CR",
       "why": "'CHA. XX.' at gutter",
       "origin": "agent",
-      "agent_index": 0
+      "agent_index": 0,
+      "moved": true
      },
      {
       "box": [
-       0.25,
-       0.04,
-       0.58,
-       0.06
+       0.2307,
+       0.0376,
+       0.576,
+       0.0576
       ],
       "class": "RH",
       "why": "'ACCORDING TO S. IOHN.'",
       "origin": "agent",
-      "agent_index": 1
+      "agent_index": 1,
+      "moved": true
      },
      {
       "box": [
-       0.66,
-       0.04,
-       0.72,
-       0.06
+       0.6696,
+       0.0382,
+       0.7296,
+       0.0582
       ],
       "class": "PN",
       "why": "'275'",
       "origin": "agent",
-      "agent_index": 2
+      "agent_index": 2,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.04,
-       0.86,
-       0.075
+       0.7335,
+       0.038,
+       0.8535,
+       0.073
       ],
       "class": "LR",
       "why": "'HOLY weeke.' — liturgical season marker at the outer head",
       "origin": "agent",
-      "agent_index": 3
+      "agent_index": 3,
+      "moved": true
      },
      {
       "box": [
-       0.12,
-       0.065,
+       0.1175,
+       0.0591,
        0.73,
        0.735
       ],
       "class": "MT",
       "why": "John 20:18-31; vv.23-24 in SPACED CAPS — emphasis is an ATTRIBUTE of MT, not a region",
       "origin": "agent",
-      "agent_index": 4
+      "agent_index": 4,
+      "moved": true
      },
      {
       "box": [
        0.08,
-       0.1,
-       0.12,
-       0.735
+       0.102,
+       0.1107,
+       0.737
       ],
       "class": "VN",
       "why": "19..31 LEFT",
       "origin": "agent",
-      "agent_index": 5
+      "agent_index": 5,
+      "moved": true
      },
      {
       "box": [
-       0.06,
-       0.03,
-       0.065,
-       0.75
+       0.058,
+       0.0629,
+       0.0749,
+       0.752
       ],
       "class": "RL",
       "why": "vertical rule left of the VN column",
       "origin": "agent",
-      "agent_index": 6
+      "agent_index": 6,
+      "moved": true
      },
      {
       "box": [
        0,
-       0.1,
-       0.06,
-       0.18
+       0.102,
+       0.056,
+       0.182
       ],
       "class": "MN",
       "why": "'Mr. 16, 14. Lu. 24,36. 1.Cor.15,' left citations, cut by the gutter",
       "origin": "agent",
-      "agent_index": 7
+      "agent_index": 7,
+      "moved": true
      },
      {
       "box": [
-       0,
-       0.63,
-       0.06,
-       0.66
+       0.002,
+       0.632,
+       0.0569,
+       0.662
       ],
       "class": "MN",
       "why": "'21,25'",
       "origin": "agent",
-      "agent_index": 8
+      "agent_index": 8,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.09,
-       0.86,
-       0.13
+       0.7309,
+       0.085,
+       0.856,
+       0.1357
       ],
       "class": "LR",
       "why": "'The Gospel vpõ Dominica in albis or Low Sunday.'",
       "origin": "agent",
-      "agent_index": 9
+      "agent_index": 9,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.15,
-       0.86,
-       0.3
+       0.7287,
+       0.148,
+       0.858,
+       0.298
       ],
       "class": "MN",
       "why": "':: Though he gaue them his peace hard before…'",
       "origin": "agent",
-      "agent_index": 10
+      "agent_index": 10,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.33,
-       0.86,
-       0.375
+       0.7321,
+       0.3226,
+       0.858,
+       0.373
       ],
       "class": "LR",
       "why": "'The Gospel vpõ S. Thomas the Apostles day, Decemb. 21.'",
       "origin": "agent",
-      "agent_index": 11
+      "agent_index": 11,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.46,
-       0.86,
-       0.49
+       0.7299,
+       0.452,
+       0.8541,
+       0.4856
       ],
       "class": "LR",
       "why": "'LOVV SVNDAY.'",
       "origin": "agent",
-      "agent_index": 12
+      "agent_index": 12,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.49,
+       0.7307,
+       0.4868,
        0.86,
-       0.54
+       0.538
       ],
       "class": "MN",
       "why": "'::See the annotation on the 19 verse of this Chapter.'",
       "origin": "agent",
-      "agent_index": 13
+      "agent_index": 13,
+      "moved": true
      },
      {
       "box": [
-       0.74,
-       0.62,
-       0.86,
-       0.72
+       0.7284,
+       0.6121,
+       0.8492,
+       0.7246
       ],
       "class": "MN",
       "why": "'::They are more happy that beleeue without sensible argumẽt…'",
       "origin": "agent",
-      "agent_index": 14
+      "agent_index": 14,
+      "moved": true
      },
      {
       "box": [
-       0.12,
-       0.755,
-       0.73,
-       0.76
+       0.1212,
+       0.7455,
+       0.7312,
+       0.7505
       ],
       "class": "RL",
       "why": "printed rule (segmented)",
       "origin": "agent",
-      "agent_index": 15
+      "agent_index": 15,
+      "moved": true
      },
      {
       "box": [
-       0.25,
-       0.775,
-       0.6,
-       0.8
+       0.2325,
+       0.7631,
+       0.5553,
+       0.7982
       ],
       "class": "CH",
       "why": "'ANNOTATIONS / CHAP. XX.' two-line header",
       "origin": "agent",
-      "agent_index": 16
+      "agent_index": 16,
+      "moved": true
      },
      {
       "box": [
-       0.06,
-       0.815,
-       0.73,
-       0.845
+       0.0556,
+       0.8037,
+       0.7332,
+       0.8337
       ],
       "class": "AN",
       "why": "first annotation, lemma '19. The doores vvere shut.)'",
       "origin": "agent",
-      "agent_index": 17
+      "agent_index": 17,
+      "moved": true
      },
      {
       "box": [
-       0.37,
-       0.85,
-       0.44,
-       0.87
+       0.5244,
+       0.8333,
+       0.6054,
+       0.8533
       ],
       "class": "SG",
       "why": "'Mm ij'",
       "origin": "agent",
-      "agent_index": 18
+      "agent_index": 18,
+      "moved": true
      },
      {
       "box": [
-       0.55,
-       0.85,
-       0.6,
-       0.87
+       0.6764,
+       0.8351,
+       0.7323,
+       0.8503
       ],
       "class": "CW",
       "why": "'maner'",
       "origin": "agent",
-      "agent_index": 19
-     },
-     {
-      "box": [
-       0.05,
-       0.88,
-       0.95,
-       0.99
-      ],
-      "class": "??",
-      "why": "BLANK lower page",
-      "origin": "agent",
-      "agent_index": 20
+      "agent_index": 19,
+      "moved": true
      }
     ],
-    "proposed_classes": []
+    "proposed_classes": [],
+    "vn_links": null
    },
    "touched": "2026-09-07T01:05:27+00:00",
-   "updated": "2026-09-07T01:05:27+00:00"
+   "updated": "2026-09-07T03:53:54+00:00"
   },
   "OT1-1609-B_0412": {
    "witness": "OT1-1609-B",
@@ -2208,7 +2389,7 @@
     "carried_from": "cold-read.json"
    },
    "review": {
-    "verdict": null,
+    "verdict": "corrected",
     "note": "",
     "side": "verso",
     "kind": null,
@@ -2230,9 +2411,9 @@
      {
       "box": [
        0.16,
-       0.0365,
+       0.035,
        0.22,
-       0.0585
+       0.057
       ],
       "class": "PN",
       "why": "top-left numeral 380; verso",
@@ -2243,9 +2424,9 @@
      {
       "box": [
        0.44,
-       0.0401,
+       0.0364,
        0.59,
-       0.0621
+       0.0584
       ],
       "class": "RH",
       "why": "centred NVMERI. in spaced caps",
@@ -2256,9 +2437,9 @@
      {
       "box": [
        0.79,
-       0.0391,
+       0.0361,
        0.96,
-       0.0661
+       0.0594
       ],
       "class": "RH",
       "why": "topical running title 'Sacrifices for', continues onto facing page",
@@ -2269,9 +2450,9 @@
      {
       "box": [
        0.029,
-       0.0655,
-       0.169,
-       0.1205
+       0.0649,
+       0.1749,
+       0.5653
       ],
       "class": "MN",
       "why": "smaller fount, fore-edge margin, 'Temporal Princes are also pastors...'",
@@ -2281,23 +2462,10 @@
      },
      {
       "box": [
-       0.0254,
-       0.1205,
-       0.1654,
-       0.3905
-      ],
-      "class": "MN",
-      "why": "continuation of same commentary note through 'his going out, and going in.'",
-      "origin": "agent",
-      "agent_index": 4,
-      "moved": true
-     },
-     {
-      "box": [
-       0.1657,
-       0.0649,
-       0.8257,
-       0.4199
+       0.1732,
+       0.0613,
+       0.8307,
+       0.4211
       ],
       "class": "MT",
       "why": "body, Numbers 27:15-23, hard left edge of aligned line starts",
@@ -2307,10 +2475,10 @@
      },
      {
       "box": [
-       0.8257,
-       0.0689,
-       0.8757,
-       0.4239
+       0.8324,
+       0.0647,
+       0.8774,
+       0.4197
       ],
       "class": "VN",
       "why": "thin numeral column hugging right edge of measure, monotone 15..23",
@@ -2320,10 +2488,10 @@
      },
      {
       "box": [
-       0.401,
-       0.4452,
-       0.641,
-       0.4652
+       0.4044,
+       0.4387,
+       0.6444,
+       0.4587
       ],
       "class": "CH",
       "why": "centred 'CHAP. XXVIII.', reads as chapter head",
@@ -2333,9 +2501,9 @@
      },
      {
       "box": [
-       0.1701,
-       0.4699,
-       0.8201,
+       0.1785,
+       0.4622,
+       0.8814,
        0.5199
       ],
       "class": "AR",
@@ -2346,10 +2514,10 @@
      },
      {
       "box": [
-       0.1691,
-       0.5187,
-       0.2391,
-       0.5567
+       0.1817,
+       0.5217,
+       0.2366,
+       0.5597
       ],
       "class": "DC",
       "why": "two-line initial O opening 28:1",
@@ -2359,10 +2527,10 @@
      },
      {
       "box": [
-       0.2357,
+       0.1803,
        0.5203,
-       0.8157,
-       0.8703
+       0.83,
+       0.881
       ],
       "class": "MT",
       "why": "body, Numbers 28:1-9",
@@ -2372,10 +2540,10 @@
      },
      {
       "box": [
-       0.8156,
-       0.5238,
-       0.8656,
-       0.8738
+       0.8349,
+       0.5232,
+       0.8773,
+       0.8458
       ],
       "class": "VN",
       "why": "numeral column restarts 1 2 3.. after the break",
@@ -2385,10 +2553,10 @@
      },
      {
       "box": [
-       0.0176,
-       0.5804,
-       0.1576,
-       0.6304
+       0.0352,
+       0.5792,
+       0.1752,
+       0.6292
       ],
       "class": "MN",
       "why": "'Varietie of Sacrifices for diuers times.'",
@@ -2398,10 +2566,10 @@
      },
      {
       "box": [
-       0.0167,
+       0.0369,
        0.6304,
-       0.1567,
-       0.6654
+       0.1769,
+       0.6815
       ],
       "class": "MN",
       "why": "'1. Euerie day, twise.'",
@@ -2411,10 +2579,10 @@
      },
      {
       "box": [
-       0.0123,
-       0.8234,
-       0.1523,
-       0.8634
+       0.0392,
+       0.8299,
+       0.1792,
+       0.8842
       ],
       "class": "MN",
       "why": "'On the Sabbath day.'",
@@ -2424,10 +2592,10 @@
      },
      {
       "box": [
-       0.7715,
-       0.8754,
-       0.8315,
-       0.8954
+       0.7732,
+       0.8801,
+       0.8332,
+       0.9001
       ],
       "class": "CW",
       "why": "single word 'with' below last body line, right; catchword (next-page match unverified)",
@@ -2859,7 +3027,8956 @@
     ]
    },
    "touched": "2026-09-07T01:16:59+00:00",
-   "updated": "2026-09-07T01:18:29+00:00"
+   "updated": "2026-09-07T23:07:08+00:00"
+  },
+  "NT-1582-B_0404": {
+   "witness": "NT-1582-B",
+   "leaf": 404,
+   "agent": {
+    "side": "verso",
+    "kind": "NT Acts 28 END: verses with a long italic quotation, right citation column, frame rule; rule; two-line annotation header; AN with left summaries; catchword carries a numeral; blank below",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.22,
+       0.035,
+       0.27,
+       0.055
+      ],
+      "class": "PN",
+      "why": "'372'"
+     },
+     {
+      "box": [
+       0.44,
+       0.035,
+       0.62,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE ACTES'"
+     },
+     {
+      "box": [
+       0.79,
+       0.035,
+       0.95,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. XXVIII.'"
+     },
+     {
+      "box": [
+       0.22,
+       0.06,
+       0.88,
+       0.415
+      ],
+      "class": "MT",
+      "why": "Acts 28:23-31; vv.26-27 an ITALIC quotation of Isaias inside the verse text — fount switch, not a region"
+     },
+     {
+      "box": [
+       0.85,
+       0.06,
+       0.9,
+       0.415
+      ],
+      "class": "VN",
+      "why": "24..31 right"
+     },
+     {
+      "box": [
+       0.1,
+       0.245,
+       0.21,
+       0.37
+      ],
+      "class": "MN",
+      "why": "':: Here also (as Mat. 13.) it is plaine that they would not see…'"
+     },
+     {
+      "box": [
+       0.9,
+       0.17,
+       0.99,
+       0.27
+      ],
+      "class": "MN",
+      "why": "'Esa 6,9. Mat. 13, 14. Mr. 4, 12. Lu. 8,10 Io.12,40 Ro. 11, 8' citation column"
+     },
+     {
+      "box": [
+       0.89,
+       0.03,
+       0.895,
+       0.42
+      ],
+      "class": "RL",
+      "why": "vertical frame rule"
+     },
+     {
+      "box": [
+       0.22,
+       0.435,
+       0.88,
+       0.44
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.41,
+       0.48,
+       0.67,
+       0.51
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS / CHAP. XXVIII.' two-line"
+     },
+     {
+      "box": [
+       0.22,
+       0.53,
+       0.88,
+       0.82
+      ],
+      "class": "AN",
+      "why": "annotations, lemmas '5. Shaking of the beast.]' '10. Chaine.]'"
+     },
+     {
+      "box": [
+       0.1,
+       0.56,
+       0.21,
+       0.62
+      ],
+      "class": "MN",
+      "why": "'Malta hath S. Paules blessing and grace vntil this day.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.63,
+       0.21,
+       0.71
+      ],
+      "class": "MN",
+      "why": "'Gods miraculous vertue in certaine countries and creatures, by his Saincts.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.77,
+       0.21,
+       0.8
+      ],
+      "class": "MN",
+      "why": "'S. Pauls chaines honoured.'"
+     },
+     {
+      "box": [
+       0.89,
+       0.56,
+       0.99,
+       0.63
+      ],
+      "class": "MN",
+      "why": "'Tho. Fazellus de rebus Siculis…' right citation, cut by edge"
+     },
+     {
+      "box": [
+       0.89,
+       0.7,
+       0.99,
+       0.72
+      ],
+      "class": "MN",
+      "why": "'4 Reg.2,1'"
+     },
+     {
+      "box": [
+       0.78,
+       0.83,
+       0.88,
+       0.85
+      ],
+      "class": "CW",
+      "why": "'22. Concerning' — catchword INCLUDING the next lemma's numeral"
+     },
+     {
+      "box": [
+       0.1,
+       0.86,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT Acts 28 END: verses with a long italic quotation, right citation column, frame rule; rule; two-line annotation header; AN with left summaries; catchword carries a numeral; blank below",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.2124,
+       0.0454,
+       0.2624,
+       0.0654
+      ],
+      "class": "PN",
+      "why": "'372'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.428,
+       0.0417,
+       0.6397,
+       0.0624
+      ],
+      "class": "RH",
+      "why": "'THE ACTES'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7539,
+       0.0417,
+       0.9685,
+       0.0624
+      ],
+      "class": "CR",
+      "why": "'CHA. XXVIII.'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2156,
+       0.0659,
+       0.8461,
+       0.415
+      ],
+      "class": "MT",
+      "why": "Acts 28:23-31; vv.26-27 an ITALIC quotation of Isaias inside the verse text — fount switch, not a region",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8456,
+       0.083,
+       0.8825,
+       0.3837
+      ],
+      "class": "VN",
+      "why": "24..31 right",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0934,
+       0.2361,
+       0.2165,
+       0.3789
+      ],
+      "class": "MN",
+      "why": "':: Here also (as Mat. 13.) it is plaine that they would not see…'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9,
+       0.1596,
+       0.9845,
+       0.27
+      ],
+      "class": "MN",
+      "why": "'Esa 6,9. Mat. 13, 14. Mr. 4, 12. Lu. 8,10 Io.12,40 Ro. 11, 8' citation column",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8889,
+       0.0664,
+       0.9026,
+       0.475
+      ],
+      "class": "RL",
+      "why": "vertical frame rule",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2014,
+       0.4298,
+       0.8614,
+       0.44
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.41,
+       0.4584,
+       0.729,
+       0.51
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS / CHAP. XXVIII.' two-line",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.22,
+       0.5136,
+       0.9095,
+       0.823
+      ],
+      "class": "AN",
+      "why": "annotations, lemmas '5. Shaking of the beast.]' '10. Chaine.]'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1,
+       0.5555,
+       0.2176,
+       0.6155
+      ],
+      "class": "MN",
+      "why": "'Malta hath S. Paules blessing and grace vntil this day.'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1,
+       0.6181,
+       0.2176,
+       0.6981
+      ],
+      "class": "MN",
+      "why": "'Gods miraculous vertue in certaine countries and creatures, by his Saincts.'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1,
+       0.767,
+       0.2198,
+       0.8
+      ],
+      "class": "MN",
+      "why": "'S. Pauls chaines honoured.'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9075,
+       0.5637,
+       0.9758,
+       0.63
+      ],
+      "class": "MN",
+      "why": "'Tho. Fazellus de rebus Siculis…' right citation, cut by edge",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9086,
+       0.6851,
+       0.9672,
+       0.7051
+      ],
+      "class": "MN",
+      "why": "'4 Reg.2,1'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8062,
+       0.8218,
+       0.9106,
+       0.8418
+      ],
+      "class": "CW",
+      "why": "'22. Concerning' — catchword INCLUDING the next lemma's numeral",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T03:53:57+00:00",
+   "updated": "2026-09-07T03:59:42+00:00"
+  },
+  "NT-1582-B_0474": {
+   "witness": "NT-1582-B",
+   "leaf": 474,
+   "agent": {
+    "side": "verso",
+    "kind": "NT 1 Cor 9: annotations above rule (left summaries), CHAP. IX, long argument, 4-line woodcut initial, verses VN right, left notes keyed ::, right citation",
+    "measure": [
+     0.22,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.21,
+       0.035,
+       0.27,
+       0.055
+      ],
+      "class": "PN",
+      "why": "'442'"
+     },
+     {
+      "box": [
+       0.34,
+       0.035,
+       0.76,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE FIRST EPISTLE OF S. PAVL'"
+     },
+     {
+      "box": [
+       0.83,
+       0.035,
+       0.95,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. IX.'"
+     },
+     {
+      "box": [
+       0.22,
+       0.06,
+       0.9,
+       0.325
+      ],
+      "class": "AN",
+      "why": "annotations for ch.8, lemmas '7. Some vvith a conscience.]' '10. In the Idols temple.]'"
+     },
+     {
+      "box": [
+       0.1,
+       0.1,
+       0.21,
+       0.14
+      ],
+      "class": "MN",
+      "why": "'Giuing of scandal reprehended.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.19,
+       0.21,
+       0.3
+      ],
+      "class": "MN",
+      "why": "'The Heretikes ridiculously apply S. Paules wordes against the Churches fastes and abstinence.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.31,
+       0.21,
+       0.35
+      ],
+      "class": "MN",
+      "why": "'Going to the Communion, vvhat a sinne in Catholikes.'"
+     },
+     {
+      "box": [
+       0.22,
+       0.345,
+       0.9,
+       0.35
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.44,
+       0.365,
+       0.59,
+       0.385
+      ],
+      "class": "CH",
+      "why": "'CHAP. IX.'"
+     },
+     {
+      "box": [
+       0.28,
+       0.4,
+       0.85,
+       0.5
+      ],
+      "class": "AR",
+      "why": "italic argument, eight lines"
+     },
+     {
+      "box": [
+       0.22,
+       0.52,
+       0.37,
+       0.6
+      ],
+      "class": "DC",
+      "why": "woodcut initial A, four lines"
+     },
+     {
+      "box": [
+       0.37,
+       0.52,
+       0.85,
+       0.6
+      ],
+      "class": "MT",
+      "why": "1 Cor 9:1-2 beside the initial"
+     },
+     {
+      "box": [
+       0.22,
+       0.6,
+       0.85,
+       0.855
+      ],
+      "class": "MT",
+      "why": "1 Cor 9:3-10"
+     },
+     {
+      "box": [
+       0.85,
+       0.52,
+       0.9,
+       0.855
+      ],
+      "class": "VN",
+      "why": "1..10 right"
+     },
+     {
+      "box": [
+       0.1,
+       0.61,
+       0.21,
+       0.74
+      ],
+      "class": "MN",
+      "why": "':: He nameth Cephas (that is Peter) to proue his purpose by the example of the cheefe and Prince of the Apostles. S. Ambro. S. Chrys. Oecum. vpon this place.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.76,
+       0.21,
+       0.85
+      ],
+      "class": "MN",
+      "why": "':: In that coũtrie they did tread out their corne vvith oxen…'"
+     },
+     {
+      "box": [
+       0.9,
+       0.81,
+       0.99,
+       0.85
+      ],
+      "class": "MN",
+      "why": "'Deu.25, 4.' right citation"
+     },
+     {
+      "box": [
+       0.9,
+       0.03,
+       0.905,
+       0.86
+      ],
+      "class": "RL",
+      "why": "vertical frame rule"
+     },
+     {
+      "box": [
+       0.78,
+       0.855,
+       0.85,
+       0.875
+      ],
+      "class": "CW",
+      "why": "'ought'"
+     },
+     {
+      "box": [
+       0.1,
+       0.88,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT 1 Cor 9: annotations above rule (left summaries), CHAP. IX, long argument, 4-line woodcut initial, verses VN right, left notes keyed ::, right citation",
+    "measure": [
+     0.22,
+     0.85
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.19,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.2021,
+       0.0356,
+       0.2621,
+       0.0556
+      ],
+      "class": "PN",
+      "why": "'442'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3339,
+       0.035,
+       0.76,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE FIRST EPISTLE OF S. PAVL'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.83,
+       0.035,
+       0.95,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. IX.'",
+      "origin": "agent",
+      "agent_index": 2
+     },
+     {
+      "box": [
+       0.2034,
+       0.0576,
+       0.9,
+       0.325
+      ],
+      "class": "AN",
+      "why": "annotations for ch.8, lemmas '7. Some vvith a conscience.]' '10. In the Idols temple.]'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0886,
+       0.0976,
+       0.1986,
+       0.1376
+      ],
+      "class": "MN",
+      "why": "'Giuing of scandal reprehended.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0869,
+       0.1793,
+       0.2039,
+       0.2803
+      ],
+      "class": "MN",
+      "why": "'The Heretikes ridiculously apply S. Paules wordes against the Churches fastes and abstinence.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0895,
+       0.2898,
+       0.2039,
+       0.3441
+      ],
+      "class": "MN",
+      "why": "'Going to the Communion, vvhat a sinne in Catholikes.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2104,
+       0.3295,
+       0.8904,
+       0.3375
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4313,
+       0.3472,
+       0.5813,
+       0.369
+      ],
+      "class": "CH",
+      "why": "'CHAP. IX.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2643,
+       0.3768,
+       0.8483,
+       0.4804
+      ],
+      "class": "AR",
+      "why": "italic argument, eight lines",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2174,
+       0.4897,
+       0.3578,
+       0.5851
+      ],
+      "class": "DC",
+      "why": "woodcut initial A, four lines",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3595,
+       0.4891,
+       0.8395,
+       0.5863
+      ],
+      "class": "MT",
+      "why": "1 Cor 9:1-2 beside the initial",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.22,
+       0.5863,
+       0.8421,
+       0.8306
+      ],
+      "class": "MT",
+      "why": "1 Cor 9:3-10",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8395,
+       0.4903,
+       0.8711,
+       0.8253
+      ],
+      "class": "VN",
+      "why": "1..10 right",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0974,
+       0.5785,
+       0.2179,
+       0.7311
+      ],
+      "class": "MN",
+      "why": "':: He nameth Cephas (that is Peter) to proue his purpose by the example of the cheefe and Prince of the Apostles. S. Ambro. S. Chrys. Oecum. vpon this place.'",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0991,
+       0.741,
+       0.2196,
+       0.831
+      ],
+      "class": "MN",
+      "why": "':: In that coũtrie they did tread out their corne vvith oxen…'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9,
+       0.7904,
+       0.9638,
+       0.8304
+      ],
+      "class": "MN",
+      "why": "'Deu.25, 4.' right citation",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8772,
+       0.3648,
+       0.8997,
+       0.8582
+      ],
+      "class": "RL",
+      "why": "vertical frame rule",
+      "origin": "agent",
+      "agent_index": 17,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7686,
+       0.8312,
+       0.8386,
+       0.8512
+      ],
+      "class": "CW",
+      "why": "'ought'",
+      "origin": "agent",
+      "agent_index": 18,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T03:59:46+00:00",
+   "updated": "2026-09-07T04:09:54+00:00"
+  },
+  "NT-1582-B_0494": {
+   "witness": "NT-1582-B",
+   "leaf": 494,
+   "agent": {
+    "side": "verso",
+    "kind": "NT 1 Cor 14 ANNOTATIONS-ONLY leaf — whole body is AN, left summaries down the full height, one right citation; catchword; blank below",
+    "measure": [
+     0.19,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.19,
+       0.035,
+       0.25,
+       0.055
+      ],
+      "class": "PN",
+      "why": "'462'"
+     },
+     {
+      "box": [
+       0.31,
+       0.035,
+       0.74,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE FIRST EPISTLE OF S. PAVL.'"
+     },
+     {
+      "box": [
+       0.79,
+       0.035,
+       0.95,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. XIIII.'"
+     },
+     {
+      "box": [
+       0.19,
+       0.06,
+       0.88,
+       0.855
+      ],
+      "class": "AN",
+      "why": "annotation prose, five paragraphs ('Secondly…', 'Neither is here…', 'For, the priuate praiers…') — commentary, no scripture on the leaf"
+     },
+     {
+      "box": [
+       0.08,
+       0.15,
+       0.18,
+       0.27
+      ],
+      "class": "MN",
+      "why": "'Catholike people in euery countrie vnderstandeth euery ceremonie, and can behaue them selues accordingly.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.35,
+       0.18,
+       0.43
+      ],
+      "class": "MN",
+      "why": "'That he speaketh not of the Churches seruice, is proued by inuincible arguments.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.55,
+       0.18,
+       0.64
+      ],
+      "class": "MN",
+      "why": "'The Apostle speaketh not of the peoples priuate praiers in latin, as vpon primmars, beades, or othervvise.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.71,
+       0.18,
+       0.78
+      ],
+      "class": "MN",
+      "why": "'Latin praiers translated, or the people taught the cõtents thereof.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.8,
+       0.18,
+       0.86
+      ],
+      "class": "MN",
+      "why": "'The peoples deuotion nothing the lesse, for praying in Latin.'"
+     },
+     {
+      "box": [
+       0.89,
+       0.33,
+       0.98,
+       0.37
+      ],
+      "class": "MN",
+      "why": "'Aug.doct. Chr. li.3. c.13.' italic citation"
+     },
+     {
+      "box": [
+       0.79,
+       0.855,
+       0.88,
+       0.875
+      ],
+      "class": "CW",
+      "why": "'secrated'"
+     },
+     {
+      "box": [
+       0.05,
+       0.88,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT 1 Cor 14 ANNOTATIONS-ONLY leaf — whole body is AN, left summaries down the full height, one right citation; catchword; blank below",
+    "measure": [
+     0.19,
+     0.88
+    ],
+    "skew_deg": -0.28,
+    "skew_source": "human",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1865,
+       0.0272,
+       0.2465,
+       0.0472
+      ],
+      "class": "PN",
+      "why": "'462'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2998,
+       0.0289,
+       0.745,
+       0.0489
+      ],
+      "class": "RH",
+      "why": "'THE FIRST EPISTLE OF S. PAVL.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7865,
+       0.0259,
+       0.9465,
+       0.0459
+      ],
+      "class": "CR",
+      "why": "'CHA. XIIII.'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1903,
+       0.0496,
+       0.8803,
+       0.8261
+      ],
+      "class": "AN",
+      "why": "annotation prose, five paragraphs ('Secondly…', 'Neither is here…', 'For, the priuate praiers…') — commentary, no scripture on the leaf",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0649,
+       0.1325,
+       0.1903,
+       0.2525
+      ],
+      "class": "MN",
+      "why": "'Catholike people in euery countrie vnderstandeth euery ceremonie, and can behaue them selues accordingly.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0711,
+       0.3331,
+       0.1895,
+       0.4131
+      ],
+      "class": "MN",
+      "why": "'That he speaketh not of the Churches seruice, is proued by inuincible arguments.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0707,
+       0.5265,
+       0.1913,
+       0.6291
+      ],
+      "class": "MN",
+      "why": "'The Apostle speaketh not of the peoples priuate praiers in latin, as vpon primmars, beades, or othervvise.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0717,
+       0.6902,
+       0.1912,
+       0.7602
+      ],
+      "class": "MN",
+      "why": "'Latin praiers translated, or the people taught the cõtents thereof.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0722,
+       0.7713,
+       0.1896,
+       0.8365
+      ],
+      "class": "MN",
+      "why": "'The peoples deuotion nothing the lesse, for praying in Latin.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8792,
+       0.3166,
+       0.9594,
+       0.3566
+      ],
+      "class": "MN",
+      "why": "'Aug.doct. Chr. li.3. c.13.' italic citation",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8079,
+       0.825,
+       0.8838,
+       0.845
+      ],
+      "class": "CW",
+      "why": "'secrated'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T04:10:02+00:00",
+   "updated": "2026-09-07T04:19:26+00:00"
+  },
+  "NT-1582-B_0617": {
+   "witness": "NT-1582-B",
+   "leaf": 617,
+   "agent": {
+    "side": "recto",
+    "kind": "NT BOOK BOUNDARY: 1 Tim annotations end, rule, 'THE ARGVMENT OF THE SECOND EPISTLE OF S. PAVL TO TIMOTHEE' three-line title, woodcut initial, italic/roman argument, signature 'Eeee', catchword; CR at gutter (left); blank below",
+    "measure": [
+     0.09,
+     0.78
+    ],
+    "regions": [
+     {
+      "box": [
+       0.04,
+       0.04,
+       0.16,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHA. VI.' gutter (recto → left)"
+     },
+     {
+      "box": [
+       0.3,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'TO TIMOTHEE.'"
+     },
+     {
+      "box": [
+       0.75,
+       0.04,
+       0.81,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'585'"
+     },
+     {
+      "box": [
+       0.09,
+       0.065,
+       0.78,
+       0.46
+      ],
+      "class": "AN",
+      "why": "closing annotations of 1 Tim 6, lemma '20. Falsely called knovvledge.]'"
+     },
+     {
+      "box": [
+       0.02,
+       0.21,
+       0.08,
+       0.23
+      ],
+      "class": "MN",
+      "why": "'Ps.132.' left citation"
+     },
+     {
+      "box": [
+       0.79,
+       0.16,
+       0.9,
+       0.22
+      ],
+      "class": "MN",
+      "why": "'Catholikes must abhorre from heretical phrases and vvordes.'"
+     },
+     {
+      "box": [
+       0.79,
+       0.36,
+       0.9,
+       0.41
+      ],
+      "class": "MN",
+      "why": "'Heretikes arrogate knovvledge falsely so called.'"
+     },
+     {
+      "box": [
+       0.09,
+       0.475,
+       0.78,
+       0.48
+      ],
+      "class": "RL",
+      "why": "printed rule between books"
+     },
+     {
+      "box": [
+       0.15,
+       0.5,
+       0.78,
+       0.575
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / SECOND EPISTLE OF S. PAVL / TO TIMOTHEE.' three lines, diminishing"
+     },
+     {
+      "box": [
+       0.09,
+       0.595,
+       0.25,
+       0.665
+      ],
+      "class": "DC",
+      "why": "woodcut initial T, four lines"
+     },
+     {
+      "box": [
+       0.25,
+       0.595,
+       0.78,
+       0.665
+      ],
+      "class": "AR",
+      "why": "book argument beside the initial, italic"
+     },
+     {
+      "box": [
+       0.09,
+       0.665,
+       0.78,
+       0.8
+      ],
+      "class": "AR",
+      "why": "book argument continued, italic/roman mixed, two paragraphs"
+     },
+     {
+      "box": [
+       0.55,
+       0.83,
+       0.62,
+       0.85
+      ],
+      "class": "SG",
+      "why": "'Eeee'"
+     },
+     {
+      "box": [
+       0.71,
+       0.83,
+       0.78,
+       0.85
+      ],
+      "class": "CW",
+      "why": "'THE'"
+     },
+     {
+      "box": [
+       0.03,
+       0.86,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "NT BOOK BOUNDARY: 1 Tim annotations end, rule, 'THE ARGVMENT OF THE SECOND EPISTLE OF S. PAVL TO TIMOTHEE' three-line title, woodcut initial, italic/roman argument, signature 'Eeee', catchword; CR at gutter (left); blank below",
+    "measure": [
+     0.09,
+     0.78
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.04,
+       0.0385,
+       0.16,
+       0.0585
+      ],
+      "class": "CR",
+      "why": "'CHA. VI.' gutter (recto → left)",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'TO TIMOTHEE.'",
+      "origin": "agent",
+      "agent_index": 1
+     },
+     {
+      "box": [
+       0.7402,
+       0.0407,
+       0.8002,
+       0.0607
+      ],
+      "class": "PN",
+      "why": "'585'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.09,
+       0.0605,
+       0.7817,
+       0.4555
+      ],
+      "class": "AN",
+      "why": "closing annotations of 1 Tim 6, lemma '20. Falsely called knovvledge.]'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.02,
+       0.2085,
+       0.0855,
+       0.23
+      ],
+      "class": "MN",
+      "why": "'Ps.132.' left citation",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7832,
+       0.153,
+       0.9086,
+       0.2235
+      ],
+      "class": "MN",
+      "why": "'Catholikes must abhorre from heretical phrases and vvordes.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7815,
+       0.3473,
+       0.9017,
+       0.4031
+      ],
+      "class": "MN",
+      "why": "'Heretikes arrogate knovvledge falsely so called.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0889,
+       0.4601,
+       0.7789,
+       0.4651
+      ],
+      "class": "RL",
+      "why": "printed rule between books",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1449,
+       0.4872,
+       0.7886,
+       0.5727
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / SECOND EPISTLE OF S. PAVL / TO TIMOTHEE.' three lines, diminishing",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1545,
+       0.5801,
+       0.2642,
+       0.6597
+      ],
+      "class": "DC",
+      "why": "woodcut initial T, four lines",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2642,
+       0.5794,
+       0.7833,
+       0.6605
+      ],
+      "class": "AR",
+      "why": "book argument beside the initial, italic",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1457,
+       0.6598,
+       0.7833,
+       0.7851
+      ],
+      "class": "AR",
+      "why": "book argument continued, italic/roman mixed, two paragraphs",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.562,
+       0.8099,
+       0.632,
+       0.8299
+      ],
+      "class": "SG",
+      "why": "'Eeee'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7034,
+       0.8084,
+       0.7843,
+       0.8299
+      ],
+      "class": "CW",
+      "why": "'THE'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T04:19:34+00:00",
+   "updated": "2026-09-07T04:22:52+00:00"
+  },
+  "NT-1582-B_0705": {
+   "witness": "NT-1582-B",
+   "leaf": 705,
+   "agent": {
+    "side": "recto",
+    "kind": "NT 2 Peter 3 END OF BOOK: annotations only, rule, large tailpiece, signature 'Qqqq' + catchword 'THE' under the tailpiece; CR at gutter; half the page blank",
+    "measure": [
+     0.11,
+     0.8
+    ],
+    "regions": [
+     {
+      "box": [
+       0.06,
+       0.04,
+       0.21,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHAP. III.' at gutter — spelled CHAP. here, not CHA."
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'OF S. PETER.'"
+     },
+     {
+      "box": [
+       0.77,
+       0.04,
+       0.82,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'673'"
+     },
+     {
+      "box": [
+       0.11,
+       0.065,
+       0.8,
+       0.405
+      ],
+      "class": "AN",
+      "why": "closing annotation of 2 Pet 3, two paragraphs"
+     },
+     {
+      "box": [
+       0.04,
+       0.23,
+       0.1,
+       0.29
+      ],
+      "class": "MN",
+      "why": "'Ps.118. Act. 8. Lu. 24. v. 45.' left citations"
+     },
+     {
+      "box": [
+       0.81,
+       0.07,
+       0.92,
+       0.15
+      ],
+      "class": "MN",
+      "why": "'The Greeke copies haue both, some ἐν οἷς, in vvhich things: some ἐν αἷς, in vvhich epistles.' — Greek inside a note"
+     },
+     {
+      "box": [
+       0.81,
+       0.19,
+       0.92,
+       0.24
+      ],
+      "class": "MN",
+      "why": "'Not only the matter, but the style of the Scriptures is hard.'"
+     },
+     {
+      "box": [
+       0.11,
+       0.44,
+       0.8,
+       0.445
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.24,
+       0.52,
+       0.66,
+       0.76
+      ],
+      "class": "OR",
+      "why": "large woodcut tailpiece, lozenge arabesque"
+     },
+     {
+      "box": [
+       0.59,
+       0.815,
+       0.68,
+       0.835
+      ],
+      "class": "SG",
+      "why": "'Qqqq' set BELOW the tailpiece"
+     },
+     {
+      "box": [
+       0.72,
+       0.815,
+       0.8,
+       0.835
+      ],
+      "class": "CW",
+      "why": "'THE'"
+     },
+     {
+      "box": [
+       0.03,
+       0.85,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "NT 2 Peter 3 END OF BOOK: annotations only, rule, large tailpiece, signature 'Qqqq' + catchword 'THE' under the tailpiece; CR at gutter; half the page blank",
+    "measure": [
+     0.11,
+     0.8
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.06,
+       0.04,
+       0.21,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHAP. III.' at gutter — spelled CHAP. here, not CHA.",
+      "origin": "agent",
+      "agent_index": 0
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'OF S. PETER.'",
+      "origin": "agent",
+      "agent_index": 1
+     },
+     {
+      "box": [
+       0.7598,
+       0.04,
+       0.82,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'673'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.11,
+       0.065,
+       0.8,
+       0.405
+      ],
+      "class": "AN",
+      "why": "closing annotation of 2 Pet 3, two paragraphs",
+      "origin": "agent",
+      "agent_index": 3
+     },
+     {
+      "box": [
+       0.04,
+       0.2207,
+       0.1068,
+       0.29
+      ],
+      "class": "MN",
+      "why": "'Ps.118. Act. 8. Lu. 24. v. 45.' left citations",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8049,
+       0.07,
+       0.92,
+       0.15
+      ],
+      "class": "MN",
+      "why": "'The Greeke copies haue both, some ἐν οἷς, in vvhich things: some ἐν αἷς, in vvhich epistles.' — Greek inside a note",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8049,
+       0.1726,
+       0.9286,
+       0.2423
+      ],
+      "class": "MN",
+      "why": "'Not only the matter, but the style of the Scriptures is hard.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.11,
+       0.4179,
+       0.8,
+       0.4299
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2161,
+       0.4817,
+       0.6805,
+       0.7542
+      ],
+      "class": "OR",
+      "why": "large woodcut tailpiece, lozenge arabesque",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.578,
+       0.779,
+       0.6868,
+       0.8083
+      ],
+      "class": "SG",
+      "why": "'Qqqq' set BELOW the tailpiece",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7115,
+       0.7767,
+       0.8,
+       0.806
+      ],
+      "class": "CW",
+      "why": "'THE'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T04:22:56+00:00",
+   "updated": "2026-09-07T04:25:44+00:00"
+  },
+  "NT-1582-B_0009": {
+   "witness": "NT-1582-B",
+   "leaf": 9,
+   "agent": {
+    "side": "recto",
+    "archetype": "prelim prose, no verses, no page number",
+    "measure": [
+     0.1,
+     0.8
+    ],
+    "verse_gutter": "none",
+    "regions": [
+     {
+      "box": [
+       0.27,
+       0.035,
+       0.56,
+       0.058
+      ],
+      "class": "RH",
+      "why": "centred spaced caps 'TO THE READER.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.058,
+       0.8,
+       0.858
+      ],
+      "class": "MT",
+      "why": "ONE prose measure, four paragraphs (tops at y .058 .113 .440 .765); bound as one text, paragraphs as sub-structure"
+     },
+     {
+      "box": [
+       0.03,
+       0.245,
+       0.1,
+       0.29
+      ],
+      "class": "MN",
+      "why": "italic left-margin citation 'Ind. lib. prohibit. regula 4.' — a source citation, sub-kind of note"
+     },
+     {
+      "box": [
+       0.8,
+       0.125,
+       0.96,
+       0.23
+      ],
+      "class": "MN",
+      "why": "right-margin summary 'The Churches order & determination concerning...'"
+     },
+     {
+      "box": [
+       0.8,
+       0.525,
+       0.96,
+       0.585
+      ],
+      "class": "MN",
+      "why": "'The holy Scriptures neuer read of al persons indifferently...'"
+     },
+     {
+      "box": [
+       0.8,
+       0.785,
+       0.96,
+       0.85
+      ],
+      "class": "MN",
+      "why": "'VVhere and in vvhose handes the Scriptures vvere in the primitiue Church.'"
+     },
+     {
+      "box": [
+       0.61,
+       0.862,
+       0.68,
+       0.882
+      ],
+      "class": "SG",
+      "why": "'a iij' signature formula at foot"
+     },
+     {
+      "box": [
+       0.76,
+       0.862,
+       0.81,
+       0.882
+      ],
+      "class": "CW",
+      "why": "'and'"
+     }
+    ],
+    "carried_from": "cold-read.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": null,
+    "measure": [
+     0.1,
+     0.8
+    ],
+    "skew_deg": -0.02,
+    "skew_source": "human",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.18,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.2624,
+       0.035,
+       0.5602,
+       0.0557
+      ],
+      "class": "RH",
+      "why": "centred spaced caps 'TO THE READER.'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0939,
+       0.0565,
+       0.7968,
+       0.8512
+      ],
+      "class": "MT",
+      "why": "ONE prose measure, four paragraphs (tops at y .058 .113 .440 .765); bound as one text, paragraphs as sub-structure",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0268,
+       0.2368,
+       0.0931,
+       0.2829
+      ],
+      "class": "MN",
+      "why": "italic left-margin citation 'Ind. lib. prohibit. regula 4.' — a source citation, sub-kind of note",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8004,
+       0.1178,
+       0.9321,
+       0.2228
+      ],
+      "class": "MN",
+      "why": "right-margin summary 'The Churches order & determination concerning...'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7968,
+       0.4959,
+       0.9335,
+       0.5663
+      ],
+      "class": "MN",
+      "why": "'The holy Scriptures neuer read of al persons indifferently...'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7976,
+       0.7582,
+       0.9243,
+       0.837
+      ],
+      "class": "MN",
+      "why": "'VVhere and in vvhose handes the Scriptures vvere in the primitiue Church.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.6146,
+       0.8526,
+       0.6778,
+       0.8691
+      ],
+      "class": "SG",
+      "why": "'a iij' signature formula at foot",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7546,
+       0.8515,
+       0.7977,
+       0.8715
+      ],
+      "class": "CW",
+      "why": "'and'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T04:25:47+00:00",
+   "updated": "2026-09-07T04:31:35+00:00"
+  },
+  "NT-1582-B_0028": {
+   "witness": "NT-1582-B",
+   "leaf": 28,
+   "agent": {
+    "side": "verso",
+    "kind": "PRELIM PREFACE END — prose with inline GREEK, left summaries, right citations, large woodcut TAILPIECE, lower third blank; no catchword or signature",
+    "measure": [
+     0.2,
+     0.9
+    ],
+    "regions": [
+     {
+      "box": [
+       0.33,
+       0.02,
+       0.83,
+       0.045
+      ],
+      "class": "RH",
+      "why": "'THE PREFACE TO THE READER.'"
+     },
+     {
+      "box": [
+       0.2,
+       0.05,
+       0.9,
+       0.645
+      ],
+      "class": "MT",
+      "why": "preface prose, five paragraphs, roman with italic Latin and inline Greek (ἀξίως τοῦ κυρίου…) — Greek inside the body is a fount switch, not a region"
+     },
+     {
+      "box": [
+       0.08,
+       0.05,
+       0.19,
+       0.12
+      ],
+      "class": "MN",
+      "why": "'In the beginning of bookes, Matthew, Paul &c. not S. Matthew. S. Paul &c.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.18,
+       0.19,
+       0.23
+      ],
+      "class": "MN",
+      "why": "'An other reading in the margent.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.29,
+       0.19,
+       0.34
+      ],
+      "class": "MN",
+      "why": "'The pointing sometime altered.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.4,
+       0.19,
+       0.46
+      ],
+      "class": "MN",
+      "why": "'The margent reading sometime preferred before the text.'"
+     },
+     {
+      "box": [
+       0.91,
+       0.1,
+       0.99,
+       0.16
+      ],
+      "class": "MN",
+      "why": "'Bib. an. 1579. 1580. an. 1577 1562.' citation/dating notes"
+     },
+     {
+      "box": [
+       0.44,
+       0.68,
+       0.67,
+       0.83
+      ],
+      "class": "OR",
+      "why": "woodcut TAILPIECE, centred below the last line — ornament, no text"
+     },
+     {
+      "box": [
+       0.08,
+       0.84,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower third"
+     }
+    ],
+    "carried_from": "cold-read-20.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "PRELIM PREFACE END — prose with inline GREEK, left summaries, right citations, large woodcut TAILPIECE, lower third blank; no catchword or signature",
+    "measure": [
+     0.2,
+     0.9
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.33,
+       0.02,
+       0.83,
+       0.045
+      ],
+      "class": "RH",
+      "why": "'THE PREFACE TO THE READER.'",
+      "origin": "agent",
+      "agent_index": 0
+     },
+     {
+      "box": [
+       0.2035,
+       0.05,
+       0.8983,
+       0.645
+      ],
+      "class": "MT",
+      "why": "preface prose, five paragraphs, roman with italic Latin and inline Greek (ἀξίως τοῦ κυρίου…) — Greek inside the body is a fount switch, not a region",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0809,
+       0.0464,
+       0.2022,
+       0.1206
+      ],
+      "class": "MN",
+      "why": "'In the beginning of bookes, Matthew, Paul &c. not S. Matthew. S. Paul &c.'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0826,
+       0.1782,
+       0.203,
+       0.2282
+      ],
+      "class": "MN",
+      "why": "'An other reading in the margent.'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0835,
+       0.2781,
+       0.2022,
+       0.3281
+      ],
+      "class": "MN",
+      "why": "'The pointing sometime altered.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0852,
+       0.3893,
+       0.2039,
+       0.4493
+      ],
+      "class": "MN",
+      "why": "'The margent reading sometime preferred before the text.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8978,
+       0.0976,
+       0.9778,
+       0.1576
+      ],
+      "class": "MN",
+      "why": "'Bib. an. 1579. 1580. an. 1577 1562.' citation/dating notes",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.44,
+       0.68,
+       0.67,
+       0.83
+      ],
+      "class": "OR",
+      "why": "woodcut TAILPIECE, centred below the last line — ornament, no text",
+      "origin": "agent",
+      "agent_index": 7
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:01:42+00:00",
+   "updated": "2026-09-07T22:03:23+00:00"
+  },
+  "NT-1582-B_0562": {
+   "witness": "NT-1582-B",
+   "leaf": 562,
+   "agent": {
+    "side": "verso",
+    "kind": "NT SETTING (Rhemes): annotations ABOVE a rule, then chapter head + argument + 7-line woodcut initial + verses; THREE-part head with 'CHA. III.' at outer; Greek in right margin; frame rule at right edge",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.13,
+       0.04,
+       0.2,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'530'"
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.72,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'THE EPISTLE OF S. PAVL'"
+     },
+     {
+      "box": [
+       0.81,
+       0.04,
+       0.94,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHA. III.' — CHAPTER RUNNING-HEAD at the outer head; NT setting puts the chapter number in the headline, not a topical title — distinct from RH by content"
+     },
+     {
+      "box": [
+       0.22,
+       0.07,
+       0.88,
+       0.42
+      ],
+      "class": "AN",
+      "why": "annotations for ch.2 in small type, five lemma-led paragraphs ('10. Name of IESVS.]' '12. With feare and trembling.]' '13. Worketh in you.]' '17. The sacrifice.]')"
+     },
+     {
+      "box": [
+       0.08,
+       0.07,
+       0.21,
+       0.42
+      ],
+      "class": "MN",
+      "why": "left summaries ×5 ('The Protestants vvill haue no reuerence done at the name of IESVS.' … 'Martyrdom.')"
+     },
+     {
+      "box": [
+       0.22,
+       0.455,
+       0.88,
+       0.46
+      ],
+      "class": "RL",
+      "why": "printed rule separating annotations from the next chapter"
+     },
+     {
+      "box": [
+       0.45,
+       0.47,
+       0.61,
+       0.49
+      ],
+      "class": "CH",
+      "why": "'CHAP. III.'"
+     },
+     {
+      "box": [
+       0.28,
+       0.5,
+       0.85,
+       0.56
+      ],
+      "class": "AR",
+      "why": "italic argument, five lines"
+     },
+     {
+      "box": [
+       0.22,
+       0.575,
+       0.43,
+       0.72
+      ],
+      "class": "DC",
+      "why": "woodcut initial F, seven lines deep"
+     },
+     {
+      "box": [
+       0.43,
+       0.575,
+       0.87,
+       0.72
+      ],
+      "class": "MT",
+      "why": "Phil 3:1-3 beside the initial"
+     },
+     {
+      "box": [
+       0.22,
+       0.72,
+       0.87,
+       0.87
+      ],
+      "class": "MT",
+      "why": "Phil 3:3-7 full measure"
+     },
+     {
+      "box": [
+       0.87,
+       0.575,
+       0.91,
+       0.87
+      ],
+      "class": "VN",
+      "why": "1..7 right"
+     },
+     {
+      "box": [
+       0.08,
+       0.64,
+       0.21,
+       0.83
+      ],
+      "class": "MN",
+      "why": "'c By allusion of vvords, he calleth the carnal Christian Iews that yet boasted in the circumcision…' left note keyed by letter"
+     },
+     {
+      "box": [
+       0.92,
+       0.67,
+       0.99,
+       0.72
+      ],
+      "class": "MN",
+      "why": "GREEK words 'κατατομή περιτομή' in the right margin — a note in Greek; class MN, fount Greek"
+     },
+     {
+      "box": [
+       0.92,
+       0.77,
+       0.99,
+       0.85
+      ],
+      "class": "MN",
+      "why": "'2.Cor.11. 22. Act. 23. 6.' citations"
+     },
+     {
+      "box": [
+       0.91,
+       0.03,
+       0.92,
+       0.9
+      ],
+      "class": "RL",
+      "why": "vertical frame rule at the right edge of the text area"
+     },
+     {
+      "box": [
+       0.82,
+       0.88,
+       0.88,
+       0.9
+      ],
+      "class": "CW",
+      "why": "'the'"
+     }
+    ],
+    "carried_from": "cold-read-20.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT SETTING (Rhemes): annotations ABOVE a rule, then chapter head + argument + 7-line woodcut initial + verses; THREE-part head with 'CHA. III.' at outer; Greek in right margin; frame rule at right edge",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": {
+     "model": "colshear-v1",
+     "y_top": 0.25,
+     "y_bot": 0.75,
+     "top": [
+      -3.4392,
+      10.6504,
+      -7.8555
+     ],
+     "bot": [
+      -3.4392,
+      10.6504,
+      -7.8555
+     ]
+    },
+    "warp": {
+     "rms_before": 0.46,
+     "rms_after": 0,
+     "status": "dewarped",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1877,
+       0.0421,
+       0.2577,
+       0.0621
+      ],
+      "class": "PN",
+      "why": "'530'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.7436,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'THE EPISTLE OF S. PAVL'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8249,
+       0.0403,
+       0.9549,
+       0.0603
+      ],
+      "class": "CR",
+      "why": "'CHA. III.' — CHAPTER RUNNING-HEAD at the outer head; NT setting puts the chapter number in the headline, not a topical title — distinct from RH by content",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2087,
+       0.0611,
+       0.9088,
+       0.42
+      ],
+      "class": "AN",
+      "why": "annotations for ch.2 in small type, five lemma-led paragraphs ('10. Name of IESVS.]' '12. With feare and trembling.]' '13. Worketh in you.]' '17. The sacrifice.]')",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0774,
+       0.0662,
+       0.2022,
+       0.1421
+      ],
+      "class": "MN",
+      "why": "left summaries ×5 ('The Protestants vvill haue no reuerence done at the name of IESVS.' … 'Martyrdom.')",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2191,
+       0.4324,
+       0.8931,
+       0.4374
+      ],
+      "class": "RL",
+      "why": "printed rule separating annotations from the next chapter",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4509,
+       0.4504,
+       0.6196,
+       0.4704
+      ],
+      "class": "CH",
+      "why": "'CHAP. III.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2791,
+       0.4774,
+       0.8596,
+       0.5451
+      ],
+      "class": "AR",
+      "why": "italic argument, five lines",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2279,
+       0.5558,
+       0.43,
+       0.7008
+      ],
+      "class": "DC",
+      "why": "woodcut initial F, seven lines deep",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4309,
+       0.5541,
+       0.8499,
+       0.7045
+      ],
+      "class": "MT",
+      "why": "Phil 3:1-3 beside the initial",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.227,
+       0.7057,
+       0.8499,
+       0.8385
+      ],
+      "class": "MT",
+      "why": "Phil 3:3-7 full measure",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8508,
+       0.5551,
+       0.8847,
+       0.8388
+      ],
+      "class": "VN",
+      "why": "1..7 right",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0949,
+       0.6184,
+       0.2249,
+       0.8209
+      ],
+      "class": "MN",
+      "why": "'c By allusion of vvords, he calleth the carnal Christian Iews that yet boasted in the circumcision…' left note keyed by letter",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9121,
+       0.6556,
+       0.9821,
+       0.7056
+      ],
+      "class": "MN",
+      "why": "GREEK words 'κατατομή περιτομή' in the right margin — a note in Greek; class MN, fount Greek",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.913,
+       0.7521,
+       0.983,
+       0.8321
+      ],
+      "class": "MN",
+      "why": "'2.Cor.11. 22. Act. 23. 6.' citations",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.889,
+       0.4382,
+       0.9095,
+       0.8634
+      ],
+      "class": "RL",
+      "why": "vertical frame rule at the right edge of the text area",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7999,
+       0.8404,
+       0.8599,
+       0.8604
+      ],
+      "class": "CW",
+      "why": "'the'",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0822,
+       0.1617,
+       0.2089,
+       0.2521
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.083,
+       0.2623,
+       0.2089,
+       0.2961
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.0892,
+       0.3045,
+       0.208,
+       0.3645
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.09,
+       0.3806,
+       0.2011,
+       0.4008
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:03:28+00:00",
+   "updated": "2026-09-07T22:09:24+00:00"
+  },
+  "NT-1582-B_0564": {
+   "witness": "NT-1582-B",
+   "leaf": 564,
+   "agent": {
+    "side": "verso",
+    "kind": "NT SETTING: ANNOTATIONS fill 70% (no scripture on this leaf), rule, chapter head + argument, then page ENDS — catchword only",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.14,
+       0.04,
+       0.2,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'532'"
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.72,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'THE EPISTLE OF S. PAVL'"
+     },
+     {
+      "box": [
+       0.81,
+       0.04,
+       0.94,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHA. III.' chapter running-head"
+     },
+     {
+      "box": [
+       0.22,
+       0.06,
+       0.88,
+       0.63
+      ],
+      "class": "AN",
+      "why": "annotations for ch.3 in small type, lemmas '12. Not that novv.]' '15. Othervvise minded.]'"
+     },
+     {
+      "box": [
+       0.08,
+       0.08,
+       0.21,
+       0.58
+      ],
+      "class": "MN",
+      "why": "left summaries ×6 ('Double perfection…' 'The heretikes folish defense…' 'The difference betvvene the disagreing of auncient fathers…' 'The spiteful vvritings…' 'A notable place of S. Augustine.')"
+     },
+     {
+      "box": [
+       0.22,
+       0.66,
+       0.88,
+       0.665
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.44,
+       0.69,
+       0.61,
+       0.71
+      ],
+      "class": "CH",
+      "why": "'CHAP. IIII.'"
+     },
+     {
+      "box": [
+       0.29,
+       0.735,
+       0.85,
+       0.8
+      ],
+      "class": "AR",
+      "why": "italic argument, four lines"
+     },
+     {
+      "box": [
+       0.76,
+       0.83,
+       0.88,
+       0.85
+      ],
+      "class": "CW",
+      "why": "'Therefore' — catchword with NO body text above it on this leaf; the chapter text begins overleaf"
+     },
+     {
+      "box": [
+       0.91,
+       0.03,
+       0.92,
+       0.88
+      ],
+      "class": "RL",
+      "why": "vertical frame rule right edge"
+     },
+     {
+      "box": [
+       0.08,
+       0.86,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ],
+    "carried_from": "cold-read-20.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT SETTING: ANNOTATIONS fill 70% (no scripture on this leaf), rule, chapter head + argument, then page ENDS — catchword only",
+    "measure": [
+     0.22,
+     0.88
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.35,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1994,
+       0.0305,
+       0.2594,
+       0.0505
+      ],
+      "class": "PN",
+      "why": "'532'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3917,
+       0.0287,
+       0.7366,
+       0.0487
+      ],
+      "class": "RH",
+      "why": "'THE EPISTLE OF S. PAVL'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8222,
+       0.0293,
+       0.9522,
+       0.0493
+      ],
+      "class": "CR",
+      "why": "'CHA. III.' chapter running-head",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.213,
+       0.0529,
+       0.9071,
+       0.6199
+      ],
+      "class": "AN",
+      "why": "annotations for ch.3 in small type, lemmas '12. Not that novv.]' '15. Othervvise minded.]'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.08,
+       0.08,
+       0.21,
+       0.1298
+      ],
+      "class": "MN",
+      "why": "left summaries ×6 ('Double perfection…' 'The heretikes folish defense…' 'The difference betvvene the disagreing of auncient fathers…' 'The spiteful vvritings…' 'A notable place of S. Augustine.')",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.213,
+       0.6433,
+       0.8852,
+       0.6507
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4356,
+       0.6686,
+       0.6327,
+       0.6916
+      ],
+      "class": "CH",
+      "why": "'CHAP. IIII.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2865,
+       0.7041,
+       0.8465,
+       0.7691
+      ],
+      "class": "AR",
+      "why": "italic argument, four lines",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7233,
+       0.783,
+       0.8477,
+       0.8042
+      ],
+      "class": "CW",
+      "why": "'Therefore' — catchword with NO body text above it on this leaf; the chapter text begins overleaf",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8829,
+       0.6526,
+       0.9051,
+       0.8532
+      ],
+      "class": "RL",
+      "why": "vertical frame rule right edge",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0848,
+       0.1623,
+       0.2072,
+       0.2563
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.0892,
+       0.3045,
+       0.2115,
+       0.4293
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.09,
+       0.4305,
+       0.2115,
+       0.4948
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     },
+     {
+      "box": [
+       0.0918,
+       0.5197,
+       0.2054,
+       0.5697
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:09:49+00:00",
+   "updated": "2026-09-07T22:13:39+00:00"
+  },
+  "NT-1582-B_0119": {
+   "witness": "NT-1582-B",
+   "leaf": 119,
+   "agent": {
+    "side": "recto",
+    "kind": "NT BOOK OPENING (Mark): CR at gutter, ornament, 3-line BT, CH, AR with right summary, 6-line woodcut initial, VN column LEFT separated by a vertical rule, left citations, right notes; LAST LINE CUT BY THE SCAN",
+    "measure": [
+     0.16,
+     0.77
+    ],
+    "regions": [
+     {
+      "box": [
+       0.04,
+       0.04,
+       0.14,
+       0.06
+      ],
+      "class": "CR",
+      "why": "'CHA. I.' at the LEFT (gutter) on a recto — NT rule: chapter running-head at gutter, page number at fore-edge"
+     },
+     {
+      "box": [
+       0.74,
+       0.04,
+       0.79,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'87'"
+     },
+     {
+      "box": [
+       0.15,
+       0.06,
+       0.78,
+       0.14
+      ],
+      "class": "OR",
+      "why": "woodcut headpiece band"
+     },
+     {
+      "box": [
+       0.15,
+       0.145,
+       0.78,
+       0.15
+      ],
+      "class": "RL",
+      "why": "printed rule under the ornament"
+     },
+     {
+      "box": [
+       0.16,
+       0.16,
+       0.77,
+       0.24
+      ],
+      "class": "BT",
+      "why": "'THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO MARKE.'"
+     },
+     {
+      "box": [
+       0.4,
+       0.255,
+       0.52,
+       0.27
+      ],
+      "class": "CH",
+      "why": "'CHAP. I.'"
+     },
+     {
+      "box": [
+       0.18,
+       0.29,
+       0.78,
+       0.39
+      ],
+      "class": "AR",
+      "why": "italic argument, eight lines"
+     },
+     {
+      "box": [
+       0.78,
+       0.255,
+       0.9,
+       0.36
+      ],
+      "class": "MN",
+      "why": "'THE FIRST part of this Gospel: of the preparation to Christs manifestation.' summary beside the argument"
+     },
+     {
+      "box": [
+       0.16,
+       0.415,
+       0.35,
+       0.54
+      ],
+      "class": "DC",
+      "why": "woodcut initial T, six lines"
+     },
+     {
+      "box": [
+       0.35,
+       0.415,
+       0.78,
+       0.54
+      ],
+      "class": "MT",
+      "why": "Mark 1:1-4 beside the initial"
+     },
+     {
+      "box": [
+       0.16,
+       0.54,
+       0.78,
+       0.87
+      ],
+      "class": "MT",
+      "why": "Mark 1:4-12"
+     },
+     {
+      "box": [
+       0.12,
+       0.415,
+       0.16,
+       0.87
+      ],
+      "class": "VN",
+      "why": "1..12 LEFT of the measure"
+     },
+     {
+      "box": [
+       0.1,
+       0.05,
+       0.105,
+       0.87
+      ],
+      "class": "RL",
+      "why": "vertical rule between the verse-number column and the outer margin — a frame rule"
+     },
+     {
+      "box": [
+       0.03,
+       0.45,
+       0.1,
+       0.57
+      ],
+      "class": "MN",
+      "why": "left citations 'Mal.3,1. Esa.40, 3. the prophets Mt.3,1. Lu.3,4. Io.1,15.' — italic, with a gloss word"
+     },
+     {
+      "box": [
+       0.03,
+       0.85,
+       0.1,
+       0.89
+      ],
+      "class": "MN",
+      "why": "'Mt.4,1. Lu.4,1.'"
+     },
+     {
+      "box": [
+       0.78,
+       0.55,
+       0.9,
+       0.7
+      ],
+      "class": "MN",
+      "why": "':: Iohns baptisme put them in hope only of remission of sinnes as a preparatiue…' ends in italic cite 'Aug.li. 5 de bapt.c.10.'"
+     },
+     {
+      "box": [
+       0.16,
+       0.855,
+       0.78,
+       0.875
+      ],
+      "class": "CT",
+      "why": "'† And forthvvith * the Spirit droue him out into the de-' — the line is clipped at the right and the catchword/next line is OFF THE SCAN. Crop-truncation, not blank"
+     }
+    ],
+    "carried_from": "cold-read-10.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "NT BOOK OPENING (Mark): CR at gutter, ornament, 3-line BT, CH, AR with right summary, 6-line woodcut initial, VN column LEFT separated by a vertical rule, left citations, right notes; LAST LINE CUT BY THE SCAN",
+    "measure": [
+     0.16,
+     0.77
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.35,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0386,
+       0.039,
+       0.1386,
+       0.059
+      ],
+      "class": "CR",
+      "why": "'CHA. I.' at the LEFT (gutter) on a recto — NT rule: chapter running-head at gutter, page number at fore-edge",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7318,
+       0.0357,
+       0.7818,
+       0.0557
+      ],
+      "class": "PN",
+      "why": "'87'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1398,
+       0.0576,
+       0.78,
+       0.1357
+      ],
+      "class": "OR",
+      "why": "woodcut headpiece band",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1507,
+       0.1369,
+       0.7732,
+       0.1462
+      ],
+      "class": "RL",
+      "why": "printed rule under the ornament",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1477,
+       0.1481,
+       0.7693,
+       0.2367
+      ],
+      "class": "BT",
+      "why": "'THE HOLY GOSPEL / OF IESVS CHRIST ACCOR- / DING TO MARKE.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3857,
+       0.2464,
+       0.52,
+       0.27
+      ],
+      "class": "CH",
+      "why": "'CHAP. I.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1657,
+       0.2781,
+       0.7657,
+       0.3819
+      ],
+      "class": "AR",
+      "why": "italic argument, eight lines",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7678,
+       0.2412,
+       0.8871,
+       0.3519
+      ],
+      "class": "MN",
+      "why": "'THE FIRST part of this Gospel: of the preparation to Christs manifestation.' summary beside the argument",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1559,
+       0.4012,
+       0.3459,
+       0.5329
+      ],
+      "class": "DC",
+      "why": "woodcut initial T, six lines",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3466,
+       0.3979,
+       0.7766,
+       0.531
+      ],
+      "class": "MT",
+      "why": "Mark 1:1-4 beside the initial",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1552,
+       0.5319,
+       0.7752,
+       0.8562
+      ],
+      "class": "MT",
+      "why": "Mark 1:4-12",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1193,
+       0.4003,
+       0.1525,
+       0.8553
+      ],
+      "class": "VN",
+      "why": "1..12 LEFT of the measure",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.102,
+       0.0647,
+       0.1125,
+       0.8762
+      ],
+      "class": "RL",
+      "why": "vertical rule between the verse-number column and the outer margin — a frame rule",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0259,
+       0.4362,
+       0.0959,
+       0.561
+      ],
+      "class": "MN",
+      "why": "left citations 'Mal.3,1. Esa.40, 3. the prophets Mt.3,1. Lu.3,4. Io.1,15.' — italic, with a gloss word",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0314,
+       0.8314,
+       0.1014,
+       0.8714
+      ],
+      "class": "MN",
+      "why": "'Mt.4,1. Lu.4,1.'",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7745,
+       0.5333,
+       0.8965,
+       0.6876
+      ],
+      "class": "MN",
+      "why": "':: Iohns baptisme put them in hope only of remission of sinnes as a preparatiue…' ends in italic cite 'Aug.li. 5 de bapt.c.10.'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7254,
+       0.8573,
+       0.7669,
+       0.8782
+      ],
+      "class": "CW",
+      "why": "",
+      "origin": "human"
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:13:43+00:00",
+   "updated": "2026-09-07T22:19:38+00:00"
+  },
+  "NT-1582-B_0777": {
+   "witness": "NT-1582-B",
+   "leaf": 777,
+   "agent": {
+    "side": "recto",
+    "kind": "END OF BOOK + END OF NT (Apocalypse 22): two verse lines, rule, TWO-LINE annotation header, AN, signature MID-PAGE, giant tailpiece, 45% blank",
+    "measure": [
+     0.14,
+     0.82
+    ],
+    "regions": [
+     {
+      "box": [
+       0.09,
+       0.05,
+       0.24,
+       0.07
+      ],
+      "class": "CR",
+      "why": "'CHA. XXII.' at gutter (recto → left)"
+     },
+     {
+      "box": [
+       0.39,
+       0.05,
+       0.65,
+       0.07
+      ],
+      "class": "RH",
+      "why": "'THE APOCALYPSE.'"
+     },
+     {
+      "box": [
+       0.78,
+       0.05,
+       0.84,
+       0.07
+      ],
+      "class": "PN",
+      "why": "'745'"
+     },
+     {
+      "box": [
+       0.14,
+       0.075,
+       0.82,
+       0.11
+      ],
+      "class": "MT",
+      "why": "Apoc 22:21, two lines, with VN 21 and 'Amen.'"
+     },
+     {
+      "box": [
+       0.15,
+       0.08,
+       0.17,
+       0.1
+      ],
+      "class": "VN",
+      "why": "'21' at left"
+     },
+     {
+      "box": [
+       0.14,
+       0.13,
+       0.82,
+       0.135
+      ],
+      "class": "RL",
+      "why": "printed rule (segmented)"
+     },
+     {
+      "box": [
+       0.33,
+       0.155,
+       0.63,
+       0.185
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS / CHAP. XXII.' — a TWO-LINE annotation-section header"
+     },
+     {
+      "box": [
+       0.14,
+       0.2,
+       0.82,
+       0.435
+      ],
+      "class": "AN",
+      "why": "three lemma-led annotations '11. He that hurteth.]' '18. If any man shal adde.]' '20. Come Lord Iesus.]'; the last ends 'AMEN.' in spaced caps"
+     },
+     {
+      "box": [
+       0.83,
+       0.24,
+       0.94,
+       0.32
+      ],
+      "class": "MN",
+      "why": "'The curse against adding or diminishing, is against Heretikes, not Catholike expositours.'"
+     },
+     {
+      "box": [
+       0.83,
+       0.35,
+       0.94,
+       0.46
+      ],
+      "class": "MN",
+      "why": "'A breefe petition vnto IESVS Christ, to come quickly, as S. Iohn here speaketh…'"
+     },
+     {
+      "box": [
+       0.58,
+       0.46,
+       0.69,
+       0.48
+      ],
+      "class": "SG",
+      "why": "'Bbbbb' — signature set immediately under the last text line, MID-PAGE, not at the foot"
+     },
+     {
+      "box": [
+       0.24,
+       0.53,
+       0.68,
+       0.79
+      ],
+      "class": "OR",
+      "why": "large woodcut tailpiece, cruciform arabesque"
+     },
+     {
+      "box": [
+       0.08,
+       0.8,
+       0.94,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ],
+    "carried_from": "cold-read-10.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "END OF BOOK + END OF NT (Apocalypse 22): two verse lines, rule, TWO-LINE annotation header, AN, signature MID-PAGE, giant tailpiece, 45% blank",
+    "measure": [
+     0.14,
+     0.82
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.25,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0844,
+       0.0486,
+       0.2526,
+       0.0686
+      ],
+      "class": "CR",
+      "why": "'CHA. XXII.' at gutter (recto → left)",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.383,
+       0.05,
+       0.65,
+       0.07
+      ],
+      "class": "RH",
+      "why": "'THE APOCALYPSE.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7737,
+       0.0533,
+       0.8337,
+       0.0733
+      ],
+      "class": "PN",
+      "why": "'745'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2008,
+       0.075,
+       0.8291,
+       0.1148
+      ],
+      "class": "MT",
+      "why": "Apoc 22:21, two lines, with VN 21 and 'Amen.'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1591,
+       0.0776,
+       0.1889,
+       0.0976
+      ],
+      "class": "VN",
+      "why": "'21' at left",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.14,
+       0.13,
+       0.82,
+       0.135
+      ],
+      "class": "RL",
+      "why": "printed rule (segmented)",
+      "origin": "agent",
+      "agent_index": 5
+     },
+     {
+      "box": [
+       0.3272,
+       0.1479,
+       0.6349,
+       0.185
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS / CHAP. XXII.' — a TWO-LINE annotation-section header",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1288,
+       0.1971,
+       0.8256,
+       0.435
+      ],
+      "class": "AN",
+      "why": "three lemma-led annotations '11. He that hurteth.]' '18. If any man shal adde.]' '20. Come Lord Iesus.]'; the last ends 'AMEN.' in spaced caps",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8251,
+       0.2357,
+       0.9477,
+       0.3224
+      ],
+      "class": "MN",
+      "why": "'The curse against adding or diminishing, is against Heretikes, not Catholike expositours.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8244,
+       0.3448,
+       0.9449,
+       0.4581
+      ],
+      "class": "MN",
+      "why": "'A breefe petition vnto IESVS Christ, to come quickly, as S. Iohn here speaketh…'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5821,
+       0.4505,
+       0.6921,
+       0.4705
+      ],
+      "class": "SG",
+      "why": "'Bbbbb' — signature set immediately under the last text line, MID-PAGE, not at the foot",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.233,
+       0.5167,
+       0.68,
+       0.79
+      ],
+      "class": "OR",
+      "why": "large woodcut tailpiece, cruciform arabesque",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:19:44+00:00",
+   "updated": "2026-09-07T22:22:00+00:00"
+  },
+  "NT-1582-B_0706": {
+   "witness": "NT-1582-B",
+   "leaf": 706,
+   "agent": {
+    "side": "verso",
+    "kind": "NT BOOK OPENING (argument of S. Johns three epistles): ornament, two-line BT, 6-line woodcut initial, italic/roman argument, left citations, right citation; catchword; SHOW-THROUGH of the recto's signature at the foot; blank half",
+    "measure": [
+     0.19,
+     0.82
+    ],
+    "regions": [
+     {
+      "box": [
+       0.18,
+       0.05,
+       0.24,
+       0.07
+      ],
+      "class": "PN",
+      "why": "'674'"
+     },
+     {
+      "box": [
+       0.19,
+       0.09,
+       0.8,
+       0.14
+      ],
+      "class": "OR",
+      "why": "woodcut headpiece between rules"
+     },
+     {
+      "box": [
+       0.19,
+       0.085,
+       0.8,
+       0.09
+      ],
+      "class": "RL",
+      "why": "rule above"
+     },
+     {
+      "box": [
+       0.19,
+       0.145,
+       0.8,
+       0.15
+      ],
+      "class": "RL",
+      "why": "rule below"
+     },
+     {
+      "box": [
+       0.23,
+       0.16,
+       0.78,
+       0.21
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF S. / IOHNS THREE EPISTLES.'"
+     },
+     {
+      "box": [
+       0.19,
+       0.23,
+       0.35,
+       0.35
+      ],
+      "class": "DC",
+      "why": "woodcut initial O, six lines"
+     },
+     {
+      "box": [
+       0.35,
+       0.23,
+       0.82,
+       0.35
+      ],
+      "class": "AR",
+      "why": "argument beside the initial, italic"
+     },
+     {
+      "box": [
+       0.19,
+       0.35,
+       0.82,
+       0.71
+      ],
+      "class": "AR",
+      "why": "argument continued, italic with roman scripture quotations"
+     },
+     {
+      "box": [
+       0.07,
+       0.27,
+       0.18,
+       0.33
+      ],
+      "class": "MN",
+      "why": "'* Higinus ep. 1. to. 1. Cõcil. August. li. 2. Euang. quæst. q.39.' left citation"
+     },
+     {
+      "box": [
+       0.07,
+       0.415,
+       0.18,
+       0.43
+      ],
+      "class": "MN",
+      "why": "'1.Ioh.2. v.24.'"
+     },
+     {
+      "box": [
+       0.07,
+       0.6,
+       0.18,
+       0.62
+      ],
+      "class": "MN",
+      "why": "'1. Ioh.2 & 5.'"
+     },
+     {
+      "box": [
+       0.82,
+       0.56,
+       0.92,
+       0.59
+      ],
+      "class": "MN",
+      "why": "'De fid. & op. c. 14.' right citation, italic"
+     },
+     {
+      "box": [
+       0.75,
+       0.715,
+       0.82,
+       0.735
+      ],
+      "class": "CW",
+      "why": "'THE'"
+     },
+     {
+      "box": [
+       0.2,
+       0.78,
+       0.4,
+       0.82
+      ],
+      "class": "ST",
+      "why": "mirror-image ghost 'THE' / 'Qqqq' — the RECTO's catchword and signature showing through"
+     },
+     {
+      "box": [
+       0.05,
+       0.74,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT BOOK OPENING (argument of S. Johns three epistles): ornament, two-line BT, 6-line woodcut initial, italic/roman argument, left citations, right citation; catchword; SHOW-THROUGH of the recto's signature at the foot; blank half",
+    "measure": [
+     0.19,
+     0.82
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.18,
+       0.05,
+       0.24,
+       0.07
+      ],
+      "class": "PN",
+      "why": "'674'",
+      "origin": "agent",
+      "agent_index": 0
+     },
+     {
+      "box": [
+       0.1914,
+       0.0833,
+       0.8014,
+       0.1333
+      ],
+      "class": "OR",
+      "why": "woodcut headpiece between rules",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.19,
+       0.0774,
+       0.8091,
+       0.0824
+      ],
+      "class": "RL",
+      "why": "rule above",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1907,
+       0.1398,
+       0.8084,
+       0.1453
+      ],
+      "class": "RL",
+      "why": "rule below",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2223,
+       0.1538,
+       0.78,
+       0.21
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF S. / IOHNS THREE EPISTLES.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1921,
+       0.2271,
+       0.3521,
+       0.3419
+      ],
+      "class": "DC",
+      "why": "woodcut initial O, six lines",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3549,
+       0.2209,
+       0.82,
+       0.3476
+      ],
+      "class": "AR",
+      "why": "argument beside the initial, italic",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.19,
+       0.3471,
+       0.8172,
+       0.7024
+      ],
+      "class": "AR",
+      "why": "argument continued, italic with roman scripture quotations",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0693,
+       0.2614,
+       0.1849,
+       0.3257
+      ],
+      "class": "MN",
+      "why": "'* Higinus ep. 1. to. 1. Cõcil. August. li. 2. Euang. quæst. q.39.' left citation",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0721,
+       0.406,
+       0.1856,
+       0.4224
+      ],
+      "class": "MN",
+      "why": "'1.Ioh.2. v.24.'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.077,
+       0.5867,
+       0.187,
+       0.6067
+      ],
+      "class": "MN",
+      "why": "'1. Ioh.2 & 5.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8179,
+       0.5467,
+       0.9179,
+       0.5767
+      ],
+      "class": "MN",
+      "why": "'De fid. & op. c. 14.' right citation, italic",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7479,
+       0.7017,
+       0.8179,
+       0.7217
+      ],
+      "class": "CW",
+      "why": "'THE'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1979,
+       0.7657,
+       0.3979,
+       0.8057
+      ],
+      "class": "ST",
+      "why": "mirror-image ghost 'THE' / 'Qqqq' — the RECTO's catchword and signature showing through",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:22:09+00:00",
+   "updated": "2026-09-07T22:27:27+00:00"
+  },
+  "NT-1582-B_0734": {
+   "witness": "NT-1582-B",
+   "leaf": 734,
+   "agent": {
+    "side": "verso",
+    "kind": "NT Apocalypse 2: plain verse page, VN right, left notes keyed ::, right citations incl. a GREEK gloss, frame rule; catchword",
+    "measure": [
+     0.2,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.19,
+       0.035,
+       0.25,
+       0.055
+      ],
+      "class": "PN",
+      "why": "'702'"
+     },
+     {
+      "box": [
+       0.42,
+       0.035,
+       0.68,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE APOCALYPSE.'"
+     },
+     {
+      "box": [
+       0.82,
+       0.035,
+       0.94,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. II.'"
+     },
+     {
+      "box": [
+       0.2,
+       0.06,
+       0.85,
+       0.86
+      ],
+      "class": "MT",
+      "why": "Apoc 2:3-18"
+     },
+     {
+      "box": [
+       0.85,
+       0.06,
+       0.9,
+       0.86
+      ],
+      "class": "VN",
+      "why": "4..18 right"
+     },
+     {
+      "box": [
+       0.08,
+       0.085,
+       0.19,
+       0.19
+      ],
+      "class": "MN",
+      "why": "':: By this vve see it plainely refuted that vvhich some Heretikes hold, that a man once in grace or charitie can neuer fall from it.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.295,
+       0.19,
+       0.4
+      ],
+      "class": "MN",
+      "why": "':: This Church representeth the state of them that are spoiled of their goodes, emprisoned, & manifoldly afflicted for the catholike faith.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.415,
+       0.19,
+       0.46
+      ],
+      "class": "MN",
+      "why": "':: The singular revvard of Martyrdom.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.47,
+       0.19,
+       0.56
+      ],
+      "class": "MN",
+      "why": "':: The death of the body is the first death: the death of the soule, the secõd. vvhich Martyrs are surest to escape of al men.'"
+     },
+     {
+      "box": [
+       0.08,
+       0.58,
+       0.19,
+       0.7
+      ],
+      "class": "MN",
+      "why": "':: The special residence of Satan is vvhere the faithful are persecuted for Christes truth. vvhere not to deny the Cath. faith for feare, is much here commended.'"
+     },
+     {
+      "box": [
+       0.9,
+       0.27,
+       0.99,
+       0.31
+      ],
+      "class": "MN",
+      "why": "'Apoc.1, 17.'"
+     },
+     {
+      "box": [
+       0.9,
+       0.61,
+       0.99,
+       0.66
+      ],
+      "class": "MN",
+      "why": "'Nu.24, 14. 25,1.'"
+     },
+     {
+      "box": [
+       0.9,
+       0.77,
+       0.99,
+       0.81
+      ],
+      "class": "MN",
+      "why": "'c ψῆφον calculũ' — Greek gloss with Latin, letter-keyed"
+     },
+     {
+      "box": [
+       0.89,
+       0.06,
+       0.895,
+       0.87
+      ],
+      "class": "RL",
+      "why": "vertical frame rule"
+     },
+     {
+      "box": [
+       0.78,
+       0.86,
+       0.85,
+       0.88
+      ],
+      "class": "CW",
+      "why": "'fire,'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "NT Apocalypse 2: plain verse page, VN right, left notes keyed ::, right citations incl. a GREEK gloss, frame rule; catchword",
+    "measure": [
+     0.2,
+     0.85
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.19,
+       0.035,
+       0.25,
+       0.055
+      ],
+      "class": "PN",
+      "why": "'702'",
+      "origin": "agent",
+      "agent_index": 0
+     },
+     {
+      "box": [
+       0.4109,
+       0.035,
+       0.68,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'THE APOCALYPSE.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.82,
+       0.035,
+       0.94,
+       0.055
+      ],
+      "class": "CR",
+      "why": "'CHA. II.'",
+      "origin": "agent",
+      "agent_index": 2
+     },
+     {
+      "box": [
+       0.2,
+       0.0562,
+       0.8297,
+       0.8296
+      ],
+      "class": "MT",
+      "why": "Apoc 2:3-18",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.829,
+       0.06,
+       0.8594,
+       0.8177
+      ],
+      "class": "VN",
+      "why": "4..18 right",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0793,
+       0.0755,
+       0.1998,
+       0.1919
+      ],
+      "class": "MN",
+      "why": "':: By this vve see it plainely refuted that vvhich some Heretikes hold, that a man once in grace or charitie can neuer fall from it.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0793,
+       0.2845,
+       0.1977,
+       0.399
+      ],
+      "class": "MN",
+      "why": "':: This Church representeth the state of them that are spoiled of their goodes, emprisoned, & manifoldly afflicted for the catholike faith.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0814,
+       0.4022,
+       0.197,
+       0.4472
+      ],
+      "class": "MN",
+      "why": "':: The singular revvard of Martyrdom.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.08,
+       0.451,
+       0.1977,
+       0.5543
+      ],
+      "class": "MN",
+      "why": "':: The death of the body is the first death: the death of the soule, the secõd. vvhich Martyrs are surest to escape of al men.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0807,
+       0.5629,
+       0.197,
+       0.7015
+      ],
+      "class": "MN",
+      "why": "':: The special residence of Satan is vvhere the faithful are persecuted for Christes truth. vvhere not to deny the Cath. faith for feare, is much here commended.'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8895,
+       0.2633,
+       0.9795,
+       0.3033
+      ],
+      "class": "MN",
+      "why": "'Apoc.1, 17.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8888,
+       0.5986,
+       0.9788,
+       0.6486
+      ],
+      "class": "MN",
+      "why": "'Nu.24, 14. 25,1.'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8853,
+       0.7514,
+       0.9753,
+       0.7914
+      ],
+      "class": "MN",
+      "why": "'c ψῆφον calculũ' — Greek gloss with Latin, letter-keyed",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8669,
+       0.0624,
+       0.8867,
+       0.8724
+      ],
+      "class": "RL",
+      "why": "vertical frame rule",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7723,
+       0.8291,
+       0.8234,
+       0.8491
+      ],
+      "class": "CW",
+      "why": "'fire,'",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:27:31+00:00",
+   "updated": "2026-09-07T22:34:35+00:00"
+  },
+  "NT-1582-B_0802": {
+   "witness": "NT-1582-B",
+   "leaf": 802,
+   "agent": {
+    "side": "verso",
+    "kind": "INDEX 'A TABLE', two columns, two letter section heads (V, W) with 2-line initials; catchword",
+    "measure": [
+     0.16,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.4,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'A TABLE'"
+     },
+     {
+      "box": [
+       0.16,
+       0.065,
+       0.51,
+       0.44
+      ],
+      "class": "IX",
+      "why": "left column, T entries continued ('…noster in the Masse… Translation of the Bible…')"
+     },
+     {
+      "box": [
+       0.32,
+       0.455,
+       0.35,
+       0.475
+      ],
+      "class": "BT",
+      "why": "letter head 'V'"
+     },
+     {
+      "box": [
+       0.16,
+       0.49,
+       0.51,
+       0.86
+      ],
+      "class": "IX",
+      "why": "left column V entries, opens with a 2-line initial V ('Virginitie…')"
+     },
+     {
+      "box": [
+       0.16,
+       0.49,
+       0.21,
+       0.53
+      ],
+      "class": "DC",
+      "why": "two-line initial V"
+     },
+     {
+      "box": [
+       0.53,
+       0.065,
+       0.88,
+       0.42
+      ],
+      "class": "IX",
+      "why": "right column, V entries continued ('Yong vvomen may vovv…' 'Vsurie…')"
+     },
+     {
+      "box": [
+       0.69,
+       0.44,
+       0.72,
+       0.46
+      ],
+      "class": "BT",
+      "why": "letter head 'W'"
+     },
+     {
+      "box": [
+       0.53,
+       0.48,
+       0.88,
+       0.87
+      ],
+      "class": "IX",
+      "why": "right column W entries, 2-line initial W ('Widovvhod…')"
+     },
+     {
+      "box": [
+       0.53,
+       0.48,
+       0.58,
+       0.52
+      ],
+      "class": "DC",
+      "why": "two-line initial W"
+     },
+     {
+      "box": [
+       0.82,
+       0.87,
+       0.88,
+       0.89
+      ],
+      "class": "CW",
+      "why": "'tion'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "INDEX 'A TABLE', two columns, two letter section heads (V, W) with 2-line initials; catchword",
+    "measure": [
+     0.16,
+     0.88
+    ],
+    "skew_deg": 0,
+    "skew_source": null,
+    "warped": false,
+    "dewarp": {
+     "model": "colshear-v1",
+     "y_top": 0.25,
+     "y_bot": 0.75,
+     "top": [
+      -0.7791,
+      1.3072
+     ],
+     "bot": [
+      -2.8215,
+      8.7248,
+      -6.4346
+     ]
+    },
+    "warp": {
+     "rms_before": 0.43,
+     "rms_after": 0.13,
+     "status": "dewarped",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.3986,
+       0.0539,
+       0.5786,
+       0.0739
+      ],
+      "class": "RH",
+      "why": "'A TABLE'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.146,
+       0.077,
+       0.5091,
+       0.452
+      ],
+      "class": "IX",
+      "why": "left column, T entries continued ('…noster in the Masse… Translation of the Bible…')",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3139,
+       0.4581,
+       0.3439,
+       0.4781
+      ],
+      "class": "BT",
+      "why": "letter head 'V'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1504,
+       0.4912,
+       0.5188,
+       0.8505
+      ],
+      "class": "IX",
+      "why": "left column V entries, opens with a 2-line initial V ('Virginitie…')",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1512,
+       0.4929,
+       0.196,
+       0.5258
+      ],
+      "class": "DC",
+      "why": "two-line initial V",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5178,
+       0.0787,
+       0.8783,
+       0.4337
+      ],
+      "class": "IX",
+      "why": "right column, V entries continued ('Yong vvomen may vovv…' 'Vsurie…')",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.683,
+       0.4447,
+       0.713,
+       0.4647
+      ],
+      "class": "BT",
+      "why": "letter head 'W'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5213,
+       0.4733,
+       0.887,
+       0.8466
+      ],
+      "class": "IX",
+      "why": "right column W entries, 2-line initial W ('Widovvhod…')",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5195,
+       0.4729,
+       0.5739,
+       0.5075
+      ],
+      "class": "DC",
+      "why": "two-line initial W",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8261,
+       0.8465,
+       0.8861,
+       0.8665
+      ],
+      "class": "CW",
+      "why": "'tion'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:39:57+00:00",
+   "updated": "2026-09-07T22:43:39+00:00"
+  },
+  "OT1-1609-B_0015": {
+   "witness": "OT1-1609-B",
+   "leaf": 15,
+   "agent": {
+    "side": "recto",
+    "kind": "PRELIM prose 'TO THE ENGLISH READER' continued; left citations, right summaries; dagger signature '† 3'; no page number",
+    "measure": [
+     0.13,
+     0.83
+    ],
+    "regions": [
+     {
+      "box": [
+       0.26,
+       0.04,
+       0.66,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'TO THE ENGLISH READER.'"
+     },
+     {
+      "box": [
+       0.13,
+       0.065,
+       0.83,
+       0.865
+      ],
+      "class": "MT",
+      "why": "prose, one long paragraph, roman with italic quotation at the end"
+     },
+     {
+      "box": [
+       0.04,
+       0.085,
+       0.12,
+       0.15
+      ],
+      "class": "MN",
+      "why": "'Lib. 1. Hist.c.47 Linvvod lib.1.' italic citations"
+     },
+     {
+      "box": [
+       0.04,
+       0.775,
+       0.12,
+       0.8
+      ],
+      "class": "MN",
+      "why": "'2 Tim 3.'"
+     },
+     {
+      "box": [
+       0.04,
+       0.83,
+       0.12,
+       0.85
+      ],
+      "class": "MN",
+      "why": "'Iac. 1.'"
+     },
+     {
+      "box": [
+       0.84,
+       0.37,
+       0.97,
+       0.42
+      ],
+      "class": "MN",
+      "why": "'A calumnious suggestion of Lutheranes.'"
+     },
+     {
+      "box": [
+       0.84,
+       0.66,
+       0.97,
+       0.75
+      ],
+      "class": "MN",
+      "why": "'VVhat part of Scriptures be most conuenient for vulgar readers.'"
+     },
+     {
+      "box": [
+       0.52,
+       0.875,
+       0.58,
+       0.895
+      ],
+      "class": "SG",
+      "why": "'† 3' dagger-series prelim signature"
+     },
+     {
+      "box": [
+       0.76,
+       0.875,
+       0.83,
+       0.895
+      ],
+      "class": "CW",
+      "why": "'But'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "PRELIM prose 'TO THE ENGLISH READER' continued; left citations, right summaries; dagger signature '† 3'; no page number",
+    "measure": [
+     0.13,
+     0.83
+    ],
+    "skew_deg": -0.3,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.14,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.2632,
+       0.0399,
+       0.6998,
+       0.0599
+      ],
+      "class": "RH",
+      "why": "'TO THE ENGLISH READER.'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1262,
+       0.0601,
+       0.8238,
+       0.8893
+      ],
+      "class": "MT",
+      "why": "prose, one long paragraph, roman with italic quotation at the end",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0427,
+       0.0834,
+       0.1227,
+       0.1484
+      ],
+      "class": "MN",
+      "why": "'Lib. 1. Hist.c.47 Linvvod lib.1.' italic citations",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0428,
+       0.7871,
+       0.1228,
+       0.8121
+      ],
+      "class": "MN",
+      "why": "'2 Tim 3.'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0376,
+       0.8486,
+       0.1176,
+       0.8686
+      ],
+      "class": "MN",
+      "why": "'Iac. 1.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8261,
+       0.3246,
+       0.9626,
+       0.3782
+      ],
+      "class": "MN",
+      "why": "'A calumnious suggestion of Lutheranes.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8279,
+       0.6835,
+       0.9652,
+       0.7735
+      ],
+      "class": "MN",
+      "why": "'VVhat part of Scriptures be most conuenient for vulgar readers.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5034,
+       0.8907,
+       0.5634,
+       0.9107
+      ],
+      "class": "SG",
+      "why": "'† 3' dagger-series prelim signature",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7686,
+       0.8886,
+       0.8386,
+       0.9086
+      ],
+      "class": "CW",
+      "why": "'But'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:43:42+00:00",
+   "updated": "2026-09-07T22:45:36+00:00"
+  },
+  "OT1-1609-B_0033": {
+   "witness": "OT1-1609-B",
+   "leaf": 33,
+   "agent": {
+    "side": "recto",
+    "kind": "Genesis p.3: verse tail (VN LEFT), rule, two-line 'ANNOTATIONS. / CHAP. I.', annotations with lemmas, left citation column, right summaries and NUMBERED side-marks (1 2 3); signature 'A 2'",
+    "measure": [
+     0.17,
+     0.79
+    ],
+    "regions": [
+     {
+      "box": [
+       0.04,
+       0.04,
+       0.16,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'Creation.' topical running title, outer (recto → left here? no: recto outer is RIGHT; this B copy has 'Creation.' at LEFT and PN right — the topical title sits at the GUTTER on this leaf)"
+     },
+     {
+      "box": [
+       0.37,
+       0.04,
+       0.55,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'"
+     },
+     {
+      "box": [
+       0.79,
+       0.04,
+       0.83,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'3'"
+     },
+     {
+      "box": [
+       0.17,
+       0.065,
+       0.79,
+       0.21
+      ],
+      "class": "MT",
+      "why": "Gen 1:30-31"
+     },
+     {
+      "box": [
+       0.13,
+       0.065,
+       0.17,
+       0.21
+      ],
+      "class": "VN",
+      "why": "30, 31 LEFT"
+     },
+     {
+      "box": [
+       0.8,
+       0.065,
+       0.93,
+       0.29
+      ],
+      "class": "MN",
+      "why": "':: Euerie creature in nature is good… S. Aug. li. 1 de Gen. cont. Manich.ca.21.'"
+     },
+     {
+      "box": [
+       0.13,
+       0.235,
+       0.79,
+       0.24
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.32,
+       0.255,
+       0.6,
+       0.29
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS. / CHAP. I.' two lines"
+     },
+     {
+      "box": [
+       0.13,
+       0.325,
+       0.79,
+       0.945
+      ],
+      "class": "AN",
+      "why": "annotations, lemmas '1. In the beginnig.]' and '1. In the beginning God made heauen and earth.]'"
+     },
+     {
+      "box": [
+       0.04,
+       0.55,
+       0.12,
+       0.62
+      ],
+      "class": "MN",
+      "why": "'cont. Epist. fund. c. 5' left citations"
+     },
+     {
+      "box": [
+       0.04,
+       0.72,
+       0.12,
+       0.8
+      ],
+      "class": "MN",
+      "why": "'Luc. 10, 16. Act. 15, 28. 2. Thess. 2.'"
+     },
+     {
+      "box": [
+       0.04,
+       0.82,
+       0.12,
+       0.945
+      ],
+      "class": "MN",
+      "why": "'Origen. super Gen.c.1. Aug. li. 2. de Gen.cont Manich. ca. 2.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.325,
+       0.93,
+       0.41
+      ],
+      "class": "MN",
+      "why": "'The Church had only Traditions & no Scripture aboue 2400. yeares.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.44,
+       0.93,
+       0.49
+      ],
+      "class": "MN",
+      "why": "'Traditions necessarie for three causes.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.5,
+       0.93,
+       0.52
+      ],
+      "class": "MN",
+      "why": "'1' — a NUMBERED side-mark keying the three causes"
+     },
+     {
+      "box": [
+       0.8,
+       0.57,
+       0.93,
+       0.63
+      ],
+      "class": "MN",
+      "why": "'2 Scripture of most eminent authoritie.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.73,
+       0.93,
+       0.75
+      ],
+      "class": "MN",
+      "why": "'3'"
+     },
+     {
+      "box": [
+       0.8,
+       0.82,
+       0.93,
+       0.86
+      ],
+      "class": "MN",
+      "why": "'Scriptures hard.'"
+     },
+     {
+      "box": [
+       0.44,
+       0.95,
+       0.5,
+       0.97
+      ],
+      "class": "SG",
+      "why": "'A 2'"
+     },
+     {
+      "box": [
+       0.72,
+       0.95,
+       0.79,
+       0.97
+      ],
+      "class": "CW",
+      "why": "'shortly'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "Genesis p.3: verse tail (VN LEFT), rule, two-line 'ANNOTATIONS. / CHAP. I.', annotations with lemmas, left citation column, right summaries and NUMBERED side-marks (1 2 3); signature 'A 2'",
+    "measure": [
+     0.17,
+     0.79
+    ],
+    "skew_deg": 0.26,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.2,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0373,
+       0.0347,
+       0.1573,
+       0.0547
+      ],
+      "class": "RH",
+      "why": "'Creation.' topical running title, outer (recto → left here? no: recto outer is RIGHT; this B copy has 'Creation.' at LEFT and PN right — the topical title sits at the GUTTER on this leaf)",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3622,
+       0.0325,
+       0.5422,
+       0.0525
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7707,
+       0.0371,
+       0.7954,
+       0.0571
+      ],
+      "class": "PN",
+      "why": "'3'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1646,
+       0.0565,
+       0.7929,
+       0.2039
+      ],
+      "class": "MT",
+      "why": "Gen 1:30-31",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1265,
+       0.0581,
+       0.1582,
+       0.146
+      ],
+      "class": "VN",
+      "why": "30, 31 LEFT",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7999,
+       0.0538,
+       0.9299,
+       0.2788
+      ],
+      "class": "MN",
+      "why": "':: Euerie creature in nature is good… S. Aug. li. 1 de Gen. cont. Manich.ca.21.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.115,
+       0.2213,
+       0.7935,
+       0.2296
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3135,
+       0.2342,
+       0.5935,
+       0.2763
+      ],
+      "class": "CH",
+      "why": "'ANNOTATIONS. / CHAP. I.' two lines",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.118,
+       0.2932,
+       0.7908,
+       0.9061
+      ],
+      "class": "AN",
+      "why": "annotations, lemmas '1. In the beginnig.]' and '1. In the beginning God made heauen and earth.]'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0335,
+       0.5162,
+       0.1135,
+       0.5862
+      ],
+      "class": "MN",
+      "why": "'cont. Epist. fund. c. 5' left citations",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0339,
+       0.6781,
+       0.1139,
+       0.7738
+      ],
+      "class": "MN",
+      "why": "'Luc. 10, 16. Act. 15, 28. 2. Thess. 2.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0346,
+       0.8105,
+       0.1146,
+       0.9065
+      ],
+      "class": "MN",
+      "why": "'Origen. super Gen.c.1. Aug. li. 2. de Gen.cont Manich. ca. 2.'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7966,
+       0.2934,
+       0.9266,
+       0.396
+      ],
+      "class": "MN",
+      "why": "'The Church had only Traditions & no Scripture aboue 2400. yeares.'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7941,
+       0.4136,
+       0.9241,
+       0.4636
+      ],
+      "class": "MN",
+      "why": "'Traditions necessarie for three causes.'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7944,
+       0.4645,
+       0.9244,
+       0.4845
+      ],
+      "class": "MN",
+      "why": "'1' — a NUMBERED side-mark keying the three causes",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7936,
+       0.5288,
+       0.9236,
+       0.6007
+      ],
+      "class": "MN",
+      "why": "'2 Scripture of most eminent authoritie.'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8289,
+       0.6827,
+       0.8785,
+       0.7027
+      ],
+      "class": "MN",
+      "why": "'3'",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7938,
+       0.7822,
+       0.9238,
+       0.8222
+      ],
+      "class": "MN",
+      "why": "'Scriptures hard.'",
+      "origin": "agent",
+      "agent_index": 17,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4984,
+       0.9078,
+       0.5584,
+       0.9278
+      ],
+      "class": "SG",
+      "why": "'A 2'",
+      "origin": "agent",
+      "agent_index": 18,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7183,
+       0.9068,
+       0.7883,
+       0.9278
+      ],
+      "class": "CW",
+      "why": "'shortly'",
+      "origin": "agent",
+      "agent_index": 19,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0358,
+       0.7764,
+       0.1099,
+       0.8111
+      ],
+      "class": "MN",
+      "why": "",
+      "origin": "human"
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:45:39+00:00",
+   "updated": "2026-09-07T22:53:13+00:00"
+  },
+  "OT1-1609-B_0036": {
+   "witness": "OT1-1609-B",
+   "leaf": 36,
+   "agent": {
+    "side": "verso",
+    "kind": "Genesis p.6: annotation tail, rule, CHAP. II, argument, 2-line initial, verses VN right, long left notes, right citations; catchword",
+    "measure": [
+     0.19,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.18,
+       0.04,
+       0.22,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'6'"
+     },
+     {
+      "box": [
+       0.45,
+       0.04,
+       0.63,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'"
+     },
+     {
+      "box": [
+       0.86,
+       0.04,
+       0.96,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'Adam.' topical, outer"
+     },
+     {
+      "box": [
+       0.19,
+       0.065,
+       0.87,
+       0.21
+      ],
+      "class": "AN",
+      "why": "annotation tail for ch.1 ('VVhich can be no other but changing bread and wine…')"
+     },
+     {
+      "box": [
+       0.05,
+       0.13,
+       0.18,
+       0.19
+      ],
+      "class": "MN",
+      "why": "'Not al men & wemen commanded to marie.'"
+     },
+     {
+      "box": [
+       0.19,
+       0.23,
+       0.87,
+       0.235
+      ],
+      "class": "RL",
+      "why": "printed rule"
+     },
+     {
+      "box": [
+       0.46,
+       0.255,
+       0.6,
+       0.27
+      ],
+      "class": "CH",
+      "why": "'CHAP. II.'"
+     },
+     {
+      "box": [
+       0.19,
+       0.285,
+       0.87,
+       0.35
+      ],
+      "class": "AR",
+      "why": "italic argument, four lines"
+     },
+     {
+      "box": [
+       0.19,
+       0.385,
+       0.26,
+       0.42
+      ],
+      "class": "DC",
+      "why": "two-line T"
+     },
+     {
+      "box": [
+       0.19,
+       0.385,
+       0.85,
+       0.905
+      ],
+      "class": "MT",
+      "why": "Gen 2:1-12"
+     },
+     {
+      "box": [
+       0.85,
+       0.385,
+       0.9,
+       0.905
+      ],
+      "class": "VN",
+      "why": "1..12 right"
+     },
+     {
+      "box": [
+       0.05,
+       0.26,
+       0.18,
+       0.5
+      ],
+      "class": "MN",
+      "why": "'God createth not new kindes of creatures, yet stil worketh… S. Aug. li,4 de Gen. ad lit. c. 12.'"
+     },
+     {
+      "box": [
+       0.05,
+       0.52,
+       0.18,
+       0.66
+      ],
+      "class": "MN",
+      "why": "':: Mans soule is immediatly created by God…'"
+     },
+     {
+      "box": [
+       0.05,
+       0.68,
+       0.18,
+       0.91
+      ],
+      "class": "MN",
+      "why": "':: Vvhether this paradise be now extant is vncertayne… Pererius.li.3. q.5.&li.7. q. vltima.'"
+     },
+     {
+      "box": [
+       0.9,
+       0.41,
+       0.99,
+       0.5
+      ],
+      "class": "MN",
+      "why": "'Exod. 20, 11. Deut. 5, 14. Heb. 4, 4.' right citations"
+     },
+     {
+      "box": [
+       0.9,
+       0.68,
+       0.99,
+       0.72
+      ],
+      "class": "MN",
+      "why": "'1. Cor. 15, 45.'"
+     },
+     {
+      "box": [
+       0.79,
+       0.905,
+       0.85,
+       0.925
+      ],
+      "class": "CW",
+      "why": "'there'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "Genesis p.6: annotation tail, rule, CHAP. II, argument, 2-line initial, verses VN right, long left notes, right citations; catchword",
+    "measure": [
+     0.19,
+     0.85
+    ],
+    "skew_deg": -0.76,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1864,
+       0.0323,
+       0.2264,
+       0.0523
+      ],
+      "class": "PN",
+      "why": "'6'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.458,
+       0.0303,
+       0.638,
+       0.0503
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8744,
+       0.0286,
+       0.9744,
+       0.0486
+      ],
+      "class": "RH",
+      "why": "'Adam.' topical, outer",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1949,
+       0.0522,
+       0.8837,
+       0.2103
+      ],
+      "class": "AN",
+      "why": "annotation tail for ch.1 ('VVhich can be no other but changing bread and wine…')",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0561,
+       0.1155,
+       0.1893,
+       0.1856
+      ],
+      "class": "MN",
+      "why": "'Not al men & wemen commanded to marie.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1972,
+       0.2166,
+       0.8844,
+       0.2258
+      ],
+      "class": "RL",
+      "why": "printed rule",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.469,
+       0.2404,
+       0.609,
+       0.259
+      ],
+      "class": "CH",
+      "why": "'CHAP. II.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.194,
+       0.2681,
+       0.8908,
+       0.3587
+      ],
+      "class": "AR",
+      "why": "italic argument, four lines",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1982,
+       0.3752,
+       0.253,
+       0.415
+      ],
+      "class": "DC",
+      "why": "two-line T",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2002,
+       0.3721,
+       0.845,
+       0.9171
+      ],
+      "class": "MT",
+      "why": "Gen 2:1-12",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8474,
+       0.375,
+       0.8758,
+       0.9135
+      ],
+      "class": "VN",
+      "why": "1..12 right",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0602,
+       0.2437,
+       0.1926,
+       0.4986
+      ],
+      "class": "MN",
+      "why": "'God createth not new kindes of creatures, yet stil worketh… S. Aug. li,4 de Gen. ad lit. c. 12.'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.062,
+       0.5025,
+       0.1984,
+       0.6633
+      ],
+      "class": "MN",
+      "why": "':: Mans soule is immediatly created by God…'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.064,
+       0.6637,
+       0.1988,
+       0.9193
+      ],
+      "class": "MN",
+      "why": "':: Vvhether this paradise be now extant is vncertayne… Pererius.li.3. q.5.&li.7. q. vltima.'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.892,
+       0.4037,
+       0.982,
+       0.5086
+      ],
+      "class": "MN",
+      "why": "'Exod. 20, 11. Deut. 5, 14. Heb. 4, 4.' right citations",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.89,
+       0.6701,
+       0.98,
+       0.7101
+      ],
+      "class": "MN",
+      "why": "'1. Cor. 15, 45.'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7794,
+       0.9176,
+       0.8458,
+       0.9322
+      ],
+      "class": "CW",
+      "why": "'there'",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:53:47+00:00",
+   "updated": "2026-09-07T22:58:26+00:00"
+  },
+  "OT1-1609-B_0145": {
+   "witness": "OT1-1609-B",
+   "leaf": 145,
+   "agent": {
+    "side": "recto",
+    "kind": "Genesis 36 plain scripture: topical RH at gutter ('Iacob.'), VN LEFT, one right note, signature 'P', catchword",
+    "measure": [
+     0.17,
+     0.8
+    ],
+    "regions": [
+     {
+      "box": [
+       0.04,
+       0.04,
+       0.13,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'Iacob.' topical, gutter side"
+     },
+     {
+      "box": [
+       0.41,
+       0.04,
+       0.55,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'"
+     },
+     {
+      "box": [
+       0.76,
+       0.04,
+       0.81,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'113'"
+     },
+     {
+      "box": [
+       0.17,
+       0.065,
+       0.8,
+       0.875
+      ],
+      "class": "MT",
+      "why": "Gen 36:5-23"
+     },
+     {
+      "box": [
+       0.12,
+       0.065,
+       0.17,
+       0.875
+      ],
+      "class": "VN",
+      "why": "5..23 LEFT"
+     },
+     {
+      "box": [
+       0.81,
+       0.11,
+       0.93,
+       0.16
+      ],
+      "class": "MN",
+      "why": "':: The separation of Esau from Iacob.'"
+     },
+     {
+      "box": [
+       0.49,
+       0.88,
+       0.53,
+       0.9
+      ],
+      "class": "SG",
+      "why": "'P'"
+     },
+     {
+      "box": [
+       0.71,
+       0.88,
+       0.8,
+       0.9
+      ],
+      "class": "CW",
+      "why": "'sonnes'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "Genesis 36 plain scripture: topical RH at gutter ('Iacob.'), VN LEFT, one right note, signature 'P', catchword",
+    "measure": [
+     0.17,
+     0.8
+    ],
+    "skew_deg": 1.06,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.25,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0227,
+       0.0404,
+       0.1127,
+       0.0604
+      ],
+      "class": "RH",
+      "why": "'Iacob.' topical, gutter side",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3985,
+       0.0403,
+       0.5385,
+       0.0603
+      ],
+      "class": "RH",
+      "why": "'GENESIS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7459,
+       0.0425,
+       0.7959,
+       0.0625
+      ],
+      "class": "PN",
+      "why": "'113'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1541,
+       0.0618,
+       0.7972,
+       0.8833
+      ],
+      "class": "MT",
+      "why": "Gen 36:5-23",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1042,
+       0.067,
+       0.1542,
+       0.8803
+      ],
+      "class": "VN",
+      "why": "5..23 LEFT",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7973,
+       0.1051,
+       0.9186,
+       0.1551
+      ],
+      "class": "MN",
+      "why": "':: The separation of Esau from Iacob.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4882,
+       0.8846,
+       0.5282,
+       0.9046
+      ],
+      "class": "SG",
+      "why": "'P'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7055,
+       0.8851,
+       0.7955,
+       0.9051
+      ],
+      "class": "CW",
+      "why": "'sonnes'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T22:58:29+00:00",
+   "updated": "2026-09-07T23:01:16+00:00"
+  },
+  "OT1-1609-B_0409": {
+   "witness": "OT1-1609-B",
+   "leaf": 409,
+   "agent": {
+    "side": "recto",
+    "archetype": "scripture, plain, no apparatus",
+    "measure": [
+     0.15,
+     0.81
+    ],
+    "verse_gutter": "left",
+    "regions": [
+     {
+      "box": [
+       0.03,
+       0.048,
+       0.17,
+       0.07
+      ],
+      "class": "RH",
+      "why": "'numbered.' top-left, topical running title continued from facing page"
+     },
+     {
+      "box": [
+       0.38,
+       0.055,
+       0.53,
+       0.077
+      ],
+      "class": "RH",
+      "why": "centred NVMERI."
+     },
+     {
+      "box": [
+       0.75,
+       0.065,
+       0.81,
+       0.088
+      ],
+      "class": "PN",
+      "why": "top-right numeral 377; recto"
+     },
+     {
+      "box": [
+       0.11,
+       0.07,
+       0.15,
+       0.87
+      ],
+      "class": "VN",
+      "why": "numeral column left of measure, 30..48 monotone"
+     },
+     {
+      "box": [
+       0.15,
+       0.068,
+       0.81,
+       0.87
+      ],
+      "class": "MT",
+      "why": "single body block Numbers 26:29-48"
+     },
+     {
+      "box": [
+       0.5,
+       0.875,
+       0.56,
+       0.895
+      ],
+      "class": "SG",
+      "why": "'Zz' letter formula centred at foot; recto; gathering signature"
+     },
+     {
+      "box": [
+       0.68,
+       0.875,
+       0.77,
+       0.895
+      ],
+      "class": "CW",
+      "why": "'whom' right of signature, catchword"
+     }
+    ],
+    "carried_from": "cold-read.json"
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": null,
+    "measure": [
+     0.15,
+     0.81
+    ],
+    "skew_deg": 1.82,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0079,
+       0.0513,
+       0.1504,
+       0.0733
+      ],
+      "class": "RH",
+      "why": "'numbered.' top-left, topical running title continued from facing page",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3648,
+       0.0526,
+       0.5148,
+       0.0746
+      ],
+      "class": "RH",
+      "why": "centred NVMERI.",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7309,
+       0.053,
+       0.7909,
+       0.076
+      ],
+      "class": "PN",
+      "why": "top-right numeral 377; recto",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0928,
+       0.0991,
+       0.1379,
+       0.8896
+      ],
+      "class": "VN",
+      "why": "numeral column left of measure, 30..48 monotone",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1385,
+       0.0756,
+       0.7977,
+       0.8889
+      ],
+      "class": "MT",
+      "why": "single body block Numbers 26:29-48",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5114,
+       0.889,
+       0.5714,
+       0.909
+      ],
+      "class": "SG",
+      "why": "'Zz' letter formula centred at foot; recto; gathering signature",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.6998,
+       0.8887,
+       0.7898,
+       0.9087
+      ],
+      "class": "CW",
+      "why": "'whom' right of signature, catchword",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T23:07:21+00:00",
+   "updated": "2026-09-07T23:09:24+00:00"
+  },
+  "OT1-1609-B_0195": {
+   "witness": "OT1-1609-B",
+   "leaf": 195,
+   "agent": {
+    "side": "recto",
+    "kind": "Exodus 4 plain scripture, VN LEFT, one right note; signature 'W 2'; topical RH at gutter",
+    "measure": [
+     0.15,
+     0.8
+    ],
+    "regions": [
+     {
+      "box": [
+       0.03,
+       0.04,
+       0.13,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'Moyses.' topical, gutter side"
+     },
+     {
+      "box": [
+       0.4,
+       0.04,
+       0.53,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'EXODVS.'"
+     },
+     {
+      "box": [
+       0.77,
+       0.04,
+       0.83,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'163'"
+     },
+     {
+      "box": [
+       0.15,
+       0.065,
+       0.8,
+       0.885
+      ],
+      "class": "MT",
+      "why": "Exod 4:4-21"
+     },
+     {
+      "box": [
+       0.11,
+       0.065,
+       0.15,
+       0.885
+      ],
+      "class": "VN",
+      "why": "5..21 LEFT"
+     },
+     {
+      "box": [
+       0.8,
+       0.69,
+       0.92,
+       0.76
+      ],
+      "class": "MN",
+      "why": "':: God designed a rodde for an instrument to work miracles.'"
+     },
+     {
+      "box": [
+       0.52,
+       0.89,
+       0.58,
+       0.91
+      ],
+      "class": "SG",
+      "why": "'W 2'"
+     },
+     {
+      "box": [
+       0.73,
+       0.89,
+       0.79,
+       0.91
+      ],
+      "class": "CW",
+      "why": "'See'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "Exodus 4 plain scripture, VN LEFT, one right note; signature 'W 2'; topical RH at gutter",
+    "measure": [
+     0.15,
+     0.8
+    ],
+    "skew_deg": 1.84,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.0075,
+       0.0499,
+       0.1075,
+       0.08
+      ],
+      "class": "RH",
+      "why": "'Moyses.' topical, gutter side",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.384,
+       0.0493,
+       0.514,
+       0.0693
+      ],
+      "class": "RH",
+      "why": "'EXODVS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7388,
+       0.0523,
+       0.7988,
+       0.0723
+      ],
+      "class": "PN",
+      "why": "'163'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1356,
+       0.0727,
+       0.7872,
+       0.8945
+      ],
+      "class": "MT",
+      "why": "Exod 4:4-21",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1041,
+       0.1181,
+       0.1341,
+       0.8935
+      ],
+      "class": "VN",
+      "why": "5..21 LEFT",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7874,
+       0.6774,
+       0.9174,
+       0.7569
+      ],
+      "class": "MN",
+      "why": "':: God designed a rodde for an instrument to work miracles.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5346,
+       0.8945,
+       0.5946,
+       0.9145
+      ],
+      "class": "SG",
+      "why": "'W 2'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7345,
+       0.8945,
+       0.7945,
+       0.9145
+      ],
+      "class": "CW",
+      "why": "'See'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T23:09:32+00:00",
+   "updated": "2026-09-07T23:12:01+00:00"
+  },
+  "OT1-1609-B_0264": {
+   "witness": "OT1-1609-B",
+   "leaf": 264,
+   "agent": {
+    "side": "verso",
+    "kind": "Exodus 26-27 chapter break: verses VN right, CHAP. XXVII, argument, 2-line initial, one long left note; catchword; topical RH at gutter (right)",
+    "measure": [
+     0.17,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.16,
+       0.04,
+       0.22,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'232'"
+     },
+     {
+      "box": [
+       0.47,
+       0.04,
+       0.62,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'EXODVS.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.03,
+       0.96,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'Ceremonies.' topical, gutter side"
+     },
+     {
+      "box": [
+       0.17,
+       0.065,
+       0.85,
+       0.5
+      ],
+      "class": "MT",
+      "why": "Exod 26:30-37"
+     },
+     {
+      "box": [
+       0.85,
+       0.065,
+       0.9,
+       0.5
+      ],
+      "class": "VN",
+      "why": "30..37 right"
+     },
+     {
+      "box": [
+       0.04,
+       0.3,
+       0.16,
+       0.42
+      ],
+      "class": "MN",
+      "why": "':: The chieffest part of the Tabernacle, called Sancta sanctorum Holie of holies.'"
+     },
+     {
+      "box": [
+       0.44,
+       0.51,
+       0.65,
+       0.53
+      ],
+      "class": "CH",
+      "why": "'CHAP. XXVII.'"
+     },
+     {
+      "box": [
+       0.17,
+       0.55,
+       0.87,
+       0.61
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines"
+     },
+     {
+      "box": [
+       0.17,
+       0.62,
+       0.24,
+       0.66
+      ],
+      "class": "DC",
+      "why": "two-line T"
+     },
+     {
+      "box": [
+       0.17,
+       0.62,
+       0.85,
+       0.925
+      ],
+      "class": "MT",
+      "why": "Exod 27:1-8"
+     },
+     {
+      "box": [
+       0.85,
+       0.62,
+       0.9,
+       0.925
+      ],
+      "class": "VN",
+      "why": "1..8 right"
+     },
+     {
+      "box": [
+       0.78,
+       0.925,
+       0.86,
+       0.945
+      ],
+      "class": "CW",
+      "why": "'hollow'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "Exodus 26-27 chapter break: verses VN right, CHAP. XXVII, argument, 2-line initial, one long left note; catchword; topical RH at gutter (right)",
+    "measure": [
+     0.17,
+     0.85
+    ],
+    "skew_deg": -1.74,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.2,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1793,
+       0.0335,
+       0.2393,
+       0.0535
+      ],
+      "class": "PN",
+      "why": "'232'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4874,
+       0.0311,
+       0.6374,
+       0.0511
+      ],
+      "class": "RH",
+      "why": "'EXODVS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8118,
+       0.0266,
+       0.9718,
+       0.0516
+      ],
+      "class": "RH",
+      "why": "'Ceremonies.' topical, gutter side",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1875,
+       0.054,
+       0.8401,
+       0.4789
+      ],
+      "class": "MT",
+      "why": "Exod 26:30-37",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.845,
+       0.0589,
+       0.895,
+       0.4279
+      ],
+      "class": "VN",
+      "why": "30..37 right",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0503,
+       0.2807,
+       0.1869,
+       0.3876
+      ],
+      "class": "MN",
+      "why": "':: The chieffest part of the Tabernacle, called Sancta sanctorum Holie of holies.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4358,
+       0.4813,
+       0.6483,
+       0.5013
+      ],
+      "class": "CH",
+      "why": "'CHAP. XXVII.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1907,
+       0.5141,
+       0.899,
+       0.58
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1924,
+       0.5838,
+       0.2483,
+       0.6202
+      ],
+      "class": "DC",
+      "why": "two-line T",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1917,
+       0.5809,
+       0.8426,
+       0.8853
+      ],
+      "class": "MT",
+      "why": "Exod 27:1-8",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8474,
+       0.5816,
+       0.8974,
+       0.8866
+      ],
+      "class": "VN",
+      "why": "1..8 right",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7597,
+       0.8841,
+       0.8397,
+       0.9041
+      ],
+      "class": "CW",
+      "why": "'hollow'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T23:12:12+00:00",
+   "updated": "2026-09-07T23:40:00+00:00"
+  },
+  "OT1-1609-B_0296": {
+   "witness": "OT1-1609-B",
+   "leaf": 296,
+   "agent": {
+    "side": "verso",
+    "kind": "Leviticus ANNOTATIONS leaf (the B copy of P_0288): whole body AN with lemma, left summaries, right citations; catchword 'CHAP.'",
+    "measure": [
+     0.19,
+     0.9
+    ],
+    "regions": [
+     {
+      "box": [
+       0.18,
+       0.04,
+       0.24,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'264'"
+     },
+     {
+      "box": [
+       0.44,
+       0.04,
+       0.63,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'LEVITICVS.'"
+     },
+     {
+      "box": [
+       0.84,
+       0.03,
+       0.96,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'Sacrifices.' topical, gutter side"
+     },
+     {
+      "box": [
+       0.19,
+       0.065,
+       0.9,
+       0.345
+      ],
+      "class": "AN",
+      "why": "annotation prose, continued; ends with a citation cluster in italic"
+     },
+     {
+      "box": [
+       0.19,
+       0.35,
+       0.9,
+       0.86
+      ],
+      "class": "AN",
+      "why": "annotation, lemma '9. Svvete sauour.]'"
+     },
+     {
+      "box": [
+       0.19,
+       0.35,
+       0.3,
+       0.365
+      ],
+      "class": "LM",
+      "why": "lemma"
+     },
+     {
+      "box": [
+       0.05,
+       0.065,
+       0.18,
+       0.12
+      ],
+      "class": "MN",
+      "why": "'For benefites receiued : or desired.'"
+     },
+     {
+      "box": [
+       0.05,
+       0.15,
+       0.18,
+       0.27
+      ],
+      "class": "MN",
+      "why": "'Al sacrifices of the old Testament prefigured Christs Sacrifice on the Crosse, and in the Eucharist.'"
+     },
+     {
+      "box": [
+       0.05,
+       0.35,
+       0.18,
+       0.6
+      ],
+      "class": "MN",
+      "why": "'Not the external worke for it selfe but sincere deuotion pleaseth God. External sacrifices were ordained: 1. to keepe the people from Idolatrie. 2. To induce them to internal vertues.'"
+     },
+     {
+      "box": [
+       0.05,
+       0.68,
+       0.18,
+       0.77
+      ],
+      "class": "MN",
+      "why": "'3. To signifie greater Mysteries of the new Testament.'"
+     },
+     {
+      "box": [
+       0.91,
+       0.52,
+       0.99,
+       0.6
+      ],
+      "class": "MN",
+      "why": "'Io. 4. v. 24. Rom. 6 v. 19.'"
+     },
+     {
+      "box": [
+       0.91,
+       0.64,
+       0.99,
+       0.66
+      ],
+      "class": "MN",
+      "why": "'Psal. 50'"
+     },
+     {
+      "box": [
+       0.84,
+       0.865,
+       0.9,
+       0.885
+      ],
+      "class": "CW",
+      "why": "'CHAP.'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "Leviticus ANNOTATIONS leaf (the B copy of P_0288): whole body AN with lemma, left summaries, right citations; catchword 'CHAP.'",
+    "measure": [
+     0.19,
+     0.9
+    ],
+    "skew_deg": -1.44,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.31,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.2001,
+       0.0307,
+       0.2601,
+       0.0507
+      ],
+      "class": "PN",
+      "why": "'264'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.46,
+       0.0289,
+       0.65,
+       0.0489
+      ],
+      "class": "RH",
+      "why": "'LEVITICVS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8554,
+       0.0268,
+       0.9754,
+       0.0518
+      ],
+      "class": "RH",
+      "why": "'Sacrifices.' topical, gutter side",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2086,
+       0.0516,
+       0.9038,
+       0.3411
+      ],
+      "class": "AN",
+      "why": "annotation prose, continued; ends with a citation cluster in italic",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2132,
+       0.3437,
+       0.901,
+       0.8565
+      ],
+      "class": "AN",
+      "why": "annotation, lemma '9. Svvete sauour.]'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2294,
+       0.3441,
+       0.3851,
+       0.3591
+      ],
+      "class": "LM",
+      "why": "lemma",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0646,
+       0.0478,
+       0.1946,
+       0.1028
+      ],
+      "class": "MN",
+      "why": "'For benefites receiued : or desired.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0732,
+       0.1346,
+       0.2092,
+       0.2546
+      ],
+      "class": "MN",
+      "why": "'Al sacrifices of the old Testament prefigured Christs Sacrifice on the Crosse, and in the Eucharist.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0718,
+       0.3442,
+       0.2119,
+       0.5884
+      ],
+      "class": "MN",
+      "why": "'Not the external worke for it selfe but sincere deuotion pleaseth God. External sacrifices were ordained: 1. to keepe the people from Idolatrie. 2. To induce them to internal vertues.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0744,
+       0.6669,
+       0.2044,
+       0.7569
+      ],
+      "class": "MN",
+      "why": "'3. To signifie greater Mysteries of the new Testament.'",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9023,
+       0.5147,
+       0.9823,
+       0.5947
+      ],
+      "class": "MN",
+      "why": "'Io. 4. v. 24. Rom. 6 v. 19.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.9045,
+       0.628,
+       0.9845,
+       0.648
+      ],
+      "class": "MN",
+      "why": "'Psal. 50'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8313,
+       0.8558,
+       0.9034,
+       0.8758
+      ],
+      "class": "CW",
+      "why": "'CHAP.'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-07T23:40:03+00:00",
+   "updated": "2026-09-08T02:14:01+00:00"
+  },
+  "OT1-1609-B_0339": {
+   "witness": "OT1-1609-B",
+   "leaf": 339,
+   "agent": {
+    "side": "recto",
+    "kind": "Leviticus 22-23 chapter break: VN LEFT, CHAP. XXIII, argument, 2-line initial, right notes with NUMBERED side-marks (1. 2.), right note beside the argument; signature 'Pp 2'",
+    "measure": [
+     0.15,
+     0.8
+    ],
+    "regions": [
+     {
+      "box": [
+       0.03,
+       0.03,
+       0.2,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'Festiual daies.' topical, gutter"
+     },
+     {
+      "box": [
+       0.39,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'LEVITICVS.'"
+     },
+     {
+      "box": [
+       0.77,
+       0.04,
+       0.83,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'307'"
+     },
+     {
+      "box": [
+       0.15,
+       0.065,
+       0.8,
+       0.19
+      ],
+      "class": "MT",
+      "why": "Lev 22:30-33"
+     },
+     {
+      "box": [
+       0.11,
+       0.065,
+       0.15,
+       0.9
+      ],
+      "class": "VN",
+      "why": "31..33 then 1..14 LEFT"
+     },
+     {
+      "box": [
+       0.35,
+       0.205,
+       0.57,
+       0.225
+      ],
+      "class": "CH",
+      "why": "'CHAP. XXIII.'"
+     },
+     {
+      "box": [
+       0.1,
+       0.235,
+       0.8,
+       0.29
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines"
+     },
+     {
+      "box": [
+       0.8,
+       0.245,
+       0.93,
+       0.275
+      ],
+      "class": "MN",
+      "why": "'The fourth part.' beside the argument"
+     },
+     {
+      "box": [
+       0.15,
+       0.3,
+       0.23,
+       0.34
+      ],
+      "class": "DC",
+      "why": "two-line A"
+     },
+     {
+      "box": [
+       0.15,
+       0.3,
+       0.8,
+       0.9
+      ],
+      "class": "MT",
+      "why": "Lev 23:1-14"
+     },
+     {
+      "box": [
+       0.8,
+       0.28,
+       0.93,
+       0.37
+      ],
+      "class": "MN",
+      "why": "'Of feastes, times of rest, & Iubilie. with priuilegies, rewardes & punishments.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.37,
+       0.93,
+       0.57
+      ],
+      "class": "MN",
+      "why": "':: There were eight seueral feastes commaded by this law…'"
+     },
+     {
+      "box": [
+       0.8,
+       0.575,
+       0.93,
+       0.595
+      ],
+      "class": "MN",
+      "why": "'1.' numbered side-mark"
+     },
+     {
+      "box": [
+       0.8,
+       0.595,
+       0.93,
+       0.7
+      ],
+      "class": "MN",
+      "why": "'::The Sabbath in memorie that God created al things in six daies & rested the seuenth.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.71,
+       0.93,
+       0.73
+      ],
+      "class": "MN",
+      "why": "'2.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.73,
+       0.93,
+       0.8
+      ],
+      "class": "MN",
+      "why": "':: Pasch in memorie of their deliuerie from Ægypt.'"
+     },
+     {
+      "box": [
+       0.53,
+       0.905,
+       0.59,
+       0.925
+      ],
+      "class": "SG",
+      "why": "'Pp 2'"
+     },
+     {
+      "box": [
+       0.73,
+       0.905,
+       0.78,
+       0.925
+      ],
+      "class": "CW",
+      "why": "'eate'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "recto",
+    "kind": "Leviticus 22-23 chapter break: VN LEFT, CHAP. XXIII, argument, 2-line initial, right notes with NUMBERED side-marks (1. 2.), right note beside the argument; signature 'Pp 2'",
+    "measure": [
+     0.15,
+     0.8
+    ],
+    "skew_deg": 1.44,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.25,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.019,
+       0.0274,
+       0.1915,
+       0.0509
+      ],
+      "class": "RH",
+      "why": "'Festiual daies.' topical, gutter",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3757,
+       0.0297,
+       0.5657,
+       0.0497
+      ],
+      "class": "RH",
+      "why": "'LEVITICVS.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.748,
+       0.0336,
+       0.808,
+       0.0536
+      ],
+      "class": "PN",
+      "why": "'307'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1435,
+       0.0537,
+       0.8078,
+       0.1906
+      ],
+      "class": "MT",
+      "why": "Lev 22:30-33",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1011,
+       0.2964,
+       0.1436,
+       0.8733
+      ],
+      "class": "VN",
+      "why": "31..33 then 1..14 LEFT",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3416,
+       0.1987,
+       0.5616,
+       0.2187
+      ],
+      "class": "CH",
+      "why": "'CHAP. XXIII.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0916,
+       0.2277,
+       0.7983,
+       0.2863
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8031,
+       0.2326,
+       0.9163,
+       0.2626
+      ],
+      "class": "MN",
+      "why": "'The fourth part.' beside the argument",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1513,
+       0.2967,
+       0.212,
+       0.3349
+      ],
+      "class": "DC",
+      "why": "two-line A",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1452,
+       0.2945,
+       0.7952,
+       0.8748
+      ],
+      "class": "MT",
+      "why": "Lev 23:1-14",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7996,
+       0.2635,
+       0.9313,
+       0.3612
+      ],
+      "class": "MN",
+      "why": "'Of feastes, times of rest, & Iubilie. with priuilegies, rewardes & punishments.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7988,
+       0.3635,
+       0.9288,
+       0.5552
+      ],
+      "class": "MN",
+      "why": "':: There were eight seueral feastes commaded by this law…'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7967,
+       0.5558,
+       0.9301,
+       0.6846
+      ],
+      "class": "MN",
+      "why": "'::The Sabbath in memorie that God created al things in six daies & rested the seuenth.'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7951,
+       0.6865,
+       0.9301,
+       0.7708
+      ],
+      "class": "MN",
+      "why": "':: Pasch in memorie of their deliuerie from Ægypt.'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     },
+     {
+      "box": [
+       0.5447,
+       0.8747,
+       0.6156,
+       0.8989
+      ],
+      "class": "SG",
+      "why": "'Pp 2'",
+      "origin": "agent",
+      "agent_index": 16,
+      "moved": true
+     },
+     {
+      "box": [
+       0.732,
+       0.8765,
+       0.7946,
+       0.8965
+      ],
+      "class": "CW",
+      "why": "'eate'",
+      "origin": "agent",
+      "agent_index": 17,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1033,
+       0.0743,
+       0.1403,
+       0.1564
+      ],
+      "class": "VN",
+      "why": "",
+      "origin": "human"
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-08T02:14:10+00:00",
+   "updated": "2026-09-08T02:20:16+00:00"
+  },
+  "OT1-1609-B_0352": {
+   "witness": "OT1-1609-B",
+   "leaf": 352,
+   "agent": {
+    "side": "verso",
+    "kind": "BOOK ARGUMENT (Numbers), whole body italic; 2-line BT; right chapter-reference column; left summaries; no running head; SHOW-THROUGH at top",
+    "measure": [
+     0.17,
+     0.88
+    ],
+    "regions": [
+     {
+      "box": [
+       0.16,
+       0.04,
+       0.22,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'320'"
+     },
+     {
+      "box": [
+       0.4,
+       0.03,
+       0.9,
+       0.055
+      ],
+      "class": "ST",
+      "why": "mirrored ghost of the recto's head — show-through"
+     },
+     {
+      "box": [
+       0.19,
+       0.06,
+       0.86,
+       0.11
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / BOOKE OF NVMERI.'"
+     },
+     {
+      "box": [
+       0.17,
+       0.125,
+       0.21,
+       0.16
+      ],
+      "class": "DC",
+      "why": "two-line I"
+     },
+     {
+      "box": [
+       0.21,
+       0.125,
+       0.88,
+       0.905
+      ],
+      "class": "AR",
+      "why": "book argument, entirely italic, ~48 lines"
+     },
+     {
+      "box": [
+       0.04,
+       0.15,
+       0.16,
+       0.2
+      ],
+      "class": "MN",
+      "why": "'Mysteries cõteined in these histories.'"
+     },
+     {
+      "box": [
+       0.04,
+       0.26,
+       0.16,
+       0.31
+      ],
+      "class": "MN",
+      "why": "'The contents according to the letter.'"
+     },
+     {
+      "box": [
+       0.04,
+       0.56,
+       0.16,
+       0.61
+      ],
+      "class": "MN",
+      "why": "'VVicked life draweth to Idolatrie.'"
+     },
+     {
+      "box": [
+       0.04,
+       0.72,
+       0.16,
+       0.76
+      ],
+      "class": "MN",
+      "why": "'Three partes of this booke.'"
+     },
+     {
+      "box": [
+       0.88,
+       0.125,
+       0.98,
+       0.73
+      ],
+      "class": "MN",
+      "why": "right column of chapter references keyed to the argument — citation notes, many short lines"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "BOOK ARGUMENT (Numbers), whole body italic; 2-line BT; right chapter-reference column; left summaries; no running head; SHOW-THROUGH at top",
+    "measure": [
+     0.17,
+     0.88
+    ],
+    "skew_deg": -0.78,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": null,
+    "regions": [
+     {
+      "box": [
+       0.1687,
+       0.0371,
+       0.2287,
+       0.063
+      ],
+      "class": "PN",
+      "why": "'320'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4088,
+       0.0315,
+       0.9575,
+       0.0565
+      ],
+      "class": "ST",
+      "why": "mirrored ghost of the recto's head — show-through",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.198,
+       0.0633,
+       0.868,
+       0.1103
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / BOOKE OF NVMERI.'",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1769,
+       0.122,
+       0.2169,
+       0.157
+      ],
+      "class": "DC",
+      "why": "two-line I",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1795,
+       0.1177,
+       0.8871,
+       0.9054
+      ],
+      "class": "AR",
+      "why": "book argument, entirely italic, ~48 lines",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0413,
+       0.1432,
+       0.1756,
+       0.1938
+      ],
+      "class": "MN",
+      "why": "'Mysteries cõteined in these histories.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0442,
+       0.2538,
+       0.1743,
+       0.3044
+      ],
+      "class": "MN",
+      "why": "'The contents according to the letter.'",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0468,
+       0.5472,
+       0.1777,
+       0.6002
+      ],
+      "class": "MN",
+      "why": "'VVicked life draweth to Idolatrie.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.048,
+       0.7,
+       0.1798,
+       0.74
+      ],
+      "class": "MN",
+      "why": "'Three partes of this booke.'",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8874,
+       0.1173,
+       0.9814,
+       0.7342
+      ],
+      "class": "MN",
+      "why": "right column of chapter references keyed to the argument — citation notes, many short lines",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-08T02:20:15+00:00",
+   "updated": "2026-09-08T02:22:34+00:00"
+  },
+  "OT1-1609-B_0354": {
+   "witness": "OT1-1609-B",
+   "leaf": 354,
+   "agent": {
+    "side": "verso",
+    "kind": "Numbers 1 PLAIN scripture, no apparatus; topical RH at gutter (right); VN right; catchword",
+    "measure": [
+     0.17,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.16,
+       0.04,
+       0.22,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'322'"
+     },
+     {
+      "box": [
+       0.46,
+       0.04,
+       0.62,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'NVMERI.'"
+     },
+     {
+      "box": [
+       0.79,
+       0.03,
+       0.96,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'Twelue tribes' topical, gutter"
+     },
+     {
+      "box": [
+       0.17,
+       0.065,
+       0.85,
+       0.9
+      ],
+      "class": "MT",
+      "why": "Num 1:17-36"
+     },
+     {
+      "box": [
+       0.85,
+       0.065,
+       0.9,
+       0.9
+      ],
+      "class": "VN",
+      "why": "17..36 right ('21 22' share a line)"
+     },
+     {
+      "box": [
+       0.78,
+       0.9,
+       0.85,
+       0.92
+      ],
+      "class": "CW",
+      "why": "'rations'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "Numbers 1 PLAIN scripture, no apparatus; topical RH at gutter (right); VN right; catchword",
+    "measure": [
+     0.17,
+     0.85
+    ],
+    "skew_deg": -0.48,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": {
+     "model": "colshear-v1",
+     "y_top": 0.25,
+     "y_bot": 0.75,
+     "top": [
+      -0.1103,
+      0.6428
+     ],
+     "bot": [
+      -0.0879,
+      0.6463
+     ]
+    },
+    "warp": {
+     "rms_before": 0.36,
+     "rms_after": 0.15,
+     "status": "dewarped",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.172,
+       0.0381,
+       0.232,
+       0.0581
+      ],
+      "class": "PN",
+      "why": "'322'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4653,
+       0.0335,
+       0.6253,
+       0.0535
+      ],
+      "class": "RH",
+      "why": "'NVMERI.'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7833,
+       0.0274,
+       0.9627,
+       0.0524
+      ],
+      "class": "RH",
+      "why": "'Twelue tribes' topical, gutter",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1702,
+       0.0575,
+       0.8421,
+       0.8749
+      ],
+      "class": "MT",
+      "why": "Num 1:17-36",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8415,
+       0.0575,
+       0.8915,
+       0.8754
+      ],
+      "class": "VN",
+      "why": "17..36 right ('21 22' share a line)",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7643,
+       0.8763,
+       0.8464,
+       0.8963
+      ],
+      "class": "CW",
+      "why": "'rations'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-08T02:22:40+00:00",
+   "updated": "2026-09-08T02:24:52+00:00"
+  },
+  "OT1-1609-B_0982": {
+   "witness": "OT1-1609-B",
+   "leaf": 982,
+   "agent": {
+    "side": "verso",
+    "kind": "1 Esdras 4-5: verses VN right, then CHAP. V + argument at the FOOT with nothing below; topical RH at gutter; NO catchword",
+    "measure": [
+     0.19,
+     0.85
+    ],
+    "regions": [
+     {
+      "box": [
+       0.18,
+       0.04,
+       0.24,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'950'"
+     },
+     {
+      "box": [
+       0.35,
+       0.04,
+       0.58,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'FIRST BOOKE'"
+     },
+     {
+      "box": [
+       0.83,
+       0.03,
+       0.98,
+       0.055
+      ],
+      "class": "RH",
+      "why": "'Artaxerxes.' topical, gutter"
+     },
+     {
+      "box": [
+       0.19,
+       0.065,
+       0.85,
+       0.79
+      ],
+      "class": "MT",
+      "why": "1 Esd 4:12-24"
+     },
+     {
+      "box": [
+       0.85,
+       0.065,
+       0.9,
+       0.79
+      ],
+      "class": "VN",
+      "why": "13..24 right"
+     },
+     {
+      "box": [
+       0.48,
+       0.8,
+       0.62,
+       0.815
+      ],
+      "class": "CH",
+      "why": "'CHAP. V.'"
+     },
+     {
+      "box": [
+       0.19,
+       0.825,
+       0.9,
+       0.88
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines — LAST thing on the leaf"
+     },
+     {
+      "box": [
+       0.05,
+       0.89,
+       0.95,
+       0.99
+      ],
+      "class": "??",
+      "why": "BLANK lower page; no catchword visible"
+     }
+    ]
+   },
+   "review": {
+    "verdict": "corrected",
+    "note": "",
+    "side": "verso",
+    "kind": "1 Esdras 4-5: verses VN right, then CHAP. V + argument at the FOOT with nothing below; topical RH at gutter; NO catchword",
+    "measure": [
+     0.19,
+     0.85
+    ],
+    "skew_deg": -0.74,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.3,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.1882,
+       0.0374,
+       0.2587,
+       0.0648
+      ],
+      "class": "PN",
+      "why": "'950'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.3582,
+       0.0397,
+       0.5882,
+       0.0597
+      ],
+      "class": "RH",
+      "why": "'FIRST BOOKE'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8383,
+       0.0338,
+       0.9883,
+       0.0618
+      ],
+      "class": "RH",
+      "why": "'Artaxerxes.' topical, gutter",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1913,
+       0.0652,
+       0.8513,
+       0.7999
+      ],
+      "class": "MT",
+      "why": "1 Esd 4:12-24",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8513,
+       0.1048,
+       0.9034,
+       0.7934
+      ],
+      "class": "VN",
+      "why": "13..24 right",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4744,
+       0.8004,
+       0.6144,
+       0.8221
+      ],
+      "class": "CH",
+      "why": "'CHAP. V.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1836,
+       0.8217,
+       0.8946,
+       0.8863
+      ],
+      "class": "AR",
+      "why": "italic argument, three lines — LAST thing on the leaf",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-08T02:25:09+00:00",
+   "updated": "2026-09-08T05:05:47+00:00"
+  },
+  "OT1-1609-B_1067": {
+   "witness": "OT1-1609-B",
+   "leaf": 1067,
+   "agent": {
+    "side": "recto",
+    "kind": "BOOK BOUNDARY (Judith→Esther): AN tail, type-ornament rule, 2-line BT, 2-line initial, italic/roman argument, left citations, right summaries; signature 'Kkkkkk 2'",
+    "measure": [
+     0.11,
+     0.79
+    ],
+    "regions": [
+     {
+      "box": [
+       0.36,
+       0.04,
+       0.48,
+       0.06
+      ],
+      "class": "RH",
+      "why": "'IVDITH.'"
+     },
+     {
+      "box": [
+       0.76,
+       0.04,
+       0.82,
+       0.06
+      ],
+      "class": "PN",
+      "why": "'1035'"
+     },
+     {
+      "box": [
+       0.11,
+       0.065,
+       0.79,
+       0.385
+      ],
+      "class": "AN",
+      "why": "closing annotation of Judith"
+     },
+     {
+      "box": [
+       0.03,
+       0.09,
+       0.1,
+       0.15
+      ],
+      "class": "MN",
+      "why": "'Deu. 25. v 5. Ruth. 3. v.12.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.065,
+       0.93,
+       0.19
+      ],
+      "class": "MN",
+      "why": "'Manie incitements concurring to the contrarie made her widowhood more excellent.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.32,
+       0.93,
+       0.36
+      ],
+      "class": "MN",
+      "why": "'widowhood an Euangelical counsell.'"
+     },
+     {
+      "box": [
+       0.13,
+       0.4,
+       0.78,
+       0.43
+      ],
+      "class": "OR",
+      "why": "type-ornament rule between books"
+     },
+     {
+      "box": [
+       0.22,
+       0.445,
+       0.7,
+       0.49
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / BOOKE OF ESTHER.'"
+     },
+     {
+      "box": [
+       0.11,
+       0.505,
+       0.17,
+       0.545
+      ],
+      "class": "DC",
+      "why": "two-line O"
+     },
+     {
+      "box": [
+       0.17,
+       0.505,
+       0.79,
+       0.88
+      ],
+      "class": "AR",
+      "why": "argument, italic/roman mixed, two paragraphs"
+     },
+     {
+      "box": [
+       0.03,
+       0.51,
+       0.1,
+       0.63
+      ],
+      "class": "MN",
+      "why": "'Melito S. Atha. S. Greg. Nazian. Origen apud Euseb.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.52,
+       0.93,
+       0.56
+      ],
+      "class": "MN",
+      "why": "'This whole booke is canonical.'"
+     },
+     {
+      "box": [
+       0.8,
+       0.79,
+       0.93,
+       0.81
+      ],
+      "class": "MN",
+      "why": "'The contentes'"
+     },
+     {
+      "box": [
+       0.8,
+       0.84,
+       0.93,
+       0.88
+      ],
+      "class": "MN",
+      "why": "'VVritten by Mardocheus.'"
+     },
+     {
+      "box": [
+       0.43,
+       0.885,
+       0.57,
+       0.905
+      ],
+      "class": "SG",
+      "why": "'Kkkkkk 2'"
+     },
+     {
+      "box": [
+       0.72,
+       0.885,
+       0.79,
+       0.905
+      ],
+      "class": "CW",
+      "why": "'Which'"
+     }
+    ]
+   },
+   "review": {
+    "verdict": null,
+    "note": "",
+    "side": "recto",
+    "kind": "BOOK BOUNDARY (Judith→Esther): AN tail, type-ornament rule, 2-line BT, 2-line initial, italic/roman argument, left citations, right summaries; signature 'Kkkkkk 2'",
+    "measure": [
+     0.11,
+     0.79
+    ],
+    "skew_deg": 0.18,
+    "skew_source": "auto:page",
+    "warped": false,
+    "dewarp": null,
+    "warp": {
+     "rms_before": 0.17,
+     "rms_after": null,
+     "status": "rigid",
+     "threshold": 0.35
+    },
+    "regions": [
+     {
+      "box": [
+       0.358,
+       0.0402,
+       0.478,
+       0.0602
+      ],
+      "class": "RH",
+      "why": "'IVDITH.'",
+      "origin": "agent",
+      "agent_index": 0,
+      "moved": true
+     },
+     {
+      "box": [
+       0.758,
+       0.0393,
+       0.818,
+       0.0593
+      ],
+      "class": "PN",
+      "why": "'1035'",
+      "origin": "agent",
+      "agent_index": 1,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1088,
+       0.0651,
+       0.7888,
+       0.3851
+      ],
+      "class": "AN",
+      "why": "closing annotation of Judith",
+      "origin": "agent",
+      "agent_index": 2,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0283,
+       0.091,
+       0.0983,
+       0.151
+      ],
+      "class": "MN",
+      "why": "'Deu. 25. v 5. Ruth. 3. v.12.'",
+      "origin": "agent",
+      "agent_index": 3,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7984,
+       0.0642,
+       0.9284,
+       0.1892
+      ],
+      "class": "MN",
+      "why": "'Manie incitements concurring to the contrarie made her widowhood more excellent.'",
+      "origin": "agent",
+      "agent_index": 4,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7993,
+       0.3192,
+       0.9293,
+       0.3592
+      ],
+      "class": "MN",
+      "why": "'widowhood an Euangelical counsell.'",
+      "origin": "agent",
+      "agent_index": 5,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1296,
+       0.4001,
+       0.7796,
+       0.4301
+      ],
+      "class": "OR",
+      "why": "type-ornament rule between books",
+      "origin": "agent",
+      "agent_index": 6,
+      "moved": true
+     },
+     {
+      "box": [
+       0.2199,
+       0.4451,
+       0.6999,
+       0.4901
+      ],
+      "class": "BT",
+      "why": "'THE ARGVMENT OF THE / BOOKE OF ESTHER.'",
+      "origin": "agent",
+      "agent_index": 7,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1101,
+       0.5058,
+       0.1701,
+       0.5458
+      ],
+      "class": "DC",
+      "why": "two-line O",
+      "origin": "agent",
+      "agent_index": 8,
+      "moved": true
+     },
+     {
+      "box": [
+       0.1708,
+       0.505,
+       0.7908,
+       0.88
+      ],
+      "class": "AR",
+      "why": "argument, italic/roman mixed, two paragraphs",
+      "origin": "agent",
+      "agent_index": 9,
+      "moved": true
+     },
+     {
+      "box": [
+       0.0303,
+       0.511,
+       0.1003,
+       0.631
+      ],
+      "class": "MN",
+      "why": "'Melito S. Atha. S. Greg. Nazian. Origen apud Euseb.'",
+      "origin": "agent",
+      "agent_index": 10,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8002,
+       0.5192,
+       0.9302,
+       0.5592
+      ],
+      "class": "MN",
+      "why": "'This whole booke is canonical.'",
+      "origin": "agent",
+      "agent_index": 11,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8013,
+       0.7892,
+       0.9313,
+       0.8092
+      ],
+      "class": "MN",
+      "why": "'The contentes'",
+      "origin": "agent",
+      "agent_index": 12,
+      "moved": true
+     },
+     {
+      "box": [
+       0.8016,
+       0.8392,
+       0.9316,
+       0.8792
+      ],
+      "class": "MN",
+      "why": "'VVritten by Mardocheus.'",
+      "origin": "agent",
+      "agent_index": 13,
+      "moved": true
+     },
+     {
+      "box": [
+       0.4317,
+       0.885,
+       0.5717,
+       0.905
+      ],
+      "class": "SG",
+      "why": "'Kkkkkk 2'",
+      "origin": "agent",
+      "agent_index": 14,
+      "moved": true
+     },
+     {
+      "box": [
+       0.7217,
+       0.8844,
+       0.7917,
+       0.9044
+      ],
+      "class": "CW",
+      "why": "'Which'",
+      "origin": "agent",
+      "agent_index": 15,
+      "moved": true
+     }
+    ],
+    "proposed_classes": []
+   },
+   "touched": "2026-09-08T05:05:50+00:00",
+   "updated": "2026-09-08T05:05:51+00:00"
   }
  }
 }

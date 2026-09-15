@@ -1,0 +1,253 @@
+{
+ "regions": 391,
+ "touched": 362,
+ "added_by_hand": 15,
+ "deleted": 18,
+ "overall": {
+  "x0": {
+   "mean": -0.00069,
+   "median": -0.0013
+  },
+  "y0": {
+   "mean": -0.00374,
+   "median": -0.0071
+  },
+  "x1": {
+   "mean": 0.00102,
+   "median": 0.0
+  },
+  "y1": {
+   "mean": -0.00886,
+   "median": -0.0048
+  },
+  "area_median": 1.0,
+  "height_change_mean": -0.00511,
+  "width_change_mean": 0.00171
+ },
+ "by_class": {
+  "RH": {
+   "n": 39,
+   "area_median": 1.0,
+   "grew": 6,
+   "shrank": 4,
+   "edges": {
+    "x0": -0.00208,
+    "y0": -0.00332,
+    "x1": 0.00162,
+    "y1": -0.0034
+   },
+   "worst_edge": "y1",
+   "worst_shift": -0.0034,
+   "touched": 31,
+   "of": 39
+  },
+  "MT": {
+   "n": 29,
+   "area_median": 1.005,
+   "grew": 5,
+   "shrank": 6,
+   "edges": {
+    "x0": -9e-05,
+    "y0": -0.00748,
+    "x1": -0.00477,
+    "y1": -0.00744
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.00748,
+   "touched": 28,
+   "of": 29
+  },
+  "MN": {
+   "n": 119,
+   "area_median": 1.051,
+   "grew": 60,
+   "shrank": 20,
+   "edges": {
+    "x0": 0.00038,
+    "y0": -0.01038,
+    "x1": 0.00015,
+    "y1": -0.00965
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.01038,
+   "touched": 116,
+   "of": 119
+  },
+  "SG": {
+   "n": 12,
+   "area_median": 1.0,
+   "grew": 3,
+   "shrank": 1,
+   "edges": {
+    "x0": 0.01575,
+    "y0": -0.01313,
+    "x1": 0.01857,
+    "y1": -0.0123
+   },
+   "worst_edge": "x1",
+   "worst_shift": 0.01857,
+   "touched": 12,
+   "of": 12
+  },
+  "CW": {
+   "n": 26,
+   "area_median": 1.0,
+   "grew": 8,
+   "shrank": 6,
+   "edges": {
+    "x0": 0.00053,
+    "y0": -0.0181,
+    "x1": 0.0025,
+    "y1": -0.01799
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.0181,
+   "touched": 26,
+   "of": 26
+  },
+  "CR": {
+   "n": 12,
+   "area_median": 1.0,
+   "grew": 4,
+   "shrank": 0,
+   "edges": {
+    "x0": -0.00186,
+    "y0": -0.00183,
+    "x1": 0.00612,
+    "y1": -0.00177
+   },
+   "worst_edge": "x1",
+   "worst_shift": 0.00612,
+   "touched": 6,
+   "of": 12
+  },
+  "PN": {
+   "n": 25,
+   "area_median": 1.0,
+   "grew": 3,
+   "shrank": 1,
+   "edges": {
+    "x0": 0.0019,
+    "y0": 0.00016,
+    "x1": 0.00212,
+    "y1": 0.00069
+   },
+   "worst_edge": "x1",
+   "worst_shift": 0.00212,
+   "touched": 20,
+   "of": 25
+  },
+  "RL": {
+   "n": 23,
+   "area_median": 1.707,
+   "grew": 15,
+   "shrank": 1,
+   "edges": {
+    "x0": -0.00773,
+    "y0": 0.06779,
+    "x1": -0.00071,
+    "y1": -0.0074
+   },
+   "worst_edge": "y0",
+   "worst_shift": 0.06779,
+   "touched": 22,
+   "of": 23
+  },
+  "BT": {
+   "n": 8,
+   "area_median": 1.064,
+   "grew": 4,
+   "shrank": 2,
+   "edges": {
+    "x0": -0.00575,
+    "y0": -0.0104,
+    "x1": -0.00163,
+    "y1": -0.00872
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.0104,
+   "touched": 7,
+   "of": 8
+  },
+  "CH": {
+   "n": 14,
+   "area_median": 1.222,
+   "grew": 11,
+   "shrank": 0,
+   "edges": {
+    "x0": -0.01007,
+    "y0": -0.01339,
+    "x1": -0.00101,
+    "y1": -0.00842
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.01339,
+   "touched": 14,
+   "of": 14
+  },
+  "AR": {
+   "n": 15,
+   "area_median": 1.076,
+   "grew": 10,
+   "shrank": 1,
+   "edges": {
+    "x0": 0.00261,
+    "y0": -0.01417,
+    "x1": 0.00802,
+    "y1": -0.00797
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.01417,
+   "touched": 15,
+   "of": 15
+  },
+  "DC": {
+   "n": 14,
+   "area_median": 0.949,
+   "grew": 2,
+   "shrank": 7,
+   "edges": {
+    "x0": 0.00716,
+    "y0": -0.01256,
+    "x1": -0.00339,
+    "y1": -0.0111
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.01256,
+   "touched": 13,
+   "of": 14
+  },
+  "VN": {
+   "n": 20,
+   "area_median": 0.798,
+   "grew": 2,
+   "shrank": 14,
+   "edges": {
+    "x0": -0.00424,
+    "y0": 0.00925,
+    "x1": -0.01071,
+    "y1": -0.02156
+   },
+   "worst_edge": "y1",
+   "worst_shift": -0.02156,
+   "touched": 20,
+   "of": 20
+  },
+  "AN": {
+   "n": 14,
+   "area_median": 1.018,
+   "grew": 3,
+   "shrank": 0,
+   "edges": {
+    "x0": -0.00225,
+    "y0": -0.00968,
+    "x1": 0.0068,
+    "y1": -0.00704
+   },
+   "worst_edge": "y0",
+   "worst_shift": -0.00968,
+   "touched": 13,
+   "of": 14
+  }
+ }
+}
