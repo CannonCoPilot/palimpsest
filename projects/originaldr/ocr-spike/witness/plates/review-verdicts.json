@@ -1,0 +1,5 @@
+{
+ "_doc": "R14.13 per-leaf review verdicts \u2014 DURABLE BASELINE for review.html. Seeded EMPTY on 2026-08-31 so the baseline is tracked from the first verdict rather than after the first loss. review.html re-reads this on boot and reports how many verdicts are not yet on disk. \u26a0\ufe0f NOT a gold file: it records whether a HUMAN LOOKED at a leaf and what they concluded, never box geometry. Box corrections go through 'export corrections'.",
+ "count": 0,
+ "leaves": {}
+}

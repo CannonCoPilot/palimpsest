@@ -1,0 +1,1345 @@
+{
+ "_doc": "Jarvis's eye-review of the plates. Merged into review-flags.json as sev='eye'. These are MY claims about LECTOR's claims; nothing here is adjudicated until Sir records a verdict in the review tool.",
+ "_classes": {
+  "E1": "HEADLINE-AS-MARGINALIA: spread-headline summary phrase named MN; it is running-head furniture",
+  "E2": "PAGE NUMBER MISNAMED: head-band page number named MN or abstained ?? instead of PN",
+  "E3": "CATCHWORD UNBOXED: Surya emits no box for the foot catchword, so it cannot be named",
+  "E4": "SIGNATURE/CATCHWORD SWAP: the signature named CW (or the reverse)",
+  "E5": "NOTE COLUMN SWALLOWED: marginal column inside the MT box instead of its own",
+  "E6": "AR/MT VERTICAL OVERLAP: argument foot cuts into body head, clipping a line",
+  "E7": "NESTED/DUPLICATE BOXES: two boxes on one object with different classes",
+  "E8": "MARGIN NOTE NAMED MT: a margin note falls inside the measure and is named MainText",
+  "E9": "NOTE MISSED: a visible margin note gets no box at all",
+  "E10": "PARATEXT HAS NO GRAMMAR: CLASSES describes a scriptural opening; on paratext the label overflows into whichever class is nearest a containment class. SG and CH both act as containment, not only MT",
+  "E11": "BLEED-THROUGH BOXED: a box on verso show-through, i.e. on ink not present on this leaf",
+  "E12": "ORNAMENT GIVEN A TEXT CLASS, AND THE CLASS DRIFTS: fleurons, headpieces, tailpieces and woodcut initials have been named MT, CH, SG, MN and RH across the corpus — five classes for one non-textual object",
+  "E13": "COLUMN STRUCTURE LOST: multi-column matter taken as one block. Not only tables — NT-1582-B_0438 sets a two-column parallel comparison inside the body and it is wrapped as a single MT",
+  "E14": "ARGUMENT NAMED CH: argument prose named CH although AR exists in CLASSES",
+  "E15": "ANNOTATIONS GENRE UNSTABLE: the annotation block is named MT, SG or CH depending on where foot_y lands. Three labels for one genre, sometimes within a single leaf",
+  "E16": "TEXT OUTSIDE THE FRAME IS RENAMED: whatever falls above head_y or below foot_y changes class regardless of what it is. Body verses become SG, body continuations become CH. This is the SAME root cause as E15 and as the frame-anchor finding",
+  "E17": "MARGIN NOTE NAMED CH: a margin note taken as a chapter head",
+  "E18": "MN AS A FOURTH CONTAINMENT CLASS: on the harmony/synopsis pages nearly every box is named MN, including the display title and the signature. MT, SG, CH and now MN have all acted as containment",
+  "E19": "SIGNATURE AND CATCHWORD MERGED INTO ONE BOX, or the signature given yet another class (CH on NT-1582-B_0777). The foot furniture has no stable treatment anywhere in the corpus",
+  "E20": "CLASS DECIDED BY POSITION AGAINST THE MEASURE: identical marginal cites are named MN on one side of the measure and MT on the other. Which side gets which INVERTS between leaves (right=MT on OT1-1609-P_0010, left=MT on _0021), because the measure lands differently each time. The label tracks the frame, not the object",
+  "E21": "OVERLAPPING SIBLING BOXES: adjacent boxes of the same class overlap or nest, so one line of text belongs to two regions at once",
+  "E22": "GENRE IS NOT LEAF-ALIGNED: a genre with no class in CLASSES (the key to the marks) shares a leaf with ordinary matter, so the leaf cannot be excluded wholesale. Scope decisions cannot reach it",
+  "E23": "EMPTY BOX: a region drawn over blank paper, carrying a class but no ink",
+  "E24": "HEAD-BAND CLASS INTERCHANGE: the structural head classes swap freely. Chapter head named RH (OT2-1610-P_0865, giving two stacked RH boxes) or MN (_0666); running head named CH (_0034) or MN or MT. RH, CH and MN are not separated by any stable cue",
+  "E25": "STRUCTURAL FURNITURE UNBOXED: a CHAPTER HEAD or RUNNING HEAD gets no box at all (CHAP. II. on OT1-1609-P_0348, CHAP. I. on _1015, PSALME X. on OT2-1610-P_0034; running head absent on _0276 and _0666). Distinct from E9, which covers marginal apparatus. This is the page's structural spine going missing, not its apparatus",
+  "E26": "BODY BLOCK UNBOXED: the scripture column ITSELF gets no region. Not a missed note — the main text of the leaf is unclaimed (OT2-1610-P_0749, _0821, _0024, _0035 and OT1-1609-P_1011). ⚠️ CITATION CORRECTED 2026-08-29: the Osee-1011 exemplar was written as a bare ordinal under the OT2 prefix it inherited from its neighbours, and NO SUCH OT2 LEAF EXISTS. A bare leaf ordinal is not an address; it takes the witness from whatever preceded it. ⚠️ This note deliberately spells no bare ordinal of its own — the first version did, and the checker resolved it against the wrong prefix and re-reported the very defect the note describes. The most severe detection failure in the corpus",
+  "E27": "SIGNATURE UNBOXED: the printed quire signature gets no box (OT1-1609-P_0661 'Hhhh 3', OT2-1610-P_0459 'I ii 2', OT2-1610-P_0902 'D'). ⚠️ CITATION CORRECTED 2026-08-29: the 'Hhhh 3' exemplar was written as a bare ordinal under the OT2 prefix; no such OT2 leaf exists and the leaf is the OT1 one named above. The twin of E3; E4/E19 cover only signatures that were MISnamed",
+  "E28": "BODY TEXT NAMED CH: ordinary prose or scripture given the chapter-head class (OT2-1610-P_0820, _0035). On _0274 the assignment is INVERTED — Psalm verse text is CH and the commentary is MT"
+ },
+ "leaves": {
+  "OT1-1609-B_0400": [
+   "E1 x2: boxes 2 and 3 ('K. Og slaine.', 'Balac') are headline furniture, not notes"
+  ],
+  "OT1-1609-B_0401": [
+   "E1: box 1 'and Balaam' is headline",
+   "E4: box 6 CW is the signature Yy",
+   "E3: the true catchword 'stoode' is unboxed"
+  ],
+  "OT1-1609-B_0402": [
+   "E5: box 3 MT swallows the whole left note column",
+   "E1: box 0 'Balac and'",
+   "E3: catchword unboxed"
+  ],
+  "OT1-1609-B_0403": [
+   "E2: box 2 MN is the page number 371 — the facing leaf's 370 was correctly PN",
+   "E1: box 8 'Balaam.'",
+   "E6: box 3 AR foot overlaps box 4 MT",
+   "E3"
+  ],
+  "OT1-1609-B_0404": [
+   "E7: box 2 MT nested on box 3 PN",
+   "E1-abstain: box 1 '??' is 'Balac and'"
+  ],
+  "OT1-1609-B_0405": [
+   "E1: box 1 'Balaam'",
+   "E3: catchword 'destroy' and signature Yy3 both unboxed"
+  ],
+  "OT1-1609-B_0406": [
+   "E7: box 1 MT nested on box 0 PN",
+   "E1-abstain: box 2 'Fornication'",
+   "E3"
+  ],
+  "OT1-1609-B_0407": [
+   "E2: page number 371 abstained as '??' — third distinct treatment in eight leaves",
+   "E1: box 0 'and Idolatrie.'",
+   "E6: box 7 MT cuts box 5 AR",
+   "E3"
+  ],
+  "OT1-1609-B_0408": [
+   "E7: box 3 MT on box 0 PN",
+   "E1-abstain: box 2 'The people'",
+   "E3",
+   "GOOD: left-margin bleed-through correctly ignored"
+  ],
+  "OT1-1609-B_0409": [
+   "E1: box 0 'numbred.'",
+   "E3: catchword 'whom' unboxed",
+   "GOOD: box 4 SG correct"
+  ],
+  "OT1-1609-B_0410": [
+   "E1: box 0 'Leuites numbered.'",
+   "E2: page number abstained '??'",
+   "E7",
+   "GOOD: box 6 CW 'CHAP.' correct"
+  ],
+  "OT1-1609-B_0411": [
+   "E1: box 2 'Daughters may inherite.'",
+   "E4: box 7 CW is the signature Zz2",
+   "E3: true catchword 'Cades' unboxed"
+  ],
+  "OT1-1609-B_0412": [
+   "E1",
+   "E7",
+   "E6: box 6 MT cuts the AR line 'in Pasch. 26. and for Pentecost.'",
+   "margin column over-segmented: boxes 7 and 8 split one note and overlap"
+  ],
+  "OT1-1609-B_0413": [
+   "E8: boxes 3 and 5 are right-margin notes named MT",
+   "E9: the note ':: Pentecost.' is unboxed",
+   "E1: box 4 'al festes.'",
+   "E3 x2"
+  ],
+  "OT1-1609-B_0414": [
+   "E1",
+   "E7",
+   "E6: box 7 MT cuts the AR line ending '...llection.'",
+   "box 8 MN clips its own last line"
+  ],
+  "OT1-1609-B_0415": [
+   "E9: the right-margin note ':: Feast of Assemblie, and Collection.' gets no box at all",
+   "E1",
+   "only 4 boxes on a leaf with 5+ objects"
+  ],
+  "OT1-1609-B_0416": [
+   "E1: box 2 'Vowes.'",
+   "E7",
+   "E9: faint right-margin cite unboxed",
+   "E3"
+  ],
+  "OT1-1609-B_0417": [
+   "E10: box 8 MT is the ANNOTATIONS block — a distinct genre held by the containment class",
+   "E3: catchword 'reuenge' unboxed",
+   "GOOD: box 14 SG 'Aaa' correct"
+  ],
+  "OT1-1609-B_0418": [
+   "E2: page number abstained '??'",
+   "E1: box 2 'Madianites slaine.'",
+   "E3"
+  ],
+  "OT1-1609-B_0419": [
+   "BEST LEAF OF THIS WITNESS: signature Aaa2 and catchword 'of the' both boxed and correctly split",
+   "E2: page number abstained",
+   "E1"
+  ],
+  "NT-1582-B_0007": [
+   "E10 AT FULL STRENGTH: twelve boxes named SG are the psalm quotation, the Augustine quotation, their 'That is.' glosses, the imprint, the date and CVM PRIVILEGIO. Title page has no correct answer in CLASSES",
+   "box 1 RH is the single word 'THE'"
+  ],
+  "NT-1582-B_0008": [
+   "GOOD LEAF: eight margin notes correct, three MT paragraphs correct, RH correct. Nothing to fix"
+  ],
+  "NT-1582-B_0009": [
+   "GOOD LEAF: box 9 CW 'and' correct",
+   "E10-lite: box 1 CH is a prose paragraph"
+  ],
+  "NT-1582-B_0028": [
+   "E12: box 11 SG is the printer's fleuron, not text",
+   "E10-lite: box 5 CH is a prose paragraph"
+  ],
+  "NT-1582-B_0029": [
+   "E10: eleven explanatory paragraphs named CH — CH acting as containment",
+   "E11: box 12 MT is drawn on verso show-through, not on ink of this leaf"
+  ],
+  "NT-1582-B_0030": [
+   "E13: the two-column table of books taken as one MT block",
+   "box 0 MT is the page's display title",
+   "box 7 MN is a box on a stray mark"
+  ],
+  "NT-1582-B_0031": [
+   "E10: boxes 10, 11, 12 named SG are quotation prose below the foot rule",
+   "E4: box 13 CW 'd ij' is the signature; box 14 'Vincentius' is the true catchword"
+  ],
+  "NT-1582-B_0032": [
+   "GOOD: box 11 CW 'THE' correct, margin notes correct",
+   "E10-lite: boxes 2, 5, 8 CH are citation lines"
+  ],
+  "NT-1582-B_0033": [
+   "E8: box 4 MT is a marginal cite",
+   "E9: right-margin cites 'Io.20,31.' and 'Eze.1 / Apoc.4.' unboxed",
+   "GOOD: box 9 CW 'The' correct"
+  ],
+  "NT-1582-B_0034": [
+   "E12: box 3 CH is a fleuron",
+   "E14: box 4 'The argument of S. Matthewes Gospel.' and boxes 5-9 are the ARGUMENT, named CH although AR exists",
+   "GOOD: box 11 CW 'THE' correct"
+  ],
+  "NT-1582-B_0035": [
+   "E12: boxes 0, 7 and 12 MT are the headpiece ornament and the woodcut initial T",
+   "E14: box 6 CH is the argument",
+   "box 2 CH is a split line of the title",
+   "GOOD: all eleven marginal cites correctly MN"
+  ],
+  "NT-1582-B_0036": [
+   "E10 DECISIVE: the ANNOTATIONS block is named SG here (boxes 7-11, 13, 14) — the SAME genre was named MT on OT1-1609-B_0417. The containment class changes with where foot_y lands, so one genre carries three different labels across the corpus",
+   "box 16 '??' is the right half of the running head 'CHA. I.'"
+  ],
+  "NT-1582-B_0037": [
+   "E15: the annotation block at the head (box 4) is named CH — the same genre is MT on OT1-1609-B_0417 and SG on NT-1582-B_0036",
+   "E14: box 6 CH is the argument",
+   "head band boxes 0, 3 and 5 all abstained '??', including the margin note 'Tradition'",
+   "GOOD: five margin notes and three body blocks all correct"
+  ],
+  "NT-1582-B_0038": [
+   "E15 DECISIVE: within ONE leaf the annotation paragraphs are named CH (boxes 10-17) and MT (box 18). The instability is intra-leaf, not only cross-witness",
+   "E17: box 17 CH is the margin note 'Adoratio of the B. Sacrament.'",
+   "GOOD: margin notes 4, 7, 8, 13, 19 correct"
+  ],
+  "NT-1582-B_0116": [
+   "E15: annotation block named CH (boxes 4, 6)",
+   "E12: box 14 MT is the woodcut initial A",
+   "head band box 0 and the margin note 'Corporals' (box 7) both abstained",
+   "GOOD: seven margin notes correct"
+  ],
+  "NT-1582-B_0117": [
+   "E15 AT ITS WORST: annotation paragraphs on this ONE leaf are named MT (box 10), SG (box 12) and SG (box 14) — three classes, one genre, one leaf",
+   "E12: box 16 SG is the fleuron",
+   "GOOD: box 17 CW 'THE' correct; six margin notes correct"
+  ],
+  "NT-1582-B_0118": [
+   "E14: box 2 'THE ARGVMENT OF S. MARKES GOSPEL.' and box 4 are argument, named CH although AR exists",
+   "E12: box 1 CH is the headpiece ornament; box 3 MN is the woodcut initial S",
+   "E10: box 11 SG is prose that fell below foot_y",
+   "GOOD: box 13 CW 'THE' correct; five margin cites correct"
+  ],
+  "NT-1582-B_0119": [
+   "E16 SEVERE: boxes 14 and 15 SG are REAL SCRIPTURE (Mark 1 v12). foot_y cut through the body block and the remainder was named signature",
+   "E12: box 2 MT is the headpiece ornament; box 8 MT is the woodcut initial T",
+   "E14: box 6 MT is the argument — argument named MT here, CH on 0118, so the argument genre is unstable too",
+   "GOOD: margin notes 5, 9, 10, 13 correct"
+  ],
+  "NT-1582-B_0120": [
+   "E16: box 5 CH is a body-text continuation that fell above head_y",
+   "E1-analogue: box 2 MN is the running head 'CHA. I.'",
+   "GOOD: eight margin notes and four body blocks all correct"
+  ],
+  "NT-1582-B_0121": [
+   "E15: annotation paragraphs named SG (boxes 9-17)",
+   "E16: box 3 CH is a body continuation above head_y",
+   "GOOD: seven margin notes correct"
+  ],
+  "NT-1582-B_0122": [
+   "E16: box 17 SG is REAL SCRIPTURE (Mark 2 v13-14) that fell below foot_y",
+   "E15: annotations named CH (boxes 4, 5, 7)",
+   "E12: box 11 MT is the woodcut initial A"
+  ],
+  "NT-1582-B_0244": [
+   "E16: box 9 SG is REAL SCRIPTURE (Luke 24 v50-51) below foot_y",
+   "E1-analogue: box 2 MN is the running head 'CHA. XXIIII.'",
+   "GOOD: box 12 RH correct; six margin notes correct including the long box 6"
+  ],
+  "NT-1582-B_0245": [
+   "E15: annotation paragraphs named MT here (boxes 5, 7, 9) — SG on 0121, CH on 0122, three labels in three consecutive gatherings",
+   "E12: box 12 MT is the large fleuron",
+   "E16: box 1 CH is a body continuation above head_y",
+   "E3: signature 'Dd iij' and catchword 'THE' both unboxed"
+  ],
+  "NT-1582-B_0246": [
+   "E14: box 1 title and boxes 4, 8, 9, 10 are the argument of S. John, named CH",
+   "E12: box 2 MN is the woodcut initial S",
+   "E16: box 14 SG is prose below foot_y",
+   "GOOD: margin notes 6, 7, 12, 13 correct"
+  ],
+  "NT-1582-B_0247": [
+   "E16: box 9 SG is prose below foot_y",
+   "E12: box 5 MT contains the woodcut initial I",
+   "GOOD: box 10 CW 'THE' correct; three margin cites correct"
+  ],
+  "NT-1582-B_0248": [
+   "E12: box 1 MT is the headpiece ornament, box 6 MT contains the woodcut initial I",
+   "E14: box 4 CH is the argument",
+   "box 2 MT is the display title named MainText",
+   "GOOD: five margin notes correct"
+  ],
+  "NT-1582-B_0311": [
+   "E15: box 11 MT is the annotation block",
+   "E16: box 9 CH is body verse 25",
+   "E1-analogue: box 0 MN is the running head 'CHA. XXI.'",
+   "GOOD: box 14 RH and box 13 CW correct; six margin notes correct including the very long box 8"
+  ],
+  "NT-1582-B_0312": [
+   "E15: box 15 SG is the annotation block",
+   "E7: box 1 MT is a fragment nested under box 20 '??'",
+   "GOOD: box 19 CW 'THE' correct, box 2 RH correct, and fourteen margin notes correct — the best margin work seen so far"
+  ],
+  "NT-1582-B_0313": [
+   "E18 (NEW): 21 of 22 boxes are named MN on the SVMME AND ORDER OF THE EVANGELICAL HISTORIE — the display title, every harmony entry, and the signature 'Nn' with its catchword. MN is acting as a fourth containment class",
+   "only box 4 MT is the four-column gospel-reference table",
+   "CANDIDATE OUT OF SCOPE: a harmony/synopsis table has no correct answer in CLASSES, same as the table of books"
+  ],
+  "NT-1582-B_0314": [
+   "GROSS UNDER-SEGMENTATION: n=2. The whole harmony page — 40+ entries, a four-column reference table, two margin notes — is ONE MT box plus a catchword",
+   "archetype A fires here at 0.6, one of the 9 A leaves",
+   "E9: the margin notes 'The 3 part...' and 'THE 2 PASCHE' are unboxed",
+   "CANDIDATE OUT OF SCOPE with 0313"
+  ],
+  "NT-1582-B_0317": [
+   "Harmony continuation, n=3: the whole 25-row table is ONE MT box; the fleuron is MT and the signature 'Nn iij' is MT",
+   "E9 AT SCALE: every right-margin liturgical label (TENEBRE, MAVNDY thursday, ASCENSION day, LOVV SVNday, EASTER DAY) is unboxed",
+   "archetype A fires at 0.6",
+   "OUT OF SCOPE with 0313 and 0314"
+  ],
+  "NT-1582-B_0318": [
+   "E14: box 2 CH is 'THE ARGVMENT OF THE ACTES OF THE APOSTLES'; the argument prose is split across MT and SG",
+   "E12: box 1 CH is the headpiece ornament, box 3 MT the woodcut initial T",
+   "E16: boxes 9-12 SG are the 'First/Secondly/Thirdly' summary list, below foot_y",
+   "GOOD: margin cites 4 and 7 correct"
+  ],
+  "NT-1582-B_0319": [
+   "GOOD LEAF: three body blocks, nine margin cites and box 10 CW 'Ievves' all correct. Page number abstained as '??' (box 11)"
+  ],
+  "NT-1582-B_0320": [
+   "E12: box 6 MT is the large fleuron",
+   "E5: box 2 MT wraps the left margin column instead of leaving it to MN",
+   "E9: the cite 'Mat.21,43.' is unboxed",
+   "GOOD: box 8 CW 'THE' correct"
+  ],
+  "NT-1582-B_0321": [
+   "E9 SEVERE: head_y cuts through the body block, and the first three lines with the woodcut initial T get NO box at all — the chapter's opening words are simply absent from the data",
+   "E14: box 4 CH is the argument",
+   "E12: box 2 CH is the title",
+   "GOOD: eight margin notes correct, including three very long ones"
+  ],
+  "NT-1582-B_0437": [
+   "E15 INTRA-LEAF: the annotation paragraphs alternate MT (7, 17, 19) and CH (11, 13, 15) down a single column",
+   "E16: box 4 CH is body text above head_y",
+   "E3: signature 'Eee iij' and catchword '1. Two' both unboxed",
+   "GOOD: ten margin notes correct — the margin work on this witness is consistently the strongest part"
+  ],
+  "NT-1582-B_0438": [
+   "E13 INSIDE THE BODY: box 4 MT wraps a TWO-COLUMN parallel comparison as one block. Column loss is not confined to tables",
+   "E15/E16: box 9 SG is an annotation paragraph below foot_y",
+   "GOOD: four margin notes correct, box 1 RH correct"
+  ],
+  "NT-1582-B_0439": [
+   "E12: box 11 CH is the woodcut initial B — the same object is MT on other leaves, CH here",
+   "E14: box 10 CH is the argument",
+   "E16: box 14 SG is body verse 4 below foot_y",
+   "E15: boxes 3, 5, 7 MT are annotation paragraphs",
+   "E9: left-margin cites 'Exo.9,16.' and '1 Tim.2,21.' unboxed"
+  ],
+  "NT-1582-B_0440": [
+   "E15: box 13 SG is the ANNOTATIONS heading, boxes 15 and 17 SG the paragraphs",
+   "E9 INCONSISTENT WITHIN ONE COLUMN: cites Leu.18,5 / Ef.52,7 / Ef.53,1 unboxed while Ef.28,16 / Ioel.2,22 / Pf.18,5 beside them are boxed",
+   "GOOD: box 18 CW and box 19 RH correct; ten margin notes correct"
+  ],
+  "NT-1582-B_0562": [
+   "E15 INTRA-LEAF: annotation paragraphs named MT (3, 8) and CH (6, 10) in one column",
+   "E12: box 13 MT is the woodcut initial",
+   "E14: box 12 CH is the argument",
+   "GOOD: nine margin notes correct"
+  ],
+  "NT-1582-B_0563": [
+   "E15: box 13 MT is the annotation block, box 11 CH its heading",
+   "E3: signature 'Xxx ij' and catchword 'vvhich' both unboxed",
+   "GOOD: box 1 RH correct; nine margin notes correct including two very long ones"
+  ],
+  "NT-1582-B_0564": [
+   "E16: box 5 CH is body text above head_y; boxes 10 SG ('CHAP. IIII.') and 11 SG (its argument) are below foot_y — a chapter head and an argument both renamed by position",
+   "GOOD: box 12 CW 'Therefore' correct; six margin notes correct"
+  ],
+  "NT-1582-B_0565": [
+   "E12 ON ONE LEAF: TWO woodcut initials sit side by side and get DIFFERENT classes — box 3 MT and box 14 CH. Same object type, same leaf, two labels",
+   "E19: box 13 CW merges the signature 'Xxx iij' AND the catchword 'al' into a single box",
+   "GOOD: box 1 RH correct; seven margin notes correct"
+  ],
+  "NT-1582-B_0566": [
+   "E15 INTRA-LEAF: annotations named CH (5, 12, 15) and MT (10)",
+   "E12: box 13 MT is the large fleuron",
+   "E16: box 3 CH is body text above head_y",
+   "GOOD: box 14 CW 'THE' correct; six margin notes correct"
+  ],
+  "NT-1582-B_0775": [
+   "E15: annotations named CH (9, 10)",
+   "E14: box 13 CH is 'CHAP. XXII.' and box 12 CH its argument",
+   "E12: box 16 MT contains the woodcut initial A",
+   "GOOD: ten margin notes correct, box 19 RH correct"
+  ],
+  "NT-1582-B_0776": [
+   "CLEAN LEAF — four body blocks, nine margin notes and the running head all correct. Nothing to fix. Only the page number abstains (box 0)"
+  ],
+  "NT-1582-B_0777": [
+   "E19: box 10 CH is the signature 'Bbbbb' — signature has now been named CW, SG and CH across this corpus",
+   "E12: box 11 MT is the fleuron",
+   "E16: box 3 CH is body verse 21",
+   "E15: annotations named CH (6) and MT (7, 8)"
+  ],
+  "NT-1582-B_0778": [
+   "A TABLE OF THE EPISTLES AND GOSPELS — n=5. The entire two-column liturgical table is UNBOXED; only the display title, a heading and the woodcut initial got boxes, the initial as SG",
+   "OUT OF SCOPE: same genre as the table of books"
+  ],
+  "NT-1582-B_0779": [
+   "Two-column liturgical table, n=3: the whole table is ONE MT box. The signature 'Bbbbb ij' and catchword 'The' are unboxed",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0780": [
+   "Two-column liturgical table, n=3: whole table as one MT; only one inner heading picked out as CH",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0781": [
+   "End of the liturgical table plus the opening of AN AMPLE AND PARTICVLAR TABLE. Index prose and the signature 'Bbbbb iij' are both named CW (boxes 10, 13); the woodcut initial A is SG",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0782": [
+   "E20 (NEW) DECISIVE: this is a two-column topical index. Identical index entries are named MN in the LEFT column (boxes 0, 1, 3, 4, 6, 7, 8, 9) and MT in the RIGHT column (boxes 2, 5). Same content, same page, class assigned purely by horizontal position",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0802": [
+   "E20 again: index entries named MN in the left column, MT in the right, and SG below foot_y (boxes 9, 12, 13). Three classes for one genre on one page, all by position",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0803": [
+   "E20 again, plus: box 6 CW is the DISPLAY TITLE 'THE EXPLICATION OF CERTAINE VVORDES' named catchword. The entire two-column glossary beneath it is unboxed",
+   "OUT OF SCOPE"
+  ],
+  "NT-1582-B_0804": [
+   "Glossary ('HARD VVORDES EXPLICATED') plus the errata table plus 'LAVS DEO'. Two two-column tables each taken as one MT box; 'LAVS DEO' named SG",
+   "OUT OF SCOPE"
+  ],
+  "OT1-1609-P_0005": [
+   "Title page of the 1609 OT. The whole ornamental border is unboxed — the measure sits inside it. Imprint, the Isaiah quotation, the printer's line and the date are all named SG (boxes 4-7), exactly as on the NT title page",
+   "OUT OF SCOPE"
+  ],
+  "OT1-1609-P_0006": [
+   "APPROBATIO (licence page). The three professors' subscriptions are named SG (boxes 3-5) — they are signatures in the other sense of the word, not quire signatures",
+   "the headpiece cartouche is unboxed; box 1 RH is the display heading inside it",
+   "KEPT IN SCOPE: the licence prose is genuinely MT and the heading genuinely head furniture, so most objects do have an answer"
+  ],
+  "OT1-1609-P_0007": [
+   "E12: box 1 MT is the woodcut initial A",
+   "E19: box 8 CW is the SIGNATURE '† 2', not a catchword",
+   "GOOD: two margin notes correct; the dedication prose correctly MT"
+  ],
+  "OT1-1609-P_0008": [
+   "RUNNING HEAD NAMED CH (box at the head, 'TO THE ENGLISH READER.') — a fifth treatment of the running head across this corpus, after RH, MN, ?? and MT",
+   "E3: catchword 'it, to' unboxed",
+   "EXCELLENT LEAF otherwise: all eight margin notes correct, body correct"
+  ],
+  "OT1-1609-P_0009": [
+   "RUNNING HEAD NAMED CH again",
+   "E4 ACROSS ADJACENT LEAVES: the signature is '† 3' named SG here (box 7) but '† 2' named CW on 0007",
+   "E9: the left-margin cites '2 Tim 3.' and 'Iac. 1.' are unboxed while the right-margin notes are boxed",
+   "GOOD: box 9 CW 'But' correct; three margin notes correct"
+  ],
+  "OT1-1609-P_0010": [
+   "E20/E8 SYSTEMATIC ON THIS WITNESS: the RIGHT-margin cites (boxes 4, 5, 6, 9) are named MT while the LEFT-margin notes (boxes 2, 3, 7, 8) are named MN. Same genre, same leaf, opposite classes",
+   "RUNNING HEAD NAMED CH again",
+   "E3: catchword 'fallen' unboxed"
+  ],
+  "OT1-1609-P_0017": [
+   "E19: box 5 CW is the signature '† †'",
+   "E9: the left-margin cites '2.Cor.4.' and '1.Pet.1.' are unboxed while the three right-margin notes are boxed",
+   "GOOD: three margin notes correct"
+  ],
+  "OT1-1609-P_0018": [
+   "box 5 CH is the DATELINE 'From the English College in Doway, the Octaues of al Sainctes. 1609.' — a colophon has no class in CLASSES",
+   "RUNNING HEAD NAMED CH",
+   "GOOD: three margin notes correct; the closing verse correctly held as MT"
+  ],
+  "OT1-1609-P_0019": [
+   "E12: box 5 MT is the woodcut initial B",
+   "box 4 MT is a sliver box on nothing",
+   "GOOD: box 8 SG '† † 2' correct; the long left cite (box 3) and both right notes correct; display title split across two CH boxes, defensible"
+  ],
+  "OT1-1609-P_0020": [
+   "GOOD LEAF: seven margin notes correct on BOTH sides, two body blocks correct. Contrast 0010 and 0021, where the same apparatus splits across MN and MT",
+   "RUNNING HEAD NAMED MT (box 8) — a sixth treatment"
+  ],
+  "OT1-1609-P_0021": [
+   "E20 INVERTED: here the LEFT-margin cites (boxes 4, 8) are named MT and the RIGHT-margin notes (2, 7, 10) are MN — the opposite assignment from 0010, eleven leaves earlier. Confirms the label tracks where the measure fell, not which margin it is",
+   "E9: the left cites 'Heb.7.', 'Gal.4.', '1.Cor.10', 'Gal.3.', 'Gen.1.' are all unboxed",
+   "GOOD: box 11 SG '† † 3' correct"
+  ],
+  "OT1-1609-P_0022": [
+   "E20 AT ITS CLEAREST ON ONE LEAF: the LEFT-margin notes (boxes 4, 5, 6, 7, 9, 12, 13) are all MN and the RIGHT-margin cites (boxes 3, 11, 14) are all MT. One apparatus, one leaf, split by side of the measure",
+   "GOOD: box 15 CW 'THE' correct; box 8 CH section head correct"
+  ],
+  "OT1-1609-P_0023": [
+   "GOOD LEAF: eight margin notes correct on BOTH sides, two body blocks correct",
+   "RUNNING HEAD NAMED CH",
+   "E3: catchword 'maner,' unboxed"
+  ],
+  "OT1-1609-P_0024": [
+   "E22 (NEW): the key to the marks ('The signification of the markes here vsed') shares this leaf with the Argument of Genesis. The same genre is out of scope as a whole leaf on NT-1582-B_0029, but here it CANNOT be excluded without losing the argument with it",
+   "E21 (NEW): boxes 4/5 and 6/7/8 overlap and nest — single lines belong to two regions at once",
+   "E10: boxes 11-14 SG are key paragraphs that fell below foot_y"
+  ],
+  "OT1-1609-P_0025": [
+   "E9 SUBSTANTIAL: the entire lower right-margin annotation block (':: The firmament is al the space...', 'S.Aug.li.11.de Gen.ad lit.c.4', ':: Likewise heaue is al the space...') is UNBOXED — several hundred words of apparatus absent from the data",
+   "E12: box 7 MT is the woodcut initial I",
+   "E14: box 4 CH is the argument",
+   "box 3 MT is the display title",
+   "GOOD: four margin notes correct on both sides"
+  ],
+  "OT1-1609-P_0026": [
+   "E9: the right cite 'Mat. 19,4.' is unboxed while 'Col. 3, 10.' beside it is boxed",
+   "E1: the head band splits into RH ('GENESIS.') plus MN ('Creation.') — the summary half named a margin note",
+   "GOOD: running head correctly RH; three margin notes correct; the very long left note correct"
+  ],
+  "OT1-1609-P_0176": [
+   "E15: box 7 MT is the annotation text, box 5 CH its heading — MT again here, SG and CH elsewhere",
+   "E1: 'Ioseph.' in the head band named MN",
+   "E9: the right-margin cites are unboxed",
+   "GOOD: two margin notes correct; page number abstained (box 0)"
+  ],
+  "OT1-1609-P_0177": [
+   "E12 LARGEST CASE: box 7 MT is the TAILPIECE ORNAMENT, a pure fleuron occupying a third of the leaf, named MainText",
+   "E15: box 4 CH and box 5 MT are both annotation prose — two classes in four lines",
+   "E1: 'Ioseph' in the head band named MN",
+   "GOOD: box 6 MN correct; running head correctly RH"
+  ],
+  "OT1-1609-P_0178": [
+   "E12 NEW VARIANT: box 1 RH is the HEADPIECE ORNAMENT named RUNNING HEAD — the ornament class has now been MT, CH, SG, MN and RH",
+   "E20: the ten LEFT-margin notes are MN, the RIGHT cite (box 9) is MT",
+   "E9 SUBSTANTIAL: the whole right-hand cite column ('Exodi 2. 3. 5. 7. 12. 14. 16. 17. 20. 26. 27. 30. & seq.') is unboxed",
+   "E14: box 5 MT is the argument"
+  ],
+  "OT1-1609-P_0179": [
+   "E12: box 1 CH is the headpiece ornament — CH this time, RH on the previous leaf",
+   "E19: boxes 11 AND 12 are BOTH named CW — box 11 is the signature 'V 2', box 12 the true catchword 'the'. One class, two different objects, same leaf",
+   "E12: box 5 MT is the woodcut initial T",
+   "GOOD: three margin notes correct"
+  ],
+  "OT1-1609-P_0180": [
+   "E21: boxes 7 CH and 8 CH overlap — 'ANNOTATIONS.' and 'CHAP. I.' nest into each other",
+   "E15: boxes 9 and 13 MT are the annotation text",
+   "EXCELLENT MARGIN WORK: all eight margin notes correct on both sides; running head correctly RH",
+   "E1: 'Israelites' in the head band named MN"
+  ],
+  "OT1-1609-P_0181": [
+   "GOOD FOOT: box 13 SG 'V 3' and box 14 CW 'I wil' correctly split — contrast 0179, where both got CW",
+   "E21: box 7 MN overlaps box 6 MT",
+   "GOOD: four margin notes correct; running head correctly RH"
+  ],
+  "OT1-1609-P_0182": [
+   "GOOD LEAF: four long left-margin notes correct, body correct, box 7 CW 'ANNO-' correct, running head correctly RH",
+   "E1: 'Moyses.' in the head band named MN"
+  ],
+  "OT1-1609-P_0183": [
+   "E21: boxes 4 CH and 5 CH overlap — 'ANNOTATIONS.' and 'CHAP. II.' nest",
+   "E15: boxes 6, 8, 11 MT are annotation text",
+   "E9: the left cites 'li.2 Antiq.', 'li.16.c.', 'Act.7.' are unboxed while every right-hand note is boxed",
+   "E14: box 13 MT is the argument",
+   "GOOD: box 12 CH chapter head correct; four right notes correct"
+  ],
+  "OT1-1609-P_0184": [
+   "GOOD LEAF: body correct, three long left notes correct, running head correctly RH",
+   "E1: 'Moyses.' in the head band named MN",
+   "E3: catchword 'forth' unboxed"
+  ],
+  "OT1-1609-P_0185": [
+   "E19: box 11 CW is a fragment at the foot, NOT the catchword — the true catchword 'Martyr' is unboxed",
+   "E9: left cites 'Act.7.' and 'Heb.2.' unboxed while 'Exod.19.20.' beside them is boxed",
+   "E15: box 8 MT is the annotation text",
+   "GOOD: box 7 CH holds 'ANNOTATIONS. CHAP. III.' as ONE box — contrast 0183, where the same pair overlapped"
+  ],
+  "OT1-1609-P_0284": [
+   "E23 (NEW): box 4 MT is drawn over BLANK PAPER — a tall empty region carrying a class but no ink",
+   "E20: the left-margin notes (boxes 5, 6) are named MT while the head-band summary is MN",
+   "GOOD: box 7 CW 'THE' correct; running head correctly RH"
+  ],
+  "OT1-1609-P_0285": [
+   "E9 SUBSTANTIAL: the entire left cite column ('Nu.1.', 'Epist. ad Paulinum.', 'Leuit. 1. 8.', '11. 12. 18.', '23. 26. 27.') is unboxed apart from box 3",
+   "E19: boxes 8 AND 9 both named CW — box 8 is the signature 'Ii 2', box 9 the catchword 'The'",
+   "E12: box 1 CH is the headpiece ornament",
+   "E14: box 4 MT is the argument",
+   "GOOD: three right notes correct"
+  ],
+  "OT1-1609-P_0286": [
+   "E12: box 2 CH is the headpiece ornament, box 7 MT the woodcut initial A",
+   "E14: box 5 CH is the argument",
+   "box 3 MT is the display title",
+   "E1: 'Sacrifices.' in the head band named MN",
+   "GOOD: both left margin notes correct"
+  ],
+  "OT1-1609-P_0287": [
+   "E2: the head-band page number '262' (top right) carries a grey abstain box, not PN",
+   "E12/E23: box 4 CH sits on the horizontal rule/ornament band above 'ANNOTATIONS.', not on any text",
+   "E15: box 5 CH labels the annotation heading 'ANNOTATIONS. / CHAP. I.' while boxes 6 and 8, the annotation paragraphs beneath it ('2. The man that shal offer]...', '3. An holocaust]...'), are MT - two classes for one genre on one leaf",
+   "E5: the lower right blue box (with box 8 MT) swallows the margin-note column 'Holocauste. / Sacrifice for sinne. / Pacifique Sacrifice.' instead of leaving it its own region",
+   "E9: those three cites 'Holocauste.', 'Sacrifice for sinne.', 'Pacifique Sacrifice.' get no MN box of their own though 7 and 9 in the same column do",
+   "GOOD: boxes 7 and 9 MN ('Sacrifice presupposed to be necessary...', 'Three kindes of Sacrifice.') are correct and well fitted; box 3 MT holds the scripture column cleanly"
+  ],
+  "OT1-1609-P_0344": [
+   "E14: box 1 CH is the argument title 'THE ARGVMENT OF THE BOOKE OF NVMERI.' and box 4 MT is the argument prose 'IN this booke called Numeri...' - argument matter named CH and MT, never AR",
+   "E8/E20: box 5 MT is the right-margin cite 'Epist. ad Paulin.' - a marginal cite named MT while the identical left-margin notes are MN",
+   "E9: the whole right-hand cite column is unboxed - 'qq. in Num.', 'Exod. 40', 'Leuit. 1.', 'Num. 1.', 'Chap. 1. 26.', '3. 4.', '18.', '2. 10.', '11. 12.' down to '36.'",
+   "E5: that same right cite column falls inside the box 4 MT rectangle rather than being its own column",
+   "GOOD: boxes 3, 6, 7, 8 MN ('Mysteries conteined in these histories.', 'The contents according to the letter.', 'VVicked life draweth to Idolatrie.', 'Three partes of this booke') are correct"
+  ],
+  "OT1-1609-P_0348": [
+   "E1: the green box top right on the spread headline phrase 'Order of camping' is named MN - it is head furniture, not a margin note",
+   "E2: the page number '324' top left carries a grey abstain box instead of PN",
+   "E14: box 2 MT is the chapter argument, italic 'At the east side of the Tabernacle the tribe of Iuda as chiefe...' - argument prose named MT",
+   "E3: the foot catchword 'whole' (bottom right, below the box 3 foot edge) has no box at all",
+   "NEW: the chapter head 'CHAP. II.' between the running head and the argument gets no box of any class - a head object dropped entirely rather than misnamed",
+   "GOOD: box 3 MT fits the scripture column exactly; the running head 'NVMERI' is boxed separately from the body"
+  ],
+  "OT1-1609-P_0660": [
+   "E1: the green box top right on the headline phrase 'Saul slaine' is named MN - head furniture",
+   "E14: box 7 CH is the argument title 'THE ARGVMENT OF THE SECOND BOOKE OF KINGES.' and box 9 MT is its prose 'BESIDES a great part of the first booke...' - argument named CH then MT on one leaf",
+   "E12: box 7 CH also takes in the ornamental rule band above the title",
+   "E11/E23: box 13 MN is drawn on blank left margin where only verso show-through ('Saul killing...') is visible - no ink of this leaf inside it",
+   "E21: box 2 MT's left edge overlaps the left-margin note boxes 1 and 6, putting the note's right-hand letters in two regions",
+   "GOOD: boxes 8, 10, 11, 12, 14 MN ('This booke is wholly of Dauid.', 'His succession to the king-', 'His vertues.', 'Faultes.', 'Thankes, and Prophecie.') are all correct"
+  ],
+  "OT1-1609-P_1011": [
+   "E1: the green box top left on the headline phrase 'Nehemias.' is named MN - head furniture",
+   "E2: the page number '987' carries a grey abstain box instead of PN",
+   "E8: box 2 MT is the right-margin annotation 'these persecuters prefigured heretikes in their wordes and actes, as venerable Beda expoundeth. li. 3. in Esd. c. 19.' - a margin note named MT",
+   "E16/NEW: the 'foot' rule is drawn immediately under the head band, so the entire scripture column from 'to them were committed the portions...' down to verse 24 gets NO box at all - the whole main text of the leaf is unregioned",
+   "E4/E19: box 3 MN is drawn on the foot signature 'Ddddddd 2' - a signature named MN",
+   "E3: the foot catchword 'and' at bottom right has no box"
+  ],
+  "OT1-1609-P_1015": [
+   "E2: the page number '991' carries a grey abstain box instead of PN",
+   "E14: box 3 MT is the chapter argument, italic 'Tobias of the tribe of Nephthali, neuer communicateth in Ierobams scisme...' - argument named MT",
+   "E23/E11: box 8 MN covers blank right margin below note 7; the only marks inside it are verso show-through, no ink of this leaf",
+   "E3: the foot catchword 'when' below the box 5 foot edge has no box",
+   "NEW: the chapter head 'CHAP. I.' under the book title has no box of any class",
+   "GOOD: box 2 CH on 'THE BOOKE OF TOBIAS.' is right; boxes 4, 6, 7 MN ('This booke is read at Mattins...', 'The first part. Tobias his holie maner of life.', ':: Not absolutly al, but very manie...') are correct; box 5 MT holds the scripture column cleanly"
+  ],
+  "OT1-1609-P_1130": [
+   "E2: box 0 is an abstain '??' on the head-band page number '8' - should be PN",
+   "E14: box 4 MT is the chapter argument, italic 'Holie Iob instructed & comforted by Gods discourse...' - argument named MT",
+   "E6/E21: box 3 MT's foot and box 4 MT's head meet across the 'CHAP. XLII.' line, and box 5 CH overlaps both; the argument's first line sits inside two rectangles",
+   "E3: the foot catchword 'mathite' (bottom right, under 'the Naa-') has no box",
+   "GOOD: box 2 RH 'THE BOOKE' correctly RH; box 5 CH 'CHAP. XLII.' correctly CH; boxes 1 and 6 MN are long margin notes held correctly end to end"
+  ],
+  "OT1-1609-P_1134": [
+   "E14: boxes 3, 5, 7, 11 are all continuous argument prose ('Then Baldad the second opposite freind...', 'Thirdly Sophar (the third disputer)...', 'Baldad likewise replied (ch. 18.)...') and all named MT",
+   "E6: consecutive MT boxes clip the line they meet on - 'ries.' at the box 3/5 join, 'cised with tribulations, more then their offences deserue.' at 5/7, 'meditation of the next world.' at 7/11",
+   "E2: the page number top left carries a grey abstain box instead of PN",
+   "GOOD: box 12 CW 'Sophar' is a correct catchword box; boxes 2, 4, 6, 8, 9, 10 MN ('The maine point of the controuersie.' ... 'The fifth conflict.') are all correct"
+  ],
+  "OT2-1610-P_0006": [
+   "E10: this is the Douai Approbatio, paratext with no fitting class - box 1 RH is put on the heading 'APPROBATIO.' inside the woodcut cartouche (it is a page heading, not a running head) and box 2 MT on the Latin approbation body",
+   "E10/E16: boxes 3, 4, 5 SG are the three approbators' subscription lines ('GVILIELMVS ESTVS Sacrae Theologiae Doctor...', 'BARTHOLOMAEVS PETRVS...', 'GEORGIVS COLVENERIVS...') - named SG only because they fall below the 'foot' rule; they are not quire signatures",
+   "GOOD: the engraved headpiece with the putti and shields is left unboxed rather than given a text class"
+  ],
+  "OT2-1610-P_0019": [
+   "E14/E10: box 1 MT is the book title 'THE BOOKE OF PSALMES' - a display title named MT; box 3 MT is the psalm argument 'The Royal prophet Dauid placed this Psalme as a Preface to the rest...'",
+   "E12: box 5 MT is drawn on the woodcut initial 'B' of 'BLESSED' - an ornament given a text class",
+   "E5/E13: box 3 MT's rectangle also contains the entire right-hand gloss column ('The right maner of seruing God. / The 7. key. / a He is in the right way to eternal felicitie.' etc.) and the body text - three streams in one block",
+   "E9: the left-margin cites 'Iose. 1.' and 'Iere. 17.' get no box while 'Mat. 5.' in the same column is boxed",
+   "E2: the page number '15' top right carries a grey abstain box instead of PN",
+   "GOOD: box 6 CW 'ANNO-' is a correct catchword; box 2 CH 'PSALME I.' correct; box 4 MN 'Mat. 5.' correct; the fleuron headpiece is left unboxed"
+  ],
+  "OT2-1610-P_0023": [
+   "E15: box 2 CH is the annotation heading 'ANNOTATIONS. PSALME. III.' while boxes 19, 4, 7, 9, 11 are the annotation paragraphs under it, all MT - the same genre split across CH and MT",
+   "E4/E19: box 17 CW is on the quire signature 'C 3', not a catchword",
+   "E14: box 14 MT is the argument of Psalme IIII ('The holie prophet teacheth, by his owne example, to flee to God in al tribulation...') named MT",
+   "E5/E9: the right-hand note beside box 14 ('Confidence in God necessary / The 7. key.') has no box and falls inside box 14 MT",
+   "E2: the page number '19' top right carries a grey abstain box instead of PN",
+   "E6: box 3 MN clips its own last line 'gint.' and boxes 19/4, 4/7, 7/9, 9/11 each cut the line at their join",
+   "GOOD: box 18 CW 'When' is a correct catchword; box 16 CH 'PSALME. IIII.' correct; boxes 5, 6, 8, 10, 12, 13 MN are correct"
+  ],
+  "OT2-1610-P_0034": [
+   "E16: every region below the 'foot' rule is named SG - boxes 7, 8, 9, 10, 11, 12, 14, 15 are the argument and the scripture of Psalme X ('Dauids freindes aduising him to flee from the persecution of Saul...', 'I TRVST in our Lord: how say b ye to my soule...') renamed by position, not by what they are",
+   "NEW: box 2 CH is on the running head 'THE BOOKE' - a running head named CH, not RH",
+   "E15: box 1 CH is the annotation heading 'ANNOTATIONS. PSALME. IX.' and box 4 MT the annotation prose under it",
+   "E13/E5: the SG rows run right across both the inner gloss column ('Gods prouident care of the iust. / The 3. key.', 'a S. Augustin applieth it to heretikes...') and the verse column, merging two columns into single strips",
+   "E2: box 0 is an abstain '??' on the page number '30'",
+   "NEW: the chapter head 'PSALME X.' below the foot rule gets no box at all",
+   "GOOD: box 16 CW '+ Be-' is a correct catchword; boxes 3, 5, 6, 13 MN ('Some diuide this Psalme into two...', 'Epist. ad Marcel', 'Anno. 1577. 1552. 1603.', 'Abac. 2.') are correct"
+  ],
+  "OT2-1610-P_0276": [
+   "E14: box 8 CH is the argument title 'THE ARGVMENT OF THE PROVERBES' and box 10 MT its prose 'THE first booke called Prouerbes, that is, common & vsual pithie sentences...'",
+   "E15: box 1 MT is proemial annotation prose ('Al fiue are Canonical and assured holie Scripture...') named MT while comparable matter elsewhere is CH",
+   "E9: the foot signature 'KK 2' (bottom centre, below the foot rule) has no box",
+   "NEW: the running head 'THE BOOKE OF PROVERBES.' across the head band has no box of any class",
+   "GOOD: box 13 CW 'THE' is a correct catchword; boxes 0, 3, 4, 5, 6, 7, 9, 11, 12 MN (including the multi-line 'A brief summe of these three: a Prouerbs, b Ecclesiastes, c Canticles.' and the cite stack 'S. Iero. in proem / S. Aug. li. 17. c. 20. ciuit.') are all correct - a well handled margin"
+  ],
+  "OT2-1610-P_0280": [
+   "E15: box 4 CH is the annotation heading 'ANNOTATIONS CHAP. II.' and box 5 MT the annotation body under it - one genre, two classes",
+   "E14: box 12 MT is the argument of chapter III ('Wisdom exhorteth to kepe Gods law (geuing long life) to obserue mercie...') named MT",
+   "E9/E5: the right-margin cites 'Rom. v. 18' and 'Tit. 11.' beside the annotation get no box and sit inside box 5 MT, while box 7 MN 'Isaia v. 8.' in the same column is boxed",
+   "E3: the foot catchword 'dayes' below the box 14 foot edge has no box",
+   "E21: box 5 MT's right edge crosses box 7 MN, so 'Isaia v. 8.' lies in two regions",
+   "GOOD: box 11 CH 'CHAP. III.' correct; box 14 MT is the scripture and is right; boxes 0, 6, 8, 9, 10, 13 MN ('Foure markes of an heretike...', '2. He glorieth in his owne inuention.', '3 Teacheth pleasing thinges.', '4. Admitteth no iudge but himself.') are correct"
+  ],
+  "OT2-1610-P_0458": [
+   "E14: boxes 2 MT and 7 MT are both continuous argument prose of the Prophets ('Testament, the former three more peculiarly setforth the Law...', 'Concerning therfore this excellent diuine gift of Prophecie...') named MT",
+   "E6: box 2's foot cuts the line 'thinges which God reueleth by his Church.' which then also falls inside box 7",
+   "E9: the right-margin cite '2. Pet' beside 'not knowen by priuate interpretation' has no box",
+   "E3: the foot catchword 'of' at bottom right has no box",
+   "E2: box 0 is an abstain '??' on the head-band page number",
+   "GOOD: boxes 3, 4, 5, 6 MN ('Foure greater Prophetes, and twelue lesser...', 'Prophecies are called visions, for their certaintie.', 'Light of prophecie is next to the light of glorie...', 'Prophecies are hard to be vnderstood for diuers causes.') are all correct"
+  ],
+  "OT2-1610-P_0666": [
+   "E18: nearly the whole leaf is MN - boxes 3, 4, 5, 6, 8, 9, 10, 11, 14, 16, 17, 18, 19, 20, 21, 23, 25 are strips of ordinary Lamentations scripture ('Thou hast iudged o Lord the cause of my soule...', 'The noble children of Sion, & they that were clothed with the principal gold...') named MN",
+   "E17: boxes 1 CH and 7 CH are left-margin notes (':: Iudge thou that which they haue iudged vniustly.', ':: Geue them the paine of hartie sorow...') named CH",
+   "E8: boxes 13 MT and 22 MT are also left-margin notes (':: VVheras the Temple before glistered with gold...', ':: One could not know an other, though they were acquanted before.') named MT - so the same left column carries CH and MT within one leaf",
+   "NEW: box 15 MN is on the chapter head 'CHAP. IIII.' - a chapter head named MN",
+   "E4/E19: box 24 MN is on the foot catchword 'It was' - a catchword named MN",
+   "E5/E13: the right-hand Hebrew letter column ('Res.', 'Sin.', 'Thau.', 'Aleph.', 'Beth.', 'Ghimel.', 'Daleth.', 'He.', 'Vau.', 'Zain.', 'Heth.') is swallowed into the verse strips instead of forming its own column",
+   "E21: the verse strips overlap top to bottom - almost every strip clips its own last line ('ife.', 'iudgement.', 'nst me.', 's against me al the day.')",
+   "NEW: the running head 'THE LAMENTATIONS' has no box of any class"
+  ],
+  "OT2-1610-P_0670": [
+   "E14: box 2 MT is the chapter argument, italic 'The Iewes in Babylon hauing heard Baruchs booke redde, 6. send the same, with money to Ierusalem...' - argument named MT",
+   "E2: the page number '662' top left carries a grey abstain box instead of PN",
+   "E3: the foot catchword 'eyes,' at bottom right has no box",
+   "GOOD: box 1 CH 'THE PROPHECIE OF BARVCH.' and box 3 CH 'CHAP. I.' are both correct; box 4 MT holds the scripture cleanly; boxes 5 and 6 MN (':: The whole time of taking Ierusalem indured eleuen yeares...', '* or, manah sacrifice.') correct; the fleuron band above the title is left unboxed"
+  ],
+  "OT2-1610-P_0717": [
+   "E7/E5: box 0 MT's top edge is drawn above the head rule so the running head 'OF EZECHIEL.' is inside the main-text box rather than its own RH region",
+   "E2: the page number '709' top right carries a grey abstain box instead of PN",
+   "GOOD: this is otherwise a clean leaf - box 6 SG 'Rrrr 3' and box 7 CW 'they' are both correct and correctly distinguished, and boxes 3, 4, 5 MN ('Num. 26. Psa. 105', ':: Asv. 9. & 22 God stil conserued a succession.', ':: God lifteth vp his hand either to deliuer...') are correct"
+  ],
+  "OT2-1610-P_0747": [
+   "E14: box 5 CH is the chapter argument, italic 'An other prophecie against the Idumeans, 5. because they afflicted the Israelites.' - argument prose named CH",
+   "E6: box 5 CH clips its own second line 'Israelites.' and overlaps both box 3 MT above and box 6 MT below",
+   "E2: the page number '739' top right carries a grey abstain box instead of PN",
+   "GOOD: box 4 CH 'CHAP. XXXV.' correct; box 9 SG 'Wwww 2' and box 10 CW 'reioyced' both correct and correctly separated; boxes 7 and 8 MN are long notes held correctly"
+  ],
+  "OT2-1610-P_0793": [
+   "E7/E5: box 11 MT's top edge sits above the head rule so the running head 'OF DANIEL.' falls inside the main-text box",
+   "E15: box 5 CH is the annotation heading 'ANNOTATIONS. CHAP. IIII.' while boxes 3 MT and 7 MT are the annotation paragraphs under it ('13. Let his hart be changed.]...', '34. Novv therfore I Nabuchodonosor praise...')",
+   "E3: the foot catchword 'Ierom.' at bottom right has no box",
+   "E9: the left-margin cite 'v. 13.' beside the annotation has no box",
+   "E2: the page number '785' top right carries a grey abstain box instead of PN",
+   "GOOD: box 10 SG 'Ccccc' is a correct signature; boxes 2, 4, 6, 8, 9 MN ('nishment: the prophet proposeth the soueraine remedie of almes dedes...', ':: Being restored to his wittes he went vp right...', 'It is probable that he died shortly after his restauration.', 'And most like that he is eternally saued.') are correct"
+  ],
+  "OT2-1610-P_0819": [
+   "E12/E14: box 5 MT contains both the fleuron ornament band and the display title 'THE ARGVMENT OF THE TWELVE LESSE PROPHECIES.' - ornament plus title in one MT region",
+   "E14: box 7 MT is the argument prose 'VVHY Isai, Ieremie, Ezechiel, and Daniel are called the foure greater Prophetes...' named MT",
+   "NEW: box 4 CH is drawn on a single stray line 'lesse prophetes, he prophecied before the captiuitie: yea before the Chaldees' which is the tail of the preceding note, not a chapter head - a CH box landing on a fragment",
+   "E9: the lower left-margin cites 'Epist. ad Paulin.' and 'In Osee. 1.' get no box although the cite stack above them (box 6 MN 'S. Iero. Prologo li. Reg. S. Aug. li. c. 18. c. 29. ciuit. Theod. Isidorus.') is boxed",
+   "E5/E9: the lower right-margin column 'Of these 12. six prophecied before the captiuitie of the 10. tribes. Other three also before...' is unboxed and lies inside box 7 MT",
+   "E2: the page number '806' top right carries a grey abstain box instead of PN",
+   "GOOD: box 10 SG 'Fffff' and box 11 CW 'Here' are both correct; boxes 8 and 9 MN correct"
+  ],
+  "OT2-1610-P_0866": [
+   "E2: box 4 is an abstain '??' on the head-band page number",
+   "E9: the right-margin cite 'Isa. 47.' (beside verse 5) has no box while box 3 MN 'Zec. 14. Habac. 2.' in the same column is boxed",
+   "E3: the foot catchword 'pastours' at bottom right has no box",
+   "E21: box 2 MT's left edge runs inside box 1 MN, so the note's right-hand letters sit in two regions",
+   "GOOD: box 3 RH 'THE PROPHECIE' correctly RH; box 1 MN is a very long margin note ('a Nemrod beganne vvith sheeding bloud...' down to 'b This citie was first called No...') held correctly as one region"
+  ],
+  "OT2-1610-P_0901": [
+   "E14: boxes 0, 2 and 8 MT are all argument prose of the Machabees ('Now touching the contentes, a great part of the same historie...', 'But because these bookes are intermixed the one with the other...') named MT",
+   "E6: box 0's foot cuts the line 'c. 3.) to their owne perdition.' which then also falls inside box 2",
+   "E9: the left-margin cite 'li. 2. c. 2. v. 24.' has no box while the right-hand notes in the same leaf are boxed",
+   "E21: box 8 MT extends right underneath box 9 MN ('An order how to reade these bookes.'), nesting the note inside the text region",
+   "GOOD: box 10 SG 'Qqqqq 2' and box 11 CW 'THE' are both correct and correctly separated; boxes 3, 4, 5, 6 MN correct"
+  ],
+  "OT2-1610-P_1085": [
+   "E10/E4: box 4 SG is on the colophon word 'FINIS.' at the foot - it is not a quire signature; no class fits and SG acted as the container",
+   "E2: the page number '1071' top right carries a grey abstain box instead of PN",
+   "GOOD: an otherwise clean leaf - box 3 MT holds the whole scripture column exactly, box 2 MN 'Psal. 146. v. 4. Iob. 38.' is correct, and the absence of a catchword box is right because this final page has none"
+  ],
+  "OT2-1610-P_1089": [
+   "E10/E13: this is the chronological table; box 2 MT and box 4 MT each take the whole five-column ruled table ('Anni mundi. | Patriarches. | The sacred Historie. | Schismes and infidelitie. | Scriptures.') as a single MT block, so the column structure is lost and the header row, the year column and the outer note column all fall inside one region",
+   "E9: the outer-column note '* Not affirming but supposing that Cainan was the sonne of Arphaxad, we place him here: and Sale 30. yeares after.' gets no box of its own",
+   "E10: box 3 CH on 'THE END OF THE FIRST AGE, AND BEGINNING OF THE SECOND.' - a table divider rule named CH for want of a fitting class",
+   "E2: the head-band page number top right carries a grey abstain box and a stray green MN box, not PN",
+   "GOOD: box 5 SG 'Pppppp 2' is a correct signature"
+  ],
+  "OT2-1610-P_1113": [
+   "E10: this is the two-column index 'OF PRINCIPAL THINGES' where no class fits; boxes 5 CH and 6 CH land on ordinary index entries ('Baptisme prefigured a 4. 32. 199. b. 197. 740. 994...' and 'Behemoth an elephant, or an other greater beast is subiect to Gods ordinance, a 1106.') - CH acting as containment",
+   "E23/NEW: boxes 3 MT and 4 MT cover only the first four or five entries at the top of each column; the remaining nine tenths of both index columns ('Arke of Noe how great...' through 'Balaam the sorcerer, first refused,' and 'S. Iohn Baptist precursor of Christ...' through 'Burden of Babylon...') receive no box at all",
+   "E9/E3: the foot signature 'Sfffff 2' and the catchword 'C' at the bottom right both have no box",
+   "E2: the page number '1099' top right carries a grey abstain box instead of PN",
+   "E7: box 4 MT's label sits inside the running head band so the head words 'THINGES.' and the column top are in two regions"
+  ],
+  "OT1-1609-P_0288": [
+   "E9/RH-MISSING: the whole head band is unboxed — running head 'LEVITICVS.' and the spread headline 'Sacrifices.' get no box at all, though boxes 0 and 12 start immediately below them",
+   "GOOD: box 11 CW 'CHAP.' correctly boxed and named CW, sitting below the foot rule",
+   "GOOD: all seven margin notes (0, 5, 6, 7, 8, 9, 10) correctly MN, including the two short right-margin cites 'Io. 4. v. 24. Rom. 6. v. 19.' (7) and 'Pfal. 50' (9) — short cites boxed, not skipped",
+   "GOOD: boxes 12 and 13 MT split at the real paragraph break before '9. Svvete favour.'"
+  ],
+  "OT1-1609-P_0345": [
+   "E2: box 0 '??' sits on the head-band page number '321' — abstained instead of PN",
+   "E14: box 7 MT is the argument prose 'Al the men of twelue tribes of Ifrael, of the age of twentie yeares and vpwardes...' — argument matter named MT",
+   "E12: box 9 MT is drawn on the woodcut initial 'A', an ornament given a text class",
+   "E23: box 5 CH is drawn on blank paper to the left of 'CHAP. I.' — the only ink under it is verso show-through",
+   "E4: box 12 CW 'Rr' is the quire signature, named CW; the real catchword is box 13 'and'",
+   "GOOD: box 13 CW 'and' correct; box 6 CH 'CHAP. I.' correct; box 8 MN 'The first part. Of those which are numbred of the 12. Tribes...' held correctly as one long MN"
+  ],
+  "OT1-1609-P_0588": [
+   "E14: box 6 MT is the argument prose 'AMONGST other thinges that happened to the people of Ifrael...' under the heading 'THE ARGVMENT OF THE BOOKE OF RVTH.' — argument named MT",
+   "GOOD: box 9 CW 'THE' correct catchword, below the foot rule",
+   "GOOD: box 8 MN is the tiny right-margin cite 'Iudic. 32.' — a short bare cite that was boxed rather than left out",
+   "GOOD: boxes 3 and 7 hold long margin notes correctly as MN; the running head 'IVDGES.' carries its own head-band box"
+  ],
+  "OT1-1609-P_0661": [
+   "E12: box 0 RH is drawn on the woodcut headpiece ornament band, not on any running head — ornament given RH",
+   "E2/E9: the page number '637' at top right has no box at all",
+   "E12/E7: box 6 MN is a second box on the woodcut initial 'A' that box 7 MT already covers — ornament given a text class, and two boxes on one object",
+   "E14: box 5 MT is the argument 'Dauid hearing that Saul and Ionathas are flaine, 11. mourneth with al his familie...' — argument named MT",
+   "E3: the foot catchword 'of our' at bottom right is unboxed",
+   "SG-MISSING: the signature 'Hhhh 3' at the foot centre gets no box",
+   "GOOD: boxes 8 and 9 MN correct, including the long '::He fained al this, thincking to get fauoure...' note"
+  ],
+  "OT1-1609-P_1012": [
+   "E2 + E1: the head band is swallowed whole by the top MT box — the page number '988', the running head 'SECOND BOOKE OF ESDRAS.' and the headline 'Nehemias.' are all inside one MT region instead of PN + RH",
+   "E9: with only n=4 regions, the entire head furniture and the foot are unrepresented; nothing at the foot is boxed",
+   "GOOD: box 1 MN '∷ A iuft man that hath merited by good workes may pray with great confidence for reward.' correctly MN",
+   "GOOD: box 3 correctly isolates the notice 'THE THIRD, AND FOVRTH BOOKES OF ESDRAS, WITH THE PRAYER OF MANASSES, folow after the MACHABEES.' as its own region"
+  ],
+  "OT1-1609-P_1059": [
+   "E2: box 1 '??' sits on the page number '1035' — abstained instead of PN",
+   "E12: box 6 CH is drawn on the fleuron ornament band above 'THE ARGVMENT OF THE BOOKE OF ESTHER.' — ornament given CH",
+   "E14: boxes 3, 8 and 11 MT are all argument prose ('Of the authoritie of this booke only two or three ancient writers doubted...', 'It conteyneth a particular great danger of the people of Ifrael...') — named MT, never AR",
+   "E3: the foot catchword 'Which' at bottom right is unboxed while the signature beside it is boxed",
+   "GOOD: box 13 SG 'Kkkkkk 2' correctly identified as the signature — a correct SG, and the CW/SG pair is not merged here",
+   "GOOD: box 7 CH 'THE ARGVMENT OF THE BOOKE OF ESTHER.' correct; box 0 RH 'IVDITH.' correct; margin notes on BOTH sides correctly MN (2, 4, 5, 9, 10, 12, 14) — no left/right inversion on this leaf"
+  ],
+  "OT1-1609-P_1131": [
+   "E2: box 1 '??' sits on the page number '1109' — abstained instead of PN",
+   "E15: boxes 5 and 7 MT are annotation paragraphs under 'ANNOTATIONS. CHAP. XLII.' — the annotation genre named MT",
+   "E6/E21: box 5's foot cuts through the line 'his facrifice to Iob, as they were commanded. v. 8. & 9.' and box 7's head starts on top of it — that line lands in two regions",
+   "E4: box 10 CW 'Tttttt 3' is the signature, named CW",
+   "GOOD: box 11 CW 'or that' is the real catchword and is correct; box 0 RH 'OF IOB.' correct; box 4 CH 'ANNOTATIONS. CHAP. XLII.' correct; margin notes 3, 6, 8, 9 correctly MN"
+  ],
+  "OT1-1609-P_1135": [
+   "E2: the page number '2113' carries only a grey abstain-coloured box, not PN (label clipped at the image edge)",
+   "RH-ABSTAINED: the running head 'OF IOB.' likewise carries a grey abstain box rather than RH",
+   "E14: boxes 0, 4, 6 and 8 MT are all argument prose ('Sophar alfo (ch.20.) attempted againe to couince Iob of impietie...', 'Eliphaz difputed the third time (ch.22.)...', 'Moreouer Baldad difputed the third time...', 'After that Iob and his three freindes ceaffed...') — the whole leaf is argument, named MT",
+   "E3: the foot catchword 'with' at bottom right is unboxed — it falls inside box 8 MT",
+   "GOOD: seven margin notes (3, 5, 7, 9, 10, 11) all correctly MN, including the short conflict tags 'The fixth conflict.', 'The feuenth conflict.', 'The eight conflict.', 'The ninth conflict.'",
+   "GOOD: the MT boxes break exactly at the paragraph divisions between conflicts"
+  ],
+  "OT2-1610-P_0007": [
+   "E12: box 0 (top, MT-blue) is drawn on the woodcut headpiece ornament band above 'PROEMIAL ANNOTATIONS' — ornament given a text class",
+   "E15: box 2 MT is the proemial annotation prose 'THE authoritie of this Booke was euer authentical...' — annotation matter named MT",
+   "GOOD: box 8 SG 'A 2' and box 9 CW 'not' are BOTH correct and correctly distinguished — the foot furniture is right on this leaf",
+   "GOOD: box 1 CH 'PROEMIAL ANNOTATIONS vpon the Booke of Pfalmes.' correct; margin notes 3, 4, 5, 6, 7 all correctly MN on both sides, including the bare cite 'Prefat. in Pfal. Epift. 134. 139.' (5)"
+  ],
+  "OT2-1610-P_0020": [
+   "E16 (severe): every region below the drawn `foot` rule — boxes 10, 11, 12, 13, 14, 15, 16, 17, 20, 21 — is named SG, but the ink there is the Psalm scripture text ('VVHy did the a Gentiles rage, and b peoples meditate vaine things?', '† The c kings of the earth ftood vp...') plus its lettered gloss column ('a Both getiles.', 'c Pilate and Herod.', 'e The voice of wicked men'). Real scripture named SG because of where foot_y fell",
+   "E5/E13: those same SG boxes each span the left gloss column AND the verse line as one region — the note column is inside the text box, and the two-column structure is lost",
+   "E21: boxes 10–17 and 20–21 overlap each other vertically — gloss lines such as 'g Godfor al this wil turne the hartes of manie.' sit in two regions",
+   "E2: the page number '16' at top left carries only a grey abstain box, not PN",
+   "E15: boxes 3 and 6 MT are annotation paragraphs under 'ANNOTATIONS. PSALME. I.' — annotation named MT, while the SAME leaf calls other annotation-adjacent matter SG",
+   "E14: box 8 MT is the argument 'Chrifts glorie, the world repining therat, 4. fhal be propagated in al the world...'",
+   "E9: the right-margin cite 'Act. 4.' beside the first psalm verse is unboxed, while 'Act. 13. Heb. I. &.5.' lower on the same margin is boxed as 19 MN",
+   "E18/E23: box 18 '??' is a stub sitting on the fragment '...e in his ...ame the Church.' inside box 17",
+   "GOOD: box 22 CW '† And' correct; box 4 CH and box 9 CH 'PSALME II.' correct; box 19 MN correct; the RH 'THE BOOKE' carries its own head-band box"
+  ],
+  "OT2-1610-P_0024": [
+   "E1/E2: the head band is boxed in MN-green — the page number '23' and the running head 'THE BOOKE' are named MN, not PN and RH",
+   "E9 (severe): with only n=5 regions the entire psalm body (verses 2–10, 'VVHEN c I inuocated, the God of my iuftice heard me...') and the whole left gloss column ('c VVhen Saul vniuftly perfecuted iuft Dauid', 'f Why do you ftil harden your hartes?', 'q Not only external but most efpecially...') get NO box at all",
+   "E5: box 0 MT spans the left gloss 'a In an inftrument apt for verfes. b This Pfalme perteyneth to the beloued...' together with the psalm title line — note column swallowed into the MT box",
+   "E5: box 4 MT does the same at the foot, cutting through the margin note 'The fignification of this' and pulling it into the annotation region",
+   "E9: the right-margin cite 'Ephef. 4.' is unboxed",
+   "GOOD: box 3 CH 'ANNOTATIONS. PSALME. IIII.' correctly CH"
+  ],
+  "OT2-1610-P_0035": [
+   "MT-NAMED-CH: box 0 CH is scripture text — verse 8 '† Becaufe our Lord is iuft and hath loued iuftice: his countenance hath feene equitie.' — named CH",
+   "RH-NAMED-CH: box 1 CH is the running head 'OF PSALMES.' — named CH, not RH",
+   "E2: box 2 '??' sits on the page number '21'",
+   "E14: box 3 CH is the argument 'The Prophet defcribeth the paucity of iuft men, and abundanc of wicked...' — argument named CH; it also swallows the right-margin note 'The ftate of the Church in the first and last times of Chrift.' (E5)",
+   "E9 (severe): the whole psalm body, verses 1–9 ('† Vnto a the end for b the octaue...' through '...multiplied the children of men.'), and both gloss columns ('a Chrifts firft, b and laft comming', 'f Infolent & arrogant.', 'h yet ftil there remaine some iuft whom God preferueth.') and the left cites 'Prouerb. 30.' and 'Act. 2.' are entirely unboxed",
+   "E15: box 6 MT is the annotation block under 'ANNOTATIONS. PSALME XI.' — the same leaf calls the annotation head CH (box 7) and the annotation body MT",
+   "E16-RISK: the drawn `head` rule falls two thirds down the page, right above the ANNOTATIONS block, so the measure does not correspond to this leaf's type block at all",
+   "GOOD: box 5 CH 'PSALME. XI.' and box 7 CH 'ANNOTATIONS. PSALME XI.' are correct"
+  ],
+  "OT2-1610-P_0277": [
+   "E2: the page number '269' at top right carries only a grey abstain box",
+   "E14: box 2 MT is the argument 'Parables are profitable to thofe that loue and wil lerne wifdom. 10. Al are admonifhed not to folow the alurements of finners...'",
+   "E12/E7: boxes 5 MT and 6 MT are two overlapping boxes on the single woodcut initial 'T' — ornament given a text class, twice",
+   "E4: box 8 CW 'Kk 3' is the quire signature, named CW",
+   "E3: the real catchword 'bloud' at bottom right is left unboxed",
+   "GOOD: box 3 CH 'CHAP. I.' correct; boxes 4 and 7 MN correct, including the very long right note 'a By thefe fentencious fimilitudes the ftudious may better conceiue...' held as one region"
+  ],
+  "OT2-1610-P_0455": [
+   "E2: the page number '447' carries only a grey abstain box, not PN",
+   "E14: box 5 CH is the argument 'The auctor rendereth praifes and thankes to God; 18. and inuiteth others do the fame, by his owne example, 31. and by earneft exhortation.' — argument named CH",
+   "E6: box 5's foot cuts through its own second line and box 6 MT's head starts on top of it — the line 'do the fame, by his owne example, 31. and by earneft exhortation.' is clipped between two regions",
+   "GOOD: box 8 CW 'day' correct; box 4 CH 'CHAP. LI.' correct; box 1 MT and box 6 MT hold the scripture cleanly; boxes 3 and 7 MN correct, including the note ending in the bare cite '4. Reg. 17. v. 29.'",
+   "GOOD: the running head 'ECCLESIASTICVS.' carries its own head-band box"
+  ],
+  "OT2-1610-P_0459": [
+   "E2: the page number '451' carries only a grey abstain box",
+   "E9 + E20: the ENTIRE left margin cite column is unboxed — 'Ierom in 2. Nahum', 'Chryf. h 8. Mth. 2.', 'Aug. catech. rudibus.', 'cont. and c.', 'Hym. Pfal.', and lower down 'Prefat. Paul. Eufto.' — while the right-margin notes 2, 3, 4, 5, 9 in the same band are all boxed as MN. Side decides class here",
+   "E14: box 8 MT is the argument 'Ifaie the fonne of Amos, and nephew (as S. Ierom infinuateth) to king Amafias, prophecied in the times of Ofias...'",
+   "E21: box 9 MN sits inside the right edge of box 8 MT — the note 'Ifai of noble lineage and a martir prophecied a long time.' is in two regions",
+   "SG-MISSING: the signature 'I ii 2' at the foot centre gets no box",
+   "GOOD: box 6 CH 'THE ARGVMENT OF THE PROPHECIE OF ISAIE.' correct; box 10 MT holds the long preface prose cleanly; RH 'PROPHETICAL BOOKES.' carries its own box"
+  ],
+  "OT2-1610-P_0667": [
+   "E5 (twice): box 2 MT spans the full page width, pulling the left Hebrew-letter column ('Teth.', 'Iod.', 'Caph.', 'Lamed.', 'Mem.', 'Nun.', 'Samech.', 'Phe.', 'Ain.', 'Sade.', 'Coph.', 'Res.', 'Sin.', 'Thau.') AND the right annotation column ('∷ VVemen being by nature pitiful, were cruel to their owne children', '∷ In the fiege of Ierufalem.') inside the main-text region",
+   "E13: consequent on the above, the three-column structure of the leaf is taken as one block",
+   "E9: no margin note on this leaf gets its own box — including the long lower-right note '∷ This perteineth either to king Iofias flaine by the Ægyptians. 2. Par. 35...'",
+   "E2: the page number '668' carries only a grey abstain box",
+   "GOOD: box 3 SG 'LIII 2' and box 4 CW 'The' are both correct and correctly separated — the foot furniture is right here; RH 'OF IEREMIE.' carries its own box"
+  ],
+  "OT2-1610-P_0671": [
+   "E2: the page number '663' carries only a grey abstain box",
+   "E14: box 4 MT is the argument 'The fame captiues further confeffe, that their calamities are iuftly comen vpon them for their iniquities, 11. and therfore lamentably pray for Gods mercie, as he promifed by Moyfes to penitents.'",
+   "E6: box 4's foot cuts through its own third line 'Gods mercie, as he promifed by Moyfes to penitents.' and box 5 MT's head lands on top of it",
+   "E9: the left-margin note fragment '...orrupted in ...dgement.' beside verses 19–20 is unboxed while the right-margin notes 2 and 6 are boxed",
+   "E3: the foot catchword 'them' at bottom right is unboxed",
+   "GOOD: box 3 CH 'CHAP. II.' correct; box 7 MT holds the scripture cleanly; boxes 2 and 6 MN correct; RH 'OF BARVCH.' carries its own box"
+  ],
+  "OT2-1610-P_0718": [
+   "E2: box 0 '??' sits on the page number — abstained instead of PN",
+   "E21: box 3 MT's left edge runs down THROUGH box 1 MN — the note lines 'vpon the Excelfes (that is, on hiegh places, or litle hilles) the people alfo called the Altar of God an Excelfe whervpon the prophet argueth...' fall in both regions",
+   "E3: the foot catchword 'when' at bottom right is unboxed",
+   "GOOD: box 1 MN is an exceptionally long left-margin note held correctly as ONE region, from '∷ By long cuftom of facrificing to idols' all the way to '∷ For fuch do efpecially pollute Gods name. Rom. 2. v. 24.' — including the embedded cites '3. Reg. 18.' and 'Apoc. 3.' This is the method working",
+   "GOOD: the running head 'THE PROPHECIE' carries its own head-band box"
+  ],
+  "OT2-1610-P_0748": [
+   "E2: box 0 '??' sits on the page number",
+   "CH-MISSING: the chapter head 'CHAP. XXXVI.' between boxes 2 and 4 gets no box at all — the only unboxed head furniture in the body of the leaf",
+   "E14: box 4 MT is the argument 'The Iewes fhal be reduced from captiuitie, 13. their maners amended. 16. which are enormious, 22. by fpecial grace of God...'",
+   "E6: box 4's foot clips its own third line 'his name: 25. fulfilled by Chrifts baptifme.' and box 5 MT's head starts on top of it",
+   "E3: the foot catchword 'plied' at bottom right is unboxed",
+   "GOOD: box 3 MN 'The 4. part. The reduction of the Iewes from captiuitie: and the Redemption of mankind by Chrift.' and box 6 MN correct; box 2 and box 5 MT correct; RH 'THE PROPHECIE' carries its own box"
+  ],
+  "OT2-1610-P_0794": [
+   "E2: box 0 '??' sits on the page number — abstained instead of PN",
+   "E3: the foot catchword 'fore' at bottom right is unboxed",
+   "GOOD: box 1 RH 'THE PROPHECIE' is correctly named RH — one of the few leaves where the running head gets the right class rather than an abstain",
+   "GOOD: boxes 2 and 4 MN correct, box 4 being a very long left note ('∷ Gods threats being conditional that if finners truly repent he wil pardon al...') held as one region",
+   "GOOD: box 3 MT holds verses 19–31 cleanly; nothing is boxed on the facing verso leaf visible at the right of the opening — no E11 here"
+  ],
+  "OT2-1610-P_0820": [
+   "PROSE-NAMED-CH: box 3 (top, red) is ordinary preface prose 'Here vve may note for inftruction of the vulgar reader, that the Prophetes commonly vfe one of thefe names...' named CH; box 6 CH is the same thing again — 'Likevvife they vfe fome of thefe other names, vvhen they fpeake of the'",
+   "E9/E13: both braced name-tables are entirely unboxed — 'kingdom of two Tribes. { Iuda, Beniamin, Ierufalem, or The houfe of Dauid.' and 'kingdom of tenne Tribes. { Ephraim, Iofeph, Samaria, Iezrahel, Bethel, or Bethauen.' Tabular matter gets no region while the prose either side of it does",
+   "E12: box 10 CH covers the fleuron ornament band together with the title 'THE PROPHECIE OF OSEE.' — ornament pulled into a text class and merged with the title",
+   "E14: box 12 MT is the argument 'OSEE borne in Belomoth (as writeth S. Epiphanius) of the tribe of Iffachar, prophecied in the reigne of Ozias...'",
+   "E9 + E20: the right-margin cite column 'de vita & interitu prophetar. 4 Reg. 17. S. Iero. Ep. ad Paulin.' is unboxed, while every left-margin note on the same leaf (4, 7, 9, 11, 13) is boxed MN",
+   "GOOD: box 14 CW 'CHAP.' correct; boxes 4, 7, 9, 11, 13 MN all correct",
+   "GOOD: box 5 MT and box 8 MT correctly hold the explanatory paragraphs that follow each brace table"
+  ],
+  "OT2-1610-P_0898": [
+   "E16: box 9 SG is drawn on 'The end of the Prophetical Bookes.' — that is a closing display line of the book, not a signature; it is named SG only because it falls below the foot rule",
+   "E2/E9: the page number '888' at top left has no box at all",
+   "RH-MISSING: the running head 'THE PROPHECIE OF MALACHIAS.' has no box",
+   "E14: box 4 MT is the argument 'In the terrible day of iudgement, the wicked fhal be condemned, and the iuft eternally rewarded. 5. Before which time Elias fhal returne...'",
+   "E15/E5: the closing annotation paragraph 'c Chrifts firft coming was in al mekenes not in terrour, but his coming to iudge wil be dreadful...' is swallowed inside box 6 MT rather than given its own region",
+   "E9 + E20: the right-margin cite column 'Zach. v 8. & 6. v. 1. Luc. 1. v. 78. Exo. 2. Deut. 5. & 6. Mat. 1. & 17. v. 11.' is unboxed, while the left-margin note 10 and the right notes 2 and 8 are boxed",
+   "E23/E21: box 5 MT is a stub box at the left edge overlapping box 7 MN with no text of its own",
+   "GOOD: box 3 CH 'CHAP. IIII.' correct; boxes 2, 7, 8, 10 MN correct, including the one-word-wide note 8 '* vtter destruction'"
+  ],
+  "OT2-1610-P_0902": [
+   "E14: box 1 MT is the argument 'King Alexander conquering manie countries, erecteth a new Monarchie. 6. who dying, his chief folowers fuccede in feueral kingdomes...'",
+   "E12/E7: boxes 5 MT and 6 MT are two overlapping boxes on the single woodcut initial 'A'",
+   "E3: the foot catchword 'hoftage:' at bottom right is unboxed",
+   "SG-MISSING: the signature letter 'D' at the lower right margin gets no box",
+   "GOOD: box 2 CH 'CHAP. I.' correct; box 0 MT correctly isolates the book title 'THE FIRST BOOKE OF MACABEES.'; margin notes 3, 4, 7, 8, 9, 10 all correctly MN including the short cite note 9 '* li. 2. 8. 3. v. 1.'",
+   "GOOD: the woodcut headpiece band at the very top is left unboxed rather than given a text class — the opposite of what happened on 0661 and 1059"
+  ],
+  "OT2-1610-P_1086": [
+   "E10/E13: box 3 MT is the whole two-column feast/citation table ('In the feaft of our Bleffed Ladies Conception. Prou. 8. v. 22. to the v. 36.' … 'S. Catherin. Eccli. 51. v. 1. to. 13.') taken as ONE MT block — a table has no MT grammar and its column structure is lost",
+   "E10: box 2 MT is the table's own title 'A table of the Epiftles, taken forth of the old Teftament, vpon certayne feftiual dayes.' — display heading named MT",
+   "E12: box 1 MT is drawn on the three-band ornamental headpiece — ornament given a text class",
+   "E16/E10: box 4 SG is 'Deo Gratias.' — a closing formula named SG because it sits below the foot rule",
+   "E2: box 0 '??' sits on the page number"
+  ],
+  "OT2-1610-P_1110": [
+   "E2: the page number '1096' at top left is boxed in MN-green — the page number named MN",
+   "E10/E13: box 2 MT is the entire five-column chronological table taken as one block — the column heads 'Anni mudi.', 'High-priefts.', 'The line of Dauid.', 'The facred Hiftoric.', 'Schifmes and infidelitie.', 'Scriptures.' and every cell under them sit in a single MT region. Ruled table matter has no MT grammar",
+   "E16/E10: box 3 SG is 'The end of the fixth age, and of the old Teftament.' — a closing display line named SG because it falls below the foot rule (same failure as 0898 box 9 and 1086 box 4)",
+   "GOOD: the running head 'AN HISTORICAL TABLE.' carries its own head-band box"
+  ],
+  "OT2-1610-P_1114": [
+   "E10/E13: box 1 MT is the whole two-column alphabetical index taken as ONE MT block — from 'Caath the fonne of Leui...' down both columns to 'Church of Chrift prefigured by the' — an index has no MT grammar and the two columns are merged",
+   "E2: box 0 '??' sits on the page number",
+   "E3: the foot catchword 'Arke' at bottom right is unboxed",
+   "GOOD: the running head 'A PARTICVLAR TABLE' carries its own head-band box, correctly separated from the index body"
+  ],
+  "OT1-1609-P_0289": [
+   "E2: box 2 '265' is the head-band page number, abstained '??' instead of PN",
+   "E1: box 0 'Sacrifices.' is the left half of the spread headline, abstained '??' rather than head furniture (RH)",
+   "E14: box 4 'How to offer flovvre, 4. loaues, wafers...' is the chapter argument, named CH",
+   "GOOD: box 3 CH 'CHAP. II.' correct; box 9 SG 'Kk' correct; box 10 CW 'CHAP.' correct; boxes 6 and 8 MN hold the right-margin annotations cleanly, and the verso bleed-through in the mid-right margin is correctly left unboxed"
+  ],
+  "OT1-1609-P_0346": [
+   "E1: the green box 'Twelue tribes' at top right is the right half of the spread headline, named MN",
+   "E3: the foot catchword 'rations' has no box at all",
+   "E6: box 3 MT foot cuts through the catchword line 'rations' at the bottom of the measure",
+   "GOOD: 'NVMERI.' correctly boxed as the running head; the heavy verso show-through in the left margin is correctly left unboxed"
+  ],
+  "OT1-1609-P_0589": [
+   "E2: box 1 '565' is the page number, abstained '??' instead of PN",
+   "E14: box 3 'By occasion of famine Elimelech of Bethleem going with his wife Noemi...' is the chapter argument, named MT",
+   "E12: box 5 MT is drawn on the woodcut initial 'I' (foliate/bird block) at the head of ch. 1, given a text class",
+   "E7: boxes 4 ('??') and 5 (MT) sit on the same woodcut initial with different classes, and box 5 is nested inside the body region",
+   "GOOD: box 2 CH 'CHAP. I.' correct; box 6 SG 'Yyy' correct; box 7 CW 'night' correct; box 0 CH on 'THE BOOKE OF RVTH.' is right"
+  ],
+  "OT1-1609-P_0662": [
+   "E1: box 0 'ning weeping and fasting.' is the left half of the spread headline, named MN",
+   "E1: the green box 'Dauid.' at top right is the right half of the spread headline, named MN",
+   "E14: box 7 'Dauid is receiued and annointed King of Iuda. 5. He commendeth those of Iabes Galaad...' is the argument of ch. II, named MT",
+   "E21: box 6 CH 'CHAP. II.' overlaps the foot of box 1 MT and the head of box 7",
+   "GOOD: box 5 MN 'The Philisthijms were strong & cunning archers...' held correctly as one note; box 8 CW 'Therefore' correct; 'SECOND BOOKE' correctly taken as running head"
+  ],
+  "OT1-1609-P_1013": [
+   "E2: box 0 '989' is the page number, abstained '??' instead of PN",
+   "E12: box 1 CH is drawn on the fleuron ornament band above 'ANNOTATIONS.'",
+   "E23: box 2 MT sits on the plain rule beneath the fleuron band, carrying a class with no text in it",
+   "E4/E19: boxes 15 and 16 are both SG at the foot; 16 holds the signature 'Dddddd 3' and 15 is a small box on a fragment to its left",
+   "GOOD: annotation prose consistently MT (boxes 5 and 12) on this leaf; margin notes 6,7,8,9,10,11,13,14 all correctly MN, including the Latin cites 'Lib. de Praedest. Sanct. c.14.' and 'De viris illustrib. verbo Iacobus.'"
+  ],
+  "OT1-1609-P_1060": [
+   "E2: box 0 '6' is the page number, abstained '??' instead of PN",
+   "E14: box 3 'which may be diuided into foure partes, not by order of the chapters...' is argument prose, named MT",
+   "E14: box 4 'Vvho soeuer vvil please to read this historie, in order of the time...' is preface/argument prose, named MT",
+   "E14: box 8 'King Assuerus celebrateth a great banket to shew his glorie...' is the chapter argument, named CH",
+   "E12/E7: the blue box inside box 11 MT is drawn on the woodcut initial 'I' of ch. 1, nested inside the body region",
+   "E9: the margin letter 'B' below box 9, part of the alphabet keying described in the preface, gets no box while 'A' beside it is inside box 9",
+   "E3: the foot catchword 'with' has no box",
+   "E6: box 4's top edge cuts into box 3's last line 'verse of the eleuenth.'",
+   "GOOD: box 1 RH 'ESTHER.' correct; boxes 2, 7, 9 MN correct"
+  ],
+  "OT1-1609-P_1132": [
+   "E2: box 0 is the head-band page number, abstained '??'",
+   "E15: box 2 is named CH but holds annotation prose ('or that patient sustaining of worldlie losses...'), while the identical annotation paragraphs below are MT (boxes 4, 6) - two classes for one genre on one leaf",
+   "E5: the right-margin cite column 'Apud Euseb. li. 6. c. 35. / Gen. 2. / Exod. 23. / Deut. 15.' sits inside boxes 2 and 4 instead of having its own region",
+   "E9: those same right-margin cites get no box of their own",
+   "E6: box 13 MT's head cuts box 10's last line 'uersaries, both in prosperous and aduerse fortune.'",
+   "E3: the foot catchword 'preseuering' has no box",
+   "GOOD: box 1 RH 'THE BOOKE' correct; box 8 CH 'A BRIEF RECAPITVLATION' correct; the eight left-margin summary notes (3,5,7,9,11,12,14) are all correctly MN"
+  ],
+  "OT1-1609-P_1136": [
+   "E2: box 0 '4' is the page number, abstained '??'",
+   "E16: box 11 SG is the colophon line 'THE END OF THE FIRST TOME.', named SG only because it falls below foot",
+   "E6: box 4's head cuts box 2's last line 'conuinced him with silence.'",
+   "E6: box 7's head cuts box 4's last line 'life, and a happie end.'",
+   "GOOD: running head 'THE BOOKE OF IOB.' correctly RH; margin notes 3,5,6,8,9,10 all correctly MN including the one-word notes 'Anagogical.' and 'Moral.'"
+  ],
+  "OT2-1610-P_0008": [
+   "E5: box 6 MT swallows the whole right-margin cite column 'Mat. 22. v.16. / Act. 4. v.24. / Ro. 4. v.6. / Ro. 11. v.9. / Heb. 4. v.7.' instead of leaving it its own region",
+   "E9: those right-margin cites get no box, while the left-margin notes beside them are boxed (2, 4, 5)",
+   "E3: the foot catchword 'renus.' has no box",
+   "GOOD: 'PROEMIAL ANNOTATIONS' correctly taken as the running head; boxes 2, 4, 5 MN correct; annotation prose consistently MT across boxes 6 and 3"
+  ],
+  "OT2-1610-P_0021": [
+   "E5: box 2 MT swallows the right-hand annotation column ('p Gods inflexible wil & powre.', 'q A prophecie that kinges shal be conuerted...', 'r None is secure before death.', 's Some fal from the way of saluation.', 't God wil iudge iustly...')",
+   "E5: boxes 4, 5, 6, 7 and 8 each swallow their right-margin summary note ('Persecution cannot hinder the glorie of Christ.', 'The Church neuer faileth.', 'Custome in sinne more hardly cured.', 'Kinges conuerted to Christianitie.', 'Defend Catholiques and punish heretikes.')",
+   "E9: the left-margin cites 'Apoc. 2. & 19.', 'in hunc Psal.', 'Ad Petil. li.2. c.92. Ad Gaud. li.2.c.26.' get no box at all",
+   "E2: the head-band page number '17' at top right is in a grey abstained box, not PN",
+   "E21/E6: boxes 4/5, 5/6, 6/7 and 7/8 overlap - e.g. box 5's head cuts box 4's last line 'and number of Christians.'",
+   "GOOD: box 3 CH 'ANNOTATIONS. PSALME. II.' correct; box 9 SG 'C' correct; 'OF PSALMES.' correctly the running head"
+  ],
+  "OT2-1610-P_0025": [
+   "E9: the margin note 'To our selues.' between boxes 7 and 8 gets no box, while every other note in that same column is boxed",
+   "E5/E9: the left-margin cites '2. Par. 15.' and 'Rom. 10.' sit inside box 1 MT with no region of their own",
+   "E3: the foot catchword 'PSALME.' has no box, and the signature 'C 3' beside it has no box either",
+   "E6: box 4's head cuts box 1's last line 'world. Signifying that his seruantes, through his grace, may also ouercome it.'",
+   "GOOD: boxes 3, 5, 6, 7, 8, 9, 10, 11 MN all correct, including the stacked one-liners 'To our neighbour.', 'To our enemies.', 'The world.', 'The flesh.', 'The diuel.'"
+  ],
+  "OT2-1610-P_0274": [
+   "NEW: the classes are inverted on this leaf - boxes 0, 4 and 5 CH are Psalm verse text ('Prayse ye him in the sound of trumpet...', 'Prayse ye him on timbrel and quire...', 'Prayse ye him on wel sounding cymbals...') while the interleaved commentary between them is MT (boxes 2, 3, 6). Scripture is named CH and gloss is named MT",
+   "E8: box 7 MT is the left-margin note 'The number of Psalmes signifieth the agrement of the old and nevv Testament.'",
+   "E8: box 12 MT is the left-margin note 'Three fifties signifie Penance. Mercie vvith iustice, and Praises of God.'",
+   "E8: box 14 MT is the left-margin note 'Gloria Patri added by tradition.'",
+   "E23/E11: box 16 MT is drawn over blank paper carrying only verso show-through at the foot of the leaf",
+   "E9: the running head 'THE BOOKE OF PSALMES.' gets no box; the foot signature 'KK' and the catchword '† Prayse' also get none",
+   "GOOD: box 10 CH 'ANNOTATIONS. PSALME CL.' correct; box 13 MN 'Colloss. Circa An. 380.' correct"
+  ],
+  "OT2-1610-P_0278": [
+   "E3: the foot catchword 'Ghost,' has no box; it is left inside the bottom edge of box 5 MT",
+   "GOOD: this leaf is close to clean. Box 9 MN is a long left-margin note running the full height of the head band ('desire duly to serue him... f The first precept... g The second... h The proper remedie') and it is held correctly as one region. Box 0 MT holds the scripture cleanly, box 4 CH 'ANNOTATIONS. CHAP. I.' is right, box 5 MT is the annotation, and boxes 1, 6, 7, 8 MN are correct"
+  ],
+  "OT2-1610-P_0456": [
+   "E2: the page number '448' at top left gets no box at all (no PN region on this leaf)",
+   "E9: the running head 'THE BOOKE OF ECCLESIAST.' gets no box",
+   "E16: box 3 SG is the colophon 'The end of the Sapiential Bookes.', named SG only because it sits below foot",
+   "GOOD: boxes 1 and 2 MN correct, including the cite 'Eccle. 12.' held inside note 1; the body MT box holds the whole column cleanly"
+  ],
+  "OT2-1610-P_0460": [
+   "E14: box 1 is the Argument of Isaie ('yeares and was cruelly put to death, sawed into partes by commandment of Manasses...'), named MT",
+   "E14: box 6 continues the same argument ('The whole prophecie conteyneth two general partes...'), named MT",
+   "E9: the left-margin part numerals '1. 2. 3. 4. 5. 6. 7. 8.' keying the eight parts of the argument get no boxes, while the prose notes beside them are boxed",
+   "E9: the running head 'THE ARGVMENT OF ISAIE.' gets no box and the page number '452' at top left gets none",
+   "E6: box 6's head cuts box 1's last line '...ng of Christ, to redeme, and deliuer mankind from captiuitie of sinne.'",
+   "GOOD: boxes 2, 4, 5 MN correct; box 3 MN correctly holds the right-margin cite stack 'S. Ier. Epist. Paulin. Et in c. Isai. 5. Aug. 18. c. ciuit. lib 9. c. confess. Heb. 1.'"
+  ],
+  "OT2-1610-P_0668": [
+   "E2: box 0 '660' is the page number, abstained '??' instead of PN",
+   "NEW: box 2 is the chapter head 'CHAP. V.' but it is named RH, not CH - the true running head is box 1 'THE LAMENTAT. OF IEREMIE.' directly above it, so two different objects carry RH on one leaf",
+   "E16: box 7 SG holds two lines of annotation prose ('18. and S. Augustin li. de Gratia. & lib. arb. c. 2. 4. &c. seuerly punished vs, we beseech thee now to cease from more.'), named SG only because it falls below foot",
+   "E9: the far-right margin cite column ('Tob...', 'Cap.', 'Ioel.', 'Mich.', 'Abd.' etc.) outside the measure gets no boxes",
+   "GOOD: box 3 MN is a very long left-margin note (a through h) held correctly as one region; box 5 MT correct; box 6 MN '* in danger of the svvord.' correct; box 8 CW 'THE' correct"
+  ],
+  "OT2-1610-P_0715": [
+   "E2: the page number '707' at top right is in a grey abstained box, not PN",
+   "E14: box 5 CH 'The Israelites calaminitie is described by two parables, of lions, 10. and of a vine planted and plucked vp.' is the chapter argument, named CH",
+   "E9: the right-margin note beside the top block ('Ezechiel beganne to prophecie in the tenth yeare...') gets no box while the notes above and below it are boxed",
+   "E21: box 8 MT's right edge runs into the margin-note column and clips the left letters of box 7's lines",
+   "GOOD: box 6 CH 'CHAP. XIX.' correct; box 9 SG 'Rrrr 2' correct; box 10 CW '† And' correct; box 7 MN is a very long right-margin note held correctly; box 0 MN 's. Tho. p.1. q 19 a.6.' correct"
+  ],
+  "OT2-1610-P_0745": [
+   "E2: box 1 '737' is the page number, abstained '??' instead of PN",
+   "E14: box 2 'A commination to euil pastors: 11. and a prophecie of the coming of Christ, the true Pastor...' is the chapter argument, named MT",
+   "E11/E23: box 8 SG is drawn on mirrored verso show-through at the bottom left ('terroul.' reversed) - ink that is not on this leaf",
+   "E4/E19: the real signature 'Wwww' at the centre foot gets no box, the SG label having landed on the bleed-through instead",
+   "E3: the foot catchword 'the' at the right has no box",
+   "E6: box 5's head cuts box 2's last line '25. and conserue it for euer.'",
+   "GOOD: box 0 RH 'OF EZECHIEL.' correct; box 4 CH 'CHAP. XXXIIII' correct; boxes 6 and 7 MN correct, including the cite 'Ioan. 10.' held inside note 7"
+  ],
+  "OT2-1610-P_0749": [
+   "NEW: the whole upper scripture block, from 'plied, and increase: and I wil make you dwel as from the beginning' down to verse 17, has NO box at all - the head rule falls in the middle of the column and everything above it is unregioned. The scripture continuing below the foot rule (verses 22 to 26) is likewise unboxed",
+   "E1: box 0 is the running head 'OF EZECHIEL.' named MN",
+   "E2: box 1 '741' is the page number, abstained '??'",
+   "E8: box 2 MT is the right-margin note ':: Iewes by their sinnes prouoking God to punish them with captiuitie...' - a margin note named MT",
+   "E16: box 3 SG is the lower right-margin note ':: Rabbi Dauid & the Chaldee Paraphrasis expound this place of remission of sinne...' - the same genre as box 2 but renamed SG because it falls below foot",
+   "E4/E19: box 4 MN is the signature 'Wwww 3' and box 5 MN is the catchword 'your' - both foot furniture named MN",
+   "NOTE: this is the worst-served leaf in the batch; every one of the six regions is misclassified and the main text is unclaimed"
+  ],
+  "OT2-1610-P_0795": [
+   "E2: box 1 '785' is the page number, abstained '??' instead of PN",
+   "E9: the left-margin cite 'v. 13.' beside box 5 gets no box",
+   "E3: the foot catchword 'Ierom.' has no box, and the signature 'Ccccc' beside it has none either",
+   "E6: box 6/box 2 boundary cuts box 2's last line 'pride he can humble.'",
+   "E6: box 8's head cuts box 5's last line '...dom, and had more magnificence then before.'",
+   "GOOD: box 0 RH 'OF DANIEL.' correct; box 6 CH 'ANNOTATIONS. CHAP. IIII.' correct; annotation prose consistently MT (boxes 5 and 8); margin notes 3, 4, 7, 9, 10 all correct; the facing leaf visible at the left edge is correctly left unboxed"
+  ],
+  "OT2-1610-P_0821": [
+   "E18: MN is acting as containment across this whole leaf - 12 of the 15 regions are MN regardless of what they hold",
+   "NEW: the entire scripture body of Osee ch. 1 (verses 1 to 11, 'HE word of our Lord, that was made to Osee the sonne of Beeri...') has NO box at all, while the furniture around it is boxed",
+   "E12: box 3 MN is drawn on the fleuron ornament band under the running head",
+   "E12: box 7 MN is drawn on the woodcut initial 'T' (bird/foliate block) at the head of ch. 1",
+   "E12/E18: box 4 MN is the chapter head 'CHAP. I.' and box 12 MN is the chapter head 'CHAP. II.'",
+   "E14: box 5 MN is the argument of ch. 1 ('In signification of the peoples idolatrie, the prophet marieth a fornicatrix...') and box 10 MN is the argument of ch. 2",
+   "E4/E19: box 13 MN is the signature 'Fffff 2' and box 14 MN is the catchword 'SAY'",
+   "E8/E20: box 6 MT is the right-margin annotation column (a through f, 'This Ieroboam king of Israel died 26. yeares before Ozias...') - named MT while the left-margin cites on the same leaf are MN",
+   "E19: box 8 MN lands on the margin fragment 'e begette' rather than a whole note",
+   "GOOD: box 9 MN '4. Reg. 9.' is a correct margin cite"
+  ],
+  "OT2-1610-P_0899": [
+   "E10/E7: the book title is split across three boxes with two classes - box 1 MT 'THE BOOKES OF MACHABEES PERTEYNING TO THE HI-', box 2 CH 'STORICAL PART OF THE', box 3 CH 'OLD TESTAMENT.' - one object, three regions, and boxes 1 and 2 overlap",
+   "E14: box 4 CH 'The argument of the bookes of Machabees, with other prooemial Annotations.' is argument matter",
+   "E16: box 9 SG holds two lines of ordinary prose continuing the annotation ('There be in al, foure bookes called Machabees. The first S. Ierom found in Hebrew, the second in Greke...'), named SG because it falls below foot",
+   "E4/E19: box 9 SG and box 10 SG ('Qqqqq') both carry SG at the foot - one is prose, one is the real signature",
+   "E9: the left-margin cites '1.1.c.2. v.64.65. &.66.' and 'li.2.c.6. &7.' get no box, and the right-margin note 'There be foure bookes.' beside box 9 gets none",
+   "E2: the page number at top right is in a grey abstained box, not PN",
+   "GOOD: box 5 MT holds the proemial prose cleanly; boxes 6, 7, 8 MN correct; box 11 CW 'is also' correct"
+  ],
+  "OT2-1610-P_0903": [
+   "E5: boxes 2, 3 and 5 each swallow the right-margin annotation column (':: This Antiochus begane his reigne in the yeare 137...', ':: Being established in the kingdom of Syria...', ':: Iosephus li. 12. c. 6. vvriteth that Antiochus first killed such as vvould haue hindred his entrance...')",
+   "E9: those right-margin notes get no box of their own, and the left-margin cites '*li.2.c.4.v.7.', '*li.2.c.4.v.21.' and the section letters 'F' and 'H' get none either",
+   "E21: the scripture column is cut into four MT boxes (2, 3, 4, 5) on no visible boundary - box 4 holds only two lines ('And Antiochus turned, after he strooke Aegypt...') and the box edges clip lines at each join",
+   "E6: box 3's head cuts box 2's last line 'he Nations, and were solde to doe euil.'",
+   "GOOD: box 6 SG 'Qqqqq 3' correct; box 7 CW 'a prince' correct; 'MACHABEES.' correctly taken as the running head"
+  ],
+  "OT2-1610-P_1087": [
+   "E10: this is a chronological table, a genre with no correct class - box 0 MT holds the display title 'AN HISTORICAL TABLE OF THE TIMES, SPECIAL PERSONS, MOST NOTABLE THINGES, AND CANONICAL BOOKES OF THE OLD TESTAMENT.'",
+   "E13: box 1 MT takes the whole five-column table as one block - the columns 'Anni mundi. | Patriarches. | Especial pointes of the sacred historie... | Schismes and infidelitie. | Canonical Scriptures.' are not separated, and the column headers are not distinguished from the rows",
+   "E9: the last title line 'BOOKES OF THE OLD TESTAMENT.' falls outside box 0 and gets no box",
+   "E2: the page number '1073' at top right sits in a grey box with no PN class",
+   "E12: the fleuron ornament band above the title gets no box (correctly, no ornament class exists) but the leaf shows the same drift risk as 1013 and 0821",
+   "GOOD: box 2 SG 'Pppppp' correct"
+  ],
+  "OT2-1610-P_1111": [
+   "E10: this is an alphabetical index, a genre with no correct class, and four different classes end up carrying the entries",
+   "E20/E16: identical index entries are classed by position - the left column below foot is SG (boxes 8 'Abel offered sacrifice sincerely', 11 'Abdias prophecied the captiuitie', 14 'Abiathar the Highpriest was deposed', 16 'Abimelech killed his brethren', 17 'Abram left his country Chaldea'), the right column is MN (5, 6, 7, 9, 10, 12, 13, 15, 18), and the one left-column entry above foot is MT (box 4 'AARON of the tribe of Leui')",
+   "E11: box 0/1 grey region at the top is drawn on mirrored show-through of 'A PARTICVLAR TABLE' from the verso, not ink on this leaf",
+   "E2: box 1 '1097' is the page number, abstained '??'",
+   "E9: the two explanatory lines 'In vvhich, the letter A. directeth to the former volume; B. to the latter; and the numbers to the pages.' get no box, though the title lines above them are boxed",
+   "E9: the foot signature 'Sfffff' and the page reference '746.' at the bottom get no box",
+   "E10/E7: boxes 2 and 3 CH split the single display title across two regions"
+  ],
+  "OT2-1610-P_1135": [
+   "E10: alphabetical index again, no correct class exists, and three classes are in play on one leaf",
+   "E20: the split is purely by column and by foot_y - the whole left column is MN (boxes 2, 4, 7, 9, 10, 13, 14, 18) while the identical right-column entries are CH (3, 5, 6, 8, 11, 15, 16) with the two that cross the head rule becoming MT (boxes 12 'Zele of Moyses against Idolaters' and 17 'Zorobabel chief dukes')",
+   "E9: the alphabet section letters 'Z' and 'Y' standing as headers over their columns get no box",
+   "E16: box 19 SG is the colophon 'FINIS', named SG because it falls below foot",
+   "E11/E19: box 20 CW is drawn on a mirrored bleed-through fragment at the right foot, not on a catchword - there is no catchword on this leaf",
+   "E2: the page number '1123' at top right sits in a grey box with no PN class",
+   "GOOD: box 1 RH 'OF PRINCIPAL THINGES' correct"
+  ],
+  "OT1-1609-P_0343": [
+   "E2: head-band page number '319' (top right) has no box at all — no PN region",
+   "E1: the left headline word 'Tithes' is unboxed head furniture; nothing claims it",
+   "E15: box 9 'MT' is the ANNOTATIONS block ('26. The first borne. ] God here forbiddeth to vow...'), same genre as the annotation heading box 8 'CH'",
+   "E23: box 8 CH extends far right past 'CHAP. XXVII.' over blank/bleed paper",
+   "GOOD: box 13 CW 'The' correctly boxed and classed; margin notes 2, 6, 10, 11, 12 all correctly MN including the stacked cite column 'Num.6.30. Deut.23. Psal.21...'"
+  ],
+  "OT1-1609-P_0347": [
+   "E2: box 3 abstains '??' on the page number '323'",
+   "E1: box 1 MN is the spread-headline word 'numbe[r]' in the head band, not a margin note",
+   "E8/E20: box 5 named MT is the right-margin annotation ':: Coming into Aegypt they were but 70. Exo.1. increased in 216. yeares...' — a margin note named MT",
+   "E3: foot catchword 'CHAP.' has no box",
+   "E4: foot signature 'Rr 2' has no box either",
+   "GOOD: running head 'NVMERI.' correctly RH; body box 4 MT holds the whole measure cleanly"
+  ],
+  "OT1-1609-P_0590": [
+   "E14: box 6 MT is the chapter argument in italic ('Ruth gathering eares of corne in Booz field, 8. he kindly biddeth her tarie...') — should be AR",
+   "E6: box 0 MT's foot cuts through the last line 'was first reaped.', which then falls inside box 6",
+   "E1: the right headline 'Elimelech. Noemi.' is boxed green as a margin note; it is spread head furniture",
+   "GOOD: box 7 CH 'CHAP. II.' correct; box 9 CW 'grace' correct; margin notes 4 and 5 held correctly over their full length"
+  ],
+  "OT1-1609-P_1010": [
+   "E2: box 0 abstains '??' on the head-band page number",
+   "E1: box 2 MN is the headline word 'Nehemias' in the head band",
+   "E14: box 5 MT is the chapter argument ('The law is read, 3. strange wemen are dismissed...') — should be AR",
+   "E11: box 12 SG at the foot sits on show-through/offset ink ('bbbbbb'), not ink on this leaf",
+   "E3: the real foot catchword at bottom right ('strates,') is unboxed while box 12 claims the bleed-through instead",
+   "GOOD: notes 3, 7, 9 ('Deut.23.'), 10 ('Num.22.') and the very long note 11 are all correctly MN"
+  ],
+  "OT1-1609-P_1014": [
+   "E14: this whole leaf is 'THE ARGVMENT OF THE BOOKE OF TOBIE'; boxes 2, 3 and 8 are argument prose named MT — AR never used",
+   "E12: box 2 MT also swallows the fleuron headpiece band above the title",
+   "E2: page number box 0 abstains '??'",
+   "E9: the right-margin cite 'chap. 1' (level with 'S. Chrysostom ho.15.') gets no box while notes 6 and 9 beside it are boxed",
+   "E3: foot catchword 'THE' unboxed; signature 'Dddd 3' also unboxed",
+   "GOOD: margin notes 4, 5, 6, 7, 9 all correctly MN"
+  ],
+  "OT1-1609-P_1061": [
+   "E2: box 6 abstains '??' on the page number '1037'",
+   "E3: foot catchword 'wher-' (bottom right) has no box",
+   "GOOD: box 5 SG 'Kkkkkk 3' is a correct signature call; running head 'ESTHER.' correctly RH; the three long right-margin notes 2, 3, 4 are held correctly and completely"
+  ],
+  "OT1-1609-P_1133": [
+   "E14: leaf is the Argument of Job; boxes 2, 4 and 8 are argument prose named MT — should be AR",
+   "E2: box 1 abstains '??' on the page number",
+   "E6: box 2's foot cuts the line 'led her follie, stil keeping necessarie patience.' into box 4",
+   "E6: box 4's foot likewise cuts 'tion of the controuersie.' into box 8",
+   "GOOD: box 10 SG 'Tttttt 4' and box 11 CW 'knowlac-' are BOTH correct and separate — the cleanest foot in this batch; notes 3, 5, 6, 7, 9 correctly MN"
+  ],
+  "OT2-1610-P_0005": [
+   "E10: general title page — no class fits; the imprint has been swept into SG",
+   "E10/E16: boxes 4, 5, 6, 7 all SG on 'By the English College of Doway', the 2.Pet.1 quotation, 'Printed at Doway by Lavrence Kellam' and the date 'M.DC.X.' — none is a signature; all fall below the drawn foot",
+   "E10: box 2 CH on 'Diligently conferred with the Hebrew, Greeke, and other Editions in diuers languages.'",
+   "E21/E6: boxes 0 and 1 MT split one title block mid-line — box 0's foot crosses 'FAITHFVLLY TRANS-' and box 1 starts on '-LATED INTO ENGLISH'",
+   "GOOD: the engraved border is left unboxed rather than given a text class"
+  ],
+  "OT2-1610-P_0018": [
+   "E15: box 9 CH is an ordinary annotation sentence ('Holie Scriptures consist not in reading, but in vnderstanding.'), same genre as boxes 7/10 MT",
+   "E15/E16: boxes 12 and 14 named SG are annotation paragraphs ('There be some thinges, mentioned in holie Scripture, which God wil haue hidden...'), reclassified only because they fall below the drawn foot — three classes (MT, CH, SG) for one genre on one leaf",
+   "E21: box 9 overlaps box 7's last line '...me. 1. Cor. 12.'",
+   "GOOD: every margin note (3, 4, 6, 8, 11, 13) is correctly MN, including the four-line 'Scriptures are to be expounded by the common spirit of the Church'; box 5 CH on the section title 'Concerning interpretation of holie Scriptures' is reasonable"
+  ],
+  "OT2-1610-P_0022": [
+   "E16: boxes 8-21 all SG over Psalm III scripture verses ('Lord a why are they b multiplied that truble me?...') — real scripture named SG purely because it sits below the drawn foot",
+   "E13/E5: those same SG boxes run straight across the left gloss column ('a O God let... ow how... usly I hart foloweth'), merging gloss and verse into single rows instead of two columns",
+   "E15: box 0 CH is annotation prose ('to nourish dissention, and so to ouerthrow al Christians...'), not a chapter head",
+   "E14: box 7 MT is the psalm argument ('King Dauid recounteth his danger, when his sonne Absalom conspired...') — should be AR",
+   "E9: the left margin note 'The 8. key.' and the right-margin cite 'Ioan.2' both get no box",
+   "GOOD: box 22 CW 'ANNO-' correct; box 6 CH 'PSALME. III.' correct; notes 3 and 5 correctly MN"
+  ],
+  "OT2-1610-P_0026": [
+   "E2: box 0 abstains '??' on the page number '22'",
+   "E14: box 2 MT is the psalm argument ('Iust men in affliction appeale to God, the reuenger of iniuries...') — should be AR",
+   "E5: box 2 also swallows the left margin note 'The general iudgement. The 9. key.' into the argument box",
+   "E9: the ENTIRE psalm body and its left gloss column ('a The faithful iust soule that ouercometh...' down to 'which shal be manifested in the end of the world.') gets no box at all — only 4 regions on a full page",
+   "E9: the chapter head 'PSALME. V.' is unboxed, and the right-margin cites 'Psal.13. Rom.3.' are unboxed",
+   "GOOD: box 3 CW '† Let' is a correct catchword"
+  ],
+  "OT2-1610-P_0275": [
+   "E7/E21: box 2 MT covers 'THE THIRD PART / OF THE OLD TESTAMENT,' while box 3 CH covers 'BOOKES' from the SAME display heading — one object, two classes, and 'CONTEINING SAPIENTIAL' left in neither",
+   "E14: boxes 5 and 9 MT are the argument prose of Sapiential Bookes — should be AR",
+   "E6: box 5's foot cuts the line '...son, the true Rule or Directorie wherin al good lawes are grounded.'",
+   "E11: the running head boxed RH at the very top is mirrored show-through ('THE BOOKE OF PROVERBES' reversed), i.e. verso ink",
+   "E2: page number '267' at top right has no box",
+   "GOOD: box 11 SG 'Kk 2' and box 12 CW 'Al fiue' both correct and distinct; notes 6, 7, 8, 10 correctly MN; the headpiece ornament left unboxed"
+  ],
+  "OT2-1610-P_0279": [
+   "E14: box 8 CH is the chapter argument ('Gaining of wisdom bringeth much good, 10. and auoydeth much euil...') — argument named CH",
+   "E6: box 0's foot cuts 'copiously teach.' into box 4; box 4's foot likewise cuts 'd. For then they shal crie and not be heard. v. 28.' into box 6",
+   "E2: page number '271' (top right) unboxed",
+   "E9: the left-margin cite stack '87.3. / v.2. / 1 v. 9.' is unboxed while the right-margin notes are boxed",
+   "E3: foot catchword 'from' has no box",
+   "GOOD: box 9 CH 'CHAP. II.' correct; notes 3, 5, 7 and the very long note 11 correctly MN"
+  ],
+  "OT2-1610-P_0457": [
+   "E9/E7: box 0 CH takes only 'THE FOVRT PART'; the rest of the same display heading ('OF THE OLD TESTAMENT CONTEINING PROPHETICAL BOOKES.') gets no box",
+   "E14: box 2 MT is the argument of the Prophetical bookes — should be AR",
+   "E11: box 5 MN is drawn on mirrored show-through ('Prophecies are hard to be vnderstood for diuers causes' reversed) — verso ink, not this leaf",
+   "E2: page number '449' unboxed",
+   "E3: foot catchword 'Testament,' unboxed",
+   "GOOD: box 6 SG 'Li' correct; notes 3 and 4 correctly MN; the ornament band left unboxed"
+  ],
+  "OT2-1610-P_0461": [
+   "E7/E21: boxes 3 CH and 2 CH are two overlapping boxes over one head region — 3 on 'THE PROPHECIE OF ISAIE', 2 nested beneath it also reaching 'CHAP. I.'",
+   "E14: box 4 MT is the argument ('Isaie prophecying in the dayes of foure kinges of Iuda, 2. admonisheth...') — should be AR",
+   "E6: box 4's foot cuts 'l, and the Church shal flourish.' into box 6",
+   "E4: box 8 CW is the SIGNATURE 'Iiij' at the centre foot, named catchword",
+   "E2: page number '453' unboxed; E9: left-margin cite 'Rom.9.' unboxed",
+   "GOOD: box 9 CW 'for' is the real catchword and is correct; notes 5 and 7 correctly MN"
+  ],
+  "OT2-1610-P_0669": [
+   "E14: box 2 MT is the whole Argument of Baruchs Prophecie — should be AR",
+   "E2: page number '661' (top right) has no box",
+   "E23/E9: note 6's box stops above 'The contents.', leaving that note line outside any region",
+   "GOOD: box 8 SG 'LIII 3' and box 9 CW 'THE' are both correct and separate; notes 3, 4, 5, 7 ('Praefat. Ierem.') correctly MN; the CH box on 'THE ARGVMENT OF BARVCHS PROPHECIE' is right"
+  ],
+  "OT2-1610-P_0716": [
+   "E14: box 3 MT is the chapter argument ('God wil not answer the elders of Israel asking by the prophet, 4....') — should be AR",
+   "E6: box 2's foot cuts the word 'lamentation.' on its own last line",
+   "E2: the small abstained box at top left sits on the page number",
+   "E3: foot catchword 'them.' has no box",
+   "GOOD: box 4 CH 'CHAP. XX' correct; box 5 MN holds a very long left-margin note (':: Ezechiel beganne to prophecie in the fifth yeare...') over its whole run"
+  ],
+  "OT2-1610-P_0746": [
+   "E2: box 0 abstains '??' on the page number",
+   "E9: the second left-margin note (':: No Iewe is so obstinate, nor heretike so blind, but al confesse that Messias, Christ is here called by the name of Dauid...') gets NO box, while box 4 above it is boxed — same column, same genre",
+   "E9: the right-margin cite 'Ioa. 10' is unboxed",
+   "E3: foot catchword 'terrour.' unboxed",
+   "GOOD: running head 'THE PROPHECIE' correctly RH; box 4 MN correct"
+  ],
+  "OT2-1610-P_0750": [
+   "E14: box 4 MT is the chapter argument ('By dead bones rising to life (which also signifieth the general resurrection)...') — should be AR",
+   "E2: the small abstained box at the top of the measure sits on the page number",
+   "E3: foot catchword 'And' has no box",
+   "GOOD: box 5 CH 'CHAP. XXXVII.' correct; box 3 MN correct; boxes 0 and 6 hold the two text blocks without clipping a line"
+  ],
+  "OT2-1610-P_0796": [
+   "E15: box 0 MT is the tail of the annotation block ('Ierom. epist.7. ad Letam. S. Augustin epist. 122...'), the same genre elsewhere named SG/CH in this corpus",
+   "E14: box 2 MT is the chapter argument ('King a Baltassar making a great banket, with his nobles drinke in the holie vessels...') — should be AR",
+   "E2: head-band page number has no box",
+   "E3: foot catchword 'changed' unboxed",
+   "GOOD: box 4 CH 'CHAP. V.' correct; the long note 3 and the small note 7 ('* the kings mother') both correctly MN"
+  ],
+  "OT2-1610-P_0865": [
+   "NEW: box 2 names the chapter head 'CHAP. II.' as RH, nested directly under box 0 RH ('NAHVM.') — a chapter head given the running-head class, two RH boxes stacked in the head band",
+   "E14: box 1 CH is the chapter argument ('The Chaldees shal mightely inuade the Assirians, 5. take and ransacke Niniue.')",
+   "E8/E20: boxes 5, 6, 7 named MT are the three right-margin annotations ('a Nabuchodonosor inuading the territorie of Niniue...', 'b The Assirians became more proud...', 'c The people of Niniue...') — margin notes named MT, and they overlap each other (E21)",
+   "E16/E14: boxes 9 and 10 SG are the next chapter head 'CHAP. III.' and its argument ('A description of Niniues ruine, 5. made ignominious to al nations...'), renamed SG only because they fall below the foot",
+   "E2: box 12 abstains '??' on the page number '855'; E9: the left-margin cite 'a. 2.' is unboxed",
+   "GOOD: box 11 CW 'Wo to' is a correct catchword"
+  ],
+  "OT2-1610-P_0900": [
+   "E14: leaf is 'THE ARGVMENT OF ...'; boxes 0, 5 and 9 are argument prose named MT",
+   "E6: box 0's foot cuts '...ted for Canonical by anie authentical auctoritie.'; box 5's foot cuts '...hemias as but one booke. Lastly by the Councels of Florence, and Trent.'",
+   "E2: the small abstained box beside 0:MT sits on the head-band page number",
+   "E3: foot catchword 'fact.' has no box",
+   "GOOD: seven margin notes (2, 3, 4, 6, 7, 8, 10) all correctly MN, including the long bare-cite column 6 ('* li.1.c.1. v.1.7.11...') held as one note — the best margin handling in this batch"
+  ],
+  "OT2-1610-P_1084": [
+   "E2: box 0 MN is drawn on the head-band page number, not on a margin note",
+   "GOOD: otherwise a clean leaf — box 2 MT holds the whole measure without clipping, box 3 MN correctly holds the bare cite stack 'Eccli.23. Luc 16. Gen 1.', box 4 CW 'was' correct, running head correctly RH"
+  ],
+  "OT2-1610-P_1088": [
+   "E13: box 1 MT wraps the whole five-column 'AN HISTORICAL TABLE' (Anni mundi | Patriarches | The sacred Historie | Schismes and infidelitie | Scriptures) as one block; no column is separated",
+   "E10: a table has no correct class and 'MT' has acted as the container",
+   "E2: the page number '4' at top left has no PN box (only a stray green fragment)",
+   "GOOD: the running head 'AN HISTORICAL TABLE' is correctly RH"
+  ],
+  "OT2-1610-P_1112": [
+   "E10: 'A PARTICVLAR TABLE' index page — no class fits and the labels have scattered across SG, CW and MT",
+   "E4: boxes 3, 5, 7, 18 named CW are ordinary index entries in the right column ('Ambition, abundance, and idlenes are the cause of much corruption 701.', 'Antiquitie a note of true doctrine b.331.') — not catchwords; there is no catchword on this leaf",
+   "E20: class is decided by side — the left column entries are all SG (boxes 2, 4, 6, 8, 9, 10, 11, 13, 14, 16, 17) and the right column all CW, with MT (boxes 1, 12, 15) sprinkled through both",
+   "E21: nearly every box's foot overlaps the next entry's first line ('...latrie.', '7. &c', '8. &c.'), so single lines sit in two regions",
+   "E2: box 19 MN is on the head-band page number",
+   "E16: the drawn foot sits just below the head band, so almost the entire page is 'outside the frame' — that is what drives the SG/CW renaming",
+   "GOOD: the running head 'A PARTICVLAR TABLE' is correctly RH"
+  ],
+  "OT2-1610-P_1136": [
+   "E10: 'Censura trium Theologorum Anglorum' approbation leaf — paratext with no correct class; MT is acting as containment for all of it",
+   "E2/E7: the unlabelled top box holds the page number '1124' and the Latin heading in ONE region, so the page number gets no PN of its own",
+   "E6/E21: boxes 3 and 4 split the signatory list mid-entry — box 3's foot cuts 'in vniuersitate Remensi.' and box 4 begins on 'GVLIELMVS HARRISONVS'",
+   "GOOD: no box was drawn on the large blank lower half of the leaf (no E23 here)"
+  ]
+ },
+ "_provenance": "Leaves 1-104 reviewed by Jarvis directly. Leaves 105-208 reviewed by four parallel readers working from a shared brief (the E1-E25 taxonomy as it then stood), each output verified against its assignment list for completeness before merging. Their finding strings are kept VERBATIM: they are evidence, and rewriting them would blur who saw what. ⚠️ 2026-08-29: E24-E28 were minted from the readers' verbatim strings AFTER they worked, so NO finding string carries those codes and a regex over the codes counts them as ZERO. They are addressed by the readers' own words instead ('NEW:', 'SG-MISSING:', 'E9 (severe)'), which is why the strings are kept verbatim. ⚠️ TWO leaf citations in _classes were WRONG and are corrected in place: see E26 and E27."
+}

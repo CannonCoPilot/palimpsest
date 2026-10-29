@@ -1,0 +1,609 @@
+{
+ "_doc": "R14.10b's CONFIRMING READ. One entry per head-band candidate box: what the SELECTED recogniser makes of it. \u26a0\ufe0f This is PERCEPTION, never a label \u2014 the reading decides the CLASS, and the printed number itself is adjudicated separately from the page (see score_pagenumber_agent.py).",
+ "witness": "OT2-1610-P",
+ "stamp": {
+  "model": "dr_v3_armB",
+  "model_path": "models/dr_v3_armB/best_0.9694.mlmodel",
+  "model_sha": "fa6e861fa94787b3",
+  "selected_by": "R2.1b 7 class wins"
+ },
+ "readings": [
+  {
+   "leaf": 8,
+   "x0": 0.18212,
+   "y0": 0.02203,
+   "x1": 0.20106,
+   "y1": 0.03944,
+   "text": "4",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf8_box0.png"
+  },
+  {
+   "leaf": 18,
+   "x0": 0.16112,
+   "y0": 0.01467,
+   "x1": 0.20148,
+   "y1": 0.0356,
+   "text": "I",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf18_box1.png"
+  },
+  {
+   "leaf": 19,
+   "x0": 0.78226,
+   "y0": 0.02255,
+   "x1": 0.81239,
+   "y1": 0.04317,
+   "text": "I5",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf19_box0.png"
+  },
+  {
+   "leaf": 20,
+   "x0": 0.16731,
+   "y0": 0.01882,
+   "x1": 0.20298,
+   "y1": 0.04023,
+   "text": "16",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf20_box0.png"
+  },
+  {
+   "leaf": 21,
+   "x0": 0.78199,
+   "y0": 0.01693,
+   "x1": 0.81771,
+   "y1": 0.03552,
+   "text": "",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf21_box1.png"
+  },
+  {
+   "leaf": 22,
+   "x0": 0.16538,
+   "y0": 0.01304,
+   "x1": 0.19841,
+   "y1": 0.03402,
+   "text": "18",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf22_box1.png"
+  },
+  {
+   "leaf": 23,
+   "x0": 0.7961,
+   "y0": 0.00853,
+   "x1": 0.83184,
+   "y1": 0.03273,
+   "text": "1",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf23_box1.png"
+  },
+  {
+   "leaf": 25,
+   "x0": 0.7852,
+   "y0": 0.00903,
+   "x1": 0.81915,
+   "y1": 0.02654,
+   "text": "",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf25_box2.png"
+  },
+  {
+   "leaf": 26,
+   "x0": 0.17004,
+   "y0": 0.0228,
+   "x1": 0.20349,
+   "y1": 0.04242,
+   "text": "22",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf26_box0.png"
+  },
+  {
+   "leaf": 34,
+   "x0": 0.27634,
+   "y0": 0.1765,
+   "x1": 0.30503,
+   "y1": 0.19207,
+   "text": "50",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf34_box0.png"
+  },
+  {
+   "leaf": 35,
+   "x0": 0.67003,
+   "y0": 0.17528,
+   "x1": 0.70146,
+   "y1": 0.18965,
+   "text": "",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf35_box2.png"
+  },
+  {
+   "leaf": 274,
+   "x0": 0.17511,
+   "y0": 0.00646,
+   "x1": 0.23091,
+   "y1": 0.02823,
+   "text": "266",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf274_box1.png"
+  },
+  {
+   "leaf": 275,
+   "x0": 0.78208,
+   "y0": 0.01869,
+   "x1": 0.83755,
+   "y1": 0.03884,
+   "text": "27",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf275_box1.png"
+  },
+  {
+   "leaf": 276,
+   "x0": 0.15652,
+   "y0": 0.01184,
+   "x1": 0.21212,
+   "y1": 0.03335,
+   "text": "268",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf276_box2.png"
+  },
+  {
+   "leaf": 277,
+   "x0": 0.75485,
+   "y0": 0.01769,
+   "x1": 0.8081,
+   "y1": 0.03855,
+   "text": "26",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf277_box0.png"
+  },
+  {
+   "leaf": 278,
+   "x0": 0.16138,
+   "y0": 0.01533,
+   "x1": 0.21586,
+   "y1": 0.03603,
+   "text": "70",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf278_box2.png"
+  },
+  {
+   "leaf": 279,
+   "x0": 0.75563,
+   "y0": 0.00983,
+   "x1": 0.80856,
+   "y1": 0.02829,
+   "text": "2I",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf279_box2.png"
+  },
+  {
+   "leaf": 280,
+   "x0": 0.18504,
+   "y0": 0.00508,
+   "x1": 0.24126,
+   "y1": 0.02741,
+   "text": "27",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf280_box2.png"
+  },
+  {
+   "leaf": 455,
+   "x0": 0.73928,
+   "y0": 0.01718,
+   "x1": 0.8025,
+   "y1": 0.03756,
+   "text": "447",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf455_box2.png"
+  },
+  {
+   "leaf": 458,
+   "x0": 0.18886,
+   "y0": 0.025,
+   "x1": 0.246,
+   "y1": 0.04565,
+   "text": "50",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf458_box0.png"
+  },
+  {
+   "leaf": 459,
+   "x0": 0.77403,
+   "y0": 0.01694,
+   "x1": 0.82409,
+   "y1": 0.03704,
+   "text": "45F",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf459_box1.png"
+  },
+  {
+   "leaf": 461,
+   "x0": 0.76721,
+   "y0": 0.01492,
+   "x1": 0.81917,
+   "y1": 0.03741,
+   "text": "453",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf461_box1.png"
+  },
+  {
+   "leaf": 666,
+   "x0": 0.1698,
+   "y0": 0.00897,
+   "x1": 0.22252,
+   "y1": 0.0322,
+   "text": "658",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf666_box0.png"
+  },
+  {
+   "leaf": 667,
+   "x0": 0.79634,
+   "y0": 0.01689,
+   "x1": 0.84807,
+   "y1": 0.03808,
+   "text": "5",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf667_box1.png"
+  },
+  {
+   "leaf": 668,
+   "x0": 0.15515,
+   "y0": 0.01178,
+   "x1": 0.21443,
+   "y1": 0.03448,
+   "text": "660",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf668_box0.png"
+  },
+  {
+   "leaf": 669,
+   "x0": 0.77729,
+   "y0": 0.014,
+   "x1": 0.82965,
+   "y1": 0.03702,
+   "text": "66I",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf669_box0.png"
+  },
+  {
+   "leaf": 670,
+   "x0": 0.15982,
+   "y0": 0.01527,
+   "x1": 0.21413,
+   "y1": 0.03669,
+   "text": "62",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf670_box0.png"
+  },
+  {
+   "leaf": 671,
+   "x0": 0.76884,
+   "y0": 0.01324,
+   "x1": 0.82254,
+   "y1": 0.03404,
+   "text": "663",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf671_box1.png"
+  },
+  {
+   "leaf": 715,
+   "x0": 0.769,
+   "y0": 0.01258,
+   "x1": 0.83974,
+   "y1": 0.0326,
+   "text": "",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf715_box3.png"
+  },
+  {
+   "leaf": 716,
+   "x0": 0.1893,
+   "y0": 0.02011,
+   "x1": 0.25133,
+   "y1": 0.04229,
+   "text": "708",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf716_box0.png"
+  },
+  {
+   "leaf": 717,
+   "x0": 0.78514,
+   "y0": 0.02114,
+   "x1": 0.84484,
+   "y1": 0.04068,
+   "text": "7O",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf717_box2.png"
+  },
+  {
+   "leaf": 718,
+   "x0": 0.16796,
+   "y0": 0.02667,
+   "x1": 0.22357,
+   "y1": 0.04655,
+   "text": "y10",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf718_box0.png"
+  },
+  {
+   "leaf": 745,
+   "x0": 0.76923,
+   "y0": 0.02751,
+   "x1": 0.82715,
+   "y1": 0.05085,
+   "text": "77",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf745_box1.png"
+  },
+  {
+   "leaf": 746,
+   "x0": 0.18233,
+   "y0": 0.03085,
+   "x1": 0.24203,
+   "y1": 0.05516,
+   "text": "738",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf746_box0.png"
+  },
+  {
+   "leaf": 747,
+   "x0": 0.76133,
+   "y0": 0.02253,
+   "x1": 0.83168,
+   "y1": 0.04289,
+   "text": "39",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf747_box1.png"
+  },
+  {
+   "leaf": 748,
+   "x0": 0.18595,
+   "y0": 0.02586,
+   "x1": 0.25177,
+   "y1": 0.04621,
+   "text": "740",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf748_box0.png"
+  },
+  {
+   "leaf": 749,
+   "x0": 0.78095,
+   "y0": 0.02061,
+   "x1": 0.8376,
+   "y1": 0.04138,
+   "text": "741",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf749_box1.png"
+  },
+  {
+   "leaf": 750,
+   "x0": 0.16779,
+   "y0": 0.02423,
+   "x1": 0.22799,
+   "y1": 0.04499,
+   "text": "742",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf750_box1.png"
+  },
+  {
+   "leaf": 793,
+   "x0": 0.78562,
+   "y0": 0.02002,
+   "x1": 0.8456,
+   "y1": 0.04089,
+   "text": "78",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf793_box1.png"
+  },
+  {
+   "leaf": 794,
+   "x0": 0.32645,
+   "y0": 0.15609,
+   "x1": 0.37246,
+   "y1": 0.17354,
+   "text": "784",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf794_box0.png"
+  },
+  {
+   "leaf": 795,
+   "x0": 0.66764,
+   "y0": 0.15985,
+   "x1": 0.71471,
+   "y1": 0.17551,
+   "text": "78",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf795_box1.png"
+  },
+  {
+   "leaf": 796,
+   "x0": 0.15557,
+   "y0": 0.02074,
+   "x1": 0.21741,
+   "y1": 0.04372,
+   "text": "8",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf796_box1.png"
+  },
+  {
+   "leaf": 819,
+   "x0": 0.7796,
+   "y0": 0.00856,
+   "x1": 0.83725,
+   "y1": 0.02926,
+   "text": "S09",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf819_box1.png"
+  },
+  {
+   "leaf": 820,
+   "x0": 0.16592,
+   "y0": 0.0005,
+   "x1": 0.21956,
+   "y1": 0.02168,
+   "text": "S1O",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf820_box1.png"
+  },
+  {
+   "leaf": 821,
+   "x0": 0.77117,
+   "y0": 0.00842,
+   "x1": 0.82232,
+   "y1": 0.02864,
+   "text": "SII",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf821_box1.png"
+  },
+  {
+   "leaf": 865,
+   "x0": 0.79422,
+   "y0": 0.03763,
+   "x1": 0.84111,
+   "y1": 0.06458,
+   "text": "8",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf865_box12.png"
+  },
+  {
+   "leaf": 866,
+   "x0": 0.16174,
+   "y0": 0.02536,
+   "x1": 0.21765,
+   "y1": 0.05044,
+   "text": "85",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf866_box4.png"
+  },
+  {
+   "leaf": 899,
+   "x0": 0.83477,
+   "y0": 0.02135,
+   "x1": 0.88824,
+   "y1": 0.0448,
+   "text": "8",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf899_box0.png"
+  },
+  {
+   "leaf": 900,
+   "x0": 0.16074,
+   "y0": 0.01843,
+   "x1": 0.2183,
+   "y1": 0.03919,
+   "text": "S90",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf900_box1.png"
+  },
+  {
+   "leaf": 901,
+   "x0": 0.78841,
+   "y0": 0.0163,
+   "x1": 0.83797,
+   "y1": 0.03769,
+   "text": "BoF",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf901_box1.png"
+  },
+  {
+   "leaf": 903,
+   "x0": 0.77751,
+   "y0": 0.00155,
+   "x1": 0.82967,
+   "y1": 0.02746,
+   "text": "893",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf903_box1.png"
+  },
+  {
+   "leaf": 1085,
+   "x0": 0.8315,
+   "y0": 0.00685,
+   "x1": 0.90009,
+   "y1": 0.02884,
+   "text": "IO7I",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1085_box1.png"
+  },
+  {
+   "leaf": 1086,
+   "x0": 0.12844,
+   "y0": 0.04665,
+   "x1": 0.19966,
+   "y1": 0.06758,
+   "text": "1072",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1086_box0.png"
+  },
+  {
+   "leaf": 1087,
+   "x0": 0.89612,
+   "y0": 0.01223,
+   "x1": 0.96102,
+   "y1": 0.03305,
+   "text": "1073",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1087_box3.png"
+  },
+  {
+   "leaf": 1111,
+   "x0": 0.74812,
+   "y0": 0.01844,
+   "x1": 0.81717,
+   "y1": 0.0409,
+   "text": "97",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1111_box1.png"
+  },
+  {
+   "leaf": 1113,
+   "x0": 0.75737,
+   "y0": 0.02251,
+   "x1": 0.82943,
+   "y1": 0.04288,
+   "text": "109",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1113_box2.png"
+  },
+  {
+   "leaf": 1114,
+   "x0": 0.16954,
+   "y0": 0.02431,
+   "x1": 0.23366,
+   "y1": 0.04571,
+   "text": "1100",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1114_box0.png"
+  },
+  {
+   "leaf": 1135,
+   "x0": 0.77234,
+   "y0": 0.01772,
+   "x1": 0.83891,
+   "y1": 0.03922,
+   "text": "1123",
+   "crop": "witness/gold/reading-crops/OT2-1610-P_leaf1135_box1.png"
+  }
+ ],
+ "leaves": [
+  5,
+  6,
+  7,
+  8,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  34,
+  35,
+  274,
+  275,
+  276,
+  277,
+  278,
+  279,
+  280,
+  455,
+  456,
+  457,
+  458,
+  459,
+  460,
+  461,
+  666,
+  667,
+  668,
+  669,
+  670,
+  671,
+  715,
+  716,
+  717,
+  718,
+  745,
+  746,
+  747,
+  748,
+  749,
+  750,
+  793,
+  794,
+  795,
+  796,
+  819,
+  820,
+  821,
+  865,
+  866,
+  898,
+  899,
+  900,
+  901,
+  902,
+  903,
+  1084,
+  1085,
+  1086,
+  1087,
+  1088,
+  1089,
+  1110,
+  1111,
+  1112,
+  1113,
+  1114,
+  1135,
+  1136
+ ]
+}

@@ -40,6 +40,12 @@ from build_foreedge_gold import GOLD, candidates            # noqa: E402
 # `AR recall 4/4` and printed `AR ⚠️ NO NAME IN THE AGENT` about the same four boxes. A checking
 # claim that can drift from what it checks is not a check.
 AGENT_CLASSES = VA.CLASSES
+# 🔴 R16.5 SPLIT THIS QUESTION IN TWO, AND THE SPLIT IS THE POINT. Widening `CLASSES` gave the
+# annotation block a correct answer, which took the "CANNOT NAME" count from 1 to 0 WITHOUT ONE
+# LINE OF RECOGNITION BEING WRITTEN. A red number going green on a declaration is exactly the
+# laundering this project forbids, so the second question — can any cue actually EMIT that class —
+# is asked separately and reported below the first.
+EMITTABLE = VA._emittable_classes()
 
 # Head-band MarginNote recall, from `visual_agent.py` on GOLD-HEADBAND. The comparison this file
 # exists to make; it is a measured figure, not a bar invented here.
@@ -68,6 +74,7 @@ def main() -> int:
     per: dict[str, list[int]] = {}
     conf: dict[tuple, int] = {}
     unnameable: dict[str, int] = {}
+    unreachable: dict[str, int] = {}
     for row in g["labels"]:
         lf = leaves[row["leaf"]]
         b = candidates(lf)[row["idx"]]
@@ -79,6 +86,8 @@ def main() -> int:
         conf[(gold, got)] = conf.get((gold, got), 0) + 1
         if gold not in AGENT_CLASSES:
             unnameable[gold] = unnameable.get(gold, 0) + 1
+        elif gold not in EMITTABLE:
+            unreachable[gold] = unreachable.get(gold, 0) + 1
 
     hit = sum(v[0] for v in per.values())
     tot = sum(v[1] for v in per.values())
@@ -118,11 +127,29 @@ def main() -> int:
     print("   on leaf 409 (R14.9). These boxes are counted as errors above, correctly: the agent is")
     print("   WRONG about them, not merely silent. They are Roadmap R14.10.")
 
+    # 🔴 THE SECOND HALF OF THE SAME QUESTION (R16.5). A class can be DECLARED and still be
+    # unreachable: `AN` is in `CLASSES` and no branch of `_cue` returns it, so the gold entry on
+    # leaf 417 is a guaranteed miss, not a contest the agent lost. ⚠️ IT COUNTS AS AN ERROR ABOVE
+    # AND MUST — the agent is wrong about that box. What changes is what the error MEANS: before
+    # R16.5 there was no right answer to give, now there is one and nothing can reach it.
+    print(f"\n🔴 CLASSES DECLARED BUT UNREACHABLE — no cue emits them: {sum(unreachable.values())} box(es)")
+    for lab, n in sorted(unreachable.items(), key=lambda kv: -kv[1]):
+        print(f"     {lab} × {n}   (declared in CLASSES; `_cue` has no branch returning it)")
+    no_cue = sorted(AGENT_CLASSES - EMITTABLE - {VA.ABSTAIN})
+    print(f"   agent-wide: {len(no_cue)} declared class(es) with no cue at all — {' '.join(no_cue) or 'none'}")
+    print("   ⚠️ DO NOT READ THE ZERO ABOVE AS PROGRESS IF THIS NUMBER IS NON-ZERO. R16.5 removed")
+    print("   the MISFILING TARGET; the recognition is Roadmap R16.6 and is not built.")
+
     print("\n⚠️ COVERAGE, STATED. 5 of 20 leaves, ONE witness, ONE operator, NOT fully blind (the")
     print("   agent's aggregate calls had been seen before adjudication). Discharges NO gate; rows")
     print("   10a/10b remain reserved for GOLD-LAYOUT (R16.1). This gold may never be promoted.")
 
-    return 1 if unnameable else 0
+    # 🔴 THE EXIT CODE FOLLOWS BOTH COUNTS, and that is R16.5's whole discipline in one line. This
+    # read `return 1 if unnameable else 0`, so declaring `AN` would have flipped this script from
+    # exit 1 to exit 0 — a suite going green because a word was added to a set, with the box on
+    # leaf 417 still misfiled exactly as before. A gold entry the agent cannot possibly reach is a
+    # RED state whichever half of the ontology is missing.
+    return 1 if (unnameable or unreachable) else 0
 
 
 if __name__ == "__main__":

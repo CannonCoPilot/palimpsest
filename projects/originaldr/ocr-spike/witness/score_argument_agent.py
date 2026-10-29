@@ -151,7 +151,7 @@ def main() -> int:
     if missing:
         print(f"🔴 THE FOUNT RECORD IS NOT AVAILABLE ON {len(missing)} LEAF/LEAVES — the cue cannot")
         print(f"   have run. This is REPORTED, never scored around: {leaves[missing[0]].fount_why}")
-        print("   Run: ../ocr-venv/bin/python witness/build_fount_record.py")
+        print("   Run: ../ocr-venv/bin/python witness/build_fount_record.py --build")
         return 1
 
     # ── A1 / A2 ──────────────────────────────────────────────────────────────────────────────

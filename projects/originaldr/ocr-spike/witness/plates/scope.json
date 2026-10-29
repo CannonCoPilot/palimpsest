@@ -1,0 +1,122 @@
+{
+ "_doc": "Per-leaf SCOPE decisions for GOLD-LAYOUT. Decided by Sir 2026-08-28 (18 OUT). RE-EVALUATED 2026-08-29 by R16.5, which widened CLASSES with AN/OR/DC/TB/DT/CO. ⚠️ Sir's DECISION is untouched; his CRITERION is what changed answer. Every one of the 18 was put out because a genre had no correct label, and 15 of the 18 said so in the same words — 'table and index rows have no correct answer in CLASSES'. Those words are now false. The 2026-08-28 reason is preserved per leaf as `why_2026-08-28`; nothing is overwritten.",
+ "_criterion": "OUT only when NO object on the leaf has a correct answer in CLASSES — title page, key to the marks, table of contents, standalone argument pages. NOT out merely because a leaf is front matter: preface prose (NT-1582-B_0008, _0009) uses RH/MT/MN correctly and stays IN. ⚠️ 2026-08-29: applied against the WIDENED class set. Under it NO leaf in this corpus is out of scope. That is the criterion working, not a bar being cleared by redefinition — the denominator GREW, 190 -> 208.",
+ "_warning": "OUT OF SCOPE IS NOT A PASS. Out-of-scope leaves contribute nothing to GOLD-LAYOUT and are counted apart from it. Run plate_scope.py to see the IN-SCOPE count against R16.1's >=125 bar. Excluding leaves until a bar clears is forbidden; if the bar stops being met the deliverable stays OPEN.",
+ "_unsolved": "RESOLVED AS TO ONTOLOGY, OPEN AS TO RECOGNITION. The ANNOTATIONS genre now has `AN`, so OT1-1609-B_0417 and NT-1582-B_0036 have one correct answer between them instead of two wrong ones. ⚠️ NO CUE EMITS `AN` — R16.5 removed the misfiling TARGET, not the misfiling. ⚠️ AND E22 IS STILL UNREACHED: OT1-1609-P_0024 carries the key to the marks AND the Argument of Genesis on ONE leaf. A leaf-level scope field cannot express that whatever the class set says; it is archetype F, Roadmap R12.3.",
+ "leaves": {
+  "NT-1582-B_0007": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries DT (display title) · CO (imprint, date, CVM PRIVILEGIO) · OR (border), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "title page — imprint, two quotations with glosses, date, CVM PRIVILEGIO. Twelve blocks, none with a correct answer in CLASSES; all were named SG.",
+   "was": "out"
+  },
+  "NT-1582-B_0029": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries MT — the key-to-the-marks paragraphs are explanatory prose, and ProseBlock was REFUSED precisely because preface prose already names correctly as MT · DT for the heading, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "key to the numbers and marks — eleven explanatory paragraphs, all named CH. No scriptural-opening grammar present.",
+   "was": "out"
+  },
+  "NT-1582-B_0030": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (two-column contents) · DT (display title), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "table of the books — a two-column contents list taken as one MT block. Column structure has no representation in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0034": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries AR (the argument prose) · OR (the fleuron), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "standalone argument page plus fleuron — argument prose named CH, ornament named CH. AR exists but the whole leaf is argument, so there is no body to anchor a frame on.",
+   "was": "out",
+   "residual_blocker": "FRAME, not ontology: the whole leaf is argument, so `frame()` has no body block to anchor the measure on. This is the frame-anchor root cause, now the ONLY thing holding this leaf back."
+  },
+  "NT-1582-B_0313": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (harmony rows) · DT · SG, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "harmony/synopsis table (THE SVMME AND ORDER OF THE EVANGELICAL HISTORIE) — 21 of 22 boxes named MN, including the display title and the signature. A table row has no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0314": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (four-column reference structure) · CW, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "harmony/synopsis table continuation — the whole page taken as ONE MT box plus a catchword. Four-column reference structure has no representation in CLASSES.",
+   "was": "out",
+   "residual_blocker": "DETECTION: 40+ entries arrive as ONE box (E13 gross under-segmentation)."
+  },
+  "NT-1582-B_0317": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB · OR (fleuron) · SG, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "harmony/synopsis table continuation — whole table as one MT, fleuron as MT, signature as MT; every marginal liturgical label unboxed.",
+   "was": "out"
+  },
+  "NT-1582-B_0778": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (two-column liturgical table) · DT · DC (woodcut initial), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "table of the Epistles and Gospels — a two-column liturgical table left almost entirely unboxed (n=5). Table rows have no correct answer in CLASSES.",
+   "was": "out",
+   "residual_blocker": "DETECTION: the table is almost entirely unboxed (n=5). A correct answer now exists for rows that have no box."
+  },
+  "NT-1582-B_0779": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column liturgical table of Epistles and Gospels — whole table as one MT box. Table and index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0780": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column liturgical table continuation — whole table as one MT box. Table and index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0781": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index rows) · SG, so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "liturgical table end plus the opening of the topical index — index prose and signature both named CW. Table and index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0782": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index rows, both columns), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column topical index — identical entries named MN in the left column and MT in the right, class assigned by position alone. Table and index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0802": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index rows), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column topical index continuation — entries named MN, MT and SG by position. Table and index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "NT-1582-B_0803": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index + glossary rows) · DT (THE EXPLICATION OF CERTAINE VVORDES), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "index end plus the two-column glossary, which is entirely unboxed; the display title is named CW. Table and index rows have no correct answer in CLASSES.",
+   "was": "out",
+   "residual_blocker": "DETECTION: the glossary beneath the display title is entirely unboxed."
+  },
+  "NT-1582-B_0804": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (glossary and errata) · CO (LAVS DEO), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "glossary and errata table plus LAVS DEO — two two-column tables each taken as one MT box. Table rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "OT1-1609-P_0005": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries DT · CO (imprint, printer’s line, date) · OR (ornamental border), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "title page of the 1609 OT — imprint, quotation, printer's line and date all named SG, and the ornamental border is unboxed entirely. Same genre as NT-1582-B_0007.",
+   "was": "out",
+   "residual_blocker": "DETECTION: the ornamental border is unboxed entirely."
+  },
+  "OT2-1610-P_1112": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index rows, both columns), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column topical index — regions split SG (left column) / CW (right column) purely by side of the measure. Index rows have no correct answer in CLASSES.",
+   "was": "out"
+  },
+  "OT2-1610-P_1113": {
+   "scope": "in",
+   "why": "R16.5 — IN. The recorded criterion RE-APPLIED, not overruled: `CLASSES` now carries TB (index rows), so this leaf's objects DO have a correct answer. ⚠️ IN IS NOT A PASS EITHER — no cue emits any of those classes yet, so every one of these boxes is still WRONG today; it is now wrong VISIBLY instead of being excluded.",
+   "why_2026-08-28": "two-column topical index continuation — roughly 90% of the index entries left uncovered after the first few. Index rows have no correct answer in CLASSES.",
+   "was": "out",
+   "residual_blocker": "DETECTION: ~90% of index entries uncovered."
+  }
+ }
+}

@@ -54,6 +54,10 @@
          max-height:130px;overflow:auto}
   .flag{border-left:3px solid var(--bad);padding-left:7px;margin:5px 0;font-size:12px}
   .flag.warn{border-color:var(--warn)} .flag.note{border-color:var(--dim)}
+  /* eye = found by LOOKING, not by the structural screen. Distinct on purpose: the screen
+     sees geometry only, so an eye finding is the only kind that can catch a leaf whose
+     geometry is lawful and whose labels are still wrong. */
+  .flag.eye{border-color:var(--accent);border-left-width:5px}
   textarea{width:100%;min-height:52px;background:var(--bg);color:var(--ink);
            border:1px solid var(--line);border-radius:5px;padding:6px;font:inherit;font-size:12px}
   .pill{font:11px ui-monospace,monospace;border:1px solid var(--line);border-radius:99px;
@@ -76,7 +80,7 @@
   </div>
   <div class="row">
     <button id="zo">−</button><button id="zi">+</button>
-    <button id="tgl" class="on">boxes</button><button id="tglf" class="on">frame</button>
+    <button id="tgl" class="on">boxes</button><button id="tglf" class="on">frame</button><button id="tgll">overlaps</button>
   </div>
 
   <div class="card">
@@ -103,10 +107,14 @@
 
   <div class="card">
     <div class="k">my review flags on this leaf</div>
+    <div id="scope"></div>
     <div id="flags" class="sub">none</div>
   </div>
 
   <div class="card">
+    <div class="k">ink ownership — R16.16 (read from lamination-scores.json, NEVER recomputed here)</div>
+    <div id="lam" class="sub">not loaded</div>
+    <div class="cause" id="lamwhy"></div>
     <div class="k">verdict — R14.13 needs one per leaf</div>
     <div class="row">
       <button class="vd" data-v="clean">CLEAN</button>
@@ -130,7 +138,19 @@ const $=q=>document.querySelector(q);
 async function boot(){
   S.data=await (await fetch('bundle.json')).json();
   try{ S.flags=await (await fetch('review-flags.json')).json(); }catch(e){ S.flags={}; }
+  // R16.17(3): the viewer READS the invariant, it does not compute it. Two implementations of one
+  // invariant is the R14.10a defect, and a viewer that disagreed with the scorer would be worse
+  // than one that shows nothing, because it would look authoritative.
+  try{ const L=await (await fetch('lamination-scores.json')).json();
+       S.lam={}; L.leaves.forEach(r=>S.lam[r.id]=r); S.lamdoc=L.verdict; }
+  catch(e){ S.lam=null; }
+  // Durable verdicts: a tracked file is the BASELINE, localStorage only carries edits made since.
+  // localStorage alone is one cleared browser from losing a 208-leaf review.
+  try{ S.filed=await (await fetch('review-verdicts.json')).json(); }catch(e){ S.filed={}; }
   try{ S.edits=JSON.parse(localStorage.getItem('gl-edits')||'{}'); }catch(e){ S.edits={}; }
+  Object.entries(S.filed.leaves||{}).forEach(([id,v])=>{
+    if(!S.edits[id]) S.edits[id]={boxes:{},added:[],deleted:[],verdict:v.verdict,note:v.note||''};
+  });
   $('#jump').innerHTML=S.data.plates.map((p,i)=>
     `<option value="${i}">${p.id} · ${p.archetype}</option>`).join('');
   $('#jump').onchange=e=>{S.i=+e.target.value;draw();};
@@ -140,6 +160,7 @@ async function boot(){
   $('#zo').onclick=()=>{S.z=Math.max(.2,S.z/1.25);zoom();};
   $('#tgl').onclick=e=>{S.boxes=!S.boxes;e.target.classList.toggle('on');draw();};
   $('#tglf').onclick=e=>{S.frame=!S.frame;e.target.classList.toggle('on');draw();};
+  $('#tgll').onclick=e=>{S.lamon=!S.lamon;e.target.classList.toggle('on');draw();};
   $('#del').onclick=delBox; $('#add').onclick=addBox; $('#exp').onclick=exportAll;
   document.querySelectorAll('.vd').forEach(b=>b.onclick=()=>verdict(b.dataset.v));
   $('#note').oninput=e=>{ed().note=e.target.value;save();};
@@ -173,6 +194,12 @@ function draw(){
   $('#ttl').textContent=p.id;
   $('#sub').innerHTML=`${p.witness} leaf ${p.leaf} · ${p.origin} · split
      <b>${p.split}</b> · ${p.gold}`;
+  // Scope is stated on the plate itself, never left implicit. An out-of-scope leaf still
+  // renders and can still be corrected — it simply contributes nothing to GOLD-LAYOUT, and
+  // saying so on the plate is what stops it being quietly counted as a pass later.
+  $('#scope').innerHTML = (p.scope && p.scope!=='in')
+    ? `<div class="flag eye"><b>OUT OF SCOPE — contributes nothing to GOLD-LAYOUT</b> — ${p.scope_why||''}</div>`
+    : '';
   $('#arch').innerHTML=`<b>${p.archetype}</b> <span class="sub">conf
      ${p.arch_conf}</span>`;
   $('#archcause').textContent=p.arch_cause||'(none recorded)';
@@ -182,6 +209,20 @@ function draw(){
   const fl=(S.flags[p.id]||[]);
   $('#flags').innerHTML=fl.length?fl.map(f=>
     `<div class="flag ${f.sev}"><b>${f.kind}</b> — ${f.what}</div>`).join(''):'none';
+  const L=S.lam&&S.lam[p.id];
+  $('#lam').innerHTML = !S.lam
+    ? '<b>lamination-scores.json ABSENT</b> — run witness/score_lamination.py. '
+      +'⚠️ absent is not zero, and this panel will not pretend it is.'
+    : !L ? '<b>this leaf is not in the scorer output</b> — the bundle and the scores disagree, '
+           +'which is itself a defect worth filing'
+    : `<b>${L.partial}</b> PARTIAL pair(s) <span class="sub">(ordering cannot fix)</span> · `
+      +`<b>${L.contained}</b> contained <span class="sub">(ordering fixes free)</span> · `
+      +`${L.ink_pairs}/${L.rect_pairs} rect pairs actually share ink · `
+      +`contested ${(L.contested_frac*100).toFixed(2)}% of leaf ink`;
+  $('#lamwhy').textContent = L && L.partial
+    ? 'Toggle "overlaps" to paint them. Each red patch is ink two boxes both claim with neither '
+      +'containing the other — the §3.0 clause-4 cases.'
+    : (L ? 'No partial pairs on this leaf.' : '');
   $('#note').value=e.note||'';
   $('#vstate').textContent=e.verdict?`recorded: ${e.verdict.toUpperCase()}`
                                     :'no verdict yet — a leaf you looked at is not a verdict';
@@ -192,7 +233,7 @@ function draw(){
 }
 
 function render(){
-  const p=cur(), ov=$('#ov'); ov.innerHTML='';
+  const p=cur(), e=ed(), ov=$('#ov'); ov.innerHTML='';
   const img=$('#plate');
   const W=img.clientWidth||img.naturalWidth, H=img.clientHeight||img.naturalHeight;
   if(!W){ img.onload=render; return; }
@@ -201,6 +242,40 @@ function render(){
       Object.assign(d.style,st);ov.appendChild(d);};
     mk('h',{top:p.head_y*H+'px'}); mk('h',{top:p.foot_y*H+'px'});
     mk('v',{left:p.measure[0]*W+'px'}); mk('v',{left:p.measure[1]*W+'px'});
+  }
+  // R16.16 made visible: the intersection of every PARTIAL pair, i.e. ink two boxes both claim
+  // with neither containing the other. ⚠️ These are the pairs a z-order CANNOT resolve — the ones
+  // needing §3.0 clause 4, boundary adjustment. CONTAINED pairs are deliberately NOT painted:
+  // ordering fixes those for free and painting them would overstate the work.
+  // 🔴 THE OVERLAY IS COMPUTED FROM THE SCORER'S RUN, SO IT DESCRIBES THE GEOMETRY AS SCORED.
+  // The moment a reviewer moves, adds or deletes a box on this leaf, the painting is STALE — it
+  // would show a violation the reviewer just repaired, or hide one they just created. Silently
+  // stale is the worse failure, so the leaf SAYS SO and the paint is suppressed. Re-run
+  // score_lamination.py against exported corrections to refresh it.
+  if(S.lamon && S.lam && S.lam[p.id] && lamStale(e)){
+    const d=document.createElement('div'); d.className='lamstale';
+    Object.assign(d.style,{position:'absolute',left:'0',top:'0',padding:'4px 8px',
+      background:'rgba(220,40,40,.92)',color:'#fff',font:'11px system-ui',zIndex:9});
+    d.textContent='overlap overlay STALE — this leaf has been edited since the scorer ran';
+    ov.appendChild(d);
+  }
+  if(S.lamon && S.lam && S.lam[p.id] && !lamStale(e)){
+    const bx=p.boxes;
+    (S.lam[p.id].partial_pairs||[]).forEach(q=>{
+      const a=bx[q.i], b=bx[q.j]; if(!a||!b) return;
+      const x0=Math.max(a.x0,b.x0), y0=Math.max(a.y0,b.y0);
+      const x1=Math.min(a.x1,b.x1), y1=Math.min(a.y1,b.y1);
+      if(x1<=x0||y1<=y0) return;
+      const d=document.createElement('div');
+      d.className='lamv';
+      Object.assign(d.style,{position:'absolute',left:x0*W+'px',top:y0*H+'px',
+        width:(x1-x0)*W+'px',height:(y1-y0)*H+'px',
+        background:'rgba(220,40,40,.28)',outline:'1px solid rgba(220,40,40,.9)',
+        pointerEvents:'none',zIndex:5});
+      d.title=`PARTIAL: box ${q.i} (${q.a_label||q.a_surya}) vs ${q.j} (${q.b_label||q.b_surya}) — `
+             +`${q.shared_px}px contested`;
+      ov.appendChild(d);
+    });
   }
   if(!S.boxes)return;
   boxesOf().forEach(b=>{
@@ -252,15 +327,51 @@ function delBox(){
   S.sel=null; save(); render();
 }
 function addBox(){
-  ed().added.push({x0:.4,y0:.4,x1:.6,y1:.45,label:S.data.classes[0],conf:1,
+  // ⚠️ A NEW BOX STARTS AS AN ABSTENTION, NEVER AS `classes[0]`. That index was a FROZENSET's
+  // arbitrary order, so before R16.5 the default happened to be harmless and after it the default
+  // could be `OR` — a hand-drawn region silently pre-labelled ornament. A box drawn for E9/E25/E26
+  // exists because the detector missed an object; what it IS, is the very thing being recorded.
+  ed().added.push({x0:.4,y0:.4,x1:.6,y1:.45,label:'??',conf:1,
                    cause:'added by reviewer'});
   save(); render();
 }
-function verdict(v){ ed().verdict=v; save(); draw(); }
+// An edit to THIS leaf's geometry invalidates the scored overlap picture for this leaf only.
+// Verdicts and notes do not — they change no box.
+function lamStale(e){
+  return !!(e && (e.added.length || e.deleted.length || Object.keys(e.boxes).length));
+}
+function verdict(v){ ed().verdict=v; save(); autoFile(); draw(); }
+
+// R16.17(4) — VERDICTS MUST SURVIVE A CLEARED BROWSER. `localStorage` is a cache, never the record:
+// a 208-leaf review held only there is one wiped profile from total loss, and the loss would be
+// silent. Every tenth verdict this drops `review-verdicts.json` to disk; committing that file makes
+// the baseline durable and it is re-read on the next boot. ⚠️ It is a CHECKPOINT, not a save button
+// — the reviewer still exports at the end, and `prog()` says how far the file has fallen behind.
+function verdictDoc(){
+  const leaves={};
+  S.data.plates.forEach(p=>{ const e=S.edits[p.id];
+    if(e&&e.verdict) leaves[p.id]={verdict:e.verdict,note:e.note||''}; });
+  return {_doc:"R14.13 per-leaf review verdicts. Durable baseline for review.html; localStorage "+
+               "holds only edits made since this file was written. NOT a gold file — it records "+
+               "whether a HUMAN LOOKED at a leaf and what they concluded, never box geometry.",
+          count:Object.keys(leaves).length, leaves};
+}
+function autoFile(){
+  const n=Object.keys(verdictDoc().leaves).length;
+  if(n && n%10===0) dl('review-verdicts.json', verdictDoc());
+}
+function dl(name,obj){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,1)],{type:'application/json'}));
+  a.download=name; a.click(); URL.revokeObjectURL(a.href);
+}
 function prog(){
   const n=S.data.plates.length;
   const done=S.data.plates.filter(p=>S.edits[p.id]?.verdict).length;
-  $('#prog').textContent=`${done}/${n} leaf verdicts recorded`;
+  const filed=Object.keys((S.filed&&S.filed.leaves)||{}).length;
+  const behind=done-filed;
+  $('#prog').innerHTML=`${done}/${n} leaf verdicts recorded`
+    + (behind>0 ? ` · <b style="color:#d55">${behind} NOT YET ON DISK</b>` : ' · file current');
 }
 
 // EXPORT: LECTOR's claim and the reviewer's correction stay DISTINGUISHABLE, always. A gold file

@@ -1,0 +1,1657 @@
+{
+ "_doc": "Eye-attested DETECTION defects per leaf, graded by ink mass. Built by witness/build_detection_standard.py from plates/eye-findings.json.",
+ "_warning": "NOT GOLD, NOT ADJUDICATED. This is Jarvis's claim about LECTOR's claim. Admissible for VALIDATING a detection instrument; inadmissible as a figure quoted about the detector's accuracy.",
+ "_base_rate": 0.6057692307692307,
+ "_grades": {
+  "SEVERE": 7,
+  "SLACK": 34,
+  "STRUCT": 8,
+  "SMALL": 73,
+  "EMPTY": 4
+ },
+ "leaves": {
+  "OT1-1609-B_0401": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the true catchword 'stoode' is unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0402": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: box 3 MT swallows the whole left note column"
+    ],
+    "SMALL": [
+     "E3: catchword unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0403": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-B_0405": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'destroy' and signature Yy3 both unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0406": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-B_0407": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-B_0408": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-B_0409": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'whom' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0411": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: true catchword 'Cades' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0413": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the note ':: Pentecost.' is unboxed",
+     "E3 x2"
+    ]
+   }
+  },
+  "OT1-1609-B_0415": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right-margin note ':: Feast of Assemblie, and Collection.' gets no box at all"
+    ]
+   }
+  },
+  "OT1-1609-B_0416": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: faint right-margin cite unboxed",
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-B_0417": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'reuenge' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-B_0418": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3"
+    ]
+   }
+  },
+  "OT1-1609-P_1135": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'with' at bottom right is unboxed — it falls inside box 8 MT"
+    ]
+   }
+  },
+  "OT1-1609-P_1132": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: the right-margin cite column 'Apud Euseb. li. 6. c. 35. / Gen. 2. / Exod. 23. / Deut. 15.' sits inside boxes 2 and 4 instead of having its own region"
+    ],
+    "SMALL": [
+     "E9: those same right-margin cites get no box of their own",
+     "E3: the foot catchword 'preseuering' has no box"
+    ]
+   }
+  },
+  "OT1-1609-P_1130": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'mathite' (bottom right, under 'the Naa-') has no box"
+    ]
+   }
+  },
+  "OT1-1609-P_0010": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'fallen' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0009": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin cites '2 Tim 3.' and 'Iac. 1.' are unboxed while the right-margin notes are boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0008": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'it, to' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0026": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right cite 'Mat. 19,4.' is unboxed while 'Col. 3, 10.' beside it is boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0025": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 SUBSTANTIAL: the entire lower right-margin annotation block (':: The firmament is al the space...', 'S.Aug.li.11.de Gen.ad lit.c.4', ':: Likewise heaue is al the space...') is UNBOXED — several hundred words of apparatus absent from the data"
+    ]
+   }
+  },
+  "OT1-1609-P_0023": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'maner,' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0021": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left cites 'Heb.7.', 'Gal.4.', '1.Cor.10', 'Gal.3.', 'Gen.1.' are all unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0017": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin cites '2.Cor.4.' and '1.Pet.1.' are unboxed while the three right-margin notes are boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0185": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E19: box 11 CW is a fragment at the foot, NOT the catchword — the true catchword 'Martyr' is unboxed",
+     "E9: left cites 'Act.7.' and 'Heb.2.' unboxed while 'Exod.19.20.' beside them is boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0184": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: catchword 'forth' unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0183": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left cites 'li.2 Antiq.', 'li.16.c.', 'Act.7.' are unboxed while every right-hand note is boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0178": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 SUBSTANTIAL: the whole right-hand cite column ('Exodi 2. 3. 5. 7. 12. 14. 16. 17. 20. 26. 27. 30. & seq.') is unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0176": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right-margin cites are unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_0284": {
+   "severity": "EMPTY",
+   "grades": [
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23 (NEW): box 4 MT is drawn over BLANK PAPER — a tall empty region carrying a class but no ink"
+    ]
+   }
+  },
+  "OT1-1609-P_0285": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 SUBSTANTIAL: the entire left cite column ('Nu.1.', 'Epist. ad Paulinum.', 'Leuit. 1. 8.', '11. 12. 18.', '23. 26. 27.') is unboxed apart from box 3"
+    ]
+   }
+  },
+  "OT1-1609-P_0287": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E12/E23: box 4 CH sits on the horizontal rule/ornament band above 'ANNOTATIONS.', not on any text"
+    ],
+    "SLACK": [
+     "E5: the lower right blue box (with box 8 MT) swallows the margin-note column 'Holocauste. / Sacrifice for sinne. / Pacifique Sacrifice.' instead of leaving it its own region"
+    ],
+    "SMALL": [
+     "E9: those three cites 'Holocauste.', 'Sacrifice for sinne.', 'Pacifique Sacrifice.' get no MN box of their own though 7 and 9 in the same column do"
+    ]
+   }
+  },
+  "OT1-1609-P_0288": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "STRUCT": [
+     "E9/RH-MISSING: the whole head band is unboxed — running head 'LEVITICVS.' and the spread headline 'Sacrifices.' get no box at all, though boxes 0 and 12 start immediately below them"
+    ],
+    "SMALL": [
+     "E9/RH-MISSING: the whole head band is unboxed — running head 'LEVITICVS.' and the spread headline 'Sacrifices.' get no box at all, though boxes 0 and 12 start immediately below them"
+    ]
+   }
+  },
+  "OT1-1609-P_0343": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: head-band page number '319' (top right) has no box at all — no PN region"
+    ],
+    "EMPTY": [
+     "E23: box 8 CH extends far right past 'CHAP. XXVII.' over blank/bleed paper"
+    ]
+   }
+  },
+  "OT1-1609-P_0344": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the whole right-hand cite column is unboxed - 'qq. in Num.', 'Exod. 40', 'Leuit. 1.', 'Num. 1.', 'Chap. 1. 26.', '3. 4.', '18.', '2. 10.', '11. 12.' down to '36.'"
+    ],
+    "SLACK": [
+     "E5: that same right cite column falls inside the box 4 MT rectangle rather than being its own column"
+    ]
+   }
+  },
+  "OT1-1609-P_0345": {
+   "severity": "EMPTY",
+   "grades": [
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23: box 5 CH is drawn on blank paper to the left of 'CHAP. I.' — the only ink under it is verso show-through"
+    ]
+   }
+  },
+  "OT1-1609-P_0346": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'rations' has no box at all"
+    ]
+   }
+  },
+  "OT1-1609-P_0347": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: foot catchword 'CHAP.' has no box",
+     "E4: foot signature 'Rr 2' has no box either"
+    ]
+   }
+  },
+  "OT1-1609-P_0348": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'whole' (bottom right, below the box 3 foot edge) has no box at all"
+    ],
+    "STRUCT": [
+     "NEW: the chapter head 'CHAP. II.' between the running head and the argument gets no box of any class - a head object dropped entirely rather than misnamed"
+    ]
+   }
+  },
+  "OT1-1609-P_0660": {
+   "severity": "EMPTY",
+   "grades": [
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E11/E23: box 13 MN is drawn on blank left margin where only verso show-through ('Saul killing...') is visible - no ink of this leaf inside it"
+    ]
+   }
+  },
+  "OT1-1609-P_0661": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2/E9: the page number '637' at top right has no box at all",
+     "E3: the foot catchword 'of our' at bottom right is unboxed",
+     "SG-MISSING: the signature 'Hhhh 3' at the foot centre gets no box"
+    ]
+   }
+  },
+  "OT1-1609-P_1010": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the real foot catchword at bottom right ('strates,') is unboxed while box 12 claims the bleed-through instead"
+    ]
+   }
+  },
+  "OT1-1609-P_1011": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE",
+    "SMALL"
+   ],
+   "evidence": {
+    "SEVERE": [
+     "E16/NEW: the 'foot' rule is drawn immediately under the head band, so the entire scripture column from 'to them were committed the portions...' down to verse 24 gets NO box at all - the whole main text of the leaf is unregioned"
+    ],
+    "SMALL": [
+     "E3: the foot catchword 'and' at bottom right has no box"
+    ]
+   }
+  },
+  "OT1-1609-P_1012": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E2 + E1: the head band is swallowed whole by the top MT box — the page number '988', the running head 'SECOND BOOKE OF ESDRAS.' and the headline 'Nehemias.' are all inside one MT region instead of PN + RH"
+    ],
+    "SMALL": [
+     "E9: with only n=4 regions, the entire head furniture and the foot are unrepresented; nothing at the foot is boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_1013": {
+   "severity": "EMPTY",
+   "grades": [
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23: box 2 MT sits on the plain rule beneath the fleuron band, carrying a class with no text in it"
+    ]
+   }
+  },
+  "OT1-1609-P_1014": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E12: box 2 MT also swallows the fleuron headpiece band above the title"
+    ],
+    "SMALL": [
+     "E9: the right-margin cite 'chap. 1' (level with 'S. Chrysostom ho.15.') gets no box while notes 6 and 9 beside it are boxed",
+     "E3: foot catchword 'THE' unboxed; signature 'Dddd 3' also unboxed"
+    ]
+   }
+  },
+  "OT1-1609-P_1015": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23/E11: box 8 MN covers blank right margin below note 7; the only marks inside it are verso show-through, no ink of this leaf"
+    ],
+    "SMALL": [
+     "E3: the foot catchword 'when' below the box 5 foot edge has no box"
+    ],
+    "STRUCT": [
+     "NEW: the chapter head 'CHAP. I.' under the book title has no box of any class"
+    ]
+   }
+  },
+  "OT1-1609-P_1059": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'Which' at bottom right is unboxed while the signature beside it is boxed"
+    ]
+   }
+  },
+  "OT1-1609-P_1060": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the margin letter 'B' below box 9, part of the alphabet keying described in the preface, gets no box while 'A' beside it is inside box 9",
+     "E3: the foot catchword 'with' has no box"
+    ]
+   }
+  },
+  "OT1-1609-P_1061": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: foot catchword 'wher-' (bottom right) has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0008": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: box 6 MT swallows the whole right-margin cite column 'Mat. 22. v.16. / Act. 4. v.24. / Ro. 4. v.6. / Ro. 11. v.9. / Heb. 4. v.7.' instead of leaving it its own region"
+    ],
+    "SMALL": [
+     "E9: those right-margin cites get no box, while the left-margin notes beside them are boxed (2, 4, 5)",
+     "E3: the foot catchword 'renus.' has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0019": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5/E13: box 3 MT's rectangle also contains the entire right-hand gloss column ('The right maner of seruing God. / The 7. key. / a He is in the right way to eternal felicitie.' etc.) and the body text - three streams in one block"
+    ],
+    "SMALL": [
+     "E9: the left-margin cites 'Iose. 1.' and 'Iere. 17.' get no box while 'Mat. 5.' in the same column is boxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0020": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5/E13: those same SG boxes each span the left gloss column AND the verse line as one region — the note column is inside the text box, and the two-column structure is lost"
+    ],
+    "SMALL": [
+     "E9: the right-margin cite 'Act. 4.' beside the first psalm verse is unboxed, while 'Act. 13. Heb. I. &.5.' lower on the same margin is boxed as 19 MN"
+    ],
+    "EMPTY": [
+     "E18/E23: box 18 '??' is a stub sitting on the fragment '...e in his ...ame the Church.' inside box 17"
+    ]
+   }
+  },
+  "OT2-1610-P_0021": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: box 2 MT swallows the right-hand annotation column ('p Gods inflexible wil & powre.', 'q A prophecie that kinges shal be conuerted...', 'r None is secure before death.', 's Some fal from the way of saluation.', 't God wil iudge iustly...')",
+     "E5: boxes 4, 5, 6, 7 and 8 each swallow their right-margin summary note ('Persecution cannot hinder the glorie of Christ.', 'The Church neuer faileth.', 'Custome in sinne more hardly cured.', 'Kinges conuerted to Christianitie.', 'Defend Catholiques and punish heretikes.')"
+    ],
+    "SMALL": [
+     "E9: the left-margin cites 'Apoc. 2. & 19.', 'in hunc Psal.', 'Ad Petil. li.2. c.92. Ad Gaud. li.2.c.26.' get no box at all"
+    ]
+   }
+  },
+  "OT2-1610-P_0022": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13/E5: those same SG boxes run straight across the left gloss column ('a O God let... ow how... usly I hart foloweth'), merging gloss and verse into single rows instead of two columns"
+    ],
+    "SMALL": [
+     "E9: the left margin note 'The 8. key.' and the right-margin cite 'Ioan.2' both get no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0023": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E5/E9: the right-hand note beside box 14 ('Confidence in God necessary / The 7. key.') has no box and falls inside box 14 MT"
+    ],
+    "SLACK": [
+     "E5/E9: the right-hand note beside box 14 ('Confidence in God necessary / The 7. key.') has no box and falls inside box 14 MT"
+    ]
+   }
+  },
+  "OT2-1610-P_0024": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE",
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SEVERE": [
+     "E9 (severe): with only n=5 regions the entire psalm body (verses 2–10, 'VVHEN c I inuocated, the God of my iuftice heard me...') and the whole left gloss column ('c VVhen Saul vniuftly perfecuted iuft Dauid', 'f Why do you ftil harden your hartes?', 'q Not only external but most efpecially...') get NO box at all"
+    ],
+    "SMALL": [
+     "E9 (severe): with only n=5 regions the entire psalm body (verses 2–10, 'VVHEN c I inuocated, the God of my iuftice heard me...') and the whole left gloss column ('c VVhen Saul vniuftly perfecuted iuft Dauid', 'f Why do you ftil harden your hartes?', 'q Not only external but most efpecially...') get NO box at all",
+     "E9: the right-margin cite 'Ephef. 4.' is unboxed"
+    ],
+    "SLACK": [
+     "E5: box 0 MT spans the left gloss 'a In an inftrument apt for verfes. b This Pfalme perteyneth to the beloued...' together with the psalm title line — note column swallowed into the MT box",
+     "E5: box 4 MT does the same at the foot, cutting through the margin note 'The fignification of this' and pulling it into the annotation region"
+    ]
+   }
+  },
+  "OT2-1610-P_0025": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the margin note 'To our selues.' between boxes 7 and 8 gets no box, while every other note in that same column is boxed",
+     "E5/E9: the left-margin cites '2. Par. 15.' and 'Rom. 10.' sit inside box 1 MT with no region of their own",
+     "E3: the foot catchword 'PSALME.' has no box, and the signature 'C 3' beside it has no box either"
+    ],
+    "SLACK": [
+     "E5/E9: the left-margin cites '2. Par. 15.' and 'Rom. 10.' sit inside box 1 MT with no region of their own"
+    ]
+   }
+  },
+  "OT2-1610-P_0026": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE",
+    "SLACK",
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: box 2 also swallows the left margin note 'The general iudgement. The 9. key.' into the argument box"
+    ],
+    "SEVERE": [
+     "E9: the ENTIRE psalm body and its left gloss column ('a The faithful iust soule that ouercometh...' down to 'which shal be manifested in the end of the world.') gets no box at all — only 4 regions on a full page"
+    ],
+    "SMALL": [
+     "E9: the ENTIRE psalm body and its left gloss column ('a The faithful iust soule that ouercometh...' down to 'which shal be manifested in the end of the world.') gets no box at all — only 4 regions on a full page",
+     "E9: the chapter head 'PSALME. V.' is unboxed, and the right-margin cites 'Psal.13. Rom.3.' are unboxed"
+    ],
+    "STRUCT": [
+     "E9: the chapter head 'PSALME. V.' is unboxed, and the right-margin cites 'Psal.13. Rom.3.' are unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0034": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "STRUCT"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13/E5: the SG rows run right across both the inner gloss column ('Gods prouident care of the iust. / The 3. key.', 'a S. Augustin applieth it to heretikes...') and the verse column, merging two columns into single strips"
+    ],
+    "STRUCT": [
+     "NEW: the chapter head 'PSALME X.' below the foot rule gets no box at all"
+    ]
+   }
+  },
+  "OT2-1610-P_0035": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE",
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E14: box 3 CH is the argument 'The Prophet defcribeth the paucity of iuft men, and abundanc of wicked...' — argument named CH; it also swallows the right-margin note 'The ftate of the Church in the first and last times of Chrift.' (E5)"
+    ],
+    "SEVERE": [
+     "E9 (severe): the whole psalm body, verses 1–9 ('† Vnto a the end for b the octaue...' through '...multiplied the children of men.'), and both gloss columns ('a Chrifts firft, b and laft comming', 'f Infolent & arrogant.', 'h yet ftil there remaine some iuft whom God preferueth.') and the left cites 'Prouerb. 30.' and 'Act. 2.' are entirely unboxed"
+    ],
+    "SMALL": [
+     "E9 (severe): the whole psalm body, verses 1–9 ('† Vnto a the end for b the octaue...' through '...multiplied the children of men.'), and both gloss columns ('a Chrifts firft, b and laft comming', 'f Infolent & arrogant.', 'h yet ftil there remaine some iuft whom God preferueth.') and the left cites 'Prouerb. 30.' and 'Act. 2.' are entirely unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0274": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23/E11: box 16 MT is drawn over blank paper carrying only verso show-through at the foot of the leaf"
+    ],
+    "STRUCT": [
+     "E9: the running head 'THE BOOKE OF PSALMES.' gets no box; the foot signature 'KK' and the catchword '† Prayse' also get none"
+    ],
+    "SMALL": [
+     "E9: the running head 'THE BOOKE OF PSALMES.' gets no box; the foot signature 'KK' and the catchword '† Prayse' also get none"
+    ]
+   }
+  },
+  "OT2-1610-P_0275": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: page number '267' at top right has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0276": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the foot signature 'KK 2' (bottom centre, below the foot rule) has no box"
+    ],
+    "STRUCT": [
+     "NEW: the running head 'THE BOOKE OF PROVERBES.' across the head band has no box of any class"
+    ]
+   }
+  },
+  "OT2-1610-P_0277": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the real catchword 'bloud' at bottom right is left unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0278": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'Ghost,' has no box; it is left inside the bottom edge of box 5 MT"
+    ]
+   }
+  },
+  "OT2-1610-P_0279": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: page number '271' (top right) unboxed",
+     "E9: the left-margin cite stack '87.3. / v.2. / 1 v. 9.' is unboxed while the right-margin notes are boxed",
+     "E3: foot catchword 'from' has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0280": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9/E5: the right-margin cites 'Rom. v. 18' and 'Tit. 11.' beside the annotation get no box and sit inside box 5 MT, while box 7 MN 'Isaia v. 8.' in the same column is boxed",
+     "E3: the foot catchword 'dayes' below the box 14 foot edge has no box"
+    ],
+    "SLACK": [
+     "E9/E5: the right-margin cites 'Rom. v. 18' and 'Tit. 11.' beside the annotation get no box and sit inside box 5 MT, while box 7 MN 'Isaia v. 8.' in the same column is boxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0456": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: the page number '448' at top left gets no box at all (no PN region on this leaf)",
+     "E9: the running head 'THE BOOKE OF ECCLESIAST.' gets no box"
+    ],
+    "STRUCT": [
+     "E9: the running head 'THE BOOKE OF ECCLESIAST.' gets no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0457": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9/E7: box 0 CH takes only 'THE FOVRT PART'; the rest of the same display heading ('OF THE OLD TESTAMENT CONTEINING PROPHETICAL BOOKES.') gets no box",
+     "E2: page number '449' unboxed",
+     "E3: foot catchword 'Testament,' unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0458": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right-margin cite '2. Pet' beside 'not knowen by priuate interpretation' has no box",
+     "E3: the foot catchword 'of' at bottom right has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0459": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 + E20: the ENTIRE left margin cite column is unboxed — 'Ierom in 2. Nahum', 'Chryf. h 8. Mth. 2.', 'Aug. catech. rudibus.', 'cont. and c.', 'Hym. Pfal.', and lower down 'Prefat. Paul. Eufto.' — while the right-margin notes 2, 3, 4, 5, 9 in the same band are all boxed as MN. Side decides class here",
+     "SG-MISSING: the signature 'I ii 2' at the foot centre gets no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0460": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin part numerals '1. 2. 3. 4. 5. 6. 7. 8.' keying the eight parts of the argument get no boxes, while the prose notes beside them are boxed",
+     "E9: the running head 'THE ARGVMENT OF ISAIE.' gets no box and the page number '452' at top left gets none"
+    ],
+    "STRUCT": [
+     "E9: the running head 'THE ARGVMENT OF ISAIE.' gets no box and the page number '452' at top left gets none"
+    ]
+   }
+  },
+  "OT2-1610-P_0666": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "STRUCT"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5/E13: the right-hand Hebrew letter column ('Res.', 'Sin.', 'Thau.', 'Aleph.', 'Beth.', 'Ghimel.', 'Daleth.', 'He.', 'Vau.', 'Zain.', 'Heth.') is swallowed into the verse strips instead of forming its own column"
+    ],
+    "STRUCT": [
+     "NEW: the running head 'THE LAMENTATIONS' has no box of any class"
+    ]
+   }
+  },
+  "OT2-1610-P_0667": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5 (twice): box 2 MT spans the full page width, pulling the left Hebrew-letter column ('Teth.', 'Iod.', 'Caph.', 'Lamed.', 'Mem.', 'Nun.', 'Samech.', 'Phe.', 'Ain.', 'Sade.', 'Coph.', 'Res.', 'Sin.', 'Thau.') AND the right annotation column ('∷ VVemen being by nature pitiful, were cruel to their owne children', '∷ In the fiege of Ierufalem.') inside the main-text region",
+     "E13: consequent on the above, the three-column structure of the leaf is taken as one block"
+    ],
+    "SMALL": [
+     "E9: no margin note on this leaf gets its own box — including the long lower-right note '∷ This perteineth either to king Iofias flaine by the Ægyptians. 2. Par. 35...'"
+    ]
+   }
+  },
+  "OT2-1610-P_0668": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the far-right margin cite column ('Tob...', 'Cap.', 'Ioel.', 'Mich.', 'Abd.' etc.) outside the measure gets no boxes"
+    ]
+   }
+  },
+  "OT2-1610-P_0669": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: page number '661' (top right) has no box",
+     "E23/E9: note 6's box stops above 'The contents.', leaving that note line outside any region"
+    ],
+    "EMPTY": [
+     "E23/E9: note 6's box stops above 'The contents.', leaving that note line outside any region"
+    ]
+   }
+  },
+  "OT2-1610-P_0670": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'eyes,' at bottom right has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0671": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin note fragment '...orrupted in ...dgement.' beside verses 19–20 is unboxed while the right-margin notes 2 and 6 are boxed",
+     "E3: the foot catchword 'them' at bottom right is unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0715": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right-margin note beside the top block ('Ezechiel beganne to prophecie in the tenth yeare...') gets no box while the notes above and below it are boxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0716": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: foot catchword 'them.' has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0717": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E7/E5: box 0 MT's top edge is drawn above the head rule so the running head 'OF EZECHIEL.' is inside the main-text box rather than its own RH region"
+    ]
+   }
+  },
+  "OT2-1610-P_0718": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'when' at bottom right is unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0745": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E11/E23: box 8 SG is drawn on mirrored verso show-through at the bottom left ('terroul.' reversed) - ink that is not on this leaf"
+    ],
+    "SMALL": [
+     "E4/E19: the real signature 'Wwww' at the centre foot gets no box, the SG label having landed on the bleed-through instead",
+     "E3: the foot catchword 'the' at the right has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0746": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the second left-margin note (':: No Iewe is so obstinate, nor heretike so blind, but al confesse that Messias, Christ is here called by the name of Dauid...') gets NO box, while box 4 above it is boxed — same column, same genre",
+     "E9: the right-margin cite 'Ioa. 10' is unboxed",
+     "E3: foot catchword 'terrour.' unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0748": {
+   "severity": "STRUCT",
+   "grades": [
+    "STRUCT",
+    "SMALL"
+   ],
+   "evidence": {
+    "STRUCT": [
+     "CH-MISSING: the chapter head 'CHAP. XXXVI.' between boxes 2 and 4 gets no box at all — the only unboxed head furniture in the body of the leaf"
+    ],
+    "SMALL": [
+     "E3: the foot catchword 'plied' at bottom right is unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0749": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE"
+   ],
+   "evidence": {
+    "SEVERE": [
+     "NEW: the whole upper scripture block, from 'plied, and increase: and I wil make you dwel as from the beginning' down to verse 17, has NO box at all - the head rule falls in the middle of the column and everything above it is unregioned. The scripture continuing below the foot rule (verses 22 to 26) is likewise unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0750": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: foot catchword 'And' has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0793": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E7/E5: box 11 MT's top edge sits above the head rule so the running head 'OF DANIEL.' falls inside the main-text box"
+    ],
+    "SMALL": [
+     "E3: the foot catchword 'Ierom.' at bottom right has no box",
+     "E9: the left-margin cite 'v. 13.' beside the annotation has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0794": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'fore' at bottom right is unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0795": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin cite 'v. 13.' beside box 5 gets no box",
+     "E3: the foot catchword 'Ierom.' has no box, and the signature 'Ccccc' beside it has none either"
+    ]
+   }
+  },
+  "OT2-1610-P_0796": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2: head-band page number has no box",
+     "E3: foot catchword 'changed' unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0819": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the lower left-margin cites 'Epist. ad Paulin.' and 'In Osee. 1.' get no box although the cite stack above them (box 6 MN 'S. Iero. Prologo li. Reg. S. Aug. li. c. 18. c. 29. ciuit. Theod. Isidorus.') is boxed",
+     "E5/E9: the lower right-margin column 'Of these 12. six prophecied before the captiuitie of the 10. tribes. Other three also before...' is unboxed and lies inside box 7 MT"
+    ],
+    "SLACK": [
+     "E5/E9: the lower right-margin column 'Of these 12. six prophecied before the captiuitie of the 10. tribes. Other three also before...' is unboxed and lies inside box 7 MT"
+    ]
+   }
+  },
+  "OT2-1610-P_0820": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9/E13: both braced name-tables are entirely unboxed — 'kingdom of two Tribes. { Iuda, Beniamin, Ierufalem, or The houfe of Dauid.' and 'kingdom of tenne Tribes. { Ephraim, Iofeph, Samaria, Iezrahel, Bethel, or Bethauen.' Tabular matter gets no region while the prose either side of it does",
+     "E9 + E20: the right-margin cite column 'de vita & interitu prophetar. 4 Reg. 17. S. Iero. Ep. ad Paulin.' is unboxed, while every left-margin note on the same leaf (4, 7, 9, 11, 13) is boxed MN"
+    ],
+    "SLACK": [
+     "E9/E13: both braced name-tables are entirely unboxed — 'kingdom of two Tribes. { Iuda, Beniamin, Ierufalem, or The houfe of Dauid.' and 'kingdom of tenne Tribes. { Ephraim, Iofeph, Samaria, Iezrahel, Bethel, or Bethauen.' Tabular matter gets no region while the prose either side of it does",
+     "E12: box 10 CH covers the fleuron ornament band together with the title 'THE PROPHECIE OF OSEE.' — ornament pulled into a text class and merged with the title"
+    ]
+   }
+  },
+  "OT2-1610-P_0821": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE"
+   ],
+   "evidence": {
+    "SEVERE": [
+     "NEW: the entire scripture body of Osee ch. 1 (verses 1 to 11, 'HE word of our Lord, that was made to Osee the sonne of Beeri...') has NO box at all, while the furniture around it is boxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0866": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the right-margin cite 'Isa. 47.' (beside verse 5) has no box while box 3 MN 'Zec. 14. Habac. 2.' in the same column is boxed",
+     "E3: the foot catchword 'pastours' at bottom right has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0898": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "STRUCT",
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E2/E9: the page number '888' at top left has no box at all",
+     "E9 + E20: the right-margin cite column 'Zach. v 8. & 6. v. 1. Luc. 1. v. 78. Exo. 2. Deut. 5. & 6. Mat. 1. & 17. v. 11.' is unboxed, while the left-margin note 10 and the right notes 2 and 8 are boxed"
+    ],
+    "STRUCT": [
+     "RH-MISSING: the running head 'THE PROPHECIE OF MALACHIAS.' has no box"
+    ],
+    "SLACK": [
+     "E15/E5: the closing annotation paragraph 'c Chrifts firft coming was in al mekenes not in terrour, but his coming to iudge wil be dreadful...' is swallowed inside box 6 MT rather than given its own region"
+    ],
+    "EMPTY": [
+     "E23/E21: box 5 MT is a stub box at the left edge overlapping box 7 MN with no text of its own"
+    ]
+   }
+  },
+  "OT2-1610-P_0899": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin cites '1.1.c.2. v.64.65. &.66.' and 'li.2.c.6. &7.' get no box, and the right-margin note 'There be foure bookes.' beside box 9 gets none"
+    ]
+   }
+  },
+  "OT2-1610-P_0900": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: foot catchword 'fact.' has no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0901": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the left-margin cite 'li. 2. c. 2. v. 24.' has no box while the right-hand notes in the same leaf are boxed"
+    ]
+   }
+  },
+  "OT2-1610-P_0902": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: the foot catchword 'hoftage:' at bottom right is unboxed",
+     "SG-MISSING: the signature letter 'D' at the lower right margin gets no box"
+    ]
+   }
+  },
+  "OT2-1610-P_0903": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: boxes 2, 3 and 5 each swallow the right-margin annotation column (':: This Antiochus begane his reigne in the yeare 137...', ':: Being established in the kingdom of Syria...', ':: Iosephus li. 12. c. 6. vvriteth that Antiochus first killed such as vvould haue hindred his entrance...')"
+    ],
+    "SMALL": [
+     "E9: those right-margin notes get no box of their own, and the left-margin cites '*li.2.c.4.v.7.', '*li.2.c.4.v.21.' and the section letters 'F' and 'H' get none either"
+    ]
+   }
+  },
+  "OT2-1610-P_1086": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E10/E13: box 3 MT is the whole two-column feast/citation table ('In the feaft of our Bleffed Ladies Conception. Prou. 8. v. 22. to the v. 36.' … 'S. Catherin. Eccli. 51. v. 1. to. 13.') taken as ONE MT block — a table has no MT grammar and its column structure is lost"
+    ]
+   }
+  },
+  "OT2-1610-P_1087": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13: box 1 MT takes the whole five-column table as one block - the columns 'Anni mundi. | Patriarches. | Especial pointes of the sacred historie... | Schismes and infidelitie. | Canonical Scriptures.' are not separated, and the column headers are not distinguished from the rows"
+    ],
+    "SMALL": [
+     "E9: the last title line 'BOOKES OF THE OLD TESTAMENT.' falls outside box 0 and gets no box"
+    ]
+   }
+  },
+  "OT2-1610-P_1088": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13: box 1 MT wraps the whole five-column 'AN HISTORICAL TABLE' (Anni mundi | Patriarches | The sacred Historie | Schismes and infidelitie | Scriptures) as one block; no column is separated"
+    ]
+   }
+  },
+  "OT2-1610-P_1089": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E10/E13: this is the chronological table; box 2 MT and box 4 MT each take the whole five-column ruled table ('Anni mundi. | Patriarches. | The sacred Historie. | Schismes and infidelitie. | Scriptures.') as a single MT block, so the column structure is lost and the header row, the year column and the outer note column all fall inside one region"
+    ],
+    "SMALL": [
+     "E9: the outer-column note '* Not affirming but supposing that Cainan was the sonne of Arphaxad, we place him here: and Sale 30. yeares after.' gets no box of its own"
+    ]
+   }
+  },
+  "OT2-1610-P_1110": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E10/E13: box 2 MT is the entire five-column chronological table taken as one block — the column heads 'Anni mudi.', 'High-priefts.', 'The line of Dauid.', 'The facred Hiftoric.', 'Schifmes and infidelitie.', 'Scriptures.' and every cell under them sit in a single MT region. Ruled table matter has no MT grammar"
+    ]
+   }
+  },
+  "OT2-1610-P_1111": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the two explanatory lines 'In vvhich, the letter A. directeth to the former volume; B. to the latter; and the numbers to the pages.' get no box, though the title lines above them are boxed",
+     "E9: the foot signature 'Sfffff' and the page reference '746.' at the bottom get no box"
+    ]
+   }
+  },
+  "OT2-1610-P_1113": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL",
+    "EMPTY"
+   ],
+   "evidence": {
+    "EMPTY": [
+     "E23/NEW: boxes 3 MT and 4 MT cover only the first four or five entries at the top of each column; the remaining nine tenths of both index columns ('Arke of Noe how great...' through 'Balaam the sorcerer, first refused,' and 'S. Iohn Baptist precursor of Christ...' through 'Burden of Babylon...') receive no box at all"
+    ],
+    "SMALL": [
+     "E9/E3: the foot signature 'Sfffff 2' and the catchword 'C' at the bottom right both have no box"
+    ]
+   }
+  },
+  "OT2-1610-P_1114": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E10/E13: box 1 MT is the whole two-column alphabetical index taken as ONE MT block — from 'Caath the fonne of Leui...' down both columns to 'Church of Chrift prefigured by the' — an index has no MT grammar and the two columns are merged"
+    ],
+    "SMALL": [
+     "E3: the foot catchword 'Arke' at bottom right is unboxed"
+    ]
+   }
+  },
+  "OT2-1610-P_1135": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: the alphabet section letters 'Z' and 'Y' standing as headers over their columns get no box"
+    ]
+   }
+  },
+  "NT-1582-B_0030": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13: the two-column table of books taken as one MT block"
+    ]
+   }
+  },
+  "NT-1582-B_0033": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: right-margin cites 'Io.20,31.' and 'Eze.1 / Apoc.4.' unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0245": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: signature 'Dd iij' and catchword 'THE' both unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0314": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "GROSS UNDER-SEGMENTATION: n=2. The whole harmony page — 40+ entries, a four-column reference table, two margin notes — is ONE MT box plus a catchword"
+    ],
+    "SMALL": [
+     "E9: the margin notes 'The 3 part...' and 'THE 2 PASCHE' are unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0317": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 AT SCALE: every right-margin liturgical label (TENEBRE, MAVNDY thursday, ASCENSION day, LOVV SVNday, EASTER DAY) is unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0320": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK",
+    "SMALL"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E5: box 2 MT wraps the left margin column instead of leaving it to MN"
+    ],
+    "SMALL": [
+     "E9: the cite 'Mat.21,43.' is unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0321": {
+   "severity": "SEVERE",
+   "grades": [
+    "SEVERE",
+    "SMALL"
+   ],
+   "evidence": {
+    "SEVERE": [
+     "E9 SEVERE: head_y cuts through the body block, and the first three lines with the woodcut initial T get NO box at all — the chapter's opening words are simply absent from the data"
+    ],
+    "SMALL": [
+     "E9 SEVERE: head_y cuts through the body block, and the first three lines with the woodcut initial T get NO box at all — the chapter's opening words are simply absent from the data"
+    ]
+   }
+  },
+  "NT-1582-B_0437": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: signature 'Eee iij' and catchword '1. Two' both unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0438": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "E13 INSIDE THE BODY: box 4 MT wraps a TWO-COLUMN parallel comparison as one block. Column loss is not confined to tables"
+    ]
+   }
+  },
+  "NT-1582-B_0439": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9: left-margin cites 'Exo.9,16.' and '1 Tim.2,21.' unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0440": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E9 INCONSISTENT WITHIN ONE COLUMN: cites Leu.18,5 / Ef.52,7 / Ef.53,1 unboxed while Ef.28,16 / Ioel.2,22 / Pf.18,5 beside them are boxed"
+    ]
+   }
+  },
+  "NT-1582-B_0563": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "E3: signature 'Xxx ij' and catchword 'vvhich' both unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0779": {
+   "severity": "SMALL",
+   "grades": [
+    "SMALL"
+   ],
+   "evidence": {
+    "SMALL": [
+     "Two-column liturgical table, n=3: the whole table is ONE MT box. The signature 'Bbbbb ij' and catchword 'The' are unboxed"
+    ]
+   }
+  },
+  "NT-1582-B_0804": {
+   "severity": "SLACK",
+   "grades": [
+    "SLACK"
+   ],
+   "evidence": {
+    "SLACK": [
+     "Glossary ('HARD VVORDES EXPLICATED') plus the errata table plus 'LAVS DEO'. Two two-column tables each taken as one MT box; 'LAVS DEO' named SG"
+    ]
+   }
+  }
+ }
+}
