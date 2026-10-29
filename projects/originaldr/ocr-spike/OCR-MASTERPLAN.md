@@ -37,6 +37,35 @@ setting of type is a scan-quality fact, not a textual one.**
    document's identity and date.
 6. **Every reading is addressable and checkable**: page and signature in the output, always.
 
+### 0.2a THE VISUAL RULE — "I CANNOT UNDERSTAND WHAT I CANNOT LOOK AT" (GOVERNING, Sir, 2026-09-01)
+
+🔴 **A FINDING ABOUT SOMETHING VISUAL MUST BE DELIVERED AS AN IMAGE OF THE THING, NOT AS A NUMBER
+ABOUT THE THING.** Boxes, frames, overlaps, tilt, archetypes, detection misses and recogniser crops
+are all **pictures**. Reporting them as a table of medians reports them in the wrong medium, and this
+project has paid for that four times in recorded findings:
+
+| what a DRAWING found | what every NUMBER said |
+|---|---|
+| R14.7 — the measure dragged out into the margin by an apparatus column | nothing. `RH` fell 20/20 → 9/20 and **no score said why** |
+| R14.9 — leaf 409's foot signature named a CHAPTER HEADING | nothing. The head-band gold labels the top three rows and **structurally cannot see the foot** |
+| R14.10d — leaf 411 sets its signature INSIDE the measure with its catchword at the fore-edge | nothing. **No gold covers it at all** |
+| R14.13's own rationale — leaf 417's annotation block boxed as `MT` | it scores as CORRECT, because `MT` is containment |
+
+**THE RULE.** Any report, review, hand-off or answer that makes a claim about layout, geometry,
+region class, tilt or recognition **must render the leaf it is talking about**, with the boxes, frame
+lines and violations painted on it, from the real raster. The prose captions the picture; the picture
+is not an illustration of the prose.
+
+⚠️ **THIS IS NOT A LICENCE TO DECORATE.** The image must carry the evidence. A picture that does not
+show the finding is not the right picture, and a pretty one that shows nothing is worse than a table,
+because it *looks* like it discharged the rule.
+
+⚠️ **AND IT BINDS THE INSTRUMENTS, NOT ONLY THE REPORTS.** A scorer that can produce a number but
+cannot produce the leaf that number came from is incomplete. This is why R16.17 exists, why
+`plates/review.html` must paint the lamination violations rather than merely count them, and why
+"the plates were produced" may never close a review step: **producing an instrument is not looking
+through it.**
+
 ### 0.3 Two disjoint channels
 
 Resolving a blot from a second photograph of the same forme is *reading the document*. Taking a word from a
@@ -1469,6 +1498,69 @@ derivable from **that leaf's own appearance**, conditioned on the archetype it a
 A constant fitted on a sample of leaves may serve as an initialisation or a plausibility clamp
 (§3.2 item 5) and may **never** be the thing that decides.
 
+#### The two agents have NAMES, and this is where they are fixed (GOVERNING, 2026-08-31, Sir's request)
+
+The recogniser has been called **SCRIBE** in every document since it was built. Its counterpart —
+the thing §3.0 has been calling "the adaptive visual agent", "the agent", and in the Roadmap
+occasionally "LECTOR" — **had no ratified name**, and a capability with no name is one nobody can
+hold a conversation about. Ratified here:
+
+| name | what it is | what it emits | code |
+|---|---|---|---|
+| **LECTOR** | the **adaptive visual agent** of this section — the reader who looks at the leaf, decides what kind of page it is, and bounds and types every region on it | a LAMINATION: ordered typed regions, each with a box, a class, a slant, a confidence, and a permitted abstention with cause | `witness/visual_agent.py` |
+| **SCRIBE** | the **recogniser** — reads the pixels inside ONE region as its own kind of thing | diplomatic text per region | `witness/recogniser.py` |
+
+⚠️ **The pairing is the point.** In a scriptorium the *lector* reads the page aloud and the *scribe*
+writes down what is read; the lector decides what is on the page and in what order, the scribe never
+does. That is exactly S1–S5 against S6–S7, and the division of labour the whole of §3.0 and §4.0
+rests on. **LECTOR decides WHAT and WHERE. SCRIBE decides WHICH CHARACTERS.** Neither may do the
+other's job, and R13.1's defect was precisely SCRIBE's output being consumed as if it settled a
+LECTOR question.
+⚠️ **LECTOR NAMES THE ROLE, NOT THE IMPLEMENTATION.** It is today a hand-written cascade (R14.16
+files that as the largest design gap). Replacing the cascade with a learned classifier does not
+change the name, the contract, or the gates — it changes what sits behind them.
+
+#### 🔴 THE HEAD BAND IS A SCALAR STANDING IN FOR A CLASS DECISION, AND IT MUST STOP DECIDING (GOVERNING, 2026-08-31, Sir's question)
+
+Sir asked: *"If the headline itself is not a class, or is not a bbox that demarcates a class, then
+why use it? Is it being used as a predetermined offset from which to guesstimate the location of
+headers, marginal notes, page numbers and main text?"*
+
+**The narrow answer is no, and the broad answer is yes, and the broad answer is the one that matters.**
+
+`head_y` and `foot_y` are **not** predetermined offsets. `frame()` derives them per leaf as the
+extreme rotated `y` of that leaf's own body column — `min(ry(b.cx, b.y0))` and `max(ry(b.cx, b.y1))`
+— so they move with the type, not with the image edge, and no constant sets their height. The letter
+of "adaptive means per-page" is satisfied.
+
+🔴 **But they are a SCALAR LINE used to decide a CLASS, and this project has already measured that
+this cannot work.** Three findings, all on file, none previously drawn together:
+
+1. **R14.14, measured**: the head line **cuts through 41 boxes**. Rotating it to follow the baseline
+   — the obvious repair — made it **50**, and `corr(|skew|, straddles) = +0.051` over 20 leaves.
+   **The angle is not the cause.** Any scalar boundary is straddled, because the head line is the
+   extreme edge of the BODY BLOCK and furniture sits at overlapping heights. There is no angle at
+   which a line separates classes that genuinely interleave in `y`.
+2. **Root Cause 1, measured**: `frame()` anchors on `max(boxes, key=area)` assuming it is the body.
+   On **71 of 208 leaves there is no body block at all**, so the anchor is a MARGINAL COLUMN and
+   `head_y`/`foot_y` land *inside* the text. Everything outside them is then relabelled **by
+   POSITION rather than by KIND**. Adaptive, and wrong.
+3. **R14.10b, measured**: on leaves 401/402/409/417 the page number's mass sits **0.005 of a page
+   BELOW** the head line, so a pure band test dropped all four and named them `MT`. The predicate now
+   carries a second cue precisely to survive its own boundary.
+
+**THE RULING.** The head band is **demoted from a DECIDER to a FEATURE**. It may be computed, drawn,
+and offered to a classifier as one input among many. It may **never** be the test that assigns a
+class, and no cue may branch on `mass_y <= head_y` as its primary discriminant. What replaces it is
+the LAMINATION (R14.12) plus **object-intrinsic evidence** — the kind R14.10a and R14.10b already
+proved works: a page number is *a short squat object two or three sorts wide*, an argument is *a
+block set in italic*. **Those are facts about what the book SETS. A y-coordinate is a fact about
+where the detector happened to draw a rectangle.**
+
+⚠️ **AND THE SAME RULING APPLIES TO EVERY OTHER SCALAR STANDING IN FOR A CLASS**: the measure edges
+`(ml, mr)` used by `_outside_frac`, the foot band, and the `0.5 * (head_y + foot_y)` midpoint clamp.
+Each is a line where a kind is meant. They are listed together in R16.14.
+
 #### The workflow, in eight steps
 
 Steps 1–4, 6 and 7 are Sir's, unchanged in substance. **Steps 5 and 8 are additions**, each because
@@ -1534,8 +1626,32 @@ number"*. **That claim is false and is now measured.** ⚠️ Every constant thi
 must be **derived from the leaf** or **retired**; a comment asserting that a threshold decides
 nothing is a hypothesis, and where the sweep disagrees the sweep wins.
 
+✅ **CURRENT READING, 2026-08-31: 3 of 12.** R14.11 part 1 retired `CENTRED_LO/HI` — the zero-slack
+one — and replaced it with a dimensionless centre offset. The three that still DECIDE are
+**`OUTSIDE_FRAC` (rel. slack 0.04×), `PN_MAX_AREA` (0.25×) and `FOOT_CATCHWORD_REL` (0.03×)**. Each
+remains OPEN under R14.11 and must be derived from the leaf or retired.
+
+🔴 **AND THE AUDIT'S DENOMINATOR IS ITSELF A BOUNDED SEARCH — MEASURED 2026-08-31, FILED AS R16.13.**
+"EVERY fixed number in the agent" is the audit's own title and it is **not true**. `visual_agent.py`
+declares **16 module-level numeric constants and the audit sweeps 12**. The five never swept are
+`BAR_MN_RECALL`, `BAR_OVERALL`, `BAR_FORBIDDEN`, **`PIVOT_X` and `MIN_BIND_FRAC`**. The first three
+are acceptance bars rather than page measures and belong in a different category — but **`PIVOT_X =
+0.5` is the literal assumption that the rotation pivot is the middle of the leaf**, and
+`MIN_BIND_FRAC = 0.50` decides which box a gold entry binds to, i.e. it decides what every score in
+this project is computed over. ⚠️ **AND THE CUE FUNCTION CARRIES UNNAMED THRESHOLDS THE AUDIT CANNOT
+REACH AT ALL**: `_cue` contains a bare `if off <= 0.5` and a bare `mass_y > 0.5 * (head_y + foot_y)`
+midpoint clamp, and `classify_archetype` returns a **fabricated default confidence of 0.60** when
+nothing decides. **A constant with no name cannot appear in a sweep of named constants.** This is
+the fifth instance of this project's standing failure shape — *a bounded search returns "not found"
+in exactly the shape an exhaustive one does* — and it is the most consequential, because the search
+that was bounded is the one that certifies the "no fixed measure may DECIDE" rule itself.
+
 ⚠️ **SLACK IS NOT A CERTIFICATE.** A wide empty band on twenty leaves of one witness is evidence
 about this window and nothing more. The audit reports the band; it never licenses the constant.
+🔴 **AND THE WINDOW IS NOW FIVE YEARS OUT OF DATE RELATIVE TO THE GOLD.** Every slack figure above
+was swept on **20 leaves of ONE witness**; the reviewed gold is **208 leaves across four settings**.
+A constant called GUARD on `OT1-1609-B` 400–419 has no standing on `NT-1582-B` at all. Re-sweeping
+the audit over the full 208 is R16.13.
 
 #### Why S5 and S8 are additions and not fluff
 

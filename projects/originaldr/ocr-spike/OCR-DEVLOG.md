@@ -187,6 +187,29 @@ scores 20/20 with 0 false positives, where the confirming read scores 14/20 plus
 1 `MN`. The read MEASURABLY DEGRADES the result here**, and B2's clean zero is not evidence that it
 discriminates: it was never once asked to reject a note.
 
+🔴🔴 **RESTATED 2026-08-31 — "20/20" IS A WITHIN-WINDOW RESULT AND THE NUMBER 20 IS THE WINDOW.**
+Sir asked why the count is twenty. **Because the window is twenty leaves** (`OT1-1609-B` 400–419,
+one page number each), not because the test found a natural boundary. Measured over the full
+208-leaf gold on 2026-08-31, `pn_candidate` admits **165 boxes**, and the pattern is the fingerprint
+of a constant swept until it fit:
+
+| witness | n | admits per leaf | leaves admitting NOTHING |
+|---|---|---|---|
+| **`OT1-1609-B` (the tuning window)** | 20 | **1.00** | **0** |
+| `OT1-1609-P` | 60 | 0.82 | 12 |
+| `OT2-1610-P` | 73 | 0.79 | 15 |
+| `NT-1582-B` | 55 | 0.69 | 21 |
+
+**48 of 208 leaves (23.1%) admit nothing at all**, and the ONLY witness with a perfect one-per-leaf
+rate and zero empty leaves is the one the constants were swept on. `PN_MAX_AREA` is already one of
+the three the fixed-measure audit calls DECIDING, at 0.25× relative slack. ⚠️ **The paragraph above
+is left standing unedited, because deleting it would erase the evidence that the claim was made.**
+What it says about the window is true; what it implies about the book is not, and the implication is
+the defect. Filed as **R16.14**, whose repair is the one this very entry identified and did not
+build: **width is the cue** — ~0.0165 of the page per digit, page numbers 0.0442–0.0546 against a
+note floor of 0.0757 — **and the read is the CHECK on a margin known to close at four digits.**
+
+
 ⚠️ **The reading of the page I walked past.** A page number is not distinguished from a side-note by
 WHERE it sits but by being a **short, squat object** — two or three sorts against a phrase. That is
 a fact about what the book *sets*, of exactly the kind R14.10a used for the ARGUMENT, and I missed it
@@ -2534,3 +2557,74 @@ that block**, and nothing warned of it.
 `CEILING_RE` does not match. A **parser** gap in that instrument, not a gap in those rows — recorded,
 not fixed here, for the reason already standing over the decimal-pair trap: changing the parser is a
 change to the instrument every other number in the block is verified by.
+
+
+---
+
+## 2026-08-31 — SIR'S STRUCTURAL REVIEW: layers, the head band, and what the instruments could not see
+
+**Five findings, four of them about instruments rather than about the book.**
+
+**1. The lamination was already governing and was never built.** Masterplan §3.0 has required S4 to
+emit a z-ordered stack since 2026-08-27, with R14.12 carrying four acceptance clauses. Sir re-asked
+for it on 2026-08-31 as "layers". Nothing had been built in four days of work that ran *past* it.
+🔑 **And measuring it first changed its cost.** `witness/score_lamination.py` (new, measures only,
+repairs nothing) over all 208 leaves and 2,275 boxes:
+
+| quantity | count | meaning |
+|---|---|---|
+| rectangle-overlapping pairs | 1,306 | what a rectangle rule would call violations |
+| **INK**-overlapping pairs | **833** (63.8%) | what §3.0's rule actually calls violations |
+| of which **CONTAINED** | **161** | **ordering alone fixes these, free** |
+| of which **PARTIAL** | **672** | 🔴 **ordering CANNOT fix these** |
+
+**L1 PASS** — the median leaf loses 33.3% of its pairs when the test moves from rectangles to ink,
+so §3.0's insistence on ink over rectangles is worth a third of the apparent problem.
+🔴 **L2 PASS, and it is the expensive answer.** **85.1% of leaves carry a PARTIAL pair**, and
+**672 of 833 ink violations (81%) are partial.** ⚠️ **So "layers solve the overlapping-box problem"
+is FALSE as stated: z-ordering resolves 19% of it.** The other 81% is §3.0 clause 4 — *the agent
+adjusts boundaries until the invariant holds* — which is the genuinely agentic, genuinely expensive
+part, and the part Sir's own phrasing named ("boxes are tweaked by the model until no box overlaps
+with INK inside another box"). Per setting: `OT1-1609-B` 100% of leaves, `NT-1582-B` 91%,
+`OT1-1609-P` 85%, `OT2-1610-P` 77%.
+⚠️ **L3 is pre-registered and NOT RUN**, and the output says so rather than omitting it. Wiring the
+two binding rules into this file would give it a second copy of the addressing rule — the R14.10a
+defect — so it is deferred to R16.16(3) where `headband_score` already declares them.
+
+**2. The head band is a scalar standing in for a class decision.** Sir asked whether the headline is
+a predetermined offset. It is not: `frame()` derives `head_y`/`foot_y` per leaf from that leaf's own
+body column, in rotated space. **But three findings already on file, never drawn together, say the
+derivation is not the problem** — R14.14 (the head line cuts **41** boxes; rotating it made **50**;
+`corr(|skew|, straddles) = +0.051`, so no angle separates classes that interleave in `y`), Root
+Cause 1 (**71/208 leaves have no body block**, so the anchor is a marginal column), and R14.10b (four
+page numbers sit 0.005 of a page *below* the line and were all named `MT`). **Masterplan §3.0 now
+demotes the band from DECIDER to FEATURE**; R16.15 carries the work.
+
+**3. The fixed-measure audit is itself a bounded search — the fifth instance of this shape.**
+`audit_fixed_measures.py` is titled *"EVERY fixed number in the agent, swept"*. It sweeps **12 of
+the 16** module-level constants. `PIVOT_X = 0.5` (the rotation pivot is assumed to be the middle of
+the leaf) and `MIN_BIND_FRAC = 0.50` (which decides what every score in this project is computed
+over) have never been swept. ⚠️ **And `_cue` carries thresholds with no name at all** — a bare
+`if off <= 0.5`, a bare `mass_y > 0.5*(head_y+foot_y)` clamp, and a **fabricated default confidence
+of 0.60** in `classify_archetype`. A sweep of named constants cannot reach an unnamed one. 🔴 **The
+bounded search here is the one certifying the "no fixed measure may DECIDE" rule itself.** R16.13.
+📌 Also corrected in the Masterplan: its governing text still read **5 of 12**; R14.11 part 1 took it
+to **3 of 12** (`OUTSIDE_FRAC`, `PN_MAX_AREA`, `FOOT_CATCHWORD_REL`) three days earlier.
+
+**4. "20/20" was the window.** See the restatement inserted above at the original entry. R16.14.
+
+**5. The review instrument was better than its Roadmap row and still could not show the thing.**
+`plates/review.html` already carried full-leaf images, boxes, frame, archetype, per-box
+reclassification, verdict capture and an export that keeps LECTOR's claim distinguishable from the
+reviewer's correction — R14.17 reads as unbuilt and is substantially built. What it could **not**
+do was show ink ownership, so the invariant Sir wants to review was invisible. Now wired: an
+`overlaps` toggle painting every PARTIAL pair's contested ink, a sidebar readout **read from
+`lamination-scores.json` and never recomputed** (two implementations of one invariant is R14.10a
+again), durable verdict checkpointing to a tracked `review-verdicts.json` every tenth verdict with a
+`NOT YET ON DISK` counter, and a **STALE banner that suppresses the paint** the moment a reviewer
+edits a leaf's geometry, because an overlay describing pre-edit geometry is worse than none.
+
+**Names ratified.** **LECTOR** — the adaptive visual agent, `visual_agent.py`, decides WHAT and
+WHERE. **SCRIBE** — the recogniser, `recogniser.py`, decides WHICH CHARACTERS. The pairing is the
+scriptorium's: the lector reads the page aloud and decides what is on it; the scribe writes what is
+read and never decides. R13.1's defect was exactly SCRIBE's output settling a LECTOR question.

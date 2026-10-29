@@ -484,3 +484,21 @@ comparable unless each is trained to its own convergence.
 > keep them withdrawn is to read each item's primary artefact, which is the JP2 for those six and the
 > **uploaded PDF** for the other five. "Always the JP2" would put a render in place of a source in five
 > cases out of eleven. The single genuine exception is `M`, bitonal at source with no original to acquire.
+
+
+## The two agents, by name (ratified 2026-08-31 — Masterplan §3.0 governs)
+
+| name | role | decides | code |
+|---|---|---|---|
+| **LECTOR** | the adaptive visual agent | **WHAT and WHERE** — page archetype, region boxes, region classes, reading order, attachment | `witness/visual_agent.py` |
+| **SCRIBE** | the recogniser | **WHICH CHARACTERS** — diplomatic text inside one already-typed region | `witness/recogniser.py` |
+
+The division is the scriptorium's: the lector reads the page aloud and decides what is on it and in
+what order; the scribe writes what is read and never decides. ⚠️ **Neither may do the other's job** —
+R13.1's defect was SCRIBE's output being consumed as if it settled a LECTOR question.
+
+⚠️ **LECTOR is a ROLE, not an implementation.** Today it is a hand-written cascade over a detector's
+boxes and performs no inference (R14.16). What it emits is required by Masterplan §3.0 to be a
+**LAMINATION** — z-ordered typed regions where a region owns the ink no higher region claims — and
+as of 2026-08-31 that requirement is measured but **not built**: over 208 leaves, **833 pairs of
+boxes share ink, and 672 of them (81%) overlap PARTIALLY**, which no ordering can resolve.

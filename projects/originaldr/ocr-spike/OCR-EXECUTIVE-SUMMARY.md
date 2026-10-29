@@ -377,6 +377,16 @@ others, "shapes from ink" as a section title. **A project whose aim lives in fra
 nearest fragment.** This one did: four hand-built geometric span rules and five pre-registered bars
 against a 19-entry gold on one witness, while four of the eight steps below had no code at all.
 
+**The two agents, named (ratified 2026-08-31, Masterplan §3.0).** **LECTOR** is the adaptive visual
+agent — it looks at the leaf, decides what kind of page it is, and bounds and types every region.
+**SCRIBE** is the recogniser — it reads the pixels inside one region as its own kind of thing.
+**LECTOR decides WHAT and WHERE; SCRIBE decides WHICH CHARACTERS**, and neither may do the other's
+job. The names are the scriptorium's, where the lector reads the page aloud and the scribe writes
+what is read.
+⚠️ **LECTOR names a ROLE, not an implementation.** It is today a hand-written cascade over a
+detector's boxes, which R14.16 files as the largest design gap in the agent; replacing that cascade
+with a learned classifier changes what sits behind the contract, not the contract.
+
 **The aim:** an **adaptive visual agent that reproduces what a literate human does when handed a page
 of this book** — look at the leaf, recognise what *kind* of page it is, see by **visual cue** where each
 class of text sits, bound those regions, understand how they **relate**, and read each region **as its
